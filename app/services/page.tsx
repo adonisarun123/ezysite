@@ -375,7 +375,7 @@ export default function ServicesPage() {
                   
                   {/* Popular Badge */}
                   {service.popular && (
-                    <div className="absolute -top-3 -left-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full transform -rotate-12 shadow-lg">
+                    <div className="absolute top-3 left-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full transform -rotate-12 shadow-lg z-20">
                       Most Popular
                     </div>
                   )}
