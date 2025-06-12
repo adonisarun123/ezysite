@@ -78,8 +78,8 @@ const trustIndicators = [
     description: 'Background checked professionals'
   },
   { 
-    label: 'Cities Served', 
-    value: '9+', 
+    label: 'Locations', 
+    value: '250+', 
     icon: MapPinIcon,
     description: 'Across major Indian cities'
   },

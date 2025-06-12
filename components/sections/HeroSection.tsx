@@ -7,7 +7,7 @@ import { CheckCircleIcon, StarIcon, PhoneIcon, ChatBubbleLeftRightIcon } from '@
 const stats = [
   { label: 'Trusted Families', value: '10,000+' },
   { label: 'Verified Helpers', value: '5,000+' },
-  { label: 'Cities Served', value: '9+' },
+  { label: 'Locations', value: '250+' },
   { label: 'Customer Rating', value: '4.8/5' },
 ]
 
