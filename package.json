@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "analyze-bundle": "node scripts/analyze-bundle.js"
+    "analyze-bundle": "node scripts/analyze-bundle.js",
+    "optimize-css": "node scripts/optimize-css.js",
+    "build:optimized": "npm run optimize-css && npm run build"
   },
   "dependencies": {
     "next": "14.0.4",
@@ -28,6 +30,7 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "eslint": "^8.55.0",
-    "eslint-config-next": "14.0.4"
+    "eslint-config-next": "14.0.4",
+    "glob": "^10.3.10"
   }
 } 

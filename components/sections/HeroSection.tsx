@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { CheckCircleIcon, StarIcon, PhoneIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/solid'
 
 const stats = [
@@ -18,28 +18,62 @@ const trustedFeatures = [
   'Flexible Service Options',
 ]
 
+// Optimized for performance - static arrays
 const services = [
-  'Live-in Maid',
-  'Full-time Maid',
-  'Part-time Maid',
-  'On-demand Helper',
-  'Babysitter/Nanny',
-  'Elderly Care',
-  'Cook',
-  'Driver'
+  'Live-in Maid', 'Full-time Maid', 'Part-time Maid', 'On-demand Helper',
+  'Babysitter/Nanny', 'Elderly Care', 'Cook', 'Driver'
 ]
 
 const cities = [
-  'Bangalore',
-  'Mumbai',
-  'Delhi',
-  'Noida',
-  'Nagpur',
-  'Lucknow',
-  'Kanpur',
-  'Meerut',
-  'Bareilly'
+  'Bangalore', 'Mumbai', 'Delhi', 'Noida', 'Nagpur', 
+  'Lucknow', 'Kanpur', 'Meerut', 'Bareilly'
 ]
+
+const quickAccessServices = [
+  { name: 'Live-in Maid', href: '/services/live-in-maids' },
+  { name: 'Part-time Helper', href: '/services/part-time-maids' },
+  { name: 'Elderly Care', href: '/services/elderly-care' },
+  { name: 'Babysitter', href: '/services/nanny-babysitter' }
+]
+
+// Memoized star rating component
+const StarRating = memo(() => (
+  <div className="flex items-center space-x-1">
+    {[...Array(5)].map((_, i) => (
+      <StarIcon key={i} className="h-4 w-4 text-yellow-400" />
+    ))}
+  </div>
+))
+
+// Memoized stats component
+const StatsGrid = memo(() => (
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {stats.map((stat) => (
+      <div key={stat.label} className="text-center bg-white rounded-lg p-3 shadow-sm">
+        <div className="text-xl md:text-2xl font-bold text-primary-600 mb-1">
+          {stat.value}
+        </div>
+        <div className="text-xs text-gray-600">{stat.label}</div>
+      </div>
+    ))}
+  </div>
+))
+
+// Memoized quick access links
+const QuickAccessLinks = memo(() => (
+  <div className="flex flex-wrap gap-2 mb-8">
+    <span className="text-sm text-gray-500 mr-2">Quick access:</span>
+    {quickAccessServices.map((service) => (
+      <Link
+        key={service.name}
+        href={service.href}
+        className="text-sm bg-white border border-gray-200 rounded-full px-3 py-1 hover:border-primary-300 hover:bg-primary-50 transition-colors"
+      >
+        {service.name}
+      </Link>
+    ))}
+  </div>
+))
 
 export default function HeroSection() {
   const [formData, setFormData] = useState({
@@ -51,9 +85,7 @@ export default function HeroSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
     console.log('Form submitted:', formData)
-    // You can integrate with your backend API here
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -69,11 +101,7 @@ export default function HeroSection() {
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-start">
           <div className="lg:col-span-7">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="flex items-center space-x-1">
-                {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} className="h-4 w-4 text-yellow-400" />
-                ))}
-              </div>
+              <StarRating />
               <span className="text-sm text-gray-600 font-medium">
                 Rated 4.8/5 by 10,000+ families
               </span>
@@ -86,6 +114,7 @@ export default function HeroSection() {
               <span className="text-gradient">Home Care</span>
             </h1>
 
+            {/* LCP Element - Optimized for fastest render */}
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
               Connect with verified, reliable professionals for all your home needs. 
               From housemaids and cooks to caretakers and maintenance - 
@@ -113,34 +142,8 @@ export default function HeroSection() {
               </Link>
             </div>
 
-            <div className="flex flex-wrap gap-2 mb-8">
-              <span className="text-sm text-gray-500 mr-2">Quick access:</span>
-              {[
-                { name: 'Live-in Maid', href: '/services/live-in-maids' },
-                { name: 'Part-time Helper', href: '/services/part-time-maids' },
-                { name: 'Elderly Care', href: '/services/elderly-care' },
-                { name: 'Babysitter', href: '/services/nanny-babysitter' }
-              ].map((service) => (
-                <Link
-                  key={service.name}
-                  href={service.href}
-                  className="text-sm bg-white border border-gray-200 rounded-full px-3 py-1 hover:border-primary-300 hover:bg-primary-50 transition-colors"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center bg-white rounded-lg p-3 shadow-sm">
-                  <div className="text-xl md:text-2xl font-bold text-primary-600 mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs text-gray-600">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+            <QuickAccessLinks />
+            <StatsGrid />
           </div>
 
           <div className="lg:col-span-5 mt-8 lg:mt-0">
@@ -169,71 +172,59 @@ export default function HeroSection() {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-3">
-                <div>
-                  <label htmlFor="hero-name" className="sr-only">Your Name</label>
-                  <input
-                    id="hero-name"
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
-                    placeholder="Your Name"
-                    aria-label="Your Name"
-                  />
-                </div>
+                <input
+                  id="hero-name"
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
+                  placeholder="Your Name"
+                  aria-label="Your Name"
+                />
 
-                <div>
-                  <label htmlFor="hero-phone" className="sr-only">Phone Number</label>
-                  <input
-                    id="hero-phone"
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
-                    placeholder="Phone Number (+91 XXXXX XXXXX)"
-                    aria-label="Phone Number"
-                  />
-                </div>
+                <input
+                  id="hero-phone"
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
+                  placeholder="Phone Number (+91 XXXXX XXXXX)"
+                  aria-label="Phone Number"
+                />
 
-                <div>
-                  <label htmlFor="hero-service" className="sr-only">Service Type</label>
-                  <select
-                    id="hero-service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
-                    aria-label="Select Service Type"
-                  >
-                    <option value="">Select Service</option>
-                    {services.map((service) => (
-                      <option key={service} value={service}>{service}</option>
-                    ))}
-                  </select>
-                </div>
+                <select
+                  id="hero-service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
+                  aria-label="Select Service Type"
+                >
+                  <option value="">Select Service</option>
+                  {services.map((service) => (
+                    <option key={service} value={service}>{service}</option>
+                  ))}
+                </select>
 
-                <div>
-                  <label htmlFor="hero-city" className="sr-only">City</label>
-                  <select
-                    id="hero-city"
-                    name="city"
-                    value={formData.city}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
-                    aria-label="Select City"
-                  >
-                    <option value="">Select City</option>
-                    {cities.map((city) => (
-                      <option key={city} value={city}>{city}</option>
-                    ))}
-                  </select>
-                </div>
+                <select
+                  id="hero-city"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
+                  aria-label="Select City"
+                >
+                  <option value="">Select City</option>
+                  {cities.map((city) => (
+                    <option key={city} value={city}>{city}</option>
+                  ))}
+                </select>
 
                 <button
                   type="submit"

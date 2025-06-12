@@ -5,11 +5,12 @@ import './dom-optimizations.css'
 import AsyncCSS from '../components/ui/AsyncCSS'
 import { OrganizationSchema, WebSiteSchema } from '../components/schema'
 
-// Optimize font loading
+// Optimize font loading with preload
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+  preload: true,
 })
 
 const poppins = Poppins({
@@ -17,6 +18,7 @@ const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700', '800'],
   display: 'swap',
   variable: '--font-poppins',
+  preload: true,
 })
 
 export const metadata: Metadata = {
@@ -62,6 +64,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preload critical resources */}
+        <link rel="preload" href="/favicon.ico" as="image" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#0074C8" />
@@ -70,37 +78,64 @@ export default function RootLayout({
         <OrganizationSchema />
         <WebSiteSchema />
         
-        {/* Critical CSS for initial render */}
+        {/* Optimized Critical CSS for LCP - More specific and minimal */}
         <style dangerouslySetInnerHTML={{
           __html: `
+            /* Critical styles for LCP element */
+            .text-lg {
+              font-size: 1.125rem;
+              line-height: 1.75rem;
+            }
+            .text-xl {
+              font-size: 1.25rem;
+              line-height: 1.75rem;
+            }
+            .text-gray-600 {
+              color: rgb(75 85 99);
+            }
+            .mb-8 {
+              margin-bottom: 2rem;
+            }
+            .leading-relaxed {
+              line-height: 1.625;
+            }
+            .max-w-2xl {
+              max-width: 42rem;
+            }
+            
+            /* Essential button styles */
             .btn-primary {
               background-color: #0074C8;
               color: white;
               font-weight: 500;
-              padding: 0.625rem 1rem;
+              padding: 0.75rem 1.5rem;
               border-radius: 0.5rem;
-              transition: all 0.2s;
+              transition: background-color 0.2s;
               border: none;
               cursor: pointer;
+              display: inline-block;
+              text-decoration: none;
             }
             .btn-primary:hover {
               background-color: #005ea6;
-              transform: scale(1.05);
             }
             .btn-secondary {
               background-color: white;
               color: #0074C8;
               font-weight: 500;
-              padding: 0.625rem 1rem;
+              padding: 0.75rem 1.5rem;
               border-radius: 0.5rem;
               border: 2px solid #0074C8;
-              transition: all 0.2s;
+              transition: background-color 0.2s;
               cursor: pointer;
+              display: inline-block;
+              text-decoration: none;
             }
             .btn-secondary:hover {
               background-color: #f9fafb;
-              transform: scale(1.05);
             }
+            
+            /* Layout essentials */
             .section-padding {
               padding: 3rem 0;
             }
@@ -115,10 +150,16 @@ export default function RootLayout({
               -webkit-text-fill-color: transparent;
               background-clip: text;
             }
+            
+            /* Font loading optimization */
+            .font-sans {
+              font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+            }
+            .font-display {
+              font-family: var(--font-poppins), var(--font-inter), system-ui, sans-serif;
+            }
+            
             @media (min-width: 640px) {
-              .btn-primary, .btn-secondary {
-                padding: 0.75rem 1.5rem;
-              }
               .container-custom {
                 padding: 0 1.5rem;
               }

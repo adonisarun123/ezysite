@@ -3,63 +3,82 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com', 'via.placeholder.com'],
   },
+  
   // Enable compression and optimization
   compress: true,
-  // Optimize build output
   swcMinify: true,
   
   // Configure SWC for modern browsers
   compiler: {
     // Remove console.log in production
     removeConsole: process.env.NODE_ENV === 'production',
+    // Enable optimizations for modern JS
+    styledComponents: false,
   },
   
-  // Disable legacy browser support completely
+  // Target modern browsers only
   experimental: {
-    // Disable runtime polyfills for legacy browsers
+    // Enable modern build features
     esmExternals: true,
+    // Enable optimizations that are safe
+    forceSwcTransforms: true,
   },
   
-  // Webpack configuration for modern JS
-  webpack: (config, { dev, isServer, webpack }) => {
+  // Webpack configuration for modern browsers
+  webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
-      // Target modern JavaScript for client bundles
+      // Target ES2020+ for client-side bundles
       config.target = ['web', 'es2020'];
       
-      // Replace polyfills with empty modules for modern browsers
+      // Optimize for modern browsers
+      config.optimization = {
+        ...config.optimization,
+        // Enable advanced optimizations
+        usedExports: true,
+        sideEffects: false,
+        // Minimize bundle size
+        minimize: true,
+      };
+      
+      // Remove polyfills for modern features
       config.resolve.alias = {
         ...config.resolve.alias,
-        // Override core-js polyfills with empty modules
+        // Don't include polyfills for modern JS features
         'core-js/modules/es.array.at': false,
         'core-js/modules/es.array.flat': false,
         'core-js/modules/es.array.flat-map': false,
         'core-js/modules/es.object.from-entries': false,
         'core-js/modules/es.string.trim-start': false,
         'core-js/modules/es.string.trim-end': false,
-      };
-      
-      // Use ProvidePlugin to provide native implementations
-      config.plugins.push(
-        new webpack.ProvidePlugin({
-          // Ensure native implementations are used
-        })
-      );
-      
-      // Disable polyfills injection
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        // Disable Node.js polyfills that might include legacy features
-        crypto: false,
-        stream: false,
-        assert: false,
-        http: false,
-        https: false,
-        os: false,
-        url: false,
-        zlib: false,
+        'core-js/modules/es.promise': false,
+        'core-js/modules/es.promise.finally': false,
       };
     }
+    
     return config;
+  },
+  
+  // Performance optimizations
+  poweredByHeader: false,
+  reactStrictMode: true,
+  
+  // Headers for better caching and performance
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN'
+          }
+        ],
+      },
+    ]
   },
 }
 
