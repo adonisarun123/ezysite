@@ -299,8 +299,8 @@ export default function ContactPage() {
                 },
                 {
                   city: "Bareilly",
-                  address: "187/3, Vivek Vihar, Janakpuri, Near Avadh Plaza Hotel",
-                  pincode: "Bareilly, Uttar Pradesh 243001",
+                  address: "No 187/3, Vivek Vihar, Janakpuri, Near Avadh Plaza Hotel, Bareilly",
+                  pincode: "Uttar Pradesh 243001",
                   phone: "+91 9410814693",
                   email: "contact@ezyhelpers.com",
                   isHQ: false
