@@ -195,19 +195,87 @@ export default function ServicesPage() {
               </Link>
             </div>
 
-            {/* Enhanced Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">50K+</div>
-                <div className="text-primary-200 text-sm">Happy Customers</div>
+            {/* Enhanced Colorful Stats with Effects */}
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t border-white/20">
+              {/* Happy Customers */}
+              <div className="group relative text-center transform hover:scale-110 transition-all duration-500 cursor-pointer">
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-400/10 to-rose-400/10 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+                
+                {/* Content */}
+                <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 group-hover:border-pink-300/50 transition-all duration-500">
+                  {/* Icon */}
+                  <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                    <HeartIcon className="h-6 w-6 text-white animate-pulse" />
+                  </div>
+                  
+                  {/* Number with gradient */}
+                  <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-pink-300 to-rose-300 bg-clip-text text-transparent mb-2 group-hover:from-pink-200 group-hover:to-rose-200 transition-all duration-500">
+                    50K+
+                  </div>
+                  <div className="text-pink-100 text-xs sm:text-sm font-medium group-hover:text-white transition-colors duration-300">
+                    Happy Customers
+                  </div>
+                  
+                  {/* Floating particles */}
+                  <div className="absolute -top-2 -right-2 w-3 h-3 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300"></div>
+                  <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-rose-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300" style={{animationDelay: '0.2s'}}></div>
+                </div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">8</div>
-                <div className="text-primary-200 text-sm">Service Categories</div>
+
+              {/* Service Categories */}
+              <div className="group relative text-center transform hover:scale-110 transition-all duration-500 cursor-pointer">
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-teal-400/10 rounded-2xl transform -rotate-3 group-hover:-rotate-6 transition-transform duration-500"></div>
+                
+                {/* Content */}
+                <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 group-hover:border-emerald-300/50 transition-all duration-500">
+                  {/* Icon */}
+                  <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                    <SparklesIcon className="h-6 w-6 text-white animate-pulse" />
+                  </div>
+                  
+                  {/* Number with gradient */}
+                  <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text text-transparent mb-2 group-hover:from-emerald-200 group-hover:to-teal-200 transition-all duration-500">
+                    8
+                  </div>
+                  <div className="text-emerald-100 text-xs sm:text-sm font-medium group-hover:text-white transition-colors duration-300">
+                    Service Categories
+                  </div>
+                  
+                  {/* Floating particles */}
+                  <div className="absolute -top-2 -left-2 w-3 h-3 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300"></div>
+                  <div className="absolute -bottom-2 -right-2 w-2 h-2 bg-teal-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300" style={{animationDelay: '0.4s'}}></div>
+                </div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">24/7</div>
-                <div className="text-primary-200 text-sm">Support Available</div>
+
+              {/* Support Available */}
+              <div className="group relative text-center transform hover:scale-110 transition-all duration-500 cursor-pointer">
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-400/10 to-orange-400/10 rounded-2xl transform rotate-2 group-hover:rotate-4 transition-transform duration-500"></div>
+                
+                {/* Content */}
+                <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 group-hover:border-amber-300/50 transition-all duration-500">
+                  {/* Icon */}
+                  <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                    <ClockIcon className="h-6 w-6 text-white animate-pulse" />
+                  </div>
+                  
+                  {/* Number with gradient */}
+                  <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-amber-300 to-orange-300 bg-clip-text text-transparent mb-2 group-hover:from-amber-200 group-hover:to-orange-200 transition-all duration-500">
+                    24/7
+                  </div>
+                  <div className="text-amber-100 text-xs sm:text-sm font-medium group-hover:text-white transition-colors duration-300">
+                    Support Available
+                  </div>
+                  
+                  {/* Floating particles */}
+                  <div className="absolute -top-2 -right-2 w-3 h-3 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300"></div>
+                  <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300" style={{animationDelay: '0.3s'}}></div>
+                </div>
               </div>
             </div>
           </div>
