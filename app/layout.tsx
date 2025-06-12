@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
+import './dom-optimizations.css'
 import AsyncCSS from '../components/ui/AsyncCSS'
 
 // Optimize font loading

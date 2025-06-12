@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import OptimizedSection from '@/components/optimized/OptimizedSection'
+import OptimizedCard from '@/components/optimized/OptimizedCard'
+import OptimizedHeader from '@/components/optimized/OptimizedHeader'
 import { 
   BuildingLibraryIcon, 
   HeartIcon, 
@@ -131,149 +134,88 @@ export default function DelhiPage() {
         </div>
       </section>
 
-      {/* Local Services */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-red-100 rounded-full blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-50 rounded-full blur-3xl opacity-30 translate-x-1/2 translate-y-1/2" />
-        
-        <div className="container-custom relative">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-red-100 rounded-full px-6 py-3 mb-6">
-              <span className="text-red-700 font-semibold text-sm">Our Specialized Services</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display">
-              Tailored for Delhi's
-              <span className="block bg-gradient-to-r from-red-600 to-pink-700 bg-clip-text text-transparent">Political Lifestyle</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Understanding the unique needs of India's national capital, we provide specialized domestic help services
-            </p>
-          </div>
+      {/* Local Services - Optimized */}
+      <OptimizedSection background="gradient" colorScheme="red" pattern>
+        <OptimizedHeader
+          badge="Our Specialized Services"
+          title="Tailored for Delhi's"
+          subtitle="Political Lifestyle"
+          description="Understanding the unique needs of India's national capital, we provide specialized domestic help services"
+          colorScheme="red"
+        />
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {localServices.map((service, index) => {
-              const IconComponent = service.icon
-              const colors = [
-                { bg: 'from-red-500 to-pink-600', light: 'bg-red-50', icon: 'text-red-600', border: 'border-red-200' },
-                { bg: 'from-pink-500 to-rose-600', light: 'bg-pink-50', icon: 'text-pink-600', border: 'border-pink-200' },
-                { bg: 'from-rose-500 to-red-600', light: 'bg-rose-50', icon: 'text-rose-600', border: 'border-rose-200' }
-              ]
-              const colorScheme = colors[index]
-              
-              return (
-                <div 
-                  key={index} 
-                  className="group relative bg-white rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100 hover:border-gray-200"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  {/* Gradient overlay on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${colorScheme.bg} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500`} />
-                  
-                  {/* Enhanced Icon */}
-                  <div className="relative mb-6">
-                    <div className={`w-16 h-16 ${colorScheme.light} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${colorScheme.border} border`}>
-                      <IconComponent className={`h-8 w-8 ${colorScheme.icon} group-hover:scale-110 transition-transform duration-300`} />
-                    </div>
-                    {/* Pulse effect */}
-                    <div className={`absolute inset-0 w-16 h-16 ${colorScheme.light} rounded-2xl opacity-0 group-hover:opacity-50 animate-ping`} />
+        <div className="grid md:grid-cols-3 gap-8">
+          {localServices.map((service, index) => {
+            const IconComponent = service.icon
+            const colorSchemes = ['red', 'red', 'red'] as const
+            
+            return (
+              <OptimizedCard
+                key={index}
+                title={service.title}
+                description={service.description}
+                icon={<IconComponent className="h-6 w-6" />}
+                colorScheme={colorSchemes[index]}
+                className="p-8"
+              />
+            )
+          })}
+        </div>
+      </OptimizedSection>
+
+      {/* Service Areas - Optimized */}
+      <OptimizedSection background="colored" colorScheme="red" pattern>
+        <OptimizedHeader
+          badge="Complete Coverage"
+          badgeIcon={<MapPinIcon className="h-5 w-5" />}
+          title="Service Areas in"
+          subtitle="Delhi"
+          description="We serve all major residential and governmental areas across Delhi NCR"
+          colorScheme="red"
+        />
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {areas.map((area, index) => {
+            const isPopular = ['Lutyens Delhi', 'South Delhi', 'Connaught Place'].includes(area)
+            return (
+              <div 
+                key={index} 
+                className={`group relative bg-white rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 ${
+                  isPopular ? 'border-red-200 bg-gradient-to-br from-white to-red-50' : 'border-gray-100'
+                }`}
+              >
+                {isPopular && (
+                  <div className="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                    Popular
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 font-display group-hover:text-gray-800 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
-                    {service.description}
-                  </p>
-                  
-                  {/* Bottom accent */}
-                  <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${colorScheme.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-2xl`} />
-                  
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                )}
+                
+                <div className="mb-3">
+                  <div className={`w-10 h-10 mx-auto rounded-lg flex items-center justify-center ${
+                    isPopular ? 'bg-red-100 border-2 border-red-200' : 'bg-gray-100'
+                  } group-hover:scale-110 transition-transform duration-300`}>
+                    <MapPinIcon className={`h-5 w-5 ${isPopular ? 'text-red-600' : 'text-gray-600'} group-hover:text-red-700`} />
                   </div>
                 </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Service Areas */}
-      <section className="section-padding bg-red-50 relative">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dc2626' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3C/g%3E%3C/svg%3E")`,
-          }} />
+                
+                <span className={`font-semibold text-sm ${
+                  isPopular ? 'text-red-700' : 'text-gray-700'
+                } group-hover:text-red-800 transition-colors`}>
+                  {area}
+                </span>
+              </div>
+            )
+          })}
         </div>
         
-        <div className="container-custom relative">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-red-100 rounded-full px-6 py-3 mb-6">
-              <MapPinIcon className="h-5 w-5 text-red-600 mr-2" />
-              <span className="text-red-700 font-semibold text-sm">Complete Coverage</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display">
-              Service Areas in 
-              <span className="block bg-gradient-to-r from-red-600 to-pink-700 bg-clip-text text-transparent">Delhi</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We serve all major residential and governmental areas across Delhi NCR
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {areas.map((area, index) => {
-              const isPopular = ['Lutyens Delhi', 'South Delhi', 'Connaught Place'].includes(area)
-              return (
-                <div 
-                  key={index} 
-                  className={`group relative bg-white rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 ${
-                    isPopular ? 'border-red-200 bg-gradient-to-br from-white to-red-50' : 'border-gray-100'
-                  }`}
-                  style={{ animationDelay: `${index * 0.05}s` }}
-                >
-                  {isPopular && (
-                    <div className="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 py-1 rounded-full font-semibold">
-                      Popular
-                    </div>
-                  )}
-                  
-                  <div className="relative mb-3">
-                    <div className={`w-10 h-10 mx-auto rounded-lg flex items-center justify-center ${
-                      isPopular ? 'bg-red-100 border-2 border-red-200' : 'bg-gray-100'
-                    } group-hover:scale-110 transition-transform duration-300`}>
-                      <MapPinIcon className={`h-5 w-5 ${isPopular ? 'text-red-600' : 'text-gray-600'} group-hover:text-red-700`} />
-                    </div>
-                    {isPopular && (
-                      <div className="absolute inset-0 w-10 h-10 mx-auto bg-red-100 rounded-lg opacity-0 group-hover:opacity-50 animate-ping" />
-                    )}
-                  </div>
-                  
-                  <span className={`font-semibold text-sm ${
-                    isPopular ? 'text-red-700' : 'text-gray-700'
-                  } group-hover:text-red-800 transition-colors`}>
-                    {area}
-                  </span>
-                  
-                  {/* Hover effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-pink-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              )
-            })}
-          </div>
-          
-          {/* Additional Info */}
-          <div className="mt-12 text-center">
-            <div className="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-md">
-              <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2" />
-              <span className="text-gray-700 font-medium">All areas covered with verified helpers</span>
-            </div>
+        {/* Additional Info */}
+        <div className="mt-12 text-center">
+          <div className="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-md">
+            <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2" />
+            <span className="text-gray-700 font-medium">All areas covered with verified helpers</span>
           </div>
         </div>
-      </section>
+      </OptimizedSection>
 
       {/* Popular Services */}
       <section className="section-padding bg-white relative overflow-hidden">

@@ -1,0 +1,251 @@
+/* DOM Optimization CSS - Reduces repetitive elements with CSS pseudo-elements */
+
+/* Reduce decorative background elements using CSS */
+.bg-decorative-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: 60px 60px;
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+.bg-decorative-circles::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -25%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Optimized card hover effects using CSS instead of DOM elements */
+.optimized-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.optimized-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(59, 130, 246, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.optimized-card:hover::before {
+  opacity: 1;
+}
+
+.optimized-card::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(45deg, #f59e0b, #ea580c);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.optimized-card:hover::after {
+  opacity: 1;
+}
+
+/* Simplified pulse effects */
+.pulse-effect {
+  animation: pulse-simple 2s ease-in-out infinite;
+}
+
+@keyframes pulse-simple {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Reduce floating elements with CSS animations */
+.floating-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-bg::before,
+.floating-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  animation: float-random 6s ease-in-out infinite;
+}
+
+.floating-bg::before {
+  top: 10%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.floating-bg::after {
+  bottom: 10%;
+  right: 10%;
+  width: 120px;
+  height: 120px;
+  animation-delay: 3s;
+}
+
+@keyframes float-random {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-15px) translateX(10px);
+  }
+  66% {
+    transform: translateY(10px) translateX(-5px);
+  }
+}
+
+/* Simplified trust indicators */
+.trust-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.trust-indicator:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Optimized gradient text without extra spans */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-start), var(--color-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Simplified area cards */
+.area-card {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.75rem;
+  border: 2px solid #e5e7eb;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.area-card:hover {
+  border-color: #ef4444;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.area-card.popular {
+  border-color: #ef4444;
+  background: linear-gradient(to bottom right, white, #fef2f2);
+}
+
+.area-card.popular::before {
+  content: 'Popular';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+/* Reduce service icons nesting */
+.service-icon {
+  width: 3rem;
+  height: 3rem;
+  background: var(--icon-bg);
+  border: 2px solid var(--icon-border);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  transition: all 0.3s ease;
+}
+
+.service-icon:hover {
+  transform: scale(1.1);
+  background: var(--icon-hover-bg);
+}
+
+/* Optimized CTA sections */
+.cta-optimized {
+  background: linear-gradient(135deg, #dc2626, #be185d);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-optimized::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.1;
+}
+
+/* Remove need for extra wrapper divs in buttons */
+.btn-optimized {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-optimized::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-optimized:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-optimized:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive optimizations */
+@media (max-width: 640px) {
+  .floating-bg::before,
+  .floating-bg::after {
+    display: none; /* Remove decorative elements on mobile */
+  }
+  
+  .optimized-card::after {
+    display: none; /* Simplify mobile cards */
+  }
+} 
