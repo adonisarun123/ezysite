@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Script from 'next/script';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import {
@@ -15,8 +16,33 @@ import {
 } from '@heroicons/react/24/outline';
 
 export default function ContactPage() {
+  // Function to open Tawk.to chat
+  const openTawkChat = () => {
+    if (typeof window !== 'undefined' && (window as any).Tawk_API) {
+      (window as any).Tawk_API.toggle();
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      {/* Tawk.to Live Chat Script */}
+      <Script
+        id="tawk-to-script"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/67188db42480f5b4f591f799/1iaruj2t3';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+          `,
+        }}
+      />
       <Navbar />
       <main className="pt-20">
         {/* Hero Section */}
@@ -38,7 +64,10 @@ export default function ContactPage() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="group bg-yellow-400 hover:bg-yellow-300 text-emerald-900 font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                <button 
+                  onClick={openTawkChat}
+                  className="group bg-yellow-400 hover:bg-yellow-300 text-emerald-900 font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
                   <span className="flex items-center justify-center gap-2">
                     <ChatBubbleLeftRightIcon className="w-5 h-5 group-hover:bounce transition-transform duration-300" />
                     Start a Conversation
@@ -110,7 +139,11 @@ export default function ContactPage() {
                       hoverColor: "hover:bg-red-100"
                     }
                   ].map((contact, index) => (
-                    <div key={index} className={`group ${contact.bgColor} ${contact.hoverColor} rounded-2xl p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-lg cursor-pointer`}>
+                    <div 
+                      key={index} 
+                      className={`group ${contact.bgColor} ${contact.hoverColor} rounded-2xl p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-lg cursor-pointer`}
+                      onClick={contact.title === "Live Chat" ? openTawkChat : undefined}
+                    >
                       <div className="flex items-start gap-4">
                         <contact.icon className={`w-8 h-8 ${contact.color} mt-1 group-hover:scale-110 transition-transform duration-300`} />
                         <div className="flex-1">
@@ -394,7 +427,10 @@ export default function ContactPage() {
                   Book a Service
                 </span>
               </button>
-              <button className="group border-2 border-white hover:bg-white hover:text-emerald-900 text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300 transform hover:scale-105">
+              <button 
+                onClick={openTawkChat}
+                className="group border-2 border-white hover:bg-white hover:text-emerald-900 text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300 transform hover:scale-105"
+              >
                 <span className="flex items-center justify-center gap-2">
                   <ChatBubbleLeftRightIcon className="w-5 h-5 group-hover:bounce transition-transform duration-300" />
                   Start Live Chat
