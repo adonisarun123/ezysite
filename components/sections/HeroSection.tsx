@@ -170,7 +170,9 @@ export default function HeroSection() {
 
               <form onSubmit={handleSubmit} className="space-y-3">
                 <div>
+                  <label htmlFor="hero-name" className="sr-only">Your Name</label>
                   <input
+                    id="hero-name"
                     type="text"
                     name="name"
                     value={formData.name}
@@ -178,11 +180,14 @@ export default function HeroSection() {
                     required
                     className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
                     placeholder="Your Name"
+                    aria-label="Your Name"
                   />
                 </div>
 
                 <div>
+                  <label htmlFor="hero-phone" className="sr-only">Phone Number</label>
                   <input
+                    id="hero-phone"
                     type="tel"
                     name="phone"
                     value={formData.phone}
@@ -190,16 +195,20 @@ export default function HeroSection() {
                     required
                     className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
                     placeholder="Phone Number (+91 XXXXX XXXXX)"
+                    aria-label="Phone Number"
                   />
                 </div>
 
                 <div>
+                  <label htmlFor="hero-service" className="sr-only">Service Type</label>
                   <select
+                    id="hero-service"
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
                     required
                     className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
+                    aria-label="Select Service Type"
                   >
                     <option value="">Select Service</option>
                     {services.map((service) => (
@@ -209,12 +218,15 @@ export default function HeroSection() {
                 </div>
 
                 <div>
+                  <label htmlFor="hero-city" className="sr-only">City</label>
                   <select
+                    id="hero-city"
                     name="city"
                     value={formData.city}
                     onChange={handleInputChange}
                     required
                     className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
+                    aria-label="Select City"
                   >
                     <option value="">Select City</option>
                     {cities.map((city) => (

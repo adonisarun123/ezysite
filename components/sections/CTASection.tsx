@@ -59,21 +59,35 @@ export default function CTASection() {
             </h3>
             <form className="space-y-4">
               <div>
+                <label htmlFor="cta-name" className="sr-only">Your Name</label>
                 <input
+                  id="cta-name"
                   type="text"
+                  name="name"
                   placeholder="Your Name"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                  aria-label="Your Name"
                 />
               </div>
               <div>
+                <label htmlFor="cta-phone" className="sr-only">Phone Number</label>
                 <input
+                  id="cta-phone"
                   type="tel"
+                  name="phone"
                   placeholder="Phone Number"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                  aria-label="Phone Number"
                 />
               </div>
               <div>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none text-gray-900">
+                <label htmlFor="cta-service" className="sr-only">Service Type</label>
+                <select 
+                  id="cta-service"
+                  name="service"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none text-gray-900"
+                  aria-label="Select Service Type"
+                >
                   <option value="">Select Service Type</option>
                   <option value="live-in">Live-in Maid</option>
                   <option value="full-time">Full-time Maid</option>
@@ -86,7 +100,13 @@ export default function CTASection() {
                 </select>
               </div>
               <div>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none text-gray-900">
+                <label htmlFor="cta-city" className="sr-only">City</label>
+                <select 
+                  id="cta-city"
+                  name="city"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none text-gray-900"
+                  aria-label="Select City"
+                >
                   <option value="">Select City</option>
                   <option value="bangalore">Bangalore</option>
                   <option value="mumbai">Mumbai</option>
