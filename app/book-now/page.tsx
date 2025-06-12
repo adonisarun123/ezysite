@@ -104,15 +104,15 @@ export default function BookNowPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
                   <CheckCircleIcon className="w-5 h-5 text-green-300" />
-                  <span className="text-blue-100">100% Verified Helpers</span>
+                  <span className="text-white">100% Verified Helpers</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
                   <StarIcon className="w-5 h-5 text-yellow-300" />
-                  <span className="text-blue-100">4.8★ Average Rating</span>
+                  <span className="text-white">4.8★ Average Rating</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
                   <ShieldCheckIcon className="w-5 h-5 text-green-300" />
-                  <span className="text-blue-100">Instant Booking</span>
+                  <span className="text-white">Instant Booking</span>
                 </div>
               </div>
             </div>

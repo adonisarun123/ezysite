@@ -178,15 +178,15 @@ export default function ServicesPage() {
 
             {/* Feature Pills */}
             <div className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-12 justify-center px-4">
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium border border-white/20 text-white">
                 <CheckCircleIcon className="h-3 w-3 sm:h-4 sm:w-4 inline mr-1" />
                 Background Verified
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium border border-white/20 text-white">
                 <ShieldCheckIcon className="h-3 w-3 sm:h-4 sm:w-4 inline mr-1" />
                 Trusted Professionals
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium border border-white/20 text-white">
                 <StarIcon className="h-3 w-3 sm:h-4 sm:w-4 inline mr-1" />
                 5-Star Rated
               </div>

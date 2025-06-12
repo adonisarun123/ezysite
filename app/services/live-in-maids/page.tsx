@@ -466,15 +466,15 @@ export default function LiveInMaidsPage() {
 
                 {/* Feature Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20 text-white">
                     <CheckCircleIcon className="h-4 w-4 inline mr-1" />
                     24-72 Hour Guarantee
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20 text-white">
                     <ShieldCheckIcon className="h-4 w-4 inline mr-1" />
                     Police Verified
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20 text-white">
                     <StarIcon className="h-4 w-4 inline mr-1" />
                     5-Star Rated
                   </div>

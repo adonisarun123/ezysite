@@ -73,7 +73,7 @@ export default function KanpurPage() {
             
             {/* Enhanced Typography */}
             <div className="space-y-2 mb-8">
-              <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20">
+              <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20 text-white">
                 <CogIcon className="h-4 w-4 inline mr-2" />
                 Industrial Capital of UP
               </div>

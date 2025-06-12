@@ -73,7 +73,7 @@ export default function MumbaiPage() {
             
             {/* Enhanced Typography */}
             <div className="space-y-2 mb-8">
-              <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20">
+              <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20 text-white">
                 <BuildingOfficeIcon className="h-4 w-4 inline mr-2" />
                 Financial Capital of India
               </div>
