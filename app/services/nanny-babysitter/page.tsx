@@ -433,7 +433,7 @@ export default function NannyBabysitterPage() {
                   {service.description}
                 </p>
                 <span className="text-pink-600 font-medium hover:text-pink-700">
-                  Learn More →
+                  Learn More About {service.title} →
                 </span>
               </Link>
             ))}

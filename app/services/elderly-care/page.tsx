@@ -287,7 +287,7 @@ export default function ElderlyCare() {
                   {service.description}
                 </p>
                 <span className="text-teal-600 font-medium hover:text-teal-700">
-                  Learn More →
+                  Learn More About {service.title} →
                 </span>
               </Link>
             ))}

@@ -437,7 +437,7 @@ export default function CooksPage() {
                   {service.description}
                 </p>
                 <span className="text-orange-600 font-medium hover:text-orange-700">
-                  Learn More →
+                  Learn More About {service.title} →
                 </span>
               </Link>
             ))}

@@ -546,7 +546,7 @@ export default function OnDemandHelpersPage() {
                     {/* Enhanced Learn More */}
                     <div className="flex items-center justify-between">
                       <span className={`${service.iconColor} group-hover:text-white font-semibold transition-colors duration-300`}>
-                        Learn More
+                        Learn More About {service.title}
                       </span>
                       <ArrowRightIcon className={`h-5 w-5 ${service.iconColor} group-hover:text-white group-hover:translate-x-1 transition-all duration-300`} />
                     </div>

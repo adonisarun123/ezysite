@@ -386,7 +386,7 @@ export default function FullTimeMaidsPage() {
                   {service.description}
                 </p>
                 <span className="text-secondary-600 font-medium hover:text-secondary-700">
-                  Learn More →
+                  Learn More About {service.title} →
                 </span>
               </Link>
             ))}

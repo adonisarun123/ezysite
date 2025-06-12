@@ -91,13 +91,13 @@ export default function DriversPage() {
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
                     ✓ Licensed Drivers
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
                     ✓ Well-Maintained Vehicles
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
                     ✓ 24/7 Available
                   </div>
                 </div>
@@ -482,7 +482,7 @@ export default function DriversPage() {
                   {service.description}
                 </p>
                 <span className="text-blue-600 font-medium hover:text-blue-700">
-                  Learn More →
+                  Learn More About {service.title} →
                 </span>
               </Link>
             ))}
