@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import { 
   CogIcon, 
   HeartIcon, 
@@ -42,7 +44,9 @@ export default function KanpurPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background-primary">
+    <main className="min-h-screen">
+      <Navbar />
+      <div className="bg-background-primary">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-600 via-slate-700 to-gray-800 text-white py-20 overflow-hidden">
         {/* Background Pattern */}
@@ -615,6 +619,8 @@ export default function KanpurPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+      <Footer />
+    </main>
   )
 } 

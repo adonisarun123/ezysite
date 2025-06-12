@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import { 
   BuildingLibraryIcon, 
   HeartIcon, 
@@ -42,7 +44,9 @@ export default function DelhiPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background-primary">
+    <main className="min-h-screen">
+      <Navbar />
+      <div className="bg-background-primary">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-red-600 via-pink-700 to-rose-800 text-white py-20 overflow-hidden">
         {/* Background Pattern */}
@@ -615,6 +619,8 @@ export default function DelhiPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+      <Footer />
+    </main>
   )
 } 
