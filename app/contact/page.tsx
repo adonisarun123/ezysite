@@ -285,30 +285,22 @@ export default function ContactPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {[
                 {
                   city: "Bangalore",
                   address: "123 Tech Park, Electronic City",
                   pincode: "Bangalore, Karnataka 560100",
-                                phone: "+91 9972571005",
-              email: "contact@ezyhelpers.com",
+                  phone: "+91 9972571005",
+                  email: "contact@ezyhelpers.com",
                   isHQ: true
                 },
                 {
-                  city: "Mumbai",
-                  address: "456 Business District, Andheri",
-                  pincode: "Mumbai, Maharashtra 400069",
-                                phone: "+91 9972571005",
-              email: "contact@ezyhelpers.com",
-                  isHQ: false
-                },
-                {
-                  city: "Delhi",
-                  address: "789 Corporate Center, Gurgaon",
-                  pincode: "Delhi NCR, Haryana 122002",
-                                phone: "+91 9972571005",
-              email: "contact@ezyhelpers.com",
+                  city: "Bareilly",
+                  address: "187/3, Vivek Vihar, Janakpuri, Near Avadh Plaza Hotel",
+                  pincode: "Bareilly, Uttar Pradesh 243001",
+                  phone: "+91 9410814693",
+                  email: "contact@ezyhelpers.com",
                   isHQ: false
                 }
               ].map((office, index) => (
