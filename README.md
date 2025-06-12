@@ -126,7 +126,7 @@ ezyhelpers-website/
 ## 📞 Contact Information
 
 - **Phone**: +91 9972571005
-- **Email**: info@ezyhelpers.com
+- **Email**: contact@ezyhelpers.com
 - **WhatsApp**: [Chat with us](https://wa.me/919972571005)
 
 ## 🏙️ Service Areas
@@ -169,7 +169,7 @@ Create a `.env.local` file for environment-specific configurations:
 ```env
 NEXT_PUBLIC_SITE_URL=https://yourdomain.com
 NEXT_PUBLIC_PHONE=+919972571005
-NEXT_PUBLIC_EMAIL=info@ezyhelpers.com
+NEXT_PUBLIC_EMAIL=contact@ezyhelpers.com
 ```
 
 ## 🔧 Customization

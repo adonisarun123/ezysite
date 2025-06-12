@@ -322,13 +322,13 @@ export default function TermsOfServicePage() {
                     {
                       icon: EnvelopeIcon,
                       title: "Legal Department",
-                      info: "legal@ezyhelpers.com",
+                      info: "contact@ezyhelpers.com",
                       description: "For contract disputes and legal matters"
                     },
                     {
                       icon: PhoneIcon,
                       title: "Legal Helpline",
-                      info: "+91 9876543211",
+                      info: "+91 9972571005",
                       description: "Available Mon-Fri, 10 AM - 5 PM"
                     }
                   ].map((contact, index) => (

@@ -49,7 +49,7 @@ export default function ForHelpersPage() {
                   <button className="group border-2 border-white hover:bg-white hover:text-blue-900 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105">
                     <span className="flex items-center justify-center gap-2">
                       <PhoneIcon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                      Call: +91 9876543210
+                      Call: +91 9972571005
                     </span>
                   </button>
                 </div>
@@ -231,7 +231,7 @@ export default function ForHelpersPage() {
               <button className="group border-2 border-white hover:bg-white hover:text-blue-900 text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300 transform hover:scale-105">
                 <span className="flex items-center justify-center gap-2">
                   <PhoneIcon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                  Call Us: +91 9876543210
+                  Call Us: +91 9972571005
                 </span>
               </button>
             </div>

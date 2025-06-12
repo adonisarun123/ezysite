@@ -47,7 +47,7 @@ export default function ContactPage() {
                 <button className="group border-2 border-white hover:bg-white hover:text-emerald-900 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105">
                   <span className="flex items-center justify-center gap-2">
                     <PhoneIcon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                    Call Now: +91 9876543210
+                    Call Now: +91 9972571005
                   </span>
                 </button>
               </div>
@@ -76,7 +76,7 @@ export default function ContactPage() {
                     {
                       icon: PhoneIcon,
                       title: "Call Us",
-                      info: "+91 9876543210",
+                      info: "+91 9972571005",
                       subinfo: "Available 24/7 for emergencies",
                       color: "text-blue-600",
                       bgColor: "bg-blue-50",
@@ -85,7 +85,7 @@ export default function ContactPage() {
                     {
                       icon: EnvelopeIcon,
                       title: "Email Support",
-                      info: "support@ezyhelpers.com",
+                      info: "contact@ezyhelpers.com",
                       subinfo: "We'll respond within 2 hours",
                       color: "text-green-600",
                       bgColor: "bg-green-50",
@@ -198,7 +198,7 @@ export default function ContactPage() {
                         <input
                           type="tel"
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 group-hover:border-emerald-300"
-                          placeholder="+91 9876543210"
+                          placeholder="+91 9972571005"
                         />
                       </div>
                     </div>
@@ -258,24 +258,24 @@ export default function ContactPage() {
                   city: "Bangalore",
                   address: "123 Tech Park, Electronic City",
                   pincode: "Bangalore, Karnataka 560100",
-                  phone: "+91 9876543210",
-                  email: "bangalore@ezyhelpers.com",
+                                phone: "+91 9972571005",
+              email: "contact@ezyhelpers.com",
                   isHQ: true
                 },
                 {
                   city: "Mumbai",
                   address: "456 Business District, Andheri",
                   pincode: "Mumbai, Maharashtra 400069",
-                  phone: "+91 9876543211",
-                  email: "mumbai@ezyhelpers.com",
+                                phone: "+91 9972571005",
+              email: "contact@ezyhelpers.com",
                   isHQ: false
                 },
                 {
                   city: "Delhi",
                   address: "789 Corporate Center, Gurgaon",
                   pincode: "Delhi NCR, Haryana 122002",
-                  phone: "+91 9876543212",
-                  email: "delhi@ezyhelpers.com",
+                                phone: "+91 9972571005",
+              email: "contact@ezyhelpers.com",
                   isHQ: false
                 }
               ].map((office, index) => (

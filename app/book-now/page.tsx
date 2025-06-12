@@ -205,7 +205,7 @@ export default function BookNowPage() {
                           type="tel"
                           required
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="+91 9876543210"
+                          placeholder="+91 9972571005"
                         />
                       </div>
                     </div>

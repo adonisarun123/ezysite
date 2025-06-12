@@ -60,8 +60,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center text-sm text-gray-300">
                 <EnvelopeIcon className="h-4 w-4 mr-2 text-primary-400" />
-                <Link href="mailto:info@ezyhelpers.com" className="hover:text-primary-400 transition-colors">
-                  info@ezyhelpers.com
+                <Link href="mailto:contact@ezyhelpers.com" className="hover:text-primary-400 transition-colors">
+                  contact@ezyhelpers.com
                 </Link>
               </div>
               <div className="flex items-start text-sm text-gray-300">

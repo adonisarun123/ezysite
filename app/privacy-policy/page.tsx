@@ -233,13 +233,13 @@ export default function PrivacyPolicyPage() {
                     {
                       icon: EnvelopeIcon,
                       title: "Email Us",
-                      info: "privacy@ezyhelpers.com",
+                      info: "contact@ezyhelpers.com",
                       description: "Get responses within 48 hours"
                     },
                     {
                       icon: PhoneIcon,
                       title: "Call Our Privacy Hotline",
-                      info: "+91 9876543210",
+                      info: "+91 9972571005",
                       description: "Available Mon-Fri, 9 AM - 6 PM"
                     }
                   ].map((contact, index) => (
