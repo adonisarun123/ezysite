@@ -403,7 +403,7 @@ export default function BookNowPage() {
                   </button>
                   
                   <p className="text-center text-sm text-gray-600">
-                    No booking fees • Pay only after you're satisfied • 100% refund guarantee
+                    No booking fees • Simple commission, then pay directly to helper • 100% satisfaction guarantee
                   </p>
                 </div>
               </form>

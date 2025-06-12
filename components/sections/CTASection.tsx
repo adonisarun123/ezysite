@@ -42,7 +42,7 @@ export default function CTASection() {
 
             <div className="mt-8 grid grid-cols-2 gap-6 text-center">
               <div>
-                <div className="text-2xl font-bold text-white mb-1">24 Hours</div>
+                <div className="text-2xl font-bold text-white mb-1">24-72 Hours</div>
                 <div className="text-primary-200 text-sm">Quick Placement</div>
               </div>
               <div>

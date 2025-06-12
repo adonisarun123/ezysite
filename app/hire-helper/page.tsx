@@ -17,7 +17,7 @@ export default function HireHelperPage() {
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Tell us your requirements and we'll match you with verified, professional helpers 
-              within 24 hours. Choose from live-in, full-time, part-time, or on-demand services.
+              within 24-72 hours. Choose from live-in, full-time, part-time, or on-demand services.
             </p>
           </div>
 
@@ -34,7 +34,7 @@ export default function HireHelperPage() {
                 <span className="text-2xl font-bold text-primary-600">24h</span>
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Quick Placement</h3>
-              <p className="text-sm text-gray-600">Get matched with helpers within 24 hours</p>
+                              <p className="text-sm text-gray-600">Get matched with helpers within 24-72 hours</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -108,7 +108,7 @@ export default function HireHelperPage() {
                     </li>
                     <li className="flex items-start">
                       <CheckCircleIcon className="h-4 w-4 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Transparent pricing
+                      Fair pricing - pay directly to helpers
                     </li>
                   </ul>
                 </div>

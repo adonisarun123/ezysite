@@ -41,8 +41,8 @@ const features = [
   {
     icon: CurrencyRupeeIcon,
     title: 'Transparent, Fair Pricing',
-    description: 'No hidden charges or agency fees. Pay directly to helpers with our transparent pricing model.',
-    stats: 'Zero hidden fees',
+    description: 'Simple one-time commission, then pay directly to your helper. Full transparency ensures fairness for both families and helpers—no hidden charges, no ongoing fees.',
+    stats: 'Direct payment model',
     badge: 'Fair Pricing',
     color: 'success'
   },
@@ -57,8 +57,8 @@ const features = [
   {
     icon: ArrowPathIcon,
     title: 'Hassle-Free Replacements',
-    description: 'Not satisfied? We\'ll find you a replacement within 24 hours at no extra cost. Your satisfaction guaranteed.',
-    stats: '24hr replacement',
+    description: 'Not satisfied? We\'ll find you a replacement within 24-72 hours at no extra cost. Your satisfaction guaranteed.',
+    stats: '24-72hr replacement',
     badge: 'Guaranteed',
     color: 'primary'
   }

@@ -364,7 +364,7 @@ export default function ServicesPage() {
               },
               {
                 title: "Transparent Pricing",
-                description: "No hidden charges. Clear, upfront pricing for all our services",
+                description: "One-time commission, then direct payment to helpers. Full transparency ensures fairness for everyone",
                 icon: CheckCircleIcon,
                 color: "text-purple-600"
               }

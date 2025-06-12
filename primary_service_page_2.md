@@ -21,8 +21,8 @@ Every maid is thoroughly background-checked and trained to ensure safety, honest
 **3\. One Reliable Person for Everything**  
 A single live-in maid manages all household tasks like cleaning, cooking, and errands by saving you time, effort, and money.
 
-**4\. Quick Placement Within 24 Hours**  
-EzyHelpers quickly matches you with a suitable live-in maid in 24 hours, providing immediate, reliable support without lengthy waits.
+**4\. Quick Placement Within 24-72 Hours**
+EzyHelpers quickly matches you with a suitable live-in maid within 24-72 hours, providing reliable support without lengthy waits.
 
 ## 
 

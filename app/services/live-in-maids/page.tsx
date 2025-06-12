@@ -54,7 +54,7 @@ export default function LiveInMaidsPage() {
     "24/7 household assistance",
     "Complete home care and supervision", 
     "All-in-one domestic assistance",
-    "Quick placement within 24 hours",
+            "Quick placement within 24-72 hours",
     "Trusted and verified professionals",
     "One reliable person for everything"
   ]
@@ -107,7 +107,7 @@ export default function LiveInMaidsPage() {
                     ✓ Background Verified
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ 24-Hour Placement
+                    ✓ 24-72 Hour Placement
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
                     ✓ All-in-One Support
@@ -468,7 +468,7 @@ export default function LiveInMaidsPage() {
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20">
                     <CheckCircleIcon className="h-4 w-4 inline mr-1" />
-                    24-Hour Guarantee
+                    24-72 Hour Guarantee
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20">
                     <ShieldCheckIcon className="h-4 w-4 inline mr-1" />
@@ -526,8 +526,8 @@ export default function LiveInMaidsPage() {
                         <ClockIcon className="h-6 w-6 text-green-900" />
                       </div>
                       <div>
-                        <div className="font-semibold text-white">24-Hour Placement</div>
-                        <div className="text-primary-200 text-sm">Get matched within a day</div>
+                        <div className="font-semibold text-white">24-72 Hour Placement</div>
+                        <div className="text-primary-200 text-sm">Get matched within 2-3 days</div>
                       </div>
                     </div>
                     

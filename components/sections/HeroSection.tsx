@@ -14,7 +14,7 @@ const stats = [
 const trustedFeatures = [
   'Background Verified Helpers',
   '24/7 Support Available', 
-  'Quick 24-Hour Placement',
+  'Quick Placement',
   'Flexible Service Options',
 ]
 
@@ -89,7 +89,7 @@ export default function HeroSection() {
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
               Connect with verified, reliable professionals for all your home needs. 
               From housemaids and cooks to caretakers and maintenance - 
-              <strong className="text-gray-900"> transparent pricing, quick booking, exceptional service.</strong>
+              <strong className="text-gray-900"> fair pricing with direct payments to helpers, quick booking, exceptional service.</strong>
             </p>
 
             <div className="grid grid-cols-2 gap-3 mb-8">
@@ -149,7 +149,7 @@ export default function HeroSection() {
                 <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-3">
                   <ChatBubbleLeftRightIcon className="h-5 w-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1 font-display">Get Helper in 24 Hours</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-1 font-display">Get Helper in 24-72 Hours</h3>
                 <p className="text-xs text-gray-600">Fill form → We call you in 30 min</p>
               </div>
 
@@ -160,7 +160,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center space-x-1">
                   <CheckCircleIcon className="h-3 w-3 text-trust-500" />
-                  <span className="text-xs text-trust-700 font-medium">No Fees</span>
+                  <span className="text-xs text-trust-700 font-medium">Direct Pay</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <CheckCircleIcon className="h-3 w-3 text-trust-500" />
