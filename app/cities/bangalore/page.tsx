@@ -220,10 +220,10 @@ export default function BangalorePage() {
             Join thousands of satisfied customers across Bangalore who trust EzyHelpers for their domestic help needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/hire-helper" className="btn-secondary bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
+            <Link href="/hire-helper" className="bg-white text-blue-600 hover:bg-gray-100 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
               Get Started Today
             </Link>
-            <Link href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-4">
+            <Link href="tel:+919972571005" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center">
               <PhoneIcon className="h-5 w-5 mr-2" />
               Call +91 9972571005
             </Link>
