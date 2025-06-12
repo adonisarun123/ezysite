@@ -40,7 +40,7 @@ export default function MeerutPage() {
       <Navbar />
       <div className="bg-background-primary">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-cyan-600 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-br from-cyan-600 to-blue-700 text-white pt-32 pb-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-6">

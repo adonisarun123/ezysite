@@ -39,8 +39,8 @@ export default function BareillyPage() {
     <main className="min-h-screen">
       <Navbar />
       <div className="bg-background-primary">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-indigo-600 to-purple-700 text-white py-20">
+              {/* Hero Section */}
+        <section className="bg-gradient-to-br from-indigo-600 to-purple-700 text-white pt-32 pb-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">

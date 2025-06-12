@@ -48,7 +48,7 @@ export default function MumbaiPage() {
       <Navbar />
       <div className="bg-background-primary">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-600 via-orange-700 to-red-800 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-orange-600 via-orange-700 to-red-800 text-white pt-32 pb-20 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
