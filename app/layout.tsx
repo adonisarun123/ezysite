@@ -3,6 +3,7 @@ import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import './dom-optimizations.css'
 import AsyncCSS from '../components/ui/AsyncCSS'
+import { OrganizationSchema, WebSiteSchema } from '../components/schema'
 
 // Optimize font loading
 const inter = Inter({
@@ -64,6 +65,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#0074C8" />
+        
+        {/* Core Schema Markup */}
+        <OrganizationSchema />
+        <WebSiteSchema />
+        
         {/* Critical CSS for initial render */}
         <style dangerouslySetInnerHTML={{
           __html: `

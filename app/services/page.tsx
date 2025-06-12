@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { BreadcrumbSchema, FAQSchema, generalFAQs, serviceFAQs } from '@/components/schema'
 import { 
   HomeIcon, 
   ClockIcon, 
@@ -22,6 +23,15 @@ import {
 } from '@heroicons/react/24/outline'
 
 export default function ServicesPage() {
+  // Breadcrumb schema for services page
+  const breadcrumbs = [
+    { name: "Home", url: "https://ezyhelpers.com" },
+    { name: "Services", url: "https://ezyhelpers.com/services" }
+  ]
+
+  // Combined FAQs for services page
+  const servicePageFAQs = [...generalFAQs, ...serviceFAQs]
+
   const services = [
     {
       title: "Live-In Maid Services",
@@ -123,6 +133,10 @@ export default function ServicesPage() {
 
   return (
     <main className="min-h-screen">
+      {/* Schema Markup */}
+      <BreadcrumbSchema items={breadcrumbs} />
+      <FAQSchema faqs={servicePageFAQs} aboutPage="https://ezyhelpers.com/services" />
+      
       <Navbar />
       
       {/* Hero Section */}

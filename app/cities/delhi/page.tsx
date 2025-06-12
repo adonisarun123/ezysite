@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import OptimizedSection from '@/components/optimized/OptimizedSection'
 import OptimizedCard from '@/components/optimized/OptimizedCard'
 import OptimizedHeader from '@/components/optimized/OptimizedHeader'
+import { LocalBusinessSchema, BreadcrumbSchema } from '@/components/schema'
 import { 
   BuildingLibraryIcon, 
   HeartIcon, 
@@ -22,6 +23,18 @@ import {
 } from '@heroicons/react/24/outline'
 
 export default function DelhiPage() {
+  // Schema data for Delhi
+  const breadcrumbs = [
+    { name: "Home", url: "https://ezyhelpers.com" },
+    { name: "Cities", url: "https://ezyhelpers.com" },
+    { name: "Delhi Services", url: "https://ezyhelpers.com/cities/delhi" }
+  ]
+
+  // Delhi-specific coordinates (approximate city center)
+  const delhiCoordinates = {
+    latitude: 28.6139,
+    longitude: 77.2090
+  }
   const localServices = [
     {
       title: "Government Quarters Support",
@@ -48,6 +61,16 @@ export default function DelhiPage() {
 
   return (
     <main className="min-h-screen">
+      {/* Schema Markup */}
+      <LocalBusinessSchema 
+        cityName="Delhi"
+        stateName="Delhi"
+        postalCode="110001"
+        latitude={delhiCoordinates.latitude}
+        longitude={delhiCoordinates.longitude}
+      />
+      <BreadcrumbSchema items={breadcrumbs} />
+      
       <Navbar />
       <div className="bg-background-primary">
       {/* Hero Section */}
