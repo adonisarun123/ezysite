@@ -504,13 +504,13 @@ export default function KanpurPage() {
               <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-white/20">
                 <span className="text-white font-semibold text-sm">Get Started Today</span>
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold mb-8 font-display">
+              <h2 className="text-4xl md:text-6xl font-bold mb-8 font-display text-white">
                 Ready to Simplify Your Life
-                <span className="block text-slate-200">in Kanpur?</span>
+                <span className="block text-slate-100">in Kanpur?</span>
               </h2>
-              <p className="text-xl md:text-2xl text-slate-200 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Join <span className="text-white font-bold">thousands of satisfied customers</span> across Kanpur who trust EzyHelpers for their domestic help needs.
-              </p>
+                             <p className="text-xl md:text-2xl text-slate-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+                 Join <span className="text-white font-bold">thousands of satisfied customers</span> across Kanpur who trust EzyHelpers for their domestic help needs.
+               </p>
             </div>
             
             {/* Enhanced CTAs */}
@@ -540,30 +540,30 @@ export default function KanpurPage() {
                 <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
                   <ShieldCheckIcon className="h-6 w-6 text-white" />
                 </div>
-                <div className="text-left">
-                  <div className="text-white font-bold">100% Verified</div>
-                  <div className="text-slate-300 text-sm">Background Checked</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center justify-center space-x-3">
-                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                  <ClockIcon className="h-6 w-6 text-white" />
-                </div>
-                <div className="text-left">
-                  <div className="text-white font-bold">24-72 Hours</div>
-                  <div className="text-slate-300 text-sm">Quick Placement</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center justify-center space-x-3">
-                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                  <StarIcon className="h-6 w-6 text-white" />
-                </div>
-                <div className="text-left">
-                  <div className="text-white font-bold">4.8★ Rating</div>
-                  <div className="text-slate-300 text-sm">Customer Satisfaction</div>
-                </div>
+                                 <div className="text-left">
+                   <div className="text-white font-bold">100% Verified</div>
+                   <div className="text-slate-200 text-sm">Background Checked</div>
+                 </div>
+               </div>
+               
+               <div className="flex items-center justify-center space-x-3">
+                 <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                   <ClockIcon className="h-6 w-6 text-white" />
+                 </div>
+                 <div className="text-left">
+                   <div className="text-white font-bold">24-72 Hours</div>
+                   <div className="text-slate-200 text-sm">Quick Placement</div>
+                 </div>
+               </div>
+               
+               <div className="flex items-center justify-center space-x-3">
+                 <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                   <StarIcon className="h-6 w-6 text-white" />
+                 </div>
+                 <div className="text-left">
+                   <div className="text-white font-bold">4.8★ Rating</div>
+                   <div className="text-slate-200 text-sm">Customer Satisfaction</div>
+                 </div>
               </div>
             </div>
           </div>
