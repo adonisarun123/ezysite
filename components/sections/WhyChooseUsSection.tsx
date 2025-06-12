@@ -48,10 +48,10 @@ const features = [
   },
   {
     icon: CheckBadgeIcon,
-    title: 'Insurance Protected Service',
-    description: 'All services are covered by comprehensive insurance for your peace of mind. Complete protection against any incidents.',
-    stats: 'Fully insured',
-    badge: 'Protected',
+    title: 'Skilled & Trained Professionals',
+    description: 'All helpers are trained for necessary skills before placement. Comprehensive skill assessment and specialized training ensure quality service.',
+    stats: 'Skill certified',
+    badge: 'Trained',
     color: 'trust'
   },
   {

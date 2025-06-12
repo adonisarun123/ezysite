@@ -77,7 +77,7 @@ export default function TermsOfServicePage() {
         'We are not liable for helper performance or service quality',
         'Maximum liability is limited to platform fees paid',
         'Users assume responsibility for property and personal safety',
-        'Insurance coverage details are provided separately',
+                    'Helper training certifications are provided upon request',
         'Force majeure events exempt us from liability'
       ]
     },

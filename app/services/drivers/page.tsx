@@ -75,7 +75,7 @@ export default function DriversPage() {
                 {/* Trust Badge */}
                 <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                   <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
-                  <span className="text-sm font-semibold">Licensed & Insured Drivers</span>
+                  <span className="text-sm font-semibold">Licensed & Verified Drivers</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
@@ -95,7 +95,7 @@ export default function DriversPage() {
                     ✓ Licensed Drivers
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Insured Vehicles
+                    ✓ Well-Maintained Vehicles
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
                     ✓ 24/7 Available

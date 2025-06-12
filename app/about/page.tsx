@@ -236,7 +236,7 @@ export default function AboutPage() {
                 {
                   icon: ShieldCheckIcon,
                   title: "Safety",
-                  description: "Complete background verification and insurance coverage for ultimate security.",
+                  description: "Complete background verification and skill training for ultimate service quality.",
                   color: "text-blue-600",
                   bgGradient: "from-blue-50 to-indigo-50"
                 },

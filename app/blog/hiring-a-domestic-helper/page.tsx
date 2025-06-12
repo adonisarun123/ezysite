@@ -269,7 +269,7 @@ export default function HiringDomesticHelperPage() {
               <h3 className="text-2xl font-bold mb-4">Need Help Finding Verified Domestic Help?</h3>
               <p className="text-violet-100 mb-6 max-w-2xl mx-auto">
                 Skip the hassle of verification and interviews. EzyHelpers provides pre-verified, 
-                trained domestic helpers with complete background checks and insurance coverage.
+                trained domestic helpers with complete background checks and comprehensive skill training.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/hire-helper" className="bg-white text-violet-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
