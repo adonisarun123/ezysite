@@ -90,13 +90,13 @@ export default function FullTimeMaidsPage() {
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
                     ✓ Fixed Schedules
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
                     ✓ No Live-In Needed
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
                     ✓ Trained Professionals
                   </div>
                 </div>
