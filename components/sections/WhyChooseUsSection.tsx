@@ -205,11 +205,11 @@ export default function WhyChooseUsSection() {
               {/* Badge */}
               <div className={`
                 absolute -top-3 left-6 px-3 py-1 rounded-full text-xs font-semibold
-                ${feature.color === 'trust' ? 'bg-trust-500 text-white' : 
-                  feature.color === 'secondary' ? 'bg-secondary-500 text-white' :
-                  feature.color === 'accent' ? 'bg-accent-500 text-white' :
-                  feature.color === 'success' ? 'bg-success-500 text-white' :
-                  'bg-primary-500 text-white'}
+                ${feature.color === 'trust' ? 'bg-trust-800 text-white' : 
+                  feature.color === 'secondary' ? 'bg-secondary-800 text-white' :
+                  feature.color === 'accent' ? 'bg-accent-800 text-white' :
+                  feature.color === 'success' ? 'bg-success-800 text-white' :
+                  'bg-primary-800 text-white'}
               `}>
                 {feature.badge}
               </div>
@@ -244,19 +244,19 @@ export default function WhyChooseUsSection() {
               {/* Stats */}
               <div className={`
                 inline-flex items-center space-x-2 px-3 py-1 rounded-full text-sm font-medium
-                ${feature.color === 'trust' ? 'bg-trust-50 text-trust-700' : 
-                  feature.color === 'secondary' ? 'bg-secondary-50 text-secondary-700' :
-                  feature.color === 'accent' ? 'bg-accent-50 text-accent-700' :
-                  feature.color === 'success' ? 'bg-success-50 text-success-700' :
-                  'bg-primary-50 text-primary-700'}
+                ${feature.color === 'trust' ? 'bg-trust-100 text-trust-900' : 
+                  feature.color === 'secondary' ? 'bg-secondary-100 text-secondary-900' :
+                  feature.color === 'accent' ? 'bg-accent-100 text-accent-900' :
+                  feature.color === 'success' ? 'bg-success-100 text-success-900' :
+                  'bg-primary-100 text-primary-900'}
               `}>
                 <div className={`
                   w-2 h-2 rounded-full
-                  ${feature.color === 'trust' ? 'bg-trust-500' : 
-                    feature.color === 'secondary' ? 'bg-secondary-500' :
-                    feature.color === 'accent' ? 'bg-accent-500' :
-                    feature.color === 'success' ? 'bg-success-500' :
-                    'bg-primary-500'}
+                  ${feature.color === 'trust' ? 'bg-trust-800' : 
+                    feature.color === 'secondary' ? 'bg-secondary-800' :
+                    feature.color === 'accent' ? 'bg-accent-800' :
+                    feature.color === 'success' ? 'bg-success-800' :
+                    'bg-primary-800'}
                 `} />
                 <span>{feature.stats}</span>
               </div>
