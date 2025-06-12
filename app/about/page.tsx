@@ -38,18 +38,34 @@ export default function AboutPage() {
                 </p>
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
                 {[
-                  { number: "50K+", label: "Happy Customers" },
-                  { number: "10K+", label: "Trusted Helpers" },
-                  { number: "9", label: "Cities Covered" },
-                  { number: "4.8", label: "Average Rating" }
+                  { number: "50K+", label: "Happy Customers", gradient: "from-emerald-300 to-teal-300", bg: "from-emerald-400/20 to-teal-400/20" },
+                  { number: "10K+", label: "Trusted Helpers", gradient: "from-blue-300 to-cyan-300", bg: "from-blue-400/20 to-cyan-400/20" },
+                  { number: "250+", label: "Locations", gradient: "from-orange-300 to-red-300", bg: "from-orange-400/20 to-red-400/20" },
+                  { number: "4.8★", label: "Average Rating", gradient: "from-yellow-300 to-amber-300", bg: "from-yellow-400/20 to-amber-400/20" }
                 ].map((stat, index) => (
                   <div key={index} className="group text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-yellow-300 mb-2 group-hover:scale-110 transition-transform duration-300">
-                      {stat.number}
+                    <div className={`relative bg-gradient-to-br ${stat.bg} backdrop-blur-sm rounded-2xl p-6 hover:scale-105 transform transition-all duration-300 border border-white/20 shadow-lg hover:shadow-2xl`}>
+                      <div className={`text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300 leading-tight`}>
+                        {stat.number}
+                      </div>
+                      <div className="text-white font-semibold text-sm md:text-base opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                        {stat.label}
+                      </div>
+                      
+                      {/* Floating particles effect */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                        <div className="absolute top-2 right-2 w-2 h-2 bg-white/40 rounded-full animate-ping" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="absolute bottom-3 left-3 w-1.5 h-1.5 bg-white/30 rounded-full animate-ping" style={{ animationDelay: '0.3s' }}></div>
+                        <div className="absolute top-1/2 right-4 w-1 h-1 bg-white/50 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
+                      </div>
+                      
+                      {/* Shine effect */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      </div>
                     </div>
-                    <div className="text-indigo-200 text-sm md:text-base">{stat.label}</div>
                   </div>
                 ))}
               </div>
