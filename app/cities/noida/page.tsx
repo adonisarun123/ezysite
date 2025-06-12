@@ -52,13 +52,27 @@ export default function NoidaPage() {
             <p className="text-xl text-green-100 mb-8 leading-relaxed">
               Delhi NCR's IT Hub deserves exceptional domestic help services. From Sector 18 to Greater Noida, we provide trusted maids, cooks, nannies, and drivers for Noida's modern lifestyle.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/hire-helper" className="btn-primary text-lg px-8 py-4">
-                Book Helper in Noida
+            {/* Enhanced CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-2xl mx-auto">
+              <Link 
+                href="/hire-helper" 
+                className="group relative bg-white text-green-800 font-bold text-lg px-10 py-5 rounded-2xl hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-white/25 min-w-[240px] text-center overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center justify-center">
+                  <span>Book Helper in Noida</span>
+                  <svg className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5-5 5M6 12h12" />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-green-50 to-white rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
-              <Link href="tel:+919972571005" className="btn-secondary text-lg px-8 py-4 bg-white/10 border-white/20 text-white hover:bg-white/20">
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call Now
+              
+              <Link 
+                href="tel:+919972571005" 
+                className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white font-semibold text-lg px-10 py-5 rounded-2xl hover:bg-white/10 backdrop-blur-sm transition-all duration-300 transform hover:scale-105 min-w-[200px]"
+              >
+                <PhoneIcon className="h-6 w-6 mr-3 group-hover:animate-pulse group-hover:scale-110 transition-transform duration-300" />
+                <span>Call Now</span>
               </Link>
             </div>
           </div>
