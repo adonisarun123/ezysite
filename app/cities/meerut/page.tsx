@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import { 
   ShoppingBagIcon, 
   HeartIcon, 
@@ -34,7 +36,9 @@ export default function MeerutPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background-primary">
+    <main className="min-h-screen">
+      <Navbar />
+      <div className="bg-background-primary">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-cyan-600 to-blue-700 text-white py-20">
         <div className="container-custom">
@@ -258,6 +262,8 @@ export default function MeerutPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+      <Footer />
+    </main>
   )
 } 
