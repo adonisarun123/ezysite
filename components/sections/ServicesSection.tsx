@@ -85,38 +85,47 @@ export default function ServicesSection() {
           {services.map((service) => (
             <div 
               key={service.title}
-              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group border border-gray-100"
+              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group border border-gray-100 hover:border-primary-200 relative overflow-hidden cursor-pointer"
             >
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors">
-                <service.icon className="h-6 w-6 text-primary-600" />
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-primary-100/0 group-hover:from-primary-50/30 group-hover:to-primary-100/20 transition-all duration-500 rounded-xl"></div>
+              
+              {/* Animated background pattern */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary-100/20 rounded-full group-hover:scale-150 group-hover:bg-primary-200/30 transition-all duration-700 opacity-0 group-hover:opacity-100"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary-100/20 rounded-full group-hover:scale-125 group-hover:bg-secondary-200/30 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+              
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-600 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 group-hover:shadow-lg">
+                  <service.icon className="h-6 w-6 text-primary-600 group-hover:text-white transition-colors duration-300" />
+                </div>
+                
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 font-display group-hover:text-primary-700 transition-colors duration-300">
+                  {service.title}
+                </h3>
+                
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  {service.description}
+                </p>
+                
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature, index) => (
+                    <li key={index} className="text-xs text-gray-500 flex items-start group-hover:text-gray-600 transition-colors duration-300">
+                      <span className="w-1 h-1 bg-primary-500 rounded-full mt-2 mr-2 flex-shrink-0 group-hover:bg-primary-600 group-hover:scale-150 transition-all duration-300"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                
+                <Link 
+                  href={service.href}
+                  className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm group-hover:translate-x-2 group-hover:font-semibold transition-all duration-300"
+                >
+                  Learn More About {service.title}
+                  <svg className="w-4 h-4 ml-1 group-hover:ml-2 group-hover:scale-110 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
-              
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 font-display">
-                {service.title}
-              </h3>
-              
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                {service.description}
-              </p>
-              
-              <ul className="space-y-2 mb-6">
-                {service.features.map((feature, index) => (
-                  <li key={index} className="text-xs text-gray-500 flex items-start">
-                    <span className="w-1 h-1 bg-primary-500 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              
-              <Link 
-                href={service.href}
-                className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm group-hover:translate-x-1 transition-transform"
-              >
-                Learn More About {service.title}
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
             </div>
           ))}
         </div>

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, memo } from 'react'
-import { CheckCircleIcon, StarIcon, PhoneIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/solid'
+import { CheckCircleIcon, StarIcon, PhoneIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
 
 const stats = [
   { label: 'Trusted Families', value: '10,000+' },
@@ -96,8 +96,8 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background-primary via-primary-50/30 to-secondary-50/30 pt-20">
-      <div className="relative container-custom section-padding">
+    <section className="relative overflow-hidden bg-gradient-to-br from-background-primary via-primary-50/30 to-secondary-50/30 pt-12 lg:pt-16">
+      <div className="relative container-custom pb-16 lg:pb-24">
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-start">
           <div className="lg:col-span-7">
             <div className="flex items-center space-x-2 mb-6">
@@ -130,15 +130,25 @@ export default function HeroSection() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 px-4">
-              <Link href="/hire-helper" className="btn-primary text-center">
-                <span className="hidden sm:inline">Book Your Helper Now →</span>
-                <span className="sm:hidden">Book Helper →</span>
+            {/* Updated CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 w-full">
+              {/* Primary CTA */}
+              <Link
+                href="/hire-helper"
+                className="w-full bg-white text-primary-600 font-semibold rounded-xl shadow-xl hover:bg-gray-50 transition-all duration-300 inline-flex items-center justify-center gap-3 py-4 px-6 whitespace-nowrap flex-1"
+              >
+                {/* outline badge icon */}
+                <CheckBadgeIcon className="h-6 w-6 flex-shrink-0" />
+                <span className="leading-none">Book Verified Helper Now</span>
               </Link>
-              <Link href="tel:+919972571005" className="btn-secondary text-center inline-flex items-center justify-center">
-                <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-                <span className="hidden sm:inline">Call +91 9972571005</span>
-                <span className="sm:hidden">Call Now</span>
+
+              {/* Secondary CTA */}
+              <Link
+                href="tel:+919972571005"
+                className="w-full bg-transparent border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-3 py-4 px-6 whitespace-nowrap flex-1"
+              >
+                <PhoneIcon className="h-6 w-6 flex-shrink-0" />
+                <span className="leading-none">Call: +91 9972571005</span>
               </Link>
             </div>
 
@@ -147,7 +157,7 @@ export default function HeroSection() {
           </div>
 
           <div className="lg:col-span-5 mt-8 lg:mt-0">
-            <div className="sticky top-8 bg-white rounded-2xl p-6 shadow-2xl border border-gray-100">
+            <div className="sticky top-24 bg-white rounded-2xl p-6 shadow-2xl border border-gray-100">
               <div className="text-center mb-4">
                 <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-3">
                   <ChatBubbleLeftRightIcon className="h-5 w-5 text-white" />

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { PhoneIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/solid'
+import { CheckBadgeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
 export default function CTASection() {
   return (
@@ -16,38 +16,45 @@ export default function CTASection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* CTA Buttons */}
-          <div className="text-center lg:text-left">
-            <div className="space-y-3 px-4">
-              <Link 
-                href="/hire-helper" 
-                className="inline-flex items-center bg-white text-primary-600 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-gray-50 transition-colors w-full sm:w-auto justify-center text-sm sm:text-base"
-              >
-                <ChatBubbleLeftRightIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3" />
-                <span className="hidden sm:inline">Book Your Helper Now</span>
-                <span className="sm:hidden">Book Helper</span>
-              </Link>
-              
-              <div className="text-primary-100 text-sm">or</div>
-              
-              <Link 
-                href="tel:+919972571005" 
-                className="inline-flex items-center bg-transparent border-2 border-white text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-white hover:text-primary-600 transition-colors w-full sm:w-auto justify-center text-sm sm:text-base"
-              >
-                <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3" />
-                <span className="hidden sm:inline">Call: +91 9972571005</span>
-                <span className="sm:hidden">Call Now</span>
-              </Link>
-            </div>
-
-            <div className="mt-8 grid grid-cols-2 gap-6 text-center">
-              <div>
-                <div className="text-2xl font-bold text-white mb-1">24-72 Hours</div>
-                <div className="text-primary-200 text-sm">Quick Placement</div>
+          {/* CTA Buttons - Single column grid approach */}
+          <div className="flex flex-col items-center justify-center space-y-6 w-full max-w-md mx-auto">
+            {/* Primary CTA Button - Simplified flex layout */}
+            <Link 
+              href="/hire-helper" 
+              className="w-full bg-white text-primary-600 font-semibold text-lg rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 inline-flex flex-row items-center justify-center gap-3 py-4 px-6 whitespace-nowrap"
+            >
+              <CheckBadgeIcon className="h-6 w-6 flex-shrink-0 self-center" />
+              <span className="leading-none">Book Verified Helper Now</span>
+            </Link>
+            
+            {/* "or" Separator */}
+            <div className="relative w-full max-w-sm">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-primary-300"></div>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-white mb-1">100%</div>
-                <div className="text-primary-200 text-sm">Verified Helpers</div>
+              <div className="relative bg-primary-600 text-center">
+                <span className="text-primary-100 text-lg font-medium px-4">or</span>
+              </div>
+            </div>
+            
+            {/* Secondary CTA Button - Simplified flex layout */}
+            <Link 
+              href="tel:+919972571005" 
+              className="w-full bg-transparent border-2 border-white text-white font-semibold text-lg rounded-2xl hover:bg-white hover:text-primary-600 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 inline-flex flex-row items-center justify-center gap-3 py-4 px-6 whitespace-nowrap"
+            >
+              <PhoneIcon className="h-6 w-6 flex-shrink-0 self-center" />
+              <span className="leading-none">Call: +91 9972571005</span>
+            </Link>
+
+            {/* Statistics Section */}
+            <div className="grid grid-cols-2 gap-8 mt-8 pt-8 border-t border-primary-300/50 w-full max-w-sm">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-2">24-72 Hours</div>
+                <div className="text-primary-200 text-sm font-medium">Quick Placement</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-2">100%</div>
+                <div className="text-primary-200 text-sm font-medium">Verified Helpers</div>
               </div>
             </div>
           </div>

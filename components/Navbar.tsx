@@ -4,12 +4,14 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Bars3Icon, XMarkIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { useUrgency } from './UrgencyContext'
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
   { name: 'Hire Helper', href: '/hire-helper' },
   { name: 'For Helpers', href: '/for-helpers' },
+  { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ]
@@ -17,6 +19,7 @@ const navigation = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const { isUrgencyVisible } = useUrgency()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,10 +29,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Use the context value directly
+  const urgencyVisible = isUrgencyVisible
+
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white'
-    }`}>
+    <>
+    <header className={`fixed inset-x-0 z-40 transition-all duration-300 ${
+      urgencyVisible ? 'top-12' : 'top-0'
+    } ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white'}`}>
       <div className="px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
         <div className="mx-auto max-w-7xl">
           <nav className="flex items-center justify-between" aria-label="Global">
@@ -179,5 +186,10 @@ export default function Navbar() {
         </div>
       </div>
     </header>
+    {/* Spacer to prevent content overlap when banner is not visible */}
+    {!urgencyVisible && (
+      <div className="h-20 lg:h-24" aria-hidden="true"></div>
+    )}
+    </>
   )
 } 

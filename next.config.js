@@ -26,6 +26,12 @@ const nextConfig = {
   
   // Webpack configuration for modern browsers
   webpack: (config, { dev, isServer }) => {
+    if (dev) {
+      // Disable filesystem cache that sometimes leads to missing pack.gz errors in dev
+      config.cache = {
+        type: 'memory',
+      }
+    }
     if (!dev && !isServer) {
       // Target ES2020+ for client-side bundles
       config.target = ['web', 'es2020'];
