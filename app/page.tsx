@@ -10,7 +10,7 @@ import CTASection from '@/components/sections/CTASection'
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pt-20 lg:pt-24">
       <Navbar />
       <HeroSection />
       <WhyChooseUsSection />
