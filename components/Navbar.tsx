@@ -30,7 +30,7 @@ export default function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white'
     }`}>
-      <nav className="flex items-center justify-between p-4 lg:px-8 container-custom" aria-label="Global">
+      <nav className="flex items-center justify-between py-4 lg:py-6 container-custom" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">EzyHelpers</span>
@@ -59,7 +59,7 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium leading-6 text-gray-900 hover:text-primary-600 transition-colors duration-200 relative group"
+              className="text-sm font-medium leading-6 text-gray-900 hover:text-primary-600 transition-colors duration-200 relative group py-2 px-1"
             >
               {item.name}
               <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
@@ -70,7 +70,7 @@ export default function Navbar() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
           <Link
             href="tel:+919972571005" 
-            className="group relative flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none overflow-hidden"
+            className="group relative flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none overflow-hidden"
           >
             {/* 3D Background Effects */}
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -102,7 +102,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div className={`lg:hidden ${mobileMenuOpen ? 'fixed inset-0 z-50' : 'hidden'}`}>
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mb-8">
             <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
               <span className="sr-only">EzyHelpers</span>
               <div className="flex items-center space-x-2">
@@ -121,14 +121,14 @@ export default function Navbar() {
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="mt-6 flow-root">
+          <div className="flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                    className="-mx-3 block rounded-lg px-3 py-3 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50 hover:text-primary-600 transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -138,7 +138,7 @@ export default function Navbar() {
               <div className="py-6 space-y-4">
                 <Link
                   href="tel:+919972571005"
-                  className="group relative flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-base rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none overflow-hidden"
+                  className="group relative flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-base rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none overflow-hidden"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {/* 3D Background Effects */}
@@ -164,7 +164,7 @@ export default function Navbar() {
                 </Link>
                 <Link 
                   href="/hire-helper" 
-                  className="btn-primary w-full text-center block"
+                  className="btn-primary w-full text-center block py-4"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Book Now
