@@ -30,74 +30,78 @@ export default function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white'
     }`}>
-      <nav className="flex items-center justify-between py-4 lg:py-6 container-custom" aria-label="Global">
-        <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">EzyHelpers</span>
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">E</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900 font-display">EzyHelpers</span>
+      <div className="px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+        <div className="mx-auto max-w-7xl">
+          <nav className="flex items-center justify-between" aria-label="Global">
+            <div className="flex lg:flex-1">
+              <Link href="/" className="-m-1.5 p-1.5">
+                <span className="sr-only">EzyHelpers</span>
+                <div className="flex items-center space-x-2">
+                  <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-xl">E</span>
+                  </div>
+                  <span className="text-xl font-bold text-gray-900 font-display">EzyHelpers</span>
+                </div>
+              </Link>
             </div>
-          </Link>
-        </div>
 
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-          </button>
-        </div>
-
-        <div className="hidden lg:flex lg:gap-x-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-sm font-medium leading-6 text-gray-900 hover:text-primary-600 transition-colors duration-200 relative group py-2 px-1"
-            >
-              {item.name}
-              <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
-            </Link>
-          ))}
-        </div>
-
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
-          <Link
-            href="tel:+919972571005" 
-            className="group relative flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none overflow-hidden"
-          >
-            {/* 3D Background Effects */}
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            
-            {/* Floating particles */}
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300"></div>
-            <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300" style={{animationDelay: '0.2s'}}></div>
-            
-            {/* Icon with enhanced styling */}
-            <PhoneIcon className="h-5 w-5 relative z-10 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300" />
-            
-            {/* Phone number with enhanced styling */}
-            <span className="relative z-10 font-extrabold tracking-wide group-hover:text-yellow-100 transition-colors duration-300">
-              +91 9972571005
-            </span>
-            
-            {/* Shine effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            <div className="flex lg:hidden">
+              <button
+                type="button"
+                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                onClick={() => setMobileMenuOpen(true)}
+              >
+                <span className="sr-only">Open main menu</span>
+                <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              </button>
             </div>
-          </Link>
-          <Link href="/hire-helper" className="btn-primary">
-            Book Now
-          </Link>
+
+            <div className="hidden lg:flex lg:gap-x-8">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm font-medium leading-6 text-gray-900 hover:text-primary-600 transition-colors duration-200 relative group py-2 px-1"
+                >
+                  {item.name}
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
+                </Link>
+              ))}
+            </div>
+
+            <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
+              <Link
+                href="tel:+919972571005" 
+                className="group relative flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none overflow-hidden"
+              >
+                {/* 3D Background Effects */}
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Floating particles */}
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300"></div>
+                <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300" style={{animationDelay: '0.2s'}}></div>
+                
+                {/* Icon with enhanced styling */}
+                <PhoneIcon className="h-5 w-5 relative z-10 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300" />
+                
+                {/* Phone number with enhanced styling */}
+                <span className="relative z-10 font-extrabold tracking-wide group-hover:text-yellow-100 transition-colors duration-300">
+                  +91 9972571005
+                </span>
+                
+                {/* Shine effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                </div>
+              </Link>
+              <Link href="/hire-helper" className="btn-primary">
+                Book Now
+              </Link>
+            </div>
+          </nav>
         </div>
-      </nav>
+      </div>
 
       {/* Mobile menu */}
       <div className={`lg:hidden ${mobileMenuOpen ? 'fixed inset-0 z-50' : 'hidden'}`}>
