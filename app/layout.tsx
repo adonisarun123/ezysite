@@ -4,6 +4,7 @@ import './globals.css'
 import './dom-optimizations.css'
 import AsyncCSS from '../components/ui/AsyncCSS'
 import { OrganizationSchema, WebSiteSchema } from '../components/schema'
+import LLMOptimization from '../components/LLMOptimization'
 
 // Optimize font loading with preload
 const inter = Inter({
@@ -177,6 +178,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
         <AsyncCSS />
+        <LLMOptimization />
         {children}
       </body>
     </html>
