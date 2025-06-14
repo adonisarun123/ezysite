@@ -194,6 +194,14 @@ colors: {
 - Update city list in `CitiesSection.tsx`
 - Change contact information in `Footer.tsx` and `Navbar.tsx`
 
+## 🔗 Supabase Integration
+
+- The project uses Supabase for storing leads from the Hero Section form.
+- Configure your Supabase credentials in `.env.local`:
+  - NEXT_PUBLIC_SUPABASE_URL
+  - NEXT_PUBLIC_SUPABASE_ANON_KEY
+- The Supabase client is initialized in `lib/supabaseClient.ts`.
+
 ---
 
 Built with ❤️ for EzyHelpers - Making home management effortless across India. 

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, memo } from 'react'
 import { CheckCircleIcon, StarIcon, PhoneIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
+import { supabase } from '@/lib/supabaseClient'
 
 const stats = [
   { label: 'Trusted Families', value: '10,000+' },
@@ -83,9 +84,56 @@ export default function HeroSection() {
     city: ''
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formErrors, setFormErrors] = useState({
+    name: '',
+    phone: '',
+    service: '',
+    city: ''
+  })
+
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const validate = () => {
+    const errors: typeof formErrors = { name: '', phone: '', service: '', city: '' }
+    if (!formData.name.trim()) {
+      errors.name = 'Name is required'
+    } else if (formData.name.trim().length < 3) {
+      errors.name = 'Name must be at least 3 characters'
+    }
+    if (!formData.phone.trim()) {
+      errors.phone = 'Phone number is required'
+    } else if (!/^[5-9][0-9]{9}$/.test(formData.phone.trim())) {
+      errors.phone = 'Enter a valid 10-digit phone number starting with 5-9'
+    }
+    if (!formData.service) {
+      errors.service = 'Please select a service'
+    }
+    if (!formData.city) {
+      errors.city = 'Please select a city'
+    }
+    setFormErrors(errors)
+    return Object.values(errors).every((v) => !v)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+    if (validate()) {
+      try {
+        const { error } = await supabase.from('leads').insert([
+          {
+            name: formData.name.trim(),
+            phone: formData.phone.trim(),
+            service: formData.service,
+            city: formData.city
+          }
+        ])
+        if (error) throw error
+        setSubmitStatus('success')
+        setFormData({ name: '', phone: '', service: '', city: '' })
+      } catch {
+        setSubmitStatus('error')
+      }
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -193,6 +241,7 @@ export default function HeroSection() {
                   placeholder="Your Name"
                   aria-label="Your Name"
                 />
+                {formErrors.name && <p className="text-xs text-red-500 mt-1">{formErrors.name}</p>}
 
                 <input
                   id="hero-phone"
@@ -205,6 +254,7 @@ export default function HeroSection() {
                   placeholder="Phone Number (+91 XXXXX XXXXX)"
                   aria-label="Phone Number"
                 />
+                {formErrors.phone && <p className="text-xs text-red-500 mt-1">{formErrors.phone}</p>}
 
                 <select
                   id="hero-service"
@@ -220,6 +270,7 @@ export default function HeroSection() {
                     <option key={service} value={service}>{service}</option>
                   ))}
                 </select>
+                {formErrors.service && <p className="text-xs text-red-500 mt-1">{formErrors.service}</p>}
 
                 <select
                   id="hero-city"
@@ -235,6 +286,7 @@ export default function HeroSection() {
                     <option key={city} value={city}>{city}</option>
                   ))}
                 </select>
+                {formErrors.city && <p className="text-xs text-red-500 mt-1">{formErrors.city}</p>}
 
                 <button
                   type="submit"
@@ -242,6 +294,8 @@ export default function HeroSection() {
                 >
                   Get Free Consultation Now
                 </button>
+                {submitStatus === 'success' && <p className="text-green-600 text-sm mt-2">Lead submitted successfully!</p>}
+                {submitStatus === 'error' && <p className="text-red-600 text-sm mt-2">There was an error submitting your lead. Please try again.</p>}
               </form>
 
               <div className="mt-3 text-center">

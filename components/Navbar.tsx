@@ -44,8 +44,15 @@ export default function Navbar() {
               <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">EzyHelpers</span>
                 <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">E</span>
+                  <div className="w-10 h-10 bg-transparent rounded-lg flex items-center justify-center">
+                    <Image
+                      src="/ezyhelper_logo_new.png"
+                      alt="EzyHelpers Logo"
+                      width={40}
+                      height={40}
+                      className="object-contain"
+                      priority
+                    />
                   </div>
                   <span className="text-xl font-bold text-gray-900 font-display">EzyHelpers</span>
                 </div>
@@ -117,8 +124,15 @@ export default function Navbar() {
             <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
               <span className="sr-only">EzyHelpers</span>
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">E</span>
+                <div className="w-8 h-8 bg-transparent rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/ezyhelper_logo_new.png"
+                    alt="EzyHelpers Logo"
+                    width={32}
+                    height={32}
+                    className="object-contain"
+                    priority
+                  />
                 </div>
                 <span className="text-lg font-bold text-gray-900 font-display">EzyHelpers</span>
               </div>
