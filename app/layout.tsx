@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import './dom-optimizations.css'
+import dynamic from 'next/dynamic'
 import AsyncCSS from '../components/ui/AsyncCSS'
 import { OrganizationSchema, WebSiteSchema } from '../components/schema'
-import LLMOptimization from '../components/LLMOptimization'
 import { UrgencyProvider } from '../components/UrgencyContext'
 
 // Optimize font loading with preload
@@ -22,6 +22,9 @@ const poppins = Poppins({
   variable: '--font-poppins',
   preload: true,
 })
+
+const LLMOptimization = dynamic(() => import('../components/LLMOptimization'), { ssr: false })
+const UrgencyCTA = dynamic(() => import('../components/UrgencyCTA'), { ssr: false })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ezyhelpers.com'),
@@ -187,6 +190,7 @@ export default function RootLayout({
           <AsyncCSS />
           <LLMOptimization />
           {children}
+          <UrgencyCTA />
         </UrgencyProvider>
       </body>
     </html>
