@@ -4,6 +4,8 @@ import Footer from '@/components/Footer';
 import UrgencyCTA from '@/components/UrgencyCTA';
 import { posts } from '@/lib/blogData';
 import { CalendarDaysIcon, ClockIcon } from '@heroicons/react/24/outline';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface PageProps {
   params: { slug: string };
@@ -17,8 +19,7 @@ export default function BlogPost({ params }: PageProps) {
   const post = posts.find((p) => p.id === params.slug);
   if (!post) return notFound();
 
-  // naive markdown to paragraphs (line breaks):
-  const paragraphs = post.content.split(/\n+/).filter(Boolean);
+  const markdown = post.content;
 
   return (
     <main className="min-h-screen">
@@ -46,10 +47,8 @@ export default function BlogPost({ params }: PageProps) {
       </header>
 
       {/* Article */}
-      <article className="prose prose-lg mx-auto px-4 py-16 max-w-3xl">
-        {paragraphs.map((para, idx) => (
-          <p key={idx}>{para}</p>
-        ))}
+      <article className="prose prose-indigo mx-auto px-4 py-16 max-w-3xl dark:prose-invert">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
       </article>
 
       {/* CTA */}
