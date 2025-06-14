@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
 const footerLinks = {
   services: [
@@ -44,8 +45,15 @@ export default function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-8">
-                <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">E</span>
+                <div className="w-10 h-10 bg-transparent rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/ezyhelper_logo_new.png"
+                    alt="EzyHelpers Logo"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                    priority
+                  />
                 </div>
                 <span className="text-xl font-bold font-display">EzyHelpers</span>
               </div>
@@ -157,7 +165,7 @@ export default function Footer() {
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
-              <p>© 2024 EzyHelpers. All rights reserved.</p>
+              <p>© 2025 EzyHelpers. All rights reserved.</p>
               <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-center">
                 <span>Registered with DWSSC & Skill India</span>
                 <span className="hidden sm:inline">•</span>

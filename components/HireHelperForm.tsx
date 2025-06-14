@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ChevronRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
+import { supabase } from '@/lib/supabaseClient'
 
 interface FormData {
   name: string
@@ -56,6 +57,8 @@ export default function HireHelperForm() {
     familySize: '',
     preferredGender: ''
   })
+  const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const handleInputChange = (field: keyof FormData, value: string | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }))
@@ -70,15 +73,123 @@ export default function HireHelperForm() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
-    alert('Thank you! We will contact you within 30 minutes to discuss your requirements.')
+  const validateStep = () => {
+    const errors: { [key: string]: string } = {}
+    const today = new Date()
+    today.setHours(0,0,0,0)
+    const maxDate = new Date(today)
+    maxDate.setMonth(maxDate.getMonth() + 1)
+    if (step === 1) {
+      if (!formData.name.trim()) {
+        errors.name = 'Name is required'
+      } else if (formData.name.trim().length < 3) {
+        errors.name = 'Name must be at least 3 characters'
+      }
+      if (!formData.phone.trim()) {
+        errors.phone = 'Phone number is required'
+      } else if (!/^[5-9][0-9]{9}$/.test(formData.phone.trim())) {
+        errors.phone = 'Enter a valid 10-digit phone number starting with 5-9'
+      }
+      if (!formData.city) {
+        errors.city = 'Please select a city'
+      }
+    } else if (step === 2) {
+      if (!formData.serviceType) {
+        errors.serviceType = 'Please select a service type'
+      }
+      if (!formData.startDate) {
+        errors.startDate = 'Please select a start date'
+      } else {
+        const startDate = new Date(formData.startDate)
+        if (startDate < today) {
+          errors.startDate = 'Start date cannot be in the past'
+        } else if (startDate > maxDate) {
+          errors.startDate = 'Start date cannot be more than one month from today'
+        }
+      }
+      if (!formData.familySize) {
+        errors.familySize = 'Please select family size'
+      }
+    }
+    setFormErrors(errors)
+    return Object.keys(errors).length === 0
   }
 
-  const nextStep = () => setStep(prev => Math.min(prev + 1, 3))
+  const validateAll = () => {
+    const errors: { [key: string]: string } = {}
+    const today = new Date()
+    today.setHours(0,0,0,0)
+    const maxDate = new Date(today)
+    maxDate.setMonth(maxDate.getMonth() + 1)
+    if (!formData.name.trim()) {
+      errors.name = 'Name is required'
+    } else if (formData.name.trim().length < 3) {
+      errors.name = 'Name must be at least 3 characters'
+    }
+    if (!formData.phone.trim()) {
+      errors.phone = 'Phone number is required'
+    } else if (!/^[5-9][0-9]{9}$/.test(formData.phone.trim())) {
+      errors.phone = 'Enter a valid 10-digit phone number starting with 5-9'
+    }
+    if (!formData.city) {
+      errors.city = 'Please select a city'
+    }
+    if (!formData.serviceType) {
+      errors.serviceType = 'Please select a service type'
+    }
+    if (!formData.startDate) {
+      errors.startDate = 'Please select a start date'
+    } else {
+      const startDate = new Date(formData.startDate)
+      if (startDate < today) {
+        errors.startDate = 'Start date cannot be in the past'
+      } else if (startDate > maxDate) {
+        errors.startDate = 'Start date cannot be more than one month from today'
+      }
+    }
+    if (!formData.familySize) {
+      errors.familySize = 'Please select family size'
+    }
+    setFormErrors(errors)
+    return Object.keys(errors).length === 0
+  }
+
+  const nextStep = () => {
+    if (validateStep()) setStep(prev => Math.min(prev + 1, 3))
+  }
   const prevStep = () => setStep(prev => Math.max(prev - 1, 1))
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (validateAll()) {
+      try {
+        const { error } = await supabase.from('hire_helper_leads').insert([
+          {
+            name: formData.name.trim(),
+            phone: formData.phone.trim(),
+            email: formData.email.trim(),
+            city: formData.city,
+            service: formData.serviceType,
+            duration: formData.duration,
+            startDate: formData.startDate,
+            specificRequirements: formData.specificRequirements,
+            experience: formData.experience,
+            budget: formData.budget,
+            languages: formData.languages.join(','),
+            additionalServices: formData.additionalServices.join(','),
+            familySize: formData.familySize,
+            preferredGender: formData.preferredGender
+          }
+        ])
+        if (error) throw error
+        setSubmitStatus('success')
+      } catch {
+        setSubmitStatus('error')
+      }
+    }
+  }
+
+  const stepTitles = ['Personal', 'Service', 'Details']
 
   return (
     <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -86,12 +197,15 @@ export default function HireHelperForm() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
           {[1, 2, 3].map((stepNum) => (
-            <div key={stepNum} className="flex items-center">
+            <div key={stepNum} className="flex flex-col items-center">
               <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
                 step >= stepNum ? 'bg-primary-500 text-white' : 'bg-gray-200 text-gray-600'
               }`}>
                 {step > stepNum ? <CheckCircleIcon className="w-5 h-5" /> : stepNum}
               </div>
+              <span className="mt-1 text-xs font-semibold text-primary-600 min-w-[60px] text-center">
+                {step > stepNum ? stepTitles[stepNum-1] : stepNum === step ? stepTitles[stepNum-1] : ''}
+              </span>
               {stepNum < 3 && (
                 <div className={`w-full h-1 mx-4 ${
                   step > stepNum ? 'bg-primary-500' : 'bg-gray-200'
@@ -130,6 +244,7 @@ export default function HireHelperForm() {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                   placeholder="Enter your full name"
                 />
+                {formErrors.name && <p className="text-xs text-red-500 mt-1">{formErrors.name}</p>}
               </div>
 
               <div>
@@ -144,6 +259,7 @@ export default function HireHelperForm() {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                   placeholder="+91 9972571005"
                 />
+                {formErrors.phone && <p className="text-xs text-red-500 mt-1">{formErrors.phone}</p>}
               </div>
 
               <div>
@@ -174,6 +290,7 @@ export default function HireHelperForm() {
                     <option key={city} value={city}>{city}</option>
                   ))}
                 </select>
+                {formErrors.city && <p className="text-xs text-red-500 mt-1">{formErrors.city}</p>}
               </div>
             </div>
 
@@ -186,6 +303,7 @@ export default function HireHelperForm() {
                 Next Step <ChevronRightIcon className="w-4 h-4 ml-2" />
               </button>
             </div>
+            {formErrors.step && <p className="text-xs text-red-500 mt-1">{formErrors.step}</p>}
           </div>
         )}
 
@@ -216,6 +334,7 @@ export default function HireHelperForm() {
                   </div>
                 ))}
               </div>
+              {formErrors.serviceType && <p className="text-xs text-red-500 mt-1">{formErrors.serviceType}</p>}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -230,6 +349,7 @@ export default function HireHelperForm() {
                   onChange={(e) => handleInputChange('startDate', e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                 />
+                {formErrors.startDate && <p className="text-xs text-red-500 mt-1">{formErrors.startDate}</p>}
               </div>
 
               <div>
@@ -247,6 +367,7 @@ export default function HireHelperForm() {
                   <option value="5-6">5-6 members</option>
                   <option value="7+">7+ members</option>
                 </select>
+                {formErrors.familySize && <p className="text-xs text-red-500 mt-1">{formErrors.familySize}</p>}
               </div>
             </div>
 
@@ -279,6 +400,7 @@ export default function HireHelperForm() {
                 Next Step <ChevronRightIcon className="w-4 h-4 ml-2" />
               </button>
             </div>
+            {formErrors.step && <p className="text-xs text-red-500 mt-1">{formErrors.step}</p>}
           </div>
         )}
 
@@ -375,6 +497,8 @@ export default function HireHelperForm() {
                 Submit Request
               </button>
             </div>
+            {submitStatus === 'success' && <p className="text-green-600 text-sm mt-2">Request submitted successfully!</p>}
+            {submitStatus === 'error' && <p className="text-red-600 text-sm mt-2">There was an error submitting your request. Please try again.</p>}
           </div>
         )}
       </form>

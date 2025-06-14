@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -16,6 +16,7 @@ import {
   GlobeAltIcon,
   HeartIcon
 } from '@heroicons/react/24/outline';
+import { supabase } from '@/lib/supabaseClient'
 
 export default function ContactPage() {
   // Function to open Tawk.to chat
@@ -24,6 +25,77 @@ export default function ContactPage() {
       (window as any).Tawk_API.toggle();
     }
   };
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: 'General Inquiry',
+    message: ''
+  })
+  const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const validate = () => {
+    const errors: { [key: string]: string } = {}
+    if (!formData.firstName.trim()) {
+      errors.firstName = 'First name is required'
+    } else if (formData.firstName.trim().length < 2) {
+      errors.firstName = 'First name must be at least 2 characters'
+    }
+    if (!formData.lastName.trim()) {
+      errors.lastName = 'Last name is required'
+    } else if (formData.lastName.trim().length < 2) {
+      errors.lastName = 'Last name must be at least 2 characters'
+    }
+    if (!formData.email.trim()) {
+      errors.email = 'Email is required'
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email.trim())) {
+      errors.email = 'Enter a valid email address'
+    }
+    if (!formData.phone.trim()) {
+      errors.phone = 'Phone number is required'
+    } else if (!/^[5-9][0-9]{9}$/.test(formData.phone.trim())) {
+      errors.phone = 'Enter a valid 10-digit phone number starting with 5-9'
+    }
+    if (!formData.subject.trim()) {
+      errors.subject = 'Please select a subject'
+    }
+    if (!formData.message.trim()) {
+      errors.message = 'Message is required'
+    } else if (formData.message.trim().length < 10) {
+      errors.message = 'Message must be at least 10 characters'
+    }
+    setFormErrors(errors)
+    return Object.keys(errors).length === 0
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (validate()) {
+      try {
+        const { error } = await supabase.from('contact_leads').insert([
+          {
+            first_name: formData.firstName.trim(),
+            last_name: formData.lastName.trim(),
+            email: formData.email.trim(),
+            phone: formData.phone.trim(),
+            subject: formData.subject,
+            message: formData.message.trim()
+          }
+        ])
+        if (error) throw error
+        setSubmitStatus('success')
+      } catch {
+        setSubmitStatus('error')
+      }
+    }
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -188,7 +260,7 @@ export default function ContactPage() {
                     <p className="text-gray-600">Fill out the form below and we'll get back to you promptly</p>
                   </div>
                   
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="group">
                         <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
@@ -196,10 +268,14 @@ export default function ContactPage() {
                           <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors duration-300" />
                           <input
                             type="text"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleInputChange}
                             className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 group-hover:border-emerald-300"
                             placeholder="John"
                           />
                         </div>
+                        {formErrors.firstName && <p className="text-xs text-red-500 mt-1">{formErrors.firstName}</p>}
                       </div>
                       <div className="group">
                         <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
@@ -207,10 +283,14 @@ export default function ContactPage() {
                           <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors duration-300" />
                           <input
                             type="text"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleInputChange}
                             className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 group-hover:border-emerald-300"
                             placeholder="Doe"
                           />
                         </div>
+                        {formErrors.lastName && <p className="text-xs text-red-500 mt-1">{formErrors.lastName}</p>}
                       </div>
                     </div>
                     
@@ -220,10 +300,14 @@ export default function ContactPage() {
                         <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors duration-300" />
                         <input
                           type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 group-hover:border-emerald-300"
                           placeholder="john@example.com"
                         />
                       </div>
+                      {formErrors.email && <p className="text-xs text-red-500 mt-1">{formErrors.email}</p>}
                     </div>
                     
                     <div className="group">
@@ -232,15 +316,24 @@ export default function ContactPage() {
                         <PhoneIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors duration-300" />
                         <input
                           type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 group-hover:border-emerald-300"
                           placeholder="+91 9972571005"
                         />
                       </div>
+                      {formErrors.phone && <p className="text-xs text-red-500 mt-1">{formErrors.phone}</p>}
                     </div>
                     
                     <div className="group">
                       <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                      <select className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 group-hover:border-emerald-300">
+                      <select
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 group-hover:border-emerald-300"
+                      >
                         <option>General Inquiry</option>
                         <option>Service Request</option>
                         <option>Billing Support</option>
@@ -248,15 +341,20 @@ export default function ContactPage() {
                         <option>Feedback</option>
                         <option>Partnership</option>
                       </select>
+                      {formErrors.subject && <p className="text-xs text-red-500 mt-1">{formErrors.subject}</p>}
                     </div>
                     
                     <div className="group">
                       <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                       <textarea
                         rows={5}
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 group-hover:border-emerald-300 resize-none"
                         placeholder="Tell us how we can help you..."
                       ></textarea>
+                      {formErrors.message && <p className="text-xs text-red-500 mt-1">{formErrors.message}</p>}
                     </div>
                     
                     <button
@@ -268,6 +366,8 @@ export default function ContactPage() {
                         Send Message
                       </span>
                     </button>
+                    {submitStatus === 'success' && <p className="text-green-600 text-sm mt-2">Message sent successfully!</p>}
+                    {submitStatus === 'error' && <p className="text-red-600 text-sm mt-2">There was an error sending your message. Please try again.</p>}
                   </form>
                 </div>
               </div>
