@@ -113,18 +113,20 @@ export default function PartTimeMaidsPage() {
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 px-4 lg:px-0">
-                  <Link href="/hire-helper" className="group relative bg-white text-accent-800 hover:bg-accent-50 font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
-                    <span className="relative z-10">
-                      <span className="hidden sm:inline">Hire Part-Time Maid Now</span>
-                      <span className="sm:hidden">Hire Maid</span>
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white to-accent-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto px-4">
+                  <Link
+                    href="/hire-helper"
+                    className="inline-flex items-center justify-center w-full bg-white text-accent-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-accent-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  >
+                    Book Flexible Part-Time Maid Near You
                   </Link>
-                  <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300">
-                    <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Call Now</span>
-                    <span className="sm:hidden">Call</span>
+
+                  <Link
+                    href="tel:+919972571005"
+                    className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
+                  >
+                    <PhoneIcon className="h-5 w-5 mr-3 flex-shrink-0" />
+                    Call +91 9972571005
                   </Link>
                 </div>
 
@@ -404,15 +406,20 @@ export default function PartTimeMaidsPage() {
           <p className="text-xl text-accent-100 mb-8 max-w-3xl mx-auto">
             Don't let household chores steal your precious time and peace. Hire a trusted part-time maid from EzyHelpers today and experience the joy of having reliable support exactly when you need it.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-            <Link href="/hire-helper" className="btn-secondary bg-white text-accent-600 hover:bg-gray-100 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
-              <span className="hidden sm:inline">Book Flexible Part-Time Maid Near You</span>
-              <span className="sm:hidden">Book Maid</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto px-4">
+            <Link
+              href="/hire-helper"
+              className="inline-flex items-center justify-center w-full bg-white text-accent-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-accent-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+            >
+              Book Flexible Part-Time Maid Near You
             </Link>
-            <Link href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
-              <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-              <span className="hidden sm:inline">Call +91 9972571005</span>
-              <span className="sm:hidden">Call Now</span>
+
+            <Link
+              href="tel:+919972571005"
+              className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
+            >
+              <PhoneIcon className="h-5 w-5 mr-3 flex-shrink-0" />
+              Call +91 9972571005
             </Link>
           </div>
         </div>
