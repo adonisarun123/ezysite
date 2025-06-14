@@ -70,18 +70,17 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Preload critical resources */}
-        <link rel="preload" href="/favicon-32x32.png" as="image" type="image/png" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Favicons */}
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAARUlEQVR42u3NQQ0AMAwCsfxL7egQyiVIv+ONba7/AgAAAAAAAAAAAAD8PyYm1wsDGpseMaArtyYdMmhczr8iZM6/EiTOnxIkzp8SJc6fEdt8GAAwC3+zfbWwAAAABJRU5ErkJggg=="
+        />
         <meta name="theme-color" content="#0074C8" />
         
         {/* Core Schema Markup */}
