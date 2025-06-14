@@ -109,7 +109,7 @@ export default function Navbar() {
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </div>
               </Link>
-              <Link href="/hire-helper" className="btn-primary">
+              <Link href="/hire-helper#hire-form" className="btn-primary">
                 Book Now
               </Link>
             </div>
@@ -188,7 +188,7 @@ export default function Navbar() {
                   </div>
                 </Link>
                 <Link 
-                  href="/hire-helper" 
+                  href="/hire-helper#hire-form" 
                   className="btn-primary w-full text-center block py-4"
                   onClick={() => setMobileMenuOpen(false)}
                 >

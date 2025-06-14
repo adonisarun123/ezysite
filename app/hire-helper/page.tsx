@@ -48,7 +48,7 @@ export default function HireHelperPage() {
       </section>
 
       {/* Form Section */}
-      <section className="section-padding bg-background-primary">
+      <section id="hire-form" className="section-padding bg-background-primary scroll-mt-24 lg:scroll-mt-32">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Form */}
