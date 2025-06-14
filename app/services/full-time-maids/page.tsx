@@ -102,14 +102,20 @@ export default function FullTimeMaidsPage() {
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                  <Link href="/hire-helper" className="group relative bg-white text-secondary-800 hover:bg-secondary-50 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
-                    <span className="relative z-10">Book Full-Time Maid Now</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white to-secondary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                  <Link
+                    href="/hire-helper"
+                    className="inline-flex items-center justify-center w-full bg-white text-secondary-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-secondary-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  >
+                    Book Reliable Full-Time Maid Now
                   </Link>
-                  <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
-                    <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    Call Now
+
+                  <Link
+                    href="tel:+919972571005"
+                    className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
+                  >
+                    <PhoneIcon className="h-5 w-5 mr-3 flex-shrink-0" />
+                    Call +91 9972571005
                   </Link>
                 </div>
 
@@ -336,12 +342,20 @@ export default function FullTimeMaidsPage() {
           <p className="text-xl text-secondary-100 mb-8 max-w-3xl mx-auto">
             No more stress, no more juggling tasks. Just peace of mind and a well-run home. Call EzyHelpers today and book a full-time maid for the support you need!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/hire-helper" className="btn-secondary bg-white text-secondary-600 hover:bg-gray-100 text-lg px-8 py-4">
+          {/* CTA Buttons */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            <Link
+              href="/hire-helper"
+              className="inline-flex items-center justify-center w-full bg-white text-secondary-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-secondary-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+            >
               Book Reliable Full-Time Maid Now
             </Link>
-            <Link href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-4">
-              <PhoneIcon className="h-5 w-5 mr-2" />
+
+            <Link
+              href="tel:+919972571005"
+              className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
+            >
+              <PhoneIcon className="h-5 w-5 mr-3 flex-shrink-0" />
               Call +91 9972571005
             </Link>
           </div>
