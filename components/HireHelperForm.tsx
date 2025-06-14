@@ -59,6 +59,7 @@ export default function HireHelperForm() {
   })
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [requestId, setRequestId] = useState<string | null>(null)
 
   const handleInputChange = (field: keyof FormData, value: string | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }))
@@ -163,6 +164,7 @@ export default function HireHelperForm() {
     e.preventDefault()
     if (validateAll()) {
       try {
+        const newRequestId = generateRequestId()
         const { error } = await supabase.from('hire_helper_leads').insert([
           {
             name: formData.name.trim(),
@@ -182,6 +184,7 @@ export default function HireHelperForm() {
           }
         ])
         if (error) throw error
+        setRequestId(newRequestId)
         setSubmitStatus('success')
       } catch {
         setSubmitStatus('error')
@@ -190,6 +193,26 @@ export default function HireHelperForm() {
   }
 
   const stepTitles = ['Personal', 'Service', 'Details']
+
+  const generateRequestId = () => {
+    // Generate a simple 6-character uppercase alphanumeric string
+    return Math.random().toString(36).substring(2, 8).toUpperCase()
+  }
+
+  if (submitStatus === 'success') {
+    return (
+      <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+        <CheckCircleIcon className="w-14 h-14 mx-auto text-primary-600" />
+        <h2 className="text-2xl font-semibold mt-4 font-display">Thanks for your enquiry!</h2>
+        {requestId && (
+          <p className="mt-3 text-sm text-gray-700">Your request ID:&nbsp;
+            <span className="font-mono font-semibold text-gray-900">{requestId}</span>
+          </p>
+        )}
+        <p className="mt-3 text-sm text-gray-700">Our team will reach out to you shortly.</p>
+      </div>
+    )
+  }
 
   return (
     <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -497,8 +520,9 @@ export default function HireHelperForm() {
                 Submit Request
               </button>
             </div>
-            {submitStatus === 'success' && <p className="text-green-600 text-sm mt-2">Request submitted successfully!</p>}
-            {submitStatus === 'error' && <p className="text-red-600 text-sm mt-2">There was an error submitting your request. Please try again.</p>}
+            {submitStatus === 'error' && (
+              <p className="text-red-600 text-sm mt-2">There was an error submitting your request. Please try again.</p>
+            )}
           </div>
         )}
       </form>
