@@ -1,7 +1,9 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import HireHelperForm from '@/components/HireHelperForm'
+import dynamic from 'next/dynamic'
 import { CheckCircleIcon, PhoneIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
+
+const HireHelperForm = dynamic(() => import('@/components/HireHelperForm'), { ssr: false })
 
 export default function HireHelperPage() {
   return (

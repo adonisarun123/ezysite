@@ -22,6 +22,10 @@ const nextConfig = {
     esmExternals: true,
     // Enable optimizations that are safe
     forceSwcTransforms: true,
+    // Inline and remove unused CSS chunks to prevent 404s
+    optimizeCss: true,
+    // Automatically rewrite package imports (Heroicons) to the exact path for better tree-shaking
+    optimizePackageImports: ['@heroicons/react'],
   },
   
   // Webpack configuration for modern browsers
