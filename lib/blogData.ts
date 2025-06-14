@@ -24,8 +24,7 @@ export const posts: BlogPost[] = [
     category: 'Hiring Guide',
     featured: true,
     tags: ['hiring', 'domestic help', 'guide', 'legal'],
-    content: `## Introduction\nBringing a domestic helper into your home can be life-changing, freeing up precious hours and giving your family professional support. In this guide we'll walk through the entire hiring journey – **from sourcing candidates to drawing up a legally-sound contract**.\n\n---\n\n### 1. Understand Your Requirements\nBefore you post a job ad, take time to map out what kind of help you need. Is it full-time, part-time, live-in? Childcare, elder-care, general housekeeping? Being clear now prevents costly mismatches later.\n\n### 2. Where to Find Reliable Helpers\n• Personal referrals\n• Verified agencies\n• Online platforms like **EzyHelpers**\n\nEach source has pros & cons – we break them down in detail.\n\n### 3. Vetting & Background Checks\nSafety first. Always…\n\n(Article truncated for brevity)
-    `,
+    content: `## Introduction\nBringing a domestic helper into your home can be life-changing, freeing up precious hours and giving your family professional support. In this guide we'll walk through the entire hiring journey – **from sourcing candidates to drawing up a legally-sound contract**.\n\n---\n\n### 1. Understand Your Requirements\nBefore you post a job ad, take time to map out what kind of help you need. Is it full-time, part-time, live-in? Childcare, elder-care, general housekeeping? Being clear now prevents costly mismatches later.\n\n### 2. Where to Find Reliable Helpers\n- Personal referrals\n- Verified agencies\n- Online platforms like **EzyHelpers**\n\nEach source has pros & cons – we break them down in detail.\n\n### 3. Vetting & Background Checks\nSafety first. Always…\n\n_(Article truncated for brevity)_`
   },
   {
     id: 'safety-tips',
