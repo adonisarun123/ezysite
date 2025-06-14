@@ -19,7 +19,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="pt-20">
+      <main>
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-800 text-white">
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
@@ -183,6 +183,13 @@ export default function AboutPage() {
                     description: "Now serving 9 cities with over 50,000 customers and 10,000 trained helpers.",
                     icon: GlobeAltIcon,
                     side: "right"
+                  },
+                  {
+                    year: "2024",
+                    title: "Helper Training & Certification Program",
+                    description: "Trained and certified 7,500+ helpers through in-house programs focused on hygiene, etiquette, and safety standards.",
+                    icon: SparklesIcon,
+                    side: "left"
                   }
                 ].map((milestone, index) => (
                   <div key={index} className={`relative flex items-center ${milestone.side === 'left' ? 'flex-row' : 'flex-row-reverse'}`}>

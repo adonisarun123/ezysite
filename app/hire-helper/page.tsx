@@ -9,7 +9,7 @@ export default function HireHelperPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-50 to-secondary-50 pt-20">
+      <section className="bg-gradient-to-r from-primary-50 to-secondary-50 pt-24 pb-20">
         <div className="container-custom section-padding">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-display">

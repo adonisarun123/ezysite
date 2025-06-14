@@ -437,12 +437,19 @@ export default function OnDemandHelpersPage() {
           <p className="text-xl text-trust-100 mb-8 max-w-3xl mx-auto">
             Life doesn't wait, and neither should you. Whether it's an unexpected mess, a sudden guest, or urgent help, EzyHelpers brings instant relief and dependable support right to your doorstep.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/hire-helper" className="btn-secondary bg-white text-trust-600 hover:bg-gray-100 text-lg px-8 py-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto px-4">
+            <Link
+              href="/hire-helper"
+              className="inline-flex items-center justify-center w-full bg-white text-trust-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-trust-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+            >
               Book On-Demand Helper Instantly
             </Link>
-            <Link href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-4">
-              <PhoneIcon className="h-5 w-5 mr-2" />
+
+            <Link
+              href="tel:+919972571005"
+              className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
+            >
+              <PhoneIcon className="h-5 w-5 mr-3 flex-shrink-0" />
               Call for Immediate Assistance
             </Link>
           </div>

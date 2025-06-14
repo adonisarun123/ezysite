@@ -108,8 +108,8 @@ export default function NannyBabysitterPage() {
                     <span className="relative z-10">Book Trusted Nanny Now</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-white to-pink-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </Link>
-                  <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
-                    <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
+                  <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 whitespace-nowrap">
+                    <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform shrink-0" />
                     Call Now
                   </Link>
                 </div>
@@ -383,13 +383,20 @@ export default function NannyBabysitterPage() {
           <p className="text-xl text-pink-100 mb-8 max-w-3xl mx-auto">
             Trust EzyHelpers to provide loving, professional childcare that lets you focus on work and life while knowing your children are in safe, caring hands.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/hire-helper" className="btn-secondary bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 py-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto px-4">
+            <Link
+              href="/hire-helper"
+              className="inline-flex items-center justify-center w-full bg-white text-purple-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-purple-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+            >
               Book Trusted Childcare Now
             </Link>
-            <Link href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-4">
-              <PhoneIcon className="h-5 w-5 mr-2" />
-              Call +91 9972571005
+
+            <Link
+              href="tel:+919972571005"
+              className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300 whitespace-nowrap"
+            >
+              <PhoneIcon className="h-5 w-5 mr-3 shrink-0" />
+              Call +91&nbsp;9972571005
             </Link>
           </div>
         </div>

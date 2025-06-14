@@ -104,7 +104,7 @@ export default function Blog() {
   ];
 
   return (
-    <main className="min-h-screen pt-32 lg:pt-36">
+    <main className="min-h-screen">
       <UrgencyCTA />
       <Navbar />
       

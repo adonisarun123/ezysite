@@ -46,7 +46,7 @@ export default function ContactPage() {
         }}
       />
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-4">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-emerald-600 via-teal-700 to-cyan-800 text-white">
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
