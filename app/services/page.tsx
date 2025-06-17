@@ -20,7 +20,14 @@ import {
   ShieldCheckIcon,
   PhoneIcon,
   CalendarDaysIcon,
-  MapPinIcon
+  MapPinIcon,
+  WrenchScrewdriverIcon,
+  PaintBrushIcon,
+  CommandLineIcon,
+  BeakerIcon,
+  BugAntIcon,
+  GlobeAltIcon,
+  FireIcon
 } from '@heroicons/react/24/outline'
 
 export default function ServicesPage() {
@@ -129,6 +136,80 @@ export default function ServicesPage() {
       borderColor: "border-slate-200",
       features: ["Licensed Drivers", "Safe Travel", "Flexible Timing"],
       popular: false
+    }
+  ]
+
+  // Secondary services
+  const secondaryServices = [
+    {
+      title: "Appliance Repair Services",
+      description: "Expert technicians for fast, reliable repairs of all home appliances",
+      href: "/services/appliance-repair",
+      icon: WrenchScrewdriverIcon,
+      bgColor: "bg-red-50",
+      iconColor: "text-red-600",
+      borderColor: "border-red-200",
+      features: ["Same-Day Service", "All Brands", "Transparent Pricing"]
+    },
+    {
+      title: "Carpenter Services",
+      description: "Skilled carpenters for custom furniture, repairs, and installations",
+      href: "/services/carpenters",
+      icon: CommandLineIcon,
+      bgColor: "bg-yellow-50",
+      iconColor: "text-yellow-600",
+      borderColor: "border-yellow-200",
+      features: ["Custom Solutions", "Quality Wood", "Timely Delivery"]
+    },
+    {
+      title: "Electrician Services",
+      description: "Certified electricians for safe installations and repairs",
+      href: "/services/electricians",
+      icon: BoltIcon,
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-600",
+      borderColor: "border-blue-200",
+      features: ["Licensed Electricians", "Emergency Service", "Safety First"]
+    },
+    {
+      title: "Gardener Services",
+      description: "Professional garden care to keep your outdoor space beautiful",
+      href: "/services/gardener",
+      icon: GlobeAltIcon,
+      bgColor: "bg-green-50",
+      iconColor: "text-green-600",
+      borderColor: "border-green-200",
+      features: ["Plant Care", "Landscape Design", "Regular Maintenance"]
+    },
+    {
+      title: "Deep Cleaning Services",
+      description: "Thorough home cleaning for a spotless, healthy environment",
+      href: "/services/deep-cleaning",
+      icon: SparklesIcon,
+      bgColor: "bg-cyan-50",
+      iconColor: "text-cyan-600",
+      borderColor: "border-cyan-200",
+      features: ["Eco-Friendly", "Deep Sanitization", "Post-Renovation"]
+    },
+    {
+      title: "Painter Services",
+      description: "Professional painting services for interior and exterior makeovers",
+      href: "/services/painters",
+      icon: PaintBrushIcon,
+      bgColor: "bg-purple-50",
+      iconColor: "text-purple-600",
+      borderColor: "border-purple-200",
+      features: ["Premium Paints", "Expert Finish", "Color Consultation"]
+    },
+    {
+      title: "Plumber Services",
+      description: "Expert plumbing solutions for leaks, installations, and repairs",
+      href: "/services/plumbers",
+      icon: BeakerIcon,
+      bgColor: "bg-indigo-50",
+      iconColor: "text-indigo-600",
+      borderColor: "border-indigo-200",
+      features: ["Emergency Repairs", "Licensed Plumbers", "Quality Fittings"]
     }
   ]
 
@@ -421,6 +502,83 @@ export default function ServicesPage() {
                       Most Popular
                     </div>
                   )}
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Secondary Services Section */}
+      <section className="relative section-padding bg-gradient-to-br from-slate-50 via-gray-50 to-slate-50 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-full h-full" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234f46e5' fill-opacity='0.1'%3E%3Cpath d='M30 0C46.569 0 60 13.431 60 30s-13.431 30-30 30S0 46.569 0 30 13.431 0 30 0zm0 10C18.954 10 10 18.954 10 30s8.954 20 20 20 20-8.954 20-20S41.046 10 30 10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
+        </div>
+
+        <div className="container-custom relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-slate-100 text-slate-800 rounded-full px-4 py-2 mb-6">
+              <WrenchScrewdriverIcon className="h-4 w-4 mr-2" />
+              <span className="text-sm font-semibold">Home Maintenance & Repair</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              Our Secondary Services
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Professional home maintenance and repair services to keep your property in perfect condition
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {secondaryServices.map((service, index) => {
+              const IconComponent = service.icon
+              return (
+                <Link 
+                  key={index} 
+                  href={service.href} 
+                  className={`group relative ${service.bgColor} rounded-2xl p-6 border-2 ${service.borderColor} hover:border-transparent hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer overflow-hidden`}
+                >
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-white rounded-full blur-2xl transform translate-x-12 -translate-y-12"></div>
+                    <div className="absolute bottom-0 left-0 w-20 h-20 bg-white rounded-full blur-xl transform -translate-x-10 translate-y-10"></div>
+                  </div>
+                  
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className={`w-12 h-12 ${service.bgColor} group-hover:bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4 transition-all duration-300 border ${service.borderColor} group-hover:border-white/20`}>
+                      <IconComponent className={`h-6 w-6 ${service.iconColor} group-hover:text-white group-hover:scale-110 transition-all duration-300`} />
+                    </div>
+                    
+                    {/* Content */}
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-white mb-2 font-display transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 group-hover:text-white/90 mb-4 leading-relaxed transition-colors duration-300 text-sm">
+                      {service.description}
+                    </p>
+                    
+                    {/* Features */}
+                    <div className="space-y-1 mb-4">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center text-xs">
+                          <CheckCircleIcon className={`h-3 w-3 ${service.iconColor} group-hover:text-white/90 mr-1.5 transition-colors duration-300`} />
+                          <span className="text-gray-600 group-hover:text-white/90 transition-colors duration-300">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Learn More */}
+                    <div className="flex items-center justify-between">
+                      <span className={`${service.iconColor} group-hover:text-white font-medium text-sm transition-colors duration-300`}>
+                        Learn More
+                      </span>
+                      <ArrowRightIcon className={`h-4 w-4 ${service.iconColor} group-hover:text-white group-hover:translate-x-1 transition-all duration-300`} />
+                    </div>
+                  </div>
                 </Link>
               )
             })}
