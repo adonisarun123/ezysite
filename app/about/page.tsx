@@ -139,8 +139,41 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Certified By Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
+                Certified By
+              </h2>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-16">
+                <div className="group flex flex-col items-center space-y-4">
+                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <img 
+                      src="/dpiit.png" 
+                      alt="DPIIT Startup India" 
+                      className="h-20 w-auto object-contain"
+                    />
+                  </div>
+                  <p className="text-lg font-semibold text-gray-700">DPIIT</p>
+                </div>
+                <div className="group flex flex-col items-center space-y-4">
+                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <img 
+                      src="/nsdc.png" 
+                      alt="National Skill Development Corporation" 
+                      className="h-20 w-auto object-contain"
+                    />
+                  </div>
+                  <p className="text-lg font-semibold text-gray-700">NSDC</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Our Story Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
