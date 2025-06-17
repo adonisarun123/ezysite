@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
+import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import {
@@ -391,8 +392,8 @@ export default function ContactPage() {
               {[
                 {
                   city: "Bangalore",
-                  address: "123 Tech Park, Electronic City",
-                  pincode: "Bangalore, Karnataka 560100",
+                  address: "HSR Layout, Bangalore",
+                  pincode: "",
                   phone: "+91 9972571005",
                   email: "contact@ezyhelpers.com",
                   isHQ: true
@@ -515,12 +516,12 @@ export default function ContactPage() {
               We're here to make your life easier.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group bg-white hover:bg-gray-100 text-emerald-900 font-semibold px-10 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+              <Link href="/services" className="group bg-white hover:bg-gray-100 text-emerald-900 font-semibold px-10 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-center">
                 <span className="flex items-center justify-center gap-2">
                   <HeartIcon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   Book a Service
                 </span>
-              </button>
+              </Link>
               <button 
                 onClick={openTawkChat}
                 className="group border-2 border-white hover:bg-white hover:text-emerald-900 text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300 transform hover:scale-105"
