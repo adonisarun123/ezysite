@@ -28,6 +28,7 @@ const footerLinks = {
     { name: 'About Us', href: '/about' },
     { name: 'How It Works', href: '/how-it-works' },
     { name: 'For Helpers', href: '/for-helpers' },
+    { name: 'FAQs', href: '/faqs' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'Privacy Policy', href: '/privacy' },
