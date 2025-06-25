@@ -1,4 +1,5 @@
 import React from 'react';
+import { Metadata } from 'next'
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -14,6 +15,12 @@ import {
   GlobeAltIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline';
+
+export const metadata: Metadata = {
+  title: 'About EzyHelpers | India\'s Top Domestic Helper Services',
+  description: 'Leading domestic helper services platform since 2020. 5,000+ verified helpers across 9 cities. Police verified professionals for your peace of mind.',
+  keywords: 'domestic helper services, about EzyHelpers, verified helpers, home services platform, trusted domestic help',
+}
 
 export default function AboutPage() {
   return (

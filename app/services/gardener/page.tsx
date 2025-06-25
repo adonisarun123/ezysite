@@ -1,5 +1,4 @@
-'use client'
-
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -18,6 +17,12 @@ import {
   BeakerIcon,
   FireIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Home Gardener Services | Landscaping Experts | EzyHelpers',
+  description: 'Professional home gardener services for lawn care, plant maintenance & landscaping. Expert gardeners available in residential neighbourhoods near you.',
+  keywords: 'Home Gardener Services, landscaping, lawn care, plant maintenance, garden maintenance, professional gardeners',
+}
 
 export default function GardenerPage() {
   const breadcrumbs = [

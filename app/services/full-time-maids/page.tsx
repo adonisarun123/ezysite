@@ -1,5 +1,4 @@
-'use client'
-
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -18,6 +17,12 @@ import {
   UserPlusIcon,
   ArrowRightIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Full Time Maid Services | 8-10 Hours | EzyHelpers',
+  description: 'Reliable full-time maid services for daily cleaning, cooking & home care. Get 8–10 hrs of trained, verified help daily. Book trusted maids near you today!',
+  keywords: 'full time maid, daily maid service, 8-10 hours maid, full time domestic help, home care services',
+}
 
 export default function FullTimeMaidsPage() {
   const services = [
@@ -335,6 +340,95 @@ export default function FullTimeMaidsPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Get answers to common questions about our full-time maid services
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {[
+                {
+                  question: "What is a full-time maid service?",
+                  answer: "A full-time maid works 8 to 12 hours a day, helping with daily cleaning, cooking, laundry, childcare, and elderly care, while returning to her own home every evening. It's ideal if you want a full-day maid service without needing someone to stay overnight."
+                },
+                {
+                  question: "How many hours do full-time maids work daily?",
+                  answer: "They typically work 8 to 12 hours, depending on your needs. You can decide the start and end time during hiring, and also schedule breaks during the day."
+                },
+                {
+                  question: "What's included in full-time maid services?",
+                  answer: "Our full-time maids handle daily cleaning, mopping, laundry, kitchen management, babysitting, elderly care, grocery shopping, and other small tasks. Tasks can be customised to suit your family's routine and preferences."
+                },
+                {
+                  question: "How much does a full-time maid cost?",
+                  answer: "Pricing varies by location, experience, and duties assigned. EzyHelpers provides affordable rates with no hidden costs. Contact us for a custom quote based on your requirements."
+                },
+                {
+                  question: "What's the difference between full-time maids and live-in maids?",
+                  answer: "Full-time maids work fixed hours and return home, offering privacy for your family while supporting you during the day. Live-in maids stay in your home, offering 24-hour domestic help for more intensive needs."
+                },
+                {
+                  question: "Are full-time maids background-verified?",
+                  answer: "Yes. All our maids undergo police verification, address check, and skill evaluations to ensure your family's safety and smooth service delivery."
+                },
+                {
+                  question: "Do your full-time maids know how to use appliances?",
+                  answer: "Yes. Our maids are trained in using washing machines, mixers, vacuum cleaners, irons, and more. If your home has specialised equipment, we can arrange additional guidance."
+                },
+                {
+                  question: "Do full-time maids work on weekends?",
+                  answer: "Yes, their schedule can include weekends if discussed during hiring. Most full-time maids take 1 weekly off, often Sundays, or any agreed day."
+                },
+                {
+                  question: "Can I customise the full-time maid's duties?",
+                  answer: "Absolutely! Tasks can be customised, whether you need childcare, elderly assistance, deep kitchen cleaning, or errand help. We match maids based on your household's lifestyle and preferences."
+                },
+                {
+                  question: "Is there a trial period for full-time maids?",
+                  answer: "Yes. We offer a trial period so you can assess the maid's performance and fit before committing to a longer contract."
+                },
+                {
+                  question: "Do full-time maids need constant supervision?",
+                  answer: "No, they are trained to work independently. However, some initial instructions and occasional monitoring help maintain consistency and satisfaction."
+                },
+                {
+                  question: "Can full-time maids work in apartments and gated communities?",
+                  answer: "Yes, all our maids and helpers are comfortable working in apartments, gated communities, and villas, following security protocols and society rules."
+                }
+              ].map((faq, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                  <details className="group">
+                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -13,6 +14,12 @@ import {
   HandRaisedIcon,
   SunIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Elder Care Services | 24/7 Senior Support | EzyHelpers',
+  description: 'Compassionate elder care services with medical assistance, companionship & mobility support. Trained specialists for seniors Trusted by families across India.',
+  keywords: 'elder care services, elderly care, senior care, 24/7 elder support, medical assistance for seniors, companionship',
+}
 
 export default function ElderlyCare() {
   const services = [
@@ -224,6 +231,95 @@ export default function ElderlyCare() {
                 </div>
               )
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Get answers to common questions about our elderly care services
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {[
+                {
+                  question: "What elderly care services does EzyHelpers provide?",
+                  answer: "EzyHelpers offers comprehensive elderly care including daily assistance, medication reminders, meal preparation, companionship, mobility support, medical appointment coordination, and 24/7 care options. Our caregivers are trained in senior care and emergency response."
+                },
+                {
+                  question: "Are your elderly care providers trained and certified?",
+                  answer: "Yes, all our elderly care providers undergo specialized training in senior care, first aid, CPR, medication management, and emergency response. They are background-verified and experienced in providing compassionate care to seniors."
+                },
+                {
+                  question: "Can you provide 24/7 elderly care services?",
+                  answer: "Absolutely! We offer round-the-clock elderly care services including live-in caregivers and rotating shift care to ensure continuous support and monitoring for seniors who need constant assistance."
+                },
+                {
+                  question: "Do you handle seniors with medical conditions like dementia or diabetes?",
+                  answer: "Yes, our caregivers are trained to assist seniors with various medical conditions including dementia, diabetes, mobility issues, and chronic illnesses. We coordinate with family members and healthcare providers for comprehensive care."
+                },
+                {
+                  question: "How much do elderly care services cost?",
+                  answer: "Elderly care costs vary based on the level of care required, duration, and specific medical needs. We offer flexible packages including hourly, daily, and monthly care plans with transparent pricing and no hidden fees."
+                },
+                {
+                  question: "Can elderly care providers assist with household tasks?",
+                  answer: "Yes, our elderly care services include light housekeeping, meal preparation, laundry, grocery shopping, and maintaining a clean, safe environment for seniors while focusing primarily on their personal care needs."
+                },
+                {
+                  question: "Do you provide transportation for medical appointments?",
+                  answer: "Yes, our caregivers can accompany seniors to medical appointments, provide transportation coordination, and assist with communication with healthcare providers to ensure continuity of medical care."
+                },
+                {
+                  question: "How do you ensure the safety of elderly clients?",
+                  answer: "We implement comprehensive safety measures including fall prevention, medication management, emergency response protocols, regular health monitoring, and 24/7 communication with family members and emergency contacts."
+                },
+                {
+                  question: "Can family members stay involved in the care process?",
+                  answer: "Absolutely! We encourage family involvement and provide regular updates on your loved one's condition, care activities, and any concerns. Family members can participate in care planning and decision-making."
+                },
+                {
+                  question: "Do you provide respite care for family caregivers?",
+                  answer: "Yes, we offer respite care services to give family caregivers a break while ensuring their loved ones receive professional care. This can be arranged for a few hours, days, or longer periods as needed."
+                },
+                {
+                  question: "What if the elderly person doesn't get along with the caregiver?",
+                  answer: "We understand the importance of compatibility in elderly care. If there are any concerns, we work to address them immediately and can arrange a replacement caregiver to ensure your loved one's comfort and well-being."
+                },
+                {
+                  question: "Do you provide end-of-life care and palliative support?",
+                  answer: "Yes, we provide compassionate end-of-life care and palliative support, working closely with hospice care teams and family members to ensure dignity, comfort, and emotional support during difficult times."
+                }
+              ].map((faq, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                  <details className="group">
+                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

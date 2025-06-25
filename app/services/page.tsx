@@ -1,5 +1,4 @@
-'use client'
-
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -29,6 +28,12 @@ import {
   GlobeAltIcon,
   FireIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Home Services | Maids, Cooks, Drivers & More | EzyHelpers',
+  description: 'Complete home services including maids, cooks, drivers, electricians, plumbers & more. Professional, verified helpers for all your household needs.',
+  keywords: 'home services, domestic help, maids, cooks, drivers, electricians, plumbers, household services, professional helpers',
+}
 
 export default function ServicesPage() {
   // Breadcrumb schema for services page
@@ -540,6 +545,21 @@ export default function ServicesPage() {
                   key={index} 
                   href={service.href} 
                   className={`group relative ${service.bgColor} rounded-2xl p-6 border-2 ${service.borderColor} hover:border-transparent hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer overflow-hidden`}
+                  onMouseEnter={(e) => {
+                    const gradients = [
+                      'linear-gradient(to bottom right, #dc2626, #991b1b)', // red gradient for appliance repair
+                      'linear-gradient(to bottom right, #7c2d12, #451a03)', // brown gradient for carpenters
+                      'linear-gradient(to bottom right, #1e40af, #1e3a8a)', // blue gradient for electricians
+                      'linear-gradient(to bottom right, #166534, #14532d)', // green gradient for gardener
+                      'linear-gradient(to bottom right, #0891b2, #0e7490)', // cyan gradient for deep cleaning
+                      'linear-gradient(to bottom right, #7c3aed, #6d28d9)', // purple gradient for painters
+                      'linear-gradient(to bottom right, #1f2937, #111827)'  // gray gradient for plumbers
+                    ]
+                    e.currentTarget.style.background = gradients[index]
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = ''
+                  }}
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300">

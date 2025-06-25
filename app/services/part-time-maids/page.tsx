@@ -1,5 +1,4 @@
-'use client'
-
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -23,6 +22,12 @@ import {
   BuildingOffice2Icon,
   UserPlusIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Part-Time Maid Services | 2-6 Hours Daily | EzyHelpers',
+  description: 'Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers.',
+  keywords: 'Part-Time Maid, hourly maid service, flexible maid service, part time domestic help, 2-6 hours maid',
+}
 
 export default function PartTimeMaidsPage() {
   const services = [
@@ -393,6 +398,95 @@ export default function PartTimeMaidsPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Get answers to common questions about our part-time maid services
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {[
+                {
+                  question: "What is a part-time maid service?",
+                  answer: "A part-time maid works for a few hours daily or on specific days of the week, handling tasks like cleaning, organizing, laundry, and light cooking. It's perfect for busy families who need regular help without the commitment of a full-time helper."
+                },
+                {
+                  question: "How many hours do part-time maids work?",
+                  answer: "Part-time maids typically work 2-6 hours per day, depending on your needs. You can choose morning, afternoon, or evening slots, and decide how many days per week you need their services."
+                },
+                {
+                  question: "What tasks do part-time maids handle?",
+                  answer: "Our part-time maids handle house cleaning, floor mopping, bathroom cleaning, kitchen organization, laundry, ironing, dishwashing, and light cooking. Tasks can be customized based on your household priorities."
+                },
+                {
+                  question: "How much does a part-time maid cost?",
+                  answer: "The cost depends on hours worked, frequency, and tasks assigned. EzyHelpers offers competitive rates with transparent pricing and no hidden charges. Contact us for a personalized quote based on your requirements."
+                },
+                {
+                  question: "Can I hire a part-time maid for specific days only?",
+                  answer: "Yes! You can hire part-time maids for specific days like weekends, alternate days, or just weekdays. This flexibility makes it ideal for people with varying schedules or budget constraints."
+                },
+                {
+                  question: "Are part-time maids background-verified?",
+                  answer: "Absolutely. All our part-time maids undergo thorough background verification, police checks, and reference validation to ensure your home's safety and security."
+                },
+                {
+                  question: "Do part-time maids bring their own cleaning supplies?",
+                  answer: "Part-time maids can use your existing cleaning supplies and equipment. If you prefer, we can arrange for them to bring basic cleaning materials at an additional cost."
+                },
+                {
+                  question: "Can I change the part-time maid's schedule?",
+                  answer: "Yes, schedules can be adjusted with advance notice. Whether you need to change timings, add extra days, or reduce frequency, we work with you to accommodate your changing needs."
+                },
+                {
+                  question: "What if I'm not satisfied with the part-time maid's work?",
+                  answer: "We offer a satisfaction guarantee. If you're not happy with the service, we provide immediate feedback to the maid or arrange a replacement at no extra cost."
+                },
+                {
+                  question: "Do part-time maids work on weekends and holidays?",
+                  answer: "Yes, part-time maids can work on weekends and holidays if discussed during hiring. Many families prefer weekend cleaning services to prepare for the upcoming week."
+                },
+                {
+                  question: "Can part-time maids handle pet-friendly homes?",
+                  answer: "Yes, many of our part-time maids are comfortable working in homes with pets. We match you with maids who are experienced with pet care and pet-friendly cleaning routines."
+                },
+                {
+                  question: "Is there a minimum commitment period for part-time maid services?",
+                  answer: "We offer flexible arrangements with no long-term commitments required. You can start with a trial period and continue based on your satisfaction and needs."
+                }
+              ].map((faq, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                  <details className="group">
+                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

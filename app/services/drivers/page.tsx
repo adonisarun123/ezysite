@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -13,6 +14,12 @@ import {
   BeakerIcon,
   SunIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Professional Drivers Services | Licensed | EzyHelpers India',
+  description: 'Licensed professional drivers for family transportation, office commutes & personal use. Safe, reliable & punctual service across major cities in India.',
+  keywords: 'professional drivers, licensed drivers, family transportation, office commute, personal driver, safe transport',
+}
 
 export default function DriversPage() {
   const services = [
@@ -419,6 +426,95 @@ export default function DriversPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Get answers to common questions about our driver services
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {[
+                {
+                  question: "What driver services does EzyHelpers provide?",
+                  answer: "EzyHelpers offers professional driver services including daily office commutes, airport transfers, outstation trips, medical appointments, shopping assistance, and special event transportation. Our drivers are trained, licensed, and experienced in safe driving practices."
+                },
+                {
+                  question: "Are your drivers licensed and experienced?",
+                  answer: "Yes, all our drivers hold valid driving licenses with clean records and extensive driving experience. They undergo background verification, defensive driving training, and are familiar with local traffic rules and routes."
+                },
+                {
+                  question: "Can I hire a driver for outstation trips?",
+                  answer: "Absolutely! We provide outstation driver services for long-distance travel, weekend getaways, and multi-city trips. Our drivers are experienced in highway driving and familiar with popular tourist destinations."
+                },
+                {
+                  question: "Do you provide drivers for both personal and commercial vehicles?",
+                  answer: "Yes, our drivers can operate personal cars, SUVs, and light commercial vehicles. They adapt to different vehicle types and are trained in vehicle maintenance basics and safety protocols."
+                },
+                {
+                  question: "How much do driver services cost?",
+                  answer: "Driver service costs depend on duration, distance, and specific requirements. We offer hourly, daily, and monthly packages with transparent pricing. Contact us for customized quotes based on your travel needs."
+                },
+                {
+                  question: "Can I book a driver for same-day service?",
+                  answer: "Yes, we offer same-day driver booking based on availability. For urgent transportation needs, our dispatch team works to assign the nearest available driver to your location."
+                },
+                {
+                  question: "Do drivers provide their own vehicles?",
+                  answer: "Our drivers typically use your personal vehicle. However, we can also arrange drivers with their own vehicles for specific requirements. This option may have different pricing structures."
+                },
+                {
+                  question: "Are drivers available for night shifts and weekends?",
+                  answer: "Yes, our drivers are available for night shifts, weekend trips, and holiday travel. We understand that transportation needs don't follow regular business hours."
+                },
+                {
+                  question: "What safety measures do your drivers follow?",
+                  answer: "Our drivers follow strict safety protocols including defensive driving techniques, regular vehicle checks, GPS navigation for optimal routes, and emergency contact procedures. They prioritize passenger safety above all else."
+                },
+                {
+                  question: "Can drivers assist with elderly or differently-abled passengers?",
+                  answer: "Yes, we have drivers specially trained to assist elderly passengers and those with mobility challenges. They provide extra care and support during boarding, travel, and arrival."
+                },
+                {
+                  question: "Do you provide drivers for corporate clients?",
+                  answer: "Yes, we offer corporate driver services for business executives, client transportation, airport transfers, and company events. We can arrange dedicated drivers for regular corporate requirements."
+                },
+                {
+                  question: "What happens if the driver is late or unavailable?",
+                  answer: "We maintain high punctuality standards. If any delay occurs due to unforeseen circumstances, we immediately inform you and arrange alternative transportation. Customer satisfaction is our priority."
+                }
+              ].map((faq, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                  <details className="group">
+                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

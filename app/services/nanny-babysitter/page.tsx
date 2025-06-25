@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -13,6 +14,12 @@ import {
   SparklesIcon,
   SunIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Professional Babysitter Services | Certified | EzyHelpers',
+  description: 'Trusted babysitter & nanny services with child safety certified professionals. 24/7 childcare support for working parents. Background verified & trained.',
+  keywords: 'babysitter, nanny services, childcare, professional babysitter, child safety certified, trained nannies',
+}
 
 export default function NannyBabysitterPage() {
   const services = [
@@ -370,6 +377,95 @@ export default function NannyBabysitterPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Get answers to common questions about our nanny and babysitter services
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {[
+                {
+                  question: "What is the difference between a babysitter and a nanny?",
+                  answer: "A babysitter is usually hired for short-term help like watching your child for a few hours or during special occasions. A nanny, on the other hand, offers full-time or long-term support. Nannies handle daily routines, help with learning activities, and provide emotional care, becoming a consistent part of your child's life."
+                },
+                {
+                  question: "Are babysitters and nannies background verified?",
+                  answer: "Yes, your child's safety is our top priority. All EzyHelpers babysitter services and nannies undergo thorough background checks, police verification, and childcare training, ensuring secure and professional care."
+                },
+                {
+                  question: "What are the different types of childcare service options you offer?",
+                  answer: "We offer flexible childcare solutions tailored to your needs: Live-in babysitters: 24/7 care and supervision. Full-time babysitters: Daily support for routines, meals, and learning. Part-time babysitters: Ideal for morning or evening shifts. On-demand babysitters: Perfect for urgent or emergency babysitting needs."
+                },
+                {
+                  question: "Can I get a nanny for specific hours or short-term needs?",
+                  answer: "Yes, we provide part-time nannies and on-call babysitters for short-term or irregular schedules. Ideal for working parents, events, or sudden changes in routine."
+                },
+                {
+                  question: "What age groups do your childcare services cover?",
+                  answer: "Our child caretaker services cover all age groups, from newborns (0–6 months) to toddlers and school-going children (5+ years). Each nanny or babysitter is trained to manage age-appropriate care tasks such as feeding, diapering, potty training, and homework assistance."
+                },
+                {
+                  question: "How do I choose between a live-in nanny and a full-time nanny?",
+                  answer: "Choose a live-in nanny for round-the-clock care, especially useful for infants or families with multiple children. A full-time nanny is suitable for daytime needs like school preparation, engaging in play, and educational activities."
+                },
+                {
+                  question: "What kind of activities do your nannies engage children in?",
+                  answer: "Our nannies/babysitters engage kids in age-appropriate educational and creative activities like storytelling, drawing, reading, skill-building, and games. We focus on both development and fun."
+                },
+                {
+                  question: "Can I choose the babysitter, or will you assign one?",
+                  answer: "We match families with suitable babysitters or nannies based on your needs. You'll always have the opportunity to interview and approve the chosen child caretaker before finalising."
+                },
+                {
+                  question: "Do you provide same-day or emergency babysitting services?",
+                  answer: "Yes, our emergency babysitting services ensure that you get quick, trusted help for last-minute needs like travel, work meetings, or urgent outings."
+                },
+                {
+                  question: "Can the schedule be customised according to my work shifts or flexible needs?",
+                  answer: "Absolutely. Whether you work early mornings, weekends, or rotating shifts, our babysitter services are customisable to your routine and preferences."
+                },
+                {
+                  question: "What tasks will the babysitter handle apart from supervision?",
+                  answer: "Our babysitters go beyond basic supervision. They assist with meal preparation, educational support, hygiene routines, emotional development, and interactive play for complete childcare support."
+                },
+                {
+                  question: "Do babysitters prepare meals for children?",
+                  answer: "Yes, babysitters prepare healthy, child-friendly meals and snacks based on your child's dietary needs and feeding schedule. We also offer cook services for complete meal assistance."
+                }
+              ].map((faq, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                  <details className="group">
+                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

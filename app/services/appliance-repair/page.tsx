@@ -1,5 +1,4 @@
-'use client'
-
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -19,6 +18,12 @@ import {
   TvIcon,
   BeakerIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Home Appliance Repair Services | Expert Technicians | Ezy',
+  description: 'Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India.',
+  keywords: 'Home Appliance Repair Services, appliance repair, washing machine repair, refrigerator repair, AC repair, expert technicians',
+}
 
 export default function ApplianceRepairPage() {
   const breadcrumbs = [
@@ -80,24 +85,72 @@ export default function ApplianceRepairPage() {
 
   const faqs = [
     {
-      question: "What types of appliances do you repair?",
-      answer: "We repair all major home appliances including refrigerators, washing machines, microwaves, air conditioners, gas stoves, geysers, TVs, and kitchen chimneys."
+      question: "How does the on-demand home appliance repair service work?",
+      answer: "You can easily book a home appliance repair technician online or by phone. Simply describe the issue to our customer support representative and select a convenient time slot. A trained appliance repair technician will visit your home, inspect the faulty device, identify the problem, and perform the repair using the right tools and genuine parts, all without requiring you to transport the appliance."
     },
     {
-      question: "Do you provide same-day repair service?",
-      answer: "Yes, we offer same-day appliance repair service in most locations. Book today and our technicians can arrive promptly to fix your issues."
+      question: "How soon can I get a home appliance repair technician?",
+      answer: "We offer same-day and emergency home appliance repair services depending on technician availability in your area. During the booking process, you can check real-time availability and select a preferred time for a quick and convenient fix."
     },
     {
-      question: "What brands of appliances do you service?",
-      answer: "We service all major appliance brands including LG, Samsung, Whirlpool, Godrej, Bosch, IFB, and many more. Our technicians are trained to work on any brand and model."
+      question: "What appliances do you repair?",
+      answer: "Our home appliance repairers handle a wide range of appliances, including refrigerators, washing machines, air conditioners, microwaves, ovens, dishwashers, geysers, kitchen chimneys, and televisions. We service all major brands and models with expertise in both common and complex issues."
     },
     {
-      question: "Do you provide transparent pricing?",
-      answer: "Yes, we provide clear, upfront pricing before starting any work with no hidden fees. You'll always know what to expect and can pay with confidence."
+      question: "How much do appliance repairs cost?",
+      answer: "The cost depends on the type of appliance, the complexity of the issue, and the parts required. We offer upfront pricing and free diagnosis. You'll receive a clear and transparent quote before any work is done."
     },
     {
-      question: "Are your technicians qualified and trustworthy?",
-      answer: "All our technicians are trained, experienced, and background-verified professionals who carry the necessary tools and spare parts for efficient repairs."
+      question: "Do you provide same-day appliance repair?",
+      answer: "Yes, we provide same-day home appliance repair services for urgent problems like refrigerator breakdowns, AC malfunctions, or washing machine issues. For faster assistance, contact us early in the day to schedule your repair."
+    },
+    {
+      question: "Do you repair all appliance brands?",
+      answer: "Yes, we repair appliances from all major manufacturers, including Samsung, LG, Whirlpool, Godrej, Bosch, IFB, and many others. Our appliance repair technicians are trained across multiple brand models."
+    },
+    {
+      question: "What areas do you cover for appliance repair?",
+      answer: "Our home appliance repair services are available across multiple cities and suburbs. Just search for \"appliance repair technician near me\" to check coverage and book a reliable service provider in your area."
+    },
+    {
+      question: "Can you repair appliances at my home?",
+      answer: "Yes, we provide convenient doorstep appliance repair. Our technicians bring necessary tools and spare parts for on-site service, eliminating the need to carry your appliance to a service centre."
+    },
+    {
+      question: "How do I know if my appliance needs repair or replacement?",
+      answer: "Our expert technicians assess the appliance thoroughly and give honest recommendations. Depending on the appliance's condition, age, and problem severity, we help you decide whether a cost-effective repair or replacement is best."
+    },
+    {
+      question: "Do you use genuine spare parts for repairs?",
+      answer: "Yes, we use genuine and quality spare parts sourced from authorised suppliers to ensure proper functionality and long-lasting results after repair."
+    },
+    {
+      question: "Can you repair old or vintage appliances?",
+      answer: "We can often repair older or discontinued appliances if compatible parts are available. Our technicians have experience with vintage models and can suggest suitable alternatives if original components are no longer manufactured."
+    },
+    {
+      question: "What should I do before the technician arrives?",
+      answer: "Please clear the area around the appliance, ensure easy access, and note any error codes or specific symptoms. Having your purchase invoice or warranty details handy can also be useful during the service."
+    },
+    {
+      question: "Do you provide emergency appliance repair services?",
+      answer: "Yes, we handle emergency repairs for critical situations like refrigerator failures, AC issues during hot weather, or any major appliance malfunctions affecting your daily life."
+    },
+    {
+      question: "How do I get a quote for appliance repair?",
+      answer: "You can reach out to us with your appliance type and issue description to get an initial estimate. After diagnosis, our technician will provide an accurate quote based on the repair needs."
+    },
+    {
+      question: "Do you offer appliance installation services?",
+      answer: "Yes, we offer installation services for new appliances, including proper setup, safe connections, and performance checks to ensure everything runs smoothly from day one."
+    },
+    {
+      question: "How do I know the home appliance technician is qualified and trustworthy?",
+      answer: "All our home appliance repairers are background-verified and certified professionals. They are trained to handle different appliances and brands with expertise and professionalism."
+    },
+    {
+      question: "What happens if the appliances can't be repaired on-site?",
+      answer: "If on-site repair is not possible due to the nature of the issue or lack of required parts, the technician will explain the situation and suggest next steps. This may include a follow-up visit or carrying the appliance to a workshop if necessary."
     }
   ]
 

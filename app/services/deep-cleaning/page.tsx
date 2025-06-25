@@ -1,5 +1,4 @@
-'use client'
-
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -18,6 +17,12 @@ import {
   CubeIcon,
   UserGroupIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'House Cleaning Services | Deep Cleaning Experts | EzyHelpers',
+  description: 'Professional house cleaning services including deep cleaning, sanitization & maintenance. Expert cleaners available across major cities.',
+  keywords: 'House Cleaning Services, deep cleaning, professional cleaners, sanitization, maintenance, expert cleaners',
+}
 
 export default function DeepCleaningPage() {
   const breadcrumbs = [

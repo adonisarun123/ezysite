@@ -1,5 +1,4 @@
-'use client'
-
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -25,6 +24,12 @@ import {
   UserPlusIcon,
   BuildingOffice2Icon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: '24/7 Live In Maid Services | EzyHelpers',
+  description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
+  keywords: 'live in maid, 24/7 maid service, live-in domestic help, round the clock maid, residential maid services',
+}
 
 export default function LiveInMaidsPage() {
   const services = [
@@ -417,6 +422,95 @@ export default function LiveInMaidsPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Get answers to common questions about our live-in maid services
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {[
+                {
+                  question: "What is a live-in maid service?",
+                  answer: "A live-in maid stays in your home 24/7, providing round-the-clock household support including cleaning, cooking, childcare, elderly care, and general home management. They have their own living space within your home and are available whenever needed."
+                },
+                {
+                  question: "What accommodation do live-in maids need?",
+                  answer: "Live-in maids need a separate room with basic amenities like a bed, storage space, and access to a bathroom. The accommodation should provide privacy and comfort for the maid while living in your home."
+                },
+                {
+                  question: "What tasks do live-in maids handle?",
+                  answer: "Live-in maids handle comprehensive household management including daily cleaning, cooking, laundry, childcare, elderly care, grocery shopping, pet care, and maintaining overall home organization. Their duties can be customized based on your family's needs."
+                },
+                {
+                  question: "How much does a live-in maid cost?",
+                  answer: "Live-in maid costs vary based on experience, duties, and location. The package typically includes salary, accommodation, meals, and other benefits. EzyHelpers provides transparent pricing with no hidden costs."
+                },
+                {
+                  question: "Are live-in maids background-verified?",
+                  answer: "Yes, all our live-in maids undergo comprehensive background verification including police checks, reference validation, medical checkups, and skill assessments to ensure your family's safety and security."
+                },
+                {
+                  question: "Do live-in maids get time off?",
+                  answer: "Yes, live-in maids typically get one day off per week and time for personal activities. The schedule can be discussed and agreed upon during the hiring process to ensure both parties are comfortable."
+                },
+                {
+                  question: "Can live-in maids handle multiple family members?",
+                  answer: "Absolutely! Live-in maids are trained to manage households with multiple family members, including children, elderly parents, and extended family. They adapt to your family's routine and preferences."
+                },
+                {
+                  question: "What if the live-in maid doesn't work out?",
+                  answer: "We provide a replacement guarantee. If you're not satisfied with the live-in maid's performance or compatibility, we'll arrange a suitable replacement at no additional cost."
+                },
+                {
+                  question: "Do live-in maids cook meals?",
+                  answer: "Yes, most live-in maids can prepare meals according to your family's preferences and dietary requirements. They can cook various cuisines and adapt to specific nutritional needs or restrictions."
+                },
+                {
+                  question: "Can live-in maids handle emergencies?",
+                  answer: "Live-in maids are trained to handle household emergencies and can provide immediate assistance. However, for medical emergencies, they will contact appropriate emergency services and family members."
+                },
+                {
+                  question: "Is there a trial period for live-in maids?",
+                  answer: "Yes, we offer a trial period to ensure compatibility between the maid and your family. This allows both parties to assess the working relationship before making a long-term commitment."
+                },
+                {
+                  question: "Do live-in maids work during festivals and holidays?",
+                  answer: "Live-in maids typically work during festivals and holidays but may request time off for their own celebrations. This can be discussed and planned in advance to ensure smooth household management."
+                }
+              ].map((faq, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                  <details className="group">
+                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,4 @@
-'use client'
-
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -18,6 +17,12 @@ import {
   FireIcon,
   ExclamationTriangleIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Licensed Electrician Services | 24/7 Available | EzyHelpers',
+  description: 'Certified electrician services for wiring, repairs & installations. Emergency electrical work available 24/7 by licensed experts in your locality.',
+  keywords: 'electrician services, electrical repairs, wiring, installations, emergency electrician, 24/7 electrical service',
+}
 
 export default function ElectriciansPage() {
   const breadcrumbs = [
@@ -73,24 +78,68 @@ export default function ElectriciansPage() {
 
   const faqs = [
     {
-      question: "What types of electrical services do you provide?",
-      answer: "We provide electrical repairs, maintenance, installations, residential wiring, emergency services, lighting installation, and appliance connections for all your home electrical needs."
+      question: "What electrical services does EzyHelpers provide?",
+      answer: "EzyHelpers offers complete electrical solutions through our certified electricians. Services include electrical repairs, home wiring, new installations, maintenance, lighting solutions, appliance connections, switchboard upgrades, and 24/7 emergency electrician support. Whether it's a minor issue or a full system upgrade, our licensed electricians ensure safety and reliability."
     },
     {
-      question: "Do you provide emergency electrical services?",
-      answer: "Yes, we offer 24/7 emergency electrician services for sudden power failures or urgent electrical issues, providing quick response when you need us most."
+      question: "Are your electricians licensed and certified?",
+      answer: "Yes, all our local electricians are licensed and certified professionals. They have undergone extensive electrical training and hold the necessary safety certifications to carry out residential and commercial electrical work in compliance with national electrical standards."
     },
     {
-      question: "Are your electricians certified and qualified?",
-      answer: "All our electricians are trained, certified, and experienced professionals who ensure safe electrical work and meet all safety standards for your home."
+      question: "Do you provide 24/7 emergency electrician services?",
+      answer: "Absolutely. EzyHelpers offers 24/7 emergency electrician services to address power failures, short circuits, electrical hazards, and urgent repairs. Our emergency electricians respond quickly to restore power and ensure your home or office is safe."
     },
     {
-      question: "Do you provide transparent pricing for electrical work?",
-      answer: "Yes, we offer clear, honest pricing with upfront quotes after on-site inspection. No hidden charges, just transparent costs for all electrical services."
+      question: "How much do electrician services cost?",
+      answer: "The cost of hiring an electrician depends on the nature of the work, its complexity, and your location. We offer upfront pricing with no hidden charges. Our certified electricians provide free estimates after an on-site assessment."
     },
     {
-      question: "Can you help with both repairs and new installations?",
-      answer: "Absolutely! We handle everything from minor electrical repairs and maintenance to complete new installations and home electrical system upgrades."
+      question: "Can I book an electrician for same-day service?",
+      answer: "Yes, we provide same-day service for urgent electrical issues. Whether it's a sudden outage or a critical fault, our local electricians are ready to assist you promptly."
+    },
+    {
+      question: "What types of electrical problems do your electricians fix?",
+      answer: "Our electricians handle a wide range of issues such as power outages, flickering lights, faulty switches, wiring faults, circuit overloads, and short circuits. We also resolve appliance connectivity issues and other electrical safety concerns."
+    },
+    {
+      question: "Do electricians provide electrical safety inspections?",
+      answer: "Yes, our certified electricians conduct detailed electrical safety inspections. These include load testing, wiring assessments, and fault diagnostics to ensure compliance with safety standards and prevent future risks."
+    },
+    {
+      question: "Can electricians help with home appliance installation?",
+      answer: "Yes, our electricians can install a variety of home appliances including geysers, ceiling fans, air conditioners, ovens, lighting fixtures, and smart home devices. All installations are done with proper safety checks and electrical compatibility."
+    },
+    {
+      question: "Can electricians upgrade old electrical systems?",
+      answer: "Definitely. Our skilled electricians perform switchboard upgrades, wiring replacements, etc. These upgrades enhance electrical safety and allow your home to handle modern electrical loads efficiently."
+    },
+    {
+      question: "Can I book an electrician for both minor repairs and major installations?",
+      answer: "Absolutely! Our experienced electricians are equipped to handle everything from repairing sockets and switches to installing DB boxes, geysers, and complete wiring systems. No job is too small or too big."
+    },
+    {
+      question: "Will you inspect the entire house if I'm unsure where the issue is?",
+      answer: "Yes, if you're unsure about the source of an electrical problem, our licensed electricians will conduct a full home inspection to diagnose and resolve the issue effectively."
+    },
+    {
+      question: "How do I prepare for an electrician visit?",
+      answer: "Before our electrician arrives, ensure clear access to electrical panels or faulty areas. Make a list of known issues. Our team will arrive with all necessary tools and safety gear to complete the job efficiently."
+    },
+    {
+      question: "Can I get a free electrical estimate?",
+      answer: "Yes, we provide free electrical estimates. Our electricians will assess your requirements and offer a transparent quote detailing the scope of work and cost involved."
+    },
+    {
+      question: "How quickly can an electrician reach my location?",
+      answer: "Response times depend on location and electrician availability. We prioritize urgent electrical issues, and our emergency electricians are dispatched quickly to ensure minimal disruption."
+    },
+    {
+      question: "What safety measures do electricians follow?",
+      answer: "All our electricians follow strict safety procedures for best practices for electrical installations and repairs. Your safety is always our top priority."
+    },
+    {
+      question: "What if electrical problems persist after service?",
+      answer: "If you continue facing issues after our service, reach out immediately. Our service guarantee includes follow-up visits to resolve any remaining or recurring problems at no additional cost."
     }
   ]
 

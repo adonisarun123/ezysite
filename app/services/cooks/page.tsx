@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -14,6 +15,12 @@ import {
   StarIcon,
   SunIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Professional Cooks Services | All Cuisines | EzyHelpers',
+  description: 'Expert cooks for Indian, Continental & regional cuisines. Includes meal planning, grocery management & dietary preferences. Hire home cooks today!',
+  keywords: 'cooks, home cooks, professional cooks, meal preparation, Indian cuisine, Continental cuisine, dietary preferences',
+}
 
 export default function CooksPage() {
   const services = [
@@ -408,6 +415,95 @@ export default function CooksPage() {
               <PhoneIcon className="h-5 w-5 mr-3 flex-shrink-0" />
               Call +91 9972571005
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Get answers to common questions about our professional cook services
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {[
+                {
+                  question: "What types of home cook services are available?",
+                  answer: "EzyHelpers offers a wide range of home cook services including live-in cooks, full-time cooks, part-time cooks, and on-demand personal chefs. Whether you need daily cooking help or a domestic cook for special occasions, we have options to suit your family's needs."
+                },
+                {
+                  question: "What cuisines can your home cooks prepare?",
+                  answer: "Our experienced cooks for home specialize in North Indian, South Indian, Chinese, Continental, and various regional cuisines. They deliver authentic flavours and traditional techniques, as per your family's taste preferences."
+                },
+                {
+                  question: "Are your home cooks trained and background verified?",
+                  answer: "Yes, all our domestic cooks are thoroughly background verified and undergo skill assessment and hygiene training. We are affiliated with DWSSC (Domestic Workers Sector Skill Council) and Skill India to ensure quality and safety."
+                },
+                {
+                  question: "Can your cooks accommodate dietary restrictions?",
+                  answer: "Absolutely. Our household cooks are trained to handle special dietary requirements including diabetic-friendly, low-sodium, vegetarian, and allergy-specific meal plans."
+                },
+                {
+                  question: "Do home cooks assist with grocery shopping and menu planning?",
+                  answer: "Yes, our cooks for home can manage grocery shopping, meal planning, ingredient selection, and kitchen inventory to ensure fresh and nutritious daily meals."
+                },
+                {
+                  question: "Can home cooks prepare meals for large families?",
+                  answer: "Yes, our professional home cooks efficiently handle cooking for families of all sizes. They ensure timely meal preparation, proper portion control, and variety in everyday menus."
+                },
+                {
+                  question: "Are home cooks available for special events or functions?",
+                  answer: "Yes, we provide on-demand domestic cooks for parties, festivals, family gatherings, and other special occasions. They can prepare customized menus and deliver professional-level meals for guests."
+                },
+                {
+                  question: "Do your home cooks maintain proper kitchen hygiene?",
+                  answer: "Yes. Our verified cooks follow strict hygiene practices including clean workspaces, safe food handling, proper storage, and kitchen maintenance and organization as part of our premium home cook services."
+                },
+                {
+                  question: "Can your cooks work with existing kitchen equipment?",
+                  answer: "Yes, our skilled domestic cooks are adaptable and can work efficiently with your existing kitchen layout, appliances, and utensils without compromising on meal quality."
+                },
+                {
+                  question: "How much do your home cook services cost?",
+                  answer: "Pricing depends on the type of service (live-in, part-time, full-time), number of meals, and complexity of food preparation. Contact EzyHelpers for customized, affordable packages."
+                },
+                {
+                  question: "Do your cooks prepare food for babies and elderly family members?",
+                  answer: "Yes. We have specialized home cooks who can prepare soft meals for elderly members and age-appropriate, nutritious baby food as part of their daily cooking help duties."
+                },
+                {
+                  question: "Are cooks available for breakfast and dinner only?",
+                  answer: "Our home cook services are flexible. Whether you need breakfast-only, dinner-only, or full-day cooking, we'll match you with a personal chef who fits your schedule."
+                }
+              ].map((faq, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                  <details className="group">
+                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

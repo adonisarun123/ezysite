@@ -1,5 +1,4 @@
-'use client'
-
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -18,6 +17,12 @@ import {
   BuildingOfficeIcon,
   FireIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'House Painting Services | Interior & Exterior | EzyHelpers',
+  description: 'Professional house painting services for interior & exterior walls. Quality paints, expert painters & affordable rates in your area.',
+  keywords: 'House Painting Services, interior painting, exterior painting, professional painters, quality paints, affordable rates',
+}
 
 export default function PaintersPage() {
   const breadcrumbs = [

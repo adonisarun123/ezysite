@@ -1,5 +1,4 @@
-'use client'
-
+import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -18,6 +17,12 @@ import {
   CubeIcon,
   ExclamationTriangleIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Emergency Plumber Service | 24/7 Available | EzyHelpers',
+  description: 'Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas.',
+  keywords: 'plumber service, emergency plumber, pipe repairs, plumbing installations, 24/7 plumber, licensed plumbers',
+}
 
 export default function PlumbersPage() {
   const breadcrumbs = [
@@ -73,24 +78,56 @@ export default function PlumbersPage() {
 
   const faqs = [
     {
-      question: "What types of plumbing services do you provide?",
-      answer: "We provide leak repairs, toilet and tap services, bathroom and kitchen plumbing installations, water heater solutions, drainage cleaning, pipe and tank services, and complete plumbing solutions for renovations."
+      question: "What plumbing services does EzyHelpers provide?",
+      answer: "EzyHelpers offers a wide range of home plumbing services, including leak detection and repair, pipe replacement, drain unclogging, toilet repairs, bathroom fittings, kitchen plumbing, water heater services, and emergency plumbing support. Our certified plumbers ensure quality service for both minor plumbing issues and full-scale installations."
     },
     {
-      question: "Do you offer same-day or emergency plumbing services?",
-      answer: "Yes, we offer same-day plumbing services depending on availability and location. We also provide emergency services for urgent plumbing issues like burst pipes or major leaks."
+      question: "Do you provide 24/7 emergency plumber services?",
+      answer: "Yes, we provide 24/7 emergency plumbing repair for urgent problems like burst pipes, sewer backups, major water leaks, and blocked drains. Our on-call plumbers respond quickly to minimize water damage and restore functionality to your home plumbing system."
     },
     {
-      question: "Are your plumbers certified and experienced?",
-      answer: "All our plumbers are certified, experienced professionals who ensure safe plumbing work. They carry necessary tools and spare parts for efficient repairs and installations."
+      question: "How much do plumber services cost?",
+      answer: "The cost of our home plumbing services depends on the nature of the job, the complexity of repairs, and the materials used. We provide upfront, transparent pricing for all plumbing work, including repairs, installations, and routine maintenance."
     },
     {
-      question: "Do you provide transparent pricing with no hidden costs?",
-      answer: "Yes, we offer clear, upfront quotes with no hidden charges. Final pricing is determined after on-site inspection, and you pay only for the agreed services."
+      question: "Are your plumbers licensed and experienced?",
+      answer: "All EzyHelpers plumbers are licensed professionals with years of hands-on experience in residential plumbing repair and maintenance. They are trained in the latest plumbing standards and safety procedures to ensure reliable service every time."
     },
     {
-      question: "Can you coordinate with electricians for water heater installations?",
-      answer: "Absolutely! Plumbing often requires electrical coordination, especially for geyser installations. We can coordinate with our certified electricians for complete service integration."
+      question: "Can I book a plumber for same-day service?",
+      answer: "Yes, you can book a same-day plumber for urgent plumbing issues such as leaking taps, clogged drains, or sudden pipe damage. We have a network of local plumbers ready to assist at short notice across major service areas."
+    },
+    {
+      question: "What areas do you cover for plumbing services?",
+      answer: "We offer plumbing services in multiple cities and neighbourhoods across India. Just search for \"home plumber near me\" or \"local plumbing services\" to find an EzyHelpers-certified plumber available in your area."
+    },
+    {
+      question: "Do you handle both minor and major plumbing issues?",
+      answer: "Yes, our plumbing team handles everything from simple tap repairs and minor leak fixes to complex plumbing projects like bathroom renovations, water line replacements, and full home plumbing system upgrades."
+    },
+    {
+      question: "Do plumbers provide free estimates?",
+      answer: "Yes, we provide free estimates after an initial assessment. Our plumbers will evaluate the scope of work and provide a detailed quote with cost breakdowns so you understand the charges before work begins."
+    },
+    {
+      question: "What plumbing materials do you use?",
+      answer: "We use durable, high-quality plumbing materials, including certified pipes, branded fixtures, reliable fittings, and long-lasting plumbing components. All supplies meet current industry standards to ensure your home plumbing lasts."
+    },
+    {
+      question: "Can plumbers help with bathroom renovations?",
+      answer: "Absolutely. Our home plumbing experts can assist with complete bathroom plumbing work, including installing toilets, fitting showers, setting up bathtubs, and connecting basins and drainage systems as part of bathroom renovation or remodelling."
+    },
+    {
+      question: "Can plumbers fix water heater and geyser problems?",
+      answer: "Yes, our experienced plumbers specialise in water heater troubleshooting, geyser installation, thermostat replacements, and heating element repairs. We work with both electric and gas-based systems in residential settings."
+    },
+    {
+      question: "How quickly can a plumber reach my location?",
+      answer: "Our response time depends on your location and plumber availability. For emergency plumbing repair needs, we prioritise quick dispatch so a local plumber can reach your home as soon as possible."
+    },
+    {
+      question: "What should I do during a plumbing emergency?",
+      answer: "In case of a plumbing emergency, turn off the main water supply immediately to prevent further damage. Avoid using affected fixtures and contact our emergency plumber service. Taking photos of the damage may also help with insurance documentation and repair assessment."
     }
   ]
 
