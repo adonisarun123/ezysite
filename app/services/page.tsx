@@ -215,7 +215,7 @@ export default function ServicesPage() {
   ]
 
   return (
-    <>
+    <div>
       <Head>
         <title>Home Services | Maids, Cooks, Drivers & More | EzyHelpers</title>
         <meta name="description" content="Complete home services including maids, cooks, drivers, electricians, plumbers & more. Professional, verified helpers for all your household needs." />
@@ -686,6 +686,6 @@ export default function ServicesPage() {
       
       <Footer />
       </main>
-    </>
+    </div>
   )
 } 

@@ -1,47 +1,63 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 interface OptimizedSectionProps {
   children: ReactNode
-  background?: 'white' | 'gray' | 'gradient' | 'colored'
+  title?: string
+  description?: string
+  badge?: string
   className?: string
-  id?: string
-  pattern?: boolean
-  colorScheme?: 'primary' | 'secondary' | 'accent' | 'trust' | 'red' | 'orange' | 'slate'
+  background?: 'white' | 'gray' | 'gradient'
+  padding?: 'normal' | 'large' | 'small'
+  centered?: boolean
 }
 
-export default function OptimizedSection({ 
-  children, 
-  background = 'white', 
+export default function OptimizedSection({
+  children,
+  title,
+  description,
+  badge,
   className = '',
-  id,
-  pattern = false,
-  colorScheme = 'primary'
+  background = 'white',
+  padding = 'normal',
+  centered = false
 }: OptimizedSectionProps) {
-  const getBackgroundClass = () => {
-    switch (background) {
-      case 'gray':
-        return 'bg-gray-50'
-      case 'gradient':
-        return `bg-gradient-to-br from-${colorScheme}-50 to-white`
-      case 'colored':
-        return `bg-${colorScheme}-50`
-      default:
-        return 'bg-white'
-    }
+  const backgroundClasses = {
+    white: 'bg-white',
+    gray: 'bg-gray-50',
+    gradient: 'bg-gradient-to-br from-gray-50 via-white to-gray-50'
+  }
+  
+  const paddingClasses = {
+    small: 'py-12',
+    normal: 'py-16 lg:py-20',
+    large: 'py-20 lg:py-24'
   }
 
-  const sectionStyle = pattern ? {
-    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23${colorScheme === 'primary' ? '0074C8' : '6B7280'}' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-    backgroundSize: '60px 60px'
-  } : {}
-
   return (
-    <section 
-      id={id}
-      className={`section-padding ${getBackgroundClass()} relative overflow-hidden ${className}`}
-      style={sectionStyle}
-    >
-      <div className="container-custom relative">
+    <section className={`${backgroundClasses[background]} ${paddingClasses[padding]} ${className}`}>
+      <div className="container-custom">
+        {(title || description || badge) && (
+          <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
+            {badge && (
+              <div className="inline-flex items-center bg-blue-100 text-blue-800 rounded-full px-4 py-2 mb-6">
+                <span className="text-sm font-semibold">{badge}</span>
+              </div>
+            )}
+            
+            {title && (
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                {title}
+              </h2>
+            )}
+            
+            {description && (
+              <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
+                {description}
+              </p>
+            )}
+          </div>
+        )}
+        
         {children}
       </div>
     </section>

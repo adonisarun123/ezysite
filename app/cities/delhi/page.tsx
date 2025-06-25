@@ -158,7 +158,7 @@ export default function DelhiPage() {
       </section>
 
       {/* Local Services - Optimized */}
-      <OptimizedSection background="gradient" colorScheme="red" pattern>
+      <OptimizedSection background="gradient">
         <OptimizedHeader
           badge="Our Specialized Services"
           title="Tailored for Delhi's"
@@ -178,7 +178,7 @@ export default function DelhiPage() {
                 title={service.title}
                 description={service.description}
                 icon={<IconComponent className="h-6 w-6" />}
-                colorScheme={colorSchemes[index]}
+                variant="primary"
                 className="p-8"
               />
             )
@@ -187,7 +187,7 @@ export default function DelhiPage() {
       </OptimizedSection>
 
       {/* Service Areas - Optimized */}
-      <OptimizedSection background="colored" colorScheme="red" pattern>
+      <OptimizedSection background="gray">
         <OptimizedHeader
           badge="Complete Coverage"
           badgeIcon={<MapPinIcon className="h-5 w-5" />}

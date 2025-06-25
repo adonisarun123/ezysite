@@ -1,14 +1,15 @@
+import React from 'react'
 import { ReactNode } from 'react'
-import Link from 'next/link'
 
 interface OptimizedCardProps {
   title: string
   description: string
-  icon: ReactNode
+  icon?: ReactNode
   href?: string
-  colorScheme?: 'primary' | 'secondary' | 'accent' | 'trust' | 'red' | 'orange' | 'slate'
-  popular?: boolean
   className?: string
+  variant?: 'primary' | 'secondary' | 'accent'
+  features?: string[]
+  hoverEffect?: boolean
 }
 
 export default function OptimizedCard({
@@ -16,44 +17,50 @@ export default function OptimizedCard({
   description,
   icon,
   href,
-  colorScheme = 'primary',
-  popular = false,
-  className = ''
+  className = '',
+  variant = 'primary',
+  features = [],
+  hoverEffect = true
 }: OptimizedCardProps) {
-  const colors = {
-    primary: 'border-primary-200 bg-primary-50 text-primary-600 hover:bg-primary-100',
-    secondary: 'border-secondary-200 bg-secondary-50 text-secondary-600 hover:bg-secondary-100',
-    accent: 'border-accent-200 bg-accent-50 text-accent-600 hover:bg-accent-100',
-    trust: 'border-trust-200 bg-trust-50 text-trust-600 hover:bg-trust-100',
-    red: 'border-red-200 bg-red-50 text-red-600 hover:bg-red-100',
-    orange: 'border-orange-200 bg-orange-50 text-orange-600 hover:bg-orange-100',
-    slate: 'border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100'
+  const baseClasses = 'optimized-card rounded-xl p-6 transition-all duration-300'
+  const variantClasses = {
+    primary: 'bg-white border border-gray-200 hover:shadow-lg',
+    secondary: 'bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-md',
+    accent: 'bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 hover:shadow-lg'
   }
+  
+  const Component = href ? 'a' : 'div'
+  const props = href ? { href } : {}
 
-  const cardContent = (
-    <>
-      <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 border transition-all duration-300 ${colors[colorScheme]}`}>
-        {icon}
-      </div>
-      <h3 className="text-lg font-bold text-gray-900 mb-3 font-display">{title}</h3>
-      <p className="text-gray-600 leading-relaxed">{description}</p>
-      {popular && (
-        <div className="absolute -top-2 -right-2 bg-yellow-500 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full">
-          Popular
+  return (
+    <Component 
+      className={`${baseClasses} ${variantClasses[variant]} ${hoverEffect ? 'hover:scale-105' : ''} ${className}`}
+      {...props}
+    >
+      {icon && (
+        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+          {icon}
         </div>
       )}
-    </>
-  )
-
-  const baseClasses = `group relative bg-white rounded-xl p-6 border-2 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${className}`
-
-  return href ? (
-    <Link href={href} className={baseClasses}>
-      {cardContent}
-    </Link>
-  ) : (
-    <div className={baseClasses}>
-      {cardContent}
-    </div>
+      
+      <h3 className="text-lg font-bold text-gray-900 mb-3 font-display">
+        {title}
+      </h3>
+      
+      <p className="text-gray-600 mb-4 leading-relaxed">
+        {description}
+      </p>
+      
+      {features.length > 0 && (
+        <ul className="space-y-2">
+          {features.map((feature, index) => (
+            <li key={index} className="text-sm text-gray-600 flex items-start">
+              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-2 flex-shrink-0" />
+              {feature}
+            </li>
+          ))}
+        </ul>
+      )}
+    </Component>
   )
 }

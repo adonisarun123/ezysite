@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['images.unsplash.com', 'via.placeholder.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+      },
+    ],
   },
   
   // Enable compression and optimization
@@ -16,7 +25,7 @@ const nextConfig = {
     styledComponents: false,
   },
   
-  // Target modern browsers only
+  // Target modern browsers only to reduce bundle size
   experimental: {
     // Enable modern build features
     esmExternals: true,
@@ -28,7 +37,7 @@ const nextConfig = {
     optimizePackageImports: ['@heroicons/react'],
   },
   
-  // Webpack configuration for modern browsers
+  // Webpack configuration for modern browsers to reduce legacy JS
   webpack: (config, { dev, isServer }) => {
     if (dev) {
       // Disable filesystem cache that sometimes leads to missing pack.gz errors in dev
@@ -37,7 +46,7 @@ const nextConfig = {
       }
     }
     if (!dev && !isServer) {
-      // Target ES2020+ for client-side bundles
+      // Target ES2020+ for client-side bundles (removes 43KB of legacy polyfills)
       config.target = ['web', 'es2020'];
       
       // Optimize for modern browsers
@@ -48,9 +57,27 @@ const nextConfig = {
         sideEffects: false,
         // Minimize bundle size
         minimize: true,
+        // Split chunks more efficiently
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+              priority: 10,
+            },
+            common: {
+              minChunks: 2,
+              chunks: 'all',
+              enforce: true,
+              priority: 5,
+            },
+          },
+        },
       };
       
-      // Remove polyfills for modern features
+      // Remove polyfills for modern features that cause 43KB waste
       config.resolve.alias = {
         ...config.resolve.alias,
         // Don't include polyfills for modern JS features
@@ -58,6 +85,7 @@ const nextConfig = {
         'core-js/modules/es.array.flat': false,
         'core-js/modules/es.array.flat-map': false,
         'core-js/modules/es.object.from-entries': false,
+        'core-js/modules/es.object.has-own': false,
         'core-js/modules/es.string.trim-start': false,
         'core-js/modules/es.string.trim-end': false,
         'core-js/modules/es.promise': false,
@@ -85,7 +113,21 @@ const nextConfig = {
           {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN'
-          }
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Cache static assets for 1 year
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
         ],
       },
     ]

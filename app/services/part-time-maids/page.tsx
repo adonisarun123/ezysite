@@ -59,7 +59,7 @@ export default function PartTimeMaidsPage() {
   ]
 
   return (
-    <>
+    <div>
       <Head>
         <title>Part-Time Maid Services | 2-6 Hours Daily | EzyHelpers</title>
         <meta name="description" content="Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers." />
@@ -657,6 +657,6 @@ export default function PartTimeMaidsPage() {
       
       <Footer />
       </main>
-    </>
+    </div>
   )
 } 
