@@ -83,33 +83,19 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
+            <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-3">
               <Link
                 href="tel:+919972571005" 
-                className="group relative flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none overflow-hidden"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold text-sm rounded-lg shadow-md hover:shadow-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 whitespace-nowrap"
               >
-                {/* 3D Background Effects */}
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                {/* Floating particles */}
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300"></div>
-                <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300" style={{animationDelay: '0.2s'}}></div>
-                
-                {/* Icon with enhanced styling */}
-                <PhoneIcon className="h-5 w-5 relative z-10 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300" />
-                
-                {/* Phone number with enhanced styling */}
-                <span className="relative z-10 font-extrabold tracking-wide group-hover:text-yellow-100 transition-colors duration-300">
-                  +91 9972571005
-                </span>
-                
-                {/* Shine effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                </div>
+                <PhoneIcon className="h-4 w-4 flex-shrink-0" />
+                <span className="hidden xl:inline">+91 9972571005</span>
+                <span className="xl:hidden">Call Now</span>
               </Link>
-              <Link href="/hire-helper#hire-form" className="btn-primary">
+              <Link 
+                href="/hire-helper#hire-form" 
+                className="inline-flex items-center px-4 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold text-sm rounded-lg shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 whitespace-nowrap"
+              >
                 Book Now
               </Link>
             </div>
@@ -160,36 +146,18 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
-              <div className="py-6 space-y-4">
+              <div className="py-6 space-y-3">
                 <Link
                   href="tel:+919972571005"
-                  className="group relative flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-base rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none overflow-hidden"
+                  className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold text-base rounded-lg shadow-md hover:shadow-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {/* 3D Background Effects */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Floating particles */}
-                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300"></div>
-                  <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 animate-bounce transition-opacity duration-300" style={{animationDelay: '0.2s'}}></div>
-                  
-                  {/* Icon with enhanced styling */}
-                  <PhoneIcon className="h-6 w-6 relative z-10 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300" />
-                  
-                  {/* Phone number with enhanced styling */}
-                  <span className="relative z-10 font-extrabold tracking-wide group-hover:text-yellow-100 transition-colors duration-300">
-                    +91 9972571005
-                  </span>
-                  
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                  </div>
+                  <PhoneIcon className="h-5 w-5 flex-shrink-0" />
+                  <span>+91 9972571005</span>
                 </Link>
                 <Link 
                   href="/hire-helper#hire-form" 
-                  className="btn-primary w-full text-center block py-4"
+                  className="flex items-center justify-center w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold text-base rounded-lg shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Book Now
