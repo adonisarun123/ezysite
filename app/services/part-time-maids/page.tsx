@@ -309,20 +309,6 @@ export default function PartTimeMaidsPage() {
                 <div 
                   key={index} 
                   className={`group relative ${item.bgColor} rounded-xl p-6 border border-transparent hover:border-white hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-                  onMouseEnter={(e) => {
-                    const gradients = [
-                      'linear-gradient(to bottom right, #6366f1, #4f46e5)',
-                      'linear-gradient(to bottom right, #10b981, #059669)',
-                      'linear-gradient(to bottom right, #f97316, #ea580c)',
-                      'linear-gradient(to bottom right, #ec4899, #db2777)',
-                      'linear-gradient(to bottom right, #eab308, #d97706)',
-                      'linear-gradient(to bottom right, #8b5cf6, #7c3aed)'
-                    ]
-                    e.currentTarget.style.background = gradients[index]
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = ''
-                  }}
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
@@ -582,17 +568,6 @@ export default function PartTimeMaidsPage() {
                   key={index} 
                   href={service.href} 
                   className={`group relative ${service.bgColor} rounded-2xl p-8 border-2 ${service.borderColor} hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-                  onMouseEnter={(e) => {
-                    const gradients = [
-                      'linear-gradient(to bottom right, #f97316, #dc2626)',
-                      'linear-gradient(to bottom right, #8b5cf6, #7c3aed)',
-                      'linear-gradient(to bottom right, #ec4899, #f43f5e)'
-                    ]
-                    e.currentTarget.style.background = gradients[index]
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = ''
-                  }}
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">

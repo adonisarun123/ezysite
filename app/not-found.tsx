@@ -1,19 +1,19 @@
-'use client'
-
 import Link from 'next/link'
-import { HomeIcon, MagnifyingGlassIcon, ArrowLeftIcon } from '@heroicons/react/24/outline'
+import { HomeIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Head from 'next/head'
+import GoBackButton from '@/components/GoBackButton'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Page Not Found - 404 | EzyHelpers',
+  description: "The page you're looking for doesn't exist. Find trusted house help services, maids, cooks, and home maintenance services at EzyHelpers.",
+  keywords: '404, page not found, EzyHelpers, house help services, domestic help',
+}
 
 export default function NotFound() {
   return (
     <>
-      <Head>
-        <title>Page Not Found - 404 | EzyHelpers</title>
-        <meta name="description" content="The page you're looking for doesn't exist. Find trusted house help services, maids, cooks, and home maintenance services at EzyHelpers." />
-        <meta name="keywords" content="404, page not found, EzyHelpers, house help services, domestic help" />
-      </Head>
       
       <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <Navbar />
@@ -58,13 +58,7 @@ export default function NotFound() {
                 Browse Services
               </Link>
               
-              <button 
-                onClick={() => window.history.back()}
-                className="inline-flex items-center px-6 py-3 bg-white text-gray-700 font-semibold rounded-lg border border-gray-300 hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg"
-              >
-                <ArrowLeftIcon className="w-5 h-5 mr-2" />
-                Go Back
-              </button>
+              <GoBackButton />
             </div>
           </div>
         </section>

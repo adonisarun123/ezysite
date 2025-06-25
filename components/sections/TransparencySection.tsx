@@ -98,17 +98,7 @@ export default function TransparencySection() {
               <div 
                 key={index}
                 className={`group relative ${colorScheme.bg} rounded-2xl p-8 border-2 ${colorScheme.border} hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-                onMouseEnter={(e) => {
-                  const gradients = [
-                    'linear-gradient(to bottom right, #10b981, #0d9488)',
-                    'linear-gradient(to bottom right, #3b82f6, #4f46e5)', 
-                    'linear-gradient(to bottom right, #8b5cf6, #7c3aed)'
-                  ]
-                  e.currentTarget.style.background = gradients[index]
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = ''
-                }}
+
               >
                 {/* Background Effects */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">

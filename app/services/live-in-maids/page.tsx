@@ -331,20 +331,7 @@ export default function LiveInMaidsPage() {
                                 index === 3 ? 'var(--hover-bg-3)' : 
                                 index === 4 ? 'var(--hover-bg-4)' : 'var(--hover-bg-5)'}`
                   }}
-                  onMouseEnter={(e) => {
-                    const gradients = [
-                      'linear-gradient(to bottom right, #3b82f6, #4f46e5)',
-                      'linear-gradient(to bottom right, #10b981, #0d9488)',
-                      'linear-gradient(to bottom right, #ec4899, #f43f5e)',
-                      'linear-gradient(to bottom right, #f59e0b, #ea580c)',
-                      'linear-gradient(to bottom right, #8b5cf6, #7c3aed)',
-                      'linear-gradient(to bottom right, #64748b, #4b5563)'
-                    ]
-                    e.currentTarget.style.background = gradients[index]
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = ''
-                  }}
+
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
