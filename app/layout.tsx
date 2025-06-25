@@ -33,12 +33,16 @@ export const metadata: Metadata = {
   keywords: 'house help, maid services, domestic help, home care, live-in maid, part-time maid, full-time maid, elderly care, babysitter, nanny, cook services, home maintenance',
   authors: [{ name: 'EzyHelpers' }],
   robots: 'index, follow',
+  alternates: {
+    canonical: 'https://ezyhelpers.com',
+  },
   openGraph: {
     title: 'EzyHelpers - Trusted House Maid Services & Complete Home Help',
     description: 'Connect with verified professionals for all your home needs. Transparent pricing, quick booking, exceptional service.',
     type: 'website',
     locale: 'en_IN',
     siteName: 'EzyHelpers',
+    url: 'https://ezyhelpers.com',
     images: [
       {
         url: '/og-image.jpg',
