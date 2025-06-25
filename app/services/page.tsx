@@ -442,7 +442,7 @@ export default function ServicesPage() {
                 <Link 
                   key={index} 
                   href={service.href} 
-                  className={`group relative ${service.bgColor} rounded-3xl p-8 border-2 ${service.borderColor} hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
+                  className={`group relative ${service.bgColor} hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-900 rounded-3xl p-8 border-2 ${service.borderColor} hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
 
                 >
                   {/* Background Pattern */}
