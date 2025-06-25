@@ -393,17 +393,30 @@ export default function DeepCleaningPage() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-lg font-bold text-gray-900 mb-3 font-display">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                  <details className="group">
+                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </details>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
