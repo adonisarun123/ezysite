@@ -1,7 +1,5 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Link from 'next/link'
-import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, generalFAQs, serviceFAQs } from '@/components/schema'
@@ -30,6 +28,12 @@ import {
   GlobeAltIcon,
   FireIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Home Services | Maids, Cooks, Drivers & More | EzyHelpers',
+  description: 'Complete home services including maids, cooks, drivers, electricians, plumbers & more. Professional, verified helpers for all your household needs.',
+  keywords: 'home services, domestic help, maids, cooks, drivers, electricians, plumbers, household services, professional helpers',
+}
 
 export default function ServicesPage() {
   // Breadcrumb schema for services page
@@ -215,12 +219,7 @@ export default function ServicesPage() {
   ]
 
   return (
-    <div>
-      <Head>
-        <title>Home Services | Maids, Cooks, Drivers & More | EzyHelpers</title>
-        <meta name="description" content="Complete home services including maids, cooks, drivers, electricians, plumbers & more. Professional, verified helpers for all your household needs." />
-        <meta name="keywords" content="home services, domestic help, maids, cooks, drivers, electricians, plumbers, household services, professional helpers" />
-      </Head>
+    <>
       <main className="min-h-screen">
         {/* Schema Markup */}
         <BreadcrumbSchema items={breadcrumbs} />
@@ -686,6 +685,6 @@ export default function ServicesPage() {
       
       <Footer />
       </main>
-    </div>
+    </>
   )
 } 
