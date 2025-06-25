@@ -123,8 +123,9 @@ export default function CooksPage() {
                     href="tel:+919972571005"
                     className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
                   >
-                    <PhoneIcon className="h-5 w-5 mr-3 flex-shrink-0" />
-                    Call +91 9972571005
+                    <PhoneIcon className="h-5 w-5 mr-2 flex-shrink-0" />
+                    <span className="hidden sm:inline">Call +91 9972571005</span>
+                    <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
 
@@ -412,8 +413,9 @@ export default function CooksPage() {
               href="tel:+919972571005"
               className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
             >
-              <PhoneIcon className="h-5 w-5 mr-3 flex-shrink-0" />
-              Call +91 9972571005
+              <PhoneIcon className="h-5 w-5 mr-2 flex-shrink-0" />
+              <span className="hidden sm:inline">Call +91 9972571005</span>
+              <span className="sm:hidden">Call Now</span>
             </Link>
           </div>
         </div>

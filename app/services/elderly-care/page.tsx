@@ -339,7 +339,8 @@ export default function ElderlyCare() {
             </Link>
             <Link href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-4">
               <PhoneIcon className="h-5 w-5 mr-2" />
-              Call +91 9972571005
+              <span className="hidden sm:inline">Call +91 9972571005</span>
+              <span className="sm:hidden">Call Now</span>
             </Link>
           </div>
         </div>
