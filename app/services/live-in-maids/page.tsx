@@ -1,7 +1,5 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Link from 'next/link'
-import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { 
@@ -26,6 +24,12 @@ import {
   UserPlusIcon,
   BuildingOffice2Icon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: '24/7 Live In Maid Services | EzyHelpers',
+  description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
+  keywords: 'live in maid, 24/7 maid service, live-in domestic help, round the clock maid, residential maid services',
+}
 
 export default function LiveInMaidsPage() {
   const services = [
@@ -62,11 +66,6 @@ export default function LiveInMaidsPage() {
 
   return (
     <>
-      <Head>
-        <title>24/7 Live In Maid Services | EzyHelpers</title>
-        <meta name="description" content="Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed." />
-        <meta name="keywords" content="live in maid, 24/7 maid service, live-in domestic help, round the clock maid, residential maid services" />
-      </Head>
       <main className="min-h-screen">
         <Navbar />
       

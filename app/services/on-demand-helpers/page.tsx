@@ -1,7 +1,5 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Link from 'next/link'
-import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { 
@@ -23,6 +21,12 @@ import {
   TruckIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
+  description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
+  keywords: 'On-Demand Helper, same day helper, emergency domestic help, instant maid service, urgent cleaning',
+}
 
 export default function OnDemandHelpersPage() {
   const services = [
@@ -59,11 +63,6 @@ export default function OnDemandHelpersPage() {
 
   return (
     <>
-      <Head>
-        <title>On-Demand Helper Services | Same Day Booking | EzyHelpers</title>
-        <meta name="description" content="Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help." />
-        <meta name="keywords" content="On-Demand Helper, same day helper, emergency domestic help, instant maid service, urgent cleaning" />
-      </Head>
       <main className="min-h-screen">
         <Navbar />
       
