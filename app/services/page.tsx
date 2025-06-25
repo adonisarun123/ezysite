@@ -1,5 +1,7 @@
-import { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
+import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, generalFAQs, serviceFAQs } from '@/components/schema'
@@ -28,12 +30,6 @@ import {
   GlobeAltIcon,
   FireIcon
 } from '@heroicons/react/24/outline'
-
-export const metadata: Metadata = {
-  title: 'Home Services | Maids, Cooks, Drivers & More | EzyHelpers',
-  description: 'Complete home services including maids, cooks, drivers, electricians, plumbers & more. Professional, verified helpers for all your household needs.',
-  keywords: 'home services, domestic help, maids, cooks, drivers, electricians, plumbers, household services, professional helpers',
-}
 
 export default function ServicesPage() {
   // Breadcrumb schema for services page
@@ -219,12 +215,18 @@ export default function ServicesPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      {/* Schema Markup */}
-      <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={servicePageFAQs} aboutPage="https://ezyhelpers.com/services" />
-      
-      <Navbar />
+    <>
+      <Head>
+        <title>Home Services | Maids, Cooks, Drivers & More | EzyHelpers</title>
+        <meta name="description" content="Complete home services including maids, cooks, drivers, electricians, plumbers & more. Professional, verified helpers for all your household needs." />
+        <meta name="keywords" content="home services, domestic help, maids, cooks, drivers, electricians, plumbers, household services, professional helpers" />
+      </Head>
+      <main className="min-h-screen">
+        {/* Schema Markup */}
+        <BreadcrumbSchema items={breadcrumbs} />
+        <FAQSchema faqs={servicePageFAQs} aboutPage="https://ezyhelpers.com/services" />
+        
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-700 via-primary-600 to-primary-500 text-white pt-28 pb-24 lg:pb-32 overflow-hidden">
@@ -441,22 +443,7 @@ export default function ServicesPage() {
                   key={index} 
                   href={service.href} 
                   className={`group relative ${service.bgColor} rounded-3xl p-8 border-2 ${service.borderColor} hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-                  onMouseEnter={(e) => {
-                    const gradients = [
-                      'linear-gradient(to bottom right, #3b82f6, #4f46e5)',
-                      'linear-gradient(to bottom right, #10b981, #0d9488)',
-                      'linear-gradient(to bottom right, #8b5cf6, #7c3aed)',
-                      'linear-gradient(to bottom right, #f97316, #dc2626)',
-                      'linear-gradient(to bottom right, #ec4899, #f43f5e)',
-                      'linear-gradient(to bottom right, #14b8a6, #0891b2)',
-                      'linear-gradient(to bottom right, #f59e0b, #ea580c)',
-                      'linear-gradient(to bottom right, #64748b, #4b5563)'
-                    ]
-                    e.currentTarget.style.background = gradients[index]
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = ''
-                  }}
+
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
@@ -545,21 +532,7 @@ export default function ServicesPage() {
                   key={index} 
                   href={service.href} 
                   className={`group relative ${service.bgColor} rounded-2xl p-6 border-2 ${service.borderColor} hover:border-transparent hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer overflow-hidden`}
-                  onMouseEnter={(e) => {
-                    const gradients = [
-                      'linear-gradient(to bottom right, #dc2626, #991b1b)', // red gradient for appliance repair
-                      'linear-gradient(to bottom right, #7c2d12, #451a03)', // brown gradient for carpenters
-                      'linear-gradient(to bottom right, #1e40af, #1e3a8a)', // blue gradient for electricians
-                      'linear-gradient(to bottom right, #166534, #14532d)', // green gradient for gardener
-                      'linear-gradient(to bottom right, #0891b2, #0e7490)', // cyan gradient for deep cleaning
-                      'linear-gradient(to bottom right, #7c3aed, #6d28d9)', // purple gradient for painters
-                      'linear-gradient(to bottom right, #1f2937, #111827)'  // gray gradient for plumbers
-                    ]
-                    e.currentTarget.style.background = gradients[index]
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = ''
-                  }}
+
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
@@ -712,6 +685,7 @@ export default function ServicesPage() {
       </section>
       
       <Footer />
-    </main>
+      </main>
+    </>
   )
 } 

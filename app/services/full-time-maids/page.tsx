@@ -1,5 +1,7 @@
-import { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
+import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { 
@@ -17,12 +19,6 @@ import {
   UserPlusIcon,
   ArrowRightIcon
 } from '@heroicons/react/24/outline'
-
-export const metadata: Metadata = {
-  title: 'Full Time Maid Services | 8-10 Hours | EzyHelpers',
-  description: 'Reliable full-time maid services for daily cleaning, cooking & home care. Get 8–10 hrs of trained, verified help daily. Book trusted maids near you today!',
-  keywords: 'full time maid, daily maid service, 8-10 hours maid, full time domestic help, home care services',
-}
 
 export default function FullTimeMaidsPage() {
   const services = [
@@ -58,8 +54,14 @@ export default function FullTimeMaidsPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <Head>
+        <title>Full Time Maid Services | 8-10 Hours | EzyHelpers</title>
+        <meta name="description" content="Reliable full-time maid services for daily cleaning, cooking & home care. Get 8–10 hrs of trained, verified help daily. Book trusted maids near you today!" />
+        <meta name="keywords" content="full time maid, daily maid service, 8-10 hours maid, full time domestic help, home care services" />
+      </Head>
+      <main className="min-h-screen">
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-secondary-700 via-secondary-600 to-secondary-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
@@ -525,19 +527,6 @@ export default function FullTimeMaidsPage() {
                   key={index}
                   href={service.href}
                   className={`group relative ${service.bgColor} rounded-2xl p-8 border-2 ${service.borderColor} hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-                  onMouseEnter={(e) => {
-                    const gradients = [
-                      'linear-gradient(to bottom right, #f97316, #dc2626)',
-                      'linear-gradient(to bottom right, #8b5cf6, #7c3aed)',
-                      'linear-gradient(to bottom right, #ec4899, #f43f5e)'
-                    ]
-                    // @ts-ignore
-                    e.currentTarget.style.background = gradients[index]
-                  }}
-                  onMouseLeave={(e) => {
-                    // @ts-ignore
-                    e.currentTarget.style.background = ''
-                  }}
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl transform translate-x-16 -translate-y-16"></div>
@@ -590,6 +579,7 @@ export default function FullTimeMaidsPage() {
       </section>
       
       <Footer />
-    </main>
+      </main>
+    </>
   )
 } 

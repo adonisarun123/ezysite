@@ -1,5 +1,7 @@
-import { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
+import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { 
@@ -24,12 +26,6 @@ import {
   UserPlusIcon,
   BuildingOffice2Icon
 } from '@heroicons/react/24/outline'
-
-export const metadata: Metadata = {
-  title: '24/7 Live In Maid Services | EzyHelpers',
-  description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
-  keywords: 'live in maid, 24/7 maid service, live-in domestic help, round the clock maid, residential maid services',
-}
 
 export default function LiveInMaidsPage() {
   const services = [
@@ -65,8 +61,14 @@ export default function LiveInMaidsPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <Head>
+        <title>24/7 Live In Maid Services | EzyHelpers</title>
+        <meta name="description" content="Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed." />
+        <meta name="keywords" content="live in maid, 24/7 maid service, live-in domestic help, round the clock maid, residential maid services" />
+      </Head>
+      <main className="min-h-screen">
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-700 via-primary-600 to-primary-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
@@ -578,19 +580,6 @@ export default function LiveInMaidsPage() {
                   key={index}
                   href={service.href}
                   className={`group relative ${service.bgColor} rounded-2xl p-8 border-2 ${service.borderColor} hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-                  onMouseEnter={(e) => {
-                    const gradients = [
-                      'linear-gradient(to bottom right, #f97316, #dc2626)',
-                      'linear-gradient(to bottom right, #8b5cf6, #7c3aed)',
-                      'linear-gradient(to bottom right, #ec4899, #f43f5e)'
-                    ]
-                    // @ts-ignore
-                    e.currentTarget.style.background = gradients[index]
-                  }}
-                  onMouseLeave={(e) => {
-                    // @ts-ignore
-                    e.currentTarget.style.background = ''
-                  }}
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl transform translate-x-16 -translate-y-16"></div>
@@ -643,6 +632,7 @@ export default function LiveInMaidsPage() {
       </section>
 
       <Footer />
-    </main>
+      </main>
+    </>
   )
 } 

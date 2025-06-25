@@ -1,5 +1,7 @@
-import { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
+import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { 
@@ -22,12 +24,6 @@ import {
   BuildingOffice2Icon,
   UserPlusIcon
 } from '@heroicons/react/24/outline'
-
-export const metadata: Metadata = {
-  title: 'Part-Time Maid Services | 2-6 Hours Daily | EzyHelpers',
-  description: 'Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers.',
-  keywords: 'Part-Time Maid, hourly maid service, flexible maid service, part time domestic help, 2-6 hours maid',
-}
 
 export default function PartTimeMaidsPage() {
   const services = [
@@ -63,8 +59,14 @@ export default function PartTimeMaidsPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <Head>
+        <title>Part-Time Maid Services | 2-6 Hours Daily | EzyHelpers</title>
+        <meta name="description" content="Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers." />
+        <meta name="keywords" content="Part-Time Maid, hourly maid service, flexible maid service, part time domestic help, 2-6 hours maid" />
+      </Head>
+      <main className="min-h-screen">
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-accent-700 via-accent-600 to-accent-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
@@ -654,6 +656,7 @@ export default function PartTimeMaidsPage() {
       </section>
       
       <Footer />
-    </main>
+      </main>
+    </>
   )
 } 

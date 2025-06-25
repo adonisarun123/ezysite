@@ -1,5 +1,7 @@
-import { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
+import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { 
@@ -21,12 +23,6 @@ import {
   TruckIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'
-
-export const metadata: Metadata = {
-  title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
-  description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
-  keywords: 'On-Demand Helper, same day helper, emergency domestic help, instant maid service, urgent cleaning',
-}
 
 export default function OnDemandHelpersPage() {
   const services = [
@@ -62,8 +58,14 @@ export default function OnDemandHelpersPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <Head>
+        <title>On-Demand Helper Services | Same Day Booking | EzyHelpers</title>
+        <meta name="description" content="Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help." />
+        <meta name="keywords" content="On-Demand Helper, same day helper, emergency domestic help, instant maid service, urgent cleaning" />
+      </Head>
+      <main className="min-h-screen">
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-trust-700 via-trust-600 to-trust-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
@@ -339,18 +341,7 @@ export default function OnDemandHelpersPage() {
                 <div 
                   key={index} 
                   className={`group relative ${item.bgColor} rounded-xl p-6 border border-transparent hover:border-white hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-                  onMouseEnter={(e) => {
-                    const gradients = [
-                      'linear-gradient(to bottom right, #3b82f6, #1d4ed8)',
-                      'linear-gradient(to bottom right, #ef4444, #dc2626)',
-                      'linear-gradient(to bottom right, #a855f7, #7c3aed)',
-                      'linear-gradient(to bottom right, #f97316, #ea580c)'
-                    ]
-                    e.currentTarget.style.background = gradients[index]
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = ''
-                  }}
+
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
@@ -616,17 +607,7 @@ export default function OnDemandHelpersPage() {
                   key={index} 
                   href={service.href} 
                   className={`group relative ${service.bgColor} rounded-2xl p-8 border-2 ${service.borderColor} hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-                  onMouseEnter={(e) => {
-                    const gradients = [
-                      'linear-gradient(to bottom right, #14b8a6, #0891b2)',
-                      'linear-gradient(to bottom right, #f59e0b, #ea580c)',
-                      'linear-gradient(to bottom right, #6366f1, #8b5cf6)'
-                    ]
-                    e.currentTarget.style.background = gradients[index]
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = ''
-                  }}
+
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
@@ -689,6 +670,7 @@ export default function OnDemandHelpersPage() {
       </section>
       
       <Footer />
-    </main>
+      </main>
+    </>
   )
 } 
