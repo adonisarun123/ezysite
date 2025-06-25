@@ -30,6 +30,10 @@ const UrgencyCTA = dynamic(() => import('../components/UrgencyCTA'), {
   ssr: false,
   loading: () => null 
 })
+const WhatsAppFloat = dynamic(() => import('../components/WhatsAppFloat'), { 
+  ssr: false,
+  loading: () => null 
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ezyhelpers.com'),
@@ -213,12 +217,10 @@ export default function RootLayout({
         </noscript>
         
         {/* Favicons */}
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAARUlEQVR42u3NQQ0AMAwCsfxL7egQyiVIv+ONba7/AgAAAAAAAAAAAAD8PyYm1wsDGpseMaArtyYdMmhczr8iZM6/EiTOnxIkzp8SJc6fEdt8GAAwC3+zfbWwAAAABJRU5ErkJggg=="
-        />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#0074C8" />
         
         {/* Core Schema Markup */}
@@ -244,6 +246,7 @@ export default function RootLayout({
           {children}
           <LLMOptimization />
           <UrgencyCTA />
+          <WhatsAppFloat />
         </UrgencyProvider>
       </body>
     </html>
