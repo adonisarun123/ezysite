@@ -18,10 +18,12 @@ import {
   HeartIcon
 } from '@heroicons/react/24/outline';
 import { supabase } from '@/lib/supabaseClient'
+import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackChatStart, trackPhoneClick } from '@/lib/analytics'
 
 export default function ContactPage() {
   // Function to open Tawk.to chat
   const openTawkChat = () => {
+    trackChatStart('tawk', 'contact_page');
     if (typeof window !== 'undefined' && (window as any).Tawk_API) {
       (window as any).Tawk_API.toggle();
     }
@@ -80,6 +82,9 @@ export default function ContactPage() {
     e.preventDefault()
     if (validate()) {
       try {
+        // Track form submission
+        trackFormSubmit('contact_form', formData);
+        
         const { error } = await supabase.from('contact_leads').insert([
           {
             first_name: formData.firstName.trim(),
@@ -91,8 +96,14 @@ export default function ContactPage() {
           }
         ])
         if (error) throw error
+        
+        // Track successful form completion
+        trackFormComplete('contact_form');
+        
         setSubmitStatus('success')
-      } catch {
+      } catch (error) {
+        // Track form error
+        trackFormError('contact_form', 'submission_error', error instanceof Error ? error.message : 'Unknown error');
         setSubmitStatus('error')
       }
     }

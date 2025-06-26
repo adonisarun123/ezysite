@@ -131,40 +131,56 @@ export default function RootLayout({
           `
         }} />
         
-        {/* Aggressively defer ALL non-critical CSS */}
+        {/* Ultra-aggressive CSS deferral to eliminate render blocking */}
         <script dangerouslySetInnerHTML={{
           __html: `
-            // Load CSS after critical render path
-            function loadCSS(href) {
-              var link = document.createElement('link');
-              link.rel = 'stylesheet';
-              link.href = href;
-              link.media = 'print';
-              link.onload = function() { this.media = 'all'; };
-              document.head.appendChild(link);
-            }
-            
-            // Load on user interaction or after 1 second
-            var cssLoaded = false;
-            function loadAllCSS() {
-              if (cssLoaded) return;
-              cssLoaded = true;
-              loadCSS('/dom-optimizations.css');
-            }
-            
-            // Immediate load after critical render
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', function() {
-                setTimeout(loadAllCSS, 100);
+            // Ultra-fast CSS loading with minimal blocking
+            (function() {
+              var cssLoaded = false;
+              
+              function loadCSS(href, media) {
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = href;
+                link.media = media || 'print';
+                link.onload = function() { 
+                  this.media = 'all';
+                  this.onload = null;
+                };
+                document.head.appendChild(link);
+                return link;
+              }
+              
+              function loadAllCSS() {
+                if (cssLoaded) return;
+                cssLoaded = true;
+                
+                // Load non-critical CSS immediately after critical render
+                loadCSS('/dom-optimizations.css');
+                
+                // Preload any other CSS that might be needed
+                var preloadLink = document.createElement('link');
+                preloadLink.rel = 'preload';
+                preloadLink.as = 'style';
+                preloadLink.href = '/dom-optimizations.css';
+                document.head.appendChild(preloadLink);
+              }
+              
+              // Load immediately after DOM is ready (non-blocking)
+              if (document.readyState !== 'loading') {
+                setTimeout(loadAllCSS, 50);
+              } else {
+                document.addEventListener('DOMContentLoaded', function() {
+                  setTimeout(loadAllCSS, 50);
+                });
+              }
+              
+              // Also load on any user interaction for instant response
+              var events = ['mousedown', 'touchstart', 'keydown', 'scroll'];
+              events.forEach(function(event) {
+                document.addEventListener(event, loadAllCSS, { once: true, passive: true });
               });
-            } else {
-              setTimeout(loadAllCSS, 100);
-            }
-            
-            // Also load on first user interaction
-            ['mousedown', 'touchstart', 'keydown'].forEach(function(event) {
-              document.addEventListener(event, loadAllCSS, { once: true, passive: true });
-            });
+            })();
           `
         }} />
         <noscript>
@@ -182,36 +198,62 @@ export default function RootLayout({
         <OrganizationSchema />
         <WebSiteSchema />
         
-        {/* Google Analytics - Optimized loading */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {/* Google Analytics - Ultra-deferred to prevent blocking */}
         <script dangerouslySetInnerHTML={{
           __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-868JRCDRFW', {
-              page_title: document.title,
-              page_location: window.location.href
-            });
-            
-            // Load GA script after page interaction or 3 seconds (whichever comes first)
-            let gaLoaded = false;
-            function loadGA() {
-              if (gaLoaded) return;
-              gaLoaded = true;
-              const script = document.createElement('script');
-              script.async = true;
-              script.src = 'https://www.googletagmanager.com/gtag/js?id=G-868JRCDRFW';
-              document.head.appendChild(script);
-            }
-            
-            // Load on user interaction
-            ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(event => {
-              document.addEventListener(event, loadGA, { once: true, passive: true });
-            });
-            
-            // Fallback: load after 3 seconds
-            setTimeout(loadGA, 3000);
+            // Ultra-deferred Google Analytics to eliminate render blocking
+            (function() {
+              var gaLoaded = false;
+              
+              function loadGA() {
+                if (gaLoaded) return;
+                gaLoaded = true;
+                
+                // Initialize dataLayer first
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                
+                // Create and load GA script
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-868JRCDRFW';
+                script.onload = function() {
+                  gtag('js', new Date());
+                  gtag('config', 'G-868JRCDRFW', {
+                    page_title: document.title,
+                    page_location: window.location.href,
+                    send_page_view: true
+                  });
+                };
+                document.head.appendChild(script);
+              }
+              
+              // Only load after page is fully loaded AND user interacts
+              var pageLoaded = false;
+              window.addEventListener('load', function() {
+                pageLoaded = true;
+              });
+              
+              function checkAndLoadGA() {
+                if (pageLoaded) {
+                  setTimeout(loadGA, 1000); // 1 second delay after page load
+                }
+              }
+              
+              // Load on user interaction (but only after page is loaded)
+              var events = ['mousedown', 'touchstart', 'keydown', 'scroll', 'click'];
+              events.forEach(function(event) {
+                document.addEventListener(event, function() {
+                  if (pageLoaded) loadGA();
+                }, { once: true, passive: true });
+              });
+              
+              // Fallback: load after 5 seconds if page is loaded
+              setTimeout(function() {
+                if (pageLoaded) loadGA();
+              }, 5000);
+            })();
           `
         }} />
       </head>

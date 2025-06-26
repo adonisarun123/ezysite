@@ -1,7 +1,33 @@
 import Link from 'next/link'
 import { CheckBadgeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { trackCTAClick, trackPhoneClick, trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
 
 export default function CTASection() {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      phone: formData.get('phone') as string,
+      service: formData.get('service') as string,
+      city: formData.get('city') as string,
+    };
+
+    try {
+      // Track form submission
+      trackFormSubmit('cta_quick_quote', data);
+      
+      // Here you would normally submit to your backend
+      // For now, just track completion
+      trackFormComplete('cta_quick_quote');
+      
+      // Reset form or show success message
+      e.currentTarget.reset();
+    } catch (error) {
+      trackFormError('cta_quick_quote', 'submission_error', error instanceof Error ? error.message : 'Unknown error');
+    }
+  };
+
   return (
     <section className="section-padding bg-gradient-to-r from-primary-600 to-primary-700 text-white">
       <div className="container-custom">
@@ -22,6 +48,7 @@ export default function CTASection() {
             <Link 
               href="/hire-helper" 
               className="w-full bg-white text-primary-600 font-semibold text-lg rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 inline-flex flex-row items-center justify-center gap-3 py-4 px-6 whitespace-nowrap"
+              onClick={() => trackCTAClick('Book Verified Helper Now', 'cta_section', 'primary')}
             >
               <CheckBadgeIcon className="h-6 w-6 flex-shrink-0 self-center" />
               <span className="leading-none">Book Verified Helper Now</span>
@@ -41,6 +68,7 @@ export default function CTASection() {
             <Link 
               href="tel:+919972571005" 
               className="w-full bg-transparent border-2 border-white text-white font-semibold text-lg rounded-2xl hover:bg-white hover:text-primary-600 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 inline-flex flex-row items-center justify-center gap-3 py-4 px-6 whitespace-nowrap"
+              onClick={() => trackPhoneClick('+919972571005', 'cta_section')}
             >
               <PhoneIcon className="h-6 w-6 flex-shrink-0 self-center" />
               <span className="leading-none">Call: +91 9972571005</span>
@@ -64,7 +92,7 @@ export default function CTASection() {
             <h3 className="text-xl font-semibold text-gray-900 mb-6 font-display">
               Get a Quick Quote
             </h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleFormSubmit} onFocus={() => trackFormStart('cta_quick_quote', 'cta_section')}>
               <div>
                 <label htmlFor="cta-name" className="sr-only">Your Name</label>
                 <input

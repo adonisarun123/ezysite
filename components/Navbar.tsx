@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Bars3Icon, XMarkIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { useUrgency } from './UrgencyContext'
+import { trackPhoneClick, trackCTAClick } from '@/lib/analytics'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -89,6 +90,7 @@ export default function Navbar() {
               <Link
                 href="tel:+919972571005" 
                 className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold text-sm rounded-lg shadow-md hover:shadow-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 whitespace-nowrap"
+                onClick={() => trackPhoneClick('+919972571005', 'navbar_desktop')}
               >
                 <PhoneIcon className="h-4 w-4 flex-shrink-0" />
                 <span className="hidden xl:inline">+91 9972571005</span>
@@ -97,6 +99,7 @@ export default function Navbar() {
               <Link 
                 href="/hire-helper#hire-form" 
                 className="inline-flex items-center px-4 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold text-sm rounded-lg shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 whitespace-nowrap"
+                onClick={() => trackCTAClick('Book Now', 'navbar_desktop', 'primary')}
               >
                 Book Now
               </Link>
@@ -154,7 +157,10 @@ export default function Navbar() {
                 <Link
                   href="tel:+919972571005"
                   className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold text-base rounded-lg shadow-md hover:shadow-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    trackPhoneClick('+919972571005', 'navbar_mobile');
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   <PhoneIcon className="h-5 w-5 flex-shrink-0" />
                   <span>+91 9972571005</span>
@@ -162,7 +168,10 @@ export default function Navbar() {
                 <Link 
                   href="/hire-helper#hire-form" 
                   className="flex items-center justify-center w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold text-base rounded-lg shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    trackCTAClick('Book Now', 'navbar_mobile', 'primary');
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   Book Now
                 </Link>

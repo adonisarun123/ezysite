@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ChevronRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
+import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackStepComplete, trackServiceSelect, trackBookingStart, trackBookingComplete } from '@/lib/analytics'
 
 interface FormData {
   name: string
@@ -60,9 +61,26 @@ export default function HireHelperForm() {
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [requestId, setRequestId] = useState<string | null>(null)
+  const [hasTrackedStart, setHasTrackedStart] = useState(false)
+
+  // Track form start when component mounts
+  useEffect(() => {
+    if (!hasTrackedStart) {
+      trackFormStart('hire_helper_form', 'hire_helper_page');
+      setHasTrackedStart(true);
+    }
+  }, [hasTrackedStart])
 
   const handleInputChange = (field: keyof FormData, value: string | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }))
+    
+    // Track service selection
+    if (field === 'serviceType' && typeof value === 'string') {
+      const selectedService = services.find(s => s.value === value);
+      if (selectedService) {
+        trackServiceSelect(selectedService.label, value, 'hire_helper_form');
+      }
+    }
   }
 
   const handleLanguageToggle = (language: string) => {
@@ -156,7 +174,19 @@ export default function HireHelperForm() {
   }
 
   const nextStep = () => {
-    if (validateStep()) setStep(prev => Math.min(prev + 1, 3))
+    if (validateStep()) {
+      const newStep = Math.min(step + 1, 3);
+      setStep(newStep);
+      
+      // Track step completion
+      const stepNames = ['Personal Information', 'Service Requirements', 'Additional Details'];
+      trackStepComplete(stepNames[step - 1], step, 3);
+      
+      // Track booking start when moving to step 2
+      if (newStep === 2 && formData.city) {
+        trackBookingStart(formData.serviceType || 'unknown', formData.city);
+      }
+    }
   }
   const prevStep = () => setStep(prev => Math.max(prev - 1, 1))
 
@@ -164,6 +194,9 @@ export default function HireHelperForm() {
     e.preventDefault()
     if (validateAll()) {
       try {
+        // Track form submission
+        trackFormSubmit('hire_helper_form', formData);
+        
         const newRequestId = generateRequestId()
         const { error } = await supabase.from('hire_helper_leads').insert([
           {
@@ -184,9 +217,16 @@ export default function HireHelperForm() {
           }
         ])
         if (error) throw error
+        
+        // Track successful form completion
+        trackFormComplete('hire_helper_form', newRequestId);
+        trackBookingComplete(formData.serviceType, formData.city, newRequestId);
+        
         setRequestId(newRequestId)
         setSubmitStatus('success')
-      } catch {
+      } catch (error) {
+        // Track form error
+        trackFormError('hire_helper_form', 'submission_error', error instanceof Error ? error.message : 'Unknown error');
         setSubmitStatus('error')
       }
     }

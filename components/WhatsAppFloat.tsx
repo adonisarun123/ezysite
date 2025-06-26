@@ -1,12 +1,16 @@
 'use client'
 
 import React from 'react';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 const WhatsAppFloat: React.FC = () => {
   const phoneNumber = '+919972571005';
   const message = 'Hi! I would like to know more about your services.';
   
   const handleWhatsAppClick = () => {
+    // Track WhatsApp click event
+    trackWhatsAppClick(phoneNumber, message, 'floating_button');
+    
     const url = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
