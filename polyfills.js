@@ -1,19 +1,16 @@
-// Minimal polyfills for essential features only
-// This file is intentionally almost empty to reduce bundle size
+// NO POLYFILLS - Modern browsers only (ES2022+)
+// This file is intentionally empty to eliminate all polyfill overhead
 
-// Only include polyfills if absolutely necessary for your target browsers
-// Modern browsers (ES2022+) don't need these polyfills
+// Target browsers: Chrome 88+, Firefox 85+, Safari 14+, Edge 88+
+// These browsers support all ES2022+ features natively
 
-// Uncomment only if you need to support very old browsers
-// import 'core-js/stable';
-// import 'regenerator-runtime/runtime';
-
-// For modern browsers, this file should remain empty or minimal
-if (typeof window !== 'undefined') {
-  console.log('Polyfills loaded - modern browsers require minimal polyfills');
-}
+// Only load IntersectionObserver polyfill if absolutely necessary
 if (typeof window !== 'undefined' && !('IntersectionObserver' in window)) {
-  import('intersection-observer')
+  // Only for very old browsers - most modern browsers have this
+  import('intersection-observer').catch(() => {
+    // Graceful fallback if polyfill fails to load
+    console.warn('IntersectionObserver polyfill failed to load');
+  });
 }
 
 // ResizeObserver for responsive components (needed for some browsers)

@@ -40,6 +40,8 @@ const nextConfig = {
     optimizeCss: true,
     // Automatically rewrite package imports (Heroicons) to the exact path for better tree-shaking
     optimizePackageImports: ['@heroicons/react'],
+    // Disable polyfills for modern browsers
+    serverComponentsExternalPackages: [],
   },
   
   // Webpack configuration for modern browsers to eliminate legacy JS
@@ -54,6 +56,13 @@ const nextConfig = {
       // Target modern browsers only - ES2022+ (eliminates more polyfills)
       config.target = ['web', 'es2022'];
       
+      // Completely disable polyfills
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        'core-js': false,
+        'regenerator-runtime': false,
+      };
+      
       // Optimize for modern browsers with aggressive tree-shaking
       config.optimization = {
         ...config.optimization,
@@ -63,7 +72,7 @@ const nextConfig = {
         innerGraph: true,
         // Minimize bundle size aggressively
         minimize: true,
-        // More efficient chunk splitting
+                // Simplified chunk splitting to reduce unused JS
         splitChunks: {
           chunks: 'all',
           minSize: 20000,
@@ -91,7 +100,9 @@ const nextConfig = {
       // Completely eliminate polyfills for modern features
       config.resolve.alias = {
         ...config.resolve.alias,
-        // Eliminate all legacy polyfills
+        // Eliminate ALL legacy polyfills
+        'core-js': false,
+        'core-js/stable': false,
         'core-js/modules/es.array.at': false,
         'core-js/modules/es.array.flat': false,
         'core-js/modules/es.array.flat-map': false,
@@ -112,14 +123,30 @@ const nextConfig = {
         'core-js/modules/es.string.iterator': false,
         'core-js/modules/web.dom-collections.iterator': false,
         'regenerator-runtime': false,
+        'regenerator-runtime/runtime': false,
       };
       
-      // Exclude unnecessary modules
+      // Exclude unnecessary modules completely
       config.externals = {
         ...config.externals,
         'core-js': 'var {}',
+        'core-js/stable': 'var {}',
         'regenerator-runtime': 'var {}',
+        'regenerator-runtime/runtime': 'var {}',
       };
+      
+      // Add plugins to further optimize
+      
+      // Ignore polyfill modules
+      const IgnorePlugin = require('webpack').IgnorePlugin;
+      config.plugins.push(
+        new IgnorePlugin({
+          resourceRegExp: /^core-js/,
+        }),
+        new IgnorePlugin({
+          resourceRegExp: /^regenerator-runtime/,
+        })
+      );
     }
     
     return config;

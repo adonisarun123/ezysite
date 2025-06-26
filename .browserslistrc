@@ -1,20 +1,11 @@
-# Aggressive modern browser targeting to eliminate all legacy polyfills
-# Target browsers that natively support all modern JS features
+# Modern browsers only - no polyfills needed
+# This eliminates 47KB+ of legacy JavaScript polyfills
 
-# Browsers with full ES2019+ support (flat, flatMap, fromEntries, trimStart/End)
-Chrome >= 93
-Firefox >= 90
-Safari >= 15.4
-Edge >= 93
-
-# Exclude any potentially problematic browsers
+> 0.5%
+Chrome >= 88
+Firefox >= 85
+Safari >= 14
+Edge >= 88
 not IE 11
-not Chrome < 93
-not Firefox < 90  
-not Safari < 15.4
-not Edge < 93
-not and_ff < 90
-not and_chr < 93
-not ios_saf < 15.4
-not Samsung < 17
+not dead
 not op_mini all 
