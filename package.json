@@ -9,7 +9,8 @@
     "lint": "next lint",
     "analyze-bundle": "node scripts/analyze-bundle.js",
     "optimize-css": "node scripts/optimize-css.js",
-    "build:optimized": "npm run optimize-css && npm run build",
+    "optimize-performance": "node scripts/optimize-performance.js",
+    "build:optimized": "npm run optimize-performance && npm run build",
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "validate-sitemap": "curl -s http://localhost:3000/sitemap.xml | head -10"
   },

@@ -227,17 +227,36 @@ export default function RootLayout({
         <OrganizationSchema />
         <WebSiteSchema />
         
-        {/* Google Analytics - Load asynchronously */}
-        <script 
-          async 
-          src="https://www.googletagmanager.com/gtag/js?id=G-868JRCDRFW"
-        />
+        {/* Google Analytics - Optimized loading */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <script dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-868JRCDRFW');
+            gtag('config', 'G-868JRCDRFW', {
+              page_title: document.title,
+              page_location: window.location.href
+            });
+            
+            // Load GA script after page interaction or 3 seconds (whichever comes first)
+            let gaLoaded = false;
+            function loadGA() {
+              if (gaLoaded) return;
+              gaLoaded = true;
+              const script = document.createElement('script');
+              script.async = true;
+              script.src = 'https://www.googletagmanager.com/gtag/js?id=G-868JRCDRFW';
+              document.head.appendChild(script);
+            }
+            
+            // Load on user interaction
+            ['mousedown', 'touchstart', 'keydown', 'scroll'].forEach(event => {
+              document.addEventListener(event, loadGA, { once: true, passive: true });
+            });
+            
+            // Fallback: load after 3 seconds
+            setTimeout(loadGA, 3000);
           `
         }} />
       </head>
