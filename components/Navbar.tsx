@@ -52,6 +52,8 @@ export default function Navbar() {
                       height={40}
                       className="object-contain"
                       priority
+                      quality={60}
+                      sizes="40px"
                     />
                   </div>
                   <span className="text-xl font-bold text-gray-900 font-display">EzyHelpers</span>
@@ -118,6 +120,8 @@ export default function Navbar() {
                     height={32}
                     className="object-contain"
                     priority
+                    quality={60}
+                    sizes="32px"
                   />
                 </div>
                 <span className="text-lg font-bold text-gray-900 font-display">EzyHelpers</span>

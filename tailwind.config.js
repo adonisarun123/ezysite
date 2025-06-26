@@ -5,8 +5,13 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  // Content purging (v3 syntax)
-  safelist: ['html', 'body'],
+  // Aggressive CSS purging for production
+  safelist: [],
+  blocklist: [
+    'debug-*',
+    'test-*',
+    'demo-*',
+  ],
   theme: {
     extend: {
       colors: {

@@ -88,128 +88,83 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" href="/grid.svg" as="image" type="image/svg+xml" />
         
-        {/* Critical CSS - Inline the most essential styles for LCP */}
+        {/* Critical CSS - Inline only the absolute essentials for LCP */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            /* Critical above-the-fold styles only */
-            * {
-              box-sizing: border-box;
-            }
+            /* Minimal critical styles - everything else deferred */
+            *{box-sizing:border-box}
+            html{scroll-behavior:smooth}
+            body{margin:0;font-family:var(--font-inter),system-ui,sans-serif;line-height:1.6;color:#2B2B2B;background:#F9FBFF;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
             
-            html {
-              scroll-behavior: smooth;
-            }
+            /* Only above-the-fold layout */
+            .hero-critical{position:relative;min-height:80vh;display:flex;align-items:center;background:linear-gradient(135deg,rgba(0,116,200,0.9),rgba(61,184,245,0.9));color:white}
+            .nav-critical{position:fixed;top:0;left:0;right:0;z-index:40;background:white;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+            .container-critical{margin:0 auto;max-width:80rem;padding:0 1rem}
             
-            body {
-              margin: 0;
-              font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-              line-height: 1.6;
-              color: #111827;
-              background-color: #ffffff;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
-            }
+            /* Critical text styles */
+            .text-4xl{font-size:2.25rem;line-height:2.5rem}
+            .text-xl{font-size:1.25rem;line-height:1.75rem}
+            .font-bold{font-weight:700}
+            .font-semibold{font-weight:600}
+            .text-center{text-align:center}
+            .mb-4{margin-bottom:1rem}
+            .mb-8{margin-bottom:2rem}
             
-            /* Essential layout classes for LCP */
-            .container-custom {
-              margin: 0 auto;
-              max-width: 80rem;
-              padding: 0 1rem;
-            }
+            /* Critical button - only primary CTA */
+            .btn-critical{background:#0074C8;color:white;font-weight:600;padding:0.875rem 2rem;border-radius:0.5rem;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;transition:background 0.2s;font-size:1rem}
+            .btn-critical:hover{background:#005ea6}
             
-            .section-padding {
-              padding: 3rem 0;
-            }
+            /* Critical flex utilities */
+            .flex{display:flex}
+            .items-center{align-items:center}
+            .justify-center{justify-content:center}
+            .justify-between{justify-content:space-between}
+            .gap-2{gap:0.5rem}
+            .gap-4{gap:1rem}
             
-            /* Critical button styles for CTA */
-            .btn-primary {
-              background-color: #0074C8;
-              color: white;
-              font-weight: 600;
-              padding: 0.875rem 2rem;
-              border-radius: 0.5rem;
-              border: none;
-              cursor: pointer;
-              display: inline-flex;
-              align-items: center;
-              gap: 0.5rem;
-              text-decoration: none;
-              transition: all 0.2s ease;
-              font-size: 1rem;
-            }
-            
-            .btn-primary:hover {
-              background-color: #005ea6;
-              transform: translateY(-1px);
-            }
-            
-            .btn-secondary {
-              background-color: transparent;
-              color: #0074C8;
-              font-weight: 600;
-              padding: 0.875rem 2rem;
-              border: 2px solid #0074C8;
-              border-radius: 0.5rem;
-              cursor: pointer;
-              display: inline-flex;
-              align-items: center;
-              gap: 0.5rem;
-              text-decoration: none;
-              transition: all 0.2s ease;
-              font-size: 1rem;
-            }
-            
-            .btn-secondary:hover {
-              background-color: #0074C8;
-              color: white;
-              transform: translateY(-1px);
-            }
-            
-            /* Typography essentials */
-            .text-gradient {
-              background: linear-gradient(135deg, #0074C8, #3DB8F5);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              background-clip: text;
-            }
-            
-            .font-display {
-              font-family: var(--font-poppins), var(--font-inter), system-ui, sans-serif;
-            }
-            
-            /* Mobile responsiveness */
-            @media (min-width: 640px) {
-              .container-custom {
-                padding: 0 1.5rem;
-              }
-              .section-padding {
-                padding: 4rem 0;
-              }
-            }
-            
-            @media (min-width: 1024px) {
-              .container-custom {
-                padding: 0 2rem;
-              }
-              .section-padding {
-                padding: 5rem 0;
-              }
+            /* Mobile critical */
+            @media(max-width:640px){
+              .text-4xl{font-size:1.875rem;line-height:2.25rem}
+              .text-xl{font-size:1.125rem;line-height:1.75rem}
+              .container-critical{padding:0 0.5rem}
             }
           `
         }} />
         
-        {/* Load non-critical CSS asynchronously to prevent render blocking */}
-        <link 
-          rel="preload" 
-          href="/dom-optimizations.css" 
-          as="style" 
-        />
+        {/* Aggressively defer ALL non-critical CSS */}
         <script dangerouslySetInnerHTML={{
           __html: `
-            var link = document.querySelector('link[href="/dom-optimizations.css"]');
-            if (link) {
+            // Load CSS after critical render path
+            function loadCSS(href) {
+              var link = document.createElement('link');
               link.rel = 'stylesheet';
+              link.href = href;
+              link.media = 'print';
+              link.onload = function() { this.media = 'all'; };
+              document.head.appendChild(link);
             }
+            
+            // Load on user interaction or after 1 second
+            var cssLoaded = false;
+            function loadAllCSS() {
+              if (cssLoaded) return;
+              cssLoaded = true;
+              loadCSS('/dom-optimizations.css');
+            }
+            
+            // Immediate load after critical render
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(loadAllCSS, 100);
+              });
+            } else {
+              setTimeout(loadAllCSS, 100);
+            }
+            
+            // Also load on first user interaction
+            ['mousedown', 'touchstart', 'keydown'].forEach(function(event) {
+              document.addEventListener(event, loadAllCSS, { once: true, passive: true });
+            });
           `
         }} />
         <noscript>

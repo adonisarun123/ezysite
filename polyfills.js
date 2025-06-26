@@ -1,10 +1,17 @@
-// Minimal polyfills for modern browsers only
-// This eliminates 43KB of unnecessary legacy JavaScript polyfills
+// Minimal polyfills for essential features only
+// This file is intentionally almost empty to reduce bundle size
 
-// Only include absolutely essential polyfills for modern browsers
-// Most modern browsers (Chrome 88+, Firefox 85+, Safari 14+) support these natively
+// Only include polyfills if absolutely necessary for your target browsers
+// Modern browsers (ES2022+) don't need these polyfills
 
-// Intersection Observer for lazy loading (still needed for some older mobile browsers)
+// Uncomment only if you need to support very old browsers
+// import 'core-js/stable';
+// import 'regenerator-runtime/runtime';
+
+// For modern browsers, this file should remain empty or minimal
+if (typeof window !== 'undefined') {
+  console.log('Polyfills loaded - modern browsers require minimal polyfills');
+}
 if (typeof window !== 'undefined' && !('IntersectionObserver' in window)) {
   import('intersection-observer')
 }
