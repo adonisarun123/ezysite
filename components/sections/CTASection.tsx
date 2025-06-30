@@ -19,8 +19,28 @@ export default function CTASection() {
       // Track form submission
       trackFormSubmit('cta_quick_quote', data);
       
-      // Here you would normally submit to your backend
-      // For now, just track completion
+      // Send email notification
+      try {
+        const emailResponse = await fetch('/api/send-lead-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            leadType: 'general',
+            formData: data
+          })
+        });
+
+        if (!emailResponse.ok) {
+          console.error('Failed to send email notification');
+        }
+      } catch (emailError) {
+        console.error('Email sending error:', emailError);
+        // Don't fail the form submission if email fails
+      }
+      
+      // Track completion
       trackFormComplete('cta_quick_quote');
       
       // Reset form or show success message

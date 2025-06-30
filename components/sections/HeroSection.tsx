@@ -117,22 +117,56 @@ export default function HeroSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (validate()) {
+    
+    if (!validate()) {
+      return; // Stop here if validation fails
+    }
+    
+    try {
+      // Store in Supabase
+      const { error } = await supabase.from('leads').insert([
+        {
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          service: formData.service,
+          city: formData.city
+        }
+      ])
+      if (error) throw error
+      
+      // Send email notification
       try {
-        const { error } = await supabase.from('leads').insert([
-          {
-            name: formData.name.trim(),
-            phone: formData.phone.trim(),
-            service: formData.service,
-            city: formData.city
-          }
-        ])
-        if (error) throw error
-        setSubmitStatus('success')
-        setFormData({ name: '', phone: '', service: '', city: '' })
-      } catch {
-        setSubmitStatus('error')
+        const emailResponse = await fetch('/api/send-lead-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            leadType: 'general',
+            formData: {
+              name: formData.name.trim(),
+              phone: formData.phone.trim(),
+              service: formData.service,
+              city: formData.city
+            }
+          })
+        });
+
+        if (!emailResponse.ok) {
+          console.error('Failed to send email notification');
+        } else {
+          console.log('Email notification sent successfully');
+        }
+      } catch (emailError) {
+        console.error('Email sending error:', emailError);
+        // Don't fail the form submission if email fails
       }
+      
+      setSubmitStatus('success')
+      setFormData({ name: '', phone: '', service: '', city: '' })
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error')
     }
   }
 
@@ -236,7 +270,6 @@ export default function HeroSection() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  required
                   className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
                   placeholder="Your Name"
                   aria-label="Your Name"
@@ -249,7 +282,6 @@ export default function HeroSection() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  required
                   className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
                   placeholder="Phone Number (+91 XXXXX XXXXX)"
                   aria-label="Phone Number"
@@ -261,7 +293,6 @@ export default function HeroSection() {
                   name="service"
                   value={formData.service}
                   onChange={handleInputChange}
-                  required
                   className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
                   aria-label="Select Service Type"
                 >
@@ -277,7 +308,6 @@ export default function HeroSection() {
                   name="city"
                   value={formData.city}
                   onChange={handleInputChange}
-                  required
                   className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
                   aria-label="Select City"
                 >

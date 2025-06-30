@@ -85,6 +85,7 @@ export default function ContactPage() {
         // Track form submission
         trackFormSubmit('contact_form', formData);
         
+        // Store in Supabase
         const { error } = await supabase.from('contact_leads').insert([
           {
             first_name: formData.firstName.trim(),
@@ -96,6 +97,34 @@ export default function ContactPage() {
           }
         ])
         if (error) throw error
+        
+        // Send email notification
+        try {
+          const emailResponse = await fetch('/api/send-lead-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              leadType: 'contact',
+              formData: {
+                firstName: formData.firstName.trim(),
+                lastName: formData.lastName.trim(),
+                email: formData.email.trim(),
+                phone: formData.phone.trim(),
+                subject: formData.subject,
+                message: formData.message.trim()
+              }
+            })
+          });
+
+          if (!emailResponse.ok) {
+            console.error('Failed to send email notification');
+          }
+        } catch (emailError) {
+          console.error('Email sending error:', emailError);
+          // Don't fail the form submission if email fails
+        }
         
         // Track successful form completion
         trackFormComplete('contact_form');
