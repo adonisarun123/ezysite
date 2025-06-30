@@ -170,6 +170,17 @@ Create a `.env.local` file for environment-specific configurations:
 NEXT_PUBLIC_SITE_URL=https://yourdomain.com
 NEXT_PUBLIC_PHONE=+919972571005
 NEXT_PUBLIC_EMAIL=contact@ezyhelpers.com
+
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+# SMTP Email Configuration (for lead notifications)
+SMTP_HOST=your_smtp_host
+SMTP_PORT=587
+SMTP_USER=your_smtp_username
+SMTP_PASS=your_smtp_password
+ADMIN_EMAIL=admin@ezyhelpers.com
 ```
 
 ## 🔧 Customization
@@ -201,6 +212,40 @@ colors: {
   - NEXT_PUBLIC_SUPABASE_URL
   - NEXT_PUBLIC_SUPABASE_ANON_KEY
 - The Supabase client is initialized in `lib/supabaseClient.ts`.
+
+## 📧 Email Notifications
+
+The project includes automatic email notifications for lead submissions:
+
+### Features
+- **SMTP Integration**: Uses nodemailer for reliable email delivery
+- **Lead Types**: Supports contact forms, hire helper forms, and general leads
+- **Professional Templates**: HTML and text email templates with lead details
+- **Error Handling**: Graceful fallback if email sending fails
+- **Admin Notifications**: All leads are sent to the configured admin email
+
+### Email Templates
+- **Contact Form**: Includes name, email, phone, subject, and message
+- **Hire Helper Form**: Comprehensive service requirements and preferences
+- **General Leads**: Basic lead information from hero section and CTAs
+
+### Configuration
+Configure SMTP settings in `.env.local`:
+```env
+SMTP_HOST=your_smtp_host
+SMTP_PORT=587
+SMTP_USER=your_smtp_username
+SMTP_PASS=your_smtp_password
+ADMIN_EMAIL=admin@ezyhelpers.com
+```
+
+### Testing
+Test your email configuration by visiting `/api/test-email` in your browser.
+
+### Files
+- `lib/emailService.ts` - Email service utilities and templates
+- `app/api/send-lead-email/route.ts` - API endpoint for sending emails
+- `app/api/test-email/route.ts` - Email configuration test endpoint
 
 ---
 

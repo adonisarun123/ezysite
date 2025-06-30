@@ -198,6 +198,8 @@ export default function HireHelperForm() {
         trackFormSubmit('hire_helper_form', formData);
         
         const newRequestId = generateRequestId()
+        
+        // Store in Supabase
         const { error } = await supabase.from('hire_helper_leads').insert([
           {
             name: formData.name.trim(),
@@ -217,6 +219,43 @@ export default function HireHelperForm() {
           }
         ])
         if (error) throw error
+        
+        // Send email notification
+        try {
+          const emailResponse = await fetch('/api/send-lead-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              leadType: 'hire_helper',
+              formData: {
+                name: formData.name.trim(),
+                phone: formData.phone.trim(),
+                email: formData.email.trim(),
+                city: formData.city,
+                serviceType: formData.serviceType,
+                duration: formData.duration,
+                startDate: formData.startDate,
+                specificRequirements: formData.specificRequirements,
+                experience: formData.experience,
+                budget: formData.budget,
+                languages: formData.languages,
+                additionalServices: formData.additionalServices,
+                familySize: formData.familySize,
+                preferredGender: formData.preferredGender
+              },
+              requestId: newRequestId
+            })
+          });
+
+          if (!emailResponse.ok) {
+            console.error('Failed to send email notification');
+          }
+        } catch (emailError) {
+          console.error('Email sending error:', emailError);
+          // Don't fail the form submission if email fails
+        }
         
         // Track successful form completion
         trackFormComplete('hire_helper_form', newRequestId);
