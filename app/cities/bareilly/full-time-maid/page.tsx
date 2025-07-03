@@ -1,381 +1,531 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import { 
+  ClockIcon, 
+  ShieldCheckIcon, 
+  HomeIcon, 
+  HeartIcon,
+  CheckCircleIcon,
+  PhoneIcon,
+  UserGroupIcon,
+  StarIcon,
+  SunIcon,
+  SparklesIcon,
+  BuildingOffice2Icon,
+  UserPlusIcon,
+  ArrowRightIcon,
+  CurrencyRupeeIcon,
+  MapPinIcon,
+  CalendarDaysIcon,
+  HandRaisedIcon,
+  AcademicCapIcon,
+  ChatBubbleLeftRightIcon,
+  UsersIcon,
+  BoltIcon
+} from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Full-Time Maid in Bareilly – Dependable Daily Help for Every Household | EzyHelpers',
-  description: 'Get a background-verified, trained full-time maid in Bareilly for cooking, cleaning, elderly care, and complete home management. Perfect for joint families and working professionals.',
-  keywords: 'full-time maid Bareilly, daily help Bareilly, house maid service Bareilly, domestic help Bareilly',
+  title: 'Full-Time Maid in Bareilly | 8-10 Hour Daily Help | EzyHelpers',
+  description: 'Get verified, trained full-time maid in Bareilly for cooking, cleaning, elderly care & home management. Hindi-speaking maids for joint families. Book now!',
+  keywords: 'full time maid Bareilly, daily maid service Bareilly, cooking cleaning maid Bareilly, home management Bareilly, verified maid service',
+  openGraph: {
+    title: 'Full-Time Maid in Bareilly - Dependable Daily Help | EzyHelpers',
+    description: 'Background-verified, trained full-time maid in Bareilly for 8-10 hours daily. Perfect for joint families and working professionals.',
+    url: 'https://ezyhelpers.com/cities/bareilly/full-time-maid',
+    type: 'website',
+  }
 }
 
-export default function FullTimeMaidBareilly() {
+export default function BareillyFullTimeMaidPage() {
+  const services = [
+    {
+      title: "Daily Cooking",
+      description: "Breakfast, lunch, dinner with authentic North Indian & local Bareilly flavours",
+      icon: HeartIcon,
+      features: ["Traditional UP cuisine", "Joint family portions", "Festival special cooking", "Dietary preferences respected"]
+    },
+    {
+      title: "Cleaning & Mopping", 
+      description: "Complete house cleaning including sweeping, mopping, and dusting daily",
+      icon: SparklesIcon,
+      features: ["Daily room cleaning", "Kitchen maintenance", "Bathroom cleaning", "Organized storage"]
+    },
+    {
+      title: "Washing & Ironing",
+      description: "Washing, drying, folding, and ironing clothes regularly with care",
+      icon: HomeIcon,
+      features: ["Clothes washing", "Proper drying", "Neat folding", "Ironing service"]
+    },
+    {
+      title: "Childcare & Eldercare",
+      description: "Feeding, bathing, dressing, and supervision for children and elderly",
+      icon: UserGroupIcon,
+      features: ["Child supervision", "Elder assistance", "Meal help", "Daily care"]
+    },
+    {
+      title: "Pooja & Traditions",
+      description: "Cleaning temples, arranging prasad, and assisting in religious activities",
+      icon: HandRaisedIcon,
+      features: ["Temple cleaning", "Prasad preparation", "Festival assistance", "Traditional respect"]
+    },
+    {
+      title: "Shopping Assistance",
+      description: "Daily groceries and errands from local Bareilly markets",
+      icon: BuildingOffice2Icon,
+      features: ["Market shopping", "Grocery selection", "Local market knowledge", "Quality purchases"]
+    }
+  ]
+
+  const idealFor = [
+    {
+      title: "Joint Families",
+      description: "Perfect for large UP families with multiple generations",
+      icon: UsersIcon
+    },
+    {
+      title: "Working Government Employees",
+      description: "Ideal for 9-5 government job holders who need reliable daily help",
+      icon: BuildingOffice2Icon
+    },
+    {
+      title: "IT & Banking Professionals",
+      description: "Great for busy professionals who work long hours",
+      icon: AcademicCapIcon
+    },
+    {
+      title: "Business Owners & Shopkeepers",
+      description: "Perfect for local business owners who are busy all day",
+      icon: UserPlusIcon
+    },
+    {
+      title: "Families with Toddlers",
+      description: "Excellent support for families with young children",
+      icon: HeartIcon
+    },
+    {
+      title: "Single Parents",
+      description: "Reliable help for single parents managing work and home",
+      icon: UserGroupIcon
+    }
+  ]
+
+  const whyChooseFeatures = [
+    {
+      title: "Speaks Hindi & Local Language",
+      description: "Native Hindi speakers familiar with Bareilly's local dialect and customs",
+      icon: ChatBubbleLeftRightIcon
+    },
+    {
+      title: "Joint Family Experience",
+      description: "Trained to manage large joint families efficiently with traditional values",
+      icon: HomeIcon
+    },
+    {
+      title: "Traditional Cooking Skills",
+      description: "Expert in North Indian cuisine and local UP specialties",
+      icon: HeartIcon
+    },
+    {
+      title: "Police Verified",
+      description: "100% background verified with local references and Aadhaar verification",
+      icon: ShieldCheckIcon
+    },
+    {
+      title: "Available in All Areas",
+      description: "Service available across Civil Lines, CB Ganj, Cantt, and all major Bareilly areas",
+      icon: MapPinIcon
+    },
+    {
+      title: "Festival Support",
+      description: "Extra help during Diwali, Holi, and other festivals with traditional knowledge",
+      icon: StarIcon
+    }
+  ]
+
+  const process = [
+    {
+      step: "1",
+      title: "Personal Consultation",
+      description: "We understand your family needs, working hours, and specific requirements"
+    },
+    {
+      step: "2", 
+      title: "Maid Selection",
+      description: "Shortlist 2-3 verified profiles matching your preferences and locality"
+    },
+    {
+      step: "3",
+      title: "Interview & Review",
+      description: "Phone, video, or in-person interviews to select the best fit"
+    },
+    {
+      step: "4",
+      title: "Easy Onboarding",
+      description: "Complete documentation and start service with full support"
+    }
+  ]
+
+  const serviceAreas = [
+    "Civil Lines", "CB Ganj", "Cantt", "Badaun Road", "Pilibhit Road", "Izatnagar",
+    "Railway Road", "Subhash Nagar", "Rampur Garden", "Medical College Road"
+  ]
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-teal-600 text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Full-Time Maid in Bareilly – Dependable Daily Help for Every Household
-            </h1>
-            <p className="text-xl mb-8 opacity-90">
-              Get a background-verified, trained full-time maid in Bareilly for cooking, cleaning, 
-              elderly care, and complete home management. Perfect for joint families and working professionals.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/book-now" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg transition-colors">
-                Book Full-Time Maid Now
-              </Link>
-              <Link href="/contact" className="bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-8 rounded-lg transition-colors">
-                Call Now
-              </Link>
-            </div>
+    <>
+      <main className="min-h-screen">
+        <Navbar />
+        
+        {/* Breadcrumb Navigation */}
+        <section className="bg-gray-100 py-4">
+          <div className="container-custom">
+            <nav className="text-sm">
+              <ol className="flex items-center space-x-2">
+                <li>
+                  <Link href="/" className="text-gray-500 hover:text-purple-600">Home</Link>
+                </li>
+                <li className="text-gray-400">/</li>
+                <li>
+                  <Link href="/cities/bareilly" className="text-gray-500 hover:text-purple-600">Bareilly</Link>
+                </li>
+                <li className="text-gray-400">/</li>
+                <li className="text-gray-900 font-medium">Full-Time Maid Service</li>
+              </ol>
+            </nav>
           </div>
-        </div>
-      </section>
-
-      {/* Service Assurance Badges */}
-      <section className="py-8 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            <div className="text-center p-4 bg-green-50 rounded-lg">
-              <div className="text-green-600 font-bold">✓</div>
-              <div className="text-sm font-medium">Verified, Trained Female Maids</div>
-            </div>
-            <div className="text-center p-4 bg-blue-50 rounded-lg">
-              <div className="text-blue-600 font-bold">✓</div>
-              <div className="text-sm font-medium">Daily 8 to 10-hour service Options</div>
-            </div>
-            <div className="text-center p-4 bg-purple-50 rounded-lg">
-              <div className="text-purple-600 font-bold">✓</div>
-              <div className="text-sm font-medium">Customizable Work Schedules</div>
-            </div>
-            <div className="text-center p-4 bg-orange-50 rounded-lg">
-              <div className="text-orange-600 font-bold">✓</div>
-              <div className="text-sm font-medium">Affordable Monthly Charges</div>
-            </div>
+        </section>
+      
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-white rounded-full blur-2xl"></div>
           </div>
-        </div>
-      </section>
 
-      {/* Highlight Metrics */}
-      <section className="py-8 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto text-center">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="text-3xl font-bold text-blue-600 mb-2">✅ 10,000+</div>
-              <div className="text-gray-700">Happy Homes</div>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="text-3xl font-bold text-green-600 mb-2">✅ 24/7</div>
-              <div className="text-gray-700">Hindi Support</div>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="text-3xl font-bold text-purple-600 mb-2">✅ 100%</div>
-              <div className="text-gray-700">Police-Verified Maids</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose EzyHelpers */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-              Why Choose EzyHelpers Full-Time Maid in Bareilly?
-            </h2>
-            <p className="text-lg text-center mb-8 text-gray-600">
-              Here's why families across Bareilly trust us for full-day maid service:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                'Speaks Hindi and Bareilly\'s local language',
-                'Knows how to manage big joint families',
-                'Can cook tasty North Indian food',
-                'Trained in traditional work',
-                'Knows cleaning and kitchen routines',
-                'Available in all main areas'
-              ].map((feature, index) => (
-                <div key={index} className="flex items-start p-4 bg-blue-50 rounded-lg">
-                  <div className="text-blue-600 mr-3 mt-1">✓</div>
-                  <div className="text-gray-700">{feature}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Offered */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-4 text-gray-800">
-              Services Offered by Full-Time Maids
-            </h2>
-            <p className="text-lg text-center mb-12 text-gray-600">
-              Get complete domestic help from morning to evening with our trusted full-day maids
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Daily Cooking',
-                  description: 'Preparing breakfast, lunch, and dinner with authentic North Indian flavours that your family loves.'
-                },
-                {
-                  title: 'Cleaning & Mopping',
-                  description: 'Sweeping, mopping, and dusting all rooms daily to keep your home fresh, clean, and hygienic.'
-                },
-                {
-                  title: 'Washing Clothes & Ironing',
-                  description: 'Washing, drying, folding, and ironing clothes regularly to keep your family\'s wardrobe clean and well-managed.'
-                },
-                {
-                  title: 'Childcare & Eldercare Support',
-                  description: 'Caring support for kids and elders with feeding, bathing, dressing, and general supervision with patience and love.'
-                },
-                {
-                  title: 'Assisting in Pooja & Traditions',
-                  description: 'Helping during daily pooja routines, cleaning temples, arranging flowers, preparing prasad, and supporting religious activities.'
-                },
-                {
-                  title: 'Festival & Seasonal Support',
-                  description: 'Assist with festive preparations like Diwali cleaning, Holi food items, summer storage, and traditional household work.'
-                },
-                {
-                  title: 'Shopping Assistance',
-                  description: 'Support with daily grocery shopping, local errands, and managing household needs from nearby markets or stores.'
-                }
-              ].map((service, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-bold mb-3 text-blue-600">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Who Needs Full-Day Maid Service */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-4 text-gray-800">
-              Who Needs a Full-Day Maid Service in Bareilly?
-            </h2>
-            <p className="text-lg text-center mb-12 text-gray-600">
-              Our full-time maids make life easier, perfect for these types of households in Bareilly
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: 'Joint Families',
-                  description: 'Full-time help for large households.'
-                },
-                {
-                  title: 'Working Government Employees (9 to 5)',
-                  description: 'Stress-free housework while you are at the office.'
-                },
-                {
-                  title: 'IT & Banking Professionals',
-                  description: 'A balanced life with stress-free daily chores.'
-                },
-                {
-                  title: 'Busy Shopkeepers & Business Owners',
-                  description: 'Focus on work while we handle your home.'
-                },
-                {
-                  title: 'Families with Toddlers or Seniors',
-                  description: 'Dedicated support for vulnerable family members.'
-                },
-                {
-                  title: 'Single Parents',
-                  description: 'Dependable help for cooking, cleaning, and childcare.'
-                }
-              ].map((need, index) => (
-                <div key={index} className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-bold mb-2 text-blue-600">{need.title}</h3>
-                  <p className="text-gray-600">{need.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Specialized Services */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-4 text-gray-800">
-              Specialized Full-Time Maid Services in Bareilly
-            </h2>
-            <p className="text-lg text-center mb-12 text-gray-600">
-              Choose from trained full-day maids based on your household type, lifestyle, and daily support needs.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: 'Full-Time Babysitters/Nannies',
-                  description: 'Caring maids to help with feeding, bathing, playing, and watching over your little ones all day.'
-                },
-                {
-                  title: 'Full-Time Senior Caretakers',
-                  description: 'Gentle support for elders by helping with walking, hygiene, medicine, and emotional companionship.'
-                },
-                {
-                  title: 'Full-Time Cooks',
-                  description: 'Daily home-cooked meals like roti, sabzi, dal, rice, prepared with care, cleanliness, and family taste in mind.'
-                },
-                {
-                  title: 'Full-Time Drivers in Bareilly',
-                  description: 'Reliable daily driving support for your home and work needs; perfect for families, seniors, and professionals.'
-                }
-              ].map((service, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-bold mb-3 text-purple-600">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Local Expertise */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-12 text-gray-800">
-              Local Expertise You Can Trust
-            </h2>
-            <p className="text-lg mb-8 text-gray-600">
-              Our maids are deeply familiar with Bareilly's unique household requirements.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-yellow-50 p-6 rounded-lg">
-                <h3 className="font-bold text-yellow-600 mb-2">Expert in UP Joint Family Homes</h3>
-                <p className="text-gray-600">Manages large households smoothly.</p>
-              </div>
-              <div className="bg-green-50 p-6 rounded-lg">
-                <h3 className="font-bold text-green-600 mb-2">Traditional Storage Knowledge</h3>
-                <p className="text-gray-600">Grain storage, pickle-making, and more.</p>
-              </div>
-              <div className="bg-orange-50 p-6 rounded-lg">
-                <h3 className="font-bold text-orange-600 mb-2">Festival & Pooja Assistance</h3>
-                <p className="text-gray-600">Helps with Diwali cleaning, Holi meals, and Karva Chauth prep.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4-Step Process */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-4 text-gray-800">
-              4-Step Easy Hiring Process
-            </h2>
-            <p className="text-lg text-center mb-12 text-gray-600">
-              Getting reliable full-time home help in Bareilly is simple & easy with EzyHelpers.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  step: '1',
-                  title: 'Personal Consultation',
-                  description: 'We understand your family\'s needs and routines to suggest the best house maid service plan.'
-                },
-                {
-                  step: '2',
-                  title: 'Maid Selection',
-                  description: 'We shortlist 2–3 background-verified maids matching your lifestyle, work needs, and cultural preferences perfectly.'
-                },
-                {
-                  step: '3',
-                  title: 'Interview & Review',
-                  description: 'You can interview shortlisted maids via phone, video, or in person to choose confidently.'
-                },
-                {
-                  step: '4',
-                  title: 'Easy Onboarding',
-                  description: 'Once selected, the maid joins with proper documentation and full-time support from our team.'
-                }
-              ].map((process, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
-                    {process.step}
+          <div className="container-custom relative z-10">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="text-center lg:text-left">
+                  <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                    <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
+                    <span className="text-sm font-semibold">Verified, Trained Female Maids</span>
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-gray-800">{process.title}</h3>
-                  <p className="text-gray-600 text-sm">{process.description}</p>
+
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
+                    Full-Time Maid in
+                    <span className="block text-yellow-200">Bareilly</span>
+                  </h1>
+                  
+                  <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed">
+                    Dependable Daily Help for Every Household. Get background-verified, trained full-time maid for cooking, cleaning, elderly care & complete home management.
+                  </p>
+
+                  <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+                      ✓ 8-10 Hour Service
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+                      ✓ Customizable Schedule
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+                      ✓ Affordable Monthly Charges
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    <Link
+                      href="/hire-helper"
+                      className="inline-flex items-center justify-center w-full bg-white text-orange-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                    >
+                      Book Full-Time Maid Now
+                    </Link>
+
+                    <Link
+                      href="tel:+919972571005"
+                      className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                    >
+                      <PhoneIcon className="h-5 w-5 mr-2" />
+                      Call Now
+                    </Link>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/20">
+                    <div className="text-center lg:text-left">
+                      <div className="text-2xl font-bold">10,000+</div>
+                      <div className="text-orange-200 text-sm">Happy Homes</div>
+                    </div>
+                    <div className="text-center lg:text-left">
+                      <div className="text-2xl font-bold">24/7</div>
+                      <div className="text-orange-200 text-sm">Hindi Support</div>
+                    </div>
+                    <div className="text-center lg:text-left">
+                      <div className="text-2xl font-bold">100%</div>
+                      <div className="text-orange-200 text-sm">Police Verified</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative hidden lg:block">
+                  <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                    <div className="grid grid-cols-2 gap-6">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
+                        <HeartIcon className="h-12 w-12 text-white mx-auto mb-3" />
+                        <div className="text-white font-semibold text-sm">Daily Cooking</div>
+                      </div>
+                      <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
+                        <SparklesIcon className="h-12 w-12 text-white mx-auto mb-3" />
+                        <div className="text-white font-semibold text-sm">House Cleaning</div>
+                      </div>
+                      <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
+                        <UserGroupIcon className="h-12 w-12 text-white mx-auto mb-3" />
+                        <div className="text-white font-semibold text-sm">Family Care</div>
+                      </div>
+                      <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
+                        <HandRaisedIcon className="h-12 w-12 text-white mx-auto mb-3" />
+                        <div className="text-white font-semibold text-sm">Pooja Help</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Services Offered by Full-Time Maids
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Comprehensive household support with traditional values and modern efficiency
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                >
+                  <div className="flex items-center mb-6">
+                    <div className="bg-orange-100 rounded-xl p-3 mr-4">
+                      <service.icon className="h-8 w-8 text-orange-600" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
+                  </div>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-gray-600">
+                        <CheckCircleIcon className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Other Services */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-              Explore Our Other Services
-            </h2>
-            <p className="text-lg text-center mb-8 text-gray-600">
-              Complete your home care needs with our wide range of professional domestic help services.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-lg text-center">
-                <h3 className="text-xl font-bold mb-3 text-purple-600">Part-Time Maid Services in Bareilly</h3>
-                <p className="text-gray-600 mb-4">Hourly help for cooking, cleaning, and daily household chores.</p>
-                <Link href="/cities/bareilly/part-time-maid" className="text-purple-600 hover:text-purple-800 font-medium">
-                  Learn More About Part-Time Maid Services →
+        {/* Who Needs Section */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Who Needs a Full-Day Maid Service in Bareilly?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Perfect for busy families who need reliable, full-time household support
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {idealFor.map((item, index) => (
+                <div
+                  key={index}
+                  className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100 hover:border-orange-200 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="bg-orange-100 rounded-xl p-4 w-fit mb-6 group-hover:bg-orange-200 transition-colors duration-300">
+                    <item.icon className="h-8 w-8 text-orange-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Section */}
+        <section className="section-padding bg-gradient-to-br from-orange-50 to-red-50">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Why Choose EzyHelpers Full-Time Maid in Bareilly?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Local expertise combined with professional training for the best household support
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {whyChooseFeatures.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="bg-orange-100 rounded-xl p-3 w-fit mb-6">
+                    <feature.icon className="h-8 w-8 text-orange-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                4-Step Easy Hiring Process
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Simple and transparent process to get your perfect full-time maid
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {process.map((step, index) => (
+                <div key={index} className="text-center">
+                  <div className="bg-orange-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mx-auto mb-6">
+                    {step.step}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Service Areas */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Service Areas in Bareilly
+              </h2>
+              <p className="text-lg text-gray-600">
+                We provide full-time maid services across all major areas in Bareilly
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {serviceAreas.map((area, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-lg p-4 text-center border border-gray-200 hover:border-orange-300 hover:shadow-md transition-all duration-300"
+                >
+                  <MapPinIcon className="h-6 w-6 text-orange-600 mx-auto mb-2" />
+                  <span className="text-gray-700 font-medium text-sm">{area}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                More Home Services in Bareilly
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <Link href="/cities/bareilly/live-in-maid" className="group bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
+                <ClockIcon className="h-12 w-12 text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">24/7 Live-In Maid Service</h3>
+                <p className="text-gray-600 mb-4">Round-the-clock household support with traditional cooking & complete care</p>
+                <div className="flex items-center text-blue-600 font-semibold">
+                  Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
+                </div>
+              </Link>
+
+              <Link href="/cities/bareilly/part-time-maid" className="group bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 hover:border-green-300 hover:shadow-lg transition-all duration-300">
+                <ClockIcon className="h-12 w-12 text-green-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Part-Time Maid Service</h3>
+                <p className="text-gray-600 mb-4">Flexible 2-4 hours daily for cooking & cleaning tasks</p>
+                <div className="flex items-center text-green-600 font-semibold">
+                  Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
+                </div>
+              </Link>
+
+              <Link href="/cities/bareilly/on-demand-helper" className="group bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 border border-red-100 hover:border-red-300 hover:shadow-lg transition-all duration-300">
+                <BoltIcon className="h-12 w-12 text-red-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Instant On-Demand Helper</h3>
+                <p className="text-gray-600 mb-4">Same-day emergency help for festivals & urgent needs</p>
+                <div className="flex items-center text-red-600 font-semibold">
+                  Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
+                </div>
+              </Link>
+            </div>
+
+            <div className="text-center mt-8">
+              <Link 
+                href="/cities/bareilly" 
+                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-8 rounded-xl hover:bg-purple-700 transition-all duration-300"
+              >
+                View All Services in Bareilly
+                <ArrowRightIcon className="h-5 w-5 ml-2" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="section-padding bg-gradient-to-br from-orange-600 to-red-600 text-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
+                Book Your Full-Time Maid in Bareilly Today
+              </h2>
+              <p className="text-xl mb-8 text-orange-100">
+                Get reliable, verified, and trained household support for your family
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <Link
+                  href="/hire-helper"
+                  className="inline-flex items-center justify-center bg-white text-orange-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                >
+                  Book Full-Time Maid Now
                 </Link>
-              </div>
-              <div className="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-lg text-center">
-                <h3 className="text-xl font-bold mb-3 text-teal-600">Cook Services in Bareilly</h3>
-                <p className="text-gray-600 mb-4">Expert cooks for North Indian meals, tiffins, and festive cooking.</p>
-                <Link href="/services/cooks" className="text-teal-600 hover:text-teal-800 font-medium">
-                  Learn More About Cook Services →
-                </Link>
-              </div>
-              <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg text-center">
-                <h3 className="text-xl font-bold mb-3 text-orange-600">Elderly Caregiver in Bareilly</h3>
-                <p className="text-gray-600 mb-4">Caring support for elders' mobility, medication, and daily personal care.</p>
-                <Link href="/services/elderly-care" className="text-orange-600 hover:text-orange-800 font-medium">
-                  Learn More About Elderly Caregiver Services →
+                
+                <Link
+                  href="tel:+919972571005"
+                  className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-2" />
+                  Call Us
                 </Link>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Book Your Full-Time Maid in Bareilly Today
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Reliable, trained, and respectful full-day maids are just a call away. With EzyHelpers, 
-              simplify your daily life and get complete home support tailored to Bareilly families.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/book-now" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg transition-colors">
-                Book Full-Time Maid Now
-              </Link>
-              <Link href="/contact" className="bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-8 rounded-lg transition-colors">
-                Call Us
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </main>
+      
+      <Footer />
+    </>
   )
 } 
