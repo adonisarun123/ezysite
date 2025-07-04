@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { 
-  ClockIcon, 
+  ClockIcon,
   ShieldCheckIcon, 
   HomeIcon, 
   HeartIcon,
@@ -222,8 +222,8 @@ export default function BareillyPartTimeMaidPage() {
 
   return (
     <>
-      <main className="min-h-screen">
-        <Navbar />
+    <main className="min-h-screen">
+      <Navbar />
 
         {/* Breadcrumb Navigation */}
         <section className="bg-gray-100 py-4">
@@ -244,28 +244,28 @@ export default function BareillyPartTimeMaidPage() {
           </div>
         </section>
       
-        {/* Hero Section */}
+      {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-green-600 via-teal-600 to-blue-600 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-white rounded-full blur-2xl"></div>
-          </div>
+        </div>
 
-          <div className="container-custom relative z-10">
+        <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="text-center lg:text-left">
                   <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                     <ClockIcon className="h-5 w-5 text-green-300 mr-2" />
                     <span className="text-sm font-semibold">Verified & Trained Local Maids</span>
-                  </div>
+            </div>
 
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
                     Part-Time Maid
                     <span className="block text-green-200">in Bareilly</span>
-                  </h1>
-                  
+            </h1>
+            
                   <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed">
                     Flexible Daily Help for Cooking & Cleaning. Get trusted part-time maids for 2–4 hours daily to handle your kitchen and home cleaning needs.
                   </p>
@@ -287,17 +287,17 @@ export default function BareillyPartTimeMaidPage() {
                       href="/hire-helper"
                       className="inline-flex items-center justify-center w-full bg-white text-green-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
                     >
-                      Book Part-Time Maid Now
-                    </Link>
-
+                  Book Part-Time Maid Now
+              </Link>
+              
                     <Link
                       href="tel:+919972571005"
                       className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
                     >
                       <PhoneIcon className="h-5 w-5 mr-2" />
-                      Call Now
-                    </Link>
-                  </div>
+                Call Now
+              </Link>
+            </div>
 
                   <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/20">
                     <div className="text-center lg:text-left">
@@ -321,30 +321,30 @@ export default function BareillyPartTimeMaidPage() {
                       <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
                         <HeartIcon className="h-12 w-12 text-white mx-auto mb-3" />
                         <div className="text-white font-semibold text-sm">Daily Cooking</div>
-                      </div>
+              </div>
                       <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
                         <SparklesIcon className="h-12 w-12 text-white mx-auto mb-3" />
                         <div className="text-white font-semibold text-sm">House Cleaning</div>
-                      </div>
+              </div>
                       <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
                         <SunIcon className="h-12 w-12 text-white mx-auto mb-3" />
                         <div className="text-white font-semibold text-sm">Morning Slots</div>
-                      </div>
+              </div>
                       <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
                         <ClockIcon className="h-12 w-12 text-white mx-auto mb-3" />
                         <div className="text-white font-semibold text-sm">Evening Slots</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
         {/* Services Section */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom">
+        <div className="container-custom">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Services Offered by Part-Time Maids
@@ -353,7 +353,7 @@ export default function BareillyPartTimeMaidPage() {
                 Essential domestic help for 2-4 hours daily with trusted and reliable part-time maids
               </p>
             </div>
-
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <div
@@ -377,13 +377,13 @@ export default function BareillyPartTimeMaidPage() {
                   </ul>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Time Slots Section */}
         <section className="section-padding bg-white">
-          <div className="container-custom">
+        <div className="container-custom">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Flexible Time Slots Available
@@ -392,7 +392,7 @@ export default function BareillyPartTimeMaidPage() {
                 Choose the perfect time slot that matches your daily routine and family schedule
               </p>
             </div>
-
+            
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {timeSlots.map((slot, index) => (
                 <div
@@ -419,13 +419,13 @@ export default function BareillyPartTimeMaidPage() {
                   </ul>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Who Needs Section */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom">
+        <div className="container-custom">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Who Needs Part-Time Maid Services in Bareilly?
@@ -434,7 +434,7 @@ export default function BareillyPartTimeMaidPage() {
                 Ideal for those who need flexible, short-duration household help
               </p>
             </div>
-
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {idealFor.map((item, index) => (
                 <div
@@ -448,13 +448,13 @@ export default function BareillyPartTimeMaidPage() {
                   <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Why Choose Section */}
         <section className="section-padding bg-gradient-to-br from-green-50 to-teal-50">
-          <div className="container-custom">
+        <div className="container-custom">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Why Choose EzyHelpers Part-Time Maid in Bareilly?
@@ -463,7 +463,7 @@ export default function BareillyPartTimeMaidPage() {
                 Bareilly families trust us for reliable, short-time daily household support
               </p>
             </div>
-
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {whyChooseFeatures.map((feature, index) => (
                 <div
@@ -477,13 +477,13 @@ export default function BareillyPartTimeMaidPage() {
                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Specialized Services */}
         <section className="section-padding bg-white">
-          <div className="container-custom">
+        <div className="container-custom">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Specialized Part-Time Maid Services in Bareilly
@@ -492,7 +492,7 @@ export default function BareillyPartTimeMaidPage() {
                 Choose the right helper for your home with flexible hours and specialized skills
               </p>
             </div>
-
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {specializedServices.map((service, index) => (
                 <div
@@ -528,8 +528,8 @@ export default function BareillyPartTimeMaidPage() {
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Simple and transparent process to get your perfect part-time maid
               </p>
-            </div>
-
+              </div>
+              
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {process.map((step, index) => (
                 <div key={index} className="text-center">
@@ -577,8 +577,8 @@ export default function BareillyPartTimeMaidPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 More Home Services in Bareilly
               </h2>
-            </div>
-
+              </div>
+              
             <div className="grid md:grid-cols-3 gap-8">
               <Link href="/cities/bareilly/full-time-maid" className="group bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 border border-orange-100 hover:border-orange-300 hover:shadow-lg transition-all duration-300">
                 <UsersIcon className="h-12 w-12 text-orange-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
@@ -595,8 +595,8 @@ export default function BareillyPartTimeMaidPage() {
                 <p className="text-gray-600 mb-4">Round-the-clock household support & complete care</p>
                 <div className="flex items-center text-purple-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
-                </div>
-              </Link>
+                  </div>
+                  </Link>
 
               <Link href="/cities/bareilly/on-demand-helper" className="group bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 border border-red-100 hover:border-red-300 hover:shadow-lg transition-all duration-300">
                 <BoltIcon className="h-12 w-12 text-red-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
@@ -606,7 +606,7 @@ export default function BareillyPartTimeMaidPage() {
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </div>
               </Link>
-            </div>
+              </div>
 
             <div className="text-center mt-8">
               <Link 
@@ -616,17 +616,17 @@ export default function BareillyPartTimeMaidPage() {
                 View All Services in Bareilly
                 <ArrowRightIcon className="h-5 w-5 ml-2" />
               </Link>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* CTA Section */}
         <section className="section-padding bg-gradient-to-br from-green-600 to-teal-600 text-white">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
-                Book Your Part-Time Maid in Bareilly Today
-              </h2>
+              Book Your Part-Time Maid in Bareilly Today
+            </h2>
               <p className="text-xl mb-8 text-green-100">
                 Get flexible, reliable, and affordable household support that fits your schedule
               </p>
@@ -637,21 +637,21 @@ export default function BareillyPartTimeMaidPage() {
                   className="inline-flex items-center justify-center bg-white text-green-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
                 >
                   Book Part-Time Maid Now
-                </Link>
-                
+              </Link>
+              
                 <Link
                   href="tel:+919972571005"
                   className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
                 >
                   <PhoneIcon className="h-5 w-5 mr-2" />
                   Call Us
-                </Link>
-              </div>
+              </Link>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
       </main>
-      
+
       <Footer />
     </>
   )

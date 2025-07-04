@@ -31,8 +31,9 @@ const footerLinks = {
     { name: 'FAQs', href: '/faqs' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact Us', href: '/contact' },
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms of Service', href: '/terms-of-service' },
+    { name: 'Refund Policy', href: '/refund-policy' },
   ],
 }
 
@@ -77,7 +78,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-start text-sm text-gray-300">
                   <MapPinIcon className="h-4 w-4 mr-3 text-primary-400 mt-0.5 flex-shrink-0" />
-                  <span>Serving across India's major cities</span>
+                  <span>HSR Layout, Bangalore, Karnataka 560102<br />Serving across India's major cities</span>
                 </div>
               </div>
             </div>

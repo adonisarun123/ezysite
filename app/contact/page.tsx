@@ -247,8 +247,8 @@ export default function ContactPage() {
                     {
                       icon: MapPinIcon,
                       title: "Visit Our Office",
-                      info: "Bangalore, Karnataka",
-                      subinfo: "Schedule an appointment",
+                      info: "HSR Layout, Bangalore, Karnataka 560102",
+                      subinfo: "Schedule an appointment by calling us",
                       color: "text-red-600",
                       bgColor: "bg-red-50",
                       hoverColor: "hover:bg-red-100"

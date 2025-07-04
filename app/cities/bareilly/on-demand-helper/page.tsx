@@ -253,7 +253,7 @@ export default function BareillyOnDemandHelperPage() {
           </div>
         </section>
       
-        {/* Hero Section */}
+      {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-red-600 via-orange-600 to-yellow-600 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
@@ -273,7 +273,7 @@ export default function BareillyOnDemandHelperPage() {
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
                     Instant Maid Service
                     <span className="block text-yellow-200">in Bareilly</span>
-                  </h1>
+            </h1>
                   
                   <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed">
                     Same-Day Quick Helper Available 24/7! Get instant maid service within 2-4 hours for emergency cleaning, last-minute cooking, and urgent home maintenance.
@@ -296,8 +296,8 @@ export default function BareillyOnDemandHelperPage() {
                       href="/hire-helper"
                       className="inline-flex items-center justify-center w-full bg-white text-red-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
                     >
-                      Book Instant Maid Now
-                    </Link>
+                Book Instant Maid Now
+              </Link>
 
                     <Link
                       href="tel:+919972571005"
@@ -305,7 +305,7 @@ export default function BareillyOnDemandHelperPage() {
                     >
                       <PhoneIcon className="h-5 w-5 mr-2" />
                       Call for Urgent Help
-                    </Link>
+              </Link>
                   </div>
 
                   <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/20">
@@ -347,9 +347,9 @@ export default function BareillyOnDemandHelperPage() {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Festival & Emergency Services Section */}
         <section className="section-padding bg-gray-50">
@@ -384,11 +384,11 @@ export default function BareillyOnDemandHelperPage() {
                       </li>
                     ))}
                   </ul>
-                </div>
-              ))}
             </div>
+              ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Daily Life Solutions */}
         <section className="section-padding bg-white">
@@ -421,11 +421,11 @@ export default function BareillyOnDemandHelperPage() {
                       </li>
                     ))}
                   </ul>
-                </div>
-              ))}
             </div>
+              ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Technical & Maintenance */}
         <section className="section-padding bg-gray-50">
@@ -433,7 +433,7 @@ export default function BareillyOnDemandHelperPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Technical & Maintenance Emergency
-              </h2>
+            </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Same-day technical services for urgent repairs and maintenance
               </p>
@@ -453,12 +453,12 @@ export default function BareillyOnDemandHelperPage() {
                   <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
                   <div className="flex items-center text-red-600 font-semibold text-sm mt-4">
                     Get Help Now <ArrowRightIcon className="h-3 w-3 ml-1" />
-                  </div>
+                </div>
                 </Link>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Specialized Services */}
         <section className="section-padding bg-white">
@@ -466,7 +466,7 @@ export default function BareillyOnDemandHelperPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Specialized Emergency Services
-              </h2>
+            </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Additional emergency support services for complete assistance
               </p>
@@ -493,9 +493,9 @@ export default function BareillyOnDemandHelperPage() {
                   </ul>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Why Choose Section */}
         <section className="section-padding bg-gradient-to-br from-red-50 to-orange-50">
@@ -503,7 +503,7 @@ export default function BareillyOnDemandHelperPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Why Choose EzyHelpers' Instant Maid Service in Bareilly?
-              </h2>
+            </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Bareilly homes love our on-demand helper service for speed, professionalism, and reliability
               </p>
@@ -522,9 +522,9 @@ export default function BareillyOnDemandHelperPage() {
                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Process Section */}
         <section className="section-padding bg-white">
@@ -532,7 +532,7 @@ export default function BareillyOnDemandHelperPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 4-Step Easy Booking Process
-              </h2>
+            </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Quick and simple process to get immediate household assistance
               </p>
@@ -548,9 +548,9 @@ export default function BareillyOnDemandHelperPage() {
                   <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Service Areas */}
         <section className="section-padding bg-gray-50">
@@ -558,11 +558,11 @@ export default function BareillyOnDemandHelperPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Service Areas in Bareilly
-              </h2>
+            </h2>
               <p className="text-lg text-gray-600">
                 Instant maid and helper services available across all major areas in Bareilly
               </p>
-            </div>
+                  </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {serviceAreas.map((area, index) => (
@@ -574,9 +574,9 @@ export default function BareillyOnDemandHelperPage() {
                   <span className="text-gray-700 font-medium text-sm">{area}</span>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Related Services */}
         <section className="section-padding bg-white">
@@ -584,7 +584,7 @@ export default function BareillyOnDemandHelperPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 More Home Services in Bareilly
-              </h2>
+            </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -595,7 +595,7 @@ export default function BareillyOnDemandHelperPage() {
                 <div className="flex items-center text-blue-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </div>
-              </Link>
+                </Link>
 
               <Link href="/cities/bareilly/live-in-maid" className="group bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 hover:border-green-300 hover:shadow-lg transition-all duration-300">
                 <ClockIcon className="h-12 w-12 text-green-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
@@ -603,8 +603,8 @@ export default function BareillyOnDemandHelperPage() {
                 <p className="text-gray-600 mb-4">Round-the-clock household support & traditional cooking</p>
                 <div className="flex items-center text-green-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
-                </div>
-              </Link>
+              </div>
+                </Link>
 
               <Link href="/cities/bareilly/part-time-maid" className="group bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100 hover:border-purple-300 hover:shadow-lg transition-all duration-300">
                 <ClockIcon className="h-12 w-12 text-purple-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
@@ -612,9 +612,9 @@ export default function BareillyOnDemandHelperPage() {
                 <p className="text-gray-600 mb-4">Daily 2–4 hours for cooking and cleaning tasks</p>
                 <div className="flex items-center text-purple-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
-                </div>
-              </Link>
-            </div>
+              </div>
+                </Link>
+              </div>
 
             <div className="text-center mt-8">
               <Link 
@@ -624,17 +624,17 @@ export default function BareillyOnDemandHelperPage() {
                 View All Services in Bareilly
                 <ArrowRightIcon className="h-5 w-5 ml-2" />
               </Link>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* CTA Section */}
         <section className="section-padding bg-gradient-to-br from-red-600 to-orange-600 text-white">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
-                Book Instant Maid in Bareilly Now
-              </h2>
+              Book Instant Maid in Bareilly Now
+            </h2>
               <p className="text-xl mb-8 text-red-100">
                 Get immediate help for any household emergency or urgent requirement
               </p>
@@ -644,20 +644,20 @@ export default function BareillyOnDemandHelperPage() {
                   href="/hire-helper"
                   className="inline-flex items-center justify-center bg-white text-red-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
                 >
-                  Book Instant Helper Now
-                </Link>
+                Book Instant Helper Now
+              </Link>
                 
                 <Link
                   href="tel:+919972571005"
                   className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
                 >
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call for Quick Helper in Bareilly
-                </Link>
-              </div>
+                Call for Quick Helper in Bareilly
+              </Link>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
       </main>
       
       <Footer />

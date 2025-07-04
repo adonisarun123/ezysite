@@ -216,7 +216,7 @@ export default function BareillyLiveInMaidPage() {
           </div>
         </section>
       
-        {/* Hero Section */}
+      {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
@@ -236,7 +236,7 @@ export default function BareillyLiveInMaidPage() {
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
                     24-Hour Maid Service
                     <span className="block text-blue-200">in Bareilly</span>
-                  </h1>
+            </h1>
                   
                   <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed">
                     Reliable & Trusted Help at Your Doorstep! Get verified, trained live-in maid service available 24/7 for traditional UP cooking, cleaning, elderly care & complete home support.
@@ -259,16 +259,16 @@ export default function BareillyLiveInMaidPage() {
                       href="/hire-helper"
                       className="inline-flex items-center justify-center w-full bg-white text-purple-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
                     >
-                      Book 24-Hour Maid Now
-                    </Link>
+                Book 24-Hour Maid Now
+              </Link>
 
                     <Link
                       href="tel:+919972571005"
                       className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
                     >
                       <PhoneIcon className="h-5 w-5 mr-2" />
-                      Call Now
-                    </Link>
+                Call Now
+              </Link>
                   </div>
 
                   <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/20">
@@ -283,9 +283,9 @@ export default function BareillyLiveInMaidPage() {
                     <div className="text-center lg:text-left">
                       <div className="text-2xl font-bold">100%</div>
                       <div className="text-purple-200 text-sm">Police Verified</div>
-                    </div>
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
 
                 <div className="relative hidden lg:block">
                   <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
@@ -307,12 +307,12 @@ export default function BareillyLiveInMaidPage() {
                         <div className="text-white font-semibold text-sm">Cultural Respect</div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
+            </div>
+            </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Services Section */}
         <section className="section-padding bg-gray-50">
@@ -347,11 +347,11 @@ export default function BareillyLiveInMaidPage() {
                       </li>
                     ))}
                   </ul>
-                </div>
-              ))}
             </div>
+              ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Cultural Expertise */}
         <section className="section-padding bg-white">
@@ -359,7 +359,7 @@ export default function BareillyLiveInMaidPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Regional & Cultural Familiarity
-              </h2>
+            </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Deep understanding of Bareilly's traditions, customs, and local lifestyle
               </p>
@@ -378,9 +378,9 @@ export default function BareillyLiveInMaidPage() {
                   <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Who Needs Section */}
         <section className="section-padding bg-gray-50">
@@ -388,7 +388,7 @@ export default function BareillyLiveInMaidPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Who Needs 24-Hour Maid Service?
-              </h2>
+            </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Perfect for families requiring continuous, reliable household support
               </p>
@@ -407,9 +407,9 @@ export default function BareillyLiveInMaidPage() {
                   <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Why Choose Section */}
         <section className="section-padding bg-gradient-to-br from-purple-50 to-indigo-50">
@@ -417,11 +417,11 @@ export default function BareillyLiveInMaidPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Why Choose EzyHelpers 24-Hour Maid Service in Bareilly?
-              </h2>
+            </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Thousands in Bareilly rely on us for verified, affordable 24-hour maid services
-              </p>
-            </div>
+            </p>
+              </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {whyChooseFeatures.map((feature, index) => (
@@ -431,14 +431,14 @@ export default function BareillyLiveInMaidPage() {
                 >
                   <div className="bg-purple-100 rounded-xl p-3 w-fit mb-6">
                     <feature.icon className="h-8 w-8 text-purple-600" />
-                  </div>
+              </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                </div>
+              </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Process Section */}
         <section className="section-padding bg-white">
@@ -446,7 +446,7 @@ export default function BareillyLiveInMaidPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 4-Step Easy Hiring Process
-              </h2>
+            </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Simple and transparent process to get your perfect 24-hour live-in maid
               </p>
@@ -462,9 +462,9 @@ export default function BareillyLiveInMaidPage() {
                   <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Service Areas */}
         <section className="section-padding bg-gray-50">
@@ -472,11 +472,11 @@ export default function BareillyLiveInMaidPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Service Areas in Bareilly
-              </h2>
+            </h2>
               <p className="text-lg text-gray-600">
                 24-hour live-in maid services available across all major areas in Bareilly
               </p>
-            </div>
+                  </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {serviceAreas.map((area, index) => (
@@ -488,9 +488,9 @@ export default function BareillyLiveInMaidPage() {
                   <span className="text-gray-700 font-medium text-sm">{area}</span>
                 </div>
               ))}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Related Services */}
         <section className="section-padding bg-white">
@@ -498,7 +498,7 @@ export default function BareillyLiveInMaidPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 More Home Services in Bareilly
-              </h2>
+            </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -509,7 +509,7 @@ export default function BareillyLiveInMaidPage() {
                 <div className="flex items-center text-orange-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </div>
-              </Link>
+                </Link>
 
               <Link href="/cities/bareilly/part-time-maid" className="group bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 hover:border-green-300 hover:shadow-lg transition-all duration-300">
                 <ClockIcon className="h-12 w-12 text-green-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
@@ -517,8 +517,8 @@ export default function BareillyLiveInMaidPage() {
                 <p className="text-gray-600 mb-4">Flexible 2-4 hours daily for cooking & cleaning tasks</p>
                 <div className="flex items-center text-green-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
-                </div>
-              </Link>
+              </div>
+                </Link>
 
               <Link href="/cities/bareilly/on-demand-helper" className="group bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 border border-red-100 hover:border-red-300 hover:shadow-lg transition-all duration-300">
                 <BoltIcon className="h-12 w-12 text-red-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
@@ -526,9 +526,9 @@ export default function BareillyLiveInMaidPage() {
                 <p className="text-gray-600 mb-4">Same-day emergency help for festivals & urgent needs</p>
                 <div className="flex items-center text-red-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
-                </div>
-              </Link>
-            </div>
+              </div>
+                </Link>
+              </div>
 
             <div className="text-center mt-8">
               <Link 
@@ -538,17 +538,17 @@ export default function BareillyLiveInMaidPage() {
                 View All Services in Bareilly
                 <ArrowRightIcon className="h-5 w-5 ml-2" />
               </Link>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* CTA Section */}
         <section className="section-padding bg-gradient-to-br from-purple-600 to-indigo-600 text-white">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
-                Book Your 24-Hour Maid in Bareilly Today
-              </h2>
+              Book Your 24-Hour Maid in Bareilly Today
+            </h2>
               <p className="text-xl mb-8 text-purple-100">
                 Get reliable, verified, and culturally-aware live-in household support for your family
               </p>
@@ -558,20 +558,20 @@ export default function BareillyLiveInMaidPage() {
                   href="/hire-helper"
                   className="inline-flex items-center justify-center bg-white text-purple-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
                 >
-                  Book 24-Hour Maid Now
-                </Link>
+                Book 24-Hour Maid Now
+              </Link>
                 
                 <Link
                   href="tel:+919972571005"
                   className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
                 >
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call for Quick Helper in Bareilly
-                </Link>
-              </div>
+                Call for Quick Helper in Bareilly
+              </Link>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
       </main>
       
       <Footer />
