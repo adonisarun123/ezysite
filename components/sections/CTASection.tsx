@@ -28,7 +28,8 @@ export default function CTASection() {
           },
           body: JSON.stringify({
             leadType: 'general',
-            formData: data
+            formData: data,
+            sourceUrl: window.location.href
           })
         });
 

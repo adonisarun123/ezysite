@@ -4,7 +4,7 @@ import { sendLeadEmail } from '@/lib/emailService';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { leadType, formData, requestId } = body;
+    const { leadType, formData, requestId, sourceUrl } = body;
 
     // Validate required fields
     if (!leadType || !formData) {
@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email
-    const result = await sendLeadEmail(leadType, formData, requestId);
+    const result = await sendLeadEmail(leadType, formData, requestId, sourceUrl);
 
     if (result.success) {
       return NextResponse.json({

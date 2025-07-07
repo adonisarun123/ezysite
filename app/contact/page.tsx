@@ -114,7 +114,8 @@ export default function ContactPage() {
                 phone: formData.phone.trim(),
                 subject: formData.subject,
                 message: formData.message.trim()
-              }
+              },
+              sourceUrl: window.location.href
             })
           });
 

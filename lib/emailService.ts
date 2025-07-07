@@ -21,6 +21,7 @@ const generateContactLeadEmail = (formData: {
   phone: string;
   subject: string;
   message: string;
+  sourceUrl?: string;
 }) => {
   return {
     subject: `New Contact Lead: ${formData.subject}`,
@@ -41,6 +42,11 @@ const generateContactLeadEmail = (formData: {
         <div style="margin-top: 20px; padding: 15px; background-color: #e8f5e8; border-radius: 8px;">
           <p style="margin: 0; color: #2d5a2d;"><strong>Action Required:</strong> Please respond to this lead within 2 hours.</p>
         </div>
+        ${formData.sourceUrl ? `
+        <div style="margin-top: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 8px;">
+          <p style="margin: 0; color: #1e40af;"><strong>Source URL:</strong> <a href="${formData.sourceUrl}" target="_blank" style="color: #1e40af; text-decoration: underline;">${formData.sourceUrl}</a></p>
+        </div>
+        ` : ''}
         <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
         <p style="color: #666; font-size: 12px;">This email was automatically generated from the EzyHelpers website contact form.</p>
       </div>
@@ -58,6 +64,8 @@ Message:
 ${formData.message}
 
 Action Required: Please respond to this lead within 2 hours.
+
+${formData.sourceUrl ? `Source URL: ${formData.sourceUrl}` : ''}
 
 ---
 This email was automatically generated from the EzyHelpers website contact form.
@@ -81,6 +89,7 @@ const generateHireHelperLeadEmail = (formData: {
   familySize: string;
   preferredGender: string;
   requestId: string;
+  sourceUrl?: string;
 }) => {
   return {
     subject: `New Hire Helper Lead: ${formData.serviceType} in ${formData.city}`,
@@ -113,6 +122,11 @@ const generateHireHelperLeadEmail = (formData: {
         <div style="margin-top: 20px; padding: 15px; background-color: #fff3cd; border-radius: 8px;">
           <p style="margin: 0; color: #856404;"><strong>Priority:</strong> High priority lead - immediate follow-up required.</p>
         </div>
+        ${formData.sourceUrl ? `
+        <div style="margin-top: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 8px;">
+          <p style="margin: 0; color: #1e40af;"><strong>Source URL:</strong> <a href="${formData.sourceUrl}" target="_blank" style="color: #1e40af; text-decoration: underline;">${formData.sourceUrl}</a></p>
+        </div>
+        ` : ''}
         <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
         <p style="color: #666; font-size: 12px;">This email was automatically generated from the EzyHelpers website hire helper form.</p>
       </div>
@@ -144,6 +158,8 @@ ${formData.specificRequirements || 'No specific requirements mentioned.'}
 
 Priority: High priority lead - immediate follow-up required.
 
+${formData.sourceUrl ? `Source URL: ${formData.sourceUrl}` : ''}
+
 ---
 This email was automatically generated from the EzyHelpers website hire helper form.
     `,
@@ -155,6 +171,7 @@ const generateGeneralLeadEmail = (formData: {
   phone: string;
   service: string;
   city: string;
+  sourceUrl?: string;
 }) => {
   return {
     subject: `New Lead: ${formData.service} in ${formData.city}`,
@@ -171,6 +188,11 @@ const generateGeneralLeadEmail = (formData: {
         <div style="margin-top: 20px; padding: 15px; background-color: #e8f5e8; border-radius: 8px;">
           <p style="margin: 0; color: #2d5a2d;"><strong>Action Required:</strong> Please call this lead within 30 minutes.</p>
         </div>
+        ${formData.sourceUrl ? `
+        <div style="margin-top: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 8px;">
+          <p style="margin: 0; color: #1e40af;"><strong>Source URL:</strong> <a href="${formData.sourceUrl}" target="_blank" style="color: #1e40af; text-decoration: underline;">${formData.sourceUrl}</a></p>
+        </div>
+        ` : ''}
         <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
         <p style="color: #666; font-size: 12px;">This email was automatically generated from the EzyHelpers website.</p>
       </div>
@@ -186,6 +208,8 @@ Lead Information:
 
 Action Required: Please call this lead within 30 minutes.
 
+${formData.sourceUrl ? `Source URL: ${formData.sourceUrl}` : ''}
+
 ---
 This email was automatically generated from the EzyHelpers website.
     `,
@@ -196,7 +220,8 @@ This email was automatically generated from the EzyHelpers website.
 export const sendLeadEmail = async (
   leadType: 'contact' | 'hire_helper' | 'general',
   formData: any,
-  requestId?: string
+  requestId?: string,
+  sourceUrl?: string
 ) => {
   try {
     const adminEmail = process.env.ADMIN_EMAIL;
@@ -211,13 +236,13 @@ export const sendLeadEmail = async (
     
     switch (leadType) {
       case 'contact':
-        emailContent = generateContactLeadEmail(formData);
+        emailContent = generateContactLeadEmail({ ...formData, sourceUrl });
         break;
       case 'hire_helper':
-        emailContent = generateHireHelperLeadEmail({ ...formData, requestId: requestId || 'N/A' });
+        emailContent = generateHireHelperLeadEmail({ ...formData, requestId: requestId || 'N/A', sourceUrl });
         break;
       case 'general':
-        emailContent = generateGeneralLeadEmail(formData);
+        emailContent = generateGeneralLeadEmail({ ...formData, sourceUrl });
         break;
       default:
         throw new Error('Invalid lead type');

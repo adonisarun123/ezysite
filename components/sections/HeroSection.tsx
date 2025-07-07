@@ -148,7 +148,8 @@ export default function HeroSection() {
               phone: formData.phone.trim(),
               service: formData.service,
               city: formData.city
-            }
+            },
+            sourceUrl: window.location.href
           })
         });
 
