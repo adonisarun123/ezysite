@@ -219,22 +219,34 @@ export default function RootLayout({
         {/* Custom positioning for Tawk.to to avoid WhatsApp overlap */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            /* Position Tawk.to widget above WhatsApp float */
+            /* Position Tawk.to widget to the left of WhatsApp float */
             #tawk-bubble {
-              bottom: 100px !important;
-              right: 24px !important;
-              z-index: 40 !important;
+              bottom: 24px !important;
+              right: 100px !important;
+              z-index: 45 !important;
             }
             
             /* Ensure Tawk.to chat window aligns properly */
             .tawk-flex-right {
-              right: 24px !important;
+              right: 100px !important;
             }
             
-            /* Mobile adjustments - stack vertically with more spacing */
+            /* Tablet adjustments - side by side with more spacing */
+            @media (max-width: 1024px) and (min-width: 769px) {
+              #tawk-bubble {
+                bottom: 24px !important;
+                right: 110px !important;
+              }
+              
+              .tawk-flex-right {
+                right: 110px !important;
+              }
+            }
+            
+            /* Mobile adjustments - stack vertically with large spacing */
             @media (max-width: 768px) {
               #tawk-bubble {
-                bottom: 120px !important;
+                bottom: 140px !important;
                 right: 24px !important;
               }
               
@@ -243,15 +255,27 @@ export default function RootLayout({
               }
             }
             
-            /* Extra small screens - more spacing */
+            /* Extra small screens - even more spacing */
             @media (max-width: 480px) {
               #tawk-bubble {
-                bottom: 130px !important;
+                bottom: 150px !important;
                 right: 16px !important;
               }
               
               .tawk-flex-right {
                 right: 16px !important;
+              }
+            }
+            
+            /* Hide Tawk.to bubble if it conflicts */
+            @media (max-width: 320px) {
+              #tawk-bubble {
+                bottom: 160px !important;
+                right: 12px !important;
+              }
+              
+              .tawk-flex-right {
+                right: 12px !important;
               }
             }
           `
