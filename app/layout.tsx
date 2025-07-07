@@ -198,6 +198,53 @@ export default function RootLayout({
         <OrganizationSchema />
         <WebSiteSchema />
         
+        {/* Tawk.to Chat Widget */}
+        <script 
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/67188db42480f5b4f591f799/1iaruj2t3';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+              })();
+            `
+          }}
+        />
+        
+        {/* Custom positioning for Tawk.to to avoid WhatsApp overlap */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Position Tawk.to widget to avoid WhatsApp float overlap */
+            #tawk-bubble {
+              bottom: 24px !important;
+              right: 100px !important;
+              z-index: 40 !important;
+            }
+            
+            /* Ensure Tawk.to chat window doesn't overlap WhatsApp */
+            .tawk-flex-right {
+              right: 100px !important;
+            }
+            
+            /* Mobile adjustments */
+            @media (max-width: 768px) {
+              #tawk-bubble {
+                bottom: 90px !important;
+                right: 24px !important;
+              }
+              
+              .tawk-flex-right {
+                right: 24px !important;
+              }
+            }
+          `
+        }} />
+        
         {/* Google Analytics - Ultra-deferred to prevent blocking */}
         <script dangerouslySetInnerHTML={{
           __html: `
