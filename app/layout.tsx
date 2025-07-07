@@ -219,27 +219,39 @@ export default function RootLayout({
         {/* Custom positioning for Tawk.to to avoid WhatsApp overlap */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            /* Position Tawk.to widget to avoid WhatsApp float overlap */
+            /* Position Tawk.to widget above WhatsApp float */
             #tawk-bubble {
-              bottom: 24px !important;
-              right: 100px !important;
+              bottom: 100px !important;
+              right: 24px !important;
               z-index: 40 !important;
             }
             
-            /* Ensure Tawk.to chat window doesn't overlap WhatsApp */
+            /* Ensure Tawk.to chat window aligns properly */
             .tawk-flex-right {
-              right: 100px !important;
+              right: 24px !important;
             }
             
-            /* Mobile adjustments */
+            /* Mobile adjustments - stack vertically with more spacing */
             @media (max-width: 768px) {
               #tawk-bubble {
-                bottom: 90px !important;
+                bottom: 120px !important;
                 right: 24px !important;
               }
               
               .tawk-flex-right {
                 right: 24px !important;
+              }
+            }
+            
+            /* Extra small screens - more spacing */
+            @media (max-width: 480px) {
+              #tawk-bubble {
+                bottom: 130px !important;
+                right: 16px !important;
+              }
+              
+              .tawk-flex-right {
+                right: 16px !important;
               }
             }
           `
