@@ -1,12 +1,10 @@
 import { MetadataRoute } from 'next'
 
-type ChangeFreq = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ezyhelpers.com'
   
   // Core pages
-  const corePages = [
+  const corePages: MetadataRoute.Sitemap = [
     '',
     '/about',
     '/contact',
@@ -20,12 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: (route === '' ? 'daily' : 'weekly') satisfies ChangeFreq,
+    changeFrequency: route === '' ? 'daily' : 'weekly',
     priority: route === '' ? 1.0 : 0.8
   }))
 
   // Service pages
-  const services = [
+  const services: MetadataRoute.Sitemap = [
     'full-time-maids',
     'part-time-maids',
     'live-in-maids',
@@ -43,12 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map(service => ({
     url: `${baseUrl}/services/${service}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly' satisfies ChangeFreq,
+    changeFrequency: 'weekly',
     priority: 0.7
   }))
 
   // Cities
-  const cities = [
+  const cities: MetadataRoute.Sitemap = [
     'delhi',
     'mumbai',
     'bangalore',
@@ -61,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map(city => ({
     url: `${baseUrl}/cities/${city}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly' satisfies ChangeFreq,
+    changeFrequency: 'weekly',
     priority: 0.6
   }))
 
