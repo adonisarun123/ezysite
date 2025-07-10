@@ -37,13 +37,37 @@ const WhatsAppFloat = dynamic(() => import('../components/WhatsAppFloat'), {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ezyhelpers.com'),
-  title: 'EzyHelpers - Trusted House Maid Services & Complete Home Help',
-  description: 'Connect with verified professionals for all your home needs. From housemaids and cooks to caretakers and home maintenance. Transparent pricing, quick booking, exceptional service.',
-  keywords: 'house help, maid services, domestic help, home care, live-in maid, part-time maid, full-time maid, elderly care, babysitter, nanny, cook services, home maintenance',
+  title: {
+    default: 'Trusted House Help Service | EzyHelpers',
+    template: '%s | EzyHelpers'
+  },
+  description: "India's #1 house help service platform. Get verified maids, cooks, nannies & drivers in 24-72hrs. 10,000+ trusted families.",
+  keywords: ['house help service', 'domestic help', 'maids', 'cooks', 'nannies', 'drivers', 'verified helpers', 'home services India'],
   authors: [{ name: 'EzyHelpers' }],
-  robots: 'index, follow',
+  creator: 'EzyHelpers',
+  publisher: 'EzyHelpers',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://ezyhelpers.com',
+    languages: {
+      'en-US': 'https://ezyhelpers.com',
+      'hi-IN': 'https://ezyhelpers.com/hi'
+    }
   },
   openGraph: {
     title: 'EzyHelpers - Trusted House Maid Services & Complete Home Help',
@@ -63,9 +87,25 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EzyHelpers - Trusted House Maid Services & Complete Home Help',
-    description: 'Connect with verified professionals for all your home needs. Transparent pricing, quick booking, exceptional service.',
-    images: ['/og-image.jpg'],
+    title: 'EzyHelpers - Your Trusted Partner for Home Services',
+    description: 'Find reliable domestic helpers, maids, cooks, drivers & more. Professional home services across major Indian cities.',
+    site: '@ezyhelpers',
+    creator: '@ezyhelpers',
+    images: [
+      {
+        url: 'https://ezyhelpers.com/ezyhelper_logo_new.png',
+        width: 1200,
+        height: 630,
+        alt: 'EzyHelpers - Home Services'
+      }
+    ]
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+    viewportFit: 'cover'
   },
 }
 
@@ -339,6 +379,45 @@ export default function RootLayout({
             })();
           `
         }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "EzyHelpers",
+              "url": "https://ezyhelpers.com",
+              "logo": "https://ezyhelpers.com/ezyhelper_logo_new.png",
+              "sameAs": [
+                "https://www.facebook.com/ezyhelpers",
+                "https://twitter.com/ezyhelpers",
+                "https://www.linkedin.com/company/ezyhelpers"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-9972571005",
+                "contactType": "customer service",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi"]
+              }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://ezyhelpers.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://ezyhelpers.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
         <UrgencyProvider>

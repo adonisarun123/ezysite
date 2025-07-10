@@ -1,65 +1,69 @@
 import { MetadataRoute } from 'next'
-import { generateSitemapEntries, getManualPages } from '../lib/sitemap-generator'
+
+type ChangeFreq = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ezyhelpers.com'
   
-  try {
-    // Automatically detect all pages from the file system
-    const autoDetectedPages = generateSitemapEntries(baseUrl)
-    
-    // Get manual pages (like dynamic blog posts)
-    const manualPages = getManualPages(baseUrl)
-    
-    // Combine and deduplicate
-    const allPages = [...autoDetectedPages, ...manualPages]
-    const uniquePages = allPages.filter((page, index, self) => 
-      index === self.findIndex(p => p.url === page.url)
-    )
-    
-    // Sort by priority (highest first) then by URL
-    return uniquePages.sort((a, b) => {
-      if (b.priority !== a.priority) {
-        return b.priority - a.priority
-      }
-      return a.url.localeCompare(b.url)
-    })
-    
-  } catch (error) {
-    console.error('Error generating sitemap:', error)
-    
-    // Fallback to manual sitemap if auto-detection fails
-    return [
-      {
-        url: baseUrl,
-        lastModified: new Date(),
-        changeFrequency: 'daily',
-        priority: 1.0,
-      },
-      {
-        url: `${baseUrl}/services`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/hire-helper`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/about`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.8,
-      },
-      {
-        url: `${baseUrl}/contact`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.7,
-      }
-    ]
-  }
+  // Core pages
+  const corePages = [
+    '',
+    '/about',
+    '/contact',
+    '/services',
+    '/blog',
+    '/faqs',
+    '/privacy-policy',
+    '/terms-of-service',
+    '/hire-helper',
+    '/join-as-helper'
+  ].map(route => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: (route === '' ? 'daily' : 'weekly') satisfies ChangeFreq,
+    priority: route === '' ? 1.0 : 0.8
+  }))
+
+  // Service pages
+  const services = [
+    'full-time-maids',
+    'part-time-maids',
+    'live-in-maids',
+    'elderly-care',
+    'nanny-babysitter',
+    'cooks',
+    'drivers',
+    'gardener',
+    'carpenters',
+    'electricians',
+    'plumbers',
+    'painters',
+    'deep-cleaning',
+    'appliance-repair'
+  ].map(service => ({
+    url: `${baseUrl}/services/${service}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'weekly' satisfies ChangeFreq,
+    priority: 0.7
+  }))
+
+  // Cities
+  const cities = [
+    'delhi',
+    'mumbai',
+    'bangalore',
+    'noida',
+    'lucknow',
+    'kanpur',
+    'bareilly',
+    'meerut',
+    'nagpur'
+  ].map(city => ({
+    url: `${baseUrl}/cities/${city}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'weekly' satisfies ChangeFreq,
+    priority: 0.6
+  }))
+
+  return [...corePages, ...services, ...cities]
 } 
