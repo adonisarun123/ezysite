@@ -1,4 +1,4 @@
-import SimplePDFButton from '../../components/SimplePDFButton'
+
 
 export const metadata = {
   title: 'Executive Summary - EzyHelpers',
@@ -68,10 +68,7 @@ export default function ExecutiveSummary() {
               Connecting quality helpers with modern families across India.
             </p>
 
-            {/* PDF Download Button */}
-            <div className="mb-12 no-print">
-              <SimplePDFButton />
-            </div>
+
           </div>
         </div>
       </div>
