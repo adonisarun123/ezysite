@@ -1,3 +1,5 @@
+'use client';
+
 import { Metadata } from 'next'
 import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
