@@ -17,8 +17,19 @@ import {
 
 export const metadata: Metadata = {
   title: 'Elder Care Services | 24/7 Senior Support | EzyHelpers',
-  description: 'Compassionate elder care services with medical assistance, companionship & mobility support. Trained specialists for seniors Trusted by families across India.',
+  description: 'Compassionate elder care services with medical assistance, companionship & mobility support. Trained specialists for seniors. Trusted by families across India.',
   keywords: 'elder care services, elderly care, senior care, 24/7 elder support, medical assistance for seniors, companionship',
+  openGraph: {
+    title: 'Professional Elder Care Services - 24/7 Senior Support',
+    description: 'Get reliable elder care services with trained professionals. Medical assistance, companionship & complete senior care solutions.',
+    url: 'https://ezyhelpers.com/services/elderly-care',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://ezyhelpers.com/services/elderly-care'
+  }
 }
 
 export default function ElderlyCare() {

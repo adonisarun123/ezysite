@@ -22,6 +22,15 @@ export const metadata: Metadata = {
   title: 'Full Time Maid Services | 8-10 Hours | EzyHelpers',
   description: 'Reliable full-time maid services for daily cleaning, cooking & home care. Get 8–10 hrs of trained, verified help daily. Book trusted maids near you today!',
   keywords: 'full time maid, daily maid service, 8-10 hours maid, full time domestic help, home care services',
+  openGraph: {
+    title: 'Full Time Maid Services - Daily Home Management | EzyHelpers',
+    description: 'Get reliable full-time maid services for all your daily home needs. Professional, verified staff for cleaning, cooking, and home management.',
+    url: 'https://ezyhelpers.com/services/full-time-maids',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://ezyhelpers.com/services/full-time-maids'
+  }
 }
 
 export default function FullTimeMaidsPage() {

@@ -1,7 +1,26 @@
+import { Metadata } from 'next'
+import React from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import dynamic from 'next/dynamic'
 import { CheckCircleIcon, PhoneIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Hire Domestic Help | Quick & Easy Booking | EzyHelpers',
+  description: 'Book verified domestic help in minutes. Easy process to hire maids, cooks, nannies & more. Background-checked staff, flexible timing options available.',
+  keywords: 'hire domestic help, book maid service, hire cook, hire nanny, domestic staff booking',
+  openGraph: {
+    title: 'Hire Verified Domestic Help - Quick Booking Process',
+    description: 'Book reliable domestic help through EzyHelpers. Verified staff, transparent pricing, and hassle-free process.',
+    url: 'https://ezyhelpers.com/hire-helper',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://ezyhelpers.com/hire-helper'
+  }
+}
 
 const HireHelperForm = dynamic(() => import('@/components/HireHelperForm'), { ssr: false })
 

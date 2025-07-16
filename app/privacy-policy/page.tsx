@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -13,6 +14,23 @@ import {
   ExclamationTriangleIcon,
   CheckCircleIcon
 } from '@heroicons/react/24/outline';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | EzyHelpers',
+  description: 'Learn how EzyHelpers protects your privacy and handles personal information. Our commitment to data security and user privacy.',
+  keywords: 'privacy policy, data protection, user privacy, information security, EzyHelpers privacy',
+  openGraph: {
+    title: 'EzyHelpers Privacy Policy',
+    description: 'Understanding how we protect your data and privacy at EzyHelpers. Clear information about data collection, usage, and your rights.',
+    url: 'https://ezyhelpers.com/privacy-policy',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://ezyhelpers.com/privacy-policy'
+  }
+}
 
 export default function PrivacyPolicyPage() {
   const sections = [

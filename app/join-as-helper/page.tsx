@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -21,6 +22,23 @@ import {
   ExclamationTriangleIcon,
   InformationCircleIcon
 } from '@heroicons/react/24/outline';
+
+export const metadata: Metadata = {
+  title: 'Join as a Helper | Work with EzyHelpers',
+  description: 'Join EzyHelpers as a domestic service provider. Get regular work, better pay, and secure employment. Register as a maid, cook, nanny, or other service provider.',
+  keywords: 'join as helper, work as maid, domestic help jobs, cook jobs, nanny positions, helper registration',
+  openGraph: {
+    title: 'Join EzyHelpers - Domestic Service Provider Opportunities',
+    description: 'Start your career with EzyHelpers. Regular work, competitive pay, and professional growth opportunities for domestic service providers.',
+    url: 'https://ezyhelpers.com/join-as-helper',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://ezyhelpers.com/join-as-helper'
+  }
+}
 
 export default function JoinAsHelperPage() {
   const serviceTypes = [

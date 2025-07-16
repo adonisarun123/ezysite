@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -15,6 +16,23 @@ import {
   XCircleIcon,
   ClockIcon
 } from '@heroicons/react/24/outline';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service | EzyHelpers',
+  description: 'Read EzyHelpers terms of service. Clear information about our service terms, user responsibilities, and policies for domestic help services.',
+  keywords: 'EzyHelpers terms, service terms, user agreement, service conditions, domestic help terms',
+  openGraph: {
+    title: 'EzyHelpers Terms of Service',
+    description: 'Understand your rights and responsibilities when using EzyHelpers domestic services. Clear terms for a better service experience.',
+    url: 'https://ezyhelpers.com/terms-of-service',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://ezyhelpers.com/terms-of-service'
+  }
+}
 
 export default function TermsOfServicePage() {
   const sections = [

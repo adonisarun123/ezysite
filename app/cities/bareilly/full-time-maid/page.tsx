@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     description: 'Background-verified, trained full-time maid in Bareilly for 8-10 hours daily. Perfect for joint families and working professionals.',
     url: 'https://ezyhelpers.com/cities/bareilly/full-time-maid',
     type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://ezyhelpers.com/cities/bareilly/full-time-maid'
   }
 }
 

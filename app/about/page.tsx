@@ -20,6 +20,17 @@ export const metadata: Metadata = {
   title: 'About EzyHelpers | India\'s Top Domestic Helper Services',
   description: 'Leading domestic helper services platform since 2020. 5,000+ verified helpers across 9 cities. Police verified professionals for your peace of mind.',
   keywords: 'domestic helper services, about EzyHelpers, verified helpers, home services platform, trusted domestic help',
+  openGraph: {
+    title: 'About EzyHelpers - Leading Home Services Platform',
+    description: 'Discover how EzyHelpers is transforming home services with 5,000+ verified professionals serving 10,000+ families across India.',
+    url: 'https://ezyhelpers.com/about',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://ezyhelpers.com/about'
+  }
 }
 
 export default function AboutPage() {

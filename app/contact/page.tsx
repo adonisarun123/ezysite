@@ -1,5 +1,4 @@
-'use client';
-
+import { Metadata } from 'next'
 import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
 import Link from 'next/link';
@@ -19,6 +18,23 @@ import {
 } from '@heroicons/react/24/outline';
 import { supabase } from '@/lib/supabaseClient'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackChatStart, trackPhoneClick } from '@/lib/analytics'
+
+export const metadata: Metadata = {
+  title: 'Contact Us | EzyHelpers Customer Support',
+  description: 'Get in touch with EzyHelpers for all your home service needs. 24/7 customer support available. Call +91 9972571005 or chat with us online.',
+  keywords: 'contact EzyHelpers, customer support, home services help, domestic help support, helper booking support',
+  openGraph: {
+    title: 'Contact EzyHelpers - 24/7 Customer Support',
+    description: 'Need help with domestic services? Contact EzyHelpers anytime. Our team is ready to assist you with all your home service requirements.',
+    url: 'https://ezyhelpers.com/contact',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://ezyhelpers.com/contact'
+  }
+}
 
 export default function ContactPage() {
   // Function to open Tawk.to chat

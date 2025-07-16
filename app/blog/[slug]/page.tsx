@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -178,6 +179,44 @@ const blogFAQs = {
     }
   ]
 };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const post = posts.find(p => p.id === params.slug)
+  
+  if (!post) {
+    return {
+      title: 'Post Not Found | EzyHelpers Blog',
+      description: 'The requested blog post could not be found.'
+    }
+  }
+
+  return {
+    title: `${post.title} | EzyHelpers Blog`,
+    description: post.excerpt,
+    keywords: `${post.category}, home services, domestic help, ${post.tags?.join(', ')}`,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://ezyhelpers.com/blog/${post.id}`,
+      type: 'article',
+      siteName: 'EzyHelpers',
+      locale: 'en_IN',
+      publishedTime: post.date,
+      authors: ['EzyHelpers'],
+      images: post.image ? [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title
+        }
+      ] : undefined
+    },
+    alternates: {
+      canonical: `https://ezyhelpers.com/blog/${post.id}`
+    }
+  }
+}
 
 export default function BlogPost({ params }: PageProps) {
   const post = posts.find((p) => p.id === params.slug);

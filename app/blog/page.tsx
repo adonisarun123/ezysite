@@ -1,5 +1,4 @@
-"use client";
-
+import { Metadata } from 'next'
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import UrgencyCTA from '@/components/UrgencyCTA';
@@ -12,6 +11,23 @@ import {
 } from '@heroicons/react/24/outline';
 
 import { posts } from '@/lib/blogData';
+
+export const metadata: Metadata = {
+  title: 'Blog | Home Services Tips & Insights | EzyHelpers',
+  description: 'Expert tips, guides & insights about domestic help services. Learn about hiring, managing & getting the best from your home service professionals.',
+  keywords: 'domestic help blog, home services tips, maid hiring guide, household management, domestic staff management',
+  openGraph: {
+    title: 'EzyHelpers Blog - Home Services Insights & Tips',
+    description: 'Get expert advice on managing your home with professional help. Tips on hiring, training, and working with domestic staff.',
+    url: 'https://ezyhelpers.com/blog',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://ezyhelpers.com/blog'
+  }
+}
 
 export default function BlogIndex() {
   const featured = posts.find((p) => p.featured) ?? posts[0];

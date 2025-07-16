@@ -1,5 +1,4 @@
-'use client';
-
+import { Metadata } from 'next'
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
@@ -13,6 +12,23 @@ import {
   PhoneIcon,
   StarIcon
 } from '@heroicons/react/24/outline';
+
+export const metadata: Metadata = {
+  title: 'Frequently Asked Questions | EzyHelpers Help Center',
+  description: 'Find answers to common questions about EzyHelpers services, booking process, helper verification, pricing, and more. Get help with domestic services.',
+  keywords: 'EzyHelpers FAQs, domestic help questions, maid service FAQ, helper booking help, home services questions',
+  openGraph: {
+    title: 'EzyHelpers FAQs - Your Questions Answered',
+    description: 'Everything you need to know about EzyHelpers domestic services. Clear answers about booking, verification, pricing, and more.',
+    url: 'https://ezyhelpers.com/faqs',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://ezyhelpers.com/faqs'
+  }
+}
 
 const faqData = [
   {
