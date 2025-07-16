@@ -1,4 +1,4 @@
-import SimplePDFButton from '@/components/SimplePDFButton'
+import SimplePDFButton from '../../components/SimplePDFButton'
 
 export const metadata = {
   title: 'Executive Summary - EzyHelpers',
