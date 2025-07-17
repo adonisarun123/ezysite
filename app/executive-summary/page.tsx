@@ -203,6 +203,36 @@ export default function ExecutiveSummary() {
               </div>
             </div>
           </div>
+
+          {/* Certified By Section */}
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-10 rounded-2xl shadow-lg border border-gray-100 mt-8">
+            <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Certified By</h3>
+            <div className="flex justify-center items-center space-x-16">
+              <div className="text-center group cursor-pointer">
+                <div className="w-32 h-32 bg-white rounded-xl shadow-md flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow duration-300">
+                  <img 
+                    src="/affiliations/nsdc-logo.png" 
+                    alt="NSDC - National Skill Development Corporation" 
+                    className="w-24 h-24 object-contain"
+                  />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">NSDC</h4>
+                <p className="text-gray-600 text-sm">National Skill Development<br/>Corporation</p>
+              </div>
+              
+              <div className="text-center group cursor-pointer">
+                <div className="w-32 h-32 bg-white rounded-xl shadow-md flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow duration-300">
+                  <img 
+                    src="/affiliations/startup-india-logo.png" 
+                    alt="Startup India - Government Initiative" 
+                    className="w-24 h-24 object-contain"
+                  />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Startup India</h4>
+                <p className="text-gray-600 text-sm">Government of India<br/>Initiative</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
