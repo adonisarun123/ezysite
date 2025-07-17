@@ -168,18 +168,18 @@ export default function AboutPage() {
                 <div className="group flex flex-col items-center space-y-4">
                   <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     <img 
-                      src="/dpiit.png" 
-                      alt="DPIIT Startup India" 
+                      src="/affiliations/startup-india-logo.png" 
+                      alt="Startup India - Government Initiative" 
                       className="h-20 w-auto object-contain"
                     />
                   </div>
-                  <p className="text-lg font-semibold text-gray-700">DPIIT</p>
+                  <p className="text-lg font-semibold text-gray-700">Startup India</p>
                 </div>
                 <div className="group flex flex-col items-center space-y-4">
                   <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     <img 
-                      src="/nsdc.png" 
-                      alt="National Skill Development Corporation" 
+                      src="/affiliations/nsdc-logo.png" 
+                      alt="NSDC - National Skill Development Corporation" 
                       className="h-20 w-auto object-contain"
                     />
                   </div>
