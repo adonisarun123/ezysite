@@ -380,6 +380,22 @@ export default function ExecutiveSummary() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <div className="bg-gray-100 py-8 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-gray-700 text-lg font-medium mb-3">
+              © 2025 EzyHelpers. All rights reserved.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-gray-600">
+              <span className="font-medium">Registered with DWSSC & Skill India</span>
+              <span className="hidden sm:inline text-gray-400">•</span>
+              <span className="font-medium">Trusted by 10,000+ families</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 } 
