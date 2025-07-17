@@ -389,7 +389,7 @@ export default function ExecutiveSummary() {
               © 2025 EzyHelpers. All rights reserved.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-gray-600">
-              <span className="font-medium">Registered with DWSSC & Skill India</span>
+              <span className="font-medium">Officially Registered with DWSSC, Skill India, StartUp India</span>
               <span className="hidden sm:inline text-gray-400">•</span>
               <span className="font-medium">Trusted by 10,000+ families</span>
             </div>
