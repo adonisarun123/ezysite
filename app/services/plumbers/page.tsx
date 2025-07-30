@@ -20,7 +20,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'Emergency Plumber Service | 24/7 Available | EzyHelpers',
-  description: 'Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas.',
+  description: 'Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/6 in your city and surrounding areas.',
   keywords: 'plumber service, emergency plumber, pipe repairs, plumbing installations, 24/7 plumber, licensed plumbers',
 }
 

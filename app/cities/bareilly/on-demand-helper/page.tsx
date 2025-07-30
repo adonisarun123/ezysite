@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   description: 'Get instant maid service in Bareilly within 2-4 hours! Emergency cleaning, last-minute cooking, and quick helper for weddings, festivals, and urgent needs.',
   keywords: 'instant maid service Bareilly, same day helper Bareilly, emergency cleaning Bareilly, quick helper service, urgent maid service',
   openGraph: {
-    title: 'Instant Maid Service in Bareilly - Same-Day Quick Helper Available 24/7 | EzyHelpers',
+    title: 'Instant Maid Service in Bareilly - Same-Day Quick Helper Available 24/6 | EzyHelpers',
     description: 'Get instant help within 2-4 hours! Emergency cleaning, cooking, and quick assistance for urgent household needs.',
     url: 'https://ezyhelpers.com/cities/bareilly/on-demand-helper',
     type: 'website',
@@ -276,7 +276,7 @@ export default function BareillyOnDemandHelperPage() {
             </h1>
                   
                   <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed">
-                    Same-Day Quick Helper Available 24/7! Get instant maid service within 2-4 hours for emergency cleaning, last-minute cooking, and urgent home maintenance.
+                    Same-Day Quick Helper Available 24/6! Get instant maid service within 2-4 hours for emergency cleaning, last-minute cooking, and urgent home maintenance.
                   </p>
 
                   <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">

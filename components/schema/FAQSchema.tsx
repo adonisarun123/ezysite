@@ -83,7 +83,7 @@ export const generalFAQs: FAQItem[] = [
     answer: "We currently serve major cities including Bangalore, Mumbai, Delhi, Noida, Nagpur, Kanpur, Lucknow, Meerut, and Bareilly. We're continuously expanding to new locations."
   },
   {
-    question: "Is customer support available 24/7?",
+    question: "Is customer support available 24/6?",
     answer: "Yes, we provide 24/7 customer support to address any concerns, emergencies, or requirements. You can reach us via phone at +91-9972571005 or through our website."
   },
   {

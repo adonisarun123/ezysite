@@ -103,7 +103,7 @@ export default function ServiceSchema({
     "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
       ],
       "opens": "00:00",
       "closes": "23:59"

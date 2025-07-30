@@ -51,7 +51,7 @@ export default function LocalBusinessSchema({
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
       ],
       "opens": "00:00",
       "closes": "23:59"
@@ -64,7 +64,7 @@ export default function LocalBusinessSchema({
       "hoursAvailable": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [
-          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
         ],
         "opens": "00:00",
         "closes": "23:59"

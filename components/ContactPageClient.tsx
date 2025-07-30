@@ -398,9 +398,9 @@ export default function ContactPageClient() {
                         onClick={handlePhoneClick}
                         className="text-indigo-600 hover:text-indigo-800 block"
                       >
-                        +91 99458 43005
+                        
                       </a>
-                      <p className="text-gray-600 text-sm mt-1">Available 24/7</p>
+                      <p className="text-gray-600 text-sm mt-1">Available 24/6</p>
                     </div>
                   </div>
 
@@ -439,7 +439,7 @@ export default function ContactPageClient() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">Business Hours</h4>
-                      <p className="text-gray-600">Monday - Sunday</p>
+                      <p className="text-gray-600">Monday - Saturday</p>
                       <p className="text-gray-600">24/7 Customer Support</p>
                       <p className="text-gray-600 text-sm">Emergency services available</p>
                     </div>

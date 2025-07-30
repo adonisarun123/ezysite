@@ -30,11 +30,11 @@ import {
 
 export const metadata: Metadata = {
   title: '24-Hour Live-In Maid Service in Bareilly | Trusted Help | EzyHelpers',
-  description: 'Get verified, trained live-in maid service in Bareilly available 24/7. Traditional UP cooking, cleaning, elderly care & complete home support. Hindi-speaking maids.',
+  description: 'Get verified, trained live-in maid service in Bareilly available 24/6. Traditional UP cooking, cleaning, elderly care & complete home support. Hindi-speaking maids.',
   keywords: '24 hour maid service Bareilly, live in maid Bareilly, round the clock helper Bareilly, trusted maid service, verified domestic help',
   openGraph: {
     title: '24-Hour Maid Service in Bareilly - Reliable & Trusted Help | EzyHelpers',
-    description: 'Background-verified, trained live-in maid service available 24/7 for traditional cooking, cleaning & complete home support.',
+    description: 'Background-verified, trained live-in maid service available 24/6 for traditional cooking, cleaning & complete home support.',
     url: 'https://ezyhelpers.com/cities/bareilly/live-in-maid',
     type: 'website',
   }
@@ -239,7 +239,7 @@ export default function BareillyLiveInMaidPage() {
             </h1>
                   
                   <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed">
-                    Reliable & Trusted Help at Your Doorstep! Get verified, trained live-in maid service available 24/7 for traditional UP cooking, cleaning, elderly care & complete home support.
+                    Reliable & Trusted Help at Your Doorstep! Get verified, trained live-in maid service available 24/6 for traditional UP cooking, cleaning, elderly care & complete home support.
                   </p>
 
                   <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">

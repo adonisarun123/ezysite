@@ -232,7 +232,7 @@ export default function RefundPolicyPage() {
                       icon: PhoneIcon,
                       title: "Refund Helpline",
                       info: "+91 9972571005",
-                      description: "Available 24/7 for urgent refund requests"
+                      description: "Available 24/6 for urgent refund requests"
                     },
                     {
                       icon: EnvelopeIcon,

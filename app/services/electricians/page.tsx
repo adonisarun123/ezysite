@@ -20,7 +20,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'Licensed Electrician Services | 24/7 Available | EzyHelpers',
-  description: 'Certified electrician services for wiring, repairs & installations. Emergency electrical work available 24/7 by licensed experts in your locality.',
+  description: 'Certified electrician services for wiring, repairs & installations. Emergency electrical work available 24/6 by licensed experts in your locality.',
   keywords: 'electrician services, electrical repairs, wiring, installations, emergency electrician, 24/7 electrical service',
 }
 
