@@ -117,7 +117,8 @@ export default function NannyBabysitterPage() {
                   </Link>
                   <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 whitespace-nowrap">
                     <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform shrink-0" />
-                    Call Now
+                    <span className="hidden sm:inline">Call: +91 9972571005</span>
+                    <span className="sm:hidden">+91 9972571005</span>
                   </Link>
                 </div>
 

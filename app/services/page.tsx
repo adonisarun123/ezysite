@@ -751,8 +751,8 @@ export default function ServicesPage() {
               
               <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300">
                 <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
-                <span className="hidden sm:inline">Call Now for Consultation</span>
-                <span className="sm:hidden">Call Now</span>
+                <span className="hidden sm:inline">Call: +91 9972571005</span>
+                <span className="sm:hidden">+91 9972571005</span>
               </Link>
             </div>
           </div>
