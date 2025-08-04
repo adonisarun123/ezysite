@@ -28,6 +28,7 @@ interface AgentData {
   pincode: string
   latitude: number | null
   longitude: number | null
+  listedBy: string
   notes: string
   createdAt: string
   updatedAt: string
@@ -156,6 +157,7 @@ export async function POST(request: NextRequest) {
     const pincode = formData.get('pincode') as string
     const latitude = formData.get('latitude') ? parseFloat(formData.get('latitude') as string) : null
     const longitude = formData.get('longitude') ? parseFloat(formData.get('longitude') as string) : null
+    const listedBy = formData.get('listedBy') as string || ''
     const notes = formData.get('notes') as string || ''
     const createdAt = formData.get('createdAt') as string || new Date().toISOString()
     
@@ -302,6 +304,7 @@ export async function POST(request: NextRequest) {
       pincode,
       latitude,
       longitude,
+      listedBy,
       notes,
       createdAt,
       updatedAt: new Date().toISOString()
@@ -363,6 +366,7 @@ export async function GET(request: NextRequest) {
       pincode: agent.pincode,
       latitude: agent.latitude,
       longitude: agent.longitude,
+      listedBy: agent.listedBy,
       createdAt: agent.createdAt,
       updatedAt: agent.updatedAt
     }))

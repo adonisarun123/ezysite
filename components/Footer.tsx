@@ -44,6 +44,7 @@ const footerLinks = {
     { name: 'About Us', href: '/about' },
     { name: 'How It Works', href: '/how-it-works' },
     { name: 'For Helpers', href: '/for-helpers' },
+    { name: 'Helper Registration', href: '/helper-register' },
     { name: 'Agent Registration', href: '/register' },
     { name: 'FAQs', href: '/faqs' },
     { name: 'Blog', href: '/blog' },

@@ -45,6 +45,9 @@ interface FormData {
   latitude: number | null
   longitude: number | null
   
+  // Listed by field
+  listedBy: string
+  
   // Notes
   notes: string
 }
@@ -98,6 +101,7 @@ export default function AgentRegistrationPage() {
     pincode: '',
     latitude: null,
     longitude: null,
+    listedBy: '',
     notes: ''
   })
   
@@ -506,6 +510,23 @@ export default function AgentRegistrationPage() {
                   <span className="font-medium text-teal-600">{formData.yearFounded}</span>
                   <span>{new Date().getFullYear()}</span>
                 </div>
+              </div>
+
+              {/* Listed By Field */}
+              <div className="space-y-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Listed By (Field Officer Name)
+                </label>
+                <input
+                  type="text"
+                  value={formData.listedBy}
+                  onChange={(e) => handleInputChange('listedBy', e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                  placeholder="Enter field officer name"
+                />
+                <p className="text-xs text-gray-500">
+                  Name of the field officer who is listing this agency
+                </p>
               </div>
             </div>
           )}
