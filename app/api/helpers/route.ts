@@ -25,7 +25,7 @@ interface HelperData {
   experienceMonths: number
   specialities: string[]
   workingHoursPreference: string
-  preferredLocalities: string[]
+  preferredLocalities: string
   maxPlacementsPerMonth: number
   expectedSalaryMin: number
   expectedSalaryMax: number
@@ -197,12 +197,7 @@ export async function POST(request: NextRequest) {
       }
     })
     
-    const preferredLocalities: string[] = []
-    formData.getAll('preferredLocalities[]').forEach(loc => {
-      if (typeof loc === 'string') {
-        preferredLocalities.push(loc)
-      }
-    })
+    const preferredLocalities = formData.get('preferredLocalities') as string || ''
     
     // Validation
     const errors: string[] = []

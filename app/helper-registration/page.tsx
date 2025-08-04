@@ -42,7 +42,7 @@ interface FormData {
   
   // Work Preferences
   workingHoursPreference: string
-  preferredLocalities: string[]
+  preferredLocalities: string
   maxPlacementsPerMonth: number
   expectedSalaryMin: number
   expectedSalaryMax: number
@@ -99,11 +99,7 @@ const specialitiesList = [
   'Drying clothes', 'Sweeping/Mopping', 'Other'
 ]
 
-const bangaloreLocalities = [
-  'Whitefield', 'Electronic City', 'Koramangala', 'Indiranagar', 'Jayanagar',
-  'BTM Layout', 'HSR Layout', 'Marathahalli', 'Sarjapur Road', 'Bannerghatta Road',
-  'Yelahanka', 'Hebbal', 'Rajajinagar', 'Malleshwaram', 'Basavanagudi'
-]
+
 
 export default function HelperRegistrationPage() {
   const [currentSection, setCurrentSection] = useState(1)
@@ -130,7 +126,7 @@ export default function HelperRegistrationPage() {
     experienceMonths: 0,
     specialities: [],
     workingHoursPreference: '8 AM - 6 PM',
-    preferredLocalities: [],
+    preferredLocalities: '',
     maxPlacementsPerMonth: 1,
     expectedSalaryMin: 10000,
     expectedSalaryMax: 15000,
@@ -414,9 +410,10 @@ export default function HelperRegistrationPage() {
       formData.specialities.forEach(spec => {
         formDataToSubmit.append('specialities[]', spec)
       })
-      formData.preferredLocalities.forEach(loc => {
-        formDataToSubmit.append('preferredLocalities[]', loc)
-      })
+      // Add preferred localities as a single string
+      if (formData.preferredLocalities) {
+        formDataToSubmit.append('preferredLocalities', formData.preferredLocalities)
+      }
       
       // Add files
       if (formData.helperPhoto) {
@@ -967,22 +964,16 @@ export default function HelperRegistrationPage() {
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   Preferred Localities (Optional)
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                  {bangaloreLocalities.map(locality => (
-                    <button
-                      key={locality}
-                      type="button"
-                      onClick={() => toggleArrayValue('preferredLocalities', locality)}
-                      className={`px-3 py-2 rounded-lg border-2 transition-all duration-200 text-sm ${
-                        formData.preferredLocalities.includes(locality)
-                          ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300'
-                          : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:border-blue-300'
-                      }`}
-                    >
-                      {locality}
-                    </button>
-                  ))}
-                </div>
+                <input
+                  type="text"
+                  value={formData.preferredLocalities}
+                  onChange={(e) => handleInputChange('preferredLocalities', e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                  placeholder="e.g., Mumbai, Delhi, Bangalore, Hyderabad (separate multiple cities with commas)"
+                />
+                <p className="text-xs text-gray-500">
+                  Enter cities or areas where you would prefer to work. You can list multiple locations separated by commas.
+                </p>
               </div>
 
               {/* Max Placements Per Month */}
