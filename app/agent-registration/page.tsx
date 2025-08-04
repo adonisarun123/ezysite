@@ -366,7 +366,7 @@ export default function AgentRegistrationPage() {
       })
       
       if (response.ok) {
-        window.location.href = '/success'
+        window.location.href = '/agent-success'
       } else {
         throw new Error('Submission failed')
       }
