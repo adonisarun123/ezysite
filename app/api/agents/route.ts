@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabaseClient'
+import { sendLeadEmail } from '@/lib/emailService'
 import { randomUUID } from 'crypto'
 
 // Types
@@ -333,6 +334,20 @@ export async function POST(request: NextRequest) {
         { error: 'Failed to save registration data', details: saveResult.error },
         { status: 500 }
       )
+    }
+
+    // Send email notification
+    try {
+      const emailResult = await sendLeadEmail('agent_registration', agentData)
+      if (!emailResult.success) {
+        console.error('Failed to send agent registration email:', emailResult.error)
+        // Note: We don't fail the registration if email fails
+      } else {
+        console.log('Agent registration email sent successfully:', emailResult.messageId)
+      }
+    } catch (error) {
+      console.error('Error sending agent registration email:', error)
+      // Note: We don't fail the registration if email fails
     }
     
     // Send success response
