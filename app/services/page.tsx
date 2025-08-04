@@ -48,173 +48,203 @@ export default function ServicesPage() {
   const services = [
     {
       title: "Live-In Maid Services",
-      description: "24/7 dedicated household support with comprehensive home management and care",
+      description: "24/7 domestic help for busy families across Bangalore. From Whitefield to Jayanagar, get reliable live-in maids for cooking, cleaning, childcare, and eldercare.",
       href: "/services/live-in-maids",
       icon: HomeIcon,
       gradient: "from-blue-500 to-indigo-600",
       bgColor: "bg-blue-50",
       iconColor: "text-blue-600",
       borderColor: "border-blue-200",
-      features: ["24/7 Support", "Comprehensive Care", "Background Verified"],
+      features: ["24/7 Presence", "₹18,000-25,000/month", "Specialized in One Area", "12-Hour Work Day"],
+      serviceTypes: ["Live-In Housekeeper", "Live-In Cook", "Live-In Nanny", "Live-In Senior Caregiver"],
+      trustIndicators: ["Background Verified", "Bangalore-Savvy", "24-72hr Placement"],
       popular: false
     },
     {
       title: "Full-Time Maid Services", 
-      description: "Daily home management during fixed hours without live-in commitment",
+      description: "Reliable 8–10 hour daily maid service for working families and everyday households across Bangalore. Get trusted help for cleaning, cooking, childcare, or elderly care, customised to your routine.",
       href: "/services/full-time-maids",
       icon: ClockIcon,
       gradient: "from-emerald-500 to-teal-600",
       bgColor: "bg-emerald-50",
       iconColor: "text-emerald-600",
       borderColor: "border-emerald-200",
-      features: ["Fixed Hours", "Daily Care", "Professional Staff"],
+      features: ["8-10 Hours Daily", "₹12,000-20,000/month", "No Accommodation Needed", "Replacement Guarantee"],
+      serviceTypes: ["Full-Time Housekeeper", "Full-Time Cook", "Full-Day Babysitter", "Full-Time Elderly Care Assistant"],
+      trustIndicators: ["Background Verified", "Experienced in Urban Homes", "Safe and Trusted Maids"],
       popular: true
     },
     {
       title: "Part-Time Maid Services",
-      description: "Flexible cleaning and household support on your schedule and budget",
+      description: "Quick and reliable part-time maids in Bangalore, available for 2–6 hours daily. Ideal for cooking, cleaning, childcare, and eldercare with flexible timing options.",
       href: "/services/part-time-maids", 
       icon: CalendarDaysIcon,
       gradient: "from-purple-500 to-violet-600",
       bgColor: "bg-purple-50",
       iconColor: "text-purple-600",
       borderColor: "border-purple-200",
-      features: ["Flexible Schedule", "Budget Friendly", "No Contracts"],
+      features: ["2-6 Hours Daily", "Same-Day Availability", "Budget-Friendly", "No Long-Term Commitment"],
+      serviceTypes: ["Part-Time Cleaning", "Part-Time Cook", "Part-Time Babysitter", "Part-Time Elder Care"],
+      trustIndicators: ["Background Verified", "Flexible Timing", "8K+ Happy Families"],
       popular: false
     },
     {
       title: "On-Demand Helper Services",
-      description: "Instant help for emergencies, events, and unexpected household needs",
+      description: "Need emergency help at home? Whether it's a last-minute mess, unexpected guests, or a missed maid visit, EzyHelpers offers instant, reliable on-demand maid and helper services in Bangalore.",
       href: "/services/on-demand-helpers",
       icon: BoltIcon,
       gradient: "from-orange-500 to-red-600",
       bgColor: "bg-orange-50",
       iconColor: "text-orange-600",
       borderColor: "border-orange-200",
-      features: ["Same-Day Service", "Emergency Ready", "No Commitment"],
+      features: ["2-4 Hours Response", "Emergency Support", "Pay Per Task", "5,000+ Bookings"],
+      serviceTypes: ["Emergency Cleaning", "One-Day Cook", "Short-Term Babysitter", "Event Helpers"],
+      trustIndicators: ["Same-Day Availability", "Last-Minute Booking", "Quick Response"],
       popular: false
     },
     {
       title: "Nanny/Babysitter Services",
-      description: "Expert childcare tailored to your family's schedule and specific needs",
+      description: "Looking for a trusted babysitter for home in Bangalore? Get trusted, trained, and caring help for your child's safety, learning, and daily routines, right in your home.",
       href: "/services/nanny-babysitter",
       icon: AcademicCapIcon,
       gradient: "from-pink-500 to-rose-600",
       bgColor: "bg-pink-50",
       iconColor: "text-pink-600",
       borderColor: "border-pink-200",
-      features: ["Child Safety", "Qualified Staff", "Flexible Hours"],
+      features: ["Infant to Teen Care", "₹15,000-25,000/month", "Emergency On-Call", "CPR & First Aid Trained"],
+      serviceTypes: ["Live-In Nanny", "Full-Time Babysitter", "Part-Time Babysitter", "Age-Specific Care"],
+      trustIndicators: ["Meal & Nap Routines", "Trained & Verified", "Trusted by Bangalore Parents"],
       popular: false
     },
     {
       title: "Elderly Care Services",
-      description: "Compassionate day-and-night support for aging loved ones with dignity",
+      description: "From medication to companionship, EzyHelpers offers trusted in-home elderly care in Bangalore, ensuring your loved ones feel safe, supported, and never alone.",
       href: "/services/elderly-care",
       icon: HeartIcon,
       gradient: "from-teal-500 to-cyan-600",
       bgColor: "bg-teal-50",
       iconColor: "text-teal-600",
       borderColor: "border-teal-200",
-      features: ["Compassionate Care", "Medical Support", "24/7 Available"],
+      features: ["24/7 or Part-Time Care", "Medical Support", "Safety Monitoring", "Personalized Attention"],
+      serviceTypes: ["Live-In Elderly Caretaker", "Full-Time Elderly Assistant", "Part-Time Elderly Helper", "Companion Care"],
+      trustIndicators: ["Daily Routine Help", "Health Monitoring", "Hygiene Assistance"],
       popular: false
     },
     {
       title: "Cook Services",
-      description: "Professional meal preparation with diverse cuisines and dietary options",
+      description: "Fresh, hygienic, and homestyle meals daily from verified professional home cooks in Bangalore. Personalised cooking tailored to your diet, culture, and daily routine.",
       href: "/services/cooks",
       icon: UserIcon,
       gradient: "from-amber-500 to-orange-600",
       bgColor: "bg-amber-50",
       iconColor: "text-amber-600",
       borderColor: "border-amber-200",
-      features: ["Multiple Cuisines", "Dietary Options", "Fresh Meals"],
+      features: ["Multi-Cuisine Expertise", "Fresh Meal Preparation", "Kitchen Hygiene Standards", "₹6,000-25,000/month"],
+      serviceTypes: ["Live-In Cooks", "Full-Time Cooks", "Part-Time Cooks", "Specialized Dietary Cooks"],
+      trustIndicators: ["Veg & Non-Veg Cooking", "Regional & Daily Cuisine", "Trained for Hygiene"],
       popular: false
     },
     {
       title: "Driver Services",
-      description: "Safe and reliable transportation for all your travel and commute needs",
+      description: "Skip the stress of driving! Book a professional driver in Bangalore for family, office, or intercity travel. Safe, courteous, and always punctual.",
       href: "/services/drivers",
       icon: TruckIcon,
       gradient: "from-slate-500 to-gray-600",
       bgColor: "bg-slate-50", 
       iconColor: "text-slate-600",
       borderColor: "border-slate-200",
-      features: ["Licensed Drivers", "Safe Travel", "Flexible Timing"],
+      features: ["Bangalore Traffic Experts", "Background-Verified", "24/7 Available Service", "All Routes Covered"],
+      serviceTypes: ["Live-In Car Driver", "Full-Time Car Driver", "On-Demand Driver", "Specialized Transport"],
+      trustIndicators: ["Emergency Trip Support", "Flexible Hourly Bookings", "Polite & Professional"],
       popular: false
     }
   ]
 
-  // Secondary services
+  // Secondary services with enhanced content from markdown files
   const secondaryServices = [
     {
-      title: "Appliance Repair Services",
-      description: "Expert technicians for fast, reliable repairs of all home appliances",
+      title: "Electrical Appliance Repair",
+      description: "Fast and expert servicing for all major electrical appliances in Bangalore, including refrigerators, washing machines, ACs, and more",
       href: "/services/appliance-repair",
       icon: WrenchScrewdriverIcon,
       bgColor: "bg-red-50",
       iconColor: "text-red-600",
       borderColor: "border-red-200",
-      features: ["Same-Day Service", "All Brands", "Transparent Pricing"]
+      features: ["Same-Day Repairs Available", "Multi-Brand Service Expertise", "Genuine Spare Parts"],
+      trustIndicators: ["100% Satisfaction Guaranteed", "Expert Technicians On Call", "Emergency Appliance Repair"],
+      guarantee: "7 Days Availability"
     },
     {
-      title: "Carpenter Services",
-      description: "Skilled carpenters for custom furniture, repairs, and installations",
+      title: "Carpentry Repair Services",
+      description: "Skilled carpenters for furniture repairs, modular fittings, and custom builds with quick, professional, and quality work",
       href: "/services/carpenters",
       icon: CommandLineIcon,
       bgColor: "bg-yellow-50",
       iconColor: "text-yellow-600",
       borderColor: "border-yellow-200",
-      features: ["Custom Solutions", "Quality Wood", "Timely Delivery"]
+      features: ["Fast Same-Day Repairs", "Custom Furniture Solutions", "Neat Workmanship Guaranteed"],
+      trustIndicators: ["100% Background-Verified", "Quality Materials Selection", "Professional Work Ethics"],
+      guarantee: "24/7 Customer Support"
     },
     {
-      title: "Electrician Services",
-      description: "Certified electricians for safe installations and repairs",
+      title: "Home Electrical Repair",
+      description: "Trusted electricians for safe wiring, lighting, EV charger setup, and smart upgrades with fast, licensed professionals",
       href: "/services/electricians",
       icon: BoltIcon,
       bgColor: "bg-blue-50",
       iconColor: "text-blue-600",
       borderColor: "border-blue-200",
-      features: ["Licensed Electricians", "Emergency Service", "Safety First"]
+      features: ["Expert in Repairs & Installations", "BESCOM-Compliant Work", "Energy-Saving Solutions"],
+      trustIndicators: ["100% Safety Assured", "Licensed Electricians Only", "Instant Fault Diagnosis"],
+      guarantee: "Same-Day Repairs Available"
     },
     {
-      title: "Gardener Services",
-      description: "Professional garden care to keep your outdoor space beautiful",
+      title: "Professional Gardener",
+      description: "Expert gardening services from garden setup to seasonal care, customized to your space, be it terrace, balcony, or home garden",
       href: "/services/gardener",
       icon: GlobeAltIcon,
       bgColor: "bg-green-50",
       iconColor: "text-green-600",
       borderColor: "border-green-200",
-      features: ["Plant Care", "Landscape Design", "Regular Maintenance"]
+      features: ["Expert in Terrace & Balcony Gardening", "Seasonal Maintenance & Plant Care", "Organic Gardening Service"],
+      trustIndicators: ["100% Background-Verified", "Certified Plant Care Specialists", "Same-Day Gardener Visit"],
+      guarantee: "24/7 Customer Support"
     },
     {
-      title: "Deep Cleaning Services",
-      description: "Thorough home cleaning for a spotless, healthy environment",
+      title: "Deep Clean Services",
+      description: "Professional home cleaning that eliminates dust, germs, and stains to give your family a cleaner, healthier living environment",
       href: "/services/deep-cleaning",
       icon: SparklesIcon,
       bgColor: "bg-cyan-50",
       iconColor: "text-cyan-600",
       borderColor: "border-cyan-200",
-      features: ["Eco-Friendly", "Deep Sanitization", "Post-Renovation"]
+      features: ["Background Verified Cleaners", "Complete Sanitization and Disinfection", "Child and Pet-Safe Products"],
+      trustIndicators: ["1200+ Homes Cleaned", "100% Quality Assurance", "2-Hour Response Time"],
+      guarantee: "7 Days Service Availability"
     },
     {
-      title: "Painter Services",
-      description: "Professional painting services for interior and exterior makeovers",
+      title: "Interior & Exterior Painting",
+      description: "Trusted painters using premium paints, expert finishes, and fast completion for clean, reliable painting services",
       href: "/services/painters",
       icon: PaintBrushIcon,
       bgColor: "bg-purple-50",
       iconColor: "text-purple-600",
       borderColor: "border-purple-200",
-      features: ["Premium Paints", "Expert Finish", "Color Consultation"]
+      features: ["Free Color Consultation", "Premium Paints Only", "Weather-resistant Coatings"],
+      trustIndicators: ["100% Dust-Free Service", "Zero Mess Guarantee", "50+ Color Options"],
+      guarantee: "Complete Surface Preparation"
     },
     {
-      title: "Plumber Services",
-      description: "Expert plumbing solutions for leaks, installations, and repairs",
+      title: "House Plumbing Repair",
+      description: "Professional plumbing solutions for leaks, installations, and repairs with skilled professionals committed to quality service",
       href: "/services/plumbers",
       icon: BeakerIcon,
       bgColor: "bg-indigo-50",
       iconColor: "text-indigo-600",
       borderColor: "border-indigo-200",
-      features: ["Emergency Repairs", "Licensed Plumbers", "Quality Fittings"]
+      features: ["Transparent Pricing Always", "Background-Checked Plumbers", "Emergency Plumbing Repairs"],
+      trustIndicators: ["Same-Day Service Available", "On-Demand Visits", "Flexible Time Slots"],
+      guarantee: "24/7 Emergency Available"
     }
   ]
 
@@ -430,7 +460,7 @@ export default function ServicesPage() {
               Our Professional Services
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Choose from our comprehensive range of domestic help services, each designed to make your life easier and more comfortable
+              Trusted, background-verified domestic help services across Bangalore. From live-in maids to emergency helpers, we provide reliable solutions tailored to your lifestyle and budget.
             </p>
           </div>
 
@@ -464,14 +494,44 @@ export default function ServicesPage() {
                       {service.description}
                     </p>
                     
-                    {/* Features */}
-                    <div className="space-y-2 mb-6">
+                    {/* Key Features */}
+                    <div className="space-y-2 mb-4">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center text-sm">
                           <CheckCircleIcon className={`h-4 w-4 ${service.iconColor} group-hover:text-white/90 mr-2 transition-colors duration-300`} />
-                          <span className="text-gray-600 group-hover:text-white/90 transition-colors duration-300">{feature}</span>
+                          <span className="text-gray-600 group-hover:text-white/90 transition-colors duration-300 font-medium">{feature}</span>
                         </div>
                       ))}
+                    </div>
+
+                    {/* Service Types */}
+                    <div className="mb-4">
+                      <h4 className="text-xs font-semibold text-gray-500 group-hover:text-white/70 mb-2 uppercase tracking-wide transition-colors duration-300">
+                        Service Options
+                      </h4>
+                      <div className="flex flex-wrap gap-1">
+                        {service.serviceTypes.slice(0, 2).map((type, idx) => (
+                          <span key={idx} className={`text-xs px-2 py-1 bg-white/60 group-hover:bg-white/20 ${service.iconColor} group-hover:text-white/90 rounded-full transition-all duration-300 border border-white/40`}>
+                            {type}
+                          </span>
+                        ))}
+                        {service.serviceTypes.length > 2 && (
+                          <span className="text-xs px-2 py-1 bg-white/40 group-hover:bg-white/10 text-gray-500 group-hover:text-white/70 rounded-full transition-all duration-300">
+                            +{service.serviceTypes.length - 2} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Trust Indicators */}
+                    <div className="mb-6">
+                      <div className="flex flex-wrap gap-1">
+                        {service.trustIndicators.map((indicator, idx) => (
+                          <span key={idx} className="text-xs px-2 py-1 bg-green-100 group-hover:bg-green-500/20 text-green-700 group-hover:text-green-300 rounded-full transition-all duration-300 border border-green-200 group-hover:border-green-400/30">
+                            ✓ {indicator}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                     
                     {/* Enhanced Learn More */}
@@ -511,15 +571,15 @@ export default function ServicesPage() {
 
         <div className="container-custom relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-slate-100 text-slate-800 rounded-full px-4 py-2 mb-6">
+            <div className="inline-flex items-center bg-gradient-to-r from-slate-100 to-gray-100 text-slate-800 rounded-full px-4 py-2 mb-6 shadow-sm">
               <WrenchScrewdriverIcon className="h-4 w-4 mr-2" />
-              <span className="text-sm font-semibold">Home Maintenance & Repair</span>
+              <span className="text-sm font-semibold">Expert Home Maintenance & Repair Services</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Our Secondary Services
+              Comprehensive Home Solutions
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Professional home maintenance and repair services to keep your property in perfect condition
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              From electrical repairs to deep cleaning, our verified experts deliver quality home maintenance services with transparent pricing, same-day availability, and 100% satisfaction guaranteed across Bangalore
             </p>
           </div>
 
@@ -531,12 +591,16 @@ export default function ServicesPage() {
                   key={index} 
                   href={service.href} 
                   className={`group relative ${service.bgColor} hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-900 rounded-2xl p-6 border-2 ${service.borderColor} hover:border-transparent hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer overflow-hidden`}
-
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
                     <div className="absolute top-0 right-0 w-24 h-24 bg-white rounded-full blur-2xl transform translate-x-12 -translate-y-12"></div>
                     <div className="absolute bottom-0 left-0 w-20 h-20 bg-white rounded-full blur-xl transform -translate-x-10 translate-y-10"></div>
+                  </div>
+
+                  {/* Guarantee Badge */}
+                  <div className="absolute top-3 right-3 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg z-20">
+                    {service.guarantee}
                   </div>
                   
                   <div className="relative z-10">
@@ -553,12 +617,24 @@ export default function ServicesPage() {
                       {service.description}
                     </p>
                     
-                    {/* Features */}
-                    <div className="space-y-1 mb-4">
+                    {/* Key Features */}
+                    <div className="space-y-1 mb-3">
+                      <div className="text-xs font-semibold text-gray-500 group-hover:text-white/70 mb-2">Key Features:</div>
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center text-xs">
-                          <CheckCircleIcon className={`h-3 w-3 ${service.iconColor} group-hover:text-white/90 mr-1.5 transition-colors duration-300`} />
+                          <CheckCircleIcon className={`h-3 w-3 ${service.iconColor} group-hover:text-white/90 mr-1.5 transition-colors duration-300 shrink-0`} />
                           <span className="text-gray-600 group-hover:text-white/90 transition-colors duration-300">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Trust Indicators */}
+                    <div className="space-y-1 mb-4">
+                      <div className="text-xs font-semibold text-gray-500 group-hover:text-white/70 mb-2">Trust Indicators:</div>
+                      {service.trustIndicators.map((indicator, idx) => (
+                        <div key={idx} className="flex items-center text-xs">
+                          <ShieldCheckIcon className={`h-3 w-3 text-green-600 group-hover:text-green-400 mr-1.5 transition-colors duration-300 shrink-0`} />
+                          <span className="text-gray-600 group-hover:text-white/90 transition-colors duration-300">{indicator}</span>
                         </div>
                       ))}
                     </div>
