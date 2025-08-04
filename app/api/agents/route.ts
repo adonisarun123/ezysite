@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { writeFile, mkdir } from 'fs/promises'
-import { join } from 'path'
+import { supabase } from '@/lib/supabaseClient'
 import { randomUUID } from 'crypto'
 
 // Types
@@ -34,23 +33,29 @@ interface AgentData {
   updatedAt: string
 }
 
-// File upload helper
-async function saveFile(file: File, folder: string): Promise<string> {
-  const buffer = Buffer.from(await file.arrayBuffer())
-  const filename = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`
-  const uploadDir = join(process.cwd(), 'public', 'uploads', folder)
+// File upload helper for Supabase storage
+async function uploadFileToSupabase(file: File, folder: string, agentId: string): Promise<string> {
+  const fileExt = file.name.split('.').pop()
+  const fileName = `${agentId}/${folder}/${Date.now()}-${randomUUID()}.${fileExt}`
   
-  // Create directory if it doesn't exist
-  try {
-    await mkdir(uploadDir, { recursive: true })
-  } catch (error) {
-    // Directory might already exist
+  const { data, error } = await supabase.storage
+    .from('agent-documents')
+    .upload(fileName, file, {
+      cacheControl: '3600',
+      upsert: false
+    })
+
+  if (error) {
+    console.error('File upload error:', error)
+    throw new Error(`Failed to upload ${folder}`)
   }
-  
-  const filepath = join(uploadDir, filename)
-  await writeFile(filepath, buffer)
-  
-  return `/uploads/${folder}/${filename}`
+
+  // Get public URL
+  const { data: { publicUrl } } = supabase.storage
+    .from('agent-documents')
+    .getPublicUrl(fileName)
+
+  return publicUrl
 }
 
 // Validation helpers
@@ -84,38 +89,46 @@ function validateIDNumber(idType: string, idNumber: string): boolean {
   }
 }
 
-// Simulate database save (in real app, this would save to your actual database)
-async function saveToDatabase(agentData: AgentData): Promise<boolean> {
+// Save agent data to Supabase database
+async function saveToDatabase(agentData: Omit<AgentData, 'createdAt' | 'updatedAt'>): Promise<{ success: boolean; error?: string }> {
   try {
-    // In a real application, you would save to your database here
-    // For now, we'll just log the data and save to a JSON file for demonstration
-    
-    const dbFilePath = join(process.cwd(), 'data', 'agents.json')
-    
-    // Create data directory if it doesn't exist
-    try {
-      await mkdir(join(process.cwd(), 'data'), { recursive: true })
-    } catch (error) {
-      // Directory might already exist
+    const { data, error } = await supabase
+      .from('agents')
+      .insert([{
+        id: agentData.id,
+        agency_name: agentData.agencyName,
+        registration_number: agentData.registrationNumber,
+        agency_certificate_url: agentData.agencyCertificate,
+        year_founded: agentData.yearFounded,
+        services_offered: agentData.servicesOffered,
+        max_helpers_supply: agentData.maxHelpersSupply,
+        owner_name: agentData.ownerName,
+        owner_dob: agentData.ownerDOB,
+        owner_photo_url: agentData.ownerPhoto,
+        owner_id_type: agentData.ownerIDType,
+        owner_id_number: agentData.ownerIDNumber,
+        owner_id_proof_url: agentData.ownerIDProof,
+        primary_phone: agentData.primaryPhone,
+        secondary_phone: agentData.secondaryPhone,
+        email: agentData.email.toLowerCase(),
+        office_address_line1: agentData.officeAddressLine1,
+        office_address_line2: agentData.officeAddressLine2,
+        city: agentData.city,
+        state: agentData.state,
+        pincode: agentData.pincode,
+        latitude: agentData.latitude,
+        longitude: agentData.longitude,
+        listed_by: agentData.listedBy,
+        notes: agentData.notes
+      }])
+      .select()
+
+    if (error) {
+      console.error('Database save error:', error)
+      return { success: false, error: error.message }
     }
-    
-    // Read existing data or create empty array
-    let existingData: AgentData[] = []
-    try {
-      const { readFile } = await import('fs/promises')
-      const fileContent = await readFile(dbFilePath, 'utf-8')
-      existingData = JSON.parse(fileContent)
-    } catch (error) {
-      // File doesn't exist yet, start with empty array
-    }
-    
-    // Add new agent data
-    existingData.push(agentData)
-    
-    // Save back to file
-    await writeFile(dbFilePath, JSON.stringify(existingData, null, 2))
-    
-    console.log('Agent registration saved:', {
+
+    console.log('Agent registration saved to Supabase:', {
       id: agentData.id,
       agencyName: agentData.agencyName,
       ownerName: agentData.ownerName,
@@ -123,14 +136,13 @@ async function saveToDatabase(agentData: AgentData): Promise<boolean> {
       phone: agentData.primaryPhone,
       city: agentData.city,
       state: agentData.state,
-      servicesOffered: agentData.servicesOffered,
-      createdAt: agentData.createdAt
+      servicesOffered: agentData.servicesOffered
     })
     
-    return true
+    return { success: true }
   } catch (error) {
     console.error('Database save error:', error)
-    return false
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }
   }
 }
 
@@ -262,38 +274,41 @@ export async function POST(request: NextRequest) {
       )
     }
     
-    // Save files
-    let agencyCertificatePath = ''
-    let ownerPhotoPath = ''
-    let ownerIDProofPath = ''
+    // Generate agent ID first for file organization
+    const agentId = randomUUID()
+    
+    // Upload files to Supabase storage
+    let agencyCertificateUrl = ''
+    let ownerPhotoUrl = ''
+    let ownerIDProofUrl = ''
     
     try {
-      agencyCertificatePath = await saveFile(agencyCertificate, 'certificates')
-      ownerPhotoPath = await saveFile(ownerPhoto, 'photos')
-      ownerIDProofPath = await saveFile(ownerIDProof, 'id-proofs')
+      agencyCertificateUrl = await uploadFileToSupabase(agencyCertificate, 'certificates', agentId)
+      ownerPhotoUrl = await uploadFileToSupabase(ownerPhoto, 'photos', agentId)
+      ownerIDProofUrl = await uploadFileToSupabase(ownerIDProof, 'id-proofs', agentId)
     } catch (error) {
-      console.error('File save error:', error)
+      console.error('File upload error:', error)
       return NextResponse.json(
-        { error: 'Failed to save uploaded files' },
+        { error: 'Failed to upload files' },
         { status: 500 }
       )
     }
     
     // Create agent data object
     const agentData: AgentData = {
-      id: randomUUID(),
+      id: agentId,
       agencyName,
       registrationNumber,
-      agencyCertificate: agencyCertificatePath,
+      agencyCertificate: agencyCertificateUrl,
       yearFounded,
       servicesOffered,
       maxHelpersSupply,
       ownerName,
       ownerDOB,
-      ownerPhoto: ownerPhotoPath,
+      ownerPhoto: ownerPhotoUrl,
       ownerIDType,
       ownerIDNumber,
-      ownerIDProof: ownerIDProofPath,
+      ownerIDProof: ownerIDProofUrl,
       primaryPhone,
       secondaryPhone,
       email: email.toLowerCase(),
@@ -311,11 +326,11 @@ export async function POST(request: NextRequest) {
     }
     
     // Save to database
-    const saved = await saveToDatabase(agentData)
+    const saveResult = await saveToDatabase(agentData)
     
-    if (!saved) {
+    if (!saveResult.success) {
       return NextResponse.json(
-        { error: 'Failed to save registration data' },
+        { error: 'Failed to save registration data', details: saveResult.error },
         { status: 500 }
       )
     }
@@ -343,32 +358,58 @@ export async function POST(request: NextRequest) {
 // GET method to retrieve agent registrations (for admin use)
 export async function GET(request: NextRequest) {
   try {
-    const { readFile } = await import('fs/promises')
-    const dbFilePath = join(process.cwd(), 'data', 'agents.json')
-    
-    const fileContent = await readFile(dbFilePath, 'utf-8')
-    const agents: AgentData[] = JSON.parse(fileContent)
-    
-    // Return sanitized data (without file paths for security)
+    const { data: agents, error } = await supabase
+      .from('agents')
+      .select(`
+        id,
+        agency_name,
+        registration_number,
+        year_founded,
+        services_offered,
+        max_helpers_supply,
+        owner_name,
+        owner_id_type,
+        primary_phone,
+        email,
+        city,
+        state,
+        pincode,
+        latitude,
+        longitude,
+        listed_by,
+        created_at,
+        updated_at
+      `)
+      .order('created_at', { ascending: false })
+
+    if (error) {
+      console.error('Database fetch error:', error)
+      return NextResponse.json(
+        { error: 'Failed to fetch agents' },
+        { status: 500 }
+      )
+    }
+
+    // Convert snake_case to camelCase for frontend compatibility
     const sanitizedAgents = agents.map(agent => ({
       id: agent.id,
-      agencyName: agent.agencyName,
-      registrationNumber: agent.registrationNumber,
-      yearFounded: agent.yearFounded,
-      servicesOffered: agent.servicesOffered,
-      maxHelpersSupply: agent.maxHelpersSupply,
-      ownerName: agent.ownerName,
-      ownerIDType: agent.ownerIDType,
-      primaryPhone: agent.primaryPhone,
+      agencyName: agent.agency_name,
+      registrationNumber: agent.registration_number,
+      yearFounded: agent.year_founded,
+      servicesOffered: agent.services_offered,
+      maxHelpersSupply: agent.max_helpers_supply,
+      ownerName: agent.owner_name,
+      ownerIDType: agent.owner_id_type,
+      primaryPhone: agent.primary_phone,
       email: agent.email,
       city: agent.city,
       state: agent.state,
       pincode: agent.pincode,
       latitude: agent.latitude,
       longitude: agent.longitude,
-      listedBy: agent.listedBy,
-      createdAt: agent.createdAt,
-      updatedAt: agent.updatedAt
+      listedBy: agent.listed_by,
+      createdAt: agent.created_at,
+      updatedAt: agent.updated_at
     }))
     
     return NextResponse.json({
@@ -378,9 +419,10 @@ export async function GET(request: NextRequest) {
     })
     
   } catch (error) {
+    console.error('Agent fetch error:', error)
     return NextResponse.json(
-      { error: 'No registrations found' },
-      { status: 404 }
+      { error: 'Failed to fetch agent registrations' },
+      { status: 500 }
     )
   }
 }

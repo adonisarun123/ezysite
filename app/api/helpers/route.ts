@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { writeFile, mkdir } from 'fs/promises'
-import { join } from 'path'
+import { supabase } from '@/lib/supabaseClient'
 import { randomUUID } from 'crypto'
 
 // Types
@@ -49,23 +48,29 @@ interface HelperData {
   updatedAt: string
 }
 
-// File upload helper
-async function saveFile(file: File, folder: string): Promise<string> {
-  const buffer = Buffer.from(await file.arrayBuffer())
-  const filename = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`
-  const uploadDir = join(process.cwd(), 'public', 'uploads', 'helpers', folder)
+// File upload helper for Supabase storage
+async function uploadFileToSupabase(file: File, folder: string, helperId: string): Promise<string> {
+  const fileExt = file.name.split('.').pop()
+  const fileName = `${helperId}/${folder}/${Date.now()}-${randomUUID()}.${fileExt}`
   
-  // Create directory if it doesn't exist
-  try {
-    await mkdir(uploadDir, { recursive: true })
-  } catch (error) {
-    // Directory might already exist
+  const { data, error } = await supabase.storage
+    .from('helper-documents')
+    .upload(fileName, file, {
+      cacheControl: '3600',
+      upsert: false
+    })
+
+  if (error) {
+    console.error('File upload error:', error)
+    throw new Error(`Failed to upload ${folder}`)
   }
-  
-  const filepath = join(uploadDir, filename)
-  await writeFile(filepath, buffer)
-  
-  return `/uploads/helpers/${folder}/${filename}`
+
+  // Get public URL
+  const { data: { publicUrl } } = supabase.storage
+    .from('helper-documents')
+    .getPublicUrl(fileName)
+
+  return publicUrl
 }
 
 // Validation helpers
@@ -94,35 +99,60 @@ function validateIFSC(ifsc: string): boolean {
   return /^[A-Z]{4}0[A-Z0-9]{6}$/.test(ifsc.toUpperCase())
 }
 
-// Simulate database save
-async function saveToDatabase(helperData: HelperData): Promise<boolean> {
+// Save helper data to Supabase database
+async function saveToDatabase(helperData: Omit<HelperData, 'createdAt' | 'updatedAt'>): Promise<{ success: boolean; error?: string }> {
   try {
-    const dbFilePath = join(process.cwd(), 'data', 'helpers.json')
-    
-    // Create data directory if it doesn't exist
-    try {
-      await mkdir(join(process.cwd(), 'data'), { recursive: true })
-    } catch (error) {
-      // Directory might already exist
+    const { data, error } = await supabase
+      .from('helpers')
+      .insert([{
+        id: helperData.id,
+        helper_type: helperData.helperType,
+        first_name: helperData.firstName,
+        last_name: helperData.lastName,
+        gender: helperData.gender,
+        date_of_birth: helperData.dateOfBirth,
+        helper_photo_url: helperData.helperPhoto,
+        native_state: helperData.nativeState,
+        current_locality: helperData.currentLocality,
+        languages_known: helperData.languagesKnown,
+        education_level: helperData.educationLevel,
+        marital_status: helperData.maritalStatus,
+        spouse_occupation: helperData.spouseOccupation,
+        kids_count: helperData.kidsCount,
+        smartphone_available: helperData.smartphoneAvailable,
+        whatsapp_active: helperData.whatsappActive,
+        vaccination_status: helperData.vaccinationStatus,
+        experience_months: helperData.experienceMonths,
+        specialities: helperData.specialities,
+        working_hours_preference: helperData.workingHoursPreference,
+        preferred_localities: helperData.preferredLocalities,
+        max_placements_per_month: helperData.maxPlacementsPerMonth,
+        expected_salary_min: helperData.expectedSalaryMin,
+        expected_salary_max: helperData.expectedSalaryMax,
+        id_proof_type: helperData.idProofType,
+        id_proof_number: helperData.idProofNumber,
+        id_proof_file_url: helperData.idProofFile,
+        bank_name: helperData.bankName,
+        bank_ifsc: helperData.bankIFSC,
+        account_holder_name: helperData.accountHolderName,
+        account_number: helperData.accountNumber,
+        primary_phone: helperData.primaryPhone,
+        alternate_phone: helperData.alternatePhone,
+        emergency_contact_name: helperData.emergencyContactName,
+        emergency_contact_phone: helperData.emergencyContactPhone,
+        latitude: helperData.latitude,
+        longitude: helperData.longitude,
+        listed_by: helperData.listedBy,
+        internal_notes: helperData.internalNotes
+      }])
+      .select()
+
+    if (error) {
+      console.error('Database save error:', error)
+      return { success: false, error: error.message }
     }
-    
-    // Read existing data or create empty array
-    let existingData: HelperData[] = []
-    try {
-      const { readFile } = await import('fs/promises')
-      const fileContent = await readFile(dbFilePath, 'utf-8')
-      existingData = JSON.parse(fileContent)
-    } catch (error) {
-      // File doesn't exist yet, start with empty array
-    }
-    
-    // Add new helper data
-    existingData.push(helperData)
-    
-    // Save back to file
-    await writeFile(dbFilePath, JSON.stringify(existingData, null, 2))
-    
-    console.log('Helper registration saved:', {
+
+    console.log('Helper registration saved to Supabase:', {
       id: helperData.id,
       name: `${helperData.firstName} ${helperData.lastName}`,
       type: helperData.helperType,
@@ -130,14 +160,13 @@ async function saveToDatabase(helperData: HelperData): Promise<boolean> {
       experience: helperData.experienceMonths,
       specialities: helperData.specialities,
       location: helperData.currentLocality,
-      listedBy: helperData.listedBy,
-      createdAt: helperData.createdAt
+      listedBy: helperData.listedBy
     })
     
-    return true
+    return { success: true }
   } catch (error) {
     console.error('Database save error:', error)
-    return false
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }
   }
 }
 
@@ -284,24 +313,27 @@ export async function POST(request: NextRequest) {
       )
     }
     
-    // Save files
-    let helperPhotoPath = ''
-    let idProofFilePath = ''
+    // Generate helper ID first for file organization
+    const helperId = randomUUID()
+    
+    // Upload files to Supabase storage
+    let helperPhotoUrl = ''
+    let idProofFileUrl = ''
     
     try {
-      helperPhotoPath = await saveFile(helperPhoto, 'photos')
-      idProofFilePath = await saveFile(idProofFile, 'id-proofs')
+      helperPhotoUrl = await uploadFileToSupabase(helperPhoto, 'photos', helperId)
+      idProofFileUrl = await uploadFileToSupabase(idProofFile, 'id-proofs', helperId)
     } catch (error) {
-      console.error('File save error:', error)
+      console.error('File upload error:', error)
       return NextResponse.json(
-        { error: 'Failed to save uploaded files' },
+        { error: 'Failed to upload files' },
         { status: 500 }
       )
     }
     
     // Create helper data object
     const helperData: HelperData = {
-      id: randomUUID(),
+      id: helperId,
       helperType,
       firstName,
       lastName,
@@ -327,12 +359,12 @@ export async function POST(request: NextRequest) {
       expectedSalaryMax,
       idProofType,
       idProofNumber,
-      idProofFile: idProofFilePath,
+      idProofFile: idProofFileUrl,
       bankName,
       bankIFSC,
       accountHolderName,
       accountNumber,
-      helperPhoto: helperPhotoPath,
+      helperPhoto: helperPhotoUrl,
       primaryPhone,
       alternatePhone,
       emergencyContactName,
@@ -346,11 +378,11 @@ export async function POST(request: NextRequest) {
     }
     
     // Save to database
-    const saved = await saveToDatabase(helperData)
+    const saveResult = await saveToDatabase(helperData)
     
-    if (!saved) {
+    if (!saveResult.success) {
       return NextResponse.json(
-        { error: 'Failed to save registration data' },
+        { error: 'Failed to save registration data', details: saveResult.error },
         { status: 500 }
       )
     }
@@ -378,33 +410,60 @@ export async function POST(request: NextRequest) {
 // GET method to retrieve helper registrations (for admin use)
 export async function GET(request: NextRequest) {
   try {
-    const { readFile } = await import('fs/promises')
-    const dbFilePath = join(process.cwd(), 'data', 'helpers.json')
-    
-    const fileContent = await readFile(dbFilePath, 'utf-8')
-    const helpers: HelperData[] = JSON.parse(fileContent)
-    
-    // Return sanitized data (without file paths for security)
+    const { data: helpers, error } = await supabase
+      .from('helpers')
+      .select(`
+        id,
+        helper_type,
+        first_name,
+        last_name,
+        gender,
+        age,
+        experience_months,
+        specialities,
+        languages_known,
+        current_locality,
+        primary_phone,
+        expected_salary_min,
+        expected_salary_max,
+        working_hours_preference,
+        latitude,
+        longitude,
+        listed_by,
+        created_at,
+        updated_at
+      `)
+      .order('created_at', { ascending: false })
+
+    if (error) {
+      console.error('Database fetch error:', error)
+      return NextResponse.json(
+        { error: 'Failed to fetch helpers' },
+        { status: 500 }
+      )
+    }
+
+    // Convert snake_case to camelCase for frontend compatibility
     const sanitizedHelpers = helpers.map(helper => ({
       id: helper.id,
-      helperType: helper.helperType,
-      firstName: helper.firstName,
-      lastName: helper.lastName,
+      helperType: helper.helper_type,
+      firstName: helper.first_name,
+      lastName: helper.last_name,
       gender: helper.gender,
       age: helper.age,
-      experienceMonths: helper.experienceMonths,
+      experienceMonths: helper.experience_months,
       specialities: helper.specialities,
-      languagesKnown: helper.languagesKnown,
-      currentLocality: helper.currentLocality,
-      primaryPhone: helper.primaryPhone,
-      expectedSalaryMin: helper.expectedSalaryMin,
-      expectedSalaryMax: helper.expectedSalaryMax,
-      workingHoursPreference: helper.workingHoursPreference,
+      languagesKnown: helper.languages_known,
+      currentLocality: helper.current_locality,
+      primaryPhone: helper.primary_phone,
+      expectedSalaryMin: helper.expected_salary_min,
+      expectedSalaryMax: helper.expected_salary_max,
+      workingHoursPreference: helper.working_hours_preference,
       latitude: helper.latitude,
       longitude: helper.longitude,
-      listedBy: helper.listedBy,
-      createdAt: helper.createdAt,
-      updatedAt: helper.updatedAt
+      listedBy: helper.listed_by,
+      createdAt: helper.created_at,
+      updatedAt: helper.updated_at
     }))
     
     return NextResponse.json({
@@ -414,9 +473,10 @@ export async function GET(request: NextRequest) {
     })
     
   } catch (error) {
+    console.error('Helper fetch error:', error)
     return NextResponse.json(
-      { error: 'No registrations found' },
-      { status: 404 }
+      { error: 'Failed to fetch helper registrations' },
+      { status: 500 }
     )
   }
 }
