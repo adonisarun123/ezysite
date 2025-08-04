@@ -66,7 +66,7 @@ A modern, conversion-focused website built with Next.js 14 and TailwindCSS for E
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/adonisarun123/ezysite.git
    cd ezyhelpers-website
    ```
 

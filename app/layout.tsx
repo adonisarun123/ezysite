@@ -256,66 +256,30 @@ export default function RootLayout({
           }}
         />
         
-        {/* Custom positioning for Tawk.to to avoid WhatsApp overlap */}
+        {/* Custom positioning for Tawk.to chat widget */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            /* Position Tawk.to widget to the left of WhatsApp float */
+            /* Position Tawk.to widget at bottom-right since WhatsApp is now center-right */
             #tawk-bubble {
               bottom: 24px !important;
-              right: 100px !important;
+              right: 24px !important;
               z-index: 45 !important;
             }
             
             /* Ensure Tawk.to chat window aligns properly */
             .tawk-flex-right {
-              right: 100px !important;
+              right: 24px !important;
             }
             
-            /* Tablet adjustments - side by side with more spacing */
-            @media (max-width: 1024px) and (min-width: 769px) {
-              #tawk-bubble {
-                bottom: 24px !important;
-                right: 110px !important;
-              }
-              
-              .tawk-flex-right {
-                right: 110px !important;
-              }
-            }
-            
-            /* Mobile adjustments - stack vertically with large spacing */
+            /* Mobile adjustments - position chat to avoid WhatsApp at 3/4 height */
             @media (max-width: 768px) {
               #tawk-bubble {
-                bottom: 140px !important;
-                right: 24px !important;
-              }
-              
-              .tawk-flex-right {
-                right: 24px !important;
-              }
-            }
-            
-            /* Extra small screens - even more spacing */
-            @media (max-width: 480px) {
-              #tawk-bubble {
-                bottom: 150px !important;
+                bottom: 100px !important;
                 right: 16px !important;
               }
               
               .tawk-flex-right {
                 right: 16px !important;
-              }
-            }
-            
-            /* Hide Tawk.to bubble if it conflicts */
-            @media (max-width: 320px) {
-              #tawk-bubble {
-                bottom: 160px !important;
-                right: 12px !important;
-              }
-              
-              .tawk-flex-right {
-                right: 12px !important;
               }
             }
           `

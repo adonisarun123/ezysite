@@ -17,7 +17,9 @@ const WhatsAppFloat: React.FC = () => {
 
   return (
     <div 
-      className="fixed bottom-6 right-6 z-50 cursor-pointer transform transition-all duration-300 hover:scale-110"
+      className="fixed top-1/2 right-6 -translate-y-1/2 z-50 cursor-pointer transform transition-all duration-300 hover:scale-110 
+                 md:top-1/2 md:-translate-y-1/2 
+                 sm:top-3/4 sm:-translate-y-1/4 sm:right-4"
       onClick={handleWhatsAppClick}
     >
       <div className="bg-green-500 hover:bg-green-600 rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse">

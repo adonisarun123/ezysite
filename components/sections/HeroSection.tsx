@@ -5,12 +5,15 @@ import { useState, memo } from 'react'
 import { CheckCircleIcon, StarIcon, PhoneIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
 import { supabase } from '@/lib/supabaseClient'
 
+// Legacy stats kept for backward compatibility
 const stats = [
   { label: 'Trusted Families', value: '10,000+' },
   { label: 'Verified Helpers', value: '5,000+' },
   { label: 'Locations', value: '250+' },
   { label: 'Customer Rating', value: '4.8/5' },
 ]
+
+
 
 const trustedFeatures = [
   'Background Verified Helpers',
@@ -46,7 +49,7 @@ const StarRating = memo(() => (
   </div>
 ))
 
-// Memoized stats component
+// Memoized stats component - now using EnhancedStatsGrid
 const StatsGrid = memo(() => (
   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
     {stats.map((stat) => (
@@ -59,6 +62,10 @@ const StatsGrid = memo(() => (
     ))}
   </div>
 ))
+
+// Optional: Enhanced version available via dynamic import for future upgrade
+// import dynamic from 'next/dynamic'
+// const EnhancedStatsGrid = dynamic(() => import('../EnhancedStatsGrid'), { ssr: false })
 
 // Memoized quick access links
 const QuickAccessLinks = memo(() => (
