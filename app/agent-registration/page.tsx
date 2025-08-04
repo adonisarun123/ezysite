@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { 
   CameraIcon, 
   MapPinIcon, 
@@ -10,7 +11,10 @@ import {
   ExclamationTriangleIcon,
   ArrowLeftIcon,
   ArrowRightIcon,
-  PhoneIcon
+  PhoneIcon,
+  ShieldCheckIcon,
+  UsersIcon,
+  BuildingOfficeIcon
 } from '@heroicons/react/24/outline'
 
 // Types
@@ -382,6 +386,51 @@ export default function AgentRegistrationPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+      {/* EzyHelpers Branded Header */}
+      <div className="bg-gradient-to-r from-teal-600 to-teal-700 py-6">
+        <div className="max-w-2xl mx-auto px-4">
+          <div className="flex items-center justify-center mb-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                <Image
+                  src="/ezyhelper_logo_new.png"
+                  alt="EzyHelpers Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="text-white">
+                <h1 className="text-2xl font-bold">EzyHelpers</h1>
+                <p className="text-teal-100 text-sm">Trusted Home Help Network</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center text-white mb-4">
+            <h2 className="text-xl font-semibold mb-2">Partner Agency Registration</h2>
+            <p className="text-teal-100 text-sm">Join India's fastest-growing domestic help network</p>
+          </div>
+          
+          {/* Trust Indicators */}
+          <div className="grid grid-cols-3 gap-4 text-center text-white text-xs">
+            <div className="flex flex-col items-center">
+              <ShieldCheckIcon className="h-6 w-6 text-teal-200 mb-1" />
+              <span>Verified Partners</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <UsersIcon className="h-6 w-6 text-teal-200 mb-1" />
+              <span>10,000+ Families</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <BuildingOfficeIcon className="h-6 w-6 text-teal-200 mb-1" />
+              <span>100+ Cities</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Progress Bar */}
       <div className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-2xl mx-auto px-4 py-3">
@@ -1082,6 +1131,35 @@ export default function AgentRegistrationPage() {
             )}
           </div>
         </form>
+      </div>
+
+      {/* Professional Footer */}
+      <div className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8 mt-12">
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <div className="flex items-center justify-center mb-4">
+            <div className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <Image
+                src="/ezyhelper_logo_new.png"
+                alt="EzyHelpers Logo"
+                width={24}
+                height={24}
+                className="object-contain"
+              />
+            </div>
+            <span className="text-lg font-semibold text-gray-900 dark:text-white">EzyHelpers</span>
+          </div>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            India's Most Trusted Domestic Help Network
+          </p>
+          <div className="flex justify-center space-x-6 text-xs text-gray-500 dark:text-gray-400">
+            <Link href="/privacy-policy" className="hover:text-teal-600">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-teal-600">Terms of Service</Link>
+            <Link href="/contact" className="hover:text-teal-600">Contact Us</Link>
+          </div>
+          <p className="text-xs text-gray-400 dark:text-gray-500 mt-4">
+            © 2024 EzyHelpers. All rights reserved.
+          </p>
+        </div>
       </div>
 
       {/* Help Contact */}
