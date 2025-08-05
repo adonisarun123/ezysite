@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ContactPageClient from '../../components/ContactPageClient';
+import Breadcrumb from '../../components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Contact Us | EzyHelpers Customer Support',
@@ -23,6 +24,14 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+      
+      <Breadcrumb 
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Contact Us' }
+        ]} 
+      />
+      
       <ContactPageClient />
       <Footer />
     </div>

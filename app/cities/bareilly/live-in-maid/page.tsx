@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Breadcrumb from '@/components/Breadcrumb'
 import { 
   ClockIcon, 
   ShieldCheckIcon, 
@@ -168,24 +169,13 @@ export default function BareillyLiveInMaidPage() {
       <main className="min-h-screen">
         <Navbar />
         
-        {/* Breadcrumb Navigation */}
-        <section className="bg-gray-100 py-4">
-          <div className="container-custom">
-            <nav className="text-sm">
-              <ol className="flex items-center space-x-2">
-                <li>
-                  <Link href="/" className="text-gray-500 hover:text-purple-600">Home</Link>
-                </li>
-                <li className="text-gray-400">/</li>
-                <li>
-                  <Link href="/cities/bareilly" className="text-gray-500 hover:text-purple-600">Bareilly</Link>
-                </li>
-                <li className="text-gray-400">/</li>
-                <li className="text-gray-900 font-medium">24-Hour Live-In Maid Service</li>
-              </ol>
-            </nav>
-          </div>
-        </section>
+        <Breadcrumb 
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Bareilly', href: '/cities/bareilly' },
+            { label: '24-Hour Live-In Maid Service' }
+          ]} 
+        />
       
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">

@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import FAQPageClient from '../../components/FAQPageClient';
+import Breadcrumb from '../../components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions | EzyHelpers Help Center',
@@ -23,6 +24,14 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+      
+      <Breadcrumb 
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'FAQs' }
+        ]} 
+      />
+      
       <FAQPageClient />
       <Footer />
     </div>

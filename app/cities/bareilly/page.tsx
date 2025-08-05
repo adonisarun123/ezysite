@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Breadcrumb from '@/components/Breadcrumb'
 import { 
   ShieldCheckIcon,
   ClockIcon,
@@ -175,6 +176,13 @@ export default function BareillyPage() {
   return (
     <main className="min-h-screen">
       <Navbar />
+      
+      <Breadcrumb 
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Bareilly' }
+        ]} 
+      />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-indigo-600 via-purple-700 to-blue-800 text-white pt-32 pb-20 overflow-hidden">

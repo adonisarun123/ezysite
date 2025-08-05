@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Breadcrumb from '@/components/Breadcrumb'
 import { 
   ComputerDesktopIcon, 
   HomeIcon, 
@@ -32,6 +33,14 @@ export default function BangalorePage() {
   return (
     <main className="min-h-screen">
       <Navbar />
+      
+      <Breadcrumb 
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Bangalore' }
+        ]} 
+      />
+      
       <div className="bg-background-primary">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white pt-32 pb-20">

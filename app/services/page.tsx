@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Breadcrumb from '@/components/Breadcrumb'
 import { BreadcrumbSchema, FAQSchema, generalFAQs, serviceFAQs } from '@/components/schema'
 import { 
   HomeIcon, 
@@ -256,6 +257,13 @@ export default function ServicesPage() {
         <FAQSchema faqs={servicePageFAQs} aboutPage="https://ezyhelpers.com/services" />
         
         <Navbar />
+        
+        <Breadcrumb 
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Services' }
+          ]} 
+        />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-700 via-primary-600 to-primary-500 text-white pt-28 pb-24 lg:pb-32 overflow-hidden">

@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import Breadcrumb from '../../components/Breadcrumb';
 import {
   HeartIcon,
   ShieldCheckIcon,
@@ -37,6 +38,14 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+      
+      <Breadcrumb 
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'About Us' }
+        ]} 
+      />
+      
       <main>
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-800 text-white">
