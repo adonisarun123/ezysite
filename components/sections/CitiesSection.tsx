@@ -8,7 +8,8 @@ import {
   StarIcon,
   CogIcon,
   TrophyIcon,
-  SparklesIcon
+  SparklesIcon,
+  BuildingStorefrontIcon
 } from '@heroicons/react/24/outline'
 
 const cities = [
@@ -19,6 +20,14 @@ const cities = [
     icon: ComputerDesktopIcon,
     color: 'bg-blue-100 group-hover:bg-blue-200',
     iconColor: 'text-blue-600'
+  },
+  { 
+    name: 'Hyderabad', 
+    description: 'Cyberabad Tech Hub', 
+    href: '/cities/hyderabad',
+    icon: BuildingStorefrontIcon,
+    color: 'bg-cyan-100 group-hover:bg-cyan-200',
+    iconColor: 'text-cyan-600'
   },
   { 
     name: 'Mumbai', 
@@ -67,14 +76,6 @@ const cities = [
     icon: CogIcon,
     color: 'bg-gray-100 group-hover:bg-gray-200',
     iconColor: 'text-gray-600'
-  },
-  { 
-    name: 'Meerut', 
-    description: 'Sports City', 
-    href: '/cities/meerut',
-    icon: TrophyIcon,
-    color: 'bg-yellow-100 group-hover:bg-yellow-200',
-    iconColor: 'text-yellow-600'
   },
   { 
     name: 'Bareilly', 
