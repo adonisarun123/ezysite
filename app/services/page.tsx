@@ -48,7 +48,7 @@ export default function ServicesPage() {
   const services = [
     {
       title: "Live-In Maid Services",
-      description: "24/7 domestic help for busy families across Bangalore. From Whitefield to Jayanagar, get reliable live-in maids for cooking, cleaning, childcare, and eldercare.",
+      description: "24/7 domestic help for busy families across India. Get reliable live-in maids for cooking, cleaning, childcare, and eldercare with personalized service.",
       href: "/services/live-in-maids",
       icon: HomeIcon,
       gradient: "from-blue-500 to-indigo-600",
@@ -57,12 +57,12 @@ export default function ServicesPage() {
       borderColor: "border-blue-200",
       features: ["24/7 Presence", "₹18,000-25,000/month", "Specialized in One Area", "12-Hour Work Day"],
       serviceTypes: ["Live-In Housekeeper", "Live-In Cook", "Live-In Nanny", "Live-In Senior Caregiver"],
-      trustIndicators: ["Background Verified", "Bangalore-Savvy", "24-72hr Placement"],
+      trustIndicators: ["Background Verified", "Locally Experienced", "24-72hr Placement"],
       popular: false
     },
     {
       title: "Full-Time Maid Services", 
-      description: "Reliable 8–10 hour daily maid service for working families and everyday households across Bangalore. Get trusted help for cleaning, cooking, childcare, or elderly care, customised to your routine.",
+      description: "Reliable 8–10 hour daily maid service for working families and everyday households across India. Get trusted help for cleaning, cooking, childcare, or elderly care, customised to your routine.",
       href: "/services/full-time-maids",
       icon: ClockIcon,
       gradient: "from-emerald-500 to-teal-600",
@@ -76,7 +76,7 @@ export default function ServicesPage() {
     },
     {
       title: "Part-Time Maid Services",
-      description: "Quick and reliable part-time maids in Bangalore, available for 2–6 hours daily. Ideal for cooking, cleaning, childcare, and eldercare with flexible timing options.",
+      description: "Quick and reliable part-time maids available for 2–6 hours daily. Ideal for cooking, cleaning, childcare, and eldercare with flexible timing options.",
       href: "/services/part-time-maids", 
       icon: CalendarDaysIcon,
       gradient: "from-purple-500 to-violet-600",
@@ -90,7 +90,7 @@ export default function ServicesPage() {
     },
     {
       title: "On-Demand Helper Services",
-      description: "Need emergency help at home? Whether it's a last-minute mess, unexpected guests, or a missed maid visit, EzyHelpers offers instant, reliable on-demand maid and helper services in Bangalore.",
+      description: "Need emergency help at home? Whether it's a last-minute mess, unexpected guests, or a missed maid visit, EzyHelpers offers instant, reliable on-demand maid and helper services.",
       href: "/services/on-demand-helpers",
       icon: BoltIcon,
       gradient: "from-orange-500 to-red-600",
@@ -104,7 +104,7 @@ export default function ServicesPage() {
     },
     {
       title: "Nanny/Babysitter Services",
-      description: "Looking for a trusted babysitter for home in Bangalore? Get trusted, trained, and caring help for your child's safety, learning, and daily routines, right in your home.",
+      description: "Looking for a trusted babysitter for your home? Get trusted, trained, and caring help for your child's safety, learning, and daily routines, right in your home.",
       href: "/services/nanny-babysitter",
       icon: AcademicCapIcon,
       gradient: "from-pink-500 to-rose-600",
@@ -113,12 +113,12 @@ export default function ServicesPage() {
       borderColor: "border-pink-200",
       features: ["Infant to Teen Care", "₹15,000-25,000/month", "Emergency On-Call", "CPR & First Aid Trained"],
       serviceTypes: ["Live-In Nanny", "Full-Time Babysitter", "Part-Time Babysitter", "Age-Specific Care"],
-      trustIndicators: ["Meal & Nap Routines", "Trained & Verified", "Trusted by Bangalore Parents"],
+      trustIndicators: ["Meal & Nap Routines", "Trained & Verified", "Trusted by Parents Nationwide"],
       popular: false
     },
     {
       title: "Elderly Care Services",
-      description: "From medication to companionship, EzyHelpers offers trusted in-home elderly care in Bangalore, ensuring your loved ones feel safe, supported, and never alone.",
+      description: "From medication to companionship, EzyHelpers offers trusted in-home elderly care, ensuring your loved ones feel safe, supported, and never alone.",
       href: "/services/elderly-care",
       icon: HeartIcon,
       gradient: "from-teal-500 to-cyan-600",
@@ -132,7 +132,7 @@ export default function ServicesPage() {
     },
     {
       title: "Cook Services",
-      description: "Fresh, hygienic, and homestyle meals daily from verified professional home cooks in Bangalore. Personalised cooking tailored to your diet, culture, and daily routine.",
+      description: "Fresh, hygienic, and homestyle meals daily from verified professional home cooks. Personalised cooking tailored to your diet, culture, and daily routine.",
       href: "/services/cooks",
       icon: UserIcon,
       gradient: "from-amber-500 to-orange-600",
@@ -146,14 +146,14 @@ export default function ServicesPage() {
     },
     {
       title: "Driver Services",
-      description: "Skip the stress of driving! Book a professional driver in Bangalore for family, office, or intercity travel. Safe, courteous, and always punctual.",
+      description: "Skip the stress of driving! Book a professional driver for family, office, or intercity travel. Safe, courteous, and always punctual.",
       href: "/services/drivers",
       icon: TruckIcon,
       gradient: "from-slate-500 to-gray-600",
       bgColor: "bg-slate-50", 
       iconColor: "text-slate-600",
       borderColor: "border-slate-200",
-      features: ["Bangalore Traffic Experts", "Background-Verified", "24/7 Available Service", "All Routes Covered"],
+      features: ["Local Traffic Experts", "Background-Verified", "24/7 Available Service", "All Routes Covered"],
       serviceTypes: ["Live-In Car Driver", "Full-Time Car Driver", "On-Demand Driver", "Specialized Transport"],
       trustIndicators: ["Emergency Trip Support", "Flexible Hourly Bookings", "Polite & Professional"],
       popular: false
@@ -164,7 +164,7 @@ export default function ServicesPage() {
   const secondaryServices = [
     {
       title: "Electrical Appliance Repair",
-      description: "Fast and expert servicing for all major electrical appliances in Bangalore, including refrigerators, washing machines, ACs, and more",
+      description: "Fast and expert servicing for all major electrical appliances, including refrigerators, washing machines, ACs, and more"
       href: "/services/appliance-repair",
       icon: WrenchScrewdriverIcon,
       bgColor: "bg-red-50",
@@ -460,7 +460,7 @@ export default function ServicesPage() {
               Our Professional Services
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Trusted, background-verified domestic help services across Bangalore. From live-in maids to emergency helpers, we provide reliable solutions tailored to your lifestyle and budget.
+              Trusted, background-verified domestic help services across India. From live-in maids to emergency helpers, we provide reliable solutions tailored to your lifestyle and budget.
             </p>
           </div>
 
@@ -579,7 +579,7 @@ export default function ServicesPage() {
               Comprehensive Home Solutions
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              From electrical repairs to deep cleaning, our verified experts deliver quality home maintenance services with transparent pricing, same-day availability, and 100% satisfaction guaranteed across Bangalore
+              From electrical repairs to deep cleaning, our verified experts deliver quality home maintenance services with transparent pricing, same-day availability, and 100% satisfaction guaranteed
             </p>
           </div>
 
