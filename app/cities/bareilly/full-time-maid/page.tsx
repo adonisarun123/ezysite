@@ -23,7 +23,8 @@ import {
   AcademicCapIcon,
   ChatBubbleLeftRightIcon,
   UsersIcon,
-  BoltIcon
+  BoltIcon,
+  CogIcon
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
@@ -224,7 +225,7 @@ export default function BareillyFullTimeMaidPage() {
             </h1>
                   
                   <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed">
-                    Dependable Daily Help for Every Household. Get background-verified, trained full-time maid for cooking, cleaning, elderly care & complete home management.
+                    Dependable Daily Help for Every Household. Get background-verified, trained full-time maid for cooking, cleaning, elderly care & complete home management. Perfect for joint families and working professionals.
                   </p>
 
                   <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
@@ -448,13 +449,87 @@ export default function BareillyFullTimeMaidPage() {
         </div>
       </section>
 
-        {/* Related Services */}
+                {/* Specialized Services */}
+        <section className="section-padding bg-gradient-to-br from-blue-50 to-indigo-50">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Specialized Full-Time Services in Bareilly
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Expert specialists for specific household needs with traditional values
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                <UserGroupIcon className="h-12 w-12 text-purple-600 mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Full-Time Babysitters/Nannies</h3>
+                <p className="text-gray-600 text-sm">Dedicated childcare with traditional games and Hindi lullabies</p>
+              </div>
+              
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                <HeartIcon className="h-12 w-12 text-red-600 mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Full-Time Senior Caretakers</h3>
+                <p className="text-gray-600 text-sm">Respectful elderly care with traditional medicine knowledge</p>
+              </div>
+              
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                <SparklesIcon className="h-12 w-12 text-green-600 mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Full-Time Cooks</h3>
+                <p className="text-gray-600 text-sm">Expert in UP specialties: Tehri, Bedai, Halwa & festival cooking</p>
+              </div>
+              
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                <UserPlusIcon className="h-12 w-12 text-blue-600 mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Full-Time Drivers</h3>
+                <p className="text-gray-600 text-sm">Licensed local drivers for daily commutes and family safety</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Local Expertise */}
         <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Local Expertise You Can Trust
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Deep understanding of Bareilly traditions and UP family values
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center p-8 bg-orange-50 rounded-2xl">
+                <HomeIcon className="h-16 w-16 text-orange-600 mx-auto mb-6" />
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Expert in UP Joint Family Homes</h3>
+                <p className="text-gray-600">Understanding of large family dynamics, guest management, and traditional hospitality</p>
+              </div>
+              
+              <div className="text-center p-8 bg-green-50 rounded-2xl">
+                <BuildingOffice2Icon className="h-16 w-16 text-green-600 mx-auto mb-6" />
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Traditional Storage Knowledge</h3>
+                <p className="text-gray-600">Expert in preserving spices, grains, and seasonal foods the traditional UP way</p>
+              </div>
+              
+              <div className="text-center p-8 bg-purple-50 rounded-2xl">
+                <HandRaisedIcon className="h-16 w-16 text-purple-600 mx-auto mb-6" />
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Festival & Pooja Assistance</h3>
+                <p className="text-gray-600">Trained in religious customs, prasad preparation, and festival celebrations</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                More Home Services in Bareilly
-            </h2>
+                Explore Our Other Services in Bareilly
+              </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -465,7 +540,7 @@ export default function BareillyFullTimeMaidPage() {
                 <div className="flex items-center text-blue-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </div>
-                </Link>
+              </Link>
 
               <Link href="/cities/bareilly/part-time-maid" className="group bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 hover:border-green-300 hover:shadow-lg transition-all duration-300">
                 <ClockIcon className="h-12 w-12 text-green-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
@@ -473,8 +548,8 @@ export default function BareillyFullTimeMaidPage() {
                 <p className="text-gray-600 mb-4">Flexible 2-4 hours daily for cooking & cleaning tasks</p>
                 <div className="flex items-center text-green-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
-              </div>
-                </Link>
+                </div>
+              </Link>
 
               <Link href="/cities/bareilly/on-demand-helper" className="group bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 border border-red-100 hover:border-red-300 hover:shadow-lg transition-all duration-300">
                 <BoltIcon className="h-12 w-12 text-red-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
@@ -482,9 +557,36 @@ export default function BareillyFullTimeMaidPage() {
                 <p className="text-gray-600 mb-4">Same-day emergency help for festivals & urgent needs</p>
                 <div className="flex items-center text-red-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
-              </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
+            </div>
+
+            {/* Additional Services Grid */}
+            <div className="grid md:grid-cols-4 gap-6 mt-12">
+              <Link href="/cities/bareilly/elderly-care" className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-300">
+                <HeartIcon className="h-8 w-8 text-purple-600 mb-3 group-hover:scale-110 transition-transform duration-300" />
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Elderly Care</h4>
+                <p className="text-gray-600 text-sm">Mobility, hygiene, meals, companionship</p>
+              </Link>
+
+              <Link href="/cities/bareilly/cooks" className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300">
+                <SparklesIcon className="h-8 w-8 text-orange-600 mb-3 group-hover:scale-110 transition-transform duration-300" />
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Cook Services</h4>
+                <p className="text-gray-600 text-sm">North & South Indian cuisines, tiffin services</p>
+              </Link>
+
+              <Link href="/cities/bareilly/babysitter" className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-pink-300 hover:shadow-lg transition-all duration-300">
+                <UserGroupIcon className="h-8 w-8 text-pink-600 mb-3 group-hover:scale-110 transition-transform duration-300" />
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Baby Care</h4>
+                <p className="text-gray-600 text-sm">Feeding, bathing, playful engagement</p>
+              </Link>
+
+              <Link href="/cities/bareilly/appliance-repair" className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
+                <CogIcon className="h-8 w-8 text-blue-600 mb-3 group-hover:scale-110 transition-transform duration-300" />
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Appliance Repair</h4>
+                <p className="text-gray-600 text-sm">Fridge, AC, fan, washing machine</p>
+              </Link>
+            </div>
 
             <div className="text-center mt-8">
               <Link 
