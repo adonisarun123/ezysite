@@ -9,7 +9,8 @@ import {
   StarIcon,
   CogIcon,
   TrophyIcon,
-  SparklesIcon
+  SparklesIcon,
+  BuildingStorefrontIcon
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
@@ -31,6 +32,7 @@ const footerLinks = {
   ],
   cities: [
     { name: 'Bangalore', href: '/cities/bangalore', icon: ComputerDesktopIcon, iconColor: 'text-blue-400' },
+    { name: 'Hyderabad', href: '/cities/hyderabad', icon: BuildingStorefrontIcon, iconColor: 'text-cyan-400' },
     { name: 'Mumbai', href: '/cities/mumbai', icon: BuildingOffice2Icon, iconColor: 'text-emerald-400' },
     { name: 'Delhi', href: '/cities/delhi', icon: BuildingLibraryIcon, iconColor: 'text-red-400' },
     { name: 'Noida', href: '/cities/noida', icon: ServerIcon, iconColor: 'text-purple-400' },
