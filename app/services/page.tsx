@@ -71,7 +71,7 @@ export default function ServicesPage() {
       borderColor: "border-emerald-200",
       features: ["8-10 Hours Daily", "₹12,000-20,000/month", "No Accommodation Needed", "Replacement Guarantee"],
       serviceTypes: ["Full-Time Housekeeper", "Full-Time Cook", "Full-Day Babysitter", "Full-Time Elderly Care Assistant"],
-      trustIndicators: ["Background Verified", "Experienced in Urban Homes", "Safe and Trusted Maids"],
+      trustIndicators: ["Background Verified", "Experienced Professionals", "Safe and Trusted Maids"],
       popular: true
     },
     {
@@ -194,7 +194,7 @@ export default function ServicesPage() {
       bgColor: "bg-blue-50",
       iconColor: "text-blue-600",
       borderColor: "border-blue-200",
-      features: ["Expert in Repairs & Installations", "BESCOM-Compliant Work", "Energy-Saving Solutions"],
+      features: ["Expert in Repairs & Installations", "Code-Compliant Work", "Energy-Saving Solutions"],
       trustIndicators: ["100% Safety Assured", "Licensed Electricians Only", "Instant Fault Diagnosis"],
       guarantee: "Same-Day Repairs Available"
     },
