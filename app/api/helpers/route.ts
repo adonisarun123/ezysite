@@ -459,7 +459,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Convert snake_case to camelCase for frontend compatibility
-    const sanitizedHelpers = helpers.map(helper => ({
+    const sanitizedHelpers = helpers.map((helper: any) => ({
       id: helper.id,
       helperType: helper.helper_type,
       firstName: helper.first_name,

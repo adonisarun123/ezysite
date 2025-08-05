@@ -164,7 +164,7 @@ export default function ServicesPage() {
   const secondaryServices = [
     {
       title: "Electrical Appliance Repair",
-      description: "Fast and expert servicing for all major electrical appliances, including refrigerators, washing machines, ACs, and more"
+      description: "Fast and expert servicing for all major electrical appliances, including refrigerators, washing machines, ACs, and more",
       href: "/services/appliance-repair",
       icon: WrenchScrewdriverIcon,
       bgColor: "bg-red-50",

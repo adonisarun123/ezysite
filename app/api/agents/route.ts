@@ -406,7 +406,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Convert snake_case to camelCase for frontend compatibility
-    const sanitizedAgents = agents.map(agent => ({
+    const sanitizedAgents = agents.map((agent: any) => ({
       id: agent.id,
       agencyName: agent.agency_name,
       registrationNumber: agent.registration_number,
