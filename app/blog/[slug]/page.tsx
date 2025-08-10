@@ -279,10 +279,10 @@ export default function BlogPost({ params }: PageProps) {
         <div className="container-custom max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold mb-6 font-display">Need Trusted Help at Home?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
-            <a href="/hire-helper" className="btn-secondary bg-white text-indigo-600 hover:bg-gray-100 w-full">
+            <a href="/hire-helper" className="bg-white text-indigo-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-200 hover:transform hover:scale-105 w-full text-center">
               Book a Helper Now
             </a>
-            <a href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 w-full">
+            <a href="tel:+919972571005" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 font-semibold py-3 px-6 rounded-lg transition-all duration-200 hover:transform hover:scale-105 w-full text-center">
               Call +91 99725 71005
             </a>
           </div>
