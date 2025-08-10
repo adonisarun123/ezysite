@@ -14,6 +14,19 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    id: 'market-overview',
+    title: 'The Indian Domestic Helper Market: Market Overview, Challenges and Future Outlook',
+    excerpt:
+      'Comprehensive analysis of India\'s domestic helper market - from its 50-90 million workforce to growth trends, formalization opportunities, and policy frameworks.',
+    author: 'Market Research Team',
+    date: 'December 15, 2024',
+    readTime: '15 min read',
+    category: 'Market Analysis',
+    featured: true,
+    tags: ['market analysis', 'domestic workers', 'industry trends', 'policy', 'formalization'],
+    content: `This comprehensive market analysis has been moved to a dedicated page for better reading experience. [Read the full analysis here](/market-overview).`
+  },
+  {
     id: 'hiring-domestic-helper',
     title: 'The Complete Guide to Hiring a Domestic Helper in India',
     excerpt:
