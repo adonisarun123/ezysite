@@ -566,9 +566,13 @@ export const sendLeadEmail = async (
 ) => {
   try {
     // Use contact@ezyhelpers.com for registration emails or fallback to ADMIN_EMAIL for other types
-    const adminEmail = (leadType === 'agent_registration' || leadType === 'helper_registration') 
+    // Get the primary admin email based on lead type
+    const primaryEmail = (leadType === 'agent_registration' || leadType === 'helper_registration') 
       ? 'contact@ezyhelpers.com' 
       : process.env.ADMIN_EMAIL;
+      
+    // Create array of recipients including Ashma's email
+    const adminEmail = [primaryEmail, 'ashma@ezyhelpers.com'].filter(Boolean).join(', ');
       
     if (!adminEmail) {
       console.error('ADMIN_EMAIL environment variable not set');
