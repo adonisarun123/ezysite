@@ -294,44 +294,44 @@ export default function BangalorePage() {
             {[
               {
                 title: "Carpenter",
-                description: "Experts for furniture repair or custom installations in apartments or villas.",
-                features: ["Furniture repair & assembly", "Door, window & shelf fitting", "Custom woodwork support"],
+                description: "Get expert carpentry help in Bangalore for furniture repairs, modular installations, and custom woodwork tailored to your space.",
+                features: ["Quick fixes for everyday furniture", "Custom built-ins for any room", "Safe, verified professionals"],
                 href: "/services/carpenters"
               },
               {
                 title: "Electrician",
-                description: "Certified professionals for switches, wiring, and inverter-related electrical issues.",
-                features: ["Fan, light & wiring repair", "Power backup & inverter fixes", "Safe and quick service"],
+                description: "Upgrading switches or fixing faulty wiring? Get reliable, safe, and certified electrical repair and installation services in Bangalore.",
+                features: ["Licensed electricians only", "Same-day repairs & installations", "Energy-saving solutions"],
                 href: "/services/electricians"
               },
               {
                 title: "Gardener",
-                description: "Plant care and garden maintenance services for balconies or lawns.",
-                features: ["Lawn & plant maintenance", "Seasonal trimming & care", "Balcony garden services"],
+                description: "From garden setup to seasonal care, expert gardening services customized to your space, be it a terrace, balcony, or home garden.",
+                features: ["Terrace & balcony experts", "Seasonal maintenance", "Organic gardening practices"],
                 href: "/services/gardener"
               },
               {
                 title: "Appliance Repair",
-                description: "Experts for same-day repairs of fridges, ACs, or washing machines.",
-                features: ["Same-day appliance service", "Original spare parts", "AC, fridge, washer, more"],
+                description: "Fix all home appliances in Bangalore with expert technicians. TV, AC, fridge, washing machine repair with doorstep service.",
+                features: ["Same-day repairs available", "Genuine spare parts", "Multi-brand expertise"],
                 href: "/services/appliance-repair"
               },
               {
                 title: "Plumber",
-                description: "Skilled plumbers for leaks, fittings, and drainage fixes in your home.",
-                features: ["Bathroom & kitchen plumbing", "Tap & pipe repair", "Emergency plumbing service"],
+                description: "Get instant help for all plumbing problems in Bangalore, from leaking taps and bathroom fittings to clogged drains.",
+                features: ["Same-day service", "Transparent pricing", "Background-checked plumbers"],
                 href: "/services/plumbers"
               },
               {
                 title: "Home Deep Cleaning",
-                description: "Professional one-time or regular deep cleaning for hygienic living spaces.",
-                features: ["Kitchen & bathroom cleaning", "Full-home sanitation", "Grease and stain removal"],
+                description: "Experience professional home cleaning in Bangalore. We eliminate dust, germs, and stains for a cleaner, healthier living environment.",
+                features: ["Complete sanitization", "Child and pet-safe products", "Flexible scheduling"],
                 href: "/services/deep-cleaning"
               },
               {
                 title: "Painter",
-                description: "Painting services using clean finishes and weather-safe materials.",
-                features: ["Interior & exterior painting", "Waterproofing & monsoon prep", "Clean, dust-free process"],
+                description: "Hire trusted painters in Bangalore for clean, reliable painting services using premium paints, expert finishes, and fast completion.",
+                features: ["Premium paints only", "Dust-free methods", "Weather-resistant coatings"],
                 href: "/services/painters"
               }
             ].map((service, index) => (
