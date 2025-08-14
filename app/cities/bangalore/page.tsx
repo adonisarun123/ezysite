@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: 'Hire Reliable Maid for Home in Bangalore | Trained Helpers',
   description: 'Find background-verified maids and helpers in Bangalore for daily chores, cooking, babysitting, elderly care, driving, and home repairs, all in one place.',
-  keywords: 'maid for home Bangalore, domestic helpers Bangalore, verified maids Bangalore, house help services Bangalore'
+  keywords: 'maid for home bangalore, domestic helpers bangalore, verified maids bangalore, house help services bangalore, home services bangalore'
 }
 
 export default function BangalorePage() {
@@ -207,50 +207,50 @@ export default function BangalorePage() {
             {[
               {
                 title: "Live-in Maid",
-                description: "Stay-in maids offering 24/7 household help and supervision for families.",
-                features: ["24/7 stay-in assistance", "Support with daily household routines", "Long-term domestic support"],
+                description: "24/7 domestic help for busy families across Bangalore. From Whitefield to Jayanagar, get reliable live-in maids for cooking, cleaning, childcare, and eldercare.",
+                features: ["24/7 stay-in assistance", "12-hour daily support", "Trained in modern home care"],
                 href: "/services/live-in-maids"
               },
               {
                 title: "Full-Time Maid",
-                description: "Daily maids for regular household chores from morning until evening.",
-                features: ["Daily full-day cleaning and care", "Trained for modern households", "Fixed-time daily assistance"],
+                description: "Reliable 8–10 hour daily maid service for working families. Get trusted help for cleaning, cooking, childcare, or elderly care, customised to your routine.",
+                features: ["8-10 hours daily support", "Experienced in urban homes", "Safe and trusted maids"],
                 href: "/services/full-time-maids"
               },
               {
                 title: "Part-Time Maid",
-                description: "Flexible hourly maids for small homes or working professionals.",
-                features: ["Flexible hourly schedules", "Kitchen and cleaning support", "Daily or alternate-day options"],
+                description: "Quick and reliable part-time maids in Bangalore, available for 2–6 hours daily. Ideal for cooking, cleaning, childcare, and eldercare.",
+                features: ["2-6 hour flexible slots", "Background verified", "Same-day availability"],
                 href: "/services/part-time-maids"
               },
               {
                 title: "On-Demand Maid",
-                description: "Short-term helpers or one-time maids for urgent or special cleaning needs.",
-                features: ["Instant maid bookings", "No long-term commitments", "Ideal for guests, events, or urgent needs"],
+                description: "Need emergency help at home? Get instant, reliable on-demand maid service for last-minute guests, missed maids, urgent cooking, event help, and babysitting.",
+                features: ["Same-day availability", "Emergency support", "Pay per task"],
                 href: "/services/on-demand-helpers"
               },
               {
                 title: "Babysitter",
-                description: "Trusted babysitters for infants or toddlers with flexible shifts and care.",
-                features: ["Trained in infant care", "Flexible shift timings", "Verified and caring professionals"],
+                description: "Get trusted, trained, and caring help for your child's safety, learning, and daily routines, right in your home.",
+                features: ["Meal & nap routines", "Infant to teen care", "Trained & verified babysitters"],
                 href: "/services/nanny-babysitter"
               },
               {
                 title: "Elderly Care",
-                description: "Trained caretakers for seniors requiring hygiene help and emotional support.",
-                features: ["Personal care and hygiene help", "Companionship and emotional support", "Medication reminders and supervision"],
+                description: "From medication to companionship, we offer trusted in-home elderly care in Bangalore, ensuring your loved ones feel safe, supported, and never alone.",
+                features: ["Daily routine help", "Health monitoring", "Personalized attention"],
                 href: "/services/elderly-care"
               },
               {
                 title: "Cook",
-                description: "Daily cooks prepare meals based on your regional and dietary needs.",
-                features: ["Customised meal prep", "North & South Indian cuisines", "Full-day or part-time options"],
+                description: "Fresh, hygienic, and homestyle meals daily from verified professional home cooks in Bangalore. Personalised cooking tailored to your diet, culture, and daily routine.",
+                features: ["Multi-cuisine expertise", "Fresh meal preparation", "Kitchen hygiene standards"],
                 href: "/services/cooks"
               },
               {
                 title: "Driver",
-                description: "Verified drivers for daily commutes, errands, and school pickups.",
-                features: ["Licensed local drivers", "Hourly or full-day bookings", "Trained for family safety"],
+                description: "Skip the stress of driving! Book a professional driver in Bangalore for family, office, or intercity travel. Safe, courteous, and always punctual.",
+                features: ["Bangalore traffic experts", "Background-verified", "24/7 available service"],
                 href: "/services/drivers"
               }
             ].map((service, index) => (
