@@ -19,9 +19,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'House Plumbing Repair in Bangalore | Water Problem Fix',
-  description: 'Fix leaking taps, blocked drains, or bathroom issues with verified plumbers. Book same-day house plumbing repair in Bangalore with on-time professionals.',
-  keywords: 'plumbing repair bangalore, plumber bangalore, tap repair bangalore, drain cleaning bangalore',
+  title: 'Plumbing Repair in Bareilly – Trusted Local Plumbers',
+  description: 'Get plumbing repair in Bareilly for leaks, pipe fittings, tap fixes, and clogged drains. Quick and professional service for your home needs.',
+  keywords: 'plumbing repair bareilly, plumber bareilly, tap repair bareilly, drain cleaning bareilly',
 }
 
 export default function PlumbersPage() {
@@ -33,99 +33,125 @@ export default function PlumbersPage() {
 
   const plumbingServices = [
     {
-      title: "Pipe Leakage Detection",
-      description: "We detect and repair hidden or visible leaks to prevent water damage and mold buildup.",
+      title: "Pipe Leakage & Blockage Repairs",
+      description: "Solve dripping pipes, hidden leaks, and seasonal blockages to protect walls and floors.",
       icon: WrenchScrewdriverIcon,
-      features: ["Hidden Leaks", "Visible Leaks", "Damage Prevention", "Mold Control"]
+      features: ["Hidden Leaks", "Dripping Pipes", "Blockages", "Wall Protection"]
     },
     {
-      title: "Faucet & Shower Repairs",
-      description: "We repair dripping taps and broken showers to restore water flow and stop wastage.",
+      title: "Bathroom Fitting & Repairs",
+      description: "Fix faucets, taps, showers, and broken flushes for clean, working bathrooms.",
       icon: BeakerIcon,
-      features: ["Dripping Taps", "Broken Showers", "Flow Fix", "Stop Wastage"]
+      features: ["Faucet Fix", "Tap Repair", "Shower Work", "Flush Fix"]
     },
     {
-      title: "Toilet Repair",
-      description: "We fix flush tanks and blockages to keep your bathroom clean and functional.",
+      title: "Toilet Repairs & Maintenance",
+      description: "Get help for toilet blockages, slow flushes, or water leaks for daily comfort.",
       icon: HomeIcon,
-      features: ["Flush Tanks", "Blockages", "Clean Fix", "Functional"]
+      features: ["Blockage Fix", "Flush Speed", "Leak Stop", "Daily Care"]
     },
     {
-      title: "Water Pressure Fix",
-      description: "We fix low water pressure in high-rises to ensure strong, steady flow in all taps.",
-      icon: FireIcon,
-      features: ["High-rise Fix", "Strong Flow", "Steady Water", "All Taps"]
-    },
-    {
-      title: "Bathroom Fitting",
-      description: "We install or repair taps, wash basins, and fittings to improve bathroom usage and hygiene.",
-      icon: CubeIcon,
-      features: ["Tap Install", "Basin Fix", "Fitting Work", "Hygiene"]
-    },
-    {
-      title: "Drain & Sink Cleaning",
-      description: "We remove grease, hair, and debris to unclog bathroom or kitchen drains and sinks.",
-      icon: CheckCircleIcon,
-      features: ["Grease Remove", "Hair Clear", "Debris Clean", "Unclog"]
-    },
-    {
-      title: "Pipe Replacement",
-      description: "We replace damaged pipes with durable ones during home renovations or major plumbing upgrades.",
-      icon: StarIcon,
-      features: ["Damaged Pipes", "Durable Fix", "Renovation", "Upgrade"]
-    },
-    {
-      title: "Emergency Plumbing",
-      description: "We handle burst pipes and blockages any time with our 24/7 emergency plumber service.",
-      icon: ExclamationTriangleIcon,
-      features: ["24/7 Service", "Burst Pipes", "Blockages", "Quick Fix"]
-    },
-    {
-      title: "Kitchen Sink & Drain",
-      description: "We fix sink leaks, clogs, and faulty faucets to maintain a clean and efficient kitchen.",
-      icon: WrenchScrewdriverIcon,
-      features: ["Sink Leaks", "Clogs", "Faucets", "Clean Kitchen"]
-    },
-    {
-      title: "Bathroom Appliances",
-      description: "We install geysers, jets, and hand showers with proper fittings for safe water use.",
+      title: "Water Tank Cleaning",
+      description: "Clean and maintain water tanks to keep water safe and fresh for your family.",
       icon: BeakerIcon,
-      features: ["Geyser Install", "Jets", "Hand Shower", "Safe Use"]
+      features: ["Tank Clean", "Safe Water", "Fresh Supply", "Regular Care"]
+    },
+    {
+      title: "Grouting & Sealant Services",
+      description: "Seal bathroom tiles, basins, and sinks to stop water seepage and mold issues.",
+      icon: CubeIcon,
+      features: ["Tile Seal", "Basin Fix", "Mold Stop", "Water Block"]
+    },
+    {
+      title: "Drainage Solutions",
+      description: "Clear blocked drains and repair sewer lines to prevent waterlogging and foul smells.",
+      icon: CheckCircleIcon,
+      features: ["Drain Clear", "Sewer Fix", "No Water Log", "Fresh Air"]
+    },
+    {
+      title: "Water Storage Tank Installation",
+      description: "Set up and maintain overhead tanks or underground sumps as per Bareilly's water needs.",
+      icon: StarIcon,
+      features: ["Tank Setup", "Sump Install", "Local Needs", "Safe Store"]
+    },
+    {
+      title: "Hard Water Treatment",
+      description: "Install water softeners to protect your pipes and fittings from Bareilly's hard water.",
+      icon: BeakerIcon,
+      features: ["Soft Water", "Pipe Care", "Fitting Save", "Long Life"]
+    },
+    {
+      title: "Bore-Well & Hand Pump Repairs",
+      description: "Experts in traditional borewell and pump solutions are used across Bareilly.",
+      icon: WrenchScrewdriverIcon,
+      features: ["Bore Fix", "Pump Work", "Local Know", "Quick Fix"]
+    },
+    {
+      title: "Monsoon Drainage Checks",
+      description: "Prepare your home for the rainy season with gutter cleaning and waterproofing services.",
+      icon: ExclamationTriangleIcon,
+      features: ["Rain Ready", "Gutter Clean", "Water Proof", "Season Safe"]
+    },
+    {
+      title: "Roof Leakage Repairs",
+      description: "Fix roof water leaks before the monsoon to prevent interior damage.",
+      icon: HomeIcon,
+      features: ["Roof Fix", "Leak Stop", "Rain Safe", "Home Care"]
     }
   ]
 
   const faqs = [
     {
-      question: "Is plumbing help available for apartments in Bangalore?",
-      answer: "Yes, our plumber services in Bangalore specialise in apartment complexes and high-rise buildings. We understand space constraints, neighbour considerations, and building-specific plumbing systems."
+      question: "Do you offer same-day plumbing repair in Bareilly?",
+      answer: "Yes, same-day plumbing repair is available in Bareilly through EzyHelpers. Our skilled plumbers provide fast service with quality fittings and complete solutions for urgent plumbing problems."
     },
     {
-      question: "Do your plumbers handle bathroom renovation for traditional homes?",
-      answer: "Yes, our bathroom renovation support includes complete upgrades for older homes, modern fixture installation, and space optimisation that is perfect for traditional houses."
+      question: "Do professional plumbers in Bareilly handle pipe leakage repairs?",
+      answer: "Yes, professional plumbers in Bareilly handle pipe leakage repairs, including dripping pipes, hidden leaks, and seasonal blockages. They protect your walls and floors from water damage with lasting solutions."
     },
     {
-      question: "Can I schedule a plumbing inspection before moving into a flat?",
-      answer: "Yes, our pre-move plumbing inspections ensure that your new flat has leak-free and functional plumbing. It's a smart step to avoid post-move hassles or unexpected repair costs."
+      question: "Do professional plumbers in Bareilly work on old homes?",
+      answer: "Yes, professional plumbers in Bareilly work on old homes, including upgrading plumbing systems, repairing old bathroom fixtures, and handling traditional pipework in older Bareilly homes."
     },
     {
-      question: "Do plumbers repair both PVC and metal plumbing systems?",
-      answer: "Yes. Our trained plumbers handle all types of plumbing systems, including PVC, CPVC, GI, PEX, and copper piping, using tools and techniques suited for each material."
+      question: "Can EzyHelpers' plumbers in Bareilly handle waterlogging issues?",
+      answer: "Yes, our professional and experienced plumbers handle waterlogging issues by providing drainage solutions, clearing blocked drains, and repairing sewer lines to prevent water accumulation."
     },
     {
-      question: "What causes frequent drain blockages in homes?",
-      answer: "Drain blockages in homes are often caused by hair accumulation, soap residue, food particles, and hard water mineral deposits. Kitchen drains may also clog due to oil and grease buildup. Our drain cleaning service uses high-pressure water jetting to effectively remove all obstructions."
+      question: "Why hire a professional plumber in Bareilly?",
+      answer: "A professional plumber ensures safety, efficiency, and durability. They are background-verified, trained, and experienced with local fittings, drainage patterns, and hard water challenges. They diagnose root causes and use quality parts to prevent recurring plumbing issues."
     },
     {
-      question: "Do I need to buy the parts, or will your plumber bring them?",
-      answer: "No need to worry. Our plumbers come fully prepared. When you book our house plumbing repair service in Bangalore, they will first inspect the issue and recommend the necessary parts. If replacements are needed, they'll either carry them or source genuine parts from trusted local suppliers. You won't have to visit a store or guess what's needed; we handle everything transparently and efficiently."
+      question: "Do EzyHelpers plumbers offer same-day plumbing repairs in Bareilly?",
+      answer: "Yes, EzyHelpers provides same-day plumbing repair in Bareilly. Verified local plumbers can address pipe leaks, blockages, bathroom fittings, and drainage problems quickly, often within 2 hours, ensuring your home is restored without delay."
     },
     {
-      question: "Do your plumbers work on Sundays or public holidays?",
-      answer: "Yes, absolutely. Our plumber services in Bangalore are available seven days a week, including Sundays and public holidays. We understand that plumbing emergencies don't follow a calendar. Our verified plumbers are always ready to provide prompt, doorstep plumbing support."
+      question: "What kinds of pipe issues do plumbers fix?",
+      answer: "Our Plumbers in Bareilly handle leaking pipes, burst pipes, hidden leak detection, seasonal blockages, and repair work. EzyHelpers' verified plumbers ensure pipes are correctly sealed, preventing water damage and ensuring long-term system efficiency."
     },
     {
-      question: "How do I hire a local plumber in Bangalore?",
-      answer: "With EzyHelpers, finding a reliable plumber nearby is no trouble at all. Just visit our website or call our customer support to book a certified plumber near you. We'll match you with a background-verified and experienced plumbing professional based on your location and service need. You can also schedule services for weekends or emergency slots. No need to search endlessly or deal with unreliable handymen."
+      question: "Can plumbers repair bathroom fittings in Bareilly?",
+      answer: "Yes, our local professional plumbers repair bathroom fittings. This includes fixing taps, faucets, showers, sink basins, and flush systems. EzyHelpers plumbers use quality components to ensure durable and functional solutions for all bathroom hardware."
+    },
+    {
+      question: "Do your plumbers address hard water problems?",
+      answer: "Yes. EzyHelpers plumbers offer hard water treatment services in Bareilly, including installing water softeners. This helps prevent limescale buildup, extends piping lifespan, and protects fittings from hard-water-related damage."
+    },
+    {
+      question: "Do you offer bore-well and hand pump repairs in Bareilly?",
+      answer: "Yes, our plumbers have experience in repairing bore-wells and hand pumps. They handle mechanical issues, pressure problems, and seasonal wear, ensuring an uninterrupted groundwater supply for your home."
+    },
+    {
+      question: "Can I schedule plumbing repairs at my convenience in Bareilly?",
+      answer: "Absolutely. EzyHelpers offers flexible plumbing repairs in Bareilly. You choose a time slot that suits your schedule, and our local professional plumbers arrive equipped to resolve issues efficiently."
+    },
+    {
+      question: "How do you handle blocked drains or sewer lines in Bareilly?",
+      answer: "Our plumbers help in clearing blockages in drains and sewer pipes with modern tools, removing clogs fast and keeping your water flowing smoothly without bad smells or backups."
+    },
+    {
+      question: "What types of plumbing installations can your plumbers handle?",
+      answer: "Our professional plumbers in Bareilly can install pipes, bathroom fittings, water heaters, kitchen plumbing, drainage systems, and other complete plumbing solutions with safe and expert service."
     }
   ]
 

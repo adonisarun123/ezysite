@@ -19,9 +19,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'House Painting in Bangalore | Interior & Exterior',
-  description: 'Interior and exterior painting in Bangalore by verified painters. Stylish colours, expert finishes, and fast service for homes, flats, and villas.',
-  keywords: 'house painting bangalore, interior painting bangalore, exterior painting bangalore, painters bangalore',
+  title: 'Professional Painting Services Bareilly – Book Experts',
+  description: 'Trusted professional painting services in Bareilly offering reliable, timely painting with expert surface preparation and finishing.',
+  keywords: 'painting services bareilly, house painting bareilly, interior painting bareilly, exterior painting bareilly',
 }
 
 export default function PaintersPage() {
@@ -33,107 +33,119 @@ export default function PaintersPage() {
 
   const paintingServices = [
     {
-      title: "Living Room & Bedroom",
-      description: "Modern colour painting that enhances ambience, matches décor, and brightens up your personal space.",
+      title: "Interior Painting Solutions",
+      description: "Festival & Occasion Painting: Fresh looks for festivals & occasions with modern colors and perfect finishes.",
       icon: HomeIcon,
-      features: ["Modern Colors", "Décor Match", "Bright Space", "Perfect Finish"]
+      features: ["Festival Ready", "Modern Colors", "Fresh Look", "Perfect Finish"]
     },
     {
-      title: "Kids' Room Creative Themes",
-      description: "Creative wall designs featuring cartoons, educational shapes, and fun themes your kids will love.",
+      title: "Kids' Room Creative Painting",
+      description: "Cartoon murals & educational designs that make learning fun and rooms vibrant.",
       icon: SparklesIcon,
-      features: ["Fun Themes", "Educational", "Creative", "Kid-Friendly"]
+      features: ["Cartoon Murals", "Educational", "Fun Designs", "Vibrant Colors"]
     },
     {
-      title: "Kitchen & Bathroom",
-      description: "Moisture-resistant paint that's easy to clean; great for kitchens and bathrooms in Bangalore's humid climate.",
-      icon: BeakerIcon,
-      features: ["Moisture-Proof", "Easy Clean", "Humidity Safe", "Long-lasting"]
-    },
-    {
-      title: "Textured Accent Walls",
-      description: "Make one wall stand out with designer paint styles like textures, patterns, and creative designs.",
-      icon: PaintBrushIcon,
-      features: ["Designer Style", "Textures", "Patterns", "Creative"]
-    },
-    {
-      title: "Doors & Furniture",
-      description: "We refresh your wooden doors, windows, and cupboards with smooth paint or polish for a brand-new look.",
-      icon: HomeIcon,
-      features: ["Wood Paint", "Polish", "Smooth Finish", "New Look"]
-    },
-    {
-      title: "Exterior Painting",
-      description: "We paint entire buildings or individual homes with neat, weatherproof finishes that look clean and fresh.",
-      icon: BuildingOfficeIcon,
-      features: ["Weatherproof", "Clean Look", "Fresh Finish", "Full Building"]
-    },
-    {
-      title: "Waterproof Coating",
-      description: "Special coatings that protect your outer walls from heavy rain, dampness, and peeling during the monsoon.",
-      icon: ShieldCheckIcon,
-      features: ["Rain Proof", "Anti-Damp", "No Peeling", "Monsoon Safe"]
-    },
-    {
-      title: "Boundary & Gate",
-      description: "We paint compound walls and gates with strong colours that resist dust and weather damage.",
-      icon: CheckCircleIcon,
-      features: ["Strong Colors", "Dust Resist", "Weather Safe", "Long-lasting"]
-    },
-    {
-      title: "Terrace & Balcony",
-      description: "Coatings that keep your balconies dry during rain and cooler during Bangalore's summer heat.",
+      title: "Pooja Room Special Colors",
+      description: "Traditional religious color combinations that create a peaceful and spiritual atmosphere.",
       icon: StarIcon,
-      features: ["Rain Safe", "Heat Cool", "Dry Surface", "Summer Ready"]
+      features: ["Traditional", "Spiritual", "Peaceful", "Perfect Match"]
     },
     {
-      title: "Metal & Grills",
-      description: "We paint gates, grills, and metal parts with anti-rust paint that keeps them safe and shiny.",
+      title: "Kitchen/Bathroom Painting",
+      description: "Moisture-resistant, easy-to-clean coats perfect for high-humidity areas.",
+      icon: BeakerIcon,
+      features: ["Moisture Proof", "Easy Clean", "Long Lasting", "Stain Resist"]
+    },
+    {
+      title: "Textured & Designer Walls",
+      description: "Transform plain walls into stunning masterpieces with unique textures and patterns.",
+      icon: PaintBrushIcon,
+      features: ["Unique Textures", "Custom Design", "Stunning Look", "Modern Style"]
+    },
+    {
+      title: "Weatherproof House Painting",
+      description: "Protects against the sun, heavy rains, and dust with durable exterior finishes.",
+      icon: BuildingOfficeIcon,
+      features: ["Sun Proof", "Rain Safe", "Dust Resist", "Long Life"]
+    },
+    {
+      title: "Boundary Wall & Gate Painting",
+      description: "Enhances curb appeal with durable finishes that withstand weather and wear.",
+      icon: CheckCircleIcon,
+      features: ["Strong Finish", "Weather Safe", "Curb Appeal", "Durable"]
+    },
+    {
+      title: "Terrace & Balcony Coatings",
+      description: "Keeps homes cooler in summer with special heat-reflective and waterproof coatings.",
+      icon: ShieldCheckIcon,
+      features: ["Heat Reflect", "Water Proof", "Cool Home", "UV Protect"]
+    },
+    {
+      title: "Wall Plastering & Crack Repairs",
+      description: "Fixes peeling, gaps & uneven surfaces for a perfect painting foundation.",
+      icon: WrenchScrewdriverIcon,
+      features: ["Crack Fix", "Even Surface", "Strong Base", "Perfect Prep"]
+    },
+    {
+      title: "Dampness Treatment",
+      description: "Anti-fungal solutions for humid areas to prevent wall damage and paint peeling.",
+      icon: BeakerIcon,
+      features: ["Anti Fungal", "Damp Proof", "Wall Save", "Long Last"]
+    },
+    {
+      title: "Wood Polish & Varnishing",
+      description: "Doors, windows & furniture shine with expert polishing and varnishing.",
+      icon: HomeIcon,
+      features: ["Wood Polish", "Door Shine", "Furniture New", "Long Life"]
+    },
+    {
+      title: "Metal Grill & Railing Painting",
+      description: "Anti-rust protection for railings & gates with durable metal paint.",
       icon: FireIcon,
-      features: ["Anti-Rust", "Shiny Look", "Metal Safe", "Long-lasting"]
+      features: ["Anti Rust", "Metal Safe", "Long Life", "Fresh Look"]
     }
   ]
 
   const faqs = [
     {
-      question: "How long does interior painting take for a 2BHK apartment in Bangalore?",
-      answer: "For a standard 2BHK apartment, interior painting usually takes around 3 to 4 days. We follow a dust-free process and paint room by room, so you can stay comfortably at home while work is ongoing. If it's monsoon season, drying time may be slightly longer depending on humidity."
+      question: "What types of house painting services are available in Bareilly?",
+      answer: "We provide comprehensive house painting services in Bareilly, including wooden furniture restoration, modular furniture installation, custom furniture making, and space-saving solutions for apartments and homes."
     },
     {
-      question: "Can you paint during Bangalore's monsoon season?",
-      answer: "Yes. We use quick-drying paints and plan around Bangalore's unpredictable weather to avoid any delays or damage. As long as there's no heavy or prolonged rainfall, we can still complete both interior and exterior jobs with proper care."
+      question: "Can you paint during monsoon season in Bareilly?",
+      answer: "Yes, we can paint during monsoon with proper precautions. We use quick-drying paints and monitor weather conditions to ensure quality results. For exterior work, we plan around rain forecasts."
     },
     {
-      question: "How do you protect furniture during painting?",
-      answer: "Before starting, we fully cover all furniture, flooring, and appliances with plastic sheets and protective drop cloths. We follow a room-by-room process, keeping your home tidy and liveable even during the painting."
+      question: "Do you offer modular furniture installation in Bareilly homes?",
+      answer: "Yes, we offer modular furniture installation in Bareilly, including modular kitchens, wardrobes, TV units, and office furniture. Our furniture painters are experienced in installing branded units with precision and care, ensuring a perfect fit for your space."
     },
     {
-      question: "Can I get help choosing the right colours?",
-      answer: "Definitely. We provide free colour consultation to help you pick shades that match your room size, natural lighting, mood, and décor. Whether you're looking for calm neutrals or vibrant accents, we guide you through the latest colour trends and paint finishes."
+      question: "Can I book same-day painter services in Bareilly?",
+      answer: "Yes, for urgent needs, we offer same-day painter services in Bareilly. Our skilled painters arrive quickly, equipped with tools to handle most common repairs and installations on the spot."
     },
     {
-      question: "What kind of paint do you use?",
-      answer: "We use high-quality paints from trusted brands like Asian Paints, Nerolac, and Dulux. You can choose from budget-friendly options, standard emulsions, or luxury finishes depending on your needs and preferences."
+      question: "Do you handle wood polishing and varnishing in Bareilly?",
+      answer: "Yes, we offer wood polishing and varnishing services for doors, windows, and furniture. Our painters are skilled in traditional and modern finishes to enhance and protect your wooden items."
     },
     {
-      question: "How much does it cost to paint exterior vs interior?",
-      answer: "The cost depends on the total area, wall condition, type of paint, and design choices. Exterior painting generally costs more due to weatherproofing needs, scaffolding, and surface preparation. Interior painting varies based on whether you choose basic colours or designer finishes. We provide a detailed quote after a free site visit."
+      question: "Can you help with compact space painting in Bareilly apartments?",
+      answer: "Absolutely! We specialize in space-enhancing paint solutions like light colors, accent walls, and creative designs that make small spaces look bigger and more inviting."
     },
     {
-      question: "Do you offer painting for occupied homes without disruption?",
-      answer: "Yes, we specialise in painting homes where families continue to live. Our dust-free methods, planned scheduling, and daily cleanups ensure your routine stays undisturbed."
+      question: "What types of paint finishes do you offer in Bareilly?",
+      answer: "We offer various finishes including matte, glossy, textured, and designer finishes. Our painters help you choose the best option based on your room's purpose and style preferences."
     },
     {
-      question: "Can I paint just one room or wall?",
-      answer: "Of course. Whether it's a single accent wall, bedroom refresh, or kitchen repaint, we offer partial painting services with the same care and quality as full-home projects."
-    },
-    {
-      question: "Do you provide paint polishing for wood or metal?",
+      question: "Do you provide paint polishing for wood or metal in Bareilly?",
       answer: "Yes, we offer painting and polishing services for doors, windows, grills, and furniture. Options include enamel, PU, and wood finishes, depending on your requirements."
     },
     {
-      question: "What if I need painting urgently or over a weekend?",
+      question: "What if I need painting urgently or over a weekend in Bareilly?",
       answer: "We offer flexible scheduling, including urgent bookings, weekends, and even night shifts if required. Just let us know your timeline, and we'll plan accordingly."
+    },
+    {
+      question: "Do you offer special festival or occasion painting services in Bareilly?",
+      answer: "Yes, we provide special painting services for festivals and occasions. Whether it's Diwali preparation or home renovation for weddings, we ensure timely completion with perfect finishes."
     }
   ]
 

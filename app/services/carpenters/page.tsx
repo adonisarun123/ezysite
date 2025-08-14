@@ -19,9 +19,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Carpentry Repair in Bangalore | Furniture Fixing',
-  description: 'Book expert carpentry repair in Bangalore. Fix broken beds, chairs, cabinets & wooden items with skilled carpenters at home.',
-  keywords: 'carpentry repair bangalore, furniture repair bangalore, carpenter bangalore, furniture fixing, woodwork repair',
+  title: 'Carpenter Home Service in Bareilly – Skilled Work',
+  description: 'Hire skilled carpenter home service in Bareilly for furniture repair, fitting, woodwork & custom installations. Reliable & trained professionals.',
+  keywords: 'carpenter bareilly, carpenter home service bareilly, furniture repair bareilly, woodwork bareilly, carpenter near me bareilly',
 }
 
 export default function CarpentersPage() {
@@ -33,91 +33,97 @@ export default function CarpentersPage() {
 
   const carpenterServices = [
     {
-      title: "Wooden Furniture Restoration",
-      description: "Bring your old or damaged wooden furniture back to life. Our expert carpenters repair cracks, loose joints, and worn finishes with precision.",
+      title: "Wooden Furniture Repair (Traditional UP Style)",
+      description: "Fix broken chairs, tables, and antique furniture with authentic craftsmanship.",
       icon: SparklesIcon,
-      features: ["Repair Cracks", "Fix Loose Joints", "Restore Finishes", "Like New Look"]
+      features: ["Traditional Repairs", "Antique Restoration", "Joint Fixing", "Finish Touch-ups"]
     },
     {
-      title: "Custom Furniture Making",
-      description: "We design foldable tables, built-in seating, and compact cupboards perfectly customised for small urban apartments in Bangalore.",
+      title: "Custom Storage Solutions",
+      description: "Space-saving cupboards, wardrobes, and shelves for large families.",
       icon: CubeIcon,
-      features: ["Space-Saving Design", "Custom Built-ins", "Perfect Fit", "Urban Style"]
+      features: ["Joint Family Storage", "Space-Saving Design", "Custom Wardrobes", "Durable Build"]
     },
     {
-      title: "Modular Furniture Installation",
-      description: "From modular kitchens to sliding wardrobes, our team ensures fast and precise installations with premium finishes and functional fittings.",
+      title: "Religious Furniture",
+      description: "Beautifully crafted wooden mandirs, pooja stands, and prayer benches.",
       icon: HomeIcon,
-      features: ["Modular Kitchens", "Sliding Wardrobes", "Premium Finish", "Expert Install"]
+      features: ["Mandir Design", "Pooja Stands", "Prayer Benches", "Traditional Style"]
     },
     {
-      title: "Bed & Wardrobe Repairs",
-      description: "Fix noisy bed frames, loose cupboard doors, broken handles, and stuck wardrobe drawers with durable parts and professional attention.",
+      title: "Door & Window Repairs",
+      description: "Common in traditional Bareilly homes, fix squeaky doors, broken windows, and frames.",
       icon: WrenchScrewdriverIcon,
-      features: ["Bed Frame Fix", "Door Repairs", "Handle Replace", "Drawer Fix"]
+      features: ["Door Repairs", "Window Fixes", "Frame Work", "Hardware Replace"]
     },
     {
-      title: "Drill & Wall Mount Services",
-      description: "Install curtain rods, TV panels, floating shelves, and wall art accurately with professional drill and mounting tools.",
+      title: "Modular Kitchen Setup",
+      description: "Custom kitchen cabinets, shelves, and storage for easy cooking.",
+      icon: HomeIcon,
+      features: ["Cabinet Design", "Storage Solutions", "Easy Access", "Quality Finish"]
+    },
+    {
+      title: "Study Table Solutions",
+      description: "Strong, spacious study tables & bookshelves for kids & students.",
       icon: BuildingOfficeIcon,
-      features: ["TV Mounting", "Shelf Install", "Art Hanging", "Precise Work"]
+      features: ["Student Desks", "Book Storage", "Ergonomic Design", "Durable Build"]
     },
     {
-      title: "Office Furniture Setup",
-      description: "Set up ergonomic desks, custom bookshelves, and work-from-home stations that match your comfort, productivity, and room layout.",
-      icon: StarIcon,
-      features: ["WFH Ready", "Ergonomic Design", "Custom Storage", "Professional Setup"]
-    },
-    {
-      title: "Kitchen Shelf Fixing",
-      description: "Upgrade your kitchen with pull-out drawers, modular spice racks, and organised shelving that suit Indian cooking needs.",
-      icon: HomeIcon,
-      features: ["Pull-out Units", "Spice Racks", "Smart Storage", "Kitchen Upgrade"]
-    },
-    {
-      title: "Furniture Assembly",
-      description: "Bought flat-pack furniture? Our experts assemble IKEA, Pepperfry, and Urban Ladder pieces efficiently with the right tools.",
+      title: "Bed & Cupboard Repairs",
+      description: "Fix broken frames, hinges, and drawers smoothly.",
       icon: WrenchScrewdriverIcon,
-      features: ["IKEA Assembly", "Brand Furniture", "Quick Setup", "Professional Tools"]
+      features: ["Frame Repairs", "Hinge Fixes", "Drawer Work", "Hardware Update"]
+    },
+    {
+      title: "Window & Curtain Rod Fixing",
+      description: "Secure fittings for curtains, blinds, and rods.",
+      icon: BuildingOfficeIcon,
+      features: ["Rod Installation", "Blind Fitting", "Secure Mounts", "Level Setup"]
+    },
+    {
+      title: "Drill & Hang Services",
+      description: "Wall mounts, shelves, and frames are installed safely.",
+      icon: WrenchScrewdriverIcon,
+      features: ["Wall Mounting", "Shelf Install", "Frame Hanging", "Safe Setup"]
     }
   ]
 
   const faqs = [
     {
-      question: "What types of carpentry repair in Bangalore do you offer?",
-      answer: "We provide comprehensive carpentry repair in Bangalore, including wooden furniture restoration, modular furniture installation, custom furniture making, and space-saving solutions for apartments and homes."
+      question: "Do you repair beds, cupboards, and wardrobes?",
+      answer: "Yes. Our professional carpenter home service in Bareilly includes repairing bed frames, cupboard doors, hinges, drawers, and wardrobes. We fix loose parts, reinforce structures, and ensure all functions work smoothly to extend furniture's lifespan and usability."
     },
     {
-      question: "Can you create custom furniture for small spaces?",
-      answer: "Absolutely! We specialise in custom furniture making with space-saving solutions and functional design perfect for compact homes and apartment optimisation."
+      question: "Do you assemble new furniture in Bareilly?",
+      answer: "Yes. EzyHelpers carpenters assemble new furniture and repair old furniture in Bareilly. Our verified professionals arrive equipped to set up beds, tables, cabinets, and more, saving you time and ensuring proper installation with no leftover parts or confusion."
     },
     {
-      question: "Do you provide furniture for work-from-home setups?",
-      answer: "Yes! We create custom WFH furniture, storage solutions, and space-saving designs perfect for working professionals."
+      question: "Are furniture assembly services available in Bareilly?",
+      answer: "Yes, professional furniture assembly services are available through our carpenter home service in Bareilly. Our skilled carpenters assemble new furniture and fix old pieces using the right tools and techniques, ensuring safe, sturdy, and accurate setup every time."
     },
     {
-      question: "Do you offer modular furniture installation in Bangalore homes?",
-      answer: "Yes, we offer modular furniture installation in Bangalore, including modular kitchens, wardrobes, TV units, and office furniture. Our furniture carpenters are experienced in installing branded units with precision and care, ensuring a perfect fit for your space."
+      question: "Do EzyHelpers' carpenters in Bareilly fix window and curtain rods?",
+      answer: "Yes. We handle window and curtain rod installation and fixing. EzyHelpers carpenters ensure secure fitting of rods and blinds, checking stability and alignment so curtains and blinds operate smoothly and safely."
     },
     {
-      question: "Can I book same-day carpenter services in Bangalore?",
-      answer: "Absolutely! For urgent needs, we offer same-day carpenter services in Bangalore. Our skilled carpenters arrive quickly, equipped with tools to handle most common repairs and installations on the spot."
+      question: "Can you provide drill and hang services in Bareilly?",
+      answer: "Yes. Our service includes drill and hang jobs like installing wall mounts, shelves, picture frames, curtain rods, and other fixtures in Bareilly homes. Carpenters use proper anchors and measurements to ensure a neat and level finish."
     },
     {
-      question: "Can I request custom furniture for small rooms or PGs?",
-      answer: "Definitely! We specialise in custom furniture making for small rooms, hostels, and PGs. From folding desks to compact wardrobes, our carpenters in Bangalore design space-saving furniture tailored to your needs."
+      question: "What types of furniture repairs do you handle in Bareilly?",
+      answer: "We offer wooden furniture repair in Bareilly, including fixing broken chairs, tables, antique items, and more. EzyHelpers carpenters are skilled in traditional UP-style craftsmanship, ensuring restored furniture looks and functions beautifully while preserving heritage value."
     },
     {
-      question: "Can you help with compact space furniture in Bangalore apartments?",
-      answer: "Absolutely! We specialise in space-saving solutions like foldable desks, vertical storage units, sliding wardrobes, and compact kitchen storage."
+      question: "Do you build mandir and pooja furniture in Bareilly?",
+      answer: "Yes. We offer dedicated mandir and prayer area setup services in Bareilly. EzyHelpers carpenters craft beautifully designed wooden mandirs, pooja stands, and prayer benches with traditional aesthetics and fine craftsmanship suited to your spiritual needs."
     },
     {
-      question: "What types of wooden furniture can you repair in Bangalore?",
-      answer: "We repair all wooden furniture, including beds, tables, chairs, wardrobes, and cabinets. Our carpenters fix cracks, wobbly joints, broken panels, and even restore antique pieces."
+      question: "Can you repair doors and windows in Bareilly homes?",
+      answer: "Absolutely. Through our carpenter home service in Bareilly, you can fix squeaky doors, broken windows, and damaged frames. They fix common household issues like misaligned doors, loose hinges, or window pane damage to restore smooth operation and home security."
     },
     {
-      question: "Do you help with furniture shifting or dismantling during house moves?",
-      answer: "Yes, we offer dismantling and reassembly services for safe furniture relocation. Our carpenters ensure damage-free disassembly, smart packing guidance, and reinstallation at your new home."
+      question: "What areas of the home do you cover with carpenter home service in Bareilly?",
+      answer: "EzyHelpers covers all household carpentry needs in Bareilly, including living room furniture repair, kitchen cabinets, bedroom wardrobes, pooja room work, balcony shelves, staircase railing repair, and more. We deliver a comprehensive carpentry upgrade for every area of your home."
     }
   ]
 

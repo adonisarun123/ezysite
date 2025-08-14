@@ -20,9 +20,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Electrical Appliance Repair in Bangalore | TV, AC, Fridge Fix',
-  description: 'Fix all home appliances in Bangalore. TV, AC, fridge, washing machine repair. Expert technicians, doorstep service.',
-  keywords: 'appliance repair bangalore, AC repair bangalore, TV repair bangalore, fridge repair bangalore, washing machine repair bangalore, home appliance repair',
+  title: 'House Appliance Repairs in Bareilly - Same-Day Technicians',
+  description: 'Need house appliance repairs in Bareilly? We fix washing machines, fridges, ovens, and more with expert technicians and fast service.',
+  keywords: 'appliance repair bareilly, washing machine repair bareilly, fridge repair bareilly, ac repair bareilly, tv repair bareilly, home appliance repair',
 }
 
 export default function ApplianceRepairPage() {
@@ -34,87 +34,99 @@ export default function ApplianceRepairPage() {
 
   const applianceServices = [
     {
-      title: "Refrigerator Repair",
-      description: "We repair cooling, compressor, and defrost issues in LG, Samsung, Whirlpool, Godrej, and more.",
+      title: "Refrigerator Repairs",
+      description: "Quick fix for cooling issues, freezer problems, or gas filling to keep your food safe and fresh.",
       icon: BeakerIcon,
-      features: ["Single & Double Door", "Side-by-Side Models", "Cooling Issues", "Compressor Problems"]
+      features: ["Cooling Issues", "Freezer Problems", "Gas Filling", "Compressor Repairs"]
     },
     {
-      title: "Washing Machine Repair",
-      description: "We repair drum, motor, and control faults in IFB, Bosch, LG, and other top brands.",
+      title: "Washing Machine Repairs",
+      description: "Solve drain errors, spin troubles, or motor failures for hassle-free laundry.",
       icon: SparklesIcon,
-      features: ["Front Load", "Top Load", "Motor Issues", "Control Panel Fixes"]
+      features: ["Drain Errors", "Spin Problems", "Motor Failures", "Control Panel Issues"]
     },
     {
-      title: "Air Conditioner Repair",
-      description: "We handle gas refills, compressor issues, and full servicing for major brands.",
-      icon: BoltIcon,
-      features: ["Split AC", "Window AC", "Cassette AC", "Gas Refills"]
-    },
-    {
-      title: "Television Repair",
-      description: "We fix screen, sound, and connectivity issues across all TV types from top brands like Samsung, LG, Mi, and Sony.",
-      icon: TvIcon,
-      features: ["LED TVs", "LCD TVs", "OLED TVs", "Smart TVs"]
-    },
-    {
-      title: "Microwave Oven Repair",
-      description: "We fix magnetron, control panel, and door issues in IFB, LG, Samsung, and other models.",
+      title: "Microwave Repairs",
+      description: "Heating problems, broken buttons, and power issues handled safely and fast.",
       icon: FireIcon,
-      features: ["Solo", "Grill", "Convection", "Control Issues"]
+      features: ["Heating Problems", "Button Repairs", "Power Issues", "Door Fixes"]
     },
     {
-      title: "Water Heater Repair",
-      description: "We fix heating elements, thermostats, and pressure valve issues in Racold, Havells, and AO Smith geysers.",
+      title: "AC Repairs",
+      description: "Reliable summer cooling, gas refills, servicing, and leak fixes to beat Bareilly heat.",
+      icon: BoltIcon,
+      features: ["Cooling Issues", "Gas Refills", "Leak Fixes", "Regular Service"]
+    },
+    {
+      title: "Gas Stove Repairs",
+      description: "Burner problems, gas leaks, or ignition faults are checked by trained pros.",
+      icon: FireIcon,
+      features: ["Burner Issues", "Gas Leaks", "Ignition Faults", "Safety Checks"]
+    },
+    {
+      title: "Geyser Repairs",
+      description: "Instant water heater service and element replacement for hot water anytime.",
       icon: BeakerIcon,
-      features: ["Instant", "Storage", "Gas", "Electric"]
+      features: ["Element Repairs", "Thermostat Issues", "Installation", "Safety Checks"]
     },
     {
-      title: "Electric Chimney Repair",
-      description: "We repair suction, motor, and light issues in Faber, Glen, Elica, and other kitchen chimney models.",
+      title: "TV Repairs",
+      description: "Fix picture, sound, or display issues without long downtime or confusion.",
+      icon: TvIcon,
+      features: ["Picture Issues", "Sound Problems", "Display Fixes", "Smart TV Support"]
+    },
+    {
+      title: "Chimney Repairs",
+      description: "Chimney cleaning, motor issues, and smoke leakage solutions for healthy kitchens.",
       icon: HomeIcon,
-      features: ["Modular", "Wall-Mount", "Auto-Clean", "Suction Fix"]
+      features: ["Motor Issues", "Smoke Leakage", "Deep Cleaning", "Filter Change"]
     },
     {
-      title: "Other Appliances",
-      description: "We also repair water purifiers, air fryers, OTGs, induction cooktops, mixers, and more.",
+      title: "Cooler Repairs",
+      description: "Popular Bareilly cooling solution repaired for smooth airflow and fresh summer comfort.",
       icon: WrenchScrewdriverIcon,
-      features: ["Water Purifiers", "Small Appliances", "Kitchen Gadgets", "Home Electronics"]
+      features: ["Motor Repairs", "Pump Issues", "Pad Replacement", "Regular Service"]
+    },
+    {
+      title: "Hard Water Solutions",
+      description: "Stop damage to washing machines and RO units with proper descaling and service.",
+      icon: BeakerIcon,
+      features: ["Descaling", "Filter Change", "Maintenance", "Performance Check"]
     }
   ]
 
   const faqs = [
     {
-      question: "What makes your electrical appliance repair in Bangalore different?",
-      answer: "Our multi-brand service expertise, genuine spare parts, and energy-efficient repairs make us a cost-effective and trustworthy option with warranty-backed service for modern Bangalore households."
+      question: "What types of house appliance repairs are available in Bareilly?",
+      answer: "EzyHelpers offers complete house appliance repairs in Bareilly for refrigerators, washing machines, microwaves, air conditioners, geysers, gas stoves, fans, and more. Whether your appliance has stopped working or is showing signs of a problem, our skilled home appliance technicians in Bareilly provide reliable same-day repair services with genuine parts and proper tools."
     },
     {
-      question: "Do you provide same-day appliance repair services?",
-      answer: "Yes, we offer same-day repair service across Bangalore, depending on technician availability. Response time is typically 90 minutes in central zones and 2 hours in outer areas."
+      question: "How fast can I get a home appliance technician in Bareilly?",
+      answer: "With EzyHelpers, you can get a verified home appliance technician in Bareilly within 2 hours. We offer same-day appliance repair services for urgent issues. Our team responds quickly and arrives fully equipped to repair everything from fridges and washing machines to ACs and geysers."
     },
     {
-      question: "Which appliance brands do you service?",
-      answer: "We handle appliances from major brands like LG, Samsung, Whirlpool, Bosch, Godrej, Haier, IFB, and more using expert multi-brand technical know-how. Call us to check support for your specific brand."
+      question: "What kinds of kitchen appliances do you repair?",
+      answer: "We repair a variety of kitchen appliances, including gas stoves, chimneys, microwaves, and RO water purifiers. Whether it's burner problems, chimney smoke leaks, or broken heating elements, our technicians offer complete kitchen appliance solutions."
     },
     {
-      question: "How do you handle broken appliance repair in Bangalore?",
-      answer: "We begin with fast diagnostics to identify the core issue, then proceed with transparent pricing and on-the-spot repair using original spare parts."
+      question: "Can you help with emergency appliance repairs in Bareilly?",
+      answer: "Yes, we offer emergency appliance repair service in Bareilly. Whether it's a sudden fridge breakdown or a geyser failure at night, our technicians respond quickly to restore your appliance."
     },
     {
-      question: "Do you fix appliances making noise or overheating?",
-      answer: "Yes. Our experts are trained to diagnose noise, vibration, and overheating problems and offer lasting solutions that restore performance."
+      question: "Can I schedule a home appliance repair at a convenient time in Bareilly?",
+      answer: "Yes, EzyHelpers allows flexible scheduling for appliance repair in Bareilly. You can choose your preferred day and time, and our technician will arrive accordingly with all necessary tools and parts."
     },
     {
-      question: "Do you provide doorstep appliance repair in Bangalore?",
-      answer: "Absolutely. EzyHelpers offers reliable doorstep repair services for all major appliances across Bangalore, ensuring convenient and professional fixes without you needing to step out."
+      question: "Do you offer repair services for both new and old appliances?",
+      answer: "Yes, we repair both new and old appliances in Bareilly. Our home appliance technicians are skilled in handling outdated models as well as the latest smart appliances, providing safe and lasting solutions."
     },
     {
-      question: "Can I get a quote for appliance repair before booking?",
-      answer: "Yes, we provide estimates based on the appliance issue. After a quick diagnosis, the technician will provide a transparent price quote before beginning the repair."
+      question: "What happens if an appliance can't be repaired immediately?",
+      answer: "If an appliance needs additional parts or time, our technician will inform you clearly. We prioritise transparency and will schedule a quick follow-up visit to complete the repair at your convenience."
     },
     {
-      question: "Do your technicians carry spare parts during the home visit?",
-      answer: "Yes, our technicians usually carry common spare parts. If a rare part is required, we source it quickly and return promptly to complete the installation."
+      question: "Can I get a multi-appliance repair service in a single visit?",
+      answer: "Yes, you can request repairs for multiple appliances in a single visit in Bareilly. Just let us know in advance, and we will send a technician prepared to handle multiple tasks."
     }
   ]
 

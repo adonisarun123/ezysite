@@ -80,59 +80,74 @@ export default function BareillyPage() {
 
   const maintenanceServices = [
     {
-      title: "Professional Domestic Helpers",
-      description: "Daily cleaning and hygiene support by trained and reliable workers.",
-      features: ["House sweeping, mopping, and dusting", "Kitchen, bathroom, and toilet cleaning", "Dishwashing and laundry", "Affordable monthly cleaning packages"],
-      icon: SparklesIcon
-    },
-    {
-      title: "Deep Cleaning Services",
-      description: "Thorough seasonal and one-time cleaning for a fresh, healthy home.",
-      features: ["Bedroom, living room & kitchen deep cleaning", "Sofa, carpet, mattress & curtain shampooing", "Festival or post-party cleanup", "Floor polishing, glass, and window cleaning"],
-      href: "/services/deep-cleaning",
-      icon: SparklesIcon
-    },
-    {
-      title: "Electrician Services",
-      description: "Licensed electricians for all types of electrical repairs and installations.",
-      features: ["Fan, light, switch, and socket fixes", "AC installation, maintenance, and repairs", "Complete wiring and circuit work", "24/7 emergency electrical help"],
-      href: "/services/electricians",
-      icon: LightBulbIcon
-    },
-    {
-      title: "Plumber Services",
-      description: "Skilled plumbers for all water-related issues in your home.",
-      features: ["Tap, pipe, and shower repairs", "Water leakage, drainage, and blockage fixes", "Bathroom fittings, motor, and tank repair", "On-demand plumbing help anytime"],
-      href: "/services/plumbers",
-      icon: WrenchScrewdriverIcon
-    },
-    {
-      title: "Carpenter Services",
-      description: "Professional carpenters for furniture and home woodwork solutions.",
-      features: ["Door/window installation & repairs", "Furniture fixing and polishing", "Customized wooden cabinets and racks"],
-      href: "/services/carpenters",
+      title: "AC Repair Services",
+      description: "Expert AC repair in Bareilly for cooling issues, gas refills, and maintenance by certified technicians.",
+      features: ["Quick gas leak detection and refilling", "Fix poor cooling problems", "Filter cleaning & replacement", "Voltage fluctuation damage repair"],
+      href: "/services/ac-repair",
       icon: CogIcon
     },
     {
-      title: "Painter Services",
-      description: "Professional painting solutions to give your home a fresh, vibrant look.",
-      features: ["Interior and exterior house painting", "Wall putty, waterproofing & texture finishes", "Quick touch-ups and full repainting", "Clean, mess-free, and affordable service"],
-      href: "/services/painters",
-      icon: PaintBrushIcon
-    },
-    {
       title: "Appliance Repair Services",
-      description: "Fast and reliable repair of home appliances by trained technicians.",
-      features: ["Washing machine, fridge, microwave & TV repair", "AC, geyser, fan & water purifier servicing", "All major brands supported", "At-home service with quick diagnosis and fix"],
+      description: "Quick fix for all home appliances in Bareilly with expert technicians and doorstep service.",
+      features: ["Refrigerator & washing machine repairs", "Microwave & TV repairs", "Gas stove & geyser fixes", "All major brands supported"],
       href: "/services/appliance-repair",
       icon: CogIcon
     },
     {
-      title: "Driver Services",
-      description: "Verified and experienced personal drivers for family, office, or long trips.",
-      features: ["Daily, hourly, or monthly driver support", "Background-verified professionals", "Available for school drops, office commutes & personal use"],
-      href: "/services/drivers",
+      title: "Carpenter Services",
+      description: "Professional carpenter home service in Bareilly for reliable repairs and beautiful custom woodwork.",
+      features: ["Traditional UP-style furniture repair", "Custom storage solutions", "Religious furniture setup", "Door & window repairs"],
+      href: "/services/carpenters",
+      icon: CogIcon
+    },
+    {
+      title: "Electrician Services",
+      description: "Trusted electrician in Bareilly for fan fittings, switches, wiring issues, and power problems.",
+      features: ["House wiring & repairs", "Switch/socket repairs", "Fan & light installation", "Circuit breaker repair"],
+      href: "/services/electricians",
+      icon: LightBulbIcon
+    },
+    {
+      title: "Deep Cleaning Services",
+      description: "Professional home deep cleaning in Bareilly for spotless, germ-free living spaces.",
+      features: ["Full house deep cleaning", "Kitchen & bathroom sanitization", "Carpet & mattress cleaning", "Post-festival cleanup"],
+      href: "/services/deep-cleaning",
+      icon: SparklesIcon
+    },
+    {
+      title: "House Shifting Services",
+      description: "Professional household shifting services in Bareilly for stress-free local or long-distance moves.",
+      features: ["Full house packing & unpacking", "Furniture dismantling & reassembly", "Safe transportation", "Loading & unloading"],
+      href: "/services/house-shifting",
       icon: TruckIcon
+    },
+    {
+      title: "Painter Services",
+      description: "Professional painting services in Bareilly with premium finishes and timely completion.",
+      features: ["Interior & exterior painting", "Weatherproof house painting", "Wall plastering & crack repairs", "Wood polish & varnishing"],
+      href: "/services/painters",
+      icon: PaintBrushIcon
+    },
+    {
+      title: "Pest Control Services",
+      description: "Safe and effective pest control for home in Bareilly to eliminate all types of pests.",
+      features: ["Termite & cockroach control", "Mosquito & ant treatment", "Bed bug elimination", "Rat & rodent control"],
+      href: "/services/pest-control",
+      icon: ShieldExclamationIcon
+    },
+    {
+      title: "Plumber Services",
+      description: "Professional plumbing repair in Bareilly for leaks, pipe fittings, and drainage problems.",
+      features: ["Pipe leakage & blockage repairs", "Bathroom fitting & repairs", "Water tank cleaning", "Drainage solutions"],
+      href: "/services/plumbers",
+      icon: WrenchScrewdriverIcon
+    },
+    {
+      title: "Sofa Cleaning Services",
+      description: "Professional sofa cleaning services in Bareilly for stain and odor removal.",
+      features: ["Fabric & leather sofa cleaning", "Stain & odor removal", "Sanitization & protection", "Same-day service"],
+      href: "/services/sofa-cleaning",
+      icon: SparklesIcon
     }
   ]
 
@@ -170,7 +185,9 @@ export default function BareillyPage() {
   ]
 
   const serviceAreas = [
-    "Civil Lines", "CB Ganj", "Cantt", "Badaun Road", "Pilibhit Road", "Izatnagar"
+    "Civil Lines", "CB Ganj", "Cantt", "Badaun Road", "Pilibhit Road", "Izatnagar", 
+    "Rampur Garden", "Satellite", "Sanjay Nagar", "Delapir", "Quila", "Shamatganj",
+    "Transport Nagar", "Model Town", "Subhash Nagar", "Rajendra Nagar"
   ]
 
   return (

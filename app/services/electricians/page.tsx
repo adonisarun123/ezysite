@@ -19,9 +19,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Home Electrical Repair Services in Bangalore | Quick Fix',
-  description: 'Hire trusted electrical repair services in Bangalore for safe wiring, lighting, EV charger setup, and smart upgrades with fast, licensed professionals.',
-  keywords: 'electrical repair bangalore, electrician bangalore, home wiring bangalore, electrical services bangalore',
+  title: 'Trusted Electrician in Bareilly - Fast Home Fixes',
+  description: 'Looking for an electrician in Bareilly? Book expert service for fan fittings, switches, wiring issues, and power problems at your home.',
+  keywords: 'electrician bareilly, electrical repair bareilly, home wiring bareilly, electrical services bareilly',
 }
 
 export default function ElectriciansPage() {
@@ -33,95 +33,95 @@ export default function ElectriciansPage() {
 
   const electricianServices = [
     {
-      title: "Electrical Wiring & Rewiring",
-      description: "Old or damaged wires? Our electricians handle complete rewiring with safety-grade materials.",
+      title: "House Wiring",
+      description: "We handle complete home wiring or rewiring with proper insulation and safety for old and new constructions.",
       icon: WrenchScrewdriverIcon,
-      features: ["Complete Rewiring", "Safety Materials", "Old Wire Fix", "Modern Standards"]
+      features: ["Complete Wiring", "Safety Standards", "Proper Insulation", "New & Old Homes"]
     },
     {
-      title: "Decorative & Functional Lighting",
-      description: "From ambient LED installations to festive lighting for events and homes.",
+      title: "Switch/Socket Repairs",
+      description: "Our electricians fix loose switches, burnt sockets, and wiring faults to restore safe and stable power access.",
+      icon: WrenchScrewdriverIcon,
+      features: ["Switch Repairs", "Socket Fixes", "Wiring Faults", "Safe Access"]
+    },
+    {
+      title: "Fan & Light Installation",
+      description: "Proper installation of ceiling fans, decorative lights, and chandeliers with safe wiring and correct mounting support.",
       icon: LightBulbIcon,
-      features: ["LED Install", "Ambient Light", "Festive Setup", "Energy Saving"]
+      features: ["Fan Installation", "Light Fitting", "Safe Wiring", "Secure Mounting"]
     },
     {
-      title: "Inverter & UPS Installation",
-      description: "Reliable inverter setups for homes and apartments to tackle Bangalore's outages.",
-      icon: BoltIcon,
-      features: ["Power Backup", "UPS Setup", "Outage Fix", "Quick Install"]
-    },
-    {
-      title: "Switch & Socket Repairs",
-      description: "Fix burnt sockets, loose switches, or tripping circuits quickly and safely.",
-      icon: WrenchScrewdriverIcon,
-      features: ["Socket Fix", "Switch Repair", "Circuit Check", "Safe Fixes"]
-    },
-    {
-      title: "Smart Home Installations",
-      description: "We install smart lighting, home automation devices, and digital control systems.",
-      icon: HomeIcon,
-      features: ["Smart Lights", "Automation", "Digital Control", "Modern Tech"]
-    },
-    {
-      title: "EV Charging Points",
-      description: "Electric vehicle charging stations for environmentally conscious Bangaloreans in apartments and independent homes.",
-      icon: BoltIcon,
-      features: ["EV Chargers", "Safe Setup", "Home Install", "Eco-Friendly"]
-    },
-    {
-      title: "Circuit Breaker Services",
-      description: "Resolve frequent tripping and install MCB/ELCB with safety certifications.",
+      title: "Circuit Breaker Repair",
+      description: "Resolve frequent MCB or ELCB tripping and upgrade faulty breakers to avoid electrical hazards and power disruption.",
       icon: ExclamationTriangleIcon,
-      features: ["MCB Install", "ELCB Setup", "Trip Fix", "Safety Check"]
+      features: ["MCB Repair", "ELCB Fix", "Trip Prevention", "Safety Upgrade"]
     },
     {
-      title: "Electrical Safety Checks",
-      description: "Electrical safety inspections and earthing checks for new homes and safety approval.",
+      title: "Electrical Safety Check",
+      description: "We inspect wires, boards, and load capacity to prevent shocks and fire risks and ensure home safety compliance.",
       icon: ShieldCheckIcon,
-      features: ["Safety Audit", "Earth Check", "Risk Review", "Compliance"]
+      features: ["Wire Inspection", "Board Check", "Load Testing", "Risk Prevention"]
+    },
+    {
+      title: "Inverter/UPS Installation",
+      description: "Get a reliable inverter or UPS setup with professional load assessment and wiring for an uninterrupted backup power supply.",
+      icon: BoltIcon,
+      features: ["Load Assessment", "Safe Setup", "Backup Power", "Proper Wiring"]
+    },
+    {
+      title: "Generator Setup",
+      description: "We provide expert installation and maintenance of home generators for safe, continuous power during outages in Bareilly.",
+      icon: HomeIcon,
+      features: ["Safe Install", "Power Backup", "Regular Service", "Load Balance"]
+    },
+    {
+      title: "Emergency Electrical Repairs",
+      description: "Our electricians are available 24/7 in Bareilly to fix sudden outages, sparks, or wiring problems on priority.",
+      icon: BoltIcon,
+      features: ["24/7 Service", "Quick Response", "Priority Fix", "Safety First"]
     }
   ]
 
   const faqs = [
     {
-      question: "Can electricians handle apartment complex electrical work?",
-      answer: "Yes, our electricians in Bangalore are familiar with apartment electrical systems, building management coordination, and residential complex electrical protocols."
+      question: "Do you offer same-day electrical repair services in Bareilly?",
+      answer: "Yes, we offer same-day electrical repair services in Bareilly. Our skilled electricians provide fast service with transparent pricing and complete solutions for urgent electrical problems."
     },
     {
-      question: "Do electricians install EV charging points?",
-      answer: "Yes. We install EV charging stations, provide power upgrades, and ensure EV-ready setups for eco-conscious Bangalore residents."
+      question: "Do electricians in Bareilly handle house wiring services?",
+      answer: "Yes, electricians in Bareilly are available for house wiring services, including safe installation and repairs for both old and new homes. Our certified electricians handle complete house wiring with proper safety standards and modern electrical codes."
     },
     {
-      question: "Can electricians upgrade old apartment wiring?",
-      answer: "Yes, we provide complete electrical rewiring, safety upgrades, and modern electrical system installation for older Bangalore apartments."
+      question: "Can I get same-day electrical repair services in Bareilly?",
+      answer: "Yes, you can get same-day electrical repair services in Bareilly through EzyHelpers. Our skilled electricians provide fast service for switch repairs, fan installations, wiring issues, and other electrical problems with transparent pricing."
     },
     {
-      question: "Do electricians work around busy professional schedules?",
-      answer: "Yes, we offer flexible timing, including weekends, evening visits, and low-disruption electrical services for working families."
+      question: "Do electricians in Bareilly handle switch and socket repairs?",
+      answer: "Yes, electricians in Bareilly handle switch and socket repairs, including fixing loose connections, faulty switches, damaged sockets, and electrical connection issues. Our certified electricians ensure safe and proper functioning of all electrical switches and outlets."
     },
     {
-      question: "Do electricians handle home office electrical setups?",
-      answer: "Yes, electricians can install dedicated circuits, extra plug points, and safely set up electrical connections for computers, Wi-Fi, and other work-from-home devices."
+      question: "Are fan and light installation services available in Bareilly?",
+      answer: "Yes, fan and light installation services are available from electricians in Bareilly. Our certified electricians provide proper fitting for ceiling fans, lights, chandeliers, and other electrical fixtures with safe wiring and secure installation."
     },
     {
-      question: "Do electricians do wiring?",
-      answer: "Yes, electricians handle all types of wiring tasks, like new installations, rewiring, and repairs for homes, offices, appliances, and smart devices to ensure safe electrical connections."
+      question: "Do electricians in Bareilly handle old house wiring repairs?",
+      answer: "Yes, electricians in Bareilly handle old house wiring repairs, including fixing damaged wires in traditional homes, upgrading outdated electrical systems, and safe rewiring for older constructions with modern safety standards and proper electrical codes."
     },
     {
-      question: "What is a professional electrician?",
-      answer: "A professional electrician is a trained expert who installs, repairs, and maintains electrical systems safely and efficiently, following safety standards and using the right tools and techniques."
+      question: "Do your electricians repair ceiling fans?",
+      answer: "Yes, electricians in Bareilly repair ceiling fans, including fixing wobbling fans, slow speed problems, motor issues, and electrical connection faults. Our skilled electricians ensure proper fan functioning with safe electrical connections and mechanical repairs."
     },
     {
-      question: "What is the cost of an electrician in Bangalore?",
-      answer: "The cost depends on the type of service, job complexity, materials required, and time taken. Contact us for a free estimate."
+      question: "What services do EzyHelpers' electricians in Bareilly offer?",
+      answer: "Our electricians in Bareilly provide house wiring, fan and light installation, switch/socket repairs, inverter and UPS installation, circuit breaker repairs, generator setup, safety checks, and emergency electrical services for homes."
     },
     {
-      question: "How do I know if my house needs electrical rewiring?",
-      answer: "If you notice flickering lights, frequent trips, burning smells, or outdated wires, your home may need rewiring. A licensed electrician can inspect and advise you."
+      question: "What safety checks do your electricians perform?",
+      answer: "Our electricians in Bareilly perform complete safety inspections, including checking for short circuits, loose wires, overloaded circuits, and faulty switchboards to prevent future hazards."
     },
     {
-      question: "What are the signs of an electrical problem at home?",
-      answer: "Common signs include sparks, warm switchboards, flickering lights, buzzing sounds, or burning smells. These should be inspected immediately."
+      question: "Are your electricians licensed to work in Bareilly?",
+      answer: "Yes, all electricians provided by EzyHelpers are licensed, certified, and trained to deliver safe electrical services in Bareilly homes according to standard electrical codes."
     }
   ]
 
