@@ -17,42 +17,46 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Professional Cooks Services | All Cuisines | EzyHelpers',
-  description: 'Expert cooks for Indian, Continental & regional cuisines. Includes meal planning, grocery management & dietary preferences. Hire home cooks today!',
-  keywords: 'cooks, home cooks, professional cooks, meal preparation, Indian cuisine, Continental cuisine, dietary preferences',
+  title: 'Cook for Home Bangalore | Daily Fresh Meals',
+  description: 'Find a reliable cook for home in Bangalore for daily, live-in, or part-time meal services. Fresh, healthy, and regionally customised food daily.',
+  keywords: 'cook for home bangalore, home cook bangalore, cook services bangalore, daily cook bangalore, personal cook bangalore',
 }
 
 export default function CooksPage() {
   const services = [
     {
       title: "Daily Meal Preparation",
-      description: "Fresh, nutritious meals prepared daily according to your family's taste preferences and dietary requirements.",
-      icon: HeartIcon
+      description: "Fresh, nutritious meals prepared daily using locally sourced ingredients from Bangalore's best markets, accommodating your family's taste preferences.",
+      icon: HeartIcon,
+      features: ["Fresh ingredients", "Local market sourcing", "Taste customization", "Nutritious meals"]
     },
     {
       title: "Kitchen Management", 
-      description: "Complete kitchen organization, grocery planning, ingredient preparation, and maintaining hygiene standards.",
-      icon: HomeIcon
+      description: "Full kitchen organization, grocery planning from nearby stores, ingredient preparation, and maintaining professional home cooking standards.",
+      icon: HomeIcon,
+      features: ["Grocery planning", "Kitchen organization", "Ingredient prep", "Hygiene standards"]
     },
     {
-      title: "Special Dietary Needs",
-      description: "Expertise in diabetic, low-sodium, vegetarian, vegan, and other specialized diet preparations.",
-      icon: SparklesIcon
+      title: "Specialized Dietary Solutions",
+      description: "Expert dietary management for diabetic meals, low-sodium preparations, vegetarian, and Jain food requirements; addressing Bangalore's health-conscious community needs.",
+      icon: SparklesIcon,
+      features: ["Diabetic meals", "Low-sodium prep", "Vegetarian options", "Jain food"]
     },
     {
-      title: "Meal Planning",
-      description: "Weekly meal planning, grocery lists, and coordination with family schedules for optimal nutrition.",
-      icon: ClockIcon
+      title: "Multi-Cuisine Expertise",
+      description: "Skilled in preparing Karnataka dishes along with popular cuisines from Tamil Nadu, Kerala, Andhra, North India, and even light Indo-Chinese meals.",
+      icon: ClockIcon,
+      features: ["South Indian", "North Indian", "Indo-Chinese", "Regional dishes"]
     }
   ]
 
   const benefits = [
-    "Customized meal planning and preparation",
-    "Dietary preferences accommodated", 
-    "Fresh and hygienic food preparation",
-    "Skilled in diverse cuisines",
-    "Kitchen maintenance and organization",
-    "Available live-in, full-time, or part-time"
+    "Traffic & time constraints support",
+    "Diverse taste preferences covered",
+    "Health-conscious lifestyle meals",
+    "Elderly and child nutrition focus",
+    "Multi-cuisine expertise",
+    "Kitchen hygiene standards"
   ]
 
   return (
@@ -307,19 +311,19 @@ export default function CooksPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Live-In Cooks",
-                description: "24/7 kitchen management with fresh meals prepared throughout the day, ideal for large families or special dietary needs.",
-                features: ["All meals covered", "24/7 availability", "Complete kitchen management", "Special occasion cooking"]
+                title: "Live-In Cooks in Bangalore",
+                description: "Perfect for large families, elderly care, or full-time assistance.",
+                features: ["24/7 kitchen access", "All daily meals included", "Basic kitchen cleaning", "Complete kitchen upkeep"]
               },
               {
-                title: "Full-Time Cooks", 
-                description: "Daily cooking during working hours with meal preparation for breakfast, lunch, and dinner according to your schedule.",
-                features: ["2-3 meals daily", "Grocery management", "Kitchen organization", "Meal planning"]
+                title: "Full-Time Cooks in Bangalore", 
+                description: "Ideal for nuclear families or tech couples.",
+                features: ["2 to 3 meals per day", "Grocery and meal planning", "Flexible 8 to 10 hour shifts", "Daily meal prep"]
               },
               {
-                title: "Part-Time Cooks",
-                description: "Specific meal preparation for selected times, perfect for busy families who need help with certain meals.",
-                features: ["1-2 meals daily", "Flexible timing", "Advance preparation", "Weekend cooking"]
+                title: "Part-Time Cooks in Bangalore",
+                description: "Great for families needing help with specific meals.",
+                features: ["1 to 2 meals per day", "Breakfast-only or dinner-only", "Evening or weekend availability", "Flexible timing"]
               }
             ].map((service, index) => (
               <div key={index} className="bg-white rounded-xl p-8">
@@ -437,52 +441,48 @@ export default function CooksPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "What types of home cook services are available?",
-                  answer: "EzyHelpers offers a wide range of home cook services including live-in cooks, full-time cooks, part-time cooks, and on-demand personal chefs. Whether you need daily cooking help or a domestic cook for special occasions, we have options to suit your family's needs."
+                  question: "How can I find a reliable cook for home in Bangalore?",
+                  answer: "EzyHelpers connects you with verified and experienced home cooks in Bangalore who undergo background checks and cooking skill assessments. We share shortlisted profiles based on your dietary needs, preferred cuisine, and schedule for a perfect home cooking match."
                 },
                 {
-                  question: "What cuisines can your home cooks prepare?",
-                  answer: "Our experienced cooks for home specialize in North Indian, South Indian, Chinese, Continental, and various regional cuisines. They deliver authentic flavours and traditional techniques, as per your family's taste preferences."
+                  question: "Do your home cooks accommodate dietary restrictions?",
+                  answer: "Yes, our cooks are experienced enough to prepare meals according to your health needs. Whether it's diabetic-friendly, Jain food, vegan, or low-sodium diets, EzyHelpers ensures you get a cook who understands and respects your dietary preferences."
                 },
                 {
-                  question: "Are your home cooks trained and background verified?",
-                  answer: "Yes, all our domestic cooks are thoroughly background verified and undergo skill assessment and hygiene training. We are affiliated with DWSSC (Domestic Workers Sector Skill Council) and Skill India to ensure quality and safety."
+                  question: "Will your home cooks help with grocery and vegetable shopping in Bangalore?",
+                  answer: "Yes, many of our home cooks in Bangalore assist with daily or weekly grocery and vegetable shopping. They can visit local markets or nearby stores to purchase fresh ingredients or accompany you when required. This ensures meals are prepared with fresh, timely ingredients while saving you time and effort."
                 },
                 {
-                  question: "Can your cooks accommodate dietary restrictions?",
-                  answer: "Absolutely. Our household cooks are trained to handle special dietary requirements including diabetic-friendly, low-sodium, vegetarian, and allergy-specific meal plans."
+                  question: "Can your cook prepare meals for office tiffins?",
+                  answer: "Absolutely. Many Bangalore families trust EzyHelpers' cooks to prepare home-style meals for office tiffins. It's a healthier, more cost-effective alternative to restaurant food, especially for busy professionals seeking nutritious lunch options."
                 },
                 {
-                  question: "Do home cooks assist with grocery shopping and menu planning?",
-                  answer: "Yes, our cooks for home can manage grocery shopping, meal planning, ingredient selection, and kitchen inventory to ensure fresh and nutritious daily meals."
+                  question: "How do you ensure food safety and kitchen hygiene?",
+                  answer: "At EzyHelpers, we train all home cooks on kitchen safety, personal hygiene, and clean cooking practices. We make sure cooking is clean and safe by using clean utensils, storing food properly, and training cooks in personal hygiene practices."
                 },
                 {
-                  question: "Can home cooks prepare meals for large families?",
-                  answer: "Yes, our professional home cooks efficiently handle cooking for families of all sizes. They ensure timely meal preparation, proper portion control, and variety in everyday menus."
+                  question: "Can I hire a cook for specific cuisines?",
+                  answer: "Yes. EzyHelpers provides multi-cuisine home cooks trained in South Indian (Karnataka, Kerala, and Tamil), North Indian, Bengali, Gujarati, and Chinese cuisines, which are perfect for Bangalore's diverse families."
                 },
                 {
-                  question: "Are home cooks available for special events or functions?",
-                  answer: "Yes, we provide on-demand domestic cooks for parties, festivals, family gatherings, and other special occasions. They can prepare customized menus and deliver professional-level meals for guests."
+                  question: "Is hiring a home cook a good idea?",
+                  answer: "Hiring a cook is one of the best ways to save time and eat healthier. With a reliable cook, you get fresh meals according to your taste, less stress over daily cooking, and improved work-life balance, especially helpful for working couples and elders."
                 },
                 {
-                  question: "Do your home cooks maintain proper kitchen hygiene?",
-                  answer: "Yes. Our verified cooks follow strict hygiene practices including clean workspaces, safe food handling, proper storage, and kitchen maintenance and organization as part of our premium home cook services."
+                  question: "What is the salary of a female cook in Bangalore?",
+                  answer: "The salary of a female home cook in Bangalore depends on her experience, working hours, and specific duties. On average, part-time female cooks earn ₹6,000 to ₹10,000 per month, while full-time cooks typically earn ₹12,000 to ₹20,000 per month. Live-in cooks may charge upwards of ₹25,000/month with added responsibilities."
                 },
                 {
-                  question: "Can your cooks work with existing kitchen equipment?",
-                  answer: "Yes, our skilled domestic cooks are adaptable and can work efficiently with your existing kitchen layout, appliances, and utensils without compromising on meal quality."
+                  question: "Can I get a temporary cook for a few weeks or events in Bangalore?",
+                  answer: "Yes, EzyHelpers offers temporary cook services in Bangalore for short-term needs like family functions or when your regular cook is on leave. You can book skilled cooks for a few days, weeks, or just for a special occasion. Our flexible service ensures you get fresh, home-style food without any long-term commitment."
                 },
                 {
-                  question: "How much do your home cook services cost?",
-                  answer: "Pricing depends on the type of service (live-in, part-time, full-time), number of meals, and complexity of food preparation. Contact EzyHelpers for customized, affordable packages."
+                  question: "Are male cooks available for home cooking in Bangalore?",
+                  answer: "Yes, EzyHelpers provides both male and female home cooks in Bangalore. Many male cooks are experienced in handling bulk meal preparation, special diets, or cooking for large families. If you have a gender preference, let us know during booking, and we'll match you with the right home cook for your needs."
                 },
                 {
-                  question: "Do your cooks prepare food for babies and elderly family members?",
-                  answer: "Yes. We have specialized home cooks who can prepare soft meals for elderly members and age-appropriate, nutritious baby food as part of their daily cooking help duties."
-                },
-                {
-                  question: "Are cooks available for breakfast and dinner only?",
-                  answer: "Our home cook services are flexible. Whether you need breakfast-only, dinner-only, or full-day cooking, we'll match you with a personal chef who fits your schedule."
+                  question: "Can I hire a cook for elderly care diets in Bangalore?",
+                  answer: "Absolutely. Our trained home cooks in Bangalore can prepare meals that are suitable for elderly family members, including soft food, low-oil dishes, diabetic-friendly recipes, or food suited for age-related health conditions. Whether it's a special diet chart from a doctor or simple, easy-to-digest home food, our cooks handle it with care and attention."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">

@@ -24,42 +24,46 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Part-Time Maid Services | 2-6 Hours Daily | EzyHelpers',
-  description: 'Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers.',
-  keywords: 'Part-Time Maid, hourly maid service, flexible maid service, part time domestic help, 2-6 hours maid',
+  title: 'Part-Time Maid in Bangalore | Hourly House Help',
+  description: 'Get reliable part-time maids in Bangalore for 2-6 hours daily. Flexible timings for cleaning, cooking, and home tasks with verified helpers.',
+  keywords: 'part time maid bangalore, hourly maid bangalore, house help bangalore, cleaning maid bangalore',
 }
 
 export default function PartTimeMaidsPage() {
   const services = [
     {
-      title: "Basic House Cleaning",
-      description: "Dusting, sweeping, mopping, and tidying up regularly for a clean and organized space.",
-      icon: HomeIcon
+      title: "Part-Time House Cleaning",
+      description: "Professional cleaning services for 2-6 hours daily. Perfect for busy professionals in Bangalore's tech hubs like Electronic City and Whitefield.",
+      icon: HomeIcon,
+      features: ["Daily sweeping", "Bathroom cleaning", "Kitchen cleaning", "Dusting & mopping"]
     },
     {
-      title: "Meal Preparation", 
-      description: "Kitchen assistance with chopping vegetables, preparing meals, or cooking simple dishes.",
-      icon: HeartIcon
+      title: "Part-Time Kitchen Help", 
+      description: "Flexible kitchen assistance with meal prep, cooking, and cleaning. Ideal for working couples in Bangalore's IT corridors.",
+      icon: HeartIcon,
+      features: ["Meal preparation", "Utensil washing", "Kitchen cleaning", "Grocery help"]
     },
     {
-      title: "Child & Elderly Care",
-      description: "Safe, kind, and dependable care for kids or elderly family members for a few hours.",
-      icon: ClockIcon
+      title: "Part-Time Child Support",
+      description: "Reliable childcare support for a few hours daily. Great for families in Bangalore's residential areas like HSR Layout and Marathahalli.",
+      icon: ClockIcon,
+      features: ["School prep", "Meal feeding", "Activity supervision", "Basic care"]
     },
     {
-      title: "Quick Task Assistance",
-      description: "Grocery shopping, picking up medicines, and other small but important daily tasks.",
-      icon: CalendarDaysIcon
+      title: "Part-Time Senior Care",
+      description: "Gentle assistance for elderly family members. Available in all major Bangalore localities for flexible hours.",
+      icon: CalendarDaysIcon,
+      features: ["Basic care", "Meal assistance", "Medicine reminders", "Light exercise"]
     }
   ]
 
   const benefits = [
-    "Flexible scheduling - daily, weekly, or hourly",
-    "Cost-effective - pay only for hours worked", 
-    "Verified and trained helpers",
-    "No long-term contracts required",
-    "Perfect for privacy-focused individuals",
-    "Budget-friendly household support"
+    "Flexible 2-6 hour schedules",
+    "Verified & trained helpers",
+    "Affordable hourly rates",
+    "No long-term commitment",
+    "Bangalore-wide coverage",
+    "Replacement guarantee"
   ]
 
   return (
@@ -406,52 +410,60 @@ export default function PartTimeMaidsPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "What is a part-time maid service?",
-                  answer: "A part-time maid works for a few hours daily or on specific days of the week, handling tasks like cleaning, organizing, laundry, and light cooking. It's perfect for busy families who need regular help without the commitment of a full-time helper."
+                  question: "What is the cost of part-time maid in Bangalore?",
+                  answer: "Part-time maid costs in Bangalore vary by area and tasks. Typically, rates range from ₹2,500 to ₹4,000 monthly for 2-3 hours daily service. Areas like Whitefield or Electronic City may have slightly higher rates. Exact pricing depends on work hours, duties, and location."
                 },
                 {
-                  question: "How many hours do part-time maids work?",
-                  answer: "Part-time maids typically work 2-6 hours per day, depending on your needs. You can choose morning, afternoon, or evening slots, and decide how many days per week you need their services."
+                  question: "What are the working hours for part-time maids?",
+                  answer: "Most part-time maids in Bangalore work 2-6 hours daily, with flexible morning or evening slots. Common timings are 7-10 AM or 4-7 PM, but can be adjusted to your schedule."
+                },
+                {
+                  question: "Can I get a part-time maid for weekends only?",
+                  answer: "Yes, weekend-only part-time maids are available in Bangalore. Many IT professionals prefer this option for deep cleaning and organizing on weekends."
+                },
+                {
+                  question: "Do you provide female part-time maids?",
+                  answer: "Yes, we have trained female part-time maids across Bangalore. Most clients prefer female maids for household work."
+                },
+                {
+                  question: "Are part-time maids available in my area?",
+                  answer: "We cover all major Bangalore areas including Whitefield, HSR Layout, Marathahalli, Koramangala, BTM Layout, JP Nagar, and more."
+                },
+                {
+                  question: "Can part-time maids cook South Indian food?",
+                  answer: "Yes, many part-time maids can prepare basic South Indian dishes like idli, dosa, sambar, and rice. Cooking skills vary by individual."
+                },
+                {
+                  question: "Do part-time maids work in gated communities?",
+                  answer: "Yes, our part-time maids are familiar with gated community protocols in Bangalore. They follow security procedures and society rules."
                 },
                 {
                   question: "What tasks do part-time maids handle?",
-                  answer: "Our part-time maids handle house cleaning, floor mopping, bathroom cleaning, kitchen organization, laundry, ironing, dishwashing, and light cooking. Tasks can be customized based on your household priorities."
+                  answer: "They handle sweeping, mopping, dusting, bathroom cleaning, utensil washing, and basic kitchen work. Additional tasks can be discussed during booking."
                 },
                 {
-                  question: "How much does a part-time maid cost?",
-                  answer: "The cost depends on hours worked, frequency, and tasks assigned. EzyHelpers offers competitive rates with transparent pricing and no hidden charges. Contact us for a personalized quote based on your requirements."
+                  question: "Can I change maid timings later?",
+                  answer: "Yes, timing changes are possible with advance notice. If current maid can't adjust, we'll find a replacement for your preferred timing."
                 },
                 {
-                  question: "Can I hire a part-time maid for specific days only?",
-                  answer: "Yes! You can hire part-time maids for specific days like weekends, alternate days, or just weekdays. This flexibility makes it ideal for people with varying schedules or budget constraints."
+                  question: "Are part-time maids verified?",
+                  answer: "Yes, all part-time maids undergo ID verification and background checks. We prioritize client safety and trust."
                 },
                 {
-                  question: "Are part-time maids background-verified?",
-                  answer: "Absolutely. All our part-time maids undergo thorough background verification, police checks, and reference validation to ensure your home's safety and security."
+                  question: "What if my regular maid takes leave?",
+                  answer: "We provide temporary replacement maids during your regular maid's leave to ensure uninterrupted service."
                 },
                 {
-                  question: "Do part-time maids bring their own cleaning supplies?",
-                  answer: "Part-time maids can use your existing cleaning supplies and equipment. If you prefer, we can arrange for them to bring basic cleaning materials at an additional cost."
+                  question: "Can I get a trial period?",
+                  answer: "Yes, we offer a short trial period to ensure the maid's work quality matches your expectations."
                 },
                 {
-                  question: "Can I change the part-time maid's schedule?",
-                  answer: "Yes, schedules can be adjusted with advance notice. Whether you need to change timings, add extra days, or reduce frequency, we work with you to accommodate your changing needs."
+                  question: "Do part-time maids speak local languages?",
+                  answer: "Most maids speak Kannada and basic Hindi. Many also understand basic English commands."
                 },
                 {
-                  question: "What if I'm not satisfied with the part-time maid's work?",
-                  answer: "We offer a satisfaction guarantee. If you're not happy with the service, we provide immediate feedback to the maid or arrange a replacement at no extra cost."
-                },
-                {
-                  question: "Do part-time maids work on weekends and holidays?",
-                  answer: "Yes, part-time maids can work on weekends and holidays if discussed during hiring. Many families prefer weekend cleaning services to prepare for the upcoming week."
-                },
-                {
-                  question: "Can part-time maids handle pet-friendly homes?",
-                  answer: "Yes, many of our part-time maids are comfortable working in homes with pets. We match you with maids who are experienced with pet care and pet-friendly cleaning routines."
-                },
-                {
-                  question: "Is there a minimum commitment period for part-time maid services?",
-                  answer: "We offer flexible arrangements with no long-term commitments required. You can start with a trial period and continue based on your satisfaction and needs."
+                  question: "What about maid replacement?",
+                  answer: "If you're unhappy with the service, we offer quick replacement within 24-48 hours in most Bangalore areas."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">

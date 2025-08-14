@@ -16,42 +16,46 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Professional Drivers Services | Licensed | EzyHelpers India',
-  description: 'Licensed professional drivers for family transportation, office commutes & personal use. Safe, reliable & punctual service across major cities in India.',
-  keywords: 'professional drivers, licensed drivers, family transportation, office commute, personal driver, safe transport',
+  title: 'Car Driver in Bangalore | Daily & Outstation',
+  description: 'Get reliable personal car driver services in Bangalore for daily commutes, office travel & family transportation with experienced drivers.',
+  keywords: 'car driver bangalore, personal driver bangalore, chauffeur service bangalore, driver hire bangalore',
 }
 
 export default function DriversPage() {
   const services = [
     {
-      title: "Daily Commute Services",
-      description: "Reliable transportation for office commutes, school runs, and regular daily travel needs with punctual service.",
-      icon: ClockIcon
+      title: "Daily Commute Drivers",
+      description: "Reliable drivers for school drops, office commutes, and daily errands, ensuring your routine runs smoothly and stress-free.",
+      icon: ClockIcon,
+      features: ["School drops", "Office commutes", "Daily errands", "Smooth routine"]
     },
     {
-      title: "Airport & Long Distance", 
-      description: "Safe and comfortable travel for airport transfers, intercity trips, and long-distance journeys.",
-      icon: TruckIcon
+      title: "Elderly & Family Transport", 
+      description: "Patient drivers who understand the needs of seniors, kids, and dependent family members, offering extra care and comfort.",
+      icon: UserIcon,
+      features: ["Senior care", "Kid transport", "Family comfort", "Extra attention"]
     },
     {
-      title: "Elderly & Family Transport",
-      description: "Careful, patient driving for seniors and family members with special attention to comfort and safety.",
-      icon: UserIcon
+      title: "Airport Pickup & Drop",
+      description: "Punctual drivers who align with your flight timing, help with luggage, and ensure smooth airport transfers every time.",
+      icon: TruckIcon,
+      features: ["Flight timing", "Luggage help", "Smooth transfers", "Punctual service"]
     },
     {
-      title: "Emergency & Medical Trips",
-      description: "On-call drivers for medical emergencies, hospital visits, and urgent transportation needs.",
-      icon: ShieldCheckIcon
+      title: "Medical & Emergency Travel",
+      description: "Quick-response drivers available for hospital visits, checkups, and emergency rides, always dependable when matters most.",
+      icon: ShieldCheckIcon,
+      features: ["Hospital visits", "Quick response", "Emergency rides", "Dependable service"]
     }
   ]
 
   const benefits = [
-    "Licensed and experienced drivers",
-    "Flexible scheduling options", 
-    "Safe and punctual service",
-    "Well-maintained vehicles available",
-    "Background-verified professionals",
-    "Available for live-in, full-time, or on-demand"
+    "Bangalore traffic experts",
+    "Background-verified drivers",
+    "24/7 available service",
+    "All routes covered",
+    "Polite & professional drivers",
+    "Emergency trip support"
   ]
 
   return (
@@ -251,19 +255,19 @@ export default function DriversPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Live-In Drivers",
-                description: "24/7 availability for families with extensive travel needs, multiple cars, or requiring constant transportation support.",
-                features: ["24/7 availability", "Multiple trips daily", "Vehicle maintenance", "Emergency response"]
+                title: "Live-In Car Driver in Bangalore",
+                description: "Perfect for families with multiple vehicles and constant mobility needs. Our live-in drivers stay on the premises to ensure dependable driving anytime.",
+                features: ["Available 24x7", "Manages multiple trips", "Weekend availability", "Vehicle upkeep"]
               },
               {
-                title: "Full-Time Drivers", 
-                description: "Dedicated drivers for regular office commutes, school runs, and daily transportation during working hours.",
-                features: ["8-12 hours daily", "Fixed schedule", "Regular routes", "Professional service"]
+                title: "Full-Time Car Driver in Bangalore", 
+                description: "A dedicated chauffeur for your regular travel needs. Ideal for working professionals, school-going children, and family routines.",
+                features: ["8-10 hours daily", "School pickup/drop", "Office commutes", "Route planning"]
               },
               {
-                title: "On-Demand Drivers",
-                description: "Flexible transportation for specific trips, special occasions, airport transfers, and as-needed basis.",
-                features: ["Trip-based service", "Flexible timing", "Special occasions", "Emergency calls"]
+                title: "On-Demand Driver in Bangalore",
+                description: "Need a driver for a few hours, a day, or a one-time event? Our flexible, on-call driver service is ideal for occasional, last-minute, or special-purpose travel.",
+                features: ["Airport transfers", "Event transport", "Emergency runs", "Urgent support"]
               }
             ].map((service, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-8">
@@ -447,52 +451,44 @@ export default function DriversPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "What driver services does EzyHelpers provide?",
-                  answer: "EzyHelpers offers professional driver services including daily office commutes, airport transfers, outstation trips, medical appointments, shopping assistance, and special event transportation. Our drivers are trained, licensed, and experienced in safe driving practices."
+                  question: "What makes your car driver in Bangalore service different?",
+                  answer: "Our drivers are specially trained in Bangalore's traffic with strong local knowledge of IT corridors, residential areas, and major connectivity routes. Each driver is background-verified and skilled in navigating city shortcuts and safe paths."
                 },
                 {
-                  question: "Are your drivers licensed and experienced?",
-                  answer: "Yes, all our drivers hold valid driving licenses with clean records and extensive driving experience. They undergo background verification, defensive driving training, and are familiar with local traffic rules and routes."
+                  question: "Do you provide personal drivers in Bangalore for elderly care?",
+                  answer: "Absolutely. Our drivers are trained to assist elderly passengers with patient driving, medical appointment coordination, and clear communication with family members."
                 },
                 {
-                  question: "Can I hire a driver for outstation trips?",
-                  answer: "Absolutely! We provide outstation driver services for long-distance travel, weekend getaways, and multi-city trips. Our drivers are experienced in highway driving and familiar with popular tourist destinations."
+                  question: "What vehicle types can your drivers handle?",
+                  answer: "Our chauffeur drivers in Bangalore are experienced to operate all car types: hatchbacks, sedans, SUVs, and even high-end luxury vehicles, with proper licensing and experience."
                 },
                 {
-                  question: "Do you provide drivers for both personal and commercial vehicles?",
-                  answer: "Yes, our drivers can operate personal cars, SUVs, and light commercial vehicles. They adapt to different vehicle types and are trained in vehicle maintenance basics and safety protocols."
+                  question: "Do you provide drivers familiar with Bangalore's IT corridors?",
+                  answer: "Yes. Our drivers have strong route expertise across key IT corridors like Outer Ring Road, Sarjapur Road, and Whitefield, ensuring faster commutes through Bangalore's major corporate zones."
                 },
                 {
-                  question: "How much do driver services cost?",
-                  answer: "Driver service costs depend on duration, distance, and specific requirements. We offer hourly, daily, and monthly packages with transparent pricing. Contact us for customized quotes based on your travel needs."
+                  question: "Do you provide one-time chauffeur drivers in Bangalore for special events?",
+                  answer: "Yes, we offer one-time chauffeur drivers in Bangalore for special occasions like weddings, corporate events, and private gatherings. Our drivers arrive on time, dressed professionally, and ensure smooth, respectful service throughout the event for you and your guests."
                 },
                 {
-                  question: "Can I book a driver for same-day service?",
-                  answer: "Yes, we offer same-day driver booking based on availability. For urgent transportation needs, our dispatch team works to assign the nearest available driver to your location."
+                  question: "Can I book a driver for airport drop or intercity travel?",
+                  answer: "Definitely. We handle airport transfers with real-time flight tracking and also offer intercity driving for leisure, business, or family travel."
                 },
                 {
-                  question: "Do drivers provide their own vehicles?",
-                  answer: "Our drivers typically use your personal vehicle. However, we can also arrange drivers with their own vehicles for specific requirements. This option may have different pricing structures."
+                  question: "Can I hire a driver in Bangalore just for one day or a few hours?",
+                  answer: "Yes, we offer on-demand drivers in Bangalore for a few hours, full-day, or one-time events. Whether it's a wedding, airport pickup, or urgent hospital visit, you can hire an experienced chauffeur whenever needed, without long-term commitments."
                 },
                 {
-                  question: "Are drivers available for night shifts and weekends?",
-                  answer: "Yes, our drivers are available for night shifts, weekend trips, and holiday travel. We understand that transportation needs don't follow regular business hours."
+                  question: "What is the cost of hiring a car driver in Bangalore?",
+                  answer: "Driver costs in Bangalore depend on the duration and type of service: hourly, daily, live-in, or outstation. Call us for exact rates; our pricing is transparent, with no hidden charges, and customised to your travel needs."
                 },
                 {
-                  question: "What safety measures do your drivers follow?",
-                  answer: "Our drivers follow strict safety protocols including defensive driving techniques, regular vehicle checks, GPS navigation for optimal routes, and emergency contact procedures. They prioritize passenger safety above all else."
+                  question: "Can I get a driver who speaks Kannada or Hindi in Bangalore?",
+                  answer: "Yes, we have multilingual drivers in Bangalore who can communicate in Kannada, Hindi, Tamil, and English. This makes communication easier for your family, elderly members, or clients with language preferences."
                 },
                 {
-                  question: "Can drivers assist with elderly or differently-abled passengers?",
-                  answer: "Yes, we have drivers specially trained to assist elderly passengers and those with mobility challenges. They provide extra care and support during boarding, travel, and arrival."
-                },
-                {
-                  question: "Do you provide drivers for corporate clients?",
-                  answer: "Yes, we offer corporate driver services for business executives, client transportation, airport transfers, and company events. We can arrange dedicated drivers for regular corporate requirements."
-                },
-                {
-                  question: "What happens if the driver is late or unavailable?",
-                  answer: "We maintain high punctuality standards. If any delay occurs due to unforeseen circumstances, we immediately inform you and arrange alternative transportation. Customer satisfaction is our priority."
+                  question: "Is fuel cost included in your driver service pricing in Bangalore?",
+                  answer: "No, our charges cover the driver's service only. Fuel expenses are borne by the client. However, our drivers assist in monitoring fuel usage, planning refills, and choosing trusted petrol stations on your route."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">

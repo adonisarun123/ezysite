@@ -23,42 +23,46 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
-  description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
-  keywords: 'On-Demand Helper, same day helper, emergency domestic help, instant maid service, urgent cleaning',
+  title: 'On-Demand Maid Service in Bangalore | Emergency Help',
+  description: 'Get fast, on-demand maid service in Bangalore for last-minute guests, missed maids, urgent cooking, event help, and babysitting with same-day availability.',
+  keywords: 'on demand maid bangalore, emergency maid bangalore, instant maid service bangalore, urgent house help bangalore',
 }
 
 export default function OnDemandHelpersPage() {
   const services = [
     {
-      title: "Temporary Maid Support",
-      description: "When your regular maid is unavailable, our trained helpers step in to maintain your routine.",
-      icon: ClockIcon
+      title: "Emergency Cleaning Services",
+      description: "For unexpected guests, festival prep, or post-party mess, our helpers provide same-day sweeping, mopping, and dusting.",
+      icon: BoltIcon,
+      features: ["Same-day cleaning", "Post-party cleanup", "Festival prep", "Emergency help"]
     },
     {
-      title: "Emergency Cleaning", 
-      description: "One-time deep cleaning, pre-guest tidy-ups, and post-move-in cleaning solutions.",
-      icon: BoltIcon
+      title: "One-Day Cook Services", 
+      description: "Cook not available? Hosting guests? Our one-day maid in Bangalore can cook fresh meals and support with groceries.",
+      icon: ClockIcon,
+      features: ["Fresh meals", "Grocery help", "Kitchen cleaning", "Event cooking"]
     },
     {
-      title: "Same-Day Childcare",
-      description: "Background-checked caregivers for unexpected childcare needs and supervision.",
-      icon: ShieldCheckIcon
+      title: "Short-Term Babysitter Support",
+      description: "Stepping out urgently? Our emergency babysitters provide child engagement, play, and homework help.",
+      icon: ShieldCheckIcon,
+      features: ["Child engagement", "Meal feeding", "Homework help", "Short-term care"]
     },
     {
-      title: "Quick Task Assistance",
-      description: "Grocery shopping, pharmacy pickups, bill payments, and parcel collections.",
-      icon: ExclamationTriangleIcon
+      title: "Emergency Event Helpers",
+      description: "Reliable event helpers are available for family gatherings, functions, and poojas.",
+      icon: ExclamationTriangleIcon,
+      features: ["Event setup", "Guest management", "Kitchen help", "Post-event cleaning"]
     }
   ]
 
   const benefits = [
-    "Instant availability for urgent needs",
-    "Flexible & hassle-free with no contracts", 
-    "Trusted and verified helpers",
-    "Affordable emergency help rates",
-    "Same-day and last-minute bookings",
-    "Wide range of on-demand services"
+    "24-72 hours quick response",
+    "Last-minute booking support",
+    "5,000+ bookings completed",
+    "Hourly flexibility",
+    "Same-day availability",
+    "Emergency support"
   ]
 
   return (
@@ -440,56 +444,48 @@ export default function OnDemandHelpersPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "What are on-demand helper services?",
-                  answer: "On-demand helpers are temporary domestic help services available for immediate or short-term needs. Whether you need emergency cleaning, event assistance, or urgent household support, our helpers are available with minimal advance notice to handle your specific requirements."
+                  question: "How quickly can I get an emergency helper in Bangalore?",
+                  answer: "Our emergency helper in Bangalore typically arrives within 2-4 hours of booking, depending on your location and current availability. Areas like Koramangala, HSR Layout, and Indiranagar usually have faster response times."
                 },
                 {
-                  question: "How quickly can an on-demand helper arrive?",
-                  answer: "Depending on your location and helper availability, we can typically arrange an on-demand helper within 2-4 hours for urgent needs. For same-day service, we recommend booking at least 4-6 hours in advance for better availability."
+                  question: "Are emergency helpers trained for multiple tasks?",
+                  answer: "Yes, most can handle cleaning, cooking, or care simultaneously. Just let us know in advance."
                 },
                 {
-                  question: "What types of tasks can on-demand helpers handle?",
-                  answer: "Our on-demand helpers can assist with emergency cleaning, party preparation and cleanup, moving assistance, deep cleaning, organizing, laundry, cooking for events, elderly care, childcare, and other urgent household needs."
+                  question: "Is one-day maid in Bangalore available during festivals?",
+                  answer: "Yes, our one day maid in Bangalore works during all major festivals including Diwali, Dussehra, Christmas, and regional celebrations. We maintain emergency helper availability for festival preparation and cleanup."
                 },
                 {
-                  question: "How much do on-demand helper services cost?",
-                  answer: "Pricing for on-demand services varies based on the type of work, duration, and urgency. We offer transparent hourly rates with no hidden fees. Emergency and last-minute bookings may have premium pricing due to the immediate nature of service."
+                  question: "Can emergency helpers communicate in languages other than Kannada?",
+                  answer: "Yes, we provide emergency helpers who can communicate in Hindi, English, Tamil, and Telugu, making it easier for Bangalore's diverse population."
                 },
                 {
-                  question: "Are on-demand helpers background-verified?",
-                  answer: "Yes, all our on-demand helpers undergo the same rigorous background verification process as our regular staff, including police checks, reference validation, and skill assessments to ensure your safety and service quality."
+                  question: "Are on-demand helpers verified?",
+                  answer: "Yes, all on-demand helpers undergo background verification. Safety is ensured even for emergency and last-minute household help."
                 },
                 {
-                  question: "Can I book on-demand helpers for events and parties?",
-                  answer: "Absolutely! We specialize in event support including pre-party preparation, serving assistance during events, and post-party cleanup. Our helpers can work with your event timeline and specific requirements."
+                  question: "Can on-demand helpers work in apartment complexes?",
+                  answer: "Yes, on-demand helpers understand gated community protocols, visitor registration, and apartment security procedures across Bangalore residential areas."
                 },
                 {
-                  question: "Do you provide on-demand helpers for weekends and holidays?",
-                  answer: "Yes, we understand that urgent needs don't follow business hours. Our on-demand services are available 7 days a week, including weekends and holidays, though availability may be limited during peak times."
+                  question: "Can I book an emergency helper for just a few hours?",
+                  answer: "Yes, you can book an emergency helper in Bangalore for a few hours depending on your need. Hourly pricing ensures flexibility for short tasks like quick cleaning or urgent kitchen help."
                 },
                 {
-                  question: "Can I specify the gender of the on-demand helper?",
-                  answer: "Yes, you can request male or female helpers based on your comfort and specific task requirements. We try to accommodate these preferences while ensuring quick service availability."
+                  question: "Is emergency help available in all parts of Bangalore?",
+                  answer: "We cover most Bangalore areas including Whitefield, Bellandur, BTM Layout, Hebbal, Marathahalli, Jayanagar, and more. Availability may vary by locality and timing."
                 },
                 {
-                  question: "What if I need multiple helpers for a large task?",
-                  answer: "We can arrange multiple on-demand helpers for large projects like deep cleaning, moving assistance, or major events. Just specify your requirements when booking, and we'll coordinate the appropriate team size."
+                  question: "Can I book a female emergency helper in Bangalore?",
+                  answer: "Yes, female emergency helpers are available for domestic needs, including household chores, elderly care, and kitchen work. Please specify gender preference while booking."
                 },
                 {
-                  question: "Do on-demand helpers bring their own supplies?",
-                  answer: "On-demand helpers typically use your existing cleaning supplies and equipment. If you need them to bring specific supplies, please mention this when booking, and we can arrange it for an additional cost."
+                  question: "Are emergency helpers suitable for elderly or patient assistance?",
+                  answer: "Yes, we provide trained helpers experienced in elderly care, including mobility assistance, companionship, and accompanying to medical appointments."
                 },
                 {
-                  question: "Can I extend the service duration if needed?",
-                  answer: "Yes, if you need the helper to stay longer than originally planned, you can extend the service duration. Additional charges will apply based on our hourly rates, and extension is subject to the helper's availability."
-                },
-                {
-                  question: "What areas do you cover for on-demand services?",
-                  answer: "We provide on-demand helper services across all major cities and suburbs where EzyHelpers operates. Coverage may vary by location, so please check availability in your specific area when booking."
-                },
-                {
-                  question: "How do I pay for on-demand helper services?",
-                  answer: "We accept various payment methods including cash, online transfers, UPI, and digital wallets. Payment can be made directly to the helper or through our online platform, depending on your preference and booking method."
+                  question: "Can I request the same emergency helper again later?",
+                  answer: "If the same helper is available, we're happy to reassign them. Many clients prefer consistency, and we try our best to accommodate such requests."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">

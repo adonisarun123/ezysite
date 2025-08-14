@@ -16,12 +16,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Elder Care Services | 24/7 Senior Support | EzyHelpers',
-  description: 'Compassionate elder care services with medical assistance, companionship & mobility support. Trained specialists for seniors. Trusted by families across India.',
-  keywords: 'elder care services, elderly care, senior care, 24/7 elder support, medical assistance for seniors, companionship',
+  title: 'Senior Citizen Home Services in Bangalore | Elderly Support',
+  description: 'Senior citizen care at home in Bangalore. Trained caregivers for elderly care, meals, medication help, and daily support.',
+  keywords: 'senior citizen care bangalore, elderly care bangalore, old age care bangalore, senior home care bangalore',
   openGraph: {
-    title: 'Professional Elder Care Services - 24/7 Senior Support',
-    description: 'Get reliable elder care services with trained professionals. Medical assistance, companionship & complete senior care solutions.',
+    title: 'Senior Citizen Home Services in Bangalore - Elderly Support',
+    description: 'Senior citizen care at home in Bangalore. Trained caregivers for elderly care, meals, medication help, and daily support.',
     url: 'https://ezyhelpers.com/services/elderly-care',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -36,33 +36,37 @@ export default function ElderlyCare() {
   const services = [
     {
       title: "Personal Care Assistance",
-      description: "Help with bathing, grooming, dressing, and maintaining personal hygiene with dignity and respect.",
-      icon: UserIcon
+      description: "Gentle, respectful help with daily hygiene tasks to maintain dignity and comfort.",
+      icon: UserIcon,
+      features: ["Bathing & grooming", "Toileting assistance", "Hygiene help", "Dressing support"]
     },
     {
-      title: "Medication Management", 
-      description: "Timely medication reminders, dosage tracking, and coordination with healthcare providers.",
-      icon: ClockIcon
+      title: "Medical Support at Home", 
+      description: "Reliable support with medicines, health checkups, and recovery care in your own home.",
+      icon: ShieldCheckIcon,
+      features: ["Medication reminders", "Health tracking", "Recovery care", "Condition management"]
     },
     {
-      title: "Mobility Support",
-      description: "Safe assistance with walking, transfers, and physical therapy exercises to maintain independence.",
-      icon: ShieldCheckIcon
+      title: "Companion Care Services",
+      description: "Friendly caretakers who provide emotional support and joyful company every day.",
+      icon: HeartIcon,
+      features: ["Reading & games", "Festival participation", "Daily conversation", "Emotional bonding"]
     },
     {
-      title: "Companionship",
-      description: "Emotional support, conversation, and engaging activities to combat loneliness and isolation.",
-      icon: HeartIcon
+      title: "Mobility Assistance",
+      description: "Trained help for safe movement inside and outside the home to prevent falls.",
+      icon: ClockIcon,
+      features: ["Walking support", "Transfer aid", "Fall prevention", "Safety checks"]
     }
   ]
 
   const benefits = [
-    "Medication reminders and health monitoring",
-    "Mobility & hygiene assistance", 
-    "Emotional support & companionship",
-    "Trained in senior care best practices",
-    "Background-verified caregivers",
-    "24/7, full-time, or part-time options available"
+    "Daily routine help and support",
+    "Personalized attention and care", 
+    "Health monitoring and tracking",
+    "Hygiene assistance and comfort",
+    "Trained in senior handling",
+    "Safe home-based assistance"
   ]
 
   return (
@@ -263,52 +267,44 @@ export default function ElderlyCare() {
             <div className="space-y-6">
               {[
                 {
-                  question: "What elderly care services does EzyHelpers provide?",
-                  answer: "EzyHelpers offers comprehensive elderly care including daily assistance, medication reminders, meal preparation, companionship, mobility support, medical appointment coordination, and 24/7 care options. Our caregivers are trained in senior care and emergency response."
+                  question: "Can I hire a part-time senior care assistant in Bangalore?",
+                  answer: "Yes, EzyHelpers offers 2–6 hour part-time care options ideal for daily tasks like meal prep, medication reminders, and companionship."
                 },
                 {
-                  question: "Are your elderly care providers trained and certified?",
-                  answer: "Yes, all our elderly care providers undergo specialized training in senior care, first aid, CPR, medication management, and emergency response. They are background-verified and experienced in providing compassionate care to seniors."
+                  question: "Do you provide live-in caretakers for seniors in Bangalore?",
+                  answer: "Yes. Our live-in caretakers offer 24/7 support and stay at your home. They assist with everything from hygiene and feeding to companionship and medical supervision."
                 },
                 {
-                  question: "Can you provide 24/7 elderly care services?",
-                  answer: "Absolutely! We offer round-the-clock elderly care services including live-in caregivers and rotating shift care to ensure continuous support and monitoring for seniors who need constant assistance."
+                  question: "What is the difference between part-time and full-time elderly care?",
+                  answer: "Part-time care is for 2–6 hours a day, ideal for light support. Full-time care offers 8–10 hours of daily help for seniors who need regular monitoring or mobility aid."
                 },
                 {
-                  question: "Do you handle seniors with medical conditions like dementia or diabetes?",
-                  answer: "Yes, our caregivers are trained to assist seniors with various medical conditions including dementia, diabetes, mobility issues, and chronic illnesses. We coordinate with family members and healthcare providers for comprehensive care."
+                  question: "Can I get a temporary caretaker after hospital discharge in Bangalore?",
+                  answer: "Yes. We provide short-term post-hospitalisation care, including wound care, feeding, medication reminders, and physical support for recovery."
                 },
                 {
-                  question: "How much do elderly care services cost?",
-                  answer: "Elderly care costs vary based on the level of care required, duration, and specific medical needs. We offer flexible packages including hourly, daily, and monthly care plans with transparent pricing and no hidden fees."
+                  question: "Are female caretakers available for elderly women in Bangalore?",
+                  answer: "Yes, you can request female caretakers for elderly women who prefer same-gender care for personal comfort during tasks like bathing or dressing."
                 },
                 {
-                  question: "Can elderly care providers assist with household tasks?",
-                  answer: "Yes, our elderly care services include light housekeeping, meal preparation, laundry, grocery shopping, and maintaining a clean, safe environment for seniors while focusing primarily on their personal care needs."
+                  question: "Can I hire a companion for an elderly person who lives alone?",
+                  answer: "Absolutely. Our elderly care assistants engage seniors with reading, conversations, games, and emotional support to prevent loneliness and isolation."
                 },
                 {
-                  question: "Do you provide transportation for medical appointments?",
-                  answer: "Yes, our caregivers can accompany seniors to medical appointments, provide transportation coordination, and assist with communication with healthcare providers to ensure continuity of medical care."
+                  question: "Are caretakers trained in handling bedridden patients?",
+                  answer: "Yes, our senior caretakers in Bangalore are trained to support bedridden seniors with repositioning, sponge baths, feeding, and bedsore prevention."
                 },
                 {
-                  question: "How do you ensure the safety of elderly clients?",
-                  answer: "We implement comprehensive safety measures including fall prevention, medication management, emergency response protocols, regular health monitoring, and 24/7 communication with family members and emergency contacts."
+                  question: "Can elderly caretakers manage chronic illnesses like diabetes or BP?",
+                  answer: "Yes. Our staff is trained to monitor vital signs, follow diet restrictions, and remind seniors to take prescribed medications for chronic conditions."
                 },
                 {
-                  question: "Can family members stay involved in the care process?",
-                  answer: "Absolutely! We encourage family involvement and provide regular updates on your loved one's condition, care activities, and any concerns. Family members can participate in care planning and decision-making."
+                  question: "Do I need to provide accommodation for a live-in caretaker?",
+                  answer: "Yes. A live-in caretaker needs to be provided with a bed, cot, or mattress and access to a bathroom. It ensures they stay rested and care efficiently."
                 },
                 {
-                  question: "Do you provide respite care for family caregivers?",
-                  answer: "Yes, we offer respite care services to give family caregivers a break while ensuring their loved ones receive professional care. This can be arranged for a few hours, days, or longer periods as needed."
-                },
-                {
-                  question: "What if the elderly person doesn't get along with the caregiver?",
-                  answer: "We understand the importance of compatibility in elderly care. If there are any concerns, we work to address them immediately and can arrange a replacement caregiver to ensure your loved one's comfort and well-being."
-                },
-                {
-                  question: "Do you provide end-of-life care and palliative support?",
-                  answer: "Yes, we provide compassionate end-of-life care and palliative support, working closely with hospice care teams and family members to ensure dignity, comfort, and emotional support during difficult times."
+                  question: "What if my parent or elderly member is uncomfortable with the assigned caregiver?",
+                  answer: "We offer immediate replacement within 24 hours and work until we find the perfect personality and skill match."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">

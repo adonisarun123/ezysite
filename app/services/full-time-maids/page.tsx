@@ -19,12 +19,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Full Time Maid Services | 8-10 Hours | EzyHelpers',
-  description: 'Reliable full-time maid services for daily cleaning, cooking & home care. Get 8–10 hrs of trained, verified help daily. Book trusted maids near you today!',
-  keywords: 'full time maid, daily maid service, 8-10 hours maid, full time domestic help, home care services',
+  title: 'Full-Time Maid Bangalore | Verified Daily Helper',
+  description: 'Full-time maids in Bangalore for daily cleaning, cooking, and home tasks. Perfect for working families needing complete home management support.',
+  keywords: 'full time maid bangalore, daily maid bangalore, home helper bangalore, domestic help bangalore',
   openGraph: {
-    title: 'Full Time Maid Services - Daily Home Management | EzyHelpers',
-    description: 'Get reliable full-time maid services for all your daily home needs. Professional, verified staff for cleaning, cooking, and home management.',
+    title: 'Full-Time Maid Bangalore - Verified Daily Helper',
+    description: 'Full-time maids in Bangalore for daily cleaning, cooking, and home tasks. Perfect for working families needing complete home management support.',
     url: 'https://ezyhelpers.com/services/full-time-maids',
     type: 'website',
   },
@@ -36,34 +36,38 @@ export const metadata: Metadata = {
 export default function FullTimeMaidsPage() {
   const services = [
     {
-      title: "Housekeeping & Cleaning",
-      description: "Daily cleaning needs like sweeping, mopping, dusting, and deep cleaning for a spotless living space.",
-      icon: HomeIcon
+      title: "Full-Time Housekeeper",
+      description: "Manage daily home tasks with a flexible 8–10 hour schedule. Perfect for tech professionals in Electronic City and Outer Ring Road.",
+      icon: HomeIcon,
+      features: ["Daily sweeping & mopping", "Bathroom cleaning", "Utensil washing", "Laundry & ironing"]
     },
     {
-      title: "Meal Preparation & Kitchen Care", 
-      description: "Meal planning, grocery shopping, cooking, dishwashing, and overall kitchen maintenance.",
-      icon: HeartIcon
+      title: "Full-Time Cook", 
+      description: "Fresh, healthy meals aligned with your work schedule. Ideal for busy professionals needing breakfast before early meetings and dinner after late work.",
+      icon: HeartIcon,
+      features: ["Breakfast & dinner prep", "South & North Indian dishes", "Tiffin packing", "Market errands"]
     },
     {
-      title: "Childcare Support",
-      description: "Babysitting, school assignments, playtime activities, and daily routines for children of all ages.",
-      icon: UserGroupIcon
+      title: "Full-Day Babysitter",
+      description: "Reliable childcare support coordinating with parents' schedules. Perfect for working couples in Whitefield and Marathahalli managing school routines.",
+      icon: UserGroupIcon,
+      features: ["Bathing & feeding", "Homework assistance", "Playtime management", "School pickup/drop"]
     },
     {
-      title: "Elderly Assistance",
-      description: "Companionship, mobility support, meal assistance, and medication reminders for seniors.",
-      icon: ShieldCheckIcon
+      title: "Full-Time Elderly Care Assistant",
+      description: "Dedicated daytime care for senior family members. Essential for families where elderly parents need supervision during work hours.",
+      icon: ShieldCheckIcon,
+      features: ["Daytime companionship", "Medication reminders", "Light medical help", "Hygiene support"]
     }
   ]
 
   const benefits = [
-    "Full-day support for all household needs",
-    "Verified, skilled, and trained professionals", 
-    "No live-in needed, just full-time help",
-    "Reliable service with replacement guarantee",
-    "Fixed schedules with trained professionals",
-    "Privacy respected - return home daily"
+    "Irregular work schedules support",
+    "Nuclear family assistance",
+    "School drop & pick challenges solved",
+    "Help for families new to Bangalore",
+    "8-10 hours daily support",
+    "Experienced in urban homes"
   ]
 
   return (
@@ -371,52 +375,44 @@ export default function FullTimeMaidsPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "What is a full-time maid service?",
-                  answer: "A full-time maid works 8 to 12 hours a day, helping with daily cleaning, cooking, laundry, childcare, and elderly care, while returning to her own home every evening. It's ideal if you want a full-day maid service without needing someone to stay overnight."
+                  question: "How many hours do full-time maids work in Bangalore?",
+                  answer: "Most full-time maids in Bangalore work for 8 to 10 hours daily, depending on the job and your requirements."
                 },
                 {
-                  question: "How many hours do full-time maids work daily?",
-                  answer: "They typically work 8 to 12 hours, depending on your needs. You can decide the start and end time during hiring, and also schedule breaks during the day."
+                  question: "What is the cost of hiring a full-time helper in Bangalore?",
+                  answer: "The cost of hiring a full-time helper in Bangalore depends on the type of service, whether it's a part-time maid, babysitter, elderly caretaker, or home cook. Pricing varies based on service hours, task complexity, helper experience, and your location within the city. For accurate quotes, it's best to share your specific needs with a trusted provider like EzyHelpers."
                 },
                 {
-                  question: "What's included in full-time maid services?",
-                  answer: "Our full-time maids handle daily cleaning, mopping, laundry, kitchen management, babysitting, elderly care, grocery shopping, and other small tasks. Tasks can be customised to suit your family's routine and preferences."
+                  question: "Can I hire a maid for only one task, like cleaning or cooking?",
+                  answer: "Yes, you can hire specialised full-time maids for just cooking, cleaning, childcare, or elder care."
                 },
                 {
-                  question: "How much does a full-time maid cost?",
-                  answer: "Pricing varies by location, experience, and duties assigned. EzyHelpers provides affordable rates with no hidden costs. Contact us for a custom quote based on your requirements."
+                  question: "Is full-time maid service available in gated societies?",
+                  answer: "Absolutely. We match you with society-trained maids who understand entry protocols and community rules."
                 },
                 {
-                  question: "What's the difference between full-time maids and live-in maids?",
-                  answer: "Full-time maids work fixed hours and return home, offering privacy for your family while supporting you during the day. Live-in maids stay in your home, offering 24-hour domestic help for more intensive needs."
+                  question: "Can I change or replace my full-time helper if needed?",
+                  answer: "Yes. If you're not satisfied, we'll arrange a quick replacement within 1–3 working days."
                 },
                 {
-                  question: "Are full-time maids background-verified?",
-                  answer: "Yes. All our maids undergo police verification, address check, and skill evaluations to ensure your family's safety and smooth service delivery."
+                  question: "Do you offer full-time maid services for weekends only?",
+                  answer: "Yes, weekend-only or alternate-day full-time help is available for cleaning, cooking, or support work."
                 },
                 {
-                  question: "Do your full-time maids know how to use appliances?",
-                  answer: "Yes. Our maids are trained in using washing machines, mixers, vacuum cleaners, irons, and more. If your home has specialised equipment, we can arrange additional guidance."
+                  question: "How quickly can I get a full-time helper in Bangalore?",
+                  answer: "Same-day service available. Most bookings are fulfilled within 24-72 hours of your request."
                 },
                 {
-                  question: "Do full-time maids work on weekends?",
-                  answer: "Yes, their schedule can include weekends if discussed during hiring. Most full-time maids take 1 weekly off, often Sundays, or any agreed day."
+                  question: "Can I change the timings of the maid later?",
+                  answer: "Yes, you can request a change in maid timings anytime. If your current maid is unavailable for the new schedule, we'll promptly replace her with another professional who matches your updated timing preferences, ensuring uninterrupted support for your home."
                 },
                 {
-                  question: "Can I customise the full-time maid's duties?",
-                  answer: "Absolutely! Tasks can be customised, whether you need childcare, elderly assistance, deep kitchen cleaning, or errand help. We match maids based on your household's lifestyle and preferences."
+                  question: "Is there a difference in pricing between different areas of Bangalore?",
+                  answer: "Slight variations exist based on location and travel time, but we maintain competitive rates citywide."
                 },
                 {
-                  question: "Is there a trial period for full-time maids?",
-                  answer: "Yes. We offer a trial period so you can assess the maid's performance and fit before committing to a longer contract."
-                },
-                {
-                  question: "Do full-time maids need constant supervision?",
-                  answer: "No, they are trained to work independently. However, some initial instructions and occasional monitoring help maintain consistency and satisfaction."
-                },
-                {
-                  question: "Can full-time maids work in apartments and gated communities?",
-                  answer: "Yes, all our maids and helpers are comfortable working in apartments, gated communities, and villas, following security protocols and society rules."
+                  question: "Can regular households afford full-time helpers in Bangalore?",
+                  answer: "Yes, most families in Bangalore find full-time help both practical and affordable. These services are designed to suit everyday household needs without stretching your budget. With flexible hours and trusted professionals, it's a smart way to get extra support without the long-term commitment."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">

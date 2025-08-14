@@ -26,42 +26,46 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: '24/7 Live In Maid Services | EzyHelpers',
-  description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
-  keywords: 'live in maid, 24/7 maid service, live-in domestic help, round the clock maid, residential maid services',
+  title: 'Live-In Maid in Bangalore | 24/7 Home Help',
+  description: 'Get live-in maids in Bangalore for 24/7 home help. Cooking, cleaning, babysitting, or elderly care. Background checked and trusted.',
+  keywords: 'live in maid bangalore, 24/7 maid bangalore, stay in maid bangalore, residential maid bangalore',
 }
 
 export default function LiveInMaidsPage() {
   const services = [
     {
-      title: "Housekeeping & Deep Cleaning",
-      description: "Regular sweeping, mopping, dusting, and deep cleaning services. Laundry and ironing handled with care.",
-      icon: HomeIcon
+      title: "Live-In Housekeeper",
+      description: "Complete home maintenance with daily cleaning, laundry, and organisation. Perfect for busy Bangalore families in tech hubs like Electronic City.",
+      icon: HomeIcon,
+      features: ["Daily cleaning", "Laundry & ironing", "Deep cleaning", "Furniture upkeep"]
     },
     {
-      title: "Cooking and Meal Preparation", 
-      description: "Nutritious meals tailored to dietary preferences, including grocery shopping and meal planning.",
-      icon: HeartIcon
+      title: "Live-In Cook", 
+      description: "Nutritious home-cooked meals tailored to your taste, from South Indian to North Indian cuisine, perfect for Bangalore's diverse population.",
+      icon: HeartIcon,
+      features: ["Multi-cuisine cooking", "Meal planning", "Grocery shopping", "Dietary restrictions"]
     },
     {
-      title: "Child Care Assistance",
-      description: "Engaging activities, homework help, school pickup/drop-off, and extracurricular coordination.",
-      icon: ShieldCheckIcon
+      title: "Live-In Nanny",
+      description: "Professional childcare with school coordination and activities. Ideal for working parents in Whitefield and Marathahalli areas.",
+      icon: ShieldCheckIcon,
+      features: ["School pickup/drop", "Homework help", "Activity coordination", "Safety monitoring"]
     },
     {
-      title: "Elderly Care Support",
-      description: "Companionship, personal care assistance, medication management, and doctor visit coordination.",
-      icon: ClockIcon
+      title: "Live-In Senior Caregiver",
+      description: "Compassionate elderly care with basic medical support. Perfect for families caring for ageing parents in Bangalore's traditional neighbourhoods.",
+      icon: ClockIcon,
+      features: ["Personal care", "Medication reminders", "Doctor visits", "Companionship"]
     }
   ]
 
   const benefits = [
-    "24/7 household assistance",
-    "Complete home care and supervision", 
-    "All-in-one domestic assistance",
-            "Quick placement within 24-72 hours",
-    "Trusted and verified professionals",
-    "One reliable person for everything"
+    "24/7 kitchen access",
+    "All daily meals included",
+    "Basic kitchen cleaning",
+    "Complete kitchen upkeep",
+    "Multi-cuisine expertise",
+    "Kitchen hygiene standards"
   ]
 
   return (
@@ -430,52 +434,68 @@ export default function LiveInMaidsPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "What is a live-in maid service?",
-                  answer: "A live-in maid stays in your home 24/7, providing round-the-clock household support including cleaning, cooking, childcare, elderly care, and general home management. They have their own living space within your home and are available whenever needed."
+                  question: "How can I find a reliable live-in maid in Bangalore?",
+                  answer: "EzyHelpers connects you with verified and experienced live-in maids in Bangalore who undergo background checks and cooking skill assessments. We share shortlisted profiles based on your dietary needs, preferred cuisine, and schedule for a perfect home cooking match."
                 },
                 {
-                  question: "What accommodation do live-in maids need?",
-                  answer: "Live-in maids need a separate room with basic amenities like a bed, storage space, and access to a bathroom. The accommodation should provide privacy and comfort for the maid while living in your home."
+                  question: "Do your live-in maids accommodate dietary restrictions?",
+                  answer: "Yes, our live-in maids are experienced enough to prepare meals according to your health needs. Whether it's diabetic-friendly, Jain food, vegan, or low-sodium diets, EzyHelpers ensures you get a maid who understands and respects your dietary preferences."
                 },
                 {
-                  question: "What tasks do live-in maids handle?",
-                  answer: "Live-in maids handle comprehensive household management including daily cleaning, cooking, laundry, childcare, elderly care, grocery shopping, pet care, and maintaining overall home organization. Their duties can be customized based on your family's needs."
+                  question: "Will your live-in maids help with grocery and vegetable shopping in Bangalore?",
+                  answer: "Yes, many of our live-in maids in Bangalore assist with daily or weekly grocery and vegetable shopping. They can visit local markets or nearby stores to purchase fresh ingredients or accompany you when required. This ensures meals are prepared with fresh, timely ingredients while saving you time and effort."
                 },
                 {
-                  question: "How much does a live-in maid cost?",
-                  answer: "Live-in maid costs vary based on experience, duties, and location. The package typically includes salary, accommodation, meals, and other benefits. EzyHelpers provides transparent pricing with no hidden costs."
+                  question: "Can your live-in maid prepare meals for office tiffins?",
+                  answer: "Absolutely. Many Bangalore families trust EzyHelpers' live-in maids to prepare home-style meals for office tiffins. It's a healthier, more cost-effective alternative to restaurant food, especially for busy professionals seeking nutritious lunch options."
                 },
                 {
-                  question: "Are live-in maids background-verified?",
-                  answer: "Yes, all our live-in maids undergo comprehensive background verification including police checks, reference validation, medical checkups, and skill assessments to ensure your family's safety and security."
+                  question: "How do you ensure food safety and kitchen hygiene?",
+                  answer: "At EzyHelpers, we train all live-in maids on kitchen safety, personal hygiene, and clean cooking practices. We make sure cooking is clean and safe by using clean utensils, storing food properly, and training maids in personal hygiene practices."
                 },
                 {
-                  question: "Do live-in maids get time off?",
-                  answer: "Yes, live-in maids typically get one day off per week and time for personal activities. The schedule can be discussed and agreed upon during the hiring process to ensure both parties are comfortable."
+                  question: "Can I hire a live-in maid for specific cuisines?",
+                  answer: "Yes. EzyHelpers provides multi-cuisine live-in maids trained in South Indian (Karnataka, Kerala, and Tamil), North Indian, Bengali, Gujarati, and Chinese cuisines, which are perfect for Bangalore's diverse families."
                 },
                 {
-                  question: "Can live-in maids handle multiple family members?",
-                  answer: "Absolutely! Live-in maids are trained to manage households with multiple family members, including children, elderly parents, and extended family. They adapt to your family's routine and preferences."
+                  question: "Is hiring a live-in maid a good idea?",
+                  answer: "Hiring a live-in maid is one of the best ways to save time and eat healthier. With a reliable maid, you get fresh meals according to your taste, less stress over daily cooking, and improved work-life balance, especially helpful for working couples and elders."
                 },
                 {
-                  question: "What if the live-in maid doesn't work out?",
-                  answer: "We provide a replacement guarantee. If you're not satisfied with the live-in maid's performance or compatibility, we'll arrange a suitable replacement at no additional cost."
+                  question: "What is the salary of a live-in maid in Bangalore?",
+                  answer: "The salary of a live-in maid in Bangalore typically ranges from ₹18,000 to ₹25,000. The exact amount depends on factors like experience, household duties, and location. Areas like Whitefield or Electronic City may offer slightly higher salaries due to demand. The salary usually includes stay, meals, and regular rest days."
                 },
                 {
-                  question: "Do live-in maids cook meals?",
-                  answer: "Yes, most live-in maids can prepare meals according to your family's preferences and dietary requirements. They can cook various cuisines and adapt to specific nutritional needs or restrictions."
+                  question: "Are the live-in maids background-checked?",
+                  answer: "Yes. All maids from EzyHelpers go through Aadhaar and address verification. Police verification is done at an additional cost if the customer requests it. This ensures safety and trust when you hire a 24hr maid in Bangalore."
                 },
                 {
-                  question: "Can live-in maids handle emergencies?",
-                  answer: "Live-in maids are trained to handle household emergencies and can provide immediate assistance. However, for medical emergencies, they will contact appropriate emergency services and family members."
+                  question: "Can live-in maids cook local Bangalore-style food?",
+                  answer: "Yes. Many live-in maids can cook South Indian meals like dosa, sambar, and rasam, as well as North Indian and basic continental dishes. They usually adapt to your family's taste preferences."
                 },
                 {
-                  question: "Is there a trial period for live-in maids?",
-                  answer: "Yes, we offer a trial period to ensure compatibility between the maid and your family. This allows both parties to assess the working relationship before making a long-term commitment."
+                  question: "How soon can I get a live-in maid in Bangalore?",
+                  answer: "You can usually get a live-in maid within 24 to 72 hours, depending on your location and requirements. EzyHelpers offers quick matching to avoid long waiting times."
                 },
                 {
-                  question: "Do live-in maids work during festivals and holidays?",
-                  answer: "Live-in maids typically work during festivals and holidays but may request time off for their own celebrations. This can be discussed and planned in advance to ensure smooth household management."
+                  question: "Can a live-in maid work for two households?",
+                  answer: "No. A live-in maid works full-time for one family only. This ensures loyalty, privacy, and focused care for your home."
+                },
+                {
+                  question: "Do live-in maids speak Kannada or Hindi?",
+                  answer: "Yes. Most live-in maids in Bangalore can speak Kannada and Hindi. This helps them communicate well with your family, neighbours, and building staff."
+                },
+                {
+                  question: "Are live-in maids suitable for IT professionals?",
+                  answer: "Absolutely. A 24hr maid in Bangalore is ideal for tech professionals who work long hours or travel often. They manage home tasks efficiently so you can focus on work."
+                },
+                {
+                  question: "Can live-in maids work in apartment buildings?",
+                  answer: "Yes. They are trained to follow apartment rules and can handle delivery access, visitor logs, and building protocols smoothly."
+                },
+                {
+                  question: "Can a live-in maid handle online deliveries or food orders?",
+                  answer: "Yes. Many live-in maids can manage online grocery deliveries and food apps like Swiggy or Zomato and coordinate with the apartment mailroom or security for daily deliveries."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">

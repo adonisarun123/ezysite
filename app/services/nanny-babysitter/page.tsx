@@ -16,42 +16,46 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Professional Babysitter Services | Certified | EzyHelpers',
-  description: 'Trusted babysitter & nanny services with child safety certified professionals. 24/7 childcare support for working parents. Background verified & trained.',
-  keywords: 'babysitter, nanny services, childcare, professional babysitter, child safety certified, trained nannies',
+  title: 'Babysitter for Home in Bangalore | Trusted Childcare',
+  description: 'Find trained babysitters for home in Bangalore. Safe, reliable childcare for infants, toddlers & school kids with flexible hours.',
+  keywords: 'babysitter bangalore, childcare bangalore, nanny bangalore, babysitting services bangalore, child caretaker bangalore',
 }
 
 export default function NannyBabysitterPage() {
   const services = [
     {
-      title: "Child Supervision & Safety",
-      description: "Constant supervision, ensuring children's safety during play, meals, and daily activities.",
-      icon: ShieldCheckIcon
-    },
-    {
-      title: "Educational Activities", 
-      description: "Homework assistance, creative activities, reading sessions, and skill development support.",
-      icon: AcademicCapIcon
-    },
-    {
       title: "Daily Routine Management",
-      description: "Feeding, bathing, nap times, and maintaining consistent daily schedules for children.",
-      icon: ClockIcon
+      description: "Our babysitters follow your child's daily schedule to keep them happy, clean, and well cared for.",
+      icon: ClockIcon,
+      features: ["Help with feeding, bathing, and diaper changes", "Support during nap time", "Safe school drop-off and pickup", "Guide kids with daily habits"]
     },
     {
-      title: "Emotional Support",
-      description: "Building companionship, emotional bonding, and providing comfort during parents' absence.",
-      icon: HeartIcon
+      title: "Engaging Activities", 
+      description: "Our babysitters make sure your child has fun while learning and growing every day.",
+      icon: AcademicCapIcon,
+      features: ["Play games and share stories", "Teach ABCs and numbers", "Help with drawing and coloring", "Encourage free play"]
+    },
+    {
+      title: "Food & Nutrition Support",
+      description: "Our babysitters take care of your child's meals with love and cleanliness.",
+      icon: HeartIcon,
+      features: ["Prepare healthy meals and snacks", "Help with feeding", "Follow diet rules", "Clean up after meals"]
+    },
+    {
+      title: "Emotional & Social Support",
+      description: "Our babysitters provide more than care; they build a strong bond with your child.",
+      icon: UserGroupIcon,
+      features: ["Give full attention and company", "Create a safe space", "Teach good habits", "Support positive play"]
     }
   ]
 
   const benefits = [
-    "Emotional support and companionship",
-    "Routine building and consistency", 
-    "Custom daily routines tailored to child",
-    "Trained in child safety and development",
-    "Background-verified professionals",
-    "Available for live-in, full-time, or part-time"
+    "Irregular work schedules support",
+    "Nuclear family childcare assistance",
+    "School drop & pick challenges solved",
+    "Trusted help for families new to Bangalore",
+    "Meal & nap routines maintained",
+    "Infant to teen care expertise"
   ]
 
   return (
@@ -251,19 +255,19 @@ export default function NannyBabysitterPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Live-In Nannies",
-                description: "24/7 childcare support with constant presence for newborns, toddlers, or multiple children requiring round-the-clock attention.",
-                features: ["24/7 availability", "Newborn specialist care", "Sleep training support", "Emergency response"]
+                title: "Live-In Nanny",
+                description: "Round-the-clock childcare from within your home for complete peace of mind.",
+                features: ["12-hour childcare support", "Perfect for infants and toddlers", "Manages meals and hygiene", "Overnight care and bonding"]
               },
               {
-                title: "Full-Time Nannies", 
-                description: "Daily childcare during working hours with structured routines, educational activities, and meal preparation for school-age children.",
-                features: ["8-12 hours daily", "School pickup/drop", "Homework assistance", "Activity planning"]
+                title: "Full-Time Babysitter", 
+                description: "Daytime childcare help that fits into your work schedule and routine needs.",
+                features: ["Works 8–10 hours daily", "Perfect for school-going children", "Educational support", "After-school care"]
               },
               {
-                title: "Part-Time Babysitters",
-                description: "Flexible childcare for specific hours, perfect for date nights, appointments, or when you need a few hours of personal time.",
-                features: ["Flexible hours", "Evening care", "Weekend availability", "Short-term support"]
+                title: "Part-Time Babysitter",
+                description: "Flexible, short-duration support ideal for busy hours or occasional help.",
+                features: ["2–6 hours a day", "Ideal for gap hours", "School holiday care", "Affordable and flexible"]
               }
             ].map((service, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-8">
@@ -398,52 +402,48 @@ export default function NannyBabysitterPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "What is the difference between a babysitter and a nanny?",
-                  answer: "A babysitter is usually hired for short-term help like watching your child for a few hours or during special occasions. A nanny, on the other hand, offers full-time or long-term support. Nannies handle daily routines, help with learning activities, and provide emotional care, becoming a consistent part of your child's life."
+                  question: "How quickly can I get a babysitter for home in Bangalore?",
+                  answer: "Emergency childcare at home in Bangalore is available within 2–4 hours. Regular booking requires 24–48 hours for proper matching."
                 },
                 {
-                  question: "Are babysitters and nannies background verified?",
-                  answer: "Yes, your child's safety is our top priority. All EzyHelpers babysitter services and nannies undergo thorough background checks, police verification, and childcare training, ensuring secure and professional care."
+                  question: "Are babysitters trained for children with special needs?",
+                  answer: "Yes, we offer specialised child supervision services for children with developmental needs, learning disabilities, and medical needs."
                 },
                 {
-                  question: "What are the different types of childcare service options you offer?",
-                  answer: "We offer flexible childcare solutions tailored to your needs: Live-in babysitters: 24/7 care and supervision. Full-time babysitters: Daily support for routines, meals, and learning. Part-time babysitters: Ideal for morning or evening shifts. On-demand babysitters: Perfect for urgent or emergency babysitting needs."
+                  question: "Do you provide babysitters for weekend events or travel?",
+                  answer: "Yes, our flexible home babysitting in Bangalore includes weekend coverage, event childcare, and travel companion services."
                 },
                 {
-                  question: "Can I get a nanny for specific hours or short-term needs?",
-                  answer: "Yes, we provide part-time nannies and on-call babysitters for short-term or irregular schedules. Ideal for working parents, events, or sudden changes in routine."
+                  question: "How do you ensure child safety in Bangalore apartments?",
+                  answer: "Our babysitters are trained to keep children safe in apartment settings. They know how to handle things like balcony safety, using lifts carefully, and what to do in case of emergencies."
                 },
                 {
-                  question: "What age groups do your childcare services cover?",
-                  answer: "Our child caretaker services cover all age groups, from newborns (0–6 months) to toddlers and school-going children (5+ years). Each nanny or babysitter is trained to manage age-appropriate care tasks such as feeding, diapering, potty training, and homework assistance."
+                  question: "Can babysitters pick up children from school in Bangalore traffic?",
+                  answer: "Our babysitters are trained in Bangalore traffic navigation, school pickup protocols, and use verified transportation for child safety."
                 },
                 {
-                  question: "How do I choose between a live-in nanny and a full-time nanny?",
-                  answer: "Choose a live-in nanny for round-the-clock care, especially useful for infants or families with multiple children. A full-time nanny is suitable for daytime needs like school preparation, engaging in play, and educational activities."
+                  question: "How much does a babysitter for home in Bangalore cost?",
+                  answer: "A babysitter typically charges ₹15,000 – ₹25,000/month depending on the child's age, required working hours, location, and experience."
                 },
                 {
-                  question: "What kind of activities do your nannies engage children in?",
-                  answer: "Our nannies/babysitters engage kids in age-appropriate educational and creative activities like storytelling, drawing, reading, skill-building, and games. We focus on both development and fun."
+                  question: "Can I get childcare at home in Bangalore for part-time hours?",
+                  answer: "Yes. We offer flexible schedules from 2 to 6 hours daily, perfect for school gaps or work-from-home parents."
                 },
                 {
-                  question: "Can I choose the babysitter, or will you assign one?",
-                  answer: "We match families with suitable babysitters or nannies based on your needs. You'll always have the opportunity to interview and approve the chosen child caretaker before finalising."
+                  question: "Can babysitters work during school holidays?",
+                  answer: "Yes, full-day holiday care during summer breaks, Diwali holidays, and school vacation periods. Extended childcare for working parents."
                 },
                 {
-                  question: "Do you provide same-day or emergency babysitting services?",
-                  answer: "Yes, our emergency babysitting services ensure that you get quick, trusted help for last-minute needs like travel, work meetings, or urgent outings."
+                  question: "What is the difference between a babysitter and a Japa maid in Bangalore?",
+                  answer: "A babysitter in Bangalore takes care of children's daily needs like feeding, playing, and homework help. A Japa maid in Bangalore, on the other hand, is trained to care for newborn babies and post-delivery mothers. They handle tasks like baby massage, mother's recovery support, and hygiene care after childbirth."
                 },
                 {
-                  question: "Can the schedule be customised according to my work shifts or flexible needs?",
-                  answer: "Absolutely. Whether you work early mornings, weekends, or rotating shifts, our babysitter services are customisable to your routine and preferences."
+                  question: "What living arrangements do live-in nannies in Bangalore need?",
+                  answer: "Live-in nannies/babysitters should be provided with a bed, cot, or mattress and access to the bathroom. A separate bathroom is preferred, but shared access is also fine based on the customer's convenience."
                 },
                 {
-                  question: "What tasks will the babysitter handle apart from supervision?",
-                  answer: "Our babysitters go beyond basic supervision. They assist with meal preparation, educational support, hygiene routines, emotional development, and interactive play for complete childcare support."
-                },
-                {
-                  question: "Do babysitters prepare meals for children?",
-                  answer: "Yes, babysitters prepare healthy, child-friendly meals and snacks based on your child's dietary needs and feeding schedule. We also offer cook services for complete meal assistance."
+                  question: "Are babysitters trained to handle sick children at home?",
+                  answer: "Yes, many babysitters are trained to manage mild illnesses such as fever or cough, and can administer medicine as directed by your doctor. For serious health concerns, we recommend medical attention along with parental supervision."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
