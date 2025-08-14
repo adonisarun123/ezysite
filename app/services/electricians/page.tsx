@@ -19,9 +19,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Licensed Electrician Services | 24/7 Available | EzyHelpers',
-  description: 'Certified electrician services for wiring, repairs & installations. Emergency electrical work available 24/6 by licensed experts in your locality.',
-  keywords: 'electrician services, electrical repairs, wiring, installations, emergency electrician, 24/7 electrical service',
+  title: 'Home Electrical Repair Services in Bangalore | Quick Fix',
+  description: 'Hire trusted electrical repair services in Bangalore for safe wiring, lighting, EV charger setup, and smart upgrades with fast, licensed professionals.',
+  keywords: 'electrical repair bangalore, electrician bangalore, home wiring bangalore, electrical services bangalore',
 }
 
 export default function ElectriciansPage() {
@@ -33,113 +33,95 @@ export default function ElectriciansPage() {
 
   const electricianServices = [
     {
-      title: "Electrical Repair Services",
-      description: "Fix broken switches, flickering lights, and overloads safely and quickly with trained electricians.",
+      title: "Electrical Wiring & Rewiring",
+      description: "Old or damaged wires? Our electricians handle complete rewiring with safety-grade materials.",
       icon: WrenchScrewdriverIcon,
-      features: ["Switch Repair", "Light Fixing", "Overload Solutions", "Quick Service"]
+      features: ["Complete Rewiring", "Safety Materials", "Old Wire Fix", "Modern Standards"]
     },
     {
-      title: "Electrical Maintenance",
-      description: "Regular checks, load tests, and surge protection to prevent problems and keep power steady.",
-      icon: CheckCircleIcon,
-      features: ["Regular Checks", "Load Tests", "Surge Protection", "Preventive Care"]
-    },
-    {
-      title: "Electrical Installations",
-      description: "Safely install fans, lights, ACs, geysers, and smart devices set up right for your home.",
-      icon: HomeIcon,
-      features: ["Fan Installation", "AC Setup", "Smart Devices", "Safe Setup"]
-    },
-    {
-      title: "Residential Electrical Services",
-      description: "Complete home electrical setups and system upgrades for renovations or new wiring needs.",
-      icon: BoltIcon,
-      features: ["Home Wiring", "System Upgrades", "Renovation Support", "Complete Setup"]
-    },
-    {
-      title: "Emergency Electrician Services",
-      description: "Quick help for sudden power failures or electrical issues, fixing problems fast when needed most.",
-      icon: ExclamationTriangleIcon,
-      features: ["24/7 Service", "Quick Response", "Power Restoration", "Emergency Fixes"]
-    },
-    {
-      title: "Lighting Installation",
-      description: "Energy-saving LED lights that brighten your home and cut down electricity bills.",
+      title: "Decorative & Functional Lighting",
+      description: "From ambient LED installations to festive lighting for events and homes.",
       icon: LightBulbIcon,
-      features: ["LED Lighting", "Energy Saving", "Bright Homes", "Bill Reduction"]
+      features: ["LED Install", "Ambient Light", "Festive Setup", "Energy Saving"]
     },
     {
-      title: "Appliance Installation",
-      description: "Safely connect home appliances, protecting them from power surges for long-lasting performance.",
-      icon: FireIcon,
-      features: ["Safe Connection", "Surge Protection", "Long-lasting", "Professional Setup"]
+      title: "Inverter & UPS Installation",
+      description: "Reliable inverter setups for homes and apartments to tackle Bangalore's outages.",
+      icon: BoltIcon,
+      features: ["Power Backup", "UPS Setup", "Outage Fix", "Quick Install"]
+    },
+    {
+      title: "Switch & Socket Repairs",
+      description: "Fix burnt sockets, loose switches, or tripping circuits quickly and safely.",
+      icon: WrenchScrewdriverIcon,
+      features: ["Socket Fix", "Switch Repair", "Circuit Check", "Safe Fixes"]
+    },
+    {
+      title: "Smart Home Installations",
+      description: "We install smart lighting, home automation devices, and digital control systems.",
+      icon: HomeIcon,
+      features: ["Smart Lights", "Automation", "Digital Control", "Modern Tech"]
+    },
+    {
+      title: "EV Charging Points",
+      description: "Electric vehicle charging stations for environmentally conscious Bangaloreans in apartments and independent homes.",
+      icon: BoltIcon,
+      features: ["EV Chargers", "Safe Setup", "Home Install", "Eco-Friendly"]
+    },
+    {
+      title: "Circuit Breaker Services",
+      description: "Resolve frequent tripping and install MCB/ELCB with safety certifications.",
+      icon: ExclamationTriangleIcon,
+      features: ["MCB Install", "ELCB Setup", "Trip Fix", "Safety Check"]
+    },
+    {
+      title: "Electrical Safety Checks",
+      description: "Electrical safety inspections and earthing checks for new homes and safety approval.",
+      icon: ShieldCheckIcon,
+      features: ["Safety Audit", "Earth Check", "Risk Review", "Compliance"]
     }
   ]
 
   const faqs = [
     {
-      question: "What electrical services does EzyHelpers provide?",
-      answer: "EzyHelpers offers complete electrical solutions through our certified electricians. Services include electrical repairs, home wiring, new installations, maintenance, lighting solutions, appliance connections, switchboard upgrades, and 24/7 emergency electrician support. Whether it's a minor issue or a full system upgrade, our licensed electricians ensure safety and reliability."
+      question: "Can electricians handle apartment complex electrical work?",
+      answer: "Yes, our electricians in Bangalore are familiar with apartment electrical systems, building management coordination, and residential complex electrical protocols."
     },
     {
-      question: "Are your electricians licensed and certified?",
-      answer: "Yes, all our local electricians are licensed and certified professionals. They have undergone extensive electrical training and hold the necessary safety certifications to carry out residential and commercial electrical work in compliance with national electrical standards."
+      question: "Do electricians install EV charging points?",
+      answer: "Yes. We install EV charging stations, provide power upgrades, and ensure EV-ready setups for eco-conscious Bangalore residents."
     },
     {
-      question: "Do you provide 24/7 emergency electrician services?",
-      answer: "Absolutely. EzyHelpers offers 24/7 emergency electrician services to address power failures, short circuits, electrical hazards, and urgent repairs. Our emergency electricians respond quickly to restore power and ensure your home or office is safe."
+      question: "Can electricians upgrade old apartment wiring?",
+      answer: "Yes, we provide complete electrical rewiring, safety upgrades, and modern electrical system installation for older Bangalore apartments."
     },
     {
-      question: "How much do electrician services cost?",
-      answer: "The cost of hiring an electrician depends on the nature of the work, its complexity, and your location. We offer upfront pricing with no hidden charges. Our certified electricians provide free estimates after an on-site assessment."
+      question: "Do electricians work around busy professional schedules?",
+      answer: "Yes, we offer flexible timing, including weekends, evening visits, and low-disruption electrical services for working families."
     },
     {
-      question: "Can I book an electrician for same-day service?",
-      answer: "Yes, we provide same-day service for urgent electrical issues. Whether it's a sudden outage or a critical fault, our local electricians are ready to assist you promptly."
+      question: "Do electricians handle home office electrical setups?",
+      answer: "Yes, electricians can install dedicated circuits, extra plug points, and safely set up electrical connections for computers, Wi-Fi, and other work-from-home devices."
     },
     {
-      question: "What types of electrical problems do your electricians fix?",
-      answer: "Our electricians handle a wide range of issues such as power outages, flickering lights, faulty switches, wiring faults, circuit overloads, and short circuits. We also resolve appliance connectivity issues and other electrical safety concerns."
+      question: "Do electricians do wiring?",
+      answer: "Yes, electricians handle all types of wiring tasks, like new installations, rewiring, and repairs for homes, offices, appliances, and smart devices to ensure safe electrical connections."
     },
     {
-      question: "Do electricians provide electrical safety inspections?",
-      answer: "Yes, our certified electricians conduct detailed electrical safety inspections. These include load testing, wiring assessments, and fault diagnostics to ensure compliance with safety standards and prevent future risks."
+      question: "What is a professional electrician?",
+      answer: "A professional electrician is a trained expert who installs, repairs, and maintains electrical systems safely and efficiently, following safety standards and using the right tools and techniques."
     },
     {
-      question: "Can electricians help with home appliance installation?",
-      answer: "Yes, our electricians can install a variety of home appliances including geysers, ceiling fans, air conditioners, ovens, lighting fixtures, and smart home devices. All installations are done with proper safety checks and electrical compatibility."
+      question: "What is the cost of an electrician in Bangalore?",
+      answer: "The cost depends on the type of service, job complexity, materials required, and time taken. Contact us for a free estimate."
     },
     {
-      question: "Can electricians upgrade old electrical systems?",
-      answer: "Definitely. Our skilled electricians perform switchboard upgrades, wiring replacements, etc. These upgrades enhance electrical safety and allow your home to handle modern electrical loads efficiently."
+      question: "How do I know if my house needs electrical rewiring?",
+      answer: "If you notice flickering lights, frequent trips, burning smells, or outdated wires, your home may need rewiring. A licensed electrician can inspect and advise you."
     },
     {
-      question: "Can I book an electrician for both minor repairs and major installations?",
-      answer: "Absolutely! Our experienced electricians are equipped to handle everything from repairing sockets and switches to installing DB boxes, geysers, and complete wiring systems. No job is too small or too big."
-    },
-    {
-      question: "Will you inspect the entire house if I'm unsure where the issue is?",
-      answer: "Yes, if you're unsure about the source of an electrical problem, our licensed electricians will conduct a full home inspection to diagnose and resolve the issue effectively."
-    },
-    {
-      question: "How do I prepare for an electrician visit?",
-      answer: "Before our electrician arrives, ensure clear access to electrical panels or faulty areas. Make a list of known issues. Our team will arrive with all necessary tools and safety gear to complete the job efficiently."
-    },
-    {
-      question: "Can I get a free electrical estimate?",
-      answer: "Yes, we provide free electrical estimates. Our electricians will assess your requirements and offer a transparent quote detailing the scope of work and cost involved."
-    },
-    {
-      question: "How quickly can an electrician reach my location?",
-      answer: "Response times depend on location and electrician availability. We prioritize urgent electrical issues, and our emergency electricians are dispatched quickly to ensure minimal disruption."
-    },
-    {
-      question: "What safety measures do electricians follow?",
-      answer: "All our electricians follow strict safety procedures for best practices for electrical installations and repairs. Your safety is always our top priority."
-    },
-    {
-      question: "What if electrical problems persist after service?",
-      answer: "If you continue facing issues after our service, reach out immediately. Our service guarantee includes follow-up visits to resolve any remaining or recurring problems at no additional cost."
+      question: "What are the signs of an electrical problem at home?",
+      answer: "Common signs include sparks, warm switchboards, flickering lights, buzzing sounds, or burning smells. These should be inspected immediately."
     }
   ]
 

@@ -19,9 +19,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'House Cleaning Services | Deep Cleaning Experts | EzyHelpers',
-  description: 'Professional house cleaning services including deep cleaning, sanitization & maintenance. Expert cleaners available across major cities.',
-  keywords: 'House Cleaning Services, deep cleaning, professional cleaners, sanitization, maintenance, expert cleaners',
+  title: 'Deep Cleaning Services in Bangalore | Home Sanitize',
+  description: 'Deep cleaning services in Bangalore for full home hygiene. Includes kitchen, bathroom, and sofa cleaning by trained professionals with safe products.',
+  keywords: 'deep cleaning services bangalore, home cleaning bangalore, bathroom cleaning bangalore, kitchen cleaning bangalore',
 }
 
 export default function DeepCleaningPage() {
@@ -33,75 +33,107 @@ export default function DeepCleaningPage() {
 
   const cleaningServices = [
     {
-      title: "Full House Cleaning",
-      description: "Thorough cleaning of every room, including dusting, vacuuming, mopping, and polishing for a fresh, hygienic space.",
+      title: "Living Room & Bedroom",
+      description: "We deep clean sofas, floors, furniture, and fixtures for a fresh, dust-free environment.",
       icon: HomeIcon,
-      features: ["Every Room", "Dusting & Vacuuming", "Mopping & Polishing", "Fresh Space"]
+      features: ["Sofa Cleaning", "Floor Mopping", "Furniture Clean", "Dust Removal"]
     },
     {
-      title: "Kitchen Deep Cleaning",
-      description: "Degreasing stoves, scrubbing sinks, cleaning countertops and cabinets, restoring the heart of your home.",
+      title: "Kitchen Deep Clean",
+      description: "We degrease tiles, stovetops, cabinets, and sinks to ensure a hygienic, odor-free kitchen.",
       icon: FireIcon,
-      features: ["Degreasing Stoves", "Scrub Sinks", "Clean Countertops", "Cabinet Cleaning"]
+      features: ["Tile Cleaning", "Stove Degreasing", "Cabinet Clean", "Sink Scrubbing"]
     },
     {
-      title: "Bathroom Sanitization",
-      description: "Deep cleaning of toilets, tiles, taps, and washbasins using hospital-grade disinfectants for germ-free bathrooms.",
+      title: "Complete Bathroom Cleaning",
+      description: "We scrub tiles, taps, toilets, and mirrors to effectively remove stains and bacterial buildup.",
       icon: BeakerIcon,
-      features: ["Toilet Deep Clean", "Tile Cleaning", "Tap Sanitization", "Germ-Free"]
+      features: ["Tile Scrubbing", "Tap Cleaning", "Toilet Clean", "Mirror Polish"]
     },
     {
-      title: "Living Room & Bedroom Cleaning",
-      description: "Dusting fans and furniture, cleaning windows, vacuuming upholstery for spotless living spaces.",
-      icon: CubeIcon,
-      features: ["Dust Fans", "Clean Windows", "Vacuum Upholstery", "Spotless Rooms"]
-    },
-    {
-      title: "Balcony & Utility Area Cleaning",
-      description: "Removing dirt, stains, and clutter from balconies and utility areas, turning them into clean functional zones.",
+      title: "Balcony & Terrace",
+      description: "We clean railings, grills, cobwebs, and walls for tidy outdoor relaxation areas.",
       icon: SparklesIcon,
-      features: ["Remove Dirt", "Stain Removal", "Clutter Clear", "Functional Zones"]
+      features: ["Railing Clean", "Grill Wash", "Cobweb Remove", "Wall Clean"]
     },
     {
-      title: "Post-Renovation Cleaning",
-      description: "Detailed deep cleaning that removes construction dust, paint splatters, and debris for new homes.",
-      icon: ShieldCheckIcon,
-      features: ["Construction Dust", "Paint Removal", "Debris Clear", "New Home Ready"]
+      title: "Study & Home Office",
+      description: "Dusting desks, chairs, bookshelves, and electronics for a clean and productive workspace.",
+      icon: CubeIcon,
+      features: ["Desk Clean", "Chair Dust", "Shelf Clean", "Electronics"]
     },
     {
-      title: "Sofa & Mattress Shampooing",
-      description: "Fabric-safe shampooing to remove embedded dust, allergens, and stains, extending furniture life.",
+      title: "Wardrobe & Storage",
+      description: "Our home cleaners clean inside and outside of wardrobes and cabinets to remove dust and allergens.",
+      icon: HomeIcon,
+      features: ["Inside Clean", "Outside Clean", "Dust Remove", "Allergen Free"]
+    },
+    {
+      title: "Pooja Room Cleaning",
+      description: "Respectful cleaning of idols, shelves, and floors using gentle, non-abrasive products.",
       icon: StarIcon,
-      features: ["Fabric Safe", "Dust Removal", "Allergen Free", "Extended Life"]
+      features: ["Idol Clean", "Shelf Clean", "Floor Mop", "Gentle Care"]
     },
     {
-      title: "Appliance Cleaning",
-      description: "Deep cleaning of fridges, ovens, chimney interiors, and fans for fully functional appliances.",
+      title: "Utility Areas",
+      description: "Deep cleaning laundry zones, washing machines, and sinks for a clutter-free, functional space.",
       icon: CheckCircleIcon,
-      features: ["Fridge Cleaning", "Oven Deep Clean", "Chimney Interior", "Fan Cleaning"]
+      features: ["Laundry Area", "Machine Clean", "Sink Clean", "Declutter"]
+    },
+    {
+      title: "Post-Renovation Clean",
+      description: "Scrubs away cement, paint, and dust after renovation or before you shift to a new home.",
+      icon: ShieldCheckIcon,
+      features: ["Cement Clean", "Paint Remove", "Dust Clear", "Move-in Ready"]
+    },
+    {
+      title: "Sanitization Service",
+      description: "We clean and sanitize frequently touched surfaces using strong disinfectants for a germ-free home.",
+      icon: BeakerIcon,
+      features: ["Surface Clean", "Disinfection", "Germ Kill", "Safe Home"]
     }
   ]
 
   const faqs = [
     {
-      question: "What does your house deep cleaning service include?",
-      answer: "Our deep cleaning includes thorough cleaning of every room, kitchen degreasing, bathroom sanitization, living room and bedroom cleaning, balcony cleaning, and optional appliance cleaning."
+      question: "How often should I book home cleaning in Bangalore?",
+      answer: "It depends on your home and lifestyle. For working professionals with less time for regular cleaning, monthly deep cleaning is ideal. Families with kids or allergy concerns may benefit from services every two weeks. For general upkeep, a thorough cleaning every 3 to 4 months helps maintain hygiene and freshness."
     },
     {
-      question: "Do you provide eco-friendly cleaning products?",
-      answer: "Yes, we use safe, eco-friendly products and proven methods that are safe for your family and pets while delivering excellent cleaning results."
+      question: "Are your cleaning products safe for children and pets?",
+      answer: "Yes, we use eco-friendly and non-toxic cleaning products that are completely safe for households with kids, elderly members, and pets. Our goal is to ensure deep cleanliness without compromising your family's safety or indoor air quality."
     },
     {
-      question: "How long does a deep cleaning service take?",
-      answer: "The duration depends on your home size and specific requirements. Typically, a 2BHK takes 4-6 hours, while larger homes may take longer. We provide time estimates during booking."
+      question: "Do you clean windows and balconies in Bangalore homes?",
+      answer: "Yes, we clean windows, glass panels, grills, and balcony spaces. Bangalore's dust and pollution can make these areas look dull. Our service brings back shine and cleanliness so your windows are spotless and balconies are inviting again."
     },
     {
-      question: "Are your cleaners background-verified?",
-      answer: "Yes, all our house cleaners are background-checked, trained professionals who deliver safe, reliable deep cleaning with expert skills."
+      question: "Do you offer apartment deep cleaning services?",
+      answer: "Yes, we specialise in deep cleaning services for apartments, gated communities, and high-rise buildings in Bangalore. Our team uses compact equipment suited for apartment layouts and ensures every corner is cleaned, including balconies and shared areas."
     },
     {
-      question: "Do you guarantee satisfaction with your cleaning service?",
-      answer: "Absolutely! We guarantee a deep clean you'll love. If you're not satisfied, we'll return and fix it, ensuring your home looks perfect."
+      question: "How long does a deep cleaning take?",
+      answer: "Deep cleaning typically takes 4 to 8 hours, depending on your home's size and the depth of cleaning required. If your home hasn't been cleaned in a while, or if it's a post-renovation service, it may take a bit longer for the best results."
+    },
+    {
+      question: "What is the difference between regular house cleaning and deep cleaning?",
+      answer: "Regular house cleaning typically involves basic upkeep like dusting, sweeping, and wiping surfaces. Deep cleaning, on the other hand, reaches under furniture, scrubs stubborn stains, disinfects surfaces, and targets hidden dust and grime. It's a more thorough, detailed, and hygienic cleaning solution."
+    },
+    {
+      question: "Is deep cleaning more expensive than regular cleaning?",
+      answer: "Yes, deep cleaning usually costs more than regular cleaning because it takes more time, involves stronger tools and products, and covers more areas in detail. It's designed to deliver long-lasting cleanliness and better hygiene."
+    },
+    {
+      question: "What are the benefits of deep cleaning your house?",
+      answer: "Deep cleaning removes layers of dust, allergens, and bacteria that regular cleaning misses. It improves air quality, reduces health risks, and makes your home feel fresher. It also helps protect furniture and appliances, extending their lifespan with proper care."
+    },
+    {
+      question: "Can I book deep cleaning just for one room or area?",
+      answer: "Yes, you can choose to clean specific areas like only the kitchen, bathrooms, or balconies. We offer flexible plans based on your needs."
+    },
+    {
+      question: "Do I need to be at home during the deep cleaning service?",
+      answer: "Not necessarily. Many of our clients go about their day while we handle the cleaning professionally and securely. Our background-verified staff ensures secure and professional service, whether you're present or not."
     }
   ]
 

@@ -19,9 +19,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Emergency Plumber Service | 24/7 Available | EzyHelpers',
-  description: 'Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/6 in your city and surrounding areas.',
-  keywords: 'plumber service, emergency plumber, pipe repairs, plumbing installations, 24/7 plumber, licensed plumbers',
+  title: 'House Plumbing Repair in Bangalore | Water Problem Fix',
+  description: 'Fix leaking taps, blocked drains, or bathroom issues with verified plumbers. Book same-day house plumbing repair in Bangalore with on-time professionals.',
+  keywords: 'plumbing repair bangalore, plumber bangalore, tap repair bangalore, drain cleaning bangalore',
 }
 
 export default function PlumbersPage() {
@@ -33,101 +33,99 @@ export default function PlumbersPage() {
 
   const plumbingServices = [
     {
-      title: "Leak Repairs & General Maintenance",
-      description: "Quick water leak repair for dripping taps, damaged pipes, and faulty joints with preventive maintenance.",
+      title: "Pipe Leakage Detection",
+      description: "We detect and repair hidden or visible leaks to prevent water damage and mold buildup.",
       icon: WrenchScrewdriverIcon,
-      features: ["Dripping Taps", "Damaged Pipes", "Faulty Joints", "Preventive Care"]
+      features: ["Hidden Leaks", "Visible Leaks", "Damage Prevention", "Mold Control"]
     },
     {
-      title: "Toilet, Tap & Faucet Services",
-      description: "Complete toilet repair, installation, and maintenance including leaking taps and flush systems.",
+      title: "Faucet & Shower Repairs",
+      description: "We repair dripping taps and broken showers to restore water flow and stop wastage.",
       icon: BeakerIcon,
-      features: ["Toilet Repair", "Tap Installation", "Flush Systems", "Faucet Replacement"]
+      features: ["Dripping Taps", "Broken Showers", "Flow Fix", "Stop Wastage"]
     },
     {
-      title: "Bathroom & Kitchen Plumbing",
-      description: "End-to-end setup of showers, geysers, wash basins, kitchen sinks, and washing machines.",
+      title: "Toilet Repair",
+      description: "We fix flush tanks and blockages to keep your bathroom clean and functional.",
       icon: HomeIcon,
-      features: ["Shower Setup", "Geyser Install", "Wash Basins", "Kitchen Sinks"]
+      features: ["Flush Tanks", "Blockages", "Clean Fix", "Functional"]
     },
     {
-      title: "Water Heater (Geyser) Solutions",
-      description: "Water heater repair and safe electric or gas geyser installations with electrical coordination.",
+      title: "Water Pressure Fix",
+      description: "We fix low water pressure in high-rises to ensure strong, steady flow in all taps.",
       icon: FireIcon,
-      features: ["Heater Repair", "Safe Installation", "Electric & Gas", "Electrical Coordination"]
+      features: ["High-rise Fix", "Strong Flow", "Steady Water", "All Taps"]
     },
     {
-      title: "Drainage & Sewer Line Cleaning",
-      description: "Unclog bathroom, kitchen, and toilet drains with sewer line cleaning to prevent backups.",
+      title: "Bathroom Fitting",
+      description: "We install or repair taps, wash basins, and fittings to improve bathroom usage and hygiene.",
       icon: CubeIcon,
-      features: ["Drain Unclogging", "Sewer Cleaning", "Backup Prevention", "Odour Removal"]
+      features: ["Tap Install", "Basin Fix", "Fitting Work", "Hygiene"]
     },
     {
-      title: "Pipe, Tank & Pump Services",
-      description: "Expert water pipe repair, tank installations, cleaning, and pump setup for water flow.",
+      title: "Drain & Sink Cleaning",
+      description: "We remove grease, hair, and debris to unclog bathroom or kitchen drains and sinks.",
       icon: CheckCircleIcon,
-      features: ["Pipe Repair", "Tank Installation", "Tank Cleaning", "Pump Setup"]
+      features: ["Grease Remove", "Hair Clear", "Debris Clean", "Unclog"]
     },
     {
-      title: "Full Bathroom & Kitchen Solutions",
-      description: "End-to-end plumbing work for renovations ensuring water flow and waste systems function efficiently.",
+      title: "Pipe Replacement",
+      description: "We replace damaged pipes with durable ones during home renovations or major plumbing upgrades.",
       icon: StarIcon,
-      features: ["Complete Renovation", "Water Flow", "Waste Systems", "Efficient Function"]
+      features: ["Damaged Pipes", "Durable Fix", "Renovation", "Upgrade"]
+    },
+    {
+      title: "Emergency Plumbing",
+      description: "We handle burst pipes and blockages any time with our 24/7 emergency plumber service.",
+      icon: ExclamationTriangleIcon,
+      features: ["24/7 Service", "Burst Pipes", "Blockages", "Quick Fix"]
+    },
+    {
+      title: "Kitchen Sink & Drain",
+      description: "We fix sink leaks, clogs, and faulty faucets to maintain a clean and efficient kitchen.",
+      icon: WrenchScrewdriverIcon,
+      features: ["Sink Leaks", "Clogs", "Faucets", "Clean Kitchen"]
+    },
+    {
+      title: "Bathroom Appliances",
+      description: "We install geysers, jets, and hand showers with proper fittings for safe water use.",
+      icon: BeakerIcon,
+      features: ["Geyser Install", "Jets", "Hand Shower", "Safe Use"]
     }
   ]
 
   const faqs = [
     {
-      question: "What plumbing services does EzyHelpers provide?",
-      answer: "EzyHelpers offers a wide range of home plumbing services, including leak detection and repair, pipe replacement, drain unclogging, toilet repairs, bathroom fittings, kitchen plumbing, water heater services, and emergency plumbing support. Our certified plumbers ensure quality service for both minor plumbing issues and full-scale installations."
+      question: "Is plumbing help available for apartments in Bangalore?",
+      answer: "Yes, our plumber services in Bangalore specialise in apartment complexes and high-rise buildings. We understand space constraints, neighbour considerations, and building-specific plumbing systems."
     },
     {
-      question: "Do you provide 24/7 emergency plumber services?",
-      answer: "Yes, we provide 24/7 emergency plumbing repair for urgent problems like burst pipes, sewer backups, major water leaks, and blocked drains. Our on-call plumbers respond quickly to minimize water damage and restore functionality to your home plumbing system."
+      question: "Do your plumbers handle bathroom renovation for traditional homes?",
+      answer: "Yes, our bathroom renovation support includes complete upgrades for older homes, modern fixture installation, and space optimisation that is perfect for traditional houses."
     },
     {
-      question: "How much do plumber services cost?",
-      answer: "The cost of our home plumbing services depends on the nature of the job, the complexity of repairs, and the materials used. We provide upfront, transparent pricing for all plumbing work, including repairs, installations, and routine maintenance."
+      question: "Can I schedule a plumbing inspection before moving into a flat?",
+      answer: "Yes, our pre-move plumbing inspections ensure that your new flat has leak-free and functional plumbing. It's a smart step to avoid post-move hassles or unexpected repair costs."
     },
     {
-      question: "Are your plumbers licensed and experienced?",
-      answer: "All EzyHelpers plumbers are licensed professionals with years of hands-on experience in residential plumbing repair and maintenance. They are trained in the latest plumbing standards and safety procedures to ensure reliable service every time."
+      question: "Do plumbers repair both PVC and metal plumbing systems?",
+      answer: "Yes. Our trained plumbers handle all types of plumbing systems, including PVC, CPVC, GI, PEX, and copper piping, using tools and techniques suited for each material."
     },
     {
-      question: "Can I book a plumber for same-day service?",
-      answer: "Yes, you can book a same-day plumber for urgent plumbing issues such as leaking taps, clogged drains, or sudden pipe damage. We have a network of local plumbers ready to assist at short notice across major service areas."
+      question: "What causes frequent drain blockages in homes?",
+      answer: "Drain blockages in homes are often caused by hair accumulation, soap residue, food particles, and hard water mineral deposits. Kitchen drains may also clog due to oil and grease buildup. Our drain cleaning service uses high-pressure water jetting to effectively remove all obstructions."
     },
     {
-      question: "What areas do you cover for plumbing services?",
-      answer: "We offer plumbing services in multiple cities and neighbourhoods across India. Just search for \"home plumber near me\" or \"local plumbing services\" to find an EzyHelpers-certified plumber available in your area."
+      question: "Do I need to buy the parts, or will your plumber bring them?",
+      answer: "No need to worry. Our plumbers come fully prepared. When you book our house plumbing repair service in Bangalore, they will first inspect the issue and recommend the necessary parts. If replacements are needed, they'll either carry them or source genuine parts from trusted local suppliers. You won't have to visit a store or guess what's needed; we handle everything transparently and efficiently."
     },
     {
-      question: "Do you handle both minor and major plumbing issues?",
-      answer: "Yes, our plumbing team handles everything from simple tap repairs and minor leak fixes to complex plumbing projects like bathroom renovations, water line replacements, and full home plumbing system upgrades."
+      question: "Do your plumbers work on Sundays or public holidays?",
+      answer: "Yes, absolutely. Our plumber services in Bangalore are available seven days a week, including Sundays and public holidays. We understand that plumbing emergencies don't follow a calendar. Our verified plumbers are always ready to provide prompt, doorstep plumbing support."
     },
     {
-      question: "Do plumbers provide free estimates?",
-      answer: "Yes, we provide free estimates after an initial assessment. Our plumbers will evaluate the scope of work and provide a detailed quote with cost breakdowns so you understand the charges before work begins."
-    },
-    {
-      question: "What plumbing materials do you use?",
-      answer: "We use durable, high-quality plumbing materials, including certified pipes, branded fixtures, reliable fittings, and long-lasting plumbing components. All supplies meet current industry standards to ensure your home plumbing lasts."
-    },
-    {
-      question: "Can plumbers help with bathroom renovations?",
-      answer: "Absolutely. Our home plumbing experts can assist with complete bathroom plumbing work, including installing toilets, fitting showers, setting up bathtubs, and connecting basins and drainage systems as part of bathroom renovation or remodelling."
-    },
-    {
-      question: "Can plumbers fix water heater and geyser problems?",
-      answer: "Yes, our experienced plumbers specialise in water heater troubleshooting, geyser installation, thermostat replacements, and heating element repairs. We work with both electric and gas-based systems in residential settings."
-    },
-    {
-      question: "How quickly can a plumber reach my location?",
-      answer: "Our response time depends on your location and plumber availability. For emergency plumbing repair needs, we prioritise quick dispatch so a local plumber can reach your home as soon as possible."
-    },
-    {
-      question: "What should I do during a plumbing emergency?",
-      answer: "In case of a plumbing emergency, turn off the main water supply immediately to prevent further damage. Avoid using affected fixtures and contact our emergency plumber service. Taking photos of the damage may also help with insurance documentation and repair assessment."
+      question: "How do I hire a local plumber in Bangalore?",
+      answer: "With EzyHelpers, finding a reliable plumber nearby is no trouble at all. Just visit our website or call our customer support to book a certified plumber near you. We'll match you with a background-verified and experienced plumbing professional based on your location and service need. You can also schedule services for weekends or emergency slots. No need to search endlessly or deal with unreliable handymen."
     }
   ]
 

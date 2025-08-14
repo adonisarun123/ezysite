@@ -19,9 +19,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Home Gardener Services | Landscaping Experts | EzyHelpers',
-  description: 'Professional home gardener services for lawn care, plant maintenance & landscaping. Expert gardeners available in residential neighbourhoods near you.',
-  keywords: 'Home Gardener Services, landscaping, lawn care, plant maintenance, garden maintenance, professional gardeners',
+  title: 'Gardener in Bangalore | Plant Care & Maintenance',
+  description: 'Hire gardeners in Bangalore for plant care and garden maintenance. Watering, trimming, and seasonal care.',
+  keywords: 'gardener bangalore, garden maintenance bangalore, plant care bangalore, terrace garden bangalore',
 }
 
 export default function GardenerPage() {
@@ -33,63 +33,95 @@ export default function GardenerPage() {
 
   const gardenerServices = [
     {
-      title: "Set Up a New Garden",
-      description: "Turn unused areas into beautiful green spaces with site evaluation, plant selection, and complete installation.",
+      title: "Garden Setup for New Homes",
+      description: "Transform your empty balcony, terrace, or yard into a beautiful green space with expert planning and setup.",
       icon: SunIcon,
-      features: ["Site Design", "Plant Selection", "Complete Setup", "Ongoing Care"]
+      features: ["Site Planning", "Plant Selection", "Soil Preparation", "Drip Irrigation"]
     },
     {
-      title: "Garden Makeover",
-      description: "Refresh and reorganize your outdoor space with enhanced aesthetics and vibrant new plantings.",
+      title: "Garden Makeover Services",
+      description: "Give your old garden a fresh, new look with creative updates and modern design elements.",
       icon: SparklesIcon,
-      features: ["Layout Redesign", "New Plants", "Decorative Elements", "Modern Upgrade"]
+      features: ["New Layout", "Trendy Planters", "Lighting Setup", "Seasonal Plants"]
     },
     {
       title: "Garden Maintenance",
-      description: "Routine care including weeding, pruning, fertilizing, and pest control for healthy gardens.",
+      description: "Keep your garden healthy and neat with regular care and expert attention to detail.",
       icon: GlobeAltIcon,
-      features: ["Regular Weeding", "Pruning & Trimming", "Fertilizing", "Pest Control"]
+      features: ["Weed Removal", "Soil Care", "Plant Trimming", "Pest Control"]
     },
     {
-      title: "Lawn Care Services",
-      description: "Professional lawn maintenance including mowing, aeration, and seasonal care for lush greenery.",
+      title: "Lawn Maintenance Service",
+      description: "Maintain a lush, green lawn all year round with professional care and attention.",
       icon: CheckCircleIcon,
-      features: ["Lawn Mowing", "Soil Aeration", "Seasonal Care", "Grass Health"]
+      features: ["Grass Cutting", "Soil Loosening", "Seasonal Care", "Issue Monitoring"]
     },
     {
       title: "Plant Care & Treatment",
-      description: "Expert plant care including watering schedules, disease treatment, and growth optimization.",
+      description: "Resolve issues such as yellowing leaves, pest infestations, and slow growth with expert care.",
       icon: BeakerIcon,
-      features: ["Watering Systems", "Disease Treatment", "Growth Care", "Plant Health"]
+      features: ["Timely Watering", "Disease Control", "Proper Nutrients", "Health Checks"]
     },
     {
-      title: "Seasonal Planting",
-      description: "Seasonal flower and shrub planting to keep your garden vibrant and colorful year-round.",
+      title: "Seasonal Garden Cleanup",
+      description: "Get your garden ready for each season: summer, monsoon, or winter with proper care.",
       icon: StarIcon,
-      features: ["Seasonal Flowers", "Shrub Planting", "Color Planning", "Year-round Beauty"]
+      features: ["Mulch Adding", "Debris Clearing", "Pest Prevention", "Seasonal Plants"]
+    },
+    {
+      title: "Terrace & Balcony Gardening",
+      description: "Make the most of small spaces with smart garden setups and vertical solutions.",
+      icon: HomeIcon,
+      features: ["Vertical Gardens", "Easy Maintenance", "Herb Growing", "Smart Irrigation"]
+    },
+    {
+      title: "Organic Gardening Service",
+      description: "Go green with eco-safe, chemical-free gardening practices for healthier plants.",
+      icon: GlobeAltIcon,
+      features: ["Home Compost", "Natural Care", "Pest Control", "Bio-Fertilizers"]
     }
   ]
 
   const faqs = [
     {
-      question: "What gardening services do you provide?",
-      answer: "We provide complete garden care including new garden setup, garden makeovers, routine maintenance, lawn care, plant care, and seasonal planting services."
+      question: "How often should I schedule garden maintenance?",
+      answer: "It depends on the plant types, but we recommend weekly or monthly visits to ensure a healthy garden."
     },
     {
-      question: "Do you offer both one-time and regular garden services?",
-      answer: "Yes, we offer flexible service options including one-time garden setup, weekly, monthly, or seasonal maintenance to suit your garden care needs."
+      question: "Can gardeners help set up an organic kitchen garden?",
+      answer: "Yes, they can grow vegetables and herbs using organic, chemical-free methods that are safe and healthy for your family."
     },
     {
-      question: "What does garden maintenance include?",
-      answer: "Our garden maintenance includes weeding, pruning and trimming, fertilizing, pest control, soil aeration, watering, and seasonal planting for healthy gardens."
+      question: "Do gardeners treat plant diseases and pests?",
+      answer: "Yes, our experienced gardeners can detect issues early and use organic methods to manage pests and diseases safely."
     },
     {
-      question: "Do you help with garden design and plant selection?",
-      answer: "Yes, our gardeners evaluate sunlight, soil type, and space to plan garden layout and choose ideal flowers, shrubs, and trees based on your preferences."
+      question: "Do gardeners offer low-maintenance garden options?",
+      answer: "Yes, they can suggest drought-tolerant plants and design easy-care gardens that are perfect for busy people who want greenery without daily effort."
     },
     {
-      question: "How far in advance should I book gardening services?",
-      answer: "We recommend booking at least 24 hours in advance for preferred slot availability. Please ensure clear garden access for smooth and timely service."
+      question: "Can gardeners arrange seasonal flowers for special occasions?",
+      answer: "Yes, they plant seasonal blooms and can create flower setups for festivals or events to keep your garden fresh and colourful."
+    },
+    {
+      question: "Do gardeners offer help with garden planning and design?",
+      answer: "Yes, they give expert advice on garden layout, plant selection, and styling, whether it's for a small balcony or a large villa garden."
+    },
+    {
+      question: "How do I find a gardener in my area?",
+      answer: "To find a gardener near you, simply visit EzyHelpers or call our helpline. We connect you with experienced local gardeners for home gardens, balconies, villas, and apartment spaces, matched to your exact location and needs."
+    },
+    {
+      question: "How to pick a gardener?",
+      answer: "Look for experience, plant knowledge, and service reliability. At EzyHelpers, all our gardeners are pre-verified and skilled in different garden styles, including organic, terrace, and villa setups."
+    },
+    {
+      question: "What can a gardener do?",
+      answer: "Gardeners handle planting, pruning, soil preparation, composting, pest control, lawn care, and full garden design."
+    },
+    {
+      question: "What are the duties of a gardener?",
+      answer: "A gardener's main duties include watering, weeding, pruning, fertilising, disease control, seasonal planting, and general garden upkeep. With EzyHelpers, you can expect trained gardeners who take full care of your plants, ensuring healthy growth and beautiful, green surroundings all year round."
     }
   ]
 

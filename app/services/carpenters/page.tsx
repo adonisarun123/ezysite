@@ -19,9 +19,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Expert Carpenter Services | Home Repairs | EzyHelpers',
-  description: 'Professional carpenter services for furniture repair, woodwork & home improvements. Skilled craftsmen available for all carpentry needs across major cities.',
-  keywords: 'carpenter services, furniture repair, woodwork, home improvements, custom furniture, carpentry work',
+  title: 'Carpentry Repair in Bangalore | Furniture Fixing',
+  description: 'Book expert carpentry repair in Bangalore. Fix broken beds, chairs, cabinets & wooden items with skilled carpenters at home.',
+  keywords: 'carpentry repair bangalore, furniture repair bangalore, carpenter bangalore, furniture fixing, woodwork repair',
 }
 
 export default function CarpentersPage() {
@@ -33,95 +33,91 @@ export default function CarpentersPage() {
 
   const carpenterServices = [
     {
-      title: "Custom Furniture Making",
-      description: "Design unique beds, tables, sofas, and wardrobes crafted to match your style and room dimensions.",
-      icon: CubeIcon,
-      features: ["Custom Design", "Quality Materials", "Perfect Fit", "Unique Style"]
-    },
-    {
-      title: "Modular Kitchen & Wardrobe",
-      description: "Transform your interiors with space-saving modular installations from measurement to setup.",
-      icon: HomeIcon,
-      features: ["Space Saving", "Modern Design", "Complete Setup", "Quality Finish"]
-    },
-    {
-      title: "Furniture Repair & Polishing",
-      description: "Extend the life of your wooden furniture with top-notch repair and polishing services.",
+      title: "Wooden Furniture Restoration",
+      description: "Bring your old or damaged wooden furniture back to life. Our expert carpenters repair cracks, loose joints, and worn finishes with precision.",
       icon: SparklesIcon,
-      features: ["Restore Structure", "Professional Polish", "Extend Life", "Like New Look"]
+      features: ["Repair Cracks", "Fix Loose Joints", "Restore Finishes", "Like New Look"]
     },
     {
-      title: "Door & Window Fixing",
-      description: "Fix jammed doors or install new windows with smooth finishes and precise fittings.",
+      title: "Custom Furniture Making",
+      description: "We design foldable tables, built-in seating, and compact cupboards perfectly customised for small urban apartments in Bangalore.",
+      icon: CubeIcon,
+      features: ["Space-Saving Design", "Custom Built-ins", "Perfect Fit", "Urban Style"]
+    },
+    {
+      title: "Modular Furniture Installation",
+      description: "From modular kitchens to sliding wardrobes, our team ensures fast and precise installations with premium finishes and functional fittings.",
+      icon: HomeIcon,
+      features: ["Modular Kitchens", "Sliding Wardrobes", "Premium Finish", "Expert Install"]
+    },
+    {
+      title: "Bed & Wardrobe Repairs",
+      description: "Fix noisy bed frames, loose cupboard doors, broken handles, and stuck wardrobe drawers with durable parts and professional attention.",
       icon: WrenchScrewdriverIcon,
-      features: ["Precise Fitting", "Smooth Operation", "Quality Hardware", "Professional Install"]
+      features: ["Bed Frame Fix", "Door Repairs", "Handle Replace", "Drawer Fix"]
     },
     {
-      title: "Office & Commercial Carpentry",
-      description: "Upgrade your office with tailored desks, counters, and shelves for enhanced functionality.",
+      title: "Drill & Wall Mount Services",
+      description: "Install curtain rods, TV panels, floating shelves, and wall art accurately with professional drill and mounting tools.",
       icon: BuildingOfficeIcon,
-      features: ["Tailored Design", "Enhanced Function", "Professional Look", "Durable Build"]
+      features: ["TV Mounting", "Shelf Install", "Art Hanging", "Precise Work"]
     },
     {
-      title: "Furniture Restoration",
-      description: "Restore antique or damaged furniture to its former glory with expert craftsmanship.",
+      title: "Office Furniture Setup",
+      description: "Set up ergonomic desks, custom bookshelves, and work-from-home stations that match your comfort, productivity, and room layout.",
       icon: StarIcon,
-      features: ["Antique Restoration", "Expert Craft", "Former Glory", "Fine Details"]
+      features: ["WFH Ready", "Ergonomic Design", "Custom Storage", "Professional Setup"]
+    },
+    {
+      title: "Kitchen Shelf Fixing",
+      description: "Upgrade your kitchen with pull-out drawers, modular spice racks, and organised shelving that suit Indian cooking needs.",
+      icon: HomeIcon,
+      features: ["Pull-out Units", "Spice Racks", "Smart Storage", "Kitchen Upgrade"]
+    },
+    {
+      title: "Furniture Assembly",
+      description: "Bought flat-pack furniture? Our experts assemble IKEA, Pepperfry, and Urban Ladder pieces efficiently with the right tools.",
+      icon: WrenchScrewdriverIcon,
+      features: ["IKEA Assembly", "Brand Furniture", "Quick Setup", "Professional Tools"]
     }
   ]
 
   const faqs = [
     {
-      question: "What types of carpenter services does EzyHelpers provide?",
-      answer: "EzyHelpers offers a wide range of professional carpenter services for both homes and offices. Our carpentry services include custom furniture making, modular kitchen installation, wardrobe fitting, furniture repair and polishing, door and window fixing, office carpentry, and furniture restoration. Our local carpenters are trained to handle both residential and commercial woodwork projects with precision."
+      question: "What types of carpentry repair in Bangalore do you offer?",
+      answer: "We provide comprehensive carpentry repair in Bangalore, including wooden furniture restoration, modular furniture installation, custom furniture making, and space-saving solutions for apartments and homes."
     },
     {
-      question: "How much do carpenter services cost in my area?",
-      answer: "Carpenter service charges depend on factors like project size, material choice, and job complexity. EzyHelpers provides transparent pricing after a site inspection. Our quotes are free, and the final estimate clearly breaks down labour costs and material charges to suit your budget."
+      question: "Can you create custom furniture for small spaces?",
+      answer: "Absolutely! We specialise in custom furniture making with space-saving solutions and functional design perfect for compact homes and apartment optimisation."
     },
     {
-      question: "Can I book a carpenter for same-day service?",
-      answer: "Yes, EzyHelpers offers same-day carpenter service based on availability in your area. Whether you need urgent carpentry repairs, quick furniture assembly, or door fixing, our team will try to assign a local carpenter to assist you on the same day."
+      question: "Do you provide furniture for work-from-home setups?",
+      answer: "Yes! We create custom WFH furniture, storage solutions, and space-saving designs perfect for working professionals."
     },
     {
-      question: "Do your carpenters use quality materials and tools?",
-      answer: "Absolutely. We use high-grade wood, fittings, and modern carpentry tools to ensure strong and lasting results. Whether it's plywood, teak, MDF, or hardwood, our skilled carpenters source materials that suit both your design goals and budget."
+      question: "Do you offer modular furniture installation in Bangalore homes?",
+      answer: "Yes, we offer modular furniture installation in Bangalore, including modular kitchens, wardrobes, TV units, and office furniture. Our furniture carpenters are experienced in installing branded units with precision and care, ensuring a perfect fit for your space."
     },
     {
-      question: "Are EzyHelpers carpenters verified and experienced?",
-      answer: "All our carpenters go through strict background checks and are skilled professionals with years of hands-on experience."
+      question: "Can I book same-day carpenter services in Bangalore?",
+      answer: "Absolutely! For urgent needs, we offer same-day carpenter services in Bangalore. Our skilled carpenters arrive quickly, equipped with tools to handle most common repairs and installations on the spot."
     },
     {
-      question: "How quickly can I get a carpenter to my location?",
-      answer: "We aim to provide qualified local carpenters to your location within 24 hours. Depending on your area and availability, we also offer next-day or even same-day carpentry services for urgent needs."
+      question: "Can I request custom furniture for small rooms or PGs?",
+      answer: "Definitely! We specialise in custom furniture making for small rooms, hostels, and PGs. From folding desks to compact wardrobes, our carpenters in Bangalore design space-saving furniture tailored to your needs."
     },
     {
-      question: "How do I book carpenter services online?",
-      answer: "Booking is easy with EzyHelpers. Just call us directly or visit our website or app, choose your carpentry service, enter your location and time preferences, and we'll confirm your appointment with a nearby carpenter suited to your job."
+      question: "Can you help with compact space furniture in Bangalore apartments?",
+      answer: "Absolutely! We specialise in space-saving solutions like foldable desks, vertical storage units, sliding wardrobes, and compact kitchen storage."
     },
     {
-      question: "What should I do to prepare for a carpenter visit?",
-      answer: "To help us serve you better, please clear the work area and ensure access to the furniture or installation site. It's also helpful if you describe your requirements in advance so our carpenter can come fully prepared with the necessary tools and materials."
+      question: "What types of wooden furniture can you repair in Bangalore?",
+      answer: "We repair all wooden furniture, including beds, tables, chairs, wardrobes, and cabinets. Our carpenters fix cracks, wobbly joints, broken panels, and even restore antique pieces."
     },
     {
-      question: "Do you offer emergency carpenter services?",
-      answer: "Yes, we provide emergency carpenter services for situations like broken doors, urgent repairs, or safety hazards. Call our customer support line to get immediate help from an available carpenter near you."
-    },
-    {
-      question: "Can your carpenters work with different types of wood?",
-      answer: "Our expert carpenters are skilled in working with various wood types including teakwood, oak, pine, MDF, plywood, and engineered wood. We help you choose the best wood material based on your usage, aesthetic preferences, and durability requirements."
-    },
-    {
-      question: "Do your carpenters offer design consultation?",
-      answer: "Yes, our carpentry services include design consultation for custom woodwork, space-saving furniture, and modular setups. Our team will help you plan functional and stylish furniture customised to your space and lifestyle needs."
-    },
-    {
-      question: "Can I get a free quote for carpentry work?",
-      answer: "Of course. EzyHelpers offers free, no-obligation quotes. After a visit to your home or office, our carpenter will assess the work and provide a clear cost estimate with no hidden charges."
-    },
-    {
-      question: "Can I schedule a carpenter visit at my preferred time?",
-      answer: "Yes, you can choose a time that works best for you. Our carpenter services are flexible and customer-friendly, ensuring our local carpenters arrive on time and complete the job efficiently."
+      question: "Do you help with furniture shifting or dismantling during house moves?",
+      answer: "Yes, we offer dismantling and reassembly services for safe furniture relocation. Our carpenters ensure damage-free disassembly, smart packing guidance, and reinstallation at your new home."
     }
   ]
 

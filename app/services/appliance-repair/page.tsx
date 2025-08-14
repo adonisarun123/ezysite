@@ -20,9 +20,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Home Appliance Repair Services | Expert Technicians | Ezy',
-  description: 'Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India.',
-  keywords: 'Home Appliance Repair Services, appliance repair, washing machine repair, refrigerator repair, AC repair, expert technicians',
+  title: 'Electrical Appliance Repair in Bangalore | TV, AC, Fridge Fix',
+  description: 'Fix all home appliances in Bangalore. TV, AC, fridge, washing machine repair. Expert technicians, doorstep service.',
+  keywords: 'appliance repair bangalore, AC repair bangalore, TV repair bangalore, fridge repair bangalore, washing machine repair bangalore, home appliance repair',
 }
 
 export default function ApplianceRepairPage() {
@@ -35,122 +35,86 @@ export default function ApplianceRepairPage() {
   const applianceServices = [
     {
       title: "Refrigerator Repair",
-      description: "Expert refrigerator technicians offer fast, reliable repair for all major problems, ensuring your fridge works efficiently.",
+      description: "We repair cooling, compressor, and defrost issues in LG, Samsung, Whirlpool, Godrej, and more.",
       icon: BeakerIcon,
-      features: ["Cooling Issues", "Gas Leaks", "Temperature Control", "All Brands"]
+      features: ["Single & Double Door", "Side-by-Side Models", "Cooling Issues", "Compressor Problems"]
     },
     {
-      title: "Washing Machine Repair", 
-      description: "Quick and effective repair services for top-load, front-load, and semi-automatic models.",
+      title: "Washing Machine Repair",
+      description: "We repair drum, motor, and control faults in IFB, Bosch, LG, and other top brands.",
       icon: SparklesIcon,
-      features: ["Drainage Problems", "Spin Cycle Errors", "Motor Faults", "All Models"]
-    },
-    {
-      title: "Microwave Oven Repair",
-      description: "Handle all types of oven repairs, including electrical malfunctions and component failures.",
-      icon: FireIcon,
-      features: ["Uneven Heating", "Turntable Issues", "Panel Replacement", "All Brands"]
+      features: ["Front Load", "Top Load", "Motor Issues", "Control Panel Fixes"]
     },
     {
       title: "Air Conditioner Repair",
-      description: "AC repair experts handle all split and window units with quick, local service.",
+      description: "We handle gas refills, compressor issues, and full servicing for major brands.",
       icon: BoltIcon,
-      features: ["Gas Refills", "Cooling Issues", "Installation", "Maintenance"]
+      features: ["Split AC", "Window AC", "Cassette AC", "Gas Refills"]
     },
     {
-      title: "Gas Stove Repair",
-      description: "Skilled technicians deliver fast and safe repairs to restore your gas stove's performance.",
-      icon: FireIcon,
-      features: ["Burner Ignition", "Gas Leakage", "Safety Checks", "Performance"]
-    },
-    {
-      title: "Geyser Repair",
-      description: "Professionals replace faulty heating elements and thermostats to get your geyser working again.",
-      icon: BeakerIcon,
-      features: ["Heating Elements", "Thermostats", "Temperature Fix", "Hot Water"]
-    },
-    {
-      title: "TV Repair",
-      description: "Efficient TV repair solutions across all major brands and models for any issues.",
+      title: "Television Repair",
+      description: "We fix screen, sound, and connectivity issues across all TV types from top brands like Samsung, LG, Mi, and Sony.",
       icon: TvIcon,
-      features: ["Screen Issues", "Audio Problems", "Power Issues", "All Brands"]
+      features: ["LED TVs", "LCD TVs", "OLED TVs", "Smart TVs"]
     },
     {
-      title: "Chimney Repair",
-      description: "Repair suction motors, clean filters, and restore airflow performance for cleaner kitchen.",
+      title: "Microwave Oven Repair",
+      description: "We fix magnetron, control panel, and door issues in IFB, LG, Samsung, and other models.",
+      icon: FireIcon,
+      features: ["Solo", "Grill", "Convection", "Control Issues"]
+    },
+    {
+      title: "Water Heater Repair",
+      description: "We fix heating elements, thermostats, and pressure valve issues in Racold, Havells, and AO Smith geysers.",
+      icon: BeakerIcon,
+      features: ["Instant", "Storage", "Gas", "Electric"]
+    },
+    {
+      title: "Electric Chimney Repair",
+      description: "We repair suction, motor, and light issues in Faber, Glen, Elica, and other kitchen chimney models.",
       icon: HomeIcon,
-      features: ["Suction Motors", "Filter Cleaning", "Airflow", "Kitchen Safety"]
+      features: ["Modular", "Wall-Mount", "Auto-Clean", "Suction Fix"]
+    },
+    {
+      title: "Other Appliances",
+      description: "We also repair water purifiers, air fryers, OTGs, induction cooktops, mixers, and more.",
+      icon: WrenchScrewdriverIcon,
+      features: ["Water Purifiers", "Small Appliances", "Kitchen Gadgets", "Home Electronics"]
     }
   ]
 
   const faqs = [
     {
-      question: "How does the on-demand home appliance repair service work?",
-      answer: "You can easily book a home appliance repair technician online or by phone. Simply describe the issue to our customer support representative and select a convenient time slot. A trained appliance repair technician will visit your home, inspect the faulty device, identify the problem, and perform the repair using the right tools and genuine parts, all without requiring you to transport the appliance."
+      question: "What makes your electrical appliance repair in Bangalore different?",
+      answer: "Our multi-brand service expertise, genuine spare parts, and energy-efficient repairs make us a cost-effective and trustworthy option with warranty-backed service for modern Bangalore households."
     },
     {
-      question: "How soon can I get a home appliance repair technician?",
-      answer: "We offer same-day and emergency home appliance repair services depending on technician availability in your area. During the booking process, you can check real-time availability and select a preferred time for a quick and convenient fix."
+      question: "Do you provide same-day appliance repair services?",
+      answer: "Yes, we offer same-day repair service across Bangalore, depending on technician availability. Response time is typically 90 minutes in central zones and 2 hours in outer areas."
     },
     {
-      question: "What appliances do you repair?",
-      answer: "Our home appliance repairers handle a wide range of appliances, including refrigerators, washing machines, air conditioners, microwaves, ovens, dishwashers, geysers, kitchen chimneys, and televisions. We service all major brands and models with expertise in both common and complex issues."
+      question: "Which appliance brands do you service?",
+      answer: "We handle appliances from major brands like LG, Samsung, Whirlpool, Bosch, Godrej, Haier, IFB, and more using expert multi-brand technical know-how. Call us to check support for your specific brand."
     },
     {
-      question: "How much do appliance repairs cost?",
-      answer: "The cost depends on the type of appliance, the complexity of the issue, and the parts required. We offer upfront pricing and free diagnosis. You'll receive a clear and transparent quote before any work is done."
+      question: "How do you handle broken appliance repair in Bangalore?",
+      answer: "We begin with fast diagnostics to identify the core issue, then proceed with transparent pricing and on-the-spot repair using original spare parts."
     },
     {
-      question: "Do you provide same-day appliance repair?",
-      answer: "Yes, we provide same-day home appliance repair services for urgent problems like refrigerator breakdowns, AC malfunctions, or washing machine issues. For faster assistance, contact us early in the day to schedule your repair."
+      question: "Do you fix appliances making noise or overheating?",
+      answer: "Yes. Our experts are trained to diagnose noise, vibration, and overheating problems and offer lasting solutions that restore performance."
     },
     {
-      question: "Do you repair all appliance brands?",
-      answer: "Yes, we repair appliances from all major manufacturers, including Samsung, LG, Whirlpool, Godrej, Bosch, IFB, and many others. Our appliance repair technicians are trained across multiple brand models."
+      question: "Do you provide doorstep appliance repair in Bangalore?",
+      answer: "Absolutely. EzyHelpers offers reliable doorstep repair services for all major appliances across Bangalore, ensuring convenient and professional fixes without you needing to step out."
     },
     {
-      question: "What areas do you cover for appliance repair?",
-      answer: "Our home appliance repair services are available across multiple cities and suburbs. Just search for \"appliance repair technician near me\" to check coverage and book a reliable service provider in your area."
+      question: "Can I get a quote for appliance repair before booking?",
+      answer: "Yes, we provide estimates based on the appliance issue. After a quick diagnosis, the technician will provide a transparent price quote before beginning the repair."
     },
     {
-      question: "Can you repair appliances at my home?",
-      answer: "Yes, we provide convenient doorstep appliance repair. Our technicians bring necessary tools and spare parts for on-site service, eliminating the need to carry your appliance to a service centre."
-    },
-    {
-      question: "How do I know if my appliance needs repair or replacement?",
-      answer: "Our expert technicians assess the appliance thoroughly and give honest recommendations. Depending on the appliance's condition, age, and problem severity, we help you decide whether a cost-effective repair or replacement is best."
-    },
-    {
-      question: "Do you use genuine spare parts for repairs?",
-      answer: "Yes, we use genuine and quality spare parts sourced from authorised suppliers to ensure proper functionality and long-lasting results after repair."
-    },
-    {
-      question: "Can you repair old or vintage appliances?",
-      answer: "We can often repair older or discontinued appliances if compatible parts are available. Our technicians have experience with vintage models and can suggest suitable alternatives if original components are no longer manufactured."
-    },
-    {
-      question: "What should I do before the technician arrives?",
-      answer: "Please clear the area around the appliance, ensure easy access, and note any error codes or specific symptoms. Having your purchase invoice or warranty details handy can also be useful during the service."
-    },
-    {
-      question: "Do you provide emergency appliance repair services?",
-      answer: "Yes, we handle emergency repairs for critical situations like refrigerator failures, AC issues during hot weather, or any major appliance malfunctions affecting your daily life."
-    },
-    {
-      question: "How do I get a quote for appliance repair?",
-      answer: "You can reach out to us with your appliance type and issue description to get an initial estimate. After diagnosis, our technician will provide an accurate quote based on the repair needs."
-    },
-    {
-      question: "Do you offer appliance installation services?",
-      answer: "Yes, we offer installation services for new appliances, including proper setup, safe connections, and performance checks to ensure everything runs smoothly from day one."
-    },
-    {
-      question: "How do I know the home appliance technician is qualified and trustworthy?",
-      answer: "All our home appliance repairers are background-verified and certified professionals. They are trained to handle different appliances and brands with expertise and professionalism."
-    },
-    {
-      question: "What happens if the appliances can't be repaired on-site?",
-      answer: "If on-site repair is not possible due to the nature of the issue or lack of required parts, the technician will explain the situation and suggest next steps. This may include a follow-up visit or carrying the appliance to a workshop if necessary."
+      question: "Do your technicians carry spare parts during the home visit?",
+      answer: "Yes, our technicians usually carry common spare parts. If a rare part is required, we source it quickly and return promptly to complete the installation."
     }
   ]
 

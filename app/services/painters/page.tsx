@@ -19,9 +19,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'House Painting Services | Interior & Exterior | EzyHelpers',
-  description: 'Professional house painting services for interior & exterior walls. Quality paints, expert painters & affordable rates in your area.',
-  keywords: 'House Painting Services, interior painting, exterior painting, professional painters, quality paints, affordable rates',
+  title: 'House Painting in Bangalore | Interior & Exterior',
+  description: 'Interior and exterior painting in Bangalore by verified painters. Stylish colours, expert finishes, and fast service for homes, flats, and villas.',
+  keywords: 'house painting bangalore, interior painting bangalore, exterior painting bangalore, painters bangalore',
 }
 
 export default function PaintersPage() {
@@ -33,75 +33,107 @@ export default function PaintersPage() {
 
   const paintingServices = [
     {
-      title: "Interior Painting",
-      description: "Give your walls a new life with elegant finishes using premium, low-odour paints for a clean, vibrant environment.",
+      title: "Living Room & Bedroom",
+      description: "Modern colour painting that enhances ambience, matches décor, and brightens up your personal space.",
       icon: HomeIcon,
-      features: ["Premium Paints", "Low-Odour", "Vibrant Colors", "Clean Finish"]
+      features: ["Modern Colors", "Décor Match", "Bright Space", "Perfect Finish"]
     },
     {
-      title: "Exterior House Painting",
-      description: "Protect your building's exterior from dust, moisture, and UV damage with weatherproof paints.",
-      icon: BuildingOfficeIcon,
-      features: ["Weather Protection", "UV Resistant", "Moisture Proof", "Long-lasting"]
-    },
-    {
-      title: "Texture & Stencil Designs",
-      description: "Add a designer feel to your home with texture finishes and stencil art for accent walls and living rooms.",
+      title: "Kids' Room Creative Themes",
+      description: "Creative wall designs featuring cartoons, educational shapes, and fun themes your kids will love.",
       icon: SparklesIcon,
-      features: ["Designer Look", "Texture Finish", "Stencil Art", "Accent Walls"]
+      features: ["Fun Themes", "Educational", "Creative", "Kid-Friendly"]
     },
     {
-      title: "Waterproofing Services",
-      description: "Prevent wall dampness and leakage with advanced waterproofing solutions using high-quality sealants.",
+      title: "Kitchen & Bathroom",
+      description: "Moisture-resistant paint that's easy to clean; great for kitchens and bathrooms in Bangalore's humid climate.",
       icon: BeakerIcon,
-      features: ["Dampness Prevention", "Leak Protection", "Quality Sealants", "Long-term Protection"]
+      features: ["Moisture-Proof", "Easy Clean", "Humidity Safe", "Long-lasting"]
     },
     {
-      title: "Wood Painting & Polishing",
-      description: "Restore and enrich wooden furniture, doors, and frames with expert polishing and coating for durability.",
+      title: "Textured Accent Walls",
+      description: "Make one wall stand out with designer paint styles like textures, patterns, and creative designs.",
       icon: PaintBrushIcon,
-      features: ["Wood Restoration", "Expert Polishing", "Durable Coating", "Enhanced Look"]
+      features: ["Designer Style", "Textures", "Patterns", "Creative"]
     },
     {
-      title: "Metal & Grill Painting",
-      description: "Get rust-free, stylish metal fixtures with specialized painting for gates, railings, and grills.",
+      title: "Doors & Furniture",
+      description: "We refresh your wooden doors, windows, and cupboards with smooth paint or polish for a brand-new look.",
+      icon: HomeIcon,
+      features: ["Wood Paint", "Polish", "Smooth Finish", "New Look"]
+    },
+    {
+      title: "Exterior Painting",
+      description: "We paint entire buildings or individual homes with neat, weatherproof finishes that look clean and fresh.",
+      icon: BuildingOfficeIcon,
+      features: ["Weatherproof", "Clean Look", "Fresh Finish", "Full Building"]
+    },
+    {
+      title: "Waterproof Coating",
+      description: "Special coatings that protect your outer walls from heavy rain, dampness, and peeling during the monsoon.",
       icon: ShieldCheckIcon,
-      features: ["Rust Prevention", "Anti-corrosive", "Stylish Finish", "Metal Protection"]
+      features: ["Rain Proof", "Anti-Damp", "No Peeling", "Monsoon Safe"]
     },
     {
-      title: "Full Home Painting",
-      description: "Complete end-to-end painting solutions for both new construction and renovation projects.",
+      title: "Boundary & Gate",
+      description: "We paint compound walls and gates with strong colours that resist dust and weather damage.",
       icon: CheckCircleIcon,
-      features: ["Complete Solution", "New & Renovation", "End-to-end", "Professional Finish"]
+      features: ["Strong Colors", "Dust Resist", "Weather Safe", "Long-lasting"]
     },
     {
-      title: "Repainting & Touch-Up",
-      description: "Revive faded or chipped walls with seamless repainting perfect for rentals and festive makeovers.",
+      title: "Terrace & Balcony",
+      description: "Coatings that keep your balconies dry during rain and cooler during Bangalore's summer heat.",
       icon: StarIcon,
-      features: ["Seamless Repair", "Color Matching", "Quick Touch-up", "Festive Ready"]
+      features: ["Rain Safe", "Heat Cool", "Dry Surface", "Summer Ready"]
+    },
+    {
+      title: "Metal & Grills",
+      description: "We paint gates, grills, and metal parts with anti-rust paint that keeps them safe and shiny.",
+      icon: FireIcon,
+      features: ["Anti-Rust", "Shiny Look", "Metal Safe", "Long-lasting"]
     }
   ]
 
   const faqs = [
     {
-      question: "What types of painting services do you provide?",
-      answer: "We offer interior painting, exterior painting, texture and stencil designs, waterproofing, wood painting and polishing, metal painting, full home painting, and repainting services."
+      question: "How long does interior painting take for a 2BHK apartment in Bangalore?",
+      answer: "For a standard 2BHK apartment, interior painting usually takes around 3 to 4 days. We follow a dust-free process and paint room by room, so you can stay comfortably at home while work is ongoing. If it's monsoon season, drying time may be slightly longer depending on humidity."
     },
     {
-      question: "Do you provide color consultation and design advice?",
-      answer: "Yes, our experts provide color consultation and design advice during the free site visit to help you choose the best paints and finishes for your space."
+      question: "Can you paint during Bangalore's monsoon season?",
+      answer: "Yes. We use quick-drying paints and plan around Bangalore's unpredictable weather to avoid any delays or damage. As long as there's no heavy or prolonged rainfall, we can still complete both interior and exterior jobs with proper care."
     },
     {
-      question: "What type of paints do you use?",
-      answer: "We use premium, low-odour paints for interiors and weatherproof paints for exteriors. All our paints are from trusted brands and provide long-lasting, beautiful finishes."
+      question: "How do you protect furniture during painting?",
+      answer: "Before starting, we fully cover all furniture, flooring, and appliances with plastic sheets and protective drop cloths. We follow a room-by-room process, keeping your home tidy and liveable even during the painting."
     },
     {
-      question: "How long does a painting project typically take?",
-      answer: "Project timeline depends on the area size and type of work. We discuss expected start and finish dates during consultation and plan work to minimize disruption to your routine."
+      question: "Can I get help choosing the right colours?",
+      answer: "Definitely. We provide free colour consultation to help you pick shades that match your room size, natural lighting, mood, and décor. Whether you're looking for calm neutrals or vibrant accents, we guide you through the latest colour trends and paint finishes."
     },
     {
-      question: "Do you handle surface preparation and cleanup?",
-      answer: "Yes, we assist in shifting furniture, protecting floors during painting, and handle all surface preparation. We also clean the area after completion, leaving your home neat and fresh."
+      question: "What kind of paint do you use?",
+      answer: "We use high-quality paints from trusted brands like Asian Paints, Nerolac, and Dulux. You can choose from budget-friendly options, standard emulsions, or luxury finishes depending on your needs and preferences."
+    },
+    {
+      question: "How much does it cost to paint exterior vs interior?",
+      answer: "The cost depends on the total area, wall condition, type of paint, and design choices. Exterior painting generally costs more due to weatherproofing needs, scaffolding, and surface preparation. Interior painting varies based on whether you choose basic colours or designer finishes. We provide a detailed quote after a free site visit."
+    },
+    {
+      question: "Do you offer painting for occupied homes without disruption?",
+      answer: "Yes, we specialise in painting homes where families continue to live. Our dust-free methods, planned scheduling, and daily cleanups ensure your routine stays undisturbed."
+    },
+    {
+      question: "Can I paint just one room or wall?",
+      answer: "Of course. Whether it's a single accent wall, bedroom refresh, or kitchen repaint, we offer partial painting services with the same care and quality as full-home projects."
+    },
+    {
+      question: "Do you provide paint polishing for wood or metal?",
+      answer: "Yes, we offer painting and polishing services for doors, windows, grills, and furniture. Options include enamel, PU, and wood finishes, depending on your requirements."
+    },
+    {
+      question: "What if I need painting urgently or over a weekend?",
+      answer: "We offer flexible scheduling, including urgent bookings, weekends, and even night shifts if required. Just let us know your timeline, and we'll plan accordingly."
     }
   ]
 
