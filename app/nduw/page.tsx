@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'National Database of Unorganised Workers | EzyHelpers',
@@ -8,7 +10,18 @@ export const metadata: Metadata = {
 export default function NDUWPage() {
   return (
     <main className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <Link href="/" className="inline-flex items-center mb-8">
+          <Image
+            src="/ezyhelper_logo_new.png"
+            alt="EzyHelpers Logo"
+            width={48}
+            height={48}
+            className="object-contain"
+            priority
+          />
+          <span className="ml-3 text-xl font-bold text-gray-900">EzyHelpers</span>
+        </Link>
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
             National Database of Unorganised Workers
