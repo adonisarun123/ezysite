@@ -14,7 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy-policy',
     '/terms-of-service',
     '/hire-helper',
-    '/join-as-helper'
+    '/join-as-helper',
+    '/nduw'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

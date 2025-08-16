@@ -51,6 +51,7 @@ const footerLinks = {
     { name: 'FAQs', href: '/faqs' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact Us', href: '/contact' },
+    { name: 'NDUW Dashboard', href: '/nduw' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms of Service', href: '/terms-of-service' },
     { name: 'Refund Policy', href: '/refund-policy' },
