@@ -13,11 +13,6 @@ import {
   BuildingStorefrontIcon
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
-
-const PDFDownloadButton = dynamic(() => import('./PDFDownloadButton'), {
-  ssr: false
-})
 
 const footerLinks = {
   services: [
@@ -230,7 +225,7 @@ export default function Footer() {
               <p className="text-primary-100 mb-8 text-lg leading-relaxed">
                 Get instant support via WhatsApp - we're here to help!
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex justify-center">
                 <Link 
                   href="https://wa.me/919972571005" 
                   target="_blank" 
@@ -242,14 +237,6 @@ export default function Footer() {
                   </svg>
                   Chat on WhatsApp
                 </Link>
-                
-                <PDFDownloadButton 
-                  filename="EzyHelpers-Services.pdf"
-                  className="inline-flex items-center bg-primary-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-primary-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
-                  variant="print"
-                >
-                  📄 Download PDF
-                </PDFDownloadButton>
               </div>
             </div>
           </div>
