@@ -83,7 +83,7 @@ export default function PaintersPage() {
     {
       title: "Wall Plastering & Crack Repairs",
       description: "Fixes peeling, gaps & uneven surfaces for a perfect painting foundation.",
-      icon: WrenchScrewdriverIcon,
+      icon: BeakerIcon,
       features: ["Crack Fix", "Even Surface", "Strong Base", "Perfect Prep"]
     },
     {
