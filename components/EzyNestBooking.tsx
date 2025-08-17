@@ -24,7 +24,12 @@ import {
 
 // Mock data for bed availability
 const TOTAL_BEDS = 5
-const mockBedAvailability = {
+
+interface BedAvailability {
+  [key: string]: number;
+}
+
+const mockBedAvailability: BedAvailability = {
   "2024-03-20": 3,
   "2024-03-21": 4,
   "2024-03-22": 2,
