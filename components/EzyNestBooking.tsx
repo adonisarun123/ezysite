@@ -184,6 +184,7 @@ export function EzyNestBooking() {
       setFormData({
         name: '',
         phone: '',
+        email: '',
         employerName: '',
         employerAddress: '',
         permanentAddress: '',
