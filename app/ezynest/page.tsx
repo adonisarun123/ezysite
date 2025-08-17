@@ -46,15 +46,15 @@ export default function EzyNestPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <button 
-                onClick={() => document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group bg-white text-rose-800 hover:bg-rose-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105"
+              <Link 
+                href="#booking-section"
+                className="group bg-white text-rose-800 hover:bg-rose-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105 text-center"
               >
                 Book a Bed Now
-              </button>
+              </Link>
               
               <Link 
-                href="#availability" 
+                href="#booking-section" 
                 className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300"
               >
                 Check Availability

@@ -8,10 +8,11 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean
   variant?: 'default' | 'outline'
+  size?: 'default' | 'sm' | 'lg'
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'default', asChild = false, ...props }, ref) => {
+  ({ className, variant = 'default', size = 'default', asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button'
     return (
       <Comp
@@ -19,6 +20,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
           variant === 'default' && 'bg-rose-600 text-white hover:bg-rose-700',
           variant === 'outline' && 'border border-gray-200 bg-white hover:bg-gray-100 hover:text-gray-900',
+          size === 'default' && 'h-10 px-4 py-2',
+          size === 'sm' && 'h-9 rounded-md px-3',
+          size === 'lg' && 'h-11 rounded-md px-8',
           className
         )}
         ref={ref}
