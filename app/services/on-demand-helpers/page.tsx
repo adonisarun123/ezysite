@@ -23,46 +23,47 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'On-Demand Maid Service in Bangalore | Emergency Help',
-  description: 'Get fast, on-demand maid service in Bangalore for last-minute guests, missed maids, urgent cooking, event help, and babysitting with same-day availability.',
-  keywords: 'on demand maid bangalore, emergency maid bangalore, instant maid service bangalore, urgent house help bangalore',
+  title: 'Instant Maid Service in Bareilly – Same-Day Help',
+  description: 'Instant maid service in Bareilly offers same-day domestic help for urgent cleaning, cooking, or emergency support during events and last-minute needs.',
+  keywords: 'instant maid service bareilly, emergency maid bareilly, same day maid bareilly, urgent house help bareilly',
 }
 
 export default function OnDemandHelpersPage() {
   const services = [
     {
-      title: "Emergency Cleaning Services",
-      description: "For unexpected guests, festival prep, or post-party mess, our helpers provide same-day sweeping, mopping, and dusting.",
+      title: "Emergency Home Cleaning",
+      description: "Expecting guests or preparing for a pooja? Our cleaning experts are just a call away for quick, reliable home cleaning.",
       icon: BoltIcon,
-      features: ["Same-day cleaning", "Post-party cleanup", "Festival prep", "Emergency help"]
+      features: ["Sweeping & mopping", "Kitchen & bathroom cleaning", "Post-party cleaning", "Room organization"]
     },
     {
-      title: "One-Day Cook Services", 
-      description: "Cook not available? Hosting guests? Our one-day maid in Bangalore can cook fresh meals and support with groceries.",
+      title: "On-Demand Cooking Services", 
+      description: "Our instant cooks prepare Bareilly-style meals, snacks, or vrat food with hygiene and care.",
       icon: ClockIcon,
-      features: ["Fresh meals", "Grocery help", "Kitchen cleaning", "Event cooking"]
+      features: ["North Indian meals", "Fasting food", "Event cooking", "Kitchen cleanup"]
     },
     {
-      title: "Short-Term Babysitter Support",
-      description: "Stepping out urgently? Our emergency babysitters provide child engagement, play, and homework help.",
+      title: "Emergency Babysitter Services",
+      description: "Need help with kids while you're busy or out? Our trained babysitters step in instantly.",
       icon: ShieldCheckIcon,
-      features: ["Child engagement", "Meal feeding", "Homework help", "Short-term care"]
+      features: ["Feeding & bathing", "Age-appropriate play", "Holiday supervision", "School drop/pickup"]
     },
     {
-      title: "Emergency Event Helpers",
-      description: "Reliable event helpers are available for family gatherings, functions, and poojas.",
+      title: "Elder Care Support",
+      description: "If your regular caregiver is away, we provide respectful and gentle elderly support.",
       icon: ExclamationTriangleIcon,
-      features: ["Event setup", "Guest management", "Kitchen help", "Post-event cleaning"]
+      features: ["Mobility assistance", "Medicine reminders", "Emotional support", "Light home help"]
     }
   ]
 
   const benefits = [
-    "24-72 hours quick response",
-    "Last-minute booking support",
-    "5,000+ bookings completed",
-    "Hourly flexibility",
-    "Same-day availability",
-    "Emergency support"
+    "Trained & Background-Verified",
+    "No Long-Term Commitment",
+    "Transparent Hour-Based Pricing",
+    "Familiar with Local Traditions",
+    "Hindi-Speaking Helpers",
+    "Same-Day Availability",
+    "Emergency Support"
   ]
 
   return (
@@ -98,26 +99,26 @@ export default function OnDemandHelpersPage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  On-Demand Helper
+                  Instant Maid Service in Bareilly
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Instant Help When Needed
+                    Quick Help When You Need It Most
                   </span>
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Need reliable help at a moment's notice? Our trusted on-demand helpers provide immediate support for cleaning, errands, childcare, and more.
+                  Need urgent domestic assistance? Our trained and verified quick helpers in Bareilly are just a call away, available within 2–4 hours for emergency situations, sudden guests, last-minute cooking, or one-time events.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Same-Day Service
+                    ✓ 2–4 Hours Response
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ No Contracts
+                    ✓ Verified & Trained
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Emergency Ready
+                    ✓ Hourly Pricing
                   </div>
                 </div>
 
@@ -137,16 +138,16 @@ export default function OnDemandHelpersPage() {
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">2-4 Hrs</div>
-                    <div className="text-trust-200 text-sm">Response Time</div>
-                  </div>
-                  <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">24/7</div>
-                    <div className="text-trust-200 text-sm">Availability</div>
-                  </div>
-                  <div className="text-center lg:text-left">
                     <div className="text-2xl font-bold text-white">Instant</div>
-                    <div className="text-trust-200 text-sm">Booking</div>
+                    <div className="text-trust-200 text-sm">Booking & Confirmation</div>
+                  </div>
+                  <div className="text-center lg:text-left">
+                    <div className="text-2xl font-bold text-white">Available</div>
+                    <div className="text-trust-200 text-sm">7 Days a Week</div>
+                  </div>
+                  <div className="text-center lg:text-left">
+                    <div className="text-2xl font-bold text-white">4.8★</div>
+                    <div className="text-trust-200 text-sm">Service Rating</div>
                   </div>
                 </div>
               </div>
@@ -444,24 +445,24 @@ export default function OnDemandHelpersPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "How quickly can I get an emergency helper in Bangalore?",
-                  answer: "Our emergency helper in Bangalore typically arrives within 2-4 hours of booking, depending on your location and current availability. Areas like Koramangala, HSR Layout, and Indiranagar usually have faster response times."
+                  question: "How quickly can I get an instant maid service in Bareilly?",
+                  answer: "You can get an instant maid service in Bareilly within just 2–4 hours of booking through EzyHelpers. Whether it's emergency cleaning, cooking, or elderly care, we provide quick helpers in Bareilly on the same day, based on availability, for urgent or last-minute needs."
                 },
                 {
-                  question: "Are emergency helpers trained for multiple tasks?",
-                  answer: "Yes, most can handle cleaning, cooking, or care simultaneously. Just let us know in advance."
+                  question: "What types of quick helper services does EzyHelpers offer in Bareilly?",
+                  answer: "EzyHelpers offers a wide range of quick helper services in Bareilly including same-day deep cleaning and post-event cleanup, on-demand cooking (including fasting and traditional meals), babysitting and childcare, elderly support and companion care, basic nursing and patient assistance at home, technical home maintenance services, and event support for functions and religious gatherings."
                 },
                 {
-                  question: "Is one-day maid in Bangalore available during festivals?",
-                  answer: "Yes, our one day maid in Bangalore works during all major festivals including Diwali, Dussehra, Christmas, and regional celebrations. We maintain emergency helper availability for festival preparation and cleanup."
+                  question: "How much does instant maid service in Bareilly cost?",
+                  answer: "The cost of instant maid service in Bareilly is based on transparent hourly pricing. There are no hidden fees or lock-in commitments; you pay only after the work is completed to your satisfaction. Whether it's a one-time deep clean or an urgent home maintenance service, we keep pricing clear and fair."
                 },
                 {
-                  question: "Can emergency helpers communicate in languages other than Kannada?",
-                  answer: "Yes, we provide emergency helpers who can communicate in Hindi, English, Tamil, and Telugu, making it easier for Bangalore's diverse population."
+                  question: "Do your quick helpers in Bareilly speak Hindi and understand local needs?",
+                  answer: "Yes, our quick helpers in Bareilly are fluent in Hindi and well-acquainted with local customs, traditions, and cooking styles. Whether it's preparing Bareilly-style meals or assisting elders with pooja routines, our instant maid service matches you with culturally aware and sensitive professionals."
                 },
                 {
-                  question: "Are on-demand helpers verified?",
-                  answer: "Yes, all on-demand helpers undergo background verification. Safety is ensured even for emergency and last-minute household help."
+                  question: "Are instant maid services available during festivals or public holidays in Bareilly?",
+                  answer: "Yes, EzyHelpers provides instant maid service in Bareilly even during festivals and holidays. Whether it's Diwali cleaning, Eid preparations, or Navratri fasting meal support, we ensure quick helpers are available when regular help is unavailable."
                 },
                 {
                   question: "Can on-demand helpers work in apartment complexes?",

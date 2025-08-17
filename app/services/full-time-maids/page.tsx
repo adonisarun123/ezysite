@@ -19,12 +19,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Full-Time Maid Bangalore | Verified Daily Helper',
-  description: 'Full-time maids in Bangalore for daily cleaning, cooking, and home tasks. Perfect for working families needing complete home management support.',
-  keywords: 'full time maid bangalore, daily maid bangalore, home helper bangalore, domestic help bangalore',
+  title: 'Reliable Full-Time Maids in Bareilly – Daily Help',
+  description: 'Book a full time maid in Bareilly for complete home assistance including cleaning, cooking, laundry, and regular household maintenance.',
+  keywords: 'full time maid bareilly, daily maid bareilly, home helper bareilly, domestic help bareilly, maid services bareilly',
   openGraph: {
-    title: 'Full-Time Maid Bangalore - Verified Daily Helper',
-    description: 'Full-time maids in Bangalore for daily cleaning, cooking, and home tasks. Perfect for working families needing complete home management support.',
+    title: 'Reliable Full-Time Maids in Bareilly – Daily Help',
+    description: 'Book a full time maid in Bareilly for complete home assistance including cleaning, cooking, laundry, and regular household maintenance.',
     url: 'https://ezyhelpers.com/services/full-time-maids',
     type: 'website',
   },
@@ -37,37 +37,38 @@ export default function FullTimeMaidsPage() {
   const services = [
     {
       title: "Full-Time Housekeeper",
-      description: "Manage daily home tasks with a flexible 8–10 hour schedule. Perfect for tech professionals in Electronic City and Outer Ring Road.",
+      description: "Experience a spotless and well-maintained home daily. Our maid is fully focused on cleanliness and household upkeep.",
       icon: HomeIcon,
-      features: ["Daily sweeping & mopping", "Bathroom cleaning", "Utensil washing", "Laundry & ironing"]
+      features: ["Sweeping & mopping", "Kitchen & bathroom cleaning", "Laundry & folding", "Dishwashing & bed-making"]
     },
     {
       title: "Full-Time Cook", 
-      description: "Fresh, healthy meals aligned with your work schedule. Ideal for busy professionals needing breakfast before early meetings and dinner after late work.",
+      description: "Relish homemade meals without the kitchen stress. Our full-time cook prepares fresh, traditional meals tailored to your family's diet.",
       icon: HeartIcon,
-      features: ["Breakfast & dinner prep", "South & North Indian dishes", "Tiffin packing", "Market errands"]
+      features: ["Full meals & snacks", "Ingredient preparation", "Grocery management", "Kitchen cleaning"]
     },
     {
       title: "Full-Day Babysitter",
-      description: "Reliable childcare support coordinating with parents' schedules. Perfect for working couples in Whitefield and Marathahalli managing school routines.",
+      description: "Ensure your child receives full-day care, love, and learning support, even when you're away.",
       icon: UserGroupIcon,
-      features: ["Bathing & feeding", "Homework assistance", "Playtime management", "School pickup/drop"]
+      features: ["Bathing & feeding", "Homework assistance", "Playtime supervision", "School pickup/drop"]
     },
     {
       title: "Full-Time Elderly Care Assistant",
-      description: "Dedicated daytime care for senior family members. Essential for families where elderly parents need supervision during work hours.",
+      description: "Your elders deserve dignity and reliable care. Our full-time caregivers are trained for senior support with compassion.",
       icon: ShieldCheckIcon,
-      features: ["Daytime companionship", "Medication reminders", "Light medical help", "Hygiene support"]
+      features: ["Bathing assistance", "Medication reminders", "Mobility support", "Emotional companionship"]
     }
   ]
 
   const benefits = [
-    "Irregular work schedules support",
-    "Nuclear family assistance",
-    "School drop & pick challenges solved",
-    "Help for families new to Bangalore",
-    "8-10 hours daily support",
-    "Experienced in urban homes"
+    "Replacement Support Available",
+    "Flexible Timings Based on Your Routine",
+    "100% Verified & Background-Checked",
+    "Affordable Pricing for Bareilly",
+    "Dedicated Customer Support",
+    "Trained for Home Responsibilities",
+    "Respects Local Traditions"
   ]
 
   return (
@@ -103,26 +104,26 @@ export default function FullTimeMaidsPage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Full-Time Maid
+                  Full-Time Maid in Bareilly
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Daily Home Management
+                    Consistent, Daily Help Without Overnight Stay
                   </span>
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Experience hassle-free living with dedicated full-time maids who handle everything from housekeeping to meal preparation with professional expertise.
+                  Let EzyHelpers take care of your home with our dedicated full-time maid in Bareilly. Each maid specialises in one key area: be it cleaning, cooking, childcare, or elderly care, ensuring your daily household needs are handled with care, professionalism, and cultural understanding.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ Fixed Schedules
+                    ✓ 100% Verified & Background-Checked
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ No Live-In Needed
+                    ✓ Fixed Daily Hours (8–10 Hours)
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ Trained Professionals
+                    ✓ Quick Replacement Guarantee
                   </div>
                 </div>
 
@@ -275,23 +276,23 @@ export default function FullTimeMaidsPage() {
             {[
               {
                 title: "Full-Time Nannies",
-                description: "Daytime childcare with feeding, bathing, routines, and playtime",
+                description: "Gentle, child-safe care tailored to age and developmental needs",
                 icon: "👶"
               },
               {
                 title: "Elderly Attendants", 
-                description: "Daily support with mobility, hygiene, medicine, and companionship",
+                description: "Ideal for seniors with health issues, post-surgery recovery, or limited mobility",
                 icon: "👴"
               },
               {
                 title: "Full-Time Cooks",
-                description: "Fresh meals from morning to night with hygiene maintenance",
+                description: "Skilled in Bareilly-style North Indian meals, veg or non-veg",
                 icon: "👨‍🍳"
               },
               {
-                title: "Full-Time Drivers",
-                description: "School runs, errands, and appointments throughout the day",
-                icon: "🚗"
+                title: "Full-Time Housekeepers",
+                description: "Skilled in household hygiene and routine cleaning tasks",
+                icon: "🧹"
               }
             ].map((service, index) => (
               <div key={index} className="bg-gray-50 rounded-lg p-6 text-center">
@@ -375,24 +376,24 @@ export default function FullTimeMaidsPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "How many hours do full-time maids work in Bangalore?",
-                  answer: "Most full-time maids in Bangalore work for 8 to 10 hours daily, depending on the job and your requirements."
+                  question: "What is a full-time maid in Bareilly?",
+                  answer: "A full-time maid in Bareilly is a dedicated domestic helper who works daily at your home without staying overnight. These maids typically handle one major responsibility, like cleaning, cooking, childcare, or elderly care. With EzyHelpers' full-day maid service in Bareilly, you get trained professionals who support your household consistently and efficiently throughout the day."
                 },
                 {
-                  question: "What is the cost of hiring a full-time helper in Bangalore?",
-                  answer: "The cost of hiring a full-time helper in Bangalore depends on the type of service, whether it's a part-time maid, babysitter, elderly caretaker, or home cook. Pricing varies based on service hours, task complexity, helper experience, and your location within the city. For accurate quotes, it's best to share your specific needs with a trusted provider like EzyHelpers."
+                  question: "How many hours does a full-day maid service in Bareilly offer?",
+                  answer: "A full-day maid service in Bareilly generally includes 8 to 10 hours of daily help. You can customise the working hours based on your routine, whether it's morning support for breakfast and cleaning or evening help with dinner and childcare. This ensures your home runs smoothly while giving the maid a structured work-life balance."
                 },
                 {
-                  question: "Can I hire a maid for only one task, like cleaning or cooking?",
-                  answer: "Yes, you can hire specialised full-time maids for just cooking, cleaning, childcare, or elder care."
+                  question: "What kind of tasks does a full-time maid in Bareilly handle?",
+                  answer: "Our full-time maids in Bareilly offer specialised services across four main areas: Housekeeping (sweeping, mopping, dusting, dishwashing, laundry), Cooking (preparing full meals, snacks, handling groceries), Childcare (feeding, bathing, homework help, playtime), and Elderly Care (bathing assistance, mobility support, medication reminders)."
                 },
                 {
-                  question: "Is full-time maid service available in gated societies?",
-                  answer: "Absolutely. We match you with society-trained maids who understand entry protocols and community rules."
+                  question: "Are full-time maids in Bareilly background verified?",
+                  answer: "Yes, all full-time maids in Bareilly provided by EzyHelpers are verified and background checked. We check Aadhaar, local address (if available), and basic identity for safety, reliability, and peace of mind. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind."
                 },
                 {
-                  question: "Can I change or replace my full-time helper if needed?",
-                  answer: "Yes. If you're not satisfied, we'll arrange a quick replacement within 1–3 working days."
+                  question: "Will the maid understand our family's traditions and customs?",
+                  answer: "Yes, our maids are trained to align with Bareilly's cultural values and family routines. Whether it's festival preparations, pooja routines, or dietary customs during fasting, our helpers respect and follow your traditions. That's what makes our full-day maid service in Bareilly ideal for culturally rooted households."
                 },
                 {
                   question: "Do you offer full-time maid services for weekends only?",
@@ -501,7 +502,7 @@ export default function FullTimeMaidsPage() {
             {[ 
               {
                 title: "Live-In Maid Services",
-                description: "24/7 household help right at home for constant support",
+                description: "Full-day support who stay in your home and assist with daily chores",
                 href: "/services/live-in-maids",
                 icon: BuildingOffice2Icon,
                 bgColor: "bg-orange-50",
@@ -509,9 +510,9 @@ export default function FullTimeMaidsPage() {
                 borderColor: "border-orange-200"
               },
               {
-                title: "Part-Time Maid Services", 
-                description: "Flexible cleaning on your schedule without full commitment",
-                href: "/services/part-time-maids",
+                title: "Instant Maid Services", 
+                description: "Instant household help for emergencies, guest visits, or special occasions",
+                href: "/services/on-demand-helpers",
                 icon: SparklesIcon,
                 bgColor: "bg-purple-50",
                 iconColor: "text-purple-600",
@@ -519,7 +520,7 @@ export default function FullTimeMaidsPage() {
               },
               {
                 title: "Cook Services",
-                description: "Delicious, hassle-free meals every day from professional cooks",
+                description: "Skilled home cooks for daily meals, fasting food, or festive dishes",
                 href: "/services/cooks",
                 icon: UserPlusIcon,
                 bgColor: "bg-pink-50",

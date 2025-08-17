@@ -17,46 +17,46 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Cook for Home Bangalore | Daily Fresh Meals',
-  description: 'Find a reliable cook for home in Bangalore for daily, live-in, or part-time meal services. Fresh, healthy, and regionally customised food daily.',
-  keywords: 'cook for home bangalore, home cook bangalore, cook services bangalore, daily cook bangalore, personal cook bangalore',
+  title: 'Hire Cooks in Bareilly – Daily or Event-Based Help',
+  description: 'Need cooks in Bareilly? Book part-time, full-time, or event-based cooking help. Our trained cooks prepare tasty, hygienic meals to suit your needs.',
+  keywords: 'cook for home bareilly, home cook bareilly, cook services bareilly, daily cook bareilly, personal cook bareilly, up cuisine cook bareilly',
 }
 
 export default function CooksPage() {
   const services = [
     {
       title: "Daily Meal Preparation",
-      description: "Fresh, nutritious meals prepared daily using locally sourced ingredients from Bangalore's best markets, accommodating your family's taste preferences.",
+      description: "Fresh, homestyle breakfast, lunch, and dinner daily, tailored to your family's specific taste preferences and prepared with local ingredients.",
       icon: HeartIcon,
-      features: ["Fresh ingredients", "Local market sourcing", "Taste customization", "Nutritious meals"]
+      features: ["Fresh ingredients", "Traditional UP style", "Taste customization", "Timely service"]
     },
     {
-      title: "Kitchen Management", 
-      description: "Full kitchen organization, grocery planning from nearby stores, ingredient preparation, and maintaining professional home cooking standards.",
+      title: "Authentic UP Cuisine",
+      description: "Experts in Bareilly-style dishes like kachori-jalebi, puri-sabzi, and festive sweets prepared with traditional methods and local flavors.",
       icon: HomeIcon,
-      features: ["Grocery planning", "Kitchen organization", "Ingredient prep", "Hygiene standards"]
+      features: ["Traditional recipes", "Festival specials", "Local delicacies", "Authentic taste"]
     },
     {
-      title: "Specialized Dietary Solutions",
-      description: "Expert dietary management for diabetic meals, low-sodium preparations, vegetarian, and Jain food requirements; addressing Bangalore's health-conscious community needs.",
+      title: "Diet-Specific Cooking",
+      description: "Specializing in Jain, sattvik, and diabetic-friendly meals made with care for health-conscious families in Bareilly.",
       icon: SparklesIcon,
-      features: ["Diabetic meals", "Low-sodium prep", "Vegetarian options", "Jain food"]
+      features: ["Jain food", "Sattvik meals", "Diabetic-friendly", "No onion-no garlic"]
     },
     {
-      title: "Multi-Cuisine Expertise",
-      description: "Skilled in preparing Karnataka dishes along with popular cuisines from Tamil Nadu, Kerala, Andhra, North India, and even light Indo-Chinese meals.",
+      title: "Full Kitchen Management",
+      description: "Our cooks handle groceries from local markets like Subhash Market and Civil Lines, meal prep, and kitchen hygiene, ensuring smooth daily operations.",
       icon: ClockIcon,
-      features: ["South Indian", "North Indian", "Indo-Chinese", "Regional dishes"]
+      features: ["Grocery management", "Kitchen organization", "Meal planning", "Hygiene standards"]
     }
   ]
 
   const benefits = [
-    "Traffic & time constraints support",
-    "Diverse taste preferences covered",
-    "Health-conscious lifestyle meals",
-    "Elderly and child nutrition focus",
-    "Multi-cuisine expertise",
-    "Kitchen hygiene standards"
+    "Trained in Authentic UP Cuisine",
+    "Background-Verified & Experienced",
+    "Fast Placement in 24–48 Hours",
+    "Affordable Plans for Every Family",
+    "Hygienic Cooking Practices",
+    "Local Market Expertise"
   ]
 
   return (
@@ -91,26 +91,26 @@ export default function CooksPage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Professional Cooks
+                  Expert Home Cooks in Bareilly
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Delicious Meals Daily
+                    Delicious Homemade Meals Daily!
                   </span>
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Enjoy fresh, healthy, and delicious home-cooked meals prepared by our skilled professional cooks who understand your taste preferences.
+                  Trusted cooks in Bareilly offering daily homemade meals with expertise in authentic UP cuisine, traditional cooking methods, and local taste preferences.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Multiple Cuisines
+                    ✓ Authentic UP Cuisine
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Dietary Preferences
+                    ✓ Background Verified
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Fresh Ingredients
+                    ✓ Local Taste Experts
                   </div>
                 </div>
 
@@ -262,24 +262,24 @@ export default function CooksPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "North Indian",
-                description: "Rich curries, tandoor items, breads, and traditional recipes",
+                title: "UP Specialties",
+                description: "Tehri, Bedai, Puri-Sabzi, and authentic festival meals",
                 icon: "🍛"
               },
               {
-                title: "South Indian", 
-                description: "Authentic dosas, sambar, rasam, and regional specialties",
+                title: "Traditional Breakfast", 
+                description: "Soft kachoris, hot jalebis, and seasonal morning snacks",
                 icon: "🥘"
               },
               {
-                title: "Continental",
-                description: "Western dishes, pasta, salads, and international favorites",
+                title: "Festival Feasts",
+                description: "Kheer, Halwa, Navratri, and Diwali special menus",
                 icon: "🍝"
               },
               {
-                title: "Chinese",
-                description: "Indo-Chinese fusion and authentic Chinese preparations",
-                icon: "🥢"
+                title: "Diet-Focused",
+                description: "Jain, pure veg, diabetic-friendly, and fasting foods",
+                icon: "🥬"
               }
             ].map((cuisine, index) => (
               <div key={index} className="bg-gray-50 rounded-lg p-6 text-center">
@@ -311,19 +311,19 @@ export default function CooksPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Live-In Cooks in Bangalore",
-                description: "Perfect for large families, elderly care, or full-time assistance.",
-                features: ["24/7 kitchen access", "All daily meals included", "Basic kitchen cleaning", "Complete kitchen upkeep"]
+                title: "Full-Time Cooks in Bareilly",
+                description: "Daily cooking during fixed hours, managing all your breakfast, lunch, and dinner needs.",
+                features: ["2-3 meals daily", "Grocery management", "Kitchen organization", "Meal planning"]
               },
               {
-                title: "Full-Time Cooks in Bangalore", 
-                description: "Ideal for nuclear families or tech couples.",
-                features: ["2 to 3 meals per day", "Grocery and meal planning", "Flexible 8 to 10 hour shifts", "Daily meal prep"]
+                title: "Part-Time Cooks in Bareilly", 
+                description: "Perfect for specific meals, giving busy Bareilly families help when they need it most.",
+                features: ["1-2 meals daily", "Flexible timing", "Advance preparation", "Weekend cooking"]
               },
               {
-                title: "Part-Time Cooks in Bangalore",
-                description: "Great for families needing help with specific meals.",
-                features: ["1 to 2 meals per day", "Breakfast-only or dinner-only", "Evening or weekend availability", "Flexible timing"]
+                title: "On-Demand / Emergency Cooks",
+                description: "Need a cook for a day or a sudden event? Get quick, reliable cooking help for immediate needs.",
+                features: ["One-time cooking help", "Ideal for sudden needs", "Party or event support", "Quick booking & arrival"]
               }
             ].map((service, index) => (
               <div key={index} className="bg-white rounded-xl p-8">
@@ -441,24 +441,24 @@ export default function CooksPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "How can I find a reliable cook for home in Bangalore?",
-                  answer: "EzyHelpers connects you with verified and experienced home cooks in Bangalore who undergo background checks and cooking skill assessments. We share shortlisted profiles based on your dietary needs, preferred cuisine, and schedule for a perfect home cooking match."
+                  question: "Do your cooks in Bareilly know traditional UP recipes?",
+                  answer: "Yes, our cooks in Bareilly are experts in preparing traditional UP cuisine. Whether you want tehri, bedai, puri-sabzi, dal-chawal, or festive halwa, our cook for home in Bareilly ensures your meals taste authentic and homemade."
                 },
                 {
-                  question: "Do your home cooks accommodate dietary restrictions?",
-                  answer: "Yes, our cooks are experienced enough to prepare meals according to your health needs. Whether it's diabetic-friendly, Jain food, vegan, or low-sodium diets, EzyHelpers ensures you get a cook who understands and respects your dietary preferences."
+                  question: "Are your home cooks in Bareilly background-verified?",
+                  answer: "Absolutely. All cooks in Bareilly provided by EzyHelpers are Aadhaar verified and local address verified. You can trust our cook for home in Bareilly to work safely, respectfully, and professionally within your kitchen and routine."
                 },
                 {
-                  question: "Will your home cooks help with grocery and vegetable shopping in Bangalore?",
-                  answer: "Yes, many of our home cooks in Bangalore assist with daily or weekly grocery and vegetable shopping. They can visit local markets or nearby stores to purchase fresh ingredients or accompany you when required. This ensures meals are prepared with fresh, timely ingredients while saving you time and effort."
+                  question: "Are emergency or one-time cooks available in Bareilly?",
+                  answer: "Yes, we provide emergency or one-time cooks in Bareilly for urgent needs like parties, family functions, or sick days. You can book a cook for home in Bareilly quickly with EzyHelpers and get reliable help on short notice."
                 },
                 {
-                  question: "Can your cook prepare meals for office tiffins?",
-                  answer: "Absolutely. Many Bangalore families trust EzyHelpers' cooks to prepare home-style meals for office tiffins. It's a healthier, more cost-effective alternative to restaurant food, especially for busy professionals seeking nutritious lunch options."
+                  question: "Do your Bareilly cooks follow hygiene standards?",
+                  answer: "Yes, our cooks in Bareilly strictly follow hygiene and safety standards. Every cook for home in Bareilly ensures the kitchen is clean, and meals are prepared using safe food handling practices, giving your family peace of mind."
                 },
                 {
-                  question: "How do you ensure food safety and kitchen hygiene?",
-                  answer: "At EzyHelpers, we train all home cooks on kitchen safety, personal hygiene, and clean cooking practices. We make sure cooking is clean and safe by using clean utensils, storing food properly, and training cooks in personal hygiene practices."
+                  question: "Are your cooks trained in vegetarian cooking?",
+                  answer: "Yes, EzyHelpers' cooks in Bareilly are trained in vegetarian and Jain meal preparation. When you book a cook in Bareilly, they'll follow your dietary requirements with care, using fresh ingredients to deliver nutritious, vegetarian home-cooked meals."
                 },
                 {
                   question: "Can I hire a cook for specific cuisines?",
@@ -525,19 +525,19 @@ export default function CooksPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Full-Time Maid Services",
-                description: "Complete household management including kitchen assistance and cleaning",
-                href: "/services/full-time-maids"
-              },
-              {
-                title: "Elderly Care Services", 
-                description: "Specialized meal preparation for seniors with dietary requirements",
+                title: "Elderly Care Services",
+                description: "Daily care, medication help, and companionship for seniors in Bareilly",
                 href: "/services/elderly-care"
               },
               {
-                title: "On-Demand Helpers",
-                description: "Emergency cooking assistance for special occasions and events",
-                href: "/services/on-demand-helpers"
+                title: "Baby Care Services", 
+                description: "Trained babysitters for safe feeding, bathing, and childcare in Bareilly",
+                href: "/services/babysitter"
+              },
+              {
+                title: "Personal Driver Services",
+                description: "Trusted drivers for school, office, or outstation travel in Bareilly",
+                href: "/services/drivers"
               }
             ].map((service, index) => (
               <Link key={index} href={service.href} className="block bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">

@@ -16,12 +16,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Senior Citizen Home Services in Bangalore | Elderly Support',
-  description: 'Senior citizen care at home in Bangalore. Trained caregivers for elderly care, meals, medication help, and daily support.',
-  keywords: 'senior citizen care bangalore, elderly care bangalore, old age care bangalore, senior home care bangalore',
+  title: 'Caretaker for Elderly in Bareilly – Compassionate Support',
+  description: 'Get caretaker for elderly at home in Bareilly with trained staff for hygiene, medication, companionship, and emotional support for your loved ones.',
+  keywords: 'caretaker for elderly bareilly, elderly care bareilly, old age care bareilly, senior home care bareilly, elder care services bareilly',
   openGraph: {
-    title: 'Senior Citizen Home Services in Bangalore - Elderly Support',
-    description: 'Senior citizen care at home in Bangalore. Trained caregivers for elderly care, meals, medication help, and daily support.',
+    title: 'Caretaker for Elderly in Bareilly – Compassionate Support',
+    description: 'Get caretaker for elderly at home in Bareilly with trained staff for hygiene, medication, companionship, and emotional support for your loved ones.',
     url: 'https://ezyhelpers.com/services/elderly-care',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -35,38 +35,39 @@ export const metadata: Metadata = {
 export default function ElderlyCare() {
   const services = [
     {
-      title: "Personal Care Assistance",
-      description: "Gentle, respectful help with daily hygiene tasks to maintain dignity and comfort.",
+      title: "Daily Personal Care",
+      description: "Helping with bathing, dressing, and grooming, ensuring hygiene and comfort for elderly family members.",
       icon: UserIcon,
-      features: ["Bathing & grooming", "Toileting assistance", "Hygiene help", "Dressing support"]
+      features: ["Bathing assistance", "Grooming help", "Dressing support", "Hygiene maintenance"]
     },
     {
-      title: "Medical Support at Home", 
-      description: "Reliable support with medicines, health checkups, and recovery care in your own home.",
+      title: "Medicine Management", 
+      description: "Reminding and assisting with timely medication, as per the doctor's advice.",
       icon: ShieldCheckIcon,
-      features: ["Medication reminders", "Health tracking", "Recovery care", "Condition management"]
+      features: ["Timely reminders", "Dosage assistance", "Health tracking", "Doctor coordination"]
     },
     {
-      title: "Companion Care Services",
-      description: "Friendly caretakers who provide emotional support and joyful company every day.",
+      title: "Meal Preparation",
+      description: "Cooking healthy and favourite meals, keeping in mind dietary needs and local tastes.",
       icon: HeartIcon,
-      features: ["Reading & games", "Festival participation", "Daily conversation", "Emotional bonding"]
+      features: ["Healthy cooking", "Dietary needs", "Local tastes", "Regular meals"]
     },
     {
-      title: "Mobility Assistance",
-      description: "Trained help for safe movement inside and outside the home to prevent falls.",
+      title: "Mobility & Support",
+      description: "Assisting with moving around the house, going for walks, and preventing falls.",
       icon: ClockIcon,
-      features: ["Walking support", "Transfer aid", "Fall prevention", "Safety checks"]
+      features: ["Walking support", "Fall prevention", "Exercise help", "Safe movement"]
     }
   ]
 
   const benefits = [
-    "Daily routine help and support",
-    "Personalized attention and care", 
-    "Health monitoring and tracking",
-    "Hygiene assistance and comfort",
-    "Trained in senior handling",
-    "Safe home-based assistance"
+    "Respects traditions and daily routines",
+    "Handles joint families with care",
+    "Fast placement with verified staff",
+    "Timely medicine and diet reminders",
+    "Regular family updates",
+    "Trained in senior care and emergencies",
+    "Local language support"
   ]
 
   return (
@@ -101,26 +102,26 @@ export default function ElderlyCare() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Elderly Care
+                  Caretaker for Elderly at Home
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Dignity & Comfort at Home
+                    Trustworthy Support for Your Loved Ones
                   </span>
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Provide your loved ones with compassionate elderly care that honors their dignity while ensuring safety, comfort, and companionship at home.
+                  Get verified, trained caretakers for elderly at home in Bareilly for daily support, health monitoring, and compassionate care, ensuring your elders feel safe and cared for at home.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ Medical Support
+                    ✓ Background Verified
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ 24/7 Care Available
+                    ✓ 24-72 Hour Placement
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ Trained Caregivers
+                    ✓ Complete Elder Care
                   </div>
                 </div>
 
@@ -267,24 +268,24 @@ export default function ElderlyCare() {
             <div className="space-y-6">
               {[
                 {
-                  question: "Can I hire a part-time senior care assistant in Bangalore?",
-                  answer: "Yes, EzyHelpers offers 2–6 hour part-time care options ideal for daily tasks like meal prep, medication reminders, and companionship."
+                  question: "What does daily personal care include for elderly at home in Bareilly?",
+                  answer: "Daily personal care by a caretaker for elderly at home in Bareilly includes bathing, grooming, dressing, toilet assistance, and maintaining hygiene. EzyHelpers' home elder care services in Bareilly ensure seniors feel clean, comfortable, and cared for with dignity and respect."
                 },
                 {
-                  question: "Do you provide live-in caretakers for seniors in Bangalore?",
-                  answer: "Yes. Our live-in caretakers offer 24/7 support and stay at your home. They assist with everything from hygiene and feeding to companionship and medical supervision."
+                  question: "Do elderly caretakers in Bareilly help with medicine management?",
+                  answer: "Yes, under our home elder care services in Bareilly, caretakers for elderly at home help with timely medication reminders and dosage assistance as per doctor's advice, ensuring seniors maintain their health routines safely and consistently."
                 },
                 {
-                  question: "What is the difference between part-time and full-time elderly care?",
-                  answer: "Part-time care is for 2–6 hours a day, ideal for light support. Full-time care offers 8–10 hours of daily help for seniors who need regular monitoring or mobility aid."
+                  question: "Do your elderly caretakers in Bareilly help with personal hygiene?",
+                  answer: "Yes, our caretaker for elderly at home in Bareilly assists with hygiene tasks such as bathing, grooming, dressing, and cleanliness. EzyHelpers ensures seniors receive respectful and supportive hygiene care at home."
                 },
                 {
-                  question: "Can I get a temporary caretaker after hospital discharge in Bangalore?",
-                  answer: "Yes. We provide short-term post-hospitalisation care, including wound care, feeding, medication reminders, and physical support for recovery."
+                  question: "What kind of meals do your caretakers prepare for seniors in Bareilly?",
+                  answer: "Our home elder care services in Bareilly include preparing healthy and locally preferred meals. Caretakers for elderly at home consider dietary restrictions, personal taste, and medical needs while cooking for seniors."
                 },
                 {
-                  question: "Are female caretakers available for elderly women in Bangalore?",
-                  answer: "Yes, you can request female caretakers for elderly women who prefer same-gender care for personal comfort during tasks like bathing or dressing."
+                  question: "Can I get a caretaker for post-hospital recovery at home in Bareilly?",
+                  answer: "Yes, EzyHelpers offers caretakes in Bareilly trained in post-hospital recovery. Our services include medication support, diet monitoring, rest assistance, and safe mobility during the recovery period."
                 },
                 {
                   question: "Can I hire a companion for an elderly person who lives alone?",
@@ -369,19 +370,19 @@ export default function ElderlyCare() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Live-In Maid Services",
-                description: "24/7 household support including elderly care assistance and home management",
-                href: "/services/live-in-maids"
+                title: "Housekeeping & Deep Cleaning",
+                description: "Professional deep cleaning, sofa washing, and kitchen sanitisation in Bareilly",
+                href: "/services/deep-cleaning"
               },
               {
                 title: "Cook Services", 
-                description: "Nutritious meal preparation following dietary restrictions for seniors",
+                description: "Expert cooks for daily meals, special occasions, or diet-specific cooking in Bareilly",
                 href: "/services/cooks"
               },
               {
-                title: "On-Demand Helpers",
-                description: "Emergency elderly care and assistance services for unexpected needs",
-                href: "/services/on-demand-helpers"
+                title: "Driver Services",
+                description: "Reliable drivers for school pickups, grocery runs, and local travel in Bareilly",
+                href: "/services/drivers"
               }
             ].map((service, index) => (
               <Link key={index} href={service.href} className="block bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">

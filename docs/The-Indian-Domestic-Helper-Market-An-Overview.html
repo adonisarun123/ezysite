@@ -1,0 +1,1851 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Indian Domestic Helper Market: Market Overview, Challenges and Future Outlook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --primary: #0f766e;
+            --secondary: #d97706;
+            --accent: #64748b;
+            --neutral: #f8fafc;
+            --base-100: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        .serif {
+            font-family: 'Crimson Text', serif;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.9) 0%, rgba(217, 119, 6, 0.8) 100%);
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1.5rem;
+            height: 400px;
+        }
+
+        .bento-main {
+            grid-row: 1 / -1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+
+        .bento-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .bento-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        .toc-sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            border-right: 1px solid #e2e8f0;
+            overflow-y: auto;
+            z-index: 50;
+            padding: 1.5rem;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: #64748b;
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            padding-left: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .toc-link:hover {
+            color: var(--primary);
+            border-left-color: var(--primary);
+            background: rgba(15, 118, 110, 0.05);
+        }
+
+        .toc-link.active {
+            color: var(--primary);
+            border-left-color: var(--primary);
+            background: rgba(15, 118, 110, 0.1);
+            font-weight: 500;
+        }
+
+        .section-header {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);
+            border-left: 4px solid var(--primary);
+        }
+
+        .quote-block {
+            border-left: 4px solid var(--secondary);
+            background: #fefce8;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        .citation {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .citation:hover {
+            text-decoration: underline;
+        }
+
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Enhanced mermaid theme with better contrast */
+        .mermaid .node rect,
+        .mermaid .node circle,
+        .mermaid .node polygon {
+            fill: #f8fafc !important;
+            stroke: var(--primary) !important;
+            stroke-width: 2px !important;
+        }
+
+        .mermaid .node .label {
+            color: #1e293b !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+        }
+
+        .mermaid .edgePath .path {
+            stroke: var(--accent) !important;
+            stroke-width: 2px !important;
+        }
+
+        .mermaid .edgeLabel {
+            background-color: white !important;
+            color: #334155 !important;
+            font-weight: 500 !important;
+            padding: 4px 8px !important;
+            border-radius: 4px !important;
+            border: 1px solid var(--accent) !important;
+        }
+
+        /* Different node colors with proper contrast */
+        .mermaid .node.primary rect,
+        .mermaid .node.primary circle,
+        .mermaid .node.primary polygon {
+            fill: #f0fdfa !important;
+            stroke: var(--primary) !important;
+        }
+
+        .mermaid .node.secondary rect,
+        .mermaid .node.secondary circle,
+        .mermaid .node.secondary polygon {
+            fill: #fefce8 !important;
+            stroke: var(--secondary) !important;
+        }
+
+        .mermaid .node.accent rect,
+        .mermaid .node.accent circle,
+        .mermaid .node.accent polygon {
+            fill: #f1f5f9 !important;
+            stroke: var(--accent) !important;
+        }
+
+        @media (max-width: 1024px) {
+            .toc-sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                width: 280px;
+                height: 100vh;
+            }
+
+            .toc-sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .bento-main {
+                grid-row: auto;
+                height: 300px;
+            }
+
+            .mermaid-control-btn:not(.reset-zoom) {
+                display: none;
+            }
+            .mermaid-controls {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+            .bento-main {
+                height: 250px;
+            }
+            .hero-overlay h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            .container.px-6 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .container.mx-auto.px-6 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .serif.text-5xl {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bento-main {
+                height: 200px;
+            }
+            .hero-overlay h1 {
+                font-size: 1.5rem;
+            }
+            .hero-overlay p {
+                font-size: 0.875rem;
+            }
+            .hero-overlay .flex.space-x-4 {
+                gap: 0.5rem;
+            }
+            .hero-overlay .flex.space-x-4 > div {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- Table of Contents Sidebar -->
+    <nav class="toc-sidebar">
+      <div class="mb-6">
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Table of Contents</h3>
+      </div>
+      <div class="space-y-1">
+        <a href="#introduction" class="toc-link text-sm">Introduction</a>
+        <a href="#market-size" class="toc-link text-sm">Market Size &amp; Economic Landscape</a>
+        <a href="#growth-trends" class="toc-link text-sm">Growth Trends &amp; Projections</a>
+        <a href="#regional-insights" class="toc-link text-sm">Regional &amp; City-Level Insights</a>
+        <a href="#challenges" class="toc-link text-sm">Market Challenges</a>
+        <a href="#opportunities" class="toc-link text-sm">Formalization Opportunities</a>
+        <a href="#policy-framework" class="toc-link text-sm">Policy &amp; Regulatory Framework</a>
+        <a href="#conclusion" class="toc-link text-sm">Conclusion</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Hero Section -->
+      <section class="relative bg-white">
+        <div class="container mx-auto px-6 py-12">
+          <div class="bento-grid">
+            <div class="bento-main">
+              <img src="https://kimi-web-img.moonshot.cn/img/placeholder-0620/%E5%9B%BE%E7%89%877.png" alt="Indian domestic helper working in a modern household" class="w-full h-full object-cover" size="large" aspect="wide" style="photo" query="Indian domestic worker in modern home" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+              <div class="hero-overlay absolute inset-0 flex items-center justify-center">
+                <div class="text-center text-white px-4 sm:px-8">
+                  <h1 class="serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 italic leading-tight">
+                    The Invisible Workforce
+                  </h1>
+                  <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-light opacity-90 mb-6">
+                    India&#39;s Domestic Helper Market at a Crossroads
+                  </p>
+                  <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <div class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                      <i class="fas fa-users mr-2"></i>50-90M Workers
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                      <i class="fas fa-chart-line mr-2"></i>12-15% Growth
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bento-side">
+              <div class="bento-card">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-home text-2xl text-teal-600 mr-3"></i>
+                  <h3 class="text-lg font-semibold">Market Scope</h3>
+                </div>
+                <p class="text-gray-600 text-sm">An estimated 50-90 million workers in India&#39;s predominantly informal domestic helper sector, representing one of the largest employment categories in the country.</p>
+              </div>
+
+              <div class="bento-card">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-mobile-alt text-2xl text-orange-600 mr-3"></i>
+                  <h3 class="text-lg font-semibold">Digital Transformation</h3>
+                </div>
+                <p class="text-gray-600 text-sm">Technology platforms are beginning to formalize the sector, with on-demand service apps driving organization and transparency in a traditionally opaque market.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Introduction -->
+      <section id="introduction" class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+          <div class="section-header">
+            <h2 class="serif text-4xl font-bold text-gray-900">Introduction</h2>
+          </div>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-gray-700 leading-relaxed mb-8">
+              The Indian domestic helper market represents one of the largest yet most invisible segments of the country&#39;s economy. Employing an estimated <strong>50 to 90 million people</strong>, this predominantly informal sector touches nearly every urban household while remaining largely undocumented and unregulated.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+              <div class="stat-card p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-user-check text-3xl text-teal-600 mr-4"></i>
+                  <div>
+                    <h4 class="text-2xl font-bold text-gray-900">80M+</h4>
+                    <p class="text-gray-600">Registered on e-Shram Portal</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-exclamation-triangle text-3xl text-orange-600 mr-4"></i>
+                  <div>
+                    <h4 class="text-2xl font-bold text-gray-900">90%+</h4>
+                    <p class="text-gray-600">Operate in Informal Sector</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-gray-700 mb-6">
+              Despite its vast scale, the market lacks definitive valuation due to its unorganized nature, though proxy data suggests an economic footprint in the tens of billions of dollars. Growth is driven by rapid urbanization, the rise of dual-income households, and increasing demand for specialized services like childcare and elderly care.
+            </p>
+
+            <div class="quote-block p-6 rounded-lg mb-8">
+              <p class="text-lg mb-4">
+                &#34;The market is evolving from unskilled labor to a demand for educated and specialized professionals, with technology platforms beginning to formalize the sector.&#34;
+              </p>
+              <cite class="text-sm text-gray-600">— Market Analysis Report, 2025</cite>
+            </div>
+
+            <p class="text-gray-700">
+              However, significant challenges remain, including a lack of legal recognition, poor working conditions, and the absence of social security for the vast majority of workers. This comprehensive analysis explores the current state, growth drivers, challenges, and future opportunities in India&#39;s domestic helper market.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Market Size &amp; Economic Landscape -->
+      <section id="market-size" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="section-header">
+            <h2 class="serif text-4xl font-bold text-gray-900">Market Size &amp; Economic Landscape</h2>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-8 mb-12">
+            <div class="lg:col-span-2">
+              <h3 class="text-2xl font-semibold mb-6">Defining the Market Scope</h3>
+
+              <div class="space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                  <h4 class="text-lg font-semibold mb-4 text-teal-700">Distinction from Related Markets</h4>
+                  <p class="text-gray-700 mb-4">
+                    The Indian domestic helper market is distinct from several related but separate market segments. The <strong>&#34;household care market&#34;</strong> primarily encompasses consumer goods like detergents and cleaning products, valued at approximately <a href="#ref-308" class="citation">USD 8.71 billion in 2024</a>.
+                  </p>
+                  <p class="text-gray-700">
+                    Similarly, the <strong>&#34;cleaning services market&#34;</strong> focuses on professional services for commercial and residential spaces, projected to reach <a href="#ref-330" class="citation">USD 13.94 billion by 2030</a>. The domestic helper market specifically refers to ongoing household tasks within private residences.
+                  </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                  <h4 class="text-lg font-semibold mb-4 text-teal-700">Informal vs. Organized Sector Divide</h4>
+                  <p class="text-gray-700 mb-4">
+                    A defining characteristic is the profound division into informal and organized sectors. The vast majority of domestic workers—<strong>over 90%</strong>—operate within the informal sector, characterized by lack of formal contracts, regulatory oversight, and social security benefits.
+                  </p>
+                  <p class="text-gray-700">
+                    In contrast, the organized sector, while currently a small fraction, is growing through registered agencies and digital platforms like <a href="#ref-322" class="citation">Urban Company</a>, bringing standardization and transparency to the hiring process.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div class="bg-teal-50 p-6 rounded-lg">
+                <h4 class="text-lg font-semibold mb-4 text-teal-800">Key Statistics</h4>
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-700">Global Domestic Helper Agency Market (2023)</span>
+                    <span class="font-bold text-teal-700">$105B</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-700">Projected 2033 Value</span>
+                    <span class="font-bold text-teal-700">$190B</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-700">Asia-Pacific Market (2024)</span>
+                    <span class="font-bold text-teal-700">$25B</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-700">Growth Rate (CAGR)</span>
+                    <span class="font-bold text-orange-600">6.1%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h4 class="text-lg font-semibold mb-4 text-gray-800">e-Shram Portal Registrations</h4>
+                <p class="text-gray-700 text-sm mb-4">
+                  The government&#39;s e-Shram portal had registered <a href="#ref-236" class="citation">30.8 crore (308 million) workers</a> by April 2025, with domestic workers constituting the second-largest group at 9% of total registrations.
+                </p>
+                <div class="bg-gray-50 p-4 rounded">
+                  <div class="text-2xl font-bold text-teal-600">2.77M</div>
+                  <div class="text-sm text-gray-600">Registered Domestic Workers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Market Structure Diagram -->
+          <div class="bg-white p-8 rounded-lg shadow-sm mb-12">
+            <h4 class="text-xl font-semibold mb-6 text-center text-gray-800">Indian Domestic Helper Market Structure</h4>
+            <div class="mermaid-container">
+              <div class="mermaid-controls">
+                <button class="mermaid-control-btn zoom-in" title="放大">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+                <button class="mermaid-control-btn zoom-out" title="缩小">
+                  <i class="fas fa-search-minus"></i>
+                </button>
+                <button class="mermaid-control-btn reset-zoom" title="重置">
+                  <i class="fas fa-expand-arrows-alt"></i>
+                </button>
+                <button class="mermaid-control-btn fullscreen" title="全屏查看">
+                  <i class="fas fa-expand"></i>
+                </button>
+              </div>
+              <div class="mermaid">
+                graph TD
+                A[&#34;Indian Domestic Helper Market&#34;] --&gt; B[&#34;Informal Sector
+                <br/>90%+&#34;]
+                A --&gt; C[&#34;Organized Sector
+                <br/>
+                &lt;10%&#34;]
+
+                B --&gt; D[&#34;Word-of-Mouth Hiring&#34;]
+                B --&gt; E[&#34;Local Brokers&#34;]
+                B --&gt; F[&#34;Unregistered Agencies&#34;]
+
+                C --&gt; G[&#34;Digital Platforms
+                <br/>Urban Company, Broomees&#34;]
+                C --&gt; H[&#34;Registered Agencies&#34;]
+                C --&gt; I[&#34;Government Schemes&#34;]
+
+                D --&gt; J[&#34;No Formal Contracts&#34;]
+                E --&gt; J
+                F --&gt; J
+                G --&gt; K[&#34;Standardized Services&#34;]
+                H --&gt; K
+                I --&gt; K
+
+                J --&gt; L[&#34;Vulnerable Workforce&#34;]
+                K --&gt; M[&#34;Professional Workforce&#34;]
+
+                classDef primary fill:#f0fdfa,stroke:#0f766e,stroke-width:2px,color:#1e293b
+                classDef secondary fill:#fefce8,stroke:#d97706,stroke-width:2px,color:#1e293b
+                classDef accent fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#1e293b
+
+                class A primary
+                class B,C secondary
+                class D,E,F,G,H,I accent
+                class J,L secondary
+                class K,M primary
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-semibold mb-6">Market Valuation Challenges</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-lg font-semibold mb-4 text-gray-800">Absence of Definitive Market Size</h4>
+                <p class="text-gray-700 mb-4">
+                  A significant challenge is the complete absence of a definitive market size valuation. Unlike formal industries, the domestic helper market&#39;s deep entrenchment in the informal economy makes precise calculation exceedingly difficult.
+                </p>
+                <p class="text-gray-700">
+                  The lack of standardized pricing, prevalence of cash transactions, and absence of centralized reporting mean there is no reliable data source for deriving precise market value.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-semibold mb-4 text-gray-800">Proxy Estimation Method</h4>
+                <p class="text-gray-700 mb-4">
+                  Using conservative estimates of 10 million workers earning an average of <strong>INR 10,000 per month</strong>, the total annual wage bill would be approximately:
+                </p>
+                <div class="bg-teal-50 p-4 rounded-lg">
+                  <div class="text-3xl font-bold text-teal-700 mb-2">INR 1.2 Trillion</div>
+                  <div class="text-lg text-gray-600">(USD 14.4 billion annually)</div>
+                </div>
+                <p class="text-sm text-gray-600 mt-4">
+                  This represents the total income generated by domestic workers and serves as a proxy for the market&#39;s value from a labor cost perspective.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Growth Trends &amp; Projections -->
+      <section id="growth-trends" class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="section-header">
+            <h2 class="serif text-4xl font-bold text-gray-900">Growth Trends &amp; Future Projections</h2>
+          </div>
+
+          <div class="mb-12">
+            <h3 class="text-2xl font-semibold mb-8">Key Drivers of Market Growth</h3>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+              <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-city text-3xl text-teal-600 mr-4"></i>
+                  <h4 class="text-lg font-semibold text-teal-800">Urbanization &amp; Dual-Income Households</h4>
+                </div>
+                <p class="text-gray-700 mb-4">
+                  By 2030, <a href="#ref-270" class="citation">70% of new jobs in India will be generated in urban centers</a>, creating a surge in dual-income households that require domestic help for work-life balance.
+                </p>
+                <div class="bg-white p-3 rounded text-sm">
+                  <strong>GCC Market:</strong> $72B → $110B by 2030
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-user-friends text-3xl text-orange-600 mr-4"></i>
+                  <h4 class="text-lg font-semibold text-orange-800">Specialized Care Demand</h4>
+                </div>
+                <p class="text-gray-700 mb-4">
+                  Increasing demand for elderly and childcare services driven by aging population and nuclear family structures, creating new opportunities for specialized caregivers.
+                </p>
+                <div class="bg-white p-3 rounded text-sm">
+                  <strong>Trend:</strong> Higher wages for specialized skills
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-chart-line text-3xl text-blue-600 mr-4"></i>
+                  <h4 class="text-lg font-semibold text-blue-800">Growing Affluence</h4>
+                </div>
+                <p class="text-gray-700 mb-4">
+                  Rising disposable incomes and lifestyle changes are making households increasingly willing to invest in services that offer convenience and improve quality of life.
+                </p>
+                <div class="bg-white p-3 rounded text-sm">
+                  <strong>Impact:</strong> Tier 2/3 cities showing similar patterns
+                </div>
+              </div>
+            </div>
+
+            <!-- Growth Projections Visualization -->
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+              <h4 class="text-xl font-semibold mb-6 text-center text-gray-800">Market Growth Projections</h4>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h5 class="text-lg font-semibold mb-4 text-teal-700">City-Specific Growth Rates</h5>
+                  <div class="space-y-4">
+                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                      <span class="font-medium">Bengaluru, Pune, Gurugram</span>
+                      <span class="text-lg font-bold text-teal-600">12-15%</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                      <span class="font-medium">Global Market (CAGR)</span>
+                      <span class="text-lg font-bold text-orange-600">6.1%</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                      <span class="font-medium">Home Services Market</span>
+                      <span class="text-lg font-bold text-blue-600">10-11%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h5 class="text-lg font-semibold mb-4 text-teal-700">Regional Market Growth</h5>
+                  <div class="bg-teal-50 p-6 rounded-lg">
+                    <div class="text-center mb-4">
+                      <div class="text-3xl font-bold text-teal-700">$25B → $50B</div>
+                      <div class="text-sm text-gray-600">Asia-Pacific Market (2024-2033)</div>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                      India is a significant contributor to regional growth, with the organized segment expected to expand rapidly as formalization increases.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <h3 class="text-2xl font-semibold mb-6">Evolving Nature of Demand</h3>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-lg font-semibold mb-4 text-gray-800">Shift Towards Skilled Helpers</h4>
+                <p class="text-gray-700 mb-4">
+                  The traditional perception of domestic work as unskilled labor is rapidly changing. A <a href="#ref-323" class="citation">2025 WorkIndia report</a> shows remarkable increases in demand for educated domestic helpers:
+                </p>
+                <div class="space-y-3">
+                  <div class="flex justify-between items-center bg-white p-3 rounded">
+                    <span>12th Grade Pass Candidates</span>
+                    <span class="font-bold text-green-600">+255%</span>
+                  </div>
+                  <div class="flex justify-between items-center bg-white p-3 rounded">
+                    <span>Graduate Candidates</span>
+                    <span class="font-bold text-green-600">+102%</span>
+                  </div>
+                  <div class="flex justify-between items-center bg-white p-3 rounded">
+                    <span>Below 10th Grade</span>
+                    <span class="font-bold text-green-600">+112%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-semibold mb-4 text-gray-800">Specialized Roles &amp; Gig Economy</h4>
+                <p class="text-gray-700 mb-4">
+                  Demand is moving towards specialized roles with distinct skill requirements:
+                </p>
+                <ul class="space-y-2 text-gray-700 mb-4">
+                  <li class="flex items-center"><i class="fas fa-utensils text-teal-600 mr-2"></i> Professional Cooks</li>
+                  <li class="flex items-center"><i class="fas fa-baby text-teal-600 mr-2"></i> Childcare Specialists</li>
+                  <li class="flex items-center"><i class="fas fa-user-nurse text-teal-600 mr-2"></i> Elderly Care Providers</li>
+                </ul>
+                <div class="bg-orange-50 p-4 rounded">
+                  <p class="text-sm text-gray-700"><strong>Gig Economy Impact:</strong> India&#39;s gig economy is projected to reach <a href="#ref-313" class="citation">US$ 455 billion by FY24</a>, bringing on-demand flexibility to domestic work.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Regional &amp; City-Level Insights -->
+      <section id="regional-insights" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="section-header">
+            <h2 class="serif text-4xl font-bold text-gray-900">Regional &amp; City-Level Insights</h2>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 class="text-2xl font-semibold mb-6">Metropolitan Hubs</h3>
+
+              <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+                <h4 class="text-lg font-semibold mb-4 text-teal-700">High Demand in Tier-I Cities</h4>
+                <p class="text-gray-700 mb-4">
+                  Metropolitan hubs like <strong>Mumbai, Delhi, Bengaluru, and Pune</strong> represent the most mature and high-value segments. These cities feature:
+                </p>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start"><i class="fas fa-check-circle text-teal-600 mr-2 mt-1"></i>High concentration of dual-income households</li>
+                  <li class="flex items-start"><i class="fas fa-check-circle text-teal-600 mr-2 mt-1"></i>Large expatriate populations</li>
+                  <li class="flex items-start"><i class="fas fa-check-circle text-teal-600 mr-2 mt-1"></i>Strong demand for specialized services</li>
+                  <li class="flex items-start"><i class="fas fa-check-circle text-teal-600 mr-2 mt-1"></i>Premium wages compared to smaller cities</li>
+                </ul>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h4 class="text-lg font-semibold mb-4 text-teal-700">GCC Concentration</h4>
+                <p class="text-gray-700 mb-4">
+                  The presence of <strong>Global Capability Centers</strong> significantly fuels demand. <a href="#ref-295" class="citation">Bengaluru alone accounted for 46% of GCC office leasing</a> in 2023-2024.
+                </p>
+                <div class="bg-teal-50 p-4 rounded">
+                  <div class="text-sm text-gray-600 mb-2">Top GCC Cities:</div>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-teal-200 text-teal-800 px-3 py-1 rounded-full text-sm">Bengaluru</span>
+                    <span class="bg-teal-200 text-teal-800 px-3 py-1 rounded-full text-sm">Hyderabad</span>
+                    <span class="bg-teal-200 text-teal-800 px-3 py-1 rounded-full text-sm">Pune</span>
+                    <span class="bg-teal-200 text-teal-800 px-3 py-1 rounded-full text-sm">Delhi-NCR</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold mb-6">Emerging Markets</h3>
+
+              <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+                <h4 class="text-lg font-semibold mb-4 text-orange-700">Tier-II/III City Growth</h4>
+                <p class="text-gray-700 mb-4">
+                  Cities like <strong>Coimbatore, Indore, Surat, and Kochi</strong> are emerging as new growth frontiers. The share of GCCs in these cities has grown from <a href="#ref-295" class="citation">5% in FY19 to 7% recently</a>.
+                </p>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between bg-gray-50 p-3 rounded">
+                    <span class="text-gray-700">Economic Development</span>
+                    <i class="fas fa-arrow-up text-green-600"></i>
+                  </div>
+                  <div class="flex items-center justify-between bg-gray-50 p-3 rounded">
+                    <span class="text-gray-700">Rising Incomes</span>
+                    <i class="fas fa-arrow-up text-green-600"></i>
+                  </div>
+                  <div class="flex items-center justify-between bg-gray-50 p-3 rounded">
+                    <span class="text-gray-700">Lifestyle Changes</span>
+                    <i class="fas fa-arrow-up text-green-600"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h4 class="text-lg font-semibold mb-4 text-orange-700">Demand for Educated Helpers</h4>
+                <p class="text-gray-700 mb-4">
+                  Employers in emerging markets increasingly seek domestic workers who can:
+                </p>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start"><i class="fas fa-comments text-orange-600 mr-2 mt-1"></i>Communicate effectively</li>
+                  <li class="flex items-start"><i class="fas fa-list-ol text-orange-600 mr-2 mt-1"></i>Follow complex instructions</li>
+                  <li class="flex items-start"><i class="fas fa-laptop text-orange-600 mr-2 mt-1"></i>Adapt to modern household tech</li>
+                  <li class="flex items-start"><i class="fas fa-graduation-cap text-orange-600 mr-2 mt-1"></i>Assist with children&#39;s education</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- State-Level Regulation Case Study -->
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-semibold mb-6">Case Study: Odisha&#39;s Regulatory Model</h3>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="md:col-span-2">
+                <p class="text-gray-700 mb-4">
+                  The state of Odisha has emerged as a pioneer in domestic worker regulation through the <strong>Odisha Domestic Workers&#39; Welfare Board</strong>. This model includes:
+                </p>
+                <ul class="space-y-2 text-gray-700 mb-6">
+                  <li class="flex items-start"><i class="fas fa-clipboard-list text-teal-600 mr-2 mt-1"></i>Mandatory registration for workers and employers</li>
+                  <li class="flex items-start"><i class="fas fa-rupee-sign text-teal-600 mr-2 mt-1"></i>Fixing of minimum wages for domestic workers</li>
+                  <li class="flex items-start"><i class="fas fa-umbrella text-teal-600 mr-2 mt-1"></i>Health insurance coverage</li>
+                  <li class="flex items-start"><i class="fas fa-calendar text-teal-600 mr-2 mt-1"></i>Maternity leave provisions</li>
+                  <li class="flex items-start"><i class="fas fa-graduation-cap text-teal-600 mr-2 mt-1"></i>Financial assistance for education</li>
+                </ul>
+                <p class="text-gray-700">
+                  While implementation faces challenges, the Odisha model serves as an inspiration for other states and demonstrates the feasibility of formalizing this informal sector.
+                </p>
+              </div>
+
+              <div class="bg-teal-50 p-6 rounded-lg">
+                <h4 class="text-lg font-semibold mb-4 text-teal-800">Key Achievements</h4>
+                <div class="space-y-4">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-teal-700">First</div>
+                    <div class="text-sm text-gray-600">State with comprehensive domestic worker welfare board</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-teal-700">Model</div>
+                    <div class="text-sm text-gray-600">For other states to replicate</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-teal-700">Framework</div>
+                    <div class="text-sm text-gray-600">For national policy development</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Market Challenges -->
+      <section id="challenges" class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="section-header">
+            <h2 class="serif text-4xl font-bold text-gray-900">Challenges in the Indian Domestic Helper Market</h2>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 class="text-2xl font-semibold mb-6 text-red-700">Workforce Vulnerabilities</h3>
+
+              <div class="space-y-6">
+                <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                  <h4 class="text-lg font-semibold mb-3 text-red-800">Lack of Legal Recognition</h4>
+                  <p class="text-gray-700 mb-3">
+                    Domestic workers are not covered by most labor laws, denying them access to:
+                  </p>
+                  <ul class="space-y-1 text-gray-700">
+                    <li class="flex items-center"><i class="fas fa-times-circle text-red-600 mr-2"></i>Health insurance</li>
+                    <li class="flex items-center"><i class="fas fa-times-circle text-red-600 mr-2"></i>Provident funds</li>
+                    <li class="flex items-center"><i class="fas fa-times-circle text-red-600 mr-2"></i>Paid leave</li>
+                    <li class="flex items-center"><i class="fas fa-times-circle text-red-600 mr-2"></i>Job security</li>
+                  </ul>
+                  <p class="text-sm text-gray-600 mt-3">
+                    The <a href="#ref-44" class="citation">Domestic Workers Bill</a> has been pending for years, leaving workers vulnerable to exploitation.
+                  </p>
+                </div>
+
+                <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                  <h4 class="text-lg font-semibold mb-3 text-orange-800">Poor Working Conditions</h4>
+                  <p class="text-gray-700 mb-3">
+                    An <a href="#ref-47" class="citation">ILO study</a> found many live-in workers in Delhi work <strong>16-18 hours daily</strong> with:
+                  </p>
+                  <ul class="space-y-1 text-gray-700">
+                    <li class="flex items-center"><i class="fas fa-exclamation text-orange-600 mr-2"></i>No standardized contracts</li>
+                    <li class="flex items-center"><i class="fas fa-exclamation text-orange-600 mr-2"></i>Unclear working hours</li>
+                    <li class="flex items-center"><i class="fas fa-exclamation text-orange-600 mr-2"></i>Restricted movement</li>
+                    <li class="flex items-center"><i class="fas fa-exclamation text-orange-600 mr-2"></i>No leave entitlements</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold mb-6 text-red-700">Market Inefficiencies</h3>
+
+              <div class="space-y-6">
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-500">
+                  <h4 class="text-lg font-semibold mb-3 text-gray-800">Unorganized Sector Dominance</h4>
+                  <div class="mb-4">
+                    <div class="flex justify-between items-center mb-2">
+                      <span class="text-gray-700">Informal Sector</span>
+                      <span class="text-2xl font-bold text-red-600">90%+</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div class="bg-red-600 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                  </div>
+                  <p class="text-gray-700 text-sm">
+                    Over <strong>90% of the workforce</strong> operates through informal channels, creating difficulties in finding reliable help and perpetuating vulnerability.
+                  </p>
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                  <h4 class="text-lg font-semibold mb-3 text-yellow-800">Skill Development Gap</h4>
+                  <p class="text-gray-700 mb-3">
+                    Most workers learn skills informally, leading to:
+                  </p>
+                  <ul class="space-y-1 text-gray-700">
+                    <li class="flex items-center"><i class="fas fa-minus-circle text-yellow-600 mr-2"></i>Non-standardized service quality</li>
+                    <li class="flex items-center"><i class="fas fa-minus-circle text-yellow-600 mr-2"></i>Limited career progression</li>
+                    <li class="flex items-center"><i class="fas fa-minus-circle text-yellow-600 mr-2"></i>Low wage ceilings</li>
+                    <li class="flex items-center"><i class="fas fa-minus-circle text-yellow-600 mr-2"></i>Inadequate safety knowledge</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Challenge Impact Flow Chart -->
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h4 class="text-xl font-semibold mb-6 text-center text-gray-800">Challenge Impact Chain</h4>
+            <div class="mermaid-container">
+              <div class="mermaid-controls">
+                <button class="mermaid-control-btn zoom-in" title="放大">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+                <button class="mermaid-control-btn zoom-out" title="缩小">
+                  <i class="fas fa-search-minus"></i>
+                </button>
+                <button class="mermaid-control-btn reset-zoom" title="重置">
+                  <i class="fas fa-expand-arrows-alt"></i>
+                </button>
+                <button class="mermaid-control-btn fullscreen" title="全屏查看">
+                  <i class="fas fa-expand"></i>
+                </button>
+              </div>
+              <div class="mermaid">
+                flowchart LR
+                A[&#34;Informal Employment
+                <br/>No Contracts&#34;] --&gt; B[&#34;Poor Working
+                <br/>Conditions&#34;]
+                B --&gt; C[&#34;Low Skill
+                <br/>Development&#34;]
+                C --&gt; D[&#34;Limited Career
+                <br/>Progression&#34;]
+                D --&gt; E[&#34;Low Wages&#34;]
+                E --&gt; F[&#34;Worker
+                <br/>Vulnerability&#34;]
+                F --&gt; G[&#34;Market
+                <br/>Inefficiency&#34;]
+                G --&gt; H[&#34;Employer
+                <br/>Dissatisfaction&#34;]
+                H --&gt; A
+
+                I[&#34;Lack of Legal
+                <br/>Framework&#34;] --&gt; A
+                J[&#34;No Social Security&#34;] --&gt; F
+                K[&#34;Child Labor
+                <br/>Issues&#34;] --&gt; L[&#34;Abuse &amp; Exploitation&#34;]
+                L --&gt; F
+
+                classDef challenge fill:#fef2f2,stroke:#dc2626,stroke-width:2px,color:#1e293b
+                classDef impact fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#1e293b
+                classDef rootCause fill:#f0f9ff,stroke:#0284c7,stroke-width:2px,color:#1e293b
+
+                class A,B,C,D,E challenge
+                class F,G,H impact
+                class I,J,K,L rootCause
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-red-100 p-8 rounded-lg mt-8">
+            <div class="flex items-start">
+              <i class="fas fa-exclamation-triangle text-3xl text-red-600 mr-4 mt-1"></i>
+              <div>
+                <h4 class="text-lg font-semibold mb-3 text-red-800">Critical Issue: Child Labor and Abuse</h4>
+                <p class="text-gray-700 mb-4">
+                  Despite legal prohibitions, thousands of children are employed in households, often in conditions amounting to modern-day slavery. The hidden nature of domestic work makes monitoring and enforcement extremely difficult.
+                </p>
+                <p class="text-gray-700">
+                  Many adult workers, particularly women, also face various forms of abuse. The power imbalance and lack of legal protections create environments where abuse can thrive with little recourse to justice.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Opportunities for Formalization -->
+      <section id="opportunities" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="section-header">
+            <h2 class="serif text-4xl font-bold text-gray-900">Opportunities for Market Organization and Formalization</h2>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-mobile-alt text-3xl text-teal-600 mr-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Technology &amp; Digital Platforms</h3>
+              </div>
+              <p class="text-gray-700 mb-4">
+                On-demand service apps are transforming how domestic help is sourced, managed, and paid for, bringing unprecedented transparency and efficiency.
+              </p>
+              <div class="space-y-2">
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-check text-teal-600 mr-2"></i>Online booking systems
+                </div>
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-check text-teal-600 mr-2"></i>Background verification
+                </div>
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-check text-teal-600 mr-2"></i>Digital payments
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-graduation-cap text-3xl text-orange-600 mr-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Skill Development</h3>
+              </div>
+              <p class="text-gray-700 mb-4">
+                Formal training programs through the <a href="#ref-59" class="citation">Domestic Workers Sector Skill Council (DWSSC)</a> and private initiatives are creating pathways for professionalization.
+              </p>
+              <div class="space-y-2">
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-check text-orange-600 mr-2"></i>Standardized curriculum
+                </div>
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-check text-orange-600 mr-2"></i>Certification programs
+                </div>
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-check text-orange-600 mr-2"></i>Specialized roles training
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-building text-3xl text-blue-600 mr-4"></i>
+                <h3 class="text-xl font-semibold text-gray-800">Organized Players</h3>
+              </div>
+              <p class="text-gray-700 mb-4">
+                Established agencies and tech startups are bringing professionalism through rigorous vetting, training, and service guarantees.
+              </p>
+              <div class="space-y-2">
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>Quality assurance
+                </div>
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>Reliability guarantees
+                </div>
+                <div class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>Dispute resolution
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technology Impact Visualization -->
+          <div class="bg-white p-8 rounded-lg shadow-sm mb-12">
+            <h4 class="text-xl font-semibold mb-6 text-center text-gray-800">Digital Platform Impact</h4>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h5 class="text-lg font-semibold mb-4 text-teal-700">Standardization Benefits</h5>
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between bg-teal-50 p-4 rounded">
+                    <span class="text-gray-700">Service Categories</span>
+                    <i class="fas fa-check-circle text-teal-600 text-xl"></i>
+                  </div>
+                  <div class="flex items-center justify-between bg-teal-50 p-4 rounded">
+                    <span class="text-gray-700">Clear Expectations</span>
+                    <i class="fas fa-check-circle text-teal-600 text-xl"></i>
+                  </div>
+                  <div class="flex items-center justify-between bg-teal-50 p-4 rounded">
+                    <span class="text-gray-700">Rating Systems</span>
+                    <i class="fas fa-check-circle text-teal-600 text-xl"></i>
+                  </div>
+                  <div class="flex items-center justify-between bg-teal-50 p-4 rounded">
+                    <span class="text-gray-700">Cashless Payments</span>
+                    <i class="fas fa-check-circle text-teal-600 text-xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h5 class="text-lg font-semibold mb-4 text-orange-700">Market Expansion</h5>
+                <div class="bg-orange-50 p-6 rounded-lg">
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-orange-600 mb-2">$58.2B</div>
+                    <div class="text-sm text-gray-600">Domestic Technology Market (FY25)</div>
+                  </div>
+                  <div class="space-y-3">
+                    <div class="flex justify-between text-sm">
+                      <span>Tier-I Cities</span>
+                      <span class="font-medium">Established</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                      <span>Tier-II Cities</span>
+                      <span class="font-medium text-orange-600">Growing</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                      <span>Tier-III Cities</span>
+                      <span class="font-medium text-green-600">Emerging</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Players -->
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-semibold mb-6">Key Players in the Organized Sector</h3>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-lg font-semibold mb-4 text-gray-800">Traditional Agencies</h4>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-teal-500 pl-4">
+                    <h5 class="font-semibold text-gray-800">The Maid&#39;s Company</h5>
+                    <p class="text-sm text-gray-600">Established placement agency with strong reputation for quality</p>
+                  </div>
+                  <div class="border-l-4 border-teal-500 pl-4">
+                    <h5 class="font-semibold text-gray-800">Hire-a-Help</h5>
+                    <p class="text-sm text-gray-600">Comprehensive training and verification services</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-semibold mb-4 text-gray-800">Technology Startups</h4>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-orange-500 pl-4">
+                    <h5 class="font-semibold text-gray-800">Urban Company</h5>
+                    <p class="text-sm text-gray-600">Market leader in on-demand home services platform</p>
+                  </div>
+                  <div class="border-l-4 border-orange-500 pl-4">
+                    <h5 class="font-semibold text-gray-800">Broomees</h5>
+                    <p class="text-sm text-gray-600">Specialized in professional domestic help placement</p>
+                  </div>
+                  <div class="border-l-4 border-orange-500 pl-4">
+                    <h5 class="font-semibold text-gray-800">Snabbit</h5>
+                    <p class="text-sm text-gray-600">Tech-driven approach to domestic worker matching</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold mb-4 text-gray-800">Growth Strategies</h4>
+              <div class="grid md:grid-cols-3 gap-4">
+                <div class="text-center">
+                  <i class="fas fa-shield-alt text-2xl text-teal-600 mb-2"></i>
+                  <h5 class="font-semibold text-sm">Trust Building</h5>
+                  <p class="text-xs text-gray-600">Background checks &amp; verification</p>
+                </div>
+                <div class="text-center">
+                  <i class="fas fa-mobile-alt text-2xl text-orange-600 mb-2"></i>
+                  <h5 class="font-semibold text-sm">Technology</h5>
+                  <p class="text-xs text-gray-600">Digital platforms &amp; apps</p>
+                </div>
+                <div class="text-center">
+                  <i class="fas fa-expand-arrows-alt text-2xl text-blue-600 mb-2"></i>
+                  <h5 class="font-semibold text-sm">Market Expansion</h5>
+                  <p class="text-xs text-gray-600">Tier-II/III city penetration</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Policy &amp; Regulatory Framework -->
+      <section id="policy-framework" class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="section-header">
+            <h2 class="serif text-4xl font-bold text-gray-900">Policy and Regulatory Framework</h2>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 class="text-2xl font-semibold mb-6">Existing National Legislation</h3>
+
+              <div class="space-y-6">
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                  <h4 class="text-lg font-semibold mb-3 text-blue-800">Unorganized Workers&#39; Social Security Act, 2008</h4>
+                  <p class="text-gray-700 mb-3">
+                    This act aims to provide social security to workers in the informal sector, including domestic helpers. It provides for:
+                  </p>
+                  <ul class="space-y-1 text-gray-700">
+                    <li class="flex items-start"><i class="fas fa-circle text-blue-600 mr-2 mt-1 text-xs"></i>Formulation of social security schemes</li>
+                    <li class="flex items-start"><i class="fas fa-circle text-blue-600 mr-2 mt-1 text-xs"></i>Health insurance coverage</li>
+                    <li class="flex items-start"><i class="fas fa-circle text-blue-600 mr-2 mt-1 text-xs"></i>Maternity benefits</li>
+                    <li class="flex items-start"><i class="fas fa-circle text-blue-600 mr-2 mt-1 text-xs"></i>Old-age pensions</li>
+                  </ul>
+                  <p class="text-sm text-gray-600 mt-3">
+                    However, implementation has been slow with limited impact on domestic workers.
+                  </p>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                  <h4 class="text-lg font-semibold mb-3 text-green-800">Domestic Workers Bill (Pending)</h4>
+                  <p class="text-gray-700 mb-3">
+                    The <a href="#ref-44" class="citation">Domestic Workers (Registration, Social Security, and Welfare) Bill</a> proposes comprehensive legislation including:
+                  </p>
+                  <ul class="space-y-1 text-gray-700">
+                    <li class="flex items-start"><i class="fas fa-clipboard-check text-green-600 mr-2 mt-1 text-xs"></i>Mandatory registration of workers and employers</li>
+                    <li class="flex items-start"><i class="fas fa-calendar text-green-600 mr-2 mt-1 text-xs"></i>Regulation of working hours and leave</li>
+                    <li class="flex items-start"><i class="fas fa-rupee-sign text-green-600 mr-2 mt-1 text-xs"></i>Minimum wage fixation</li>
+                    <li class="flex items-start"><i class="fas fa-balance-scale text-green-600 mr-2 mt-1 text-xs"></i>Dispute resolution mechanisms</li>
+                  </ul>
+                  <p class="text-sm text-orange-600 mt-3 font-medium">
+                    Status: Pending in Parliament for several years
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold mb-6">Proposed Reforms &amp; International Involvement</h3>
+
+              <div class="space-y-6">
+                <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+                  <h4 class="text-lg font-semibold mb-3 text-purple-800">Advocacy Efforts</h4>
+                  <p class="text-gray-700 mb-3">
+                    Civil society organizations and trade unions are calling for:
+                  </p>
+                  <ul class="space-y-1 text-gray-700">
+                    <li class="flex items-start"><i class="fas fa-gavel text-purple-600 mr-2 mt-1 text-xs"></i>Fast-track courts for abuse cases</li>
+                    <li class="flex items-start"><i class="fas fa-clock text-purple-600 mr-2 mt-1 text-xs"></i>Regulation of working hours</li>
+                    <li class="flex items-start"><i class="fas fa-umbrella text-purple-600 mr-2 mt-1 text-xs"></i>Universal social security coverage</li>
+                    <li class="flex items-start"><i class="fas fa-file-contract text-purple-600 mr-2 mt-1 text-xs"></i>Mandatory employment contracts</li>
+                  </ul>
+                </div>
+
+                <div class="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500">
+                  <h4 class="text-lg font-semibold mb-3 text-indigo-800">ILO Convention No. 189</h4>
+                  <p class="text-gray-700 mb-3">
+                    The International Labour Organization&#39;s <strong>Convention on Decent Work for Domestic Workers</strong> sets global standards including:
+                  </p>
+                  <ul class="space-y-1 text-gray-700">
+                    <li class="flex items-start"><i class="fas fa-globe text-indigo-600 mr-2 mt-1 text-xs"></i>International labor standards</li>
+                    <li class="flex items-start"><i class="fas fa-users text-indigo-600 mr-2 mt-1 text-xs"></i>Tripartite committee structures</li>
+                    <li class="flex items-start"><i class="fas fa-chart-line text-indigo-600 mr-2 mt-1 text-xs"></i>National policy frameworks</li>
+                  </ul>
+                  <p class="text-sm text-gray-600 mt-3">
+                    India is being encouraged to ratify and implement this convention.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Policy Framework Visualization -->
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <h4 class="text-xl font-semibold mb-6 text-center text-gray-800">Policy Framework Structure</h4>
+            <div class="mermaid-container">
+              <div class="mermaid-controls">
+                <button class="mermaid-control-btn zoom-in" title="放大">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+                <button class="mermaid-control-btn zoom-out" title="缩小">
+                  <i class="fas fa-search-minus"></i>
+                </button>
+                <button class="mermaid-control-btn reset-zoom" title="重置">
+                  <i class="fas fa-expand-arrows-alt"></i>
+                </button>
+                <button class="mermaid-control-btn fullscreen" title="全屏查看">
+                  <i class="fas fa-expand"></i>
+                </button>
+              </div>
+              <div class="mermaid">
+                graph TD
+                A[&#34;National Policy Framework&#34;] --&gt; B[&#34;Existing Laws&#34;]
+                A --&gt; C[&#34;Pending Legislation&#34;]
+                A --&gt; D[&#34;State Initiatives&#34;]
+                A --&gt; E[&#34;International Standards&#34;]
+
+                B --&gt; F[&#34;Unorganized Workers&#39;
+                <br/>Social Security Act, 2008&#34;]
+                C --&gt; G[&#34;Domestic Workers Bill
+                <br/>Registration, Welfare&#34;]
+                D --&gt; H[&#34;Odisha Model
+                <br/>Welfare Board&#34;]
+                E --&gt; I[&#34;ILO Convention 189
+                <br/>Decent Work&#34;]
+
+                F --&gt; J[&#34;Implementation Gaps&#34;]
+                G --&gt; K[&#34;Parliamentary Approval Pending&#34;]
+                H --&gt; L[&#34;Successful State Model&#34;]
+                I --&gt; M[&#34;Ratification Required&#34;]
+
+                J --&gt; N[&#34;Reform Priorities&#34;]
+                K --&gt; N
+                L --&gt; N
+                M --&gt; N
+
+                N --&gt; O[&#34;Comprehensive
+                <br/>Legal Framework&#34;]
+                N --&gt; P[&#34;Social Security
+                <br/>Coverage&#34;]
+                N --&gt; Q[&#34;Skill Development
+                <br/>Programs&#34;]
+                N --&gt; R[&#34;Worker Protection
+                <br/>Mechanisms&#34;]
+
+                classDef framework fill:#eff6ff,stroke:#2563eb,stroke-width:2px,color:#1e293b
+                classDef existing fill:#f0f9ff,stroke:#0284c7,stroke-width:2px,color:#1e293b
+                classDef pending fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#1e293b
+                classDef state fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#1e293b
+                classDef international fill:#faf5ff,stroke:#9333ea,stroke-width:2px,color:#1e293b
+                classDef challenges fill:#fef2f2,stroke:#dc2626,stroke-width:2px,color:#1e293b
+                classDef priorities fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#1e293b
+                classDef outcomes fill:#f0fdfa,stroke:#0f766e,stroke-width:2px,color:#1e293b
+
+                class A framework
+                class B,F,J existing
+                class C,G,K pending
+                class D,H,L state
+                class E,I,M international
+                class N priorities
+                class O,P,Q,R outcomes
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conclusion -->
+      <section id="conclusion" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+          <div class="section-header">
+            <h2 class="serif text-4xl font-bold text-gray-900">Conclusion</h2>
+          </div>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-gray-700 leading-relaxed mb-8">
+              The Indian domestic helper market stands at a critical juncture. With an estimated <strong>50-90 million workers</strong>, it represents one of the largest employment sectors in the country, yet remains predominantly informal and largely invisible in official economic statistics.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+              <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                <i class="fas fa-chart-line text-4xl text-teal-600 mb-4"></i>
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">Growth Trajectory</h4>
+                <p class="text-gray-600 text-sm">Driven by urbanization, dual-income households, and rising demand for specialized care services</p>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                <i class="fas fa-balance-scale text-4xl text-orange-600 mb-4"></i>
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">Formalization Challenge</h4>
+                <p class="text-gray-600 text-sm">Over 90% informality rate creates vulnerabilities but also opportunities for organization</p>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                <i class="fas fa-mobile-alt text-4xl text-blue-600 mb-4"></i>
+                <h4 class="text-lg font-semibold text-gray-800 mb-2">Technology Impact</h4>
+                <p class="text-gray-600 text-sm">Digital platforms driving transparency, standardization, and professionalization</p>
+              </div>
+            </div>
+
+            <div class="bg-teal-50 p-8 rounded-lg mb-8">
+              <h3 class="text-2xl font-semibold mb-4 text-teal-800">Key Takeaways</h3>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <i class="fas fa-arrow-right text-teal-600 mr-3 mt-1"></i>
+                  <strong>Market Evolution:</strong> The sector is transitioning from unskilled labor to a demand for educated, specialized professionals, with education becoming a key differentiator.
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-arrow-right text-teal-600 mr-3 mt-1"></i>
+                  <strong>Regional Expansion:</strong> Growth is no longer confined to metropolitan areas, with Tier-II and Tier-III cities emerging as new frontiers of demand.
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-arrow-right text-teal-600 mr-3 mt-1"></i>
+                  <strong>Policy Imperative:</strong> The pending Domestic Workers Bill represents a critical opportunity to provide legal recognition and social security to millions of workers.
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-arrow-right text-teal-600 mr-3 mt-1"></i>
+                  <strong>Technology Catalyst:</strong> Digital platforms are successfully formalizing segments of the market, demonstrating the potential for scalable solutions.
+                </li>
+              </ul>
+            </div>
+
+            <div class="quote-block p-8 rounded-lg">
+              <p class="text-xl italic mb-4">
+                &#34;The future of India&#39;s domestic helper market lies in its successful transition from informal arrangements to a formalized, professional sector that recognizes the dignity and rights of workers while meeting the evolving needs of urban households.&#34;
+              </p>
+              <cite class="text-sm text-gray-600">— Market Analysis Conclusion, 2025</cite>
+            </div>
+
+            <p class="text-gray-700 mt-8">
+              As India continues its rapid urbanization and economic development, the domestic helper market will play an increasingly vital role in supporting urban lifestyles and providing employment opportunities. The challenge lies in ensuring that this growth benefits all stakeholders—workers gain dignity, security, and fair compensation; employers access reliable, professional services; and society recognizes the invaluable contribution of this workforce to the nation&#39;s economic and social fabric.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- References -->
+      <section class="py-12 bg-white border-t">
+        <div class="container mx-auto px-6 max-w-4xl">
+          <h3 class="text-2xl font-semibold mb-8 text-gray-900">References</h3>
+          <div class="grid gap-4 text-sm text-gray-600">
+            <div id="ref-308">[308] Expert Market Research. &#34;India Household Care Market Report.&#34; <a href="https://www.expertmarketresearch.com/reports/india-household-care-market" class="citation">https://www.expertmarketresearch.com/reports/india-household-care-market</a>
+            </div>
+            <div id="ref-312">[312] Press Information Bureau. &#34;India&#39;s Care Economy Report.&#34; <a href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/mar/doc202435319501.pdf" class="citation">https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/mar/doc202435319501.pdf</a>
+            </div>
+            <div id="ref-270">[270] World Bank. &#34;India Urban Development Report.&#34; <a href="https://www.worldbank.org/hi/news/press-release/2025/07/22/india-has-a-critical-opportunity-to-drive-resilient-urban-development-says-new-world-bank-report" class="citation">https://www.worldbank.org/hi/news/press-release/2025/07/22/india-has-a-critical-opportunity-to-drive-resilient-urban-development-says-new-world-bank-report</a>
+            </div>
+            <div id="ref-296">[296] NASSCOM. &#34;Technology Sector India Strategic Review 2025.&#34; <a href="https://nasscom.in/knowledge-center/publications/technology-sector-india-strategic-review-2025" class="citation">https://nasscom.in/knowledge-center/publications/technology-sector-india-strategic-review-2025</a>
+            </div>
+            <div id="ref-323">[323] WorkIndia Report. &#34;Rising Demand for Educated Domestic Helpers.&#34; <a href="https://www.devdiscourse.com/article/business/3518662-the-rising-demand-for-educated-domestic-helpers-a-shift-in-indias-household-job-market" class="citation">https://www.devdiscourse.com/article/business/3518662-the-rising-demand-for-educated-domestic-helpers-a-shift-in-indias-household-job-market</a>
+            </div>
+            <div id="ref-236">[236] Navbharat Times. &#34;e-Shram Portal Registrations Data.&#34; <a href="https://navbharattimes.indiatimes.com/business/business-dictionary/agriculture-labour-account-for-more-than-half-of-unorganised-sector-workers/articleshow/120786609.cms" class="citation">https://navbharattimes.indiatimes.com/business/business-dictionary/agriculture-labour-account-for-more-than-half-of-unorganised-sector-workers/articleshow/120786609.cms</a>
+            </div>
+            <div id="ref-295">[295] NASSCOM. &#34;GCC Market Analysis Report.&#34; <a href="https://www.angelone.in/news/market-updates/gcc-boom-poised-to-reshape-india-s-job-market-amid-ai-growth-and-talent-surge" class="citation">https://www.angelone.in/news/market-updates/gcc-boom-poised-to-reshape-india-s-job-market-amid-ai-growth-and-talent-surge</a>
+            </div>
+            <div id="ref-44">[44] Domestic Workers Bill. &#34;Parliamentary Documents.&#34; <a href="https://sansad.in/getFile/BillsTexts/RSBillTexts/Asintroduced/domestic-7417-E.pdf?source=legislation" class="citation">https://sansad.in/getFile/BillsTexts/RSBillTexts/Asintroduced/domestic-7417-E.pdf?source=legislation</a>
+            </div>
+            <div id="ref-59">[59] Domestic Workers Sector Skill Council. &#34;Training Framework.&#34; <a href="https://nationalskillsnetwork.in/domestic-workers-dwssc/" class="citation">https://nationalskillsnetwork.in/domestic-workers-dwssc/</a>
+            </div>
+            <div id="ref-47">[47] ILO. &#34;Working Conditions Study.&#34; <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@ed_norm/@declaration/documents/publication/wcms_378058.pdf" class="citation">https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@ed_norm/@declaration/documents/publication/wcms_378058.pdf</a>
+            </div>
+            <div id="ref-313">[313] IBEF. &#34;India Services Sector Report.&#34; <a href="https://www.ibef.org/industry/services" class="citation">https://www.ibef.org/industry/services</a>
+            </div>
+            <div id="ref-322">[322] DataHorizzon Research. &#34;Domestic Helper Agency Market Analysis.&#34; <a href="https://datahorizzonresearch.com/domestic-helper-agency-market-44572" class="citation">https://datahorizzonresearch.com/domestic-helper-agency-market-44572</a>
+            </div>
+            <div id="ref-330">[330] Grand View Research. &#34;Cleaning Services Market Report.&#34; <a href="https://www.grandviewresearch.com/horizon/outlook/cleaning-services-market/india" class="citation">https://www.grandviewresearch.com/horizon/outlook/cleaning-services-market/india</a>
+            </div>
+            <div id="ref-315">[315] ORF. &#34;Empowering Domestic Workers in Urban India.&#34; <a href="https://www.orfonline.org/expert-speak/empowering-domestic-workers-in-urban-india" class="citation">https://www.orfonline.org/expert-speak/empowering-domestic-workers-in-urban-india</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#f8fafc',
+                primaryTextColor: '#1e293b',
+                primaryBorderColor: '#0f766e',
+                lineColor: '#64748b',
+                secondaryColor: '#fefce8',
+                tertiaryColor: '#f1f5f9',
+                background: '#ffffff',
+                mainBkg: '#f8fafc',
+                secondBkg: '#fefce8',
+                tertiaryBkg: '#f1f5f9',
+                nodeBkg: '#f8fafc',
+                nodeBorder: '#0f766e',
+                clusterBkg: '#f8fafc',
+                clusterBorder: '#64748b',
+                defaultLinkColor: '#64748b',
+                titleColor: '#1e293b',
+                edgeLabelBackground: '#ffffff',
+                nodeTextColor: '#1e293b'
+            },
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            sequence: {
+                useMaxWidth: false
+            },
+            gantt: {
+                useMaxWidth: false
+            }
+        });
+
+        // Initialize Mermaid Controls for zoom and pan
+        function initializeMermaidControls() {
+            const containers = document.querySelectorAll('.mermaid-container');
+
+            containers.forEach(container => {
+            const mermaidElement = container.querySelector('.mermaid');
+            let scale = 1;
+            let isDragging = false;
+            let startX, startY, translateX = 0, translateY = 0;
+
+            // 触摸相关状态
+            let isTouch = false;
+            let touchStartTime = 0;
+            let initialDistance = 0;
+            let initialScale = 1;
+            let isPinching = false;
+
+            // Zoom controls
+            const zoomInBtn = container.querySelector('.zoom-in');
+            const zoomOutBtn = container.querySelector('.zoom-out');
+            const resetBtn = container.querySelector('.reset-zoom');
+            const fullscreenBtn = container.querySelector('.fullscreen');
+
+            function updateTransform() {
+                mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+                if (scale > 1) {
+                container.classList.add('zoomed');
+                } else {
+                container.classList.remove('zoomed');
+                }
+
+                mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+            }
+
+            if (zoomInBtn) {
+                zoomInBtn.addEventListener('click', () => {
+                scale = Math.min(scale * 1.25, 4);
+                updateTransform();
+                });
+            }
+
+            if (zoomOutBtn) {
+                zoomOutBtn.addEventListener('click', () => {
+                scale = Math.max(scale / 1.25, 0.3);
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+                updateTransform();
+                });
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+                });
+            }
+
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', () => {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+                });
+            }
+
+            // Mouse Events
+            mermaidElement.addEventListener('mousedown', (e) => {
+                if (isTouch) return; // 如果是触摸设备，忽略鼠标事件
+
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                mermaidElement.style.cursor = 'grabbing';
+                updateTransform();
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && !isTouch) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            // 获取两点之间的距离
+            function getTouchDistance(touch1, touch2) {
+                return Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+                );
+            }
+
+            // Touch Events - 触摸事件处理
+            mermaidElement.addEventListener('touchstart', (e) => {
+                isTouch = true;
+                touchStartTime = Date.now();
+
+                if (e.touches.length === 1) {
+                // 单指拖动
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+
+                } else if (e.touches.length === 2) {
+                // 双指缩放
+                isPinching = true;
+                isDragging = false;
+
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                initialDistance = getTouchDistance(touch1, touch2);
+                initialScale = scale;
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isDragging && !isPinching) {
+                // 单指拖动
+                const touch = e.touches[0];
+                translateX = touch.clientX - startX;
+                translateY = touch.clientY - startY;
+                updateTransform();
+
+                } else if (e.touches.length === 2 && isPinching) {
+                // 双指缩放
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                const currentDistance = getTouchDistance(touch1, touch2);
+
+                if (initialDistance > 0) {
+                    const newScale = Math.min(Math.max(
+                    initialScale * (currentDistance / initialDistance),
+                    0.3
+                    ), 4);
+                    scale = newScale;
+                    updateTransform();
+                }
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchend', (e) => {
+                // 重置状态
+                if (e.touches.length === 0) {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                // 延迟重置isTouch，避免鼠标事件立即触发
+                setTimeout(() => {
+                    isTouch = false;
+                }, 100);
+                } else if (e.touches.length === 1 && isPinching) {
+                // 从双指变为单指，切换为拖动模式
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+                }
+
+                updateTransform();
+            });
+
+            mermaidElement.addEventListener('touchcancel', (e) => {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                setTimeout(() => {
+                isTouch = false;
+                }, 100);
+
+                updateTransform();
+            });
+
+            // Enhanced wheel zoom with better center point handling
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const rect = container.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+
+                // Adjust translation to zoom towards center
+                if (newScale !== scale) {
+                const scaleDiff = newScale / scale;
+                translateX = translateX * scaleDiff;
+                translateY = translateY * scaleDiff;
+                scale = newScale;
+
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+
+                updateTransform();
+                }
+            });
+
+            // Initialize display
+            updateTransform();
+            });
+        }
+
+        // Table of Contents Active Link Tracking
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        function updateActiveLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveLink);
+        updateActiveLink();
+
+        // Smooth scrolling for anchor links
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (if needed)
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.toc-sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        // Close sidebar when clicking outside in mobile view
+        document.addEventListener('click', function(e) {
+            const sidebar = document.querySelector('.toc-sidebar');
+            const menuBtn = document.querySelector('.menu-btn');
+
+            if (window.innerWidth <= 1024 &&
+                !sidebar.contains(e.target) &&
+                !(menuBtn && menuBtn.contains(e.target))) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        // Handle window resize
+        function handleResize() {
+            const sidebar = document.querySelector('.toc-sidebar');
+
+            if (window.innerWidth > 1024) {
+                // In large view, ensure sidebar is visible (remove 'open' class which might have been used to show it)
+                sidebar.classList.remove('open');
+            }
+            // In small view, the sidebar is hidden by default (via transform)
+        }
+
+        // Add mobile menu button for small screens
+        if (window.innerWidth <= 1024) {
+            const menuBtn = document.createElement('button');
+            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            menuBtn.className = 'menu-btn fixed top-4 left-4 z-50 bg-teal-600 text-white p-3 rounded-lg shadow-lg lg:hidden';
+            menuBtn.onclick = toggleMobileMenu;
+            document.body.appendChild(menuBtn);
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        // Initialize mermaid controls after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for mermaid to render, then initialize controls
+            setTimeout(initializeMermaidControls, 1000);
+        });
+    </script>
+  </body>
+</html>

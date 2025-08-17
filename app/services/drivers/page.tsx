@@ -16,46 +16,47 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Car Driver in Bangalore | Daily & Outstation',
-  description: 'Get reliable personal car driver services in Bangalore for daily commutes, office travel & family transportation with experienced drivers.',
-  keywords: 'car driver bangalore, personal driver bangalore, chauffeur service bangalore, driver hire bangalore',
+  title: 'Personal Drivers in Bareilly – Safe & Trusted Travel',
+  description: 'Book experienced and licensed drivers in Bareilly for personal or family use. Choose from hourly, full-day, or live-in driver service options.',
+  keywords: 'car driver bareilly, personal driver bareilly, chauffeur service bareilly, driver hire bareilly, driver services bareilly',
 }
 
 export default function DriversPage() {
   const services = [
     {
-      title: "Daily Commute Drivers",
-      description: "Reliable drivers for school drops, office commutes, and daily errands, ensuring your routine runs smoothly and stress-free.",
+      title: "Daily Office & School Commutes",
+      description: "Punctual and disciplined drivers for everyday routines like office travel, school pickups, and local errands, ensuring your day runs on schedule.",
       icon: ClockIcon,
-      features: ["School drops", "Office commutes", "Daily errands", "Smooth routine"]
+      features: ["Office commutes", "School pickups", "Local errands", "Timely service"]
     },
     {
-      title: "Elderly & Family Transport", 
-      description: "Patient drivers who understand the needs of seniors, kids, and dependent family members, offering extra care and comfort.",
-      icon: UserIcon,
-      features: ["Senior care", "Kid transport", "Family comfort", "Extra attention"]
-    },
-    {
-      title: "Airport Pickup & Drop",
-      description: "Punctual drivers who align with your flight timing, help with luggage, and ensure smooth airport transfers every time.",
+      title: "Airport & Outstation Trips", 
+      description: "Comfortable, dependable drivers for Pantnagar Airport drops, train station pickups, and intercity travel from Bareilly to Lucknow, Delhi, and nearby cities.",
       icon: TruckIcon,
-      features: ["Flight timing", "Luggage help", "Smooth transfers", "Punctual service"]
+      features: ["Airport transfers", "Train station pickups", "Intercity travel", "Comfortable rides"]
     },
     {
-      title: "Medical & Emergency Travel",
-      description: "Quick-response drivers available for hospital visits, checkups, and emergency rides, always dependable when matters most.",
+      title: "Elderly & Family Transport",
+      description: "Patient drivers who assist seniors and family members with respectful, careful driving, ideal for hospital visits, temple trips, or local outings.",
+      icon: UserIcon,
+      features: ["Senior assistance", "Hospital visits", "Temple trips", "Careful driving"]
+    },
+    {
+      title: "Emergency & Event Support",
+      description: "Quick-response drivers available for urgent hospital runs, emergency checkups, family functions, weddings, and large gatherings.",
       icon: ShieldCheckIcon,
-      features: ["Hospital visits", "Quick response", "Emergency rides", "Dependable service"]
+      features: ["24/7 availability", "Emergency response", "Event transport", "Guest pickups"]
     }
   ]
 
   const benefits = [
-    "Bangalore traffic experts",
-    "Background-verified drivers",
-    "24/7 available service",
-    "All routes covered",
-    "Polite & professional drivers",
-    "Emergency trip support"
+    "100% RTO Licensed & Verified",
+    "Fast Booking & Driver Assignment",
+    "Trained for Elderly & Child Safety",
+    "Polite, Punctual & Professional",
+    "Flexible Timing",
+    "Fuel & Vehicle Handling",
+    "Dedicated Local Support Team"
   ]
 
   return (
@@ -90,26 +91,26 @@ export default function DriversPage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Professional Drivers
+                  Expert Drivers in Bareilly
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Safe & Reliable Transport
+                    At Your Service
                   </span>
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Travel with confidence using our professional driver services. Licensed, experienced drivers for all your transportation needs, from daily commutes to special occasions.
+                  Reliable, Safe, and Trusted Driver Services for Every Need. From daily commutes to special occasions, our verified drivers ensure comfortable and secure travel.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ Licensed Drivers
+                    ✓ Local Route Experts
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ Well-Maintained Vehicles
+                    ✓ Emergency Service
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ 24/7 Available
+                    ✓ 24/7 Driver Support
                   </div>
                 </div>
 
@@ -255,19 +256,19 @@ export default function DriversPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Live-In Car Driver in Bangalore",
-                description: "Perfect for families with multiple vehicles and constant mobility needs. Our live-in drivers stay on the premises to ensure dependable driving anytime.",
-                features: ["Available 24x7", "Manages multiple trips", "Weekend availability", "Vehicle upkeep"]
+                title: "Live-In Drivers in Bareilly",
+                description: "Round-the-clock transportation support for families with multiple cars and extensive travel requirements.",
+                features: ["24/7 availability", "Multiple trips daily", "Vehicle maintenance", "Emergency response"]
               },
               {
-                title: "Full-Time Car Driver in Bangalore", 
-                description: "A dedicated chauffeur for your regular travel needs. Ideal for working professionals, school-going children, and family routines.",
-                features: ["8-10 hours daily", "School pickup/drop", "Office commutes", "Route planning"]
+                title: "Full-Time Drivers in Bareilly", 
+                description: "Regular daily transportation for office commutes, school runs, and scheduled family trips.",
+                features: ["8-10 hours daily", "Fixed schedule", "Regular routes", "Professional service"]
               },
               {
-                title: "On-Demand Driver in Bangalore",
-                description: "Need a driver for a few hours, a day, or a one-time event? Our flexible, on-call driver service is ideal for occasional, last-minute, or special-purpose travel.",
-                features: ["Airport transfers", "Event transport", "Emergency runs", "Urgent support"]
+                title: "On-Demand Drivers in Bareilly",
+                description: "Trip-based flexible transportation for special occasions, airport transfers, and emergency travel needs.",
+                features: ["Trip-based service", "Flexible timing", "Special occasions", "Emergency calls"]
               }
             ].map((service, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-8">
@@ -303,24 +304,24 @@ export default function DriversPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "School Transport",
-                description: "Safe pickup and drop-off for children with punctual, reliable service",
+                title: "School & College",
+                description: "Safe transport for students with timely pickups and careful driving",
                 icon: "🎒"
               },
               {
-                title: "Office Commute", 
-                description: "Daily office transportation with comfortable, professional service",
-                icon: "💼"
-              },
-              {
-                title: "Medical Visits",
-                description: "Patient, careful transport for medical appointments and emergencies",
+                title: "Hospital & Medical", 
+                description: "Emergency and routine medical visits with patient-focused care",
                 icon: "🏥"
               },
               {
-                title: "Shopping & Errands",
-                description: "Convenient transportation for shopping, errands, and daily tasks",
-                icon: "🛒"
+                title: "Airport & Station",
+                description: "Reliable transfers to Pantnagar Airport and railway stations",
+                icon: "✈️"
+              },
+              {
+                title: "Events & Functions",
+                description: "Professional transport for weddings, parties, and family gatherings",
+                icon: "🎉"
               }
             ].map((service, index) => (
               <div key={index} className="bg-white rounded-lg p-6 text-center">
@@ -451,24 +452,24 @@ export default function DriversPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "What makes your car driver in Bangalore service different?",
-                  answer: "Our drivers are specially trained in Bangalore's traffic with strong local knowledge of IT corridors, residential areas, and major connectivity routes. Each driver is background-verified and skilled in navigating city shortcuts and safe paths."
+                  question: "Are drivers in Bareilly RTO licensed and verified?",
+                  answer: "Yes, all drivers in Bareilly provided by EzyHelpers are RTO licensed and background-verified. Our driver services in Bareilly ensure complete safety and trust by conducting thorough checks before assigning any driver to your family or trip."
                 },
                 {
-                  question: "Do you provide personal drivers in Bangalore for elderly care?",
-                  answer: "Absolutely. Our drivers are trained to assist elderly passengers with patient driving, medical appointment coordination, and clear communication with family members."
+                  question: "Can I get emergency driver services in Bareilly?",
+                  answer: "Yes, EzyHelpers offers emergency driver services in Bareilly, available 24/7. Whether it's a hospital visit, medical emergency, or urgent travel need, our drivers in Bareilly are trained for fast response and immediate availability within your area."
                 },
                 {
-                  question: "What vehicle types can your drivers handle?",
-                  answer: "Our chauffeur drivers in Bangalore are experienced to operate all car types: hatchbacks, sedans, SUVs, and even high-end luxury vehicles, with proper licensing and experience."
+                  question: "Do drivers in Bareilly know local routes and traffic patterns?",
+                  answer: "Yes, our drivers in Bareilly are local route experts who understand the city's traffic, peak times, and alternate routes. Our driver services in Bareilly ensure faster, safer travel with less stress and fewer delays during daily commutes."
                 },
                 {
-                  question: "Do you provide drivers familiar with Bangalore's IT corridors?",
-                  answer: "Yes. Our drivers have strong route expertise across key IT corridors like Outer Ring Road, Sarjapur Road, and Whitefield, ensuring faster commutes through Bangalore's major corporate zones."
+                  question: "What is the difference between full-time and live-in drivers in Bareilly?",
+                  answer: "Full-time drivers in Bareilly work 8–12 hours a day, ideal for regular commutes. Live-in drivers offer 24/7 availability for families with frequent travel. Both driver services in Bareilly are professional, verified, and tailored to your schedule."
                 },
                 {
-                  question: "Do you provide one-time chauffeur drivers in Bangalore for special events?",
-                  answer: "Yes, we offer one-time chauffeur drivers in Bangalore for special occasions like weddings, corporate events, and private gatherings. Our drivers arrive on time, dressed professionally, and ensure smooth, respectful service throughout the event for you and your guests."
+                  question: "Do driver services in Bareilly include vehicle maintenance?",
+                  answer: "Yes, our driver services in Bareilly cover basic vehicle support such as fuel management, mileage tracking, safe parking, and simple security checks. Drivers in Bareilly also help with cleanliness and timely fuel refills for smooth trips."
                 },
                 {
                   question: "Can I book a driver for airport drop or intercity travel?",
@@ -552,19 +553,19 @@ export default function DriversPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Live-In Maid Services",
-                description: "Complete household management with transportation coordination when needed",
-                href: "/services/live-in-maids"
-              },
-              {
-                title: "Elderly Care Services", 
-                description: "Specialized transportation for medical appointments and senior care needs",
-                href: "/services/elderly-care"
-              },
-              {
-                title: "On-Demand Helpers",
-                description: "Emergency transportation and quick assistance for urgent travel needs",
+                title: "Instant Maid Services",
+                description: "Reliable maids for daily cleaning and chores in Bareilly",
                 href: "/services/on-demand-helpers"
+              },
+              {
+                title: "Professional Cooks", 
+                description: "Experienced cooks for homely meals every day in Bareilly",
+                href: "/services/cooks"
+              },
+              {
+                title: "Home Deep Cleaning",
+                description: "Thorough cleaning for sparkling homes in Bareilly",
+                href: "/services/deep-cleaning"
               }
             ].map((service, index) => (
               <Link key={index} href={service.href} className="block bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">

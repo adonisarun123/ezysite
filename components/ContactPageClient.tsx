@@ -542,6 +542,25 @@ export default function ContactPageClient() {
           </div>
         </div>
       </section>
+
+      {/* Trustpilot Reviews Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              Trusted by Thousands of Families
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              See what our customers say about EzyHelpers
+            </p>
+            {/* TrustBox widget - Review Collector */}
+            <div className="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="68a1c72a576f64d91294b48e" data-style-height="52px" data-style-width="100%" data-token="2931d60a-58ab-4e13-be80-2ad15d4b1bbc">
+              <a href="https://www.trustpilot.com/review/ezyhelpers.com" target="_blank" rel="noopener">Trustpilot</a>
+            </div>
+            {/* End TrustBox widget */}
+          </div>
+        </div>
+      </section>
     </>
   )
 } 

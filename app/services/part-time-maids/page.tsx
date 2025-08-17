@@ -24,46 +24,47 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Part-Time Maid in Bangalore | Hourly House Help',
-  description: 'Get reliable part-time maids in Bangalore for 2-6 hours daily. Flexible timings for cleaning, cooking, and home tasks with verified helpers.',
-  keywords: 'part time maid bangalore, hourly maid bangalore, house help bangalore, cleaning maid bangalore',
+  title: 'Best Part-Time Maid in Bareilly – Flexible Timings',
+  description: 'Get a part-time maid in Bareilly for morning or evening help. Choose trained maids for cleaning, cooking, or daily tasks as per your convenience.',
+  keywords: 'part time maid bareilly, hourly maid bareilly, house help bareilly, cleaning maid bareilly',
 }
 
 export default function PartTimeMaidsPage() {
   const services = [
     {
-      title: "Part-Time House Cleaning",
-      description: "Professional cleaning services for 2-6 hours daily. Perfect for busy professionals in Bangalore's tech hubs like Electronic City and Whitefield.",
+      title: "Part-time Maid for Housekeeping",
+      description: "Keep your home clean and organised with daily help from a local maid in Bareilly.",
       icon: HomeIcon,
-      features: ["Daily sweeping", "Bathroom cleaning", "Kitchen cleaning", "Dusting & mopping"]
+      features: ["Sweeping & mopping", "Kitchen & bathroom cleaning", "Laundry & ironing", "Room tidying"]
     },
     {
-      title: "Part-Time Kitchen Help", 
-      description: "Flexible kitchen assistance with meal prep, cooking, and cleaning. Ideal for working couples in Bangalore's IT corridors.",
+      title: "Part-time Maid for Cooking", 
+      description: "Enjoy freshly prepared meals without the kitchen hassle, including traditional North Indian and Bareilly-style recipes.",
       icon: HeartIcon,
-      features: ["Meal preparation", "Utensil washing", "Kitchen cleaning", "Grocery help"]
+      features: ["Daily meal prep", "Grocery assistance", "Kitchen hygiene", "Dishwashing"]
     },
     {
-      title: "Part-Time Child Support",
-      description: "Reliable childcare support for a few hours daily. Great for families in Bangalore's residential areas like HSR Layout and Marathahalli.",
+      title: "Part-time Maid for Babysitting",
+      description: "Need a few hours of childcare support? Our reliable babysitters in Bareilly provide safe and caring assistance.",
       icon: ClockIcon,
-      features: ["School prep", "Meal feeding", "Activity supervision", "Basic care"]
+      features: ["Feeding & nap time", "Play & storytelling", "School prep help", "Basic hygiene"]
     },
     {
-      title: "Part-Time Senior Care",
-      description: "Gentle assistance for elderly family members. Available in all major Bangalore localities for flexible hours.",
+      title: "Part-Time Helper for Elderly",
+      description: "Provide your elderly loved ones in Bareilly with caring assistance for a few hours a day.",
       icon: CalendarDaysIcon,
-      features: ["Basic care", "Meal assistance", "Medicine reminders", "Light exercise"]
+      features: ["Bathing assistance", "Medicine reminders", "Light meal prep", "Gentle companionship"]
     }
   ]
 
   const benefits = [
-    "Flexible 2-6 hour schedules",
-    "Verified & trained helpers",
-    "Affordable hourly rates",
-    "No long-term commitment",
-    "Bangalore-wide coverage",
-    "Replacement guarantee"
+    "Experienced & Verified Local Maids",
+    "2–6 Hour Daily Shifts Available",
+    "Affordable Hour-Based Pricing",
+    "Morning, Afternoon & Evening Slots",
+    "Daily, Weekly, or Festive Options",
+    "Quick Replacements if Needed",
+    "Hindi-Speaking Staff"
   ]
 
   return (
@@ -99,26 +100,26 @@ export default function PartTimeMaidsPage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Part-Time Maid
+                  Part-Time Maid in Bareilly
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Book Hourly, Daily, Weekly
+                    Flexible, Daily Help That Fits Your Schedule
                   </span>
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Keep your home spotless and stress-free with flexible part-time maids. From cleaning to meal prep, get professional help exactly when you need it.
+                  Looking for trusted household help without a full-time stay? EzyHelpers connects you with verified part-time maids in Bareilly who work for 2–6 hours a day, perfect for cleaning, cooking, and other essential chores.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Flexible Scheduling
+                    ✓ Background-Checked Maids
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Pay Per Hour
+                    ✓ Daily & Weekly Options
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ No Contracts
+                    ✓ Flexible Timings
                   </div>
                 </div>
 
@@ -144,16 +145,16 @@ export default function PartTimeMaidsPage() {
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">2-6 Hrs</div>
-                    <div className="text-accent-200 text-sm">Flexible Hours</div>
+                    <div className="text-2xl font-bold text-white">2–6 Hrs</div>
+                    <div className="text-accent-200 text-sm">Daily Availability</div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">Budget</div>
-                    <div className="text-accent-200 text-sm">Friendly Rates</div>
+                    <div className="text-2xl font-bold text-white">20+</div>
+                    <div className="text-accent-200 text-sm">Bareilly Areas</div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">Privacy</div>
-                    <div className="text-accent-200 text-sm">Respected</div>
+                    <div className="text-2xl font-bold text-white">Custom</div>
+                    <div className="text-accent-200 text-sm">Schedules</div>
                   </div>
                 </div>
               </div>
@@ -410,24 +411,24 @@ export default function PartTimeMaidsPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "What is the cost of part-time maid in Bangalore?",
-                  answer: "Part-time maid costs in Bangalore vary by area and tasks. Typically, rates range from ₹2,500 to ₹4,000 monthly for 2-3 hours daily service. Areas like Whitefield or Electronic City may have slightly higher rates. Exact pricing depends on work hours, duties, and location."
+                  question: "What is a part-time maid in Bareilly?",
+                  answer: "A part-time maid in Bareilly is a trained household helper who works for a few hours each day instead of living in your home. EzyHelpers provides reliable maids who visit your house for 2 to 6 hours to help with daily chores like cleaning, cooking, or even elder and child care, based on your routine and preferences."
                 },
                 {
-                  question: "What are the working hours for part-time maids?",
-                  answer: "Most part-time maids in Bangalore work 2-6 hours daily, with flexible morning or evening slots. Common timings are 7-10 AM or 4-7 PM, but can be adjusted to your schedule."
+                  question: "How many hours does a part-time maid work in Bareilly?",
+                  answer: "Typically, a part-time maid in Bareilly works between 2 to 6 hours per day. You can schedule their visits in the morning, afternoon, or evening based on what suits your household. EzyHelpers allows complete flexibility so you can get the help you need without disrupting your daily flow."
                 },
                 {
-                  question: "Can I get a part-time maid for weekends only?",
-                  answer: "Yes, weekend-only part-time maids are available in Bangalore. Many IT professionals prefer this option for deep cleaning and organizing on weekends."
+                  question: "What does a part-time maid for cooking and cleaning in Bareilly do?",
+                  answer: "A part-time maid for cooking and cleaning in Bareilly handles essential home chores such as housekeeping (sweeping, mopping, dusting, bathroom cleaning, and laundry), cooking (daily meals, basic snacks, and kitchen cleanup), babysitting (feeding, bathing, playing, and helping with homework), and elderly care (assisting with medication, hygiene, and companionship)."
                 },
                 {
-                  question: "Do you provide female part-time maids?",
-                  answer: "Yes, we have trained female part-time maids across Bangalore. Most clients prefer female maids for household work."
+                  question: "Are part-time maids in Bareilly safe and background verified?",
+                  answer: "Yes, every part-time maid in Bareilly provided by EzyHelpers goes through a detailed background verification process. We check their Aadhaar, local address, and past experience. Police and medical checks can also be arranged if you need them. Plus, they are trained in hygiene and behaviour protocols."
                 },
                 {
-                  question: "Are part-time maids available in my area?",
-                  answer: "We cover all major Bangalore areas including Whitefield, HSR Layout, Marathahalli, Koramangala, BTM Layout, JP Nagar, and more."
+                  question: "Where in Bareilly are part-time maid services available?",
+                  answer: "EzyHelpers provides part-time maid in Bareilly services across 20+ local areas, including Civil Lines, Model Town, Rajendra Nagar, Izzatnagar, and more. No matter where you live in the city, we can connect you to a reliable maid near your home."
                 },
                 {
                   question: "Can part-time maids cook South Indian food?",

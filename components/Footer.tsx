@@ -243,6 +243,22 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Trustpilot Reviews Section */}
+      <div className="bg-gray-800/30 py-8">
+        <div className="px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center mb-6">
+              <h3 className="text-lg font-semibold mb-4 font-display text-white">Trusted by Thousands</h3>
+              {/* TrustBox widget - Review Collector */}
+              <div className="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="68a1c72a576f64d91294b48e" data-style-height="52px" data-style-width="100%" data-token="2931d60a-58ab-4e13-be80-2ad15d4b1bbc">
+                <a href="https://www.trustpilot.com/review/ezyhelpers.com" target="_blank" rel="noopener">Trustpilot</a>
+              </div>
+              {/* End TrustBox widget */}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Bottom Copyright Section */}
       <div className="bg-gray-900 py-8 lg:py-10">
         <div className="px-4 sm:px-6 lg:px-8">

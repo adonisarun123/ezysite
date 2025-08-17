@@ -28,53 +28,67 @@ import {
 export default function BareillyPage() {
   const domesticServices = [
     {
-      title: "Live-In Maid Services",
-      description: "24/7 dedicated household support with complete home care and personal assistance.",
-      features: ["24/7 Support", "Full Home Management (Cleaning, Cooking, Care)", "Ideal for the elderly, families, & Working Professionals", "Background-Verified & Trained Helpers"],
-      href: "/cities/bareilly/live-in-maid",
-      icon: HomeIcon
-    },
-    {
-      title: "Full-Time Maid Services", 
-      description: "Daily 8–10 hour assistance to manage all your regular household work.",
-      features: ["Fixed Daily Schedule (Morning to Evening)", "Cleaning, Cooking & Daily Maintenance", "Best for Couples & Small Families", "Affordable Monthly Packages"],
-      href: "/cities/bareilly/full-time-maid",
-      icon: UsersIcon
-    },
-    {
-      title: "Part-Time Maid Services",
-      description: "Flexible daily help for 2–6 hours as per your convenience.",
-      features: ["Morning or Evening Shifts", "Specific Tasks Like Cleaning, cooking, babysitting", "Budget-Friendly for Small Households", "Reliable & Verified Maids"],
-      href: "/cities/bareilly/part-time-maid",
-      icon: ClockIcon
-    },
-    {
-      title: "On-Demand Help Services",
-      description: "Instant, same-day household assistance for urgent or one-time cleaning and chores.",
-      features: ["Available Within a Few Hours", "Cleaning, Cooking, Washing & Other Tasks", "No Long-Term Commitment Required", "Verified Helpers for Short-Term Needs"],
-      href: "/cities/bareilly/on-demand-helper",
-      icon: SparklesIcon
-    },
-    {
-      title: "Childcare / Nanny Services",
-      description: "Loving babysitters for all ages with flexible, weekend-friendly support.",
-      features: ["Babysitters for All Ages", "Educational & Fun Activities", "Flexible Timings Including Weekends"],
-      href: "/services/nanny-babysitter",
+      title: "Babysitter Services",
+      description: "Trusted and experienced babysitters in Bareilly for safe, engaging childcare with flexible scheduling.",
+      features: ["Trained in Child Safety", "Age-Appropriate Activities", "School Support & Homework Help", "Flexible Timing Options"],
+      href: "/services/babysitter",
       icon: HeartIcon
     },
     {
+      title: "Cook Services", 
+      description: "Professional cooks in Bareilly skilled in local cuisine, traditional recipes, and dietary preferences.",
+      features: ["North Indian & UP Specialties", "Customized Meal Plans", "Hygienic Food Preparation", "Festival & Event Cooking"],
+      href: "/services/cooks",
+      icon: ShoppingBagIcon
+    },
+    {
+      title: "Driver Services",
+      description: "Licensed and experienced drivers in Bareilly for safe, reliable transportation.",
+      features: ["School & Office Commutes", "Local & Outstation Trips", "Safe & Professional Service", "Flexible Timing Options"],
+      href: "/services/drivers",
+      icon: TruckIcon
+    },
+    {
       title: "Elderly Care Services",
-      description: "Trained caretakers offering daily assistance, medication help, and full-time care.",
-      features: ["Trained Caregivers for Daily Support", "Medication Reminders & Mobility Help", "Full-Time or Day/Night Options"],
+      description: "Compassionate elderly care in Bareilly with trained caregivers for personalized support.",
+      features: ["Personal Care & Hygiene", "Medication Management", "Companionship & Support", "Mobility Assistance"],
       href: "/services/elderly-care",
       icon: UserGroupIcon
     },
     {
-      title: "Cooking Services",
-      description: "Trained cooks for everyday meals or special events.",
-      features: ["Daily Meal Preparation for Families", "Lunch Box / Tiffin Services", "Event & Party Cooking", "Veg & Non-Veg Options, Custom Diets"],
-      href: "/services/cooks",
-      icon: ShoppingBagIcon
+      title: "Full-Time Maid Services",
+      description: "Reliable full-time maids in Bareilly for complete household management and daily tasks.",
+      features: ["Daily Cleaning & Maintenance", "Laundry & Dishwashing", "Kitchen Organization", "Regular Home Support"],
+      href: "/services/full-time-maids",
+      icon: UsersIcon
+    },
+    {
+      title: "Japa Services",
+      description: "Expert newborn and mother care with traditional postpartum support in Bareilly.",
+      features: ["Newborn Care & Massage", "Mother's Recovery Support", "Traditional Healing Practices", "24/7 Care Options"],
+      href: "/services/japa",
+      icon: SparklesIcon
+    },
+    {
+      title: "Live-In Maid Services",
+      description: "Dedicated live-in maids in Bareilly for round-the-clock household support and care.",
+      features: ["24/7 Home Management", "Cooking & Cleaning", "Child & Elder Care", "Complete Domestic Support"],
+      href: "/services/live-in-maids",
+      icon: HomeIcon
+    },
+    {
+      title: "On-Demand Helper Services",
+      description: "Quick and reliable emergency help in Bareilly for urgent household needs.",
+      features: ["Same-Day Service", "Emergency Support", "Flexible Hours", "No Long-Term Commitment"],
+      href: "/services/on-demand-helpers",
+      icon: ClockIcon
+    },
+    {
+      title: "Part-Time Maid Services",
+      description: "Flexible part-time maids in Bareilly for customized household help when you need it.",
+      features: ["2-6 Hour Shifts", "Morning/Evening Options", "Task-Specific Help", "Affordable Rates"],
+      href: "/services/part-time-maids",
+      icon: ClockIcon
     }
   ]
 

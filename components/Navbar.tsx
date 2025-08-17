@@ -11,7 +11,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
   { name: 'Hire Helper', href: '/hire-helper' },
-  { name: 'EzyNest', href: '/ezynest', isNew: true },
+  { name: 'Nest', href: '/nest', isNew: true },
   { name: 'For Helpers', href: '/for-helpers' },
   { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },

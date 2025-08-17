@@ -164,7 +164,7 @@ export default function EzyNestPage() {
             "@type": "Hostel",
             "name": "EzyNest by EzyHelpers",
             "description": "Women-only, short-stay hostel for domestic helpers with proper bedding, equipped kitchen, lockers, and security with CCTV and check-in registers.",
-            "url": "https://www.ezyhelpers.com/ezynest",
+            "url": "https://www.ezyhelpers.com/nest",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "HSR Layout",
@@ -194,7 +194,7 @@ export default function EzyNestPage() {
               "price": "499",
               "priceCurrency": "INR",
               "availability": "https://schema.org/InStock",
-              "url": "https://www.ezyhelpers.com/ezynest#pricing"
+              "url": "https://www.ezyhelpers.com/nest#pricing"
             }]
           })
         }}

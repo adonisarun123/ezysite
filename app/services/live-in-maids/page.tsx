@@ -26,46 +26,47 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Live-In Maid in Bangalore | 24/7 Home Help',
-  description: 'Get live-in maids in Bangalore for 24/7 home help. Cooking, cleaning, babysitting, or elderly care. Background checked and trusted.',
-  keywords: 'live in maid bangalore, 24/7 maid bangalore, stay in maid bangalore, residential maid bangalore',
+  title: 'Verified Live-In Maids in Bareilly – 12-Hour Daily Support',
+  description: 'Hire a verified live in house maid in Bareilly for all-day support. Our maids stay with you and assist with cooking, cleaning, and daily household needs.',
+  keywords: 'live in maid bareilly, 24/7 maid bareilly, stay in maid bareilly, residential maid bareilly, house maid bareilly',
 }
 
 export default function LiveInMaidsPage() {
   const services = [
     {
-      title: "Live-In Housekeeper",
-      description: "Complete home maintenance with daily cleaning, laundry, and organisation. Perfect for busy Bangalore families in tech hubs like Electronic City.",
+      title: "Live-in Maid for Housekeeping",
+      description: "Maintain a clean, organised home with a live-in house maid in Bareilly focused entirely on cleanliness and hygiene.",
       icon: HomeIcon,
-      features: ["Daily cleaning", "Laundry & ironing", "Deep cleaning", "Furniture upkeep"]
+      features: ["Sweeping & mopping", "Kitchen & bathroom cleaning", "Laundry & ironing", "Bed-making & dishwashing"]
     },
     {
-      title: "Live-In Cook", 
-      description: "Nutritious home-cooked meals tailored to your taste, from South Indian to North Indian cuisine, perfect for Bangalore's diverse population.",
+      title: "Live-in Maid for Cooking", 
+      description: "Enjoy UP-style home-cooked meals every day from a dedicated live-in maid service in Bareilly that specialises in traditional recipes and family-friendly food.",
       icon: HeartIcon,
-      features: ["Multi-cuisine cooking", "Meal planning", "Grocery shopping", "Dietary restrictions"]
+      features: ["Traditional UP dishes", "Festival specials", "Grocery assistance", "Kitchen hygiene"]
     },
     {
-      title: "Live-In Nanny",
-      description: "Professional childcare with school coordination and activities. Ideal for working parents in Whitefield and Marathahalli areas.",
+      title: "Live-in Maid for Elderly Care",
+      description: "Give your elders the dignity and support they deserve with a compassionate live-in house maid in Bareilly trained in elderly care.",
       icon: ShieldCheckIcon,
-      features: ["School pickup/drop", "Homework help", "Activity coordination", "Safety monitoring"]
+      features: ["Personal hygiene", "Medication reminders", "Mobility assistance", "Emotional support"]
     },
     {
-      title: "Live-In Senior Caregiver",
-      description: "Compassionate elderly care with basic medical support. Perfect for families caring for ageing parents in Bangalore's traditional neighbourhoods.",
+      title: "Live-In Babysitter",
+      description: "Ensure your child is cared for by a loving, attentive live-in babysitter in Bareilly who prioritizes safety and hygiene.",
       icon: ClockIcon,
-      features: ["Personal care", "Medication reminders", "Doctor visits", "Companionship"]
+      features: ["Feeding & bathing", "Learning activities", "School readiness", "Safe environment"]
     }
   ]
 
   const benefits = [
-    "24/7 kitchen access",
-    "All daily meals included",
-    "Basic kitchen cleaning",
-    "Complete kitchen upkeep",
-    "Multi-cuisine expertise",
-    "Kitchen hygiene standards"
+    "Fluent in Hindi & Regional Languages",
+    "Skilled in UP-Style Cooking",
+    "Understands Joint Family Routines",
+    "Maids from Local Areas",
+    "Fast Replacements Available",
+    "Ongoing Support After Hiring",
+    "Respects Cultural Values"
   ]
 
   return (
@@ -101,26 +102,26 @@ export default function LiveInMaidsPage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  24×7 Support at Home
+                  Live-in House Maid in Bareilly
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Hire Verified Live-In Maids
+                    Trusted Help for Your Home, 24/7
                   </span>
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Experience peace of mind with our trusted live-in maids who provide consistent, 24/7 household support tailored to your family's unique needs.
+                  EzyHelpers connects you with trained, verified, Hindi-speaking live-in house maids in Bareilly for cooking, cleaning, elderly care, and complete home support. Our maids understand your cultural values, food preferences, and family lifestyle.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Background Verified
+                    ✓ 100% Background-Checked
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ 24-72 Hour Placement
+                    ✓ Maid Placement in 24–72 Hours
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ All-in-One Support
+                    ✓ Transparent Monthly Pricing
                   </div>
                 </div>
 
@@ -434,24 +435,24 @@ export default function LiveInMaidsPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "How can I find a reliable live-in maid in Bangalore?",
-                  answer: "EzyHelpers connects you with verified and experienced live-in maids in Bangalore who undergo background checks and cooking skill assessments. We share shortlisted profiles based on your dietary needs, preferred cuisine, and schedule for a perfect home cooking match."
+                  question: "What is a live-in maid, and how does it work in Bareilly?",
+                  answer: "A live-in maid in Bareilly is a domestic helper who stays at your home and helps with daily tasks like cooking, cleaning, and caregiving. She typically works up to 12 hours a day but remains available for basic support throughout the day and night."
                 },
                 {
-                  question: "Do your live-in maids accommodate dietary restrictions?",
-                  answer: "Yes, our live-in maids are experienced enough to prepare meals according to your health needs. Whether it's diabetic-friendly, Jain food, vegan, or low-sodium diets, EzyHelpers ensures you get a maid who understands and respects your dietary preferences."
+                  question: "How fast can I hire a live-in maid in Bareilly?",
+                  answer: "With EzyHelpers, you can hire a live-in maid in Bareilly within 24 to 72 hours. We maintain a ready database of verified candidates for quick placement based on your needs."
                 },
                 {
-                  question: "Will your live-in maids help with grocery and vegetable shopping in Bangalore?",
-                  answer: "Yes, many of our live-in maids in Bangalore assist with daily or weekly grocery and vegetable shopping. They can visit local markets or nearby stores to purchase fresh ingredients or accompany you when required. This ensures meals are prepared with fresh, timely ingredients while saving you time and effort."
+                  question: "Are EzyHelpers' live-in house maids in Bareilly verified and safe?",
+                  answer: "Yes, all live-in house maids in Bareilly from EzyHelpers are background verified. We check the Aadhaar local address if available and basic identity. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind."
                 },
                 {
-                  question: "Can your live-in maid prepare meals for office tiffins?",
-                  answer: "Absolutely. Many Bangalore families trust EzyHelpers' live-in maids to prepare home-style meals for office tiffins. It's a healthier, more cost-effective alternative to restaurant food, especially for busy professionals seeking nutritious lunch options."
+                  question: "What services do live-in maids provide in Bareilly?",
+                  answer: "Live-in maids in Bareilly offer dedicated support based on specific household needs. Their services include housekeeping (cleaning, laundry, dishwashing), cooking (preparing UP-style meals and regional dishes), elderly care (helping with hygiene, mobility, and medication reminders), and childcare (feeding, bathing, and engaging with children)."
                 },
                 {
-                  question: "How do you ensure food safety and kitchen hygiene?",
-                  answer: "At EzyHelpers, we train all live-in maids on kitchen safety, personal hygiene, and clean cooking practices. We make sure cooking is clean and safe by using clean utensils, storing food properly, and training maids in personal hygiene practices."
+                  question: "Do live-in maids in Bareilly speak Hindi?",
+                  answer: "Yes, all our maids are fluent in Hindi and understand the regional language. This makes day-to-day communication easy for your family and elders."
                 },
                 {
                   question: "Can I hire a live-in maid for specific cuisines?",
@@ -554,7 +555,7 @@ export default function LiveInMaidsPage() {
             {[ 
               {
                 title: "Full-Time Maid Services",
-                description: "Daily household help without live-in commitment",
+                description: "Reliable daily help for all home chores without requiring the maid to stay",
                 href: "/services/full-time-maids",
                 icon: BuildingOffice2Icon,
                 bgColor: "bg-orange-50",
@@ -563,7 +564,7 @@ export default function LiveInMaidsPage() {
               },
               {
                 title: "Part-Time Maid Services", 
-                description: "Flexible cleaning on your schedule without full commitment",
+                description: "Flexible, time-based cleaning and assistance that fits your schedule",
                 href: "/services/part-time-maids",
                 icon: SparklesIcon,
                 bgColor: "bg-purple-50",
@@ -571,9 +572,9 @@ export default function LiveInMaidsPage() {
                 borderColor: "border-purple-200"
               },
               {
-                title: "Cook Services",
-                description: "Delicious, hassle-free meals every day from professional cooks",
-                href: "/services/cooks",
+                title: "Instant Maid Services",
+                description: "Instant household help for emergencies, guest visits, or special occasions",
+                href: "/services/on-demand-helpers",
                 icon: UserPlusIcon,
                 bgColor: "bg-pink-50",
                 iconColor: "text-pink-600",
