@@ -56,6 +56,7 @@ const checkInTimes = [
 interface BookingFormData {
   name: string
   phone: string
+  email: string
   employerName: string
   employerAddress: string
   permanentAddress: string
@@ -71,6 +72,7 @@ export function EzyNestBooking() {
   const [formData, setFormData] = useState<BookingFormData>({
     name: '',
     phone: '',
+    email: '',
     employerName: '',
     employerAddress: '',
     permanentAddress: '',
@@ -118,7 +120,7 @@ export function EzyNestBooking() {
     }
 
     // Validate required fields
-    const requiredFields = ['name', 'phone', 'employerName', 'employerAddress', 'permanentAddress', 'idProofNumber'] as const
+    const requiredFields = ['name', 'phone', 'email', 'employerName', 'employerAddress', 'permanentAddress', 'idProofNumber'] as const
     const missingFields = requiredFields.filter(field => !formData[field as keyof BookingFormData])
     
     if (missingFields.length > 0) {
@@ -153,6 +155,24 @@ export function EzyNestBooking() {
       
       console.log('Booking submitted:', bookingData)
       
+      // Send booking confirmation emails
+      try {
+        const emailResponse = await fetch('/api/send-booking-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ bookingDetails: bookingData }),
+        })
+
+        if (!emailResponse.ok) {
+          throw new Error('Failed to send confirmation email')
+        }
+      } catch (error) {
+        console.error('Email sending failed:', error)
+        // Continue with success dialog even if email fails
+      }
+
       // Set booking details and show success dialog
       setBookingDetails(bookingData)
       setShowSuccessDialog(true)
@@ -308,6 +328,17 @@ export function EzyNestBooking() {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email Address</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                     required
                   />
                 </div>
