@@ -11,6 +11,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
   { name: 'Hire Helper', href: '/hire-helper' },
+  { name: 'EzyNest', href: '/ezynest', isNew: true },
   { name: 'For Helpers', href: '/for-helpers' },
   { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
@@ -80,7 +81,14 @@ export default function Navbar() {
                   href={item.href}
                   className="text-sm font-medium leading-6 text-gray-900 hover:text-primary-600 transition-colors duration-200 relative group py-2 px-1"
                 >
-                  {item.name}
+                  <span className="relative inline-flex items-center">
+                    {item.name}
+                    {item.isNew && (
+                      <span className="ml-2 inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-sm">
+                        New
+                      </span>
+                    )}
+                  </span>
                   <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
                 </Link>
               ))}
@@ -149,7 +157,14 @@ export default function Navbar() {
                     className="-mx-3 block rounded-lg px-3 py-3 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50 hover:text-primary-600 transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {item.name}
+                    <span className="flex items-center justify-between">
+                      {item.name}
+                      {item.isNew && (
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-sm">
+                          New
+                        </span>
+                      )}
+                    </span>
                   </Link>
                 ))}
               </div>
