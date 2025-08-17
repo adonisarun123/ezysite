@@ -7,20 +7,26 @@ export async function POST(request: Request) {
     const { bookingDetails } = data
 
     // Send email using the existing email service
+    const serviceName = `EzyNest Booking - ${bookingDetails.numberOfDays} ${bookingDetails.numberOfDays === 1 ? 'Day' : 'Days'}`
+    
     const result = await sendLeadEmail('general', {
       name: bookingDetails.name,
       phone: bookingDetails.phone,
-      service: 'EzyNest Booking',
+      service: serviceName,
       city: 'Bangalore',
       email: bookingDetails.email,
       additionalDetails: {
         bookingId: bookingDetails.bookingId,
         checkInDate: bookingDetails.checkInDate,
         checkInTime: bookingDetails.checkInTime,
+        checkOutDate: bookingDetails.checkOutDate,
+        numberOfDays: bookingDetails.numberOfDays,
         employerName: bookingDetails.employerName,
         employerAddress: bookingDetails.employerAddress,
         permanentAddress: bookingDetails.permanentAddress,
         idProofNumber: bookingDetails.idProofNumber,
+        idProofFileName: bookingDetails.idProofFileName,
+        bookingType: 'EzyNest Women-Only Short Stay'
       }
     })
 

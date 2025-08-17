@@ -83,10 +83,62 @@ export function EzyNestBooking() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccessDialog, setShowSuccessDialog] = useState(false)
   const [bookingDetails, setBookingDetails] = useState<any>(null)
+  const [idProofFile, setIdProofFile] = useState<File | null>(null)
+  const [checkoutDate, setCheckoutDate] = useState<Date | undefined>()
+  const [showCamera, setShowCamera] = useState(false)
+  const [cameraStream, setCameraStream] = useState<MediaStream | null>(null)
   
   const validatePhoneNumber = (phone: string) => {
     const phoneRegex = /^[0-9]{10}$/
     return phoneRegex.test(phone)
+  }
+
+  const calculateBookingDays = () => {
+    if (!date || !checkoutDate) return 0
+    const diffTime = Math.abs(checkoutDate.getTime() - date.getTime())
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+    return diffDays
+  }
+
+  const startCamera = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ 
+        video: { facingMode: 'environment' } // Use back camera on mobile
+      })
+      setCameraStream(stream)
+      setShowCamera(true)
+    } catch (error) {
+      console.error('Error accessing camera:', error)
+      alert('Could not access camera. Please use file upload instead.')
+    }
+  }
+
+  const stopCamera = () => {
+    if (cameraStream) {
+      cameraStream.getTracks().forEach(track => track.stop())
+      setCameraStream(null)
+    }
+    setShowCamera(false)
+  }
+
+  const capturePhoto = () => {
+    const video = document.getElementById('camera-video') as HTMLVideoElement
+    const canvas = document.createElement('canvas')
+    const context = canvas.getContext('2d')
+    
+    if (video && context) {
+      canvas.width = video.videoWidth
+      canvas.height = video.videoHeight
+      context.drawImage(video, 0, 0)
+      
+      canvas.toBlob((blob) => {
+        if (blob) {
+          const file = new File([blob], `id-proof-${Date.now()}.jpg`, { type: 'image/jpeg' })
+          setIdProofFile(file)
+          stopCamera()
+        }
+      }, 'image/jpeg', 0.8)
+    }
   }
 
   const getAvailableBeds = (selectedDate: string) => {
@@ -115,6 +167,16 @@ export function EzyNestBooking() {
       return
     }
 
+    if (!checkoutDate) {
+      alert('Please select check-out date')
+      return
+    }
+
+    if (checkoutDate <= date) {
+      alert('Check-out date must be after check-in date')
+      return
+    }
+
     if (!consentAccepted) {
       alert('Please accept the consent form to proceed')
       return
@@ -134,8 +196,8 @@ export function EzyNestBooking() {
       return
     }
 
-    if (!formData.idProofFile) {
-      alert('Please upload your ID proof')
+    if (!idProofFile) {
+      alert('Please capture or upload your ID proof')
       return
     }
 
@@ -143,12 +205,16 @@ export function EzyNestBooking() {
       setIsSubmitting(true)
       
       // Prepare booking data
+      const bookingDays = calculateBookingDays()
       const bookingData = {
         ...formData,
         checkInDate: date.toISOString().split('T')[0],
         checkInTime: time,
+        checkOutDate: checkoutDate.toISOString().split('T')[0],
+        numberOfDays: bookingDays,
         bookingId: `EZYNEST-${Date.now()}`,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        idProofFileName: idProofFile?.name || 'id-proof.jpg'
       }
 
       // Simulate API call delay
@@ -182,6 +248,8 @@ export function EzyNestBooking() {
       setStep(1)
       setDate(undefined)
       setTime(undefined)
+      setCheckoutDate(undefined)
+      setIdProofFile(null)
       setFormData({
         name: '',
         phone: '',
@@ -201,17 +269,48 @@ export function EzyNestBooking() {
     }
   }
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (file) {
-      setFormData(prev => ({ ...prev, idProofFile: file }))
-    }
-  }
-
 
 
   return (
     <div className="max-w-4xl mx-auto">
+      {/* Camera Dialog */}
+      <Dialog open={showCamera} onOpenChange={(open) => !open && stopCamera()}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle>Capture ID Proof</DialogTitle>
+            <DialogDescription>
+              Position your ID document clearly in the camera view
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4">
+            {cameraStream && (
+              <div className="relative">
+                <video
+                  id="camera-video"
+                  autoPlay
+                  playsInline
+                  className="w-full rounded-lg"
+                  ref={(video) => {
+                    if (video && cameraStream) {
+                      video.srcObject = cameraStream
+                    }
+                  }}
+                />
+                <div className="absolute inset-4 border-2 border-white border-dashed rounded-lg opacity-50" />
+              </div>
+            )}
+            <div className="flex gap-2">
+              <Button onClick={capturePhoto} className="flex-1">
+                📸 Capture
+              </Button>
+              <Button variant="outline" onClick={stopCamera} className="flex-1">
+                Cancel
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
       <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
         <DialogContent>
           <DialogHeader>
@@ -308,7 +407,7 @@ export function EzyNestBooking() {
                 disabled={!date || !time}
                 onClick={() => setStep(2)}
               >
-                Continue to Registration
+                Continue to Check-out Date
               </Button>
             </CardFooter>
           </Card>
@@ -316,6 +415,43 @@ export function EzyNestBooking() {
       )}
 
       {step === 2 && (
+        <div className="max-w-md mx-auto">
+          <Card>
+            <CardHeader>
+              <CardTitle>Select Check-out Date</CardTitle>
+              <CardDescription>Choose when you will check out</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-center">
+                <CompactCalendar
+                  selectedDate={checkoutDate}
+                  onDateSelect={setCheckoutDate}
+                  className="shadow-lg border-rose-200"
+                  disabledDates={(checkDate) => checkDate <= (date || new Date()) || checkDate > new Date(new Date().setMonth(new Date().getMonth() + 3))}
+                />
+              </div>
+              {checkoutDate && date && (
+                <div className="mt-4 rounded-lg bg-rose-50 p-3 text-center">
+                  <p className="text-sm font-medium text-rose-900">
+                    Duration: {calculateBookingDays()} {calculateBookingDays() === 1 ? 'day' : 'days'}
+                  </p>
+                </div>
+              )}
+            </CardContent>
+            <CardFooter>
+              <Button 
+                className="w-full bg-rose-600 hover:bg-rose-700"
+                disabled={!checkoutDate}
+                onClick={() => setStep(3)}
+              >
+                Continue to Registration
+              </Button>
+            </CardFooter>
+          </Card>
+        </div>
+      )}
+
+      {step === 3 && (
         <Card>
           <CardHeader>
             <CardTitle>Helper Registration</CardTitle>
@@ -401,14 +537,41 @@ export function EzyNestBooking() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="idProofFile">Upload ID Proof</Label>
-                  <Input
-                    id="idProofFile"
-                    type="file"
-                    accept="image/*,.pdf"
-                    onChange={handleFileUpload}
-                    required
-                  />
+                  <Label>ID Proof Copy</Label>
+                  <div className="space-y-3">
+                    <div className="flex gap-2">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={startCamera}
+                        className="flex-1"
+                      >
+                        📷 Take Photo
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => document.getElementById('idProofFile')?.click()}
+                        className="flex-1"
+                      >
+                        📁 Upload File
+                      </Button>
+                    </div>
+                    <Input
+                      id="idProofFile"
+                      type="file"
+                      accept="image/*,.pdf"
+                      onChange={(e) => setIdProofFile(e.target.files?.[0] || null)}
+                      className="hidden"
+                    />
+                    {idProofFile && (
+                      <div className="p-3 bg-green-50 rounded-lg">
+                        <p className="text-sm text-green-800">
+                          ✓ {idProofFile.name} selected
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
 
