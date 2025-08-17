@@ -68,6 +68,7 @@ export function EzyNestBooking() {
     idProofNumber: '',
   })
   const [consentAccepted, setConsentAccepted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const getAvailableBeds = (selectedDate: string) => {
     return mockBedAvailability[selectedDate] || TOTAL_BEDS
@@ -87,10 +88,79 @@ export function EzyNestBooking() {
     setTime(selectedTime)
   }
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
+    
+    if (!date || !time) {
+      alert('Please select date and time first')
+      return
+    }
+
+    if (!consentAccepted) {
+      alert('Please accept the consent form to proceed')
+      return
+    }
+
+    // Validate required fields
+    const requiredFields = ['name', 'phone', 'employerName', 'employerAddress', 'permanentAddress', 'idProofNumber']
+    const missingFields = requiredFields.filter(field => !formData[field])
+    
+    if (missingFields.length > 0) {
+      alert(`Please fill in all required fields: ${missingFields.join(', ')}`)
+      return
+    }
+
+    if (!formData.idProofFile) {
+      alert('Please upload your ID proof')
+      return
+    }
+
+    try {
+      setIsSubmitting(true)
+      
+      // Prepare booking data
+      const bookingData = {
+        ...formData,
+        checkInDate: date.toISOString().split('T')[0],
+        checkInTime: time,
+        bookingId: `EZYNEST-${Date.now()}`,
+        timestamp: new Date().toISOString()
+      }
+
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 2000))
+      
+      console.log('Booking submitted:', bookingData)
+      
+      // Show success message
+      alert(`Booking successful! 
+      
+Booking ID: ${bookingData.bookingId}
+Check-in: ${bookingData.checkInDate} at ${time}
+Name: ${formData.name}
+
+You will receive a confirmation email shortly. Please save your booking ID for reference.`)
+      
+      // Reset form
+      setStep(1)
+      setDate(undefined)
+      setTime(undefined)
+      setFormData({
+        name: '',
+        phone: '',
+        employerName: '',
+        employerAddress: '',
+        permanentAddress: '',
+        idProofNumber: '',
+      })
+      setConsentAccepted(false)
+      
+    } catch (error) {
+      console.error('Booking error:', error)
+      alert('There was an error processing your booking. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -273,9 +343,9 @@ export function EzyNestBooking() {
                 <Button
                   type="submit"
                   className="w-full bg-rose-600 hover:bg-rose-700"
-                  disabled={!consentAccepted}
+                  disabled={!consentAccepted || isSubmitting}
                 >
-                  Complete Booking
+                  {isSubmitting ? 'Processing Booking...' : 'Complete Booking'}
                 </Button>
               </div>
             </form>
