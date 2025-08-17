@@ -254,8 +254,29 @@ export function EzyNestBooking() {
                 mode="single"
                 selected={date}
                 onSelect={handleDateSelect}
-                className="rounded-md border"
+                className="rounded-xl border border-rose-100 p-4 shadow-lg"
                 disabled={{ before: new Date() }}
+                fromDate={new Date()}
+                toDate={new Date(new Date().setMonth(new Date().getMonth() + 3))}
+                modifiers={{
+                  available: (date) => {
+                    const formattedDate = format(date, 'yyyy-MM-dd')
+                    return getAvailableBeds(formattedDate) > 0
+                  }
+                }}
+                modifiersStyles={{
+                  available: {
+                    color: '#059669',
+                    fontWeight: '500'
+                  }
+                }}
+                footer={date && (
+                  <div className="mt-3 rounded-lg bg-rose-50 p-3 text-center">
+                    <p className="text-sm font-medium text-rose-900">
+                      {getAvailableBeds(format(date, 'yyyy-MM-dd'))} beds available
+                    </p>
+                  </div>
+                )}
               />
             </CardContent>
           </Card>
