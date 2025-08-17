@@ -1,6 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useMemo } from 'react'
+import { GoogleMap, useLoadScript, Autocomplete } from '@react-google-maps/api'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from '@/components/ui/dialog'
 import { Calendar } from '@/components/ui/calendar'
 import { format } from 'date-fns'
 import { 
@@ -69,6 +79,18 @@ export function EzyNestBooking() {
   })
   const [consentAccepted, setConsentAccepted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false)
+  const [bookingDetails, setBookingDetails] = useState<any>(null)
+  
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
+    libraries: ['places'],
+  })
+  
+  const validatePhoneNumber = (phone: string) => {
+    const phoneRegex = /^[0-9]{10}$/
+    return phoneRegex.test(phone)
+  }
 
   const getAvailableBeds = (selectedDate: string) => {
     return mockBedAvailability[selectedDate] || TOTAL_BEDS
@@ -110,6 +132,11 @@ export function EzyNestBooking() {
       return
     }
 
+    if (!validatePhoneNumber(formData.phone)) {
+      alert('Please enter a valid 10-digit phone number')
+      return
+    }
+
     if (!formData.idProofFile) {
       alert('Please upload your ID proof')
       return
@@ -132,14 +159,9 @@ export function EzyNestBooking() {
       
       console.log('Booking submitted:', bookingData)
       
-      // Show success message
-      alert(`Booking successful! 
-      
-Booking ID: ${bookingData.bookingId}
-Check-in: ${bookingData.checkInDate} at ${time}
-Name: ${formData.name}
-
-You will receive a confirmation email shortly. Please save your booking ID for reference.`)
+      // Set booking details and show success dialog
+      setBookingDetails(bookingData)
+      setShowSuccessDialog(true)
       
       // Reset form
       setStep(1)
@@ -170,8 +192,43 @@ You will receive a confirmation email shortly. Please save your booking ID for r
     }
   }
 
+  if (!isLoaded) {
+    return <div>Loading...</div>
+  }
+
   return (
     <div className="max-w-4xl mx-auto">
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-rose-600 mb-4">
+              Booking Confirmed! 🎉
+            </DialogTitle>
+            <DialogDescription>
+              <div className="space-y-4">
+                <div className="p-4 bg-rose-50 rounded-lg">
+                  <p className="font-semibold text-rose-900">Booking ID: {bookingDetails?.bookingId}</p>
+                </div>
+                <div className="space-y-2">
+                  <p><span className="font-semibold">Check-in Date:</span> {bookingDetails?.checkInDate}</p>
+                  <p><span className="font-semibold">Check-in Time:</span> {bookingDetails?.checkInTime}</p>
+                  <p><span className="font-semibold">Guest Name:</span> {bookingDetails?.name}</p>
+                </div>
+                <div className="text-sm text-gray-500 mt-4">
+                  <p>A confirmation email has been sent to your registered email address.</p>
+                  <p className="mt-2">Please save your booking ID for future reference.</p>
+                </div>
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button onClick={() => setShowSuccessDialog(false)}>
+              Close
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
       {step === 1 && (
         <div className="grid md:grid-cols-2 gap-8">
           <Card>
@@ -275,22 +332,46 @@ You will receive a confirmation email shortly. Please save your booking ID for r
 
                 <div className="space-y-2">
                   <Label htmlFor="employerAddress">Employer Address</Label>
-                  <Input
-                    id="employerAddress"
-                    value={formData.employerAddress}
-                    onChange={(e) => setFormData(prev => ({ ...prev, employerAddress: e.target.value }))}
-                    required
-                  />
+                  <Autocomplete
+                    onLoad={(autocomplete) => {
+                      autocomplete.addListener('place_changed', () => {
+                        const place = autocomplete.getPlace()
+                        if (place.formatted_address) {
+                          setFormData(prev => ({ ...prev, employerAddress: place.formatted_address }))
+                        }
+                      })
+                    }}
+                  >
+                    <Input
+                      id="employerAddress"
+                      value={formData.employerAddress}
+                      onChange={(e) => setFormData(prev => ({ ...prev, employerAddress: e.target.value }))}
+                      placeholder="Start typing to search..."
+                      required
+                    />
+                  </Autocomplete>
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="permanentAddress">Your Permanent Address</Label>
-                  <Input
-                    id="permanentAddress"
-                    value={formData.permanentAddress}
-                    onChange={(e) => setFormData(prev => ({ ...prev, permanentAddress: e.target.value }))}
-                    required
-                  />
+                  <Autocomplete
+                    onLoad={(autocomplete) => {
+                      autocomplete.addListener('place_changed', () => {
+                        const place = autocomplete.getPlace()
+                        if (place.formatted_address) {
+                          setFormData(prev => ({ ...prev, permanentAddress: place.formatted_address }))
+                        }
+                      })
+                    }}
+                  >
+                    <Input
+                      id="permanentAddress"
+                      value={formData.permanentAddress}
+                      onChange={(e) => setFormData(prev => ({ ...prev, permanentAddress: e.target.value }))}
+                      placeholder="Start typing to search..."
+                      required
+                    />
+                  </Autocomplete>
                 </div>
 
                 <div className="space-y-2">
