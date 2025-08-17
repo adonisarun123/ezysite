@@ -1,8 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useMemo } from 'react'
-import { GoogleMap, useLoadScript, Autocomplete } from '@react-google-maps/api'
+import { useState } from 'react'
 import {
   Dialog,
   DialogContent,
@@ -81,11 +79,6 @@ export function EzyNestBooking() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccessDialog, setShowSuccessDialog] = useState(false)
   const [bookingDetails, setBookingDetails] = useState<any>(null)
-  
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
-    libraries: ['places'],
-  })
   
   const validatePhoneNumber = (phone: string) => {
     const phoneRegex = /^[0-9]{10}$/
@@ -192,9 +185,7 @@ export function EzyNestBooking() {
     }
   }
 
-  if (!isLoaded) {
-    return <div>Loading...</div>
-  }
+
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -332,46 +323,24 @@ export function EzyNestBooking() {
 
                 <div className="space-y-2">
                   <Label htmlFor="employerAddress">Employer Address</Label>
-                  <Autocomplete
-                    onLoad={(autocomplete) => {
-                      autocomplete.addListener('place_changed', () => {
-                        const place = autocomplete.getPlace()
-                        if (place.formatted_address) {
-                          setFormData(prev => ({ ...prev, employerAddress: place.formatted_address }))
-                        }
-                      })
-                    }}
-                  >
-                    <Input
-                      id="employerAddress"
-                      value={formData.employerAddress}
-                      onChange={(e) => setFormData(prev => ({ ...prev, employerAddress: e.target.value }))}
-                      placeholder="Start typing to search..."
-                      required
-                    />
-                  </Autocomplete>
+                  <Input
+                    id="employerAddress"
+                    value={formData.employerAddress}
+                    onChange={(e) => setFormData(prev => ({ ...prev, employerAddress: e.target.value }))}
+                    placeholder="Enter complete address"
+                    required
+                  />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="permanentAddress">Your Permanent Address</Label>
-                  <Autocomplete
-                    onLoad={(autocomplete) => {
-                      autocomplete.addListener('place_changed', () => {
-                        const place = autocomplete.getPlace()
-                        if (place.formatted_address) {
-                          setFormData(prev => ({ ...prev, permanentAddress: place.formatted_address }))
-                        }
-                      })
-                    }}
-                  >
-                    <Input
-                      id="permanentAddress"
-                      value={formData.permanentAddress}
-                      onChange={(e) => setFormData(prev => ({ ...prev, permanentAddress: e.target.value }))}
-                      placeholder="Start typing to search..."
-                      required
-                    />
-                  </Autocomplete>
+                  <Input
+                    id="permanentAddress"
+                    value={formData.permanentAddress}
+                    onChange={(e) => setFormData(prev => ({ ...prev, permanentAddress: e.target.value }))}
+                    placeholder="Enter complete address"
+                    required
+                  />
                 </div>
 
                 <div className="space-y-2">
