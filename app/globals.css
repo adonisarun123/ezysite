@@ -5,6 +5,133 @@
 /* React DayPicker styles */
 @import 'react-day-picker/dist/style.css';
 
+/* Calendar customizations */
+.rdp {
+  --rdp-cell-size: 48px;
+  --rdp-accent-color: #e11d48;
+  --rdp-background-color: #ffffff;
+  margin: 0;
+}
+
+.rdp-months {
+  display: flex;
+  gap: 0;
+}
+
+.rdp-month {
+  width: 100%;
+}
+
+.rdp-table {
+  width: 100%;
+  max-width: none;
+  border-spacing: 0;
+}
+
+.rdp-head_cell {
+  width: 48px;
+  height: 32px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.rdp-cell {
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  position: relative;
+}
+
+.rdp-button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rdp-button:hover {
+  background-color: #f3f4f6;
+}
+
+.rdp-button_reset {
+  all: unset;
+  box-sizing: border-box;
+}
+
+.rdp-day_selected {
+  background-color: #e11d48 !important;
+  color: white !important;
+}
+
+.rdp-day_selected:hover {
+  background-color: #be185d !important;
+}
+
+.rdp-day_today {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.rdp-day_outside {
+  color: #d1d5db;
+}
+
+.rdp-day_disabled {
+  color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.rdp-nav_button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.rdp-nav_button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.rdp-nav_button_previous {
+  position: absolute;
+  left: 4px;
+}
+
+.rdp-nav_button_next {
+  position: absolute;
+  right: 4px;
+}
+
+.rdp-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0 16px 0;
+  position: relative;
+}
+
+.rdp-caption_label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
