@@ -61,6 +61,7 @@ interface BookingFormData {
   permanentAddress: string
   idProofNumber: string
   idProofFile?: File
+  [key: string]: string | File | undefined
 }
 
 export function EzyNestBooking() {
@@ -117,8 +118,8 @@ export function EzyNestBooking() {
     }
 
     // Validate required fields
-    const requiredFields = ['name', 'phone', 'employerName', 'employerAddress', 'permanentAddress', 'idProofNumber']
-    const missingFields = requiredFields.filter(field => !formData[field])
+    const requiredFields = ['name', 'phone', 'employerName', 'employerAddress', 'permanentAddress', 'idProofNumber'] as const
+    const missingFields = requiredFields.filter(field => !formData[field as keyof BookingFormData])
     
     if (missingFields.length > 0) {
       alert(`Please fill in all required fields: ${missingFields.join(', ')}`)
