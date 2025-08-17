@@ -73,7 +73,7 @@ export function EzyNestBooking() {
     return mockBedAvailability[selectedDate] || TOTAL_BEDS
   }
 
-  const handleDateSelect = (selectedDate: Date) => {
+  const handleDateSelect = (selectedDate: Date | undefined) => {
     setDate(selectedDate)
   }
 

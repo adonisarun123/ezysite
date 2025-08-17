@@ -4,7 +4,11 @@ import * as React from 'react'
 import { DayPicker } from 'react-day-picker'
 import { cn } from '@/lib/utils'
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>
+export type CalendarProps = React.ComponentProps<typeof DayPicker> & {
+  mode?: 'single' | 'multiple' | 'range'
+  selected?: Date | Date[] | undefined
+  onSelect?: (date: Date | Date[] | undefined) => void
+}
 
 function Calendar({
   className,
