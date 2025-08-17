@@ -171,22 +171,53 @@ const generateGeneralLeadEmail = (formData: {
   phone: string;
   service: string;
   city: string;
+  email?: string;
   sourceUrl?: string;
+  additionalDetails?: any;
 }) => {
+  const isEzyNestBooking = formData.service.includes('EzyNest');
+  
   return {
     subject: `New Lead: ${formData.service} in ${formData.city}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #f1750a;">New Lead Received</h2>
+        <h2 style="color: #f1750a;">${isEzyNestBooking ? '🏠 New EzyNest Booking' : 'New Lead Received'}</h2>
         <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #333;">Lead Information</h3>
           <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Phone:</strong> <a href="tel:${formData.phone}">${formData.phone}</a></p>
+          ${formData.email ? `<p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>` : ''}
           <p><strong>Service:</strong> ${formData.service}</p>
           <p><strong>City:</strong> ${formData.city}</p>
         </div>
+        
+        ${formData.additionalDetails ? `
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Booking Details</h3>
+          ${formData.additionalDetails.bookingId ? `<p><strong>Booking ID:</strong> ${formData.additionalDetails.bookingId}</p>` : ''}
+          ${formData.additionalDetails.checkInDate ? `<p><strong>Check-in Date:</strong> ${formData.additionalDetails.checkInDate}</p>` : ''}
+          ${formData.additionalDetails.checkInTime ? `<p><strong>Check-in Time:</strong> ${formData.additionalDetails.checkInTime}</p>` : ''}
+          ${formData.additionalDetails.checkOutDate ? `<p><strong>Check-out Date:</strong> ${formData.additionalDetails.checkOutDate}</p>` : ''}
+          ${formData.additionalDetails.numberOfDays ? `<p><strong>Duration:</strong> ${formData.additionalDetails.numberOfDays} ${formData.additionalDetails.numberOfDays === 1 ? 'day' : 'days'}</p>` : ''}
+          ${formData.additionalDetails.bookingType ? `<p><strong>Booking Type:</strong> ${formData.additionalDetails.bookingType}</p>` : ''}
+        </div>
+        
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Employment Details</h3>
+          ${formData.additionalDetails.employerName ? `<p><strong>Employer Name:</strong> ${formData.additionalDetails.employerName}</p>` : ''}
+          ${formData.additionalDetails.employerAddress ? `<p><strong>Employer Address:</strong> ${formData.additionalDetails.employerAddress}</p>` : ''}
+          ${formData.additionalDetails.permanentAddress ? `<p><strong>Permanent Address:</strong> ${formData.additionalDetails.permanentAddress}</p>` : ''}
+        </div>
+        
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Identity Verification</h3>
+          ${formData.additionalDetails.idProofNumber ? `<p><strong>ID Proof Number:</strong> ${formData.additionalDetails.idProofNumber}</p>` : ''}
+          ${formData.additionalDetails.idProofFileName ? `<p><strong>ID Proof File:</strong> ${formData.additionalDetails.idProofFileName}</p>` : ''}
+        </div>
+        ` : ''}
+        
         <div style="margin-top: 20px; padding: 15px; background-color: #e8f5e8; border-radius: 8px;">
-          <p style="margin: 0; color: #2d5a2d;"><strong>Action Required:</strong> Please call this lead within 30 minutes.</p>
+          <p style="margin: 0; color: #2d5a2d;"><strong>Action Required:</strong> ${isEzyNestBooking ? 'Process booking and arrange accommodation' : 'Please call this lead within 30 minutes'}.</p>
         </div>
         ${formData.sourceUrl ? `
         <div style="margin-top: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 8px;">
@@ -198,15 +229,35 @@ const generateGeneralLeadEmail = (formData: {
       </div>
     `,
     text: `
-New Lead: ${formData.service} in ${formData.city}
+${isEzyNestBooking ? 'New EzyNest Booking' : 'New Lead'}: ${formData.service} in ${formData.city}
 
 Lead Information:
 - Name: ${formData.name}
 - Phone: ${formData.phone}
+${formData.email ? `- Email: ${formData.email}` : ''}
 - Service: ${formData.service}
 - City: ${formData.city}
 
-Action Required: Please call this lead within 30 minutes.
+${formData.additionalDetails ? `
+BOOKING DETAILS:
+${formData.additionalDetails.bookingId ? `- Booking ID: ${formData.additionalDetails.bookingId}` : ''}
+${formData.additionalDetails.checkInDate ? `- Check-in Date: ${formData.additionalDetails.checkInDate}` : ''}
+${formData.additionalDetails.checkInTime ? `- Check-in Time: ${formData.additionalDetails.checkInTime}` : ''}
+${formData.additionalDetails.checkOutDate ? `- Check-out Date: ${formData.additionalDetails.checkOutDate}` : ''}
+${formData.additionalDetails.numberOfDays ? `- Duration: ${formData.additionalDetails.numberOfDays} ${formData.additionalDetails.numberOfDays === 1 ? 'day' : 'days'}` : ''}
+${formData.additionalDetails.bookingType ? `- Booking Type: ${formData.additionalDetails.bookingType}` : ''}
+
+EMPLOYMENT DETAILS:
+${formData.additionalDetails.employerName ? `- Employer Name: ${formData.additionalDetails.employerName}` : ''}
+${formData.additionalDetails.employerAddress ? `- Employer Address: ${formData.additionalDetails.employerAddress}` : ''}
+${formData.additionalDetails.permanentAddress ? `- Permanent Address: ${formData.additionalDetails.permanentAddress}` : ''}
+
+IDENTITY VERIFICATION:
+${formData.additionalDetails.idProofNumber ? `- ID Proof Number: ${formData.additionalDetails.idProofNumber}` : ''}
+${formData.additionalDetails.idProofFileName ? `- ID Proof File: ${formData.additionalDetails.idProofFileName}` : ''}
+` : ''}
+
+Action Required: ${isEzyNestBooking ? 'Process booking and arrange accommodation' : 'Please call this lead within 30 minutes'}.
 
 ${formData.sourceUrl ? `Source URL: ${formData.sourceUrl}` : ''}
 
@@ -617,6 +668,71 @@ export const sendLeadEmail = async (
     
   } catch (error) {
     console.error('Error sending lead email:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+};
+
+// Specific EzyNest booking email function with file attachment
+export const sendEzyNestBookingEmail = async (
+  bookingDetails: any,
+  idProofFile?: File | null
+) => {
+  try {
+    const transporter = createTransporter();
+    
+    const serviceName = `EzyNest Booking - ${bookingDetails.numberOfDays} ${bookingDetails.numberOfDays === 1 ? 'Day' : 'Days'}`;
+    
+    const emailContent = generateGeneralLeadEmail({
+      name: bookingDetails.name,
+      phone: bookingDetails.phone,
+      service: serviceName,
+      city: 'Bangalore',
+      email: bookingDetails.email,
+      additionalDetails: {
+        bookingId: bookingDetails.bookingId,
+        checkInDate: bookingDetails.checkInDate,
+        checkInTime: bookingDetails.checkInTime,
+        checkOutDate: bookingDetails.checkOutDate,
+        numberOfDays: bookingDetails.numberOfDays,
+        employerName: bookingDetails.employerName,
+        employerAddress: bookingDetails.employerAddress,
+        permanentAddress: bookingDetails.permanentAddress,
+        idProofNumber: bookingDetails.idProofNumber,
+        idProofFileName: bookingDetails.idProofFileName,
+        bookingType: 'EzyNest Women-Only Short Stay'
+      }
+    });
+
+    const adminEmail = ['contact@ezyhelpers.com', 'ashma@ezyhelpers.com'].join(', ');
+
+    let mailOptions: any = {
+      from: process.env.SMTP_USER,
+      to: adminEmail,
+      replyTo: bookingDetails.email || process.env.SMTP_USER,
+      ...emailContent,
+    };
+
+    // Add ID proof attachment if provided
+    if (idProofFile) {
+      const buffer = await idProofFile.arrayBuffer();
+      const uint8Array = new Uint8Array(buffer);
+      
+      mailOptions.attachments = [
+        {
+          filename: `ID_Proof_${bookingDetails.bookingId}.${idProofFile.name.split('.').pop()}`,
+          content: uint8Array,
+          contentType: idProofFile.type,
+        }
+      ];
+    }
+
+    const result = await transporter.sendMail(mailOptions);
+    
+    console.log('EzyNest booking email sent successfully:', result.messageId);
+    return { success: true, messageId: result.messageId };
+    
+  } catch (error) {
+    console.error('Error sending EzyNest booking email:', error);
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
 };

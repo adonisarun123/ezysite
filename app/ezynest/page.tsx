@@ -11,6 +11,8 @@ import {
   DocumentCheckIcon
 } from '@heroicons/react/24/outline'
 import { BookingSection } from './BookingSection'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'EzyNest — Women-Only Short-Stay by EzyHelpers',
@@ -19,9 +21,11 @@ export const metadata: Metadata = {
 
 export default function EzyNestPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-rose-600 via-rose-700 to-rose-800 text-white pt-28 pb-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-rose-600 via-rose-700 to-rose-800 text-white pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-20 w-80 h-80 bg-white rounded-full blur-3xl"></div>
@@ -76,7 +80,7 @@ export default function EzyNestPage() {
                 <div className="text-rose-200 text-sm">Women-Only</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">4.8★</div>
+                <div className="text-2xl font-bold text-white mb-1">5 Star</div>
                 <div className="text-rose-200 text-sm">Guest Rating</div>
               </div>
             </div>
@@ -195,6 +199,8 @@ export default function EzyNestPage() {
           })
         }}
       />
-    </main>
+      </main>
+      <Footer />
+    </>
   )
 }

@@ -222,14 +222,17 @@ export function EzyNestBooking() {
       
       console.log('Booking submitted:', bookingData)
       
-      // Send booking confirmation emails
+      // Send booking confirmation emails with ID proof attachment
       try {
+        const emailFormData = new FormData()
+        emailFormData.append('bookingDetails', JSON.stringify(bookingData))
+        if (idProofFile) {
+          emailFormData.append('idProofFile', idProofFile)
+        }
+
         const emailResponse = await fetch('/api/send-booking-email', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ bookingDetails: bookingData }),
+          body: emailFormData,
         })
 
         if (!emailResponse.ok) {
