@@ -10,6 +10,7 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog'
 import { Calendar } from '@/components/ui/calendar'
+import CompactCalendar from '@/components/ui/compact-calendar'
 import { format } from 'date-fns'
 import { 
   Select,
@@ -250,34 +251,26 @@ export function EzyNestBooking() {
               <CardDescription>Choose your check-in date</CardDescription>
             </CardHeader>
             <CardContent>
-              <Calendar
-                mode="single"
-                selected={date}
-                onSelect={handleDateSelect}
-                className="rounded-xl border border-rose-100 p-4 shadow-lg"
-                disabled={{ before: new Date() }}
-                fromDate={new Date()}
-                toDate={new Date(new Date().setMonth(new Date().getMonth() + 3))}
-                modifiers={{
-                  available: (date) => {
+              <div className="flex justify-center">
+                <CompactCalendar
+                  selectedDate={date}
+                  onDateSelect={handleDateSelect}
+                  className="shadow-lg border-rose-200"
+                  disabledDates={(date) => date < new Date() || date > new Date(new Date().setMonth(new Date().getMonth() + 3))}
+                  availabilityIndicator={(date) => {
                     const formattedDate = format(date, 'yyyy-MM-dd')
-                    return getAvailableBeds(formattedDate) > 0
-                  }
-                }}
-                modifiersStyles={{
-                  available: {
-                    color: '#059669',
-                    fontWeight: '500'
-                  }
-                }}
-                footer={date && (
-                  <div className="mt-3 rounded-lg bg-rose-50 p-3 text-center">
-                    <p className="text-sm font-medium text-rose-900">
-                      {getAvailableBeds(format(date, 'yyyy-MM-dd'))} beds available
-                    </p>
-                  </div>
-                )}
-              />
+                    const available = getAvailableBeds(formattedDate)
+                    return { available, total: TOTAL_BEDS }
+                  }}
+                />
+              </div>
+              {date && (
+                <div className="mt-4 rounded-lg bg-rose-50 p-3 text-center">
+                  <p className="text-sm font-medium text-rose-900">
+                    {getAvailableBeds(format(date, 'yyyy-MM-dd'))} of {TOTAL_BEDS} beds available
+                  </p>
+                </div>
+              )}
             </CardContent>
           </Card>
 
