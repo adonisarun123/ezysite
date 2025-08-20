@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/terms-of-service',
     '/hire-helper',
     '/join-as-helper',
+    '/service-request',
     '/nduw',
     '/nest'
   ].map(route => ({

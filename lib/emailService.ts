@@ -192,6 +192,30 @@ const generateGeneralLeadEmail = (formData: {
         </div>
         
         ${formData.additionalDetails ? `
+        ${formData.additionalDetails.leadType === 'Comprehensive Service Request' ? `
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">📋 Service Requirements</h3>
+          ${formData.additionalDetails.duration ? `<p><strong>Duration:</strong> ${formData.additionalDetails.duration}</p>` : ''}
+          ${formData.additionalDetails.startDate ? `<p><strong>Preferred Start Date:</strong> ${formData.additionalDetails.startDate}</p>` : ''}
+          ${formData.additionalDetails.budget ? `<p><strong>Monthly Budget:</strong> ₹${formData.additionalDetails.budget}</p>` : ''}
+          ${formData.additionalDetails.familySize ? `<p><strong>Family Size:</strong> ${formData.additionalDetails.familySize}</p>` : ''}
+        </div>
+        
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">👤 Helper Preferences</h3>
+          ${formData.additionalDetails.experience ? `<p><strong>Experience Level:</strong> ${formData.additionalDetails.experience}</p>` : ''}
+          ${formData.additionalDetails.preferredGender ? `<p><strong>Gender Preference:</strong> ${formData.additionalDetails.preferredGender}</p>` : ''}
+          ${formData.additionalDetails.languages ? `<p><strong>Preferred Languages:</strong> ${formData.additionalDetails.languages}</p>` : ''}
+          ${formData.additionalDetails.additionalServices ? `<p><strong>Additional Services:</strong> ${formData.additionalDetails.additionalServices}</p>` : ''}
+        </div>
+        
+        ${formData.additionalDetails.specificRequirements ? `
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">📝 Specific Requirements</h3>
+          <p style="white-space: pre-wrap;">${formData.additionalDetails.specificRequirements}</p>
+        </div>
+        ` : ''}
+        ` : `
         <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #333;">Booking Details</h3>
           ${formData.additionalDetails.bookingId ? `<p><strong>Booking ID:</strong> ${formData.additionalDetails.bookingId}</p>` : ''}
@@ -214,6 +238,7 @@ const generateGeneralLeadEmail = (formData: {
           ${formData.additionalDetails.idProofNumber ? `<p><strong>ID Proof Number:</strong> ${formData.additionalDetails.idProofNumber}</p>` : ''}
           ${formData.additionalDetails.idProofFileName ? `<p><strong>ID Proof File:</strong> ${formData.additionalDetails.idProofFileName}</p>` : ''}
         </div>
+        `}
         ` : ''}
         
         <div style="margin-top: 20px; padding: 15px; background-color: #e8f5e8; border-radius: 8px;">
@@ -239,6 +264,24 @@ ${formData.email ? `- Email: ${formData.email}` : ''}
 - City: ${formData.city}
 
 ${formData.additionalDetails ? `
+${formData.additionalDetails.leadType === 'Comprehensive Service Request' ? `
+SERVICE REQUIREMENTS:
+${formData.additionalDetails.duration ? `- Duration: ${formData.additionalDetails.duration}` : ''}
+${formData.additionalDetails.startDate ? `- Preferred Start Date: ${formData.additionalDetails.startDate}` : ''}
+${formData.additionalDetails.budget ? `- Monthly Budget: ₹${formData.additionalDetails.budget}` : ''}
+${formData.additionalDetails.familySize ? `- Family Size: ${formData.additionalDetails.familySize}` : ''}
+
+HELPER PREFERENCES:
+${formData.additionalDetails.experience ? `- Experience Level: ${formData.additionalDetails.experience}` : ''}
+${formData.additionalDetails.preferredGender ? `- Gender Preference: ${formData.additionalDetails.preferredGender}` : ''}
+${formData.additionalDetails.languages ? `- Preferred Languages: ${formData.additionalDetails.languages}` : ''}
+${formData.additionalDetails.additionalServices ? `- Additional Services: ${formData.additionalDetails.additionalServices}` : ''}
+
+${formData.additionalDetails.specificRequirements ? `
+SPECIFIC REQUIREMENTS:
+${formData.additionalDetails.specificRequirements}
+` : ''}
+` : `
 BOOKING DETAILS:
 ${formData.additionalDetails.bookingId ? `- Booking ID: ${formData.additionalDetails.bookingId}` : ''}
 ${formData.additionalDetails.checkInDate ? `- Check-in Date: ${formData.additionalDetails.checkInDate}` : ''}
@@ -255,6 +298,7 @@ ${formData.additionalDetails.permanentAddress ? `- Permanent Address: ${formData
 IDENTITY VERIFICATION:
 ${formData.additionalDetails.idProofNumber ? `- ID Proof Number: ${formData.additionalDetails.idProofNumber}` : ''}
 ${formData.additionalDetails.idProofFileName ? `- ID Proof File: ${formData.additionalDetails.idProofFileName}` : ''}
+`}
 ` : ''}
 
 Action Required: ${isEzyNestBooking ? 'Process booking and arrange accommodation' : 'Please call this lead within 30 minutes'}.
