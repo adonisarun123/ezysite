@@ -31,35 +31,35 @@ export default function BareillyPage() {
       title: "Babysitter Services",
       description: "Trusted and experienced babysitters in Bareilly for safe, engaging childcare with flexible scheduling.",
       features: ["Trained in Child Safety", "Age-Appropriate Activities", "School Support & Homework Help", "Flexible Timing Options"],
-      href: "/services/babysitter",
+      href: "/cities/bareilly/babysitter",
       icon: HeartIcon
     },
     {
       title: "Cook Services", 
       description: "Professional cooks in Bareilly skilled in local cuisine, traditional recipes, and dietary preferences.",
       features: ["North Indian & UP Specialties", "Customized Meal Plans", "Hygienic Food Preparation", "Festival & Event Cooking"],
-      href: "/services/cooks",
+      href: "/cities/bareilly/cooks",
       icon: ShoppingBagIcon
     },
     {
       title: "Driver Services",
       description: "Licensed and experienced drivers in Bareilly for safe, reliable transportation.",
       features: ["School & Office Commutes", "Local & Outstation Trips", "Safe & Professional Service", "Flexible Timing Options"],
-      href: "/services/drivers",
+      href: "/cities/bareilly/drivers",
       icon: TruckIcon
     },
     {
       title: "Elderly Care Services",
       description: "Compassionate elderly care in Bareilly with trained caregivers for personalized support.",
       features: ["Personal Care & Hygiene", "Medication Management", "Companionship & Support", "Mobility Assistance"],
-      href: "/services/elderly-care",
+      href: "/cities/bareilly/elderly-care",
       icon: UserGroupIcon
     },
     {
       title: "Full-Time Maid Services",
       description: "Reliable full-time maids in Bareilly for complete household management and daily tasks.",
       features: ["Daily Cleaning & Maintenance", "Laundry & Dishwashing", "Kitchen Organization", "Regular Home Support"],
-      href: "/services/full-time-maids",
+      href: "/cities/bareilly/full-time-maid",
       icon: UsersIcon
     },
     {
@@ -73,21 +73,21 @@ export default function BareillyPage() {
       title: "Live-In Maid Services",
       description: "Dedicated live-in maids in Bareilly for round-the-clock household support and care.",
       features: ["24/7 Home Management", "Cooking & Cleaning", "Child & Elder Care", "Complete Domestic Support"],
-      href: "/services/live-in-maids",
+      href: "/cities/bareilly/live-in-maid",
       icon: HomeIcon
     },
     {
       title: "On-Demand Helper Services",
       description: "Quick and reliable emergency help in Bareilly for urgent household needs.",
       features: ["Same-Day Service", "Emergency Support", "Flexible Hours", "No Long-Term Commitment"],
-      href: "/services/on-demand-helpers",
+      href: "/cities/bareilly/on-demand-helper",
       icon: ClockIcon
     },
     {
       title: "Part-Time Maid Services",
       description: "Flexible part-time maids in Bareilly for customized household help when you need it.",
       features: ["2-6 Hour Shifts", "Morning/Evening Options", "Task-Specific Help", "Affordable Rates"],
-      href: "/services/part-time-maids",
+      href: "/cities/bareilly/part-time-maid",
       icon: ClockIcon
     }
   ]
@@ -104,28 +104,28 @@ export default function BareillyPage() {
       title: "Appliance Repair Services",
       description: "Quick fix for all home appliances in Bareilly with expert technicians and doorstep service.",
       features: ["Refrigerator & washing machine repairs", "Microwave & TV repairs", "Gas stove & geyser fixes", "All major brands supported"],
-      href: "/services/appliance-repair",
+      href: "/cities/bareilly/appliance-repair",
       icon: CogIcon
     },
     {
       title: "Carpenter Services",
       description: "Professional carpenter home service in Bareilly for reliable repairs and beautiful custom woodwork.",
       features: ["Traditional UP-style furniture repair", "Custom storage solutions", "Religious furniture setup", "Door & window repairs"],
-      href: "/services/carpenters",
+      href: "/cities/bareilly/carpenter",
       icon: CogIcon
     },
     {
       title: "Electrician Services",
       description: "Trusted electrician in Bareilly for fan fittings, switches, wiring issues, and power problems.",
       features: ["House wiring & repairs", "Switch/socket repairs", "Fan & light installation", "Circuit breaker repair"],
-      href: "/services/electricians",
+      href: "/cities/bareilly/electrician",
       icon: LightBulbIcon
     },
     {
       title: "Deep Cleaning Services",
       description: "Professional home deep cleaning in Bareilly for spotless, germ-free living spaces.",
       features: ["Full house deep cleaning", "Kitchen & bathroom sanitization", "Carpet & mattress cleaning", "Post-festival cleanup"],
-      href: "/services/deep-cleaning",
+      href: "/cities/bareilly/home-cleaning",
       icon: SparklesIcon
     },
     {
@@ -139,7 +139,7 @@ export default function BareillyPage() {
       title: "Painter Services",
       description: "Professional painting services in Bareilly with premium finishes and timely completion.",
       features: ["Interior & exterior painting", "Weatherproof house painting", "Wall plastering & crack repairs", "Wood polish & varnishing"],
-      href: "/services/painters",
+      href: "/cities/bareilly/painting",
       icon: PaintBrushIcon
     },
     {
@@ -153,14 +153,14 @@ export default function BareillyPage() {
       title: "Plumber Services",
       description: "Professional plumbing repair in Bareilly for leaks, pipe fittings, and drainage problems.",
       features: ["Pipe leakage & blockage repairs", "Bathroom fitting & repairs", "Water tank cleaning", "Drainage solutions"],
-      href: "/services/plumbers",
+      href: "/cities/bareilly/plumber",
       icon: WrenchScrewdriverIcon
     },
     {
       title: "Sofa Cleaning Services",
       description: "Professional sofa cleaning services in Bareilly for stain and odor removal.",
       features: ["Fabric & leather sofa cleaning", "Stain & odor removal", "Sanitization & protection", "Same-day service"],
-      href: "/services/sofa-cleaning",
+      href: "/cities/bareilly/sofa-cleaning",
       icon: SparklesIcon
     }
   ]

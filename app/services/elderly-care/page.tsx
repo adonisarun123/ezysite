@@ -16,12 +16,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Caretaker for Elderly in Bareilly – Compassionate Support',
-  description: 'Get caretaker for elderly at home in Bareilly with trained staff for hygiene, medication, companionship, and emotional support for your loved ones.',
-  keywords: 'caretaker for elderly bareilly, elderly care bareilly, old age care bareilly, senior home care bareilly, elder care services bareilly',
+  title: 'Elderly Care – Dignity & Comfort at Home',
+  description: 'Provide your loved ones with compassionate elderly care that honors their dignity while ensuring safety, comfort, and companionship at home.',
+  keywords: 'elderly care, senior care, caretaker for elderly, in-home elderly care, compassionate care, medication reminders, mobility assistance, companionship',
   openGraph: {
-    title: 'Caretaker for Elderly in Bareilly – Compassionate Support',
-    description: 'Get caretaker for elderly at home in Bareilly with trained staff for hygiene, medication, companionship, and emotional support for your loved ones.',
+    title: 'Elderly Care – Dignity & Comfort at Home',
+    description: 'Provide your loved ones with compassionate elderly care that honors their dignity while ensuring safety, comfort, and companionship at home.',
     url: 'https://ezyhelpers.com/services/elderly-care',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -35,39 +35,34 @@ export const metadata: Metadata = {
 export default function ElderlyCare() {
   const services = [
     {
-      title: "Daily Personal Care",
-      description: "Helping with bathing, dressing, and grooming, ensuring hygiene and comfort for elderly family members.",
+      title: "Personal Care Assistance",
+      description: "Help with bathing, grooming, dressing, and maintaining personal hygiene with dignity and respect.",
       icon: UserIcon,
-      features: ["Bathing assistance", "Grooming help", "Dressing support", "Hygiene maintenance"]
     },
     {
-      title: "Medicine Management", 
-      description: "Reminding and assisting with timely medication, as per the doctor's advice.",
+      title: "Medication Management", 
+      description: "Timely medication reminders, dosage tracking, and coordination with healthcare providers.",
       icon: ShieldCheckIcon,
-      features: ["Timely reminders", "Dosage assistance", "Health tracking", "Doctor coordination"]
     },
     {
-      title: "Meal Preparation",
-      description: "Cooking healthy and favourite meals, keeping in mind dietary needs and local tastes.",
-      icon: HeartIcon,
-      features: ["Healthy cooking", "Dietary needs", "Local tastes", "Regular meals"]
-    },
-    {
-      title: "Mobility & Support",
-      description: "Assisting with moving around the house, going for walks, and preventing falls.",
+      title: "Mobility Support",
+      description: "Safe assistance with walking, transfers, and physical therapy exercises to maintain independence.",
       icon: ClockIcon,
-      features: ["Walking support", "Fall prevention", "Exercise help", "Safe movement"]
+    },
+    {
+      title: "Companionship",
+      description: "Emotional support, conversation, and engaging activities to combat loneliness and isolation.",
+      icon: HeartIcon,
     }
   ]
 
   const benefits = [
-    "Respects traditions and daily routines",
-    "Handles joint families with care",
-    "Fast placement with verified staff",
-    "Timely medicine and diet reminders",
-    "Regular family updates",
-    "Trained in senior care and emergencies",
-    "Local language support"
+    "Medication reminders and health monitoring",
+    "Mobility & hygiene assistance",
+    "Emotional support & companionship",
+    "Trained in senior care best practices",
+    "Background-verified caregivers",
+    "24/7, full-time, or part-time options available"
   ]
 
   return (
@@ -98,31 +93,25 @@ export default function ElderlyCare() {
                 {/* Trust Badge */}
                 <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                   <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
-                  <span className="text-sm font-semibold">Compassionate Senior Care</span>
+                  <span className="text-sm font-semibold">Dignity & Comfort at Home</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Caretaker for Elderly at Home
+                  Elderly Care
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Trustworthy Support for Your Loved Ones
+                    Dignity & Comfort at Home
                   </span>
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Get verified, trained caretakers for elderly at home in Bareilly for daily support, health monitoring, and compassionate care, ensuring your elders feel safe and cared for at home.
+                  Provide your loved ones with compassionate elderly care that honors their dignity while ensuring safety, comfort, and companionship at home.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ Background Verified
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ 24-72 Hour Placement
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ Complete Elder Care
-                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">✓ Medical Support</div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">✓ 24/7 Care Available</div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">✓ Trained Caregivers</div>
                 </div>
 
                 {/* CTA Buttons */}
@@ -252,6 +241,64 @@ export default function ElderlyCare() {
         </div>
       </section>
 
+      {/* Flexible Elderly Care Options */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Flexible Elderly Care Options</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Choose the care plan that best supports your loved one’s health, comfort, and independence.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">Live-In Elderly Care</h3>
+              <p className="text-gray-600 mb-4">24/7 compassionate assistance and supervision, perfect for seniors who need round-the-clock support and companionship.</p>
+              <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                <li>Continuous care & supervision</li>
+                <li>Help with hygiene, mobility, and medication</li>
+                <li>Emotional companionship</li>
+                <li>Ideal for post-hospital recovery or advanced age</li>
+              </ul>
+            </div>
+            <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">Full-Time Elderly Care</h3>
+              <p className="text-gray-600 mb-4">Daytime care tailored to your loved one’s daily schedule and medical needs, ensuring safety, routine, and well-being.</p>
+              <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                <li>8–12 hours of daily support</li>
+                <li>Medication reminders & mobility help</li>
+                <li>Meal prep & personal hygiene assistance</li>
+                <li>Emotional support and engagement</li>
+              </ul>
+            </div>
+            <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">On-Demand Elderly Care</h3>
+              <p className="text-gray-600 mb-4">Quick, flexible support whenever you need temporary or emergency care for your loved one.</p>
+              <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                <li>Hourly or same-day assistance</li>
+                <li>Bathing, feeding, walking, or companionship</li>
+                <li>Emergency or short-notice availability</li>
+                <li>Ideal for caregiver breaks or unexpected situations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Caregiver Philosophy */}
+      <section className="section-padding bg-background-secondary">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Our Caregiver Philosophy: Compassionate Care You Can Trust</h2>
+          </div>
+          <div className="max-w-4xl mx-auto text-gray-700 space-y-5 leading-relaxed">
+            <p>At EzyHelpers, we believe that exceptional elderly care begins with dedicated and empathetic caregivers. Our selection focuses on hiring individuals who are experienced, reliable, and naturally caring toward senior citizens. We look for caretakers who demonstrate patience, good communication, and a genuine interest in supporting elders with dignity. Each elderly care assistant is chosen to reflect our core values of respect, responsibility, and compassionate care.</p>
+            <p>Once selected, our caretakers receive hands-on training in essential elderly care areas such as assisting with mobility, hygiene care, handling age-related health conditions like diabetes and high blood pressure, and basic safety and home care practices. They are also taught how to support elders with forgetfulness or reduced independence in a respectful and reassuring manner.</p>
+            <p>To maintain the highest standards, we provide continuous training through regular workshops, helping our caretakers stay updated and confident in their duties.</p>
+            <p>We also believe in emotional connection, matching each senior with a caregiver who understands their routine, personality, and cultural preferences. This ensures a nurturing, trustworthy bond that brings both comfort and companionship. With EzyHelpers, your loved ones are cared for by trained professionals who treat them like family.</p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
@@ -268,44 +315,44 @@ export default function ElderlyCare() {
             <div className="space-y-6">
               {[
                 {
-                  question: "What does daily personal care include for elderly at home in Bareilly?",
-                  answer: "Daily personal care by a caretaker for elderly at home in Bareilly includes bathing, grooming, dressing, toilet assistance, and maintaining hygiene. EzyHelpers' home elder care services in Bareilly ensure seniors feel clean, comfortable, and cared for with dignity and respect."
+                  question: "What elderly care services can I get at home from EzyHelpers?",
+                  answer: "EzyHelpers offers professional in-home elderly care, including help with hygiene, mobility, daily tasks, medication reminders, and companionship. Our trained caretakers ensure seniors live safely and comfortably at home, receiving the attention and respect they deserve every day."
                 },
                 {
-                  question: "Do elderly caretakers in Bareilly help with medicine management?",
-                  answer: "Yes, under our home elder care services in Bareilly, caretakers for elderly at home help with timely medication reminders and dosage assistance as per doctor's advice, ensuring seniors maintain their health routines safely and consistently."
+                  question: "Are EzyHelpers’ caretakers trained to handle medical needs?",
+                  answer: "Yes, our senior citizen caretakers are trained in basic medical support. They can give medication reminders, monitor vital signs, and assist during emergencies. Although they aren’t certified doctors or nurses, they offer dependable home assistance for elderly family members who require regular health supervision."
                 },
                 {
-                  question: "Do your elderly caretakers in Bareilly help with personal hygiene?",
-                  answer: "Yes, our caretaker for elderly at home in Bareilly assists with hygiene tasks such as bathing, grooming, dressing, and cleanliness. EzyHelpers ensures seniors receive respectful and supportive hygiene care at home."
+                  question: "Can elderly caretakers help with bathing and grooming seniors?",
+                  answer: "Absolutely. Our elderly care assistants help with bathing, grooming, dressing, and toileting. These hygiene tasks are performed gently and respectfully, ensuring your senior family member remains clean, comfortable, and treated with dignity at all times."
                 },
                 {
-                  question: "What kind of meals do your caretakers prepare for seniors in Bareilly?",
-                  answer: "Our home elder care services in Bareilly include preparing healthy and locally preferred meals. Caretakers for elderly at home consider dietary restrictions, personal taste, and medical needs while cooking for seniors."
+                  question: "Do your care providers assist with daily medications for the elderly?",
+                  answer: "Yes, our care providers provide medication reminders and help organise daily doses as per the doctor’s instructions. This ensures your elderly loved one takes the right medicines at the right time, supporting better health and regular treatment compliance."
                 },
                 {
-                  question: "Can I get a caretaker for post-hospital recovery at home in Bareilly?",
-                  answer: "Yes, EzyHelpers offers caretakes in Bareilly trained in post-hospital recovery. Our services include medication support, diet monitoring, rest assistance, and safe mobility during the recovery period."
+                  question: "Are EzyHelpers’ elderly caretakers' backgrounds verified?",
+                  answer: "Yes, all EzyHelpers caretakers are fully background verified with Aadhaar, address proof, and work history. We also provide health certificates upon request. Your family’s safety and trust are our top priorities in elderly care services."
                 },
                 {
-                  question: "Can I hire a companion for an elderly person who lives alone?",
-                  answer: "Absolutely. Our elderly care assistants engage seniors with reading, conversations, games, and emotional support to prevent loneliness and isolation."
+                  question: "Do you provide post-hospital recovery care for seniors at home?",
+                  answer: "Yes, EzyHelpers offers post-hospital care for seniors. Our caretakers help with recovery routines, monitor health, manage medications, and offer emotional support, ensuring a smooth, safe transition from hospital to home care."
                 },
                 {
-                  question: "Are caretakers trained in handling bedridden patients?",
-                  answer: "Yes, our senior caretakers in Bangalore are trained to support bedridden seniors with repositioning, sponge baths, feeding, and bedsore prevention."
+                  question: "Will the elderly care assistants maintain health logs and medication records?",
+                  answer: "Yes, our elderly care assistants can maintain basic health records, track medication timing, and note any changes in behavior or routine. These updates help families and doctors monitor progress and make informed decisions during checkups or emergencies."
                 },
                 {
-                  question: "Can elderly caretakers manage chronic illnesses like diabetes or BP?",
-                  answer: "Yes. Our staff is trained to monitor vital signs, follow diet restrictions, and remind seniors to take prescribed medications for chronic conditions."
+                  question: "Can elderly assistants accompany seniors to appointments or walks?",
+                  answer: "Yes, our elderly care assistants can accompany seniors to doctor visits, therapy sessions, or daily walks. They provide both physical support and companionship, making every outing safer, easier, and more enjoyable."
                 },
                 {
-                  question: "Do I need to provide accommodation for a live-in caretaker?",
-                  answer: "Yes. A live-in caretaker needs to be provided with a bed, cot, or mattress and access to a bathroom. It ensures they stay rested and care efficiently."
+                  question: "Will the caretakers help with feeding, diapers, or physiotherapy?",
+                  answer: "Yes, our elderly caretakers assist with feeding, adult diaper changes, and basic physiotherapy exercises as needed. These services are delivered with patience and professionalism to keep seniors comfortable and well-supported at home."
                 },
                 {
-                  question: "What if my parent or elderly member is uncomfortable with the assigned caregiver?",
-                  answer: "We offer immediate replacement within 24 hours and work until we find the perfect personality and skill match."
+                  question: "Do I need to provide a room for a live-in elderly caretaker?",
+                  answer: "Yes, if you hire a live-in elderly caretaker, you must provide a room, either private or shared, with basic amenities like a bed, mattress, and bathroom access. A comfortable stay helps the caretaker provide better round-the-clock care."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
@@ -344,7 +391,7 @@ export default function ElderlyCare() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/hire-helper" className="btn-secondary bg-white text-teal-600 hover:bg-gray-100 text-lg px-8 py-4">
-              Book Compassionate Care Now
+              Book Compassionate Care
             </Link>
             <Link href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-4">
               <PhoneIcon className="h-5 w-5 mr-2" />
@@ -370,19 +417,19 @@ export default function ElderlyCare() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Housekeeping & Deep Cleaning",
-                description: "Professional deep cleaning, sofa washing, and kitchen sanitisation in Bareilly",
-                href: "/services/deep-cleaning"
+                title: "Live-In Maid Services",
+                description: "24/7 household support, including elderly care assistance and home management",
+                href: "/services/live-in-maids"
               },
               {
                 title: "Cook Services", 
-                description: "Expert cooks for daily meals, special occasions, or diet-specific cooking in Bareilly",
+                description: "Nutritious meal preparation following dietary restrictions for seniors",
                 href: "/services/cooks"
               },
               {
-                title: "Driver Services",
-                description: "Reliable drivers for school pickups, grocery runs, and local travel in Bareilly",
-                href: "/services/drivers"
+                title: "On-Demand Helpers",
+                description: "Emergency elderly care and assistance services for unexpected needs",
+                href: "/services/on-demand-helpers"
               }
             ].map((service, index) => (
               <Link key={index} href={service.href} className="block bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
@@ -404,4 +451,4 @@ export default function ElderlyCare() {
       <Footer />
     </main>
   )
-} 
+}

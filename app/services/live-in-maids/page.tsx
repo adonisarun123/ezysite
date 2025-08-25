@@ -26,47 +26,70 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Verified Live-In Maids in Bareilly – 12-Hour Daily Support',
-  description: 'Hire a verified live in house maid in Bareilly for all-day support. Our maids stay with you and assist with cooking, cleaning, and daily household needs.',
-  keywords: 'live in maid bareilly, 24/7 maid bareilly, stay in maid bareilly, residential maid bareilly, house maid bareilly',
+  title: 'Live-In Maid Services – Dedicated Help for Every Need',
+  description:
+    'EzyHelpers connects you with trained and background-verified live-in maids specialised in housekeeping, cooking, childcare, or elder care, making home management easier with dedicated support customised to your family’s needs.',
+  keywords: 'live-in maid, 24-hour maid, live in house maid, housekeeping, cooking, babysitting, elderly care',
 }
 
 export default function LiveInMaidsPage() {
   const services = [
     {
-      title: "Live-in Maid for Housekeeping",
-      description: "Maintain a clean, organised home with a live-in house maid in Bareilly focused entirely on cleanliness and hygiene.",
+      title: "Live-In Maid for Housekeeping",
+      description: "A dedicated housekeeper to keep your home spotless and organised every day.",
       icon: HomeIcon,
-      features: ["Sweeping & mopping", "Kitchen & bathroom cleaning", "Laundry & ironing", "Bed-making & dishwashing"]
+      features: [
+        "Sweeping, mopping, and dusting",
+        "Kitchen & bathroom cleaning",
+        "Laundry and ironing",
+        "Dishwashing and utensil management",
+        "Bed-making and room organization"
+      ]
     },
     {
-      title: "Live-in Maid for Cooking", 
-      description: "Enjoy UP-style home-cooked meals every day from a dedicated live-in maid service in Bareilly that specialises in traditional recipes and family-friendly food.",
+      title: "Live-In Maid for Cooking", 
+      description: "Wholesome, home-cooked meals tailored to your family’s preferences.",
       icon: HeartIcon,
-      features: ["Traditional UP dishes", "Festival specials", "Grocery assistance", "Kitchen hygiene"]
+      features: [
+        "Menu planning and ingredient prep",
+        "Grocery shopping (if agreed)",
+        "Cooking breakfast, lunch, dinner",
+        "Post-cooking kitchen cleaning",
+        "Maintaining stove and kitchen hygiene"
+      ]
     },
     {
-      title: "Live-in Maid for Elderly Care",
-      description: "Give your elders the dignity and support they deserve with a compassionate live-in house maid in Bareilly trained in elderly care.",
+      title: "Live-In Maid for Elderly Care",
+      description: "Compassionate support tailored to seniors’ daily needs.",
       icon: ShieldCheckIcon,
-      features: ["Personal hygiene", "Medication reminders", "Mobility assistance", "Emotional support"]
+      features: [
+        "Assistance with bathing, dressing, grooming",
+        "Medication reminders and schedule tracking",
+        "Mobility support and walking assistance",
+        "Emotional support and companionship"
+      ]
     },
     {
-      title: "Live-In Babysitter",
-      description: "Ensure your child is cared for by a loving, attentive live-in babysitter in Bareilly who prioritizes safety and hygiene.",
+      title: "Live-In Maid for Babysitting (Child Care)",
+      description: "Attentive childcare with safety, learning, and routines.",
       icon: ClockIcon,
-      features: ["Feeding & bathing", "Learning activities", "School readiness", "Safe environment"]
+      features: [
+        "Supervising and engaging activities",
+        "Feeding, bathing, and hygiene support",
+        "Homework help and reading",
+        "School pickup/drop coordination",
+        "Nap routines and bedtime care"
+      ]
     }
   ]
 
   const benefits = [
-    "Fluent in Hindi & Regional Languages",
-    "Skilled in UP-Style Cooking",
-    "Understands Joint Family Routines",
-    "Maids from Local Areas",
-    "Fast Replacements Available",
-    "Ongoing Support After Hiring",
-    "Respects Cultural Values"
+    "100% Verified & Background-Checked Maids",
+    "Specialised Support – One Maid for One Task",
+    "Quick Replacements & Fast Turnaround",
+    "24x7 Customer Assistance",
+    "Ongoing Support Even After Hiring",
+    "Transparent Pricing with No Hidden Charges"
   ]
 
   return (
@@ -102,58 +125,58 @@ export default function LiveInMaidsPage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Live-in House Maid in Bareilly
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Trusted Help for Your Home, 24/7
-                  </span>
+                  Live-In Maid Services – Dedicated Help for Every Need
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  EzyHelpers connects you with trained, verified, Hindi-speaking live-in house maids in Bareilly for cooking, cleaning, elderly care, and complete home support. Our maids understand your cultural values, food preferences, and family lifestyle.
+                  EzyHelpers connects you with trained and background-verified live-in maids specialised in housekeeping, cooking, childcare, or elder care, making home management easier with dedicated support customised to your family’s specific needs.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ 100% Background-Checked
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Maid Placement in 24–72 Hours
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Transparent Monthly Pricing
-                  </div>
+                  {[
+                    '100% Verified & Background-Checked',
+                    'Quick Replacement Guarantee',
+                    'Personalized Matchmaking',
+                    'Flexible Contract Options'
+                  ].map((pill, i) => (
+                    <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ {pill}</div>
+                  ))}
                 </div>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 px-4 lg:px-0">
                   <Link href="/hire-helper" className="group relative bg-white text-primary-800 hover:bg-primary-50 font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
                     <span className="relative z-10">
-                      <span className="hidden sm:inline">Book Live-In Maid Now</span>
-                      <span className="sm:hidden">Book Maid</span>
+                      <span className="hidden sm:inline">Book a Live-In Maid Now</span>
+                      <span className="sm:hidden">Book Now</span>
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-white to-primary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </Link>
                   <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Call: +91 9972571005</span>
-                    <span className="sm:hidden">+91 9972571005</span>
+                    <span className="hidden sm:inline">Call Us for Quick Assistance</span>
+                    <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
 
                 {/* Quick Stats */}
-                <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+                <div className="grid grid-cols-4 gap-6 pt-8 border-t border-white/20">
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">10K+</div>
-                    <div className="text-primary-200 text-sm">Happy Families</div>
+                    <div className="text-2xl font-bold text-white">98%</div>
+                    <div className="text-primary-200 text-sm">Customer Satisfaction</div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">24/7</div>
-                    <div className="text-primary-200 text-sm">Support Available</div>
+                    <div className="text-2xl font-bold text-white">24 Hrs</div>
+                    <div className="text-primary-200 text-sm">Maid Replacement</div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">5★</div>
-                    <div className="text-primary-200 text-sm">Average Rating</div>
+                    <div className="text-2xl font-bold text-white">10,000+</div>
+                    <div className="text-primary-200 text-sm">Happy Households</div>
+                  </div>
+                  <div className="text-center lg:text-left">
+                    <div className="text-2xl font-bold text-white">100%</div>
+                    <div className="text-primary-200 text-sm">Verified & Trained</div>
                   </div>
                 </div>
               </div>
@@ -200,10 +223,10 @@ export default function LiveInMaidsPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Why Choose EzyHelpers' Live-in Maid Services?
+              Why Choose EzyHelpers for Your Live-In Maid Needs?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Experience trusted, 24/7 home assistance with verified live-in maids tailored to your lifestyle
+              We make finding the right domestic help simple, safe, and fast.
             </p>
           </div>
 
@@ -223,10 +246,10 @@ export default function LiveInMaidsPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Services Offered By Our Live-in Maids
+              Our Specialized Live-In Maid Services for Every Household Need
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Explore our comprehensive range of 24 hrs maid services designed to meet your specific needs and requirements
+              Choose from expert categories of live-in maids, each focused on a specific household role.
             </p>
           </div>
 
@@ -243,9 +266,14 @@ export default function LiveInMaidsPage() {
                       <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">
                         {service.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-gray-600 leading-relaxed mb-3">
                         {service.description}
                       </p>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        {service.features.map((f, i) => (
+                          <li key={i}>{f}</li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -260,10 +288,10 @@ export default function LiveInMaidsPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Who Benefits Most from a Live-In Maid?
+              Who Needs a Live-In Maid?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Live-in maids are the ideal solution for households that need dependable, all-day support with minimal hassle
+              Live-in maids are ideal for households needing dependable, all-day support with minimal hassle.
             </p>
           </div>
 
@@ -373,10 +401,10 @@ export default function LiveInMaidsPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Our Simple 4-Step Process
+              Our Easy 4-Step Maid Hiring Process
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Finding a trustworthy 24-hour maid is easy with our guided, step-by-step process designed for your comfort and peace of mind
+              Hiring a live-in maid with EzyHelpers is smooth and stress-free.
             </p>
           </div>
 
@@ -385,22 +413,22 @@ export default function LiveInMaidsPage() {
               {
                 step: "1",
                 title: "Consultation",
-                description: "We discuss your household needs and create a plan that suits your lifestyle"
+                description: "Discuss your needs and choose the type of maid service—cleaning, cooking, childcare, or elder care."
               },
               {
                 step: "2", 
-                title: "Matching",
-                description: "We select 2–3 verified live-in maids who fit your criteria"
+                title: "Maid Shortlisting",
+                description: "We match you with 2–3 verified candidates based on your preferences."
               },
               {
                 step: "3",
-                title: "Interviews", 
-                description: "Meet shortlisted candidates through in-person or online interviews"
+                title: "Interview & Selection", 
+                description: "Connect with shortlisted maids via call, video or in-person interviews."
               },
               {
                 step: "4",
-                title: "Onboarding",
-                description: "Trial period with ongoing support and regular check-ins"
+                title: "Smooth Onboarding",
+                description: "We handle documentation. Your maid begins with a trial; support team stays in touch."
               }
             ].map((process, index) => (
               <div key={index} className="text-center">
@@ -419,85 +447,63 @@ export default function LiveInMaidsPage() {
         </div>
       </section>
 
+      {/* Things to Know Before Hiring */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Things to Know Before Hiring a 24-Hour Maid</h2>
+            <p className="text-lg text-gray-600">Everything you should know to make the right hiring decision.</p>
+          </div>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">1. Living Arrangements</h3>
+              <p className="text-gray-700">Provide a separate or shared room as per your setup. Arrange basic amenities like a bed/mattress and access to a private or shared bathroom.</p>
+            </div>
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">2. Work Schedule Clarity</h3>
+              <p className="text-gray-700">While she stays 24/7, the working schedule is structured at 12 hours daily. Define duty hours, breaks, and rest periods clearly.</p>
+            </div>
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">3. Monthly Offs</h3>
+              <p className="text-gray-700">Every live-in maid is entitled to 2 days off per month. Plan in advance to support physical and mental well-being.</p>
+            </div>
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">4. One Role Per Maid</h3>
+              <p className="text-gray-700">Each live-in maid is assigned only one responsibility—housekeeping, cooking, babysitting, or elderly care—for quality and focus.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Frequently Asked Questions
+              FAQs
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Get answers to common questions about our live-in maid services
+              Answers to common questions about live-in maid services.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {[
-                {
-                  question: "What is a live-in maid, and how does it work in Bareilly?",
-                  answer: "A live-in maid in Bareilly is a domestic helper who stays at your home and helps with daily tasks like cooking, cleaning, and caregiving. She typically works up to 12 hours a day but remains available for basic support throughout the day and night."
-                },
-                {
-                  question: "How fast can I hire a live-in maid in Bareilly?",
-                  answer: "With EzyHelpers, you can hire a live-in maid in Bareilly within 24 to 72 hours. We maintain a ready database of verified candidates for quick placement based on your needs."
-                },
-                {
-                  question: "Are EzyHelpers' live-in house maids in Bareilly verified and safe?",
-                  answer: "Yes, all live-in house maids in Bareilly from EzyHelpers are background verified. We check the Aadhaar local address if available and basic identity. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind."
-                },
-                {
-                  question: "What services do live-in maids provide in Bareilly?",
-                  answer: "Live-in maids in Bareilly offer dedicated support based on specific household needs. Their services include housekeeping (cleaning, laundry, dishwashing), cooking (preparing UP-style meals and regional dishes), elderly care (helping with hygiene, mobility, and medication reminders), and childcare (feeding, bathing, and engaging with children)."
-                },
-                {
-                  question: "Do live-in maids in Bareilly speak Hindi?",
-                  answer: "Yes, all our maids are fluent in Hindi and understand the regional language. This makes day-to-day communication easy for your family and elders."
-                },
-                {
-                  question: "Can I hire a live-in maid for specific cuisines?",
-                  answer: "Yes. EzyHelpers provides multi-cuisine live-in maids trained in South Indian (Karnataka, Kerala, and Tamil), North Indian, Bengali, Gujarati, and Chinese cuisines, which are perfect for Bangalore's diverse families."
-                },
-                {
-                  question: "Is hiring a live-in maid a good idea?",
-                  answer: "Hiring a live-in maid is one of the best ways to save time and eat healthier. With a reliable maid, you get fresh meals according to your taste, less stress over daily cooking, and improved work-life balance, especially helpful for working couples and elders."
-                },
-                {
-                  question: "What is the salary of a live-in maid in Bangalore?",
-                  answer: "The salary of a live-in maid in Bangalore typically ranges from ₹18,000 to ₹25,000. The exact amount depends on factors like experience, household duties, and location. Areas like Whitefield or Electronic City may offer slightly higher salaries due to demand. The salary usually includes stay, meals, and regular rest days."
-                },
-                {
-                  question: "Are the live-in maids background-checked?",
-                  answer: "Yes. All maids from EzyHelpers go through Aadhaar and address verification. Police verification is done at an additional cost if the customer requests it. This ensures safety and trust when you hire a 24hr maid in Bangalore."
-                },
-                {
-                  question: "Can live-in maids cook local Bangalore-style food?",
-                  answer: "Yes. Many live-in maids can cook South Indian meals like dosa, sambar, and rasam, as well as North Indian and basic continental dishes. They usually adapt to your family's taste preferences."
-                },
-                {
-                  question: "How soon can I get a live-in maid in Bangalore?",
-                  answer: "You can usually get a live-in maid within 24 to 72 hours, depending on your location and requirements. EzyHelpers offers quick matching to avoid long waiting times."
-                },
-                {
-                  question: "Can a live-in maid work for two households?",
-                  answer: "No. A live-in maid works full-time for one family only. This ensures loyalty, privacy, and focused care for your home."
-                },
-                {
-                  question: "Do live-in maids speak Kannada or Hindi?",
-                  answer: "Yes. Most live-in maids in Bangalore can speak Kannada and Hindi. This helps them communicate well with your family, neighbours, and building staff."
-                },
-                {
-                  question: "Are live-in maids suitable for IT professionals?",
-                  answer: "Absolutely. A 24hr maid in Bangalore is ideal for tech professionals who work long hours or travel often. They manage home tasks efficiently so you can focus on work."
-                },
-                {
-                  question: "Can live-in maids work in apartment buildings?",
-                  answer: "Yes. They are trained to follow apartment rules and can handle delivery access, visitor logs, and building protocols smoothly."
-                },
-                {
-                  question: "Can a live-in maid handle online deliveries or food orders?",
-                  answer: "Yes. Many live-in maids can manage online grocery deliveries and food apps like Swiggy or Zomato and coordinate with the apartment mailroom or security for daily deliveries."
-                }
+                { question: 'What services does a live-in maid provide?', answer: 'A live-in maid stays in your home full-time and works up to 12 hours a day. She focuses on one task only—housekeeping, cooking, babysitting (child care), or elderly care. You can choose the type of help your family needs most.' },
+                { question: 'Are live-in maids background-verified?', answer: 'Yes. All our live-in maids are background verified. We check Aadhaar, local address (if available), and basic identity. Police verification and medical checkups can be arranged at extra cost.' },
+                { question: 'Does a live-in maid handle multiple household tasks?', answer: 'No. Each live-in maid is trained for one specific task only—cleaning, cooking, child care, or elder care. Minor extra help may be provided only if mutually agreed.' },
+                { question: 'How is a live-in maid different from a full-time or part-time maid?', answer: 'A live-in maid stays 24x7 and works a structured 12-hour shift daily. Full-time and part-time maids come from outside and leave after their 8–10 hour or 2–6 hour shifts.' },
+                { question: 'What is the difference between a live-in maid and a full-time maid?', answer: 'A live-in maid lives in your home and offers full-day support, while a full-time maid comes daily but does not stay overnight. Live-in maids offer better continuity and are ideal for families needing a reliable presence.' },
+                { question: 'What are the working hours for a live-in maid?', answer: 'Live-in maids work for 12 hours a day with a fixed schedule. They stay 24 hours but are not expected to work all day or during the night.' },
+                { question: 'Do I need to provide accommodation for the live-in maid?', answer: 'Yes. Provide a room (private or shared) with basic facilities like a bed/mattress and bathroom access.' },
+                { question: 'Can I hire a live-in maid just for cooking or babysitting?', answer: 'Absolutely. You can hire a live-in maid specifically for cooking, housekeeping, child care, or elderly care.' },
+                { question: 'How fast can EzyHelpers place a live-in maid?', answer: 'In most cases, within 24 to 72 hours after understanding your needs. You’ll get profiles of verified maids to choose from quickly.' },
+                { question: "What qualifications or training do EzyHelpers' live-in maids have?", answer: 'Maids are trained in their specific roles—cleaning, cooking, child safety, or senior care—with verified experience.' },
+                { question: 'How many off days do live-in maids get?', answer: 'Every live-in maid is entitled to two off days per month, decided in advance by mutual agreement.' },
+                { question: 'Can I interview the live-in maid before hiring?', answer: 'Yes. We arrange interviews with 2–3 shortlisted maids via phone or video call so you can choose confidently.' },
+                { question: 'Is the pricing fixed?', answer: 'Pricing depends on role, experience, and location. We offer transparent rates without hidden charges; you pay directly to the helper. Contact us for a detailed quote.' },
+                { question: 'Is there a trial period for live-in maids?', answer: 'Yes, a trial period is available if you’d like to assess before finalising.' }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
                   <details className="group">
@@ -519,6 +525,28 @@ export default function LiveInMaidsPage() {
                   </details>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA Block */}
+      <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Find Your Trusted Live-In Maid with EzyHelpers Today!</h2>
+              <p className="text-lg text-gray-700">Don’t let chores or care responsibilities overwhelm you. Get reliable, background-verified live-in maids who fit right into your home and schedule.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors shadow">
+                Book Your Live-In Maid
+                <ArrowRightIcon className="h-5 w-5 ml-2" />
+              </Link>
+              <Link href="tel:+919972571005" className="inline-flex items-center bg-white border-2 border-primary-200 text-primary-700 font-semibold px-6 py-3 rounded-xl hover:bg-primary-50 transition-colors">
+                <PhoneIcon className="h-5 w-5 mr-2" />
+                Speak to Our Support Team
+              </Link>
             </div>
           </div>
         </div>
@@ -572,10 +600,10 @@ export default function LiveInMaidsPage() {
                 borderColor: "border-purple-200"
               },
               {
-                title: "Instant Maid Services",
-                description: "Instant household help for emergencies, guest visits, or special occasions",
-                href: "/services/on-demand-helpers",
-                icon: UserPlusIcon,
+                title: "Cook Services",
+                description: "Hire trained cooks for daily meals, diet-specific menus, and hygienic kitchen management",
+                href: "/services/cooks",
+                icon: HeartIcon,
                 bgColor: "bg-pink-50",
                 iconColor: "text-pink-600",
                 borderColor: "border-pink-200"

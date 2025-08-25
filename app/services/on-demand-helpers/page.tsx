@@ -23,9 +23,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Instant Maid Service in Bareilly – Same-Day Help',
-  description: 'Instant maid service in Bareilly offers same-day domestic help for urgent cleaning, cooking, or emergency support during events and last-minute needs.',
-  keywords: 'instant maid service bareilly, emergency maid bareilly, same day maid bareilly, urgent house help bareilly',
+  title: 'On-Demand Maid Services – Instant Help When You Need It Most',
+  description: 'Need urgent household help? EzyHelpers offers on-demand maid services, perfect for one-time or last-minute support—cleaning, cooking, babysitting, elderly care, and more with quick confirmation and verified helpers.',
+  keywords: 'on-demand maid, emergency maid, same day maid, urgent house help, instant booking, hourly pricing',
 }
 
 export default function OnDemandHelpersPage() {
@@ -38,7 +38,7 @@ export default function OnDemandHelpersPage() {
     },
     {
       title: "On-Demand Cooking Services", 
-      description: "Our instant cooks prepare Bareilly-style meals, snacks, or vrat food with hygiene and care.",
+      description: "Our instant cooks prepare fresh home-style meals, snacks, or fasting food with hygiene and care.",
       icon: ClockIcon,
       features: ["North Indian meals", "Fasting food", "Event cooking", "Kitchen cleanup"]
     },
@@ -57,13 +57,13 @@ export default function OnDemandHelpersPage() {
   ]
 
   const benefits = [
-    "Trained & Background-Verified",
-    "No Long-Term Commitment",
-    "Transparent Hour-Based Pricing",
-    "Familiar with Local Traditions",
-    "Hindi-Speaking Helpers",
-    "Same-Day Availability",
-    "Emergency Support"
+    "Fast Response – Helpers Available in Hours",
+    "Trained & Background-Checked Professionals",
+    "No Long-Term Contract Required",
+    "Multiple Services Under One Roof",
+    "Reasonable, Hour-Based Pricing",
+    "Ideal for Unplanned Needs or Temporary Help",
+    "Transparent Hourly Pricing"
   ]
 
   return (
@@ -95,18 +95,18 @@ export default function OnDemandHelpersPage() {
                 {/* Trust Badge */}
                 <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                   <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
-                  <span className="text-sm font-semibold">Emergency Response Available</span>
+                  <span className="text-sm font-semibold">Same-Day Availability</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Instant Maid Service in Bareilly
+                  On-Demand Maid Services
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Quick Help When You Need It Most
+                    Instant Help When You Need It Most
                   </span>
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Need urgent domestic assistance? Our trained and verified quick helpers in Bareilly are just a call away, available within 2–4 hours for emergency situations, sudden guests, last-minute cooking, or one-time events.
+                  Need urgent household help? Our trained and background-verified helpers are just a call away for one-time or last-minute needs—emergency cleaning, quick cooking, babysitting, elderly care, and more.
                 </p>
 
                 {/* Key Benefits Pills */}
@@ -125,12 +125,11 @@ export default function OnDemandHelpersPage() {
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                   <Link href="/hire-helper" className="group relative bg-white text-trust-800 hover:bg-trust-50 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
-                    <span className="relative z-10">Book Emergency Help Now</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white to-trust-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span className="relative z-10">Book an On-Demand Maid</span>
                   </Link>
                   <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Call: +91 9972571005</span>
+                    <span className="hidden sm:inline">Call for Emergency Help</span>
                     <span className="sm:hidden">+91 9972571005</span>
                   </Link>
                 </div>
@@ -147,7 +146,7 @@ export default function OnDemandHelpersPage() {
                   </div>
                   <div className="text-center lg:text-left">
                     <div className="text-2xl font-bold text-white">4.8★</div>
-                    <div className="text-trust-200 text-sm">Service Rating</div>
+                    <div className="text-trust-200 text-sm">For Emergency Helper Services</div>
                   </div>
                 </div>
               </div>
@@ -240,6 +239,13 @@ export default function OnDemandHelpersPage() {
                       <p className="text-gray-600 leading-relaxed">
                         {service.description}
                       </p>
+                      {service.features && (
+                        <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700">
+                          {service.features.map((f, i) => (
+                            <li key={i}>{f}</li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -249,41 +255,23 @@ export default function OnDemandHelpersPage() {
         </div>
       </section>
 
-      {/* Extended Services */}
+      {/* Additional On-Demand Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Complete On-Demand Domestic Help Services
+              Additional Specialized On-Demand Services
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              {
-                title: "Event Staffing",
-                description: "Experienced staff for serving, organizing, and managing your gatherings"
-              },
-              {
-                title: "Post-Party Cleanup", 
-                description: "Complete cleanup after events so you can relax without lifting a finger"
-              },
-              {
-                title: "On-Demand Cooking",
-                description: "Kitchen assistance and meal preparation for unexpected guests"
-              },
-              {
-                title: "Minor Home Repairs",
-                description: "Small plumbing, electrical, and carpentry repairs on short notice"
-              },
-              {
-                title: "Driver Services",
-                description: "Professional drivers for airport drops, meetings, or late-night travel"
-              },
-              {
-                title: "Elderly Support",
-                description: "Last-minute elderly care with companionship and daily assistance"
-              }
+              { title: "On-Demand Pet Walker", description: "Dog walking, feeding, and basic grooming when you're short on time" },
+              { title: "On-Demand Patient/Nursing Care", description: "Basic nursing support, medicine assistance, and hygiene care at home" },
+              { title: "On-Demand Technical Support", description: "Quick fixes for electrical, plumbing, or minor carpentry issues" },
+              { title: "On-Demand Event Helpers", description: "Setup, serving, guest management, and post-event cleanup" },
+              { title: "Post-Party Cleanup", description: "Complete cleanup after events so you can relax without lifting a finger" },
+              { title: "Driver Services", description: "Professional drivers for airport drops, meetings, or late-night travel" }
             ].map((service, index) => (
               <div key={index} className="bg-gray-50 rounded-lg p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-3 font-display">
@@ -383,10 +371,10 @@ export default function OnDemandHelpersPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Our Simple 4-Step Emergency Process
+              Our Easy 4-Step Emergency Booking Process
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              A step-by-step process to book trusted help when you need it most
+              Booking an on-demand maid with EzyHelpers is instant and stress-free.
             </p>
           </div>
 
@@ -394,23 +382,23 @@ export default function OnDemandHelpersPage() {
             {[
               {
                 step: "1",
-                title: "Tell Us What You Need",
-                description: "Let us know exactly what kind of emergency help you're looking for"
+                title: "Instant Consultation",
+                description: "Call or book online immediately and tell us your urgent need"
               },
               {
                 step: "2", 
-                title: "Pick Your Time Slot",
-                description: "Choose a convenient date and time that works best for you"
+                title: "Immediate Matching",
+                description: "We quickly match available verified helpers to your requirement"
               },
               {
                 step: "3",
-                title: "We Assign Helper", 
-                description: "Quick assignment of trained, verified helper skilled in your requested service"
+                title: "Quick Confirmation", 
+                description: "Receive immediate confirmation with helper details and ETA"
               },
               {
                 step: "4",
-                title: "Helper Arrives",
-                description: "Your helper arrives on time and completes the task efficiently"
+                title: "Service Delivery",
+                description: "Your helper arrives promptly and begins work immediately"
               }
             ].map((process, index) => (
               <div key={index} className="text-center">
@@ -423,6 +411,28 @@ export default function OnDemandHelpersPage() {
                 <p className="text-gray-600">
                   {process.description}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What to Consider Section */}
+      <section className="section-padding bg-background-secondary">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What to Consider Before Booking Emergency Helpers?</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Everything you should know for immediate service</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[ 
+              { title: "Immediate Availability", description: "Emergency helpers are subject to availability in your area. Peak times may have longer response times, so book as early as possible." },
+              { title: "Service Scope", description: "Clearly communicate your urgent needs and expectations so the helper comes prepared with the right tools and supplies." },
+              { title: "Hourly Rates", description: "Pricing is hourly and confirmed upfront. There are no hidden fees, and you pay only after service completion." }
+            ].map((item, i) => (
+              <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -443,51 +453,15 @@ export default function OnDemandHelpersPage() {
 
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
-              {[
-                {
-                  question: "How quickly can I get an instant maid service in Bareilly?",
-                  answer: "You can get an instant maid service in Bareilly within just 2–4 hours of booking through EzyHelpers. Whether it's emergency cleaning, cooking, or elderly care, we provide quick helpers in Bareilly on the same day, based on availability, for urgent or last-minute needs."
-                },
-                {
-                  question: "What types of quick helper services does EzyHelpers offer in Bareilly?",
-                  answer: "EzyHelpers offers a wide range of quick helper services in Bareilly including same-day deep cleaning and post-event cleanup, on-demand cooking (including fasting and traditional meals), babysitting and childcare, elderly support and companion care, basic nursing and patient assistance at home, technical home maintenance services, and event support for functions and religious gatherings."
-                },
-                {
-                  question: "How much does instant maid service in Bareilly cost?",
-                  answer: "The cost of instant maid service in Bareilly is based on transparent hourly pricing. There are no hidden fees or lock-in commitments; you pay only after the work is completed to your satisfaction. Whether it's a one-time deep clean or an urgent home maintenance service, we keep pricing clear and fair."
-                },
-                {
-                  question: "Do your quick helpers in Bareilly speak Hindi and understand local needs?",
-                  answer: "Yes, our quick helpers in Bareilly are fluent in Hindi and well-acquainted with local customs, traditions, and cooking styles. Whether it's preparing Bareilly-style meals or assisting elders with pooja routines, our instant maid service matches you with culturally aware and sensitive professionals."
-                },
-                {
-                  question: "Are instant maid services available during festivals or public holidays in Bareilly?",
-                  answer: "Yes, EzyHelpers provides instant maid service in Bareilly even during festivals and holidays. Whether it's Diwali cleaning, Eid preparations, or Navratri fasting meal support, we ensure quick helpers are available when regular help is unavailable."
-                },
-                {
-                  question: "Can on-demand helpers work in apartment complexes?",
-                  answer: "Yes, on-demand helpers understand gated community protocols, visitor registration, and apartment security procedures across Bangalore residential areas."
-                },
-                {
-                  question: "Can I book an emergency helper for just a few hours?",
-                  answer: "Yes, you can book an emergency helper in Bangalore for a few hours depending on your need. Hourly pricing ensures flexibility for short tasks like quick cleaning or urgent kitchen help."
-                },
-                {
-                  question: "Is emergency help available in all parts of Bangalore?",
-                  answer: "We cover most Bangalore areas including Whitefield, Bellandur, BTM Layout, Hebbal, Marathahalli, Jayanagar, and more. Availability may vary by locality and timing."
-                },
-                {
-                  question: "Can I book a female emergency helper in Bangalore?",
-                  answer: "Yes, female emergency helpers are available for domestic needs, including household chores, elderly care, and kitchen work. Please specify gender preference while booking."
-                },
-                {
-                  question: "Are emergency helpers suitable for elderly or patient assistance?",
-                  answer: "Yes, we provide trained helpers experienced in elderly care, including mobility assistance, companionship, and accompanying to medical appointments."
-                },
-                {
-                  question: "Can I request the same emergency helper again later?",
-                  answer: "If the same helper is available, we're happy to reassign them. Many clients prefer consistency, and we try our best to accommodate such requests."
-                }
+              {[ 
+                { question: "What is an on-demand maid service?", answer: "An on-demand maid service provides quick household support when you need it most—cleaning, cooking, babysitting, or care. It’s ideal for unexpected situations and short-term help, bookable for just a few hours without any long-term contract." },
+                { question: "How quickly can I get an on-demand maid?", answer: "We can often send an on-demand maid within a few hours of your request. Same-day service is available in most locations—booking early helps during weekends or holidays." },
+                { question: "Do I need to pay upfront, or can I pay after the service is completed?", answer: "You can pay after the service is completed. The total charge is confirmed before the service begins, and payment is only required once you're satisfied with the help provided." },
+                { question: "Can I request a female helper for babysitting or elderly care?", answer: "Yes, you can request a female helper. Please mention your preference while booking and we’ll try our best to match it based on availability." },
+                { question: "Can I cancel my emergency booking if my situation changes?", answer: "Yes, you can cancel your emergency booking. Since these services are fast and same-day, some charges may apply if the helper is already on the way." },
+                { question: "Can I hire an on-demand cook for same-day meals?", answer: "Yes. On-demand cooks can prepare home-style meals for your family or small gatherings, and also help with groceries, menu planning, and kitchen cleaning." },
+                { question: "Can I choose the language my helper speaks?", answer: "Yes, you can mention your preferred language during booking. We’ll try to match someone who can communicate comfortably with your family." },
+                { question: "How is emergency service different from regular part-time maid service?", answer: "Emergency services are for urgent, same-day help without contracts and for shorter durations. Part-time services are scheduled regularly with fixed timings and longer-term arrangements." }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
                   <details className="group">
@@ -517,18 +491,14 @@ export default function OnDemandHelpersPage() {
       {/* CTA Section */}
       <section className="section-padding bg-trust-600 text-white text-center">
         <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
-            Need Help Right Now? We are Just a Call Away!
-          </h2>
-          <p className="text-xl text-trust-100 mb-8 max-w-3xl mx-auto">
-            Life doesn't wait, and neither should you. Whether it's an unexpected mess, a sudden guest, or urgent help, EzyHelpers brings instant relief and dependable support right to your doorstep.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">Find Your Trusted On-Demand Maid with EzyHelpers Today!</h2>
+          <p className="text-xl text-trust-100 mb-8 max-w-3xl mx-auto">Don't let emergencies or last-minute situations overwhelm you. Get reliable, background-verified helpers who provide immediate support exactly when you need it most.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto px-4">
             <Link
               href="/hire-helper"
               className="inline-flex items-center justify-center w-full bg-white text-trust-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-trust-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
             >
-              Book On-Demand Helper Instantly
+              Book Your Emergency Helper
             </Link>
 
             <Link
@@ -536,7 +506,7 @@ export default function OnDemandHelpersPage() {
               className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
             >
               <PhoneIcon className="h-5 w-5 mr-3 flex-shrink-0" />
-              Call for Immediate Assistance
+              Call Us for Immediate Assistance
             </Link>
           </div>
         </div>
@@ -578,10 +548,10 @@ export default function OnDemandHelpersPage() {
                 borderColor: "border-teal-200"
               },
               {
-                title: "Appliance Repair Services", 
-                description: "Quick repairs by certified technicians for all major appliances",
-                href: "/services/on-demand-helpers",
-                icon: SparklesIcon,
+                title: "Elderly Care Services", 
+                description: "Compassionate support for seniors with daily routines and companionship",
+                href: "/services/elderly-care",
+                icon: UserPlusIcon,
                 gradient: "from-amber-500 to-orange-600",
                 bgColor: "bg-amber-50",
                 iconColor: "text-amber-600",
