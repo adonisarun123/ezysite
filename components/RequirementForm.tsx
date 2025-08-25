@@ -213,66 +213,93 @@ export default function RequirementForm() {
       setSubmitStatus('submitting')
       
       try {
+        console.log('🚀 Starting form submission...')
+        
         // Track form submission
         trackFormSubmit('requirement_form', formData)
         
         const newRequestId = generateRequestId()
         const timestamp = new Date().toISOString()
         
-        // Store in Supabase
-        const { error } = await supabase.from('requirement_leads').insert([
-          {
-            request_id: newRequestId,
-            name: formData.name.trim(),
-            email: formData.email.trim(),
-            contact_no: formData.contactNo.trim(),
-            area_of_service: formData.areaOfService.trim(),
-            apartment: formData.apartment.trim(),
-            latitude: formData.latitude,
-            longitude: formData.longitude,
-            requirement_description: formData.requirementDescription.trim(),
-            created_at: timestamp
-          }
-        ])
+        console.log('📝 Generated Request ID:', newRequestId)
+        console.log('⏰ Timestamp:', timestamp)
+        console.log('📍 Location data:', { lat: formData.latitude, lng: formData.longitude })
         
-        if (error) throw error
+        // Prepare data for Supabase
+        const insertData = {
+          request_id: newRequestId,
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          contact_no: formData.contactNo.trim(),
+          area_of_service: formData.areaOfService.trim(),
+          apartment: formData.apartment.trim(),
+          latitude: formData.latitude,
+          longitude: formData.longitude,
+          requirement_description: formData.requirementDescription.trim(),
+          created_at: timestamp
+        }
+        
+        console.log('💾 Attempting to save to Supabase:', insertData)
+        
+        // Store in Supabase
+        const { data, error } = await supabase.from('requirement_leads').insert([insertData])
+        
+        if (error) {
+          console.error('❌ Supabase error:', error)
+          throw new Error(`Database error: ${error.message}`)
+        }
+        
+        console.log('✅ Successfully saved to database:', data)
         
         // Send email notification
         try {
+          console.log('📧 Attempting to send email notification...')
+          
+          const emailPayload = {
+            leadType: 'requirement',
+            formData: {
+              name: formData.name.trim(),
+              email: formData.email.trim(),
+              contactNo: formData.contactNo.trim(),
+              areaOfService: formData.areaOfService.trim(),
+              apartment: formData.apartment.trim(),
+              latitude: formData.latitude,
+              longitude: formData.longitude,
+              requirementDescription: formData.requirementDescription.trim(),
+              address: locationState.address
+            },
+            requestId: newRequestId,
+            timestamp,
+            sourceUrl: window.location.href
+          }
+          
+          console.log('📧 Email payload:', emailPayload)
+          
           const emailResponse = await fetch('/api/send-lead-email', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-              leadType: 'requirement',
-              formData: {
-                name: formData.name.trim(),
-                email: formData.email.trim(),
-                contactNo: formData.contactNo.trim(),
-                areaOfService: formData.areaOfService.trim(),
-                apartment: formData.apartment.trim(),
-                latitude: formData.latitude,
-                longitude: formData.longitude,
-                requirementDescription: formData.requirementDescription.trim(),
-                address: locationState.address
-              },
-              requestId: newRequestId,
-              timestamp,
-              sourceUrl: window.location.href
-            })
+            body: JSON.stringify(emailPayload)
           })
 
           if (!emailResponse.ok) {
-            console.error('Failed to send email notification')
+            const errorText = await emailResponse.text()
+            console.error('❌ Email API error:', errorText)
+            console.error('❌ Email response status:', emailResponse.status)
+          } else {
+            console.log('✅ Email sent successfully')
           }
         } catch (emailError) {
-          console.error('Email sending error:', emailError)
+          console.error('❌ Email sending error:', emailError)
           // Don't fail the form submission if email fails
         }
         
         // Track successful completion
         trackFormComplete('requirement_form', newRequestId)
+        
+        console.log('🎉 Form submission completed successfully!')
+        console.log('🆔 Final Request ID:', newRequestId)
         
         setRequestId(newRequestId)
         setSubmitStatus('success')
@@ -280,13 +307,28 @@ export default function RequirementForm() {
       } catch (error) {
         // Track form error
         trackFormError('requirement_form', 'submission_error', error instanceof Error ? error.message : 'Unknown error')
-        console.error('Form submission error:', error)
+        
+        console.error('💥 FORM SUBMISSION FAILED!')
+        console.error('❌ Error details:', error)
         
         // Log specific error details for debugging
         if (error instanceof Error) {
-          console.error('Error message:', error.message)
-          console.error('Error stack:', error.stack)
+          console.error('📝 Error message:', error.message)
+          console.error('📋 Error stack:', error.stack)
+          console.error('🔍 Error name:', error.name)
         }
+        
+        // Log current form data state for debugging
+        console.error('📊 Form data at time of error:', {
+          name: formData.name?.length,
+          email: formData.email?.length,
+          contactNo: formData.contactNo?.length,
+          areaOfService: formData.areaOfService?.length,
+          apartment: formData.apartment?.length,
+          latitude: formData.latitude,
+          longitude: formData.longitude,
+          requirementDescription: formData.requirementDescription?.length
+        })
         
         setSubmitStatus('error')
       }
