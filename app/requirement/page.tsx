@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { Breadcrumb } from '@/components/Breadcrumb'
+import Breadcrumb from '@/components/Breadcrumb'
 
 // Dynamic import for the form component
 const RequirementForm = dynamic(() => import('@/components/RequirementForm'), {
