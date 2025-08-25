@@ -16,47 +16,46 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Personal Drivers in Bareilly – Safe & Trusted Travel',
-  description: 'Book experienced and licensed drivers in Bareilly for personal or family use. Choose from hourly, full-day, or live-in driver service options.',
-  keywords: 'car driver bareilly, personal driver bareilly, chauffeur service bareilly, driver hire bareilly, driver services bareilly',
+  title: 'Professional Drivers | Safe & Reliable Transport',
+  description: 'Travel with confidence using our professional driver services. Licensed, experienced drivers for all your transportation needs, from daily commutes to special occasions.',
+  keywords: 'professional driver, licensed drivers, chauffeur, hire driver, driver services, airport transfer, outstation travel, daily commute',
 }
 
 export default function DriversPage() {
   const services = [
     {
-      title: "Daily Office & School Commutes",
-      description: "Punctual and disciplined drivers for everyday routines like office travel, school pickups, and local errands, ensuring your day runs on schedule.",
+      title: "Daily Commute Services",
+      description: "Reliable transportation for office commutes, school runs, and regular daily travel needs with punctual service.",
       icon: ClockIcon,
-      features: ["Office commutes", "School pickups", "Local errands", "Timely service"]
+      features: ["Office commutes", "School runs", "Local errands", "Timely service"]
     },
     {
-      title: "Airport & Outstation Trips", 
-      description: "Comfortable, dependable drivers for Pantnagar Airport drops, train station pickups, and intercity travel from Bareilly to Lucknow, Delhi, and nearby cities.",
+      title: "Airport & Long Distance", 
+      description: "Safe and comfortable travel for airport transfers, intercity trips, and long-distance journeys.",
       icon: TruckIcon,
-      features: ["Airport transfers", "Train station pickups", "Intercity travel", "Comfortable rides"]
+      features: ["Airport transfers", "Station pickups", "Intercity travel", "Comfortable rides"]
     },
     {
       title: "Elderly & Family Transport",
-      description: "Patient drivers who assist seniors and family members with respectful, careful driving, ideal for hospital visits, temple trips, or local outings.",
+      description: "Careful, patient driving for seniors and family members with special attention to comfort and safety.",
       icon: UserIcon,
-      features: ["Senior assistance", "Hospital visits", "Temple trips", "Careful driving"]
+      features: ["Senior assistance", "Hospital visits", "Family outings", "Careful driving"]
     },
     {
-      title: "Emergency & Event Support",
-      description: "Quick-response drivers available for urgent hospital runs, emergency checkups, family functions, weddings, and large gatherings.",
+      title: "Emergency & Medical Trips",
+      description: "On-call drivers for medical emergencies, hospital visits, and urgent transportation needs.",
       icon: ShieldCheckIcon,
-      features: ["24/7 availability", "Emergency response", "Event transport", "Guest pickups"]
+      features: ["24/7 availability", "Emergency response", "Medical trips", "Quick support"]
     }
   ]
 
   const benefits = [
-    "100% RTO Licensed & Verified",
-    "Fast Booking & Driver Assignment",
-    "Trained for Elderly & Child Safety",
-    "Polite, Punctual & Professional",
-    "Flexible Timing",
-    "Fuel & Vehicle Handling",
-    "Dedicated Local Support Team"
+    "Licensed and experienced drivers",
+    "Flexible scheduling options",
+    "Safe and punctual service",
+    "Well-maintained vehicles available",
+    "Background-verified professionals",
+    "Available for live-in, full-time, or on-demand"
   ]
 
   return (
@@ -91,9 +90,9 @@ export default function DriversPage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Expert Drivers in Bareilly
+                  Professional Drivers
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    At Your Service
+                    Safe & Reliable Transport
                   </span>
                 </h1>
                 
@@ -101,17 +100,11 @@ export default function DriversPage() {
                   Reliable, Safe, and Trusted Driver Services for Every Need. From daily commutes to special occasions, our verified drivers ensure comfortable and secure travel.
                 </p>
 
-                {/* Key Benefits Pills */}
+                {/* Assurance Badges */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ Local Route Experts
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ Emergency Service
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">
-                    ✓ 24/7 Driver Support
-                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">✓ Licensed Drivers</div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">✓ Well-Maintained Vehicles</div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white">✓ 24/7 Available</div>
                 </div>
 
                 {/* CTA Buttons */}
@@ -256,18 +249,18 @@ export default function DriversPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Live-In Drivers in Bareilly",
-                description: "Round-the-clock transportation support for families with multiple cars and extensive travel requirements.",
+                title: "Live-In Drivers",
+                description: "24/7 availability for families with extensive travel needs, multiple cars, or requiring constant transportation support.",
                 features: ["24/7 availability", "Multiple trips daily", "Vehicle maintenance", "Emergency response"]
               },
               {
-                title: "Full-Time Drivers in Bareilly", 
-                description: "Regular daily transportation for office commutes, school runs, and scheduled family trips.",
-                features: ["8-10 hours daily", "Fixed schedule", "Regular routes", "Professional service"]
+                title: "Full-Time Drivers", 
+                description: "Dedicated drivers for regular office commutes, school runs, and daily transportation during working hours.",
+                features: ["8-12 hours daily", "Fixed schedule", "Regular routes", "Professional service"]
               },
               {
-                title: "On-Demand Drivers in Bareilly",
-                description: "Trip-based flexible transportation for special occasions, airport transfers, and emergency travel needs.",
+                title: "On-Demand Drivers",
+                description: "Flexible transportation for specific trips, special occasions, airport transfers, and on an as-needed basis.",
                 features: ["Trip-based service", "Flexible timing", "Special occasions", "Emergency calls"]
               }
             ].map((service, index) => (
@@ -292,7 +285,7 @@ export default function DriversPage() {
         </div>
       </section>
 
-      {/* Transportation Types */}
+      {/* Specialized Services */}
       <section className="section-padding bg-background-secondary">
         <div className="container-custom">
           <div className="text-center mb-16">
@@ -304,24 +297,24 @@ export default function DriversPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "School & College",
-                description: "Safe transport for students with timely pickups and careful driving",
+                title: "School Transport",
+                description: "Safe pickup and drop-off for children with punctual, reliable service",
                 icon: "🎒"
               },
               {
-                title: "Hospital & Medical", 
-                description: "Emergency and routine medical visits with patient-focused care",
+                title: "Office Commute", 
+                description: "Daily office transportation with comfortable, professional service",
+                icon: "🚗"
+              },
+              {
+                title: "Medical Visits",
+                description: "Patient, careful transport for medical appointments and emergencies",
                 icon: "🏥"
               },
               {
-                title: "Airport & Station",
-                description: "Reliable transfers to Pantnagar Airport and railway stations",
-                icon: "✈️"
-              },
-              {
-                title: "Events & Functions",
-                description: "Professional transport for weddings, parties, and family gatherings",
-                icon: "🎉"
+                title: "Shopping & Errands",
+                description: "Convenient transportation for shopping, errands, and daily tasks",
+                icon: "🛍️"
               }
             ].map((service, index) => (
               <div key={index} className="bg-white rounded-lg p-6 text-center">
@@ -338,105 +331,29 @@ export default function DriversPage() {
         </div>
       </section>
 
-      {/* Driver Qualifications */}
+      {/* Narrative Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Qualified & Professional Drivers
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">
+              Why Choose EzyHelpers Drivers for Your Daily Travel Needs
             </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Valid Driving License",
-                description: "All drivers possess valid licenses with clean driving records and experience"
-              },
-              {
-                title: "Background Verification", 
-                description: "Comprehensive police verification and reference checks for safety assurance"
-              },
-              {
-                title: "Defensive Driving Training",
-                description: "Trained in safe driving practices, traffic rules, and emergency response"
-              },
-              {
-                title: "Local Area Knowledge",
-                description: "Familiar with city routes, traffic patterns, and efficient navigation"
-              },
-              {
-                title: "Professional Conduct",
-                description: "Courteous, punctual, and maintaining professional behavior at all times"
-              },
-              {
-                title: "Vehicle Maintenance",
-                description: "Basic vehicle maintenance knowledge and coordination with service centers"
-              }
-            ].map((qualification, index) => (
-              <div key={index} className="bg-blue-50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-3 font-display">
-                  {qualification.title}
-                </h3>
-                <p className="text-gray-600">
-                  {qualification.description}
-                </p>
-              </div>
-            ))}
+            <div className="space-y-5 text-gray-700 leading-relaxed">
+              <p>
+                EzyHelpers offers more than just a driving service; we provide a complete personal commute experience built on reliability, safety, and professionalism. Our drivers are carefully selected and experienced to deliver smooth, stress-free travel; whether it’s for daily commutes, family outings, airport drops, or long-distance trips. With a strong focus on punctuality, our drivers ensure that you’re never late for important meetings, appointments, or flights. They are trained to respect your privacy and operate with full discretion, making them suitable for both personal and professional use.
+              </p>
+              <p>
+                We also understand that schedules can change, which is why our services are flexible and designed to adapt to your unique needs. EzyHelpers drivers maintain a neat appearance and speak respectfully, providing updates on ETAs and managing unexpected delays with professionalism. Their in-depth knowledge of local roads and traffic conditions ensures faster, safer routes and smarter driving decisions.
+              </p>
+              <p>
+                In addition to driving, they care for your vehicle as if it were their own, keeping it clean, fuelled, and ready for the next journey. Whether you need a full-time chauffeur or temporary driver support, EzyHelpers delivers a dependable service that makes your everyday travel more comfortable, convenient, and worry-free.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Special Features */}
-      <section className="section-padding bg-background-secondary">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Additional Service Features
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "GPS Navigation",
-                description: "Modern navigation tools for efficient route planning and time management"
-              },
-              {
-                title: "Fuel Management", 
-                description: "Efficient fuel consumption and coordination with fuel stations"
-              },
-              {
-                title: "Vehicle Security",
-                description: "Secure parking and basic vehicle security measures during service"
-              },
-              {
-                title: "Multi-Language Support",
-                description: "Drivers comfortable with local languages and basic English communication"
-              },
-              {
-                title: "Flexible Scheduling",
-                description: "Adaptable to changing schedules and last-minute transportation needs"
-              },
-              {
-                title: "Emergency Assistance",
-                description: "Breakdown assistance coordination and emergency contact protocols"
-              }
-            ].map((feature, index) => (
-              <div key={index} className="bg-white rounded-lg p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-3 font-display">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
+      {/* FAQs */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16">
@@ -452,44 +369,48 @@ export default function DriversPage() {
             <div className="space-y-6">
               {[
                 {
-                  question: "Are drivers in Bareilly RTO licensed and verified?",
-                  answer: "Yes, all drivers in Bareilly provided by EzyHelpers are RTO licensed and background-verified. Our driver services in Bareilly ensure complete safety and trust by conducting thorough checks before assigning any driver to your family or trip."
+                  question: "Are EzyHelpers drivers licensed and experienced?",
+                  answer: "Yes, all EzyHelpers drivers have valid Indian driving licences and years of experience. They are experienced in safe driving, know how to handle different vehicles, and are well-versed with local traffic rules and city roads."
                 },
                 {
-                  question: "Can I get emergency driver services in Bareilly?",
-                  answer: "Yes, EzyHelpers offers emergency driver services in Bareilly, available 24/7. Whether it's a hospital visit, medical emergency, or urgent travel need, our drivers in Bareilly are trained for fast response and immediate availability within your area."
+                  question: "Can EzyHelpers drivers handle all types of cars?",
+                  answer: "Yes, our drivers are skilled in driving hatchbacks, sedans, SUVs, and luxury cars. We ensure the driver assigned to you is experienced with your specific vehicle type for smooth and safe driving."
                 },
                 {
-                  question: "Do drivers in Bareilly know local routes and traffic patterns?",
-                  answer: "Yes, our drivers in Bareilly are local route experts who understand the city's traffic, peak times, and alternate routes. Our driver services in Bareilly ensure faster, safer travel with less stress and fewer delays during daily commutes."
+                  question: "Can I book a driver for outstation travel through EzyHelpers?",
+                  answer: "Yes, we provide experienced drivers for outstation and intercity travel. Whether it’s a weekend getaway, a business trip, or a pilgrimage, our drivers ensure a safe, comfortable, and well-planned journey."
                 },
                 {
-                  question: "What is the difference between full-time and live-in drivers in Bareilly?",
-                  answer: "Full-time drivers in Bareilly work 8–12 hours a day, ideal for regular commutes. Live-in drivers offer 24/7 availability for families with frequent travel. Both driver services in Bareilly are professional, verified, and tailored to your schedule."
+                  question: "Do you provide drivers for airport pickup and drop-off?",
+                  answer: "Yes, EzyHelpers offers reliable airport transfer services. Our drivers assist with luggage, manage traffic delays, and ensure on-time arrival or pickup, making airport travel stress-free and smooth."
                 },
                 {
-                  question: "Do driver services in Bareilly include vehicle maintenance?",
-                  answer: "Yes, our driver services in Bareilly cover basic vehicle support such as fuel management, mileage tracking, safe parking, and simple security checks. Drivers in Bareilly also help with cleanliness and timely fuel refills for smooth trips."
+                  question: "Are EzyHelpers drivers familiar with local roads and traffic?",
+                  answer: "Yes, our drivers know local routes, shortcuts, and traffic conditions well. Their experience helps save travel time and avoid congested areas, especially during peak hours."
                 },
                 {
-                  question: "Can I book a driver for airport drop or intercity travel?",
-                  answer: "Definitely. We handle airport transfers with real-time flight tracking and also offer intercity driving for leisure, business, or family travel."
+                  question: "Do EzyHelpers drivers maintain car hygiene and condition?",
+                  answer: "Yes, our drivers are trained to maintain basic vehicle hygiene. They clean interiors, check fuel and tyre pressure, and keep your car ready for daily use."
                 },
                 {
-                  question: "Can I hire a driver in Bangalore just for one day or a few hours?",
-                  answer: "Yes, we offer on-demand drivers in Bangalore for a few hours, full-day, or one-time events. Whether it's a wedding, airport pickup, or urgent hospital visit, you can hire an experienced chauffeur whenever needed, without long-term commitments."
+                  question: "Are driver services from EzyHelpers suitable for corporate travel?",
+                  answer: "Yes, we offer professional drivers for business travel and corporate clients. Our drivers are well-groomed and punctual and maintain formal conduct, ideal for executives, meetings, and client pickups."
                 },
                 {
-                  question: "What is the cost of hiring a car driver in Bangalore?",
-                  answer: "Driver costs in Bangalore depend on the duration and type of service: hourly, daily, live-in, or outstation. Call us for exact rates; our pricing is transparent, with no hidden charges, and customised to your travel needs."
+                  question: "What is the salary of a car driver in India?",
+                  answer: "The salary of a car driver in India depends on factors like work hours, location, type of vehicle, and whether the role is part-time, full-time, or live-in. At EzyHelpers, we help match you with professional drivers based on your specific travel needs and schedule."
                 },
                 {
-                  question: "Can I get a driver who speaks Kannada or Hindi in Bangalore?",
-                  answer: "Yes, we have multilingual drivers in Bangalore who can communicate in Kannada, Hindi, Tamil, and English. This makes communication easier for your family, elderly members, or clients with language preferences."
+                  question: "What is the difference between a driver and a chauffeur?",
+                  answer: "A driver primarily focuses on transporting passengers from one location to another. A chauffeur, on the other hand, offers a more premium experience, often including etiquette, grooming standards, vehicle maintenance, and formal client interactions. EzyHelpers provides both types based on your service preferences."
                 },
                 {
-                  question: "Is fuel cost included in your driver service pricing in Bangalore?",
-                  answer: "No, our charges cover the driver's service only. Fuel expenses are borne by the client. However, our drivers assist in monitoring fuel usage, planning refills, and choosing trusted petrol stations on your route."
+                  question: "How to get a driver in India?",
+                  answer: "To hire a driver in India, simply contact a reliable service like EzyHelpers. We provide licensed, background-verified drivers for daily commutes, school runs, airport transfers, and outstation trips. You can choose from part-time, full-time, live-in, or on-demand options based on your schedule."
+                },
+                {
+                  question: "What are the duties of a private hire driver?",
+                  answer: "A private hire driver is responsible for safe and timely transportation, maintaining vehicle cleanliness, route planning, assisting passengers, and ensuring a comfortable ride. EzyHelpers ensures all drivers are trained to handle these tasks professionally for your peace of mind."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
@@ -528,8 +449,9 @@ export default function DriversPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/hire-helper" className="btn-secondary bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
-              Hire Professional Driver Today
+              Hire a Professional Driver
             </Link>
+
             <Link href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-4">
               <PhoneIcon className="h-5 w-5 mr-2" />
               Call +91 9972571005
@@ -553,19 +475,19 @@ export default function DriversPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Instant Maid Services",
-                description: "Reliable maids for daily cleaning and chores in Bareilly",
+                title: "Live-In Maid Services",
+                description: "Complete household management with transportation coordination when needed",
+                href: "/services/live-in-maids"
+              },
+              {
+                title: "Elderly Care Services", 
+                description: "Specialized transportation for medical appointments and senior care needs",
+                href: "/services/elderly-care"
+              },
+              {
+                title: "On-Demand Helpers",
+                description: "Emergency transportation and quick assistance for urgent travel needs",
                 href: "/services/on-demand-helpers"
-              },
-              {
-                title: "Professional Cooks", 
-                description: "Experienced cooks for homely meals every day in Bareilly",
-                href: "/services/cooks"
-              },
-              {
-                title: "Home Deep Cleaning",
-                description: "Thorough cleaning for sparkling homes in Bareilly",
-                href: "/services/deep-cleaning"
               }
             ].map((service, index) => (
               <Link key={index} href={service.href} className="block bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">

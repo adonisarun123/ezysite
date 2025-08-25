@@ -209,49 +209,49 @@ export default function BangalorePage() {
                 title: "Live-in Maid",
                 description: "24/7 domestic help for busy families across Bangalore. From Whitefield to Jayanagar, get reliable live-in maids for cooking, cleaning, childcare, and eldercare.",
                 features: ["24/7 stay-in assistance", "12-hour daily support", "Trained in modern home care"],
-                href: "/services/live-in-maids"
+                href: "/cities/bangalore/live-in-maids"
               },
               {
                 title: "Full-Time Maid",
                 description: "Reliable 8–10 hour daily maid service for working families. Get trusted help for cleaning, cooking, childcare, or elderly care, customised to your routine.",
                 features: ["8-10 hours daily support", "Experienced in urban homes", "Safe and trusted maids"],
-                href: "/services/full-time-maids"
+                href: "/cities/bangalore/full-time-maid"
               },
               {
                 title: "Part-Time Maid",
                 description: "Quick and reliable part-time maids in Bangalore, available for 2–6 hours daily. Ideal for cooking, cleaning, childcare, and eldercare.",
                 features: ["2-6 hour flexible slots", "Background verified", "Same-day availability"],
-                href: "/services/part-time-maids"
+                href: "/cities/bangalore/part-time-maid"
               },
               {
                 title: "On-Demand Maid",
                 description: "Need emergency help at home? Get instant, reliable on-demand maid service for last-minute guests, missed maids, urgent cooking, event help, and babysitting.",
                 features: ["Same-day availability", "Emergency support", "Pay per task"],
-                href: "/services/on-demand-helpers"
+                href: "/cities/bangalore/on-demand-helper"
               },
               {
                 title: "Babysitter",
                 description: "Get trusted, trained, and caring help for your child's safety, learning, and daily routines, right in your home.",
                 features: ["Meal & nap routines", "Infant to teen care", "Trained & verified babysitters"],
-                href: "/services/nanny-babysitter"
+                href: "/cities/bangalore/nanny-babysitter"
               },
               {
                 title: "Elderly Care",
                 description: "From medication to companionship, we offer trusted in-home elderly care in Bangalore, ensuring your loved ones feel safe, supported, and never alone.",
                 features: ["Daily routine help", "Health monitoring", "Personalized attention"],
-                href: "/services/elderly-care"
+                href: "/cities/bangalore/elderly-care"
               },
               {
                 title: "Cook",
                 description: "Fresh, hygienic, and homestyle meals daily from verified professional home cooks in Bangalore. Personalised cooking tailored to your diet, culture, and daily routine.",
                 features: ["Multi-cuisine expertise", "Fresh meal preparation", "Kitchen hygiene standards"],
-                href: "/services/cooks"
+                href: "/cities/bangalore/cooks"
               },
               {
                 title: "Driver",
                 description: "Skip the stress of driving! Book a professional driver in Bangalore for family, office, or intercity travel. Safe, courteous, and always punctual.",
                 features: ["Bangalore traffic experts", "Background-verified", "24/7 available service"],
-                href: "/services/drivers"
+                href: "/cities/bangalore/drivers"
               }
             ].map((service, index) => (
               <div key={index} className="bg-blue-50 rounded-lg p-6 hover:shadow-lg transition-shadow group">
@@ -296,43 +296,43 @@ export default function BangalorePage() {
                 title: "Carpenter",
                 description: "Get expert carpentry help in Bangalore for furniture repairs, modular installations, and custom woodwork tailored to your space.",
                 features: ["Quick fixes for everyday furniture", "Custom built-ins for any room", "Safe, verified professionals"],
-                href: "/services/carpenters"
+                href: "/cities/bangalore/carpenter"
               },
               {
                 title: "Electrician",
                 description: "Upgrading switches or fixing faulty wiring? Get reliable, safe, and certified electrical repair and installation services in Bangalore.",
                 features: ["Licensed electricians only", "Same-day repairs & installations", "Energy-saving solutions"],
-                href: "/services/electricians"
+                href: "/cities/bangalore/electrician"
               },
               {
                 title: "Gardener",
                 description: "From garden setup to seasonal care, expert gardening services customized to your space, be it a terrace, balcony, or home garden.",
                 features: ["Terrace & balcony experts", "Seasonal maintenance", "Organic gardening practices"],
-                href: "/services/gardener"
+                href: "/cities/bangalore/gardener"
               },
               {
                 title: "Appliance Repair",
                 description: "Fix all home appliances in Bangalore with expert technicians. TV, AC, fridge, washing machine repair with doorstep service.",
                 features: ["Same-day repairs available", "Genuine spare parts", "Multi-brand expertise"],
-                href: "/services/appliance-repair"
+                href: "/cities/bangalore/appliance-repair"
               },
               {
                 title: "Plumber",
                 description: "Get instant help for all plumbing problems in Bangalore, from leaking taps and bathroom fittings to clogged drains.",
                 features: ["Same-day service", "Transparent pricing", "Background-checked plumbers"],
-                href: "/services/plumbers"
+                href: "/cities/bangalore/plumber"
               },
               {
                 title: "Home Deep Cleaning",
                 description: "Experience professional home cleaning in Bangalore. We eliminate dust, germs, and stains for a cleaner, healthier living environment.",
                 features: ["Complete sanitization", "Child and pet-safe products", "Flexible scheduling"],
-                href: "/services/deep-cleaning"
+                href: "/cities/bangalore/home-deep-cleaning"
               },
               {
                 title: "Painter",
                 description: "Hire trusted painters in Bangalore for clean, reliable painting services using premium paints, expert finishes, and fast completion.",
                 features: ["Premium paints only", "Dust-free methods", "Weather-resistant coatings"],
-                href: "/services/painters"
+                href: "/cities/bangalore/painter"
               }
             ].map((service, index) => (
               <div key={index} className="bg-white rounded-lg p-6 hover:shadow-lg transition-shadow group">
