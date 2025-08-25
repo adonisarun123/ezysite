@@ -652,22 +652,134 @@ This email was automatically generated from the EzyHelpers Helper Registration s
   };
 };
 
+const generateRequirementLeadEmail = (formData: {
+  name: string;
+  email: string;
+  contactNo: string;
+  areaOfService: string;
+  apartment: string;
+  latitude: number | null;
+  longitude: number | null;
+  requirementDescription: string;
+  address?: string;
+  requestId: string;
+  timestamp: string;
+  sourceUrl?: string;
+}) => {
+  return {
+    subject: `New Service Requirement: ${formData.areaOfService} - ${formData.requestId}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #0074C8; background-color: #f0f8ff; padding: 20px; border-radius: 8px; margin: 0 0 20px 0;">📋 New Service Requirement Received</h2>
+        
+        <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #334155;">Request Details</h3>
+          <p><strong>Request ID:</strong> <span style="font-family: monospace; background-color: #e1e8f0; padding: 2px 6px; border-radius: 4px;">${formData.requestId}</span></p>
+          <p><strong>Submission Time:</strong> ${new Date(formData.timestamp).toLocaleString()}</p>
+          <p><strong>Priority:</strong> <span style="background-color: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-weight: bold;">New Requirement</span></p>
+        </div>
+
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #1e293b;">Customer Information</h3>
+          <p><strong>Name:</strong> ${formData.name}</p>
+          <p><strong>Email:</strong> <a href="mailto:${formData.email}" style="color: #0074C8;">${formData.email}</a></p>
+          <p><strong>Contact Number:</strong> <a href="tel:${formData.contactNo}" style="color: #0074C8;">${formData.contactNo}</a></p>
+        </div>
+
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #1e293b;">📍 Location Details</h3>
+          <p><strong>Area of Service:</strong> ${formData.areaOfService}</p>
+          <p><strong>Apartment/Building:</strong> ${formData.apartment}</p>
+          ${formData.address ? `<p><strong>Detected Address:</strong> ${formData.address}</p>` : ''}
+          ${formData.latitude && formData.longitude ? `
+          <p><strong>Coordinates:</strong> ${formData.latitude.toFixed(6)}, ${formData.longitude.toFixed(6)}</p>
+          <p><strong>Maps Link:</strong> <a href="https://www.google.com/maps?q=${formData.latitude},${formData.longitude}" target="_blank" style="color: #0074C8;">View on Google Maps</a></p>
+          ` : ''}
+        </div>
+
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #1e293b;">📝 Service Requirements</h3>
+          <div style="background-color: #f8fafc; padding: 15px; border-radius: 6px; white-space: pre-wrap; font-family: Arial, sans-serif; line-height: 1.6;">${formData.requirementDescription}</div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background-color: #fef2f2; border-left: 4px solid #ef4444; border-radius: 8px;">
+          <p style="margin: 0; color: #dc2626;"><strong>🚨 Immediate Action Required:</strong></p>
+          <ul style="color: #dc2626; margin: 10px 0;">
+            <li>Contact customer within 30 minutes</li>
+            <li>Assess requirements and provide quote</li>
+            <li>Match with suitable helpers</li>
+            <li>Follow up within 24 hours</li>
+          </ul>
+        </div>
+
+        ${formData.sourceUrl ? `
+        <div style="margin-top: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 8px;">
+          <p style="margin: 0; color: #1e40af;"><strong>Source URL:</strong> <a href="${formData.sourceUrl}" target="_blank" style="color: #1e40af; text-decoration: underline;">${formData.sourceUrl}</a></p>
+        </div>
+        ` : ''}
+
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #e2e8f0;">
+        <p style="color: #64748b; font-size: 12px;">This email was automatically generated from the EzyHelpers Service Requirement Form.</p>
+      </div>
+    `,
+    text: `
+New Service Requirement: ${formData.areaOfService} - ${formData.requestId}
+
+REQUEST DETAILS:
+- Request ID: ${formData.requestId}
+- Submission Time: ${new Date(formData.timestamp).toLocaleString()}
+- Priority: New Requirement
+
+CUSTOMER INFORMATION:
+- Name: ${formData.name}
+- Email: ${formData.email}
+- Contact Number: ${formData.contactNo}
+
+LOCATION DETAILS:
+- Area of Service: ${formData.areaOfService}
+- Apartment/Building: ${formData.apartment}
+${formData.address ? `- Detected Address: ${formData.address}` : ''}
+${formData.latitude && formData.longitude ? `- Coordinates: ${formData.latitude.toFixed(6)}, ${formData.longitude.toFixed(6)}` : ''}
+${formData.latitude && formData.longitude ? `- Maps Link: https://www.google.com/maps?q=${formData.latitude},${formData.longitude}` : ''}
+
+SERVICE REQUIREMENTS:
+${formData.requirementDescription}
+
+IMMEDIATE ACTION REQUIRED:
+- Contact customer within 30 minutes
+- Assess requirements and provide quote
+- Match with suitable helpers  
+- Follow up within 24 hours
+
+${formData.sourceUrl ? `Source URL: ${formData.sourceUrl}` : ''}
+
+---
+This email was automatically generated from the EzyHelpers Service Requirement Form.
+    `,
+  };
+};
+
 // Main email sending function
 export const sendLeadEmail = async (
-  leadType: 'contact' | 'hire_helper' | 'general' | 'agent_registration' | 'helper_registration',
+  leadType: 'contact' | 'hire_helper' | 'general' | 'agent_registration' | 'helper_registration' | 'requirement',
   formData: any,
   requestId?: string,
   sourceUrl?: string
 ) => {
   try {
-    // Use contact@ezyhelpers.com for registration emails or fallback to ADMIN_EMAIL for other types
-    // Get the primary admin email based on lead type
-    const primaryEmail = (leadType === 'agent_registration' || leadType === 'helper_registration') 
-      ? 'contact@ezyhelpers.com' 
-      : process.env.ADMIN_EMAIL;
-      
-    // Create array of recipients including Ashma's email
-    const adminEmail = [primaryEmail, 'ashma@ezyhelpers.com'].filter(Boolean).join(', ');
+    // Create array of all email recipients
+    const emailRecipients = [
+      'contact@ezyhelpers.com',
+      'suraj.ezyhelpers@gmail.com',
+      'ashma@ezyhelpers.com'
+    ];
+    
+    // Add ADMIN_EMAIL if it's set and different from the above
+    if (process.env.ADMIN_EMAIL && !emailRecipients.includes(process.env.ADMIN_EMAIL)) {
+      emailRecipients.push(process.env.ADMIN_EMAIL);
+    }
+    
+    const adminEmail = emailRecipients.filter(Boolean).join(', ');
       
     if (!adminEmail) {
       console.error('ADMIN_EMAIL environment variable not set');
@@ -693,6 +805,9 @@ export const sendLeadEmail = async (
         break;
       case 'helper_registration':
         emailContent = generateHelperRegistrationEmail(formData);
+        break;
+      case 'requirement':
+        emailContent = generateRequirementLeadEmail({ ...formData, requestId: requestId || 'N/A', sourceUrl });
         break;
       default:
         throw new Error('Invalid lead type');
@@ -747,7 +862,12 @@ export const sendEzyNestBookingEmail = async (
       }
     });
 
-    const adminEmail = ['contact@ezyhelpers.com', 'ashma@ezyhelpers.com'].join(', ');
+    const emailRecipients = [
+      'contact@ezyhelpers.com',
+      'suraj.ezyhelpers@gmail.com', 
+      'ashma@ezyhelpers.com'
+    ];
+    const adminEmail = emailRecipients.join(', ');
 
     let mailOptions: any = {
       from: process.env.SMTP_USER,

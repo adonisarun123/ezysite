@@ -15,9 +15,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate lead type
-    if (!['contact', 'hire_helper', 'general'].includes(leadType)) {
+    if (!['contact', 'hire_helper', 'general', 'requirement'].includes(leadType)) {
       return NextResponse.json(
-        { error: 'Invalid lead type. Must be one of: contact, hire_helper, general' },
+        { error: 'Invalid lead type. Must be one of: contact, hire_helper, general, requirement' },
         { status: 400 }
       );
     }
