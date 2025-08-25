@@ -191,10 +191,8 @@ export default function RequirementForm() {
       errors.requirementDescription = 'Please provide a detailed description (at least 10 characters)'
     }
 
-    // Location validation
-    if (!formData.latitude || !formData.longitude) {
-      errors.location = 'Location coordinates are required. Please enable location detection or try again.'
-    }
+    // Location validation (made optional)
+    // Note: Location detection is optional - form can be submitted without coordinates
 
     setFormErrors(errors)
     return Object.keys(errors).length === 0
@@ -283,6 +281,13 @@ export default function RequirementForm() {
         // Track form error
         trackFormError('requirement_form', 'submission_error', error instanceof Error ? error.message : 'Unknown error')
         console.error('Form submission error:', error)
+        
+        // Log specific error details for debugging
+        if (error instanceof Error) {
+          console.error('Error message:', error.message)
+          console.error('Error stack:', error.stack)
+        }
+        
         setSubmitStatus('error')
       }
     }
