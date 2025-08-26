@@ -677,6 +677,12 @@ const generateRequirementLeadEmail = (formData: {
           <p><strong>Request ID:</strong> <span style="font-family: monospace; background-color: #e1e8f0; padding: 2px 6px; border-radius: 4px;">${formData.requestId}</span></p>
           <p><strong>Submission Time:</strong> ${new Date(formData.timestamp).toLocaleString()}</p>
           <p><strong>Priority:</strong> <span style="background-color: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-weight: bold;">New Requirement</span></p>
+          ${formData.databaseSaved === false ? `
+          <p><strong>⚠️ Database Status:</strong> <span style="background-color: #fef2f2; color: #dc2626; padding: 2px 8px; border-radius: 4px; font-weight: bold;">NOT SAVED TO DATABASE</span></p>
+          <p style="color: #dc2626; font-size: 14px;"><em>This lead was received via email only. Please manually enter into system.</em></p>
+          ` : formData.databaseSaved === true ? `
+          <p><strong>✅ Database Status:</strong> <span style="background-color: #f0fdf4; color: #166534; padding: 2px 8px; border-radius: 4px; font-weight: bold;">SAVED TO DATABASE</span></p>
+          ` : ''}
         </div>
 
         <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">

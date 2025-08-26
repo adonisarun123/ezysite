@@ -215,6 +215,20 @@ export default function RequirementForm() {
       try {
         console.log('🚀 Starting form submission...')
         
+        // Test Supabase connection first
+        console.log('🔗 Testing database connection...')
+        try {
+          const { error: connectionError } = await supabase.from('requirement_leads').select('id').limit(1)
+          if (connectionError) {
+            console.error('❌ Database connection failed:', connectionError)
+            throw new Error(`Database connection failed: ${connectionError.message}`)
+          }
+          console.log('✅ Database connection successful')
+        } catch (dbError) {
+          console.error('❌ Database test failed:', dbError)
+          throw new Error(`Database not accessible: ${dbError instanceof Error ? dbError.message : 'Unknown database error'}`)
+        }
+        
         // Track form submission
         trackFormSubmit('requirement_form', formData)
         
@@ -241,15 +255,22 @@ export default function RequirementForm() {
         
         console.log('💾 Attempting to save to Supabase:', insertData)
         
-        // Store in Supabase
-        const { data, error } = await supabase.from('requirement_leads').insert([insertData])
-        
-        if (error) {
-          console.error('❌ Supabase error:', error)
-          throw new Error(`Database error: ${error.message}`)
+        // Store in Supabase (with fallback)
+        let databaseSaved = false
+        try {
+          const { data, error } = await supabase.from('requirement_leads').insert([insertData])
+          
+          if (error) {
+            console.error('❌ Supabase insert error:', error)
+            console.warn('🔄 Database save failed, but continuing with email notification...')
+          } else {
+            console.log('✅ Successfully saved to database:', data)
+            databaseSaved = true
+          }
+        } catch (dbSaveError) {
+          console.error('❌ Database save exception:', dbSaveError)
+          console.warn('🔄 Database save failed, but continuing with email notification...')
         }
-        
-        console.log('✅ Successfully saved to database:', data)
         
         // Send email notification
         try {
@@ -266,7 +287,8 @@ export default function RequirementForm() {
               latitude: formData.latitude,
               longitude: formData.longitude,
               requirementDescription: formData.requirementDescription.trim(),
-              address: locationState.address
+              address: locationState.address,
+              databaseSaved: databaseSaved
             },
             requestId: newRequestId,
             timestamp,
@@ -287,19 +309,33 @@ export default function RequirementForm() {
             const errorText = await emailResponse.text()
             console.error('❌ Email API error:', errorText)
             console.error('❌ Email response status:', emailResponse.status)
+            
+            // If database failed AND email failed, this is a real problem
+            if (!databaseSaved) {
+              throw new Error(`Both database save and email notification failed. Email error: ${errorText}`)
+            }
+            console.warn('⚠️ Email failed but database saved - requirement recorded')
           } else {
             console.log('✅ Email sent successfully')
           }
         } catch (emailError) {
           console.error('❌ Email sending error:', emailError)
-          // Don't fail the form submission if email fails
+          
+          // If database failed AND email failed, this is a real problem
+          if (!databaseSaved) {
+            throw new Error(`Both database save and email notification failed. Email error: ${emailError instanceof Error ? emailError.message : 'Unknown email error'}`)
+          }
+          console.warn('⚠️ Email failed but database saved - requirement recorded')
         }
         
         // Track successful completion
         trackFormComplete('requirement_form', newRequestId)
         
+        // Show success even if only one method worked
         console.log('🎉 Form submission completed successfully!')
         console.log('🆔 Final Request ID:', newRequestId)
+        console.log('💾 Database saved:', databaseSaved)
+        console.log('📧 Email status: Check above logs')
         
         setRequestId(newRequestId)
         setSubmitStatus('success')
@@ -583,9 +619,23 @@ export default function RequirementForm() {
 
         {submitStatus === 'error' && (
           <div className="text-center">
-            <p className="text-red-600 text-sm bg-red-50 p-3 rounded-lg">
-              There was an error submitting your requirement. Please check your details and try again.
-            </p>
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
+              <p className="text-red-800 text-sm font-medium mb-2">
+                ⚠️ Submission Error
+              </p>
+              <p className="text-red-700 text-sm mb-3">
+                There was an error submitting your requirement. Please try the following:
+              </p>
+              <ul className="text-red-700 text-sm text-left space-y-1 mb-3">
+                <li>• Check your internet connection</li>
+                <li>• Enable location services if blocked</li>
+                <li>• Try refreshing the page and submitting again</li>
+                <li>• Contact us directly if the problem persists</li>
+              </ul>
+              <p className="text-red-600 text-xs">
+                Check browser console (F12) for technical details
+              </p>
+            </div>
           </div>
         )}
       </form>
