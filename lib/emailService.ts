@@ -665,6 +665,7 @@ const generateRequirementLeadEmail = (formData: {
   requestId: string;
   timestamp: string;
   sourceUrl?: string;
+  databaseSaved?: boolean;
 }) => {
   return {
     subject: `New Service Requirement: ${formData.areaOfService} - ${formData.requestId}`,
@@ -735,6 +736,7 @@ REQUEST DETAILS:
 - Request ID: ${formData.requestId}
 - Submission Time: ${new Date(formData.timestamp).toLocaleString()}
 - Priority: New Requirement
+${formData.databaseSaved === false ? '- Database Status: NOT SAVED TO DATABASE (manual entry required)' : formData.databaseSaved === true ? '- Database Status: SAVED TO DATABASE' : ''}
 
 CUSTOMER INFORMATION:
 - Name: ${formData.name}
