@@ -14,6 +14,18 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    id: 'live-in-maid-salary-roles-hiring-guide-bangalore',
+    title: 'Live-In Maid Bangalore: Salary, Roles & How to Hire',
+    excerpt: 'Your complete guide to hiring a live-in maid in Bangalore, including roles, salaries, safety checks, and tips for finding reliable, verified help.',
+    author: 'Hiring Team',
+    date: 'December 22, 2024',
+    readTime: '12 min read',
+    category: 'Hiring Guide',
+    featured: true,
+    tags: ['live-in maid', 'bangalore', 'salary guide', 'hiring tips', 'domestic help'],
+    image: '/blog/live-in-maid-salary-roles-hiring-guide-bangalore.jpg',
+    content: `
+  {
     id: 'complete-guide-to-maid-verification-and-background-check-in-india',
     title: 'Maid Verification in India: Safe & Trusted Domestic Help',
     excerpt: 'Maid verification is crucial for your family\'s safety. Learn the risks of unverified hires and how to protect your home with proper verification.',
