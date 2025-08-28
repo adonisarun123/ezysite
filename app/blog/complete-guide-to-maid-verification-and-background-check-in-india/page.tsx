@@ -19,18 +19,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Maid Verification in India: Safe & Trusted Domestic Help',
     description: 'Learn how to verify and hire trusted domestic help safely.',
-    url: 'https://ezyhelpers.com/blog/maid-verification',
+    url: 'https://ezyhelpers.com/blog/complete-guide-to-maid-verification-and-background-check-in-india',
     type: 'article',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/blog/maid-verification'
+    canonical: 'https://ezyhelpers.com/blog/complete-guide-to-maid-verification-and-background-check-in-india'
   }
 }
 
 export default function MaidVerificationGuide() {
-  const post = posts.find(p => p.id === 'maid-verification-guide');
+  const post = posts.find(p => p.id === 'complete-guide-to-maid-verification-and-background-check-in-india');
 
   if (!post) {
     return <div>Post not found</div>;

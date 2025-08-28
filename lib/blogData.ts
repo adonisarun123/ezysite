@@ -14,7 +14,7 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
-    id: 'maid-verification-guide',
+    id: 'complete-guide-to-maid-verification-and-background-check-in-india',
     title: 'Maid Verification in India: Safe & Trusted Domestic Help',
     excerpt: 'Maid verification is crucial for your family\'s safety. Learn the risks of unverified hires and how to protect your home with proper verification.',
     author: 'Security Team',
@@ -23,7 +23,7 @@ export const posts: BlogPost[] = [
     category: 'Safety & Security',
     featured: true,
     tags: ['verification', 'safety', 'domestic help', 'background check', 'security'],
-    image: '/blog/maid-verification.jpg',
+    image: '/blog/complete-guide-to-maid-verification-and-background-check-in-india.jpg',
     content: `
   {
     id: 'market-overview',
