@@ -5,6 +5,9 @@ import Footer from '@/components/Footer';
 import UrgencyCTA from '@/components/UrgencyCTA';
 import Link from 'next/link';
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import TableOfContents from '@/components/TableOfContents';
 import {
   CalendarDaysIcon,
   ClockIcon,
@@ -115,8 +118,19 @@ export default function LiveInMaidGuide() {
 
       {/* Content */}
       <article className="section-padding">
-        <div className="container-custom max-w-4xl">
-          <div className="prose prose-lg prose-blue mx-auto">
+        <div className="container-custom max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Table of Contents - Desktop Sidebar */}
+            <div className="lg:col-span-1 order-2 lg:order-1">
+              <TableOfContents content={post.content} className="hidden lg:block" />
+            </div>
+
+            {/* Main Content */}
+            <div className="lg:col-span-3 order-1 lg:order-2">
+              {/* Table of Contents - Mobile */}
+              <TableOfContents content={post.content} className="block lg:hidden mb-8" />
+
+              <div className="prose prose-lg prose-blue mx-auto">
             {/* Featured Image */}
             {post.image && (
               <div className="relative h-[400px] rounded-2xl overflow-hidden mb-12 shadow-xl">
@@ -131,8 +145,31 @@ export default function LiveInMaidGuide() {
             )}
 
             {/* Article Content */}
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100">
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100 prose prose-lg prose-blue max-w-none">
+              <ReactMarkdown 
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ children }) => <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-8 first:mt-0">{children}</h1>,
+                  h2: ({ children }) => <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8 first:mt-0">{children}</h2>,
+                  h3: ({ children }) => <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3 mt-6">{children}</h3>,
+                  h4: ({ children }) => <h4 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 mt-4">{children}</h4>,
+                  p: ({ children }) => <p className="text-gray-700 mb-4 leading-relaxed">{children}</p>,
+                  ul: ({ children }) => <ul className="list-disc pl-6 mb-4 space-y-2">{children}</ul>,
+                  ol: ({ children }) => <ol className="list-decimal pl-6 mb-4 space-y-2">{children}</ol>,
+                  li: ({ children }) => <li className="text-gray-700 leading-relaxed">{children}</li>,
+                  strong: ({ children }) => <strong className="font-semibold text-gray-900">{children}</strong>,
+                  em: ({ children }) => <em className="italic text-gray-800">{children}</em>,
+                  blockquote: ({ children }) => <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-700 my-6">{children}</blockquote>,
+                  code: ({ children }) => <code className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono">{children}</code>,
+                  pre: ({ children }) => <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto mb-4">{children}</pre>,
+                  a: ({ href, children }) => <a href={href} className="text-blue-600 hover:text-blue-800 underline font-medium">{children}</a>,
+                  table: ({ children }) => <div className="overflow-x-auto mb-4"><table className="min-w-full border border-gray-200 rounded-lg">{children}</table></div>,
+                  th: ({ children }) => <th className="bg-gray-50 px-4 py-2 text-left font-semibold text-gray-900 border-b">{children}</th>,
+                  td: ({ children }) => <td className="px-4 py-2 text-gray-700 border-b border-gray-100">{children}</td>,
+                }}
+              >
+                {post.content}
+              </ReactMarkdown>
             </div>
 
             {/* Author Info */}
@@ -170,6 +207,8 @@ export default function LiveInMaidGuide() {
               >
                 Hire Verified Help Now
               </Link>
+            </div>
+              </div>
             </div>
           </div>
         </div>
