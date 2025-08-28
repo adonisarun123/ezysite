@@ -14,6 +14,18 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    id: 'maid-verification-guide',
+    title: 'Maid Verification in India: Safe & Trusted Domestic Help',
+    excerpt: 'Maid verification is crucial for your family\'s safety. Learn the risks of unverified hires and how to protect your home with proper verification.',
+    author: 'Security Team',
+    date: 'December 20, 2024',
+    readTime: '10 min read',
+    category: 'Safety & Security',
+    featured: true,
+    tags: ['verification', 'safety', 'domestic help', 'background check', 'security'],
+    image: '/blog/maid-verification.jpg',
+    content: `
+  {
     id: 'market-overview',
     title: 'The Indian Domestic Helper Market: Market Overview, Challenges and Future Outlook',
     excerpt:
