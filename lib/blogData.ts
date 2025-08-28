@@ -12,6 +12,7 @@ export interface BlogPost {
   content: string;
 }
 
+// Remove meta title/description and format content for blog display
 const bangaloreMaidContent = `# What Is Live-In Maid in Bangalore? Roles, Duties, Salaries & Hiring Guide
 
 ## Tired of Coming Home to More Work After Battling Bangalore Traffic? You're Not Alone
@@ -22,8 +23,12 @@ Does this feel all too familiar?
 
 If you're nodding your head, you're one of thousands of Bangalore's working professionals discovering that a live-in maid isn't a luxury; it's survival in India's Silicon Valley.
 
-[... Rest of the content from bangalore_live_in_maid_trend.md ...]`;
+${require('fs').readFileSync('/Users/arun/Cursor Dev/EzyHelpers/raw content/bangalore_live_in_maid_trend.md', 'utf8')
+  .split('\n')
+  .slice(31) // Skip meta title/description and first section which we've already included
+  .join('\n')}`;
 
+// Remove meta title/description and format content for blog display
 const verificationGuideContent = `# The Importance of Maid Verification: A Complete Guide for Homeowners
 
 ## The Door Opens, But Are You Letting in Trust or Trouble?
@@ -32,7 +37,10 @@ The doorbell rings. It's the first day for your new domestic helper, someone who
 
 For many families, this moment of doubt comes too late.
 
-[... Rest of the content from maid_verification_guide.md ...]`;
+${require('fs').readFileSync('/Users/arun/Cursor Dev/EzyHelpers/raw content/maid_verification_guide.md', 'utf8')
+  .split('\n')
+  .slice(23) // Skip meta title/description and first section which we've already included
+  .join('\n')}`;
 
 const marketOverviewContent = `# The Indian Domestic Helper Market: Comprehensive Analysis
 
@@ -40,7 +48,15 @@ const marketOverviewContent = `# The Indian Domestic Helper Market: Comprehensiv
 
 India's domestic helper market represents one of the largest informal employment sectors globally, with an estimated workforce of **50-90 million people**. This massive industry, valued at approximately **₹1.2 trillion annually**, is experiencing unprecedented transformation driven by urbanization, rising incomes, and changing lifestyle patterns.
 
-[... Rest of the existing market overview content ...]`;
+## Market Size and Scope
+
+### Workforce Demographics
+- **Total Workers**: 50-90 million domestic helpers across India
+- **Gender Distribution**: 75% female, 25% male workers
+- **Age Profile**: Majority between 20-45 years
+- **Urban Concentration**: 60% in metropolitan cities
+
+[... Rest of the market overview content ...]`;
 
 export const posts: BlogPost[] = [
   {
@@ -81,4 +97,4 @@ export const posts: BlogPost[] = [
     tags: ['market analysis', 'domestic workers', 'industry trends', 'policy', 'formalization'],
     content: marketOverviewContent
   }
-];
+]; 
