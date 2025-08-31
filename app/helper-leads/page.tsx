@@ -9,10 +9,14 @@ const JOB_ROLES = [
   { value: 'HOUSEKEEPING', label: 'Housekeeping' },
   { value: 'BABY_CARE', label: 'Baby Care' },
   { value: 'ELDER_CARE', label: 'Elder Care' },
+  { value: 'DRIVER', label: 'Driver' },
+  { value: 'SECURITY', label: 'Security' },
+  { value: 'CARPENTER', label: 'Carpenter' },
+  { value: 'PLUMBER', label: 'Plumber' },
   { value: 'OTHER', label: 'Other' }
 ] as const
 
-type JobRole = 'COOK' | 'HOUSEKEEPING' | 'BABY_CARE' | 'ELDER_CARE' | 'OTHER'
+type JobRole = 'COOK' | 'HOUSEKEEPING' | 'BABY_CARE' | 'ELDER_CARE' | 'DRIVER' | 'SECURITY' | 'CARPENTER' | 'PLUMBER' | 'OTHER'
 
 interface FormData {
   helper_name: string
@@ -303,7 +307,7 @@ export default function HelperLeadsPage() {
               <label className="block text-sm font-semibold text-gray-700 mb-3">
                 Services You Can Provide <span className="text-red-500">*</span>
               </label>
-              <div className="space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {JOB_ROLES.map((role) => (
                   <label
                     key={role.value}
