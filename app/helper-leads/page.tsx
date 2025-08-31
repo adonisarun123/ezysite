@@ -244,6 +244,8 @@ export default function HelperLeadsPage() {
         lng: finalLng
       }
 
+      console.log('Submitting data:', submitData)
+
       const { error } = await supabase
         .from('ezyhelpers.helper_lead')
         .insert([submitData])
@@ -272,7 +274,29 @@ export default function HelperLeadsPage() {
     } catch (error) {
       console.error('Submission error:', error)
       setShowError(true)
-      setErrorMessage('There was an error submitting your registration. Please try again or contact support.')
+      
+      // Show more specific error message
+      let errorMsg = 'There was an error submitting your registration. Please try again or contact support.'
+      
+      if (error && typeof error === 'object' && 'message' in error) {
+        console.error('Detailed error:', error)
+        const errorMessage = (error as any).message
+        
+        // Handle specific Supabase errors
+        if (errorMessage.includes('enum')) {
+          errorMsg = 'Service selection error. Please refresh the page and try again.'
+        } else if (errorMessage.includes('permission') || errorMessage.includes('RLS')) {
+          errorMsg = 'Database permission error. Please contact support.'
+        } else if (errorMessage.includes('duplicate') || errorMessage.includes('unique')) {
+          errorMsg = 'This mobile number is already registered. Please use a different number.'
+        } else if (errorMessage.includes('schema') || errorMessage.includes('table')) {
+          errorMsg = 'Database configuration error. Please contact support.'
+        } else {
+          errorMsg = `Error: ${errorMessage}`
+        }
+      }
+      
+      setErrorMessage(errorMsg)
     } finally {
       setIsSubmitting(false)
     }
