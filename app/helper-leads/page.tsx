@@ -56,6 +56,8 @@ export default function HelperLeadsPage() {
   const [showError, setShowError] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [locationDetected, setLocationDetected] = useState(false)
+  const [locationLoading, setLocationLoading] = useState(true)
+  const [manualCoords, setManualCoords] = useState({ lat: '', lng: '' })
 
   // Location detection on component mount
   useEffect(() => {
@@ -63,6 +65,74 @@ export default function HelperLeadsPage() {
   }, [])
 
   const detectLocation = async () => {
+    setLocationLoading(true)
+    
+    try {
+      // Try browser geolocation first for precise coordinates
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            // Get precise coordinates from browser
+            const browserCoords = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            }
+            
+            // Also get location details from IP
+            try {
+              const response = await fetch('https://ipapi.co/json/')
+              const data = await response.json()
+              
+              const location = {
+                ip: data.ip,
+                detected_city: data.city,
+                detected_region: data.region,
+                detected_country: data.country_name,
+                lat: browserCoords.lat, // Use precise browser coordinates
+                lng: browserCoords.lng,
+                raw_geo: { ...data, precise_coords: true }
+              }
+              
+              setLocationData(location)
+              setManualCoords({ 
+                lat: browserCoords.lat.toFixed(6), 
+                lng: browserCoords.lng.toFixed(6) 
+              })
+              setLocationDetected(true)
+            } catch (ipError) {
+              // Use browser coords with limited info
+              const location = {
+                lat: browserCoords.lat,
+                lng: browserCoords.lng,
+                raw_geo: { precise_coords: true, source: 'browser' }
+              }
+              setLocationData(location)
+              setManualCoords({ 
+                lat: browserCoords.lat.toFixed(6), 
+                lng: browserCoords.lng.toFixed(6) 
+              })
+              setLocationDetected(true)
+            }
+            setLocationLoading(false)
+          },
+          async (error) => {
+            console.log('Browser geolocation failed:', error)
+            // Fallback to IP-based location
+            await fallbackToIpLocation()
+          },
+          { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 }
+        )
+      } else {
+        // Browser doesn't support geolocation
+        await fallbackToIpLocation()
+      }
+    } catch (error) {
+      console.log('Location detection failed:', error)
+      setLocationLoading(false)
+    }
+  }
+
+  const fallbackToIpLocation = async () => {
     try {
       const response = await fetch('https://ipapi.co/json/')
       const data = await response.json()
@@ -74,14 +144,21 @@ export default function HelperLeadsPage() {
         detected_country: data.country_name,
         lat: data.latitude,
         lng: data.longitude,
-        raw_geo: data
+        raw_geo: { ...data, precise_coords: false }
       }
       
       setLocationData(location)
+      if (data.latitude && data.longitude) {
+        setManualCoords({ 
+          lat: data.latitude.toFixed(6), 
+          lng: data.longitude.toFixed(6) 
+        })
+      }
       setLocationDetected(true)
     } catch (error) {
-      console.log('Location detection failed:', error)
-      // Continue without location data
+      console.log('IP location detection failed:', error)
+    } finally {
+      setLocationLoading(false)
     }
   }
 
@@ -153,12 +230,18 @@ export default function HelperLeadsPage() {
     setShowSuccess(false)
 
     try {
+      // Use manual coordinates if provided, otherwise use detected coordinates
+      const finalLat = manualCoords.lat ? parseFloat(manualCoords.lat) : locationData.lat
+      const finalLng = manualCoords.lng ? parseFloat(manualCoords.lng) : locationData.lng
+      
       const submitData = {
         ...formData,
         helper_name: formData.helper_name.trim(),
         job_role_other: formData.job_roles.includes('OTHER') ? formData.job_role_other.trim() : null,
         remarks: formData.remarks.trim() || null,
-        ...locationData
+        ...locationData,
+        lat: finalLat,
+        lng: finalLng
       }
 
       const { error } = await supabase
@@ -178,6 +261,7 @@ export default function HelperLeadsPage() {
         job_role_other: '',
         remarks: ''
       })
+      setManualCoords({ lat: '', lng: '' })
       
       // Scroll to success message
       document.getElementById('success-message')?.scrollIntoView({ 
@@ -238,20 +322,51 @@ export default function HelperLeadsPage() {
             </div>
           )}
 
-          {/* Location Info */}
-          {locationDetected && locationData.detected_city && (
-            <div className="m-6 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-              <div className="flex items-center">
-                <svg className="h-4 w-4 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span className="text-blue-700 text-sm">
-                  📍 Location detected: {locationData.detected_city}, {locationData.detected_region}
-                </span>
+          {/* Location Status */}
+          <div className="m-6">
+            {locationLoading && (
+              <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <div className="flex items-center">
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-yellow-600 mr-3"></div>
+                  <span className="text-yellow-800 text-sm">Detecting your location...</span>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+            
+            {!locationLoading && locationDetected && (
+              <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
+                <div className="flex items-center mb-2">
+                  <svg className="h-4 w-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-green-800 text-sm font-medium">
+                    Location detected {locationData.raw_geo?.precise_coords ? '(High Accuracy)' : '(Approximate)'}
+                  </span>
+                </div>
+                {locationData.detected_city && (
+                  <div className="text-green-700 text-sm ml-6">
+                    📍 {locationData.detected_city}, {locationData.detected_region}, {locationData.detected_country}
+                  </div>
+                )}
+                {(locationData.lat && locationData.lng) && (
+                  <div className="text-green-700 text-xs ml-6 mt-1">
+                    Coordinates: {locationData.lat.toFixed(6)}, {locationData.lng.toFixed(6)}
+                  </div>
+                )}
+              </div>
+            )}
+            
+            {!locationLoading && !locationDetected && (
+              <div className="p-3 bg-orange-50 border border-orange-200 rounded-lg">
+                <div className="flex items-center">
+                  <svg className="h-4 w-4 text-orange-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.084 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                  </svg>
+                  <span className="text-orange-800 text-sm">Unable to detect location automatically</span>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="p-6 space-y-6">
@@ -364,6 +479,65 @@ export default function HelperLeadsPage() {
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                 placeholder="Tell us about your experience, availability, or any special skills..."
               />
+            </div>
+
+            {/* Location Coordinates */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Location Coordinates (Optional)
+              </label>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="latitude" className="block text-xs font-medium text-gray-600 mb-1">
+                    Latitude
+                  </label>
+                  <input
+                    type="number"
+                    id="latitude"
+                    step="any"
+                    value={manualCoords.lat}
+                    onChange={(e) => setManualCoords(prev => ({ ...prev, lat: e.target.value }))}
+                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm"
+                    placeholder="Auto-detected"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="longitude" className="block text-xs font-medium text-gray-600 mb-1">
+                    Longitude
+                  </label>
+                  <input
+                    type="number"
+                    id="longitude"
+                    step="any"
+                    value={manualCoords.lng}
+                    onChange={(e) => setManualCoords(prev => ({ ...prev, lng: e.target.value }))}
+                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm"
+                    placeholder="Auto-detected"
+                  />
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 mt-2">
+                {locationDetected 
+                  ? `Coordinates ${locationData.raw_geo?.precise_coords ? 'automatically detected with high accuracy' : 'detected from your IP location'}. You can override them if needed.`
+                  : 'Enter your GPS coordinates manually or allow location access for automatic detection.'
+                }
+              </p>
+              
+              {/* Re-detect Location Button */}
+              <button
+                type="button"
+                onClick={() => {
+                  setLocationDetected(false)
+                  detectLocation()
+                }}
+                className="mt-3 px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center"
+              >
+                <svg className="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Detect Location Again
+              </button>
             </div>
 
             {/* Submit Button */}
