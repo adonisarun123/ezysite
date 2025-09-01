@@ -100,9 +100,6 @@ export default function CooksPage() {
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Background Verified
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
                     ✓ Multiple Cuisines
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
@@ -128,7 +125,7 @@ export default function CooksPage() {
                   >
                     <PhoneIcon className="h-5 w-5 mr-2 flex-shrink-0" />
                     <span className="hidden sm:inline">Call +91 9972571005</span>
-                    <span className="sm:hidden">Call Now</span>
+                    <span className="sm:hidden">Call +91 9972571005</span>
                   </Link>
                 </div>
 
@@ -392,7 +389,7 @@ export default function CooksPage() {
               },
               {
                 title: "Senior-Friendly Cooking",
-                description: "Soft, easily digestible meals with proper nutrition for elderly"
+                description: "Soft, easily digestible meals with proper nutrition for the elderly"
               },
               {
                 title: "Baby Food Preparation",
@@ -423,7 +420,7 @@ export default function CooksPage() {
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-orange-500 to-red-600 text-white text-center">
         <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
+          <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">
             Enjoy Delicious Home-Cooked Meals Every Day
           </h2>
           <p className="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
@@ -443,7 +440,7 @@ export default function CooksPage() {
             >
               <PhoneIcon className="h-5 w-5 mr-2 flex-shrink-0" />
               <span className="hidden sm:inline">Call +91 9972571005</span>
-              <span className="sm:hidden">Call Now</span>
+              <span className="sm:hidden">Call +91 9972571005</span>
             </Link>
           </div>
         </div>

@@ -117,8 +117,8 @@ export default function NannyBabysitterPage() {
                   </Link>
                   <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 whitespace-nowrap">
                     <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform shrink-0" />
-                    <span className="hidden sm:inline">Call: +91 9972571005</span>
-                    <span className="sm:hidden">+91 9972571005</span>
+                    <span className="hidden sm:inline">Call Now</span>
+                    <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
 
@@ -176,6 +176,82 @@ export default function NannyBabysitterPage() {
         </div>
       </section>
 
+      {/* Specialized Care for Every Age Group */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              Specialized Care for Every Age Group
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Newborns (0-6 months)</h3>
+              <p>Feeding schedules, diaper changes, sleep routines, and infant safety</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Toddlers (1-3 years)</h3>
+              <p>Potty training, language development, safe play, and meal assistance</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Preschoolers (3-5 years)</h3>
+              <p>Educational activities, social skills, creative play, and pre-school prep</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">School Age (5+ years)</h3>
+              <p>Homework help, extracurricular coordination, transportation, and supervision</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Safety & Qualifications You Can Trust */}
+      <section className="section-padding bg-background-secondary">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Safety & Qualifications You Can Trust</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">1. Background Verified</h3>
+              <p>Comprehensive police verification and reference checks for all caregivers</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">2. Child Safety Training</h3>
+              <p>Certified in first aid, CPR, and emergency response procedures</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">3. Experience & Skills</h3>
+              <p>Proven experience with children and early childhood development knowledge</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">4. Regular Health Checkups</h3>
+              <p>Up-to-date medical certificates and health screenings</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">5. Communication Skills</h3>
+              <p>Clear communication with parents and age-appropriate interaction with children</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">6. Ongoing Support</h3>
+              <p>Regular check-ins and replacement guarantee for peace of mind</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Professional Childcare Matters for Your Family */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Professional Childcare Matters for Your Family</h2>
+          </div>
+          <div className="max-w-4xl mx-auto text-gray-700 space-y-5 leading-relaxed">
+            <p>Choosing professional childcare services through EzyHelpers is more than just hiring someone to watch your child; it’s a decision that shapes your child’s growth, learning, and emotional stability. Our experienced babysitters and nannies bring not only warmth and compassion but also structured routines that children thrive on. They are trained in child development, hygiene, nutrition, and safety, ensuring that your little one is nurtured in a safe and engaging environment. From feeding and nap schedules to play-based learning and emotional bonding, professional child caretakers help create a consistent, loving routine that supports every stage of your child’s development.</p>
+            <p>With EzyHelpers, you get personalised one-on-one care, something that’s hard to find in crowded daycare settings. Our professionals can adapt to your child’s unique needs, whether it’s handling tantrums, supporting learning milestones, or caring for multiple siblings. Our caretakers are trained in basic first aid and know how to handle common emergencies at home, ensuring your loved ones stay safe and well-supported in any situation. Most importantly, our flexible service plans let you choose part-time, full-time, or live-in options that align with your family’s lifestyle. Trusting a professional childcare provider means gaining peace of mind, knowing your child is in capable, caring hands while you focus on your work and personal responsibilities.</p>
+          </div>
+        </div>
+      </section>
       {/* Why Choose Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
@@ -375,7 +451,7 @@ export default function NannyBabysitterPage() {
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-pink-500 to-purple-600 text-white text-center">
         <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
+          <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">
             Give Your Child the Best Care
           </h2>
           <p className="text-xl text-pink-100 mb-8 max-w-3xl mx-auto">
@@ -395,7 +471,7 @@ export default function NannyBabysitterPage() {
             >
               <PhoneIcon className="h-5 w-5 mr-2 shrink-0" />
               <span className="hidden sm:inline">Call +91 9972571005</span>
-              <span className="sm:hidden">Call Now</span>
+              <span className="sm:hidden">Call +91 9972571005</span>
             </Link>
           </div>
         </div>

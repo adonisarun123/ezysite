@@ -31,33 +31,101 @@ export const metadata: Metadata = {
 export default function OnDemandHelpersPage() {
   const services = [
     {
-      title: "Emergency Home Cleaning",
-      description: "Expecting guests or preparing for a pooja? Our cleaning experts are just a call away for quick, reliable home cleaning.",
+      title: "On-Demand Maid for Emergency Cleaning",
+      description: "Had a sudden mess or last-minute guests? Our on-demand maids for cleaning can reach your home quickly to get everything spotless.",
       icon: BoltIcon,
-      features: ["Sweeping & mopping", "Kitchen & bathroom cleaning", "Post-party cleaning", "Room organization"]
+      features: [
+        "Sweeping, mopping, and dusting",
+        "Deep kitchen and bathroom cleaning",
+        "Quick room organization and clutter removal",
+        "Sanitization of key areas"
+      ],
+      cta: "Book Emergency Cleaning Now"
     },
     {
-      title: "On-Demand Cooking Services", 
-      description: "Our instant cooks prepare fresh home-style meals, snacks, or fasting food with hygiene and care.",
+      title: "On-Demand Cook", 
+      description: "Hosting a get-together or just too busy to cook? Our on-demand cooks can step in with fresh meals made right at home.",
       icon: ClockIcon,
-      features: ["North Indian meals", "Fasting food", "Event cooking", "Kitchen cleanup"]
+      features: [
+        "Prepare meals for families or small gatherings",
+        "Assist with menu planning and groceries",
+        "Cook Indian dishes, snacks, and more",
+        "Clean the kitchen after cooking"
+      ],
+      cta: "Hire Emergency Cook Today"
     },
     {
-      title: "Emergency Babysitter Services",
-      description: "Need help with kids while you're busy or out? Our trained babysitters step in instantly.",
+      title: "On-Demand Babysitter",
+      description: "Need to step out unexpectedly? Our emergency helpers for babysitting offer safe, caring support for your child at short notice.",
       icon: ShieldCheckIcon,
-      features: ["Feeding & bathing", "Age-appropriate play", "Holiday supervision", "School drop/pickup"]
+      features: [
+        "Supervise and engage kids with play or study",
+        "Feed and manage hygiene needs",
+        "Help with homework or school pickup",
+        "Keep your child safe and happy"
+      ],
+      cta: "Get Emergency Babysitter"
     },
     {
-      title: "Elder Care Support",
-      description: "If your regular caregiver is away, we provide respectful and gentle elderly support.",
+      title: "On-Demand Elderly Care Assistant",
+      description: "When your regular caregiver is unavailable, call our trained on-demand elderly care helpers for prompt and kind assistance.",
       icon: ExclamationTriangleIcon,
-      features: ["Mobility assistance", "Medicine reminders", "Emotional support", "Light home help"]
+      features: [
+        "Help with bathing, dressing, and medication",
+        "Offer emotional support and companionship",
+        "Assist with walking and movement",
+        "Provide health updates to the family"
+      ],
+      cta: "Book Emergency Elder Care"
+    },
+    {
+      title: "On-Demand Pet Walker",
+      description: "Can’t make time for your pet’s walk today? Our on-demand pet helpers are just a call away.",
+      icon: UserGroupIcon,
+      features: [
+        "Dog walking and feeding",
+        "Basic grooming and playtime",
+        "Pet transport and emergency care"
+      ],
+      cta: "Get Emergency Pet Walker"
+    },
+    {
+      title: "On-Demand Patient/Nursing Care",
+      description: "Need help caring for someone unwell? Our emergency nursing helpers can come to your home and support you with basic medical needs.",
+      icon: BriefcaseIcon,
+      features: [
+        "Administer medicines and monitor vitals",
+        "Help with movement and hygiene",
+        "Assist with doctor instructions and care routines"
+      ],
+      cta: "Book Emergency Nursing Care"
+    },
+    {
+      title: "On-Demand Technical Support",
+      description: "Got a sudden plumbing, electric, or furniture issue? Get our on-demand technicians to fix it quickly.",
+      icon: SparklesIcon,
+      features: [
+        "Electrical repairs and short circuit fixes",
+        "Plumbing leaks and drainage issues",
+        "Minor carpentry or appliance setup"
+      ],
+      cta: "Get Emergency Technical Help"
+    },
+    {
+      title: "On-Demand Event Helpers",
+      description: "Hosting a party or social event and short on help? Our on-demand event helpers will make your function smooth and stress-free.",
+      icon: CalendarIcon,
+      features: [
+        "Assist with setup, decoration, and serving",
+        "Help in the kitchen and manage guests",
+        "Handle cleaning after the event"
+      ],
+      cta: "Book Event Emergency Helpers"
     }
   ]
 
   const benefits = [
-    "Fast Response – Helpers Available in Hours",
+    "Fast Response – Maids Available in Hours",
     "Trained & Background-Checked Professionals",
     "No Long-Term Contract Required",
     "Multiple Services Under One Roof",
@@ -106,20 +174,24 @@ export default function OnDemandHelpersPage() {
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Need urgent household help? Our trained and background-verified helpers are just a call away for one-time or last-minute needs—emergency cleaning, quick cooking, babysitting, elderly care, and more.
+                  Need urgent household help? EzyHelpers offers on-demand maid services in your city, perfect for one-time or last-minute support needs. Whether it’s an unexpected guest, emergency cleanup, last-minute cooking, or temporary care, our emergency helpers are just a call away; skilled, verified, and ready to assist.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ 2–4 Hours Response
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Verified & Trained
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    ✓ Hourly Pricing
-                  </div>
+                  {[
+                    'Verified & Trained Emergency Helpers',
+                    'Same-Day Availability',
+                    'Hourly Pricing, No Commitment',
+                    'Flexible Short-Term Assignments',
+                    'Available for Events & Special Occasions',
+                    'Quick Replacement Guarantee',
+                    'Multi-Tasking Capable (on request)',
+                    'Instant Booking Options',
+                    'Multi-Service Specialists'
+                  ].map((pill, i) => (
+                    <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ {pill}</div>
+                  ))}
                 </div>
 
                 {/* CTA Buttons */}
@@ -192,12 +264,8 @@ export default function OnDemandHelpersPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Why EzyHelpers is Your Best Choice for Emergency House Help?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Choose EzyHelpers for peace of mind during emergencies - fast response, trusted service, and experienced staff
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose EzyHelpers for On-Demand Maids?</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Our On-Demand Maid service is designed for flexibility and quick action. Whether it’s for 2 hours or a day-long event, we provide trained helpers for one-time or emergency needs.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -215,12 +283,8 @@ export default function OnDemandHelpersPage() {
       <section className="section-padding bg-background-secondary">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Comprehensive On-Demand Services Offered by EzyHelpers
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              A wide range of flexible, reliable household support solutions designed to meet your needs, whenever and wherever you need them
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Our Specialized On-Demand Maid Services for Every Urgent Need</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Whether it’s an unexpected guest, a last-minute event, or a sudden personal need, EzyHelpers is here with trained on-demand maids and emergency helpers ready to step in fast. Choose from our expert services designed to support you exactly when you need them most.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -240,124 +304,24 @@ export default function OnDemandHelpersPage() {
                         {service.description}
                       </p>
                       {service.features && (
-                        <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700">
-                          {service.features.map((f, i) => (
-                            <li key={i}>{f}</li>
-                          ))}
-                        </ul>
+                        <>
+                          <div className="mt-4 text-sm font-semibold text-gray-900">What they do:</div>
+                          <ul className="mt-2 space-y-2 list-disc list-inside text-gray-700">
+                            {service.features.map((f, i) => (
+                              <li key={i}>{f}</li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
+                      {service.cta && (
+                        <div className="mt-4">
+                          <Link href="/hire-helper" className="inline-flex items-center text-trust-700 font-semibold hover:underline">
+                            {service.cta}
+                            <ArrowRightIcon className="h-4 w-4 ml-1" />
+                          </Link>
+                        </div>
                       )}
                     </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Additional On-Demand Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Additional Specialized On-Demand Services
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "On-Demand Pet Walker", description: "Dog walking, feeding, and basic grooming when you're short on time" },
-              { title: "On-Demand Patient/Nursing Care", description: "Basic nursing support, medicine assistance, and hygiene care at home" },
-              { title: "On-Demand Technical Support", description: "Quick fixes for electrical, plumbing, or minor carpentry issues" },
-              { title: "On-Demand Event Helpers", description: "Setup, serving, guest management, and post-event cleanup" },
-              { title: "Post-Party Cleanup", description: "Complete cleanup after events so you can relax without lifting a finger" },
-              { title: "Driver Services", description: "Professional drivers for airport drops, meetings, or late-night travel" }
-            ].map((service, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-3 font-display">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who Benefits */}
-      <section className="section-padding bg-background-secondary">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Who Can Benefit from Our On-Demand Services?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Ideal for anyone needing flexible, reliable home assistance, only when you need it
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: "Busy Professionals",
-                description: "Unpredictable work hours needing help when actually at home",
-                icon: BriefcaseIcon,
-                bgColor: "bg-blue-50",
-                iconColor: "text-blue-600"
-              },
-              {
-                title: "Emergency Situations", 
-                description: "Urgent childcare due to cancelled babysitters or unexpected plans",
-                icon: ExclamationTriangleIcon,
-                bgColor: "bg-red-50",
-                iconColor: "text-red-600"
-              },
-              {
-                title: "Event Hosts",
-                description: "Fast cleaning or staffing support before, during, or after gatherings",
-                icon: UserGroupIcon,
-                bgColor: "bg-purple-50",
-                iconColor: "text-purple-600"
-              },
-              {
-                title: "Transitional Housing",
-                description: "Moving, renovating, or in-between homes needing short-term support",
-                icon: HomeModernIcon,
-                bgColor: "bg-orange-50",
-                iconColor: "text-orange-600"
-              }
-            ].map((item, index) => {
-              const IconComponent = item.icon
-              return (
-                <div 
-                  key={index} 
-                  className={`group relative ${item.bgColor} rounded-xl p-6 border border-transparent hover:border-white hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-
-                >
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl transform translate-x-16 -translate-y-16"></div>
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full blur-2xl transform -translate-x-12 translate-y-12"></div>
-                  </div>
-                  
-                  <div className="relative z-10">
-                    <div className={`w-12 h-12 ${item.bgColor} group-hover:bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-4 transition-all duration-300`}>
-                      <IconComponent className={`h-6 w-6 ${item.iconColor} group-hover:text-white group-hover:scale-110 transition-all duration-300`} />
-                    </div>
-                    
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-white mb-3 font-display transition-colors duration-300">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-300 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                  
-                  {/* Decorative Element */}
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <StarIcon className="h-4 w-4 text-white" />
                   </div>
                 </div>
               )
@@ -383,22 +347,22 @@ export default function OnDemandHelpersPage() {
               {
                 step: "1",
                 title: "Instant Consultation",
-                description: "Call or book online immediately and tell us your urgent need"
+                description: "Call or book online immediately. Discuss your urgent needs and choose the type of emergency helper you need."
               },
               {
                 step: "2", 
                 title: "Immediate Matching",
-                description: "We quickly match available verified helpers to your requirement"
+                description: "We instantly connect you with available verified emergency helpers based on your location and urgent requirements."
               },
               {
                 step: "3",
                 title: "Quick Confirmation", 
-                description: "Receive immediate confirmation with helper details and ETA"
+                description: "Get immediate confirmation of your booking with helper details and estimated arrival time."
               },
               {
                 step: "4",
                 title: "Service Delivery",
-                description: "Your helper arrives promptly and begins work immediately"
+                description: "Your emergency helper arrives promptly and begins work immediately. Our support team monitors the service throughout."
               }
             ].map((process, index) => (
               <div key={index} className="text-center">
@@ -422,13 +386,13 @@ export default function OnDemandHelpersPage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What to Consider Before Booking Emergency Helpers?</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Everything you should know for immediate service</p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Everything You Should Know for Immediate Service</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[ 
               { title: "Immediate Availability", description: "Emergency helpers are subject to availability in your area. Peak times may have longer response times, so book as early as possible." },
-              { title: "Service Scope", description: "Clearly communicate your urgent needs and expectations so the helper comes prepared with the right tools and supplies." },
-              { title: "Hourly Rates", description: "Pricing is hourly and confirmed upfront. There are no hidden fees, and you pay only after service completion." }
+              { title: "Service Scope", description: "Clearly communicate your urgent needs and expectations to ensure the emergency helper comes prepared with the necessary tools and supplies." },
+              { title: "Hourly Rates", description: "Pricing for on-demand maid services is based on hourly rates and clearly communicated before the service begins. You’ll know the total cost in advance to ensure full transparency. There are no hidden fees, and you only pay after the service is completed to your satisfaction." }
             ].map((item, i) => (
               <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                 <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{item.title}</h3>
@@ -453,15 +417,15 @@ export default function OnDemandHelpersPage() {
 
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
-              {[ 
-                { question: "What is an on-demand maid service?", answer: "An on-demand maid service provides quick household support when you need it most—cleaning, cooking, babysitting, or care. It’s ideal for unexpected situations and short-term help, bookable for just a few hours without any long-term contract." },
-                { question: "How quickly can I get an on-demand maid?", answer: "We can often send an on-demand maid within a few hours of your request. Same-day service is available in most locations—booking early helps during weekends or holidays." },
-                { question: "Do I need to pay upfront, or can I pay after the service is completed?", answer: "You can pay after the service is completed. The total charge is confirmed before the service begins, and payment is only required once you're satisfied with the help provided." },
-                { question: "Can I request a female helper for babysitting or elderly care?", answer: "Yes, you can request a female helper. Please mention your preference while booking and we’ll try our best to match it based on availability." },
-                { question: "Can I cancel my emergency booking if my situation changes?", answer: "Yes, you can cancel your emergency booking. Since these services are fast and same-day, some charges may apply if the helper is already on the way." },
-                { question: "Can I hire an on-demand cook for same-day meals?", answer: "Yes. On-demand cooks can prepare home-style meals for your family or small gatherings, and also help with groceries, menu planning, and kitchen cleaning." },
-                { question: "Can I choose the language my helper speaks?", answer: "Yes, you can mention your preferred language during booking. We’ll try to match someone who can communicate comfortably with your family." },
-                { question: "How is emergency service different from regular part-time maid service?", answer: "Emergency services are for urgent, same-day help without contracts and for shorter durations. Part-time services are scheduled regularly with fixed timings and longer-term arrangements." }
+              {[
+                { question: 'What is an on-demand maid service?', answer: 'An on-demand maid service helps you get quick household support when you need it most. EzyHelpers offers same-day emergency maids for cleaning, cooking, babysitting, and care. It is ideal for unexpected situations and short-term help. You can book it for just a few hours without any long-term contract.' },
+                { question: 'How quickly can I get an on-demand maid?', answer: 'EzyHelpers can send an on-demand maid within a few hours of your request. We offer same-day service across most locations. For faster response, it is best to book early, especially during weekends or holidays.' },
+                { question: 'Do I need to pay upfront, or can I pay after the emergency service is completed?', answer: 'You can pay after the service is completed. We accept multiple payment methods, including cash, UPI, and card. The total charge is confirmed before the service begins, and payment is only required once you are satisfied with the help provided.' },
+                { question: 'Can I request a female helper for emergency babysitting or elderly care?', answer: 'Yes, you can request a female helper. We understand that families may prefer female support for services like babysitting or elder care. Just let us know your preference while booking. We try our best to match it, depending on availability.' },
+                { question: 'Can I cancel my emergency booking if my situation changes?', answer: 'Yes, you can cancel your emergency booking. However, since these services are fast and same-day, some charges may apply if the helper is already on the way. For best results, inform our support team as early as possible.' },
+                { question: 'Can I hire an on-demand cook for same-day meals?', answer: 'Yes, we offer on-demand cooks for same-day meal preparation. They can help with cooking meals for your family, small parties, or guests. They also help with groceries, menu planning, and kitchen cleaning. You can request this service for a few hours or for a full day.' },
+                { question: 'Can I choose the language my emergency helper speaks?', answer: 'Yes, you can mention your preferred language when booking. Most of our helpers speak both local languages and basic English. We will try to match you with someone who can communicate clearly with your family.' },
+                { question: 'How is emergency service different from regular part-time maid service?', answer: 'Emergency maid services are for urgent, same-day help. You can book them instantly for short periods without contracts. Part-time services are scheduled regularly with fixed timings and long-term arrangements. Emergency services are quicker but may cost slightly more per hour.' }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
                   <details className="group">
@@ -491,8 +455,8 @@ export default function OnDemandHelpersPage() {
       {/* CTA Section */}
       <section className="section-padding bg-trust-600 text-white text-center">
         <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">Find Your Trusted On-Demand Maid with EzyHelpers Today!</h2>
-          <p className="text-xl text-trust-100 mb-8 max-w-3xl mx-auto">Don't let emergencies or last-minute situations overwhelm you. Get reliable, background-verified helpers who provide immediate support exactly when you need it most.</p>
+          <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Find Your Trusted On-Demand Maid with EzyHelpers Today!</h2>
+          <p className="text-xl text-trust-100 mb-8 max-w-3xl mx-auto">Don't let emergencies or last-minute situations overwhelm you. With EzyHelpers, get reliable, background-verified emergency helpers who provide immediate support exactly when you need it most.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto px-4">
             <Link
               href="/hire-helper"
@@ -539,7 +503,7 @@ export default function OnDemandHelpersPage() {
             {[
               {
                 title: "Part-Time Maid Services",
-                description: "Flexible cleaning on your schedule without full commitment",
+                description: "Short-duration cleaning, cooking, or support help for 2–6 hours a day",
                 href: "/services/part-time-maids",
                 icon: BuildingOffice2Icon,
                 gradient: "from-teal-500 to-cyan-600",
@@ -559,7 +523,7 @@ export default function OnDemandHelpersPage() {
               },
               {
                 title: "Driver Services",
-                description: "Safe and timely travel solutions for all your transportation needs",
+                description: "Experienced, background-verified drivers for family travel, errands, or appointments",
                 href: "/services/drivers",
                 icon: TruckIcon,
                 gradient: "from-indigo-500 to-purple-600",
@@ -599,7 +563,7 @@ export default function OnDemandHelpersPage() {
                     {/* Enhanced Learn More */}
                     <div className="flex items-center justify-between">
                       <span className={`${service.iconColor} group-hover:text-white font-semibold transition-colors duration-300`}>
-                        Learn More About {service.title}
+                        {index === 0 ? 'Learn More About Part-Time Maid Services' : index === 1 ? 'Learn More About Elderly Care Services' : 'Learn More About Driver Services'}
                       </span>
                       <ArrowRightIcon className={`h-5 w-5 ${service.iconColor} group-hover:text-white group-hover:translate-x-1 transition-all duration-300`} />
                     </div>

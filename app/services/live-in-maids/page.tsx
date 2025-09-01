@@ -36,7 +36,7 @@ export default function LiveInMaidsPage() {
   const services = [
     {
       title: "Live-In Maid for Housekeeping",
-      description: "A dedicated housekeeper to keep your home spotless and organised every day.",
+      description: "Imagine coming home to a spotless and organised space every day. Our live-in housekeeper is dedicated solely to maintaining the cleanliness and order of your home.",
       icon: HomeIcon,
       features: [
         "Sweeping, mopping, and dusting",
@@ -44,19 +44,23 @@ export default function LiveInMaidsPage() {
         "Laundry and ironing",
         "Dishwashing and utensil management",
         "Bed-making and room organization"
-      ]
+      ],
+      expertise: "Trained in efficient and hygienic cleaning practices.",
+      cta: "Book Live-In Housekeeper"
     },
     {
       title: "Live-In Maid for Cooking", 
-      description: "Wholesome, home-cooked meals tailored to your family’s preferences.",
+      description: "Enjoy wholesome, home-cooked meals without the hassle. Our live-in cook specialises in preparing delicious and nutritious food tailored to your family's preferences.",
       icon: HeartIcon,
       features: [
-        "Menu planning and ingredient prep",
-        "Grocery shopping (if agreed)",
-        "Cooking breakfast, lunch, dinner",
+        "Planning menus and ingredient preparation",
+        "Grocery shopping (if required and agreed upon)",
+        "Cooking breakfast, lunch, and dinner",
         "Post-cooking kitchen cleaning",
         "Maintaining stove and kitchen hygiene"
-      ]
+      ],
+      expertise: "Experienced in various cuisines and dietary needs, ensuring fresh and tasty food.",
+      cta: "Hire a Live-in Cook Today"
     },
     {
       title: "Live-In Maid for Elderly Care",
@@ -66,20 +70,25 @@ export default function LiveInMaidsPage() {
         "Assistance with bathing, dressing, grooming",
         "Medication reminders and schedule tracking",
         "Mobility support and walking assistance",
-        "Emotional support and companionship"
-      ]
+        "Emotional support and companionship",
+        "Light tasks to maintain their comfort"
+      ],
+      expertise: "Trained in providing respectful and empathetic care for the elderly, focusing on their dignity and comfort.",
+      cta: "Book Live-In Elder Care"
     },
     {
       title: "Live-In Maid for Babysitting (Child Care)",
-      description: "Attentive childcare with safety, learning, and routines.",
+      description: "Ensure your children receive attentive and loving care even when you're busy. Our live-in babysitter is trained in child care and safety.",
       icon: ClockIcon,
       features: [
-        "Supervising and engaging activities",
+        "Supervising and engaging children in age-appropriate activities",
         "Feeding, bathing, and hygiene support",
-        "Homework help and reading",
-        "School pickup/drop coordination",
+        "Helping with schoolwork and reading",
+        "School pickup and drop coordination",
         "Nap routines and bedtime care"
-      ]
+      ],
+      expertise: "Experienced in child development and emergency protocols, providing a safe and nurturing environment.",
+      cta: "Get a Live-In Babysitter"
     }
   ]
 
@@ -164,19 +173,19 @@ export default function LiveInMaidsPage() {
                 <div className="grid grid-cols-4 gap-6 pt-8 border-t border-white/20">
                   <div className="text-center lg:text-left">
                     <div className="text-2xl font-bold text-white">98%</div>
-                    <div className="text-primary-200 text-sm">Customer Satisfaction</div>
+                    <div className="text-primary-200 text-sm">Customer Satisfaction Rate</div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">24 Hrs</div>
+                    <div className="text-2xl font-bold text-white">24-Hour</div>
                     <div className="text-primary-200 text-sm">Maid Replacement</div>
                   </div>
                   <div className="text-center lg:text-left">
                     <div className="text-2xl font-bold text-white">10,000+</div>
-                    <div className="text-primary-200 text-sm">Happy Households</div>
+                    <div className="text-primary-200 text-sm">Happy Households Served</div>
                   </div>
                   <div className="text-center lg:text-left">
                     <div className="text-2xl font-bold text-white">100%</div>
-                    <div className="text-primary-200 text-sm">Verified & Trained</div>
+                    <div className="text-primary-200 text-sm">Verified & Trained Professionals</div>
                   </div>
                 </div>
               </div>
@@ -274,6 +283,17 @@ export default function LiveInMaidsPage() {
                           <li key={i}>{f}</li>
                         ))}
                       </ul>
+                      {service.expertise && (
+                        <p className="text-gray-700 mt-3"><span className="font-semibold">Expertise:</span> {service.expertise}</p>
+                      )}
+                      {service.cta && (
+                        <div className="mt-4">
+                          <Link href="/hire-helper" className="inline-flex items-center text-primary-700 font-semibold hover:underline">
+                            {service.cta}
+                            <ArrowRightIcon className="h-4 w-4 ml-1" />
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -291,107 +311,17 @@ export default function LiveInMaidsPage() {
               Who Needs a Live-In Maid?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Live-in maids are ideal for households needing dependable, all-day support with minimal hassle.
+              Live-in maids are the ideal solution for households that need dependable, all-day support with minimal hassle. Here's who can benefit the most:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Working Professionals",
-                description: "Perfect for those who leave early, return late, or travel for work",
-                icon: BriefcaseIcon,
-                gradient: "from-blue-500 to-indigo-600",
-                bgColor: "bg-blue-50",
-                iconColor: "text-blue-600",
-                shadowColor: "shadow-blue-500/25"
-              },
-              {
-                title: "Dual-Income Families", 
-                description: "Reliable support for both partners working full-time",
-                icon: UsersIcon,
-                gradient: "from-emerald-500 to-teal-600",
-                bgColor: "bg-emerald-50",
-                iconColor: "text-emerald-600",
-                shadowColor: "shadow-emerald-500/25"
-              },
-              {
-                title: "Parents with Young Children",
-                description: "Consistent childcare including feeding, bathing, and school prep",
-                icon: AcademicCapIcon,
-                gradient: "from-pink-500 to-rose-600",
-                bgColor: "bg-pink-50",
-                iconColor: "text-pink-600",
-                shadowColor: "shadow-pink-500/25"
-              },
-              {
-                title: "Homes with Elderly Members",
-                description: "Daily assistance, medication reminders, and companionship",
-                icon: UserIcon,
-                gradient: "from-amber-500 to-orange-600",
-                bgColor: "bg-amber-50",
-                iconColor: "text-amber-600",
-                shadowColor: "shadow-amber-500/25"
-              },
-              {
-                title: "Busy Individuals",
-                description: "Takes over all routine tasks from cleaning to grocery runs",
-                icon: SparklesIcon,
-                gradient: "from-purple-500 to-violet-600",
-                bgColor: "bg-purple-50",
-                iconColor: "text-purple-600",
-                shadowColor: "shadow-purple-500/25"
-              },
-              {
-                title: "Security & Consistency",
-                description: "Round-the-clock help with household stability and privacy",
-                icon: LockClosedIcon,
-                gradient: "from-slate-500 to-gray-600",
-                bgColor: "bg-slate-50",
-                iconColor: "text-slate-600",
-                shadowColor: "shadow-slate-500/25"
-              }
-            ].map((item, index) => {
-              const IconComponent = item.icon
-              return (
-                <div 
-                  key={index} 
-                  className={`group relative ${item.bgColor} rounded-xl p-6 border border-transparent hover:border-white hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-                  style={{
-                    background: `${index === 0 ? 'var(--hover-bg-0)' : 
-                                index === 1 ? 'var(--hover-bg-1)' : 
-                                index === 2 ? 'var(--hover-bg-2)' : 
-                                index === 3 ? 'var(--hover-bg-3)' : 
-                                index === 4 ? 'var(--hover-bg-4)' : 'var(--hover-bg-5)'}`
-                  }}
-
-                >
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl transform translate-x-16 -translate-y-16"></div>
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full blur-2xl transform -translate-x-12 translate-y-12"></div>
-                  </div>
-                  
-                  <div className="relative z-10">
-                    <div className={`w-12 h-12 ${item.bgColor} group-hover:bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-4 transition-all duration-300`}>
-                      <IconComponent className={`h-6 w-6 ${item.iconColor} group-hover:text-white group-hover:scale-110 transition-all duration-300`} />
-                    </div>
-                    
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-white mb-3 font-display transition-colors duration-300">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-300 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                  
-                  {/* Decorative Element */}
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <StarIcon className="h-4 w-4 text-white" />
-                  </div>
-                </div>
-              )
-            })}
+          <div className="max-w-3xl mx-auto">
+            <ul className="list-disc pl-6 text-gray-700 space-y-2 text-lg">
+              <li>Working couples needing help with housekeeping or cooking.</li>
+              <li>New parents requiring a trustworthy babysitter.</li>
+              <li>Families with elderly members who need constant care.</li>
+              <li>Busy professionals who want a well-maintained home.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -413,7 +343,7 @@ export default function LiveInMaidsPage() {
               {
                 step: "1",
                 title: "Consultation",
-                description: "Discuss your needs and choose the type of maid service—cleaning, cooking, childcare, or elder care."
+                description: "Discuss your needs with our team and choose the type of maid service you want, like cleaning, cooking, childcare, or elder care."
               },
               {
                 step: "2", 
@@ -428,7 +358,7 @@ export default function LiveInMaidsPage() {
               {
                 step: "4",
                 title: "Smooth Onboarding",
-                description: "We handle documentation. Your maid begins with a trial; support team stays in touch."
+                description: "Once selected, we handle the documentation, and your maid begins with a trial period. The support team stays in touch throughout."
               }
             ].map((process, index) => (
               <div key={index} className="text-center">
@@ -457,19 +387,19 @@ export default function LiveInMaidsPage() {
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-2">1. Living Arrangements</h3>
-              <p className="text-gray-700">Provide a separate or shared room as per your setup. Arrange basic amenities like a bed/mattress and access to a private or shared bathroom.</p>
+              <p className="text-gray-700">Live-in maids should be provided with a separate room or shared room based on your household setup. Basic amenities such as a bed, cot or mattress and access to a private or shared bathroom must be arranged depending on available resources.</p>
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-2">2. Work Schedule Clarity</h3>
-              <p className="text-gray-700">While she stays 24/7, the working schedule is structured at 12 hours daily. Define duty hours, breaks, and rest periods clearly.</p>
+              <p className="text-gray-700">While the maid stays at your home 24/7, she works for a structured 12 hours daily. Clearly outline expectations around duty hours, break times, and rest periods to avoid overwork or misunderstanding.</p>
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-2">3. Monthly Offs</h3>
-              <p className="text-gray-700">Every live-in maid is entitled to 2 days off per month. Plan in advance to support physical and mental well-being.</p>
+              <p className="text-gray-700">Every live-in maid is entitled to 2 days off per month, which should be respected and planned in advance to support her physical and mental well-being.</p>
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-2">4. One Role Per Maid</h3>
-              <p className="text-gray-700">Each live-in maid is assigned only one responsibility—housekeeping, cooking, babysitting, or elderly care—for quality and focus.</p>
+              <p className="text-gray-700">Each live-in maid is assigned only one responsibility at a time, such as housekeeping, cooking, babysitting, or elderly care for quality and focus. Maids are not expected to handle multiple duties.</p>
             </div>
           </div>
         </div>
@@ -490,20 +420,20 @@ export default function LiveInMaidsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {[
-                { question: 'What services does a live-in maid provide?', answer: 'A live-in maid stays in your home full-time and works up to 12 hours a day. She focuses on one task only—housekeeping, cooking, babysitting (child care), or elderly care. You can choose the type of help your family needs most.' },
-                { question: 'Are live-in maids background-verified?', answer: 'Yes. All our live-in maids are background verified. We check Aadhaar, local address (if available), and basic identity. Police verification and medical checkups can be arranged at extra cost.' },
-                { question: 'Does a live-in maid handle multiple household tasks?', answer: 'No. Each live-in maid is trained for one specific task only—cleaning, cooking, child care, or elder care. Minor extra help may be provided only if mutually agreed.' },
-                { question: 'How is a live-in maid different from a full-time or part-time maid?', answer: 'A live-in maid stays 24x7 and works a structured 12-hour shift daily. Full-time and part-time maids come from outside and leave after their 8–10 hour or 2–6 hour shifts.' },
-                { question: 'What is the difference between a live-in maid and a full-time maid?', answer: 'A live-in maid lives in your home and offers full-day support, while a full-time maid comes daily but does not stay overnight. Live-in maids offer better continuity and are ideal for families needing a reliable presence.' },
-                { question: 'What are the working hours for a live-in maid?', answer: 'Live-in maids work for 12 hours a day with a fixed schedule. They stay 24 hours but are not expected to work all day or during the night.' },
-                { question: 'Do I need to provide accommodation for the live-in maid?', answer: 'Yes. Provide a room (private or shared) with basic facilities like a bed/mattress and bathroom access.' },
-                { question: 'Can I hire a live-in maid just for cooking or babysitting?', answer: 'Absolutely. You can hire a live-in maid specifically for cooking, housekeeping, child care, or elderly care.' },
-                { question: 'How fast can EzyHelpers place a live-in maid?', answer: 'In most cases, within 24 to 72 hours after understanding your needs. You’ll get profiles of verified maids to choose from quickly.' },
-                { question: "What qualifications or training do EzyHelpers' live-in maids have?", answer: 'Maids are trained in their specific roles—cleaning, cooking, child safety, or senior care—with verified experience.' },
-                { question: 'How many off days do live-in maids get?', answer: 'Every live-in maid is entitled to two off days per month, decided in advance by mutual agreement.' },
-                { question: 'Can I interview the live-in maid before hiring?', answer: 'Yes. We arrange interviews with 2–3 shortlisted maids via phone or video call so you can choose confidently.' },
-                { question: 'Is the pricing fixed?', answer: 'Pricing depends on role, experience, and location. We offer transparent rates without hidden charges; you pay directly to the helper. Contact us for a detailed quote.' },
-                { question: 'Is there a trial period for live-in maids?', answer: 'Yes, a trial period is available if you’d like to assess before finalising.' }
+                { question: 'What services does a live-in maid provide?', answer: 'A live-in maid stays in your home full-time and works up to 12 hours a day. She focuses on one task only, such as housekeeping, cooking, babysitting (child care), or elderly care. You can choose the type of help your family needs most.' },
+                { question: 'Are live-in maids background-verified?', answer: 'Yes, all our live-in maids are background verified. We check Aadhaar, local address (if available), and basic identity. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind.' },
+                { question: 'Does a live-in maid handle multiple household tasks?', answer: 'No, each live-in maid is trained for one specific task only, either cleaning, cooking, child care, or elder care. This ensures better quality and focus. Minor extra help may be provided only if both sides agree.' },
+                { question: 'How is a live-in maid different from a full-time or part-time maid?', answer: 'A live-in maid stays at your home 24x7 and works a structured 12-hour shift every day. In contrast, full-time and part-time maids come from outside and leave after completing their 8–10 hour or 2–6 hour shifts.' },
+                { question: 'What is the difference between a live-in maid and a full-time maid?', answer: 'A live-in maid lives in your home and offers full-day support, while a full-time maid comes daily but does not stay overnight. Live-in maids offer better continuity and are ideal for families who need a reliable, round-the-clock presence.' },
+                { question: 'What are the working hours for a live-in maid?', answer: 'Live-in maids work for 12 hours a day with a fixed schedule. They stay 24 hours at your home but are not expected to work all day or during the night.' },
+                { question: 'Do I need to provide accommodation for the live-in maid?', answer: 'Yes. You’ll need to provide a room (private or shared) with basic facilities like a bed, mattress, or cot, and bathroom access. A comfortable space helps the maid feel at home and do her job better.' },
+                { question: 'Can I hire a live-in maid just for cooking or babysitting?', answer: 'Absolutely. You can hire a live-in maid specifically for cooking, housekeeping, child care, or elderly care. Each maid is trained in only one area and is placed based on your exact household needs.' },
+                { question: 'How fast can EzyHelpers place a live-in maid in my home?', answer: 'In most cases, we can place a live-in maid within 24 to 72 hours after understanding your needs. You’ll get profiles of trained and background-verified maids to choose from quickly.' },
+                { question: "What qualifications or training do EzyHelpers' live-in maids have?", answer: 'Our live-in maids are trained in their specific roles, whether it’s hygiene and cleaning, cooking meals, child safety and development, or senior care. We also verify their previous work experience and ensure they’re ready for real-life tasks.' },
+                { question: 'How many off days do live-in maids get?', answer: 'Every live-in maid is entitled to two off days per month. These can be decided in advance by mutual agreement. Respecting off days helps the maid stay motivated and refreshed.' },
+                { question: 'Can I interview the live-in maid before hiring?', answer: 'Yes. We arrange interviews with 2–3 shortlisted maids via phone or video call. You can speak to them, ask questions, and choose the one that feels right for your home.' },
+                { question: 'Is the pricing for live-in maid services fixed?', answer: 'Pricing is flexible and depends on the role (cooking, cleaning, etc.), the maid’s experience, and your location. We offer transparent rates without hidden charges, and you pay directly to the helper. Contact us for a detailed quote.' },
+                { question: 'Is there a trial period for live-in maids?', answer: 'Yes, we offer a trial period if you’d like to assess the maid before finalising. However, many families skip the trial once they’re satisfied after the interview. We leave the choice up to you.' }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
                   <details className="group">
@@ -536,7 +466,7 @@ export default function LiveInMaidsPage() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Find Your Trusted Live-In Maid with EzyHelpers Today!</h2>
-              <p className="text-lg text-gray-700">Don’t let chores or care responsibilities overwhelm you. Get reliable, background-verified live-in maids who fit right into your home and schedule.</p>
+              <p className="text-lg text-gray-700">Don’t let household chores or care responsibilities overwhelm you. With EzyHelpers, get reliable, background-verified live-in maids who fit right into your home and schedule.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors shadow">
@@ -583,7 +513,7 @@ export default function LiveInMaidsPage() {
             {[ 
               {
                 title: "Full-Time Maid Services",
-                description: "Reliable daily help for all home chores without requiring the maid to stay",
+                description: "Daily household help without live-in commitment",
                 href: "/services/full-time-maids",
                 icon: BuildingOffice2Icon,
                 bgColor: "bg-orange-50",
@@ -592,7 +522,7 @@ export default function LiveInMaidsPage() {
               },
               {
                 title: "Part-Time Maid Services", 
-                description: "Flexible, time-based cleaning and assistance that fits your schedule",
+                description: "Flexible cleaning on your schedule without full commitment",
                 href: "/services/part-time-maids",
                 icon: SparklesIcon,
                 bgColor: "bg-purple-50",
@@ -601,7 +531,7 @@ export default function LiveInMaidsPage() {
               },
               {
                 title: "Cook Services",
-                description: "Hire trained cooks for daily meals, diet-specific menus, and hygienic kitchen management",
+                description: "Delicious, hassle-free meals every day from professional cooks",
                 href: "/services/cooks",
                 icon: HeartIcon,
                 bgColor: "bg-pink-50",

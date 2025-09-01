@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import FAQAccordion from '@/components/FAQAccordion'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
 import { 
   HomeIcon, 
@@ -28,12 +29,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Live-In Maid Services in Bangalore | 24hr Domestic Help | EzyHelpers',
-  description: 'Professional live-in maid services in Bangalore. 24/7 household assistance with background-verified maids. Quick placement in Electronic City, Whitefield, Indiranagar & all areas.',
+  title: 'Live-In Maid in Bangalore | 24/7 Home Help',
+  description: 'Get live-in maids in Bangalore for 24/7 home help. Cooking, cleaning, babysitting, or elderly care. Background checked and trusted.',
   keywords: 'live-in maid Bangalore, 24/7 domestic help Bangalore, live-in housekeeping Bangalore, full-time maid services Bangalore, household assistance Bangalore',
   openGraph: {
-    title: 'Live-In Maid Services in Bangalore | 24hr Domestic Help',
-    description: 'Get trusted live-in maids in Bangalore with 24/7 support. Background verified professionals for complete home care. Serving Electronic City, Whitefield & all areas.',
+    title: 'Live-In Maid in Bangalore | 24/7 Home Help',
+    description: 'Get live-in maids in Bangalore for 24/7 home help. Cooking, cleaning, babysitting, or elderly care. Background checked and trusted.',
     url: 'https://ezyhelpers.com/cities/bangalore/live-in-maids',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -57,7 +58,7 @@ export default function BangaloreLiveInMaidsPage() {
   const liveInServices = [
     {
       title: "Live-In Housekeeper",
-      description: "Complete home maintenance with daily cleaning, laundry, and organization - perfect for busy Bangalore families in tech hubs like Electronic City.",
+      description: "Complete home maintenance with daily cleaning, laundry, and organisation. Perfect for busy Bangalore families in tech hubs like Electronic City.",
       icon: HomeIcon,
       features: ["Daily cleaning", "Laundry & ironing", "Deep cleaning", "Furniture upkeep"],
       gradient: "from-blue-500 to-indigo-600",
@@ -66,7 +67,7 @@ export default function BangaloreLiveInMaidsPage() {
     },
     {
       title: "Live-In Cook",
-      description: "Nutritious home-cooked meals tailored to your taste - from South Indian to North Indian cuisine, perfect for Bangalore's diverse population.",
+      description: "Nutritious home-cooked meals tailored to your taste, from South Indian to North Indian cuisine, perfect for Bangalore's diverse population.",
       icon: HeartIcon,
       features: ["Multi-cuisine cooking", "Meal planning", "Grocery shopping", "Dietary restrictions"],
       gradient: "from-red-500 to-pink-600",
@@ -75,7 +76,7 @@ export default function BangaloreLiveInMaidsPage() {
     },
     {
       title: "Live-In Nanny",
-      description: "Professional childcare with school coordination and activities - ideal for working parents in Whitefield and Marathahalli areas.",
+      description: "Professional childcare with school coordination and activities. Ideal for working parents in Whitefield and Marathahalli areas.",
       icon: UserGroupIcon,
       features: ["School pick-up/drop", "Homework help", "Activity coordination", "Safety monitoring"],
       gradient: "from-green-500 to-emerald-600",
@@ -84,7 +85,7 @@ export default function BangaloreLiveInMaidsPage() {
     },
     {
       title: "Live-In Senior Caregiver",
-      description: "Compassionate elderly care with medical support - perfect for families caring for aging parents in Bangalore's traditional neighborhoods.",
+      description: "Compassionate elderly care with basic medical support. Perfect for families caring for ageing parents in Bangalore's traditional neighbourhoods.",
       icon: ShieldCheckIcon,
       features: ["Personal care", "Medication reminders", "Doctor visits", "Companionship"],
       gradient: "from-purple-500 to-violet-600",
@@ -101,43 +102,43 @@ export default function BangaloreLiveInMaidsPage() {
 
   const benefits = [
     {
-      title: "Bangalore-Savvy & Apartment-Ready",
-      description: "Our maids are trained for Bangalore's modern apartments and gated community lifestyle",
-      icon: BuildingOffice2Icon
-    },
-    {
       title: "12-Hour Daily Support",
-      description: "Dedicated assistance while ensuring proper rest and work-life balance",
+      description: "Dedicated assistance while ensuring the maid gets proper rest and privacy.",
       icon: ClockIcon
     },
     {
       title: "One Focus Area, High Skill",
-      description: "Specialized roles guarantee efficiency and better results for your household",
+      description: "Each maid specializes in one area, ensuring quality and consistency.",
       icon: StarIcon
     },
     {
+      title: "Time for Career & Growth",
+      description: "With domestic work off your plate, focus on work and family.",
+      icon: AcademicCapIcon
+    },
+    {
+      title: "Emotional Peace",
+      description: "Return to a clean, well-managed home every day.",
+      icon: HeartIcon
+    },
+    {
       title: "Emergency Readiness",
-      description: "Your maid knows your home and can respond quickly to urgent needs",
+      description: "Your maid knows your home and can respond quickly to health or urgent needs.",
       icon: FireIcon
     },
     {
       title: "Value for Money",
-      description: "Instead of multiple part-timers, one trained expert saves costs and confusion",
+      description: "Instead of juggling multiple part-timers, one trained live-in expert saves costs and confusion.",
       icon: CurrencyRupeeIcon
-    },
-    {
-      title: "Flexible with Family Dynamics",
-      description: "Adapt to late-night work schedules, festivals, and Bangalore's unique lifestyle",
-      icon: HandRaisedIcon
     }
   ]
 
   const pricingInfo = {
-    range: "₹15,000 to ₹25,000/month",
+    range: "₹18,000 to ₹25,000/month",
     factors: [
-      "Type of role (cooking, childcare, general housekeeping)",
+      "Type of work (cooking, childcare, general housekeeping)",
       "Helper's experience and language skills",
-      "Home size and location (Marathahalli vs. Indiranagar)",
+      "Home size and location",
       "Inclusions like food, accommodation, and rest days"
     ]
   }
@@ -146,7 +147,7 @@ export default function BangaloreLiveInMaidsPage() {
     {
       step: "1",
       title: "Consultation",
-      description: "We understand your unique needs, preferences, and lifestyle for the perfect match",
+      description: "We carefully understand your lifestyle, preferences, and specific requirements",
       icon: ChatBubbleLeftRightIcon
     },
     {
@@ -158,7 +159,7 @@ export default function BangaloreLiveInMaidsPage() {
     {
       step: "3",
       title: "Interviews",
-      description: "Evaluate candidates with interviews and trial period to ensure great fit",
+      description: "Evaluate candidates with interviews and trial periods to ensure a great fit",
       icon: CheckCircleIcon
     },
     {
@@ -171,24 +172,60 @@ export default function BangaloreLiveInMaidsPage() {
 
   const faqs = [
     {
-      question: "What accommodation should I provide for a live-in maid in Bangalore?",
-      answer: "A live-in maid needs basic accommodation including a cot/mattress, clean drinking water, washroom access, and space for personal belongings. Treated with dignity, your maid will work with dedication and loyalty."
+      question: "How to get a live-in maid in Bangalore?",
+      answer: "To hire a live-in maid in Bangalore, choose a reliable domestic help agency like EzyHelpers. We match you with background-verified maids based on your needs. Our team ensures smooth onboarding, documentation, and support for a comfortable, long-term arrangement."
     },
     {
-      question: "How much does a live-in maid cost in Bangalore?",
-      answer: "Live-in maid salaries in Bangalore range from ₹15,000 to ₹25,000/month, depending on the role type, experience, language skills, and your home's location and size."
+      question: "Is it safe to have a live-in maid in Bangalore with kids at home?",
+      answer: "Yes, it is safe if you hire through a trusted agency. At EzyHelpers, each live-in maid in Bangalore is background-verified, trained, and experienced in childcare, ensuring a secure and caring environment for your children."
     },
     {
-      question: "Do live-in maids work 24/7?",
-      answer: "While your maid resides at home, she typically works 10-12 hours daily. It's important to set healthy boundaries with rest time to prevent burnout and ensure better performance."
+      question: "What accommodation should I provide for a live-in maid?",
+      answer: "You should offer a private room or a shared room with a bed, cot or mattress and access to a bathroom depending on the availability and convenience of the customers. Many Bangalore homes have a dedicated helper’s room for this."
     },
     {
-      question: "Are EzyHelpers' live-in maids verified?",
-      answer: "Yes, all our live-in maids undergo thorough Aadhaar verification and local address verification for your complete peace of mind and safety."
+      question: "What if my live-in maid leaves suddenly?",
+      answer: "Most maids give a one-month notice before leaving. If that happens, EzyHelpers will help you find a replacement quickly so your household routine is not disturbed."
     },
     {
-      question: "Which areas in Bangalore do you serve?",
-      answer: "We serve all major areas including Electronic City, Whitefield, Marathahalli, Koramangala, Indiranagar, Jayanagar, BTM Layout, HSR Layout, and all other Bangalore neighborhoods."
+      question: "Do live-in maids in Bangalore get time off?",
+      answer: "Yes, live-in maids in Bangalore are entitled to get two days off per month, which may be scheduled with mutual understanding."
+    },
+    {
+      question: "What is the salary of a live-in maid in Bangalore?",
+      answer: "The monthly salary for a live-in maid in Bangalore typically ranges from ₹18,000 to ₹25,000. The exact amount depends on factors like experience, household duties, and location. Areas like Whitefield or Electronic City may offer slightly higher salaries due to demand. The salary usually includes stay, meals, and regular rest days."
+    },
+    {
+      question: "Are the live-in maids background-checked?",
+      answer: "Yes. All maids from EzyHelpers go through Aadhaar and address verification. Police verification is done at an additional cost if the customer requests it. This ensures safety and trust when you hire a 24hr maid in Bangalore."
+    },
+    {
+      question: "Can live-in maids cook local Bangalore-style food?",
+      answer: "Yes. Many live-in maids can cook South Indian meals like dosa, sambar, and rasam, as well as North Indian and basic continental dishes. They usually adapt to your family’s taste preferences."
+    },
+    {
+      question: "How soon can I get a live-in maid in Bangalore?",
+      answer: "You can usually get a live-in maid within 24 to 72 hours, depending on your location and requirements. EzyHelpers offers quick matching to avoid long waiting times."
+    },
+    {
+      question: "Can a live-in maid work for two households?",
+      answer: "No. A live-in maid works full-time for one family only. This ensures loyalty, privacy, and focused care for your home."
+    },
+    {
+      question: "Do live-in maids speak Kannada or Hindi?",
+      answer: "Yes. Most live-in maids in Bangalore can speak Kannada and Hindi. This helps them communicate well with your family, neighbours, and building staff."
+    },
+    {
+      question: "Are live-in maids suitable for IT professionals?",
+      answer: "Absolutely. A 24hr maid in Bangalore is ideal for tech professionals who work long hours or travel often. They manage home tasks efficiently so you can focus on work."
+    },
+    {
+      question: "Can live-in maids work in apartment buildings?",
+      answer: "Yes. They are trained to follow apartment rules and can handle delivery access, visitor logs, and building protocols smoothly."
+    },
+    {
+      question: "Can a live-in maid handle online deliveries or food orders?",
+      answer: "Yes. Many live-in maids can manage online grocery deliveries and food apps like Swiggy or Zomato and coordinate with the apartment mailroom or security for daily deliveries."
     }
   ]
 
@@ -221,13 +258,14 @@ export default function BangaloreLiveInMaidsPage() {
       
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-primary-700 via-primary-600 to-primary-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+
           {/* Background Decorative Elements */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-white rounded-full blur-2xl"></div>
           </div>
-          
+
           {/* Geometric Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute top-0 left-0 w-full h-full" style={{
@@ -254,7 +292,7 @@ export default function BangaloreLiveInMaidsPage() {
                   </h1>
                   
                   <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                    24/7 domestic help for busy Bangalore families. From Electronic City to Whitefield - trusted live-in maids for complete household support.
+                    24/7 domestic help for busy families across Bangalore. From Whitefield to Jayanagar, get reliable live-in maids for cooking, cleaning, childcare, and eldercare.
                   </p>
 
                   {/* Key Benefits Pills */}
@@ -281,7 +319,7 @@ export default function BangaloreLiveInMaidsPage() {
                     </Link>
                     <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300">
                       <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
-                      <span className="hidden sm:inline">Call +91 9972571005</span>
+                      <span className="hidden sm:inline">Call Now</span>
                       <span className="sm:hidden">Call Now</span>
                     </Link>
                   </div>
@@ -289,16 +327,16 @@ export default function BangaloreLiveInMaidsPage() {
                   {/* Trust Indicators */}
                   <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
                     <div className="text-center lg:text-left">
-                      <div className="text-2xl font-bold text-white">10K+</div>
-                      <div className="text-primary-200 text-sm">Happy Families</div>
-                    </div>
-                    <div className="text-center lg:text-left">
-                      <div className="text-2xl font-bold text-white">5★</div>
-                      <div className="text-primary-200 text-sm">Average Rating</div>
-                    </div>
-                    <div className="text-center lg:text-left">
                       <div className="text-2xl font-bold text-white">24/7</div>
-                      <div className="text-primary-200 text-sm">Support Available</div>
+                      <div className="text-primary-200 text-sm">Support</div>
+                    </div>
+                    <div className="text-center lg:text-left">
+                      <div className="text-2xl font-bold text-white">100%</div>
+                      <div className="text-primary-200 text-sm">Verified Maids</div>
+                    </div>
+                    <div className="text-center lg:text-left">
+                      <div className="text-2xl font-bold text-white">Trained</div>
+                      <div className="text-primary-200 text-sm">in Duties</div>
                     </div>
                   </div>
                 </div>
@@ -340,6 +378,7 @@ export default function BangaloreLiveInMaidsPage() {
           </div>
         </section>
 
+
         {/* Why Bangalore Residents Need Live-In Maids */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
@@ -348,15 +387,15 @@ export default function BangaloreLiveInMaidsPage() {
                 Why Do Bangalore Residents Need Live-In Maid Services?
               </h2>
               <p className="text-xl text-gray-600 mb-12">
-                Busy city life makes home tasks hard to manage. Live-in maids help you balance both.
+                Busy City Life Makes Home Tasks Hard to Manage. Live-in maids help you balance both.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
-                  title: "Long Hours & Traffic Woes",
-                  description: "Tech professionals often face 12-14 hour days. A live-in maid keeps the home running smoothly in your absence.",
+                  title: "Hectic Bangalore Life",
+                  description: "For tech professionals working 12–14 hours, a live-in maid keeps your home clean and stress-free.",
                   icon: ClockIcon,
                   color: "text-blue-600",
                   bgColor: "bg-blue-100"
@@ -406,7 +445,7 @@ export default function BangaloreLiveInMaidsPage() {
                 What Services Does a 24hr Live-In Maid Provide?
               </h2>
               <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-                At EzyHelpers, our live-in maids are trained to focus on one specialized area of domestic support. Whether you live in a compact apartment in Whitefield or a family home in Jayanagar, we match you with a dedicated expert.
+                At EzyHelpers, our live-in maids are trained to focus on one specialised area of domestic work. Whether you live in a compact apartment in Whitefield or a family home in Jayanagar, we match you with a dedicated expert.
               </p>
             </div>
 
@@ -414,7 +453,7 @@ export default function BangaloreLiveInMaidsPage() {
               {liveInServices.map((service, index) => {
                 const IconComponent = service.icon
                 return (
-                  <div key={index} className={`${service.bgColor} rounded-2xl p-8 hover:shadow-lg transition-shadow`}>
+                  <div key={index} className={`${service.bgColor} rounded-2xl p-8 hover:shadow-lg transition-all`}>
                     <div className="flex items-start space-x-6">
                       <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center shrink-0 shadow-lg`}>
                         <IconComponent className="h-8 w-8 text-white" />
@@ -460,7 +499,7 @@ export default function BangaloreLiveInMaidsPage() {
                   How Much Does a Live-In Maid in Bangalore Cost?
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Transparent pricing to fit every home
+                  Transparent Pricing to Fit Every Home
                 </p>
               </div>
 
@@ -492,7 +531,7 @@ export default function BangaloreLiveInMaidsPage() {
                 Benefits of Hiring a Live-In Maid in Bangalore
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Professional support designed for Bangalore's modern lifestyle
+                
               </p>
             </div>
 
@@ -509,6 +548,33 @@ export default function BangaloreLiveInMaidsPage() {
                   </div>
                 )
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Choosing the Right Live-In Maid in Bangalore */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Choosing the Right Live-In Maid in Bangalore</h2>
+            </div>
+            <div className="max-w-4xl mx-auto space-y-4">
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="font-semibold text-gray-900 mb-2">Bangalore-Savvy & Apartment-Ready</h3>
+                <p className="text-gray-600">Our maids are trained to handle Bangalore’s modern apartments, gated community rules, and urban family lifestyles.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="font-semibold text-gray-900 mb-2">Thoroughly Verified for Your Safety</h3>
+                <p className="text-gray-600">Each maid undergoes Aadhaar verification and local address verification for your peace of mind.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="font-semibold text-gray-900 mb-2">Matched by Skills & Needs</h3>
+                <p className="text-gray-600">We don’t just assign maids; we match them based on your exact household needs and expectations.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="font-semibold text-gray-900 mb-2">Flexible with Family Dynamics</h3>
+                <p className="text-gray-600">From childcare to festival cooking or odd work hours, our maids adapt with ease.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -547,7 +613,93 @@ export default function BangaloreLiveInMaidsPage() {
           </div>
         </section>
 
-        {/* Areas Served */}
+        {/* What to Expect When You Hire a Live-In Maid in Bangalore */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What to Expect When You Hire a Live-In Maid in Bangalore</h2>
+              <p className="text-lg text-gray-600">EzyHelpers ensures a smooth, respectful start for families and maids, making live-in help stress-free in Bangalore.</p>
+            </div>
+            <div className="max-w-4xl mx-auto space-y-4">
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="font-semibold text-gray-900 mb-2">Accommodation Guidelines</h3>
+                <p className="text-gray-600">Provide basic living space, respect, and safety to encourage trust, comfort, and long-term dependable service.</p>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="font-semibold text-gray-900 mb-2">24/7 Presence Doesn’t Mean 24/7 Work</h3>
+                <p className="text-gray-600">Though present 24/7, a live-in maid works for 12 hours a day. Adequate rest ensures long-term reliability and well-being.</p>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="font-semibold text-gray-900 mb-2">Monthly Offs Are a Must</h3>
+                <p className="text-gray-600">Live-in maids get 2 monthly days off; unused days carry forward and can be taken later flexibly.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Explore Other Trusted Home Services by EzyHelpers
+              </h2>
+              <p className="text-lg text-gray-600">
+                From part-time help to skilled drivers, find dependable support for every household need.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Nanny Services in Bangalore",
+                  description: "Experienced nannies for full-day or live-in care of infants and young children.",
+                  href: "/cities/bangalore/nanny-babysitter",
+                  icon: UserGroupIcon,
+                  color: "text-pink-600",
+                  bgColor: "bg-pink-50"
+                },
+                {
+                  title: "Senior Citizen Care in Bangalore", 
+                  description: "Compassionate caregivers for elders for medication, mobility support, companionship and more.",
+                  href: "/cities/bangalore/elderly-care",
+                  icon: HeartIcon,
+                  color: "text-purple-600",
+                  bgColor: "bg-purple-50"
+                },
+                {
+                  title: "Cook for Home in Bangalore",
+                  description: "Home cooks for daily meals, special diets, and regional cuisine preferences.",
+                  href: "/cities/bangalore/cooks",
+                  icon: SparklesIcon,
+                  color: "text-green-600",
+                  bgColor: "bg-green-50"
+                }
+              ].map((service, index) => {
+                const IconComponent = service.icon
+                return (
+                  <Link key={index} href={service.href} className={`${service.bgColor} rounded-xl p-6 hover:shadow-lg transition-all group`}>
+                    <div className={`w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm group-hover:shadow-md transition-shadow`}>
+                      <IconComponent className={`h-6 w-6 ${service.color}`} />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      {service.description}
+                    </p>
+                    <div className="flex items-center text-primary-600 font-medium text-sm group-hover:text-primary-700">
+                      {service.title.includes('Nanny') ? 'Learn About Nanny Services' : service.title.includes('Senior') ? 'Learn About Senior Care' : 'Learn About Home Cook'}
+                      <ArrowRightIcon className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Areas We Serve */}
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
@@ -591,114 +743,7 @@ export default function BangaloreLiveInMaidsPage() {
             </div>
 
             <div className="max-w-4xl mx-auto">
-              <div className="space-y-6">
-                {faqs.map((faq, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h3>
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-700 text-white">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
-                Transform Your Bangalore Lifestyle Today
-              </h2>
-              <p className="text-xl text-primary-100 mb-10 leading-relaxed">
-                A live-in maid in Bangalore offers trusted, all-round support, making daily life easier for modern, working families. Start today.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/hire-helper" className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors shadow-lg hover:shadow-xl">
-                  Book Live-in Maid Online
-                </Link>
-                <Link href="tel:+919972571005" className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">
-                  Call +91 9972571005
-                </Link>
-              </div>
-
-              <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/20">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">24/7</div>
-                  <div className="text-primary-200 text-sm">Support Available</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">5★</div>
-                  <div className="text-primary-200 text-sm">Average Rating</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">100%</div>
-                  <div className="text-primary-200 text-sm">Background Verified</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Related Services */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                Explore Other Trusted Home Services by EzyHelpers
-              </h2>
-              <p className="text-lg text-gray-600">
-                From part-time help to skilled drivers, find dependable support for every household need.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Nanny Services in Bangalore",
-                  description: "Experienced nannies for full-day or live-in care of infants and young children.",
-                  href: "/cities/bangalore/nanny-babysitter",
-                  icon: UserGroupIcon,
-                  color: "text-pink-600",
-                  bgColor: "bg-pink-50"
-                },
-                {
-                  title: "Senior Citizen Care Services in Bangalore", 
-                  description: "Compassionate caregivers for elders for medication, mobility support, companionship and more.",
-                  href: "/cities/bangalore/elderly-care",
-                  icon: HeartIcon,
-                  color: "text-purple-600",
-                  bgColor: "bg-purple-50"
-                },
-                {
-                  title: "Cook for Home in Bangalore",
-                  description: "Home cooks for daily meals, special diets, and regional cuisine preferences.",
-                  href: "/cities/bangalore/cooks",
-                  icon: SparklesIcon,
-                  color: "text-green-600",
-                  bgColor: "bg-green-50"
-                }
-              ].map((service, index) => {
-                const IconComponent = service.icon
-                return (
-                  <Link key={index} href={service.href} className={`${service.bgColor} rounded-xl p-6 hover:shadow-lg transition-all group`}>
-                    <div className={`w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm group-hover:shadow-md transition-shadow`}>
-                      <IconComponent className={`h-6 w-6 ${service.color}`} />
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      {service.description}
-                    </p>
-                    <div className="flex items-center text-primary-600 font-medium text-sm group-hover:text-primary-700">
-                      Learn More
-                      <ArrowRightIcon className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </Link>
-                )
-              })}
+              <FAQAccordion faqs={faqs} />
             </div>
           </div>
         </section>
@@ -707,4 +752,4 @@ export default function BangaloreLiveInMaidsPage() {
       </main>
     </>
   )
-} 
+}

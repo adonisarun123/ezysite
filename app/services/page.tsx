@@ -742,7 +742,7 @@ export default function ServicesPage() {
 
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-display">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-6 font-display">
               Ready to Transform Your Home Life?
             </h2>
             <p className="text-xl text-primary-100 mb-10 leading-relaxed">

@@ -36,32 +36,36 @@ export const metadata: Metadata = {
 export default function FullTimeMaidsPage() {
   const services = [
     {
-      title: "Full-Time Housekeeper",
-      description: "Experience a spotless and well-maintained home daily. Our maid is fully focused on cleanliness and household upkeep.",
+      title: "Full-Time Maid for Housekeeping",
+      description: "Experience a consistently clean and organised home every day. Our full-time housekeeper is dedicated fully to cleaning and organising.",
       icon: HomeIcon,
-      features: ["Sweeping, mopping, dusting", "Kitchen & bathroom cleaning", "Laundry and folding", "Dishwashing and utensil management", "Bed-making and surface cleaning"],
-      expertise: "Skilled in household hygiene and routine cleaning tasks."
+      features: ["Sweeping, mopping, dusting", "Kitchen & bathroom cleaning", "Laundry and folding clothes", "Dishwashing and utensil management", "Bed-making and surface cleaning"],
+      expertise: "Skilled in household hygiene and routine cleaning tasks.",
+      cta: "Book a Full-Time Housekeeper"
     },
     {
-      title: "Full-Time Cook", 
-      description: "Relish homemade meals without the kitchen stress. Our full-time cook prepares fresh, traditional meals tailored to your family's diet.",
+      title: "Full-Time Maid for Cooking", 
+      description: "Enjoy wholesome, home-cooked meals without the hassle. Our full-time cook specialises in preparing delicious and nutritious food tailored to your family's preferences throughout the day.",
       icon: HeartIcon,
       features: ["Cooking meals as per your family’s diet", "Chopping and ingredient preparation", "Post-cooking kitchen cleaning", "Grocery handling (if required)", "Managing utensils and stove hygiene"],
-      expertise: "Experienced in various cuisines and dietary needs (veg or non-veg) to ensure fresh and tasty food every day."
+      expertise: "Experienced in various cuisines and dietary needs, vegetarian or non-veg as per request, ensuring fresh and tasty food every day.",
+      cta: "Hire a Full-Time Cook"
     },
     {
-      title: "Full-Day Babysitter",
-      description: "Ensure your child receives full-day care, love, and learning support, even when you're away.",
+      title: "Full-Time Maid for Babysitting (Child Care)",
+      description: "Ensure your children receive attentive and loving care even when you're busy. Our full-time maid babysitter is trained in child care and safety, providing dedicated support for your children's full-day needs.",
       icon: UserGroupIcon,
       features: ["Feeding and bathing assistance", "School pickup/drop-off", "Reading, playtime, and study help", "Nap routines and hygiene care", "Child safety monitoring"],
-      expertise: "Experienced in child engagement, comfort, and care routines to provide a safe, nurturing environment."
+      expertise: "Experienced in child engagement, comfort, and care routines and providing a safe and nurturing environment from morning to evening.",
+      cta: "Book a Full-Time Babysitter"
     },
     {
-      title: "Full-Time Elderly Care Assistant",
-      description: "Your elders deserve dignity and reliable care. Our full-time caregivers are trained for senior support with compassion.",
+      title: "Full-Time Maid for Elderly Care",
+      description: "Support your elderly family members with gentle, professional care. Our full-day elderly caretaker ensures comfort, safety, and companionship for seniors while you manage your busy routine.",
       icon: ShieldCheckIcon,
       features: ["Assistance with bathing, dressing, and daily hygiene", "Medication reminders and timely support", "Companionship and emotional care", "Help with walking, mobility, or wheelchair support", "Accompanying to doctor appointments (if required)"],
-      expertise: "Trained to provide respectful, empathetic senior care with dignity and comfort."
+      expertise: "Trained in providing respectful and empathetic care for the elderly, focusing on their dignity and comfort throughout the day.",
+      cta: "Book a Full-Time Elderly Caregiver"
     }
   ]
 
@@ -69,9 +73,8 @@ export default function FullTimeMaidsPage() {
     "Backup & replacement support available",
     "Choose timings that suit your schedule",
     "Verified profiles with proper background checks",
-    "Transparent pricing – no hidden charges",
-    "Ongoing support even after hiring",
-    "Trained for home responsibilities"
+    "Affordable and city-specific rates",
+    "Ongoing Support Even After Hiring"
   ]
 
   return (
@@ -111,14 +114,14 @@ export default function FullTimeMaidsPage() {
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Let EzyHelpers take care of your home with our dedicated full-time maids. Each helper specialises in one key area—housekeeping, cooking, childcare, or elderly care—so your daily home needs are handled with care and professionalism.
+                  Let EzyHelpers take care of your home with our dedicated full-time maids. Each Live-in maid specializes in one key area, whether it's keeping your home spotless, preparing delicious meals, providing loving childcare, or offering compassionate elderly care.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   {[
                     '100% Verified & Background-Checked',
-                    'Fixed Daily Hours (8–10 Hours)',
+                    'Fixed Daily Hours',
                     'Transparent Pricing – No Hidden Charges',
                     'Quick Replacement Guarantee',
                     'Personalized Matchmaking'
@@ -133,7 +136,7 @@ export default function FullTimeMaidsPage() {
                     href="/hire-helper"
                     className="inline-flex items-center justify-center w-full bg-white text-secondary-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-secondary-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
                   >
-                    Book Reliable Full-Time Maid Now
+                    Book a Full-Time Maid
                   </Link>
 
                   <Link
@@ -141,8 +144,8 @@ export default function FullTimeMaidsPage() {
                     className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
                   >
                     <PhoneIcon className="h-5 w-5 mr-2 flex-shrink-0" />
-                    <span className="hidden sm:inline">Call +91 9972571005</span>
-                    <span className="sm:hidden">+91 9972571005</span>
+                    <span className="hidden sm:inline">Call Us for Quick Assistance</span>
+                    <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
 
@@ -153,7 +156,7 @@ export default function FullTimeMaidsPage() {
                     <div className="text-secondary-200 text-sm">Trained for Home Responsibilities</div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">8–10 Hrs</div>
+                    <div className="text-2xl font-bold text-white">8-10 Hours</div>
                     <div className="text-secondary-200 text-sm">Daily Dedicated Service</div>
                   </div>
                   <div className="text-center lg:text-left">
@@ -205,10 +208,10 @@ export default function FullTimeMaidsPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Why Hire a Full-Time Maid through EzyHelpers?
+              Why Choose EzyHelpers for Your Full-Time Maid Needs?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Get the benefits of dedicated help without 24/7 live-in commitment - perfect for busy families
+              With EzyHelpers, you get more than just help; you get peace of mind.
             </p>
           </div>
 
@@ -228,10 +231,10 @@ export default function FullTimeMaidsPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Our Comprehensive Full-Time Maid Services
+              Our Specialized Full-Time Maid Services for Every Household Need
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Ideal for those with busy work schedules, elderly parents, or young children
+              Our full-day maid service offers skilled support tailored to your daily home requirements.  We match you with someone skilled, reliable, and dedicated to that task alone.
             </p>
           </div>
 
@@ -262,6 +265,14 @@ export default function FullTimeMaidsPage() {
                       {service.expertise && (
                         <p className="text-gray-600 text-sm mt-3"><span className="font-semibold text-gray-900">Expertise:</span> {service.expertise}</p>
                       )}
+                      {service.cta && (
+                        <div className="mt-4">
+                          <Link href="/hire-helper" className="inline-flex items-center text-secondary-700 font-semibold hover:underline">
+                            {service.cta}
+                            <ArrowRightIcon className="h-4 w-4 ml-1" />
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -276,7 +287,7 @@ export default function FullTimeMaidsPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Who Needs a Full-Time Maid?</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Full-time maids are ideal for dependable, all-day support with minimal hassle.</p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Full-time maids are the ideal solution for households that need dependable, all-day support with minimal hassle. Here's who can benefit the most from a full-day maid service:</p>
           </div>
           <div className="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-8 border border-gray-100">
             <ul className="grid md:grid-cols-2 gap-3">
@@ -309,7 +320,7 @@ export default function FullTimeMaidsPage() {
               {
                 step: "1",
                 title: "Consultation",
-                description: "Discuss your needs and choose the type of maid service—cleaning, cooking, childcare, or elder care."
+                description: "Discuss your needs with our team and choose the type of maid service you want, like cleaning, cooking, childcare, or elder care."
               },
 
               {
@@ -327,7 +338,7 @@ export default function FullTimeMaidsPage() {
               {
                 step: "4",
                 title: "Smooth Onboarding",
-                description: "We handle documentation. Your maid begins with a trial; support team stays in touch."
+                description: "Once selected, we handle the documentation, and your maid begins with a trial period. The support team stays in touch throughout."
               }
             ].map((process, index) => (
               <div key={index} className="text-center">
@@ -360,11 +371,11 @@ export default function FullTimeMaidsPage() {
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-2">2. Weekly Offs</h3>
-              <p className="text-gray-700">Your maid is entitled to one weekly off, ideally planned in advance. Public or religious holidays can be mutually discussed.</p>
+              <p className="text-gray-700">Your maid is entitled to one week off, ideally planned in advance. National or religious holidays can also be mutually discussed.</p>
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-2">3. No Multi-tasking</h3>
-              <p className="text-gray-700">Each full-time maid focuses on one role—housekeeping, cooking, child care, or elder care—unless agreed otherwise during hiring.</p>
+              <p className="text-gray-700">It's important to understand that a full-time maid specialised in one area is not expected to handle multiple duties concurrently (e.g., a cook is not also a babysitter) unless mutually agreed upon during hiring.</p>
             </div>
           </div>
         </div>
@@ -385,16 +396,16 @@ export default function FullTimeMaidsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {[
-                { question: 'What is a full-time maid service?', answer: 'A full-time maid works 8–10 hours a day, 6 days a week, focusing on one main role—housekeeping, cooking, child care, or elderly care—for consistent and reliable support.' },
-                { question: 'How many hours does a full-time maid work daily?', answer: 'Full-time maids usually work between 8 to 10 hours a day. You can choose timings that fit your routine. Unlike live-in maids, they leave after their shift.' },
-                { question: 'What services do full-time maids provide?', answer: 'Based on your needs: Housekeeping (cleaning, laundry, dishwashing), Cooking (meals, grocery handling, kitchen cleaning), Babysitting (feeding, school pickup/drop, homework help), Elderly Care (bathing, mobility, medication reminders, companionship).' },
-                { question: 'Are full-time maids background verified?', answer: 'Yes. We check Aadhaar, local address, and experience. Police and medical checks can be arranged if requested.' },
-                { question: 'Can a full-time maid do multiple tasks like cooking and cleaning?', answer: 'No. Each maid is trained for one role only. Minor additional help can be discussed and mutually agreed.' },
-                { question: 'How much does a full-time maid cost?', answer: 'Pricing depends on your city and the role. We offer fair, transparent rates with no hidden fees. Contact us for a free quote.' },
-                { question: 'Do full-time maids get weekly days off?', answer: 'Yes. All full-time maids get one day off per week, decided mutually. Public/religious holidays can be discussed in advance.' },
-                { question: 'What happens if my maid does not show up?', answer: 'We provide quick replacement support if your maid is absent or unavailable, so your routine is not disrupted.' },
-                { question: 'What support do I get after hiring?', answer: 'We stay connected after hiring—regular check-ins, fast issue resolution, and replacements when needed. Trial period support is included.' },
-                { question: 'Do I need to provide meals?', answer: 'Usually no; full-time maids bring their own food. You may mutually agree to provide meals—discuss it clearly during hiring.' }
+                { question: 'What is a full-time maid service?', answer: 'A full-time maid service offers professional household help who works 8 to 10 hours a day, 6 days a week. The maid focuses on one main task, like housekeeping, cooking, child care, or elderly care, so you get consistent and reliable support for your home.' },
+                { question: 'How many hours does a full-time maid work daily?', answer: 'Full-time maids usually work between 8 to 10 hours a day. You can choose the timing that fits your routine. Unlike live-in maids, they leave after their shift and do not stay overnight.' },
+                { question: 'What services do full-time maids provide?', answer: 'Full-time maids help with one key area based on your needs:\n\n- Housekeeping: Cleaning, dusting, laundry, dishwashing, room organization\n- Cooking: Preparing meals, grocery handling, kitchen cleaning\n- Babysitting: Feeding kids, school pickup and drop, homework help\n- Elderly Care: Bathing, mobility support, medication reminders, companionship' },
+                { question: 'Are full-time maids background verified?', answer: 'Yes, all our full-time maids are fully verified. We check their Aadhaar, local address, and past experience. Police and medical checks can also be arranged if you need them.' },
+                { question: 'Can a full-time maid do multiple tasks like cooking and cleaning?', answer: 'No, each full-time maid is trained for one role only. For example, if you hire a cook, she will only handle kitchen-related tasks. However, if you need a little extra help, you can discuss it with her in advance and come to an agreement.' },
+                { question: 'How much does a full-time maid cost?', answer: 'The cost of a full-time maid depends on your city and the type of service you choose. Our rates are fair and transparent, with no hidden fees. Just contact EzyHelpers for a free quote based on your location and needs.' },
+                { question: 'Do full-time maids get weekly days off?', answer: 'Yes, all full-time maids get one day off every week. You can decide this day together when you hire. You can also discuss public or religious holidays with the maid in advance.' },
+                { question: 'What happens if my full-time maid does not show up?', answer: 'Don’t worry. EzyHelpers offers a quick replacement if your maid is absent or unavailable. We always keep a backup option ready so your daily routine doesn’t get disrupted.' },
+                { question: 'What support do I get after hiring a full-time maid?', answer: 'Even after you hire a maid, we stay connected. Our team checks in regularly, helps resolve issues, and provides fast replacements if needed. We also track how things are going during the trial period to make sure everything is smooth.' },
+                { question: 'Do I need to provide meals?', answer: 'In most cases, no. Full-time maids bring their own food. But if both you and the maid are comfortable, you can decide to provide meals. Just make sure to discuss this clearly during the hiring process.' }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
                   <details className="group">
@@ -424,15 +435,15 @@ export default function FullTimeMaidsPage() {
       {/* CTA Section */}
       <section className="section-padding bg-secondary-600 text-white text-center">
         <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">Get Trusted Full-Time Help with EzyHelpers Today!</h2>
-          <p className="text-xl text-secondary-100 mb-8 max-w-3xl mx-auto">Why wait to enjoy a better work-life balance? Hire a full-time maid who shows up every day, on time, and takes care of the tasks you need most.</p>
+          <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Get Trusted Full-Time Help with EzyHelpers Today!</h2>
+          <p className="text-xl text-secondary-100 mb-8 max-w-3xl mx-auto">Why wait to enjoy a better work-life balance? With EzyHelpers, hire a full-time maid who shows up every day, on time, and takes care of the tasks you need most.</p>
           {/* CTA Buttons */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             <Link
               href="/hire-helper"
               className="inline-flex items-center justify-center w-full bg-white text-secondary-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-secondary-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
             >
-              Book Reliable Full-Time Maid Now
+              Book a Full-Time Maid
             </Link>
 
             <Link
@@ -496,7 +507,7 @@ export default function FullTimeMaidsPage() {
               },
               {
                 title: "Elderly Care Services",
-                description: "Compassionate attendants to assist with personal care, mobility, and companionship",
+                description: "Compassionate maids to assist with personal care, mobility, and companionship",
                 href: "/services/elderly-care",
                 icon: ShieldCheckIcon,
                 bgColor: "bg-pink-50",
@@ -530,7 +541,7 @@ export default function FullTimeMaidsPage() {
 
                     <div className="flex items-center justify-between">
                       <span className={`${service.iconColor} group-hover:text-white font-semibold transition-colors duration-300`}>
-                        Learn More About {service.title}
+                        {index === 0 ? 'Learn More About Live-In Maid' : index === 1 ? 'Learn More About Babysitter' : 'Learn More About Elderly Care'}
                       </span>
                       <ArrowRightIcon className={`h-5 w-5 ${service.iconColor} group-hover:text-white group-hover:translate-x-1 transition-all duration-300`} />
                     </div>

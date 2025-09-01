@@ -247,7 +247,7 @@ export default function HelperLeadsPage() {
       console.log('Submitting data:', submitData)
 
       const { error } = await supabase
-        .from('ezyhelpers.helper_lead')
+        .from('helper_lead')
         .insert([submitData])
 
       if (error) {
@@ -271,6 +271,47 @@ export default function HelperLeadsPage() {
         block: 'center' 
       })
 
+      // Fire-and-forget: Send admin email notification (does not block UX)
+      try {
+        const emailPayload = {
+          leadType: 'general',
+          formData: {
+            name: submitData.helper_name,
+            phone: submitData.mobile,
+            service: 'Helper Lead Registration',
+            city: submitData.detected_city || 'Unknown',
+            additionalDetails: {
+              job_roles: submitData.job_roles,
+              job_role_other: submitData.job_role_other,
+              remarks: submitData.remarks,
+              latitude: submitData.lat ?? null,
+              longitude: submitData.lng ?? null,
+            },
+          },
+          sourceUrl: typeof window !== 'undefined' ? window.location.href : undefined,
+        }
+
+        // Do not await; log result only
+        void fetch('/api/send-lead-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(emailPayload),
+        })
+          .then(async (res) => {
+            const data = await res.json().catch(() => undefined)
+            if (!res.ok || !data?.success) {
+              console.warn('Helper lead email not sent:', data?.error || res.statusText)
+            } else {
+              console.log('Helper lead email sent. Message ID:', data.messageId)
+            }
+          })
+          .catch((err) => {
+            console.warn('Helper lead email request failed:', err)
+          })
+      } catch (emailErr) {
+        console.warn('Helper lead email setup error:', emailErr)
+      }
+
     } catch (error) {
       console.error('Submission error:', error)
       setShowError(true)
@@ -278,25 +319,37 @@ export default function HelperLeadsPage() {
       // Show more specific error message
       let errorMsg = 'There was an error submitting your registration. Please try again or contact support.'
       
-      if (error && typeof error === 'object' && 'message' in error) {
-        console.error('Detailed error:', error)
-        const errorMessage = (error as any).message
-        
-        // Handle specific Supabase errors
-        if (errorMessage.includes('enum')) {
-          errorMsg = 'Service selection error. Please refresh the page and try again.'
-        } else if (errorMessage.includes('permission') || errorMessage.includes('RLS')) {
-          errorMsg = 'Database permission error. Please contact support.'
-        } else if (errorMessage.includes('duplicate') || errorMessage.includes('unique')) {
+      if (error && typeof error === 'object') {
+        const errAny = error as any
+        const errorMessage: string | undefined = errAny.message
+        const errorCode: string | undefined = errAny.code
+
+        // Handle specific Supabase/Postgres errors
+        if (errorCode === '23505' || (errorMessage && (
+          errorMessage.toLowerCase().includes('duplicate key') ||
+          errorMessage.toLowerCase().includes('unique') ||
+          errorMessage.toLowerCase().includes('duplicate')
+        ))) {
           errorMsg = 'This mobile number is already registered. Please use a different number.'
-        } else if (errorMessage.includes('schema') || errorMessage.includes('table')) {
+        } else if (errorMessage && errorMessage.includes('enum')) {
+          errorMsg = 'Service selection error. Please refresh the page and try again.'
+        } else if (errorMessage && (errorMessage.includes('permission') || errorMessage.includes('RLS'))) {
+          errorMsg = 'Database permission error. Please contact support.'
+        } else if (errorMessage && (errorMessage.includes('schema') || errorMessage.includes('table'))) {
           errorMsg = 'Database configuration error. Please contact support.'
-        } else {
+        } else if (errorMessage) {
           errorMsg = `Error: ${errorMessage}`
         }
       }
       
       setErrorMessage(errorMsg)
+      // Scroll to error banner for visibility
+      setTimeout(() => {
+        document.getElementById('error-message')?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        })
+      }, 0)
     } finally {
       setIsSubmitting(false)
     }
@@ -332,7 +385,7 @@ export default function HelperLeadsPage() {
 
           {/* Error Message */}
           {showError && (
-            <div className="m-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+            <div id="error-message" className="m-6 p-4 bg-red-50 border border-red-200 rounded-lg">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
@@ -393,6 +446,7 @@ export default function HelperLeadsPage() {
           </div>
 
           {/* Form */}
+          {!showSuccess && (
           <form onSubmit={handleSubmit} className="p-6 space-y-6">
             {/* Helper Name */}
             <div>
@@ -584,6 +638,7 @@ export default function HelperLeadsPage() {
               )}
             </button>
           </form>
+          )}
 
           {/* Footer */}
           <div className="bg-gray-50 px-6 py-4 text-center">

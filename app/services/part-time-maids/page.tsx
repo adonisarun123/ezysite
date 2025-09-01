@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 export default function PartTimeMaidsPage() {
   const services = [
     {
-      title: "Part-time Maid for Housekeeping",
-      description: "Keep your home neat and organised on your schedule.",
+      title: "Part-Time Maid for Housekeeping",
+      description: "Keep your home neat and tidy without the need for a full-time helper. Our part-time housekeeper ensures a clean and organized living space on your schedule.",
       icon: HomeIcon,
       features: [
         "Sweeping, mopping, and dusting",
@@ -38,11 +38,12 @@ export default function PartTimeMaidsPage() {
         "Bed-making and room organisation",
         "Surface cleaning and clutter removal"
       ],
-      expertise: "Trained in hygienic, time-efficient cleaning methods with flexible timing options."
+      expertise: "Trained in hygienic, time-efficient cleaning methods with flexible timing options.",
+      cta: "Book a Part-Time Housekeeper"
     },
     {
-      title: "Part-time Maid for Cooking", 
-      description: "Enjoy fresh, home-cooked meals at the hours you prefer.",
+      title: "Part-Time Maid for Cooking", 
+      description: "Enjoy fresh, home-cooked meals prepared at the hours you prefer. Our part-time cook ensures nutritious meals without daily kitchen stress.",
       icon: HeartIcon,
       features: [
         "Menu planning and basic grocery support (if required)",
@@ -51,11 +52,12 @@ export default function PartTimeMaidsPage() {
         "Kitchen cleaning and dishwashing after meals",
         "Maintaining overall kitchen hygiene"
       ],
-      expertise: "Skilled in various cuisines and dietary preferences with customisable timings."
+      expertise: "Skilled in various cuisines and dietary preferences with customisable timings.",
+      cta: "Hire a Part-Time Cook Today"
     },
     {
-      title: "Part-time Maid for Babysitting",
-      description: "Attentive child care exactly when you need it.",
+      title: "Part-Time Maid for Babysitting (Child Care)",
+      description: "Get attentive child care exactly when you need it. Our part-time babysitter supports your child’s daily routine with love and safety.",
       icon: CalendarDaysIcon,
       features: [
         "Feeding and hygiene care",
@@ -64,11 +66,12 @@ export default function PartTimeMaidsPage() {
         "Pickup and drop-off assistance (if applicable)",
         "Bedtime prep during evening shifts"
       ],
-      expertise: "Experienced in child safety, development, and emergency response during scheduled hours."
+      expertise: "Experienced in child safety, development, and emergency response during scheduled hours.",
+      cta: "Get a Part-Time Babysitter"
     },
     {
-      title: "Part-time Maid for Elderly Care",
-      description: "Compassionate, scheduled care for elders at home.",
+      title: "Part-Time Maid for Elderly Care",
+      description: "Support your elderly family members with compassionate, scheduled care. Our part-time elderly caretaker assists with daily routines respectfully and attentively.",
       icon: UserIcon,
       features: [
         "Bathing, dressing, and mobility support",
@@ -77,11 +80,12 @@ export default function PartTimeMaidsPage() {
         "Light housekeeping related to the elder’s space",
         "Assistance with doctor visits (if within timing)"
       ],
-      expertise: "Trained in senior care with flexible hours, prioritising dignity and comfort."
+      expertise: "Trained in senior care with flexible work hours, prioritising dignity and comfort.",
+      cta: "Book Part-Time Elder Care"
     },
     {
       title: "Part-Time Maid for Specific Tasks",
-      description: "Get focused help only for the chores you need.",
+      description: "Get help for just what you need, nothing more, nothing less. Our part-time maid for specific tasks is ideal for homes that need focused assistance with particular chores.",
       icon: SparklesIcon,
       features: [
         "Laundry and ironing",
@@ -90,7 +94,8 @@ export default function PartTimeMaidsPage() {
         "Cupboard and storage organisation",
         "Dishwashing and kitchen tidying"
       ],
-      expertise: "Skilled in recurring household chores, offering targeted and efficient help."
+      expertise: "Skilled in recurring household chores, offering targeted and efficient help.",
+      cta: "Get Specific Task Help"
     }
   ]
 
@@ -140,17 +145,18 @@ export default function PartTimeMaidsPage() {
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Looking for household help without a live-in commitment? Our experienced part-time maids visit your home for a few hours a day to take care of cleaning, cooking, childcare, elderly care, or specific tasks—based on your schedule and needs.
+                  Looking for household help without a live-in commitment? EzyHelpers connects you with experienced part-time maids who visit your home for a few hours a day to take care of cleaning, cooking, or other essential tasks, based on your schedule and needs. Get reliable, efficient help that fits your lifestyle.
                 </p>
 
                 {/* Key Benefits Pills */}
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   {[
-                    'Verified & Background-Checked Maids',
+                    'Verified & Background-Checked Part-Time Maids',
                     'Daily/Weekly Options',
                     'Replacement Guarantee Within 24 Hours',
-                    'Customizable Work Hours',
-                    'Trained in Home Hygiene Standards'
+                    'Customizable Work Hours Based on Your Schedule',
+                    'Fully Trained in Home Hygiene Standards',
+                    'Flexible Contract Options'
                   ].map((pill, i) => (
                     <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ {pill}</div>
                   ))}
@@ -162,7 +168,7 @@ export default function PartTimeMaidsPage() {
                     href="/hire-helper"
                     className="inline-flex items-center justify-center w-full bg-white text-accent-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-accent-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
                   >
-                    Book Flexible Part-Time Maid Near You
+                    Book a Part-Time Maid
                   </Link>
 
                   <Link
@@ -170,15 +176,15 @@ export default function PartTimeMaidsPage() {
                     className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
                   >
                     <PhoneIcon className="h-5 w-5 mr-2 shrink-0" />
-                    <span className="hidden sm:inline">Call +91 9972571005</span>
+                    <span className="hidden sm:inline">Call Us for Quick Assistance</span>
                     <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
 
                 {/* Quick Stats */}
-                <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+                <div className="grid grid-cols-4 gap-6 pt-8 border-t border-white/20">
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">2–6 Hrs</div>
+                    <div className="text-2xl font-bold text-white">2-6 Hrs</div>
                     <div className="text-accent-200 text-sm">Flexible Hours</div>
                   </div>
                   <div className="text-center lg:text-left">
@@ -188,6 +194,10 @@ export default function PartTimeMaidsPage() {
                   <div className="text-center lg:text-left">
                     <div className="text-2xl font-bold text-white">Privacy</div>
                     <div className="text-accent-200 text-sm">Respected</div>
+                  </div>
+                  <div className="text-center lg:text-left">
+                    <div className="text-2xl font-bold text-white">Flexible</div>
+                    <div className="text-accent-200 text-sm">Timings and Scheduling Options</div>
                   </div>
                 </div>
               </div>
@@ -229,6 +239,31 @@ export default function PartTimeMaidsPage() {
         </div>
       </section>
 
+      {/* Why Choose Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose EzyHelpers for Your Part-Time Maid Needs?</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">We offer trusted part-time house maid services with maximum flexibility and zero long-term stress.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              'Experienced and Verified Maids',
+              'Available for 2 to 6 Hours a Day',
+              'Daily, Weekly or Custom Visit Schedules',
+              'Affordable, Hour-Based Pricing',
+              'Quick Replacements if Needed',
+              'Transparent Service with No Hidden Costs'
+            ].map((benefit, index) => (
+              <div key={index} className="flex items-start space-x-3">
+                <CheckCircleIcon className="h-6 w-6 text-accent-600 mt-1 shrink-0" />
+                <span className="text-gray-700 font-medium">{benefit}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services Offered */}
       <section className="section-padding bg-background-secondary">
         <div className="container-custom">
@@ -264,6 +299,14 @@ export default function PartTimeMaidsPage() {
                       {service.expertise && (
                         <p className="text-gray-600 text-sm mt-3"><span className="font-semibold text-gray-900">Expertise:</span> {service.expertise}</p>
                       )}
+                      {service.cta && (
+                        <div className="mt-4">
+                          <Link href="/hire-helper" className="inline-flex items-center text-accent-700 font-semibold hover:underline">
+                            {service.cta}
+                            <ArrowRightIcon className="h-4 w-4 ml-1" />
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -278,7 +321,7 @@ export default function PartTimeMaidsPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Who Needs a Part-Time Maid?</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Ideal for consistent help without a live-in arrangement.</p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Part-time maids are an excellent solution for households that require consistent help but do not need a live-in arrangement. Here’s who can benefit the most:</p>
           </div>
           <div className="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-8 border border-gray-100">
             <ul className="grid md:grid-cols-2 gap-3">
@@ -286,7 +329,7 @@ export default function PartTimeMaidsPage() {
                 'Working professionals with limited time for household chores.',
                 'Small families who need occasional help with cleaning or cooking.',
                 'Individuals seeking flexible support for specific tasks.',
-                'Anyone looking for a well-maintained home without a full-time commitment.'
+                'Anyone looking for a well-maintained home without a full-time commitment'
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start text-gray-700">
                   <CheckCircleIcon className="h-5 w-5 text-accent-600 mt-0.5 mr-2" />
@@ -308,10 +351,10 @@ export default function PartTimeMaidsPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: '1', title: 'Consultation', description: 'Discuss your needs and choose the service and preferred timings.' },
-              { step: '2', title: 'Maid Shortlisting', description: 'We match you with 2–3 verified candidates based on your preferences.' },
-              { step: '3', title: 'Interview & Selection', description: 'Speak with shortlisted maids via phone or in-person to select the best fit.' },
-              { step: '4', title: 'Smooth Onboarding', description: 'We handle documentation and support you during onboarding.' },
+              { step: '1', title: 'Consultation', description: 'Discuss your needs with our team and choose the type of part-time maid service you want, along with preferred timings.' },
+              { step: '2', title: 'Maid Shortlisting', description: 'We match you with 2–3 verified candidates based on your preferences, required hours, and location.' },
+              { step: '3', title: 'Interview & Selection', description: 'Connect with shortlisted maids via call or in-person interviews to find the best fit.' },
+              { step: '4', title: 'Smooth Onboarding', description: 'Once selected, we handle the documentation, and your maid begins. Our support team stays in touch throughout.' },
             ].map((p, i) => (
               <div key={i} className="text-center">
                 <div className="w-16 h-16 bg-accent-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">{p.step}</div>
@@ -327,25 +370,25 @@ export default function PartTimeMaidsPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Things to Know Before Hiring a Part-Time Maid</h2>
-            <p className="text-lg text-gray-600">Everything you should know to make the right hiring decision.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Things to Know Before Hiring a Full-Time Maid</h2>
+            <p className="text-lg text-gray-600">Everything You Should Know to Make the Right Hiring Decision</p>
           </div>
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
               <h3 className="text-lg font-bold text-gray-900 mb-2">1. Work Schedule Clarity</h3>
-              <p className="text-gray-700">Clearly outline duty hours, tasks, and schedule preferences (e.g., 3 hours daily, 3 times a week).</p>
+              <p className="text-gray-700">Clearly outline expectations around duty hours, specific tasks, and schedule preferences (e.g., 3 hours daily, 3 times a week) to ensure a smooth working relationship.</p>
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
               <h3 className="text-lg font-bold text-gray-900 mb-2">2. Timings & Work Hours</h3>
-              <p className="text-gray-700">Part-time maids are available for 2–6 hours per day. Fix a clear daily schedule.</p>
+              <p className="text-gray-700">Part-time maids are available for 2–6 hours per day, depending on the task and your requirements. Fix a clear daily schedule.</p>
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
               <h3 className="text-lg font-bold text-gray-900 mb-2">3. Defined Responsibilities</h3>
-              <p className="text-gray-700">Discuss and agree on duties in advance. Avoid tasks beyond scope or outside the shift.</p>
+              <p className="text-gray-700">Clearly discuss and agree on duties in advance. Do not expect the maid to handle tasks beyond what was discussed or outside her shift.</p>
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
               <h3 className="text-lg font-bold text-gray-900 mb-2">4. Weekly Offs</h3>
-              <p className="text-gray-700">Most part-time maids prefer one day off per week—confirm it in advance and plan accordingly.</p>
+              <p className="text-gray-700">Most part-time maids prefer one day off per week, typically Sunday. Confirm the day off in advance and plan accordingly.</p>
             </div>
           </div>
         </div>
@@ -362,16 +405,16 @@ export default function PartTimeMaidsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {[
-                { question: 'What is a part-time maid service?', answer: 'A part-time maid is a trained helper who comes to your home for a few hours each day to handle tasks like cleaning, cooking, babysitting, elderly care, or specific chores. Unlike live-in or full-time maids, they work fixed hours and leave after their shift.' },
-                { question: 'How many hours do part-time maids work per day?', answer: 'Part-time maids usually work 2–6 hours a day. You can set a schedule that works for you—daily, alternate days, or a few days a week.' },
-                { question: 'What services do part-time maids provide?', answer: 'Housekeeping (sweeping, mopping, dusting, kitchen/bathroom cleaning, laundry), Cooking (meal planning, prep, cooking, kitchen cleaning), Babysitting (feeding, supervision, homework help, school pickup/drop), Elderly care (bathing, dressing, medication reminders, companionship), Specific tasks (ironing, dishwashing, bathroom cleaning, organising).' },
-                { question: 'How much does a part-time maid cost?', answer: 'Pricing depends on hours and service type. We offer affordable hourly rates with no hidden charges and flexible plans.' },
-                { question: 'Are part-time maids background verified?', answer: 'Yes. We verify ID, experience, and references; additional checks can be arranged if needed.' },
-                { question: 'Can I schedule visits weekly instead of daily?', answer: 'Absolutely. Choose from daily, weekly, or customised schedules to suit your home and budget.' },
-                { question: 'What happens if my part-time maid does not show up?', answer: 'We arrange a quick replacement—typically within 24 hours—so your routine isn’t disrupted.' },
-                { question: 'Do part-time maids work on Sundays?', answer: 'Most prefer one weekly day off (often Sunday). If you need Sunday service, we will try to match availability.' },
-                { question: 'Can I hire a part-time maid for specific tasks only?', answer: 'Yes. You can hire for focused tasks like bathroom cleaning, ironing, or dishwashing.' },
-                { question: 'Are duties fixed in advance?', answer: 'Yes. All tasks are discussed and agreed upon before work starts to avoid confusion later.' },
+                { question: 'What is a part-time maid service?', answer: 'A part-time maid service means you get a trained house helper who comes to your home for a few hours each day. They handle things like cleaning, cooking, or babysitting, depending on what you need. Unlike a full-time or live-in maid, a part-time maid works for a fixed number of hours and goes home after their shift, giving you the support you need without a long-term stay.' },
+                { question: 'How many hours do part-time maids work per day?', answer: 'Part-time maids usually work between 2 to 6 hours a day. The exact number of hours depends on your requirements and the tasks you want them to do. You can set a schedule that works for you, daily, alternate days, or even just a few days a week.' },
+                { question: 'What services do part-time maids provide?', answer: 'Part-time maids offer different types of help based on your needs. We provide:\n\n- Housekeeping: Sweeping, mopping, dusting, kitchen and bathroom cleaning, laundry, and room organisation\n- Cooking: Meal planning, food prep, cooking, and kitchen cleaning\n- Babysitting: Feeding, child supervision, homework help, and school pickup or drop-off\n- Elderly care: Bathing, dressing, medication reminders, and emotional support\n- Specific tasks: Like laundry, dishwashing, bathroom cleaning, or organizing storage areas\n  So, whether you need help every day or just with a few chores, a part-time house maid can be the right fit.' },
+                { question: 'How much does a part-time maid cost?', answer: 'The cost of a part-time maid depends on how many hours you need help and the type of service you choose. EzyHelpers offers affordable hourly rates with no hidden charges. You can choose from daily, weekly, or customized plans based on your home’s needs.' },
+                { question: 'Are part-time maids’ backgrounds verified?', answer: 'Yes, every part-time maid provided by EzyHelpers is 100 per cent background verified. We check their ID, past experience, and references and also make sure they’re trained in home hygiene. Your safety and trust come first.' },
+                { question: 'Can I schedule part-time maid visits weekly instead of daily?', answer: 'Absolutely. You can choose how often you want a part-time maid to come. Some customers need daily visits, while others prefer 2 or 3 times a week. The service is flexible; you can set a routine that suits your home and budget.' },
+                { question: 'What happens if my part-time maid does not show up?', answer: 'If your assigned part-time maid is absent or unavailable, we’ll arrange a replacement within 24 hours. EzyHelpers takes punctuality seriously, and we make sure your home tasks don’t get delayed.' },
+                { question: 'Do part-time maids work on Sundays?', answer: 'Most part-time maids take one weekly day off, and that’s usually Sunday. But if you need service on Sundays, we can try to match you with someone available. It’s best to confirm this during the booking.' },
+                { question: 'Can I hire a part-time maid for specific household tasks only?', answer: 'Yes, of course. You can hire a part-time maid for just one task like bathroom cleaning, ironing, or dishwashing. These are called specific-task services and are great if you don’t need help with everything, just one or two chores.' },
+                { question: 'Are duties of part-time maids fixed in advance?', answer: 'Yes, all tasks are discussed and agreed upon before the maid starts work. This helps avoid confusion later. For example, if you hire a maid for cooking, she won’t be expected to also do laundry unless that was decided upfront.' },
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
                   <details className="group">
@@ -402,13 +445,13 @@ export default function PartTimeMaidsPage() {
       <section className="section-padding bg-accent-600 text-white text-center">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">Find a Trusted Part-Time Maid with EzyHelpers</h2>
-          <p className="text-xl text-accent-100 mb-8 max-w-3xl mx-auto">Whether you need daily cleaning, weekly deep-cleaning, or occasional kitchen support, we’ve got the right helper for you.</p>
+          <p className="text-xl text-accent-100 mb-8 max-w-3xl mx-auto">Save your time and energy with reliable part-time house maids who help you manage daily chores on your terms. Whether you need daily cleaning, weekly deep-cleaning, or occasional kitchen support, we’ve got the right helper for you.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto px-4">
             <Link
               href="/hire-helper"
               className="inline-flex items-center justify-center w-full bg-white text-accent-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-accent-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
             >
-              Book a Part-Time Maid
+              Book Your Part-Time Maid Today
             </Link>
 
             <Link
@@ -416,7 +459,7 @@ export default function PartTimeMaidsPage() {
               className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
             >
               <PhoneIcon className="h-5 w-5 mr-2 shrink-0" />
-              <span className="hidden sm:inline">Call for Quick Assistance</span>
+              <span className="hidden sm:inline">Call for Quick Booking</span>
               <span className="sm:hidden">+91 9972571005</span>
             </Link>
           </div>
@@ -509,7 +552,7 @@ export default function PartTimeMaidsPage() {
                     {/* Enhanced Learn More */}
                     <div className="flex items-center justify-between">
                       <span className={`${service.iconColor} group-hover:text-white font-semibold transition-colors duration-300`}>
-                        Learn More About {service.title}
+                        {index === 0 ? 'Learn More About Full-Time Maid' : index === 1 ? 'Learn More About On-Demand Services' : 'Learn More About Driver Services'}
                       </span>
                       <ArrowRightIcon className={`h-5 w-5 ${service.iconColor} group-hover:text-white group-hover:translate-x-1 transition-all duration-300`} />
                     </div>

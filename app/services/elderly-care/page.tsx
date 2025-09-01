@@ -122,8 +122,8 @@ export default function ElderlyCare() {
                   </Link>
                   <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Call: +91 9972571005</span>
-                    <span className="sm:hidden">+91 9972571005</span>
+                    <span className="hidden sm:inline">Call Now</span>
+                    <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
 
@@ -212,7 +212,7 @@ export default function ElderlyCare() {
               Comprehensive Senior Care Services
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Professional elderly care services designed to support independence and enhance quality of life
+              Professional elderly care services are designed to support independence and enhance quality of life
             </p>
           </div>
 
@@ -383,7 +383,7 @@ export default function ElderlyCare() {
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-teal-600 to-cyan-700 text-white text-center">
         <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
+          <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">
             Give Your Loved Ones the Care They Deserve
           </h2>
           <p className="text-xl text-teal-100 mb-8 max-w-3xl mx-auto">
@@ -393,10 +393,10 @@ export default function ElderlyCare() {
             <Link href="/hire-helper" className="btn-secondary bg-white text-teal-600 hover:bg-gray-100 text-lg px-8 py-4">
               Book Compassionate Care
             </Link>
-            <Link href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-4">
+            <Link href="tel:+919972571005" className="btn-secondary border-white bg-transparent text-white hover:bg-white/10 text-lg px-8 py-4">
               <PhoneIcon className="h-5 w-5 mr-2" />
               <span className="hidden sm:inline">Call +91 9972571005</span>
-              <span className="sm:hidden">Call Now</span>
+              <span className="sm:hidden">Call +91 9972571005</span>
             </Link>
           </div>
         </div>

@@ -97,7 +97,7 @@ export default function DriversPage() {
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  Reliable, Safe, and Trusted Driver Services for Every Need. From daily commutes to special occasions, our verified drivers ensure comfortable and secure travel.
+                  Travel with confidence using our professional driver services. Licensed, experienced drivers for all your transportation needs, from daily commutes to special occasions.
                 </p>
 
                 {/* Assurance Badges */}
@@ -115,8 +115,8 @@ export default function DriversPage() {
                   </Link>
                   <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Call: +91 9972571005</span>
-                    <span className="sm:hidden">+91 9972571005</span>
+                    <span className="hidden sm:inline">Call Now</span>
+                    <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
 
@@ -174,6 +174,75 @@ export default function DriversPage() {
         </div>
       </section>
 
+      {/* Qualified & Professional Drivers */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Qualified & Professional Drivers</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Valid Driving License</h3>
+              <p className="text-gray-700">All drivers possess valid licenses with clean driving records and experience</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Background Verification</h3>
+              <p className="text-gray-700">Comprehensive police verification and reference checks for safety assurance</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Defensive Driving Training</h3>
+              <p className="text-gray-700">Trained in safe driving practices, traffic rules, and emergency response</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Local Area Knowledge</h3>
+              <p className="text-gray-700">Familiar with city routes, traffic patterns, and efficient navigation</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Professional Conduct</h3>
+              <p className="text-gray-700">Courteous, punctual, and maintain professional behavior at all times</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Vehicle Maintenance</h3>
+              <p className="text-gray-700">Basic vehicle maintenance knowledge and coordination with service centers</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Service Features */}
+      <section className="section-padding bg-background-secondary">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Additional Service Features</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">GPS Navigation</h3>
+              <p className="text-gray-700">Modern navigation tools for efficient route planning and time management</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Fuel Management</h3>
+              <p className="text-gray-700">Efficient fuel consumption and coordination with fuel stations</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Vehicle Security</h3>
+              <p className="text-gray-700">Secure parking and basic vehicle security measures during service</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Multi-Language Support</h3>
+              <p className="text-gray-700">Drivers comfortable with local languages and basic English communication</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Flexible Scheduling</h3>
+              <p className="text-gray-700">Adaptable to changing schedules and last-minute transportation needs</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Emergency Assistance</h3>
+              <p className="text-gray-700">Breakdown assistance coordination and emergency contact protocols</p>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Why Choose Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
@@ -260,7 +329,7 @@ export default function DriversPage() {
               },
               {
                 title: "On-Demand Drivers",
-                description: "Flexible transportation for specific trips, special occasions, airport transfers, and on an as-needed basis.",
+                description: "Flexible transportation for specific trips, special occasions, airport transfers, and an as-needed basis.",
                 features: ["Trip-based service", "Flexible timing", "Special occasions", "Emergency calls"]
               }
             ].map((service, index) => (
@@ -441,7 +510,7 @@ export default function DriversPage() {
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center">
         <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
+          <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">
             Travel Safely with Professional Drivers
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
@@ -452,7 +521,7 @@ export default function DriversPage() {
               Hire a Professional Driver
             </Link>
 
-            <Link href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-4">
+            <Link href="tel:+919972571005" className="btn-secondary border-white bg-transparent text-white hover:bg-white/10 text-lg px-8 py-4">
               <PhoneIcon className="h-5 w-5 mr-2" />
               Call +91 9972571005
             </Link>
