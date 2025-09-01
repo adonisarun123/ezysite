@@ -20,9 +20,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'House Appliance Repairs in Bareilly - Same-Day Technicians',
-  description: 'Need house appliance repairs in Bareilly? We fix washing machines, fridges, ovens, and more with expert technicians and fast service.',
-  keywords: 'appliance repair bareilly, washing machine repair bareilly, fridge repair bareilly, ac repair bareilly, tv repair bareilly, home appliance repair',
+  title: 'Expert Home Appliance Repair Services - Same-Day, Transparent Pricing',
+  description: 'Fast, reliable appliance repair at your doorstep. Same-day service with transparent pricing and guaranteed satisfaction.',
+  keywords: 'appliance repair, refrigerator repair, washing machine repair, microwave oven repair, AC repair, gas stove repair, geyser repair, TV repair, chimney repair, home appliance service',
 }
 
 export default function ApplianceRepairPage() {
@@ -34,99 +34,91 @@ export default function ApplianceRepairPage() {
 
   const applianceServices = [
     {
-      title: "Refrigerator Repairs",
-      description: "Quick fix for cooling issues, freezer problems, or gas filling to keep your food safe and fresh.",
+      title: "Refrigerator Repair",
+      description: "Expert refrigerator technicians offer fast, reliable repair for all major problems, ensuring your fridge works efficiently.",
       icon: BeakerIcon,
-      features: ["Cooling Issues", "Freezer Problems", "Gas Filling", "Compressor Repairs"]
+      features: ["Cooling Issues", "Gas Leaks", "Temperature Control", "All Brands"]
     },
     {
-      title: "Washing Machine Repairs",
-      description: "Solve drain errors, spin troubles, or motor failures for hassle-free laundry.",
+      title: "Washing Machine Repair",
+      description: "Quick and effective repair services for top-load, front-load, and semi-automatic models.",
       icon: SparklesIcon,
-      features: ["Drain Errors", "Spin Problems", "Motor Failures", "Control Panel Issues"]
+      features: ["Drainage Problems", "Spin Cycle Errors", "Motor Faults", "All Models"]
     },
     {
-      title: "Microwave Repairs",
-      description: "Heating problems, broken buttons, and power issues handled safely and fast.",
+      title: "Microwave Oven Repair",
+      description: "Handle all types of oven repairs, including electrical malfunctions and component failures.",
       icon: FireIcon,
-      features: ["Heating Problems", "Button Repairs", "Power Issues", "Door Fixes"]
+      features: ["Uneven Heating", "Turntable Issues", "Panel Replacement", "All Brands"]
     },
     {
-      title: "AC Repairs",
-      description: "Reliable summer cooling, gas refills, servicing, and leak fixes to beat Bareilly heat.",
+      title: "Air Conditioner Repair",
+      description: "AC repair experts handle all split and window units with quick, local service.",
       icon: BoltIcon,
-      features: ["Cooling Issues", "Gas Refills", "Leak Fixes", "Regular Service"]
+      features: ["Gas Refills", "Cooling Issues", "Installation", "Maintenance"]
     },
     {
-      title: "Gas Stove Repairs",
-      description: "Burner problems, gas leaks, or ignition faults are checked by trained pros.",
+      title: "Gas Stove Repair",
+      description: "Skilled technicians deliver fast and safe repairs to restore your gas stove's performance.",
       icon: FireIcon,
-      features: ["Burner Issues", "Gas Leaks", "Ignition Faults", "Safety Checks"]
+      features: ["Burner Ignition", "Gas Leakage", "Safety Checks", "Performance"]
     },
     {
-      title: "Geyser Repairs",
-      description: "Instant water heater service and element replacement for hot water anytime.",
+      title: "Geyser Repair",
+      description: "Professionals replace faulty heating elements and thermostats to get your geyser working again.",
       icon: BeakerIcon,
-      features: ["Element Repairs", "Thermostat Issues", "Installation", "Safety Checks"]
+      features: ["Heating Elements", "Thermostats", "Temperature Fix", "Hot Water"]
     },
     {
-      title: "TV Repairs",
-      description: "Fix picture, sound, or display issues without long downtime or confusion.",
+      title: "TV Repair",
+      description: "Efficient TV repair solutions across all major brands and models for any issues.",
       icon: TvIcon,
-      features: ["Picture Issues", "Sound Problems", "Display Fixes", "Smart TV Support"]
+      features: ["Screen Issues", "Audio Problems", "Power Issues", "All Brands"]
     },
     {
-      title: "Chimney Repairs",
-      description: "Chimney cleaning, motor issues, and smoke leakage solutions for healthy kitchens.",
+      title: "Chimney Repair",
+      description: "Repair suction motors, clean filters, and restore airflow performance for cleaner kitchen.",
       icon: HomeIcon,
-      features: ["Motor Issues", "Smoke Leakage", "Deep Cleaning", "Filter Change"]
-    },
-    {
-      title: "Cooler Repairs",
-      description: "Popular Bareilly cooling solution repaired for smooth airflow and fresh summer comfort.",
-      icon: WrenchScrewdriverIcon,
-      features: ["Motor Repairs", "Pump Issues", "Pad Replacement", "Regular Service"]
-    },
-    {
-      title: "Hard Water Solutions",
-      description: "Stop damage to washing machines and RO units with proper descaling and service.",
-      icon: BeakerIcon,
-      features: ["Descaling", "Filter Change", "Maintenance", "Performance Check"]
+      features: ["Suction Motors", "Filter Cleaning", "Airflow", "Kitchen Safety"]
     }
   ]
 
   const faqs = [
     {
-      question: "What types of house appliance repairs are available in Bareilly?",
-      answer: "EzyHelpers offers complete house appliance repairs in Bareilly for refrigerators, washing machines, microwaves, air conditioners, geysers, gas stoves, fans, and more. Whether your appliance has stopped working or is showing signs of a problem, our skilled home appliance technicians in Bareilly provide reliable same-day repair services with genuine parts and proper tools."
+      question: "Can I get same-day appliance repair at home?",
+      answer: "Yes, EzyHelpers offers same-day appliance repair service in most Indian cities. If you book early, we can usually send a technician within a few hours. It's perfect for urgent problems like a non-working fridge, washing machine, or AC, especially during summer or busy days."
     },
     {
-      question: "How fast can I get a home appliance technician in Bareilly?",
-      answer: "With EzyHelpers, you can get a verified home appliance technician in Bareilly within 2 hours. We offer same-day appliance repair services for urgent issues. Our team responds quickly and arrives fully equipped to repair everything from fridges and washing machines to ACs and geysers."
+      question: "What types of appliances do you repair at home?",
+      answer: "We repair all major home appliances, including refrigerators, washing machines, ACs, microwaves, geysers, kitchen chimneys, dishwashers, and TVs. Our experienced technicians can handle common issues and support most Indian households with reliable doorstep service for popular appliance models and brands."
     },
     {
-      question: "What kinds of kitchen appliances do you repair?",
-      answer: "We repair a variety of kitchen appliances, including gas stoves, chimneys, microwaves, and RO water purifiers. Whether it's burner problems, chimney smoke leaks, or broken heating elements, our technicians offer complete kitchen appliance solutions."
+      question: "Do you offer emergency appliance repair services near me?",
+      answer: "Yes, we provide emergency appliance repair services in case of urgent breakdowns like fridge failure or AC not cooling. Just call us, and we'll try to send a nearby technician as quickly as possible based on your area and service availability."
     },
     {
-      question: "Can you help with emergency appliance repairs in Bareilly?",
-      answer: "Yes, we offer emergency appliance repair service in Bareilly. Whether it's a sudden fridge breakdown or a geyser failure at night, our technicians respond quickly to restore your appliance."
+      question: "Which appliance brands do your technicians service?",
+      answer: "Our appliance technicians repair all major brands such as LG, Samsung, Whirlpool, IFB, Bosch, Godrej, Haier, Voltas, and more. Whether it's a high-end or budget model, we have experts certified to fix issues across most Indian and international appliance brands."
     },
     {
-      question: "Can I schedule a home appliance repair at a convenient time in Bareilly?",
-      answer: "Yes, EzyHelpers allows flexible scheduling for appliance repair in Bareilly. You can choose your preferred day and time, and our technician will arrive accordingly with all necessary tools and parts."
+      question: "Is doorstep appliance repair service available?",
+      answer: "Yes, our appliance repair service is 100% doorstep-based. The technician visits your home with the required tools and spare parts. You don’t need to carry the appliance anywhere; everything is checked, repaired, and tested at your location for maximum convenience."
     },
     {
-      question: "Do you offer repair services for both new and old appliances?",
-      answer: "Yes, we repair both new and old appliances in Bareilly. Our home appliance technicians are skilled in handling outdated models as well as the latest smart appliances, providing safe and lasting solutions."
+      question: "How do I know if my appliance should be repaired or replaced?",
+      answer: "Our technician will inspect the appliance and give an honest opinion. If repair is cost-effective and safe, we proceed. If not, we may suggest replacement. Your long-term savings, safety, and convenience always guide our recommendations."
     },
     {
-      question: "What happens if an appliance can't be repaired immediately?",
-      answer: "If an appliance needs additional parts or time, our technician will inform you clearly. We prioritise transparency and will schedule a quick follow-up visit to complete the repair at your convenience."
+      question: "Is the inspection or diagnosis free before repair?",
+      answer: "Yes, we offer free inspection for most appliance repairs. The technician checks the problem, explains the solution, and gives you a price estimate before starting the repair. This helps you decide confidently without any upfront commitment."
     },
     {
-      question: "Can I get a multi-appliance repair service in a single visit?",
-      answer: "Yes, you can request repairs for multiple appliances in a single visit in Bareilly. Just let us know in advance, and we will send a technician prepared to handle multiple tasks."
+      question: "Can you repair old or discontinued appliances?",
+      answer: "Yes, we repair older appliances if spare parts are still available. Our appliance repair technicians are skilled in handling discontinued or vintage models and will let you know if the repair is practical or if replacement makes more sense."
+    },
+    {
+      question: "Do you provide installation services for new appliances?",
+      answer: "Yes, we offer professional installation for appliances like air conditioners, geysers, washing machines, and kitchen chimneys. Our technicians ensure proper connections, safe setup, and full testing so the appliance works correctly from the start."
     }
   ]
 
@@ -151,7 +143,7 @@ export default function ApplianceRepairPage() {
               <span className="text-sm font-semibold">Expert Appliance Repair</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
               Expert Home Appliance
               <span className="block bg-gradient-to-r from-white to-red-100 bg-clip-text text-transparent">
                 Repair Services
@@ -199,6 +191,8 @@ export default function ApplianceRepairPage() {
         </div>
       </section>
 
+      
+
       {/* Why Choose Us */}
       <section className="section-padding bg-white">
         <div className="container-custom">
@@ -207,7 +201,7 @@ export default function ApplianceRepairPage() {
               Why Choose EzyHelpers for Appliance Repair?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Trust, speed, and professional excellence combined to become your go-to provider for home appliance repair services
+              Dependable, skilled, and quick, your all-in-one solution for appliance repair needs.
             </p>
           </div>
 
@@ -321,7 +315,7 @@ export default function ApplianceRepairPage() {
               },
               {
                 step: "2", 
-                title: "Pick Convenient Time",
+                title: "Pick a Convenient Time",
                 description: "Choose a date and time slot that fits your schedule perfectly"
               },
               {
@@ -351,42 +345,24 @@ export default function ApplianceRepairPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="section-padding bg-gray-50">
+      {/* Maintenance Tips Section */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Frequently Asked Questions
+              Extend the Life of Your Appliances with Simple Maintenance Tips
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Common questions about our appliance repair services
-            </p>
           </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
-                  <details className="group">
-                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
-                        {faq.question}
-                      </h3>
-                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </details>
-                </div>
-              ))}
-            </div>
+          <div className="max-w-4xl mx-auto space-y-6 text-lg text-gray-700">
+            <p>
+              At EzyHelpers, we believe that timely repairs combined with regular maintenance can greatly extend the lifespan of your home appliances. While our expert technicians are always ready to handle breakdowns, following a few easy care tips at home can help prevent many common issues. Routine cleaning and proper usage not only improve appliance performance but also reduce energy consumption and lower the risk of major failures.
+            </p>
+            <p>
+              For example, regularly wiping down refrigerator door seals and vacuuming condenser coils can prevent cooling problems and increase energy efficiency. Washing machines benefit from monthly drum cleaning using hot water and mild cleaning agents like vinegar to remove soap scum and avoid unpleasant smells. Keeping the microwave interior clean and ensuring proper ventilation during use helps avoid electrical issues. In the case of air conditioners, cleaning or replacing filters monthly ensures better airflow and cooling. Even small actions like not overloading your washing machine or dishwasher can protect the motor and prevent wear and tear.
+            </p>
+            <p>
+              During our repair visits, our appliance technicians are happy to share specific maintenance tips suited to your brand and model. These small, regular habits can go a long way in keeping your appliances efficient, safe, and long-lasting.
+            </p>
           </div>
         </div>
       </section>
@@ -400,7 +376,7 @@ export default function ApplianceRepairPage() {
 
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-display">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-6 font-display">
               Don't Let Broken Appliances Slow You Down!
             </h2>
             <p className="text-xl text-red-100 mb-10 leading-relaxed">
@@ -423,8 +399,64 @@ export default function ApplianceRepairPage() {
           </div>
         </div>
       </section>
-      
+      {/* Explore Other Services */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Trusted experts for every corner of your home.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Carpenter Services</h3>
+              <p className="text-gray-600 mb-3">Custom furniture, repairs, and fittings by skilled local carpenters.</p>
+              <Link href="/services/carpenter" className="text-red-700 font-medium hover:underline">Learn about Carpenter Services</Link>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Electrician Services</h3>
+              <p className="text-gray-600 mb-3">Expert electricians for all your home wiring and appliance power needs.</p>
+              <Link href="/services/electrician" className="text-red-700 font-medium hover:underline">Learn about Electrician Services</Link>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Gardener Services</h3>
+              <p className="text-gray-600 mb-3">Maintain a beautiful home garden with experienced gardening help.</p>
+              <Link href="/services/gardener" className="text-red-700 font-medium hover:underline">Learn about Gardener Services</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                  <details className="group">
+                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </details>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   )
-} 
+}

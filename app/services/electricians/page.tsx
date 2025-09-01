@@ -19,9 +19,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Trusted Electrician in Bareilly - Fast Home Fixes',
-  description: 'Looking for an electrician in Bareilly? Book expert service for fan fittings, switches, wiring issues, and power problems at your home.',
-  keywords: 'electrician bareilly, electrical repair bareilly, home wiring bareilly, electrical services bareilly',
+  title: 'Expert Electrician Services at Your Doorstep',
+  description: 'Certified electricians for safe installations, repairs, and maintenance. Quick response, fair pricing, and peace of mind guaranteed.',
+  keywords: 'electrician services, electrical repair, home wiring, electrical maintenance, lighting installation, appliance installation, emergency electrician',
 }
 
 export default function ElectriciansPage() {
@@ -33,95 +33,89 @@ export default function ElectriciansPage() {
 
   const electricianServices = [
     {
-      title: "House Wiring",
-      description: "We handle complete home wiring or rewiring with proper insulation and safety for old and new constructions.",
+      title: 'Electrical Repair Services',
+      description: 'Fix broken switches, flickering lights, and overloads safely and quickly with trained electricians.',
       icon: WrenchScrewdriverIcon,
-      features: ["Complete Wiring", "Safety Standards", "Proper Insulation", "New & Old Homes"]
+      features: ['Switch Repair', 'Light Fixing', 'Overload Solutions', 'Quick Service']
     },
     {
-      title: "Switch/Socket Repairs",
-      description: "Our electricians fix loose switches, burnt sockets, and wiring faults to restore safe and stable power access.",
-      icon: WrenchScrewdriverIcon,
-      features: ["Switch Repairs", "Socket Fixes", "Wiring Faults", "Safe Access"]
-    },
-    {
-      title: "Fan & Light Installation",
-      description: "Proper installation of ceiling fans, decorative lights, and chandeliers with safe wiring and correct mounting support.",
-      icon: LightBulbIcon,
-      features: ["Fan Installation", "Light Fitting", "Safe Wiring", "Secure Mounting"]
-    },
-    {
-      title: "Circuit Breaker Repair",
-      description: "Resolve frequent MCB or ELCB tripping and upgrade faulty breakers to avoid electrical hazards and power disruption.",
-      icon: ExclamationTriangleIcon,
-      features: ["MCB Repair", "ELCB Fix", "Trip Prevention", "Safety Upgrade"]
-    },
-    {
-      title: "Electrical Safety Check",
-      description: "We inspect wires, boards, and load capacity to prevent shocks and fire risks and ensure home safety compliance.",
+      title: 'Electrical Maintenance',
+      description: 'Regular checks, load tests, and surge protection to prevent problems and keep power steady.',
       icon: ShieldCheckIcon,
-      features: ["Wire Inspection", "Board Check", "Load Testing", "Risk Prevention"]
+      features: ['Regular Checks', 'Load Tests', 'Surge Protection', 'Preventive Care']
     },
     {
-      title: "Inverter/UPS Installation",
-      description: "Get a reliable inverter or UPS setup with professional load assessment and wiring for an uninterrupted backup power supply.",
-      icon: BoltIcon,
-      features: ["Load Assessment", "Safe Setup", "Backup Power", "Proper Wiring"]
+      title: 'Electrical Installations',
+      description: 'Safely install fans, lights, ACs, geysers, and smart devices set up right for your home.',
+      icon: LightBulbIcon,
+      features: ['Fan Installation', 'AC Setup', 'Smart Devices', 'Safe Setup']
     },
     {
-      title: "Generator Setup",
-      description: "We provide expert installation and maintenance of home generators for safe, continuous power during outages in Bareilly.",
+      title: 'Residential Electrical Services',
+      description: 'Complete home electrical setups and system upgrades for renovations or new wiring needs.',
       icon: HomeIcon,
-      features: ["Safe Install", "Power Backup", "Regular Service", "Load Balance"]
+      features: ['Home Wiring', 'System Upgrades', 'Renovation Support', 'Complete Setup']
     },
     {
-      title: "Emergency Electrical Repairs",
-      description: "Our electricians are available 24/7 in Bareilly to fix sudden outages, sparks, or wiring problems on priority.",
+      title: 'Emergency Electrician Services',
+      description: 'Quick help for sudden power failures or electrical issues, fixing problems fast when needed most.',
+      icon: ExclamationTriangleIcon,
+      features: ['24/7 Service', 'Quick Response', 'Power Restoration', 'Emergency Fixes']
+    },
+    {
+      title: 'Lighting Installation',
+      description: 'Energy-saving LED lights that brighten your home and cut down electricity bills.',
+      icon: LightBulbIcon,
+      features: ['LED Lighting', 'Energy Saving', 'Bright Homes', 'Bill Reduction']
+    },
+    {
+      title: 'Appliance Installation',
+      description: 'Safely connect home appliances, protecting them from power surges for long-lasting performance.',
       icon: BoltIcon,
-      features: ["24/7 Service", "Quick Response", "Priority Fix", "Safety First"]
+      features: ['Safe Connection', 'Surge Protection', 'Long-lasting', 'Professional Setup']
     }
   ]
 
   const faqs = [
     {
-      question: "Do you offer same-day electrical repair services in Bareilly?",
-      answer: "Yes, we offer same-day electrical repair services in Bareilly. Our skilled electricians provide fast service with transparent pricing and complete solutions for urgent electrical problems."
+      question: "Are EzyHelpers' electricians certified and licensed?",
+      answer: "Yes, all our electricians are licensed and certified as per Indian electrical safety norms. They are experienced in residential and commercial wiring, repairs, and installations, ensuring your home or business stays safe and compliant."
     },
     {
-      question: "Do electricians in Bareilly handle house wiring services?",
-      answer: "Yes, electricians in Bareilly are available for house wiring services, including safe installation and repairs for both old and new homes. Our certified electricians handle complete house wiring with proper safety standards and modern electrical codes."
+      question: "Can I book an electrician for same-day service?",
+      answer: "Yes, EzyHelpers offers same-day electrician service for urgent issues. Whether it’s a fuse problem or sudden power failure, our nearby electricians can reach your home quickly and fix it on the spot."
     },
     {
-      question: "Can I get same-day electrical repair services in Bareilly?",
-      answer: "Yes, you can get same-day electrical repair services in Bareilly through EzyHelpers. Our skilled electricians provide fast service for switch repairs, fan installations, wiring issues, and other electrical problems with transparent pricing."
+      question: "What common electrical issues do your electricians handle?",
+      answer: "Our electricians fix power cuts, tripping issues, short circuits, faulty switches, flickering lights, and wiring faults. We also troubleshoot appliance connection issues and overload problems, ensuring your home remains safe and functional."
     },
     {
-      question: "Do electricians in Bareilly handle switch and socket repairs?",
-      answer: "Yes, electricians in Bareilly handle switch and socket repairs, including fixing loose connections, faulty switches, damaged sockets, and electrical connection issues. Our certified electricians ensure safe and proper functioning of all electrical switches and outlets."
+      question: "Do you offer complete electrical inspections for homes?",
+      answer: "Yes, we provide detailed home electrical inspections. This includes wiring checks, load testing, switchboard analysis, and fault diagnosis to ensure everything is safe, up-to-date, and compliant with electrical safety guidelines."
     },
     {
-      question: "Are fan and light installation services available in Bareilly?",
-      answer: "Yes, fan and light installation services are available from electricians in Bareilly. Our certified electricians provide proper fitting for ceiling fans, lights, chandeliers, and other electrical fixtures with safe wiring and secure installation."
+      question: "Can EzyHelpers install appliances like fans, geysers, or ACs?",
+      answer: "Yes, EzyHelpers' electricians can install commonly used electrical appliances such as ceiling fans, wall fans, geysers (standard types), exhaust fans, light fixtures, tube lights, LED panels, switchboards, MCBs, and inverters. We ensure secure wiring, proper grounding, safety compliance, and thorough performance testing for every installation. "
     },
     {
-      question: "Do electricians in Bareilly handle old house wiring repairs?",
-      answer: "Yes, electricians in Bareilly handle old house wiring repairs, including fixing damaged wires in traditional homes, upgrading outdated electrical systems, and safe rewiring for older constructions with modern safety standards and proper electrical codes."
+      question: "Can you upgrade my old electrical system or switchboard?",
+      answer: "Definitely. We perform wiring replacements, switchboard upgrades, and load-balancing work to make your electrical system safer and capable of handling today’s modern appliances and energy needs."
     },
     {
-      question: "Do your electricians repair ceiling fans?",
-      answer: "Yes, electricians in Bareilly repair ceiling fans, including fixing wobbling fans, slow speed problems, motor issues, and electrical connection faults. Our skilled electricians ensure proper fan functioning with safe electrical connections and mechanical repairs."
+      question: "Do you provide electricians for both small and large electrical jobs?",
+      answer: "Yes, we handle everything from minor repairs like fixing a switch to large projects like full house rewiring or DB box installation. Our electricians carry all the tools to complete the job efficiently."
     },
     {
-      question: "What services do EzyHelpers' electricians in Bareilly offer?",
-      answer: "Our electricians in Bareilly provide house wiring, fan and light installation, switch/socket repairs, inverter and UPS installation, circuit breaker repairs, generator setup, safety checks, and emergency electrical services for homes."
+      question: "I don’t know what’s causing the electrical issue. Can you help?",
+      answer: "Of course. Our electricians will perform a full electrical diagnosis to find and fix hidden problems. You don’t need to identify the issue; we’ll take care of everything from start to finish."
     },
     {
-      question: "What safety checks do your electricians perform?",
-      answer: "Our electricians in Bareilly perform complete safety inspections, including checking for short circuits, loose wires, overloaded circuits, and faulty switchboards to prevent future hazards."
+      question: "Is it safe to hire an online electrician for home repairs?",
+      answer: "Yes, it is safe when booked through trusted platforms like EzyHelpers. All our electricians are background verified and certified. We ensure professional service with proper tools, safety gear, and transparent pricing, giving you reliable home repair without the risk of hiring unknown freelancers."
     },
     {
-      question: "Are your electricians licensed to work in Bareilly?",
-      answer: "Yes, all electricians provided by EzyHelpers are licensed, certified, and trained to deliver safe electrical services in Bareilly homes according to standard electrical codes."
+      question: "Is it safe to let the electrician work alone at home?",
+      answer: "Yes, if you book through a trusted service like EzyHelpers. All our electricians are background-verified and trained to work professionally. We also share their details in advance, so you can feel secure even if they are working alone at your home."
     }
   ]
 
@@ -146,7 +140,7 @@ export default function ElectriciansPage() {
               <span className="text-sm font-semibold">Expert Electrical Services</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
               Expert Electrician Services
               <span className="block bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
                 at Your Doorstep
@@ -202,7 +196,7 @@ export default function ElectriciansPage() {
               Why Choose EzyHelpers for Your Electrical Needs?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Skilled electricians, quick response times, and fair pricing for stress-free electrical solutions
+              Skilled electricians, fast service, and fair rates for worry-free electrical solutions.
             </p>
           </div>
 
@@ -210,25 +204,25 @@ export default function ElectriciansPage() {
             {[
               {
                 title: "Trusted Electricians",
-                description: "Experienced local electricians resolve all electrical issues safely with clear, honest pricing",
+                description: "Qualified local electricians fix all issues safely with transparent and honest pricing.",
                 icon: ShieldCheckIcon,
                 color: "text-blue-600"
               },
               {
                 title: "Fast Emergency Response",
-                description: "Quick response to electrical emergencies, sending skilled professionals for urgent issues",
+                description: "Rapid help during power issues with quick-dispatch, certified electrical professionals.",
                 icon: ClockIcon,
                 color: "text-red-600"
               },
               {
                 title: "Flexible Scheduling",
-                description: "Convenient appointments during day, evening, or weekends to suit your needs",
+                description: "Book electricians at your convenience—daytime, evenings, or even on weekends.",
                 icon: CheckCircleIcon,
                 color: "text-green-600"
               },
               {
                 title: "Complete Electrical Care",
-                description: "Handle all electrical needs from new installations to repairs and routine maintenance",
+                description: "From installations to repairs, we cover all your home’s electrical service needs.",
                 icon: BoltIcon,
                 color: "text-yellow-600"
               }
@@ -260,7 +254,7 @@ export default function ElectriciansPage() {
               Reliable & Professional Electrician Services
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Wide range of electrician services designed to ensure safety, efficiency, and long-term reliability
+              Wide range of electrical services designed to ensure safety, efficiency, and long-term reliability
             </p>
           </div>
 
@@ -331,7 +325,7 @@ export default function ElectriciansPage() {
               },
               {
                 title: "Uninterrupted Functionality",
-                description: "Ensure reliable power supply for everyday life",
+                description: "Ensure a reliable power supply for everyday life",
                 icon: ClockIcon
               }
             ].map((reason, index) => {
@@ -377,17 +371,17 @@ export default function ElectriciansPage() {
               {
                 step: "2",
                 title: "Certified Electrician Visit",
-                description: "Trained, certified electrician arrives on time with all necessary tools"
+                description: "Trained, certified electricians arrive on time with all necessary tools"
               },
               {
                 step: "3",
                 title: "Problem Diagnosis & Quote",
-                description: "Electrician inspects the issue and offers upfront quotes with no hidden costs"
+                description: "The electrician inspects the issue and offers upfront quotes with no hidden costs"
               },
               {
                 step: "4",
                 title: "Safe, Efficient Service",
-                description: "All work done with safety in mind, tested before leaving to ensure perfection"
+                description: "All work is done with safety in mind, and tested before leaving to ensure perfection"
               }
             ].map((step, index) => (
               <div key={index} className="text-center">
@@ -406,16 +400,26 @@ export default function ElectriciansPage() {
         </div>
       </section>
 
+      {/* Why Regular Electrical Maintenance Matters for Every Home */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Regular Electrical Maintenance Matters for Every Home</h2>
+          </div>
+          <div className="max-w-4xl mx-auto text-gray-700 space-y-6 leading-relaxed">
+            <p>Routine electrical maintenance isn’t just about fixing problems; it’s about preventing them before they happen. At EzyHelpers, we emphasise proactive care to keep your home’s electrical system running safely and efficiently all year round. Whether it’s a residential flat or a multi-floor home, periodic inspections can help avoid unexpected breakdowns, reduce fire risks, and improve overall power efficiency.</p>
+            <p>Our electricians perform comprehensive maintenance checks that include inspecting power outlets, tightening loose connections, and identifying faulty wiring that may go unnoticed during daily use. We also verify that load capacities are properly balanced to prevent frequent tripping, overheating, or damage to your appliances.</p>
+            <p>In addition to checking your switchboards and circuit breakers, we ensure the health of your grounding (earthing) system, critical for both shock protection and appliance safety. Special attention is given to high-consumption appliances like air conditioners, geysers, and microwaves, ensuring they're securely and correctly connected.</p>
+            <p>By investing in regular electrical maintenance with EzyHelpers, you’re not only protecting your home and loved ones but you are also saving money by extending the lifespan of expensive appliances and avoiding emergency repair costs. A safe home is a maintained home.</p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Common questions about our electrician services
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -446,6 +450,33 @@ export default function ElectriciansPage() {
         </div>
       </section>
 
+      {/* Explore Other Services */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">All-in-one home services for modern living.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Plumber Services</h3>
+              <p className="text-gray-600 mb-3">Quick solutions for leaks, clogs, fittings, and water systems.</p>
+              <Link href="/services/plumber" className="text-blue-700 font-medium hover:underline">Learn about Plumber Services</Link>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Home Deep Cleaning</h3>
+              <p className="text-gray-600 mb-3">Book a professional deep clean to refresh your entire home.</p>
+              <Link href="/services/home-deep-cleaning" className="text-blue-700 font-medium hover:underline">Learn about Home Deep Cleaning Services</Link>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Painting Services</h3>
+              <p className="text-gray-600 mb-3">Interior or exterior, get smooth, professional paintwork done fast.</p>
+              <Link href="/services/painting" className="text-blue-700 font-medium hover:underline">Learn about Painting Services</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20">
         <div className="absolute inset-0 opacity-10">
@@ -455,7 +486,7 @@ export default function ElectriciansPage() {
 
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-display">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-6 font-display">
               Book Our Expert Electrician Services Today!
             </h2>
             <p className="text-xl text-blue-100 mb-10 leading-relaxed">

@@ -55,7 +55,7 @@ export default function CTASection() {
     <section className="section-padding bg-gradient-to-r from-primary-600 to-primary-700 text-white">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">
+          <h2 className="text-3xl md:text-4xl text-white font-bold mb-4 font-display">
             Book Your Trusted Home Help Today!
           </h2>
           <p className="text-lg text-primary-100 max-w-3xl mx-auto mb-8">

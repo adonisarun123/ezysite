@@ -33,119 +33,99 @@ export default function PaintersPage() {
 
   const paintingServices = [
     {
-      title: "Interior Painting Solutions",
-      description: "Festival & Occasion Painting: Fresh looks for festivals & occasions with modern colors and perfect finishes.",
+      title: "Interior Painting",
+      description: "Give your walls a new life with elegant finishes using premium, low-odour paints for a clean, vibrant environment.",
       icon: HomeIcon,
-      features: ["Festival Ready", "Modern Colors", "Fresh Look", "Perfect Finish"]
+      features: ["Premium Paints", "Low-Odour", "Vibrant Colors", "Clean Finish"]
     },
     {
-      title: "Kids' Room Creative Painting",
-      description: "Cartoon murals & educational designs that make learning fun and rooms vibrant.",
-      icon: SparklesIcon,
-      features: ["Cartoon Murals", "Educational", "Fun Designs", "Vibrant Colors"]
-    },
-    {
-      title: "Pooja Room Special Colors",
-      description: "Traditional religious color combinations that create a peaceful and spiritual atmosphere.",
-      icon: StarIcon,
-      features: ["Traditional", "Spiritual", "Peaceful", "Perfect Match"]
-    },
-    {
-      title: "Kitchen/Bathroom Painting",
-      description: "Moisture-resistant, easy-to-clean coats perfect for high-humidity areas.",
-      icon: BeakerIcon,
-      features: ["Moisture Proof", "Easy Clean", "Long Lasting", "Stain Resist"]
-    },
-    {
-      title: "Textured & Designer Walls",
-      description: "Transform plain walls into stunning masterpieces with unique textures and patterns.",
-      icon: PaintBrushIcon,
-      features: ["Unique Textures", "Custom Design", "Stunning Look", "Modern Style"]
-    },
-    {
-      title: "Weatherproof House Painting",
-      description: "Protects against the sun, heavy rains, and dust with durable exterior finishes.",
+      title: "Exterior House Painting",
+      description: "Protect your building's exterior from dust, moisture, and UV damage with weatherproof paints.",
       icon: BuildingOfficeIcon,
-      features: ["Sun Proof", "Rain Safe", "Dust Resist", "Long Life"]
+      features: ["Weather Protection", "UV Resistant", "Moisture Proof", "Long-lasting"]
     },
     {
-      title: "Boundary Wall & Gate Painting",
-      description: "Enhances curb appeal with durable finishes that withstand weather and wear.",
-      icon: CheckCircleIcon,
-      features: ["Strong Finish", "Weather Safe", "Curb Appeal", "Durable"]
+      title: "Texture & Stencil Designs",
+      description: "Add a designer feel to your home with textured finishes and stencil art for accent walls and living rooms.",
+      icon: PaintBrushIcon,
+      features: ["Designer Look", "Texture Finish", "Stencil Art", "Accent Walls"]
     },
     {
-      title: "Terrace & Balcony Coatings",
-      description: "Keeps homes cooler in summer with special heat-reflective and waterproof coatings.",
-      icon: ShieldCheckIcon,
-      features: ["Heat Reflect", "Water Proof", "Cool Home", "UV Protect"]
-    },
-    {
-      title: "Wall Plastering & Crack Repairs",
-      description: "Fixes peeling, gaps & uneven surfaces for a perfect painting foundation.",
+      title: "Waterproofing Services",
+      description: "Prevent wall dampness and leakage with advanced waterproofing solutions using high-quality sealants.",
       icon: BeakerIcon,
-      features: ["Crack Fix", "Even Surface", "Strong Base", "Perfect Prep"]
+      features: ["Dampness Prevention", "Leak Protection", "Quality Sealants", "Long-term Protection"]
     },
     {
-      title: "Dampness Treatment",
-      description: "Anti-fungal solutions for humid areas to prevent wall damage and paint peeling.",
-      icon: BeakerIcon,
-      features: ["Anti Fungal", "Damp Proof", "Wall Save", "Long Last"]
+      title: "Wood Painting & Polishing",
+      description: "Restore and enrich wooden furniture, doors, and frames with expert polishing and coating for durability.",
+      icon: SparklesIcon,
+      features: ["Wood Restoration", "Expert Polishing", "Durable Coating", "Enhanced Look"]
     },
     {
-      title: "Wood Polish & Varnishing",
-      description: "Doors, windows & furniture shine with expert polishing and varnishing.",
-      icon: HomeIcon,
-      features: ["Wood Polish", "Door Shine", "Furniture New", "Long Life"]
-    },
-    {
-      title: "Metal Grill & Railing Painting",
-      description: "Anti-rust protection for railings & gates with durable metal paint.",
+      title: "Metal & Grill Painting",
+      description: "Get rust-free, stylish metal fixtures with specialised painting for gates, railings, and grills.",
       icon: FireIcon,
-      features: ["Anti Rust", "Metal Safe", "Long Life", "Fresh Look"]
+      features: ["Rust Prevention", "Anti-corrosive", "Stylish Finish", "Metal Protection"]
+    },
+    {
+      title: "Full Home Painting",
+      description: "Complete end-to-end painting solutions for both new construction and renovation projects.",
+      icon: CheckCircleIcon,
+      features: ["Complete Solution", "New & Renovation", "End-to-end", "Professional Finish"]
+    },
+    {
+      title: "Repainting & Touch-Up",
+      description: "Revive faded or chipped walls with seamless repainting, perfect for rentals and festive makeovers.",
+      icon: SparklesIcon,
+      features: ["Seamless Repair", "Color Matching", "Quick Touch-up", "Festive Ready"]
     }
   ]
 
   const faqs = [
     {
-      question: "What types of house painting services are available in Bareilly?",
-      answer: "We provide comprehensive house painting services in Bareilly, including wooden furniture restoration, modular furniture installation, custom furniture making, and space-saving solutions for apartments and homes."
+      question: "Do EzyHelpers painters offer a free site inspection before painting?",
+      answer: "Yes, we provide a free site visit. Our painters assess surface conditions, understand your requirements and recommend suitable painting methods and materials, ensuring accurate estimates and the right approach for your home’s painting needs."
     },
     {
-      question: "Can you paint during monsoon season in Bareilly?",
-      answer: "Yes, we can paint during monsoon with proper precautions. We use quick-drying paints and monitor weather conditions to ensure quality results. For exterior work, we plan around rain forecasts."
+      question: "How much does home painting cost?",
+      answer: "Painting charges depend on area size, paint type, surface preparation, and whether it’s interior or exterior work. We provide competitive, transparent pricing with detailed free estimates after a site visit."
     },
     {
-      question: "Do you offer modular furniture installation in Bareilly homes?",
-      answer: "Yes, we offer modular furniture installation in Bareilly, including modular kitchens, wardrobes, TV units, and office furniture. Our furniture painters are experienced in installing branded units with precision and care, ensuring a perfect fit for your space."
+      question: "What paint brands do you use for home painting?",
+      answer: "We use trusted brands like Asian Paints, Berger, Nerolac, and Dulux. Based on your budget, surface type, and finish preference, our team will recommend the best paints for long-lasting and beautiful results."
     },
     {
-      question: "Can I book same-day painter services in Bareilly?",
-      answer: "Yes, for urgent needs, we offer same-day painter services in Bareilly. Our skilled painters arrive quickly, equipped with tools to handle most common repairs and installations on the spot."
+      question: "Is same-day house painting service available?",
+      answer: "Same-day painting may be possible for small tasks like touch-ups or single walls. For full room or house painting, advance booking is recommended to ensure proper preparation and quality workmanship."
     },
     {
-      question: "Do you handle wood polishing and varnishing in Bareilly?",
-      answer: "Yes, we offer wood polishing and varnishing services for doors, windows, and furniture. Our painters are skilled in traditional and modern finishes to enhance and protect your wooden items."
+      question: "Can your painters help me choose paint colors and finishes?",
+      answer: "Yes, our painters offer color consultation to help you select shades, finishes, and combinations that match your furniture, lighting, and style. We guide you using swatches, visual tools, and practical advice for the best outcome."
     },
     {
-      question: "Can you help with compact space painting in Bareilly apartments?",
-      answer: "Absolutely! We specialize in space-enhancing paint solutions like light colors, accent walls, and creative designs that make small spaces look bigger and more inviting."
+      question: "Do painters handle wall preparation before painting?",
+      answer: "Absolutely. We prepare all surfaces by cleaning, crack-filling, sanding, and priming. Proper surface preparation is crucial for smooth paint application, longer durability, and professional-looking results in Indian home environments."
     },
     {
-      question: "What types of paint finishes do you offer in Bareilly?",
-      answer: "We offer various finishes including matte, glossy, textured, and designer finishes. Our painters help you choose the best option based on your room's purpose and style preferences."
+      question: "What should I do to prepare my home before painters arrive?",
+      answer: "Please move furniture away from walls, take down wall décor, and cover fragile items. Our painters also protect floors and furniture with plastic sheets or covers to ensure cleanliness during the job."
     },
     {
-      question: "Do you provide paint polishing for wood or metal in Bareilly?",
-      answer: "Yes, we offer painting and polishing services for doors, windows, grills, and furniture. Options include enamel, PU, and wood finishes, depending on your requirements."
+      question: "Do your painters clean up after completing the work?",
+      answer: "Yes, our painters ensure a full post-painting cleanup. We remove all tools, paint cans, and waste, leaving your home clean, organised, and ready to use immediately after the painting is done."
     },
     {
-      question: "What if I need painting urgently or over a weekend in Bareilly?",
-      answer: "We offer flexible scheduling, including urgent bookings, weekends, and even night shifts if required. Just let us know your timeline, and we'll plan accordingly."
+      question: "Can I hire painters for small jobs like one room or wall touch-ups?",
+      answer: "Yes, you can. We handle all job sizes, from full home painting to quick touch-ups, single rooms, or wall patches. No task is too small for our experienced and professional painters."
     },
     {
-      question: "Do you offer special festival or occasion painting services in Bareilly?",
-      answer: "Yes, we provide special painting services for festivals and occasions. Whether it's Diwali preparation or home renovation for weddings, we ensure timely completion with perfect finishes."
+      question: "What’s the best season to get house painting done?",
+      answer: "The dry season (typically October to March) is best for painting, as it allows faster drying and a better finish. Avoid the monsoon, as humidity can affect paint adhesion and quality."
+    },
+    {
+      question: "Do I need to buy paint separately, or is it included in the service?",
+      answer: "You can choose either. We offer packages with or without paint. Our team can help you choose the right brand and finish, and even procure it for you at market price or with discounts."
     }
   ]
 
@@ -170,7 +150,7 @@ export default function PaintersPage() {
               <span className="text-sm font-semibold">Expert Painting Services</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
               Transform Your Home with
               <span className="block bg-gradient-to-r from-white to-purple-100 bg-clip-text text-transparent">
                 Expert Painting
@@ -218,6 +198,8 @@ export default function PaintersPage() {
         </div>
       </section>
 
+      
+
       {/* Why Choose Us */}
       <section className="section-padding bg-white">
         <div className="container-custom">
@@ -226,7 +208,7 @@ export default function PaintersPage() {
               Why Choose EzyHelpers for House Painting Services?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Professional painting services you can trust with quality, care & clarity at every step
+              Professional painting services you can trust with quality, care & clarity at every step.
             </p>
           </div>
 
@@ -234,25 +216,25 @@ export default function PaintersPage() {
             {[
               {
                 title: "Skilled & Experienced Painters",
-                description: "Professional painters deliver flawless finishes using expert techniques for long-lasting beauty",
+                description: "Trained professionals use expert techniques to ensure smooth, durable, and flawless paint finishes.",
                 icon: ShieldCheckIcon,
                 color: "text-purple-600"
               },
               {
                 title: "Wide Range of Services",
-                description: "Home painting, texture finishes, waterproofing, and metal polishing - customized solutions",
+                description: "From wall painting to waterproofing, get tailored solutions for every surface and need.",
                 icon: CheckCircleIcon,
                 color: "text-green-600"
               },
               {
                 title: "Clean & Efficient Work",
-                description: "Work neatly, protect your space, and complete tasks efficiently with minimal disruption",
+                description: "We protect your space, maintain cleanliness, and finish projects quickly with minimal disruption.",
                 icon: ClockIcon,
                 color: "text-blue-600"
               },
               {
                 title: "Transparent Pricing",
-                description: "Honest pricing with no hidden charges and reliable customer support at every stage",
+                description: "Clear estimates, no hidden fees, and full support from booking to project completion.",
                 icon: StarIcon,
                 color: "text-yellow-600"
               }
@@ -341,7 +323,7 @@ export default function PaintersPage() {
               {
                 step: "2",
                 title: "Free Site Visit & Advice",
-                description: "Our experts come to see the space, suggest best paints and finishes, and give clear price estimate."
+                description: "Our experts come to see the space, suggest the best paints and finishes, and give a clear price estimate."
               },
               {
                 step: "3",
@@ -386,7 +368,7 @@ export default function PaintersPage() {
             {[
               {
                 title: "Pricing & Availability",
-                description: "Costs vary based on area size, surface condition, and paint type. Early booking recommended for weekends",
+                description: "Costs vary based on area size, surface condition, and paint type. Early booking is recommended for weekends",
                 icon: ClockIcon
               },
               {
@@ -420,56 +402,36 @@ export default function PaintersPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Why Professional Painting is More Than Just a Color Change */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Common questions about our painting services
-            </p>
-          </div>
-
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
-                  <details className="group">
-                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
-                        {faq.question}
-                      </h3>
-                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </details>
-                </div>
-              ))}
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">
+              Why Professional Painting is More Than Just a Color Change
+            </h2>
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              <p>
+                Painting isn’t just about adding colour; it’s about transforming your space in ways that enhance both function and feel. With EzyHelpers' professional painting services, you get more than just a beautiful finish.
+              </p>
+              <p>
+                A well-executed paint job gives your home or office an instant facelift, improving aesthetics while reflecting your personality or brand. Whether you're going for a cosy, neutral vibe or a bold, statement-making look, our experts help you choose the right colours and finishes to match your vision.
+              </p>
+              <p>
+                Beyond beauty, professional painting also protects. High-quality paint shields walls from moisture, dust, UV exposure, and daily wear, reducing maintenance costs and increasing durability. It also helps seal surfaces, preventing issues like mold or surface cracks.
+              </p>
+              <p>
+                We use eco-friendly, low-VOC paints that are safer for children, pets, and the environment. This ensures better indoor air quality and fewer lingering odours, which is especially important in frequently used spaces. With EzyHelpers, painting becomes an investment in comfort, health, and long-term value.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 text-white py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl"></div>
-        </div>
-
+      {/* Call To Action */}
+      <section className="relative bg-gradient-to-br from-purple-700 via-purple-800 to-purple-900 text-white py-16 overflow-hidden">
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-display">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-6 font-display">
               Ready to Give Your Home a Fresh, Beautiful Look?
             </h2>
             <p className="text-xl text-purple-100 mb-10 leading-relaxed">
@@ -492,8 +454,65 @@ export default function PaintersPage() {
           </div>
         </div>
       </section>
-      
+
+      {/* Explore Other Services */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
+            <p className="text-lg text-gray-600">On-demand help for a stress-free home life</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Home Deep Cleaning</h3>
+              <p className="text-gray-600 mb-3">Book a professional deep clean to refresh your entire home.</p>
+              <Link href="/services/deep-cleaning" className="text-purple-700 font-semibold hover:underline">Learn about Home Deep Cleaning Services</Link>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Gardener Services</h3>
+              <p className="text-gray-600 mb-3">Maintain a beautiful home garden with experienced gardening help.</p>
+              <Link href="/services/gardener" className="text-purple-700 font-semibold hover:underline">Learn about Gardener Services</Link>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Carpenter Services</h3>
+              <p className="text-gray-600 mb-3">Custom furniture, repairs, and fittings by skilled local carpenters.</p>
+              <Link href="/services/carpenters" className="text-purple-700 font-semibold hover:underline">Learn about Carpenter Services</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs (Last Section) */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                  <details className="group">
+                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                      <h3 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </details>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   )
-} 
+}

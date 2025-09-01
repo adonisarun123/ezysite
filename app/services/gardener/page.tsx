@@ -33,95 +33,79 @@ export default function GardenerPage() {
 
   const gardenerServices = [
     {
-      title: "Garden Setup for New Homes",
-      description: "Transform your empty balcony, terrace, or yard into a beautiful green space with expert planning and setup.",
+      title: "Set Up a New Garden",
+      description: "Turn unused areas into beautiful green spaces with site evaluation, plant selection, and complete installation.",
       icon: SunIcon,
-      features: ["Site Planning", "Plant Selection", "Soil Preparation", "Drip Irrigation"]
+      features: ["Site Design", "Plant Selection", "Complete Setup", "Ongoing Care"]
     },
     {
-      title: "Garden Makeover Services",
-      description: "Give your old garden a fresh, new look with creative updates and modern design elements.",
+      title: "Garden Makeover",
+      description: "Refresh and reorganise your outdoor space with enhanced aesthetics and vibrant new plantings.",
       icon: SparklesIcon,
-      features: ["New Layout", "Trendy Planters", "Lighting Setup", "Seasonal Plants"]
+      features: ["Layout Redesign", "New Plants", "Decorative Elements", "Modern Upgrade"]
     },
     {
       title: "Garden Maintenance",
-      description: "Keep your garden healthy and neat with regular care and expert attention to detail.",
+      description: "Routine care including weeding, pruning, fertilising, and pest control for healthy gardens.",
       icon: GlobeAltIcon,
-      features: ["Weed Removal", "Soil Care", "Plant Trimming", "Pest Control"]
+      features: ["Regular Weeding", "Pruning & Trimming", "Fertilizing", "Pest Control"]
     },
     {
-      title: "Lawn Maintenance Service",
-      description: "Maintain a lush, green lawn all year round with professional care and attention.",
+      title: "Lawn Care Services",
+      description: "Professional lawn maintenance, including mowing, aeration, and seasonal care for lush greenery.",
       icon: CheckCircleIcon,
-      features: ["Grass Cutting", "Soil Loosening", "Seasonal Care", "Issue Monitoring"]
+      features: ["Lawn Mowing", "Soil Aeration", "Seasonal Care", "Grass Health"]
     },
     {
       title: "Plant Care & Treatment",
-      description: "Resolve issues such as yellowing leaves, pest infestations, and slow growth with expert care.",
+      description: "Expert plant care, including watering schedules, disease treatment, and growth optimization.",
       icon: BeakerIcon,
-      features: ["Timely Watering", "Disease Control", "Proper Nutrients", "Health Checks"]
+      features: ["Watering Systems", "Disease Treatment", "Growth Care", "Plant Health"]
     },
     {
-      title: "Seasonal Garden Cleanup",
-      description: "Get your garden ready for each season: summer, monsoon, or winter with proper care.",
+      title: "Seasonal Planting",
+      description: "Seasonal flower and shrub planting to keep your garden vibrant and colorful year-round.",
       icon: StarIcon,
-      features: ["Mulch Adding", "Debris Clearing", "Pest Prevention", "Seasonal Plants"]
-    },
-    {
-      title: "Terrace & Balcony Gardening",
-      description: "Make the most of small spaces with smart garden setups and vertical solutions.",
-      icon: HomeIcon,
-      features: ["Vertical Gardens", "Easy Maintenance", "Herb Growing", "Smart Irrigation"]
-    },
-    {
-      title: "Organic Gardening Service",
-      description: "Go green with eco-safe, chemical-free gardening practices for healthier plants.",
-      icon: GlobeAltIcon,
-      features: ["Home Compost", "Natural Care", "Pest Control", "Bio-Fertilizers"]
+      features: ["Seasonal Flowers", "Shrub Planting", "Color Planning", "Year-round Beauty"]
     }
   ]
 
   const faqs = [
     {
-      question: "How often should I schedule garden maintenance?",
-      answer: "It depends on the plant types, but we recommend weekly or monthly visits to ensure a healthy garden."
+      question: "Can I book a gardener for one-time garden cleaning or planting?",
+      answer: "Yes, you can hire a gardener for one-time services like garden cleaning, new plant installation, or seasonal garden prep. It’s perfect for those who need help occasionally or want a quick garden refresh before festivals or events."
     },
     {
-      question: "Can gardeners help set up an organic kitchen garden?",
-      answer: "Yes, they can grow vegetables and herbs using organic, chemical-free methods that are safe and healthy for your family."
+      question: "Do your gardeners help with plant selection for Indian weather?",
+      answer: "Absolutely. Our gardeners suggest plants based on your region’s climate, sunlight, soil type, and your preferences. Whether you want flowering plants, herbs, or low-maintenance greens, we help you pick the best ones for Indian conditions."
     },
     {
-      question: "Do gardeners treat plant diseases and pests?",
-      answer: "Yes, our experienced gardeners can detect issues early and use organic methods to manage pests and diseases safely."
+      question: "Can I customise the gardening service based on my space?",
+      answer: "Definitely. Whether you want a kitchen garden, flower bed, or peaceful Zen-style layout, we customise garden design, plants, and setup to match your space, lifestyle, and vision, be it balcony, terrace, or lawn."
     },
     {
-      question: "Do gardeners offer low-maintenance garden options?",
-      answer: "Yes, they can suggest drought-tolerant plants and design easy-care gardens that are perfect for busy people who want greenery without daily effort."
+      question: "Do your gardening services support organic gardening?",
+      answer: "Yes, we promote chemical-free gardening using organic manure, composting, natural pest control, and eco-friendly soil enhancers. It’s safe for your family, pets, and the environment."
     },
     {
-      question: "Can gardeners arrange seasonal flowers for special occasions?",
-      answer: "Yes, they plant seasonal blooms and can create flower setups for festivals or events to keep your garden fresh and colourful."
+      question: "How often do I really need a gardener at home?",
+      answer: "It depends on your garden size and the season. During active growing months, a weekly or bi-weekly visit helps keep things in shape. In cooler or off-seasons, monthly visits are usually enough. Regular care keeps your plants healthy and your garden looking fresh without becoming overgrown."
     },
     {
-      question: "Do gardeners offer help with garden planning and design?",
-      answer: "Yes, they give expert advice on garden layout, plant selection, and styling, whether it's for a small balcony or a large villa garden."
+      question: "Do you offer lawn mowing and grass cutting services?",
+      answer: "Yes, our garden maintenance includes lawn mowing, grass trimming, fertilization, weed control, and edging. We help keep your lawn neat, green, and ready for every season."
     },
     {
-      question: "How do I find a gardener in my area?",
-      answer: "To find a gardener near you, simply visit EzyHelpers or call our helpline. We connect you with experienced local gardeners for home gardens, balconies, villas, and apartment spaces, matched to your exact location and needs."
+      question: "What common garden problems can your gardeners solve?",
+      answer: "Our expert home gardeners fix issues like plant pests, leaf yellowing, fungal infections, overgrowth, dry soil, and poor drainage. We restore your garden’s health with safe, effective, and long-lasting solutions."
     },
     {
-      question: "How to pick a gardener?",
-      answer: "Look for experience, plant knowledge, and service reliability. At EzyHelpers, all our gardeners are pre-verified and skilled in different garden styles, including organic, terrace, and villa setups."
+      question: "How do I take care of my plants between gardener visits?",
+      answer: "We provide simple DIY garden care tips like watering schedules, pruning methods, plant feeding, and soil aeration. These help you maintain your garden's health and beauty between our gardener’s visits."
     },
     {
-      question: "What can a gardener do?",
-      answer: "Gardeners handle planting, pruning, soil preparation, composting, pest control, lawn care, and full garden design."
-    },
-    {
-      question: "What are the duties of a gardener?",
-      answer: "A gardener's main duties include watering, weeding, pruning, fertilising, disease control, seasonal planting, and general garden upkeep. With EzyHelpers, you can expect trained gardeners who take full care of your plants, ensuring healthy growth and beautiful, green surroundings all year round."
+      question: "Do you offer balcony and terrace gardening services? What’s included?",
+      answer: "Yes, EzyHelpers offers complete balcony and terrace gardening solutions. Whether you live in an apartment or have limited outdoor space, our gardeners can design and maintain beautiful green areas. Services include soil preparation, planter arrangements, vertical stands, waterproofing suggestions, plant selection (flowers, veggies, or decoratives), and ongoing care. We help you create a lush, functional garden even in the heart of the city."
     }
   ]
 
@@ -146,7 +130,7 @@ export default function GardenerPage() {
               <span className="text-sm font-semibold">Expert Garden Care</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
               Bring Your Garden to Life
               <span className="block bg-gradient-to-r from-white to-green-100 bg-clip-text text-transparent">
                 with Expert Care
@@ -193,7 +177,6 @@ export default function GardenerPage() {
           </div>
         </div>
       </section>
-
       {/* Why Choose Us */}
       <section className="section-padding bg-white">
         <div className="container-custom">
@@ -202,7 +185,7 @@ export default function GardenerPage() {
               Why Choose EzyHelpers for Your Garden Services?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Comprehensive garden care with trained professionals who understand your unique gardening needs
+              Comprehensive garden care from trained professionals who understand your home’s outdoor needs.
             </p>
           </div>
 
@@ -210,25 +193,25 @@ export default function GardenerPage() {
             {[
               {
                 title: "Skilled Gardeners",
-                description: "Trained gardeners expertly handle planting, pruning, watering, and lawn care for year-round beauty",
+                description: "Experienced gardeners manage planting, pruning, watering, and lawn care with expert attention.",
                 icon: ShieldCheckIcon,
                 color: "text-green-600"
               },
               {
                 title: "Flexible Service Options",
-                description: "Choose weekly, monthly, or one-time gardening help with flexible scheduling for convenience",
+                description: "Book weekly, monthly, or one-time visits, whatever suits your garden’s schedule best.",
                 icon: ClockIcon,
                 color: "text-blue-600"
               },
               {
                 title: "Transparent Pricing",
-                description: "Affordable, high-quality garden care with clear pricing and no hidden fees",
+                description: "Upfront pricing with no surprises, get affordable, reliable gardening help every time.",
                 icon: CheckCircleIcon,
                 color: "text-emerald-600"
               },
               {
                 title: "Complete Garden Care",
-                description: "From mowing lawns to trimming hedges and planting flowers, we manage all essential tasks",
+                description: "We handle mowing, trimming, weeding, and planting, your entire garden, professionally managed.",
                 icon: StarIcon,
                 color: "text-yellow-600"
               }
@@ -327,7 +310,7 @@ export default function GardenerPage() {
               {
                 step: "4",
                 title: "Professional Garden Care",
-                description: "Our skilled gardeners handle all tasks using right tools and techniques for beautiful results."
+                description: "Our skilled gardeners handle all tasks using the right tools and techniques for beautiful results."
               }
             ].map((step, index) => (
               <div key={index} className="text-center">
@@ -396,6 +379,92 @@ export default function GardenerPage() {
         </div>
       </section>
 
+      {/* Deep Care Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              How EzyHelpers Keeps Your Garden Thriving – All Year Round
+            </h2>
+          </div>
+          <div className="max-w-4xl mx-auto text-gray-700 space-y-6 leading-relaxed">
+            <p>
+              Maintaining a lush, healthy garden requires more than just watering and sunlight; it demands timely care and expert intervention. At EzyHelpers, we go beyond basic maintenance to tackle deeper garden issues that often go unnoticed.
+            </p>
+            <p>
+              Our experienced gardeners regularly monitor plant health and provide preventive care to avoid major setbacks. Whether it's treating soil imbalances, controlling pest outbreaks naturally, or trimming overgrowth, our team ensures your garden stays balanced and beautiful.
+            </p>
+            <p>
+              We focus on eco-friendly solutions like organic composting, smart mulching, and natural pest deterrents that support plant vitality without harming the environment. Our services also include seasonal plant care, helping you choose the right species for different weather conditions, and preparing your garden for monsoons, heatwaves, or frost.
+            </p>
+            <p>
+              If your plants aren’t blooming or leaves are wilting, we diagnose the root cause, be it poor drainage, compacted soil, or lack of nutrients, and fix it with specialised treatments. From revitalising lawns to restoring flower beds, EzyHelpers provides comprehensive garden care that fits your lifestyle and local climate.
+            </p>
+            <p>
+              Let us take the guesswork out of gardening. With EzyHelpers, you get professional support, ongoing maintenance, and a garden that’s healthy, green, and thriving every season.
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* CTA Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white py-20">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container-custom relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-6 font-display">
+              Ready to Make Your Garden Beautiful?
+            </h2>
+            <p className="text-xl text-green-100 mb-10 leading-relaxed">
+              Let EzyHelpers' expert gardeners handle everything for you! No more stress, no more hard work, just a green, healthy garden you can enjoy every day.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/hire-helper" className="group bg-white text-green-800 hover:bg-green-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
+                <span className="flex items-center justify-center">
+                  Book Your Gardener Today
+                  <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+              
+              <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
+                <PhoneIcon className="h-5 w-5 mr-2" />
+                Call +91 9972571005
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Explore Other Services */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
+            <p className="text-lg text-gray-600">Comprehensive solutions to make home life easier.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Electrician Services</h3>
+              <p className="text-gray-600 mb-4">Expert electricians for all your home wiring and appliance power needs.</p>
+              <Link href="/services/electricians" className="text-green-700 font-semibold inline-flex items-center">Learn about Electrician Services <ArrowRightIcon className="h-4 w-4 ml-1" /></Link>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Plumber Services</h3>
+              <p className="text-gray-600 mb-4">Quick solutions for leaks, clogs, fittings, and water systems.</p>
+              <Link href="/services/plumbers" className="text-green-700 font-semibold inline-flex items-center">Learn about Plumber Services <ArrowRightIcon className="h-4 w-4 ml-1" /></Link>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Painting Services</h3>
+              <p className="text-gray-600 mb-4">Interior or exterior, get smooth, professional paintwork done fast.</p>
+              <Link href="/services/painting" className="text-green-700 font-semibold inline-flex items-center">Learn about Painting Services <ArrowRightIcon className="h-4 w-4 ml-1" /></Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
@@ -436,39 +505,6 @@ export default function GardenerPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-display">
-              Ready to Make Your Garden Beautiful?
-            </h2>
-            <p className="text-xl text-green-100 mb-10 leading-relaxed">
-              Let EzyHelpers' expert gardeners handle everything for you! No more stress, no more hard work, just a green, healthy garden you can enjoy every day.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/hire-helper" className="group bg-white text-green-800 hover:bg-green-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
-                <span className="flex items-center justify-center">
-                  Book Your Gardener Today
-                  <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-              
-              <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call +91 9972571005
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-      
       <Footer />
     </main>
   )
