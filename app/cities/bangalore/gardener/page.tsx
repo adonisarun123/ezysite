@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
+import FAQAccordion from '@/components/FAQAccordion'
 import {
   MapPinIcon,
   SparklesIcon,
@@ -20,11 +21,11 @@ import {
 export const metadata: Metadata = {
   title: 'Gardener in Bangalore | Plant Care & Maintenance',
   description:
-    'Hire gardeners in Bangalore for plant care and garden maintenance. Watering, trimming, and seasonal care for balconies, terraces, and home gardens.',
+    'Hire gardeners in Bangalore for plant care and garden maintenance. Watering, trimming, and seasonal care.',
   openGraph: {
     title: 'Gardener in Bangalore | Plant Care & Maintenance',
     description:
-      'Professional gardener services: setup, makeover, maintenance, lawn care, organic gardening, terrace & balcony gardens in Bangalore.',
+      'Hire gardeners in Bangalore for plant care and garden maintenance. Watering, trimming, and seasonal care.',
     url: 'https://ezyhelpers.com/cities/bangalore/gardener',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -58,17 +59,18 @@ export default function BangaloreGardenerPage() {
   ]
 
   const whyChoose = [
-    'Terrace & balcony garden experts',
-    'Safe & organic gardening',
-    'Flexible timing options',
-    'Custom garden plans',
-    'Gardening for all seasons',
-    'Easy booking & timely visits'
+    'Terrace & Balcony Garden Experts',
+    'Safe & Organic Gardening',
+    'Flexible Timing Options',
+    'Custom Garden Plans',
+    'Gardening for All Seasons',
+    'Easy Booking & Timely Visits'
   ]
 
   const services = [
     {
       title: 'Garden Setup for New Homes',
+      description: 'Transform your empty balcony, terrace, or yard into a beautiful green space.',
       points: [
         'Site visit & garden planning',
         'Choosing and planting the right plants',
@@ -78,6 +80,7 @@ export default function BangaloreGardenerPage() {
     },
     {
       title: 'Garden Makeover Services',
+      description: 'Give your old garden a fresh, new look with creative updates.',
       points: [
         'New layout and design ideas',
         'Adding pots, lights, and decor',
@@ -87,6 +90,7 @@ export default function BangaloreGardenerPage() {
     },
     {
       title: 'Garden Maintenance in Bangalore',
+      description: 'Keep your garden healthy and neat with regular care.',
       points: [
         'Removing weeds and improving soil',
         'Adding fertilizers when needed',
@@ -96,15 +100,17 @@ export default function BangaloreGardenerPage() {
     },
     {
       title: 'Lawn Maintenance Service',
+      description: 'Maintain a lush, green lawn all year round.',
       points: [
         'Regular grass cutting',
         'Loosening soil for better growth',
-        'Care for seasonal grass types',
-        'Monitoring for lawn issues'
+        'Caring for seasonal grass types',
+        'Monitoring for any lawn issues'
       ]
     },
     {
       title: 'Plant Care & Treatment',
+      description: 'Resolve issues such as yellowing leaves, pest infestations, and slow growth.',
       points: [
         'Timely watering based on plant type',
         'Identifying diseases early',
@@ -114,6 +120,7 @@ export default function BangaloreGardenerPage() {
     },
     {
       title: 'Seasonal Garden Cleanup',
+      description: 'Get your garden ready for each season: summer, monsoon, or winter.',
       points: [
         'Adding mulch and protective covers',
         'Clearing fallen leaves and debris',
@@ -123,6 +130,7 @@ export default function BangaloreGardenerPage() {
     },
     {
       title: 'Terrace & Balcony Gardening',
+      description: 'Make the most of small spaces with smart garden setups.',
       points: [
         'Vertical plant walls',
         'Easy-to-maintain green options',
@@ -132,11 +140,12 @@ export default function BangaloreGardenerPage() {
     },
     {
       title: 'Organic Gardening Service',
+      description: 'Go green with eco-safe, chemical-free gardening.',
       points: [
         'Using home-made compost',
         'Natural fertilizers and boosters',
-        'Organic pest management',
-        'Bio-fertilizers for enriched soil'
+        'Organic ways to keep pests away',
+        'Enriching soil with cow dung and bio-fertilizers'
       ]
     }
   ]
@@ -144,15 +153,15 @@ export default function BangaloreGardenerPage() {
   const personas = [
     { title: 'Apartment Dwellers & IT Professionals', description: 'Low-maintenance balcony and terrace garden care for busy urban lifestyles.' },
     { title: 'Villa Owners & Large Properties', description: 'Full-service landscape upkeep for villas and independent homes.' },
-    { title: 'Senior Citizens & Garden Enthusiasts', description: 'Gentle garden help for elders who love plants but need support.' },
-    { title: 'Eco-Conscious Families', description: 'Organic gardening with chemical-free care; safe for kids and pets.' }
+    { title: 'Senior Citizens & Garden Enthusiasts', description: 'Gentle garden help for elders who love plants but need physical support.' },
+    { title: 'Eco-Conscious Families', description: 'Organic gardening with chemical-free care; safe for kids, pets, and nature.' }
   ]
 
   const process = [
-    { step: '1', title: 'Tell Us Your Needs', description: 'Share garden size, issues, and desired services.', icon: PencilSquareIcon },
-    { step: '2', title: 'Receive a Quote', description: 'Get a custom quote based on plants, size, and tasks.', icon: AdjustmentsHorizontalIcon },
-    { step: '3', title: 'Choose a Time Slot', description: 'Pick a date and time, including weekend options.', icon: ClockIcon },
-    { step: '4', title: 'Expert Garden Service', description: 'Professional gardener arrives with tools and provides detailed care.', icon: ShieldCheckIcon }
+    { step: '1', title: 'Tell Us Your Needs', description: 'Call or fill out the form. Share your garden size, issues, or desired service.', icon: PencilSquareIcon },
+    { step: '2', title: 'Receive a Quote', description: 'Get a custom quote based on your plant types, garden size, and tasks.', icon: AdjustmentsHorizontalIcon },
+    { step: '3', title: 'Choose a Time Slot', description: 'Pick a date and time for the visit, including options for weekends.', icon: ClockIcon },
+    { step: '4', title: 'Expert Garden Service', description: 'Our professional gardener arrives with tools and offers detailed care.', icon: ShieldCheckIcon }
   ]
 
   const bangaloreAreas = [
@@ -162,16 +171,56 @@ export default function BangaloreGardenerPage() {
   ]
 
   const faqs = [
-    { question: 'How often should I schedule garden maintenance?', answer: 'Weekly or monthly visits depending on plant types and growth cycles.' },
-    { question: 'Can gardeners help set up an organic kitchen garden?', answer: 'Yes. We grow vegetables and herbs using chemical-free methods.' },
-    { question: 'Do gardeners treat plant diseases and pests?', answer: 'Yes. We detect issues early and use organic methods for safe management.' },
-    { question: 'Do gardeners offer low-maintenance garden options?', answer: 'Yes. We suggest drought-tolerant plants and easy-care layouts.' },
-    { question: 'Can gardeners arrange seasonal flowers for occasions?', answer: 'Yes. We plant seasonal blooms and create festive arrangements.' },
-    { question: 'Do gardeners help with garden planning and design?', answer: 'Yes. We advise on layout, plant selection, and styling for any space.' },
-    { question: 'How do I find a gardener in my area?', answer: 'Call EzyHelpers or book online—we match you with local, experienced gardeners.' },
-    { question: 'How to pick a gardener?', answer: 'Look for experience, plant knowledge, and reliability. All our gardeners are pre-verified.' },
-    { question: 'What can a gardener do?', answer: 'Planting, pruning, soil prep, composting, pest control, lawn care, and full design.' },
-    { question: 'What are the duties of a gardener?', answer: 'Watering, weeding, pruning, fertilising, disease control, seasonal planting, and upkeep.' }
+    {
+      question: 'How often should I schedule garden maintenance?',
+      answer:
+        'It depends on the plant types, but we recommend weekly or monthly visits to ensure a healthy garden.'
+    },
+    {
+      question: 'Can gardeners help set up an organic kitchen garden?',
+      answer:
+        'Yes, they can grow vegetables and herbs using organic, chemical-free methods that are safe and healthy for your family.'
+    },
+    {
+      question: 'Do gardeners treat plant diseases and pests?',
+      answer:
+        'Yes, our experienced gardeners can detect issues early and use organic methods to manage pests and diseases safely.'
+    },
+    {
+      question: 'Do gardeners offer low-maintenance garden options?',
+      answer:
+        'Yes, they can suggest drought-tolerant plants and design easy-care gardens that are perfect for busy people who want greenery without daily effort.'
+    },
+    {
+      question: 'Can gardeners arrange seasonal flowers for special occasions?',
+      answer:
+        'Yes, they plant seasonal blooms and can create flower setups for festivals or events to keep your garden fresh and colourful.'
+    },
+    {
+      question: 'Do gardeners offer help with garden planning and design?',
+      answer:
+        'Yes, they give expert advice on garden layout, plant selection, and styling, whether it&rsquo;s for a small balcony or a large villa garden.'
+    },
+    {
+      question: 'How do I find a gardener in my area?',
+      answer:
+        'To find a gardener near you, simply visit EzyHelpers or call our helpline. We connect you with experienced local gardeners for home gardens, balconies, villas, and apartment spaces, matched to your exact location and needs.'
+    },
+    {
+      question: 'How to pick a gardener?',
+      answer:
+        'Look for experience, plant knowledge, and service reliability. At EzyHelpers, all our gardeners are pre-verified and skilled in different garden styles, including organic, terrace, and villa setups.'
+    },
+    {
+      question: 'What can a gardener do?',
+      answer:
+        'Gardeners handle planting, pruning, soil preparation, composting, pest control, lawn care, and full garden design.'
+    },
+    {
+      question: 'What are the duties of a gardener?',
+      answer:
+        'A gardener&rsquo;s main duties include watering, weeding, pruning, fertilising, disease control, seasonal planting, and general garden upkeep. With EzyHelpers, you can expect trained gardeners who take full care of your plants, ensuring healthy growth and beautiful, green surroundings all year round.'
+    }
   ]
 
   const localBusinessProps = {
@@ -215,13 +264,8 @@ export default function BangaloreGardenerPage() {
                   <span className="text-sm font-semibold">Professional Gardeners Across Bangalore</span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Professional Gardener
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">Bangalore</span>
-                </h1>
-                <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  From setup to seasonal care—expert gardening for terraces, balconies, and home gardens.
-                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-display leading-tight text-white drop-shadow-lg">Professional Gardener in Bangalore</h1>
+                <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">From garden setup to seasonal care, EzyHelpers provides expert gardening services customized to your space, be it a terrace, balcony, or home garden.</p>
 
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   {trustBadges.map((tb, i) => (
@@ -239,7 +283,7 @@ export default function BangaloreGardenerPage() {
                   </Link>
                   <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Call +91 9972571005</span>
+                    <span className="hidden sm:inline">Call for Expert Garden Care</span>
                     <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
@@ -274,8 +318,8 @@ export default function BangaloreGardenerPage() {
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose a Professional Gardener?</h2>
-              <p className="text-lg text-gray-600">Complete garden solutions from setup to seasonal care for every type of home garden.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose a Professional Gardener in Bangalore for Your Garden Needs?</h2>
+              <p className="text-lg text-gray-600">Complete garden solutions from setup to seasonal care for every type of home garden</p>
             </div>
 
             <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
@@ -295,14 +339,17 @@ export default function BangaloreGardenerPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Gardening Services for Bangalore Homes</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Full-range garden services designed for urban homes and lifestyles.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What services does your garden caretaker in Bangalore offer for homes?</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Full-range home garden services designed for Bangalore&rsquo;s urban homes and lifestyles</p>
             </div>
 
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
               {services.map((svc, idx) => (
                 <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
                   <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{svc.title}</h3>
+                  {svc.description && (
+                    <p className="text-gray-700 mb-3">{svc.description}</p>
+                  )}
                   <ul className="space-y-2">
                     {svc.points.map((p, pi) => (
                       <li key={pi} className="flex items-start text-gray-700">
@@ -321,8 +368,8 @@ export default function BangaloreGardenerPage() {
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Who Benefits from Our Gardening Services?</h2>
-              <p className="text-lg text-gray-600">Solutions for a variety of residential landscapes and lifestyle needs.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Who Benefits from Our Gardening Services in Bangalore?</h2>
+              <p className="text-lg text-gray-600">Diverse home garden service solutions for varied residential landscapes and lifestyle needs.</p>
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {personas.map((p, idx) => (
@@ -339,8 +386,8 @@ export default function BangaloreGardenerPage() {
         <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Book a Garden Caretaker</h2>
-              <p className="text-lg text-gray-600">Book your gardener in 4 simple steps.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Book a Garden Caretaker in Bangalore?</h2>
+              <p className="text-lg text-gray-600">Book your garden caretaker in Bangalore in 4 simple steps:</p>
             </div>
 
             <div className="grid md:grid-cols-4 gap-8">
@@ -369,7 +416,7 @@ export default function BangaloreGardenerPage() {
         <section className="py-16 bg-white">
           <div className="container-custom text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Ready to Transform Your Dream Garden?</h2>
-            <p className="text-lg text-gray-600 mb-6">Enjoy a healthy, relaxing outdoor space without the hard work.</p>
+            <p className="text-lg text-gray-600 mb-6">Enjoy a healthy, relaxing outdoor space without the hard work. EzyHelpers&rsquo; gardener services in Bangalore deliver results you can see and feel.</p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl">
                 Book Your Gardener Today
@@ -388,7 +435,7 @@ export default function BangaloreGardenerPage() {
           <div className="container-custom">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Areas We Serve in Bangalore</h2>
-              <p className="text-lg text-gray-600">Trusted gardening services across major Bangalore neighborhoods.</p>
+              <p className="text-lg text-gray-600">Trusted gardening services across all Bangalore neighborhoods</p>
             </div>
             <div className="max-w-4xl mx-auto">
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
@@ -399,8 +446,9 @@ export default function BangaloreGardenerPage() {
                 ))}
               </div>
               <div className="text-center mt-8">
+                <p className="text-gray-600 mb-4">And many more areas across Bangalore</p>
                 <Link href="/hire-helper" className="inline-flex items-center text-primary-700 font-semibold hover:text-primary-800">
-                  Check service in your area
+                  Check Service in Your Area
                   <ArrowRightIcon className="h-4 w-4 ml-1" />
                 </Link>
               </div>
@@ -413,7 +461,7 @@ export default function BangaloreGardenerPage() {
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Home Services in Bangalore</h2>
-              <p className="text-lg text-gray-600">Comprehensive solutions to make urban living easier.</p>
+              <p className="text-lg text-gray-600">Comprehensive solutions to make urban living easier across Bangalore.</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {[
@@ -425,11 +473,74 @@ export default function BangaloreGardenerPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
                   <p className="text-gray-700 mb-4">{card.description}</p>
                   <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-                    Explore
+                    {card.title.includes('Electrical') ? 'Explore Electrician Services' : card.title.includes('Plumbing') ? 'Explore Plumbing Services' : 'Explore Painting Services'}
                     <ArrowRightIcon className="h-4 w-4 ml-1" />
                   </Link>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
+              <FAQAccordion
+                faqs={[
+                  {
+                    question: 'How often should I schedule garden maintenance?',
+                    answer:
+                      'It depends on the plant types, but we recommend weekly or monthly visits to ensure a healthy garden.'
+                  },
+                  {
+                    question: 'Can gardeners help set up an organic kitchen garden?',
+                    answer:
+                      'Yes, they can grow vegetables and herbs using organic, chemical-free methods that are safe and healthy for your family.'
+                  },
+                  {
+                    question: 'Do gardeners treat plant diseases and pests?',
+                    answer:
+                      'Yes, our experienced gardeners can detect issues early and use organic methods to manage pests and diseases safely.'
+                  },
+                  {
+                    question: 'Do gardeners offer low-maintenance garden options?',
+                    answer:
+                      'Yes, they can suggest drought-tolerant plants and design easy-care gardens that are perfect for busy people who want greenery without daily effort.'
+                  },
+                  {
+                    question: 'Can gardeners arrange seasonal flowers for special occasions?',
+                    answer:
+                      'Yes, they plant seasonal blooms and can create flower setups for festivals or events to keep your garden fresh and colourful.'
+                  },
+                  {
+                    question: 'Do gardeners offer help with garden planning and design?',
+                    answer:
+                      'Yes, they give expert advice on garden layout, plant selection, and styling, whether it&rsquo;s for a small balcony or a large villa garden.'
+                  },
+                  {
+                    question: 'How do I find a gardener in my area?',
+                    answer:
+                      'To find a gardener near you, simply visit EzyHelpers or call our helpline. We connect you with experienced local gardeners for home gardens, balconies, villas, and apartment spaces, matched to your exact location and needs.'
+                  },
+                  {
+                    question: 'How to pick a gardener?',
+                    answer:
+                      'Look for experience, plant knowledge, and service reliability. At EzyHelpers, all our gardeners are pre-verified and skilled in different garden styles, including organic, terrace, and villa setups.'
+                  },
+                  {
+                    question: 'What can a gardener do?',
+                    answer:
+                      'Gardeners handle planting, pruning, soil preparation, composting, pest control, lawn care, and full garden design.'
+                  },
+                  {
+                    question: 'What are the duties of a gardener?',
+                    answer:
+                      'A gardener&rsquo;s main duties include watering, weeding, pruning, fertilising, disease control, seasonal planting, and general garden upkeep. With EzyHelpers, you can expect trained gardeners who take full care of your plants, ensuring healthy growth and beautiful, green surroundings all year round.'
+                  }
+                ]}
+              />
             </div>
           </div>
         </section>

@@ -410,12 +410,12 @@ export default function ApplianceRepairPage() {
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Carpenter Services</h3>
               <p className="text-gray-600 mb-3">Custom furniture, repairs, and fittings by skilled local carpenters.</p>
-              <Link href="/services/carpenter" className="text-red-700 font-medium hover:underline">Learn about Carpenter Services</Link>
+              <Link href="/services/carpenters" className="text-red-700 font-medium hover:underline">Learn about Carpenter Services</Link>
             </div>
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Electrician Services</h3>
               <p className="text-gray-600 mb-3">Expert electricians for all your home wiring and appliance power needs.</p>
-              <Link href="/services/electrician" className="text-red-700 font-medium hover:underline">Learn about Electrician Services</Link>
+              <Link href="/services/electricians" className="text-red-700 font-medium hover:underline">Learn about Electrician Services</Link>
             </div>
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Gardener Services</h3>

@@ -97,7 +97,7 @@ export default function BangaloreOnDemandHelperPage() {
     {
       title: 'One-Day Cook Services',
       icon: HeartIcon,
-      features: ['Fresh, homestyle meals (veg/non-veg)', 'Grocery support and prep', 'Kitchen clean-up after use'],
+      features: ['Cook fresh, homestyle meals (veg/non-veg)', 'Support with groceries and prep', 'Clean kitchen after use'],
       gradient: 'from-rose-500 to-pink-600'
     },
     {
@@ -116,24 +116,24 @@ export default function BangaloreOnDemandHelperPage() {
       features: [
         'Assist with walking, bathing, and feeding',
         'Medication reminders',
-        'Companionship and family updates'
+        'Companionship and updates to family'
       ],
       gradient: 'from-violet-500 to-purple-600'
     },
     {
       title: 'Instant Technical or Domestic Repairs',
       icon: WrenchScrewdriverIcon,
-      features: ['Plumbing and minor electrical', 'Appliance support or setup', 'Basic carpentry and assembly'],
+      features: ['Plumbing and minor electrical issues', 'Appliance support or setup', 'Furniture assembly and basic carpentry'],
       gradient: 'from-amber-500 to-orange-600'
     },
     {
       title: 'Emergency Event Helpers',
       icon: CalendarDaysIcon,
-      features: ['Event setup and decoration', 'Kitchen and guest management', 'Post-event cleaning'],
+      features: ['Event setup and decoration help', 'Kitchen and guest management', 'Post-event cleaning'],
       gradient: 'from-cyan-500 to-sky-600'
     },
     {
-      title: 'Emergency School Pickup/Drop',
+      title: 'Emergency School Pickup/Drop Service',
       icon: TruckIcon,
       features: ['Safe school pickups and drop-offs', 'Verified ID helpers', 'Instant coordination with schools'],
       gradient: 'from-teal-500 to-emerald-600'
@@ -147,7 +147,7 @@ export default function BangaloreOnDemandHelperPage() {
     {
       title: 'Temporary Packing & Moving Help',
       icon: TruckIcon,
-      features: ['Organize and pack essentials', 'Load, label, and assist movers', 'Short-notice relocation help'],
+      features: ['Organize and pack kitchenware, clothes, essentials', 'Load, label, and assist movers', 'Short-notice help for tenants and bachelors'],
       gradient: 'from-slate-500 to-gray-600'
     },
     {
@@ -159,6 +159,7 @@ export default function BangaloreOnDemandHelperPage() {
     {
       title: 'Emergency Pet Care and Walking',
       icon: BoltIcon,
+      description: 'Our emergency helpers provide immediate pet care support.',
       features: ['Dog walking and feeding', 'Basic grooming and playtime', 'House sitting with pet care'],
       gradient: 'from-yellow-500 to-amber-600'
     }
@@ -172,9 +173,9 @@ export default function BangaloreOnDemandHelperPage() {
   ]
 
   const considerations = [
-    'Immediate Availability: Availability depends on your area and traffic. During rush hours or rain, delays are common. Book early for smoother same-day help.',
-    'Define Service Scope Clearly: Share exact needs (e.g., kitchen deep cleaning or festival prep) so our helpers arrive fully prepared.',
-    'Transparent Hourly Rates: Pay only after work is done with no hidden fees; you’ll know the cost before service begins.'
+    'Immediate Availability Availability depends on your area and traffic. During rush hours or rain, delays are common. Book early for smoother, same-day emergency help in Bangalore.',
+    'Define Service Scope Clearly Share exact needs, like kitchen deep cleaning or festival prep, so our emergency helpers arrive fully prepared, especially for unique Bangalore home environments.',
+    'Transparent Hourly Rates Pay only after work is done with no hidden fees or advance payment. You’ll know the cost before service begins.'
   ]
 
   const bangaloreAreas = [
@@ -184,16 +185,17 @@ export default function BangaloreOnDemandHelperPage() {
   ]
 
   const faqs = [
-    { question: 'How quickly can I get an emergency helper in Bangalore?', answer: 'Typically within 2–4 hours of booking depending on your location and availability.' },
-    { question: 'Are emergency helpers trained for multiple tasks?', answer: 'Yes, many can handle cleaning, cooking, and basic care. Share details in advance.' },
-    { question: 'Is one-day maid available during festivals?', answer: 'Yes, we maintain availability during major festivals for prep and cleanup.' },
-    { question: 'Do helpers speak multiple languages?', answer: 'Yes, helpers can communicate in Hindi, English, Kannada, Tamil, and Telugu.' },
-    { question: 'Are on-demand helpers verified?', answer: 'All helpers undergo background verification for safety and trust.' },
-    { question: 'Can helpers work in gated societies?', answer: 'Yes, they understand visitor registration and apartment security protocols.' },
-    { question: 'Can I book for just a few hours?', answer: 'Yes. Hourly pricing enables short tasks like quick cleaning or urgent kitchen help.' },
-    { question: 'Is emergency help available citywide?', answer: 'Most Bangalore areas are covered; availability varies by locality and timing.' },
-    { question: 'Can I book a female emergency helper?', answer: 'Yes. Specify gender preference while booking to match your needs.' },
-    { question: 'Can I request the same helper again?', answer: 'If available, we’ll reassign the same helper for continuity.' }
+    { question: 'How quickly can I get an emergency helper in Bangalore?', answer: 'Our emergency helper in Bangalore typically arrives within 2-4 hours of booking, depending on your location and current availability. Areas like Koramangala, HSR Layout, and Indiranagar usually have faster response times.' },
+    { question: 'Are emergency helpers trained for multiple tasks?', answer: 'Yes, most can handle cleaning, cooking, or care simultaneously. Just let us know in advance.' },
+    { question: 'Is one-day maid in Bangalore available during festivals?', answer: 'Yes, our one day maid in Bangalore works during all major festivals including Diwali, Dussehra, Christmas, and regional celebrations. We maintain emergency helper availability for festival preparation and cleanup.' },
+    { question: 'Can emergency helpers communicate in languages other than Kannada?', answer: 'Yes, we provide emergency helpers who can communicate in Hindi, English, Tamil, and Telugu, making it easier for Bangalore’s diverse population.' },
+    { question: 'Are on-demand helpers verified?', answer: 'Yes, all on-demand helpers undergo background verification. Safety is ensured even for emergency and last-minute household help.' },
+    { question: 'Can on-demand helpers work in apartment complexes?', answer: 'Yes, on-demand helpers understand gated community protocols, visitor registration, and apartment security procedures across Bangalore residential areas.' },
+    { question: 'Can I book an emergency helper for just a few hours?', answer: 'Yes, you can book an emergency helper in Bangalore for a few hours depending on your need. Hourly pricing ensures flexibility for short tasks like quick cleaning or urgent kitchen help.' },
+    { question: 'Is emergency help available in all parts of Bangalore?', answer: 'We cover most Bangalore areas including Whitefield, Bellandur, BTM Layout, Hebbal, Marathahalli, Jayanagar, and more. Availability may vary by locality and timing.' },
+    { question: 'Can I book a female emergency helper in Bangalore?', answer: 'Yes, female emergency helpers are available for domestic needs, including household chores, elderly care, and kitchen work. Please specify gender preference while booking.' },
+    { question: 'Are emergency helpers suitable for elderly or patient assistance?', answer: 'Yes, we provide trained helpers experienced in elderly care, including mobility assistance, companionship, and accompanying to medical appointments.' },
+    { question: 'Can I request the same emergency helper again later?', answer: 'If the same helper is available, we’re happy to reassign them. Many clients prefer consistency, and we try our best to accommodate such requests.' }
   ]
 
   const localBusinessProps = {
@@ -242,7 +244,7 @@ export default function BangaloreOnDemandHelperPage() {
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">Bangalore</span>
                 </h1>
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Instant, reliable helpers for cleaning, cooking, babysitting, and more. Same-day availability for urgent needs.
+                  Need emergency help at home? Whether it's a last-minute mess, unexpected guests, or a missed maid visit, EzyHelpers offers instant, reliable on-demand maid and helper services in Bangalore for cleaning, cooking, babysitting, and more.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
@@ -269,7 +271,7 @@ export default function BangaloreOnDemandHelperPage() {
 
                 <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">24–72 hrs</div>
+                    <div className="text-2xl font-bold text-white">24-72hours</div>
                     <div className="text-primary-200 text-sm">Quick Response</div>
                   </div>
                   <div className="text-center lg:text-left">
@@ -329,7 +331,7 @@ export default function BangaloreOnDemandHelperPage() {
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Services Do Our On-Demand Maids Offer?</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Customised for urgent or temporary needs for professionals, students and families.</p>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Whether you're a working professional, student, or homemaker, our on-demand maid services in Bangalore are customised for your urgent or temporary needs.</p>
             </div>
 
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -341,6 +343,9 @@ export default function BangaloreOnDemandHelperPage() {
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{service.title}</h3>
+                    {('description' in service) && (service as any).description && (
+                      <p className="text-gray-700 mb-3">{(service as any).description}</p>
+                    )}
                     <ul className="space-y-2">
                       {service.features.map((f: string, i: number) => (
                         <li key={i} className="flex items-start text-gray-700">
@@ -349,6 +354,14 @@ export default function BangaloreOnDemandHelperPage() {
                         </li>
                       ))}
                     </ul>
+                    {service.title === 'Emergency Pet Care and Walking' && (
+                      <div className="mt-4">
+                        <Link href="/hire-helper" className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
+                          Get Emergency Pet Helper
+                          <ArrowRightIcon className="h-4 w-4 ml-1" />
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 )
               })}
@@ -367,7 +380,7 @@ export default function BangaloreOnDemandHelperPage() {
         <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Book Our Emergency Helper in 4 Simple Steps</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Book Our Emergency Helper in Bangalore in 4 Simple Steps</h2>
               <p className="text-lg text-gray-600">Follow these quick steps to book a verified emergency helper in Bangalore.</p>
             </div>
 
@@ -397,8 +410,8 @@ export default function BangaloreOnDemandHelperPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Before You Book: Quick Tips</h2>
-              <p className="text-lg text-gray-600">Ensure faster service, better communication, and smoother same-day bookings.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Should You Consider Before Booking an Emergency Helper in Bangalore?</h2>
+              <p className="text-lg text-gray-600">Quick tips to ensure faster service, better communication, and smoother same-day bookings across Bangalore.</p>
             </div>
 
             <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
@@ -418,6 +431,53 @@ export default function BangaloreOnDemandHelperPage() {
                   <Link href="tel:+919972571005" className="text-primary-700 font-semibold hover:underline">Call Now for Immediate Booking</Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Emphasized CTA */}
+        <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-700 text-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Don’t Let Urgent Situations Stress You – Book Your Emergency Helper Today!</h2>
+              <p className="text-xl text-primary-100 mb-10 leading-relaxed">
+                Whether it’s a spill, a guest, a sudden event, or an emergency cleaning task, EzyHelpers is here with trusted, fast, and skilled support.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/hire-helper" className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors shadow-lg hover:shadow-xl">
+                  Book Online – Instant Confirmation
+                </Link>
+                <Link href="tel:+919972571005" className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">
+                  Call Now for Immediate Booking
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Trusted Home Services by EzyHelpers</h2>
+              <p className="text-lg text-gray-600">Complete household support solutions for Bangalore's busy professionals.</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { title: 'Driver Services in Bangalore', href: '/services/drivers', description: 'Trained, verified drivers for office commutes, school runs, and long trips.', cta: 'Book a Reliable Driver Now' },
+                { title: 'Appliance Repair in Bangalore', href: '/services/appliance-repair', description: 'Fast, expert repairs for ACs, fridges, washing machines, and more.', cta: 'Get Same-Day Appliance Repair' },
+                { title: 'Home Deep Cleaning in Bangalore', href: '/services/deep-cleaning', description: 'Deep cleaning for kitchen, bathroom, sofa, and floor hygiene.', cta: 'Schedule Deep Cleaning Today' }
+              ].map((card, idx) => (
+                <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
+                  <p className="text-gray-700 mb-4">{card.description}</p>
+                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
+                    {card.cta}
+                    <ArrowRightIcon className="h-4 w-4 ml-1" />
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -466,32 +526,7 @@ export default function BangaloreOnDemandHelperPage() {
           </div>
         </section>
 
-        {/* Related Services */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Trusted Home Services by EzyHelpers</h2>
-              <p className="text-lg text-gray-600">Complete household support solutions for Bangalore's busy professionals.</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { title: 'Driver Services in Bangalore', href: '/services/drivers', description: 'Trained, verified drivers for office commutes, school runs, and long trips.' },
-                { title: 'Appliance Repair in Bangalore', href: '/services/appliance-repair', description: 'Fast, expert repairs for ACs, fridges, washing machines, and more.' },
-                { title: 'Home Deep Cleaning in Bangalore', href: '/services/deep-cleaning', description: 'Deep cleaning for kitchen, bathroom, sofa, and floor hygiene.' }
-              ].map((card, idx) => (
-                <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
-                  <p className="text-gray-700 mb-4">{card.description}</p>
-                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-                    Learn More
-                    <ArrowRightIcon className="h-4 w-4 ml-1" />
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
         <Footer />
       </main>

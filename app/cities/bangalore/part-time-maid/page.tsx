@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import FAQAccordion from '@/components/FAQAccordion'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
 import {
   HomeIcon,
@@ -53,42 +54,42 @@ export default function BangalorePartTimeMaidPage() {
   const reasons = [
     {
       title: 'Budget-Conscious Households',
-      description: "Affordable housekeeping that doesn't strain monthly budgets.",
+      description: "Both regular households and young professionals need affordable housekeeping services that don't strain monthly budgets.",
       icon: CurrencyRupeeIcon,
       color: 'text-green-600',
       bgColor: 'bg-green-100'
     },
     {
       title: 'Small Apartment Reality',
-      description: 'Ideal for 1BHK and 2BHK homes in areas like HSR Layout and Indiranagar. Pay only for hours needed.',
+      description: '1BHK and 2BHK homes in HSR Layout and Indiranagar require efficient hourly domestic help, not full-day assistance.',
       icon: HomeIcon,
       color: 'text-blue-600',
       bgColor: 'bg-blue-100'
     },
     {
       title: 'Flexible Work Schedules',
-      description: 'Fits 9–5, hybrid, or irregular routines with hourly slots.',
+      description: 'From traditional 9 to 5 jobs to hybrid work models, families need customisable home care that adapts to changing routines.',
       icon: ClockIcon,
       color: 'text-purple-600',
       bgColor: 'bg-purple-100'
     },
     {
       title: 'Student & PG Residents',
-      description: 'Cost-sharing options for shared accommodations and PGs.',
+      description: 'Newcomers to Bangalore and students in shared accommodations need cost-sharing options for household maintenance.',
       icon: UserIcon,
       color: 'text-amber-600',
       bgColor: 'bg-amber-100'
     },
     {
       title: 'Regular Family Needs',
-      description: 'Daily support for 3–4 hours while maintaining privacy and cultural comfort.',
+      description: 'Traditional Bangalore families prefer daily maid support for 3–4 hours, valuing privacy and cultural comfort over live-in arrangements.',
       icon: StarIcon,
       color: 'text-yellow-600',
       bgColor: 'bg-yellow-100'
     },
     {
       title: 'Dual-Income Households',
-      description: 'Reliable help without the commitment of full-time staff.',
+      description: 'Working couples across all income levels need reliable domestic support without the commitment of full-time staff.',
       icon: UserGroupIcon,
       color: 'text-pink-600',
       bgColor: 'bg-pink-100'
@@ -110,7 +111,7 @@ export default function BangalorePartTimeMaidPage() {
     {
       title: 'Part-Time Cook',
       description:
-        'Fresh home-cooked meals with budget-friendly kitchen upkeep. Ideal for South Indian, North Indian, and more.',
+        'Fresh home-cooked meals with budget-friendly cleaning of cooking areas. Ideal for Bangalore\'s diverse food preferences, from South Indian to North Indian cuisine.',
       icon: HeartIcon,
       features: ['Multi-cuisine cooking', 'Meal preparation', 'Kitchen maintenance', 'Grocery assistance'],
       gradient: 'from-red-500 to-pink-600',
@@ -128,9 +129,9 @@ export default function BangalorePartTimeMaidPage() {
       iconColor: 'text-green-600'
     },
     {
-      title: 'Part-Time Elderly Care',
+      title: 'Part-Time Home Care For Elderly',
       description:
-        'Compassionate hourly care for ageing parents in traditional Bangalore neighborhoods.',
+        'Compassionate elderly care with hourly domestic help for families. Ideal for a traditional Bangalore neighbourhoods, caring for ageing parents.',
       icon: ShieldCheckIcon,
       features: ['Help with bathing & mobility', 'Medication reminders', 'Daily companionship', 'Health monitoring'],
       gradient: 'from-purple-500 to-violet-600',
@@ -141,7 +142,7 @@ export default function BangalorePartTimeMaidPage() {
 
   const pricingInfo = {
     headline: 'Transparent Pricing Based on Your Needs',
-    note: 'Typical hourly engagement: 2–6 hours per day. Rates vary by task, hours, experience, and location.',
+    description: 'The cost of hiring a part-time maid in Bangalore depends on several key factors that ensure fair pricing for every home:',
     factors: [
       'Service type (housekeeping, cooking, childcare, eldercare)',
       'Daily hours (2–6 hour slots available)',
@@ -152,20 +153,20 @@ export default function BangalorePartTimeMaidPage() {
   }
 
   const benefits = [
-    { title: 'Budget-Friendly Cleaning', description: 'Pay only for the hours you need—perfect for professionals and students.' },
-    { title: 'Flexible Housekeeping', description: 'Adjust timing and frequency to match work schedules and travel plans.' },
-    { title: 'No Long-Term Commitment', description: 'Enjoy services without binding contracts.' },
-    { title: 'Same-Day Availability', description: 'Urgent needs? Get hourly help within hours.' },
-    { title: 'Customizable Home Care', description: 'Choose specific tasks and focus areas for maximum efficiency.' },
-    { title: 'Perfect for Small Spaces', description: 'Thorough cleaning for 1BHK apartments and PGs without overpaying.' }
+    { title: 'Budget-Friendly Cleaning', description: 'Pay only for the hours you need, perfect for young professionals and students.' },
+    { title: 'Flexible Housekeeping', description: 'Adjust timing and frequency based on your work schedule and travel plans.' },
+    { title: 'No Long-Term Commitment', description: 'Enjoy flexible services without the need for monthly contracts or binding commitments.' },
+    { title: 'Same-Day Availability', description: 'Urgent cleaning needs or last-minute guests? We provide hourly domestic help within hours.' },
+    { title: 'Customizable Home Care', description: 'Choose specific tasks and focus areas for maximum efficiency in a limited time.' },
+    { title: 'Perfect for Small Spaces', description: '1BHK apartments and PG accommodations get thorough cleaning without overpaying.' }
   ]
 
   const choosingRight = [
-    'Apartment & society ready: understands complex rules and timings across Bangalore.',
-    'Background verified: Aadhaar and local address checks for security.',
-    'Task-specific training: efficient within 2–6 hour windows.',
-    'Multi-language: Kannada, Hindi, Tamil, and English.',
-    'Flexible & reliable: early morning to evening slots available.'
+    'Bangalore Apartment & Society Ready: Our part-time maids understand apartment complexes, society timings, and urban living requirements across Bangalore.',
+    'Background Verified for Trust: Every part-time helper undergoes Aadhaar verification and local address checks for your security.',
+    'Task-Specific Training: Our maids are trained for efficient task completion within 2–6 hour windows for maximum productivity.',
+    "Multi-Language Communication: Available in Kannada, Hindi, Tamil, and English to serve Bangalore's diverse population effectively.",
+    'Flexible & Reliable: From early morning slots to evening schedules, our helpers adapt to your lifestyle.'
   ]
 
   const process = [
@@ -263,8 +264,8 @@ export default function BangalorePartTimeMaidPage() {
                   {/* Key Benefits Pills */}
                   <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                     <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Background Verified</div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Same-Day Availability</div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Flexible 2–6 Hour Slots</div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Affordable Monthly Plans</div>
                   </div>
 
                   {/* CTA Buttons */}
@@ -339,12 +340,12 @@ export default function BangalorePartTimeMaidPage() {
         {/* Why Section */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
                 Why Do Bangalore Households Choose Part-Time Maid Services?
               </h2>
               <p className="text-xl text-gray-600 mb-12">
-                Budget-friendly cleaning that fits every lifestyle.
+                Budget-Friendly Cleaning That Fits Every Lifestyle. Part-time maid services in Bangalore offer the perfect balance of professional home help and cost-effectiveness.
               </p>
             </div>
 
@@ -373,7 +374,7 @@ export default function BangalorePartTimeMaidPage() {
                 What Services Does a Part-Time Helper in Bangalore Provide?
               </h2>
               <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-                EzyHelpers provides specialized maids for each household task, delivering focused expertise and customized care solutions.
+                At EzyHelpers, our Bangalore part-time maid services provide specialized maids for each household task, delivering focused expertise and customized care solutions.
               </p>
             </div>
 
@@ -426,14 +427,13 @@ export default function BangalorePartTimeMaidPage() {
               </div>
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Pricing depends on:</h3>
+                  <p className="text-gray-700 mb-4">{pricingInfo.description}</p>
                   {pricingInfo.factors.map((factor, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <CurrencyRupeeIcon className="h-5 w-5 text-primary-600 mt-1 shrink-0" />
                       <span className="text-gray-700">{factor}</span>
                     </div>
                   ))}
-                  <p className="text-gray-600 pt-2">{pricingInfo.note}</p>
                 </div>
               </div>
             </div>
@@ -474,7 +474,7 @@ export default function BangalorePartTimeMaidPage() {
                 Choosing the Right Part-Time Helper in Bangalore
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Flexible, background-verified helpers who understand Bangalore’s urban family routines.
+                Flexible, background-verified helpers who understand Bangalore’s homes and urban family routines.
               </p>
             </div>
             <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm">
@@ -512,37 +512,10 @@ export default function BangalorePartTimeMaidPage() {
                       </div>
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 mb-3">{step.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                    <p className="text-gray-600 leading-relaxed">{step.description}.</p>
                   </div>
                 )
               })}
-            </div>
-          </div>
-        </section>
-
-        {/* Areas We Serve */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Areas We Serve in Bangalore</h2>
-              <p className="text-lg text-gray-600">Trusted part-time maid services across all Bangalore neighborhoods</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                {bangaloreAreas.map((area, index) => (
-                  <div key={index} className="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
-                    <span className="text-gray-700 font-medium text-sm">{area}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="text-center mt-8">
-                <p className="text-gray-600 mb-4">And many more areas across Bangalore</p>
-                <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors">
-                  Check Service in Your Area
-                  <ArrowRightIcon className="h-4 w-4 ml-2" />
-                </Link>
-              </div>
             </div>
           </div>
         </section>
@@ -551,17 +524,17 @@ export default function BangalorePartTimeMaidPage() {
         <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-700 text-white">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">Transform Your Bangalore Home with Affordable Excellence</h2>
+              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Transform Your Bangalore Home with Affordable Excellence</h2>
               <p className="text-xl text-primary-100 mb-10 leading-relaxed">
-                Part-time maid services offer the perfect solution for modern, busy lifestyles without breaking the budget.
+                Part-time maid services in Bangalore offer the perfect solution for modern, busy lifestyles without breaking the budget.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/hire-helper" className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors shadow-lg hover:shadow-xl">
-                  Book Part-Time Maid Now
+                  Book Part-Time Maid Online
                 </Link>
                 <Link href="tel:+919972571005" className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">
-                  Call +91 9972571005
+                  Call Now
                 </Link>
               </div>
 
@@ -595,20 +568,57 @@ export default function BangalorePartTimeMaidPage() {
 
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { title: 'Home Cook Services', href: '/services/cooks', description: 'Hire a personal cook for regional meals, special diets, and daily tiffins.' },
-                { title: 'On-Demand Maid Services', href: '/services/on-demand-helpers', description: 'Instant, task-based maid help for cleaning, cooking, and emergencies.' },
-                { title: 'Babysitter/Nanny Services', href: '/services/nanny-babysitter', description: 'Caring childcare for working families with flexible schedules.' }
+                { title: 'Home Cook Services', href: '/services/cooks', description: 'Hire a personal cook for regional meals, special diets, and daily tiffins.', cta: 'Explore Home Cooks Services' },
+                { title: 'Deep Cleaning Services', href: '/services/deep-cleaning', description: 'One-time or regular deep cleaning for apartments and villas.', cta: 'Explore Deep Cleaning Services' },
+                { title: 'On-Demand Maid Services in Bangalore', href: '/services/on-demand-helpers', description: 'Instant, task-based maid help for cleaning, cooking, and emergencies', cta: 'Explore On-Demand Services' }
               ].map((card, idx) => (
                 <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
                   <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
                   <p className="text-gray-700 mb-4">{card.description}</p>
                   <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-                    Learn More
+                    {card.cta}
                     <ArrowRightIcon className="h-4 w-4 ml-1" />
                   </Link>
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Areas We Serve */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Areas We Serve in Bangalore</h2>
+              <p className="text-lg text-gray-600">Trusted part-time maid services across all Bangalore neighborhoods</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {bangaloreAreas.map((area, index) => (
+                  <div key={index} className="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <span className="text-gray-700 font-medium text-sm">{area}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center mt-8">
+                <p className="text-gray-600 mb-4">and many more localities across Bangalore</p>
+                <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors">
+                  Check Service in Your Area
+                  <ArrowRightIcon className="h-4 w-4 ml-2" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+            </div>
+            <FAQAccordion faqs={faqs} />
           </div>
         </section>
 

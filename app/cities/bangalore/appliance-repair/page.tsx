@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Electrical Appliance Repair in Bangalore | TV, AC, Fridge Fix',
     description:
-      'Fast, expert servicing for refrigerators, washing machines, ACs, TVs and more. Same-day repairs by certified technicians across Bangalore.',
+      'Fix all home appliances in Bangalore. TV, AC, fridge, washing machine repair. Expert technicians, doorstep service.',
     url: 'https://ezyhelpers.com/cities/bangalore/appliance-repair',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -33,6 +33,8 @@ export const metadata: Metadata = {
     canonical: 'https://ezyhelpers.com/cities/bangalore/appliance-repair'
   }
 }
+
+import FAQAccordion from '@/components/FAQAccordion'
 
 export default function BangaloreApplianceRepairPage() {
   const breadcrumbs = [
@@ -58,26 +60,70 @@ export default function BangaloreApplianceRepairPage() {
   ]
 
   const whyChoose = [
-    'Verified, safety-trained technicians',
-    'Support for all appliance models',
-    'Upfront transparent price estimates',
-    'Post-service follow-up support',
-    'Flexible scheduling options',
-    'Doorstep repairs across Bangalore'
+    'Verified, Safety-Trained Technicians',
+    'Support for All Appliance Models',
+    'Upfront Transparent Price Estimates',
+    'Post-Service Follow-Up Support',
+    'Flexible Scheduling Options',
+    'Doorstep Repairs Across Bangalore'
   ]
 
   const services = [
-    'Refrigerator (Single, Double, Side-by-Side): cooling, compressor, defrost issues',
-    'Freezer / Deep Freezer: temperature, motor, sealing issues',
-    'Microwave Oven (Solo, Grill, Convection): magnetron, panel, door issues',
-    'Dishwasher: spray arm, drainage, drying faults',
-    'Washing Machine (Front/Top Load): drum, motor, control faults',
-    'Air Conditioner (Split/Window/Cassette): gas refill, compressor, full service',
-    'Ceiling/Table/Exhaust Fan: motor, capacitor, speed issues',
-    'Water Heater / Geyser (Instant/Storage/Gas): element, thermostat, pressure valve',
-    'Television (LED/LCD/OLED/Smart): screen, sound, connectivity issues',
-    'Inverter & UPS: battery, circuit, power issues',
-    'Electric Chimney (Modular/Wall/Auto-Clean): suction, motor, lighting issues'
+    {
+      title: 'Refrigerator (Single, Double, Side-by-Side)',
+      description:
+        'We repair cooling, compressor, and defrost issues in LG, Samsung, Whirlpool, Godrej, and more.'
+    },
+    {
+      title: 'Freezer / Deep Freezer',
+      description:
+        'We repair temperature, motor, and sealing issues in upright and chest freezers of major brands.'
+    },
+    {
+      title: 'Microwave Oven (Solo, Grill, Convection)',
+      description:
+        'We fix magnetron, control panel, and door issues in IFB, LG, Samsung, and other models.'
+    },
+    {
+      title: 'Dishwasher',
+      description:
+        'We resolve spray arm, drainage, and drying faults in Bosch, Siemens, Whirlpool, and similar dishwashers.'
+    },
+    {
+      title: 'Washing Machine (Front Load / Top Load)',
+      description:
+        'We repair drum, motor, and control faults in IFB, Bosch, LG, and other top brands.'
+    },
+    {
+      title: 'Air Conditioner (Split, Window, Cassette)',
+      description:
+        'We handle gas refills, compressor issues, and full servicing for major brands.'
+    },
+    {
+      title: 'Ceiling Fan / Table Fan / Exhaust Fan',
+      description:
+        'We repair fan motors, capacitors, and speed problems for consistent airflow in all room types.'
+    },
+    {
+      title: 'Water Heater / Geyser (Instant, Storage, Gas)',
+      description:
+        'We fix heating elements, thermostats, and pressure valve issues in Racold, Havells, and AO Smith geysers.'
+    },
+    {
+      title: 'Television (LED, LCD, OLED, Smart TVs)',
+      description:
+        'We fix screen, sound, and connectivity issues across all TV types from top brands like Samsung, LG, Mi, and Sony.'
+    },
+    {
+      title: 'Inverter & UPS',
+      description:
+        'We repair battery, circuit, and power issues in inverters and UPS for uninterrupted backup support.'
+    },
+    {
+      title: 'Electric Chimney (Modular / Wall-Mount / Auto-Clean)',
+      description:
+        'We repair suction, motor, and light issues in Faber, Glen, Elica, and other kitchen chimney models.'
+    }
   ]
 
   const otherAppliances = [
@@ -95,18 +141,18 @@ export default function BangaloreApplianceRepairPage() {
   ]
 
   const earlyWarnings = [
-    'Unusual noises or vibrations: buzzing/clicking indicates loose or damaged parts',
-    'Higher electricity bills: inefficiency increases power draw',
-    'Longer operating times: cycles taking longer than normal',
-    'Overheating or burning smell: electrical faults or clogged vents',
-    'Delayed response or unresponsive controls: buttons/displays wearing out'
+    'Unusual noises or vibrations — Sounds like buzzing, clicking, or rattling usually indicate loose or damaged internal parts.',
+    'Higher electricity bills — Appliances that are running inefficiently tend to consume more power without obvious signs.',
+    'Longer operating times — If your washing machine, AC, or fridge takes longer to complete tasks, it likely needs attention.',
+    'Overheating or burning smell — This could indicate electrical faults or clogged vents, which may pose fire risks if not addressed.',
+    'Delayed response or unresponsive controls — Slow or unresponsive buttons and displays often signal internal component wear or malfunction.'
   ]
 
   const process = [
-    { step: '1', title: 'Share Your Issue', description: 'Tell us which appliance needs repair and describe the problem.', icon: PencilSquareIcon },
-    { step: '2', title: 'Pick a Convenient Time', description: 'Choose a time slot that fits your schedule—morning or evening.', icon: ClockIcon },
-    { step: '3', title: 'Expert Technician Visit', description: 'Certified technician arrives with tools and genuine spare parts.', icon: WrenchScrewdriverIcon },
-    { step: '4', title: 'Quality Service & Support', description: 'Enjoy restored performance and after-service support.', icon: ShieldCheckIcon }
+    { step: '1', title: 'Share Your Issue', description: 'Let us know which appliance needs repair and briefly describe the issue.', icon: PencilSquareIcon },
+    { step: '2', title: 'Pick a Convenient Time', description: 'Choose a time slot that fits your schedule, whether in the morning or evening.', icon: ClockIcon },
+    { step: '3', title: 'Expert Technician Visit', description: 'Our trained technician will arrive on time, equipped with tools and genuine spare parts.', icon: WrenchScrewdriverIcon },
+    { step: '4', title: 'Quality Service and Support', description: 'Enjoy restored appliance performance and after-service customer support.', icon: ShieldCheckIcon }
   ]
 
   const bangaloreAreas = [
@@ -116,14 +162,46 @@ export default function BangaloreApplianceRepairPage() {
   ]
 
   const faqs = [
-    { question: 'What makes your electrical appliance repair different?', answer: 'Multi-brand expertise, genuine spare parts, and energy-efficient repairs with warranty-backed service.' },
-    { question: 'Do you provide same-day appliance repair?', answer: 'Yes, same-day service across Bangalore depending on availability. Typical response: 90 minutes in central zones, ~2 hours in outer areas.' },
-    { question: 'Which appliance brands do you service?', answer: 'LG, Samsung, Whirlpool, Bosch, Godrej, Haier, IFB, Sony, Mi, and more.' },
-    { question: 'How do you handle broken appliance repair?', answer: 'Fast diagnostics, transparent pricing, and on-the-spot repair using original spare parts.' },
-    { question: 'Do you fix noise or overheating issues?', answer: 'Yes. We diagnose vibration/overheating problems and offer lasting solutions.' },
-    { question: 'Do you provide doorstep appliance repair?', answer: 'Absolutely. Reliable doorstep service across Bangalore for all major appliances.' },
-    { question: 'Can I get a quote before booking?', answer: 'Yes. After quick diagnosis, we provide a transparent price estimate before repairs.' },
-    { question: 'Do technicians carry spare parts during the visit?', answer: 'They carry common parts; rare items are sourced quickly and installed promptly.' }
+    {
+      question: 'What makes your electrical appliance repair in Bangalore different?',
+      answer:
+        'Our multi-brand service expertise, genuine spare parts, and energy-efficient repairs make us a cost-effective and trustworthy option with warranty-backed service for modern Bangalore households.'
+    },
+    {
+      question: 'Do you provide same-day appliance repair services?',
+      answer:
+        'Yes, we offer same-day repair service across Bangalore, depending on technician availability. Response time is typically 90 minutes in central zones and 2 hours in outer areas.'
+    },
+    {
+      question: 'Which appliance brands do you service?',
+      answer:
+        'We handle appliances from major brands like LG, Samsung, Whirlpool, Bosch, Godrej, Haier, IFB, and more using expert multi-brand technical know-how. Call us to check support for your specific brand.'
+    },
+    {
+      question: 'How do you handle broken appliance repair in Bangalore?',
+      answer:
+        'We begin with fast diagnostics to identify the core issue, then proceed with transparent pricing and on-the-spot repair using original spare parts.'
+    },
+    {
+      question: 'Do you fix appliances making noise or overheating?',
+      answer:
+        'Yes. Our experts are trained to diagnose noise, vibration, and overheating problems and offer lasting solutions that restore performance.'
+    },
+    {
+      question: 'Do you provide doorstep appliance repair in Bangalore?',
+      answer:
+        'Absolutely. EzyHelpers offers reliable doorstep repair services for all major appliances across Bangalore, ensuring convenient and professional fixes without you needing to step out.'
+    },
+    {
+      question: 'Can I get a quote for appliance repair before booking?',
+      answer:
+        'Yes, we provide estimates based on the appliance issue. After a quick diagnosis, the technician will provide a transparent price quote before beginning the repair.'
+    },
+    {
+      question: 'Do your technicians carry spare parts during the home visit?',
+      answer:
+        'Yes, our technicians usually carry common spare parts. If a rare part is required, we source it quickly and return promptly to complete the installation.'
+    }
   ]
 
   const localBusinessProps = {
@@ -169,13 +247,8 @@ export default function BangaloreApplianceRepairPage() {
                   <span className="text-sm font-semibold">Trusted Appliance Technicians Across Bangalore</span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Trusted Electrical Appliance Repair
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">Bangalore</span>
-                </h1>
-                <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Fast, expert servicing for refrigerators, washing machines, ACs, TVs and more—right at your doorstep.
-                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">Trusted Electrical Appliance Repair in Bangalore</h1>
+                <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">Home appliance acting up? EzyHelpers offers fast and expert servicing for all major electrical appliances in Bangalore, including refrigerators, washing machines, ACs, and more.</p>
 
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   {trustBadges.map((tb, i) => (
@@ -193,7 +266,7 @@ export default function BangaloreApplianceRepairPage() {
                   </Link>
                   <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Call +91 9972571005</span>
+                    <span className="hidden sm:inline">Emergency Repair Service</span>
                     <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
@@ -228,8 +301,8 @@ export default function BangaloreApplianceRepairPage() {
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose EzyHelpers?</h2>
-              <p className="text-lg text-gray-600">Fast, efficient doorstep repairs designed for everyday home challenges.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose EzyHelpers for Electrical Appliance Repair in Bangalore?</h2>
+              <p className="text-lg text-gray-600">We deliver fast and efficient doorstep appliance repair services, which is designed to meet the everyday challenges at home.</p>
             </div>
 
             <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
@@ -249,15 +322,15 @@ export default function BangaloreApplianceRepairPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Electrical Appliance Repair Services</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">From kitchens to living rooms, we fix it all—reliable, same-day service for every major home appliance.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Electrical Appliance Repair Services Do We Offer in Bangalore?</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">From kitchens to living rooms, we fix it all. We offer reliable and same-day repair services for every appliance in your home.</p>
             </div>
 
             <div className="grid md:grid-cols-2 xl:grid-cols-2 gap-8">
-              {services.map((item, idx) => (
+              {services.map((svc, idx) => (
                 <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">{item.split(':')[0]}</h3>
-                  <p className="text-gray-700">{item.split(':').slice(1).join(':').trim()}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">{svc.title}</h3>
+                  <p className="text-gray-700">{svc.description}</p>
                 </div>
               ))}
             </div>
@@ -282,8 +355,8 @@ export default function BangaloreApplianceRepairPage() {
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">5 Early Appliance Warning Signs</h2>
-              <p className="text-lg text-gray-600">Prevent costly breakdowns with timely servicing—watch for these signs.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Wait for a Breakdown? Know These 5 Early Appliance Warning Signs</h2>
+              <p className="text-lg text-gray-600">At EzyHelpers, we recommend timely servicing to prevent costly breakdowns. Watch for these early signs to keep your appliances running smoothly.</p>
             </div>
 
             <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
@@ -303,8 +376,8 @@ export default function BangaloreApplianceRepairPage() {
         <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Book Appliance Repair</h2>
-              <p className="text-lg text-gray-600">A fast and stress-free booking process in four steps.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Book Our Appliance Repair Services in Bangalore?</h2>
+              <p className="text-lg text-gray-600">Enjoy a fast and stress-free booking process in just four simple steps:</p>
             </div>
 
             <div className="grid md:grid-cols-4 gap-8">
@@ -329,50 +402,6 @@ export default function BangaloreApplianceRepairPage() {
           </div>
         </section>
 
-        {/* FAQs */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
-              <div className="divide-y divide-gray-200 rounded-2xl border border-gray-100 bg-white">
-                {faqs.map((faq, idx) => (
-                  <div key={idx} className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Related Services */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
-              <p className="text-lg text-gray-600">Complete home solutions beyond appliance repairs.</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { title: 'Carpentry Repairs in Bangalore', href: '/services/carpenters', description: 'Furniture fixes, door adjustments, and custom woodwork.' },
-                { title: 'Gardener in Bangalore', href: '/services/gardener', description: 'Seasonal plant care, lawn maintenance, and full garden setups.' },
-                { title: 'House Plumbing Repair in Bangalore', href: '/services/plumbers', description: 'Leaks fixed, drains unclogged, taps repaired by experts.' }
-              ].map((card, idx) => (
-                <div key={idx} className="rounded-2xl p-8 bg-white hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
-                  <p className="text-gray-700 mb-4">{card.description}</p>
-                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-                    Learn More
-                    <ArrowRightIcon className="h-4 w-4 ml-1" />
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Final CTA */}
         <section className="py-16 bg-white">
           <div className="container-custom text-center">
@@ -387,6 +416,63 @@ export default function BangaloreApplianceRepairPage() {
                 <PhoneIcon className="h-5 w-5 mr-2" />
                 Call +91 9972571005
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Explore Other Services */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
+              <p className="text-lg text-gray-600">Complete home solutions beyond appliance repairs&nbsp;</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[ 
+                { title: 'Carpentry Repairs in Bangalore', href: '/cities/bangalore/carpenters', description: 'We handle custom furniture fixes, door adjustments, and other woodwork repairs.' },
+                { title: 'Gardener in Bangalore', href: '/cities/bangalore/gardener', description: 'Get seasonal plant care, lawn maintenance, and full garden setup services.' },
+                { title: 'House Plumbing Repair in Bangalore', href: '/cities/bangalore/plumbers', description: 'We fix leaks, clogged drains, and faulty taps with expert plumbing support.' }
+              ].map((card, idx) => (
+                <div key={idx} className="rounded-2xl p-8 bg-white hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
+                  <p className="text-gray-700 mb-4">{card.description}</p>
+                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
+                    {card.title.includes('Carpentry') ? 'Learn About Carpentry Services' : card.title.includes('Gardener') ? 'Learn About Gardening Services' : 'Learn About Plumbing Services'}
+                    <ArrowRightIcon className="h-4 w-4 ml-1" />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Preventive Maintenance */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 font-display">The Importance of Preventive Appliance Maintenance in Bangalore</h3>
+            </div>
+            <div className="max-w-4xl mx-auto text-gray-700 space-y-4">
+              <p>
+                In Bangalore, issues like power fluctuations, dust buildup, and hard water cause ongoing stress on home appliances. Regular preventive maintenance helps catch electrical faults early, improves energy efficiency, and reduces the risk of sudden breakdowns.
+              </p>
+              <p>
+                Our preventive servicing is affordable, dependable, and perfect for busy families and tenants. Scheduling preventive maintenance every 3 to 6 months can extend the lifespan of appliances and reduce electricity bills.
+              </p>
+              <p>
+                EzyHelpers offers reliable, certified technicians and warranty-backed servicing to keep your appliances in top shape.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
+              <FAQAccordion faqs={faqs} />
             </div>
           </div>
         </section>

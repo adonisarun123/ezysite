@@ -184,7 +184,7 @@ export default function ContactPageClient() {
               </div>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl text-white font-bold mb-6 leading-tight">
               Get in Touch with
               <span className="block bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
                 EzyHelpers
@@ -199,17 +199,17 @@ export default function ContactPageClient() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
                 <PhoneIcon className="h-8 w-8 text-blue-300 mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Call Us</h3>
+                <h3 className="font-semibold text-white mb-2">Call Us</h3>
                 <p className="text-gray-200">24/7 Support Available</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
                 <EnvelopeIcon className="h-8 w-8 text-purple-300 mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Email Us</h3>
+                <h3 className="font-semibold text-white mb-2">Email Us</h3>
                 <p className="text-gray-200">Quick Response Guaranteed</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
                 <MapPinIcon className="h-8 w-8 text-green-300 mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Visit Us</h3>
+                <h3 className="font-semibold text-white mb-2">Visit Us</h3>
                 <p className="text-gray-200">Multiple City Locations</p>
               </div>
             </div>
@@ -391,14 +391,14 @@ export default function ContactPageClient() {
                         onClick={handlePhoneClick}
                         className="text-indigo-600 hover:text-indigo-800 block"
                       >
-                        +91 99725 71005
+                        <span className="font-medium text-gray-900 mr-1">Bangalore:</span> +91 99725 71005
                       </a>
                       <a 
-                        href="tel:+919945843005" 
+                        href="tel:+919410814693" 
                         onClick={handlePhoneClick}
                         className="text-indigo-600 hover:text-indigo-800 block"
                       >
-                        
+                        <span className="font-medium text-gray-900 mr-1">Bareilly:</span> +91 94108 14693
                       </a>
                       <p className="text-gray-600 text-sm mt-1">Available 24/6</p>
                     </div>
@@ -427,7 +427,8 @@ export default function ContactPageClient() {
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">Office Address</h4>
                       <address className="text-gray-600 not-italic">
-                        HSR Layout, Bangalore, Karnataka 560102<br />
+                        <span className="font-medium text-gray-900">Bangalore:</span> HSR Layout, Bangalore, Karnataka 560102<br />
+                        <span className="font-medium text-gray-900">Bareilly:</span> 187/3, Vivek Vihar, Janakpuri, Near Avadh Plaza Hotel, Bareilly, Uttar Pradesh 243001<br />
                         <span className="text-sm">Serving across India's major cities</span>
                       </address>
                     </div>
@@ -449,7 +450,7 @@ export default function ContactPageClient() {
 
               {/* Quick Support */}
               <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-4">Need Immediate Help?</h3>
+                <h3 className="text-2xl text-white font-bold mb-4">Need Immediate Help?</h3>
                 <p className="mb-6 opacity-90">
                   Our customer support team is available 24/7 to assist you with any queries or emergency bookings.
                 </p>
@@ -539,25 +540,6 @@ export default function ContactPageClient() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trustpilot Reviews Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              Trusted by Thousands of Families
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              See what our customers say about EzyHelpers
-            </p>
-            {/* TrustBox widget - Review Collector */}
-            <div className="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="68a1c72a576f64d91294b48e" data-style-height="52px" data-style-width="100%" data-token="2931d60a-58ab-4e13-be80-2ad15d4b1bbc">
-              <a href="https://www.trustpilot.com/review/ezyhelpers.com" target="_blank" rel="noopener">Trustpilot</a>
-            </div>
-            {/* End TrustBox widget */}
           </div>
         </div>
       </section>

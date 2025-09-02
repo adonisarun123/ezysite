@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
+import FAQAccordion from '@/components/FAQAccordion'
 import {
   MapPinIcon,
   CheckCircleIcon,
@@ -47,28 +48,31 @@ export default function BangaloreCooksPage() {
     'Multi-Cuisine Expertise',
     'Fresh Meal Preparation',
     'Kitchen Hygiene Standards',
-    'Flexible Timings'
+    'Flexible Timings for Busy Lifestyles',
+    'Expert in Regional & Daily Cuisine',
+    'Veg & Non-Veg Cooking Covered',
+    'Trained for Hygiene and Cleanliness'
   ]
 
   const reasons = [
     {
       title: 'Traffic & Time Constraints',
-      description: 'Skip cooking stress after long commutes; fresh meals are ready on time.',
+      description: 'Skip cooking stress after long commutes; our home chefs ensure fresh meals are always ready.',
       icon: CalendarDaysIcon
     },
     {
       title: 'Diverse Taste Preferences',
-      description: 'Regional and multi-cuisine dishes tailored to family taste.',
+      description: 'Our home cooks specialise in regional and multi-cuisine dishes tailored to your family\'s food habits and flavour preferences.',
       icon: SparklesIcon
     },
     {
       title: 'Health-Conscious Lifestyle',
-      description: 'Low-oil, diabetic-friendly meals for health-focused families.',
+      description: 'Get low-oil, diabetic-friendly meals daily. Suitable for health-focused professionals and fitness-conscious families in Bangalore.',
       icon: HeartIcon
     },
     {
       title: 'Elderly and Child Nutrition',
-      description: 'Soft, nutritious meals for elders and child-friendly options.',
+      description: 'Daily soft, nutritious meals prepared specially for elderly parents or kids with dietary sensitivities.',
       icon: UserGroupIcon
     }
   ]
@@ -77,35 +81,35 @@ export default function BangaloreCooksPage() {
     {
       title: 'Daily Meal Preparation',
       description:
-        'Fresh, nutritious meals prepared daily using locally sourced ingredients and your taste preferences.',
+        'Fresh, nutritious meals prepared daily using locally sourced ingredients from Bangalore\'s best markets, accommodating your family\'s taste preferences.',
       icon: FireIcon
     },
     {
       title: 'Kitchen Management & Organization',
       description:
-        'Grocery planning, ingredient prep, tidy counters, and maintaining professional standards.',
+        'Full kitchen organization, grocery planning from nearby stores, ingredient preparation, and maintaining professional home cooking standards.',
       icon: ClipboardDocumentListIcon
     },
     {
       title: 'Specialized Dietary Solutions',
       description:
-        'Diabetic-friendly, low-sodium, vegetarian, and Jain meals to match your health goals.',
+        'Expert dietary management for diabetic meals, low-sodium preparations, vegetarian, and Jain food requirements; addressing Bangalore\'s health-conscious community needs.',
       icon: CheckCircleIcon
     },
     {
       title: 'Multi-Cuisine Expertise',
       description:
-        'Karnataka staples plus Tamil, Kerala, Andhra, North Indian, and light Indo-Chinese.',
+        'Skilled in preparing Karnataka dishes along with popular cuisines from Tamil Nadu, Kerala, Andhra, North India, and even light Indo-Chinese meals.',
       icon: SparklesIcon
     }
   ]
 
   const cuisines = [
-    'South Indian: Dosa, sambar, rasam, rice dishes with homestyle spices',
-    'North Indian: Sabzis, rotis, parathas, and gravies in traditional style',
-    'Chinese: Fried rice, noodles, Manchurian with Indo-Chinese flair',
-    'Continental: Healthy pasta and salad breakfasts',
-    'Regional Indian: Dal baati, litti chokha, Bengali and Gujarati meals'
+    'South Indian Authentic dosas, sambar, rasam, and rice dishes with homestyle spices and flavours.',
+    'North Indian Wholesome sabzis, rotis, parathas, and creamy gravies prepared in traditional style.',
+    'Chinese Tasty fried rice, noodles, and Manchurian with Indo-Chinese spices and street-style flair.',
+    'Continental Fresh pasta and salad breakfasts made with healthy ingredients.',
+    'Regional Indian Dal baati, litti chokha, and Bengali and Gujarati meals rooted in cultural taste.'
   ]
 
   const cookTypes = [
@@ -119,14 +123,14 @@ export default function BangaloreCooksPage() {
     },
     {
       title: 'Part-Time Cooks in Bangalore',
-      points: ['1 to 2 meals per day', 'Breakfast-only or dinner-only', 'Evening or weekend availability']
+      points: ['1 to 2 meals per day', 'Breakfast-only or dinner-only options', 'Evening or weekend availability']
     }
   ]
 
   const process = [
     { step: '1', title: 'Tell Us Your Needs', description: 'Share cuisine, meal count, and timing preferences for daily cooking.', icon: ChatBubbleLeftRightIcon },
-    { step: '2', title: 'Get Matched', description: 'Receive verified cook profiles tailored to your kitchen needs.', icon: ClipboardDocumentListIcon },
-    { step: '3', title: 'Hire and Enjoy', description: 'Start quickly and enjoy homestyle meals every day.', icon: CheckCircleIcon }
+    { step: '2', title: 'Get Matched', description: 'Receive verified cook profiles tailored to your family’s unique kitchen needs.', icon: ClipboardDocumentListIcon },
+    { step: '3', title: 'Hire and Enjoy', description: 'Get started quickly and enjoy hassle-free, home-cooked meals every day.', icon: CheckCircleIcon }
   ]
 
   const bangaloreAreas = [
@@ -136,17 +140,61 @@ export default function BangaloreCooksPage() {
   ]
 
   const faqs = [
-    { question: 'How can I find a reliable cook for home in Bangalore?', answer: 'We connect you with verified, experienced home cooks who pass background checks and skill assessments. Shortlisted profiles match your diet and schedule.' },
-    { question: 'Do your home cooks accommodate dietary restrictions?', answer: 'Yes. Diabetic-friendly, Jain food, vegan, and low-sodium diets are supported by trained cooks.' },
-    { question: 'Will your home cooks help with grocery and vegetable shopping?', answer: 'Many cooks assist with daily/weekly grocery shopping from local markets or nearby stores.' },
-    { question: 'Can your cook prepare meals for office tiffins?', answer: 'Yes. Many families rely on our cooks for nutritious office tiffins—healthier and cost-effective.' },
-    { question: 'How do you ensure food safety and kitchen hygiene?', answer: 'We train cooks on kitchen safety and hygiene: clean utensils, proper storage, and personal cleanliness.' },
-    { question: 'Can I hire a cook for specific cuisines?', answer: 'Yes. Multi-cuisine cooks trained in South Indian, North Indian, Bengali, Gujarati, and Chinese.' },
-    { question: 'Is hiring a home cook a good idea?', answer: 'It saves time, improves diet quality, and reduces stress—great for working couples and elders.' },
-    { question: 'What is the salary of a female cook in Bangalore?', answer: 'Part-time: ₹6,000–₹10,000/month; Full-time: ₹12,000–₹20,000/month; Live-in: ₹25,000+/month depending on duties.' },
-    { question: 'Can I get a temporary cook for a few weeks or events?', answer: 'Yes. We offer short-term cooks for functions or when your regular cook is on leave.' },
-    { question: 'Are male cooks available for home cooking?', answer: 'Yes. Both male and female cooks are available. Share any preference during booking.' },
-    { question: 'Can I hire a cook for elderly care diets?', answer: 'Absolutely. We can follow diet charts for elders: soft food, low-oil, diabetic-friendly, etc.' }
+    {
+      question: 'How can I find a reliable cook for home in Bangalore?',
+      answer:
+        'EzyHelpers connects you with verified and experienced home cooks in Bangalore who undergo background checks and cooking skill assessments. We share shortlisted profiles based on your dietary needs, preferred cuisine, and schedule for a perfect home cooking match.'
+    },
+    {
+      question: 'Do your home cooks accommodate dietary restrictions?',
+      answer:
+        'Yes, our cooks are experienced enough to prepare meals according to your health needs. Whether it’s diabetic-friendly, Jain food, vegan, or low-sodium diets, EzyHelpers ensures you get a cook who understands and respects your dietary preferences.'
+    },
+    {
+      question: 'Will your home cooks help with grocery and vegetable shopping in Bangalore?',
+      answer:
+        'Yes, many of our home cooks in Bangalore assist with daily or weekly grocery and vegetable shopping. They can visit local markets or nearby stores to purchase fresh ingredients or accompany you when required. This ensures meals are prepared with fresh, timely ingredients while saving you time and effort.'
+    },
+    {
+      question: 'Can your cook prepare meals for office tiffins?',
+      answer:
+        'Absolutely. Many Bangalore families trust EzyHelpers’ cooks to prepare home-style meals for office tiffins. It’s a healthier, more cost-effective alternative to restaurant food, especially for busy professionals seeking nutritious lunch options.'
+    },
+    {
+      question: 'How do you ensure food safety and kitchen hygiene?',
+      answer:
+        'At EzyHelpers, we train all home cooks on kitchen safety, personal hygiene, and clean cooking practices. We make sure cooking is clean and safe by using clean utensils, storing food properly, and training cooks in personal hygiene practices.'
+    },
+    {
+      question: 'Can I hire a cook for specific cuisines?',
+      answer:
+        'Yes. EzyHelpers provides multi-cuisine home cooks trained in South Indian (Karnataka, Kerala, and Tamil), North Indian, Bengali, Gujarati, and Chinese cuisines, which are perfect for Bangalore’s diverse families.'
+    },
+    {
+      question: 'Is hiring a home cook a good idea?',
+      answer:
+        'Hiring a cook is one of the best ways to save time and eat healthier. With a reliable cook, you get fresh meals according to your taste, less stress over daily cooking, and improved work-life balance, especially helpful for working couples and elders.'
+    },
+    {
+      question: 'What is the salary of a female cook in Bangalore?',
+      answer:
+        'The salary of a female home cook in Bangalore depends on her experience, working hours, and specific duties. On average, part-time female cooks earn ₹6,000 to ₹10,000 per month, while full-time cooks typically earn ₹12,000 to ₹20,000 per month. Live-in cooks may charge upwards of ₹25,000/month with added responsibilities.'
+    },
+    {
+      question: 'Can I get a temporary cook for a few weeks or events in Bangalore?',
+      answer:
+        'Yes, EzyHelpers offers temporary cook services in Bangalore for short-term needs like family functions or when your regular cook is on leave. You can book skilled cooks for a few days, weeks, or just for a special occasion. Our flexible service ensures you get fresh, home-style food without any long-term commitment.'
+    },
+    {
+      question: 'Are male cooks available for home cooking in Bangalore?',
+      answer:
+        'Yes, EzyHelpers provides both male and female home cooks in Bangalore. Many male cooks are experienced in handling bulk meal preparation, special diets, or cooking for large families. If you have a gender preference, let us know during booking, and we’ll match you with the right home cook for your needs.'
+    },
+    {
+      question: 'Can I hire a cook for elderly care diets in Bangalore?',
+      answer:
+        'Absolutely. Our trained home cooks in Bangalore can prepare meals that are suitable for elderly family members, including soft food, low-oil dishes, diabetic-friendly recipes, or food suited for age-related health conditions. Whether it\'s a special diet chart from a doctor or simple, easy-to-digest home food, our cooks handle it with care and attention.'
+    }
   ]
 
   const localBusinessProps = {
@@ -191,11 +239,10 @@ export default function BangaloreCooksPage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Cook for Home
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">Bangalore</span>
+                  Cook for Home in Bangalore
                 </h1>
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Fresh, hygienic, homestyle meals from verified professional home cooks. Tailored to your taste, culture, and routine.
+                  Fresh, hygienic, and homestyle meals daily from verified professional home cooks in Bangalore. Personalised cooking tailored to your diet, culture, and daily routine.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
@@ -241,7 +288,7 @@ export default function BangaloreCooksPage() {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose Our Cook for Home in Bangalore?</h2>
-              <p className="text-lg text-gray-600">Professional cooking designed for Bangalore’s diverse lifestyles—from IT professionals to traditional families.</p>
+              <p className="text-lg text-gray-600">Professional home cooking services designed specifically for Bangalore's diverse lifestyle needs, from IT professionals to traditional families.</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -265,8 +312,8 @@ export default function BangaloreCooksPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Cook Services Available in Bangalore</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">From daily meals to special diets and multi-cuisine cooking—get exactly what your family needs.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Are the Different Cook Services Available in Bangalore?</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">From daily meal preparation services to special occasion cooking, our skilled home chefs in Bangalore handle all your food needs.</p>
             </div>
 
             <div className="grid md:grid-cols-2 xl:grid-cols-2 gap-8">
@@ -290,8 +337,8 @@ export default function BangaloreCooksPage() {
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Cuisines Our Home Cooks Specialise In</h2>
-              <p className="text-lg text-gray-600">Trained in multiple cuisines to serve Bangalore’s diverse population.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What cuisines do our home cooks specialise in?</h2>
+              <p className="text-lg text-gray-600">Our home cooks in Bangalore are trained in multiple cuisines to cater to the city's diverse population.</p>
             </div>
             <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
               <ul className="space-y-3">
@@ -310,8 +357,8 @@ export default function BangaloreCooksPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Types of Home Cook Services</h2>
-              <p className="text-lg text-gray-600">Choose an option that fits your schedule and meal needs.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Types of Home Cook Services Are Available in Bangalore?</h2>
+              <p className="text-lg text-gray-600">Explore cook options to suit your family's schedule, meal needs, and lifestyle.</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -336,8 +383,8 @@ export default function BangaloreCooksPage() {
         <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Hire a Cook for Home</h2>
-              <p className="text-lg text-gray-600">A simple process to get you a reliable home cook tailored to your needs.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Hire a Cook for Home in Bangalore?</h2>
+              <p className="text-lg text-gray-600">Discover our simple, step-by-step process to book a reliable home cook tailored to your family's needs.</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -353,6 +400,43 @@ export default function BangaloreCooksPage() {
                   </div>
                 )
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Explore Trusted Home Maintenance Services in Bangalore */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Trusted Home Maintenance Services in Bangalore</h2>
+              <p className="text-lg text-gray-600">Skilled professionals for all your home improvement, repair, and upgrade needs.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[{
+                title: 'Carpenter Services in Bangalore',
+                href: '/cities/bangalore/carpenter',
+                description: 'Furniture repairs, shelf fitting, and woodwork for your home.',
+                linkText: 'Explore Carpenter Services'
+              }, {
+                title: 'Painter Services in Bangalore',
+                href: '/cities/bangalore/painter',
+                description: 'Expert painting for interiors, exteriors, or full home makeovers.',
+                linkText: 'Explore Painting Services'
+              }, {
+                title: 'Home Appliance Repair in Bangalore',
+                href: '/cities/bangalore/appliance-repair',
+                description: 'Same-day service for ACs, fridges, washing machines, and more.',
+                linkText: 'Explore Appliance Repair Services'
+              }].map((card, idx) => (
+                <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
+                  <p className="text-gray-700 mb-4">{card.description}</p>
+                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
+                    {card.linkText}
+                    <ArrowRightIcon className="h-4 w-4 ml-1" />
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -389,44 +473,12 @@ export default function BangaloreCooksPage() {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
-              <div className="divide-y divide-gray-200 rounded-2xl border border-gray-100 bg-white">
-                {faqs.map((faq, idx) => (
-                  <div key={idx} className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
+              <FAQAccordion faqs={faqs} />
             </div>
           </div>
         </section>
 
-        {/* Related Services */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Related Home Services</h2>
-              <p className="text-lg text-gray-600">More trusted help for a smoother home routine in Bangalore.</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { title: 'Full-Time Maid in Bangalore', href: '/cities/bangalore/full-time-maid', description: 'Daily home management support: cleaning, kitchen help, and more.' },
-                { title: 'On-Demand Helper in Bangalore', href: '/cities/bangalore/on-demand-helper', description: 'Instant help for urgent needs, events, and last-minute support.' },
-                { title: 'Senior Citizen Care in Bangalore', href: '/cities/bangalore/elderly-care', description: 'Trained caretakers for mobility help, medication, and companionship.' }
-              ].map((card, idx) => (
-                <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
-                  <p className="text-gray-700 mb-4">{card.description}</p>
-                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-                    Learn More
-                    <ArrowRightIcon className="h-4 w-4 ml-1" />
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
         <Footer />
       </main>

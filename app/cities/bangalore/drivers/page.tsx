@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
+import FAQAccordion from '@/components/FAQAccordion'
 import {
   MapPinIcon,
   ShieldCheckIcon,
@@ -19,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: 'Car Driver in Bangalore | Daily & Outstation',
   description:
-    'Get reliable personal car driver services in Bangalore for daily commutes, airport transfers, office travel & family transportation with experienced drivers.',
+    'Get reliable personal car driver services in Bangalore for daily commutes, office travel & family transportation with experienced drivers.',
   openGraph: {
     title: 'Car Driver in Bangalore | Daily & Outstation',
     description:
@@ -51,23 +52,23 @@ export default function BangaloreDriversPage() {
 
   const reasons = [
     {
-      title: 'Beat Traffic & Save Time',
-      description: 'Our drivers know Bangalore shortcuts and peak-hour bypasses.',
+      title: 'Stuck in traffic often?',
+      description: 'Our drivers know Bangalore’s shortcuts and peak-hour bypasses.',
       icon: MapIcon
     },
     {
-      title: 'Family & Elderly Transport',
-      description: 'Patient, courteous drivers for seniors, kids, and family routines.',
+      title: 'Worried about elders travelling alone?',
+      description: 'We provide patient, trained drivers for elderly and family transportation.',
       icon: UserGroupIcon
     },
     {
-      title: 'Corporate Convenience',
-      description: 'Stay productive while we handle your daily commutes and meetings.',
+      title: 'Busy work schedule?',
+      description: 'Use our driver services in Bangalore, designed for corporate executives, saving you time and stress.',
       icon: ClockIcon
     },
     {
-      title: 'Airport & Intercity',
-      description: 'Punctual airport pickups/drops and safe outstation trips.',
+      title: 'Need airport transfers or intercity trips?',
+      description: 'Our chauffeur service in Bangalore ensures timely and relaxed travel.',
       icon: PaperAirplaneIcon
     }
   ]
@@ -76,27 +77,27 @@ export default function BangaloreDriversPage() {
     {
       title: 'Daily Commute Drivers',
       description:
-        'Reliable drivers for school drops, office commutes, and daily errands to keep your routine smooth.'
+        'Reliable drivers for school drops, office commutes, and daily errands, ensuring your routine runs smoothly and stress-free.'
     },
     {
       title: 'Elderly & Family Transport',
       description:
-        'Trained, patient drivers who assist seniors and kids with careful, comfortable travel.'
+        'Patient drivers who understand the needs of seniors, kids, and dependent family members, offering extra care and comfort.'
     },
     {
       title: 'Airport Pickup & Drop',
       description:
-        'On-time arrivals aligned with your flight schedule, with luggage assistance.'
+        'Punctual drivers who align with your flight timing, help with luggage, and ensure smooth airport transfers every time.'
     },
     {
       title: 'Intercity & Outstation',
       description:
-        'Experienced drivers for long drives, route planning, and safe outstation trips.'
+        'Skilled drivers for outstation trips, handling route planning, rest stops, and long drives with safety and professionalism.'
     },
     {
       title: 'Medical & Emergency Travel',
       description:
-        'Quick-response drivers for hospital visits, checkups, and urgent rides.'
+        'Quick-response drivers available for hospital visits, checkups, and emergency rides, always dependable when matters most.'
     }
   ]
 
@@ -106,20 +107,21 @@ export default function BangaloreDriversPage() {
       points: [
         'Available 24x7 for all family members',
         'Assists with vehicle upkeep and maintenance reminders',
-        'Manages multiple daily trips and coordinates travel',
-        'Weekend, holiday & emergency availability',
-        'Stays at your home for convenience and trust'
+        'Manages multiple daily trips with ease',
+        'Efficiently coordinates school, office, and personal travel',
+        'Weekend, holiday & emergency availability guaranteed',
+        'Stays at your home for complete convenience and trust'
       ]
     },
     {
       title: 'Full-Time Car Driver in Bangalore',
       points: [
-        '8–10 hours of exclusive daily service',
+        '8 to 10 hours of exclusive daily service',
         'Perfect for office commutes and business travel',
         'Reliable school drop-off and pickups',
-        'Efficient route planning to avoid delays',
+        'Efficient Bangalore route planning to avoid traffic delays',
         'Presentable, punctual, and professional',
-        'Tracks fuel use & basic maintenance scheduling'
+        'Tracks fuel use & supports basic maintenance scheduling'
       ]
     },
     {
@@ -129,54 +131,50 @@ export default function BangaloreDriversPage() {
         'Transport for weddings, events, or parties',
         'Emergency hospital runs or doctor visits',
         'Local shopping, errands, and day tours',
-        'Backup driver support when yours is unavailable',
+        'Urgent or backup driver support when yours is unavailable',
         'Weekend getaways and intercity leisure trips'
       ]
     }
   ]
 
   const qualifications = [
-    'Valid Driving License: verified with clean records',
-    'Background Verification: Aadhaar, DL, and address checks',
-    'Defensive Driving Training: traffic management & emergency response',
-    'Local Area Knowledge: Indiranagar, Jayanagar, HSR Layout and more',
-    'Professional Conduct: courteous, punctual, and respectful',
-    'Vehicle Maintenance Awareness: basic upkeep and service coordination'
+    { title: 'Valid Driving License', description: 'All our drivers hold verified licenses and clean driving records, ensuring full legal and safety compliance.' },
+    { title: 'Background Verification', description: 'Each driver undergoes Aadhaar, DL, and address verification for your peace of mind.' },
+    { title: 'Defensive Driving Training', description: 'Professionally trained in safe driving, Bangalore traffic management, and emergency response protocols.' },
+    { title: 'Local Area Knowledge', description: 'Our drivers know key zones like Indiranagar, Jayanagar, HSR Layout, and how to navigate Bangalore traffic smartly.' },
+    { title: 'Professional Conduct', description: 'Expect courteous, punctual, and respectful behaviour throughout the service period.' },
+    { title: 'Vehicle Maintenance Awareness', description: 'Basic upkeep knowledge with service coordination ensures your car stays road-ready.' }
   ]
 
   const features = [
     'GPS navigation support to avoid traffic and find faster routes',
-    'Fuel management: monitor levels, plan refills, choose trusted stations',
+    'Fuel management: monitor levels, plan refills smartly, and choose trusted stations across Bangalore routes',
     'Vehicle security protocols and responsible handling',
     'Multi-language support: Kannada, Hindi, Tamil, English',
-    'Flexible scheduling: hourly, full-day, or 24-hour bookings',
+    'Flexible scheduling: Book drivers for 24hrs, full-day or hourly needs',
     'Emergency assistance ready: quick response for hospital/roadside situations'
   ]
 
   const process = [
     { step: '1', title: 'Call or Book Online', description: 'Call +91 9972571005 or submit your details via our online form.', icon: PhoneIcon },
-    { step: '2', title: 'Tell Us Your Need', description: 'Share category (live-in, full-time, on-demand), timings, location, and car details.', icon: MapIcon },
-    { step: '3', title: 'Get Matched Instantly', description: 'We assign a background-verified driver suited to your requirements.', icon: ShieldCheckIcon },
-    { step: '4', title: 'Travel Worry-Free', description: 'Enjoy safe, on-time travel with a trained, courteous driver.', icon: CheckCircleIcon }
+    { step: '2', title: 'Tell Us Your Need', description: 'Share your driver category (live-in, full-time, on-demand), timing, location, and car details.', icon: MapIcon },
+    { step: '3', title: 'Get Matched Instantly', description: 'We quickly assign a background-verified driver suited to your travel requirements.', icon: ShieldCheckIcon },
+    { step: '4', title: 'Travel Worry-Free', description: 'Enjoy safe, on-time travel with a trained, courteous driver at your service.', icon: CheckCircleIcon }
   ]
 
-  const bangaloreAreas = [
-    'Electronic City', 'Whitefield', 'Marathahalli', 'Koramangala', 'Indiranagar',
-    'Jayanagar', 'BTM Layout', 'HSR Layout', 'Sarjapur Road', 'Bannerghatta Road',
-    'Yelahanka', 'Hebbal', 'Rajajinagar', 'Malleshwaram', 'Basavanagudi'
-  ]
+  
 
   const faqs = [
-    { question: 'What makes your car driver service different in Bangalore?', answer: 'Drivers are trained for Bangalore’s traffic with strong local knowledge of IT corridors and residential areas. All are background-verified.' },
-    { question: 'Do you provide personal drivers for elderly care?', answer: 'Yes. Drivers assist elderly passengers, coordinate medical appointments, and communicate with family.' },
-    { question: 'What vehicle types can drivers handle?', answer: 'Hatchbacks, sedans, SUVs, and luxury vehicles—licensed and experienced.' },
-    { question: 'Do drivers know Bangalore’s IT corridors?', answer: 'Yes. Route expertise across ORR, Sarjapur Road, Whitefield, and more for faster commutes.' },
-    { question: 'Can I get one-time chauffeur drivers for events?', answer: 'Yes. One-time bookings for weddings, corporate events, and private gatherings are available.' },
-    { question: 'Airport drop or intercity travel available?', answer: 'Definitely. We manage airport transfers with flight tracking and offer outstation driving.' },
-    { question: 'Can I hire a driver for a day or a few hours?', answer: 'Yes. On-demand hourly or full-day bookings for urgent or special needs.' },
-    { question: 'What is the cost of hiring a car driver in Bangalore?', answer: 'Pricing depends on duration and type—hourly, daily, live-in, or outstation. Call us for exact rates.' },
-    { question: 'Are multilingual drivers available?', answer: 'Yes. Many drivers speak Kannada, Hindi, Tamil, and English.' },
-    { question: 'Is fuel cost included in pricing?', answer: 'No. Charges cover the driver’s service; fuel is borne by the client. Drivers help track fuel and refills.' }
+    { question: 'What makes your car driver in Bangalore service different?', answer: 'Our drivers are specially trained in Bangalore’s traffic with strong local knowledge of IT corridors, residential areas, and major connectivity routes. Each driver is background-verified and skilled in navigating city shortcuts and safe paths.' },
+    { question: 'Do you provide personal drivers in Bangalore for elderly care?', answer: 'Absolutely. Our drivers are trained to assist elderly passengers with patient driving, medical appointment coordination, and clear communication with family members.' },
+    { question: 'What vehicle types can your drivers handle?', answer: 'Our chauffeur drivers in Bangalore are experienced to operate all car types: hatchbacks, sedans, SUVs, and even high-end luxury vehicles, with proper licensing and experience.' },
+    { question: 'Do you provide drivers familiar with Bangalore’s IT corridors?', answer: 'Yes. Our drivers have strong route expertise across key IT corridors like Outer Ring Road, Sarjapur Road, and Whitefield, ensuring faster commutes through Bangalore’s major corporate zones.' },
+    { question: 'Do you provide one-time chauffeur drivers in Bangalore for special events?', answer: 'Yes, we offer one-time chauffeur drivers in Bangalore for special occasions like weddings, corporate events, and private gatherings. Our drivers arrive on time, dressed professionally, and ensure smooth, respectful service throughout the event for you and your guests.' },
+    { question: 'Can I book a driver for airport drop or intercity travel?', answer: 'Definitely. We handle airport transfers with real-time flight tracking and also offer intercity driving for leisure, business, or family travel.' },
+    { question: 'Can I hire a driver in Bangalore just for one day or a few hours?', answer: 'Yes, we offer on-demand drivers in Bangalore for a few hours, full-day, or one-time events. Whether it’s a wedding, airport pickup, or urgent hospital visit, you can hire an experienced chauffeur whenever needed, without long-term commitments.' },
+    { question: 'What is the cost of hiring a car driver in Bangalore?', answer: 'Driver costs in Bangalore depend on the duration and type of service: hourly, daily, live-in, or outstation. Call us for exact rates; our pricing is transparent, with no hidden charges, and customised to your travel needs.' },
+    { question: 'Can I get a driver who speaks Kannada or Hindi in Bangalore?', answer: 'Yes, we have multilingual drivers in Bangalore who can communicate in Kannada, Hindi, Tamil, and English. This makes communication easier for your family, elderly members, or clients with language preferences.' },
+    { question: 'Is fuel cost included in your driver service pricing in Bangalore?', answer: 'No, our charges cover the driver’s service only. Fuel expenses are borne by the client. However, our drivers assist in monitoring fuel usage, planning refills, and choosing trusted petrol stations on your route.' }
   ]
 
   const localBusinessProps = {
@@ -221,11 +219,11 @@ export default function BangaloreDriversPage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Professional Car Driver
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">Bangalore</span>
+                  Professional Car Driver in Bangalore
                 </h1>
+                <p className="text-2xl text-white/95 font-semibold mb-2">Safe & Reliable Chauffeur Service in Bangalore</p>
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Safe & reliable chauffeur service for family, office, and intercity travel. Courteous, punctual, and background-verified.
+                  Skip the stress of driving! Book a professional driver in Bangalore for family, office, or intercity travel. Safe, courteous, and always punctual.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
@@ -285,7 +283,7 @@ export default function BangaloreDriversPage() {
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Hire a Professional Car Driver in Bangalore?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Should I Hire a Professional Car Driver in Bangalore?</h2>
               <p className="text-lg text-gray-600">Reliable drivers for smooth daily commutes or long-distance travel.</p>
             </div>
 
@@ -310,8 +308,8 @@ export default function BangaloreDriversPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Our Professional Drivers Offer</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">From daily commutes to emergency trips and outstation travel, get trained, reliable drivers tailored to your lifestyle.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Can I Expect from Your Professional Drivers in Bangalore?</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">From daily commutes to emergency trips and outstation travel, EzyHelpers provides trained, reliable car drivers tailored to your lifestyle</p>
             </div>
 
             <div className="grid md:grid-cols-2 xl:grid-cols-2 gap-8">
@@ -330,7 +328,7 @@ export default function BangaloreDriversPage() {
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Flexible Driver Service Categories</h2>
-              <p className="text-lg text-gray-600">Choose a category that matches your lifestyle and travel needs.</p>
+              <p className="text-lg text-gray-600">Choose from our reliable driver service categories designed to match your lifestyle</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -355,16 +353,19 @@ export default function BangaloreDriversPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Qualified & Professional Drivers</h2>
-              <p className="text-lg text-gray-600">Bangalore’s most reliable personal drivers for everyday and emergency needs.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Qualified & Professional Drivers in Bangalore</h2>
+              <p className="text-lg text-gray-600">Bangalore’s Most Reliable Personal Drivers for Your Everyday and Emergency Needs.</p>
             </div>
 
             <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <ul className="space-y-3">
-                {qualifications.map((item, idx) => (
-                  <li key={idx} className="flex items-start text-gray-700">
-                    <ShieldCheckIcon className="h-5 w-5 text-primary-600 mt-0.5 mr-2" />
-                    {item}
+              <ul className="space-y-5">
+                {qualifications.map((q, idx) => (
+                  <li key={idx} className="text-gray-700">
+                    <div className="flex items-center mb-1">
+                      <ShieldCheckIcon className="h-5 w-5 text-primary-600 mr-2" />
+                      <span className="font-semibold">{q.title}</span>
+                    </div>
+                    <p className="pl-7 text-gray-600">{q.description}</p>
                   </li>
                 ))}
               </ul>
@@ -376,7 +377,7 @@ export default function BangaloreDriversPage() {
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Additional Service Features</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Additional Service Features in Bangalore</h2>
               <p className="text-lg text-gray-600">Extras that make your travel safer and more convenient in Bangalore.</p>
             </div>
 
@@ -397,8 +398,8 @@ export default function BangaloreDriversPage() {
         <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Hire a Driver in Bangalore</h2>
-              <p className="text-lg text-gray-600">Follow a simple, hassle-free process to hire trusted, background-verified drivers.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Hire a Driver in Bangalore with EzyHelpers</h2>
+              <p className="text-lg text-gray-600">Follow a simple, hassle-free process to hire trusted, background-verified drivers in Bangalore</p>
             </div>
 
             <div className="grid md:grid-cols-4 gap-8">
@@ -423,28 +424,15 @@ export default function BangaloreDriversPage() {
           </div>
         </section>
 
-        {/* Areas We Serve */}
+        {/* Post-Process Benefit and CTA */}
         <section className="section-padding bg-white">
           <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Areas We Serve in Bangalore</h2>
-              <p className="text-lg text-gray-600">Available across the city’s major neighborhoods and corridors</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                {bangaloreAreas.map((area, index) => (
-                  <div key={index} className="bg-white rounded-lg p-3 text-center shadow-sm hover:shadow-md transition-shadow">
-                    <span className="text-gray-700 font-medium text-sm">{area}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="text-center mt-8">
-                <p className="text-gray-600 mb-4">And many more areas across Bangalore</p>
-                <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors">
-                  Check Service in Your Area
-                  <ArrowRightIcon className="h-4 w-4 ml-2" />
-                </Link>
+            <div className="max-w-3xl mx-auto text-center">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display">Travel Smart with a Trusted Car Driver in Bangalore</h3>
+              <p className="text-lg text-gray-700 mb-6">Experience stress-free travel with our driver services. Our drivers ensure comfort, punctuality, and peace of mind every time.</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/hire-helper" className="bg-primary-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-primary-700 transition-colors">Book Your Driver Today</Link>
+                <Link href="tel:+919972571005" className="border-2 border-primary-600 text-primary-700 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors">Call Now: +91 9972571005</Link>
               </div>
             </div>
           </div>
@@ -455,14 +443,7 @@ export default function BangaloreDriversPage() {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
-              <div className="divide-y divide-gray-200 rounded-2xl border border-gray-100 bg-white">
-                {faqs.map((faq, idx) => (
-                  <div key={idx} className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
+              <FAQAccordion faqs={faqs} />
             </div>
           </div>
         </section>
@@ -477,15 +458,15 @@ export default function BangaloreDriversPage() {
 
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { title: 'On-Demand Maid Service in Bangalore', href: '/cities/bangalore/on-demand-helper', description: 'Same-day help for cleaning, emergencies, and post-party needs.' },
-                { title: 'Babysitter for Home in Bangalore', href: '/cities/bangalore/nanny-babysitter', description: 'Trusted childcare for babies to teens—hourly or full-day.' },
-                { title: 'Senior Citizen Care in Bangalore', href: '/cities/bangalore/elderly-care', description: 'Caring in-home support for hygiene and health monitoring.' }
+                { title: 'On-Demand Maid Service in Bangalore', href: '/cities/bangalore/on-demand-helper', description: 'Same-day help for cleaning, emergencies, or post-party home needs.', linkText: 'Learn About On-Demand Maid' },
+                { title: 'Babysitter for Home in Bangalore', href: '/cities/bangalore/nanny-babysitter', description: 'Trusted babysitters for babies to teens, available hourly or full-day.', linkText: 'Learn About Babysitter' },
+                { title: 'Senior Citizen Home Care Services in Bangalore', href: '/cities/bangalore/elderly-care', description: 'Caring in-home support for seniors, from hygiene to daily health monitoring.', linkText: 'Learn About Senior Care' }
               ].map((card, idx) => (
                 <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
                   <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
                   <p className="text-gray-700 mb-4">{card.description}</p>
                   <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-                    Learn More
+                    {card.linkText}
                     <ArrowRightIcon className="h-4 w-4 ml-1" />
                   </Link>
                 </div>

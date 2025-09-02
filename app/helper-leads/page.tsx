@@ -58,9 +58,11 @@ export default function HelperLeadsPage() {
   const [locationDetected, setLocationDetected] = useState(false)
   const [locationLoading, setLocationLoading] = useState(true)
   const [manualCoords, setManualCoords] = useState({ lat: '', lng: '' })
+  const [hasMounted, setHasMounted] = useState(false)
 
   // Location detection on component mount
   useEffect(() => {
+    setHasMounted(true)
     detectLocation()
   }, [])
 
@@ -355,6 +357,11 @@ export default function HelperLeadsPage() {
     }
   }
 
+  if (!hasMounted) {
+    // Prevent SSR/CSR mismatch by waiting until mounted
+    return null
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
       <div className="max-w-md mx-auto">
@@ -559,64 +566,7 @@ export default function HelperLeadsPage() {
               />
             </div>
 
-            {/* Location Coordinates */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Location Coordinates (Optional)
-              </label>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="latitude" className="block text-xs font-medium text-gray-600 mb-1">
-                    Latitude
-                  </label>
-                  <input
-                    type="number"
-                    id="latitude"
-                    step="any"
-                    value={manualCoords.lat}
-                    onChange={(e) => setManualCoords(prev => ({ ...prev, lat: e.target.value }))}
-                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm"
-                    placeholder="Auto-detected"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="longitude" className="block text-xs font-medium text-gray-600 mb-1">
-                    Longitude
-                  </label>
-                  <input
-                    type="number"
-                    id="longitude"
-                    step="any"
-                    value={manualCoords.lng}
-                    onChange={(e) => setManualCoords(prev => ({ ...prev, lng: e.target.value }))}
-                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-sm"
-                    placeholder="Auto-detected"
-                  />
-                </div>
-              </div>
-              <p className="text-xs text-gray-500 mt-2">
-                {locationDetected 
-                  ? `Coordinates ${locationData.raw_geo?.precise_coords ? 'automatically detected with high accuracy' : 'detected from your IP location'}. You can override them if needed.`
-                  : 'Enter your GPS coordinates manually or allow location access for automatic detection.'
-                }
-              </p>
-              
-              {/* Re-detect Location Button */}
-              <button
-                type="button"
-                onClick={() => {
-                  setLocationDetected(false)
-                  detectLocation()
-                }}
-                className="mt-3 px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center"
-              >
-                <svg className="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                Detect Location Again
-              </button>
-            </div>
+            {/* Location Coordinates - Removed as per requirements */}
 
             {/* Submit Button */}
             <button

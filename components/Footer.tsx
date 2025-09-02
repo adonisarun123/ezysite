@@ -80,22 +80,43 @@ export default function Footer() {
                 Your trusted partner for all home help needs. We connect you with verified, 
                 reliable professionals for complete peace of mind.
               </p>
-              <div className="space-y-4">
-                <div className="flex items-center text-sm text-gray-300">
-                  <PhoneIcon className="h-4 w-4 mr-3 text-primary-400" />
-                  <Link href="tel:+919972571005" className="hover:text-primary-400 transition-colors">
-                    +91 9972571005
-                  </Link>
-                </div>
+              <div className="space-y-6">
+                {/* General Email */}
                 <div className="flex items-center text-sm text-gray-300">
                   <EnvelopeIcon className="h-4 w-4 mr-3 text-primary-400" />
                   <Link href="mailto:contact@ezyhelpers.com" className="hover:text-primary-400 transition-colors">
                     contact@ezyhelpers.com
                   </Link>
                 </div>
-                <div className="flex items-start text-sm text-gray-300">
-                  <MapPinIcon className="h-4 w-4 mr-3 text-primary-400 mt-0.5 flex-shrink-0" />
-                  <span>HSR Layout, Bangalore, Karnataka 560102<br />Serving across India's major cities</span>
+
+                {/* Bangalore Office */}
+                <div>
+                  <h4 className="text-sm font-semibold text-white mb-2">Bangalore Office</h4>
+                  <div className="flex items-center text-sm text-gray-300 mb-1">
+                    <PhoneIcon className="h-4 w-4 mr-3 text-primary-400" />
+                    <Link href="tel:+919972571005" className="hover:text-primary-400 transition-colors">
+                      +91 9972571005
+                    </Link>
+                  </div>
+                  <div className="flex items-start text-sm text-gray-300">
+                    <MapPinIcon className="h-4 w-4 mr-3 text-primary-400 mt-0.5 flex-shrink-0" />
+                    <span>HSR Layout, Bangalore, Karnataka 560102</span>
+                  </div>
+                </div>
+
+                {/* Bareilly Office */}
+                <div>
+                  <h4 className="text-sm font-semibold text-white mb-2">Bareilly Office</h4>
+                  <div className="flex items-center text-sm text-gray-300 mb-1">
+                    <PhoneIcon className="h-4 w-4 mr-3 text-primary-400" />
+                    <Link href="tel:+919410814693" className="hover:text-primary-400 transition-colors">
+                      +91 9410814693
+                    </Link>
+                  </div>
+                  <div className="flex items-start text-sm text-gray-300">
+                    <MapPinIcon className="h-4 w-4 mr-3 text-primary-400 mt-0.5 flex-shrink-0" />
+                    <span>187/3, Vivek Vihar, Janakpuri, Near Avadh Plaza Hotel, Bareilly, Uttar Pradesh 243001</span>
+                  </div>
                 </div>
               </div>
               

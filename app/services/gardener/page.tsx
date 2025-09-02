@@ -459,7 +459,7 @@ export default function GardenerPage() {
             <div className="bg-white border border-gray-200 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Painting Services</h3>
               <p className="text-gray-600 mb-4">Interior or exterior, get smooth, professional paintwork done fast.</p>
-              <Link href="/services/painting" className="text-green-700 font-semibold inline-flex items-center">Learn about Painting Services <ArrowRightIcon className="h-4 w-4 ml-1" /></Link>
+              <Link href="/services/painters" className="text-green-700 font-semibold inline-flex items-center">Learn about Painting Services <ArrowRightIcon className="h-4 w-4 ml-1" /></Link>
             </div>
           </div>
         </div>

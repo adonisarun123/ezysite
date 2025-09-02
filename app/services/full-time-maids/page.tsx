@@ -499,7 +499,7 @@ export default function FullTimeMaidsPage() {
               {
                 title: "Babysitting Services", 
                 description: "Caring, attentive support for your child’s daily routine, play, and development",
-                href: "/services/babysitter",
+                href: "/services/nanny-babysitter",
                 icon: UserGroupIcon,
                 bgColor: "bg-purple-50",
                 iconColor: "text-purple-600",
