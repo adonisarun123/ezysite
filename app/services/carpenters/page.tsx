@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
+import FAQAccordion from '@/components/FAQAccordion'
 import { 
   CommandLineIcon,
   CheckCircleIcon,
@@ -397,12 +398,12 @@ export default function CarpentersPage() {
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Plumber Services</h3>
               <p className="text-gray-600 mb-3">Quick solutions for leaks, clogs, fittings, and water systems.</p>
-              <Link href="/services/plumber" className="text-yellow-700 font-medium hover:underline">Learn about Plumber Services</Link>
+              <Link href="/services/plumbers" className="text-yellow-700 font-medium hover:underline">Learn about Plumber Services</Link>
             </div>
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Home Deep Cleaning</h3>
               <p className="text-gray-600 mb-3">Book a professional deep clean to refresh your entire home.</p>
-              <Link href="/services/home-deep-cleaning" className="text-yellow-700 font-medium hover:underline">Learn about Home Deep Cleaning Services</Link>
+              <Link href="/services/deep-cleaning" className="text-yellow-700 font-medium hover:underline">Learn about Home Deep Cleaning Services</Link>
             </div>
           </div>
         </div>
@@ -415,30 +416,11 @@ export default function CarpentersPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
           </div>
 
+          {/* SEO Schema for FAQs */}
+          <FAQSchema faqs={faqs} />
+
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
-                  <details className="group">
-                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
-                        {faq.question}
-                      </h3>
-                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </details>
-                </div>
-              ))}
-            </div>
+            <FAQAccordion faqs={faqs} />
           </div>
         </div>
       </section>

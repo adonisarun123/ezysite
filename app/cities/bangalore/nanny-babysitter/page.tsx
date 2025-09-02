@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
+import FAQAccordion from '@/components/FAQAccordion'
 import {
   UserGroupIcon,
   HeartIcon,
@@ -49,25 +50,25 @@ export default function BangaloreNannyBabysitterPage() {
     {
       title: 'Irregular Work Schedules',
       description:
-        'Night shifts or long hours? Our babysitters keep your child’s daily routine intact with care and structure.',
+        'Night shifts or long hours? Our babysitters maintain your child’s daily routine with ease.',
       icon: CalendarDaysIcon
     },
     {
       title: 'Nuclear Families',
       description:
-        'In-home babysitters offer essential care when family support is limited in Bangalore.',
+        'In the absence of nearby family members in Bangalore, in-home babysitters offer essential care and trusted child support.',
       icon: UserGroupIcon
     },
     {
       title: 'School Drop & Pick Challenges',
       description:
-        'Support with pickup/drop, homework, and after-school supervision at home.',
+        'Busy work hours? Babysitters assist with school transport, homework, and after-school supervision at home.',
       icon: AcademicCapIcon
     },
     {
-      title: 'New to Bangalore',
+      title: 'Trusted Help for Families New to Bangalore',
       description:
-        'Verified babysitters familiar with local areas and apartment protocols.',
+        'New to Bangalore? Our verified babysitters provide safe, reliable help familiar with local areas.',
       icon: ShieldCheckIcon
     }
   ]
@@ -76,38 +77,51 @@ export default function BangaloreNannyBabysitterPage() {
     {
       title: 'Daily Routine Management',
       description:
-        'Babysitters follow your child’s schedule to keep them happy, clean, and well cared for.',
+        'Our babysitters follow your child’s daily schedule to keep them happy, clean, and well cared for.',
       features: [
-        'Feeding, baths, and timely diaper changes',
-        'Nap routines and hygiene maintenance',
-        'School drop/pick and bag packing',
-        'Dressing support and daily habits (toilet training, brushing)'
+        'Help with feeding, giving baths, and changing diapers on time',
+        'Support during nap time and keep hygiene in check',
+        'Safely drop off and pick up your child from school',
+        'Assist with dressing and packing school bags',
+        'Guide kids with brushing, toilet training, and other daily habits'
       ],
       icon: CheckCircleIcon,
       gradient: 'from-blue-500 to-indigo-600'
     },
     {
       title: 'Engaging Activities',
-      description: 'Fun learning that builds early skills and confidence.',
-      features: ['Play, stories, and reading', 'ABCs, 123s, colors and animals', 'Drawing, coloring, stickers', 'Encouraged free play'],
+      description: 'Our babysitters make sure your child has fun while learning and growing every day.',
+      features: [
+        'Play games, share fun stories, and read picture books',
+        'Teach ABCs, 123s, colors, and animal names',
+        'Help with drawing, coloring, and sticker books',
+        'Encourage free play and let kids enjoy their own time'
+      ],
       icon: PuzzlePieceIcon,
       gradient: 'from-emerald-500 to-green-600'
     },
     {
       title: 'Food & Nutrition Support',
-      description: 'Healthy, simple meals with careful hygiene.',
-      features: ['Prepare simple meals/snacks', 'Sterilize bottles and feed', 'Guide older kids to eat mindfully', 'Follow allergies/diet rules and clean-up'],
+      description: 'Our babysitters take care of your child’s meals with love and cleanliness.',
+      features: [
+        'Prepare simple, healthy meals and snacks',
+        'Sterilize bottles and help with feeding',
+        'Spoon-feed toddlers or guide older kids to eat',
+        'Follow any food allergies or diet rules',
+        'Clean up after mealtime and note what your child eats'
+      ],
       icon: CakeIcon,
       gradient: 'from-amber-500 to-orange-600'
     },
     {
       title: 'Emotional & Social Support',
-      description: 'Warm companionship and social learning.',
+      description: 'Our babysitters and nannies provide more than care; they build a strong bond with your child.',
       features: [
-        'Full attention and gentle communication',
-        'Teach manners and good habits',
-        'Help express emotions and stay calm',
-        'Positive play with siblings/peers'
+        'Give full attention and friendly company throughout the day',
+        'Communicate gently and create a space where your child feels safe',
+        'Teach polite behavior, good habits, and thankfulness',
+        'Help kids express their emotions and stay calm',
+        'Support positive play with siblings and others'
       ],
       icon: HeartIcon,
       gradient: 'from-pink-500 to-rose-600'
@@ -140,18 +154,18 @@ export default function BangaloreNannyBabysitterPage() {
   ]
 
   const safetyTraining = [
-    'Background Verified: Aadhaar + local address checks',
-    'Child Safety Training: CPR, first aid, emergency protocols',
-    'Experience & Childcare Skills: Infants to school-age with child development knowledge',
-    'Effective Communication with parents and age-appropriate interaction with children',
-    'Ongoing Support System with follow-ups and quick replacements if needed'
+    'Background Verified: Complete Aadhaar and local address verification to ensure trust and safety.',
+    'Child Safety Training: Certified in CPR, first aid, and emergency protocols for all age groups.',
+    'Experience & Childcare Skills: Experienced in handling infants to school-age children with knowledge of child development.',
+    'Effective Communication: Trained to communicate clearly with parents and interact age-appropriately with children.',
+    'Ongoing Support System: We provide regular follow-ups and offer quick replacements if needed for complete peace of mind.'
   ]
 
   const process = [
-    { step: '1', title: 'Free Consultation', description: 'We understand your child’s age, routines, preferences and special needs.', icon: ChatBubbleLeftRightIcon },
-    { step: '2', title: 'Skill-Based Matching', description: 'Receive 2–3 profiles matched to your location and family requirements.', icon: BookOpenIcon },
-    { step: '3', title: 'Interviews', description: 'Speak to shortlisted babysitters or request a one-day trial.', icon: CalendarDaysIcon },
-    { step: '4', title: 'Onboarding', description: 'Quick, respectful joining with house rules and safety guidance.', icon: CheckCircleIcon }
+    { step: '1', title: 'Free Consultation', description: 'We understand your child’s age, routines, preferences, and special needs', icon: ChatBubbleLeftRightIcon },
+    { step: '2', title: 'Skill-Based Matching', description: 'Receive 2-3 profiles matched to your specific location and family requirements', icon: BookOpenIcon },
+    { step: '3', title: 'Interviews', description: 'Speak directly to shortlisted babysitters or request a one-day trial', icon: CalendarDaysIcon },
+    { step: '4', title: 'Onboarding', description: 'Quick, respectful joining with guidance on house rules and safety protocols', icon: CheckCircleIcon }
   ]
 
   const bangaloreAreas = [
@@ -161,16 +175,17 @@ export default function BangaloreNannyBabysitterPage() {
   ]
 
   const faqs = [
-    { question: 'How quickly can I get a babysitter for home in Bangalore?', answer: 'Emergency childcare is available within 2–4 hours. Regular bookings typically take 24–48 hours for proper matching.' },
-    { question: 'Are babysitters trained for children with special needs?', answer: 'Yes. We offer specialised supervision for developmental needs, learning disabilities, and basic medical needs.' },
-    { question: 'Do you provide babysitters for weekend events or travel?', answer: 'Yes. Our flexible home babysitting includes weekend coverage, event childcare, and travel companion services.' },
-    { question: 'How do you ensure child safety in Bangalore apartments?', answer: 'Babysitters are trained for apartment safety: balcony awareness, lift use, and emergency protocols.' },
-    { question: 'Can babysitters pick up children from school in Bangalore traffic?', answer: 'Yes. Trained for traffic navigation, school pickup protocols, and using verified transport.' },
-    { question: 'How much does a babysitter in Bangalore cost?', answer: 'Typically ₹15,000 – ₹25,000/month depending on age, hours, location, and experience.' },
-    { question: 'Can I book part-time childcare?', answer: 'Yes. 2–6 hour flexible schedules suit school gaps or work-from-home parents.' },
-    { question: 'Do babysitters work during school holidays?', answer: 'Yes. Full-day holiday care during summer breaks, Diwali, and other vacation periods.' },
-    { question: 'Babysitter vs. Japa maid in Bangalore?', answer: 'Babysitter: daily needs and supervision. Japa maid: newborn and post-delivery mother care and recovery support.' },
-    { question: 'What living arrangements do live-in nannies need?', answer: 'Provide a bed/cot/mattress and bathroom access (separate preferred, shared acceptable as convenient).' }
+    { question: 'How quickly can I get a babysitter for home in Bangalore?', answer: 'Emergency childcare at home in Bangalore is available within 2–4 hours. Regular booking requires 24–48 hours for proper matching.' },
+    { question: 'Are babysitters trained for children with special needs?', answer: 'Yes, we offer specialised child supervision services for children with developmental needs, learning disabilities, and medical needs.' },
+    { question: 'Do you provide babysitters for weekend events or travel?', answer: 'Yes, our flexible home babysitting in Bangalore includes weekend coverage, event childcare, and travel companion services.' },
+    { question: 'How do you ensure child safety in Bangalore apartments?', answer: 'Our babysitters are trained to keep children safe in apartment settings. They know how to handle things like balcony safety, using lifts carefully, and what to do in case of emergencies.' },
+    { question: 'Can babysitters pick up children from school in Bangalore traffic?', answer: 'Our babysitters are trained in Bangalore traffic navigation, school pickup protocols, and use verified transportation for child safety.' },
+    { question: 'How much does a babysitter for home in Bangalore cost?', answer: 'A babysitter typically charges ₹15,000 – ₹25,000/month depending on the child’s age, required working hours, location, and experience.' },
+    { question: 'Can I get childcare at home in Bangalore for part-time hours?', answer: 'Yes. We offer flexible schedules from 2 to 6 hours daily, perfect for school gaps or work-from-home parents.' },
+    { question: 'Can babysitters work during school holidays?', answer: 'Yes, full-day holiday care during summer breaks, Diwali holidays, and school vacation periods. Extended childcare for working parents.' },
+    { question: 'What is the difference between a babysitter and a Japa maid in Bangalore?', answer: 'A babysitter in Bangalore takes care of children’s daily needs like feeding, playing, and homework help. A Japa maid in Bangalore, on the other hand, is trained to care for newborn babies and post-delivery mothers. They handle tasks like baby massage, mother’s recovery support, and hygiene care after childbirth.' },
+    { question: 'What living arrangements do live-in nannies in Bangalore need?', answer: 'Live-in nannies/babysitters should be provided with a bed, cot, or mattress and access to the bathroom. A separate bathroom is preferred, but shared access is also fine based on the customer’s convenience.' },
+    { question: 'Are babysitters trained to handle sick children at home?', answer: 'Yes, many babysitters are trained to manage mild illnesses such as fever or cough, and can administer medicine as directed by your doctor. For serious health concerns, we recommend medical attention along with parental supervision.' }
   ]
 
   const localBusinessProps = {
@@ -219,7 +234,7 @@ export default function BangaloreNannyBabysitterPage() {
                   <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">Bangalore</span>
                 </h1>
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Trusted, trained, and caring childcare for infants, toddlers, and school kids—right at home.
+                  Looking for a trusted babysitter for home in Bangalore? Get trusted, trained, and caring help for your child’s safety, learning, and daily routines, right in your home.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
@@ -280,7 +295,7 @@ export default function BangaloreNannyBabysitterPage() {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Do Bangalore Parents Need Babysitter Services?</h2>
-              <p className="text-lg text-gray-600">Bangalore’s demanding work hours and traffic make at-home childcare essential for peace of mind.</p>
+              <p className="text-lg text-gray-600">In Bangalore, parents juggle demanding work hours, traffic delays, and long commutes. A reliable babysitter for home in Bangalore ensures your child is in safe hands while you manage work and life.</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -304,8 +319,8 @@ export default function BangaloreNannyBabysitterPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Services Does a Home Babysitter Offer?</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Professional childcare that’s safe, supportive, and nurturing—tailored to your child.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Services Does a Home Babysitter in Bangalore Offer?</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">At EzyHelpers, our babysitters are trained in professional childcare to provide safe, supportive, and educational care for your child.</p>
             </div>
 
             <div className="grid md:grid-cols-2 xl:grid-cols-2 gap-8">
@@ -333,9 +348,64 @@ export default function BangaloreNannyBabysitterPage() {
 
             <div className="text-center mt-12">
               <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl">
-                Book Babysitter for Home
+                Book Professional Babysitter Now
                 <ArrowRightIcon className="h-5 w-5 ml-2" />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Types of Babysitters */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Are the Different Types of Babysitters Available in Bangalore?</h2>
+              <p className="text-lg text-gray-600">At EzyHelpers, we understand every family's needs are different. We offer customised babysitting options:</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: 'Live-In Nanny',
+                  description: 'Round-the-clock childcare from within your home for complete peace of mind.',
+                  bullets: [
+                    '12-hour childcare support within your home',
+                    'Perfect for infants, toddlers, or families needing full-time assistance',
+                    'Manages meals, hygiene, learning routines, and provides overnight care and emotional bonding'
+                  ]
+                },
+                {
+                  title: 'Full-Time Babysitter',
+                  description: 'Daytime childcare help that fits into your work schedule and routine needs.',
+                  bullets: [
+                    'Works for 8–10 hours daily',
+                    'Perfect for school-going children or working parents',
+                    'Offers educational support, routine planning, and after-school care'
+                  ]
+                },
+                {
+                  title: 'Part-Time Babysitter',
+                  description: 'Flexible, short-duration support ideal for busy hours or occasional help.',
+                  bullets: [
+                    '2–6 hours a day',
+                    'Ideal for gap hours, school holidays, or occasional care',
+                    'Affordable and flexible option for stay-at-home or hybrid working parents'
+                  ]
+                }
+              ].map((t, idx) => (
+                <div key={idx} className="rounded-2xl p-8 bg-white hover:shadow-lg transition-shadow border border-gray-100">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">{t.title}</h3>
+                  <p className="text-gray-700 mb-4">{t.description}</p>
+                  <ul className="space-y-2">
+                    {t.bullets.map((b, i) => (
+                      <li key={i} className="flex items-start text-gray-700">
+                        <CheckCircleIcon className="h-5 w-5 text-primary-600 mr-2 mt-0.5" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -365,8 +435,8 @@ export default function BangaloreNannyBabysitterPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Safety and Qualifications</h2>
-              <p className="text-lg text-gray-600">Strict verification and training ensure reliable childcare at home.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How Do We Ensure Babysitter Safety and Qualifications in Bangalore?</h2>
+              <p className="text-lg text-gray-600">At EzyHelpers, every babysitter and nanny undergoes strict verification and training to ensure safe, reliable, and high-quality childcare for your home.</p>
             </div>
 
             <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
@@ -387,7 +457,7 @@ export default function BangaloreNannyBabysitterPage() {
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How Our Babysitter Hiring Process Works</h2>
-              <p className="text-lg text-gray-600">A fast, foolproof process to get you trustworthy childcare in Bangalore.</p>
+              <p className="text-lg text-gray-600">We follow a fast, foolproof process to get you trustworthy childcare at home in Bangalore</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -408,6 +478,47 @@ export default function BangaloreNannyBabysitterPage() {
                   </div>
                 )
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Ready to Hire CTA */}
+        <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-700 text-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Ready to Hire a Babysitter in Bangalore?</h2>
+              <p className="text-xl text-primary-100 mb-8 leading-relaxed">Give your child the care they deserve without stepping out of your home. Choose EzyHelpers for safe, educational, and reliable childcare at home in Bangalore.</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/hire-helper" className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors shadow-lg hover:shadow-xl">Book Babysitter for Home</Link>
+                <Link href="tel:+919972571005" className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">Call +91 9972571005</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Trusted Home Services by EzyHelpers</h2>
+              <p className="text-lg text-gray-600">Complete household support solutions for Bangalore's busy professionals.</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { title: 'Full-Time Maid in Bangalore', href: '/cities/bangalore/full-time-maid', description: 'Support for 2–6 hours daily with cleaning, kitchen help, and more.', cta: 'Learn About Full-Time Maid' },
+                { title: 'Cook for Home in Bangalore', href: '/cities/bangalore/cooks', description: 'Home-cooked meals tailored to your family’s dietary and regional tastes.', cta: 'Learn About Home Cook Services' },
+                { title: 'Senior Citizen Care in Bangalore', href: '/cities/bangalore/elderly-care', description: 'Trained caretakers for mobility help, medication reminders, and companionship.', cta: 'Learn About Elderly Care' }
+              ].map((card, idx) => (
+                <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
+                  <p className="text-gray-700 mb-4">{card.description}</p>
+                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
+                    {card.cta}
+                    <ArrowRightIcon className="h-4 w-4 ml-1" />
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -444,41 +555,7 @@ export default function BangaloreNannyBabysitterPage() {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
-              <div className="divide-y divide-gray-200 rounded-2xl border border-gray-100 bg-white">
-                {faqs.map((faq, idx) => (
-                  <div key={idx} className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Related Services */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Trusted Home Services by EzyHelpers</h2>
-              <p className="text-lg text-gray-600">Complete household support solutions for Bangalore's busy professionals.</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { title: 'Full-Time Maid in Bangalore', href: '/cities/bangalore/full-time-maid', description: 'Support for 8–10 hours daily with cleaning, kitchen help, and more.' },
-                { title: 'Cook for Home in Bangalore', href: '/services/cooks', description: 'Home-cooked meals tailored to your family’s dietary and regional tastes.' },
-                { title: 'Senior Citizen Care in Bangalore', href: '/cities/bangalore/elderly-care', description: 'Trained caretakers for mobility help, medication reminders, and companionship.' }
-              ].map((card, idx) => (
-                <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
-                  <p className="text-gray-700 mb-4">{card.description}</p>
-                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-                    Learn More
-                    <ArrowRightIcon className="h-4 w-4 ml-1" />
-                  </Link>
-                </div>
-              ))}
+              <FAQAccordion faqs={faqs} />
             </div>
           </div>
         </section>

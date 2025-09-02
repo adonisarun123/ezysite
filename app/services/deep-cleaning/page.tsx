@@ -498,7 +498,7 @@ export default function DeepCleaningPage() {
             <div className="border border-gray-200 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Carpenter Services</h3>
               <p className="text-gray-600 mb-3">Custom furniture, repairs, and fittings by skilled local carpenters.</p>
-              <Link href="/services/carpenter" className="text-cyan-700 font-semibold hover:underline">Learn about Carpenter Services</Link>
+              <Link href="/services/carpenters" className="text-cyan-700 font-semibold hover:underline">Learn about Carpenter Services</Link>
             </div>
             <div className="border border-gray-200 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Appliance Repair Services</h3>
@@ -508,7 +508,7 @@ export default function DeepCleaningPage() {
             <div className="border border-gray-200 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Plumber Services</h3>
               <p className="text-gray-600 mb-3">Quick solutions for leaks, clogs, fittings, and water systems.</p>
-              <Link href="/services/plumber" className="text-cyan-700 font-semibold hover:underline">Learn about Plumber Services</Link>
+              <Link href="/services/plumbers" className="text-cyan-700 font-semibold hover:underline">Learn about Plumber Services</Link>
             </div>
           </div>
         </div>

@@ -461,17 +461,17 @@ export default function ElectriciansPage() {
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Plumber Services</h3>
               <p className="text-gray-600 mb-3">Quick solutions for leaks, clogs, fittings, and water systems.</p>
-              <Link href="/services/plumber" className="text-blue-700 font-medium hover:underline">Learn about Plumber Services</Link>
+              <Link href="/services/plumbers" className="text-blue-700 font-medium hover:underline">Learn about Plumber Services</Link>
             </div>
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Home Deep Cleaning</h3>
               <p className="text-gray-600 mb-3">Book a professional deep clean to refresh your entire home.</p>
-              <Link href="/services/home-deep-cleaning" className="text-blue-700 font-medium hover:underline">Learn about Home Deep Cleaning Services</Link>
+              <Link href="/services/deep-cleaning" className="text-blue-700 font-medium hover:underline">Learn about Home Deep Cleaning Services</Link>
             </div>
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Painting Services</h3>
               <p className="text-gray-600 mb-3">Interior or exterior, get smooth, professional paintwork done fast.</p>
-              <Link href="/services/painting" className="text-blue-700 font-medium hover:underline">Learn about Painting Services</Link>
+              <Link href="/services/painters" className="text-blue-700 font-medium hover:underline">Learn about Painting Services</Link>
             </div>
           </div>
         </div>

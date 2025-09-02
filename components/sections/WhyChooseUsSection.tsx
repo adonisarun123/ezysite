@@ -270,7 +270,7 @@ export default function WhyChooseUsSection() {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4 font-display">Ready to Experience the Difference?</h3>
+            <h3 className="text-2xl text-white font-bold mb-4 font-display">Ready to Experience the Difference?</h3>
             <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
               Join thousands of satisfied families who trust EzyHelpers for their home help needs. 
               Book your verified helper today!

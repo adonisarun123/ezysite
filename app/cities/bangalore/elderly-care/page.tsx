@@ -48,25 +48,25 @@ export default function BangaloreElderlyCarePage() {
     {
       title: 'Stretched Work Hours',
       description:
-        'Long office hours leave little time for elderly members. We ensure dependable daily support at home.',
+        'Long office hours leave little time for elderly members in the family. We ensure dependable support at home.',
       icon: ClipboardDocumentCheckIcon
     },
     {
       title: 'Nuclear Families',
       description:
-        'Elders often feel alone in small families. Our companions provide emotional warmth and interaction.',
+        'Elderly people often feel alone in small families. Our companions provide emotional warmth and daily interaction.',
       icon: UserGroupIcon
     },
     {
       title: 'Health Risks at Home',
       description:
-        'Risks like falls or missed meds increase when alone. We ensure safety checks and supervision daily.',
+        'Home alone, elders face risks like falls or missed meds. We ensure safety and supervision daily.',
       icon: ShieldCheckIcon
     },
     {
       title: 'Distance Barriers',
       description:
-        'Living far from parents? Our caretakers act as extended family for daily elder support.',
+        'Living far from parents? Our caretakers act as your extended family for daily elder support needs.',
       icon: HandRaisedIcon
     }
   ]
@@ -75,21 +75,21 @@ export default function BangaloreElderlyCarePage() {
     {
       title: 'Personal Care Assistance',
       description: 'Gentle, respectful help with daily hygiene tasks to maintain dignity and comfort.',
-      features: ['Bathing, grooming, and dressing', 'Toileting and hygiene assistance', 'Assistance with meals'],
+      features: ['Bathing, grooming, and dressing', 'Toileting and hygiene assistance', 'Assistance with Meals'],
       icon: HeartIcon,
       gradient: 'from-pink-500 to-rose-600'
     },
     {
       title: 'Medical Support at Home',
-      description: 'Reliable support with medicines, health tracking, and recovery care at home.',
-      features: ['Medication reminders and health tracking', 'Post-hospitalization recovery care', 'Chronic condition management'],
+      description: 'Reliable support with medicines, health checkups, and recovery care in your own home.',
+      features: ['Medication reminders and health tracking', 'Post-hospitalization recovery care', 'Chronic condition management (BP, diabetes, etc.)'],
       icon: ShieldCheckIcon,
       gradient: 'from-blue-500 to-indigo-600'
     },
     {
       title: 'Companion Care Services',
-      description: 'Friendly caretakers providing emotional support and joyful company every day.',
-      features: ['Reading, games, and bonding', 'Festival participation and social engagement', 'Daily conversations to reduce isolation'],
+      description: 'Friendly caretakers who provide emotional support and joyful company every day.',
+      features: ['Reading, games, and emotional bonding', 'Festival participation and social engagement', 'Daily conversation support to reduce isolation'],
       icon: ChatBubbleLeftRightIcon,
       gradient: 'from-emerald-500 to-green-600'
     },
@@ -102,15 +102,15 @@ export default function BangaloreElderlyCarePage() {
     },
     {
       title: 'Meal Prep & Diet Management',
-      description: 'Healthy, home-style meals tailored to health needs and preferences.',
-      features: ['Personalized meal planning', 'Special diet support (low sugar, low salt)', 'Grocery shopping and meal prep'],
+      description: 'Healthy, home-style meals tailored to your health needs and preferences.',
+      features: ['Personalized meal planning', 'Special diet support (low sugar, low salt, etc.)', 'Help with grocery shopping and meal prep'],
       icon: SparklesIcon,
       gradient: 'from-amber-500 to-orange-600'
     },
     {
       title: 'Safety Monitoring Systems',
-      description: 'Extra peace of mind with daily updates, night care, and emergency tools.',
-      features: ['Daily health updates to family', 'Night-time supervision options', 'Emergency button setup and support'],
+      description: 'Extra peace of mind with daily updates, night care, and emergency support tools.',
+      features: ['Daily health updates to family members', 'Night-time supervision options', 'Emergency button setup and support'],
       icon: ShieldCheckIcon,
       gradient: 'from-cyan-500 to-sky-600'
     }
@@ -119,34 +119,52 @@ export default function BangaloreElderlyCarePage() {
   const careTypes = [
     {
       title: 'Live-In Elderly Caretaker',
-      description:
-        '24/7 senior care with continuous support for high-dependency cases. Ideal for bedridden seniors or post-surgery recovery. Includes hygiene, feeding, companionship, and night supervision.',
+      description: '24/7 senior care with continuous support for high-dependency cases',
+      bullets: [
+        'Round-the-clock presence at home for the elderly who need constant care',
+        'Ideal for bedridden seniors or those recovering from surgery',
+        'Covers all aspects of personal care, feeding, hygiene, and companionship',
+        'Night-time supervision to prevent falls, wandering, or emergencies',
+        'Serves as a trusted live-in companion, especially for seniors who live alone'
+      ]
     },
     {
       title: 'Full-Time Elderly Assistant',
-      description:
-        'Day or night shifts (8–10 hours) for regular medical and physical assistance including bathing, mobility, meal prep, and vital monitoring.',
+      description: 'Day or night shifts (8–10 hours) for regular medical and physical assistance',
+      bullets: [
+        'Best suited for seniors with moderate health or mobility challenges',
+        'Provides support with bathing, dressing, mobility, and meal preparation',
+        'Offers medication reminders and chronic condition monitoring (BP, diabetes)',
+        'Engages in light physical activities, walks, and supervised movements',
+        "Available in both day and night shifts based on your family's needs"
+      ]
     },
     {
       title: 'Part-Time Elderly Helper',
-      description:
-        'Short daily visits (2–6 hours) for basic support, companionship, and routine help. Cost-effective and flexible.',
+      description: 'Short daily visits (2–6 hours) for basic support and companionship',
+      bullets: [
+        'Ideal for independent seniors who need help during specific hours',
+        'Assists with morning or evening routines like bathing, meals, and light cleaning',
+        'Offers companionship, reading, conversations, and emotional engagement',
+        'Supports families who work part-time or live nearby but need backup',
+        'Cost-effective option for flexible elder care in Bangalore'
+      ]
     }
   ]
 
   const whoShouldOpt = [
-    'Busy professionals with elderly parents at home',
-    'Children living abroad or in other cities',
-    'Families with elderly members needing daily care',
-    'Recovering patients needing short-term support',
-    'Elderly individuals who live alone'
+    'Busy Professionals with Elderly Parents at Home',
+    'Children Living Abroad or in Other Cities',
+    'Families with Elderly Members',
+    'Recovering Patients Needing Short-Term Support',
+    'Elderly Individuals Who Live Alone'
   ]
 
   const process = [
-    { step: '1', title: 'Tell Us Your Needs', description: 'Share routine, health condition, and care timing preferences.', icon: ChatBubbleLeftRightIcon },
-    { step: '2', title: 'Receive Profiles', description: 'Get 2–3 verified caretaker profiles based on your needs.', icon: ClipboardDocumentCheckIcon },
-    { step: '3', title: 'Interview & Choose', description: 'Speak to selected caretakers and choose your best match.', icon: CalendarDaysIcon },
-    { step: '4', title: 'Start Services Quickly', description: 'Get professional care started within 24–72 working hours.', icon: CheckCircleIcon }
+    { step: '1', title: 'Tell Us Your Needs', description: 'Share your senior’s routine, health condition, and care timing preferences.', icon: ChatBubbleLeftRightIcon },
+    { step: '2', title: 'Receive Profiles', description: 'We’ll send 2–3 verified caretaker profiles based on your needs.', icon: ClipboardDocumentCheckIcon },
+    { step: '3', title: 'Interview & Choose', description: 'Speak to the selected caretakers and choose the one you’re most comfortable with.', icon: CalendarDaysIcon },
+    { step: '4', title: 'Start Services Quickly', description: 'Get professional elderly care started within 24 to 72 working hours.', icon: CheckCircleIcon }
   ]
 
   const bangaloreAreas = [
@@ -156,16 +174,16 @@ export default function BangaloreElderlyCarePage() {
   ]
 
   const faqs = [
-    { question: 'Can I hire a part-time senior care assistant in Bangalore?', answer: 'Yes. We offer 2–6 hour part-time care options for meal prep, medication reminders, and companionship.' },
-    { question: 'Do you provide live-in caretakers for seniors in Bangalore?', answer: 'Yes. Live-in caretakers provide 24/7 support including hygiene, feeding, companionship, and night supervision.' },
-    { question: 'Difference between part-time and full-time elderly care?', answer: 'Part-time: 2–6 hours for light support. Full-time: 8–10 hours for seniors needing regular monitoring or mobility aid.' },
-    { question: 'Can I get a temporary caretaker after hospital discharge?', answer: 'Yes. Short-term post-hospitalisation care includes wound care, feeding, medication reminders, and physical support.' },
-    { question: 'Are female caretakers available?', answer: 'Yes. Request female caretakers for comfort during personal care tasks.' },
-    { question: 'Can I hire a companion for an elderly person who lives alone?', answer: 'Absolutely. Companions engage with reading, conversations, games, and emotional support.' },
-    { question: 'Are caretakers trained for bedridden patients?', answer: 'Yes. Trained for repositioning, sponge baths, feeding, and bedsore prevention.' },
-    { question: 'Can caretakers manage chronic illnesses like diabetes or BP?', answer: 'Yes. Staff can monitor vitals, follow diet restrictions, and remind prescribed medications.' },
-    { question: 'Do I need to provide accommodation for live-in caretaker?', answer: 'Yes. Provide a bed/cot/mattress and bathroom access for efficient care.' },
-    { question: 'What if we are not comfortable with the assigned caregiver?', answer: 'We offer prompt replacement and work until we find the perfect skill and personality match.' }
+    { question: 'Can I hire a part-time senior care assistant in Bangalore?', answer: 'Yes, EzyHelpers offers 2–6 hour part-time care options ideal for daily tasks like meal prep, medication reminders, and companionship.' },
+    { question: 'Do you provide live-in caretakers for seniors in Bangalore?', answer: 'Yes. Our live-in caretakers offer 24/7 support and stay at your home. They assist with everything from hygiene and feeding to companionship and medical supervision.' },
+    { question: 'What is the difference between part-time and full-time elderly care?', answer: 'Part-time care is for 2–6 hours a day, ideal for light support. Full-time care offers 8–10 hours of daily help for seniors who need regular monitoring or mobility aid.' },
+    { question: 'Can I get a temporary caretaker after hospital discharge in Bangalore?', answer: 'Yes. We provide short-term post-hospitalisation care, including wound care, feeding, medication reminders, and physical support for recovery.' },
+    { question: 'Are female caretakers available for elderly women in Bangalore?', answer: 'Yes, you can request female caretakers for elderly women who prefer same-gender care for personal comfort during tasks like bathing or dressing.' },
+    { question: 'Can I hire a companion for an elderly person who lives alone?', answer: 'Absolutely. Our elderly care assistants engage seniors with reading, conversations, games, and emotional support to prevent loneliness and isolation.' },
+    { question: 'Are caretakers trained in handling bedridden patients?', answer: 'Yes, our senior caretakers in Bangalore are trained to support bedridden seniors with repositioning, sponge baths, feeding, and bedsore prevention.' },
+    { question: 'Can elderly caretakers manage chronic illnesses like diabetes or BP?', answer: 'Yes. Our staff is trained to monitor vital signs, follow diet restrictions, and remind seniors to take prescribed medications for chronic conditions.' },
+    { question: 'Do I need to provide accommodation for a live-in caretaker?', answer: 'Yes. A live-in caretaker needs to be provided with a bed, cot, or mattress and access to a bathroom. It ensures they stay rested and care efficiently.' },
+    { question: 'What if my parent or elderly member is uncomfortable with the assigned caregiver?', answer: 'We offer immediate replacement within 24 hours and work until we find the perfect personality and skill match.' }
   ]
 
   const localBusinessProps = {
@@ -210,11 +228,10 @@ export default function BangaloreElderlyCarePage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Senior Citizen Home Care
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">Bangalore</span>
+                  Senior Citizen Home Care Services in Bangalore
                 </h1>
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  From medication to companionship, get trusted in-home elderly care so your loved ones feel safe, supported, and never alone.
+                  From medication to companionship, EzyHelpers offers trusted in-home elderly care in Bangalore, ensuring your loved ones feel safe, supported, and never alone.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
@@ -271,6 +288,28 @@ export default function BangaloreElderlyCarePage() {
           </div>
         </section>
 
+        {/* Transform Peace of Mind CTA (placed after Process as per Markdown) */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto text-center">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display">Transform Your Family's Peace of Mind Today</h3>
+              <p className="text-lg text-gray-700 mb-6">Give your parents comfort, dignity, and care with trusted senior home care services in Bangalore, while you focus on life.</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/hire-helper" className="bg-primary-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-primary-700 transition-colors">Book Senior Care Services</Link>
+                <Link href="tel:+919972571005" className="border-2 border-primary-600 text-primary-700 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors">Call +91 9972571005</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+
+        
+
+        
+
+        
+
         {/* Why Do Parents Need Care */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
@@ -300,8 +339,8 @@ export default function BangaloreElderlyCarePage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Do Our Aged Care Support Services Include?</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">From personal care and mobility to meal prep and safety monitoring, we cover it all.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Do Our Aged Care Support Services in Bangalore Include?</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Whether your parents need help for a few hours or 24/7 support, our trained caregivers cover every aspect of elder care at home in Bangalore:</p>
             </div>
 
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -340,15 +379,25 @@ export default function BangaloreElderlyCarePage() {
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Types of Elderly Care in Bangalore</h2>
-              <p className="text-lg text-gray-600">Choose the right care category based on your needs.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What are the different types of elderly care services available in Bangalore?</h2>
+              <p className="text-lg text-gray-600">Choose the Right Care Category Based on Your Needs</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {careTypes.map((type, idx) => (
                 <div key={idx} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
                   <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{type.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{type.description}</p>
+                  <p className="text-gray-700 mb-4">{type.description}</p>
+                  {Array.isArray((type as any).bullets) && (
+                    <ul className="space-y-2">
+                      {(type as any).bullets.map((b: string, i: number) => (
+                        <li key={i} className="flex items-start text-gray-700">
+                          <CheckCircleIcon className="h-5 w-5 text-primary-600 mr-2 mt-0.5" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>
@@ -359,8 +408,8 @@ export default function BangaloreElderlyCarePage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Who Should Opt for Aged Care Support?</h2>
-              <p className="text-lg text-gray-600">We serve a wide range of households and situations.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Who Should Opt for Aged Care Support Services in Bangalore?</h2>
+              <p className="text-lg text-gray-600">We Serve a Wide Range of Households:</p>
             </div>
 
             <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
@@ -380,8 +429,8 @@ export default function BangaloreElderlyCarePage() {
         <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Get Senior Care at Home?</h2>
-              <p className="text-lg text-gray-600">Find the right caretaker with our quick, hassle-free process.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Get Senior Care at Home in Bangalore?</h2>
+              <p className="text-lg text-gray-600">Easily find the right caretaker for your loved ones with our quick, hassle-free process.</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -406,7 +455,34 @@ export default function BangaloreElderlyCarePage() {
           </div>
         </section>
 
-        {/* Areas */}
+        {/* Related Services (moved up to match Markdown order) */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Trusted Home Services by EzyHelpers</h2>
+              <p className="text-lg text-gray-600">Complete household support solutions for Bangalore's busy professionals.</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { title: 'Live-In Maid in Bangalore', href: '/cities/bangalore/live-in-maid', description: '24/7 home help for cooking, cleaning, childcare, and eldercare.' },
+                { title: 'Full-Time Maid in Bangalore', href: '/cities/bangalore/full-time-maid', description: '8–10 hour daily support with household chores and kitchen tasks.' },
+                { title: 'Part-Time Maid in Bangalore', href: '/cities/bangalore/part-time-maid', description: '2–6 hour flexible help for daily cleaning, utensils, and basic upkeep.' }
+              ].map((card, idx) => (
+                <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
+                  <p className="text-gray-700 mb-4">{card.description}</p>
+                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
+                    {card.title.includes('Live-In') ? 'Learn About Live-In Maid' : card.title.includes('Full-Time') ? 'Learn About Full-Time Maid' : 'Learn About Part-Time Maid'}
+                    <ArrowRightIcon className="h-4 w-4 ml-1" />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Areas We Serve */}
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
@@ -433,7 +509,7 @@ export default function BangaloreElderlyCarePage() {
           </div>
         </section>
 
-        {/* FAQs */}
+        {/* FAQs (moved to end to match Markdown order) */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
@@ -446,33 +522,6 @@ export default function BangaloreElderlyCarePage() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Related Services */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Trusted Home Services by EzyHelpers</h2>
-              <p className="text-lg text-gray-600">Complete household support solutions for Bangalore's busy professionals.</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { title: 'Live-In Maid in Bangalore', href: '/cities/bangalore/live-in-maid', description: '24/7 home help for cooking, cleaning, childcare, and eldercare.' },
-                { title: 'Full-Time Maid in Bangalore', href: '/cities/bangalore/full-time-maid', description: '8–10 hour daily support with household chores and kitchen tasks.' },
-                { title: 'Part-Time Maid in Bangalore', href: '/cities/bangalore/part-time-maid', description: '2–6 hour flexible help for daily cleaning, utensils, and basic upkeep.' }
-              ].map((card, idx) => (
-                <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
-                  <p className="text-gray-700 mb-4">{card.description}</p>
-                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-                    Learn More
-                    <ArrowRightIcon className="h-4 w-4 ml-1" />
-                  </Link>
-                </div>
-              ))}
             </div>
           </div>
         </section>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
+import FAQAccordion from '@/components/FAQAccordion'
 import {
   MapPinIcon,
   WrenchScrewdriverIcon,
@@ -53,68 +54,68 @@ export default function BangaloreCarpenterPage() {
   ]
 
   const whyChoose = [
-    'Quick fixes for everyday furniture problems',
-    'Affordable rates with no surprise charges',
-    'Safe, verified professionals',
-    'Trusted local carpenters near you',
-    'Custom built-ins for any room',
-    'Quality materials selection',
-    'Professional work ethics'
+    'Quick Fixes for Everyday Furniture Problems',
+    'Affordable Rates with No Surprise Charges',
+    'Safe, Verified Professionals',
+    'Trusted Local Carpenters Near You',
+    'Custom Built-Ins for Any Room',
+    'Quality Materials Selection',
+    'Professional Work Ethics'
   ]
 
   const services = [
     {
       title: 'Wooden Furniture Restoration',
       description:
-        'Repair cracks, loose joints, and worn finishes with precision to bring old or damaged furniture back to life.'
+        'Bring your old or damaged wooden furniture back to life. Our expert carpenters repair cracks, loose joints, and worn finishes with precision.'
     },
     {
       title: 'Custom Furniture Making for Compact Homes',
       description:
-        'Foldable tables, built-in seating, and compact cupboards tailored for small urban apartments in Bangalore.'
+        'We design foldable tables, built-in seating, and compact cupboards perfectly customised for small urban apartments in Bangalore.'
     },
     {
       title: 'Modular Furniture Installation',
       description:
-        'Fast, precise installation of modular kitchens, sliding wardrobes, and more with premium finishes.'
+        'From modular kitchens to sliding wardrobes, our team ensures fast and precise installations with premium finishes and functional fittings.'
     },
     {
       title: 'Bed & Wardrobe Repairs',
       description:
-        'Fix noisy bed frames, loose cupboard doors, broken handles, and stuck drawers with durable parts.'
+        'Fix noisy bed frames, loose cupboard doors, broken handles, and stuck wardrobe drawers with durable parts and professional attention.'
     },
     {
       title: 'Drill & Wall Mount Services',
       description:
-        'Install curtain rods, TV panels, floating shelves, and wall art accurately with professional tools.'
+        'Install curtain rods, TV panels, floating shelves, and wall art accurately with professional drill and mounting tools.'
     },
     {
       title: 'Space-Saving Storage for Urban Living',
       description:
-        'Maximise space with vertical racks, wall-mounted units, and hidden storage for compact homes or PGs.'
+        'Maximise space with custom vertical racks, wall-mounted units, and smart hidden storage options designed for compact homes or PGs.'
     },
     {
       title: 'Office Furniture Setup (WFH Ready)',
       description:
-        'Ergonomic desks, custom bookshelves, and work-from-home stations for comfort and productivity.'
+        'Set up ergonomic desks, custom bookshelves, and work-from-home stations that match your comfort, productivity, and room layout.'
     },
     {
       title: 'Kitchen Shelf Fixing & Upgrades',
       description:
-        'Pull-out drawers, modular spice racks, and organised shelving that suit Indian cooking needs.'
+        'Upgrade your kitchen with pull-out drawers, modular spice racks, and organised shelving that suit Indian cooking needs.'
     },
     {
       title: 'Furniture Assembly Services',
       description:
-        'Expert assembly of IKEA, Pepperfry, and Urban Ladder pieces with the right tools.'
+        'Bought flat-pack furniture? Our experts assemble IKEA, Pepperfry, and Urban Ladder pieces efficiently with the right tools.'
     }
   ]
 
   const process = [
-    { step: '1', title: 'Share Your Need', description: 'Tell us your furniture repair or custom build requirements.' },
-    { step: '2', title: 'Pick a Convenient Time', description: 'Choose a date and time that suits your schedule.' },
-    { step: '3', title: 'Expert Carpenter Visits', description: 'Skilled, verified carpenter arrives with all necessary tools.' },
-    { step: '4', title: 'Quality Service & Support', description: 'We ensure satisfaction with follow-up support and quality guarantee.' }
+    { step: '1', title: 'Share Your Need', description: 'Tell us your furniture repair requirements: what needs fixing or custom making.' },
+    { step: '2', title: 'Pick a Convenient Time', description: 'Choose a date and time that suits your busy schedule perfectly.' },
+    { step: '3', title: 'Expert Carpenter Visits', description: 'Our skilled, verified furniture carpenter in Bangalore arrives with all necessary tools.' },
+    { step: '4', title: 'Quality Service & Support', description: 'We ensure your satisfaction with follow-up support and quality guarantee.' }
   ]
 
   const bangaloreAreas = [
@@ -136,51 +137,15 @@ export default function BangaloreCarpenterPage() {
   ]
 
   const faqs = [
-    {
-      question: 'What types of carpentry repair in Bangalore do you offer?',
-      answer:
-        'Wooden furniture restoration, modular furniture installation, custom furniture making, and space-saving solutions for apartments and homes.'
-    },
-    {
-      question: 'Can you create custom furniture for small spaces?',
-      answer:
-        'Absolutely. We specialise in space-saving custom furniture perfect for compact homes and apartment optimisation.'
-    },
-    {
-      question: 'Do you provide furniture for work-from-home setups?',
-      answer:
-        'Yes. We create custom WFH furniture, storage solutions, and space-saving designs for professionals.'
-    },
-    {
-      question: 'Do you offer modular furniture installation in Bangalore homes?',
-      answer:
-        'Yes. We install modular kitchens, wardrobes, TV units, and office furniture with precision and care.'
-    },
-    {
-      question: 'Can I book same-day carpenter services in Bangalore?',
-      answer:
-        'Absolutely. For urgent needs, we offer same-day carpenter services across Bangalore.'
-    },
-    {
-      question: 'Can I request custom furniture for small rooms or PGs?',
-      answer:
-        'Yes. From folding desks to compact wardrobes, we design space-saving furniture tailored to your needs.'
-    },
-    {
-      question: 'Can you help with compact space furniture in Bangalore apartments?',
-      answer:
-        'We specialise in foldable desks, vertical storage units, sliding wardrobes, and compact kitchen storage.'
-    },
-    {
-      question: 'What types of wooden furniture can you repair in Bangalore?',
-      answer:
-        'Beds, tables, chairs, wardrobes, cabinets—fixing cracks, wobbly joints, broken panels, and more.'
-    },
-    {
-      question: 'Do you help with furniture shifting or dismantling during house moves?',
-      answer:
-        'Yes. We dismantle and reassemble furniture for safe relocation, with smart packing guidance.'
-    }
+    { question: 'What types of carpentry repair in Bangalore do you offer?', answer: 'We provide comprehensive carpentry repair in Bangalore, including wooden furniture restoration, modular furniture installation, custom furniture making, and space-saving solutions for apartments and homes.' },
+    { question: 'Can you create custom furniture for small spaces?', answer: 'Absolutely! We specialise in custom furniture making with space-saving solutions and functional design perfect for compact homes and apartment optimisation.' },
+    { question: 'Do you provide furniture for work-from-home setups?', answer: 'Yes! We create custom WFH furniture, storage solutions, and space-saving designs perfect for working professionals.' },
+    { question: 'Do you offer modular furniture installation in Bangalore homes?', answer: 'Yes, we offer modular furniture installation in Bangalore, including modular kitchens, wardrobes, TV units, and office furniture. Our furniture carpenters are experienced in installing branded units with precision and care, ensuring a perfect fit for your space.' },
+    { question: 'Can I book same-day carpenter services in Bangalore?', answer: 'Absolutely! For urgent needs, we offer same-day carpenter services in Bangalore. Our skilled carpenters arrive quickly, equipped with tools to handle most common repairs and installations on the spot.' },
+    { question: 'Can I request custom furniture for small rooms or PGs?', answer: 'Definitely! We specialise in custom furniture making for small rooms, hostels, and PGs. From folding desks to compact wardrobes, our carpenters in Bangalore design space-saving furniture tailored to your needs.' },
+    { question: 'Can you help with compact space furniture in Bangalore apartments?', answer: 'Absolutely! We specialise in space-saving solutions like foldable desks, vertical storage units, sliding wardrobes, and compact kitchen storage.' },
+    { question: 'What types of wooden furniture can you repair in Bangalore?', answer: 'We repair all wooden furniture, including beds, tables, chairs, wardrobes, and cabinets. Our carpenters fix cracks, wobbly joints, broken panels, and even restore antique pieces.' },
+    { question: 'Do you help with furniture shifting or dismantling during house moves?', answer: 'Yes, we offer dismantling and reassembly services for safe furniture relocation. Our carpenters ensure damage-free disassembly, smart packing guidance, and reinstallation at your new home.' }
   ]
 
   const localBusinessProps = {
@@ -224,13 +189,8 @@ export default function BangaloreCarpenterPage() {
                   <span className="text-sm font-semibold">Skilled Carpenters Across Bangalore</span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Carpentry Repair
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">Bangalore</span>
-                </h1>
-                <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Expert furniture repairs, modular fittings, and custom woodwork. Quick, professional, and high-quality work by EzyHelpers.
-                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">Carpentry Repair in Bangalore</h1>
+                <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">Skilled carpenters in Bangalore for furniture repairs, modular fittings, and custom builds. Quick, professional, and quality work by EzyHelpers.</p>
 
                 <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
                   {trustBadges.map((tb, i) => (
@@ -248,7 +208,7 @@ export default function BangaloreCarpenterPage() {
                   </Link>
                   <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Call +91 9972571005</span>
+                    <span className="hidden sm:inline">Call for Same-Day Service</span>
                     <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
@@ -283,8 +243,8 @@ export default function BangaloreCarpenterPage() {
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose EzyHelpers?</h2>
-              <p className="text-lg text-gray-600">Expert carpentry help for repairs, installations, and custom woodwork tailored to your space.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose EzyHelpers for Carpentry Repair in Bangalore?</h2>
+              <p className="text-lg text-gray-600">Get expert carpentry help in Bangalore for furniture repairs, modular installations, and custom woodwork tailored to your space.</p>
             </div>
 
             <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
@@ -304,8 +264,8 @@ export default function BangaloreCarpenterPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Carpentry Services in Bangalore</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Comprehensive carpentry services for custom furniture making and repair needs.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Services Does Our Professional Furniture Carpenter in Bangalore Offer?</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Comprehensive carpenter services in Bangalore for all your custom furniture making and repair needs.</p>
             </div>
 
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -319,26 +279,44 @@ export default function BangaloreCarpenterPage() {
           </div>
         </section>
 
+        {/* How to Book */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Book Our Furniture Carpenter in Bangalore</h2>
+              <p className="text-lg text-gray-600">Booking carpentry repair in Bangalore is easy and quick! Follow these 4 simple steps:</p>
+            </div>
+            <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {process.map((p) => (
+                <div key={p.step} className="rounded-2xl p-6 bg-gray-50 border border-gray-100 text-center">
+                  <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white font-bold">{p.step}</div>
+                  <h3 className="font-semibold text-gray-900 mb-1">{p.title}</h3>
+                  <p className="text-gray-700 text-sm">{p.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Importance Section */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Regular Carpentry Repairs Matter</h2>
-              <p className="text-lg text-gray-600">Bangalore’s climate and urban living demand proactive upkeep to preserve beauty and function.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Regular Carpentry Repairs Matter for Bangalore Homes</h2>
+              <p className="text-lg text-gray-600">In fast-paced Bangalore homes, be it compact apartments in Whitefield or independent houses in Jayanagar, woodwork is more than just utility; it adds character, convenience, and comfort to everyday living.</p>
             </div>
             <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <p className="text-gray-700 leading-relaxed">
-                In fast-paced Bangalore homes—from compact apartments in Whitefield to independent houses in Jayanagar—woodwork adds character, convenience, and
-                comfort to everyday living. Humidity and seasonal changes can cause swelling, warping, and loosening over time. Our carpenters don’t just repair;
-                they restore: fixing broken tables, reinforcing cots, repairing bookshelves, and resizing modular shutters with precision. Book on-call for quick
-                fixes or schedule a full inspection for larger projects.
-              </p>
+              <div className="text-gray-700 leading-relaxed space-y-4">
+                <p>Bangalore&rsquo;s climate, with its mix of humidity, monsoon moisture, and dry summer heat, often causes wooden furniture and fixtures to swell, warp, or loosen over time. Doors may jam during rain, cabinets may develop creaky hinges, and wardrobes or lofts can gather dust, termites, or hidden damage. That&rsquo;s where EzyHelpers&apos; skilled carpenters step in.</p>
+                <p>Our skilled carpenters don&rsquo;t just repair; they restore. Whether it&rsquo;s fixing a broken study table, reinforcing a sagging cot, repairing wall-mounted bookshelves, or resizing modular kitchen shutters, EzyHelpers ensures every nail, screw, and panel is fixed right, first time, every time.</p>
+                <p>Living in a tech-savvy city like Bangalore means people expect smart, time-efficient service, and that&rsquo;s exactly what we deliver. With EzyHelpers, you can book a carpenter on-call for minor tasks like replacing handles or tightening joints, or schedule full home inspections for larger woodwork projects.</p>
+              </div>
               <div className="mt-6">
                 <div className="rounded-xl bg-primary-50 px-6 py-5 text-primary-900 flex items-start">
                   <HomeModernIcon className="h-6 w-6 mr-3 text-primary-600" />
                   <div>
-                    <p className="font-semibold">Don't Let Furniture Problems Limit Your Space!</p>
-                    <p>Get fast, reliable carpentry repairs and installations built for your home.</p>
+                    <p className="font-semibold">Don&apos;t Let Furniture Problems Limit Your Space!</p>
+                    <p>Get expert carpentry repairs and installations in Bangalore with EzyHelpers; fast, reliable, and built for your home.</p>
                   </div>
                 </div>
               </div>
@@ -372,11 +350,40 @@ export default function BangaloreCarpenterPage() {
                 ))}
               </div>
               <div className="text-center mt-8">
+                <p className="text-gray-600 mb-4">And many more areas across Bangalore</p>
                 <Link href="/hire-helper" className="inline-flex items-center text-primary-700 font-semibold hover:text-primary-800">
-                  Check service in your area
+                  Check Service in Your Area
                   <ArrowRightIcon className="h-4 w-4 ml-1" />
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        
+
+        {/* Explore Other Services */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
+              <p className="text-lg text-gray-600">Easy solutions beyond carpentry repair in Bangalore for complete home care:</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { title: 'On-Demand Helpers in Bangalore', href: '/cities/bangalore/on-demand-helper', description: 'Need quick help with daily tasks? Book reliable local helpers for apartment maintenance.', linkText: 'Learn about On-Demand Helpers' },
+                { title: 'Electrician Services in Bangalore', href: '/cities/bangalore/electrician', description: 'Expert electricians for all your home wiring, appliance installation, and power solutions.', linkText: 'Learn about Electrician Services' },
+                { title: 'Plumbing Services in Bangalore', href: '/cities/bangalore/plumber', description: 'Professional plumbers for all your apartment and home plumbing needs in Bangalore.', linkText: 'Learn about Plumbing Services' }
+              ].map((card, idx) => (
+                <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
+                  <p className="text-gray-700 mb-4">{card.description}</p>
+                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
+                    {card.linkText}
+                    <ArrowRightIcon className="h-4 w-4 ml-1" />
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -386,40 +393,7 @@ export default function BangaloreCarpenterPage() {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
-              <div className="divide-y divide-gray-200 rounded-2xl border border-gray-100 bg-white">
-                {faqs.map((faq, idx) => (
-                  <div key={idx} className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Explore Other Services */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
-              <p className="text-lg text-gray-600">Easy solutions beyond carpentry repair for complete home care.</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { title: 'On-Demand Helpers in Bangalore', href: '/services/on-demand', description: 'Quick help with daily tasks—reliable local helpers for apartment maintenance.' },
-                { title: 'Electrician Services in Bangalore', href: '/services/electricians', description: 'Wiring, appliance installation, and power solutions by experts.' },
-                { title: 'Plumbing Services in Bangalore', href: '/services/plumbers', description: 'Leaks fixed, drains unclogged, taps repaired—professional support.' }
-              ].map((card, idx) => (
-                <div key={idx} className="rounded-2xl p-8 bg-gray-50 hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">{card.title}</h3>
-                  <p className="text-gray-700 mb-4">{card.description}</p>
-                  <Link href={card.href} className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
-                    Learn More
-                    <ArrowRightIcon className="h-4 w-4 ml-1" />
-                  </Link>
-                </div>
-              ))}
+              <FAQAccordion faqs={faqs} />
             </div>
           </div>
         </section>
