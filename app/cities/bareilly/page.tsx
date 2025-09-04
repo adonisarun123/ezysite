@@ -66,7 +66,7 @@ export default function BareillyPage() {
       title: "Japa Services",
       description: "Expert newborn and mother care with traditional postpartum support in Bareilly.",
       features: ["Newborn Care & Massage", "Mother's Recovery Support", "Traditional Healing Practices", "24/7 Care Options"],
-      href: "/services/japa",
+      href: "/cities/bareilly/japa",
       icon: SparklesIcon
     },
     {
@@ -97,7 +97,7 @@ export default function BareillyPage() {
       title: "AC Repair Services",
       description: "Expert AC repair in Bareilly for cooling issues, gas refills, and maintenance by certified technicians.",
       features: ["Quick gas leak detection and refilling", "Fix poor cooling problems", "Filter cleaning & replacement", "Voltage fluctuation damage repair"],
-      href: "/services/ac-repair",
+      href: "/cities/bareilly/ac-repair",
       icon: CogIcon
     },
     {
@@ -132,7 +132,7 @@ export default function BareillyPage() {
       title: "House Shifting Services",
       description: "Professional household shifting services in Bareilly for stress-free local or long-distance moves.",
       features: ["Full house packing & unpacking", "Furniture dismantling & reassembly", "Safe transportation", "Loading & unloading"],
-      href: "/services/house-shifting",
+      href: "/cities/bareilly/house-shifting",
       icon: TruckIcon
     },
     {
@@ -146,7 +146,7 @@ export default function BareillyPage() {
       title: "Pest Control Services",
       description: "Safe and effective pest control for home in Bareilly to eliminate all types of pests.",
       features: ["Termite & cockroach control", "Mosquito & ant treatment", "Bed bug elimination", "Rat & rodent control"],
-      href: "/services/pest-control",
+      href: "/cities/bareilly/pest-control",
       icon: ShieldExclamationIcon
     },
     {
@@ -229,7 +229,7 @@ export default function BareillyPage() {
               <span className="text-sm font-semibold">Police Verified & Background Checked</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
               Bareilly's Most Trusted
               <span className="block bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
                 House Maid Service
@@ -503,7 +503,7 @@ export default function BareillyPage() {
       {/* Final CTA */}
       <section className="section-padding bg-gradient-to-r from-indigo-600 to-purple-700 text-white text-center">
         <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
+          <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">
             Ready to Transform Your Home Life in Bareilly?
           </h2>
           <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">

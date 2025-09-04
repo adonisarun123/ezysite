@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
+import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+
 import { 
   ClockIcon, 
   ShieldCheckIcon, 
@@ -33,12 +35,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Professional House Appliance Repair in Bareilly | Same-Day Service | EzyHelpers',
-  description: 'Fast, trusted appliance repair technicians in Bareilly delivering same-day solutions for AC, fridge, washing machine & more. Expert repairs at your doorstep.',
+  title: 'House Appliance Repairs in Bareilly - Same-Day Technicians',
+  description: 'Need house appliance repairs in Bareilly? We fix washing machines, fridges, ovens, and more with expert technicians and fast service.',
   keywords: 'appliance repair Bareilly, AC repair Bareilly, fridge repair Bareilly, washing machine repair Bareilly, home appliance service',
   openGraph: {
-    title: 'Professional House Appliance Repair in Bareilly - Same-Day Service',
-    description: 'Fast, trusted appliance repair technicians delivering same-day solutions to keep your Bareilly home running smoothly and stress-free.',
+    title: 'House Appliance Repairs in Bareilly - Same-Day Technicians',
+    description: 'Need house appliance repairs in Bareilly? We fix washing machines, fridges, ovens, and more with expert technicians and fast service.',
     url: 'https://ezyhelpers.com/cities/bareilly/appliance-repair',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -53,108 +55,135 @@ export default function BareillyApplianceRepairPage() {
   const applianceServices = [
     {
       title: "Refrigerator Repairs",
-      description: "Quick fix for cooling issues, freezer problems, or gas filling",
+      description: "Quick fix for cooling issues, freezer problems, or gas filling to keep your food safe and fresh.",
       icon: SparklesIcon,
       features: ["Cooling system repair", "Gas filling service", "Compressor issues", "Thermostat problems"]
     },
     {
       title: "Washing Machine Repairs", 
-      description: "Drain errors, spin troubles, motor failures fixed fast",
+      description: "Solve drain errors, spin troubles, or motor failures for hassle-free laundry.",
       icon: CogIcon,
       features: ["Drain blockage", "Motor replacement", "Spin mechanism", "Water level sensor"]
     },
     {
-      title: "AC Repairs",
-      description: "Gas refills, servicing, leak fixes for Bareilly heat",
-      icon: BoltIcon,
-      features: ["Gas refilling", "Cooling coil cleaning", "Leak detection", "Filter replacement"]
-    },
-    {
       title: "Microwave Repairs",
-      description: "Heating problems, broken buttons, power issues resolved",
+      description: "Heating problems, broken buttons, and power issues handled safely and fast.",
       icon: LightBulbIcon,
       features: ["Heating element", "Control panel", "Power supply", "Door mechanism"]
     },
     {
+      title: "AC Repairs",
+      description: "Reliable summer cooling, gas refills, servicing, and leak fixes to beat Bareilly heat.",
+      icon: BoltIcon,
+      features: ["Gas refilling", "Cooling coil cleaning", "Leak detection", "Filter replacement"]
+    },
+    {
+      title: "Gas Stove Repairs",
+      description: "Burner problems, gas leaks, or ignition faults are checked by trained pros.",
+      icon: FireIcon,
+      features: ["Burner cleaning", "Gas leak repair", "Ignition system", "Safety valve"]
+    },
+    {
+      title: "Geyser Repairs",
+      description: "Instant water heater service and element replacement for hot water anytime.",
+      icon: WrenchScrewdriverIcon,
+      features: ["Element replacement", "Thermostat issues", "Leak fixes", "Electrical checks"]
+    },
+    {
       title: "TV Repairs",
-      description: "Picture, sound, or display issues fixed professionally",
+      description: "Fix picture, sound, or display issues without long downtime or confusion.",
       icon: HomeIcon,
       features: ["Screen display", "Audio problems", "Remote issues", "Cable connection"]
     },
     {
-      title: "Gas Stove Repairs",
-      description: "Burner problems, gas leaks, ignition faults handled safely",
-      icon: FireIcon,
-      features: ["Burner cleaning", "Gas leak repair", "Ignition system", "Safety valve"]
+      title: "Chimney Repairs",
+      description: "Chimney cleaning, motor issues, and smoke leakage solutions for healthy kitchens.",
+      icon: WrenchScrewdriverIcon,
+      features: ["Deep cleaning", "Motor service", "Smoke leakage fixes", "Filter replacement"]
+    },
+    {
+      title: "Cooler Repairs",
+      description: "Popular Bareilly cooling solution repaired for smooth airflow and fresh summer comfort.",
+      icon: CogIcon,
+      features: ["Pump replacement", "Fan motor", "Cooling pads", "Wiring checks"]
+    },
+    {
+      title: "Voltage Fluctuation Repairs",
+      description: "Protect appliances from Bareilly’s unstable power conditions, avoiding costly damage.",
+      icon: ExclamationTriangleIcon,
+      features: ["Stabilizer advice", "Component checks", "Surge damage repair", "Wiring fixes"]
+    },
+    {
+      title: "Hard Water Solutions",
+      description: "Stop damage to washing machines and RO units with proper descaling and service.",
+      icon: ShieldCheckIcon,
+      features: ["Descaling", "Filter checks", "Pipe cleaning", "Preventive care"]
     }
   ]
 
   const whyChooseFeatures = [
-    {
-      title: "Skilled & Trained Technicians",
-      description: "Experienced professionals with expertise in all major appliance brands",
-      icon: AcademicCapIcon
-    },
-    {
-      title: "Fast Same-Day Service",
-      description: "Quick response within 2 hours for urgent appliance breakdowns",
-      icon: ClockIcon
-    },
-    {
-      title: "Clear and Honest Pricing",
-      description: "Transparent upfront pricing with no hidden charges or surprises",
-      icon: CurrencyRupeeIcon
-    },
-    {
-      title: "Complete Appliance Solutions",
-      description: "From minor repairs to major overhauls for all home appliances",
-      icon: WrenchScrewdriverIcon
-    },
-    {
-      title: "Genuine Parts & Warranty",
-      description: "Only authentic spare parts used with warranty on repairs",
-      icon: ShieldCheckIcon
-    },
-    {
-      title: "24/7 Emergency Support",
-      description: "Round-the-clock availability for urgent appliance emergencies",
-      icon: ExclamationTriangleIcon
-    }
+    { title: 'Skilled & Trained Technicians', description: 'Experienced professionals with expertise in all major appliance brands', icon: AcademicCapIcon },
+    { title: 'Fast Same-Day Appliance Service', description: 'Quick response within 2 hours for urgent appliance breakdowns', icon: ClockIcon },
+    { title: 'Emergency & Priority Repairs Available', description: 'Round-the-clock availability for urgent appliance emergencies', icon: ExclamationTriangleIcon },
+    { title: 'Complete Appliance Repair Solutions', description: 'From minor repairs to major overhauls for all home appliances', icon: WrenchScrewdriverIcon },
+    { title: 'Repairs for All Major Brands', description: 'Multi-brand repair expertise across leading appliances', icon: ShieldCheckIcon },
+    { title: 'Doorstep Service Across Bareilly', description: 'Technicians available across all major localities in Bareilly', icon: MapPinIcon },
+    { title: 'Support for Multiple Appliance Types', description: 'End-to-end solutions for kitchen and home appliances', icon: CogIcon },
   ]
 
   const applianceTypes = [
-    "AC Repair", "Fridge Repair", "Washing Machine Repair", "TV Repair", 
-    "Geyser Repair", "Electric Fan Repair", "Water Purifier Repair", 
-    "CCTV Camera Repair", "Microwave & Oven Repairs", "Gas Stove Repair", 
-    "Chimney Repair", "Cooler Repairs"
+    { name: 'AC Repair', desc: 'Keep your home cool with fast AC and cooler service.' },
+    { name: 'Fridge Repair', desc: 'Fix fridge problems caused by power cuts for fresh, safe food.' },
+    { name: 'Washing Machine Repair', desc: 'Repair washing machines damaged by Bareilly’s hard water for smooth use.' },
+    { name: 'TV Repair', desc: 'Enjoy your favourite shows again with fast TV repair solutions.' },
+    { name: 'Geyser Repair', desc: 'Fix electric or gas geyser issues for instant hot water comfort.' },
+    { name: 'Electric Fan Repair', desc: 'Get ceiling and table fans fixed for smooth, quiet performance.' },
+    { name: 'Water Purifier Repair', desc: 'Clean and safe drinking water with RO and UV purifier repairs.' },
+    { name: 'CCTV Camera Repair', desc: 'Fix home security camera problems to protect your house always.' },
+    { name: 'Microwave & Oven Repairs', desc: 'Quickly fix heating or display issues in any microwave oven.' },
+    { name: 'Gas Stove Repair', desc: 'Repair burners and leaks for safe and smooth daily cooking needs.' },
+    { name: 'Chimney Repair', desc: 'Keep your kitchen smoke-free with reliable chimney cleaning and repairs.' },
   ]
 
   const process = [
     {
       step: "1",
       title: "Share Your Issue",
-      description: "Tell us the appliance type and exact problem you're facing"
+      description: "Tell us your appliance type and the exact problem you are facing."
     },
     {
       step: "2", 
       title: "Pick a Convenient Time",
-      description: "Choose your preferred day and time slot for the visit"
+      description: "Choose a specific day and time slot that suits your family best."
     },
     {
       step: "3",
       title: "Expert Technician Visit",
-      description: "Verified professional arrives fully equipped with tools and parts"
+      description: "Our verified professional arrives fully equipped for safe, reliable repairs."
     },
     {
       step: "4",
       title: "Quality Service & Support",
-      description: "Satisfaction ensured with follow-up help and warranty"
+      description: "We ensure satisfaction and offer follow-up help whenever you need it."
     }
   ]
 
   const serviceAreas = [
     "Civil Lines", "CB Ganj", "Cantt", "Badaun Road", "Pilibhit Road", "Izatnagar",
     "Railway Road", "Subhash Nagar", "Rampur Garden", "Medical College Road"
+  ]
+
+  const faqs: FAQItem[] = [
+    { question: 'What types of house appliance repairs are available in Bareilly?', answer: 'EzyHelpers offers complete house appliance repairs in Bareilly for refrigerators, washing machines, microwaves, air conditioners, geysers, gas stoves, fans, and more. Whether your appliance has stopped working or is showing signs of a problem, our skilled home appliance technicians in Bareilly provide reliable same-day repair services with genuine parts and proper tools.' },
+    { question: 'How fast can I get a home appliance technician in Bareilly?', answer: 'With EzyHelpers, you can get a verified home appliance technician in Bareilly within 2 hours. We offer same-day appliance repair services for urgent issues. Our team responds quickly and arrives fully equipped to repair everything from fridges and washing machines to ACs and geysers.' },
+    { question: 'What kinds of kitchen appliances do you repair?', answer: 'We repair a variety of kitchen appliances, including gas stoves, chimneys, microwaves, and RO water purifiers. Whether it’s burner problems, chimney smoke leaks, or broken heating elements, our technicians offer complete kitchen appliance solutions.' },
+    { question: 'Can you help with emergency appliance repairs in Bareilly?', answer: 'Yes, we offer emergency appliance repair service in Bareilly. Whether it’s a sudden fridge breakdown or a geyser failure at night, our technicians respond quickly to restore your appliance.' },
+    { question: 'Can I schedule a home appliance repair at a convenient time in Bareilly?', answer: 'Yes, EzyHelpers allows flexible scheduling for appliance repair in Bareilly. You can choose your preferred day and time, and our technician will arrive accordingly with all necessary tools and parts.' },
+    { question: 'Do you offer repair services for both new and old appliances?', answer: 'Yes, we repair both new and old appliances in Bareilly. Our home appliance technicians are skilled in handling outdated models as well as the latest smart appliances, providing safe and lasting solutions.' },
+    { question: 'What happens if an appliance can’t be repaired immediately?', answer: 'If an appliance needs additional parts or time, our technician will inform you clearly. We prioritise transparency and will schedule a quick follow-up visit to complete the repair at your convenience.' },
+    { question: 'What types of microwaves do you repair in Bareilly?', answer: 'We repair solo, grill, and convection microwave ovens in Bareilly. Our technicians fix heating issues, turntable problems, door errors, and electronic display faults across all popular brands.' },
+    { question: 'Do you handle the installation of new appliances in Bareilly?', answer: 'Yes, we offer installation services for appliances like washing machines, geysers, RO purifiers, and more in Bareilly. Proper setup ensures safety, efficiency, and long-term performance from day one.' },
+    { question: 'Can I get a multi-appliance repair service in a single visit?', answer: 'Yes, you can request repairs for multiple appliances in a single visit in Bareilly. Just let us know in advance, and we will send a technician prepared to handle multiple tasks.' },
   ]
 
   return (
@@ -348,14 +377,19 @@ export default function BareillyApplianceRepairPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {applianceTypes.map((appliance, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-lg p-6 text-center border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-300"
+                  className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-300"
                 >
-                  <CogIcon className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                  <span className="text-gray-700 font-medium text-sm">{appliance}</span>
+                  <div className="flex items-start gap-4">
+                    <CogIcon className="h-8 w-8 text-blue-600 flex-shrink-0" />
+                    <div>
+                      <div className="text-gray-900 font-semibold">{appliance.name}</div>
+                      <p className="text-gray-600 text-sm mt-1 leading-relaxed">{appliance.desc}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -445,7 +479,7 @@ export default function BareillyApplianceRepairPage() {
               <Link href="/cities/bareilly/home-cleaning" className="group bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 hover:border-green-300 hover:shadow-lg transition-all duration-300">
                 <SparklesIcon className="h-12 w-12 text-green-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Home Deep Cleaning</h3>
-                <p className="text-gray-600 mb-4">Safe treatments for a pest-free home</p>
+                <p className="text-gray-600 mb-4">Professional deep cleaning for a spotless, hygienic home</p>
                 <div className="flex items-center text-green-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </div>
@@ -468,7 +502,7 @@ export default function BareillyApplianceRepairPage() {
         <section className="section-padding bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
+              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">
                 Don't Let Appliance Problems Slow You Down!
               </h2>
               <p className="text-xl mb-8 text-blue-100">
@@ -491,6 +525,46 @@ export default function BareillyApplianceRepairPage() {
                   Call +91 9972571005
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Preventive Checkups Section */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Regular Appliance Checkups Matter</h2>
+              <p className="text-lg text-gray-600">Prevent sudden breakdowns and extend the life of your appliances with timely maintenance.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="bg-white rounded-xl p-6 border border-gray-200">
+                <ShieldCheckIcon className="h-8 w-8 text-blue-600 mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Avoid Costly Repairs</h3>
+                <p className="text-gray-600 text-sm">Small issues are fixed early before they turn into expensive failures.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 border border-gray-200">
+                <CogIcon className="h-8 w-8 text-blue-600 mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Better Performance</h3>
+                <p className="text-gray-600 text-sm">Appliances work efficiently, saving energy and delivering reliable results.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 border border-gray-200">
+                <ExclamationTriangleIcon className="h-8 w-8 text-blue-600 mb-3" />
+                <h3 className="font-semibold text-gray-900 mb-2">Local Challenges</h3>
+                <p className="text-gray-600 text-sm">Power cuts and hard water in Bareilly can damage appliances—regular service helps prevent it.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Frequently Asked Questions</h2>
+              <p className="text-lg text-gray-600">Find quick answers about our house appliance repair services in Bareilly.</p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <FAQAccordion faqs={faqs} />
             </div>
           </div>
         </section>

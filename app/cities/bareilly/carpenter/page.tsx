@@ -3,11 +3,10 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
+import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import { 
   ClockIcon, 
-  ShieldCheckIcon, 
   PhoneIcon, 
-  CheckCircleIcon,
   ArrowRightIcon,
   MapPinIcon,
   WrenchScrewdriverIcon,
@@ -15,22 +14,18 @@ import {
   CurrencyRupeeIcon,
   HomeIcon,
   BoltIcon,
-  PaintBrushIcon,
-  BuildingOffice2Icon,
   RectangleStackIcon,
   AcademicCapIcon,
   HandRaisedIcon,
-  SparklesIcon,
-  ExclamationTriangleIcon
+  SparklesIcon
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Professional Carpenter Services in Bareilly | Custom Furniture & Repair | EzyHelpers',
-  description: 'Skilled carpenters in Bareilly for furniture repair, custom woodwork, mandir making, and home carpentry. Same-day service with transparent pricing.',
-  keywords: 'carpenter Bareilly, furniture repair Bareilly, custom furniture Bareilly, mandir carpenter Bareilly, wood work services Bareilly',
+  title: 'Carpenter Home Service in Bareilly – Skilled Work',
+  description: 'Hire skilled carpenter home service in Bareilly for furniture repair, fitting, woodwork & custom installations. Reliable & trained professionals.',
   openGraph: {
-    title: 'Expert Carpenter Services in Bareilly - Custom Furniture & Repairs | EzyHelpers',
-    description: 'Professional carpenters offering reliable home repairs, custom woodwork, and exceptional craftsmanship in Bareilly.',
+    title: 'Carpenter Home Service in Bareilly – Skilled Work',
+    description: 'Hire skilled carpenter home service in Bareilly for furniture repair, fitting, woodwork & custom installations. Reliable & trained professionals.',
     url: 'https://ezyhelpers.com/cities/bareilly/carpenter',
     type: 'website',
   }
@@ -38,133 +33,47 @@ export const metadata: Metadata = {
 
 export default function BareillyCarpentersPage() {
   const carpentryServices = [
-    {
-      title: "Custom Furniture Making",
-      description: "Bespoke furniture crafted to your specifications with quality wood and traditional techniques",
-      icon: BuildingOffice2Icon,
-      features: ["Custom wardrobes & cupboards", "Study tables & chairs", "Bed frames & storage", "Kitchen cabinets"]
-    },
-    {
-      title: "Furniture Repair & Restoration",
-      description: "Expert repair of wooden furniture including chairs, tables, and antique pieces",
-      icon: WrenchScrewdriverIcon,
-      features: ["Chair & table repairs", "Drawer fixes", "Hinge replacements", "Antique restoration"]
-    },
-    {
-      title: "Mandir & Religious Furniture",
-      description: "Specialized in creating beautiful mandirs and prayer furniture with traditional designs",
-      icon: HomeIcon,
-      features: ["Custom mandir designs", "Prayer benches", "Religious storage", "Traditional woodwork"]
-    },
-    {
-      title: "Door & Window Services",
-      description: "Door frame installation, window repairs, and wooden door manufacturing",
-      icon: RectangleStackIcon,
-      features: ["Door frame fitting", "Window repairs", "Handle installations", "Lock mechanism fixes"]
-    },
-    {
-      title: "Modular Kitchen Setup",
-      description: "Complete kitchen carpentry including cabinets, shelves, and storage solutions",
-      icon: CogIcon,
-      features: ["Kitchen cabinets", "Shelving systems", "Pantry organization", "Counter support"]
-    },
-    {
-      title: "Storage Solutions",
-      description: "Custom storage options for every room including wardrobes and built-in solutions",
-      icon: RectangleStackIcon,
-      features: ["Walk-in wardrobes", "Under-stair storage", "Built-in shelving", "Closet organization"]
-    }
+    { title: 'Wooden Furniture Repair (Traditional UP Style)', description: 'Fix broken chairs, tables, and antique furniture with authentic craftsmanship.' },
+    { title: 'Custom Storage Solutions for Joint Family Homes', description: 'Space-saving cupboards, wardrobes, and shelves for large families.' },
+    { title: 'Religious Furniture (Mandir & Prayer Area Setup)', description: 'Beautifully crafted wooden mandirs, pooja stands, and prayer benches.' },
+    { title: 'Door & Window Repairs', description: 'Common in traditional Bareilly homes, fix squeaky doors, broken windows, and frames.' },
+    { title: 'Modular Kitchen Setup for Bareilly Homes', description: 'Custom kitchen cabinets, shelves, and storage for easy cooking.' },
+    { title: 'Study Table Solutions for Student Families', description: 'Strong, spacious study tables & bookshelves for kids & students.' },
+    { title: 'Bed, Cupboard & Wardrobe Repairs', description: 'Fix broken frames, hinges, and drawers smoothly.' },
+    { title: 'Furniture Assembly & Repairs', description: 'Assemble new furniture or fix old furniture with care.' },
+    { title: 'Window & Curtain Rod Fixing', description: 'Secure fittings for curtains, blinds, and rods.' },
+    { title: 'Drill & Hang Services', description: 'Wall mounts, shelves, and frames are installed safely.' },
   ]
 
   const whyChooseFeatures = [
-    {
-      title: "Local Wood Market Expertise",
-      description: "Deep knowledge of Bareilly's wood markets for cost-effective material sourcing",
-      icon: MapPinIcon
-    },
-    {
-      title: "Traditional & Modern Skills",
-      description: "Expertise in both traditional Bareilly craftsmanship and modern woodworking techniques",
-      icon: AcademicCapIcon
-    },
-    {
-      title: "Same-Day Service Available",
-      description: "Quick response for urgent repairs and fast completion of small projects",
-      icon: ClockIcon
-    },
-    {
-      title: "Transparent Pricing",
-      description: "Fixed pricing with no hidden costs - free on-site estimation for all projects",
-      icon: CurrencyRupeeIcon
-    },
-    {
-      title: "Quality Materials",
-      description: "Premium wood selection with monsoon-resistant options for Bareilly's climate",
-      icon: ShieldCheckIcon
-    },
-    {
-      title: "Dust-Free Work",
-      description: "Clean working practices with proper dust control and site cleanup",
-      icon: SparklesIcon
-    }
+    { title: 'Skilled & Experienced Carpenters', description: 'Traditional skills, trusted professionals, and transparent pricing make EzyHelpers the best choice for carpenter home service in Bareilly.', icon: AcademicCapIcon },
+    { title: 'Fast Same-Day Woodwork Services', description: 'Quick response and timely completion for urgent carpentry needs.', icon: ClockIcon },
+    { title: 'Fair and Transparent Pricing', description: 'Clear estimates with no hidden charges and honest pricing.', icon: CurrencyRupeeIcon },
+    { title: 'Complete Carpentry Solutions for Bareilly Homes', description: 'From small repairs to custom furniture for every room.', icon: WrenchScrewdriverIcon },
+    { title: 'Free On-Site Estimation', description: 'We visit, inspect, and provide a transparent on-site estimate.', icon: MapPinIcon },
+    { title: 'Dust-Free & Clean Work', description: 'Proper dust control and cleanup after every job.', icon: SparklesIcon },
   ]
 
   const carpentryProcess = [
-    {
-      step: "1",
-      title: "Share Your Need",
-      description: "Tell us what furniture or woodwork needs fixing or building"
-    },
-    {
-      step: "2",
-      title: "Free Estimation Visit",
-      description: "Our carpenter visits for measurement and cost estimation"
-    },
-    {
-      step: "3",
-      title: "Material Selection",
-      description: "Choose from quality wood options within your budget"
-    },
-    {
-      step: "4",
-      title: "Expert Craftsmanship",
-      description: "Skilled carpentry work with follow-up support"
-    }
+    { step: '1', title: 'Share Your Need', description: 'Tell us your carpentry work; what needs fixing or building.' },
+    { step: '2', title: 'Pick a Convenient Time', description: 'Choose a date and time that perfectly suits your family.' },
+    { step: '3', title: 'Expert Carpenter Visits', description: 'Our skilled, verified carpenter arrives, fully prepared for the job.' },
+    { step: '4', title: 'Quality Service & Support', description: 'We ensure your happiness and offer follow-up help.' },
   ]
 
-  const serviceAreas = [
-    "Civil Lines", "CB Ganj", "Cantt", "Badaun Road", "Pilibhit Road", "Izatnagar",
-    "Railway Road", "Subhash Nagar", "Rampur Garden", "Medical College Road"
+  const faqs: FAQItem[] = [
+    { question: 'Do you repair beds, cupboards, and wardrobes?', answer: "Yes. Our professional carpenter home service in Bareilly includes repairing bed frames, cupboard doors, hinges, drawers, and wardrobes. We fix loose parts, reinforce structures, and ensure all functions work smoothly to extend furniture's lifespan and usability." },
+    { question: 'Do you assemble new furniture in Bareilly?', answer: 'Yes. EzyHelpers carpenters assemble new furniture and repair old furniture in Bareilly. Our verified professionals arrive equipped to set up beds, tables, cabinets, and more, saving you time and ensuring proper installation with no leftover parts or confusion.' },
+    { question: 'Are furniture assembly services available in Bareilly?', answer: 'Yes, professional furniture assembly services are available through our carpenter home service in Bareilly. Our skilled carpenters assemble new furniture and fix old pieces using the right tools and techniques, ensuring safe, sturdy, and accurate setup every time.' },
+    { question: 'Do EzyHelpers’ carpenters in Bareilly fix window and curtain rods?', answer: 'Yes. We handle window and curtain rod installation and fixing. EzyHelpers carpenters ensure secure fitting of rods and blinds, checking stability and alignment so curtains and blinds operate smoothly and safely.' },
+    { question: 'Can you provide drill and hang services in Bareilly?', answer: ' Yes. Our service includes drill and hang jobs like installing wall mounts, shelves, picture frames, curtain rods, and other fixtures in Bareilly homes. Carpenters use proper anchors and measurements to ensure a neat and level finish.' },
+    { question: 'What types of furniture repairs do you handle in Bareilly?', answer: 'We offer wooden furniture repair in Bareilly, including fixing broken chairs, tables, antique items, and more. EzyHelpers carpenters are skilled in traditional UP-style craftsmanship, ensuring restored furniture looks and functions beautifully while preserving heritage value.' },
+    { question: 'Do you build mandir and pooja furniture in Bareilly?', answer: 'Yes. We offer dedicated mandir and prayer area setup services in Bareilly. EzyHelpers carpenters craft beautifully designed wooden mandirs, pooja stands, and prayer benches with traditional aesthetics and fine craftsmanship suited to your spiritual needs.' },
+    { question: 'Can you repair doors and windows in Bareilly homes?', answer: 'Absolutely. Through our carpenter home service in Bareilly, you can fix squeaky doors, broken windows, and damaged frames. They fix common household issues like misaligned doors, loose hinges, or window pane damage to restore smooth operation and home security.' },
+    { question: 'What areas of the home do you cover with carpenter home service in Bareilly?', answer: 'EzyHelpers covers all household carpentry needs in Bareilly, including living room furniture repair, kitchen cabinets, bedroom wardrobes, pooja room work, balcony shelves, staircase railing repair, and more. We deliver a comprehensive carpentry upgrade for every area of your home.' },
   ]
 
-  const carpentryTypes = [
-    "Furniture Repair", "Custom Wardrobes", "Mandir Making", "Door Installation", 
-    "Kitchen Cabinets", "Study Tables", "Bed Frames", "Storage Solutions",
-    "Window Repairs", "Antique Restoration", "Built-in Furniture", "Shelving Systems"
-  ]
-
-  const specializedServices = [
-    {
-      title: "Festival Furniture",
-      description: "Special furniture for festivals and occasions",
-      icon: SparklesIcon
-    },
-    {
-      title: "Joint Family Solutions",
-      description: "Storage solutions for large families",
-      icon: HomeIcon
-    },
-    {
-      title: "Student Furniture",
-      description: "Study desks and educational furniture",
-      icon: AcademicCapIcon
-    },
-    {
-      title: "Monsoon-Proof Wood",
-      description: "Weather-resistant wood options",
-      icon: ShieldCheckIcon
-    }
-  ]
+  // (no additional constants)
 
   return (
     <>
@@ -194,24 +103,20 @@ export default function BareillyCarpentersPage() {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
-                Professional Carpenter Services
-                <span className="block text-green-200">in Bareilly</span>
+                Carpenter Home Service in Bareilly –
+                <span className="block text-green-200">Reliable & Skilled Carpenters for Your Home in Bareilly</span>
               </h1>
               
               <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">
-                Skilled carpenters offering reliable home repairs, beautiful custom woodwork, and exceptional craftsmanship to enhance your Bareilly home.
+                EzyHelpers offers professional carpenters in Bareilly for reliable home repairs, beautiful custom woodwork, and exceptional craftsmanship to enhance your living space.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10 justify-center">
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                  ✓ Local Wood Market Expertise
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                  ✓ Traditional & Modern Work
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                  ✓ Transparent Pricing
-                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✅ Transparent Pricing & Local Expertise</div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✅ Same-Day Carpentry Repairs</div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✅ Locally Experienced Carpenters</div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✅ Skilled in Traditional & Modern Work</div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✅ Quality Tools & Premium Materials</div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
@@ -227,14 +132,14 @@ export default function BareillyCarpentersPage() {
                   className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
                 >
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  Same-Day Service
+                  Same-Day Service Available
                 </Link>
               </div>
 
-              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/20 max-w-2xl mx-auto">
+              <div className="grid grid-cols-4 gap-6 pt-6 border-t border-white/20 max-w-3xl mx-auto">
                 <div className="text-center">
                   <div className="text-2xl font-bold">Bareilly's Choice</div>
-                  <div className="text-green-200 text-sm">for Home Carpentry</div>
+                  <div className="text-green-200 text-sm">For Home Carpentry</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold">Safe & Certified</div>
@@ -244,71 +149,27 @@ export default function BareillyCarpentersPage() {
                   <div className="text-2xl font-bold">Fixed Pricing</div>
                   <div className="text-green-200 text-sm">No Surprises</div>
                 </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold">Always On Time</div>
+                  <div className="text-green-200 text-sm">For Your Convenience</div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Main Carpentry Services */}
+        {/* Why Choose Section (placed before Services Offered as per Markdown) */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                Our Professional Carpentry Services in Bareilly
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Complete woodworking solutions from furniture repair to custom creations with traditional Bareilly craftsmanship
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {carpentryServices.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-                >
-                  <div className="flex items-center mb-6">
-                    <div className="bg-green-100 rounded-xl p-3 mr-4">
-                      <service.icon className="h-8 w-8 text-green-600" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
-                  </div>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <CheckCircleIcon className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Section */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                Why Choose EzyHelpers for Carpentry in Bareilly?
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Local expertise meets professional service for all your woodworking and furniture needs
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose EzyHelpers for Carpenter Home Service in Bareilly?</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Traditional skills, trusted professionals, and transparent pricing make EzyHelpers the best choice for carpenter home service in Bareilly.</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {whyChooseFeatures.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="bg-green-100 rounded-xl p-3 w-fit mb-6">
-                    <feature.icon className="h-8 w-8 text-green-600" />
-                  </div>
+                <div key={index} className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="bg-green-100 rounded-xl p-3 w-fit mb-6"><feature.icon className="h-8 w-8 text-green-600" /></div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
@@ -317,71 +178,80 @@ export default function BareillyCarpentersPage() {
           </div>
         </section>
 
-        {/* Specialized Services */}
+        {/* Services Offered by Our Professional Carpenters in Bareilly */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Services Offered by Our Professional Carpenters in Bareilly</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Comprehensive solutions for all your home's wood and furniture needs.</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {carpentryServices.map((service, index) => (
+                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Specialized Carpenter Services for Bareilly Homes */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                Specialized Carpentry for Bareilly Homes
-              </h2>
-              <p className="text-lg text-gray-600">
-                Understanding local needs and cultural preferences
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Specialized Carpenter Services for Bareilly Homes</h2>
+              <p className="text-lg text-gray-600">Custom Woodwork Solutions Designed for Bareilly's Homes and Lifestyles</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {specializedServices.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl p-6 text-center border border-gray-200 hover:border-green-300 hover:shadow-md transition-all duration-300"
-                >
-                  <div className="bg-green-100 rounded-lg p-3 w-fit mx-auto mb-4">
-                    <service.icon className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-600">{service.description}</p>
-                </div>
-              ))}
+              <div className="bg-white rounded-xl p-6 text-center border border-gray-200">
+                <div className="bg-green-100 rounded-lg p-3 w-fit mx-auto mb-4"><HomeIcon className="h-8 w-8 text-green-600" /></div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Mandir & Prayer Furniture</h3>
+                <p className="text-sm text-gray-600">Custom wooden mandirs, pooja stands & sacred storage, crafted with traditional designs for spiritual homes.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 text-center border border-gray-200">
+                <div className="bg-green-100 rounded-lg p-3 w-fit mx-auto mb-4"><CogIcon className="h-8 w-8 text-green-600" /></div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Smart Kitchen Solutions</h3>
+                <p className="text-sm text-gray-600">Modular kitchens designed for Bareilly’s cooking style, with spice racks, sturdy countertops & easy utensil access.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 text-center border border-gray-200">
+                <div className="bg-green-100 rounded-lg p-3 w-fit mx-auto mb-4"><AcademicCapIcon className="h-8 w-8 text-green-600" /></div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Study Tables for Students</h3>
+                <p className="text-sm text-gray-600">Ergonomic study desks with book storage & proper lighting support help Bareilly’s students focus better.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 text-center border border-gray-200">
+                <div className="bg-green-100 rounded-lg p-3 w-fit mx-auto mb-4"><RectangleStackIcon className="h-8 w-8 text-green-600" /></div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Storage for Joint Families</h3>
+                <p className="text-sm text-gray-600">Space-saving wardrobes, multi-section cupboards & clever storage while keeping large family homes organised.</p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Carpentry Types */}
+        {/* Local Materials & Expertise */}
         <section className="section-padding bg-white">
           <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                Types of Carpentry Work We Do
-              </h2>
-              <p className="text-lg text-gray-600">
-                From simple repairs to complex custom furniture projects
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {carpentryTypes.map((type, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200 hover:border-green-300 hover:shadow-md transition-all duration-300"
-                >
-                  <WrenchScrewdriverIcon className="h-6 w-6 text-green-600 mx-auto mb-2" />
-                  <span className="text-gray-700 font-medium text-sm">{type}</span>
-                </div>
-              ))}
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Local Materials & Expertise</h2>
+              <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                <li>Knowledge of Bareilly’s Wood Markets– Best quality wood at fair prices</li>
+                <li>Monsoon-Resistant Wood Options– Prevents damage in humid weather</li>
+                <li>Cost-Effective Solutions– Save money with locally sourced materials</li>
+              </ul>
             </div>
           </div>
         </section>
 
-        {/* Process Section */}
+        {/* (Removed Carpentry Types section as per Markdown alignment) */}
+
+        {/* How to Book Our Professional Carpenter in Bareilly */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                How to Book Our Carpenter Services
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Simple process from consultation to completion with transparent pricing
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Book Our Professional Carpenter in Bareilly</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Booking Carpenter Home Service is easy and quick! Follow these 4 simple steps:</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -398,67 +268,35 @@ export default function BareillyCarpentersPage() {
           </div>
         </section>
 
-        {/* Service Areas */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                Service Areas in Bareilly
-              </h2>
-              <p className="text-lg text-gray-600">
-                Professional carpentry services available across all major areas in Bareilly
-              </p>
-            </div>
+        {/* Explore Other Services */}
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {serviceAreas.map((area, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200 hover:border-green-300 hover:shadow-md transition-all duration-300"
-                >
-                  <MapPinIcon className="h-6 w-6 text-green-600 mx-auto mb-2" />
-                  <span className="text-gray-700 font-medium text-sm">{area}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Related Services */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                Explore Other Home Services in Bareilly
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
+              <p className="text-lg text-gray-600">Easy solutions beyond carpentry for Bareilly homes</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <Link href="/cities/bareilly/painting" className="group bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 border border-orange-100 hover:border-orange-300 hover:shadow-lg transition-all duration-300">
-                <PaintBrushIcon className="h-12 w-12 text-orange-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Painting Services</h3>
-                <p className="text-gray-600 mb-4">Professional house painting and wall finishing services</p>
-                <div className="flex items-center text-orange-600 font-semibold">
-                  Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
-                </div>
+              <Link href="/cities/bareilly/on-demand-helper" className="group bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
+                <HandRaisedIcon className="h-12 w-12 text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">On-Demand Helpers</h3>
+                <p className="text-gray-600 mb-4">Need quick help with daily tasks? Book reliable local helpers.</p>
+                <div className="flex items-center text-blue-600 font-semibold">Learn about On-Demand Helpers <ArrowRightIcon className="h-4 w-4 ml-2" /></div>
               </Link>
 
-              <Link href="/cities/bareilly/electrician" className="group bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border border-yellow-100 hover:border-yellow-300 hover:shadow-lg transition-all duration-300">
+              <Link href="/cities/bareilly/drivers" className="group bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border border-yellow-100 hover:border-yellow-300 hover:shadow-lg transition-all duration-300">
                 <BoltIcon className="h-12 w-12 text-yellow-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Electrician Services</h3>
-                <p className="text-gray-600 mb-4">Electrical installations and repair services for your home</p>
-                <div className="flex items-center text-yellow-600 font-semibold">
-                  Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
-                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Driver Services</h3>
+                <p className="text-gray-600 mb-4">Hire trusted drivers for local trips or outstation travel anytime.</p>
+                <div className="flex items-center text-yellow-600 font-semibold">Learn about Driver Services <ArrowRightIcon className="h-4 w-4 ml-2" /></div>
               </Link>
 
-              <Link href="/cities/bareilly/appliance-repair" className="group bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
-                <CogIcon className="h-12 w-12 text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Appliance Repair</h3>
-                <p className="text-gray-600 mb-4">Expert repair services for all home appliances</p>
-                <div className="flex items-center text-blue-600 font-semibold">
-                  Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
-                </div>
+              <Link href="/cities/bareilly/electrician" className="group bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 hover:border-green-300 hover:shadow-lg transition-all duration-300">
+                <CogIcon className="h-12 w-12 text-green-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Electrician Services</h3>
+                <p className="text-gray-600 mb-4">Expert electricians for all your home wiring and appliance power needs.</p>
+                <div className="flex items-center text-green-600 font-semibold">Learn about Electrician Services <ArrowRightIcon className="h-4 w-4 ml-2" /></div>
               </Link>
             </div>
 
@@ -474,16 +312,12 @@ export default function BareillyCarpentersPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section (placed before Maintenance and FAQs as per Markdown) */}
         <section className="section-padding bg-gradient-to-br from-green-600 to-emerald-600 text-white">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
-                Don't Let Furniture Problems Bother You!
-              </h2>
-              <p className="text-xl mb-8 text-green-100">
-                Book a skilled carpenter now for hassle-free home woodwork solutions
-              </p>
+              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Don't Let Furniture Problems Bother You!</h2>
+              <p className="text-xl mb-8 text-green-100">Get your carpenter home service in Bareilly handled quickly and reliably with EzyHelpers. Our trusted, professional carpenters solve your issues fast so you can relax in a hassle-free home.</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
                 <Link
@@ -501,6 +335,31 @@ export default function BareillyCarpentersPage() {
                   Call +91 9972571005
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Regular Carpentry Maintenance Matters */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Regular Carpentry Maintenance Matters for Bareilly Homes</h3>
+              <p className="text-gray-700 mb-4">Woodwork in Indian homes, especially in Bareilly’s traditional and joint family households, plays a crucial role in both function and heritage. At EzyHelpers, we believe that professional carpentry is not just about building new furniture but about preserving and enhancing your home through regular maintenance and skilled repairs.</p>
+              <p className="text-gray-700 mb-4">Over time, wooden furniture, doors, windows, and storage units suffer from wear and tear due to humidity, termites, seasonal changes, or simply daily use. Small issues like loose hinges, cracked panels, or swollen door frames, if ignored, can turn into costly replacements. Our professional carpenters in Bareilly are trained to spot these early signs and fix them efficiently, saving you time, money, and hassle.</p>
+              <p className="text-gray-700 mb-4">We handle everything from restoring antique wooden furniture and fixing pooja mandirs to repairing study desks, kitchen cabinets, and wardrobes. Whether you need to adjust a jammed drawer or reinforce a weak bed frame, our carpenters bring local knowledge, traditional UP-style craftsmanship, and modern tools to ensure long-lasting quality.</p>
+              <p className="text-gray-700">With EzyHelpers’ carpenter home service in Bareilly, you also get access to seasonal wood care, like using monsoon-resistant treatments to prevent warping or selecting cost-effective materials from trusted local markets. Regular inspections and upkeep not only enhance the look of your interiors but also extend the life of your woodwork.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <FAQAccordion faqs={faqs} />
             </div>
           </div>
         </section>
