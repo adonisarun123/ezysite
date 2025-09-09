@@ -176,6 +176,22 @@ const generateGeneralLeadEmail = (formData: {
   additionalDetails?: any;
 }) => {
   const isEzyNestBooking = formData.service.includes('EzyNest');
+  const isHelperLead = formData.additionalDetails?.leadType === 'Helper Lead' || !!formData.additionalDetails?.job_roles;
+  const roleLabelMap: Record<string, string> = {
+    COOK: 'Cooking',
+    HOUSEKEEPING: 'Housekeeping',
+    BABY_CARE: 'Baby Care',
+    ELDER_CARE: 'Elder Care',
+    DRIVER: 'Driver',
+    SECURITY: 'Security',
+    CARPENTER: 'Carpenter',
+    PLUMBER: 'Plumber',
+    OTHER: 'Other'
+  };
+  const formatServices = (roles?: string[]) => {
+    if (!roles || roles.length === 0) return 'None';
+    return roles.map(r => roleLabelMap[r] || r).join(', ');
+  };
   
   return {
     subject: `New Lead: ${formData.service} in ${formData.city}`,
@@ -215,6 +231,30 @@ const generateGeneralLeadEmail = (formData: {
           <p style="white-space: pre-wrap;">${formData.additionalDetails.specificRequirements}</p>
         </div>
         ` : ''}
+        ` : isHelperLead ? `
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">👷‍♀️ Helper Registration Details</h3>
+          <p><strong>Services You Can Provide:</strong> ${formatServices(formData.additionalDetails.job_roles)}</p>
+          ${formData.additionalDetails.job_role_other ? `<p><strong>Other Service:</strong> ${formData.additionalDetails.job_role_other}</p>` : ''}
+          ${formData.additionalDetails.area_of_residence ? `<p><strong>Area of Residence:</strong> ${formData.additionalDetails.area_of_residence}</p>` : ''}
+          ${Array.isArray(formData.additionalDetails.languages) && formData.additionalDetails.languages.length ? `<p><strong>Languages:</strong> ${formData.additionalDetails.languages.join(', ')}</p>` : ''}
+          ${formData.additionalDetails.remarks ? `<p><strong>Additional Info:</strong> ${formData.additionalDetails.remarks}</p>` : ''}
+        </div>
+
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">📍 Location</h3>
+          ${formData.additionalDetails.detected_city || formData.additionalDetails.detected_region || formData.additionalDetails.detected_country ? `
+            <p><strong>Detected Location:</strong> ${[
+              formData.additionalDetails.detected_city,
+              formData.additionalDetails.detected_region,
+              formData.additionalDetails.detected_country
+            ].filter(Boolean).join(', ')}</p>
+          ` : ''}
+          ${(formData.additionalDetails.latitude && formData.additionalDetails.longitude) ? `
+            <p><strong>Coordinates:</strong> ${Number(formData.additionalDetails.latitude).toFixed(6)}, ${Number(formData.additionalDetails.longitude).toFixed(6)}</p>
+            <p><strong>Maps Link:</strong> <a href="https://www.google.com/maps?q=${formData.additionalDetails.latitude},${formData.additionalDetails.longitude}" target="_blank" style="color: #1e40af; text-decoration: underline;">View on Google Maps</a></p>
+          ` : ''}
+        </div>
         ` : ``}
         ` : ''}
         
@@ -258,6 +298,22 @@ ${formData.additionalDetails.specificRequirements ? `
 SPECIFIC REQUIREMENTS:
 ${formData.additionalDetails.specificRequirements}
 ` : ''}
+` : isHelperLead ? `
+HELPER REGISTRATION DETAILS:
+- Services You Can Provide: ${formatServices(formData.additionalDetails.job_roles)}
+${formData.additionalDetails.job_role_other ? `- Other Service: ${formData.additionalDetails.job_role_other}` : ''}
+${Array.isArray(formData.additionalDetails.languages) && formData.additionalDetails.languages.length ? `- Languages: ${formData.additionalDetails.languages.join(', ')}` : ''}
+${formData.additionalDetails.area_of_residence ? `- Area of Residence: ${formData.additionalDetails.area_of_residence}` : ''}
+${formData.additionalDetails.remarks ? `- Additional Info: ${formData.additionalDetails.remarks}` : ''}
+
+LOCATION:
+${(formData.additionalDetails.detected_city || formData.additionalDetails.detected_region || formData.additionalDetails.detected_country) ? `- Detected: ${[
+  formData.additionalDetails.detected_city,
+  formData.additionalDetails.detected_region,
+  formData.additionalDetails.detected_country
+].filter(Boolean).join(', ')}` : ''}
+${(formData.additionalDetails.latitude && formData.additionalDetails.longitude) ? `- Coordinates: ${Number(formData.additionalDetails.latitude).toFixed(6)}, ${Number(formData.additionalDetails.longitude).toFixed(6)}
+- Maps: https://www.google.com/maps?q=${formData.additionalDetails.latitude},${formData.additionalDetails.longitude}` : ''}
 ` : ``}
 ` : ''}
 
