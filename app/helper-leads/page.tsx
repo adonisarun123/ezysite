@@ -26,6 +26,7 @@ interface FormData {
   remarks: string
   area_of_residence?: string
   languages?: string[]
+  field_officer_name?: string
 }
 
 interface LocationData {
@@ -50,7 +51,8 @@ export default function HelperLeadsPage() {
     job_role_other: '',
     remarks: '',
     area_of_residence: '',
-    languages: []
+    languages: [],
+    field_officer_name: ''
   })
 
   const [locationData, setLocationData] = useState<LocationData>({})
@@ -192,6 +194,26 @@ export default function HelperLeadsPage() {
       newErrors.job_role_other = 'Please specify the other service'
     }
 
+    // Validate remarks (required)
+    if (!formData.remarks || !formData.remarks.trim()) {
+      newErrors.remarks = 'Please provide additional information'
+    }
+
+    // Validate area of residence (required)
+    if (!formData.area_of_residence || !formData.area_of_residence.trim()) {
+      newErrors.area_of_residence = 'Please enter your area of residence'
+    }
+
+    // Validate languages (at least one)
+    if (!formData.languages || formData.languages.length === 0) {
+      newErrors.languages = 'Please select at least one language'
+    }
+
+    // Validate field officer name (required)
+    if (!formData.field_officer_name || !formData.field_officer_name.trim()) {
+      newErrors.field_officer_name = 'Please enter the field officer name'
+    }
+
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
@@ -260,6 +282,9 @@ export default function HelperLeadsPage() {
         job_roles: formData.job_roles,
         job_role_other: formData.job_roles.includes('OTHER') ? formData.job_role_other.trim() : null,
         remarks: formData.remarks.trim() || null,
+        area_of_residence: (formData.area_of_residence || '').trim() || null,
+        languages: formData.languages || [],
+        field_officer_name: (formData.field_officer_name || '').trim() || null,
         ip: locationData.ip || null,
         detected_city: locationData.detected_city || null,
         detected_region: locationData.detected_region || null,
@@ -274,6 +299,7 @@ export default function HelperLeadsPage() {
         ...dbData,
         area_of_residence: (formData.area_of_residence || '').trim() || null,
         languages: formData.languages || [],
+        field_officer_name: (formData.field_officer_name || '').trim() || null,
       }
 
       console.log('Submitting data:', submitData)
@@ -295,7 +321,8 @@ export default function HelperLeadsPage() {
         job_role_other: '',
         remarks: '',
         area_of_residence: '',
-        languages: []
+        languages: [],
+        field_officer_name: ''
       })
       setManualCoords({ lat: '', lng: '' })
       
@@ -321,6 +348,7 @@ export default function HelperLeadsPage() {
               area_of_residence: submitData.area_of_residence,
               languages: submitData.languages,
               remarks: submitData.remarks,
+              field_officer_name: submitData.field_officer_name,
               detected_city: submitData.detected_city,
               detected_region: submitData.detected_region,
               detected_country: submitData.detected_country,
@@ -330,6 +358,9 @@ export default function HelperLeadsPage() {
           },
           sourceUrl: typeof window !== 'undefined' ? window.location.href : undefined,
         }
+
+        // TEMP DEBUG: verify email payload contains field officer name
+        console.log('Email payload (helper-leads):', emailPayload)
 
         // Do not await; log result only
         void fetch('/api/send-lead-email', {
@@ -592,37 +623,47 @@ export default function HelperLeadsPage() {
             {/* Additional Information */}
             <div>
               <label htmlFor="remarks" className="block text-sm font-semibold text-gray-700 mb-2">
-                Additional Information
+                Additional Information <span className="text-red-500">*</span>
               </label>
               <textarea
                 id="remarks"
                 rows={4}
                 value={formData.remarks}
                 onChange={(e) => handleInputChange('remarks', e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
+                  errors.remarks ? 'border-red-300 bg-red-50' : 'border-gray-200 focus:border-blue-500'
+                }`}
                 placeholder="Tell us about your experience, availability, or any special skills..."
               />
+              {errors.remarks && (
+                <p className="text-red-500 text-sm mt-1">{errors.remarks}</p>
+              )}
             </div>
 
             {/* Area of Residence */}
             <div>
               <label htmlFor="area_of_residence" className="block text-sm font-semibold text-gray-700 mb-2">
-                Area of Residence
+                Area of Residence <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
                 id="area_of_residence"
                 value={formData.area_of_residence}
                 onChange={(e) => handleInputChange('area_of_residence', e.target.value)}
-                className="w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors border-gray-200 focus:border-blue-500"
+                className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
+                  errors.area_of_residence ? 'border-red-300 bg-red-50' : 'border-gray-200 focus:border-blue-500'
+                }`}
                 placeholder="e.g., HSR Layout, Indiranagar, Whitefield"
               />
+              {errors.area_of_residence && (
+                <p className="text-red-500 text-sm mt-1">{errors.area_of_residence}</p>
+              )}
             </div>
 
             {/* Languages Known */}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-3">
-                Languages You Can Speak
+                Languages You Can Speak <span className="text-red-500">*</span>
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {LANGUAGE_OPTIONS.map((lang) => (
@@ -637,6 +678,29 @@ export default function HelperLeadsPage() {
                   </label>
                 ))}
               </div>
+              {errors.languages && (
+                <p className="text-red-500 text-sm mt-2">{errors.languages}</p>
+              )}
+            </div>
+
+            {/* Field Officer Name */}
+            <div>
+              <label htmlFor="field_officer_name" className="block text-sm font-semibold text-gray-700 mb-2">
+                Field Officer Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="field_officer_name"
+                value={formData.field_officer_name}
+                onChange={(e) => handleInputChange('field_officer_name', e.target.value)}
+                className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
+                  errors.field_officer_name ? 'border-red-300 bg-red-50' : 'border-gray-200 focus:border-blue-500'
+                }`}
+                placeholder="Enter your name if you are submitting on behalf of the helper"
+              />
+              {errors.field_officer_name && (
+                <p className="text-red-500 text-sm mt-1">{errors.field_officer_name}</p>
+              )}
             </div>
 
             {/* Location Coordinates - Removed as per requirements */}

@@ -203,6 +203,7 @@ const generateGeneralLeadEmail = (formData: {
           <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Phone:</strong> <a href="tel:${formData.phone}">${formData.phone}</a></p>
           ${formData.email ? `<p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>` : ''}
+          ${formData.additionalDetails?.field_officer_name ? `<p><strong>Field Officer Name:</strong> ${formData.additionalDetails.field_officer_name}</p>` : ''}
           <p><strong>Service:</strong> ${formData.service}</p>
           <p><strong>City:</strong> ${formData.city}</p>
         </div>
