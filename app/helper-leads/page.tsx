@@ -24,6 +24,8 @@ interface FormData {
   job_roles: JobRole[]
   job_role_other: string
   remarks: string
+  area_of_residence?: string
+  languages?: string[]
 }
 
 interface LocationData {
@@ -46,7 +48,9 @@ export default function HelperLeadsPage() {
     mobile: '',
     job_roles: [],
     job_role_other: '',
-    remarks: ''
+    remarks: '',
+    area_of_residence: '',
+    languages: []
   })
 
   const [locationData, setLocationData] = useState<LocationData>({})
@@ -205,6 +209,19 @@ export default function HelperLeadsPage() {
     }
   }
 
+  // Language options and handlers (component scope)
+  const LANGUAGE_OPTIONS = [
+    'Hindi', 'English', 'Kannada', 'Tamil', 'Telugu', 'Malayalam', 'Bengali', 'Marathi', 'Gujarati', 'Punjabi'
+  ]
+
+  const toggleLanguage = (lang: string) => {
+    const current = formData.languages || []
+    const updated = current.includes(lang)
+      ? current.filter(l => l !== lang)
+      : [...current, lang]
+    handleInputChange('languages', updated)
+  }
+
   const toggleJobRole = (role: JobRole) => {
     const newRoles = formData.job_roles.includes(role)
       ? formData.job_roles.filter(r => r !== role)
@@ -236,21 +253,34 @@ export default function HelperLeadsPage() {
       const finalLat = manualCoords.lat ? parseFloat(manualCoords.lat) : locationData.lat
       const finalLng = manualCoords.lng ? parseFloat(manualCoords.lng) : locationData.lng
       
-      const submitData = {
-        ...formData,
+      // Data to insert into DB (only allowed columns)
+      const dbData = {
         helper_name: formData.helper_name.trim(),
+        mobile: formData.mobile,
+        job_roles: formData.job_roles,
         job_role_other: formData.job_roles.includes('OTHER') ? formData.job_role_other.trim() : null,
         remarks: formData.remarks.trim() || null,
-        ...locationData,
-        lat: finalLat,
-        lng: finalLng
+        ip: locationData.ip || null,
+        detected_city: locationData.detected_city || null,
+        detected_region: locationData.detected_region || null,
+        detected_country: locationData.detected_country || null,
+        lat: finalLat ?? null,
+        lng: finalLng ?? null,
+        raw_geo: locationData.raw_geo || null,
+      }
+
+      // Data to use for email composition (can include additional fields)
+      const submitData = {
+        ...dbData,
+        area_of_residence: (formData.area_of_residence || '').trim() || null,
+        languages: formData.languages || [],
       }
 
       console.log('Submitting data:', submitData)
 
       const { error } = await supabase
         .from('helper_lead')
-        .insert([submitData])
+        .insert([dbData])
 
       if (error) {
         throw error
@@ -263,7 +293,9 @@ export default function HelperLeadsPage() {
         mobile: '',
         job_roles: [],
         job_role_other: '',
-        remarks: ''
+        remarks: '',
+        area_of_residence: '',
+        languages: []
       })
       setManualCoords({ lat: '', lng: '' })
       
@@ -283,9 +315,15 @@ export default function HelperLeadsPage() {
             service: 'Helper Lead Registration',
             city: submitData.detected_city || 'Unknown',
             additionalDetails: {
+              leadType: 'Helper Lead',
               job_roles: submitData.job_roles,
               job_role_other: submitData.job_role_other,
+              area_of_residence: submitData.area_of_residence,
+              languages: submitData.languages,
               remarks: submitData.remarks,
+              detected_city: submitData.detected_city,
+              detected_region: submitData.detected_region,
+              detected_country: submitData.detected_country,
               latitude: submitData.lat ?? null,
               longitude: submitData.lng ?? null,
             },
@@ -564,6 +602,41 @@ export default function HelperLeadsPage() {
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                 placeholder="Tell us about your experience, availability, or any special skills..."
               />
+            </div>
+
+            {/* Area of Residence */}
+            <div>
+              <label htmlFor="area_of_residence" className="block text-sm font-semibold text-gray-700 mb-2">
+                Area of Residence
+              </label>
+              <input
+                type="text"
+                id="area_of_residence"
+                value={formData.area_of_residence}
+                onChange={(e) => handleInputChange('area_of_residence', e.target.value)}
+                className="w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors border-gray-200 focus:border-blue-500"
+                placeholder="e.g., HSR Layout, Indiranagar, Whitefield"
+              />
+            </div>
+
+            {/* Languages Known */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-3">
+                Languages You Can Speak
+              </label>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {LANGUAGE_OPTIONS.map((lang) => (
+                  <label key={lang} className="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked={(formData.languages || []).includes(lang)}
+                      onChange={() => toggleLanguage(lang)}
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    />
+                    <span className="ml-2 text-gray-700 text-sm">{lang}</span>
+                  </label>
+                ))}
+              </div>
             </div>
 
             {/* Location Coordinates - Removed as per requirements */}
