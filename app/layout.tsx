@@ -337,6 +337,29 @@ export default function RootLayout({
           `
         }} />
         
+        {/* Google tag (gtag.js) event - delayed navigation helper */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Helper function to delay opening a URL until a gtag event is sent.
+              // Call it in response to an action that should navigate to a URL.
+              function gtagSendEvent(url) {
+                var callback = function () {
+                  if (typeof url === 'string') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'form_complete', {
+                  'event_callback': callback,
+                  'event_timeout': 2000,
+                  // <event_parameters>
+                });
+                return false;
+              }
+            `
+          }}
+        />
+        
         {/* Microsoft Clarity */}
         <script 
           type="text/javascript"
