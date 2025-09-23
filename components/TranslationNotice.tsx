@@ -14,9 +14,10 @@ export default function TranslationNotice() {
       if (userDismissed) return;
       
       const body = document.body;
+      const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
       const isTranslated = body.classList.contains('translated-ltr') || 
                           body.classList.contains('translated-rtl') ||
-                          document.querySelector('.goog-te-combo')?.value !== '';
+                          (selectElement && selectElement.value !== '');
       
       if (isTranslated && !userDismissed) {
         setIsVisible(true);
