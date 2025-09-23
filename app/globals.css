@@ -265,3 +265,68 @@
 .prose-blog td {
   @apply px-4 py-3 text-gray-700 border-b border-gray-100;
 } 
+/* Google Translate Customizations */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+.goog-te-gadget-icon {
+  display: none !important;
+}
+
+#google_translate_element {
+  display: none !important;
+}
+
+.goog-te-gadget-simple {
+  display: none !important;
+}
+
+/* Ensure body doesn't get pushed down by Google Translate */
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+/* Hide all Google Translate UI elements but keep functionality */
+.goog-te-menu-value,
+.goog-te-gadget-simple .goog-te-menu-value {
+  display: none !important;
+}
+
+/* Keep the combo select hidden but functional */
+.goog-te-combo {
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  pointer-events: none !important;
+}
+
+/* Style the floating language button */
+.language-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.language-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}

@@ -1,7 +1,13 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import WorkingLanguageSelector from '../../components/WorkingLanguageSelector';
+import TranslationNotice from '../../components/TranslationNotice';
+import GoogleTranslateWidget from '../../components/GoogleTranslateWidget';
+import { useLanguageSelector } from '../../hooks/useLanguageSelector';
 import {
   UserPlusIcon,
   CurrencyDollarIcon,
@@ -18,9 +24,34 @@ import {
 } from '@heroicons/react/24/outline';
 
 export default function ForHelpersPage() {
+  const { isOpen, openSelector, closeSelector, handleLanguageSelect } = useLanguageSelector();
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+      
+      {/* Language Selector Popup */}
+      <WorkingLanguageSelector 
+        isOpen={isOpen}
+        onClose={closeSelector}
+        onLanguageSelect={handleLanguageSelect}
+      />
+      
+      {/* Translation Notice */}
+      <TranslationNotice />
+      
+
+      
+      {/* Floating Language Button */}
+      <button
+        onClick={openSelector}
+        className="fixed bottom-6 right-6 z-40 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
+        title="Change Language"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+        </svg>
+      </button>
       <main className="pt-20">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">

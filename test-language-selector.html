@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selector Test</title>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0px !important; }
+        #google_translate_element { display: none; }
+        .language-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to EzyHelpers</h1>
+    <p>This is a test page to verify Google Translate integration works correctly.</p>
+    <p>Click the language button to translate this page.</p>
+    
+    <div id="google_translate_element"></div>
+    <button class="language-btn" onclick="showLanguageOptions()">🌐</button>
+    
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,bn,te,mr,ta,gu,kn,ml,pa,or,as',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+        
+        function showLanguageOptions() {
+            const element = document.getElementById('google_translate_element');
+            element.style.display = element.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function translateTo(langCode) {
+            const selectElement = document.querySelector('.goog-te-combo');
+            if (selectElement) {
+                selectElement.value = langCode;
+                selectElement.dispatchEvent(new Event('change'));
+            }
+        }
+    </script>
+</body>
+</html>
