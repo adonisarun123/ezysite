@@ -119,9 +119,10 @@ export default function WorkingLanguageSelector({ isOpen, onClose, onLanguageSel
 
       // Fallback after 2 seconds
       setTimeout(() => {
+        const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
         const isTranslated = document.body.classList.contains('translated-ltr') || 
                             document.body.classList.contains('translated-rtl') ||
-                            document.querySelector('.goog-te-combo')?.value === language.code;
+                            (selectElement && selectElement.value === language.code);
         
         if (!isTranslated) {
           useGoogleTranslateHash();
