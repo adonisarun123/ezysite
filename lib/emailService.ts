@@ -15,8 +15,7 @@ const createTransporter = () => {
 
 // Email templates
 const generateContactLeadEmail = (formData: {
-  firstName: string;
-  lastName: string;
+  name: string;
   email: string;
   phone: string;
   subject: string;
@@ -30,7 +29,7 @@ const generateContactLeadEmail = (formData: {
         <h2 style="color: #f1750a;">New Contact Lead Received</h2>
         <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #333;">Contact Information</h3>
-          <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
+          <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>
           <p><strong>Phone:</strong> <a href="tel:${formData.phone}">${formData.phone}</a></p>
           <p><strong>Subject:</strong> ${formData.subject}</p>
@@ -55,7 +54,7 @@ const generateContactLeadEmail = (formData: {
 New Contact Lead: ${formData.subject}
 
 Contact Information:
-- Name: ${formData.firstName} ${formData.lastName}
+- Name: ${formData.name}
 - Email: ${formData.email}
 - Phone: ${formData.phone}
 - Subject: ${formData.subject}
