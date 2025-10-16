@@ -4,10 +4,12 @@ import { sendLeadEmail } from '@/lib/emailService';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
+    console.log('Received body:', JSON.stringify(body, null, 2));
     const { leadType, formData, requestId, sourceUrl } = body;
 
     // Validate required fields
     if (!leadType || !formData) {
+      console.error('Validation failed - leadType:', leadType, 'formData:', formData);
       return NextResponse.json(
         { error: 'Missing required fields: leadType and formData' },
         { status: 400 }

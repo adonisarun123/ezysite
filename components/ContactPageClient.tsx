@@ -110,12 +110,29 @@ export default function ContactPageClient() {
       if (error) throw error
 
       // Send email via API
+      const emailPayload = {
+        leadType: 'general',
+        formData: {
+          name: formData.name,
+          phone: formData.phone,
+          service: formData.service,
+          city: formData.city,
+          email: formData.email,
+          sourceUrl: typeof window !== 'undefined' ? window.location.href : undefined,
+          additionalDetails: {
+            specificRequirements: formData.message
+          }
+        }
+      };
+      
+      console.log('Sending email payload:', emailPayload);
+      
       const response = await fetch('/api/send-lead-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(emailPayload),
       })
 
       if (!response.ok) {
