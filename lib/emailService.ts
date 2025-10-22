@@ -859,7 +859,6 @@ async function sendEmailWithRetry(
         onFailedAttempt: (error) => {
           logger.warn(`Email send attempt ${error.attemptNumber} failed`, {
             retriesLeft: error.retriesLeft,
-            error: error.message,
           });
         },
       }

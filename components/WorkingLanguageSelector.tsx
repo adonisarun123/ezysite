@@ -103,7 +103,7 @@ export default function WorkingLanguageSelector({ isOpen, onClose, onLanguageSel
       };
 
       // Method 2: Use Google Translate URL hash
-      const useGoogleTranslateHash = () => {
+      const applyGoogleTranslateHash = () => {
         window.location.hash = `googtrans(en|${language.code})`;
         setTimeout(() => {
           window.location.reload();
@@ -113,19 +113,19 @@ export default function WorkingLanguageSelector({ isOpen, onClose, onLanguageSel
       // Try widget first, fallback to hash method
       setTimeout(() => {
         if (!tryGoogleTranslateWidget()) {
-          useGoogleTranslateHash();
+          applyGoogleTranslateHash();
         }
       }, 500);
 
       // Fallback after 2 seconds
       setTimeout(() => {
         const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-        const isTranslated = document.body.classList.contains('translated-ltr') || 
+        const isTranslated = document.body.classList.contains('translated-ltr') ||
                             document.body.classList.contains('translated-rtl') ||
                             (selectElement && selectElement.value === language.code);
-        
+
         if (!isTranslated) {
-          useGoogleTranslateHash();
+          applyGoogleTranslateHash();
         }
         setIsTranslating(false);
       }, 2000);

@@ -43,12 +43,12 @@ export function validateServerEnv() {
     return serverSchema.parse(process.env);
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const errorMessages = error.errors.map(
-        (err) => `${err.path.join('.')}: ${err.message}`
+      const errorMessages = error.issues.map(
+        (err: z.ZodIssue) => `${err.path.join('.')}: ${err.message}`
       );
 
       console.error('❌ Environment variable validation failed:');
-      errorMessages.forEach((msg) => console.error(`  - ${msg}`));
+      errorMessages.forEach((msg: string) => console.error(`  - ${msg}`));
 
       throw new Error(
         `Environment validation failed:\n${errorMessages.join('\n')}`
@@ -70,8 +70,8 @@ export function validateClientEnv() {
     });
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const errorMessages = error.errors.map(
-        (err) => `${err.path.join('.')}: ${err.message}`
+      const errorMessages = error.issues.map(
+        (err: z.ZodIssue) => `${err.path.join('.')}: ${err.message}`
       );
 
       throw new Error(
