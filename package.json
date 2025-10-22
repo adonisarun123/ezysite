@@ -33,9 +33,11 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^10.16.16",
+    "libphonenumber-js": "^1.12.24",
     "lucide-react": "^0.294.0",
     "next": "^14.2.30",
     "nodemailer": "^6.10.1",
+    "p-retry": "^7.1.0",
     "postcss": "^8.4.32",
     "puppeteer": "^24.13.0",
     "react": "^18.2.0",
@@ -46,7 +48,8 @@
     "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^3.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
