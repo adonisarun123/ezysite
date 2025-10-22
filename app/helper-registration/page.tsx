@@ -109,6 +109,9 @@ export default function HelperRegistrationPage() {
   const [currentSection, setCurrentSection] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [locationLoading, setLocationLoading] = useState(true)
+  const [submittedData, setSubmittedData] = useState<FormData | null>(null)
+  const [confirmationId, setConfirmationId] = useState<string>('')
+  const [submitSuccess, setSubmitSuccess] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     helperType: 'Full-time',
     firstName: '',
@@ -436,7 +439,13 @@ export default function HelperRegistrationPage() {
       })
       
       if (response.ok) {
-        window.location.href = '/helper-success'
+        // Generate confirmation ID
+        const confirmId = `HLP-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substr(2, 4).toUpperCase()}`
+        
+        // Store submitted data for thank you display
+        setSubmittedData({ ...formData })
+        setConfirmationId(confirmId)
+        setSubmitSuccess(true)
       } else {
         throw new Error('Submission failed')
       }
@@ -531,9 +540,86 @@ export default function HelperRegistrationPage() {
       </div>
 
       <div className="max-w-2xl mx-auto px-4 py-8">
-        <form className="space-y-6">
-          {/* Section 1: Basic Details */}
-          {currentSection === 1 && (
+        {submitSuccess && submittedData ? (
+          /* Thank You Message */
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8">
+            <div className="text-center py-8">
+              <div className="mb-6">
+                <div className="mx-auto w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircleIcon className="h-12 w-12 text-green-600 dark:text-green-400" />
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Registration Successful!</h2>
+                <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">Thank you for joining EzyHelpers</p>
+                
+                <div className="bg-blue-50 dark:bg-blue-900/30 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4 mb-6 inline-block">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Registration Number</p>
+                  <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">{confirmationId}</p>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-6 mb-6 text-left max-w-lg mx-auto">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-4 text-center">Your Registration Details</h3>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between border-b border-gray-200 dark:border-gray-600 pb-2">
+                    <span className="text-gray-600 dark:text-gray-400">Name:</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{submittedData.firstName} {submittedData.lastName}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-200 dark:border-gray-600 pb-2">
+                    <span className="text-gray-600 dark:text-gray-400">Helper Type:</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{submittedData.helperType}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-200 dark:border-gray-600 pb-2">
+                    <span className="text-gray-600 dark:text-gray-400">Phone:</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{submittedData.primaryPhone}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-200 dark:border-gray-600 pb-2">
+                    <span className="text-gray-600 dark:text-gray-400">Location:</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{submittedData.currentLocality}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-gray-200 dark:border-gray-600 pb-2">
+                    <span className="text-gray-600 dark:text-gray-400">Experience:</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{submittedData.experienceMonths} months</span>
+                  </div>
+                  <div className="pt-2">
+                    <span className="text-gray-600 dark:text-gray-400 block mb-2">Skills:</span>
+                    <p className="font-medium text-gray-900 dark:text-white text-sm">{submittedData.specialities.join(', ')}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-4 mb-6">
+                <p className="text-blue-800 dark:text-blue-300 text-sm">
+                  <strong>What's Next?</strong><br />
+                  Our verification team will review your profile within 24-48 hours. We'll contact you at {submittedData.primaryPhone} once your profile is approved. Keep your documents ready for verification.
+                </p>
+              </div>
+
+              <div className="flex gap-4 justify-center">
+                <Link
+                  href="/"
+                  className="bg-blue-600 text-white py-3 px-8 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+                >
+                  Go to Homepage
+                </Link>
+                <button
+                  onClick={() => {
+                    setSubmitSuccess(false)
+                    setSubmittedData(null)
+                    setConfirmationId('')
+                    setCurrentSection(1)
+                  }}
+                  className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-3 px-8 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
+                >
+                  Register Another Helper
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          /* Registration Form */
+          <form className="space-y-6">
+            {/* Section 1: Basic Details */}
+            {currentSection === 1 && (
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 space-y-6">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
@@ -1482,6 +1568,7 @@ export default function HelperRegistrationPage() {
             )}
           </div>
         </form>
+        )}
       </div>
 
       {/* Professional Footer */}

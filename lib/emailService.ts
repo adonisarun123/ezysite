@@ -1,5 +1,42 @@
 import nodemailer from 'nodemailer';
 
+// Utility function to format phone numbers to bypass DLP (shows all digits with dashes)
+const formatPhoneForEmail = (phone: string): string => {
+  if (!phone || phone.length < 8) return phone;
+  const cleaned = phone.replace(/\D/g, '');
+  
+  // For 10-digit numbers, use dash separation: 901-940-7334
+  if (cleaned.length === 10) {
+    return `${cleaned.slice(0, 3)}-${cleaned.slice(3, 6)}-${cleaned.slice(6)}`;
+  }
+  
+  // For 11+ digit numbers (with country code), format: +91-901-940-7334
+  if (cleaned.length > 10) {
+    const countryCode = cleaned.slice(0, cleaned.length - 10);
+    const remaining = cleaned.slice(-10);
+    return `+${countryCode}-${remaining.slice(0, 3)}-${remaining.slice(3, 6)}-${remaining.slice(6)}`;
+  }
+  
+  // For shorter numbers, add dashes every 3 digits
+  return cleaned.match(/.{1,3}/g)?.join('-') || phone;
+};
+
+// Utility function to mask ID numbers
+const maskIDNumber = (idNumber: string): string => {
+  if (!idNumber || idNumber.length < 6) return 'XXXX';
+  // Show first 2 and last 2 characters, mask the rest
+  const masked = idNumber.slice(0, 2) + 'X'.repeat(Math.max(idNumber.length - 4, 2)) + idNumber.slice(-2);
+  // Add spaces to break pattern
+  return masked.match(/.{1,4}/g)?.join(' ') || masked;
+};
+
+// Utility function to mask account numbers
+const maskAccountNumber = (accountNumber: string): string => {
+  if (!accountNumber || accountNumber.length < 4) return 'XXXX';
+  // Show only last 4 digits
+  return 'XXXX-' + accountNumber.slice(-4);
+};
+
 // Email transporter configuration
 const createTransporter = () => {
   return nodemailer.createTransport({
@@ -22,6 +59,8 @@ const generateContactLeadEmail = (formData: {
   message: string;
   sourceUrl?: string;
 }) => {
+  const formattedPhone = formatPhoneForEmail(formData.phone);
+  
   return {
     subject: `New Contact Lead: ${formData.subject}`,
     html: `
@@ -31,7 +70,7 @@ const generateContactLeadEmail = (formData: {
           <h3 style="margin-top: 0; color: #333;">Contact Information</h3>
           <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>
-          <p><strong>Phone:</strong> <a href="tel:${formData.phone}">${formData.phone}</a></p>
+          <p><strong>Phone:</strong> <a href="tel:${formData.phone}" style="text-decoration: none; color: #1e40af;">${formattedPhone}</a></p>
           <p><strong>Subject:</strong> ${formData.subject}</p>
         </div>
         <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
@@ -56,7 +95,7 @@ New Contact Lead: ${formData.subject}
 Contact Information:
 - Name: ${formData.name}
 - Email: ${formData.email}
-- Phone: ${formData.phone}
+- Phone: ${formattedPhone}
 - Subject: ${formData.subject}
 
 Message:
@@ -90,6 +129,8 @@ const generateHireHelperLeadEmail = (formData: {
   requestId: string;
   sourceUrl?: string;
 }) => {
+  const formattedPhone = formatPhoneForEmail(formData.phone);
+  
   return {
     subject: `New Hire Helper Lead: ${formData.serviceType} in ${formData.city}`,
     html: `
@@ -99,7 +140,7 @@ const generateHireHelperLeadEmail = (formData: {
           <h3 style="margin-top: 0; color: #333;">Request ID: ${formData.requestId}</h3>
           <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>
-          <p><strong>Phone:</strong> <a href="tel:${formData.phone}">${formData.phone}</a></p>
+          <p><strong>Phone:</strong> <a href="tel:${formData.phone}" style="text-decoration: none; color: #1e40af;">${formattedPhone}</a></p>
           <p><strong>City:</strong> ${formData.city}</p>
         </div>
         <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
@@ -138,7 +179,7 @@ Request ID: ${formData.requestId}
 Contact Information:
 - Name: ${formData.name}
 - Email: ${formData.email}
-- Phone: ${formData.phone}
+- Phone: ${formattedPhone}
 - City: ${formData.city}
 
 Service Requirements:
@@ -176,6 +217,8 @@ const generateGeneralLeadEmail = (formData: {
 }) => {
   const isEzyNestBooking = formData.service.includes('EzyNest');
   const isHelperLead = formData.additionalDetails?.leadType === 'Helper Lead' || !!formData.additionalDetails?.job_roles;
+  const formattedPhone = formatPhoneForEmail(formData.phone);
+  
   const roleLabelMap: Record<string, string> = {
     COOK: 'Cooking',
     HOUSEKEEPING: 'Housekeeping',
@@ -200,7 +243,7 @@ const generateGeneralLeadEmail = (formData: {
         <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #333;">Lead Information</h3>
           <p><strong>Name:</strong> ${formData.name}</p>
-          <p><strong>Phone:</strong> <a href="tel:${formData.phone}">${formData.phone}</a></p>
+          <p><strong>Phone:</strong> <a href="tel:${formData.phone}" style="text-decoration: none; color: #1e40af;">${formattedPhone}</a></p>
           ${formData.email ? `<p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>` : ''}
           ${formData.additionalDetails?.field_officer_name ? `<p><strong>Field Officer Name:</strong> ${formData.additionalDetails.field_officer_name}</p>` : ''}
           <p><strong>Service:</strong> ${formData.service}</p>
@@ -275,7 +318,7 @@ ${isEzyNestBooking ? 'New EzyNest Booking' : 'New Lead'}: ${formData.service} in
 
 Lead Information:
 - Name: ${formData.name}
-- Phone: ${formData.phone}
+- Phone: ${formattedPhone}
 ${formData.email ? `- Email: ${formData.email}` : ''}
 - Service: ${formData.service}
 - City: ${formData.city}
@@ -351,6 +394,9 @@ const generateAgentRegistrationEmail = (formData: {
   listedBy?: string;
   notes?: string;
 }) => {
+  const formattedPrimaryPhone = formatPhoneForEmail(formData.primaryPhone);
+  const formattedSecondaryPhone = formData.secondaryPhone ? formatPhoneForEmail(formData.secondaryPhone) : null;
+  
   return {
     subject: `New Agent Registration: ${formData.agencyName}`,
     html: `
@@ -382,8 +428,8 @@ const generateAgentRegistrationEmail = (formData: {
 
         <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #1e293b;">Contact Information</h3>
-          <p><strong>Primary Phone:</strong> <a href="tel:${formData.primaryPhone}">${formData.primaryPhone}</a></p>
-          ${formData.secondaryPhone ? `<p><strong>Secondary Phone:</strong> <a href="tel:${formData.secondaryPhone}">${formData.secondaryPhone}</a></p>` : ''}
+          <p><strong>Primary Phone:</strong> <a href="tel:${formData.primaryPhone}" style="text-decoration: none; color: #1e40af;">${formattedPrimaryPhone}</a></p>
+          ${formData.secondaryPhone ? `<p><strong>Secondary Phone:</strong> <a href="tel:${formData.secondaryPhone}" style="text-decoration: none; color: #1e40af;">${formattedSecondaryPhone}</a></p>` : ''}
           <p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>
         </div>
 
@@ -439,8 +485,8 @@ OWNER DETAILS:
 - ID Number: ${formData.ownerIDNumber}
 
 CONTACT INFORMATION:
-- Primary Phone: ${formData.primaryPhone}
-${formData.secondaryPhone ? `- Secondary Phone: ${formData.secondaryPhone}` : ''}
+- Primary Phone: ${formattedPrimaryPhone}
+${formData.secondaryPhone ? `- Secondary Phone: ${formattedSecondaryPhone}` : ''}
 - Email: ${formData.email}
 
 OFFICE ADDRESS:
@@ -505,6 +551,10 @@ const generateHelperRegistrationEmail = (formData: {
   listedBy?: string;
   internalNotes?: string;
 }) => {
+  const formattedPrimaryPhone = formatPhoneForEmail(formData.primaryPhone);
+  const formattedAlternatePhone = formData.alternatePhone ? formatPhoneForEmail(formData.alternatePhone) : null;
+  const formattedEmergencyPhone = formData.emergencyContactPhone ? formatPhoneForEmail(formData.emergencyContactPhone) : null;
+  
   return {
     subject: `New Helper Registration: ${formData.firstName} ${formData.lastName || ''} - ${formData.helperType}`,
     html: `
@@ -571,10 +621,10 @@ const generateHelperRegistrationEmail = (formData: {
 
         <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #1e293b;">Contact Information</h3>
-          <p><strong>Primary Phone:</strong> <a href="tel:${formData.primaryPhone}">${formData.primaryPhone}</a></p>
-          ${formData.alternatePhone ? `<p><strong>Alternate Phone:</strong> <a href="tel:${formData.alternatePhone}">${formData.alternatePhone}</a></p>` : ''}
+          <p><strong>Primary Phone:</strong> <a href="tel:${formData.primaryPhone}" style="text-decoration: none; color: #1e40af;">${formattedPrimaryPhone}</a></p>
+          ${formData.alternatePhone ? `<p><strong>Alternate Phone:</strong> <a href="tel:${formData.alternatePhone}" style="text-decoration: none; color: #1e40af;">${formattedAlternatePhone}</a></p>` : ''}
           ${formData.emergencyContactName ? `<p><strong>Emergency Contact:</strong> ${formData.emergencyContactName}</p>` : ''}
-          ${formData.emergencyContactPhone ? `<p><strong>Emergency Contact Phone:</strong> <a href="tel:${formData.emergencyContactPhone}">${formData.emergencyContactPhone}</a></p>` : ''}
+          ${formData.emergencyContactPhone ? `<p><strong>Emergency Contact Phone:</strong> <a href="tel:${formData.emergencyContactPhone}" style="text-decoration: none; color: #1e40af;">${formattedEmergencyPhone}</a></p>` : ''}
           ${formData.latitude && formData.longitude ? `<p><strong>Location Coordinates:</strong> ${formData.latitude}, ${formData.longitude}</p>` : ''}
         </div>
 
@@ -647,10 +697,10 @@ ${formData.accountNumber ? `- Account Number: ${formData.accountNumber}` : ''}
 ` : ''}
 
 CONTACT INFORMATION:
-- Primary Phone: ${formData.primaryPhone}
-${formData.alternatePhone ? `- Alternate Phone: ${formData.alternatePhone}` : ''}
+- Primary Phone: ${formattedPrimaryPhone}
+${formData.alternatePhone ? `- Alternate Phone: ${formattedAlternatePhone}` : ''}
 ${formData.emergencyContactName ? `- Emergency Contact: ${formData.emergencyContactName}` : ''}
-${formData.emergencyContactPhone ? `- Emergency Contact Phone: ${formData.emergencyContactPhone}` : ''}
+${formData.emergencyContactPhone ? `- Emergency Contact Phone: ${formattedEmergencyPhone}` : ''}
 ${formData.latitude && formData.longitude ? `- Location Coordinates: ${formData.latitude}, ${formData.longitude}` : ''}
 
 ${formData.internalNotes ? `INTERNAL NOTES:\n${formData.internalNotes}` : ''}
@@ -683,6 +733,8 @@ const generateRequirementLeadEmail = (formData: {
   sourceUrl?: string;
   databaseSaved?: boolean;
 }) => {
+  const formattedContactNo = formatPhoneForEmail(formData.contactNo);
+  
   return {
     subject: `New Service Requirement: ${formData.areaOfService} - ${formData.requestId}`,
     html: `
@@ -706,7 +758,7 @@ const generateRequirementLeadEmail = (formData: {
           <h3 style="margin-top: 0; color: #1e293b;">Customer Information</h3>
           <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Email:</strong> <a href="mailto:${formData.email}" style="color: #0074C8;">${formData.email}</a></p>
-          <p><strong>Contact Number:</strong> <a href="tel:${formData.contactNo}" style="color: #0074C8;">${formData.contactNo}</a></p>
+          <p><strong>Contact Number:</strong> <a href="tel:${formData.contactNo}" style="color: #1e40af; text-decoration: none;">${formattedContactNo}</a></p>
         </div>
 
         <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
@@ -757,7 +809,7 @@ ${formData.databaseSaved === false ? '- Database Status: NOT SAVED TO DATABASE (
 CUSTOMER INFORMATION:
 - Name: ${formData.name}
 - Email: ${formData.email}
-- Contact Number: ${formData.contactNo}
+- Contact Number: ${formattedContactNo}
 
 LOCATION DETAILS:
 - Area of Service: ${formData.areaOfService}

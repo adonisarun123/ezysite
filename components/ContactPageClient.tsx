@@ -35,6 +35,8 @@ export default function ContactPageClient() {
   })
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [submittedData, setSubmittedData] = useState<any>(null)
+  const [confirmationId, setConfirmationId] = useState<string>('')
 
   useEffect(() => {
     // Track page view
@@ -139,6 +141,13 @@ export default function ContactPageClient() {
         throw new Error('Failed to send email')
       }
 
+      // Generate confirmation ID
+      const confirmId = `CNT-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substr(2, 4).toUpperCase()}`
+      
+      // Store submitted data for thank you display
+      setSubmittedData({ ...formData })
+      setConfirmationId(confirmId)
+      
       setSubmitStatus('success')
       trackFormComplete('contact_form')
       
@@ -241,28 +250,89 @@ export default function ContactPageClient() {
             
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
-              <div className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Send us a Message</h2>
-                <p className="text-gray-600">
-                  Fill out the form below and we'll get back to you within 24 hours.
-                </p>
-              </div>
+              {submitStatus === 'success' && submittedData ? (
+                /* Thank You Message */
+                <div className="text-center py-8">
+                  <div className="mb-6">
+                    <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                      <CheckCircleIcon className="h-10 w-10 text-green-600" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-2">Thank You!</h2>
+                    <p className="text-lg text-gray-600 mb-6">Your message has been sent successfully</p>
+                    
+                    <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-4 mb-6 inline-block">
+                      <p className="text-sm text-gray-600 mb-1">Confirmation Number</p>
+                      <p className="text-2xl font-bold text-indigo-600">{confirmationId}</p>
+                    </div>
+                  </div>
 
-              {submitStatus === 'success' && (
-                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
-                  <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2" />
-                  <span className="text-green-700">Thank you! Your message has been sent successfully.</span>
+                  <div className="bg-gray-50 rounded-lg p-6 mb-6 text-left max-w-md mx-auto">
+                    <h3 className="font-semibold text-gray-900 mb-4 text-center">Submitted Information</h3>
+                    <div className="space-y-3 text-sm">
+                      <div className="flex justify-between border-b border-gray-200 pb-2">
+                        <span className="text-gray-600">Name:</span>
+                        <span className="font-medium text-gray-900">{submittedData.name}</span>
+                      </div>
+                      <div className="flex justify-between border-b border-gray-200 pb-2">
+                        <span className="text-gray-600">Email:</span>
+                        <span className="font-medium text-gray-900">{submittedData.email}</span>
+                      </div>
+                      <div className="flex justify-between border-b border-gray-200 pb-2">
+                        <span className="text-gray-600">Phone:</span>
+                        <span className="font-medium text-gray-900">{submittedData.phone}</span>
+                      </div>
+                      <div className="flex justify-between border-b border-gray-200 pb-2">
+                        <span className="text-gray-600">Service:</span>
+                        <span className="font-medium text-gray-900">{submittedData.service}</span>
+                      </div>
+                      <div className="flex justify-between border-b border-gray-200 pb-2">
+                        <span className="text-gray-600">City:</span>
+                        <span className="font-medium text-gray-900">{submittedData.city}</span>
+                      </div>
+                      <div className="pt-2">
+                        <span className="text-gray-600 block mb-2">Message:</span>
+                        <p className="font-medium text-gray-900 text-sm bg-white p-3 rounded border border-gray-200">{submittedData.message}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                    <p className="text-blue-800 text-sm">
+                      <strong>What's Next?</strong><br />
+                      Our team will review your inquiry and get back to you within 24 hours.
+                      Please save your confirmation number for reference.
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      setSubmitStatus('idle')
+                      setSubmittedData(null)
+                      setConfirmationId('')
+                    }}
+                    className="bg-indigo-600 text-white py-3 px-8 rounded-lg font-semibold hover:bg-indigo-700 transition-colors duration-200"
+                  >
+                    Submit Another Inquiry
+                  </button>
                 </div>
-              )}
+              ) : (
+                /* Contact Form */
+                <>
+                  <div className="mb-8">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Send us a Message</h2>
+                    <p className="text-gray-600">
+                      Fill out the form below and we'll get back to you within 24 hours.
+                    </p>
+                  </div>
 
-              {submitStatus === 'error' && (
-                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center">
-                  <XCircleIcon className="h-5 w-5 text-red-600 mr-2" />
-                  <span className="text-red-700">Sorry, there was an error sending your message. Please try again.</span>
-                </div>
-              )}
+                  {submitStatus === 'error' && (
+                    <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center">
+                      <XCircleIcon className="h-5 w-5 text-red-600 mr-2" />
+                      <span className="text-red-700">Sorry, there was an error sending your message. Please try again.</span>
+                    </div>
+                  )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -388,6 +458,8 @@ export default function ContactPageClient() {
                   Send Message
                 </button>
               </form>
+                </>
+              )}
             </div>
 
             {/* Contact Information */}
