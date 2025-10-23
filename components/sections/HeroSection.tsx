@@ -47,7 +47,8 @@ const StarRating = memo(() => (
       <StarIcon key={i} className="h-4 w-4 text-yellow-400" />
     ))}
   </div>
-))
+));
+StarRating.displayName = 'StarRating';
 
 // Memoized stats component - now using EnhancedStatsGrid
 const StatsGrid = memo(() => (
@@ -61,7 +62,8 @@ const StatsGrid = memo(() => (
       </div>
     ))}
   </div>
-))
+));
+StatsGrid.displayName = 'StatsGrid';
 
 // Optional: Enhanced version available via dynamic import for future upgrade
 // import dynamic from 'next/dynamic'
@@ -81,7 +83,8 @@ const QuickAccessLinks = memo(() => (
       </Link>
     ))}
   </div>
-))
+));
+QuickAccessLinks.displayName = 'QuickAccessLinks';
 
 export default function HeroSection() {
   const [formData, setFormData] = useState({

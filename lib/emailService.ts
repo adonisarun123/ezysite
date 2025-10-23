@@ -1,4 +1,18 @@
 import nodemailer from 'nodemailer';
+import pRetry from 'p-retry';
+import { EMAIL } from './constants';
+import { logger } from './logger';
+import type {
+  EmailContent,
+  ContactFormData,
+  HireHelperFormData,
+  GeneralLeadFormData,
+  AgentRegistrationFormData,
+  HelperRegistrationFormData,
+  RequirementFormData,
+  LeadType,
+  EmailSendResult,
+} from '@/types/email';
 
 // Utility function to format phone numbers to bypass DLP (shows all digits with dashes)
 const formatPhoneForEmail = (phone: string): string => {
@@ -51,14 +65,7 @@ const createTransporter = () => {
 };
 
 // Email templates
-const generateContactLeadEmail = (formData: {
-  name: string;
-  email: string;
-  phone: string;
-  subject: string;
-  message: string;
-  sourceUrl?: string;
-}) => {
+const generateContactLeadEmail = (formData: ContactFormData): EmailContent => {
   const formattedPhone = formatPhoneForEmail(formData.phone);
   
   return {
@@ -423,7 +430,7 @@ const generateAgentRegistrationEmail = (formData: {
           <p><strong>Owner Name:</strong> ${formData.ownerName}</p>
           <p><strong>Date of Birth:</strong> ${formData.ownerDOB}</p>
           <p><strong>ID Type:</strong> ${formData.ownerIDType}</p>
-          <p><strong>ID Number:</strong> ${formData.ownerIDNumber}</p>
+          <p><strong>ID Number:</strong> ${maskIDNumber(formData.ownerIDNumber)}</p>
         </div>
 
         <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
@@ -482,7 +489,7 @@ OWNER DETAILS:
 - Owner Name: ${formData.ownerName}
 - Date of Birth: ${formData.ownerDOB}
 - ID Type: ${formData.ownerIDType}
-- ID Number: ${formData.ownerIDNumber}
+- ID Number: ${maskIDNumber(formData.ownerIDNumber)}
 
 CONTACT INFORMATION:
 - Primary Phone: ${formattedPrimaryPhone}
@@ -606,7 +613,7 @@ const generateHelperRegistrationEmail = (formData: {
         <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #1e293b;">Identity Verification</h3>
           <p><strong>ID Proof Type:</strong> ${formData.idProofType}</p>
-          <p><strong>ID Proof Number:</strong> ${formData.idProofNumber}</p>
+          <p><strong>ID Proof Number:</strong> ${maskIDNumber(formData.idProofNumber)}</p>
         </div>
 
         ${formData.bankName || formData.accountNumber ? `
@@ -615,7 +622,7 @@ const generateHelperRegistrationEmail = (formData: {
           ${formData.bankName ? `<p><strong>Bank Name:</strong> ${formData.bankName}</p>` : ''}
           ${formData.bankIFSC ? `<p><strong>IFSC Code:</strong> ${formData.bankIFSC}</p>` : ''}
           ${formData.accountHolderName ? `<p><strong>Account Holder Name:</strong> ${formData.accountHolderName}</p>` : ''}
-          ${formData.accountNumber ? `<p><strong>Account Number:</strong> ${formData.accountNumber}</p>` : ''}
+          ${formData.accountNumber ? `<p><strong>Account Number:</strong> ${maskAccountNumber(formData.accountNumber)}</p>` : ''}
         </div>
         ` : ''}
 
@@ -687,13 +694,13 @@ SALARY EXPECTATIONS:
 
 IDENTITY VERIFICATION:
 - ID Proof Type: ${formData.idProofType}
-- ID Proof Number: ${formData.idProofNumber}
+- ID Proof Number: ${maskIDNumber(formData.idProofNumber)}
 
 ${formData.bankName || formData.accountNumber ? `BANKING DETAILS:
 ${formData.bankName ? `- Bank Name: ${formData.bankName}` : ''}
 ${formData.bankIFSC ? `- IFSC Code: ${formData.bankIFSC}` : ''}
 ${formData.accountHolderName ? `- Account Holder Name: ${formData.accountHolderName}` : ''}
-${formData.accountNumber ? `- Account Number: ${formData.accountNumber}` : ''}
+${formData.accountNumber ? `- Account Number: ${maskAccountNumber(formData.accountNumber)}` : ''}
 ` : ''}
 
 CONTACT INFORMATION:
@@ -835,30 +842,77 @@ This email was automatically generated from the EzyHelpers Service Requirement F
   };
 };
 
+// Helper function to send email with retry logic
+async function sendEmailWithRetry(
+  transporter: nodemailer.Transporter,
+  mailOptions: nodemailer.SendMailOptions
+): Promise<EmailSendResult> {
+  try {
+    const result = await pRetry(
+      async () => {
+        return await transporter.sendMail(mailOptions);
+      },
+      {
+        retries: EMAIL.MAX_RETRY_ATTEMPTS,
+        factor: EMAIL.RETRY_BACKOFF_MULTIPLIER,
+        minTimeout: EMAIL.RETRY_DELAY_MS,
+        onFailedAttempt: (error) => {
+          logger.warn(`Email send attempt ${error.attemptNumber} failed`, {
+            retriesLeft: error.retriesLeft,
+          });
+        },
+      }
+    );
+
+    logger.emailSent(
+      String(mailOptions.to),
+      String(mailOptions.subject),
+      true,
+      { messageId: result.messageId }
+    );
+
+    return { success: true, messageId: result.messageId };
+  } catch (error) {
+    logger.emailSent(
+      String(mailOptions.to),
+      String(mailOptions.subject),
+      false,
+      { error: error instanceof Error ? error.message : 'Unknown error' }
+    );
+
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
+
 // Main email sending function
 export const sendLeadEmail = async (
-  leadType: 'contact' | 'hire_helper' | 'general' | 'agent_registration' | 'helper_registration' | 'requirement',
-  formData: any,
+  leadType: LeadType,
+  formData: any, // TODO: Create union type for all form data types
   requestId?: string,
   sourceUrl?: string
-) => {
+): Promise<EmailSendResult> => {
   try {
-    // Create array of all email recipients
-    const emailRecipients = [
-      'contact@ezyhelpers.com',
-      'suraj.ezyhelpers@gmail.com',
-      'ashma@ezyhelpers.com'
-    ];
-    
-    // Add ADMIN_EMAIL if it's set and different from the above
-    if (process.env.ADMIN_EMAIL && !emailRecipients.includes(process.env.ADMIN_EMAIL)) {
-      emailRecipients.push(process.env.ADMIN_EMAIL);
+    // Get email recipients from environment variables
+    // Format: email1@example.com,email2@example.com,email3@example.com
+    const emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL;
+
+    if (!emailRecipientsEnv) {
+      console.error('EMAIL_RECIPIENTS or ADMIN_EMAIL environment variable not set');
+      return { success: false, error: 'Email recipients not configured' };
     }
-    
-    const adminEmail = emailRecipients.filter(Boolean).join(', ');
-      
+
+    // Split by comma and trim whitespace
+    const adminEmail = emailRecipientsEnv
+      .split(',')
+      .map(email => email.trim())
+      .filter(Boolean)
+      .join(', ');
+
     if (!adminEmail) {
-      console.error('ADMIN_EMAIL environment variable not set');
+      console.error('No valid email recipients found');
       return { success: false, error: 'Admin email not configured' };
     }
 
@@ -896,13 +950,10 @@ export const sendLeadEmail = async (
       ...emailContent,
     };
 
-    const result = await transporter.sendMail(mailOptions);
-    
-    console.log('Lead email sent successfully:', result.messageId);
-    return { success: true, messageId: result.messageId };
-    
+    // Send email with retry logic
+    return await sendEmailWithRetry(transporter, mailOptions);
   } catch (error) {
-    console.error('Error sending lead email:', error);
+    logger.error('Error in sendLeadEmail', error);
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
 };
@@ -938,12 +989,13 @@ export const sendEzyNestBookingEmail = async (
       }
     });
 
-    const emailRecipients = [
-      'contact@ezyhelpers.com',
-      'suraj.ezyhelpers@gmail.com', 
-      'ashma@ezyhelpers.com'
-    ];
-    const adminEmail = emailRecipients.join(', ');
+    // Get email recipients from environment variables
+    const emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
+    const adminEmail = emailRecipientsEnv
+      .split(',')
+      .map(email => email.trim())
+      .filter(Boolean)
+      .join(', ');
 
     let mailOptions: any = {
       from: process.env.SMTP_USER,

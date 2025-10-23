@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabaseClient'
 import { sendLeadEmail } from '@/lib/emailService'
 import { randomUUID } from 'crypto'
+import { validateApiKey, checkRateLimit } from '@/lib/auth'
 
 // Types
 interface AgentData {
@@ -371,8 +372,40 @@ export async function POST(request: NextRequest) {
 }
 
 // GET method to retrieve agent registrations (for admin use)
+// Protected with API key authentication
 export async function GET(request: NextRequest) {
   try {
+    // Authenticate request
+    const authResult = validateApiKey(request);
+    if (!authResult.isValid) {
+      return NextResponse.json(
+        { error: 'Unauthorized', message: authResult.error },
+        { status: 401 }
+      );
+    }
+
+    // Rate limiting based on API key
+    const apiKey = request.headers.get('authorization')?.replace('Bearer ', '') || 'unknown';
+    const rateLimit = checkRateLimit(`api_agents_${apiKey}`, 50, 60000); // 50 requests per minute
+
+    if (!rateLimit.allowed) {
+      return NextResponse.json(
+        {
+          error: 'Rate limit exceeded',
+          message: 'Too many requests. Please try again later.',
+          resetAt: new Date(rateLimit.resetAt).toISOString()
+        },
+        {
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': '50',
+            'X-RateLimit-Remaining': String(rateLimit.remaining),
+            'X-RateLimit-Reset': String(rateLimit.resetAt)
+          }
+        }
+      );
+    }
+
     const { data: agents, error } = await supabase
       .from('agents')
       .select(`

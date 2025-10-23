@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabaseClient'
 import { sendLeadEmail } from '@/lib/emailService'
 import { randomUUID } from 'crypto'
+import { validateApiKey, checkRateLimit } from '@/lib/auth'
+import { VALIDATION } from '@/lib/constants'
+import { parsePhoneNumber, isValidPhoneNumber } from 'libphonenumber-js'
+import { logger } from '@/lib/logger'
 
 // Types
 interface HelperData {
@@ -76,8 +80,25 @@ async function uploadFileToSupabase(file: File, folder: string, helperId: string
 
 // Validation helpers
 function validatePhone(phone: string): boolean {
-  const phoneRegex = /^[0-9]{10,15}$/
-  return phoneRegex.test(phone.replace(/\s+/g, ''))
+  try {
+    // Remove all spaces and special characters first
+    const cleaned = phone.replace(/\s+/g, '').replace(/[-()+]/g, '');
+
+    // Try parsing as Indian phone number (default)
+    if (isValidPhoneNumber(cleaned, 'IN')) {
+      return true;
+    }
+
+    // Try parsing without country code
+    if (isValidPhoneNumber('+91' + cleaned)) {
+      return true;
+    }
+
+    // Fallback: basic length check
+    return cleaned.length >= VALIDATION.MIN_PHONE_LENGTH && cleaned.length <= VALIDATION.MAX_PHONE_LENGTH;
+  } catch {
+    return false;
+  }
 }
 
 function validateIDNumber(idType: string, idNumber: string): boolean {
@@ -231,19 +252,19 @@ export async function POST(request: NextRequest) {
     
     // Validation
     const errors: string[] = []
-    
-    if (!firstName || firstName.length < 2) {
-      errors.push('First name must be at least 2 characters')
+
+    if (!firstName || firstName.length < VALIDATION.MIN_NAME_LENGTH) {
+      errors.push(`First name must be at least ${VALIDATION.MIN_NAME_LENGTH} characters`)
     }
-    
+
     if (!dateOfBirth) {
       errors.push('Date of birth is required')
     } else {
       const age = new Date().getFullYear() - new Date(dateOfBirth).getFullYear()
-      if (age < 18) {
-        errors.push('Must be at least 18 years old')
-      } else if (age > 60) {
-        errors.push('Must be under 60 years old')
+      if (age < VALIDATION.MIN_AGE) {
+        errors.push(`Must be at least ${VALIDATION.MIN_AGE} years old`)
+      } else if (age > VALIDATION.MAX_AGE) {
+        errors.push(`Must be under ${VALIDATION.MAX_AGE} years old`)
       }
     }
     
@@ -296,15 +317,12 @@ export async function POST(request: NextRequest) {
     }
     
     // Check file sizes
-    const maxPhotoSize = 800 * 1024 // 800KB
-    const maxDocSize = 5 * 1024 * 1024 // 5MB
-    
-    if (helperPhoto && helperPhoto.size > maxPhotoSize) {
-      errors.push('Helper photo file size must be less than 800KB')
+    if (helperPhoto && helperPhoto.size > VALIDATION.MAX_PHOTO_SIZE) {
+      errors.push(`Helper photo file size must be less than ${VALIDATION.MAX_PHOTO_SIZE / 1024}KB`)
     }
-    
-    if (idProofFile && idProofFile.size > maxDocSize) {
-      errors.push('ID proof file size must be less than 5MB')
+
+    if (idProofFile && idProofFile.size > VALIDATION.MAX_ID_PROOF_SIZE) {
+      errors.push(`ID proof file size must be less than ${VALIDATION.MAX_ID_PROOF_SIZE / (1024 * 1024)}MB`)
     }
     
     if (errors.length > 0) {
@@ -317,15 +335,20 @@ export async function POST(request: NextRequest) {
     // Generate helper ID first for file organization
     const helperId = randomUUID()
     
-    // Upload files to Supabase storage
+    // Upload files to Supabase storage in parallel for better performance
     let helperPhotoUrl = ''
     let idProofFileUrl = ''
-    
+
     try {
-      helperPhotoUrl = await uploadFileToSupabase(helperPhoto, 'photos', helperId)
-      idProofFileUrl = await uploadFileToSupabase(idProofFile, 'id-proofs', helperId)
+      const startTime = Date.now();
+      [helperPhotoUrl, idProofFileUrl] = await Promise.all([
+        uploadFileToSupabase(helperPhoto, 'photos', helperId),
+        uploadFileToSupabase(idProofFile, 'id-proofs', helperId)
+      ]);
+      const uploadTime = Date.now() - startTime;
+      logger.info('Files uploaded successfully', { helperId, uploadTimeMs: uploadTime });
     } catch (error) {
-      console.error('File upload error:', error)
+      logger.error('File upload failed', error, { helperId });
       return NextResponse.json(
         { error: 'Failed to upload files' },
         { status: 500 }
@@ -423,8 +446,40 @@ export async function POST(request: NextRequest) {
 }
 
 // GET method to retrieve helper registrations (for admin use)
+// Protected with API key authentication
 export async function GET(request: NextRequest) {
   try {
+    // Authenticate request
+    const authResult = validateApiKey(request);
+    if (!authResult.isValid) {
+      return NextResponse.json(
+        { error: 'Unauthorized', message: authResult.error },
+        { status: 401 }
+      );
+    }
+
+    // Rate limiting based on API key
+    const apiKey = request.headers.get('authorization')?.replace('Bearer ', '') || 'unknown';
+    const rateLimit = checkRateLimit(`api_helpers_${apiKey}`, 50, 60000); // 50 requests per minute
+
+    if (!rateLimit.allowed) {
+      return NextResponse.json(
+        {
+          error: 'Rate limit exceeded',
+          message: 'Too many requests. Please try again later.',
+          resetAt: new Date(rateLimit.resetAt).toISOString()
+        },
+        {
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': '50',
+            'X-RateLimit-Remaining': String(rateLimit.remaining),
+            'X-RateLimit-Reset': String(rateLimit.resetAt)
+          }
+        }
+      );
+    }
+
     const { data: helpers, error } = await supabase
       .from('helpers')
       .select(`
