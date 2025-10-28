@@ -1,8 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { testEmailConnection } from '@/lib/emailService';
+import { validateApiKey } from '@/lib/auth';
 
 export async function GET(request: NextRequest) {
   try {
+    // Only allow in development or with valid API key
+    if (process.env.NODE_ENV === 'production') {
+      const authResult = validateApiKey(request);
+      if (!authResult.isValid) {
+        return NextResponse.json(
+          { error: 'Unauthorized' },
+          { status: 401 }
+        );
+      }
+    }
+
     // Check if environment variables are set
     const requiredEnvVars = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'ADMIN_EMAIL'];
     const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);

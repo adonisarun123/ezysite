@@ -57,14 +57,7 @@ const createTransporter = () => {
 };
 
 // Email templates
-const generateContactLeadEmail = (formData: {
-  name: string;
-  email: string;
-  phone: string;
-  subject: string;
-  message: string;
-  sourceUrl?: string;
-}) => {
+const generateContactLeadEmail = (formData: ContactFormData): EmailContent => {
   const formattedPhone = formatPhoneForEmail(formData.phone);
   
   return {
@@ -849,30 +842,77 @@ This email was automatically generated from the EzyHelpers Service Requirement F
   };
 };
 
+// Helper function to send email with retry logic
+async function sendEmailWithRetry(
+  transporter: nodemailer.Transporter,
+  mailOptions: nodemailer.SendMailOptions
+): Promise<EmailSendResult> {
+  try {
+    const result = await pRetry(
+      async () => {
+        return await transporter.sendMail(mailOptions);
+      },
+      {
+        retries: EMAIL.MAX_RETRY_ATTEMPTS,
+        factor: EMAIL.RETRY_BACKOFF_MULTIPLIER,
+        minTimeout: EMAIL.RETRY_DELAY_MS,
+        onFailedAttempt: (error) => {
+          logger.warn(`Email send attempt ${error.attemptNumber} failed`, {
+            retriesLeft: error.retriesLeft,
+          });
+        },
+      }
+    );
+
+    logger.emailSent(
+      String(mailOptions.to),
+      String(mailOptions.subject),
+      true,
+      { messageId: result.messageId }
+    );
+
+    return { success: true, messageId: result.messageId };
+  } catch (error) {
+    logger.emailSent(
+      String(mailOptions.to),
+      String(mailOptions.subject),
+      false,
+      { error: error instanceof Error ? error.message : 'Unknown error' }
+    );
+
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
+
 // Main email sending function
 export const sendLeadEmail = async (
-  leadType: 'contact' | 'hire_helper' | 'general' | 'agent_registration' | 'helper_registration' | 'requirement',
-  formData: any,
+  leadType: LeadType,
+  formData: any, // TODO: Create union type for all form data types
   requestId?: string,
   sourceUrl?: string
-) => {
+): Promise<EmailSendResult> => {
   try {
-    // Create array of all email recipients
-    const emailRecipients = [
-      'contact@ezyhelpers.com',
-      'suraj.ezyhelpers@gmail.com',
-      'ashma@ezyhelpers.com'
-    ];
-    
-    // Add ADMIN_EMAIL if it's set and different from the above
-    if (process.env.ADMIN_EMAIL && !emailRecipients.includes(process.env.ADMIN_EMAIL)) {
-      emailRecipients.push(process.env.ADMIN_EMAIL);
+    // Get email recipients from environment variables
+    // Format: email1@example.com,email2@example.com,email3@example.com
+    const emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL;
+
+    if (!emailRecipientsEnv) {
+      console.error('EMAIL_RECIPIENTS or ADMIN_EMAIL environment variable not set');
+      return { success: false, error: 'Email recipients not configured' };
     }
-    
-    const adminEmail = emailRecipients.filter(Boolean).join(', ');
-      
+
+    // Split by comma and trim whitespace
+    const adminEmail = emailRecipientsEnv
+      .split(',')
+      .map(email => email.trim())
+      .filter(Boolean)
+      .join(', ');
+
     if (!adminEmail) {
-      console.error('ADMIN_EMAIL environment variable not set');
+      console.error('No valid email recipients found');
       return { success: false, error: 'Admin email not configured' };
     }
 
@@ -910,13 +950,10 @@ export const sendLeadEmail = async (
       ...emailContent,
     };
 
-    const result = await transporter.sendMail(mailOptions);
-    
-    console.log('Lead email sent successfully:', result.messageId);
-    return { success: true, messageId: result.messageId };
-    
+    // Send email with retry logic
+    return await sendEmailWithRetry(transporter, mailOptions);
   } catch (error) {
-    console.error('Error sending lead email:', error);
+    logger.error('Error in sendLeadEmail', error);
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
 };
@@ -952,12 +989,13 @@ export const sendEzyNestBookingEmail = async (
       }
     });
 
-    const emailRecipients = [
-      'contact@ezyhelpers.com',
-      'suraj.ezyhelpers@gmail.com', 
-      'ashma@ezyhelpers.com'
-    ];
-    const adminEmail = emailRecipients.join(', ');
+    // Get email recipients from environment variables
+    const emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
+    const adminEmail = emailRecipientsEnv
+      .split(',')
+      .map(email => email.trim())
+      .filter(Boolean)
+      .join(', ');
 
     let mailOptions: any = {
       from: process.env.SMTP_USER,

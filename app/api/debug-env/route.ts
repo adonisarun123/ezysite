@@ -1,7 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { validateApiKey } from '@/lib/auth';
 
 export async function GET(request: NextRequest) {
   try {
+    // Only allow in development or with valid API key
+    if (process.env.NODE_ENV === 'production') {
+      const authResult = validateApiKey(request);
+      if (!authResult.isValid) {
+        return NextResponse.json(
+          { error: 'Unauthorized' },
+          { status: 401 }
+        );
+      }
+    }
+
     console.log('🔍 Checking environment variables...');
     
     const envCheck = {

@@ -1,12 +1,19 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { CheckBadgeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { trackCTAClick, trackPhoneClick, trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
 
 export default function CTASection() {
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
+
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitStatus('submitting');
+    setSubmitMessage('');
+
     const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get('name') as string,
@@ -18,7 +25,7 @@ export default function CTASection() {
     try {
       // Track form submission
       trackFormSubmit('cta_quick_quote', data);
-      
+
       // Send email notification
       try {
         const emailResponse = await fetch('/api/send-lead-email', {
@@ -35,19 +42,34 @@ export default function CTASection() {
 
         if (!emailResponse.ok) {
           console.error('Failed to send email notification');
+          setSubmitStatus('error');
+          setSubmitMessage('Failed to submit. Please try again or call us directly.');
+          return;
         }
       } catch (emailError) {
         console.error('Email sending error:', emailError);
-        // Don't fail the form submission if email fails
+        setSubmitStatus('error');
+        setSubmitMessage('Failed to submit. Please try again or call us directly.');
+        return;
       }
-      
+
       // Track completion
       trackFormComplete('cta_quick_quote');
-      
-      // Reset form or show success message
+
+      // Reset form and show success message
       e.currentTarget.reset();
+      setSubmitStatus('success');
+      setSubmitMessage('Thank you! We\'ll contact you within 30 minutes.');
+
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+        setSubmitMessage('');
+      }, 5000);
     } catch (error) {
       trackFormError('cta_quick_quote', 'submission_error', error instanceof Error ? error.message : 'Unknown error');
+      setSubmitStatus('error');
+      setSubmitMessage('An error occurred. Please try again.');
     }
   };
 
@@ -123,7 +145,7 @@ export default function CTASection() {
                   type="text"
                   name="name"
                   placeholder="Your Name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none text-gray-900"
                   aria-label="Your Name"
                 />
               </div>
@@ -134,7 +156,7 @@ export default function CTASection() {
                   type="tel"
                   name="phone"
                   placeholder="Phone Number"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none text-gray-900"
                   aria-label="Phone Number"
                 />
               </div>
@@ -179,14 +201,28 @@ export default function CTASection() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                disabled={submitStatus === 'submitting'}
+                className="w-full bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Get Free Consultation
+                {submitStatus === 'submitting' ? 'Submitting...' : 'Get Free Consultation'}
               </button>
+
+              {/* Success/Error Message */}
+              {submitMessage && (
+                <div className={`mt-4 p-3 rounded-lg text-center text-sm font-medium ${
+                  submitStatus === 'success'
+                    ? 'bg-green-100 text-green-800 border border-green-200'
+                    : 'bg-red-100 text-red-800 border border-red-200'
+                }`}>
+                  {submitMessage}
+                </div>
+              )}
             </form>
-            <p className="text-xs text-gray-500 mt-4 text-center">
-              We'll contact you within 30 minutes to discuss your requirements.
-            </p>
+            {submitStatus !== 'success' && (
+              <p className="text-xs text-gray-500 mt-4 text-center">
+                We'll contact you within 30 minutes to discuss your requirements.
+              </p>
+            )}
           </div>
         </div>
       </div>
