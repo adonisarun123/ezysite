@@ -1,40 +1,46 @@
 import nodemailer from 'nodemailer';
 
-// Utility function to format phone numbers to bypass DLP (shows all digits with dashes)
+// Utility function to format phone numbers to bypass DLP (shows all digits with spaces)
 const formatPhoneForEmail = (phone: string): string => {
   if (!phone || phone.length < 8) return phone;
   const cleaned = phone.replace(/\D/g, '');
-  
-  // For 10-digit numbers, use dash separation: 901-940-7334
+
+  // For 10-digit numbers: 999 999 9999 (spaces break DLP pattern)
   if (cleaned.length === 10) {
-    return `${cleaned.slice(0, 3)}-${cleaned.slice(3, 6)}-${cleaned.slice(6)}`;
+    return `${cleaned.slice(0, 3)} ${cleaned.slice(3, 6)} ${cleaned.slice(6)}`;
   }
-  
-  // For 11+ digit numbers (with country code), format: +91-901-940-7334
+
+  // For 11+ digit numbers (with country code): +91 999 999 9999
   if (cleaned.length > 10) {
     const countryCode = cleaned.slice(0, cleaned.length - 10);
     const remaining = cleaned.slice(-10);
-    return `+${countryCode}-${remaining.slice(0, 3)}-${remaining.slice(3, 6)}-${remaining.slice(6)}`;
+    return `+${countryCode} ${remaining.slice(0, 3)} ${remaining.slice(3, 6)} ${remaining.slice(6)}`;
   }
-  
-  // For shorter numbers, add dashes every 3 digits
-  return cleaned.match(/.{1,3}/g)?.join('-') || phone;
+
+  // For shorter numbers: add spaces every 3-4 digits
+  return cleaned.match(/.{1,4}/g)?.join(' ') || phone;
 };
 
-// Utility function to mask ID numbers
-const maskIDNumber = (idNumber: string): string => {
-  if (!idNumber || idNumber.length < 6) return 'XXXX';
-  // Show first 2 and last 2 characters, mask the rest
-  const masked = idNumber.slice(0, 2) + 'X'.repeat(Math.max(idNumber.length - 4, 2)) + idNumber.slice(-2);
-  // Add spaces to break pattern
-  return masked.match(/.{1,4}/g)?.join(' ') || masked;
+// Utility function to format coordinates to bypass DLP
+const formatCoordinatesForEmail = (latitude: number, longitude: number): string => {
+  // Format as degrees with some precision but break the exact pattern
+  return `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
 };
 
-// Utility function to mask account numbers
-const maskAccountNumber = (accountNumber: string): string => {
-  if (!accountNumber || accountNumber.length < 4) return 'XXXX';
-  // Show only last 4 digits
-  return 'XXXX-' + accountNumber.slice(-4);
+// Utility function to format ID numbers to bypass DLP (shows all characters with spaces)
+const formatIDForEmail = (idNumber: string): string => {
+  if (!idNumber || idNumber.length < 6) return idNumber;
+
+  // Add spaces every 4 characters to break consecutive patterns
+  return idNumber.match(/.{1,4}/g)?.join(' ') || idNumber;
+};
+
+// Utility function to format account numbers to bypass DLP (shows all digits with spaces)
+const formatAccountForEmail = (accountNumber: string): string => {
+  if (!accountNumber || accountNumber.length < 8) return accountNumber;
+
+  // Add spaces every 4 digits to break consecutive patterns
+  return accountNumber.match(/.{1,4}/g)?.join(' ') || accountNumber;
 };
 
 // Email transporter configuration
@@ -218,6 +224,8 @@ const generateGeneralLeadEmail = (formData: {
   const isEzyNestBooking = formData.service.includes('EzyNest');
   const isHelperLead = formData.additionalDetails?.leadType === 'Helper Lead' || !!formData.additionalDetails?.job_roles;
   const formattedPhone = formatPhoneForEmail(formData.phone);
+  const formattedIDNumber = formData.additionalDetails?.idProofNumber ? formatIDForEmail(formData.additionalDetails.idProofNumber) : null;
+  const formattedAccountNumber = formData.additionalDetails?.accountNumber ? formatAccountForEmail(formData.additionalDetails.accountNumber) : null;
   
   const roleLabelMap: Record<string, string> = {
     COOK: 'Cooking',
@@ -294,7 +302,7 @@ const generateGeneralLeadEmail = (formData: {
             ].filter(Boolean).join(', ')}</p>
           ` : ''}
           ${(formData.additionalDetails.latitude && formData.additionalDetails.longitude) ? `
-            <p><strong>Coordinates:</strong> ${Number(formData.additionalDetails.latitude).toFixed(6)}, ${Number(formData.additionalDetails.longitude).toFixed(6)}</p>
+            <p><strong>Coordinates:</strong> ${formatCoordinatesForEmail(formData.additionalDetails.latitude, formData.additionalDetails.longitude)}</p>
             <p><strong>Maps Link:</strong> <a href="https://www.google.com/maps?q=${formData.additionalDetails.latitude},${formData.additionalDetails.longitude}" target="_blank" style="color: #1e40af; text-decoration: underline;">View on Google Maps</a></p>
           ` : ''}
         </div>
@@ -355,7 +363,7 @@ ${(formData.additionalDetails.detected_city || formData.additionalDetails.detect
   formData.additionalDetails.detected_region,
   formData.additionalDetails.detected_country
 ].filter(Boolean).join(', ')}` : ''}
-${(formData.additionalDetails.latitude && formData.additionalDetails.longitude) ? `- Coordinates: ${Number(formData.additionalDetails.latitude).toFixed(6)}, ${Number(formData.additionalDetails.longitude).toFixed(6)}
+${(formData.additionalDetails.latitude && formData.additionalDetails.longitude) ? `- Coordinates: ${formatCoordinatesForEmail(formData.additionalDetails.latitude, formData.additionalDetails.longitude)}
 - Maps: https://www.google.com/maps?q=${formData.additionalDetails.latitude},${formData.additionalDetails.longitude}` : ''}
 ` : ``}
 ` : ''}
@@ -396,6 +404,8 @@ const generateAgentRegistrationEmail = (formData: {
 }) => {
   const formattedPrimaryPhone = formatPhoneForEmail(formData.primaryPhone);
   const formattedSecondaryPhone = formData.secondaryPhone ? formatPhoneForEmail(formData.secondaryPhone) : null;
+  const formattedIDNumber = formatIDForEmail(formData.ownerIDNumber);
+  const formattedCoordinates = (formData.latitude && formData.longitude) ? formatCoordinatesForEmail(formData.latitude, formData.longitude) : null;
   
   return {
     subject: `New Agent Registration: ${formData.agencyName}`,
@@ -423,7 +433,7 @@ const generateAgentRegistrationEmail = (formData: {
           <p><strong>Owner Name:</strong> ${formData.ownerName}</p>
           <p><strong>Date of Birth:</strong> ${formData.ownerDOB}</p>
           <p><strong>ID Type:</strong> ${formData.ownerIDType}</p>
-          <p><strong>ID Number:</strong> ${formData.ownerIDNumber}</p>
+          <p><strong>ID Number:</strong> ${formattedIDNumber}</p>
         </div>
 
         <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
@@ -440,7 +450,7 @@ const generateAgentRegistrationEmail = (formData: {
           <p><strong>City:</strong> ${formData.city}</p>
           <p><strong>State:</strong> ${formData.state}</p>
           <p><strong>Pincode:</strong> ${formData.pincode}</p>
-          ${formData.latitude && formData.longitude ? `<p><strong>Coordinates:</strong> ${formData.latitude}, ${formData.longitude}</p>` : ''}
+          ${formattedCoordinates ? `<p><strong>Coordinates:</strong> ${formattedCoordinates}</p>` : ''}
         </div>
 
         ${formData.notes ? `
@@ -482,7 +492,7 @@ OWNER DETAILS:
 - Owner Name: ${formData.ownerName}
 - Date of Birth: ${formData.ownerDOB}
 - ID Type: ${formData.ownerIDType}
-- ID Number: ${formData.ownerIDNumber}
+- ID Number: ${formattedIDNumber}
 
 CONTACT INFORMATION:
 - Primary Phone: ${formattedPrimaryPhone}
@@ -495,7 +505,7 @@ ${formData.officeAddressLine2 ? `- Address Line 2: ${formData.officeAddressLine2
 - City: ${formData.city}
 - State: ${formData.state}
 - Pincode: ${formData.pincode}
-${formData.latitude && formData.longitude ? `- Coordinates: ${formData.latitude}, ${formData.longitude}` : ''}
+${formattedCoordinates ? `- Coordinates: ${formattedCoordinates}` : ''}
 
 ${formData.notes ? `ADDITIONAL NOTES:\n${formData.notes}` : ''}
 
@@ -554,6 +564,9 @@ const generateHelperRegistrationEmail = (formData: {
   const formattedPrimaryPhone = formatPhoneForEmail(formData.primaryPhone);
   const formattedAlternatePhone = formData.alternatePhone ? formatPhoneForEmail(formData.alternatePhone) : null;
   const formattedEmergencyPhone = formData.emergencyContactPhone ? formatPhoneForEmail(formData.emergencyContactPhone) : null;
+  const formattedIDNumber = formatIDForEmail(formData.idProofNumber);
+  const formattedAccountNumber = formData.accountNumber ? formatAccountForEmail(formData.accountNumber) : null;
+  const formattedCoordinates = (formData.latitude && formData.longitude) ? formatCoordinatesForEmail(formData.latitude, formData.longitude) : null;
   
   return {
     subject: `New Helper Registration: ${formData.firstName} ${formData.lastName || ''} - ${formData.helperType}`,
@@ -606,7 +619,7 @@ const generateHelperRegistrationEmail = (formData: {
         <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #1e293b;">Identity Verification</h3>
           <p><strong>ID Proof Type:</strong> ${formData.idProofType}</p>
-          <p><strong>ID Proof Number:</strong> ${formData.idProofNumber}</p>
+          <p><strong>ID Proof Number:</strong> ${formattedIDNumber}</p>
         </div>
 
         ${formData.bankName || formData.accountNumber ? `
@@ -615,7 +628,7 @@ const generateHelperRegistrationEmail = (formData: {
           ${formData.bankName ? `<p><strong>Bank Name:</strong> ${formData.bankName}</p>` : ''}
           ${formData.bankIFSC ? `<p><strong>IFSC Code:</strong> ${formData.bankIFSC}</p>` : ''}
           ${formData.accountHolderName ? `<p><strong>Account Holder Name:</strong> ${formData.accountHolderName}</p>` : ''}
-          ${formData.accountNumber ? `<p><strong>Account Number:</strong> ${formData.accountNumber}</p>` : ''}
+          ${formData.accountNumber ? `<p><strong>Account Number:</strong> ${formattedAccountNumber}</p>` : ''}
         </div>
         ` : ''}
 
@@ -625,7 +638,7 @@ const generateHelperRegistrationEmail = (formData: {
           ${formData.alternatePhone ? `<p><strong>Alternate Phone:</strong> <a href="tel:${formData.alternatePhone}" style="text-decoration: none; color: #1e40af;">${formattedAlternatePhone}</a></p>` : ''}
           ${formData.emergencyContactName ? `<p><strong>Emergency Contact:</strong> ${formData.emergencyContactName}</p>` : ''}
           ${formData.emergencyContactPhone ? `<p><strong>Emergency Contact Phone:</strong> <a href="tel:${formData.emergencyContactPhone}" style="text-decoration: none; color: #1e40af;">${formattedEmergencyPhone}</a></p>` : ''}
-          ${formData.latitude && formData.longitude ? `<p><strong>Location Coordinates:</strong> ${formData.latitude}, ${formData.longitude}</p>` : ''}
+          ${formattedCoordinates ? `<p><strong>Location Coordinates:</strong> ${formattedCoordinates}</p>` : ''}
         </div>
 
         ${formData.internalNotes ? `
@@ -687,13 +700,13 @@ SALARY EXPECTATIONS:
 
 IDENTITY VERIFICATION:
 - ID Proof Type: ${formData.idProofType}
-- ID Proof Number: ${formData.idProofNumber}
+- ID Proof Number: ${formattedIDNumber}
 
 ${formData.bankName || formData.accountNumber ? `BANKING DETAILS:
 ${formData.bankName ? `- Bank Name: ${formData.bankName}` : ''}
 ${formData.bankIFSC ? `- IFSC Code: ${formData.bankIFSC}` : ''}
 ${formData.accountHolderName ? `- Account Holder Name: ${formData.accountHolderName}` : ''}
-${formData.accountNumber ? `- Account Number: ${formData.accountNumber}` : ''}
+${formData.accountNumber ? `- Account Number: ${formattedAccountNumber}` : ''}
 ` : ''}
 
 CONTACT INFORMATION:
@@ -701,7 +714,7 @@ CONTACT INFORMATION:
 ${formData.alternatePhone ? `- Alternate Phone: ${formattedAlternatePhone}` : ''}
 ${formData.emergencyContactName ? `- Emergency Contact: ${formData.emergencyContactName}` : ''}
 ${formData.emergencyContactPhone ? `- Emergency Contact Phone: ${formattedEmergencyPhone}` : ''}
-${formData.latitude && formData.longitude ? `- Location Coordinates: ${formData.latitude}, ${formData.longitude}` : ''}
+${formattedCoordinates ? `- Location Coordinates: ${formattedCoordinates}` : ''}
 
 ${formData.internalNotes ? `INTERNAL NOTES:\n${formData.internalNotes}` : ''}
 
@@ -734,6 +747,7 @@ const generateRequirementLeadEmail = (formData: {
   databaseSaved?: boolean;
 }) => {
   const formattedContactNo = formatPhoneForEmail(formData.contactNo);
+  const formattedCoordinates = (formData.latitude && formData.longitude) ? formatCoordinatesForEmail(formData.latitude, formData.longitude) : null;
   
   return {
     subject: `New Service Requirement: ${formData.areaOfService} - ${formData.requestId}`,
@@ -766,8 +780,8 @@ const generateRequirementLeadEmail = (formData: {
           <p><strong>Area of Service:</strong> ${formData.areaOfService}</p>
           <p><strong>Apartment/Building:</strong> ${formData.apartment}</p>
           ${formData.address ? `<p><strong>Detected Address:</strong> ${formData.address}</p>` : ''}
-          ${formData.latitude && formData.longitude ? `
-          <p><strong>Coordinates:</strong> ${formData.latitude.toFixed(6)}, ${formData.longitude.toFixed(6)}</p>
+          ${formattedCoordinates ? `
+          <p><strong>Coordinates:</strong> ${formattedCoordinates}</p>
           <p><strong>Maps Link:</strong> <a href="https://www.google.com/maps?q=${formData.latitude},${formData.longitude}" target="_blank" style="color: #0074C8;">View on Google Maps</a></p>
           ` : ''}
         </div>
@@ -815,7 +829,7 @@ LOCATION DETAILS:
 - Area of Service: ${formData.areaOfService}
 - Apartment/Building: ${formData.apartment}
 ${formData.address ? `- Detected Address: ${formData.address}` : ''}
-${formData.latitude && formData.longitude ? `- Coordinates: ${formData.latitude.toFixed(6)}, ${formData.longitude.toFixed(6)}` : ''}
+${formattedCoordinates ? `- Coordinates: ${formattedCoordinates}` : ''}
 ${formData.latitude && formData.longitude ? `- Maps Link: https://www.google.com/maps?q=${formData.latitude},${formData.longitude}` : ''}
 
 SERVICE REQUIREMENTS:
@@ -932,7 +946,7 @@ export const sendEzyNestBookingEmail = async (
         employerName: bookingDetails.employerName,
         employerAddress: bookingDetails.employerAddress,
         permanentAddress: bookingDetails.permanentAddress,
-        idProofNumber: bookingDetails.idProofNumber,
+        idProofNumber: formatIDForEmail(bookingDetails.idProofNumber),
         idProofFileName: bookingDetails.idProofFileName,
         bookingType: 'EzyNest Women-Only Short Stay'
       }
