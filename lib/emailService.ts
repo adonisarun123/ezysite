@@ -1,4 +1,8 @@
 import nodemailer from 'nodemailer';
+import pRetry from 'p-retry';
+import { EMAIL } from './constants';
+import { logger } from './logger';
+import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, EmailSendResult, LeadType } from '../types/email';
 
 // Utility function to format phone numbers to bypass DLP (shows all digits with spaces)
 const formatPhoneForEmail = (phone: string): string => {
@@ -1039,4 +1043,4 @@ export const testEmailConnection = async () => {
     console.error('Email connection test failed:', error);
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
-}; 
+};
