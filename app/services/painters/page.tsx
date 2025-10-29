@@ -19,9 +19,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Professional Painting Services Bareilly – Book Experts',
-  description: 'Trusted professional painting services in Bareilly offering reliable, timely painting with expert surface preparation and finishing.',
-  keywords: 'painting services bareilly, house painting bareilly, interior painting bareilly, exterior painting bareilly',
+  title: 'House Painting Services | Interior & Exterior | EzyHelpers',
+  description: 'Professional house painting services for interior & exterior walls. Quality paints, expert painters & affordable rates in your area.',
+  keywords: 'house painting services, interior painting, exterior painting, wall painting, professional painters',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/painters'
+  }
 }
 
 export default function PaintersPage() {

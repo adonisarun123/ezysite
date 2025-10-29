@@ -35,13 +35,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Live-In Maid in Bangalore | 24/7 Home Help',
     description: 'Get live-in maids in Bangalore for 24/7 home help. Cooking, cleaning, babysitting, or elderly care. Background checked and trusted.',
-    url: 'https://ezyhelpers.com/cities/bangalore/live-in-maids',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/live-in-maids',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/live-in-maids'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/live-in-maids'
   }
 }
 

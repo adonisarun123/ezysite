@@ -16,9 +16,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Professional Drivers | Safe & Reliable Transport',
-  description: 'Travel with confidence using our professional driver services. Licensed, experienced drivers for all your transportation needs, from daily commutes to special occasions.',
+  title: 'Professional Drivers Services | Safe & Reliable | EzyHelpers',
+  description: 'Licensed professional drivers for family transportation, office commutes & personal use. Safe, reliable & punctual service across major cities in India.',
   keywords: 'professional driver, licensed drivers, chauffeur, hire driver, driver services, airport transfer, outstation travel, daily commute',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/drivers'
+  }
 }
 
 export default function DriversPage() {

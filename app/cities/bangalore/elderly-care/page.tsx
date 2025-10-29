@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     title: 'Senior Citizen Home Services in Bangalore | Elderly Support',
     description:
       'Trusted in-home elderly care in Bangalore: personal care, medication help, meal prep, mobility support, and companionship.',
-    url: 'https://ezyhelpers.com/cities/bangalore/elderly-care',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/elderly-care',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/elderly-care'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/elderly-care'
   }
 }
 

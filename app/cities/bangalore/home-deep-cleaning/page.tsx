@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     title: 'Deep Cleaning Services in Bangalore | Home Sanitize',
     description:
       'Deep cleaning services in Bangalore for full home hygiene. Includes kitchen, bathroom, and sofa cleaning by trained professionals with safe products.',
-    url: 'https://ezyhelpers.com/cities/bangalore/home-deep-cleaning',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/home-deep-cleaning',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/home-deep-cleaning'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/home-deep-cleaning'
   }
 }
 

@@ -14,9 +14,12 @@ export const metadata: Metadata = {
     title: 'Newborn Babycare in Bareilly – Trained Japa Maids',
     description:
       'Looking for newborn babycare in Bareilly? Hire trained Japa maids for postnatal care, baby feeding, massage, and support—safe, gentle, and experienced help.',
-    url: 'https://ezyhelpers.com/cities/bareilly/japa',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/japa',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/japa'
+  }
 }
 
 export default function BareillyJapa() {

@@ -17,19 +17,18 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Full-Time Maid Services – Consistent, Daily Help Without Stay-In',
-  description:
-    "Hire reliable full-time maids for daily household support. Choose specialists for housekeeping, cooking, childcare, or elderly care. Fixed daily hours, verified profiles, and quick replacements.",
+  title: 'Full Time Maid Services | Full Day Help for Your Home',
+  description: 'Reliable full-time maid services for daily cleaning, cooking & home care. Get 8–10 hrs of trained, verified help daily. Book trusted maids near you today!',
   keywords: 'full time maid, daily maid, home helper, domestic help, maid services',
   openGraph: {
     title: 'Full-Time Maid Services – Consistent, Daily Help Without Stay-In',
     description:
       "Hire reliable full-time maids for daily household support. Choose specialists for housekeeping, cooking, childcare, or elderly care. Fixed daily hours, verified profiles, and quick replacements.",
-    url: 'https://ezyhelpers.com/services/full-time-maids',
+    url: 'https://www.ezyhelpers.com/services/full-time-maids',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/services/full-time-maids'
+    canonical: 'https://www.ezyhelpers.com/services/full-time-maids'
   }
 }
 

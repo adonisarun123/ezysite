@@ -19,9 +19,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Expert Electrician Services at Your Doorstep',
-  description: 'Certified electricians for safe installations, repairs, and maintenance. Quick response, fair pricing, and peace of mind guaranteed.',
+  title: 'Expert Electrician Services for Your Home | EzyHelpers',
+  description: 'Certified electrician services for wiring, repairs & installations. Emergency electrical work available 24/7 by licensed experts in your locality.',
   keywords: 'electrician services, electrical repair, home wiring, electrical maintenance, lighting installation, appliance installation, emergency electrician',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/electricians'
+  }
 }
 
 export default function ElectriciansPage() {

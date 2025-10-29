@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     title: 'On-Demand Maid Service in Bangalore | Emergency Help',
     description:
       'Instant, reliable on-demand maid and helper services in Bangalore for cleaning, cooking, babysitting and more. Same-day availability.',
-    url: 'https://ezyhelpers.com/cities/bangalore/on-demand-helper',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/on-demand-helper',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/on-demand-helper'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/on-demand-helper'
   }
 }
 

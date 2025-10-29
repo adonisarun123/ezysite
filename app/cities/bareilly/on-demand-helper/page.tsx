@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Instant Maid Service in Bareilly – Same-Day Help',
     description: 'Instant maid service in Bareilly offers same-day domestic help for urgent cleaning, cooking, or emergency support during events and last-minute needs.',
-    url: 'https://ezyhelpers.com/cities/bareilly/on-demand-helper',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/on-demand-helper',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bareilly/on-demand-helper'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/on-demand-helper'
   }
 }
 

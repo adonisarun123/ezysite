@@ -26,8 +26,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Carpenter Home Service in Bareilly – Skilled Work',
     description: 'Hire skilled carpenter home service in Bareilly for furniture repair, fitting, woodwork & custom installations. Reliable & trained professionals.',
-    url: 'https://ezyhelpers.com/cities/bareilly/carpenter',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/carpenter',
     type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/carpenter'
   }
 }
 

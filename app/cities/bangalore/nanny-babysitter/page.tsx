@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     title: 'Babysitter for Home in Bangalore | Trusted Childcare',
     description:
       'Trusted, trained, and caring babysitters in Bangalore for infants to teens. Flexible hourly or full-day support at home.',
-    url: 'https://ezyhelpers.com/cities/bangalore/nanny-babysitter',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/nanny-babysitter',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/nanny-babysitter'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/nanny-babysitter'
   }
 }
 

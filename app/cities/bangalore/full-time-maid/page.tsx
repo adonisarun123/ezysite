@@ -28,21 +28,18 @@ import {
 
 export const metadata: Metadata = {
   title: 'Full-Time Maid Bangalore | Verified Daily Helper',
-  description:
-    'Full-time maids in Bangalore for daily cleaning, cooking, and home tasks. Perfect for working families needing complete home management support.',
-  keywords:
-    'full time maid bangalore, full day maid bangalore, daily maid bangalore, househelp bangalore, cook bangalore, babysitter bangalore, elderly care bangalore',
+  description: 'Full-time maids in Bangalore for daily cleaning, cooking, and home tasks. Perfect for working families needing complete home management support.',
+  keywords: 'full time maid bangalore, full day maid bangalore, daily maid bangalore, househelp bangalore, cook bangalore, babysitter bangalore, elderly care bangalore',
   openGraph: {
     title: 'Full-Time Maid Bangalore | Verified Daily Helper',
-    description:
-      'Reliable 8–10 hour daily maid service in Bangalore for cleaning, cooking, childcare, or elderly care. Background-verified and trained.',
-    url: 'https://ezyhelpers.com/cities/bangalore/full-time-maid',
+    description: 'Reliable 8–10 hour daily maid service in Bangalore for cleaning, cooking, childcare, or elderly care. Background-verified and trained.',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/full-time-maid',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/full-time-maid'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/full-time-maid'
   }
 }
 

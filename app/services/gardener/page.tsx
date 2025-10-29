@@ -19,9 +19,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Gardener in Bangalore | Plant Care & Maintenance',
-  description: 'Hire gardeners in Bangalore for plant care and garden maintenance. Watering, trimming, and seasonal care.',
-  keywords: 'gardener bangalore, garden maintenance bangalore, plant care bangalore, terrace garden bangalore',
+  title: 'Home Gardener Services | Gardening Experts | EzyHelpers',
+  description: 'Professional home gardener services for lawn care, plant maintenance & landscaping. Expert gardeners available in residential neighbourhoods near you.',
+  keywords: 'gardener services, garden maintenance, plant care, terrace garden, lawn care, landscaping',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/gardener'
+  }
 }
 
 export default function GardenerPage() {

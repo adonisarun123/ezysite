@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Reliable Full-Time Maids in Bareilly – Daily Help',
     description: 'Book a full time maid in Bareilly for complete home assistance including cleaning, cooking, laundry, and regular household maintenance.',
-    url: 'https://ezyhelpers.com/cities/bareilly/full-time-maid',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/full-time-maid',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bareilly/full-time-maid'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/full-time-maid'
   }
 }
 

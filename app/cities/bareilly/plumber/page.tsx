@@ -17,8 +17,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Plumbing Repair in Bareilly – Trusted Local Plumbers',
     description: 'Get plumbing repair in Bareilly for leaks, pipe fittings, tap fixes, and clogged drains. Quick and professional service for your home needs.',
-    url: 'https://ezyhelpers.com/cities/bareilly/plumber',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/plumber',
     type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/plumber'
   }
 }
 

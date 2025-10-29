@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     title: 'Car Driver in Bangalore | Daily & Outstation',
     description:
       'Professional chauffeur services in Bangalore: on-demand, full-time, and live-in drivers. Safe, punctual, background-verified.',
-    url: 'https://ezyhelpers.com/cities/bangalore/drivers',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/drivers',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/drivers'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/drivers'
   }
 }
 

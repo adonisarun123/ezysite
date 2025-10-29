@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     title: 'Part-Time Maid Services in Bangalore | Flexible Hourly Help',
     description:
       'Quick and reliable part-time maids in Bangalore for 2–6 hours daily. Ideal for cooking, cleaning, childcare, and eldercare.',
-    url: 'https://ezyhelpers.com/cities/bangalore/part-time-maid',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/part-time-maid',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/part-time-maid'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/part-time-maid'
   }
 }
 

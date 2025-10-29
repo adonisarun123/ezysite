@@ -18,19 +18,19 @@ import {
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'About EzyHelpers | India\'s Top Domestic Helper Services',
-  description: 'Leading domestic helper services platform since 2020. 5,000+ verified helpers across 9 cities. Police verified professionals for your peace of mind.',
+  title: 'EzyHelpers | Your Trusted Domestic Helper Services Provider',
+  description: 'Trusted domestic helper services by EzyHelpers ensure your home is cared for with professionalism, reliability, and the peace of mind families deserve.',
   keywords: 'domestic helper services, about EzyHelpers, verified helpers, home services platform, trusted domestic help',
   openGraph: {
     title: 'About EzyHelpers - Leading Home Services Platform',
     description: 'Discover how EzyHelpers is transforming home services with 5,000+ verified professionals serving 10,000+ families across India.',
-    url: 'https://ezyhelpers.com/about',
+    url: 'https://www.ezyhelpers.com/about',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/about'
+    canonical: 'https://www.ezyhelpers.com/about'
   }
 }
 

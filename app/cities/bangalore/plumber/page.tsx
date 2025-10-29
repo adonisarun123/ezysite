@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     title: 'House Plumbing Repair in Bangalore | Water Problem Fix',
     description:
       'Fix leaking taps, blocked drains, or bathroom issues with verified plumbers. Book same-day house plumbing repair in Bangalore with on-time professionals.',
-    url: 'https://ezyhelpers.com/cities/bangalore/plumber',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/plumber',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/plumber'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/plumber'
   }
 }
 

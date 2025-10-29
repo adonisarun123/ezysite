@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     title: 'Electrical Appliance Repair in Bangalore | TV, AC, Fridge Fix',
     description:
       'Fix all home appliances in Bangalore. TV, AC, fridge, washing machine repair. Expert technicians, doorstep service.',
-    url: 'https://ezyhelpers.com/cities/bangalore/appliance-repair',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/appliance-repair',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/appliance-repair'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/appliance-repair'
   }
 }
 

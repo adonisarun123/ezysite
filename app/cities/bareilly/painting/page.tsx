@@ -19,8 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Professional Painting Services Bareilly – Book Experts',
     description: 'Trusted professional painting services in Bareilly offering reliable, timely painting with expert surface preparation and finishing.',
-    url: 'https://ezyhelpers.com/cities/bareilly/painting',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/painting',
     type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/painting'
   }
 }
 

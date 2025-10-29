@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     title: 'Cook for Home Bangalore | Daily Fresh Meals',
     description:
       'Verified home cooks in Bangalore for daily meals, special diets, and multi-cuisine expertise. Flexible timings and hygienic cooking.',
-    url: 'https://ezyhelpers.com/cities/bangalore/cooks',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/cooks',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/cooks'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/cooks'
   }
 }
 

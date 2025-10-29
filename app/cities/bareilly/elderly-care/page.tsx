@@ -12,8 +12,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Caretaker for Elderly in Bareilly – Compassionate Support',
     description: 'Get caretaker for elderly at home in Bareilly with trained staff for hygiene, medication, companionship, and emotional support for your loved ones.',
-    url: 'https://ezyhelpers.com/cities/bareilly/elderly-care',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/elderly-care',
     type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/elderly-care'
   }
 }
 

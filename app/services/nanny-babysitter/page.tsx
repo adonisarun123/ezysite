@@ -16,9 +16,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Nanny & Babysitter | Expert Childcare You Trust',
-  description: 'Give your children the loving care they deserve with qualified nannies and babysitters trained in child development and safety.',
+  title: 'Professional Babysitter Services | Certified | EzyHelpers',
+  description: 'Trusted babysitter & nanny services with child safety certified professionals. 24/7 childcare support for working parents. Background verified & trained.',
   keywords: 'nanny, babysitter, childcare, child caretaker, child safety, child development',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/nanny-babysitter'
+  }
 }
 
 export default function NannyBabysitterPage() {

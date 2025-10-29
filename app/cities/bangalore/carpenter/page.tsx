@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     title: 'Carpentry Repair in Bangalore | Furniture Fixing',
     description:
       'Skilled carpenters in Bangalore for furniture repairs, modular fittings, and custom builds. Quick, professional, and quality work by EzyHelpers.',
-    url: 'https://ezyhelpers.com/cities/bangalore/carpenter',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/carpenter',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/carpenter'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/carpenter'
   }
 }
 

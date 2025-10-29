@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     title: 'House Painting in Bangalore | Interior & Exterior',
     description:
       'Interior and exterior painting in Bangalore by verified painters. Stylish colours, expert finishes, and fast service for homes, flats, and villas.',
-    url: 'https://ezyhelpers.com/cities/bangalore/painter',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/painter',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/painter'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/painter'
   }
 }
 

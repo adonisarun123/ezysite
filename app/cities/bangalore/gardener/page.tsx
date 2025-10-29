@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     title: 'Gardener in Bangalore | Plant Care & Maintenance',
     description:
       'Hire gardeners in Bangalore for plant care and garden maintenance. Watering, trimming, and seasonal care.',
-    url: 'https://ezyhelpers.com/cities/bangalore/gardener',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/gardener',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/gardener'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/gardener'
   }
 }
 

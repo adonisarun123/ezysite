@@ -14,9 +14,12 @@ export const metadata: Metadata = {
     title: 'Hire Cooks in Bareilly – Daily or Event-Based Help',
     description:
       'Need cooks in Bareilly? Book part-time, full-time, or event-based cooking help. Our trained cooks prepare tasty, hygienic meals to suit your needs.',
-    url: 'https://ezyhelpers.com/cities/bareilly/cooks',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/cooks',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/cooks'
+  }
 }
 
 export default function BareillyCooksPage() {

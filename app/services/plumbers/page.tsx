@@ -19,9 +19,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Plumbing Repair in Bareilly – Trusted Local Plumbers',
-  description: 'Get plumbing repair in Bareilly for leaks, pipe fittings, tap fixes, and clogged drains. Quick and professional service for your home needs.',
-  keywords: 'plumbing repair bareilly, plumber bareilly, tap repair bareilly, drain cleaning bareilly',
+  title: 'Fix Leaks & More with Expert Plumber Service | EzyHelpers',
+  description: 'Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas.',
+  keywords: 'plumber service, plumbing repair, tap repair, drain cleaning, pipe repair, emergency plumber',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/plumbers'
+  }
 }
 
 export default function PlumbersPage() {

@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     title: 'Home Electrical Repair Services in Bangalore | Quick Fix',
     description:
       'Trusted electricians for every home. Repairs, installations, smart upgrades, and EV charging points across Bangalore.',
-    url: 'https://ezyhelpers.com/cities/bangalore/electrician',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/electrician',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN'
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/electrician'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/electrician'
   }
 }
 

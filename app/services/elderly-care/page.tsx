@@ -16,19 +16,19 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Elderly Care – Dignity & Comfort at Home',
-  description: 'Provide your loved ones with compassionate elderly care that honors their dignity while ensuring safety, comfort, and companionship at home.',
+  title: 'Compassionate Elderly Care Services for Seniors | EzyHelpers',
+  description: 'Compassionate elder care services with medical assistance, companionship & mobility support. Trained specialists for seniors Trusted by families across India.',
   keywords: 'elderly care, senior care, caretaker for elderly, in-home elderly care, compassionate care, medication reminders, mobility assistance, companionship',
   openGraph: {
-    title: 'Elderly Care – Dignity & Comfort at Home',
-    description: 'Provide your loved ones with compassionate elderly care that honors their dignity while ensuring safety, comfort, and companionship at home.',
-    url: 'https://ezyhelpers.com/services/elderly-care',
+    title: 'Compassionate Elderly Care Services for Seniors | EzyHelpers',
+    description: 'Compassionate elder care services with medical assistance, companionship & mobility support. Trained specialists for seniors Trusted by families across India.',
+    url: 'https://www.ezyhelpers.com/services/elderly-care',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/services/elderly-care'
+    canonical: 'https://www.ezyhelpers.com/services/elderly-care'
   }
 }
 

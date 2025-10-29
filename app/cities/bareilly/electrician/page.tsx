@@ -26,8 +26,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Trusted Electrician in Bareilly - Fast Home Fixes',
     description: 'Looking for an electrician in Bareilly? Book expert service for fan fittings, switches, wiring issues, and power problems at your home.',
-    url: 'https://ezyhelpers.com/cities/bareilly/electrician',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/electrician',
     type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/electrician'
   }
 }
 

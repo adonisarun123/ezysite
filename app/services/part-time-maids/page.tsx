@@ -19,10 +19,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Part-Time Maid Services – Flexible Help, When You Need It',
-  description:
-    'Looking for household help without a live-in commitment? EzyHelpers connects you with experienced part-time maids who visit your home for a few hours a day for cleaning, cooking, childcare, elderly care, or specific tasks—based on your schedule and needs.',
+  title: 'Part-Time Maid Services | 2-6 Hours Daily | EzyHelpers',
+  description: 'Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers.',
   keywords: 'part time maid, hourly maid, house help, cooking maid, babysitter, elderly care',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/part-time-maids'
+  }
 }
 
 export default function PartTimeMaidsPage() {

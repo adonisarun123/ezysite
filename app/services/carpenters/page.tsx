@@ -20,9 +20,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Find the Best Carpenter Services - Quality Workmanship Guaranteed',
-  description: 'Quality workmanship guaranteed! Expert carpenters for custom furniture, repairs, installations, and more with premium materials and precise craftsmanship.',
+  title: 'Expert Carpenter Services | Home Repairs | EzyHelpers',
+  description: 'Professional carpenter services for furniture repair, woodwork & home improvements. Skilled craftsmen available for all carpentry needs across major cities.',
   keywords: 'carpenter services, custom furniture, modular kitchen, wardrobe, furniture repair, door window fixing, office carpentry, furniture restoration',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/carpenters'
+  }
 }
 
 export default function CarpentersPage() {

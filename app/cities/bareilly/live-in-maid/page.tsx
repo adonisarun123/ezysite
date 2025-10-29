@@ -16,13 +16,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Verified Live-In Maids in Bareilly – 12-Hour Daily Support',
     description: 'Hire a verified live in house maid in Bareilly for all-day support. Our maids stay with you and assist with cooking, cleaning, and daily household needs.',
-    url: 'https://ezyhelpers.com/cities/bareilly/live-in-maid',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/live-in-maid',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bareilly/live-in-maid'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/live-in-maid'
   }
 }
 

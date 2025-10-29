@@ -33,13 +33,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Best Part-Time Maid in Bareilly – Flexible Timings',
     description: 'Get a part-time maid in Bareilly for morning or evening help. Choose trained maids for cleaning, cooking, or daily tasks as per your convenience.',
-    url: 'https://ezyhelpers.com/cities/bareilly/part-time-maid',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/part-time-maid',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bareilly/part-time-maid'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/part-time-maid'
   }
 }
 

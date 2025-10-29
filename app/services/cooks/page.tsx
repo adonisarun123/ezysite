@@ -17,9 +17,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Professional Cooks | Delicious Meals Daily',
-  description: 'Enjoy fresh, healthy, and delicious home-cooked meals prepared by skilled professional cooks who understand your taste preferences.',
+  title: 'Professional Cook Services for Home | EzyHelpers',
+  description: 'Expert cooks for Indian, Continental & regional cuisines. Includes meal planning, grocery management & dietary preferences. Hire home cooks today!',
   keywords: 'home cook, professional cook, daily cooking, meal prep, hygienic cooking, multiple cuisines, dietary preferences',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/cooks'
+  }
 }
 
 export default function CooksPage() {

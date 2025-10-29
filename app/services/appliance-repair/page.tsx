@@ -20,9 +20,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Expert Home Appliance Repair Services - Same-Day, Transparent Pricing',
-  description: 'Fast, reliable appliance repair at your doorstep. Same-day service with transparent pricing and guaranteed satisfaction.',
+  title: 'Home Appliance Repair Services | Expert Technicians | EzyHelpers',
+  description: 'Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India.',
   keywords: 'appliance repair, refrigerator repair, washing machine repair, microwave oven repair, AC repair, gas stove repair, geyser repair, TV repair, chimney repair, home appliance service',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/appliance-repair'
+  }
 }
 
 export default function ApplianceRepairPage() {

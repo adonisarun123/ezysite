@@ -26,10 +26,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Live-In Maid Services – Dedicated Help for Every Need',
-  description:
-    'EzyHelpers connects you with trained and background-verified live-in maids specialised in housekeeping, cooking, childcare, or elder care, making home management easier with dedicated support customised to your family’s needs.',
+  title: 'Get 24/7 Help with Expert Live in Maid Services– Book Instantly',
+  description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
   keywords: 'live-in maid, 24-hour maid, live in house maid, housekeeping, cooking, babysitting, elderly care',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/live-in-maids'
+  }
 }
 
 export default function LiveInMaidsPage() {

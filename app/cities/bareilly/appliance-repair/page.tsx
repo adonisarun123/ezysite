@@ -41,13 +41,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'House Appliance Repairs in Bareilly - Same-Day Technicians',
     description: 'Need house appliance repairs in Bareilly? We fix washing machines, fridges, ovens, and more with expert technicians and fast service.',
-    url: 'https://ezyhelpers.com/cities/bareilly/appliance-repair',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/appliance-repair',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bareilly/appliance-repair'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/appliance-repair'
   }
 }
 

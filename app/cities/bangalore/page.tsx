@@ -18,9 +18,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Hire Reliable Maid for Home in Bangalore | Trained Helpers',
-  description: 'Find background-verified maids and helpers in Bangalore for daily chores, cooking, babysitting, elderly care, driving, and home repairs, all in one place.',
-  keywords: 'maid for home bangalore, domestic helpers bangalore, verified maids bangalore, house help services bangalore, home services bangalore'
+  title: 'Book Maid for Home in Bangalore | Safe & Reliable Help',
+  description: 'Verified maid for home in Bangalore with flexible timing, multilingual helpers & quick replacements. Trusted by families across Bangalore.',
+  keywords: 'maid for home bangalore, domestic helpers bangalore, verified maids bangalore, house help services bangalore, home services bangalore',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore'
+  }
 }
 
 export default function BangalorePage() {

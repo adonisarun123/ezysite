@@ -22,8 +22,11 @@ export const metadata: Metadata = {
     title: 'Babysitter Services in Bareilly – Trusted Child Care',
     description:
       'Book babysitter services in Bareilly for newborns, toddlers, or school-aged children. Safe, caring support for full-day or part-time needs.',
-    url: 'https://ezyhelpers.com/cities/bareilly/babysitter',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/babysitter',
     type: 'website'
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/babysitter'
   }
 }
 

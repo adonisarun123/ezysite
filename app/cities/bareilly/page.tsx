@@ -29,7 +29,11 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'House Maid Service in Bareilly – Safe & Verified',
   description:
-    'Searching for a reliable house maid in Bareilly? Hire domestic helpers for cleaning, cooking, and caregiving, all under one trusted platform.'
+    'Searching for a reliable house maid in Bareilly? Hire domestic helpers for cleaning, cooking, and caregiving, all under one trusted platform.',
+  keywords: 'house maid bareilly, domestic helper bareilly, maid service bareilly, cleaning maid bareilly, cooking maid bareilly',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly'
+  }
 }
 
 export default function BareillyPage() {
@@ -92,67 +96,179 @@ export default function BareillyPage() {
           </div>
         </section>
 
-        {/* Comprehensive Domestic Help Services */}
+        {/* Domestic Staff Services */}
         <section className="section-padding bg-white">
           <div className="container-custom">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Comprehensive Domestic Help Services in Bareilly</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">From part-time helpers to full-time, live-in assistance, our house help services in Bareilly are designed to simplify your life. Choose the right house helper based on your daily home requirements.</p>
-            </div>
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Domestic Help Services</h3>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Reliable Domestic Helpers for Every Household Need in Bareilly</p>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Trusted Domestic Staff – Maids, Drivers & More in Bareilly
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Daily home management made simple with verified maids, nannies, drivers, cooks, and elderly care helpers you can rely on.
+              </p>
             </div>
 
-            <div className="mb-4">
-              <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto">
-                {[
-                  'Live-In Maid',
-                  'Full-Time Maid',
-                  'Part-Time Maid',
-                  'On-Demand Maid',
-                  'Babysitter',
-                  'Japa Maid',
-                  'Elderly Care',
-                  'Cooks',
-                  'Drivers'
-                ].map((item, idx) => (
-                  <span key={idx} className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm shadow-sm">
-                    {item}
-                  </span>
-                ))}
-              </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Live-In Maid",
+                  description: "Stay-in maids offering 12-hour daily household help for families needing full-day support.",
+                  features: ["12-hour daily assistance", "Support with daily household routines", "Long-term domestic support"],
+                  href: "/cities/bareilly/live-in-maid",
+                  linkText: "Learn More About Live-In Maids"
+                },
+                {
+                  title: "Full-Time Maid",
+                  description: "Daily maids for regular household chores from morning until evening.",
+                  features: ["8-10 hours daily cleaning and care", "Trained for home responsibilities", "Fixed-time daily assistance"],
+                  href: "/cities/bareilly/full-time-maid",
+                  linkText: "Learn More About Full-Time Maids"
+                },
+                {
+                  title: "Part-Time Maid",
+                  description: "Flexible hourly maids for small homes or working professionals.",
+                  features: ["Flexible 2-6 hour schedules", "Kitchen and cleaning support", "Morning or evening slots"],
+                  href: "/cities/bareilly/part-time-maid",
+                  linkText: "Learn More About Part-Time Maids"
+                },
+                {
+                  title: "On-Demand Helper",
+                  description: "Instant maid service for urgent cleaning or emergency support during events.",
+                  features: ["Same-day availability", "No long-term commitments", "Ideal for events or urgent needs"],
+                  href: "/cities/bareilly/on-demand-helper",
+                  linkText: "Learn More About On-Demand Helpers"
+                },
+                {
+                  title: "Babysitter",
+                  description: "Trusted babysitters for newborns, toddlers, and school-aged children with flexible care.",
+                  features: ["Trained in child care", "Flexible shift timings", "Verified and caring professionals"],
+                  href: "/cities/bareilly/babysitter",
+                  linkText: "Learn More About Babysitters"
+                },
+                {
+                  title: "Japa Maid",
+                  description: "Trained Japa maids for postnatal care, baby feeding, massage, and new mother support.",
+                  features: ["Newborn baby care", "Mother postnatal support", "Traditional baby massage"],
+                  href: "/cities/bareilly/japa",
+                  linkText: "Learn More About Japa Maids"
+                },
+                {
+                  title: "Elderly Care",
+                  description: "Trained caretakers for seniors requiring hygiene help, medication, and companionship.",
+                  features: ["Personal care and hygiene help", "Medication reminders", "Companionship and emotional support"],
+                  href: "/cities/bareilly/elderly-care",
+                  linkText: "Learn More About Elderly Care"
+                },
+                {
+                  title: "Cook",
+                  description: "Daily cooks prepare meals based on your dietary preferences and traditional UP cuisine.",
+                  features: ["Authentic UP cuisine", "Customized meal prep", "Full-day or part-time options"],
+                  href: "/cities/bareilly/cooks",
+                  linkText: "Learn More About Cooks"
+                },
+                {
+                  title: "Driver",
+                  description: "Verified drivers for daily commutes, school pickups, and family transportation.",
+                  features: ["Licensed local drivers", "Hourly or full-day bookings", "Trained for family safety"],
+                  href: "/cities/bareilly/drivers",
+                  linkText: "Learn More About Drivers"
+                }
+              ].map((service, index) => (
+                <div key={index} className="bg-blue-50 rounded-lg p-6 hover:shadow-lg transition-shadow group">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 font-display group-hover:text-blue-600">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {service.description}
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start text-sm text-gray-600">
+                        <CheckCircleIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href={service.href} className="text-blue-600 font-medium hover:text-blue-700">
+                    {service.linkText}
+                    {' '}→
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Home Maintenance & Repairs */}
+        {/* Home Maintenance Services */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
-            <div className="text-center mb-8">
+            <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                Home Maintenance & Repairs
+                Home Maintenance Services in Bareilly
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Expert Services to Keep Your Home Safe, Clean & Functional
+                From repairs to installations, hire skilled technicians and service professionals for every part of your home.
               </p>
             </div>
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto">
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                'Carpenters',
-                'Electricians',
-                'House Appliance Repair',
-                'Plumber',
-                'Painters',
-                'Home Deep Cleaning & Maintenance',
-                'Sofa Cleaning',
-                'AC Repair',
-                'Pest Control',
-                'House Shifting'
-              ].map((item, idx) => (
-                <span key={idx} className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm shadow-sm">
-                  {item}
-                </span>
+                {
+                  title: "Carpenter",
+                  description: "Skilled carpenters for furniture repair, fitting, and custom woodwork installations.",
+                  features: ["Furniture repair & assembly", "Door, window & shelf fitting", "Custom woodwork support"],
+                  href: "/cities/bareilly/carpenter",
+                  linkText: "Learn More About Carpenters"
+                },
+                {
+                  title: "Electrician",
+                  description: "Certified electricians for fan fittings, switches, wiring issues, and power problems.",
+                  features: ["Fan, light & wiring repair", "Switch & socket installation", "Safe and quick service"],
+                  href: "/cities/bareilly/electrician",
+                  linkText: "Learn More About Electricians"
+                },
+                {
+                  title: "Appliance Repair",
+                  description: "Expert technicians for washing machines, fridges, ACs, and all home appliances.",
+                  features: ["Same-day appliance service", "AC, fridge, washer repair", "Expert technicians"],
+                  href: "/cities/bareilly/appliance-repair",
+                  linkText: "Learn More About Appliance Repair"
+                },
+                {
+                  title: "Plumber",
+                  description: "Professional plumbers for leaks, pipe fittings, tap fixes, and drainage solutions.",
+                  features: ["Leak & blockage repairs", "Bathroom & kitchen plumbing", "Emergency plumbing service"],
+                  href: "/cities/bareilly/plumber",
+                  linkText: "Learn More About Plumbers"
+                },
+                {
+                  title: "Painter",
+                  description: "Professional painters for interior and exterior painting with expert surface preparation.",
+                  features: ["Interior & exterior painting", "Wall repair & preparation", "Premium paint finishes"],
+                  href: "/cities/bareilly/painting",
+                  linkText: "Learn More About Painters"
+                }
+              ].map((service, index) => (
+                <div key={index} className="bg-blue-50 rounded-lg p-6 hover:shadow-lg transition-shadow group">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 font-display group-hover:text-blue-600">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {service.description}
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start text-sm text-gray-600">
+                        <CheckCircleIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href={service.href} className="text-blue-600 font-medium hover:text-blue-700">
+                    {service.linkText}
+                    {' '}→
+                  </Link>
+                </div>
               ))}
             </div>
           </div>

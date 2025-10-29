@@ -12,8 +12,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Personal Drivers in Bareilly – Safe & Trusted Travel',
     description: 'Book experienced and licensed drivers in Bareilly for personal or family use. Choose from hourly, full-day, or live-in driver service options.',
-    url: 'https://ezyhelpers.com/cities/bareilly/drivers',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/drivers',
     type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/drivers'
   }
 }
 

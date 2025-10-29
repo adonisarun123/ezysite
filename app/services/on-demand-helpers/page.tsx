@@ -23,9 +23,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'On-Demand Maid Services – Instant Help When You Need It Most',
-  description: 'Need urgent household help? EzyHelpers offers on-demand maid services, perfect for one-time or last-minute support—cleaning, cooking, babysitting, elderly care, and more with quick confirmation and verified helpers.',
+  title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
+  description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
   keywords: 'on-demand maid, emergency maid, same day maid, urgent house help, instant booking, hourly pricing',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/on-demand-helpers'
+  }
 }
 
 export default function OnDemandHelpersPage() {

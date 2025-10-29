@@ -13,8 +13,8 @@ import CTASection from '@/components/sections/CTASection'
 import { UrgencyProvider } from '@/components/UrgencyContext'
 
 export const metadata: Metadata = {
-  title: 'Trusted House Help Service | EzyHelpers - 4.8★ Rated',
-  description: "India's #1 house help service platform. Get verified maids, cooks, nannies & drivers in 24-72hrs. 10,000+ trusted families. Call +91 9972571005",
+  title: 'Trusted & Verified House Help Service in India | EzyHelpers',
+  description: "Find safe & verified house help service across India. EzyHelpers connects you with trained maids for daily chores, cleaning, cooking & more.",
   keywords: 'house help service, domestic help, maids, cooks, nannies, drivers, verified helpers, home services India',
 }
 
