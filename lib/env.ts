@@ -20,6 +20,7 @@ const serverSchema = z.object({
   // Email Recipients (comma-separated list)
   EMAIL_RECIPIENTS: z.string().optional(),
   ADMIN_EMAIL: z.string().optional(),
+  HIRE_CONTACT_EMAIL_RECIPIENTS: z.string().optional(), // Specific recipients for hire-helper and contact forms
 
   // API Security
   API_SECRET_KEY: z.string().min(32, 'API secret key must be at least 32 characters').optional(),

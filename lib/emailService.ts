@@ -899,9 +899,18 @@ export const sendLeadEmail = async (
   sourceUrl?: string
 ): Promise<EmailSendResult> => {
   try {
-    // Get email recipients from environment variables
-    // Format: email1@example.com,email2@example.com,email3@example.com
-    const emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL;
+    // Selective email routing based on lead type
+    // hire_helper and general (contact form) use HIRE_CONTACT_EMAIL_RECIPIENTS
+    // Other forms use the default EMAIL_RECIPIENTS
+    let emailRecipientsEnv: string;
+    
+    if (leadType === 'hire_helper' || leadType === 'general') {
+      // Use dedicated recipients for hire helper and contact forms
+      emailRecipientsEnv = process.env.HIRE_CONTACT_EMAIL_RECIPIENTS || process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
+    } else {
+      // Use default recipients for other forms (agent registration, helper registration, etc.)
+      emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
+    }
 
     if (!emailRecipientsEnv) {
       console.error('EMAIL_RECIPIENTS or ADMIN_EMAIL environment variable not set');
