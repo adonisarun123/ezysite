@@ -6,7 +6,7 @@ import Breadcrumb from '../../components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Contact Us | EzyHelpers Customer Support',
-  description: 'Get in touch with EzyHelpers for all your home service needs. 24/7 customer support available. Call +91 9972571005 or chat with us online.',
+  description: 'Get in touch with EzyHelpers for all your home service needs. 24/7 customer support available. Call 080-31411776 or chat with us online.',
   keywords: 'contact EzyHelpers, customer support, home services help, domestic help support, helper booking support',
   openGraph: {
     title: 'Contact EzyHelpers - 24/7 Customer Support',

@@ -284,11 +284,11 @@ export default function WhyChooseUsSection() {
                 Book Verified Helper Now
               </a>
               <a 
-                href="tel:+919972571005" 
+                href="tel:+918031411776" 
                 className="inline-flex items-center bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-primary-600 transition-colors"
               >
                 <PhoneIcon className="h-5 w-5 mr-2" />
-                Call: +91 9972571005
+                Call: 080-31411776
               </a>
             </div>
           </div>

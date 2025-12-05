@@ -104,11 +104,11 @@ export default function MumbaiPage() {
               </Link>
               
               <Link 
-                href="tel:+919972571005" 
+                href="tel:+918031411776" 
                 className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white font-semibold text-lg px-10 py-5 rounded-2xl hover:bg-white/10 backdrop-blur-sm transition-all duration-300 transform hover:scale-105 min-w-[200px]"
               >
                 <PhoneIcon className="h-6 w-6 mr-3 group-hover:animate-pulse group-hover:scale-110 transition-transform duration-300" />
-                <span>Call Now</span>
+                <span>Call 080-31411776</span>
               </Link>
             </div>
             
@@ -541,11 +541,11 @@ export default function MumbaiPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-50 to-white rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
               
-              <Link href="tel:+919972571005" className="group flex items-center bg-transparent border-2 border-white/40 text-white font-bold text-xl px-12 py-6 rounded-2xl hover:bg-white/10 backdrop-blur-sm transition-all duration-300 transform hover:scale-105">
+              <Link href="tel:+918031411776" className="group flex items-center bg-transparent border-2 border-white/40 text-white font-bold text-xl px-12 py-6 rounded-2xl hover:bg-white/10 backdrop-blur-sm transition-all duration-300 transform hover:scale-105">
                 <PhoneIcon className="h-6 w-6 mr-4 group-hover:animate-pulse" />
                 <div className="text-left">
                   <div className="text-sm opacity-80">Call Now</div>
-                  <div>+91 9972571005</div>
+                  <div>080-31411776</div>
                 </div>
               </Link>
             </div>

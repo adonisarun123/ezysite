@@ -248,9 +248,9 @@ export default function BareillyPartTimeMaidPage() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-green-700 font-semibold text-lg py-4 px-8 rounded-xl shadow-md hover:bg-gray-100 transition-all">Book a Part-Time Maid</Link>
-              <Link href="tel:+919972571005" className="inline-flex items-center justify-center text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all">
+              <Link href="tel:+918031411776" className="inline-flex items-center justify-center text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all">
                 <PhoneIcon className="h-5 w-5 mr-2" />
-                Call Us for Quick Booking
+                Call 080-31411776
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -565,11 +565,11 @@ export default function BareillyPartTimeMaidPage() {
               </Link>
               
                 <Link
-                  href="tel:+919972571005"
+                  href="tel:+918031411776"
                   className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
                 >
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call Us
+                  Call 080-31411776
               </Link>
             </div>
           </div>

@@ -24,7 +24,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
-  description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
+  description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call 080-31411776 for instant help.',
   keywords: 'on-demand maid, emergency maid, same day maid, urgent house help, instant booking, hourly pricing',
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/on-demand-helpers'
@@ -202,10 +202,10 @@ export default function OnDemandHelpersPage() {
                   <Link href="/hire-helper" className="group relative bg-white text-trust-800 hover:bg-trust-50 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
                     <span className="relative z-10">Book an On-Demand Maid</span>
                   </Link>
-                  <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
+                  <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
                     <span className="hidden sm:inline">Call for Emergency Help</span>
-                    <span className="sm:hidden">+91 9972571005</span>
+                    <span className="sm:hidden">080-31411776</span>
                   </Link>
                 </div>
 
@@ -469,11 +469,11 @@ export default function OnDemandHelpersPage() {
             </Link>
 
             <Link
-              href="tel:+919972571005"
+              href="tel:+918031411776"
               className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
             >
               <PhoneIcon className="h-5 w-5 mr-3 flex-shrink-0" />
-              Call Us for Immediate Assistance
+              Call 080-31411776 for Immediate Assistance
             </Link>
           </div>
         </div>

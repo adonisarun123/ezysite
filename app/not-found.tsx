@@ -174,10 +174,10 @@ export default function NotFound() {
                   Contact Support
                 </Link>
                 <a 
-                  href="tel:+919972571005"
+                  href="tel:+918031411776"
                   className="inline-flex items-center px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all duration-300 border border-blue-500"
                 >
-                  Call: +91 99725 71005
+                  Call: 080-31411776
                 </a>
               </div>
             </div>

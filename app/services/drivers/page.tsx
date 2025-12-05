@@ -116,9 +116,9 @@ export default function DriversPage() {
                     <span className="relative z-10">Book Professional Driver</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </Link>
-                  <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
+                  <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Call Now</span>
+                    <span className="hidden sm:inline">Call 080-31411776</span>
                     <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
@@ -524,9 +524,9 @@ export default function DriversPage() {
               Hire a Professional Driver
             </Link>
 
-            <Link href="tel:+919972571005" className="btn-secondary border-white bg-transparent text-white hover:bg-white/10 text-lg px-8 py-4">
+            <Link href="tel:+918031411776" className="btn-secondary border-white bg-transparent text-white hover:bg-white/10 text-lg px-8 py-4">
               <PhoneIcon className="h-5 w-5 mr-2" />
-              Call +91 9972571005
+              Call 080-31411776
             </Link>
           </div>
         </div>

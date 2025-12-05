@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { CheckCircleIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
+import { sendWebhook } from '@/lib/webhookService'
 
 interface FormData {
   name: string
@@ -328,6 +329,9 @@ export default function RequirementForm() {
           console.warn('⚠️ Email failed but database saved - requirement recorded')
         }
         
+        // Send webhook
+        sendWebhook('requirement', formData, newRequestId).catch(console.error)
+        
         // Track successful completion
         trackFormComplete('requirement_form', newRequestId)
         
@@ -472,7 +476,7 @@ export default function RequirementForm() {
                 value={formData.contactNo}
                 onChange={(e) => handleInputChange('contactNo', e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
-                placeholder="9972571005"
+                placeholder="080-31411776"
                 maxLength={10}
               />
               {formErrors.contactNo && <p className="text-xs text-red-500 mt-1">{formErrors.contactNo}</p>}

@@ -346,7 +346,7 @@ export default function TermsOfServicePage() {
                     {
                       icon: PhoneIcon,
                       title: "Legal Helpline",
-                      info: "+91 9972571005",
+                      info: "080-31411776",
                       description: "Available Mon-Fri, 10 AM - 5 PM"
                     }
                   ].map((contact, index) => (

@@ -178,7 +178,7 @@ export default function ContactPageClient() {
   }
 
   const handlePhoneClick = () => {
-    trackPhoneClick('+919972571005', 'contact_page')
+    trackPhoneClick('+918031411776', 'contact_page')
   }
 
   const handleChatClick = () => {
@@ -476,18 +476,18 @@ export default function ContactPageClient() {
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">Phone Numbers</h4>
                       <a 
-                        href="tel:+919972571005" 
+                        href="tel:+918031411776" 
                         onClick={handlePhoneClick}
                         className="text-indigo-600 hover:text-indigo-800 block"
                       >
-                        <span className="font-medium text-gray-900 mr-1">Bangalore:</span> +91 99725 71005
+                        <span className="font-medium text-gray-900 mr-1">Bangalore:</span> 080-31411776
                       </a>
                       <a 
-                        href="tel:+919410814693" 
+                        href="tel:+918031411776" 
                         onClick={handlePhoneClick}
                         className="text-indigo-600 hover:text-indigo-800 block"
                       >
-                        <span className="font-medium text-gray-900 mr-1">Bareilly:</span> +91 94108 14693
+                        <span className="font-medium text-gray-900 mr-1">Bareilly:</span> 080-31411776
                       </a>
                       <p className="text-gray-600 text-sm mt-1">Available 24/6</p>
                     </div>
@@ -546,12 +546,12 @@ export default function ContactPageClient() {
                 
                 <div className="space-y-4">
                   <a
-                    href="tel:+919972571005"
+                    href="tel:+918031411776"
                     onClick={handlePhoneClick}
                     className="flex items-center bg-white/20 hover:bg-white/30 backdrop-blur-sm px-6 py-3 rounded-lg transition-colors duration-200"
                   >
                     <PhoneIcon className="h-5 w-5 mr-3" />
-                    <span className="font-semibold">Call Now: +91 99725 71005</span>
+                    <span className="font-semibold">Call Now: 080-31411776</span>
                   </a>
                   
                   <button

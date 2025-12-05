@@ -175,9 +175,9 @@ export default function BangalorePlumberPage() {
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-white to-primary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </Link>
-                  <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300">
+                  <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Emergency Plumber Service</span>
+                    <span className="hidden sm:inline">Call 080-31411776</span>
                     <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
@@ -310,9 +310,9 @@ export default function BangalorePlumberPage() {
                   Book Online Plumber Service
                   <ArrowRightIcon className="h-5 w-5 ml-2" />
                 </Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center bg-white border-2 border-primary-200 text-primary-700 font-semibold px-6 py-3 rounded-xl hover:bg-primary-50 transition-colors">
+                <Link href="tel:+918031411776" className="inline-flex items-center bg-white border-2 border-primary-200 text-primary-700 font-semibold px-6 py-3 rounded-xl hover:bg-primary-50 transition-colors">
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call +91 9972571005
+                  Call 080-31411776
                 </Link>
               </div>
             </div>

@@ -33,7 +33,7 @@ export default function LocalBusinessSchema({
     "alternateName": `EzyHelpers - Domestic Help Services in ${cityName}`,
     "description": `Professional domestic help services in ${cityName}, ${stateName}. Verified maids, cooks, nannies, drivers, and elderly care professionals. Trusted by thousands of families.`,
     "url": `https://ezyhelpers.com/cities/${cityName.toLowerCase().replace(/\s+/g, '-')}`,
-    "telephone": "+91-9972571005",
+    "telephone": "+91-80-31411776",
     "email": "info@ezyhelpers.com",
     "address": {
       "@type": "PostalAddress",
@@ -58,7 +58,7 @@ export default function LocalBusinessSchema({
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9972571005",
+      "telephone": "+91-80-31411776",
       "contactType": "customer service",
       "availableLanguage": ["English", "Hindi"],
       "hoursAvailable": {

@@ -157,12 +157,12 @@ export default function Navbar() {
 
               <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-3">
                 <Link
-                  href="tel:+919972571005"
+                  href="tel:+918031411776"
                   className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold text-sm rounded-lg shadow-md hover:shadow-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 whitespace-nowrap"
-                  onClick={() => trackPhoneClick('+919972571005', 'navbar_desktop')}
+                  onClick={() => trackPhoneClick('+918031411776', 'navbar_desktop')}
                 >
                   <PhoneIcon className="h-4 w-4 flex-shrink-0" />
-                  <span className="hidden xl:inline">+91 9972571005</span>
+                  <span className="hidden xl:inline">080-31411776</span>
                   <span className="xl:hidden">Call Now</span>
                 </Link>
                 <Link
@@ -253,15 +253,15 @@ export default function Navbar() {
                 </div>
                 <div className="py-6 space-y-3">
                   <Link
-                    href="tel:+919972571005"
+                    href="tel:+918031411776"
                     className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold text-base rounded-lg shadow-md hover:shadow-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300"
                     onClick={() => {
-                      trackPhoneClick('+919972571005', 'navbar_mobile');
+                      trackPhoneClick('+918031411776', 'navbar_mobile');
                       setMobileMenuOpen(false);
                     }}
                   >
                     <PhoneIcon className="h-5 w-5 flex-shrink-0" />
-                    <span>+91 9972571005</span>
+                    <span>080-31411776</span>
                   </Link>
                   <Link
                     href="/hire-helper#hire-form"

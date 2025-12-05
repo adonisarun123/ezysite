@@ -23,7 +23,7 @@ export default function OrganizationSchema() {
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+91-9972571005",
+        "telephone": "+91-80-31411776",
         "contactType": "customer service",
         "availableLanguage": ["English", "Hindi"],
         "hoursAvailable": {
@@ -36,7 +36,7 @@ export default function OrganizationSchema() {
         }
       }
     ],
-    "telephone": "+91-9972571005",
+    "telephone": "+91-80-31411776",
     "email": "info@ezyhelpers.com",
     "sameAs": [
       "https://www.facebook.com/ezyhelpers",

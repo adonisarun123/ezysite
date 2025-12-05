@@ -134,12 +134,12 @@ export default function JapaPage() {
                   </Link>
 
                   <Link
-                    href="tel:+919972571005"
+                    href="tel:+918031411776"
                     className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
                   >
                     <PhoneIcon className="h-5 w-5 mr-2 flex-shrink-0" />
-                    <span className="hidden sm:inline">Call: +91 9972571005</span>
-                    <span className="sm:hidden">+91 9972571005</span>
+                    <span className="hidden sm:inline">Call: 080-31411776</span>
+                    <span className="sm:hidden">080-31411776</span>
                   </Link>
                 </div>
 
@@ -390,9 +390,9 @@ export default function JapaPage() {
             <Link href="/hire-helper" className="btn-secondary bg-white text-pink-600 hover:bg-gray-100 text-lg px-8 py-4">
               Book Newborn Babycare Now
             </Link>
-            <Link href="tel:+919972571005" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-4">
+            <Link href="tel:+918031411776" className="btn-secondary border-white text-white hover:bg-white/10 text-lg px-8 py-4">
               <PhoneIcon className="h-5 w-5 mr-2" />
-              Call +91 9972571005
+              Call 080-31411776
             </Link>
           </div>
         </div>

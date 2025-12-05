@@ -84,7 +84,7 @@ export const generalFAQs: FAQItem[] = [
   },
   {
     question: "Is customer support available 24/6?",
-    answer: "Yes, we provide 24/7 customer support to address any concerns, emergencies, or requirements. You can reach us via phone at +91-9972571005 or through our website."
+    answer: "Yes, we provide 24/7 customer support to address any concerns, emergencies, or requirements. You can reach us via phone at 080-31411776 or through our website."
   },
   {
     question: "What types of domestic help services do you offer?",

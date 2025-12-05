@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabaseClient'
 import { sendLeadEmail } from '@/lib/emailService'
+import { sendWebhook } from '@/lib/webhookService'
 import { randomUUID } from 'crypto'
 import { validateApiKey, checkRateLimit } from '@/lib/auth'
 
@@ -336,6 +337,9 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    // Send webhook
+    sendWebhook('agent_registration', agentData, agentId).catch(console.error)
 
     // Send email notification
     try {

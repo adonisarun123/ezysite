@@ -118,10 +118,10 @@ export default function NannyBabysitterPage() {
                     <span className="relative z-10">Book Trusted Nanny Now</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-white to-pink-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </Link>
-                  <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 whitespace-nowrap">
+                  <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 whitespace-nowrap">
                     <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform shrink-0" />
                     <span className="hidden sm:inline">Call Now</span>
-                    <span className="sm:hidden">Call Now</span>
+                    <span className="sm:hidden">080-31411776</span>
                   </Link>
                 </div>
 
@@ -469,12 +469,12 @@ export default function NannyBabysitterPage() {
             </Link>
 
             <Link
-              href="tel:+919972571005"
+              href="tel:+918031411776"
               className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
             >
               <PhoneIcon className="h-5 w-5 mr-2 shrink-0" />
-              <span className="hidden sm:inline">Call +91 9972571005</span>
-              <span className="sm:hidden">Call +91 9972571005</span>
+              <span className="hidden sm:inline">Call 080-31411776</span>
+              <span className="sm:hidden">Call 080-31411776</span>
             </Link>
           </div>
         </div>

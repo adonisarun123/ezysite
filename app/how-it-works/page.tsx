@@ -125,11 +125,11 @@ export default function HowItWorksPage() {
                 Get Started Now
               </Link>
               <Link
-                href="tel:+919972571005"
+                href="tel:+918031411776"
                 className="inline-flex items-center justify-center bg-primary-500 text-white font-semibold px-8 py-4 rounded-xl hover:bg-primary-400 transition-all duration-200 transform hover:scale-105 border-2 border-primary-400"
               >
                 <PhoneIcon className="w-5 h-5 mr-2" />
-                Call Us
+                Call 080-31411776
               </Link>
             </div>
           </div>

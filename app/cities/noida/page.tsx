@@ -68,7 +68,7 @@ export default function NoidaPage() {
               </Link>
               
               <Link 
-                href="tel:+919972571005" 
+                href="tel:+918031411776" 
                 className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white font-semibold text-lg px-10 py-5 rounded-2xl hover:bg-white/10 backdrop-blur-sm transition-all duration-300 transform hover:scale-105 min-w-[200px]"
               >
                 <PhoneIcon className="h-6 w-6 mr-3 group-hover:animate-pulse group-hover:scale-110 transition-transform duration-300" />
@@ -223,9 +223,9 @@ export default function NoidaPage() {
             <Link href="/hire-helper" className="bg-white text-green-600 hover:bg-gray-100 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
               Get Started Today
             </Link>
-            <Link href="tel:+919972571005" className="border-2 border-white text-white hover:bg-white hover:text-green-600 font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center">
+            <Link href="tel:+918031411776" className="border-2 border-white text-white hover:bg-white hover:text-green-600 font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center">
               <PhoneIcon className="h-5 w-5 mr-2" />
-              Call +91 9972571005
+              Call 080-31411776
             </Link>
           </div>
         </div>

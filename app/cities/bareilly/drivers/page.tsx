@@ -73,11 +73,11 @@ export default function BareillyDriversPage() {
                 </Link>
 
                 <Link
-                  href="tel:+919972571005"
+                  href="tel:+918031411776"
                   className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
                 >
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call Now to Hire a Driver!
+                  Call 080-31411776
                 </Link>
               </div>
 

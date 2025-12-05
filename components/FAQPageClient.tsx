@@ -33,7 +33,7 @@ export default function FAQPageClient() {
       id: 2,
       category: 'Booking',
       question: 'How can I book a helper through EzyHelpers?',
-      answer: 'You can book a helper through our website, mobile app, or by calling our customer support at +91 99725 71005. Simply select your service, location, and requirements, and we\'ll match you with suitable helpers.'
+      answer: 'You can book a helper through our website, mobile app, or by calling our customer support at 080-31411776. Simply select your service, location, and requirements, and we\'ll match you with suitable helpers.'
     },
     {
       id: 3,
@@ -224,13 +224,13 @@ export default function FAQPageClient() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
               <a
-                href="tel:+919972571005"
+                href="tel:+918031411776"
                 className="flex items-center justify-center bg-white/20 hover:bg-white/30 backdrop-blur-sm px-6 py-4 rounded-lg transition-colors duration-200"
               >
                 <PhoneIcon className="h-6 w-6 mr-3" />
                 <div className="text-left">
                   <div className="font-semibold">Call Us</div>
-                  <div className="text-sm text-indigo-100">+91 99725 71005</div>
+                  <div className="text-sm text-indigo-100">080-31411776</div>
                 </div>
               </a>
               

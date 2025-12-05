@@ -231,7 +231,7 @@ export default function RefundPolicyPage() {
                     {
                       icon: PhoneIcon,
                       title: "Refund Helpline",
-                      info: "+91 9972571005",
+                      info: "080-31411776",
                       description: "Available 24/6 for urgent refund requests"
                     },
                     {

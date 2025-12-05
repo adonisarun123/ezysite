@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { ChevronRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackStepComplete, trackServiceSelect, trackBookingStart, trackBookingComplete } from '@/lib/analytics'
+import { sendWebhook } from '@/lib/webhookService'
 
 interface FormData {
   name: string
@@ -258,6 +259,9 @@ export default function HireHelperForm() {
           // Don't fail the form submission if email fails
         }
         
+        // Send webhook
+        sendWebhook('hire_helper', formData, newRequestId).catch(console.error)
+        
         // Track successful form completion
         trackFormComplete('hire_helper_form', newRequestId);
         trackBookingComplete(formData.serviceType, formData.city, newRequestId);
@@ -360,7 +364,7 @@ export default function HireHelperForm() {
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
-                  placeholder="+91 9972571005"
+                  placeholder="080-31411776"
                 />
                 {formErrors.phone && <p className="text-xs text-red-500 mt-1">{formErrors.phone}</p>}
               </div>

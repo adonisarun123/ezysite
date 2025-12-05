@@ -121,7 +121,7 @@ export default function BareillySofaCleaning() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
                 <Link href="/hire-helper" className="inline-flex items-center justify-center w-full bg-white text-indigo-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book Sofa Cleaning Now</Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"><PhoneIcon className="h-5 w-5 mr-2" />Call Now for Same-Day Service</Link>
+                <Link href="tel:+918031411776" className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"><PhoneIcon className="h-5 w-5 mr-2" />Call 080-31411776</Link>
               </div>
 
               <div className="flex flex-wrap gap-3 mb-8 justify-center">
@@ -243,7 +243,7 @@ export default function BareillySofaCleaning() {
               <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Don’t Let a Dirty Sofa Spoil Your Home’s Look!</h2>              <p className="text-xl mb-8 text-indigo-100">Book professional sofa cleaning services in Bareilly and enjoy sparkling clean furniture without the hassle.</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
                 <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book Sofa Cleaning Now</Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"><PhoneIcon className="h-5 w-5 mr-2" />Call +91 9972571005</Link>
+                <Link href="tel:+918031411776" className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"><PhoneIcon className="h-5 w-5 mr-2" />Call 080-31411776</Link>
               </div>
             </div>
           </div>

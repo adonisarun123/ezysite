@@ -325,9 +325,9 @@ export default function BangaloreCarpenterPage() {
                   Book a Carpenter Now
                   <ArrowRightIcon className="h-5 w-5 ml-2" />
                 </Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center bg-white border-2 border-primary-200 text-primary-700 font-semibold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors">
+                <Link href="tel:+918031411776" className="inline-flex items-center bg-white border-2 border-primary-200 text-primary-700 font-semibold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors">
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call +91 9972571005
+                  Call 080-31411776
                 </Link>
               </div>
             </div>

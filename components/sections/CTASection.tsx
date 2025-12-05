@@ -111,12 +111,12 @@ export default function CTASection() {
             
             {/* Secondary CTA Button - Simplified flex layout */}
             <Link 
-              href="tel:+919972571005" 
+              href="tel:+918031411776" 
               className="w-full bg-transparent border-2 border-white text-white font-semibold text-lg rounded-2xl hover:bg-white hover:text-primary-600 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 inline-flex flex-row items-center justify-center gap-3 py-4 px-6 whitespace-nowrap"
-              onClick={() => trackPhoneClick('+919972571005', 'cta_section')}
+              onClick={() => trackPhoneClick('+918031411776', 'cta_section')}
             >
               <PhoneIcon className="h-6 w-6 flex-shrink-0 self-center" />
-              <span className="leading-none">Call: +91 9972571005</span>
+              <span className="leading-none">Call: 080-31411776</span>
             </Link>
 
             {/* Statistics Section */}

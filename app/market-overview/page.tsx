@@ -860,10 +860,10 @@ export default function MarketOverviewPage() {
                   Find a Helper
                 </a>
                 <a
-                  href="tel:+919972571005"
+                  href="tel:+918031411776"
                   className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white font-medium py-3 px-6 rounded-lg border border-white/30 transition-all duration-200"
                 >
-                  📞 Call +91 9972571005
+                  📞 Call 080-31411776
                 </a>
               </div>
             </div>

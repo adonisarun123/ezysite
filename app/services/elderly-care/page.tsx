@@ -120,9 +120,9 @@ export default function ElderlyCare() {
                     <span className="relative z-10">Book Elderly Care Now</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-white to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </Link>
-                  <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
+                  <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Call Now</span>
+                    <span className="hidden sm:inline">Call 080-31411776</span>
                     <span className="sm:hidden">Call Now</span>
                   </Link>
                 </div>
@@ -393,10 +393,10 @@ export default function ElderlyCare() {
             <Link href="/hire-helper" className="btn-secondary bg-white text-teal-600 hover:bg-gray-100 text-lg px-8 py-4">
               Book Compassionate Care
             </Link>
-            <Link href="tel:+919972571005" className="btn-secondary border-white bg-transparent text-white hover:bg-white/10 text-lg px-8 py-4">
+            <Link href="tel:+918031411776" className="btn-secondary border-white bg-transparent text-white hover:bg-white/10 text-lg px-8 py-4">
               <PhoneIcon className="h-5 w-5 mr-2" />
-              <span className="hidden sm:inline">Call +91 9972571005</span>
-              <span className="sm:hidden">Call +91 9972571005</span>
+              <span className="hidden sm:inline">Call 080-31411776</span>
+              <span className="sm:hidden">Call 080-31411776</span>
             </Link>
           </div>
         </div>

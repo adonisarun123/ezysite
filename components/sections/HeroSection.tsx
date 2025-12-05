@@ -237,11 +237,11 @@ export default function HeroSection() {
 
               {/* Secondary CTA */}
               <Link
-                href="tel:+919972571005"
+                href="tel:+918031411776"
                 className="w-full bg-transparent border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-3 py-4 px-6 whitespace-nowrap flex-1"
               >
                 <PhoneIcon className="h-6 w-6 flex-shrink-0" />
-                <span className="leading-none">Call: +91 9972571005</span>
+                <span className="leading-none">Call: 080-31411776</span>
               </Link>
             </div>
 

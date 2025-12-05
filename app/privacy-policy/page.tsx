@@ -257,7 +257,7 @@ export default function PrivacyPolicyPage() {
                     {
                       icon: PhoneIcon,
                       title: "Call Our Privacy Hotline",
-                      info: "+91 9972571005",
+                      info: "080-31411776",
                       description: "Available Mon-Fri, 9 AM - 6 PM"
                     }
                   ].map((contact, index) => (

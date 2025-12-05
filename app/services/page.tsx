@@ -328,9 +328,9 @@ export default function ServicesPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-white to-primary-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </Link>
               
-              <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 hover:border-white hover:shadow-xl">
+              <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 hover:border-white hover:shadow-xl">
                 <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
-                <span className="hidden sm:inline">Call +91 9972571005</span>
+                <span className="hidden sm:inline">Call 080-31411776</span>
                 <span className="sm:hidden">Call Now</span>
               </Link>
             </div>
@@ -757,10 +757,10 @@ export default function ServicesPage() {
                 </span>
               </Link>
               
-              <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300">
+              <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300">
                 <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
-                <span className="hidden sm:inline">Call: +91 9972571005</span>
-                <span className="sm:hidden">+91 9972571005</span>
+                <span className="hidden sm:inline">Call: 080-31411776</span>
+                <span className="sm:hidden">080-31411776</span>
               </Link>
             </div>
           </div>

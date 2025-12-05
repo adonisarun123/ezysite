@@ -366,10 +366,10 @@ export default function ExecutiveSummary() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="tel:+919972571005" 
+              href="tel:+918031411776" 
               className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
             >
-              📞 Call +91 9972571005
+              📞 Call 080-31411776
             </a>
             <a 
               href="/hire-helper" 

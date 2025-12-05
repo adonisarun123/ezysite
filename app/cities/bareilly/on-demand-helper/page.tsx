@@ -54,9 +54,9 @@ export default function BareillyOnDemandHelperPage() {
                 <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-red-700 font-semibold text-lg py-4 px-8 rounded-xl shadow-md hover:bg-gray-100 transition-all">
                   Book an Instant Maid
                 </Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all">
+                <Link href="tel:+918031411776" className="inline-flex items-center justify-center text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all">
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call for Quick Helper
+                  Call 080-31411776
                 </Link>
               </div>
 

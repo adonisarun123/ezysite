@@ -172,9 +172,9 @@ export default function PaintersPage() {
                 </span>
               </Link>
               
-              <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
+              <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
                 <PhoneIcon className="h-5 w-5 mr-2" />
-                Free Site Visit
+                Call 080-31411776
               </Link>
             </div>
 
@@ -449,9 +449,9 @@ export default function PaintersPage() {
                 </span>
               </Link>
               
-              <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
+              <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
                 <PhoneIcon className="h-5 w-5 mr-2" />
-                Call +91 9972571005
+                Call 080-31411776
               </Link>
             </div>
           </div>

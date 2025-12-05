@@ -31,7 +31,7 @@ export default function ServiceSchema({
       "@type": "LocalBusiness",
       "name": "EzyHelpers",
       "url": "https://ezyhelpers.com",
-      "telephone": "+91-9972571005",
+      "telephone": "+91-80-31411776",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "IN",
@@ -46,10 +46,10 @@ export default function ServiceSchema({
         "worstRating": "1"
       }
     },
-    "availableChannel": {
+      "availableChannel": {
       "@type": "ServiceChannel",
       "serviceUrl": serviceUrl,
-      "servicePhone": "+91-9972571005",
+      "servicePhone": "+91-80-31411776",
       "availableLanguage": ["English", "Hindi"]
     },
     "areaServed": availableInLocation.map(location => ({

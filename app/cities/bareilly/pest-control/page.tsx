@@ -170,9 +170,9 @@ export default function BareillyPestControl() {
                 <Link href="/hire-helper" className="inline-flex items-center justify-center w-full bg-white text-emerald-700 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">
                   Book Pest Control Now
                 </Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300">
+                <Link href="tel:+918031411776" className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300">
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  Emergency Pest Service
+                  Call 080-31411776
                 </Link>
               </div>
 

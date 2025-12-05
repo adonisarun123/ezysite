@@ -86,18 +86,18 @@ export default function HireHelperPage() {
                 
                 <div className="space-y-4 mb-8">
                   <a 
-                    href="tel:+919972571005"
+                    href="tel:+918031411776"
                     className="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow border border-gray-200"
                   >
                     <PhoneIcon className="h-6 w-6 text-primary-600 mr-4" />
                     <div>
                       <div className="font-medium text-gray-900">Call Us Now</div>
-                      <div className="text-sm text-gray-600">+91 9972571005</div>
+                      <div className="text-sm text-gray-600">080-31411776</div>
                     </div>
                   </a>
 
                   <a 
-                    href="https://wa.me/919972571005"
+                    href="https://wa.me/918031411776"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow border border-gray-200"

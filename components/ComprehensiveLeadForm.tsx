@@ -5,6 +5,7 @@ import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { sendWebhook } from '@/lib/webhookService'
 import { 
   UserIcon, 
   PhoneIcon, 
@@ -215,6 +216,9 @@ export default function ComprehensiveLeadForm() {
       })
 
       if (response.ok) {
+        // Send webhook
+        sendWebhook('comprehensive_lead', formData).catch(console.error)
+        
         setIsSubmitted(true)
         // Reset form
         setFormData({
