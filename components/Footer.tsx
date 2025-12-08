@@ -109,8 +109,8 @@ export default function Footer() {
                   <h4 className="text-sm font-semibold text-white mb-2">Bareilly Office</h4>
                   <div className="flex items-center text-sm text-gray-300 mb-1">
                     <PhoneIcon className="h-4 w-4 mr-3 text-primary-400" />
-                    <Link href="tel:+919410814693" className="hover:text-primary-400 transition-colors">
-                      +91 9410814693
+                    <Link href="tel:+918031411776" className="hover:text-primary-400 transition-colors">
+                      080-31411776
                     </Link>
                   </div>
                   <div className="flex items-start text-sm text-gray-300">
