@@ -342,7 +342,7 @@ export default function LiveInMaidBangalorePage() {
             Join 10,000+ Bangalore families who trust EzyHelpers for safe, reliable home help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#top" className="bg-white text-primary-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 hover:shadow-lg transition-all shadow-xl">
+            <a href="#ad-lead-form" className="bg-white text-primary-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 hover:shadow-lg transition-all shadow-xl">
               Get Your Maid in 3 Days
             </a>
             <a href="tel:+919972571005" className="bg-primary-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary-900 transition-all shadow-xl flex items-center justify-center gap-2 border border-white/10">

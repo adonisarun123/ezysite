@@ -194,7 +194,7 @@ export default function AdLeadForm() {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100 relative overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100 relative overflow-hidden" id="ad-lead-form">
       <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-secondary-400 to-success-400"></div>
       <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Get a Call Back</h3>
       <p className="text-gray-500 text-center mb-6 text-sm">Fill the form below to get verified profiles</p>
