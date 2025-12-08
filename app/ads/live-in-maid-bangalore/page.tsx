@@ -20,7 +20,7 @@ import {
 export default function LiveInMaidBangalorePage() {
   const features = [
     {
-      title: '100% Verified Profiles',
+      title: '100% Background-Verified Profiles',
       description: 'Every maid undergoes ID verification and local address checks for your safety.',
       icon: ShieldCheckIcon
     },
@@ -212,16 +212,6 @@ export default function LiveInMaidBangalorePage() {
                   </div>
                 ))}
               </div>
-
-              <div className="bg-gradient-to-r from-primary-800/50 to-primary-900/50 border border-primary-700 rounded-xl p-6 backdrop-blur-md">
-                <h3 className="text-lg font-semibold text-secondary-200 mb-2 flex items-center">
-                  <ShieldCheckIcon className="h-5 w-5 mr-2 text-secondary-400" />
-                  Why Families Trust Us
-                </h3>
-                <p className="text-primary-100 text-sm leading-relaxed">
-                  We understand that trusting someone in your home is a big decision. That's why we go the extra mile to ensure 100% verification and reliability.
-                </p>
-              </div>
             </div>
 
             {/* Right Form */}
@@ -239,9 +229,9 @@ export default function LiveInMaidBangalorePage() {
         
         <div className="container-custom relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why EzyHelpers</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose EzyHelpers</h2>
             <div className="w-24 h-1 bg-success-400 mx-auto rounded-full mb-4"></div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">We provide end-to-end support to ensure you find the perfect helper for your home.</p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">We understand that trusting someone in your home is a big decision. That's why we go the extra mile to ensure 100% verification and reliability.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
