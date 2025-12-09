@@ -136,8 +136,8 @@ export default function NannyBabysitterPage() {
                     <div className="text-pink-200 text-sm">& Certified</div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">24/7</div>
-                    <div className="text-pink-200 text-sm">Support</div>
+                    <div className="text-2xl font-bold text-white">Trusted</div>
+                    <div className="text-pink-200 text-sm">Care</div>
                   </div>
                 </div>
               </div>

@@ -231,8 +231,8 @@ export default function BareillyElectricianPage() {
                   <div className="text-yellow-200 text-sm">Customer Rating</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold">24/7</div>
-                  <div className="text-yellow-200 text-sm">Emergency Support</div>
+                  <div className="text-2xl font-bold">Quick</div>
+                  <div className="text-yellow-200 text-sm">Fix</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold">2-Hour</div>

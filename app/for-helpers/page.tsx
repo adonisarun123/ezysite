@@ -175,7 +175,7 @@ export default function ForHelpersPage() {
                 {
                   icon: HeartIcon,
                   title: "Support System",
-                  description: "24/7 customer support to help you succeed in your career.",
+                  description: "Our team is here to guide you, answer queries, and ensure a smooth work experience.",
                   color: "text-pink-600",
                   bgColor: "bg-pink-50",
                   hoverColor: "hover:bg-pink-100"

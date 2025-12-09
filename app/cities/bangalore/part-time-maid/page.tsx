@@ -187,7 +187,7 @@ export default function BangalorePartTimeMaidPage() {
     { question: 'What is the cost of hiring a part-time helper in Bangalore?', answer: 'Pricing depends on service type, hours, experience, task complexity, frequency, and your location. Share your needs with EzyHelpers for accurate quotes.' },
     { question: 'Can I hire a maid for only one task, like cleaning or cooking?', answer: 'Yes, you can hire specialized part-time maids for just cooking, cleaning, childcare, or elder care.' },
     { question: 'Is part-time maid service available in gated societies?', answer: 'Absolutely. We match you with society-trained maids who understand entry protocols and community rules.' },
-    { question: 'Can I change or replace my part-time helper if needed?', answer: 'Yes. If you are not satisfied, we arrange a quick replacement within 1–3 working days.' },
+    { question: 'Can I change or replace my part-time helper if needed?', answer: "Absolutely. If you need a change, we require 15 days' prior notice to ensure a smooth transition and reliable replacement process." },
     { question: 'Do you offer weekend-only part-time help?', answer: 'Yes, weekend-only or alternate-day help is available for cleaning, cooking, or support work.' },
     { question: 'How quickly can I get a part-time helper in Bangalore?', answer: 'Same-day service available. Most bookings are fulfilled within 24–72 hours.' },
     { question: 'Can I change the timings later?', answer: 'Yes. If the current maid is unavailable for the new schedule, we will promptly replace her to match your updated preferences.' },

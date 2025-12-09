@@ -53,7 +53,7 @@ export default function BangaloreGardenerPage() {
 
   const highlights = [
     { title: 'Same-Day', subtitle: 'Gardener Visit' },
-    { title: '24/7', subtitle: 'Customer Support' },
+    { title: 'Garden', subtitle: 'Experts' },
     { title: '100%', subtitle: 'Background-Verified' },
     { title: 'Certified', subtitle: 'Plant Care Specialists' }
   ]

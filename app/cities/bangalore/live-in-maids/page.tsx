@@ -304,7 +304,7 @@ export default function BangaloreLiveInMaidsPage() {
                       ✓ Bangalore-Savvy
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                      ✓ 24-72hr Placement
+                      ✓ Household Experts
                     </div>
                   </div>
 
@@ -327,8 +327,8 @@ export default function BangaloreLiveInMaidsPage() {
                   {/* Trust Indicators */}
                   <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
                     <div className="text-center lg:text-left">
-                      <div className="text-2xl font-bold text-white">24/7</div>
-                      <div className="text-primary-200 text-sm">Support</div>
+                      <div className="text-2xl font-bold text-white">Dedicated</div>
+                      <div className="text-primary-200 text-sm">Maid</div>
                     </div>
                     <div className="text-center lg:text-left">
                       <div className="text-2xl font-bold text-white">100%</div>

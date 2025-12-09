@@ -175,8 +175,8 @@ export default function PlumbersPage() {
                 <div className="text-indigo-200 text-sm">Plumbing Jobs</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">24/7</div>
-                <div className="text-indigo-200 text-sm">Emergency Service</div>
+                <div className="text-2xl font-bold text-white mb-1">Quick</div>
+                <div className="text-indigo-200 text-sm">Response</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-white mb-1">100%</div>

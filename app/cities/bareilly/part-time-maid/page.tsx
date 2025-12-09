@@ -257,8 +257,6 @@ export default function BareillyPartTimeMaidPage() {
               {[
                 'Background-Checked Maids',
                 'Daily, Weekly & Custom Time Slots',
-                'Replacement Within 24 Hours',
-                'Maids Trained in Hygiene & Food Safety',
                 'Flexible Contracts with No Stay-In',
                 'Timings Tailored to Your Routine'
               ].map((b, i) => (

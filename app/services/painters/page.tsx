@@ -193,8 +193,8 @@ export default function PaintersPage() {
                 <div className="text-purple-200 text-sm">Customer Rating</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">24/7</div>
-                <div className="text-purple-200 text-sm">Support</div>
+                <div className="text-2xl font-bold text-white mb-1">Quality</div>
+                <div className="text-purple-200 text-sm">Finish</div>
               </div>
             </div>
           </div>

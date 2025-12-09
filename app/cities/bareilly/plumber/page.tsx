@@ -145,8 +145,8 @@ export default function BareillyPlumber() {
                   <div className="text-blue-200 text-sm">Callback for Booking Confirmation</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold">24/7</div>
-                  <div className="text-blue-200 text-sm">Emergency Support</div>
+                  <div className="text-2xl font-bold">Fast</div>
+                  <div className="text-blue-200 text-sm">Service</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold">2-Hour</div>

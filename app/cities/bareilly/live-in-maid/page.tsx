@@ -70,9 +70,6 @@ export default function BareillyLiveInMaidPage() {
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 {[
                   '100% Background-Checked Maids',
-                  'Maid Placement Within 24–72 Hours',
-                  'Dedicated Support for Housekeeping, Cooking & Elderly Care',
-                  'Transparent Monthly Pricing – No Hidden Fees',
                   'Support Available Even After Placement',
                   'Fluent in Hindi & Regional Languages'
                 ].map((b, i) => (

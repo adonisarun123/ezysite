@@ -71,7 +71,7 @@ const steps = [
     details: [
       'Free replacement within guarantee period',
       'Regular performance check-ins',
-      '24/7 customer support',
+      'Dedicated Relationship Manager',
       'Conflict resolution assistance'
     ]
   }
@@ -85,12 +85,12 @@ const features = [
   },
   {
     title: 'Quick Matching',
-    description: 'Find suitable candidates within 24-48 hours of your request.',
+    description: 'Hassle-free matching with verified, experienced domestic helpers.',
     icon: ClockIcon
   },
   {
     title: 'Replacement Guarantee',
-    description: 'Free replacement if you are not satisfied with the helper within 30 days.',
+    description: 'Free replacement if you are dissatisfied, based on earliest availability.',
     icon: CheckCircleIcon
   }
 ]
@@ -269,12 +269,12 @@ export default function HowItWorksPage() {
             <div className="space-y-8">
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">How long does it take to find a helper?</h3>
-                <p className="text-gray-600">Typically, we can present suitable candidates within 24-48 hours of receiving your requirements. The final selection and hiring process usually takes 3-7 days depending on your availability for interviews.</p>
+                <p className="text-gray-600">We carefully shortlist suitable candidates based on your requirements within 72 hours, ensuring they meet your household needs and expectations. The final selection and hiring process is guided by your availability for interviews, so you can choose the helper who best fits your family.</p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">What if I'm not satisfied with the helper?</h3>
-                <p className="text-gray-600">We offer a 30-day replacement guarantee. If you're not satisfied with the helper's performance, we'll provide a free replacement at no additional cost.</p>
+                <p className="text-gray-600">If you’re not satisfied with the helper due to genuine concerns like skill gaps, attitude issues, or reliability problems, we will review the situation with both parties and arrange a replacement that better matches your family’s needs and expectations.</p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-sm">

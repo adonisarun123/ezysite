@@ -39,9 +39,9 @@ export const metadata: Metadata = {
 export default function BareillyPage() {
   const trustBadges = [
     '✅ Trained & Background Verified',
-    '✅ Free Replacement Guarantee',
+    '✅ Free Replacement',
     '✅ Quick Helper Matching',
-    '✅ 24/7 Customer Support'
+    '✅ Easy Booking'
   ];
 
   return (
@@ -304,8 +304,8 @@ export default function BareillyPage() {
                 <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <ArrowRightIcon className="h-8 w-8 text-indigo-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">Quick Placements & Replacements</h3>
-                <p className="text-gray-600 leading-relaxed">Need urgent help? We ensure fast placement of house helpers in Bareilly, often within 24–72 hours. Not happy with the match? We provide quick and easy replacements at no extra cost.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">Placements & Replacements</h3>
+                <p className="text-gray-600 leading-relaxed">Need urgent help? We provide fast house helper placements in Bareilly. If you are not satisfied with the match, we guarantee easy replacements at no extra cost.</p>
               </div>
               <div className="text-center p-6 rounded-2xl hover:shadow-lg transition-shadow duration-300">
                 <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -357,7 +357,7 @@ export default function BareillyPage() {
               <div className="text-center">
                 <div className="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">Interview & Placement</h3>
-                <p className="text-gray-600">Speak with shortlisted helpers, choose the one that fits your needs, and get them placed at your home within 24 to 72 hours.</p>
+                <p className="text-gray-600">Speak with the shortlisted helpers, choose the best fit for your needs, and quickly finalize placement at your home.</p>
               </div>
             </div>
           </div>
@@ -380,7 +380,7 @@ export default function BareillyPage() {
                 {[
                   {
                     question: "How do I hire a verified house maid in Bareilly?",
-                    answer: "Simply contact EzyHelpers via call or WhatsApp, share your requirements, and we'll match you with verified house helpers in Bareilly within 24-72 hours. All our helpers undergo Aadhaar and address verification for your safety."
+                    answer: "Contact EzyHelpers (Call or WhatsApp) with your requirements. We will quickly match you with verified, safe house helpers in Bareilly. All our domestic helpers are Aadhaar and local address verified."
                   },
                   {
                     question: "What types of house help services are available in Bareilly?",
@@ -404,7 +404,7 @@ export default function BareillyPage() {
                   },
                   {
                     question: "Can I get urgent or same-day house help in Bareilly?",
-                    answer: "Yes, for urgent requirements, we offer on-demand maid services that can be arranged within 24-72 hours. Contact us immediately for emergency house help needs, and we'll do our best to provide quick assistance."
+                    answer: "Yes, for urgent requirements, we offer on-demand maid services. Contact us for emergency house help needs, and we'll do our best to provide quick assistance."
                   },
                   {
                     question: "What training do the house helpers receive?",

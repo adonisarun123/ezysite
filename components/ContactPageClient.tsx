@@ -218,15 +218,14 @@ export default function ContactPageClient() {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
-              We're here to help you find the perfect domestic help for your home. 
-              Reach out to us 24/7 for support, queries, or to book our services.
+              We're here to help you find the perfect domestic help for your home. Reach out to us for support, queries, or to book our services.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
                 <PhoneIcon className="h-8 w-8 text-blue-300 mx-auto mb-4" />
                 <h3 className="font-semibold text-white mb-2">Call Us</h3>
-                <p className="text-gray-200">24/7 Support Available</p>
+                <p className="text-gray-200">For Quick Assistance</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
                 <EnvelopeIcon className="h-8 w-8 text-purple-300 mx-auto mb-4" />
@@ -489,7 +488,7 @@ export default function ContactPageClient() {
                       >
                         <span className="font-medium text-gray-900 mr-1">Bareilly:</span> 080-31411776
                       </a>
-                      <p className="text-gray-600 text-sm mt-1">Available 24/6</p>
+                      <p className="text-gray-600 text-sm mt-1">Prompt Assistance Guaranteed</p>
                     </div>
                   </div>
 
@@ -530,7 +529,7 @@ export default function ContactPageClient() {
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">Business Hours</h4>
                       <p className="text-gray-600">Monday - Saturday</p>
-                      <p className="text-gray-600">24/7 Customer Support</p>
+                      <p className="text-gray-600">9 AM – 7 PM</p>
                       <p className="text-gray-600 text-sm">Emergency services available</p>
                     </div>
                   </div>
@@ -541,7 +540,7 @@ export default function ContactPageClient() {
               <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 text-white">
                 <h3 className="text-2xl text-white font-bold mb-4">Need Immediate Help?</h3>
                 <p className="mb-6 opacity-90">
-                  Our customer support team is available 24/7 to assist you with any queries or emergency bookings.
+                  Our Customer Support team is available during working hours to assist you with any queries or emergency bookings.
                 </p>
                 
                 <div className="space-y-4">
@@ -608,7 +607,7 @@ export default function ContactPageClient() {
               {[
                 {
                   question: "How quickly can I get a helper?",
-                  answer: "We typically provide helpers within 24-48 hours of your request, depending on your location and specific requirements."
+                  answer: "We typically provide helpers within 24–72 hours of your request, depending on your location and specific requirements. However, during high demand or due to availability constraints, it may take longer."
                 },
                 {
                   question: "Are all helpers verified?",
@@ -620,7 +619,7 @@ export default function ContactPageClient() {
                 },
                 {
                   question: "Do you provide emergency services?",
-                  answer: "Yes, we have 24/7 emergency support for urgent domestic help requirements across all our service cities."
+                  answer: "Yes, emergency domestic help is supported across all service cities, subject to helper availability."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-md p-6">

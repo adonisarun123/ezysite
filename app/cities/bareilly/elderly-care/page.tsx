@@ -23,14 +23,14 @@ export const metadata: Metadata = {
 export default function BareillyElderlyCare() {
   const serviceBadges = [
     'Background Verified Caretakers',
-    '24–72 Hour Caretaker Placement',
+    'Compassionate Care',
     'Complete Elder Care Support',
     'Affordable Monthly Plans'
   ]
 
   const highlightMetrics = [
     { value: '500+', label: 'Happy Families' },
-    { value: '24/7', label: 'Hindi Support' },
+    { value: 'Reliable', label: 'Senior Support' },
     { value: '100%', label: 'Verified & Experienced' }
   ]
 

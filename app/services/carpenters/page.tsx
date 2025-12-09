@@ -180,8 +180,8 @@ export default function CarpentersPage() {
                 <div className="text-yellow-200 text-sm">Quality Wood</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">24/7</div>
-                <div className="text-yellow-200 text-sm">Support</div>
+                <div className="text-2xl font-bold text-white mb-1">Timely</div>
+                <div className="text-yellow-200 text-sm">Service</div>
               </div>
             </div>
           </div>

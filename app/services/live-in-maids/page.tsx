@@ -98,7 +98,7 @@ export default function LiveInMaidsPage() {
     "100% Verified & Background-Checked Maids",
     "Specialised Support – One Maid for One Task",
     "Quick Replacements & Fast Turnaround",
-    "24x7 Customer Assistance",
+    "Dedicated Support Representative",
     "Ongoing Support Even After Hiring",
     "Transparent Pricing with No Hidden Charges"
   ]
@@ -178,8 +178,8 @@ export default function LiveInMaidsPage() {
                     <div className="text-primary-200 text-sm">Customer Satisfaction Rate</div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">24-Hour</div>
-                    <div className="text-primary-200 text-sm">Maid Replacement</div>
+                    <div className="text-2xl font-bold text-white">Easy</div>
+                    <div className="text-primary-200 text-sm">Replacement Support</div>
                   </div>
                   <div className="text-center lg:text-left">
                     <div className="text-2xl font-bold text-white">10,000+</div>
@@ -430,7 +430,7 @@ export default function LiveInMaidsPage() {
                 { question: 'What are the working hours for a live-in maid?', answer: 'Live-in maids work for 12 hours a day with a fixed schedule. They stay 24 hours at your home but are not expected to work all day or during the night.' },
                 { question: 'Do I need to provide accommodation for the live-in maid?', answer: 'Yes. You’ll need to provide a room (private or shared) with basic facilities like a bed, mattress, or cot, and bathroom access. A comfortable space helps the maid feel at home and do her job better.' },
                 { question: 'Can I hire a live-in maid just for cooking or babysitting?', answer: 'Absolutely. You can hire a live-in maid specifically for cooking, housekeeping, child care, or elderly care. Each maid is trained in only one area and is placed based on your exact household needs.' },
-                { question: 'How fast can EzyHelpers place a live-in maid in my home?', answer: 'In most cases, we can place a live-in maid within 24 to 72 hours after understanding your needs. You’ll get profiles of trained and background-verified maids to choose from quickly.' },
+                { question: 'How fast can EzyHelpers place a live-in maid in my home?', answer: 'In most cases, we can place a live-in maid within 24 to 72 hours after understanding your needs. You’ll get profiles of trained and background-verified maids to choose from. Depending on demand and availability, it may take longer, but we’ll do our best to find a suitable match for you.' },
                 { question: "What qualifications or training do EzyHelpers' live-in maids have?", answer: 'Our live-in maids are trained in their specific roles, whether it’s hygiene and cleaning, cooking meals, child safety and development, or senior care. We also verify their previous work experience and ensure they’re ready for real-life tasks.' },
                 { question: 'How many off days do live-in maids get?', answer: 'Every live-in maid is entitled to two off days per month. These can be decided in advance by mutual agreement. Respecting off days helps the maid stay motivated and refreshed.' },
                 { question: 'Can I interview the live-in maid before hiring?', answer: 'Yes. We arrange interviews with 2–3 shortlisted maids via phone or video call. You can speak to them, ask questions, and choose the one that feels right for your home.' },

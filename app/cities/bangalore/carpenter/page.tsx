@@ -49,7 +49,7 @@ export default function BangaloreCarpenterPage() {
 
   const highlights = [
     { title: 'Same-Day', subtitle: 'Service Available' },
-    { title: '24/7', subtitle: 'Customer Support' },
+    { title: 'Emergency', subtitle: 'Fix' },
     { title: '100%', subtitle: 'Background-Verified' }
   ]
 

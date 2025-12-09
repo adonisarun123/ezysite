@@ -175,8 +175,8 @@ export default function ElectriciansPage() {
                 <div className="text-blue-200 text-sm">Electrical Jobs</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">24/7</div>
-                <div className="text-blue-200 text-sm">Emergency Service</div>
+                <div className="text-2xl font-bold text-white mb-1">Same-Day</div>
+                <div className="text-blue-200 text-sm">Service</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-white mb-1">100%</div>

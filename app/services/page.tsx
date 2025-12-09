@@ -406,10 +406,10 @@ export default function ServicesPage() {
                   
                   {/* Number with gradient */}
                   <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-amber-300 to-orange-300 bg-clip-text text-transparent mb-2 group-hover:from-amber-200 group-hover:to-orange-200 transition-all duration-500">
-                    24/7
+                    Dedicated
                   </div>
                   <div className="text-amber-100 text-xs sm:text-sm font-medium group-hover:text-white transition-colors duration-300">
-                    Support Available
+                    Support Team
                   </div>
                   
                   {/* Floating particles */}
@@ -683,8 +683,8 @@ export default function ServicesPage() {
                 color: "text-green-600"
               },
               {
-                title: "24/7 Support",
-                description: "Round-the-clock customer support to address any concerns or requirements",
+                title: "Dedicated Support Team",
+                description: "Our team supports you from enquiry to service completion.",
                 icon: HeartIcon,
                 color: "text-red-600"
               },
@@ -701,8 +701,8 @@ export default function ServicesPage() {
                 color: "text-yellow-600"
               },
               {
-                title: "Instant Replacement",
-                description: "Quick replacement guarantee if you're not satisfied with the assigned helper",
+                title: "Replacement Support",
+                description: "We assist with replacement if helper is not suitable",
                 icon: BoltIcon,
                 color: "text-orange-600"
               },

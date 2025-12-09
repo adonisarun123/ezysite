@@ -178,8 +178,8 @@ export default function ApplianceRepairPage() {
                 <div className="text-red-200 text-sm">Repairs Done</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">24/7</div>
-                <div className="text-red-200 text-sm">Support</div>
+                <div className="text-2xl font-bold text-white mb-1">Quick</div>
+                <div className="text-red-200 text-sm">Repairs</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-white mb-1">4.8★</div>

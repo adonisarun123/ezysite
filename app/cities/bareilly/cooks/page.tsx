@@ -130,7 +130,6 @@ export default function BareillyCooksPage() {
                   'Local Taste Experts',
                   '100% Satisfaction Guarantee',
                   'Emergency Service',
-                  '24–48 Hr Cook Placement',
                 ].map((badge, idx) => (
                   <div key={idx} className="flex items-center justify-center bg-white/10 rounded-full px-4 py-2 text-sm">
                     <CheckCircleIcon className="h-4 w-4 mr-2 text-white" />
@@ -167,7 +166,7 @@ export default function BareillyCooksPage() {
               {[
                 'Trained in Authentic UP Cuisine',
                 'Background-Verified & Experienced Cooks',
-                'Fast Cook Placement in 24–48 Hours',
+                'Vegetarian & Non-Vegetarian Expertise',
                 'Affordable Plans for Every Family',
                 'Hygienic Cooking Practices',
                 'Local Market Expertise',

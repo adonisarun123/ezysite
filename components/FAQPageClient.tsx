@@ -217,9 +217,9 @@ export default function FAQPageClient() {
       <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-600">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl font-bold mb-4">Still have questions?</h2>
+            <h2 className="text-3xl text-white font-bold mb-4">Still have questions?</h2>
             <p className="text-xl text-indigo-100 mb-8">
-              Our customer support team is here to help you 24/7
+              Our customer support team is here to help you
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">

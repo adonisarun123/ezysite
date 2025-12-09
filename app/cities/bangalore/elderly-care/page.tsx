@@ -183,7 +183,7 @@ export default function BangaloreElderlyCarePage() {
     { question: 'Are caretakers trained in handling bedridden patients?', answer: 'Yes, our senior caretakers in Bangalore are trained to support bedridden seniors with repositioning, sponge baths, feeding, and bedsore prevention.' },
     { question: 'Can elderly caretakers manage chronic illnesses like diabetes or BP?', answer: 'Yes. Our staff is trained to monitor vital signs, follow diet restrictions, and remind seniors to take prescribed medications for chronic conditions.' },
     { question: 'Do I need to provide accommodation for a live-in caretaker?', answer: 'Yes. A live-in caretaker needs to be provided with a bed, cot, or mattress and access to a bathroom. It ensures they stay rested and care efficiently.' },
-    { question: 'What if my parent or elderly member is uncomfortable with the assigned caregiver?', answer: 'We offer immediate replacement within 24 hours and work until we find the perfect personality and skill match.' }
+    { question: 'What if my parent or elderly member is uncomfortable with the assigned caregiver?', answer: 'We understand that comfort is critical. We will prioritize your request and promptly look for a suitable replacement helper that is the right skill fit for your loved one.' }
   ]
 
   const localBusinessProps = {

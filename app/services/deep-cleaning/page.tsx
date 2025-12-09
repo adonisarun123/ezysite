@@ -194,8 +194,8 @@ export default function DeepCleaningPage() {
                 <div className="text-cyan-200 text-sm">Customer Rating</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">24/7</div>
-                <div className="text-cyan-200 text-sm">Support</div>
+                <div className="text-2xl font-bold text-white mb-1">Verified</div>
+                <div className="text-cyan-200 text-sm">Cleaners</div>
               </div>
             </div>
           </div>

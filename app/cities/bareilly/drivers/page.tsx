@@ -24,7 +24,6 @@ export default function BareillyDriversPage() {
   const serviceBadges = [
     'Local Route Experts',
     'Emergency Service',
-    '24/7 Driver Support',
     '100% RTO Licensed',
     '4.9★ Rating'
   ]
@@ -32,7 +31,7 @@ export default function BareillyDriversPage() {
   const highlightMetrics = [
     { value: '5K+', label: 'Happy Families Served' },
     { value: '4.7★', label: 'Driver Ratings' },
-    { value: '24–48 Hr', label: 'Driver Placement' }
+    { value: 'Local', label: 'Driving Experts' }
   ]
 
   return (

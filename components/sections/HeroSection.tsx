@@ -17,7 +17,7 @@ const stats = [
 
 const trustedFeatures = [
   'Background Verified Helpers',
-  '24/7 Support Available', 
+  'Dedicated Support Team', 
   'Quick Placement',
   'Flexible Service Options',
 ]
@@ -270,7 +270,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center space-x-1">
                   <CheckCircleIcon className="h-3 w-3 text-trust-500" />
-                  <span className="text-xs text-trust-700 font-medium">24hr Support</span>
+                  <span className="text-xs text-trust-700 font-medium">Quick Helper Matching</span>
                 </div>
               </div>
 

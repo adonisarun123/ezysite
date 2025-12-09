@@ -33,8 +33,8 @@ export const metadata: Metadata = {
 export default function BareillyBabysitterPage() {
   const serviceAssuranceBadges = [
     'Background Verified Caretakers',
-    'First-Aid Trained Babysitters',
-    '24-72 Hour Placement',
+    'Personalized Matching',
+    'Safe Childcare',
     'Flexible Hours for Your Needs'
   ]
 
@@ -54,7 +54,7 @@ export default function BareillyBabysitterPage() {
   ]
 
   const whyChooseList = [
-    'Quick Placement in 24–72 Hours',
+    'Trained & Certified Baby Care Professionals',
     'Background Checked & Experienced',
     'Knows Local Parenting Traditions',
     'Lullabies & Traditional Games',

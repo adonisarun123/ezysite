@@ -260,8 +260,8 @@ export default function BareillyApplianceRepairPage() {
                       <div className="text-blue-200 text-sm">Customer Rating</div>
                     </div>
                     <div className="text-center lg:text-left">
-                      <div className="text-2xl font-bold">24/7</div>
-                      <div className="text-blue-200 text-sm">Emergency Support</div>
+                      <div className="text-2xl font-bold">Fast</div>
+                      <div className="text-blue-200 text-sm">Repairs</div>
                     </div>
                     <div className="text-center lg:text-left">
                       <div className="text-2xl font-bold">2-Hour</div>

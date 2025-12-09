@@ -25,8 +25,8 @@ const features = [
   {
     icon: ClockIcon,
     title: 'Instant Booking & Flexible Hours',
-    description: 'From 2-hour help to full-time live-in support. Book instantly or schedule in advance with 24/7 availability.',
-    stats: '24/7 availability',
+    description: 'From 2-hour help to full-time live-in support. Book instantly or schedule in advance.',
+    stats: 'Help When Needed',
     badge: 'Instant Booking',
     color: 'secondary'
   },
@@ -57,8 +57,8 @@ const features = [
   {
     icon: ArrowPathIcon,
     title: 'Hassle-Free Replacements',
-    description: 'Not satisfied? We\'ll find you a replacement within 24-72 hours at no extra cost. Your satisfaction guaranteed.',
-    stats: '24-72hr replacement',
+    description: "Not satisfied? We'll find you a replacement at no extra cost. Your satisfaction guaranteed.",
+    stats: 'Easy Replacements',
     badge: 'Guaranteed',
     color: 'primary'
   }
