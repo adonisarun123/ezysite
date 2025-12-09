@@ -3,7 +3,7 @@ import React from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import dynamic from 'next/dynamic'
-import { CheckCircleIcon, PhoneIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
+import { CheckCircleIcon, PhoneIcon, ChatBubbleLeftRightIcon, BoltIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   title: 'Hire Domestic Help | Quick & Easy Booking | EzyHelpers',
@@ -51,7 +51,7 @@ export default function HireHelperPage() {
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-primary-600">24h</span>
+                <BoltIcon className="h-8 w-8 text-primary-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Quick Placement</h3>
               <p className="text-sm text-gray-600">Helpers Matched Fast</p>

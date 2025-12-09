@@ -185,7 +185,7 @@ export default function ServicesPage() {
       borderColor: "border-yellow-200",
       features: ["Fast Same-Day Repairs", "Custom Furniture Solutions", "Neat Workmanship Guaranteed"],
       trustIndicators: ["100% Background-Verified", "Quality Materials Selection", "Professional Work Ethics"],
-      guarantee: "24/7 Customer Support"
+      guarantee: "Quick Repairs"
     },
     {
       title: "Home Electrical Repair",
@@ -209,7 +209,7 @@ export default function ServicesPage() {
       borderColor: "border-green-200",
       features: ["Expert in Terrace & Balcony Gardening", "Seasonal Maintenance & Plant Care", "Organic Gardening Service"],
       trustIndicators: ["100% Background-Verified", "Certified Plant Care Specialists", "Same-Day Gardener Visit"],
-      guarantee: "24/7 Customer Support"
+      guarantee: "Expert Garden Care"
     },
     {
       title: "Deep Clean Services",
@@ -245,7 +245,7 @@ export default function ServicesPage() {
       borderColor: "border-indigo-200",
       features: ["Transparent Pricing Always", "Background-Checked Plumbers", "Emergency Plumbing Repairs"],
       trustIndicators: ["Same-Day Service Available", "On-Demand Visits", "Flexible Time Slots"],
-      guarantee: "24/7 Emergency Available"
+      guarantee: "Emergency Fixes"
     }
   ]
 
