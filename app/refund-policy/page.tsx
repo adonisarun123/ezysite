@@ -35,11 +35,10 @@ export default function RefundPolicyPage() {
       title: 'Placement Fee Refunds',
       icon: CurrencyDollarIcon,
       content: [
-        'Full refund available if no suitable helper is found within 7 days',
-        '100% refund if helper does not show up for the first day without valid reason',
-        '75% refund if helper leaves within first 3 days due to our matching error',
-        '50% refund if helper leaves within first week due to compatibility issues',
-        'No refund after successful placement and 7 days of satisfactory service'
+        'Helper Does Not Report – If the helper does not report for duty on the first day, we will arrange a replacement promptly earliest possible.',
+        'Helper Leaves Early (First 3 Days) – If the helper leaves within the first 3 days, we will provide a replacement or credit toward a new placement.',
+        'Helper Leaves Within First Week – If the helper leaves within the first week due to compatibility issues, a replacement will be arranged.',
+        'After 7 Days of Service – No refund or replacement is applicable once the helper has completed 7 days of satisfactory service.'
       ]
     },
     {
@@ -47,11 +46,13 @@ export default function RefundPolicyPage() {
       title: 'Free Replacement Policy',
       icon: ArrowPathIcon,
       content: [
-        'Free replacement within 24-72 hours if not satisfied with assigned helper',
-        'Up to 3 free replacements within the first month of service',
-        'Unlimited replacements for the first 7 days at no additional cost',
-        'Replacement guarantee covers skill mismatch, attitude issues, or reliability problems',
-        'Emergency replacements available within 48 hours for urgent situations'
+        'Replacement Within 10–15 Days – If you are not satisfied with the assigned helper, a replacement will be provided as per the plan subscribed.',
+        'Advance Notice Required – Customers should notify us at least 15 days in advance to request a replacement.',
+        'Replacement During First Month – Up to 2 replacements can be requested within the first month if service expectations aren’t met (Depending upon the plan subscribed)',
+        'Temporary Assistance – For urgent cases, a temporary helper can be arranged until a permanent replacement is assigned.',
+        'Replacement for Genuine Concerns – If you have concerns about your helper, such as skill gaps, attitude issues, or reliability problems, we will discuss the matter with both parties and arrange a replacement accordingly.',
+        'Service duration continuity – The service period starts from the the first helper placement. If we provide a replacement later, the service days keep counting, the duration does not restart. All replacements are part of the same ongoing service period.',
+        'Note: All of the above rules are subject to the specific plan you have subscribed to.'
       ]
     },
     {
@@ -60,9 +61,9 @@ export default function RefundPolicyPage() {
       icon: ClockIcon,
       content: [
         'Refund requests must be submitted within specified timeframes',
-        'Same-day refund processing for pre-placement cancellations',
-        '3-5 business days for placement fee refunds after helper placement',
-        '7-10 business days for complex cases requiring investigation',
+        '7-10 business days refund processing for pre-placement cancellations',
+        '5 business days for placement fee refunds after helper placement',
+        '15 business days for complex cases requiring investigation',
         'Refunds processed to original payment method or bank transfer'
       ]
     },
@@ -164,7 +165,7 @@ export default function RefundPolicyPage() {
                   {
                     icon: ShieldCheckIcon,
                     title: "Customer Protection",
-                    description: "Full refund if no suitable helper found or service quality issues arise",
+                    description: "You are eligible for a full refund if no helper is provided within 7 days of registration.",
                     color: "text-emerald-600",
                     bgColor: "bg-emerald-50"
                   }
@@ -232,7 +233,7 @@ export default function RefundPolicyPage() {
                       icon: PhoneIcon,
                       title: "Refund Helpline",
                       info: "080-31411776",
-                      description: "Available 24/6 for urgent refund requests"
+                      description: "Available For Immediate Assistance"
                     },
                     {
                       icon: EnvelopeIcon,
@@ -257,8 +258,8 @@ export default function RefundPolicyPage() {
                   <div className="space-y-3 text-gray-700">
                     <p><strong>Name:</strong> Anita Desai</p>
                     <p><strong>Specialization:</strong> Customer Satisfaction & Refunds</p>
-                    <p><strong>Experience:</strong> 6+ years in customer service</p>
-                    <p><strong>Languages:</strong> English, Hindi, Marathi</p>
+                    <p><strong>Experience:</strong> 12+ years in customer service</p>
+                    <p><strong>Languages:</strong> English, Hindi, Kannada, Tamil, Telugu</p>
                   </div>
                 </div>
               </div>
@@ -267,11 +268,11 @@ export default function RefundPolicyPage() {
         </section>
 
         <section className="py-12 bg-emerald-100">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="flex items-center justify-center gap-3 text-emerald-700">
               <CalendarDaysIcon className="w-5 h-5" />
               <span className="text-sm">
-                This Refund Policy was last updated on December 15, 2024. 
+                This Refund Policy was last updated on December 09, 2025. 
                 We reserve the right to modify this policy with prior notice to customers.
               </span>
             </div>
