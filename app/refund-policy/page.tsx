@@ -35,10 +35,10 @@ export default function RefundPolicyPage() {
       title: 'Placement Fee Refunds',
       icon: CurrencyDollarIcon,
       content: [
-        'Helper Does Not Report – If the helper does not report for duty on the first day, we will arrange a replacement promptly earliest possible.',
-        'Helper Leaves Early (First 3 Days) – If the helper leaves within the first 3 days, we will provide a replacement or credit toward a new placement.',
-        'Helper Leaves Within First Week – If the helper leaves within the first week due to compatibility issues, a replacement will be arranged.',
-        'After 7 Days of Service – No refund or replacement is applicable once the helper has completed 7 days of satisfactory service.'
+        '<strong>Helper Does Not Report</strong> – If the helper does not report for duty on the first day, we will arrange a replacement promptly earliest possible.',
+        '<strong>Helper Leaves Early (First 3 Days)</strong> – If the helper leaves within the first 3 days, we will provide a replacement or credit toward a new placement.',
+        '<strong>Helper Leaves Within First Week</strong> – If the helper leaves within the first week due to compatibility issues, a replacement will be arranged.',
+        '<strong>After 7 Days of Service</strong> – No refund or replacement is applicable once the helper has completed 7 days of satisfactory service.'
       ]
     },
     {
@@ -46,13 +46,13 @@ export default function RefundPolicyPage() {
       title: 'Free Replacement Policy',
       icon: ArrowPathIcon,
       content: [
-        'Replacement Within 10–15 Days – If you are not satisfied with the assigned helper, a replacement will be provided as per the plan subscribed.',
-        'Advance Notice Required – Customers should notify us at least 15 days in advance to request a replacement.',
-        'Replacement During First Month – Up to 2 replacements can be requested within the first month if service expectations aren’t met (Depending upon the plan subscribed)',
-        'Temporary Assistance – For urgent cases, a temporary helper can be arranged until a permanent replacement is assigned.',
-        'Replacement for Genuine Concerns – If you have concerns about your helper, such as skill gaps, attitude issues, or reliability problems, we will discuss the matter with both parties and arrange a replacement accordingly.',
-        'Service duration continuity – The service period starts from the the first helper placement. If we provide a replacement later, the service days keep counting, the duration does not restart. All replacements are part of the same ongoing service period.',
-        'Note: All of the above rules are subject to the specific plan you have subscribed to.'
+        '<strong> Replacement Within 10–15 Days </strong>– If you are not satisfied with the assigned helper, a replacement will be provided as per the plan subscribed.',
+        '<strong>Advance Notice Required </strong>– Customers should notify us at least 15 days in advance to request a replacement.',
+        '<strong>Replacement During First Month </strong>– Up to 2 replacements can be requested within the first month if service expectations aren’t met (Depending upon the plan subscribed)',
+        '<strong>Temporary Assistance </strong>– For urgent cases, a temporary helper can be arranged until a permanent replacement is assigned.',
+        '<strong>Replacement for Genuine Concerns </strong>– If you have concerns about your helper, such as skill gaps, attitude issues, or reliability problems, we will discuss the matter with both parties and arrange a replacement accordingly.',
+        '<strong>Service duration continuity </strong>– The service period starts from the the first helper placement. If we provide a replacement later, the service days keep counting, the duration does not restart. All replacements are part of the same ongoing service period.',
+        '<strong>Note: All of the above rules are subject to the specific plan you have subscribed to.</strong>'
       ]
     },
     {
@@ -127,7 +127,7 @@ export default function RefundPolicyPage() {
                 </div>
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
                   <CalendarDaysIcon className="w-5 h-5 text-blue-300" />
-                  <span className="text-emerald-100">Effective: Dec 2024</span>
+                  <span className="text-emerald-100">Effective: Dec 2025</span>
                 </div>
               </div>
             </div>
@@ -203,7 +203,10 @@ export default function RefundPolicyPage() {
                       {section.content.map((item, itemIndex) => (
                         <li key={itemIndex} className="flex items-start gap-3">
                           <CheckCircleIcon className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700 leading-relaxed">{item}</span>
+                          <span 
+                            className="text-gray-700 leading-relaxed" 
+                            dangerouslySetInnerHTML={{ __html: item }}
+                          />
                         </li>
                       ))}
                     </ul>
