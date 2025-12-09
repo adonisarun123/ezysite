@@ -62,7 +62,7 @@ export default function RefundPolicyPage() {
       content: [
         'Refund requests must be submitted within specified timeframes',
         '7-10 business days refund processing for pre-placement cancellations',
-        '5 business days for placement fee refunds after helper placement',
+        '15 business days for placement fee refunds after helper placement',
         '15 business days for complex cases requiring investigation',
         'Refunds processed to original payment method or bank transfer'
       ]
