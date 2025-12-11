@@ -30,7 +30,7 @@ export default function CaseStudyCard({ caseStudy, featured = false }: CaseStudy
 
                     <h3 className={`font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors ${featured ? 'text-2xl md:text-3xl' : 'text-xl'
                         }`}>
-                        {caseStudy.shorterTitle || caseStudy.title}
+                        {caseStudy.shortTitle || caseStudy.title}
                     </h3>
 
                     <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
