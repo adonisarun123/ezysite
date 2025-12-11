@@ -63,7 +63,7 @@ export default function FAQPageClient() {
       id: 7,
       category: 'Services',
       question: 'Do you provide replacement if I\'m not satisfied?',
-      answer: 'Yes, we offer free replacement within the first week if you\'re not satisfied with the helper\'s performance. Customer satisfaction is our top priority.'
+      answer: 'Yes, we offer free  replacement within the first week if you\'re not satisfied with the helper\'s performance. Customer satisfaction is our top priority.'
     },
     {
       id: 8,
