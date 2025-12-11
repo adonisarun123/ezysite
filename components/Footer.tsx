@@ -46,6 +46,7 @@ const footerLinks = {
     { name: 'Agent Registration', href: '/agent-registration' },
     { name: 'FAQs', href: '/faqs' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Case Studies', href: '/case-studies' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'National Database', href: '/nduw' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
