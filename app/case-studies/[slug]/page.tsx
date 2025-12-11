@@ -46,7 +46,7 @@ const RESPECT_RETENTION_SECTIONS = {
     preChallenge: (
         <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4 font-display">The Household Retention Problem Nobody Talks About</h2>
-<p className="text-gray-700 mb-3">
+            <p className="text-gray-700 mb-3">
                 Employee retention is a challenge in every industry, and domestic help is no different. Many Indian families live through the same cycle: a helper joins, works for a few months, and then leaves abruptly--sometimes without notice, sometimes for personal reasons, sometimes because a neighbor offered a slightly higher salary.
             </p>
             <p className="text-gray-700 mb-3">
@@ -220,6 +220,16 @@ const CASE_STUDY_EXTRA_CONTENT: Record<string, { preChallenge?: JSX.Element; pos
                         <li>Small breathing spaces equal big behavioural shifts.</li>
                     </ul>
                 </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Lessons for Every Household</h3>
+                    <p className="text-gray-700 mb-3">
+                        With one structured break, the family reclaimed calm and the helper stopped feeling invisible. The story is a reminder that rest is not laziness—it is a productivity investment that prevents quiet burnout.
+                    </p>
+                    <p className="text-gray-700 italic">
+                        Rest = Retention. Structure = Stability.
+                    </p>
+                </section>
             </>
         )
     },
@@ -255,6 +265,13 @@ const CASE_STUDY_EXTRA_CONTENT: Record<string, { preChallenge?: JSX.Element; pos
                         The helper stayed for over a year, confidence returned, and the home stopped treating replacements as the default. Helpers don't quit because of work--they quit because of confusion.
                     </p>
                 </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Why This Approach Works</h3>
+                    <p className="text-gray-700">
+                        Clarity calls remove the burden of guesswork. Without a shared script of expectations, helpers feel tested. Once routines are documented and discussed, they show up confident and stay put.
+                    </p>
+                </section>
             </>
         )
     },
@@ -288,6 +305,13 @@ const CASE_STUDY_EXTRA_CONTENT: Record<string, { preChallenge?: JSX.Element; pos
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Pay Discipline Drives Loyalty</h3>
                     <p className="text-gray-700">
                         Two-thirds of helpers on our platform live with pay uncertainty. Those who know exactly when they will be paid stay 2.5× longer. It's not about paying more--it is about paying predictably.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Simple Systems Rule</h3>
+                    <p className="text-gray-700">
+                        A fixed date takes five minutes to set up and removes weeks of low-grade anxiety. A reminder, an instruction, a UPI transfer—these small systems turn transactional relationships into respectful partnerships.
                     </p>
                 </section>
             </>
