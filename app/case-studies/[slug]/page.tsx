@@ -224,10 +224,69 @@ const CASE_STUDY_EXTRA_CONTENT: Record<string, { preChallenge?: JSX.Element; pos
                 <section className="mb-12">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Lessons for Every Household</h3>
                     <p className="text-gray-700 mb-3">
-                        With one structured break, the family reclaimed calm and the helper stopped feeling invisible. The story is a reminder that rest is not laziness—it is a productivity investment that prevents quiet burnout.
+                        With one structured break, the family reclaimed calm and the helper stopped feeling invisible. The story is a reminder that rest is not laziness--it is a productivity investment that prevents quiet burnout.
                     </p>
                     <p className="text-gray-700 italic">
                         Rest = Retention. Structure = Stability.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 5: The Impact</h3>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Her energy bounced back--she cleaned with more focus and less fatigue.</li>
+                        <li>Her behaviour softened--she became communicative, cheerful, and relaxed.</li>
+                        <li>Work quality improved--laundry stayed crisp, rooms tidy, initiative returned.</li>
+                        <li>Mistakes reduced--no more missed dusting or delayed tasks.</li>
+                        <li>Loyalty deepened--"Ab sab theek chal raha hai. Main yahin rehna chahti hoon."</li>
+                        <li>The family realised a small break created trust--"We didn't realise 30 minutes could make such a big difference."</li>
+                    </ul>
+                    <p className="text-gray-700 mt-3 italic">
+                        Rest = Retention. Structure = Stability. Breaks = Better Behaviour.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 6: Why Agencies Should Enforce Break Policies</h3>
+                    <p className="text-gray-700 mb-3">
+                        Families assume helpers can rest when free, but helpers feel guilty, afraid, and unsure. A fixed, enforced break gives them dignity, predictability, permission to breathe, and a mental reset.
+                    </p>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Dignity through uninterrupted rest.</li>
+                        <li>Predictability that protects mental space.</li>
+                        <li>Permission to breathe without fear of being lazy.</li>
+                        <li>Fresh perspective and better attitude for the family.</li>
+                        <li>Long-term retention and a stable, peaceful home.</li>
+                    </ul>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 7: The Biggest Lessons</h3>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Helpers leave because of exhaustion and silence, not work.</li>
+                        <li>Families aren't wrong--they simply lack awareness.</li>
+                        <li>Communication and clarity can save placements.</li>
+                        <li>Structured breaks solve what salary alone cannot.</li>
+                        <li>"Chhote Break, Bade Results" is a retention strategy every household should adopt.</li>
+                    </ul>
+                    <p className="text-gray-700 mt-3">
+                        This case shows what EzyHelpers stands for: not just providing helpers, but protecting helper-family relationships. Small change, big results, long-term stability.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">What Makes EzyHelpers Different</h3>
+                    <p className="text-gray-700 mb-3">
+                        Most maid services focus purely on placement. EzyHelpers believes in protecting the relationship through ongoing communication, proactive mediation, and clear guidelines.
+                    </p>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Ongoing communication support keeps families and helpers aligned.</li>
+                        <li>Proactive mediation resolves silent issues before they escalate.</li>
+                        <li>Training for families and helpers reinforces respectful expectations.</li>
+                        <li>Clear guidelines protect everyone's dignity.</li>
+                    </ul>
+                    <p className="text-gray-700 mt-3">
+                        Our verified maids have higher retention because we secure their emotional safety, not just their skills.
                     </p>
                 </section>
             </>
@@ -235,41 +294,101 @@ const CASE_STUDY_EXTRA_CONTENT: Record<string, { preChallenge?: JSX.Element; pos
     },
     'kaam-ka-clear-system-helper-bhaagne-ka-chance-kam': {
         preChallenge: (
-            <section className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4 font-display">When Clarity Was Missing</h2>
-                <p className="text-gray-700 mb-3">
-                    A Bangalore couple had gone through four helpers in six months. The helpers' reasons were vague; the family assumed attitude issues. In reality, helpers were silent because they feared new tasks would appear without warning.
-                </p>
-                <p className="text-gray-700">
-                    A single helper explained: "Kabhi kuch naya bola hai, aur main sochti hoon yeh main kar sakti hoon ya nahi. Yeh sab mujhe thoda confuse kar deta hai."
-                </p>
-            </section>
-        ),
-        postResults: (
             <>
+                <section className="mb-10">
+                    <p className="text-sm uppercase tracking-wide text-gray-500 mb-2 font-semibold">The Hidden Reason Helpers Leave</p>
+                    <p className="text-gray-700">
+                        Every household wants a reliable maid, yet helpers quit silently. Families chalk it up to attitude, while helpers blame overwork. The real issue? Unclear expectations.
+                    </p>
+                </section>
+
                 <section className="mb-12">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Clarity Conversation</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 1: The House Where Maids Kept Running Away</h3>
                     <p className="text-gray-700 mb-3">
-                        We sat both sides together for a 15-minute discussion. Every routine task, occasional extra, and communication rhythm was spelled out. The helper finally knew what to expect instead of guessing.
+                        A young Bangalore couple changed four maids in six months. Each left suddenly with vague excuses like "family issues" or "I can't continue." On paper, everything looked perfect--neat 2BHK, no kids, no pets--but beneath the surface something pushed helpers away.
                     </p>
                     <ul className="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Routine versus extra work was clarified.</li>
-                        <li>Boundaries were agreed upfront.</li>
-                        <li>Predictability replaced constant tension.</li>
+                        <li>The helpers' departures were silent; nothing concrete was shared.</li>
+                        <li>Every day brought unexpected additions: deep cleaning, guest prep, dog feeding.</li>
+                        <li>In a survey of 47 recent helpers who quit, only 3 left for better pay. The rest left because of uncertainty.</li>
                     </ul>
                 </section>
 
                 <section className="mb-12">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">The Outcome</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 2: The Helper's Version Nobody Heard</h3>
+                    <p className="text-gray-700 mb-3">
+                        The last maid who left finally admitted: "Madam ka kaam kabhi khatam hi nahi hota." The work itself wasn't abusive, but the lack of predictability left her mentally exhausted.
+                    </p>
                     <p className="text-gray-700">
-                        The helper stayed for over a year, confidence returned, and the home stopped treating replacements as the default. Helpers don't quit because of work--they quit because of confusion.
+                        Helpers weren't lazy--they were confused. They left not because the house was big but because they didn't know what would be added next.
+                    </p>
+                </section>
+            </>
+        ),
+        postResults: (
+            <>
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 3: The Turning Point</h3>
+                    <p className="text-gray-700 mb-3">
+                        When the same helper joined another household, the process wasn't rushed. A proper clarity discussion was organized before hiring, covering daily work, occasional tasks, timing, behavior, and communication.
+                    </p>
+                    <p className="text-gray-700 italic">
+                        "Aapne sab pehle hi bata diya. Ab tension nahi hai."
+                    </p>
+                    <p className="text-gray-700">
+                        She knew exactly what to expect--no surprises, no hidden workload.
                     </p>
                 </section>
 
                 <section className="mb-12">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Why This Approach Works</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 4: Immediate Change</h3>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Arrived on time every day.</li>
+                        <li>Worked confidently with a known routine.</li>
+                        <li>Stayed cheerful, communicated openly, and looked in control.</li>
+                        <li>The same helper stayed for over one year.</li>
+                    </ul>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 5: Helpers Fear Uncertainty</h3>
+                    <p className="text-gray-700 mb-3">
+                        Families blame workload, attitude, or pay. The real fear for helpers is sudden changes, unspoken expectations, and being judged for not guessing new tasks. A clarity discussion reduced turnover by 70%.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 6: Why EzyHelpers Works Differently</h3>
+                    <p className="text-gray-700 mb-3">
+                        We don't just send maids; we ensure both sides start on the same page. We introduce trial sessions, video interviews, structured task conversations, and three-way discussions.
+                    </p>
                     <p className="text-gray-700">
-                        Clarity calls remove the burden of guesswork. Without a shared script of expectations, helpers feel tested. Once routines are documented and discussed, they show up confident and stay put.
+                        Clear expectations build trust faster than high salaries or strict rules. When clarity exists, confidence grows and retention becomes automatic.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 7: The Family Who Finally Found Stability</h3>
+                    <p className="text-gray-700 mb-3">
+                        The family realized one honest conversation eliminated months of stress. They stopped adding surprise tasks, kept communication simple, respected boundaries, and understood daily work. The result:
+                    </p>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>The maid stayed long-term.</li>
+                        <li>The home became stable and peaceful.</li>
+                        <li>Replacements, frustration, and silent exits disappeared.</li>
+                    </ul>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 8: Before You Blame the Maid</h3>
+                    <p className="text-gray-700 mb-3">
+                        When helpers quit, the knee-jerk reaction is to blame them. The reality: work is perfectly managed on paper, but expectations are invisible. Helpers are expected to read minds and match standards that were never explained.
+                    </p>
+                    <p className="text-gray-700">
+                        Replace confusion with clear communication and realistic expectations. That fixes what replacements never will.
+                    </p>
+                    <p className="text-gray-700 italic">
+                        Helpers don't leave homes--they leave confusion. Give clarity and you get stability.
                     </p>
                 </section>
             </>
@@ -277,41 +396,149 @@ const CASE_STUDY_EXTRA_CONTENT: Record<string, { preChallenge?: JSX.Element; pos
     },
     'salary-time-pe-loyalty-pukka': {
         preChallenge: (
-            <section className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4 font-display">When Salary Had No Date</h2>
-                <p className="text-gray-700 mb-3">
-                    Every month Rani asked, "Ma'am, salary kab milegi?" and the reply always changed. Payments landed between the 8th and the 20th, so she couldn't plan rent, tuition, or groceries and started to feel like a beggar.
-                </p>
-                <p className="text-gray-700">
-                    The Vermas assumed a few days' delay was harmless. For Rani it meant borrowed money, stress, and guilt.
-                </p>
-            </section>
+            <>
+                <section className="mb-10">
+                    <p className="text-sm uppercase tracking-wide text-gray-500 mb-2 font-semibold">The Hidden Crisis: When Salary Has No Date</p>
+                    <p className="text-gray-700">
+                        Trust in domestic help is built on keeping promises--especially paying on time. A delayed salary cracks dignity, fuels anxiety, and often triggers a sudden exit. This story isn"t about a bad helper or employer, but about how structured professionalism rebuilt the relationship between Rani and the Verma family.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 1: The Monthly Question</h3>
+                    <p className="text-gray-700 mb-3">
+                        Every month around the 10th, Rani asked, "Ma'am, salary kab milegi?" Mrs. Verma"s answers varied--"this weekend," "next Tuesday," "let me check." Payments arrived between the 8th and 20th, so Rani couldn"t plan rent, tuition, or groceries. In September she requested a new house.
+                    </p>
+                    <p className="text-gray-700">
+                        The family assumed everything was fine. For Rani, those few days meant anger from her landlord and late tuition payments.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 2: "I'm Not Disrespected… Just Uncertain"</h3>
+                    <p className="text-gray-700 mb-3">
+                        Rani told the support executive: "The work is fine. The family is nice. But I can"t live like this anymore." The unpredictability forced her to borrow ₹500-₹800 and buy groceries in smaller, costlier bundles.
+                    </p>
+                    <p className="text-gray-700 italic">
+                        "I feel like a beggar in my own job."
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 3: "We Pay Her--So What's Wrong?"</h3>
+                    <p className="text-gray-700 mb-3">
+                        Mrs. Verma was shocked. They paid every month! When asked the exact date, she paused--sometimes early, sometimes mid-month. She found repeated asking annoying: "We"re going to pay anyway, right?"
+                    </p>
+                    <p className="text-gray-700">
+                        Her flexibility cost Rani actual money. To the Vermas a few days didn"t matter; to Rani it meant real expenses and stress.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 4: Different Financial Worlds</h3>
+                    <p className="text-gray-700 mb-3">
+                        The Vermas had savings and reserves. Rani lived on ₹25,000 with zero backup. A three-day delay meant late rent, borrowed cash, and expensive groceries. The unpredictability didn"t just stress her--it cost her.
+                    </p>
+                </section>
+            </>
         ),
         postResults: (
             <>
                 <section className="mb-12">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Fixing the Pay Date</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 5: The Intervention</h3>
                     <p className="text-gray-700 mb-3">
-                        We suggested the 5th of every month, with UPI or standing instruction. The family agreed. Rani stopped worrying, started saving ₹500 a month, and felt respected for the first time.
+                        EzyHelpers proposed a fixed paydate--the 5th of every month. Mrs. Verma worried about cash or Sundays; the support team suggested UPI, paying early if the 5th fell on a Sunday, or standing bank instructions.
                     </p>
+                    <p className="text-gray-700">
+                        "You know what feels formal? Asking for salary three times. You know what feels friendly? Being so reliable your helper never has to ask."
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 6: Transformation</h3>
+                    <div className="grid md:grid-cols-3 gap-4">
+                        <div className="p-5 rounded-2xl border border-gray-200 bg-gray-50">
+                            <p className="text-sm font-semibold text-primary-600 mb-3">For Rani</p>
+                            <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li>No more borrowing.</li>
+                                <li>Saved ₹500 monthly.</li>
+                                <li>Felt respected.</li>
+                            </ul>
+                        </div>
+                        <div className="p-5 rounded-2xl border border-success-100 bg-success-50">
+                            <p className="text-sm font-semibold text-success-600 mb-3">For the Vermas</p>
+                            <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li>No reminders or ATM runs.</li>
+                                <li>Rani became cheerful and involved.</li>
+                                <li>Relationship felt more respectful.</li>
+                            </ul>
+                        </div>
+                        <div className="p-5 rounded-2xl border border-primary-100 bg-primary-50">
+                            <p className="text-sm font-semibold text-primary-700 mb-3">For the Relationship</p>
+                            <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li>Payday became a symbol of respect.</li>
+                                <li>Trust flourished.</li>
+                                <li>Harmony replaced tension.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 7: Measurable Impact</h3>
+                    <p className="text-gray-700 mb-3">
+                        Rani now plans her month from the 2nd. Mrs. Verma admitted she didn"t realize irregular payments created tension. Fixed paydays replaced low-grade guilt with peace.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 8: Small Systems Prevent Big Problems</h3>
+                    <p className="text-gray-700 mb-3">
+                        The Vermas weren"t bad employers and Rani wasn"t difficult--they lacked clarity. A fixed salary date solves what replacements never will.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 9: Platform Insights</h3>
+                    <p className="text-gray-700 mb-3">
+                        Only 34% of helpers know the exact date they"ll be paid. The remaining 66% live in uncertainty. Those with fixed dates stay 2.5× longer--they"re happier, more loyal, and more stable.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 10: What You Can Do Today</h3>
+                    <p className="text-gray-700 mb-3">
+                        Ask: "What date is your salary?" If the helper can"t answer confidently, pick a date (1st-5th), communicate it clearly, set a reminder, use UPI, and stick to it. Five minutes, zero cost, huge impact.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 11: How EzyHelpers Helps</h3>
                     <ul className="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Rent and tuition were never late again.</li>
-                        <li>No more awkward reminders or ATM runs.</li>
-                        <li>Trust flourished and loyalty deepened.</li>
+                        <li>Listen deeply--treat transfer requests as symptoms.</li>
+                        <li>Diagnose objectively--engage both parties to uncover friction.</li>
+                        <li>Set up simple systems (like fixed paydays) to remove confusion.</li>
                     </ul>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Part 12: Ready for Stability?</h3>
+                    <p className="text-gray-700 mb-3">
+                        Good helpers leave when basics are missing. At EzyHelpers, we build respectful, long-term relationships. Visit us to find verified helpers and the systems that keep them loyal.
+                    </p>
                 </section>
 
                 <section className="mb-12">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Pay Discipline Drives Loyalty</h3>
                     <p className="text-gray-700">
-                        Two-thirds of helpers on our platform live with pay uncertainty. Those who know exactly when they will be paid stay 2.5× longer. It's not about paying more--it is about paying predictably.
+                        Two-thirds of helpers live with pay uncertainty. Those who know the exact date stay 2.5× longer. It"s not about paying more--it"s about paying predictably.
                     </p>
                 </section>
 
                 <section className="mb-12">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Simple Systems Rule</h3>
                     <p className="text-gray-700">
-                        A fixed date takes five minutes to set up and removes weeks of low-grade anxiety. A reminder, an instruction, a UPI transfer—these small systems turn transactional relationships into respectful partnerships.
+                        A fixed date takes five minutes to set up and removes weeks of low-grade anxiety. A reminder, instruction, or UPI transfer turns transactional relationships into respectful partnerships.
                     </p>
                 </section>
             </>
@@ -319,34 +546,79 @@ const CASE_STUDY_EXTRA_CONTENT: Record<string, { preChallenge?: JSX.Element; pos
     },
     'small-celebrations-big-bonding': {
         preChallenge: (
-            <section className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4 font-display">Emotional Distance in a Live-In Babysitter Placement</h2>
-                <p className="text-gray-700 mb-3">
-                    Kavitha did everything perfectly but remained reserved--eating alone, declining gifts, never sharing her story. Mrs. Sharma sensed she did not feel part of the home.
-                </p>
-                <p className="text-gray-700">
-                    The issue had nothing to do with skill. It was about belonging.
-                </p>
-            </section>
+            <>
+                <section className="mb-10">
+                    <p className="text-sm uppercase tracking-wide text-gray-500 mb-2 font-semibold">From Loyalty to Belonging</p>
+                    <p className="text-gray-700">
+                        Families assume loyalty comes from salary or rules, but in live-in care it's shaped by how the helper feels. This story shows how a Bangalore couple built a bond with their babysitter--not through perks, but through one thoughtful Diwali gesture.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">The Sharma Family & Kavitha</h3>
+                    <p className="text-gray-700 mb-3">
+                        The Sharmas were first-time parents with a 9-month-old and demanding corporate jobs. Kavitha, a 26-year-old from Assam, arrived calm, gentle, and perfect with the baby. But she stayed quiet, never spoke up, and kept to herself.
+                    </p>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>She did everything right--feeding, playtimes, naps, hygiene.</li>
+                        <li>She never initiated conversation or accepted new clothes.</li>
+                        <li>She didn't mention her family or festivals, and sat apart during meals.</li>
+                    </ul>
+                    <p className="text-gray-700 mt-3">
+                        Mrs. Sharma felt the emotional distance. "She takes care of the baby beautifully, but I don't think she feels comfortable here," she told her husband. He replied, "Let's give it time." Yet the gap remained.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Diwali Week Reality Check</h3>
+                    <p className="text-gray-700 mb-3">
+                        Diwali brought sweets, decorations, and new clothes. Kavitha, however, had nothing prepared--no sari, no diya, no celebration. When Mrs. Sharma asked if Kavitha was celebrating, she revealed her mother had passed away and she hadn't celebrated since.
+                    </p>
+                    <p className="text-gray-700">
+                        That evening, Mrs. Sharma prepared a gift bag with a silk saree, barfi, and ₹1,000--not as a bonus, but as a gesture of care. She simply said, "You are part of this home."
+                    </p>
+                </section>
+            </>
         ),
         postResults: (
             <>
                 <section className="mb-12">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">The Diwali Gesture</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">The Diwali Gesture That Opened Her Heart</h3>
                     <p className="text-gray-700 mb-3">
-                        Mrs. Sharma gifted Kavitha a saree, sweets, and ₹1,000--not as a bonus, but as a personal note: "You are part of this home." Kavitha replied with decorations, a heartfelt note, and joined the family emotionally.
+                        Kavitha accepted the gift quietly. The next morning she decorated the room with marigold strings, rangoli, and left a note saying this felt like her first Diwali since her mother passed. Mrs. Sharma cried.
                     </p>
                     <ul className="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Her smile returned and conversations opened up.</li>
-                        <li>She began calling the baby "our baby" and protected the child with affection.</li>
-                        <li>She declined a higher-paid job because she felt valued.</li>
+                        <li>The smile returned, not just politely but genuinely.</li>
+                        <li>She called the baby "our baby" and began contributing to the home.</li>
+                        <li>She ate with the family and initiated conversations.</li>
                     </ul>
                 </section>
 
                 <section className="mb-12">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Big Loyalty From Small Celebrations</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">A Loyalty Moment That Means Everything</h3>
+                    <p className="text-gray-700 mb-3">
+                        When a neighbor offered Kavitha higher pay, she declined. "Money comes and goes. Respect is what makes me stay," she told Mrs. Sharma. The couple realized the bond they had built--trust, belonging, and loyalty--was priceless.
+                    </p>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">EzyHelpers Insight: Small Celebrations Build Big Bonds</h3>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Helpers rarely receive personal acknowledgement; a single heartfelt gesture stands out.</li>
+                        <li>Emotional wounds run deep--respect and belonging heal faster than perks.</li>
+                        <li>Feeling "seen" creates loyalty stronger than salary hikes.</li>
+                        <li>Human connection, especially during festivals, is the most powerful retention tool.</li>
+                        <li>Small consistent gestures create long-term bonds.</li>
+                    </ul>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Conclusion: Thoughtfulness Wins</h3>
+                    <p className="text-gray-700 mb-3">
+                        The story isn't about sweets or money--it's about thinking, human connection, and belonging. A ₹1,000 gesture opened the door for emotional security, a happier home, and a babysitter who now stands by the family.
+                    </p>
                     <p className="text-gray-700">
-                        Thoughtful gestures, especially during festivals, signal that helpers are seen. That emotional safety builds loyalty, stability, and a happier home.
+                        At EzyHelpers we help families act on this lesson every day: loyalty is earned when helpers feel valued, respected, and included.
                     </p>
                 </section>
             </>
