@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ezyhelpers.com'
-  
+
   // Core pages
   const corePages: MetadataRoute.Sitemap = [
     '',
@@ -66,5 +66,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6
   }))
 
-  return [...corePages, ...services, ...cities]
+  // Case Studies
+  const caseStudyPages: MetadataRoute.Sitemap = [
+    '/case-studies'
+  ].map(route => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'weekly',
+    priority: 0.8
+  }))
+
+  const caseStudiesList: MetadataRoute.Sitemap = [
+    'working-couple-bangalore-live-in-maid',
+    'elderly-care-bareilly-parents',
+    'apartment-association-cooks-cleaners'
+  ].map(slug => ({
+    url: `${baseUrl}/case-studies/${slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'monthly',
+    priority: 0.7
+  }))
+
+  return [...corePages, ...services, ...cities, ...caseStudyPages, ...caseStudiesList]
 } 
