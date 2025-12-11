@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { TagIcon, MapPinIcon, ChartBarIcon } from 'lucide-react';
+import { TagIcon, MapPinIcon, BarChart3 } from 'lucide-react';
 import { CaseStudy } from '../data/caseStudies';
 
 interface CaseStudyCardProps {
@@ -41,7 +41,7 @@ export default function CaseStudyCard({ caseStudy, featured = false }: CaseStudy
                     {caseStudy.heroMetricLabel && (
                         <div className="flex items-center gap-4 mb-6 p-3 bg-gray-50 rounded-lg">
                             <div className="flex items-center gap-2 text-primary-600">
-                                <ChartBarIcon className="w-5 h-5" />
+                                <BarChart3 className="w-5 h-5" />
                             </div>
                             <div>
                                 <p className="text-xs text-gray-500 uppercase font-semibold">{caseStudy.heroMetricLabel}</p>
