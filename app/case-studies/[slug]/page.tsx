@@ -174,6 +174,162 @@ const RESPECT_RETENTION_SECTIONS = {
     )
 };
 
+const CASE_STUDY_EXTRA_CONTENT: Record<string, { preChallenge?: JSX.Element; postResults?: JSX.Element }> = {
+    'respect-equals-retention': RESPECT_RETENTION_SECTIONS,
+    'chhote-break-bade-results': {
+        preChallenge: (
+            <section className="mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 font-display">When Palak Asked for a House Change</h2>
+                <p className="text-gray-700 mb-3">
+                    Palak, a 23-year-old live-in housemaid from Bihar, handled all housekeeping tasks yet worked nonstop from 6 AM to 10 PM. Even short pauses felt wrong, and the piling "extras" made her feel invisible and exhausted.
+                </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-3">
+                    <li>Every request added guilt--she feared taking a break would seem lazy.</li>
+                    <li>The routine offered no breathing space or predictability.</li>
+                    <li>She quietly told EzyHelpers: "I want a new house."</li>
+                </ul>
+                <p className="text-gray-700">
+                    The principle that saved the placement was clear: <strong>Chhote Break, Bade Results.</strong>
+                </p>
+            </section>
+        ),
+        postResults: (
+            <>
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Impact of the Protected Break</h3>
+                    <div className="grid md:grid-cols-2 gap-4">
+                        <div className="p-5 rounded-2xl border border-gray-200 bg-gray-50">
+                            <p className="text-sm text-primary-600 font-semibold mb-2">Energy & Focus</p>
+                            <p className="text-gray-700">Speed and focus returned almost instantly once she had half an hour to breathe.</p>
+                        </div>
+                        <div className="p-5 rounded-2xl border border-success-100 bg-success-50">
+                            <p className="text-sm text-success-600 font-semibold mb-2">Loyalty</p>
+                            <p className="text-gray-700">She declared, "Everything is fine now. I want to stay here."</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">EzyHelpers Lesson: Structure = Stability</h3>
+                    <p className="text-gray-700 mb-3">
+                        A guaranteed 30-minute break gave Palak permission to recharge. The family stopped piling on surprise tasks, and performance, mood, and communication all improved.
+                    </p>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Breaks restore dignity and focus.</li>
+                        <li>Predictability reduces stress.</li>
+                        <li>Small breathing spaces equal big behavioural shifts.</li>
+                    </ul>
+                </section>
+            </>
+        )
+    },
+    'kaam-ka-clear-system-helper-bhaagne-ka-chance-kam': {
+        preChallenge: (
+            <section className="mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 font-display">When Clarity Was Missing</h2>
+                <p className="text-gray-700 mb-3">
+                    A Bangalore couple had gone through four helpers in six months. The helpers' reasons were vague; the family assumed attitude issues. In reality, helpers were silent because they feared new tasks would appear without warning.
+                </p>
+                <p className="text-gray-700">
+                    A single helper explained: "Kabhi kuch naya bola hai, aur main sochti hoon yeh main kar sakti hoon ya nahi. Yeh sab mujhe thoda confuse kar deta hai."
+                </p>
+            </section>
+        ),
+        postResults: (
+            <>
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Clarity Conversation</h3>
+                    <p className="text-gray-700 mb-3">
+                        We sat both sides together for a 15-minute discussion. Every routine task, occasional extra, and communication rhythm was spelled out. The helper finally knew what to expect instead of guessing.
+                    </p>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Routine versus extra work was clarified.</li>
+                        <li>Boundaries were agreed upfront.</li>
+                        <li>Predictability replaced constant tension.</li>
+                    </ul>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">The Outcome</h3>
+                    <p className="text-gray-700">
+                        The helper stayed for over a year, confidence returned, and the home stopped treating replacements as the default. Helpers don't quit because of work--they quit because of confusion.
+                    </p>
+                </section>
+            </>
+        )
+    },
+    'salary-time-pe-loyalty-pukka': {
+        preChallenge: (
+            <section className="mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 font-display">When Salary Had No Date</h2>
+                <p className="text-gray-700 mb-3">
+                    Every month Rani asked, "Ma'am, salary kab milegi?" and the reply always changed. Payments landed between the 8th and the 20th, so she couldn't plan rent, tuition, or groceries and started to feel like a beggar.
+                </p>
+                <p className="text-gray-700">
+                    The Vermas assumed a few days' delay was harmless. For Rani it meant borrowed money, stress, and guilt.
+                </p>
+            </section>
+        ),
+        postResults: (
+            <>
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Fixing the Pay Date</h3>
+                    <p className="text-gray-700 mb-3">
+                        We suggested the 5th of every month, with UPI or standing instruction. The family agreed. Rani stopped worrying, started saving ₹500 a month, and felt respected for the first time.
+                    </p>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Rent and tuition were never late again.</li>
+                        <li>No more awkward reminders or ATM runs.</li>
+                        <li>Trust flourished and loyalty deepened.</li>
+                    </ul>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Pay Discipline Drives Loyalty</h3>
+                    <p className="text-gray-700">
+                        Two-thirds of helpers on our platform live with pay uncertainty. Those who know exactly when they will be paid stay 2.5× longer. It's not about paying more--it is about paying predictably.
+                    </p>
+                </section>
+            </>
+        )
+    },
+    'small-celebrations-big-bonding': {
+        preChallenge: (
+            <section className="mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 font-display">Emotional Distance in a Live-In Babysitter Placement</h2>
+                <p className="text-gray-700 mb-3">
+                    Kavitha did everything perfectly but remained reserved--eating alone, declining gifts, never sharing her story. Mrs. Sharma sensed she did not feel part of the home.
+                </p>
+                <p className="text-gray-700">
+                    The issue had nothing to do with skill. It was about belonging.
+                </p>
+            </section>
+        ),
+        postResults: (
+            <>
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">The Diwali Gesture</h3>
+                    <p className="text-gray-700 mb-3">
+                        Mrs. Sharma gifted Kavitha a saree, sweets, and ₹1,000--not as a bonus, but as a personal note: "You are part of this home." Kavitha replied with decorations, a heartfelt note, and joined the family emotionally.
+                    </p>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Her smile returned and conversations opened up.</li>
+                        <li>She began calling the baby "our baby" and protected the child with affection.</li>
+                        <li>She declined a higher-paid job because she felt valued.</li>
+                    </ul>
+                </section>
+
+                <section className="mb-12">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Big Loyalty From Small Celebrations</h3>
+                    <p className="text-gray-700">
+                        Thoughtful gestures, especially during festivals, signal that helpers are seen. That emotional safety builds loyalty, stability, and a happier home.
+                    </p>
+                </section>
+            </>
+        )
+    }
+};
+
 interface Props {
     params: { slug: string };
 }
@@ -225,9 +381,7 @@ export default function CaseStudyDetailPage({ params }: Props) {
         notFound();
     }
 
-    const respectRetentionSections = caseStudy.slug === 'respect-equals-retention'
-        ? RESPECT_RETENTION_SECTIONS
-        : null;
+    const extraSections = CASE_STUDY_EXTRA_CONTENT[caseStudy.slug];
 
     const related = getRelatedCaseStudies(params.slug, 3);
 
@@ -364,8 +518,8 @@ export default function CaseStudyDetailPage({ params }: Props) {
                             {/* Main Content Column */}
                             <div className="md:col-span-8 prose prose-lg prose-headings:font-display prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900">
 
-                                {/* Additional Context (Respect=Retention only) */}
-                                {respectRetentionSections?.preChallenge}
+                                {/* Additional Context (slug-specific stories) */}
+                                {extraSections?.preChallenge}
 
                                 {/* Challenge */}
                                 <section className="mb-12">
@@ -418,8 +572,8 @@ export default function CaseStudyDetailPage({ params }: Props) {
                                     )}
                                 </section>
 
-                                {/* Additional Insight (Respect=Retention only) */}
-                                {respectRetentionSections?.postResults}
+                                {/* Additional Insight (slug-specific stories) */}
+                                {extraSections?.postResults}
                             </div>
 
                             {/* Sidebar Column */}
