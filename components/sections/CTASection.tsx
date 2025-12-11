@@ -122,8 +122,8 @@ export default function CTASection() {
             {/* Statistics Section */}
             <div className="grid grid-cols-2 gap-8 mt-8 pt-8 border-t border-primary-300/50 w-full max-w-sm">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">24-72 Hours</div>
-                <div className="text-primary-200 text-sm font-medium">Quick Placement</div>
+                <div className="text-3xl font-bold text-white mb-2">Quick</div>
+                <div className="text-primary-200 text-sm font-medium">Placement</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">100%</div>
