@@ -57,13 +57,13 @@ export default function FAQPageClient() {
       id: 6,
       category: 'Booking',
       question: 'How quickly can I get a helper?',
-      answer: 'We typi cally provide helpers within 24–72 hours of your request, depending on your location and specific requirements. However, during high demand or due to availability constraints, it may take longer.'
+      answer: 'We typically provide helpers within 24-48 hours of your request. For urgent requirements, we also offer same-day service in select locations based on availability.'
     },
     {
       id: 7,
       category: 'Services',
       question: 'Do you provide replacement if I\'m not satisfied?',
-      answer: 'Yes, we offer free replacement within the first week if you\'re not satisfied with the helper\'s performance. Customer satisfaction is our top priority.'
+      answer: 'Yes, we offer free  replacement within the first week if you\'re not satisfied with the helper\'s performance. Customer satisfaction is our top priority.'
     },
     {
       id: 8,
