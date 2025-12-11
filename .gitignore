@@ -99,4 +99,9 @@ Thumbs.db
 
 # PWA files
 **/sw.js
-**/workbox-*.js 
+**/workbox-*.js
+
+# Conversion tool output files
+Results of converting*
+*conversion output*
+*converted output* 
