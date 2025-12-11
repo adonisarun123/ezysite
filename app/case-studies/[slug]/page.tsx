@@ -9,6 +9,171 @@ import { getCaseStudy, getRelatedCaseStudies, caseStudies } from '../data/caseSt
 import { CheckCircleIcon, StarIcon, ArrowLeftIcon } from 'lucide-react';
 import Link from 'next/link';
 
+const RESPECT_LOYALTY_ACTIONS = [
+    { action: 'Asking for tea or water before work', result: 'Creates emotional comfort before a long day' },
+    { action: 'Addressing helpers by name instead of "maid"', result: 'Builds dignity and identity' },
+    { action: 'Praising good work aloud', result: 'Reinforces job pride and purpose' },
+    { action: 'Allowing emergency leaves or flexibility', result: 'Signals trust and empathy' },
+    { action: 'Celebrating birthdays and festivals together', result: 'Creates a sense of belonging' },
+    { action: 'Paying on time and transparently', result: 'Provides financial security and reliability' },
+];
+
+const RESPECT_HUMAN_ELEMENTS = [
+    {
+        title: 'Dignity',
+        description: '"I matter" - the helper feels seen as a person, not a task list.'
+    },
+    {
+        title: 'Belonging',
+        description: '"I am part of this place" - small rituals create emotional attachment.'
+    },
+    {
+        title: 'Security',
+        description: '"I won\'t be mistreated here" - trust is earned through calm, kind interactions.'
+    },
+];
+
+const RESPECT_IMPACT_STATEMENTS = [
+    'A clean, organized home every single day without the churn of retraining.',
+    'Zero disruption from helpers coming and going, which kept the routine steady.',
+    'Emotional peace and reduced stress for Nisha, balancing parenting and work.',
+    'More time for career and family because training new helpers was no longer required.',
+    'A happy child who formed a bond with Rani and feels safe.',
+    'A positive, supportive work-home atmosphere where Rani is treated like family.',
+];
+
+const RESPECT_RETENTION_SECTIONS = {
+    preChallenge: (
+        <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 font-display">The Household Retention Problem Nobody Talks About</h2>
+<p className="text-gray-700 mb-3">
+                Employee retention is a challenge in every industry, and domestic help is no different. Many Indian families live through the same cycle: a helper joins, works for a few months, and then leaves abruptly--sometimes without notice, sometimes for personal reasons, sometimes because a neighbor offered a slightly higher salary.
+            </p>
+            <p className="text-gray-700 mb-3">
+                The constant turnover disrupts routines, creates stress, and fosters the belief that "good helpers never stay for long." But what if the real issue is not loyalty but how helpers feel in the homes where they work?
+            </p>
+            <p className="text-gray-700 italic">
+                When helpers feel respected, they don't leave -- they stay.
+            </p>
+        </section>
+    ),
+    postResults: (
+        <>
+            <section className="mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Key Insight from the Case Study: The Real Reason Helpers Stay</h3>
+                <p className="text-gray-700 mb-4">
+                    The household tasks, timings, and responsibilities were not dramatically different from previous jobs. The real difference was the emotional environment. Rani didn't stay because of a bigger salary or lighter workload -- she stayed because Nisha made her feel valued.
+                </p>
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="p-5 rounded-2xl border border-gray-100 bg-red-50">
+                        <p className="text-sm text-red-600 font-semibold mb-3">Helpers do NOT stay for:</p>
+                        <ul className="list-disc list-inside text-gray-700 space-y-2">
+                            <li>High salary alone</li>
+                            <li>Light workload</li>
+                            <li>Immediate necessity to earn</li>
+                            <li>Absence of better options</li>
+                        </ul>
+                    </div>
+                    <div className="p-5 rounded-2xl border border-gray-100 bg-green-50">
+                        <p className="text-sm text-green-600 font-semibold mb-3">What made Rani stay:</p>
+                        <ul className="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Warm behaviour and kindness</li>
+                            <li>Human treatment that acknowledged her dignity</li>
+                            <li>The ritual of offering a cup of tea before work</li>
+                            <li>Feeling seen and valued each day</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section className="mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Human Psychology Behind Retention</h3>
+                <p className="text-gray-700 mb-4">
+                    Research shows every worker needs three core emotional experiences to stay engaged:
+                </p>
+                <div className="grid md:grid-cols-3 gap-6">
+                    {RESPECT_HUMAN_ELEMENTS.map((item) => (
+                        <div key={item.title} className="p-5 border border-gray-100 rounded-2xl bg-white shadow-sm">
+                            <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">{item.title}</p>
+                            <p className="text-gray-700 text-sm leading-relaxed">{item.description}</p>
+                        </div>
+                    ))}
+                </div>
+                <p className="text-gray-700 mt-4">
+                    When helpers feel valued, they take ownership, treat the home with care, and protect the family with loyalty. Rani chose to stay even after a neighbour offered ₹2,000 more, because, in her words, "Naya ghar mil jayega, par izzat har jagah nahi milti."
+                </p>
+            </section>
+
+            <section className="mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">EzyHelpers POV</h3>
+                <p className="text-gray-700 mb-4">
+                    Verification, training, and matching are our basics, yet we've learned that true retention is built on relationships. While platforms can shortlist skilled helpers, only the family can make them feel respected.
+                </p>
+                <ul className="space-y-3 text-gray-700">
+                    <li>Helpers need to be spoken to with kindness and calmness every day.</li>
+                    <li>Breaks, emotional check-ins, and festival celebrations foster belonging.</li>
+                    <li>Support instead of shouting builds security--helpers protect the household when they feel safe.</li>
+                </ul>
+            </section>
+
+            <section className="mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">What We Learned After Listening to Hundreds of Helpers & Families</h3>
+                <p className="text-gray-700">
+                    The pattern became clear: helpers leave because of behaviour, not salary. After speaking to families and reviewing work environments, we now emphasize creating healthy emotional ecosystems alongside skill matching. When helpers and families feel comfortable and respected, retention becomes natural, and the entire home feels happier.
+                </p>
+            </section>
+
+            <section className="mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Employer-Helper Relationship: Simple Actions That Build Strong Loyalty</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                    {RESPECT_LOYALTY_ACTIONS.map((item) => (
+                        <div key={item.action} className="p-5 rounded-2xl border border-gray-100 bg-white shadow-sm">
+                            <p className="text-sm font-semibold text-gray-500 mb-2">{item.action}</p>
+                            <p className="text-gray-700 text-sm">{item.result}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section className="mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Impact on Nisha's Life</h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-3">
+                    {RESPECT_IMPACT_STATEMENTS.map((statement) => (
+                        <li key={statement}>{statement}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <section className="mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Conclusion</h3>
+                <p className="text-gray-700 mb-3">
+                    This story is a mirror for thousands of homes. Many families want helpers who stay long term. Loyalty does not come from salary or contracts--it comes from humanity.
+                </p>
+                <p className="text-gray-700 italic">
+                    Respect = Retention.
+                </p>
+            </section>
+
+            <section className="mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Final Thought</h3>
+                <p className="text-gray-700 mb-3">
+                    Every helper dreams of working with dignity. Every family dreams of someone who stays. The bridge between these dreams is respect.
+                </p>
+                <p className="text-xs text-gray-500">
+                    Disclaimer: This case study is based on a real EzyHelpers customer experience. Names and identifiable details were altered for privacy.
+                </p>
+            </section>
+
+            <section className="mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">About EzyHelpers</h3>
+                <p className="text-gray-700">
+                    EzyHelpers is India's trusted platform connecting families with trained, background-verified helpers across services like cleaning, cooking, babysitting, elderly care, live-in/full-time maids, drivers, and home maintenance. We strive for dignified employment by ensuring fair pay, transparent transactions, and safe working environments, while delivering reliable support to families.
+                </p>
+            </section>
+        </>
+    )
+};
+
 interface Props {
     params: { slug: string };
 }
@@ -59,6 +224,10 @@ export default function CaseStudyDetailPage({ params }: Props) {
     if (!caseStudy) {
         notFound();
     }
+
+    const respectRetentionSections = caseStudy.slug === 'respect-equals-retention'
+        ? RESPECT_RETENTION_SECTIONS
+        : null;
 
     const related = getRelatedCaseStudies(params.slug, 3);
 
@@ -195,6 +364,9 @@ export default function CaseStudyDetailPage({ params }: Props) {
                             {/* Main Content Column */}
                             <div className="md:col-span-8 prose prose-lg prose-headings:font-display prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900">
 
+                                {/* Additional Context (Respect=Retention only) */}
+                                {respectRetentionSections?.preChallenge}
+
                                 {/* Challenge */}
                                 <section className="mb-12">
                                     <h2>The Challenge</h2>
@@ -245,6 +417,9 @@ export default function CaseStudyDetailPage({ params }: Props) {
                                         </div>
                                     )}
                                 </section>
+
+                                {/* Additional Insight (Respect=Retention only) */}
+                                {respectRetentionSections?.postResults}
                             </div>
 
                             {/* Sidebar Column */}

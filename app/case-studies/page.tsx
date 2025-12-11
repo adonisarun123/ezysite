@@ -1,35 +1,14 @@
 'use client';
 
-import { useState } from 'react';
-import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MainContent from '@/components/MainContent';
 import CaseStudyCard from './components/CaseStudyCard';
-import CaseStudyFilters from './components/CaseStudyFilters';
 import CTASection from '@/components/sections/CTASection';
 import { caseStudies } from './data/caseStudies';
 
 export default function CaseStudiesPage() {
-    const [selectedClientType, setSelectedClientType] = useState<string | null>(null);
-    const [selectedServiceType, setSelectedServiceType] = useState<string | null>(null);
-
-    // Derive unique filter options from data
-    const clientTypes = Array.from(new Set(caseStudies.map(cs => cs.clientType)));
-    const serviceTypes = Array.from(new Set(caseStudies.flatMap(cs => cs.serviceTypes)));
-
-    const filteredCaseStudies = caseStudies.filter(cs => {
-        if (selectedClientType && cs.clientType !== selectedClientType) return false;
-        if (selectedServiceType && !cs.serviceTypes.includes(selectedServiceType)) return false;
-        return true;
-    });
-
-    const featuredCaseStudies = caseStudies.slice(0, 2); // Simple featured logic
-
-    const clearFilters = () => {
-        setSelectedClientType(null);
-        setSelectedServiceType(null);
-    };
+    const filteredCaseStudies = caseStudies;
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -111,19 +90,8 @@ export default function CaseStudiesPage() {
                     </div>
                 </section>
 
-                {/* Filters */}
-                <CaseStudyFilters
-                    clientTypes={clientTypes}
-                    serviceTypes={serviceTypes}
-                    selectedClientType={selectedClientType}
-                    selectedServiceType={selectedServiceType}
-                    onClientTypeChange={setSelectedClientType}
-                    onServiceChange={setSelectedServiceType}
-                    onClear={clearFilters}
-                />
-
                 {/* Grid Section */}
-                <section className="py-12 md:py-16 bg-white min-h-[500px]">
+                <section className="pt-10 md:pt-12 pb-12 bg-white min-h-[500px]">
                     <div className="container mx-auto px-4 max-w-7xl">
                         {filteredCaseStudies.length > 0 ? (
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -136,10 +104,7 @@ export default function CaseStudiesPage() {
                             </div>
                         ) : (
                             <div className="text-center py-20">
-                                <p className="text-xl text-gray-500">No case studies match your filters.</p>
-                                <button onClick={clearFilters} className="text-primary-600 hover:text-primary-700 font-semibold mt-4">
-                                    Clear all filters
-                                </button>
+                                <p className="text-xl text-gray-500">No case studies are available right now. Check back soon.</p>
                             </div>
                         )}
                     </div>
