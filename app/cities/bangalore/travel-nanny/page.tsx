@@ -27,16 +27,23 @@ import {
   ShoppingBagIcon,
   PlusCircleIcon
 } from '@heroicons/react/24/outline'
-import BreadcrumbSchema, { generateServiceBreadcrumbs } from '@/components/schema/BreadcrumbSchema'
+import BreadcrumbSchema from '@/components/schema/BreadcrumbSchema'
 import FAQSchema from '@/components/schema/FAQSchema'
 
 export const metadata: Metadata = {
   title: 'Travel Nanny in Bangalore | Flexible Vacation Babysitters',
   description: 'Book On-demand Travel Nannies in Bangalore for short trips or long vacations. Flexible childcare when you need it for day trips, weekends, or longer holidays.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/travel-nanny'
+  }
 }
 
 export default function TravelNannyPage() {
-  const breadcrumbs = generateServiceBreadcrumbs("Travel Nanny", "travel-nanny")
+  const breadcrumbs = [
+    { name: "Home", url: "https://ezyhelpers.com" },
+    { name: "Bangalore", url: "https://ezyhelpers.com/cities/bangalore" },
+    { name: "Travel Nanny", url: "https://ezyhelpers.com/cities/bangalore/travel-nanny" }
+  ]
 
   const serviceAssurance = [
     "Trained in Childcare Safety",

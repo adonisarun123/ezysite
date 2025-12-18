@@ -23,7 +23,14 @@ interface NavigationItem {
 
 const navigation: NavigationItem[] = [
   { name: 'Home', href: '/', icon: Bars3Icon },
-  { name: 'Services', href: '/services' },
+  { name: 'Services',
+    href: '/services',
+    hasDropdown: true,
+    dropdownItems: [
+      { name: 'Bangalore', href: '/cities/bangalore' },
+      { name: 'Bareilly', href: '/cities/bareilly' },
+    ]
+  },
   { name: 'Hire Helper', href: '/hire-helper' },
   { name: 'Nest', href: '/nest', isNew: true },
   { name: 'For Helpers', href: '/for-helpers' },
@@ -43,7 +50,7 @@ const navigation: NavigationItem[] = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const { isUrgencyVisible } = useUrgency()
 
   useEffect(() => {
@@ -57,13 +64,13 @@ export default function Navbar() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Element
-      if (aboutDropdownOpen && !target.closest('.relative')) {
-        setAboutDropdownOpen(false)
+      if (openDropdown && !target.closest('.relative')) {
+        setOpenDropdown(null)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [aboutDropdownOpen])
+  }, [openDropdown])
 
   // Use the context value directly
   const urgencyVisible = isUrgencyVisible
@@ -103,29 +110,29 @@ export default function Navbar() {
                       <div
                         key={item.name}
                         className="relative"
-                        onMouseEnter={() => setAboutDropdownOpen(true)}
-                        onMouseLeave={() => setAboutDropdownOpen(false)}
+                        onMouseEnter={() => setOpenDropdown(item.name)}
+                        onMouseLeave={() => setOpenDropdown(null)}
                       >
                         <button
                           type="button"
                           className="flex items-center gap-1 text-[15px] font-medium text-gray-700 hover:text-primary-600 transition-colors duration-200 outline-none"
-                          onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
+                          onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
                         >
                           {item.name}
                           <ChevronDownIcon
-                            className={`h-3 w-3 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180' : ''}`}
+                            className={`h-3 w-3 transition-transform duration-200 ${openDropdown === item.name ? 'rotate-180' : ''}`}
                             strokeWidth={2.5}
                           />
                         </button>
 
-                        {aboutDropdownOpen && (
+                        {openDropdown === item.name && (
                           <div className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50 mt-1">
                             {item.dropdownItems?.map((dropdownItem) => (
                               <Link
                                 key={dropdownItem.name}
                                 href={dropdownItem.href}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
-                                onClick={() => setAboutDropdownOpen(false)}
+                                onClick={() => setOpenDropdown(null)}
                               >
                                 {dropdownItem.name}
                               </Link>

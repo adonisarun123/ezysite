@@ -14,7 +14,8 @@ import {
   ShieldCheckIcon,
   ChatBubbleLeftRightIcon,
   HomeModernIcon,
-  WrenchScrewdriverIcon
+  WrenchScrewdriverIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
@@ -289,6 +290,55 @@ export default function BangalorePage() {
           </div>
         </div>
       </section>
+      
+      {/* Premium Services */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+              Premium Services
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Exclusive, specialized care services designed for your unique lifestyle needs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+            {[
+              {
+                title: "Travel Nanny",
+                description: "Book On-demand Travel Nannies in Bangalore for short trips or long vacations.",
+                features: ["Childcare on the go", "Safety monitoring", "Holiday/Vacation support"],
+                href: "/cities/bangalore/travel-nanny",
+                linkText: "Learn More About Travel Nanny"
+              }
+            ].map((service, index) => (
+              <div key={index} className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg p-6 hover:shadow-lg transition-shadow group border border-amber-100">
+                <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                  <SparklesIcon className="h-6 w-6 text-amber-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 font-display group-hover:text-amber-600">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  {service.description}
+                </p>
+                <ul className="space-y-2 mb-4">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start text-sm text-gray-600">
+                      <CheckCircleIcon className="h-4 w-4 text-amber-600 mt-0.5 mr-2 shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Link href={service.href} className="text-amber-600 font-medium hover:text-amber-700">
+                  {service.linkText} {'->'}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Home Maintenance Services */}
       <section className="section-padding bg-background-secondary">
@@ -383,7 +433,7 @@ export default function BangalorePage() {
       </section>
 
       {/* IT Lifestyle Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background-secondary">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">

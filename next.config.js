@@ -250,6 +250,8 @@ const nextConfig = {
       { source: '/blog/the-existing-process-of-hiring-a-24-hours-domestic-helper', destination: '/blog', permanent: true },
       { source: '/blog/difference-between-24-hours-live-in-and-full-day-helper', destination: '/blog', permanent: true },
       { source: '/blog/generally-we-dont-verify-our-helpers-why', destination: '/blog', permanent: true },
+      // 29
+      { source: '/services/travel-nanny', destination: '/cities/bangalore/travel-nanny', permanent: true },
     ]
   },
 }
