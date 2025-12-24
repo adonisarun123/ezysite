@@ -126,7 +126,7 @@ export default function Navbar() {
                         </button>
 
                         {openDropdown === item.name && (
-                          <div className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50 mt-1">
+                          <div className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
                             {item.dropdownItems?.map((dropdownItem) => (
                               <Link
                                 key={dropdownItem.name}
