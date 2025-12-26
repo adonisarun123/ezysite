@@ -52,6 +52,11 @@ export default function NestPageClient() {
       title: 'Festival or holiday stay',
       description: 'Helpers have a safe place to stay during holidays or festival time.',
       icon: SparklesIcon
+    },
+    {
+      title: 'Medical or personal leave',
+      description: 'Maids/helpers can stay safe during medical leave or for personal reasons.',
+      icon: HeartIcon
     }
   ]
 
@@ -197,14 +202,17 @@ export default function NestPageClient() {
             <div className="pt-4">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
                 <HomeIcon className="h-4 w-4 text-yellow-400 mr-2" />
-                <span className="text-white/90 text-sm font-medium">Women-Only Accommodation</span>
+                <span className="text-white/90 text-sm font-medium">Safe & Affordable Maid Stay</span>
               </div>
 
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight font-display">
                 Nest – <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-200 to-rose-100">Domestic Worker Accommodation</span> in Bangalore
               </h1>
               <p className="text-xl text-rose-100 mb-8 leading-relaxed font-light">
-                Safe & Affordable Maid Stay. India's first <span className="text-white font-medium">women-only domestic helper hostel</span>, offering short-term and long-term stays.
+                The "Nest" by EzyHelpers is India's first <span className="text-white font-medium">women-only domestic helper hostel</span>, offering short-term and long-term stays for maids and helpers who need a safe and comfortable place to stay.
+              </p>
+              <p className="text-lg text-rose-100 mb-8 leading-relaxed font-light">
+                Whether you are a domestic helper looking for a short-term stay between jobs, a helper coming from another city for work, or an employer/customer looking for a safe place for your helper/maid while you are away, Nest is here for you.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-10">
@@ -223,9 +231,12 @@ export default function NestPageClient() {
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
                 <a href="#nest-booking-form" className="bg-white text-rose-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 hover:shadow-lg transition-all shadow-xl text-center">
                   Book Stay Now
+                </a>
+                <a href="#pricing-section" className="bg-rose-100/10 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all text-center">
+                  Check Pricing
                 </a>
                 <a href="tel:08031411776" className="bg-rose-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-rose-900 transition-all shadow-xl flex items-center justify-center gap-2 border border-white/10">
                   <PhoneIcon className="h-5 w-5" />
@@ -344,7 +355,7 @@ export default function NestPageClient() {
       </section>
 
       {/* Pricing Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
+      <section id="pricing-section" className="section-padding bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -372,11 +383,29 @@ export default function NestPageClient() {
                     <ul className="space-y-3">
                       <li className="flex items-start text-gray-700">
                         <CurrencyRupeeIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                        <span><strong>₹299</strong> per day</span>
+                        <span><strong>₹299</strong> per day (1 day)</span>
                       </li>
                       <li className="flex items-start text-gray-700">
                         <CurrencyRupeeIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
                         <span><strong>₹1,750</strong> per week (7 days)</span>
+                      </li>
+                    </ul>
+                    <ul className="mt-4 space-y-2 text-sm text-gray-600">
+                      <li className="flex items-start">
+                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>Safe women-only hostel</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>3 meals every day</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>Basic facilities included</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>The stay can be extended if needed</span>
                       </li>
                     </ul>
                   </div>
@@ -391,14 +420,34 @@ export default function NestPageClient() {
                         <span><strong>₹6,000</strong> per month (30 days)</span>
                       </li>
                     </ul>
+                    <ul className="mt-4 space-y-2 text-sm text-gray-600">
+                      <li className="flex items-start">
+                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>Affordable rent with meals</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>Comfortable rooms with basic facilities</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>Learn skills while staying</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>Safe and friendly environment</span>
+                      </li>
+                    </ul>
                   </div>
-                  <div className="bg-green-50 rounded-xl p-4">
+                  <div className="border-t border-gray-200 pt-6">
+                    <h4 className="font-bold text-gray-900 mb-4">Benefits for Helpers</h4>
                     <ul className="space-y-2 text-sm">
                       {[
-                        '3 meals every day',
-                        'Safe women-only hostel with CCTV',
-                        'Comfortable rooms with geyser, RO water',
-                        'Learn skills while staying'
+                        'Safe, women-only hostel with CCTV',
+                        '3 meals every day (Breakfast, Lunch & Dinner)',
+                        'Comfortable rooms with beds, geyser, RO water, utensils, fans & more',
+                        'Learn skills while staying',
+                        'Budget-friendly and flexible stay options'
                       ].map((benefit, i) => (
                         <li key={i} className="flex items-start text-gray-700">
                           <CheckCircleIcon className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -464,12 +513,28 @@ export default function NestPageClient() {
           </div>
 
           <div className="mt-8 text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-3xl mx-auto">
-            <p className="text-white font-medium mb-2">Important Notes:</p>
-            <ul className="text-gray-200 text-sm space-y-1">
-              <li>✓ All packages include accommodation and meals</li>
-              <li>✓ No hidden charges</li>
-              <li>✓ No advance payment required</li>
-              <li>✓ Maximum stay: One month</li>
+            <p className="text-white font-medium mb-3">Note:</p>
+            <ul className="text-gray-200 text-sm space-y-2 max-w-lg mx-auto text-left">
+              <li className="flex items-start">
+                <span className="mr-2 text-rose-300">•</span>
+                <span>Pricing may vary based on stay duration and room availability</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-rose-300">•</span>
+                <span>All packages include accommodation and meals</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-rose-300">•</span>
+                <span>No hidden charges</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-rose-300">•</span>
+                <span>Helpers can stay for a maximum of <strong>one month</strong></span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-rose-300">•</span>
+                <span>No advance payment is required for short-term or long-term plans</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -478,18 +543,19 @@ export default function NestPageClient() {
       {/* Location Benefits */}
       <section className="py-16 bg-gradient-to-r from-rose-900 to-rose-800 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl text-white font-bold mb-8 flex items-center justify-center">
+          <h2 className="text-2xl md:text-3xl text-white font-bold mb-4 flex items-center justify-center">
             <MapPinIcon className="h-6 w-6 mr-2 text-pink-400" />
-            Perfect Location in Bangalore
+            Location Benefits
           </h2>
+          <p className="text-rose-100 mb-8 max-w-2xl mx-auto">
+            Nest is located in a safe and well-connected area of Bangalore
+          </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              'Near HSR Layout',
-              'Electronic City',
-              'Sarjapur Road',
-              'Easy public transport access',
+              'Near HSR Layout, Electronic City, and Sarjapur Road',
+              'Easy access to public transport',
               'Safe residential area',
-              'Markets nearby'
+              'Markets and shops nearby'
             ].map((location, idx) => (
               <span key={idx} className="bg-white/10 hover:bg-white/20 border border-white/20 px-5 py-2 rounded-full text-sm backdrop-blur-sm transition-colors cursor-default">
                 {location}
@@ -511,7 +577,7 @@ export default function NestPageClient() {
             Book Your Stay at Nest by EzyHelpers
           </h2>
           <p className="text-xl text-rose-100 mb-10 max-w-2xl mx-auto font-light">
-            Choose your check-in date and check bed availability
+            Choose your check-in date and time to check bed availability
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#nest-booking-form" className="bg-white text-rose-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 hover:shadow-lg transition-all shadow-xl">
