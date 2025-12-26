@@ -63,7 +63,7 @@ const createTransporter = () => {
 // Email templates
 const generateContactLeadEmail = (formData: ContactFormData): EmailContent => {
   const formattedPhone = formatPhoneForEmail(formData.phone);
-  
+
   return {
     subject: `New Contact Lead: ${formData.subject}`,
     html: `
@@ -133,7 +133,7 @@ const generateHireHelperLeadEmail = (formData: {
   sourceUrl?: string;
 }) => {
   const formattedPhone = formatPhoneForEmail(formData.phone);
-  
+
   return {
     subject: `New Hire Helper Lead: ${formData.serviceType} in ${formData.city}`,
     html: `
@@ -223,7 +223,7 @@ const generateGeneralLeadEmail = (formData: {
   const formattedPhone = formatPhoneForEmail(formData.phone);
   const formattedIDNumber = formData.additionalDetails?.idProofNumber ? formatIDForEmail(formData.additionalDetails.idProofNumber) : null;
   const formattedAccountNumber = formData.additionalDetails?.accountNumber ? formatAccountForEmail(formData.additionalDetails.accountNumber) : null;
-  
+
   const roleLabelMap: Record<string, string> = {
     COOK: 'Cooking',
     HOUSEKEEPING: 'Housekeeping',
@@ -239,7 +239,7 @@ const generateGeneralLeadEmail = (formData: {
     if (!roles || roles.length === 0) return 'None';
     return roles.map(r => roleLabelMap[r] || r).join(', ');
   };
-  
+
   return {
     subject: `New Lead: ${formData.service} in ${formData.city}`,
     html: `
@@ -356,10 +356,10 @@ ${formData.additionalDetails.remarks ? `- Additional Info: ${formData.additional
 
 LOCATION:
 ${(formData.additionalDetails.detected_city || formData.additionalDetails.detected_region || formData.additionalDetails.detected_country) ? `- Detected: ${[
-  formData.additionalDetails.detected_city,
-  formData.additionalDetails.detected_region,
-  formData.additionalDetails.detected_country
-].filter(Boolean).join(', ')}` : ''}
+            formData.additionalDetails.detected_city,
+            formData.additionalDetails.detected_region,
+            formData.additionalDetails.detected_country
+          ].filter(Boolean).join(', ')}` : ''}
 ${(formData.additionalDetails.latitude && formData.additionalDetails.longitude) ? `- Coordinates: ${formatCoordinatesForEmail(formData.additionalDetails.latitude, formData.additionalDetails.longitude)}
 - Maps: https://www.google.com/maps?q=${formData.additionalDetails.latitude},${formData.additionalDetails.longitude}` : ''}
 ` : ``}
@@ -403,7 +403,7 @@ const generateAgentRegistrationEmail = (formData: {
   const formattedSecondaryPhone = formData.secondaryPhone ? formatPhoneForEmail(formData.secondaryPhone) : null;
   const formattedIDNumber = formatIDForEmail(formData.ownerIDNumber);
   const formattedCoordinates = (formData.latitude && formData.longitude) ? formatCoordinatesForEmail(formData.latitude, formData.longitude) : null;
-  
+
   return {
     subject: `New Agent Registration: ${formData.agencyName}`,
     html: `
@@ -564,7 +564,7 @@ const generateHelperRegistrationEmail = (formData: {
   const formattedIDNumber = formatIDForEmail(formData.idProofNumber);
   const formattedAccountNumber = formData.accountNumber ? formatAccountForEmail(formData.accountNumber) : null;
   const formattedCoordinates = (formData.latitude && formData.longitude) ? formatCoordinatesForEmail(formData.latitude, formData.longitude) : null;
-  
+
   return {
     subject: `New Helper Registration: ${formData.firstName} ${formData.lastName || ''} - ${formData.helperType}`,
     html: `
@@ -745,7 +745,7 @@ const generateRequirementLeadEmail = (formData: {
 }) => {
   const formattedContactNo = formatPhoneForEmail(formData.contactNo);
   const formattedCoordinates = (formData.latitude && formData.longitude) ? formatCoordinatesForEmail(formData.latitude, formData.longitude) : null;
-  
+
   return {
     subject: `New Service Requirement: ${formData.areaOfService} - ${formData.requestId}`,
     html: `
@@ -903,7 +903,7 @@ export const sendLeadEmail = async (
     // hire_helper and general (contact form) use HIRE_CONTACT_EMAIL_RECIPIENTS
     // Other forms use the default EMAIL_RECIPIENTS
     let emailRecipientsEnv: string;
-    
+
     if (leadType === 'hire_helper' || leadType === 'general') {
       // Use dedicated recipients for hire helper and contact forms
       emailRecipientsEnv = process.env.HIRE_CONTACT_EMAIL_RECIPIENTS || process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
@@ -930,9 +930,9 @@ export const sendLeadEmail = async (
     }
 
     const transporter = createTransporter();
-    
+
     let emailContent;
-    
+
     switch (leadType) {
       case 'contact':
         emailContent = generateContactLeadEmail({ ...formData, sourceUrl });
@@ -978,9 +978,9 @@ export const sendEzyNestBookingEmail = async (
 ) => {
   try {
     const transporter = createTransporter();
-    
+
     const serviceName = `EzyNest Booking - ${bookingDetails.numberOfDays} ${bookingDetails.numberOfDays === 1 ? 'Day' : 'Days'}`;
-    
+
     const emailContent = generateGeneralLeadEmail({
       name: bookingDetails.name,
       phone: bookingDetails.phone,
@@ -1021,7 +1021,7 @@ export const sendEzyNestBookingEmail = async (
     if (idProofFile) {
       const buffer = await idProofFile.arrayBuffer();
       const uint8Array = new Uint8Array(buffer);
-      
+
       mailOptions.attachments = [
         {
           filename: `ID_Proof_${bookingDetails.bookingId}.${idProofFile.name.split('.').pop()}`,
@@ -1032,24 +1032,167 @@ export const sendEzyNestBookingEmail = async (
     }
 
     const result = await transporter.sendMail(mailOptions);
-    
+
     console.log('EzyNest booking email sent successfully:', result.messageId);
     return { success: true, messageId: result.messageId };
-    
+
   } catch (error) {
     console.error('Error sending EzyNest booking email:', error);
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
 };
 
+// NEST Lead Email Function
+export const sendNestLeadEmail = async (
+  formData: {
+    name: string
+    phone: string
+    email?: string | null
+    booking_type: 'helper' | 'employer' | null
+    check_in_date?: string | null
+    check_out_date?: string | null
+    duration_days?: number | null
+    user_type?: string | null
+    message?: string | null
+  },
+  requestId?: string
+): Promise<EmailSendResult> => {
+  try {
+    const formattedPhone = formatPhoneForEmail(formData.phone)
+    const emailRecipientsEnv = process.env.NEST_LEADS_EMAIL || process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || ''
+
+    if (!emailRecipientsEnv) {
+      console.error('NEST_LEADS_EMAIL, EMAIL_RECIPIENTS or ADMIN_EMAIL environment variable not set')
+      return { success: false, error: 'Email recipients not configured' }
+    }
+
+    const adminEmail = emailRecipientsEnv
+      .split(',')
+      .map(email => email.trim())
+      .filter(Boolean)
+      .join(', ')
+
+    if (!adminEmail) {
+      console.error('No valid email recipients found')
+      return { success: false, error: 'Admin email not configured' }
+    }
+
+    const transporter = createTransporter()
+
+    const userTypeLabels: Record<string, string> = {
+      'helper_between_jobs': 'Helper between jobs',
+      'helper_new_to_city': 'Helper new to city',
+      'helper_employer_vacation': 'Helper during employer vacation',
+      'employer_booking': 'Employer booking for helper',
+      'emergency_stay': 'Emergency stay',
+      'festival_stay': 'Festival/holiday stay',
+      'medical_leave': 'Medical/personal leave'
+    }
+
+    const userTypeLabel = formData.user_type ? userTypeLabels[formData.user_type] || formData.user_type : 'Not specified'
+    const bookingTypeLabel = formData.booking_type === 'helper' ? 'Helper' : formData.booking_type === 'employer' ? 'Employer' : 'Not specified'
+
+    const emailContent = {
+      subject: `New NEST Accommodation Booking - ${requestId || 'NEW'}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #e11d48; background-color: #ffe4e6; padding: 20px; border-radius: 8px; margin: 0 0 20px 0;">🏠 New NEST Accommodation Booking</h2>
+          
+          <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="margin-top: 0; color: #334155;">Request Details</h3>
+            ${requestId ? `<p><strong>Request ID:</strong> <span style="font-family: monospace; background-color: #e1e8f0; padding: 2px 6px; border-radius: 4px;">${requestId}</span></p>` : ''}
+            <p><strong>Booking Type:</strong> <span style="background-color: #fce7f3; color: #e11d48; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${bookingTypeLabel}</span></p>
+            <p><strong>Stay Type:</strong> ${userTypeLabel}</p>
+          </div>
+
+          <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+            <h3 style="margin-top: 0; color: #1e293b;">Contact Information</h3>
+            <p><strong>Name:</strong> ${formData.name}</p>
+            <p><strong>Phone:</strong> <a href="tel:${formData.phone}" style="text-decoration: none; color: #1e40af;">${formattedPhone}</a></p>
+            ${formData.email ? `<p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>` : ''}
+          </div>
+
+          <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+            <h3 style="margin-top: 0; color: #1e293b;">📅 Booking Dates</h3>
+            ${formData.check_in_date ? `<p><strong>Check-in Date:</strong> ${new Date(formData.check_in_date).toLocaleDateString('en-IN', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}</p>` : '<p><strong>Check-in Date:</strong> Not specified</p>'}
+            ${formData.check_out_date ? `<p><strong>Check-out Date:</strong> ${new Date(formData.check_out_date).toLocaleDateString('en-IN', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}</p>` : '<p><strong>Check-out Date:</strong> Not specified</p>'}
+            ${formData.duration_days ? `<p><strong>Duration:</strong> ${formData.duration_days} ${formData.duration_days === 1 ? 'day' : 'days'}</p>` : ''}
+          </div>
+
+          ${formData.message ? `
+          <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+            <h3 style="margin-top: 0; color: #1e293b;">📝 Special Requirements</h3>
+            <p style="white-space: pre-wrap;">${formData.message}</p>
+          </div>
+          ` : ''}
+
+          <div style="margin-top: 30px; padding: 20px; background-color: #fef2f2; border-left: 4px solid #ef4444; border-radius: 8px;">
+            <p style="margin: 0; color: #dc2626;"><strong>🚨 Action Required:</strong></p>
+            <ul style="color: #dc2626; margin: 10px 0;">
+              <li>Contact ${bookingTypeLabel === 'Helper' ? 'helper' : 'employer'} within 30 minutes</li>
+              <li>Confirm availability for requested dates</li>
+              <li>Process booking and arrange accommodation</li>
+              <li>Send confirmation with booking details</li>
+            </ul>
+          </div>
+
+          <hr style="margin: 30px 0; border: none; border-top: 1px solid #e2e8f0;">
+          <p style="color: #64748b; font-size: 12px;">This email was automatically generated from the NEST booking system.</p>
+        </div>
+      `,
+      text: `
+New NEST Accommodation Booking${requestId ? ` - ${requestId}` : ''}
+
+REQUEST DETAILS:
+${requestId ? `- Request ID: ${requestId}` : ''}
+- Booking Type: ${bookingTypeLabel}
+- Stay Type: ${userTypeLabel}
+
+CONTACT INFORMATION:
+- Name: ${formData.name}
+- Phone: ${formattedPhone}
+${formData.email ? `- Email: ${formData.email}` : ''}
+
+BOOKING DATES:
+${formData.check_in_date ? `- Check-in Date: ${new Date(formData.check_in_date).toLocaleDateString('en-IN')}` : '- Check-in Date: Not specified'}
+${formData.check_out_date ? `- Check-out Date: ${new Date(formData.check_out_date).toLocaleDateString('en-IN')}` : '- Check-out Date: Not specified'}
+${formData.duration_days ? `- Duration: ${formData.duration_days} ${formData.duration_days === 1 ? 'day' : 'days'}` : ''}
+
+${formData.message ? `SPECIAL REQUIREMENTS:\n${formData.message}` : ''}
+
+ACTION REQUIRED:
+- Contact ${bookingTypeLabel === 'Helper' ? 'helper' : 'employer'} within 30 minutes
+- Confirm availability for requested dates
+- Process booking and arrange accommodation
+- Send confirmation with booking details
+
+---
+This email was automatically generated from the NEST booking system.
+      `
+    }
+
+    const mailOptions = {
+      from: process.env.SMTP_USER,
+      to: adminEmail,
+      replyTo: formData.email || process.env.SMTP_USER,
+      ...emailContent,
+    }
+
+    return await sendEmailWithRetry(transporter, mailOptions)
+  } catch (error) {
+    logger.error('Error in sendNestLeadEmail', error)
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }
+  }
+}
+
 // Test email function
 export const testEmailConnection = async () => {
   try {
-    const transporter = createTransporter();
-    await transporter.verify();
-    return { success: true, message: 'Email connection verified successfully' };
+    const transporter = createTransporter()
+    await transporter.verify()
+    return { success: true, message: 'Email connection verified successfully' }
   } catch (error) {
-    console.error('Email connection test failed:', error);
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+    console.error('Email connection test failed:', error)
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }
   }
-};
+}
