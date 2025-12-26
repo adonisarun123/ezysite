@@ -224,7 +224,7 @@ export default function NestPageClient() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#booking-section" className="bg-white text-rose-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 hover:shadow-lg transition-all shadow-xl text-center">
+                <a href="#nest-booking-form" className="bg-white text-rose-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 hover:shadow-lg transition-all shadow-xl text-center">
                   Book Stay Now
                 </a>
                 <a href="tel:08031411776" className="bg-rose-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-rose-900 transition-all shadow-xl flex items-center justify-center gap-2 border border-white/10">
@@ -514,7 +514,7 @@ export default function NestPageClient() {
             Choose your check-in date and check bed availability
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#ad-lead-form" className="bg-white text-rose-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 hover:shadow-lg transition-all shadow-xl">
+            <a href="#nest-booking-form" className="bg-white text-rose-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 hover:shadow-lg transition-all shadow-xl">
               Check Availability
             </a>
             <a href="tel:08031411776" className="bg-rose-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-rose-900 transition-all shadow-xl flex items-center justify-center gap-2 border border-white/10">
