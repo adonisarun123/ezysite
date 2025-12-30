@@ -378,76 +378,33 @@ export default function NestPageClient() {
                   <div className="border-b border-gray-200 pb-6">
                     <h4 className="font-bold text-gray-900 mb-4 flex items-center">
                       <ClockIcon className="h-5 w-5 mr-2 text-rose-600" />
-                      Short Stay (Daily / Weekly)
+                      Stay Plans for Helpers
                     </h4>
                     <ul className="space-y-3">
                       <li className="flex items-start text-gray-700">
                         <CurrencyRupeeIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                        <span><strong>₹299</strong> per day (1 day)</span>
+                        <span><strong>₹299</strong> per day (1 day stay)</span>
                       </li>
                       <li className="flex items-start text-gray-700">
                         <CurrencyRupeeIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                        <span><strong>₹1,750</strong> per week (7 days)</span>
+                        <span><strong>₹1,750</strong> per week (7 days stay)</span>
                       </li>
-                    </ul>
-                    <ul className="mt-4 space-y-2 text-sm text-gray-600">
-                      <li className="flex items-start">
-                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <span>Safe women-only hostel</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <span>3 meals every day</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <span>Basic facilities included</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <span>The stay can be extended if needed</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="pb-6">
-                    <h4 className="font-bold text-gray-900 mb-4 flex items-center">
-                      <CalendarDaysIcon className="h-5 w-5 mr-2 text-rose-600" />
-                      Long Stay (Monthly)
-                    </h4>
-                    <ul className="space-y-3">
                       <li className="flex items-start text-gray-700">
                         <CurrencyRupeeIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                        <span><strong>₹6,000</strong> per month (30 days)</span>
-                      </li>
-                    </ul>
-                    <ul className="mt-4 space-y-2 text-sm text-gray-600">
-                      <li className="flex items-start">
-                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <span>Affordable rent with meals</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <span>Comfortable rooms with basic facilities</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <span>Learn skills while staying</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircleIcon className="h-4 w-4 text-rose-600 mr-2 mt-0.5 flex-shrink-0" />
-                        <span>Safe and friendly environment</span>
+                        <span><strong>₹6,000</strong> per month (30 days stay)</span>
                       </li>
                     </ul>
                   </div>
+
                   <div className="border-t border-gray-200 pt-6">
-                    <h4 className="font-bold text-gray-900 mb-4">Benefits for Helpers</h4>
+                    <h4 className="font-bold text-gray-900 mb-4">Benefits</h4>
                     <ul className="space-y-2 text-sm">
                       {[
-                        'Safe, women-only hostel with CCTV',
-                        '3 meals every day (Breakfast, Lunch & Dinner)',
-                        'Comfortable rooms with beds, geyser, RO water, utensils, fans & more',
-                        'Learn skills while staying',
-                        'Budget-friendly and flexible stay options'
+                        'Safe women-only hostel',
+                        '3 meals every day',
+                        'Comfortable rooms with basic facilities',
+                        'Skill learning during the stay',
+                        'The stay can be extended if required'
                       ].map((benefit, i) => (
                         <li key={i} className="flex items-start text-gray-700">
                           <CheckCircleIcon className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -464,40 +421,38 @@ export default function NestPageClient() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-rose-300">
               <div className="bg-gradient-to-r from-gray-800 to-gray-900 p-8 text-white">
                 <h3 className="text-2xl text-white font-bold mb-2">For Employers/Customers</h3>
-                <p className="text-gray-300">Booking accommodation for your helpers/maids</p>
+                <p className="text-gray-300">Temporary safe stay for your helper during your absence</p>
               </div>
               <div className="p-8">
                 <div className="space-y-6">
-                  <ul className="space-y-4">
-                    <li className="flex items-start text-gray-700">
-                      <CurrencyRupeeIcon className="h-6 w-6 text-green-500 mr-3 mt-0.5" />
-                      <div>
-                        <p className="font-bold text-lg">₹550 per day</p>
-                        <p className="text-sm text-gray-500">1 day stay</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start text-gray-700">
-                      <CurrencyRupeeIcon className="h-6 w-6 text-green-500 mr-3 mt-0.5" />
-                      <div>
-                        <p className="font-bold text-lg">₹3,500 per week</p>
-                        <p className="text-sm text-gray-500">7 days stay</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start text-gray-700">
-                      <CurrencyRupeeIcon className="h-6 w-6 text-green-500 mr-3 mt-0.5" />
-                      <div>
-                        <p className="font-bold text-lg">₹10,500 per month</p>
-                        <p className="text-sm text-gray-500">30 days stay</p>
-                      </div>
-                    </li>
-                  </ul>
+                  <div className="border-b border-gray-200 pb-6">
+                    <h4 className="font-bold text-gray-900 mb-4 flex items-center">
+                      <ClockIcon className="h-5 w-5 mr-2 text-gray-600" />
+                      Pricing
+                    </h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start text-gray-700">
+                        <CurrencyRupeeIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                        <span><strong>₹550</strong> per day (1 day stay)</span>
+                      </li>
+                      <li className="flex items-start text-gray-700">
+                        <CurrencyRupeeIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                        <span><strong>₹3,500</strong> per week (7 days stay)</span>
+                      </li>
+                      <li className="flex items-start text-gray-700">
+                        <CurrencyRupeeIcon className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                        <span><strong>₹10,500</strong> per month (30 days stay)</span>
+                      </li>
+                    </ul>
+                  </div>
 
-                  <div className="bg-blue-50 rounded-xl p-4 mt-6">
+                  <div className="border-t border-gray-200 pt-6">
+                    <h4 className="font-bold text-gray-900 mb-4">Benefits</h4>
                     <ul className="space-y-2 text-sm">
                       {[
-                        'Transparent and affordable pricing',
-                        '3 meals every day included',
-                        'Flexible stay duration',
+                        'Transparent and affordable price',
+                        'Meals included in the pricing',
+                        'Hostel available for 1 day to monthly stays',
                         'Peace of mind knowing your helper is well cared for'
                       ].map((benefit, i) => (
                         <li key={i} className="flex items-start text-gray-700">

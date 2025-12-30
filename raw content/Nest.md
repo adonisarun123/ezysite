@@ -85,34 +85,23 @@ Simple, Transparent & Affordable Domestic Helper Accommodation
 
 Safe and comfortable stay for women helpers
 
-**Short Stay (Daily / Weekly)**
+**Stay Plans for Helpers**
 
-* **Daily Stay:** ₹299 (1 day)  
-* **Weekly Stay:** ₹1,750 (7 days)  
+* **Daily Stay:** ₹299 (1 day stay)  
+* **Weekly Stay:** ₹1,750 (7 days stay)  
+* **Monthly Stay:** ₹6,000 (30 days stay)
+
+**Benefits**
+
 * Safe women-only hostel  
 * 3 meals every day  
-* Basic facilities included  
-* The stay can be extended if needed
-
-**Long Stay (Monthly)**
-
-* **Monthly Stay:** ₹6,000 (30 days)  
-* Affordable rent with meals  
 * Comfortable rooms with basic facilities  
-* Learn skills while staying  
-* Safe and friendly environment
-
-**Benefits for Helpers**
-
-* Safe, women-only hostel with CCTV  
-* 3 meals every day (Breakfast, Lunch & Dinner)  
-* Comfortable rooms with beds, geyser, RO water, utensils, fans & more  
-* Learn skills while staying  
-* Budget-friendly and flexible stay options
+* Skill learning during the stay  
+* The stay can be extended if required
 
 ### **H3: Plans for Customers/Employers**
 
-For employers booking accommodation for their helpers/maids while away or unavailable at home:
+Temporary safe stay for your helper during your absence
 
 * **Daily Stay:** ₹550 (1 day stay)  
 * **Weekly Stay:** ₹3,500 (7 days stay)  
@@ -120,10 +109,9 @@ For employers booking accommodation for their helpers/maids while away or unavai
 
 **Benefits** 
 
-* Transparent and affordable pricing  
-* 3 meals every day (Breakfast, Lunch & Dinner)  
-* Comfortable rooms with beds, geyser, RO water, utensils, fans & more  
-* Flexible stay duration to match your travel or absence  
+* Transparent and affordable price  
+* Meals included in the pricing  
+* Hostel available for 1 day to monthly stays  
 * Peace of mind knowing your helper is well cared for
 
 **Note**

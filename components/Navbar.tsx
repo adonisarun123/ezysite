@@ -3,11 +3,11 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { 
-  Bars3Icon, 
-  XMarkIcon, 
-  PhoneIcon, 
-  ChevronDownIcon 
+import {
+  Bars3Icon,
+  XMarkIcon,
+  PhoneIcon,
+  ChevronDownIcon
 } from '@heroicons/react/24/outline'
 import { useUrgency } from './UrgencyContext'
 import { trackPhoneClick, trackCTAClick } from '@/lib/analytics'
@@ -23,7 +23,8 @@ interface NavigationItem {
 
 const navigation: NavigationItem[] = [
   { name: 'Home', href: '/', icon: Bars3Icon },
-  { name: 'Services',
+  {
+    name: 'Services',
     href: '/services',
     hasDropdown: true,
     dropdownItems: [
@@ -82,7 +83,7 @@ export default function Navbar() {
         <div className="px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
           <div className="mx-auto max-w-7xl">
             <nav className="flex items-center justify-between" aria-label="Global">
-              
+
               {/* Left Side: Logo and Desktop Navigation */}
               <div className="flex items-center gap-x-8 xl:gap-x-12">
                 {/* Logo Section */}
@@ -113,17 +114,16 @@ export default function Navbar() {
                         onMouseEnter={() => setOpenDropdown(item.name)}
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
-                        <button
-                          type="button"
+                        <Link
+                          href={item.href}
                           className="flex items-center gap-1 text-[15px] font-medium text-gray-700 hover:text-primary-600 transition-colors duration-200 outline-none"
-                          onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
                         >
                           {item.name}
                           <ChevronDownIcon
                             className={`h-3 w-3 transition-transform duration-200 ${openDropdown === item.name ? 'rotate-180' : ''}`}
                             strokeWidth={2.5}
                           />
-                        </button>
+                        </Link>
 
                         {openDropdown === item.name && (
                           <div className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
