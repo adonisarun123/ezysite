@@ -22,25 +22,22 @@ const poppins = Poppins({
 })
 
 // Dynamic imports for non-critical components to reduce initial bundle size
-const LLMOptimization = dynamic(() => import('../components/LLMOptimization'), { 
+const LLMOptimization = dynamic(() => import('../components/LLMOptimization'), {
   ssr: false,
-  loading: () => null 
+  loading: () => null
 })
-const UrgencyCTA = dynamic(() => import('../components/UrgencyCTA'), { 
+const UrgencyCTA = dynamic(() => import('../components/UrgencyCTA'), {
   ssr: false,
-  loading: () => null 
+  loading: () => null
 })
-const WhatsAppFloat = dynamic(() => import('../components/WhatsAppFloat'), { 
+const WhatsAppFloat = dynamic(() => import('../components/WhatsAppFloat'), {
   ssr: false,
-  loading: () => null 
+  loading: () => null
 })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ezyhelpers.com'),
-  title: {
-    default: 'Trusted House Help Service | EzyHelpers',
-    template: '%s | EzyHelpers'
-  },
+  title: 'Trusted House Help Service | EzyHelpers',
   description: "India's #1 house help service platform. Get verified maids, cooks, nannies & drivers in 24-72hrs. 10,000+ trusted families.",
   keywords: ['house help service', 'domestic help', 'maids', 'cooks', 'nannies', 'drivers', 'verified helpers', 'home services India'],
   authors: [{ name: 'EzyHelpers' }],
@@ -120,7 +117,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" href="/grid.svg" as="image" type="image/svg+xml" />
-        
+
         {/* Critical CSS - Inline only the absolute essentials for LCP */}
         <style dangerouslySetInnerHTML={{
           __html: `
@@ -163,7 +160,7 @@ export default function RootLayout({
             }
           `
         }} />
-        
+
         {/* Ultra-aggressive CSS deferral to eliminate render blocking */}
         <script dangerouslySetInnerHTML={{
           __html: `
@@ -219,20 +216,20 @@ export default function RootLayout({
         <noscript>
           <link rel="stylesheet" href="/dom-optimizations.css" />
         </noscript>
-        
+
         {/* Favicons */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#0074C8" />
-        
+
         {/* Core Schema Markup */}
         <OrganizationSchema />
         <WebSiteSchema />
-        
+
         {/* Tawk.to Chat Widget */}
-        <script 
+        <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
@@ -248,7 +245,7 @@ export default function RootLayout({
             `
           }}
         />
-        
+
         {/* Custom positioning for Tawk.to chat widget */}
         <style dangerouslySetInnerHTML={{
           __html: `
@@ -277,7 +274,7 @@ export default function RootLayout({
             }
           `
         }} />
-        
+
         {/* Google Analytics - Ultra-deferred to prevent blocking */}
         <script dangerouslySetInnerHTML={{
           __html: `
@@ -336,7 +333,7 @@ export default function RootLayout({
             })();
           `
         }} />
-        
+
         {/* Google tag (gtag.js) event - delayed navigation helper */}
         <script
           dangerouslySetInnerHTML={{
@@ -359,9 +356,9 @@ export default function RootLayout({
             `
           }}
         />
-        
+
         {/* Microsoft Clarity */}
-        <script 
+        <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
@@ -373,9 +370,9 @@ export default function RootLayout({
             `
           }}
         />
-        
+
         {/* Meta Pixel Code */}
-        <script 
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
@@ -400,11 +397,11 @@ export default function RootLayout({
           }}
         />
         {/* End Meta Pixel Code */}
-        
+
         {/* TrustBox script */}
         <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
         {/* End TrustBox script */}
-        
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
