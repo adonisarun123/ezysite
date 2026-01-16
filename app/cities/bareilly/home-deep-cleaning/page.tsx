@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Full House Deep Cleaning in Bareilly - Book Experts Now',
     description: 'Get full home deep cleaning in Bareilly for kitchen, bathroom, and entire house. Verified cleaners ensure spotless, hygienic results.',
-    url: 'https://ezyhelpers.com/cities/bareilly/home-deep-cleaning',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/home-deep-cleaning',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bareilly/home-deep-cleaning'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/home-deep-cleaning'
   }
 }
 
@@ -348,9 +348,9 @@ export default function BareillyHomeCleaning() {
         {/* Why Regular Deep Cleaning Matters for Every Home in Bareilly */}
         <section className="section-padding bg-white">
           <div className="container-custom">
-            <div className="max-w-5xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display">Why Regular Deep Cleaning Matters for Every Home in Bareilly</h3>
-              <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
+              <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Regular Deep Cleaning Matters for Every Home in Bareilly</h3>
+              <div className="max-w-5xl mx-auto md:mx-10 text-justify">
                 <p className="text-gray-700 mb-4">Deep cleaning is more than a tidy home - it keeps your family healthy and safe. Bareilly’s dust, pollution, and humidity can make homes dirty quickly. Regular cleaning prevents bacteria, allergens, and long-term damage.</p>
                 <p className="text-gray-700 mb-4">EzyHelpers goes beyond simple sweeping. We clean hidden dirt, bacteria, and allergens that daily cleaning misses. From disinfecting high-touch areas to scrubbing kitchens and bathrooms, we make your home fresh and safe.</p>
                 <p className="text-gray-700 mb-4">We clean every detail: chimney filters, bathroom corners, under furniture, ceiling fans, curtain rods, and behind appliances. Our cleaners use eco-friendly, allergy-safe products, safe for children, elders, and pets.</p>

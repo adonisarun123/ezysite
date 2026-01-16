@@ -251,9 +251,37 @@ export default function BareillyPage() {
                 {
                   title: "Home Deep Cleaning & Maintenance",
                   description: "Professional Deep Cleaning Services to keep your home hygienic, fresh, and well-maintained.",
-                  features: [" Full Home Deep Cleaning", "Kitchen, Bathroom & Floor cleaning", "Regular maintenance support"],
+                  features: ["Full Home Deep Cleaning", "Kitchen, Bathroom & Floor cleaning", "Regular maintenance support"],
                   href: "/cities/bareilly/home-deep-cleaning",
                   linkText: "Learn More About Home Deep Cleaning"
+                },
+                {
+                  title: "Sofa Cleaning",
+                  description: "Expert Sofa Cleaning to remove stains, dust, and allergens for a fresher living space.",
+                  features: ["Fabric & leather sofa cleaning", "Deep stain & odor removal", "Safe, quick-dry cleaning methods"],
+                  href: "/cities/bareilly/sofa-cleaning",
+                  linkText: "Learn More About Sofa Cleaning"
+                },
+                {
+                  title: "AC Repair",
+                  description: "Reliable Air Conditioner repair and servicing to keep your home cool and comfortable all year.",
+                  features: ["AC repair & basic fault fixing", "Regular servicing & gas refill", "Split & window AC support"],
+                  href: "/cities/bareilly/ac-repair",
+                  linkText: "Learn More About AC Repair"
+                },
+                {
+                  title: "Pest Control",
+                  description: "Effective Pest Control solutions to protect your home from harmful insects and rodents.",
+                  features: ["Pest control for residential homes", "Safe & long-lasting treatments", "Pest control for residential homes"],
+                  href: "/cities/bareilly/pest-control",
+                  linkText: "Learn More About Pest Control"
+                },
+                {
+                  title: "House Shifting",
+                  description: "Stress-free House Shifting services for safe and smooth relocation.",
+                  features: ["Packing & unpacking support", "Local & intercity shifting", "Careful handling of household items"],
+                  href: "/cities/bareilly/house-shifting",
+                  linkText: "Learn More About House Shifting"
                 }
               ].map((service, index) => (
                 <div key={index} className="bg-blue-50 rounded-lg p-6 hover:shadow-lg transition-shadow group">
