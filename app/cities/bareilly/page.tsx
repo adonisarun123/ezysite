@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
-import { 
+import {
   ShieldCheckIcon,
   ClockIcon,
   PhoneIcon,
@@ -247,6 +247,13 @@ export default function BareillyPage() {
                   features: ["Interior & exterior painting", "Wall repair & preparation", "Premium paint finishes"],
                   href: "/cities/bareilly/painting",
                   linkText: "Learn More About Painters"
+                },
+                {
+                  title: "Home Deep Cleaning & Maintenance",
+                  description: "Professional Deep Cleaning Services to keep your home hygienic, fresh, and well-maintained.",
+                  features: [" Full Home Deep Cleaning", "Kitchen, Bathroom & Floor cleaning", "Regular maintenance support"],
+                  href: "/cities/bareilly/home-deep-cleaning",
+                  linkText: "Learn More About Home Deep Cleaning"
                 }
               ].map((service, index) => (
                 <div key={index} className="bg-blue-50 rounded-lg p-6 hover:shadow-lg transition-shadow group">
