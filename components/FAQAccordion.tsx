@@ -33,7 +33,7 @@ export default function FAQAccordion({ faqs }: { faqs: FAQItem[] }) {
                 leaveTo="transform scale-y-95 opacity-0"
               >
                 <Disclosure.Panel className="px-6 pb-6 text-gray-600">
-                  <p className="leading-relaxed">{faq.answer}</p>
+                  <p className="leading-relaxed whitespace-pre-line">{faq.answer}</p>
                 </Disclosure.Panel>
               </Transition>
             </div>
