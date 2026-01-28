@@ -1,8 +1,7 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import Navbar from '@/components/Navbar'
 import NestBookingForm from '@/components/NestBookingForm'
 import FAQAccordion from '@/components/FAQAccordion'
 import {
@@ -168,25 +167,7 @@ export default function NestPageClient() {
 
   return (
     <main className="min-h-screen bg-white font-sans selection:bg-rose-100 selection:text-rose-900">
-      {/* Simple Header */}
-      <header className="bg-white py-4 border-b border-gray-100 sticky top-0 z-50 backdrop-blur-md bg-white/90 shadow-sm">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="inline-flex items-center space-x-2">
-            <div className="w-10 h-10 bg-transparent rounded-lg flex items-center justify-center">
-              <Image
-                src="/ezyhelper_logo_new.png"
-                alt="EzyHelpers Logo"
-                width={40}
-                height={40}
-                className="object-contain"
-                priority
-                quality={60}
-              />
-            </div>
-            <span className="text-xl font-bold text-primary-900 font-display tracking-tight">EzyHelpers</span>
-          </Link>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-rose-600 via-rose-700 to-rose-800 py-12 md:py-20">
