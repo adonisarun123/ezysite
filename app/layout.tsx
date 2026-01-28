@@ -132,8 +132,6 @@ export default function RootLayout({
             .container-critical{margin:0 auto;max-width:80rem;padding:0 1rem}
             
             /* Critical text styles */
-            .text-4xl{font-size:2.25rem;line-height:2.5rem}
-            .text-xl{font-size:1.25rem;line-height:1.75rem}
             .font-bold{font-weight:700}
             .font-semibold{font-weight:600}
             .text-center{text-align:center}

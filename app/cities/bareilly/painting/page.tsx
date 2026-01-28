@@ -447,7 +447,7 @@ export default function BareillyPainting() {
                 <div className="flex items-center text-indigo-600 font-semibold">Learn More</div>
               </Link>
 
-              <Link href="/cities/bareilly/appliance-repair" className="group bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-8 border border-emerald-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300">
+              <Link href="/cities/bareilly/ac-repair" className="group bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-8 border border-emerald-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300">
                 <HomeIcon className="h-12 w-12 text-emerald-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3">AC Repair Service</h3>
                 <p className="text-gray-600 mb-4">Reliable AC repairs to stay cool during Bareilly’s extreme summers.</p>
@@ -486,9 +486,6 @@ export default function BareillyPainting() {
 
         {/* Importance Section */}
         <section className="section-padding bg-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-pink-50 rounded-bl-full -mr-32 -mt-32 opacity-50"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-50 rounded-tr-full -ml-32 -mb-32 opacity-50"></div>
-
           <div className="container-custom relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
