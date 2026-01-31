@@ -54,7 +54,7 @@ export default function BangaloreHomeChef() {
         { question: 'What if I’m not satisfied with the chef or need a replacement?', answer: 'If you are not fully satisfied with your assigned chef, EzyHelpers provides a replacement within one week or 15 days. You will need to notify us 15 days prior to the replacement.' },
     ]
 
-    const areasWeClean = [
+    const whyneed = [
         'Trained chefs, not regular helpers',
         'Only cooking work, no household chores',
         'Planned menus, not last-minute cooking',
@@ -232,7 +232,7 @@ export default function BangaloreHomeChef() {
                     </div>
                 </section>
 
-                {/* Types of Areas We Clean Thoroughly */}
+                {/* why need */}
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-10">
@@ -242,7 +242,7 @@ export default function BangaloreHomeChef() {
                         <div className="bg-pink-100/50 rounded-2xl p-8">
                             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">What Makes Our Home Chef a Professional Service</h3>
                             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-                                {areasWeClean.map((item, idx) => (
+                                {whyneed.map((item, idx) => (
                                     <div key={idx} className="bg-white rounded-lg py-4 px-2 text-center shadow-sm hover:shadow-md transition-all duration-300 text-sm font-medium text-gray-700 cursor-default">
                                         {item}
                                     </div>

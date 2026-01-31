@@ -57,7 +57,7 @@ export default function BangaloreChauffeurService() {
         { question: 'Can Chauffeurs drive both automatic and manual cars?', answer: 'Yes. EzyHelpers Chauffeurs are trained to drive both automatic and manual cars, including sedans, SUVs, and luxury vehicles. They adapt easily to different car models, transmission types, and driving conditions, ensuring smooth and safe travel across Bangalore.' },
     ]
 
-    const areasWeClean = [
+    const whatdoes = [
         'Drive premium and high-end cars smoothly and safely in Bangalore traffic',
         'Comfortable driving both automatic and manual cars',
         'Take proper care of the car and handle it carefully at all times',
@@ -214,7 +214,7 @@ export default function BangaloreChauffeurService() {
 
                         <div className="max-w-6xl mx-auto">
                             <div className="grid md:grid-cols-2 gap-6">
-                                {areasWeClean.map((item, idx) => (
+                                {whatdoes.map((item, idx) => (
                                     <div key={idx} className="group bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6 border border-yellow-100 hover:border-yellow-300 hover:shadow-lg transition-all duration-300">
                                         <div className="flex items-start gap-4">
                                             <div className="flex-shrink-0 mt-1">
