@@ -13,7 +13,15 @@ interface AdFormData {
   message: string
 }
 
-export default function AdLeadForm() {
+interface AdLeadFormProps {
+  city?: string
+  trackingEvent?: string
+}
+
+export default function AdLeadForm({
+  city = 'Bangalore',
+  trackingEvent = 'live_in_maid_bangalore_ad'
+}: AdLeadFormProps) {
   const [formData, setFormData] = useState<AdFormData>({
     name: '',
     phone: '',
@@ -28,10 +36,10 @@ export default function AdLeadForm() {
   // Track form start when component mounts
   useEffect(() => {
     if (!hasTrackedStart) {
-      trackFormStart('ad_lead_form', 'live_in_maid_bangalore_ad');
+      trackFormStart('ad_lead_form', trackingEvent);
       setHasTrackedStart(true);
     }
-  }, [hasTrackedStart])
+  }, [hasTrackedStart, trackingEvent])
 
   const handleInputChange = (field: keyof AdFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
@@ -47,19 +55,19 @@ export default function AdLeadForm() {
 
   const validateAll = () => {
     const errors: { [key: string]: string } = {}
-    
+
     if (!formData.name.trim()) {
       errors.name = 'Name is required'
     } else if (formData.name.trim().length < 3) {
       errors.name = 'Name must be at least 3 characters'
     }
-    
+
     if (!formData.phone.trim()) {
       errors.phone = 'Phone number is required'
     } else if (!/^[5-9][0-9]{9}$/.test(formData.phone.trim())) {
       errors.phone = 'Enter a valid 10-digit phone number starting with 5-9'
     }
-    
+
     // Email is optional in original form, but user asked for "Email" field. 
     // Usually in simple lead forms email might be required or optional. 
     // I'll make it optional but validate format if present, or just text.
@@ -84,16 +92,16 @@ export default function AdLeadForm() {
       try {
         // Track form submission
         trackFormSubmit('ad_lead_form', formData);
-        
+
         const newRequestId = generateRequestId()
-        
+
         // Prepare data for Supabase and Webhook
         // Mapping simple fields to complex schema
         const submissionData = {
           name: formData.name.trim(),
           phone: formData.phone.trim(),
           email: formData.email.trim(),
-          city: 'Bangalore', // Hardcoded for this ad page
+          city: city,
           service: 'live-in', // Hardcoded for this ad page
           // Map message to specificRequirements
           specificRequirements: formData.message.trim(),
@@ -107,12 +115,12 @@ export default function AdLeadForm() {
           familySize: '',
           preferredGender: ''
         }
-        
+
         // Store in Supabase
         const { error } = await supabase.from('hire_helper_leads').insert([submissionData])
-        
+
         if (error) throw error
-        
+
         // Send email notification
         try {
           const emailResponse = await fetch('/api/send-lead-email', {
@@ -140,19 +148,19 @@ export default function AdLeadForm() {
         } catch (emailError) {
           console.error('Email sending error:', emailError);
         }
-        
+
         // Send webhook
         // Note: sendWebhook expects the data structure. I'll pass the submissionData.
         sendWebhook('hire_helper', {
-            ...submissionData,
-            languages: [],
-            additionalServices: [],
-            serviceType: 'live-in'
+          ...submissionData,
+          languages: [],
+          additionalServices: [],
+          serviceType: 'live-in'
         }, newRequestId).catch(console.error)
-        
+
         // Track successful form completion
         trackFormComplete('ad_lead_form', newRequestId);
-        
+
         setRequestId(newRequestId)
         setSubmitStatus('success')
       } catch (error) {
@@ -179,7 +187,7 @@ export default function AdLeadForm() {
         <p className="text-gray-600 mb-6">
           Thank you for your interest. Our team will call you shortly to discuss your requirements.
         </p>
-        <button 
+        <button
           onClick={() => {
             setFormData({ name: '', phone: '', email: '', message: '' })
             setSubmitStatus('idle')
@@ -198,7 +206,7 @@ export default function AdLeadForm() {
       <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-secondary-400 to-success-400"></div>
       <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Get a Call Back</h3>
       <p className="text-gray-500 text-center mb-6 text-sm">Fill the form below to get verified profiles</p>
-      
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -209,9 +217,8 @@ export default function AdLeadForm() {
             required
             value={formData.name}
             onChange={(e) => handleInputChange('name', e.target.value)}
-            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all ${
-              formErrors.name ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50 focus:bg-white'
-            }`}
+            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all ${formErrors.name ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50 focus:bg-white'
+              }`}
             placeholder="Enter your name"
           />
           {formErrors.name && <p className="text-xs text-red-500 mt-1 ml-1">{formErrors.name}</p>}
@@ -228,9 +235,8 @@ export default function AdLeadForm() {
               required
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
-              className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all ${
-                formErrors.phone ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50 focus:bg-white'
-              }`}
+              className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all ${formErrors.phone ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50 focus:bg-white'
+                }`}
               placeholder="99999 99999"
               maxLength={10}
             />
@@ -246,9 +252,8 @@ export default function AdLeadForm() {
             type="email"
             value={formData.email}
             onChange={(e) => handleInputChange('email', e.target.value)}
-            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all ${
-              formErrors.email ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50 focus:bg-white'
-            }`}
+            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all ${formErrors.email ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50 focus:bg-white'
+              }`}
             placeholder="john@example.com"
           />
           {formErrors.email && <p className="text-xs text-red-500 mt-1 ml-1">{formErrors.email}</p>}
@@ -290,7 +295,7 @@ export default function AdLeadForm() {
             </>
           )}
         </button>
-        
+
         <p className="text-xs text-center text-gray-400 mt-4">
           By submitting, you agree to our terms and privacy policy.
         </p>

@@ -5,10 +5,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import AdLeadForm from '@/components/AdLeadForm'
 import FAQAccordion from '@/components/FAQAccordion'
-import { 
-  CheckCircleIcon, 
-  ShieldCheckIcon, 
-  ClockIcon, 
+import {
+  CheckCircleIcon,
+  ShieldCheckIcon,
+  ClockIcon,
   UserGroupIcon,
   ArrowPathIcon,
   PhoneIcon,
@@ -103,8 +103,8 @@ export default function LiveInMaidBangalorePage() {
   ]
 
   const areas = [
-    'HSR Layout', 'Koramangala', 'Whitefield', 'JP Nagar', 'Jayanagar', 
-    'Indiranagar', 'Marathahalli', 'BTM Layout', 'Malleshwaram', 'Hebbal', 
+    'HSR Layout', 'Koramangala', 'Whitefield', 'JP Nagar', 'Jayanagar',
+    'Indiranagar', 'Marathahalli', 'BTM Layout', 'Malleshwaram', 'Hebbal',
     'Electronic City', 'Yelahanka', 'All major areas'
   ]
 
@@ -177,8 +177,8 @@ export default function LiveInMaidBangalorePage() {
       <section className="relative overflow-hidden bg-primary-900 py-12 md:py-20">
         {/* Background Pattern */}
         <div className="absolute inset-0">
-           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-800 to-transparent opacity-50"></div>
-           <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-900 rounded-full mix-blend-overlay filter blur-3xl opacity-30"></div>
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-800 to-transparent opacity-50"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-900 rounded-full mix-blend-overlay filter blur-3xl opacity-30"></div>
         </div>
 
         <div className="container-custom relative z-10">
@@ -189,14 +189,14 @@ export default function LiveInMaidBangalorePage() {
                 <SparklesIcon className="h-4 w-4 text-yellow-400 mr-2" />
                 <span className="text-white/90 text-sm font-medium">Premium Verified Helpers</span>
               </div>
-              
+
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight font-display">
                 Hire Verified <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-300 to-success-300">Live-In Maids</span> in Bangalore
               </h1>
               <p className="text-xl text-primary-100 mb-8 leading-relaxed font-light">
                 Background-checked, trained maids for housekeeping, baby care & elderly care. <span className="text-white font-medium">Quick joining in 48-72 hours.</span>
               </p>
-              
+
               <div className="grid sm:grid-cols-2 gap-4 mb-10">
                 {[
                   'Quick Hiring',
@@ -216,7 +216,7 @@ export default function LiveInMaidBangalorePage() {
 
             {/* Right Form */}
             <div className="relative z-10">
-              <AdLeadForm />
+              <AdLeadForm city="Bangalore" trackingEvent="live_in_maid_bangalore_ad" />
             </div>
           </div>
         </div>
@@ -226,7 +226,7 @@ export default function LiveInMaidBangalorePage() {
       <section className="section-padding bg-white relative overflow-hidden">
         {/* Pepper Pattern (Light) */}
         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:20px_20px]"></div>
-        
+
         <div className="container-custom relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Choose EzyHelpers</h2>
@@ -250,8 +250,8 @@ export default function LiveInMaidBangalorePage() {
 
       {/* Services Section (DARK) - Visual Break */}
       <section className="section-padding bg-primary-800 relative">
-         {/* Pattern */}
-         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        {/* Pattern */}
+        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
         <div className="container-custom relative z-10">
           <div className="text-center mb-12">
@@ -318,15 +318,15 @@ export default function LiveInMaidBangalorePage() {
 
       {/* CTA Section (DARK/VIBRANT) - Final Push */}
       <section className="py-20 bg-primary-600 text-white text-center relative overflow-hidden">
-         {/* Decorative Elements */}
-         <div className="absolute top-0 left-0 w-full h-full opacity-10">
-             <div className="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-             <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary-400 rounded-full blur-3xl mix-blend-overlay"></div>
-         </div>
+        {/* Decorative Elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary-400 rounded-full blur-3xl mix-blend-overlay"></div>
+        </div>
 
         <div className="container-custom relative z-10">
           <h2 className="text-3xl text-white md:text-5xl font-bold mb-6 font-display leading-tight">
-            Ready to Hire a Trusted <br/>Live-In Maid?
+            Ready to Hire a Trusted <br />Live-In Maid?
           </h2>
           <p className="text-xl text-primary-100 mb-10 max-w-2xl mx-auto font-light">
             Join 10,000+ Bangalore families who trust EzyHelpers for safe, reliable home help.
@@ -363,8 +363,8 @@ export default function LiveInMaidBangalorePage() {
 
       {/* FAQ Section (LIGHT) - Trust & Info */}
       <section className="section-padding bg-white relative">
-         {/* Pepper Pattern (Light) */}
-         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        {/* Pepper Pattern (Light) */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
         <div className="container-custom relative z-10">
           <div className="text-center mb-12">
