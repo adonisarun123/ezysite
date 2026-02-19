@@ -271,7 +271,7 @@ export default function ServicesPage() {
     {
       title: "Premium Chauffeur",
       description: "Book Premium Chauffeurs for Luxury cars, delivering safe, smooth, stress-free travel always.",
-      href: "services/premium-chauffeur-service",
+      href: "/services/premium-chauffeur-service",
       icon: TruckIcon,
       bgColor: "bg-amber-50",
       iconColor: "text-amber-600",
@@ -281,7 +281,7 @@ export default function ServicesPage() {
     }, {
       title: "Professional Chef",
       description: "Book Professional Chefs at home for daily meals, healthy diets, and special occasions.",
-      href: "services/professional-chef-for-home",
+      href: "/services/professional-chef-for-home",
       icon: FireIcon,
       bgColor: "bg-amber-50",
       iconColor: "text-amber-600",
@@ -291,7 +291,7 @@ export default function ServicesPage() {
     }, {
       title: "Japa Nanny",
       description: "Book trained Japa Nannies for newborn care and mother recovery support.",
-      href: "services/japa-nanny-services",
+      href: "/services/japa-nanny-services",
       icon: SparklesIcon,
       bgColor: "bg-amber-50",
       iconColor: "text-amber-600",
@@ -301,7 +301,7 @@ export default function ServicesPage() {
     }, {
       title: "English-Speaking Babysitter",
       description: "Hire English-speaking Babysitters to support learning, confidence, and daily childcare.",
-      href: "services/english-speaking-babysitters",
+      href: "/services/english-speaking-babysitters",
       icon: AcademicCapIcon,
       bgColor: "bg-amber-50",
       iconColor: "text-amber-600",
@@ -311,7 +311,7 @@ export default function ServicesPage() {
     }, {
       title: "Patient Care Services",
       description: "Get compassionate Patient Care at home for daily support, comfort, and safety.",
-      href: "services/patient-care-services-at-home",
+      href: "/services/patient-care-services-at-home",
       icon: HeartIcon,
       bgColor: "bg-amber-50",
       iconColor: "text-amber-600",
@@ -321,7 +321,7 @@ export default function ServicesPage() {
     }, {
       title: "Special Needs Caregiver",
       description: "Book trained non-medical caregivers who support children with special needs in their daily home routines.",
-      href: "services/special-needs-caregiver",
+      href: "/services/special-needs-caregiver",
       icon: UserGroupIcon,
       bgColor: "bg-amber-50",
       iconColor: "text-amber-600",
@@ -331,7 +331,7 @@ export default function ServicesPage() {
     }, {
       title: "Dog Pet Sitters",
       description: "Find trusted Dog Pet Sitters for daily care and home support.",
-      href: "services/dog-pet-sitters",
+      href: "/services/dog-pet-sitters",
       icon: HomeIcon,
       bgColor: "bg-amber-50",
       iconColor: "text-amber-600",
