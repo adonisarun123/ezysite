@@ -106,9 +106,9 @@ export default function HelperJobsPage() {
                             </div>
 
                             <div className="grid grid-cols-6 gap-2 mb-6 max-w-5xl mx-auto px-1 md:flex md:flex-wrap md:justify-center">
-                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Agents</div>
-                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Fees</div>
-                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Commission</div>
+                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[10px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Agents</div>
+                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[10px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Fees</div>
+                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Commission</div>
                                 <div className="col-span-3 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ Job Support Always</div>
                                 <div className="col-span-3 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ Written Agreement</div>
                             </div>
