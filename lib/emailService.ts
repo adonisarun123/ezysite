@@ -930,15 +930,18 @@ const generateCustomerRequirementEmail = (formData: CustomerRequirementFormData)
 
         <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #1e293b;">Daily Routine & Household</h3>
-          <p><strong>Wake Up Early:</strong> ${formData.wakeUpEarly ? 'Yes' : 'No'}</p>
+          <p><strong>Wake Up Early:</strong> ${formData.wakeUpEarly ? `Yes (at ${formData.wakeupTime || 'Not specified'})` : 'No'}</p>
           <p><strong>Sleeping Time:</strong> ${formData.usualSleepingTime || 'Not specified'}</p>
           <p><strong>Rest Time:</strong> ${formData.restTimeProvided ? `Yes (${formData.restTimeDetails})` : 'No'}</p>
+          <p><strong>Dietary Preference:</strong> ${formData.dietaryPreference === 'vegetarian' ? 'Vegetarian Only' : 'Vegetarian & Non-Vegetarian'}</p>
           <p><strong>Food & Snacks:</strong> Tea/Snacks: ${formData.provideTeaSnacks ? 'Yes' : 'No'}, Meals: ${formData.provideMeals ? 'Yes' : 'No'}</p>
           <p><strong>Food Arrangement:</strong> ${formData.foodArrangement || 'Not specified'}</p>
+          <p><strong>Personal Care Provided:</strong> ${formData.personalCareItems?.join(', ') || 'None'}</p>
           <p><strong>Tasks:</strong> ${tasksList}</p>
           <p><strong>Gas Stove:</strong> ${formData.gasStoveType || 'Not specified'}</p>
           <p><strong>Drop Children:</strong> ${formData.dropChildrenBusStop ? 'Yes' : 'No'}</p>
           <p><strong>House Details:</strong> Pets: ${formData.hasPets ? 'Yes' : 'No'}, Elderly: ${formData.hasElderly ? 'Yes' : 'No'}, Type: ${formData.houseType || 'Not specified'}</p>
+          <p><strong>Separate Room:</strong> ${formData.separateRoomProvided === true ? 'Yes' : formData.separateRoomProvided === false ? 'No' : 'Not specified'}</p>
           <p><strong>BHK / House Size:</strong> ${formData.bhkType === 'other' ? formData.bhkOther || 'Other' : formData.bhkType?.toUpperCase() || 'Not specified'}</p>
           <p><strong>Menstrual Restrictions:</strong> ${formData.kitchenRestrictionMenstrualPeriods ? 'Yes' : 'No'}</p>
         </div>
@@ -973,15 +976,18 @@ PREFERENCES:
 - House Rules: ${formData.houseRules || 'None'}
 
 DAILY ROUTINE & HOUSEHOLD:
-- Wake Up Early: ${formData.wakeUpEarly ? 'Yes' : 'No'}
+- Wake Up Early: ${formData.wakeUpEarly ? `Yes (at ${formData.wakeupTime || 'Not specified'})` : 'No'}
 - Sleeping Time: ${formData.usualSleepingTime || 'Not specified'}
 - Rest Time: ${formData.restTimeProvided ? `Yes (${formData.restTimeDetails})` : 'No'}
+- Dietary Preference: ${formData.dietaryPreference === 'vegetarian' ? 'Vegetarian Only' : 'Vegetarian & Non-Vegetarian'}
 - Food & Snacks: Tea/Snacks: ${formData.provideTeaSnacks ? 'Yes' : 'No'}, Meals: ${formData.provideMeals ? 'Yes' : 'No'}
 - Food Arrangement: ${formData.foodArrangement || 'Not specified'}
+- Personal Care Provided: ${formData.personalCareItems?.join(', ') || 'None'}
 - Tasks: ${tasksList}
 - Gas Stove: ${formData.gasStoveType || 'Not specified'}
 - Drop Children: ${formData.dropChildrenBusStop ? 'Yes' : 'No'}
 - House Details: Pets: ${formData.hasPets ? 'Yes' : 'No'}, Elderly: ${formData.hasElderly ? 'Yes' : 'No'}, Type: ${formData.houseType || 'Not specified'}
+- Separate Room: ${formData.separateRoomProvided === true ? 'Yes' : formData.separateRoomProvided === false ? 'No' : 'Not specified'}
 - BHK / House Size: ${formData.bhkType === 'other' ? formData.bhkOther || 'Other' : formData.bhkType?.toUpperCase() || 'Not specified'}
 - Menstrual Restrictions: ${formData.kitchenRestrictionMenstrualPeriods ? 'Yes' : 'No'}
 

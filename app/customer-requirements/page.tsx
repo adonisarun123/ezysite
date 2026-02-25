@@ -478,6 +478,16 @@ export default function CustomerRequirementsPage() {
                                     </div>
 
                                     <div className="space-y-4">
+                                        <label className="text-sm font-semibold text-gray-700">At what time should the helper wake up?</label>
+                                        <input
+                                            type="time"
+                                            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none"
+                                            value={formData.wakeupTime || ''}
+                                            onChange={(e) => handleInputChange('wakeupTime', e.target.value)}
+                                        />
+                                    </div>
+
+                                    <div className="space-y-4">
                                         <label className="text-sm font-semibold text-gray-700">Usual sleeping time at your home</label>
                                         <select
                                             className="w-full px-4 py-3 rounded-lg border border-gray-200"
@@ -559,6 +569,49 @@ export default function CustomerRequirementsPage() {
                                                 >
                                                     {opt.replace(/_/g, ' ').toUpperCase()}
                                                 </button>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4 col-span-full">
+                                        <label className="text-sm font-semibold text-gray-700">Dietary Preference of Household</label>
+                                        <div className="grid grid-cols-2 gap-4">
+                                            {[
+                                                { id: 'vegetarian', label: 'Vegetarian Only' },
+                                                { id: 'non_vegetarian', label: 'Vegetarian & Non-Vegetarian' }
+                                            ].map(opt => (
+                                                <button
+                                                    key={opt.id}
+                                                    type="button"
+                                                    onClick={() => handleInputChange('dietaryPreference', opt.id)}
+                                                    className={`py-4 px-2 rounded-xl border-2 text-xs font-bold text-center ${formData.dietaryPreference === opt.id ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-gray-100 text-gray-400'}`}
+                                                >
+                                                    {opt.label.toUpperCase()}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4 col-span-full pt-4">
+                                        <label className="text-sm font-semibold text-gray-700">Which personal care items will you provide?</label>
+                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                            {['Soap', 'Shampoo', 'Toothpaste', 'Toothbrush', 'Cream', 'Oil', 'None'].map(item => (
+                                                <label key={item} className={`flex items-center p-3 rounded-xl border-2 cursor-pointer transition-all ${formData.personalCareItems?.includes(item) ? 'border-blue-200 bg-blue-50 text-blue-700' : 'border-gray-50 text-gray-500 hover:border-gray-100'}`}>
+                                                    <input
+                                                        type="checkbox"
+                                                        className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-gray-300"
+                                                        checked={formData.personalCareItems?.includes(item) || false}
+                                                        onChange={(e) => {
+                                                            const currentItems = formData.personalCareItems || [];
+                                                            if (e.target.checked) {
+                                                                handleInputChange('personalCareItems', [...currentItems, item]);
+                                                            } else {
+                                                                handleInputChange('personalCareItems', currentItems.filter(i => i !== item));
+                                                            }
+                                                        }}
+                                                    />
+                                                    <span className="ml-2 text-xs font-bold">{item.toUpperCase()}</span>
+                                                </label>
                                             ))}
                                         </div>
                                     </div>
@@ -729,6 +782,22 @@ export default function CustomerRequirementsPage() {
                                                 />
                                             </div>
                                         )}
+                                    </div>
+
+                                    <div className="space-y-4 col-span-full">
+                                        <label className="text-sm font-semibold text-gray-700">Will you provide a separate room for the helper?</label>
+                                        <div className="flex gap-4">
+                                            {['Yes', 'No'].map(opt => (
+                                                <button
+                                                    key={opt}
+                                                    type="button"
+                                                    onClick={() => handleInputChange('separateRoomProvided', opt === 'Yes')}
+                                                    className={`flex-1 py-3 rounded-xl border-2 font-bold ${formData.separateRoomProvided === (opt === 'Yes') ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-gray-100 text-gray-400'}`}
+                                                >
+                                                    {opt}
+                                                </button>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

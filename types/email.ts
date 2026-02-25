@@ -153,7 +153,10 @@ export interface CustomerRequirementFormData {
   languages?: ('kannada' | 'hindi' | 'tamil' | 'telugu' | 'english' | 'no_preference')[];
   houseRules?: string;
   wakeUpEarly?: boolean;
+  wakeupTime?: string;
   usualSleepingTime?: 'before_10pm' | '10_11pm' | 'after_11pm';
+  dietaryPreference?: 'vegetarian' | 'non_vegetarian';
+  personalCareItems?: string[];
   restTimeProvided?: boolean;
   restTimeDetails?: string;
   provideTeaSnacks?: boolean;
@@ -171,6 +174,7 @@ export interface CustomerRequirementFormData {
   hasPets?: boolean;
   hasElderly?: boolean;
   houseType?: 'single_story' | 'duplex';
+  separateRoomProvided?: boolean;
   bhkType?: '1bhk' | '2bhk' | '3bhk' | '4bhk' | 'other';
   bhkOther?: string;
   kitchenRestrictionMenstrualPeriods?: boolean;
