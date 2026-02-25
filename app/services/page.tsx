@@ -444,7 +444,7 @@ export default function ServicesPage() {
 
                     {/* Number with gradient */}
                     <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-pink-300 to-rose-300 bg-clip-text text-transparent mb-2 group-hover:from-pink-200 group-hover:to-rose-200 transition-all duration-500">
-                      50K+
+                      10K+
                     </div>
                     <div className="text-pink-100 text-xs sm:text-sm font-medium group-hover:text-white transition-colors duration-300">
                       Happy Customers
@@ -471,7 +471,7 @@ export default function ServicesPage() {
 
                     {/* Number with gradient */}
                     <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text text-transparent mb-2 group-hover:from-emerald-200 group-hover:to-teal-200 transition-all duration-500">
-                      8
+                      10+
                     </div>
                     <div className="text-emerald-100 text-xs sm:text-sm font-medium group-hover:text-white transition-colors duration-300">
                       Service Categories
@@ -528,7 +528,7 @@ export default function ServicesPage() {
                       250+
                     </div>
                     <div className="text-sky-100 text-xs sm:text-sm font-medium group-hover:text-white transition-colors duration-300">
-                      Locations Covered
+                      Localities Covered
                     </div>
 
                     {/* Floating particles */}
