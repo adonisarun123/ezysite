@@ -414,7 +414,7 @@ export default function CustomerRequirementsPage() {
                                 <div className="space-y-4">
                                     <label className="text-sm font-semibold text-gray-700">Language Preference (Multi-select)</label>
                                     <div className="flex flex-wrap gap-2">
-                                        {['kannada', 'hindi', 'tamil', 'telugu', 'english', 'no_preference'].map(lang => (
+                                        {(['kannada', 'hindi', 'tamil', 'telugu', 'english', 'no_preference'] as const).map(lang => (
                                             <button
                                                 key={lang}
                                                 type="button"
