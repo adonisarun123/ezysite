@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import pRetry from 'p-retry';
 import { EMAIL } from './constants';
 import { logger } from './logger';
-import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, EmailSendResult, LeadType } from '../types/email';
+import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, EmailSendResult, LeadType } from '../types/email';
 
 // Utility function to format phone numbers to bypass DLP (shows all digits with spaces)
 const formatPhoneForEmail = (phone: string): string => {
@@ -892,6 +892,105 @@ async function sendEmailWithRetry(
 }
 
 // Main email sending function
+const generateCustomerRequirementEmail = (formData: CustomerRequirementFormData): EmailContent => {
+  const formattedPhone = formatPhoneForEmail(formData.mobileNumber);
+
+  const tasksList = formData.tasks ? Object.entries(formData.tasks)
+    .filter(([_, value]) => value === true)
+    .map(([key, _]) => key.replace(/([A-Z])/g, ' $1').toLowerCase())
+    .join(', ') : 'None';
+
+  return {
+    subject: `New Customer Requirement: ${formData.customerName} - ${formData.serviceType}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto;">
+        <h2 style="color: #2563eb; background-color: #eff6ff; padding: 20px; border-radius: 8px; margin: 0 0 20px 0;">🏠 New Customer Requirement</h2>
+        
+        <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #334155;">Customer Details</h3>
+          <p><strong>Name:</strong> ${formData.customerName}</p>
+          <p><strong>Phone:</strong> <a href="tel:${formData.mobileNumber}" style="text-decoration: none; color: #1e40af;">${formattedPhone}</a></p>
+          <p><strong>Address:</strong> ${formData.houseNumber}, ${formData.apartmentName}, ${formData.areaLocality}</p>
+        </div>
+
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #1e293b;">Service Requirements</h3>
+          <p><strong>Service Type:</strong> ${formData.serviceType}${formData.serviceType === 'other' ? ` (${formData.serviceTypeOther})` : ''}</p>
+          <p><strong>Work Type:</strong> ${formData.workType}</p>
+          <p><strong>Timings:</strong> ${formData.workTiming.startTime} - ${formData.workTiming.endTime}</p>
+        </div>
+
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #1e293b;">Preferences</h3>
+          <p><strong>Age Preference:</strong> ${formData.agePreference || 'No preference'}</p>
+          <p><strong>Languages:</strong> ${formData.languages?.join(', ') || 'No preference'}</p>
+          <p><strong>House Rules:</strong> ${formData.houseRules || 'None'}</p>
+        </div>
+
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #1e293b;">Daily Routine & Household</h3>
+          <p><strong>Wake Up Early:</strong> ${formData.wakeUpEarly ? 'Yes' : 'No'}</p>
+          <p><strong>Sleeping Time:</strong> ${formData.usualSleepingTime || 'Not specified'}</p>
+          <p><strong>Rest Time:</strong> ${formData.restTimeProvided ? `Yes (${formData.restTimeDetails})` : 'No'}</p>
+          <p><strong>Food & Snacks:</strong> Tea/Snacks: ${formData.provideTeaSnacks ? 'Yes' : 'No'}, Meals: ${formData.provideMeals ? 'Yes' : 'No'}</p>
+          <p><strong>Food Arrangement:</strong> ${formData.foodArrangement || 'Not specified'}</p>
+          <p><strong>Tasks:</strong> ${tasksList}</p>
+          <p><strong>Gas Stove:</strong> ${formData.gasStoveType || 'Not specified'}</p>
+          <p><strong>Drop Children:</strong> ${formData.dropChildrenBusStop ? 'Yes' : 'No'}</p>
+          <p><strong>House Details:</strong> Pets: ${formData.hasPets ? 'Yes' : 'No'}, Elderly: ${formData.hasElderly ? 'Yes' : 'No'}, Type: ${formData.houseType || 'Not specified'}</p>
+          <p><strong>Menstrual Restrictions:</strong> ${formData.kitchenRestrictionMenstrualPeriods ? 'Yes' : 'No'}</p>
+        </div>
+
+        <div style="background-color: #fffbeb; padding: 20px; border: 1px solid #fbbf24; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #92400e;">Policy Understandings</h3>
+          <p><strong>Emergency Leave:</strong> ${formData.emergencyLeaveOk ? 'Yes' : 'No'}</p>
+          <p><strong>Salary Policy:</strong> Agreed to pay by 7th, no advance salary, provide feedback within 1 month.</p>
+        </div>
+
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #e2e8f0;">
+        <p style="color: #64748b; font-size: 12px;">This email was automatically generated from the EzyHelpers website customer requirement form.</p>
+      </div>
+    `,
+    text: `
+New Customer Requirement: ${formData.customerName} - ${formData.serviceType}
+
+CUSTOMER DETAILS:
+- Name: ${formData.customerName}
+- Phone: ${formattedPhone}
+- Address: ${formData.houseNumber}, ${formData.apartmentName}, ${formData.areaLocality}
+
+SERVICE REQUIREMENTS:
+- Service Type: ${formData.serviceType}${formData.serviceType === 'other' ? ` (${formData.serviceTypeOther})` : ''}
+- Work Type: ${formData.workType}
+- Timings: ${formData.workTiming.startTime} - ${formData.workTiming.endTime}
+
+PREFERENCES:
+- Age Preference: ${formData.agePreference || 'No preference'}
+- Languages: ${formData.languages?.join(', ') || 'No preference'}
+- House Rules: ${formData.houseRules || 'None'}
+
+DAILY ROUTINE & HOUSEHOLD:
+- Wake Up Early: ${formData.wakeUpEarly ? 'Yes' : 'No'}
+- Sleeping Time: ${formData.usualSleepingTime || 'Not specified'}
+- Rest Time: ${formData.restTimeProvided ? `Yes (${formData.restTimeDetails})` : 'No'}
+- Food & Snacks: Tea/Snacks: ${formData.provideTeaSnacks ? 'Yes' : 'No'}, Meals: ${formData.provideMeals ? 'Yes' : 'No'}
+- Food Arrangement: ${formData.foodArrangement || 'Not specified'}
+- Tasks: ${tasksList}
+- Gas Stove: ${formData.gasStoveType || 'Not specified'}
+- Drop Children: ${formData.dropChildrenBusStop ? 'Yes' : 'No'}
+- House Details: Pets: ${formData.hasPets ? 'Yes' : 'No'}, Elderly: ${formData.hasElderly ? 'Yes' : 'No'}, Type: ${formData.houseType || 'Not specified'}
+- Menstrual Restrictions: ${formData.kitchenRestrictionMenstrualPeriods ? 'Yes' : 'No'}
+
+POLICY UNDERSTANDINGS:
+- Emergency Leave: ${formData.emergencyLeaveOk ? 'Yes' : 'No'}
+- Salary Policy: Agreed to pay by 7th, no advance salary, provide feedback within 1 month.
+
+---
+This email was automatically generated from the EzyHelpers website customer requirement form.
+    `,
+  };
+};
+
 export const sendLeadEmail = async (
   leadType: LeadType,
   formData: any, // TODO: Create union type for all form data types
@@ -953,6 +1052,9 @@ export const sendLeadEmail = async (
         break;
       case 'helper_registration':
         emailContent = generateHelperRegistrationEmail(formData);
+        break;
+      case 'customer_requirement':
+        emailContent = generateCustomerRequirementEmail(formData);
         break;
       case 'requirement':
         emailContent = generateRequirementLeadEmail({ ...formData, requestId: requestId || 'N/A', sourceUrl });
