@@ -135,6 +135,55 @@ export interface HelperRegistrationFormData {
   internalNotes?: string;
 }
 
+export interface CustomerRequirementFormData {
+  customerName: string;
+  mobileNumber: string;
+  houseNumber: string;
+  areaLocality: string;
+  apartmentName: string;
+  serviceType: 'maid' | 'cook' | 'babysitter' | 'elderly_care' | 'other';
+  serviceTypeOther?: string;
+  workType: 'live_in' | 'full_time' | 'part_time';
+  workTiming: {
+    startTime: string;
+    endTime: string;
+  };
+  agePreference?: 'no_preference' | 'below_30' | '30_45' | 'above_45';
+  languages?: ('kannada' | 'hindi' | 'tamil' | 'telugu' | 'english' | 'no_preference')[];
+  houseRules?: string;
+  wakeUpEarly?: boolean;
+  usualSleepingTime?: 'before_10pm' | '10_11pm' | 'after_11pm';
+  restTimeProvided?: boolean;
+  restTimeDetails?: string;
+  provideTeaSnacks?: boolean;
+  provideMeals?: boolean;
+  foodArrangement?: 'same_as_family' | 'separate_food';
+  tasks?: {
+    ironing?: boolean;
+    wateringPlants?: boolean;
+    washingMachine?: boolean;
+    microwave?: boolean;
+    mixerOvenAirFryer?: boolean;
+  };
+  gasStoveType?: 'regular' | 'special';
+  dropChildrenBusStop?: boolean;
+  hasPets?: boolean;
+  hasElderly?: boolean;
+  houseType?: 'single_story' | 'duplex';
+  kitchenRestrictionMenstrualPeriods?: boolean;
+  emergencyLeaveOk?: boolean;
+  policyAcks: {
+    salaryBy7th: boolean;
+    noAdvanceSalary: boolean;
+    feedbackWithinOneMonth: boolean;
+    infoAccurate: boolean;
+    agreeToTerms: boolean;
+    contactConsent: boolean;
+  };
+  submittedAt?: string;
+  source?: 'website' | 'app' | 'whatsapp' | 'callcenter' | 'other';
+}
+
 export interface RequirementFormData {
   name: string;
   email: string;
@@ -157,7 +206,8 @@ export type LeadType =
   | 'general'
   | 'agent_registration'
   | 'helper_registration'
-  | 'requirement';
+  | 'requirement'
+  | 'customer_requirement';
 
 export interface EmailSendResult {
   success: boolean;
