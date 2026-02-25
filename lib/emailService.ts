@@ -1006,6 +1006,9 @@ export const sendLeadEmail = async (
     if (leadType === 'hire_helper' || leadType === 'general') {
       // Use dedicated recipients for hire helper and contact forms
       emailRecipientsEnv = process.env.HIRE_CONTACT_EMAIL_RECIPIENTS || process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
+    } else if (leadType === 'customer_requirement') {
+      // Use dedicated recipients for customer requirement form
+      emailRecipientsEnv = process.env.CUSTOMER_REQUIREMENT_RECIPIENTS || process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
     } else {
       // Use default recipients for other forms (agent registration, helper registration, etc.)
       emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
