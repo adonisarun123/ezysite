@@ -922,7 +922,8 @@ const generateCustomerRequirementEmail = (formData: CustomerRequirementFormData)
 
         <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #1e293b;">Preferences</h3>
-          <p><strong>Age Preference:</strong> ${formData.agePreference || 'No preference'}</p>
+          <p><strong>Age Preference:</strong> ${formData.agePreference?.replace('_', ' ') || 'No preference'}</p>
+          <p><strong>Gender Preference:</strong> ${formData.preferredGender || 'No preference'}</p>
           <p><strong>Languages:</strong> ${formData.languages?.join(', ') || 'No preference'}</p>
           <p><strong>House Rules:</strong> ${formData.houseRules || 'None'}</p>
         </div>
@@ -938,6 +939,7 @@ const generateCustomerRequirementEmail = (formData: CustomerRequirementFormData)
           <p><strong>Gas Stove:</strong> ${formData.gasStoveType || 'Not specified'}</p>
           <p><strong>Drop Children:</strong> ${formData.dropChildrenBusStop ? 'Yes' : 'No'}</p>
           <p><strong>House Details:</strong> Pets: ${formData.hasPets ? 'Yes' : 'No'}, Elderly: ${formData.hasElderly ? 'Yes' : 'No'}, Type: ${formData.houseType || 'Not specified'}</p>
+          <p><strong>BHK / House Size:</strong> ${formData.bhkType === 'other' ? formData.bhkOther || 'Other' : formData.bhkType?.toUpperCase() || 'Not specified'}</p>
           <p><strong>Menstrual Restrictions:</strong> ${formData.kitchenRestrictionMenstrualPeriods ? 'Yes' : 'No'}</p>
         </div>
 
@@ -965,7 +967,8 @@ SERVICE REQUIREMENTS:
 - Timings: ${formData.workTiming.startTime} - ${formData.workTiming.endTime}
 
 PREFERENCES:
-- Age Preference: ${formData.agePreference || 'No preference'}
+- Age Preference: ${formData.agePreference?.replace('_', ' ') || 'No preference'}
+- Gender Preference: ${formData.preferredGender || 'No preference'}
 - Languages: ${formData.languages?.join(', ') || 'No preference'}
 - House Rules: ${formData.houseRules || 'None'}
 
@@ -979,6 +982,7 @@ DAILY ROUTINE & HOUSEHOLD:
 - Gas Stove: ${formData.gasStoveType || 'Not specified'}
 - Drop Children: ${formData.dropChildrenBusStop ? 'Yes' : 'No'}
 - House Details: Pets: ${formData.hasPets ? 'Yes' : 'No'}, Elderly: ${formData.hasElderly ? 'Yes' : 'No'}, Type: ${formData.houseType || 'Not specified'}
+- BHK / House Size: ${formData.bhkType === 'other' ? formData.bhkOther || 'Other' : formData.bhkType?.toUpperCase() || 'Not specified'}
 - Menstrual Restrictions: ${formData.kitchenRestrictionMenstrualPeriods ? 'Yes' : 'No'}
 
 POLICY UNDERSTANDINGS:

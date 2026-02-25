@@ -148,7 +148,8 @@ export interface CustomerRequirementFormData {
     startTime: string;
     endTime: string;
   };
-  agePreference?: 'no_preference' | 'below_30' | '30_45' | 'above_45';
+  agePreference?: 'no_preference' | 'below_25' | 'below_30' | '30_45' | 'above_45';
+  preferredGender?: 'female' | 'male' | 'no_preference';
   languages?: ('kannada' | 'hindi' | 'tamil' | 'telugu' | 'english' | 'no_preference')[];
   houseRules?: string;
   wakeUpEarly?: boolean;
@@ -170,6 +171,8 @@ export interface CustomerRequirementFormData {
   hasPets?: boolean;
   hasElderly?: boolean;
   houseType?: 'single_story' | 'duplex';
+  bhkType?: '1bhk' | '2bhk' | '3bhk' | '4bhk' | 'other';
+  bhkOther?: string;
   kitchenRestrictionMenstrualPeriods?: boolean;
   emergencyLeaveOk?: boolean;
   policyAcks: {

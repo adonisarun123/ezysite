@@ -405,9 +405,23 @@ export default function CustomerRequirementsPage() {
                                         onChange={(e) => handleInputChange('agePreference', e.target.value)}
                                     >
                                         <option value="no_preference">No preference</option>
+                                        <option value="below_25">Below 25</option>
                                         <option value="below_30">Below 30</option>
                                         <option value="30_45">30–45</option>
                                         <option value="above_45">Above 45</option>
+                                    </select>
+                                </div>
+
+                                <div className="space-y-4">
+                                    <label className="text-sm font-semibold text-gray-700">Preferred Gender</label>
+                                    <select
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none"
+                                        value={formData.preferredGender || 'no_preference'}
+                                        onChange={(e) => handleInputChange('preferredGender', e.target.value)}
+                                    >
+                                        <option value="no_preference">No preference</option>
+                                        <option value="female">Female</option>
+                                        <option value="male">Male</option>
                                     </select>
                                 </div>
 
@@ -689,6 +703,33 @@ export default function CustomerRequirementsPage() {
                                             ))}
                                         </div>
                                     </div>
+
+                                    <div className="space-y-4 col-span-full">
+                                        <label className="text-sm font-semibold text-gray-700">BHK / House Size Details</label>
+                                        <div className="grid grid-cols-3 md:grid-cols-5 gap-3">
+                                            {['1bhk', '2bhk', '3bhk', '4bhk', 'other'].map(opt => (
+                                                <button
+                                                    key={opt}
+                                                    type="button"
+                                                    onClick={() => handleInputChange('bhkType', opt)}
+                                                    className={`py-3 px-1 rounded-xl border-2 text-xs font-bold text-center transition-all ${formData.bhkType === opt ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-gray-100 text-gray-400 hover:border-gray-200'}`}
+                                                >
+                                                    {opt === 'other' ? 'OTHERS' : opt.toUpperCase()}
+                                                </button>
+                                            ))}
+                                        </div>
+                                        {formData.bhkType === 'other' && (
+                                            <div className="mt-3 animate-in fade-in slide-in-from-top-2 duration-200">
+                                                <input
+                                                    type="text"
+                                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none"
+                                                    placeholder="Enter number of BHK (e.g. 5 BHK, 6 BHK)"
+                                                    value={formData.bhkOther || ''}
+                                                    onChange={(e) => handleInputChange('bhkOther', e.target.value)}
+                                                />
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         )}
@@ -796,7 +837,7 @@ export default function CustomerRequirementsPage() {
                     </p>
                     <p>© {new Date().getFullYear()} EzyHelpers Private Limited. All rights reserved.</p>
                 </div>
-            </main>
-        </div>
+            </main >
+        </div >
     )
 }
