@@ -106,11 +106,11 @@ export default function HelperInterviewPage() {
                                 key={l}
                                 onClick={() => setLang(l)}
                                 className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${lang === l
-                                        ? 'bg-white text-blue-600 shadow-sm ring-1 ring-slate-200'
-                                        : 'text-slate-500 hover:text-slate-800'
+                                    ? 'bg-white text-blue-600 shadow-sm ring-1 ring-slate-200'
+                                    : 'text-slate-500 hover:text-slate-800'
                                     }`}
                             >
-                                {l.toUpperCase()}
+                                {translations[l].label}
                             </button>
                         ))}
                     </div>

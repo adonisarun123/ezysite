@@ -2,6 +2,7 @@ export type Language = 'en' | 'hi' | 'kn' | 'ta' | 'te';
 
 export const translations: Record<Language, any> = {
     en: {
+        label: 'English',
         title: 'HELPER INTERVIEW QUESTIONNAIRE',
         sections: {
             basic: '1. Basic Information',
@@ -62,6 +63,7 @@ export const translations: Record<Language, any> = {
         }
     },
     hi: {
+        label: 'हिंदी',
         title: 'हेल्पर इंटरव्यू प्रश्नावली',
         sections: {
             basic: '1. बुनियादी जानकारी',
@@ -122,6 +124,7 @@ export const translations: Record<Language, any> = {
         }
     },
     kn: {
+        label: 'ಕನ್ನಡ',
         title: 'ಹೆಲ್ಪರ್ ಸಂದರ್ಶನ ಪ್ರಶ್ನಾವಳಿ',
         sections: {
             basic: '1. ಮೂಲ ಮಾಹಿತಿ',
@@ -182,6 +185,7 @@ export const translations: Record<Language, any> = {
         }
     },
     ta: {
+        label: 'தமிழ்',
         title: 'பணியாளர் நேர்காணல் கேள்வித்தாள்',
         sections: {
             basic: '1. அடிப்படை தகவல்கள்',
@@ -242,6 +246,7 @@ export const translations: Record<Language, any> = {
         }
     },
     te: {
+        label: 'తెలుగు',
         title: 'హెల్పర్ ఇంటర్వ్యూ ప్రశ్నపత్రం',
         sections: {
             basic: '1. ప్రాథమిక సమాచారం',
