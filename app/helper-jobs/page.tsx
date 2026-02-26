@@ -83,6 +83,15 @@ export default function HelperJobsPage() {
                         { label: 'Home', href: '/' },
                         { label: 'Helper Jobs' }
                     ]}
+                    rightContent={
+                        <div className="flex items-center space-x-2 text-sm font-medium">
+                            <Link href="/helper-jobs/hin" className="text-gray-500 hover:text-purple-600 transition-colors">
+                                हिंदी
+                            </Link>
+                            <span className="text-gray-300">|</span>
+                            <span className="text-purple-700 font-bold bg-white px-2 py-1 rounded-full shadow-xl">English</span>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section with Bright Colors */}
@@ -97,7 +106,7 @@ export default function HelperJobsPage() {
                         <div className="w-full max-w-none mx-auto text-center px-4">
                             <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">Domestic Helper Jobs In Bangalore  100% Free | EzyHelpers</h1>
 
-                            <p className="text-sm sm:text-base md:text-2xl font-semibold mb-4 text-purple-100 max-w-5xl mx-auto">Looking For A Safe Job With A Good Salary? <br />Tired Of Agents Taking Money/False Promises?</p>
+                            <p className="text-xs sm:text-base md:text-2xl font-semibold mb-4 text-purple-100 max-w-5xl mx-auto">Looking For A Safe Job With A Good Salary? <br />Tired Of Agents Taking Money/False Promises?</p>
 
                             <div className="space-y-4 mb-6 max-w-5xl mx-auto">
                                 <p className="text-sm sm:text-base md:text-xl text-purple-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none">
@@ -106,11 +115,11 @@ export default function HelperJobsPage() {
                             </div>
 
                             <div className="grid grid-cols-6 gap-2 mb-6 max-w-5xl mx-auto px-1 md:flex md:flex-wrap md:justify-center">
-                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[10px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Agents</div>
-                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[10px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Fees</div>
-                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Commission</div>
-                                <div className="col-span-3 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ Job Support Always</div>
-                                <div className="col-span-3 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ Written Agreement</div>
+                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[8px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Agents</div>
+                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[8px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Fees</div>
+                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-0 py-2 md:px-6 md:py-3 text-[8px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ No Commission</div>
+                                <div className="col-span-3 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[8px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ Job Support Always</div>
+                                <div className="col-span-3 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[8px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ Written Agreement</div>
                             </div>
 
                             <p className="text-sm sm:text-base md:text-xl font-semibold mb-6 text-yellow-300 max-w-4xl mx-auto">Move From Low-Paying Local Work To Stable Jobs With Dignity And Security</p>
@@ -228,11 +237,6 @@ export default function HelperJobsPage() {
                                     state: "Assam",
                                     desc: "Do Not Struggle With Limited Local Options Anymore; Apply For Stable Bangalore Jobs Where The Employer Pays Your Full Salary Directly And On-Time.",
                                     features: ["Multiple Household Job Categories", "Flexible Work Options", "Direct Payment From Employer", "Long-Term Job Stability", "Safe Working Environment"]
-                                },
-                                {
-                                    state: "West Bengal",
-                                    desc: "Stop Dealing With Local Job Insecurity And Move To Bangalore For Trusted Domestic Helper Jobs That Offer A Fixed Income And Full Support For Helpers.",
-                                    features: ["Babysitting, Cooking & Maid Jobs", "Full-Time & Live-In Roles", "Fixed Monthly Income", "Ongoing Support From Our Team", "No Registration Fee"]
                                 },
                                 {
                                     state: "Bihar",
