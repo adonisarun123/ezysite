@@ -379,7 +379,10 @@ export default function HelperInterviewPage() {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.monthlyLeave}</label>
-                                    <input type="text" name="monthlyLeave" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <select name="monthlyLeave" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.leavePreference}</label>
@@ -390,7 +393,10 @@ export default function HelperInterviewPage() {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.restTimeNeeded}</label>
-                                    <input type="text" name="restTimeNeeded" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <select name="restTimeNeeded" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.menstrualCycleComfort}</label>
@@ -410,10 +416,19 @@ export default function HelperInterviewPage() {
                             </h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.eatSameFood}</label>
-                                    <select name="eatSameFood" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                    <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.riceOrRoti}</label>
+                                    <select name="riceOrRoti" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
+                                        <option value="Rice">Rice</option>
+                                        <option value="Roti">Roti</option>
+                                        <option value="Both">Both</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.howManyRotis}</label>
+                                    <select name="howManyRotis" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
+                                        {Array.from({ length: 15 }, (_, i) => i + 1).map(num => (
+                                            <option key={num} value={num}>{num}</option>
+                                        ))}
                                     </select>
                                 </div>
                                 <div>
