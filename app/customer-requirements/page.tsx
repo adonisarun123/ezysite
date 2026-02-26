@@ -595,7 +595,7 @@ export default function CustomerRequirementsPage() {
                                     <div className="space-y-4 col-span-full pt-4">
                                         <label className="text-sm font-semibold text-gray-700">Which personal care items will you provide?</label>
                                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                                            {['Soap', 'Shampoo', 'Toothpaste', 'Toothbrush', 'Cream', 'Oil', 'None'].map(item => (
+                                            {['Soap', 'Shampoo', 'Toothpaste', 'Toothbrush', 'Sanitary pads', 'Cream', 'Oil', 'None'].map(item => (
                                                 <label key={item} className={`flex items-center p-3 rounded-xl border-2 cursor-pointer transition-all ${formData.personalCareItems?.includes(item) ? 'border-blue-200 bg-blue-50 text-blue-700' : 'border-gray-50 text-gray-500 hover:border-gray-100'}`}>
                                                     <input
                                                         type="checkbox"
