@@ -144,11 +144,11 @@ export default function HelperInterviewPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.fullName} *</label>
-                                    <input type="text" name="fullName" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50 transition-colors" />
+                                    <input type="text" name="fullName" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50 transition-colors" placeholder={t.placeholders.fullName} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.age} *</label>
-                                    <input type="text" name="age" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <input type="text" name="age" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.age} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.maritalStatus} *</label>
@@ -162,11 +162,11 @@ export default function HelperInterviewPage() {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.hasChildren} *</label>
-                                    <input type="text" name="hasChildren" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <input type="text" name="hasChildren" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.hasChildren} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.localReference} *</label>
-                                    <input type="text" name="localReference" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <input type="text" name="localReference" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.localReference} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.hasSmartphone} *</label>
@@ -184,7 +184,7 @@ export default function HelperInterviewPage() {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.speakOtherLanguages} *</label>
-                                    <input type="text" name="speakOtherLanguages" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <input type="text" name="speakOtherLanguages" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.speakOtherLanguages} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.readWriteHindi} *</label>
@@ -294,7 +294,7 @@ export default function HelperInterviewPage() {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.canDrive}</label>
-                                    <input type="text" name="canDrive" placeholder="Car / Scooter / None" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <input type="text" name="canDrive" placeholder={t.placeholders.canDrive} className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
                                 </div>
                             </div>
                         </section>
@@ -308,7 +308,7 @@ export default function HelperInterviewPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.wakeUpTime}</label>
-                                    <input type="text" name="wakeUpTime" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <input type="text" name="wakeUpTime" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.wakeUpTime} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.earlyStart}</label>
@@ -371,11 +371,11 @@ export default function HelperInterviewPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.regularMedicines}</label>
-                                    <input type="text" name="regularMedicines" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <input type="text" name="regularMedicines" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.regularMedicines} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.healthConditions}</label>
-                                    <input type="text" name="healthConditions" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <input type="text" name="healthConditions" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.healthConditions} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.monthlyLeave}</label>
@@ -440,7 +440,11 @@ export default function HelperInterviewPage() {
                                 </div>
                                 <div className="md:col-span-2">
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.foodRestrictions}</label>
-                                    <input type="text" name="foodRestrictions" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <input type="text" name="foodRestrictions" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.foodRestrictions} />
+                                </div>
+                                <div className="md:col-span-2">
+                                    <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.foodAllergies}</label>
+                                    <input type="text" name="foodAllergies" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.foodAllergies} />
                                 </div>
                             </div>
                         </section>
@@ -454,11 +458,11 @@ export default function HelperInterviewPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.formalTraining}</label>
-                                    <input type="text" name="formalTraining" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <input type="text" name="formalTraining" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.formalTraining} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.specificTrainingNeeded}</label>
-                                    <input type="text" name="specificTrainingNeeded" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" />
+                                    <input type="text" name="specificTrainingNeeded" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.specificTrainingNeeded} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.openToTraining}</label>

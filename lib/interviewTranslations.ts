@@ -55,12 +55,29 @@ export const translations: Record<Language, any> = {
             howManyRotis: 'How many Roti\'s do you consume regularly?',
             vegNonVegPreference: 'Are you okay with eating vegetarian or non-vegetarian food based on the household?',
             foodRestrictions: 'Do you have any food restrictions?',
+            foodAllergies: 'Do you have any food allergies? (e.g., Peanuts, Milk, Gluten)',
             formalTraining: 'Have you received any formal training in housekeeping or elderly care?',
             specificTrainingNeeded: 'Do you need any specific training?',
             openToTraining: 'Are you open to receiving additional training if required?',
             personalHabits: 'Do you smoke, drink alcohol, or use tobacco?',
             followHouseRules: 'Are you willing to follow the employer’s house rules?',
             consentText: 'I hereby confirm that all the information provided by me is true and correct to the best of my knowledge. I understand that providing false information may lead to rejection or termination of employment. I voluntarily consent to share my personal details for verification and placement purposes.'
+        },
+        placeholders: {
+            fullName: 'e.g., Sunita Kumari',
+            age: 'e.g., 28',
+            hasChildren: 'e.g., 2 children (Ages 4 and 7)',
+            localReference: 'e.g., Ramesh Singh - 9876543210',
+            speakOtherLanguages: 'e.g., English, Punjabi',
+            canDrive: 'e.g., Car and Scooter',
+            wakeUpTime: 'e.g., 5:30 AM',
+            regularMedicines: 'e.g., Blood Pressure medicine',
+            healthConditions: 'e.g., None',
+            foodRestrictions: 'e.g., No Beef / Pork',
+            foodAllergies: 'e.g., Allergic to Peanuts',
+            formalTraining: 'e.g., 3 months course in Home Nursing',
+            specificTrainingNeeded: 'e.g., Learning to use semi-automatic washing machine',
+            personalHabits: 'e.g., None'
         }
     },
     hi: {
@@ -117,12 +134,29 @@ export const translations: Record<Language, any> = {
             howManyRotis: 'आप नियमित रूप से कितनी रोटियाँ खाते हैं?',
             vegNonVegPreference: 'क्या आप घर के अनुसार शाकाहारी या मांसाहारी भोजन खाने में सहज हैं?',
             foodRestrictions: 'क्या आपको किसी प्रकार की भोजन संबंधी पाबंदी है?',
+            foodAllergies: 'क्या आपको किसी भोजन से एलर्जी है? (जैसे: मूँगफली, दूध, ग्लूटेन)',
             formalTraining: 'क्या आपने हाउसकीपिंग या बुज़ुर्गों की देखभाल का कोई औपचारिक प्रशिक्षण लिया है?',
             specificTrainingNeeded: 'क्या आपको किसी विशेष प्रशिक्षण की आवश्यकता है?',
             openToTraining: 'क्या आप आवश्यकता होने पर अतिरिक्त प्रशिक्षण लेने के लिए तैयार हैं?',
             personalHabits: 'क्या आप धूम्रपान, शराब या तंबाकू का सेवन करते / करती हैं?',
             followHouseRules: 'क्या आप नियोक्ता के घर के नियमों का पालन करने के लिए तैयार हैं?',
             consentText: 'मैं यह पुष्टि करता / करती हूँ कि मेरे द्वारा दी गई सभी जानकारी सत्य है। मैं सत्यापन और प्लेसमेंट के उद्देश्य से अपनी व्यक्तिगत जानकारी साझा करने की सहमति देता / देती हूँ।'
+        },
+        placeholders: {
+            fullName: 'उदा. सुनीता कुमारी',
+            age: 'उदा. 28',
+            hasChildren: 'उदा. 2 बच्चे (उम्र 4 और 7)',
+            localReference: 'उदा. रमेश सिंह - 9876543210',
+            speakOtherLanguages: 'उदा. अंग्रेज़ी, पंजाबी',
+            canDrive: 'उदा. कार और स्कूटर',
+            wakeUpTime: 'उदा. सुबह 5:30',
+            regularMedicines: 'उदा. ब्लड प्रेशर की दवाई',
+            healthConditions: 'उदा. कोई नहीं',
+            foodRestrictions: 'उदा. बीफ / पोर्क नहीं',
+            foodAllergies: 'उदा. मूँगफली से एलर्जी',
+            formalTraining: 'उदा. होम नर्सिंग में 3 महीने का कोर्स',
+            specificTrainingNeeded: 'उदा. सेमी-ऑटोमैटिक वॉशिंग मशीन सीखना',
+            personalHabits: 'उदा. कोई नहीं'
         }
     },
     kn: {
@@ -179,12 +213,29 @@ export const translations: Record<Language, any> = {
             howManyRotis: 'ನೀವು ನಿಯಮಿತವಾಗಿ ಎಷ್ಟು ರೊಟ್ಟಿಗಳನ್ನು ಸೇವಿಸುತ್ತೀರಿ?',
             vegNonVegPreference: 'ಮನೆಯ ಪ್ರಕಾರ ಶಾಕಾಹಾರಿ ಅಥವಾ ಮಾಂಸಾಹಾರಿ ಆಹಾರ ತಿನ್ನಲು ಸಿದ್ಧರಿದ್ದೀರಾ?',
             foodRestrictions: 'ಯಾವುದೇ ಆಹಾರ ನಿರ್ಬಂಧಗಳಿವೆಯೆ?',
+            foodAllergies: 'ನಿಮಗೆ ಯಾವುದೇ ಆಹಾರದ ಅಲರ್ಜಿ ಇದೆಯೆ? (ಉದಾ: ಶೇಂಗಾ, ಹಾಲು, ಗ್ಲುಟನ್)',
             formalTraining: 'ಹೌಸ್ಕೀಪಿಂಗ್ ಅಥವಾ ಹಿರಿಯರ ಆರೈಕೆಗೆ ಸಂಬಂಧಿಸಿದ ತರಬೇತಿ ಪಡೆದಿದ್ದೀರಾ?',
             specificTrainingNeeded: 'ನಿಮಗೆ ಯಾವುದೇ ವಿಶೇಷ ತರಬೇತಿ ಬೇಕೇ?',
             openToTraining: 'ಅಗತ್ಯವಿದ್ದರೆ ಹೆಚ್ಚುವರಿ ತರಬೇತಿ ಪಡೆಯಲು ಸಿದ್ಧರಿದ್ದೀರಾ?',
             personalHabits: 'ಧೂಮಪಾನ, ಮದ್ಯ ಅಥವಾ ತಂಬಾಕು ಬಳಸುತ್ತೀರಾ?',
             followHouseRules: 'ಉದ್ಯೋಗದಾತರ ಮನೆಯ ನಿಯಮಗಳನ್ನು ಪಾಲಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?',
             consentText: 'ನಾನು ನೀಡಿದ ಎಲ್ಲಾ ಮಾಹಿತಿ ಸತ್ಯವಾಗಿದೆ. ಪರಿಶೀಲನೆ ಮತ್ತು ನೇಮಕಾತಿಗಾಗಿ ನನ್ನ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳಲು ನಾನು ಒಪ್ಪುತ್ತೇನೆ.'
+        },
+        placeholders: {
+            fullName: 'ಉದಾ: ಸುನೀತ ಕುಮಾರಿ',
+            age: 'ಉದಾ: 28',
+            hasChildren: 'ಉದಾ: 2 ಮಕ್ಕಳು (ವಯಸ್ಸು 4 ಮತ್ತು 7)',
+            localReference: 'ಉದಾ: ರಮೇಶ್ ಸಿಂಗ್ - 9876543210',
+            speakOtherLanguages: 'ಉದಾ: ಇಂಗ್ಲಿಷ್, ಪಂಜಾಬಿ',
+            canDrive: 'ಉದಾ: ಕಾರ್ ಮತ್ತು ಸ್ಕೂಟರ್',
+            wakeUpTime: 'ಉದಾ: ಬೆಳಿಗ್ಗೆ 5:30',
+            regularMedicines: 'ಉದಾ: ರಕ್ತದೊತ್ತಡದ ಮಾತ್ರೆ',
+            healthConditions: 'ಉದಾ: ಯಾವುದೂ ಇಲ್ಲ',
+            foodRestrictions: 'ಉದಾ: ಮಾಂಸ ಸೇವಿಸುವುದಿಲ್ಲ',
+            foodAllergies: 'ಉದಾ: ಶೇಂಗಾ ಅಲರ್ಜಿ',
+            formalTraining: 'ಉದಾ: ಹೋಮ್ ನರ್ಸಿಂಗ್‌ನಲ್ಲಿ 3 ತಿಂಗಳ ಕೋರ್ಸ್',
+            specificTrainingNeeded: 'ಉದಾ: ಸೆಮಿ-ಆಟೋಮ್ಯಾಟಿಕ್ ವಾಷಿಂಗ್ ಮೆಷಿನ್ ಕಲಿಯುವುದು',
+            personalHabits: 'ಉದಾ: ಯಾವುದೂ ಇಲ್ಲ'
         }
     },
     ta: {
@@ -241,12 +292,29 @@ export const translations: Record<Language, any> = {
             howManyRotis: 'நீங்கள் வழக்கமாக எத்தனை ரொட்டிகளை சாப்பிடுகிறீர்கள்?',
             vegNonVegPreference: 'வீட்டின் வழக்கப்படி சைவம் அல்லது அசைவம் சாப்பிட வசதியா?',
             foodRestrictions: 'உணவு தொடர்பான எந்த கட்டுப்பாடுகள் உள்ளனவா?',
+            foodAllergies: 'உங்களுக்கு ஏதேனும் உணவு ஒவ்வாமை (Food Allergy) உள்ளதா? (உதாரணம்: வேர்க்கடலை, பால், கோதுமை)',
             formalTraining: 'வீட்டு வேலை அல்லது முதியோர் பராமரிப்பில் பயிற்சி பெற்றுள்ளீர்களா?',
             specificTrainingNeeded: 'உங்களுக்கு சிறப்பு பயிற்சி தேவையா?',
             openToTraining: 'தேவையானால் கூடுதல் பயிற்சி பெற தயாரா?',
             personalHabits: 'புகைபிடித்தல், மது அல்லது புகையிலை பயன்படுத்துகிறீர்களா?',
             followHouseRules: 'வீட்டின் விதிகளை பின்பற்ற தயாரா?',
             consentText: 'நான் வழங்கிய அனைத்து தகவல்களும் உண்மை. சரிபார்ப்பு மற்றும் பணியமர்த்தலுக்காக எனது தகவல்களை பகிர ஒப்புக்கொள்கிறேன்.'
+        },
+        placeholders: {
+            fullName: 'உதாரணம்: சுனிதா குமாரி',
+            age: 'உதாரணம்: 28',
+            hasChildren: 'உதாரணம்: 2 குழந்தைகள் (வயது 4 மற்றும் 7)',
+            localReference: 'உதாரணம்: ரமேஷ் சிங் - 9876543210',
+            speakOtherLanguages: 'உதாரணம்: ஆங்கிலம், பஞ்சாபி',
+            canDrive: 'உதாரணம்: கார் மற்றும் ஸ்கூட்டர்',
+            wakeUpTime: 'உதாரணம்: காலை 5:30',
+            regularMedicines: 'உதாரணம்: இரத்த அழுத்த மாத்திரை',
+            healthConditions: 'உதாரணம்: ஏதும் இல்லை',
+            foodRestrictions: 'உதாரணம்: மாட்டிறைச்சி / பன்றி இறைச்சி இல்லை',
+            foodAllergies: 'உதாரணம்: வேர்க்கடலை ஒவ்வாமை',
+            formalTraining: 'உதாரணம்: வீட்டு செவிலியர் பயிற்சியில் 3 மாத படிப்பு',
+            specificTrainingNeeded: 'உதாரணம்: செமி-ஆட்டோமேட்டிக் வாஷிங் மெஷின் கற்க வேண்டும்',
+            personalHabits: 'உதாரணம்: ஏதும் இல்லை'
         }
     },
     te: {
@@ -303,12 +371,29 @@ export const translations: Record<Language, any> = {
             howManyRotis: 'మీరు క్రమం తప్పకుండా ఎన్ని రోటీలు తింటారు?',
             vegNonVegPreference: 'ఇంటి ప్రకారం శాకాహారం లేదా మాంసాహారం తినగలరా?',
             foodRestrictions: 'ఏవైనా ఆహార పరిమితులు ఉన్నాయా?',
+            foodAllergies: 'మీకు ఏదైనా ఆహార అలర్జీ ఉందా? (ఉదాహరణకు: వేరుశనగ, పాలు, గ్లూటెన్)',
             formalTraining: 'హౌస్కీపింగ్ లేదా వృద్ధుల సంరక్షణలో శిక్షణ పొందారా?',
             specificTrainingNeeded: 'మీకు ప్రత్యేక శిక్షణ అవసరమా?',
             openToTraining: 'అవసరమైతే అదనపు శిక్షణ పొందడానికి సిద్ధంగా ఉన్నారా?',
             personalHabits: 'పొగ త్రాగడం, మద్యం లేదా పొగాకు ఉపయోగిస్తారా?',
             followHouseRules: 'ఇంటి నియమాలను పాటించడానికి సిద్ధంగా ఉన్నారా?',
             consentText: 'నేను ఇచ్చిన సమాచారం నిజమైనది. ధృవీకరణ మరియు నియామక ప్రయోజనాల కోసం నా వ్యక్తిగత వివరాలను పంచుకోవడానికి నేను సమ్మతిస్తున్నాను.'
+        },
+        placeholders: {
+            fullName: 'ఉదాహరణకు: సునీత కుమారి',
+            age: 'ఉదాహరణకు: 28',
+            hasChildren: 'ఉదాహరణకు: 2 పిల్లలు (వయస్సు 4 మరియు 7)',
+            localReference: 'ఉదాహరణకు: రమేష్ సింగ్ - 9876543210',
+            speakOtherLanguages: 'ఉదాహరణకు: ఇంగ్లీష్, పంజాబీ',
+            canDrive: 'ఉదాహరణకు: కారు మరియు స్కూటర్',
+            wakeUpTime: 'ఉదాహరణకు: ఉదయం 5:30',
+            regularMedicines: 'ఉదాహరణకు: రక్తపోటు మందు',
+            healthConditions: 'ఉదాహరణకు: ఏమీ లేదు',
+            foodRestrictions: 'ఉదాహరణకు: గొడ్డు మాంసం / పంది మాంసం లేదు',
+            foodAllergies: 'ఉదాహరణకు: వేరుశనగ అలర్జీ',
+            formalTraining: 'ఉదాహರಣకు: హోమ్ నర్సింగ్‌లో 3 నెలల కోర్సు',
+            specificTrainingNeeded: 'ఉదాహరణకు: సెమీ ఆటోమేటిక్ వాషింగ్ మెషీన్ నేర్చుకోవాలి',
+            personalHabits: 'ఉదాహరణకు: ఏమీ లేదు'
         }
     }
 };
