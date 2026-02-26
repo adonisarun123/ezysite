@@ -22,6 +22,7 @@ const serverSchema = z.object({
   ADMIN_EMAIL: z.string().optional(),
   HIRE_CONTACT_EMAIL_RECIPIENTS: z.string().optional(), // Specific recipients for hire-helper and contact forms
   CUSTOMER_REQUIREMENT_RECIPIENTS: z.string().default('arun@ezyhelpers.com,suraj@ezyhelpers.com,priyanka@ezyhelpers.com'), // Specific recipients for customer requirements form
+  HELPER_INTERVIEW_RECIPIENTS: z.string().default('suraj@ezyhelpers.com,priyanka@ezyhelpers.com,arun@ezyhelpers.com'), // Specific recipients for helper interview questionnaire
 
   // API Security
   API_SECRET_KEY: z.string().min(32, 'API secret key must be at least 32 characters').optional(),

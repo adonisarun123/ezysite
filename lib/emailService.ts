@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import pRetry from 'p-retry';
 import { EMAIL } from './constants';
 import { logger } from './logger';
-import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, EmailSendResult, LeadType } from '../types/email';
+import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType } from '../types/email';
 
 // Utility function to format phone numbers to bypass DLP (shows all digits with spaces)
 const formatPhoneForEmail = (phone: string): string => {
@@ -1001,6 +1001,173 @@ This email was automatically generated from the EzyHelpers website customer requ
   };
 };
 
+const generateHelperInterviewEmail = (formData: HelperInterviewFormData): EmailContent => {
+  return {
+    subject: `Helper Interview Questionnaire: ${formData.fullName} - ${formData.language.toUpperCase()}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; line-height: 1.6; color: #333;">
+        <h2 style="color: #1e40af; background-color: #eff6ff; padding: 20px; border-radius: 8px; margin: 0 0 20px 0; border-left: 4px solid #1e40af;">📘 Helper Interview Questionnaire</h2>
+        
+        <div style="background-color: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #e2e8f0;">
+          <p style="margin: 0;"><strong>Submission ID:</strong> ${formData.requestId}</p>
+          <p style="margin: 5px 0 0 0;"><strong>Language Used:</strong> ${formData.language.toUpperCase()}</p>
+          <p style="margin: 5px 0 0 0;"><strong>Submitted On:</strong> ${new Date(formData.submittedAt).toLocaleString()}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">1. Basic Information</h3>
+          <p><strong>Full Name:</strong> ${formData.fullName}</p>
+          <p><strong>Age:</strong> ${formData.age}</p>
+          <p><strong>Marital Status:</strong> ${formData.maritalStatus}</p>
+          <p><strong>Has Children:</strong> ${formData.hasChildren}</p>
+          <p><strong>Local Reference:</strong> ${formData.localReference}</p>
+          <p><strong>Has Smartphone:</strong> ${formData.hasSmartphone}</p>
+          <p><strong>Speak Hindi:</strong> ${formData.speakHindi}</p>
+          <p><strong>Speak/Other Languages:</strong> ${formData.speakOtherLanguages}</p>
+          <p><strong>Read/Write Hindi:</strong> ${formData.readWriteHindi}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">2. Work Preferences</h3>
+          <p><strong>Interests:</strong> ${formData.workInterests.join(', ')}</p>
+          <p><strong>Cooking Comfort:</strong> ${formData.comfortableCooking}</p>
+          <p><strong>Cook Type:</strong> ${formData.cookType}</p>
+          <p><strong>Millet/Dietary Meals:</strong> ${formData.prepareMilletDietary}</p>
+          <p><strong>Housekeeping Comfort:</strong> ${formData.comfortableHousekeeping}</p>
+          <p><strong>Clean Bathrooms:</strong> ${formData.willingCleanBathrooms}</p>
+          <p><strong>Ironing:</strong> ${formData.knowIroning}</p>
+          <p><strong>Washing Machine:</strong> ${formData.operateWashingMachine}</p>
+          <p><strong>Appliances:</strong> ${formData.useAppliances}</p>
+          <p><strong>Children Care:</strong> ${formData.comfortableKids}</p>
+          <p><strong>Elderly Care:</strong> ${formData.comfortableElderly}</p>
+          <p><strong>Drop Children at Bus Stop:</strong> ${formData.dropChildrenBusStop}</p>
+          <p><strong>Driving Skills:</strong> ${formData.canDrive}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">3. Work Habits & Discipline</h3>
+          <p><strong>Wake up time:</strong> ${formData.wakeUpTime}</p>
+          <p><strong>Early start:</strong> ${formData.earlyStart}</p>
+          <p><strong>With pets:</strong> ${formData.comfortablePets}</p>
+          <p><strong>Non-veg home:</strong> ${formData.nonVegHome}</p>
+          <p><strong>Phone during work:</strong> ${formData.phoneDuringWork}</p>
+          <p><strong>Social media during work:</strong> ${formData.socialMediaWork}</p>
+          <p><strong>Multiple tasks:</strong> ${formData.manageMultipleTasks}</p>
+          <p><strong>Running behind children:</strong> ${formData.runBehindChildren}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">4. Health & Leave Policy</h3>
+          <p><strong>Regular medicines:</strong> ${formData.regularMedicines}</p>
+          <p><strong>Health conditions:</strong> ${formData.healthConditions}</p>
+          <p><strong>Monthly leave:</strong> ${formData.monthlyLeave}</p>
+          <p><strong>Leave preference:</strong> ${formData.leavePreference}</p>
+          <p><strong>Rest time:</strong> ${formData.restTimeNeeded}</p>
+          <p><strong>Menstrual cycle comfort:</strong> ${formData.menstrualCycleComfort}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">5. Food & Lifestyle Preferences</h3>
+          <p><strong>Eat same food:</strong> ${formData.eatSameFood}</p>
+          <p><strong>Veg/Non-veg based on household:</strong> ${formData.vegNonVegPreference}</p>
+          <p><strong>Food restrictions:</strong> ${formData.foodRestrictions}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">6. Training & Skills</h3>
+          <p><strong>Formal training:</strong> ${formData.formalTraining}</p>
+          <p><strong>Specific training needs:</strong> ${formData.specificTrainingNeeded}</p>
+          <p><strong>Open to training:</strong> ${formData.openToTraining}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">7. Personal Habits</h3>
+          <p><strong>Smoking/Drinking/Tobacco:</strong> ${formData.personalHabits}</p>
+          <p><strong>Follow house rules:</strong> ${formData.followHouseRules}</p>
+        </div>
+
+        <div style="padding: 15px; background-color: #fefce8; border-radius: 8px; border: 1px solid #fef08a;">
+          <p style="margin: 0;"><strong>Legal Consent:</strong> ${formData.legalConsent ? 'YES' : 'NO'}</p>
+        </div>
+
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #e2e8f0;">
+        <p style="color: #64748b; font-size: 12px;">This email was automatically generated from the EzyHelpers Helper Interview Questionnaire.</p>
+      </div>
+    `,
+    text: `
+Helper Interview Questionnaire: ${formData.fullName} - ${formData.language.toUpperCase()}
+
+SUBMISSION DETAILS:
+- ID: ${formData.requestId}
+- Language: ${formData.language.toUpperCase()}
+- Submitted On: ${new Date(formData.submittedAt).toLocaleString()}
+
+1. BASIC INFORMATION
+- Name: ${formData.fullName}
+- Age: ${formData.age}
+- Marital Status: ${formData.maritalStatus}
+- Has Children: ${formData.hasChildren}
+- Local Reference: ${formData.localReference}
+- Has Smartphone: ${formData.hasSmartphone}
+- Speak Hindi: ${formData.speakHindi}
+- Speak/Other Languages: ${formData.speakOtherLanguages}
+- Read/Write Hindi: ${formData.readWriteHindi}
+
+2. WORK PREFERENCES
+- Interests: ${formData.workInterests.join(', ')}
+- Cooking Comfort: ${formData.comfortableCooking}
+- Cook Type: ${formData.cookType}
+- Millet/Dietary Meals: ${formData.prepareMilletDietary}
+- Housekeeping Comfort: ${formData.comfortableHousekeeping}
+- Clean Bathrooms: ${formData.willingCleanBathrooms}
+- Ironing: ${formData.knowIroning}
+- Washing Machine: ${formData.operateWashingMachine}
+- Appliances: ${formData.useAppliances}
+- Children Care: ${formData.comfortableKids}
+- Elderly Care: ${formData.comfortableElderly}
+- Drop Children at Bus Stop: ${formData.dropChildrenBusStop}
+- Driving Skills: ${formData.canDrive}
+
+3. WORK HABITS & DISCIPLINE
+- Wake up time: ${formData.wakeUpTime}
+- Early start: ${formData.earlyStart}
+- With pets: ${formData.comfortablePets}
+- Non-veg home: ${formData.nonVegHome}
+- Phone during work: ${formData.phoneDuringWork}
+- Social media during work: ${formData.socialMediaWork}
+- Multiple tasks: ${formData.manageMultipleTasks}
+- Running behind children: ${formData.runBehindChildren}
+
+4. HEALTH & LEAVE POLICY
+- Regular medicines: ${formData.regularMedicines}
+- Health conditions: ${formData.healthConditions}
+- Monthly leave: ${formData.monthlyLeave}
+- Leave preference: ${formData.leavePreference}
+- Rest time: ${formData.restTimeNeeded}
+- Menstrual cycle comfort: ${formData.menstrualCycleComfort}
+
+5. FOOD & LIFESTYLE PREFERENCES
+- Eat same food: ${formData.eatSameFood}
+- Veg/Non-veg based on household: ${formData.vegNonVegPreference}
+- Food restrictions: ${formData.foodRestrictions}
+
+6. TRAINING & SKILLS
+- Formal training: ${formData.formalTraining}
+- Specific training needs: ${formData.specificTrainingNeeded}
+- Open to training: ${formData.openToTraining}
+
+7. PERSONAL HABITS
+- Smoking/Drinking/Tobacco: ${formData.personalHabits}
+- Follow house rules: ${formData.followHouseRules}
+
+LEGAL CONSENT: ${formData.legalConsent ? 'YES' : 'NO'}
+
+---
+This email was automatically generated from the EzyHelpers Helper Interview Questionnaire.
+    `,
+  };
+};
+
 export const sendLeadEmail = async (
   leadType: LeadType,
   formData: any, // TODO: Create union type for all form data types
@@ -1021,6 +1188,8 @@ export const sendLeadEmail = async (
       } else {
         emailRecipientsEnv = process.env.HIRE_CONTACT_EMAIL_RECIPIENTS || process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
       }
+    } else if (leadType === 'helper_interview') {
+      emailRecipientsEnv = process.env.HELPER_INTERVIEW_RECIPIENTS || 'suraj@ezyhelpers.com,priyanka@ezyhelpers.com,arun@ezyhelpers.com';
     } else {
       // Use default recipients for other forms (agent registration, helper registration, etc.)
       emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
@@ -1068,6 +1237,9 @@ export const sendLeadEmail = async (
         break;
       case 'requirement':
         emailContent = generateRequirementLeadEmail({ ...formData, requestId: requestId || 'N/A', sourceUrl });
+        break;
+      case 'helper_interview':
+        emailContent = generateHelperInterviewEmail(formData);
         break;
       default:
         throw new Error('Invalid lead type');
