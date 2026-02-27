@@ -100,19 +100,25 @@ export default function HelperInterviewPage() {
                         </span>
                     </div>
 
-                    <div className="flex items-center space-x-2 bg-slate-100 p-1 rounded-xl">
-                        {(['en', 'hi', 'kn', 'ta', 'te'] as Language[]).map((l) => (
-                            <button
-                                key={l}
-                                onClick={() => setLang(l)}
-                                className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${lang === l
-                                    ? 'bg-white text-blue-600 shadow-sm ring-1 ring-slate-200'
-                                    : 'text-slate-500 hover:text-slate-800'
-                                    }`}
-                            >
-                                {translations[l].label}
-                            </button>
-                        ))}
+                    <div className="flex items-center space-x-3">
+                        <div className="hidden sm:flex items-center space-x-1 px-2.5 py-1 bg-[#ccff00] rounded-lg shadow-[0_0_10px_rgba(204,255,0,0.4)] border border-[#b8e600] animate-pulse">
+                            <LanguageIcon className="h-4 w-4 text-slate-900" />
+                            <span className="text-[10px] font-black text-slate-900 uppercase tracking-tighter">Choose Language</span>
+                        </div>
+                        <div className="flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+                            {(['en', 'hi', 'kn', 'ta', 'te'] as Language[]).map((l) => (
+                                <button
+                                    key={l}
+                                    onClick={() => setLang(l)}
+                                    className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all ${lang === l
+                                        ? 'bg-white text-blue-600 shadow-sm ring-1 ring-slate-200'
+                                        : 'text-slate-500 hover:text-slate-800'
+                                        }`}
+                                >
+                                    {translations[l].label}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </header>
