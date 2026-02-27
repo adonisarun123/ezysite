@@ -4,6 +4,13 @@ export const translations: Record<Language, any> = {
     en: {
         label: 'English',
         title: 'HELPER INTERVIEW QUESTIONNAIRE',
+        common: {
+            yes: 'Yes',
+            no: 'No',
+            select: 'Select...',
+            submit: 'Submit Interview Details',
+            submitting: 'Submitting...'
+        },
         sections: {
             basic: '1. Basic Information',
             workPrefs: '2. Work Preferences',
@@ -17,8 +24,9 @@ export const translations: Record<Language, any> = {
         fields: {
             fullName: 'Full Name',
             age: 'Age',
-            maritalStatus: 'Marital Status (Married / Unmarried / Widow / Widower)',
-            hasChildren: 'Do you have children? If yes, how many and what are their ages?',
+            maritalStatus: 'Marital Status',
+            hasChildren: 'Do you have children?',
+            childrenDetails: 'If yes, how many and what are their ages?',
             localReference: 'Do you have any local reference? If yes, please share the contact number',
             hasSmartphone: 'Do you have a smartphone?',
             speakHindi: 'Can you speak Hindi?',
@@ -26,7 +34,7 @@ export const translations: Record<Language, any> = {
             readWriteHindi: 'Can you read and write Hindi?',
             workInterests: 'What type of work are you interested in? (Cooking / Housekeeping / Babysitting / Elderly Care / All-rounder)',
             comfortableCooking: 'Are you comfortable with cooking?',
-            cookType: 'Do you cook vegetarian, non-vegetarian, or both?',
+            cookType: 'What type of food can you cook?',
             prepareMilletDietary: 'Can you prepare millet or dietary meals?',
             comfortableHousekeeping: 'Are you comfortable with housekeeping (cleaning, mopping, dusting)?',
             willingCleanBathrooms: 'Are you willing to clean bathrooms?',
@@ -63,10 +71,32 @@ export const translations: Record<Language, any> = {
             followHouseRules: 'Are you willing to follow the employer’s house rules?',
             consentText: 'I hereby confirm that all the information provided by me is true and correct to the best of my knowledge. I understand that providing false information may lead to rejection or termination of employment. I voluntarily consent to share my personal details for verification and placement purposes.'
         },
+        options: {
+            maritalStatus: {
+                married: 'Married',
+                unmarried: 'Unmarried',
+                widow: 'Widow',
+                widower: 'Widower'
+            },
+            cookType: {
+                vegetarian: 'Vegetarian',
+                nonVegetarian: 'Non-Vegetarian',
+                both: 'Both'
+            },
+            leavePreference: {
+                monthly: 'Monthly',
+                cumulative: 'All Together'
+            },
+            riceOrRoti: {
+                rice: 'Rice',
+                roti: 'Roti',
+                both: 'Both'
+            }
+        },
         placeholders: {
             fullName: 'e.g., Sunita Kumari',
             age: 'e.g., 28',
-            hasChildren: 'e.g., 2 children (Ages 4 and 7)',
+            childrenDetails: 'e.g., 2 children (Ages 4 and 7)',
             localReference: 'e.g., Ramesh Singh - 9876543210',
             speakOtherLanguages: 'e.g., English, Punjabi',
             canDrive: 'e.g., Car and Scooter',
@@ -83,6 +113,13 @@ export const translations: Record<Language, any> = {
     hi: {
         label: 'हिंदी',
         title: 'हेल्पर इंटरव्यू प्रश्नावली',
+        common: {
+            yes: 'हाँ',
+            no: 'नहीं',
+            select: 'चुनें...',
+            submit: 'इंटरव्यू विवरण जमा करें',
+            submitting: 'जमा किया जा रहा है...'
+        },
         sections: {
             basic: '1. बुनियादी जानकारी',
             workPrefs: '2. कार्य प्राथमिकताएँ',
@@ -96,8 +133,9 @@ export const translations: Record<Language, any> = {
         fields: {
             fullName: 'पूरा नाम',
             age: 'आयु',
-            maritalStatus: 'वैवाहिक स्थिति (विवाहित / अविवाहित / विधवा / विधुर)',
-            hasChildren: 'क्या आपके बच्चे हैं? यदि हाँ, तो कितने और उनकी उम्र क्या है?',
+            maritalStatus: 'वैवाहिक स्थिति',
+            hasChildren: 'क्या आपके बच्चे हैं?',
+            childrenDetails: 'यदि हाँ, तो कितने और उनकी उम्र क्या है?',
             localReference: 'क्या आपके पास कोई स्थानीय संदर्भ है? यदि हाँ, तो संपर्क नंबर बताएं',
             hasSmartphone: 'क्या आपके पास स्मार्टफोन है?',
             speakHindi: 'क्या आप हिंदी बोल सकते / सकती हैं?',
@@ -105,7 +143,7 @@ export const translations: Record<Language, any> = {
             readWriteHindi: 'क्या आप हिंदी पढ़ और लिख सकते / सकती हैं?',
             workInterests: 'आप किस प्रकार का काम करना चाहते / चाहती हैं? (खाना बनाना / घर की सफ़ाई / बच्चों की देखभाल / बुज़ुर्गों की देखभाल / सभी काम)',
             comfortableCooking: 'क्या आप खाना बनाने में सहज हैं?',
-            cookType: 'क्या आप शाकाहारी, मांसाहारी या दोनों प्रकार का खाना बना सकते / सकती हैं?',
+            cookType: 'आप किस प्रकार का खाना बना सकते / सकती हैं?',
             prepareMilletDietary: 'क्या आप मिलेट या डाइट फूड बना सकते / सकती हैं?',
             comfortableHousekeeping: 'क्या आप झाड़ू, पोछा और डस्टिंग जैसे काम कर सकते / सकती हैं?',
             willingCleanBathrooms: 'क्या आप बाथरूम साफ़ करने के लिए तैयार हैं?',
@@ -142,10 +180,32 @@ export const translations: Record<Language, any> = {
             followHouseRules: 'क्या आप नियोक्ता के घर के नियमों का पालन करने के लिए तैयार हैं?',
             consentText: 'मैं यह पुष्टि करता / करती हूँ कि मेरे द्वारा दी गई सभी जानकारी सत्य है। मैं सत्यापन और प्लेसमेंट के उद्देश्य से अपनी व्यक्तिगत जानकारी साझा करने की सहमति देता / देती हूँ।'
         },
+        options: {
+            maritalStatus: {
+                married: 'विवाहित',
+                unmarried: 'अविवाहित',
+                widow: 'विधवा',
+                widower: 'विधुर'
+            },
+            cookType: {
+                vegetarian: 'शाकाहारी',
+                nonVegetarian: 'मांसाहारी',
+                both: 'दोनों'
+            },
+            leavePreference: {
+                monthly: 'मासिक',
+                cumulative: 'एक साथ'
+            },
+            riceOrRoti: {
+                rice: 'चावल',
+                roti: 'रोटी',
+                both: 'दोनों'
+            }
+        },
         placeholders: {
             fullName: 'उदा. सुनीता कुमारी',
             age: 'उदा. 28',
-            hasChildren: 'उदा. 2 बच्चे (उम्र 4 और 7)',
+            childrenDetails: 'उदा. 2 बच्चे (उम्र 4 और 7)',
             localReference: 'उदा. रमेश सिंह - 9876543210',
             speakOtherLanguages: 'उदा. अंग्रेज़ी, पंजाबी',
             canDrive: 'उदा. कार और स्कूटर',
@@ -162,6 +222,13 @@ export const translations: Record<Language, any> = {
     kn: {
         label: 'ಕನ್ನಡ',
         title: 'ಹೆಲ್ಪರ್ ಸಂದರ್ಶನ ಪ್ರಶ್ನಾವಳಿ',
+        common: {
+            yes: 'ಹೌದು',
+            no: 'ಇಲ್ಲ',
+            select: 'ಆಯ್ಕೆ ಮಾಡಿ...',
+            submit: 'ಸಂದರ್ಶನ ವಿವರಗಳನ್ನು ಸಲ್ಲಿಸಿ',
+            submitting: 'ಸಲ್ಲಿಸಲಾಗುತ್ತಿದೆ...'
+        },
         sections: {
             basic: '1. ಮೂಲ ಮಾಹಿತಿ',
             workPrefs: '2. ಕೆಲಸದ ಆದ್ಯತೆಗಳು',
@@ -175,8 +242,9 @@ export const translations: Record<Language, any> = {
         fields: {
             fullName: 'ಪೂರ್ಣ ಹೆಸರು',
             age: 'ವಯಸ್ಸು',
-            maritalStatus: 'ವೈವಾಹಿಕ ಸ್ಥಿತಿ (ವಿವಾಹಿತ / ಅವಿವಾಹಿತ / ವಿಧವೆ / ವಿಧುರ)',
-            hasChildren: 'ನಿಮಗೆ ಮಕ್ಕಳು ಇದೆಯೆ? ಇದ್ದರೆ ಎಷ್ಟು ಮತ್ತು ಅವರ ವಯಸ್ಸು ಎಷ್ಟು?',
+            maritalStatus: 'ವೈವಾಹಿಕ ಸ್ಥಿತಿ',
+            hasChildren: 'ನಿಮಗೆ ಮಕ್ಕಳು ಇದೆಯೆ?',
+            childrenDetails: 'ಇದ್ದರೆ ಎಷ್ಟು ಮತ್ತು ಅವರ ವಯಸ್ಸು ಎಷ್ಟು?',
             localReference: 'ನಿಮಗೆ ಸ್ಥಳೀಯ ಪರಿಚಯ ಇದೆಯೆ? ಇದ್ದರೆ ಸಂಪರ್ಕ ಸಂಖ್ಯೆ ನೀಡಿ',
             hasSmartphone: 'ನಿಮ್ಮ ಬಳಿ ಸ್ಮಾರ್ಟ್ಫೋನ್ ಇದೆಯೆ?',
             speakHindi: 'ನೀವು ಹಿಂದಿ ಮಾತನಾಡಬಹುದೇ?',
@@ -184,9 +252,9 @@ export const translations: Record<Language, any> = {
             readWriteHindi: 'ನೀವು ಹಿಂದಿ ಓದಲು ಮತ್ತು ಬರೆಯಲು ಬಲ್ಲಿರಾ?',
             workInterests: 'ನೀವು ಯಾವ ರೀತಿಯ ಕೆಲಸ ಮಾಡಲು ಆಸಕ್ತರಾಗಿದ್ದೀರಿ? (ಅಡುಗೆ / ಮನೆ ಸ್ವಚ್ಛತೆ / ಮಕ್ಕಳ ಆರೈಕೆ / ಹಿರಿಯರ ಆರೈಕೆ / ಎಲ್ಲ ಕೆಲಸ)',
             comfortableCooking: 'ಅಡುಗೆ ಮಾಡಲು ನೀವು ಸುಲಭವಾಗಿದ್ದೀರಾ?',
-            cookType: 'ನೀವು ಶಾಕಾಹಾರಿ, ಮಾಂಸಾಹಾರಿ ಅಥವಾ ಎರಡೂ ರೀತಿಯ ಆಹಾರ ತಯಾರಿಸಬಹುದೇ?',
+            cookType: 'ನೀವು ಯಾವ ರೀತಿಯ ಆಹಾರ ತಯಾರಿಸಬಹುದು?',
             prepareMilletDietary: 'ಮಿಲ್ಲೆಟ್ ಅಥವಾ ಡೈಟ್ ಆಹಾರ ತಯಾರಿಸಬಹುದೇ?',
-            comfortableHousekeeping: 'ಜಾಡು, ಪೊಚ್ಚು ಮತ್ತು ಧೂಳು ತೂಗುವ ಕೆಲಸ ಮಾಡಬಹುದೇ?',
+            comfortableHousekeeping: 'ಜಾಡು, ಪೊಚ್ಚು ಮತ್ತು ಧೂಳು تೂಗುವ ಕೆಲಸ ಮಾಡಬಹುದೇ?',
             willingCleanBathrooms: 'ಬಾತ್ರೂಮ್ ಸ್ವಚ್ಛಗೊಳಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?',
             knowIroning: 'ಬಟ್ಟೆ ಇಸ್ತ್ರಿ ಮಾಡಬಹುದೇ?',
             operateWashingMachine: 'ವಾಷಿಂಗ್ ಮೆಷಿನ್ ಬಳಸಬಹುದೇ?',
@@ -204,7 +272,7 @@ export const translations: Record<Language, any> = {
             manageMultipleTasks: 'ಒಂದೇ ಸಮಯದಲ್ಲಿ ಹಲವಾರು ಕೆಲಸ ನಿರ್ವಹಿಸಬಹುದೇ?',
             runBehindChildren: 'ಅಗತ್ಯವಿದ್ದರೆ ಮಕ್ಕಳ ಹಿಂದೆ ಓಡಲು ಸಿದ್ಧರಿದ್ದೀರಾ?',
             regularMedicines: 'ನೀವು ನಿಯಮಿತವಾಗಿ ಯಾವುದೇ ಔಷಧಿ ತೆಗೆದುಕೊಳ್ಳುತ್ತೀರಾ?',
-            healthConditions: 'ನಮಗೆ ತಿಳಿದಿರಬೇಕಾದ ಯಾವುದೇ ಆರೋಗ್ಯ समस्या ಇದೆಯೆ?',
+            healthConditions: 'ನಮಗೆ ತಿಳಿದಿರಬೇಕಾದ ಯಾವುದೇ ಆರೋಗ್ಯ ಸಮಸ್ಯೆ ಇದೆಯೆ?',
             monthlyLeave: 'ನಿಮಗೆ ಮಾಸಿಕ ರಜೆ ಬೇಕೇ?',
             leavePreference: 'ರಜೆಯನ್ನು ಮಾಸಿಕ ಅಥವಾ ಒಟ್ಟಿಗೆ ತೆಗೆದುಕೊಳ್ಳಲು ಇಷ್ಟಪಡುತ್ತೀರಾ?',
             restTimeNeeded: 'ಕೆಲಸದ ವೇಳೆ ವಿಶ್ರಾಂತಿ ಸಮಯ ಬೇಕೇ? (ಲೈವ್-ಇನ್ ಗೆ ಮಾತ್ರ)',
@@ -221,10 +289,32 @@ export const translations: Record<Language, any> = {
             followHouseRules: 'ಉದ್ಯೋಗದಾತರ ಮನೆಯ ನಿಯಮಗಳನ್ನು ಪಾಲಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?',
             consentText: 'ನಾನು ನೀಡಿದ ಎಲ್ಲಾ ಮಾಹಿತಿ ಸತ್ಯವಾಗಿದೆ. ಪರಿಶೀಲನೆ ಮತ್ತು ನೇಮಕಾತಿಗಾಗಿ ನನ್ನ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳಲು ನಾನು ಒಪ್ಪುತ್ತೇನೆ.'
         },
+        options: {
+            maritalStatus: {
+                married: 'ವಿವಾಹಿತ',
+                unmarried: 'ಅವಿವಾಹಿತ',
+                widow: 'ವಿಧವೆ',
+                widower: 'ವಿಧುರ'
+            },
+            cookType: {
+                vegetarian: 'ಶಾಕಾಹಾರಿ',
+                nonVegetarian: 'ಮಾಂಸಾಹಾರಿ',
+                both: 'ಎರಡೂ'
+            },
+            leavePreference: {
+                monthly: 'ಮಾಸಿಕ',
+                cumulative: 'ಒಟ್ಟಿಗೆ'
+            },
+            riceOrRoti: {
+                rice: 'ಅಕ್ಕಿ',
+                roti: 'ರೊಟ್ಟಿ',
+                both: 'ಎರಡೂ'
+            }
+        },
         placeholders: {
             fullName: 'ಉದಾ: ಸುನೀತ ಕುಮಾರಿ',
             age: 'ಉದಾ: 28',
-            hasChildren: 'ಉದಾ: 2 ಮಕ್ಕಳು (ವಯಸ್ಸು 4 ಮತ್ತು 7)',
+            childrenDetails: 'ಉದಾ: 2 ಮಕ್ಕಳು (ವಯಸ್ಸು 4 ಮತ್ತು 7)',
             localReference: 'ಉದಾ: ರಮೇಶ್ ಸಿಂಗ್ - 9876543210',
             speakOtherLanguages: 'ಉದಾ: ಇಂಗ್ಲಿಷ್, ಪಂಜಾಬಿ',
             canDrive: 'ಉದಾ: ಕಾರ್ ಮತ್ತು ಸ್ಕೂಟರ್',
@@ -241,11 +331,18 @@ export const translations: Record<Language, any> = {
     ta: {
         label: 'தமிழ்',
         title: 'பணியாளர் நேர்காணல் கேள்வித்தாள்',
+        common: {
+            yes: 'ஆம்',
+            no: 'இல்லை',
+            select: 'தேர்ந்தெடு...',
+            submit: 'நேர்காணல் விவரங்களைச் சமர்ப்பிக்கவும்',
+            submitting: 'சமர்ப்பிக்கப்படுகிறது...'
+        },
         sections: {
             basic: '1. அடிப்படை தகவல்கள்',
             workPrefs: '2. வேலை விருப்பங்கள்',
             habits: '3. வேலை பழக்கம் மற்றும் ஒழுக்கம்',
-            health: '4. உடல்நலம் மற்றும் விடுப்பு',
+            health: '4. உடல்நலம் 및 விடுப்பு',
             lifestyle: '5. உணவு மற்றும் வாழ்க்கை முறை',
             training: '6. பயிற்சி மற்றும் திறன்கள்',
             personal: '7. தனிப்பட்ட பழக்கங்கள்',
@@ -254,8 +351,9 @@ export const translations: Record<Language, any> = {
         fields: {
             fullName: 'முழுப் பெயர்',
             age: 'வயது',
-            maritalStatus: 'திருமண நிலை (திருமணமானவர் / திருமணமாகாதவர் / விதவை / விதவர்)',
-            hasChildren: 'உங்களுக்கு குழந்தைகள் உள்ளனவா? இருந்தால் எண்ணிக்கை மற்றும் வயது',
+            maritalStatus: 'திருமண நிலை',
+            hasChildren: 'உங்களுக்கு குழந்தைகள் உள்ளனவா?',
+            childrenDetails: 'இருந்தால் எண்ணிக்கை மற்றும் வயது',
             localReference: 'உங்களிடம் உள்ளூர் பரிந்துரை உள்ளதா? இருந்தால் தொடர்பு எண்',
             hasSmartphone: 'உங்களிடம் ஸ்மார்ட்போன் உள்ளதா?',
             speakHindi: 'நீங்கள் இந்தி பேச முடியுமா?',
@@ -263,7 +361,7 @@ export const translations: Record<Language, any> = {
             readWriteHindi: 'நீங்கள் இந்தி படிக்கவும் எழுதவும் முடியுமா?',
             workInterests: 'நீங்கள் எந்த வகை வேலை செய்ய விரும்புகிறீர்கள்? (சமையல் / வீட்டு சுத்தம் / குழந்தை பராமரிப்பு / முதியோர் பராமரிப்பு / அனைத்து வேலைகள்)',
             comfortableCooking: 'சமையல் செய்ய உங்களுக்கு வசதியா?',
-            cookType: 'சைவம், அசைவம் அல்லது இரண்டையும் சமைக்க முடியுமா?',
+            cookType: 'நீங்கள் எந்த வகை உணவு சமைக்க விரும்புகிறீர்கள்?',
             prepareMilletDietary: 'சிறுதானிய அல்லது டயட் உணவு செய்ய முடியுமா?',
             comfortableHousekeeping: 'வீட்டு சுத்தம் செய்ய வசதியா?',
             willingCleanBathrooms: 'குளியலறை சுத்தம் செய்ய தயாரா?',
@@ -300,17 +398,39 @@ export const translations: Record<Language, any> = {
             followHouseRules: 'வீட்டின் விதிகளை பின்பற்ற தயாரா?',
             consentText: 'நான் வழங்கிய அனைத்து தகவல்களும் உண்மை. சரிபார்ப்பு மற்றும் பணியமர்த்தலுக்காக எனது தகவல்களை பகிர ஒப்புக்கொள்கிறேன்.'
         },
+        options: {
+            maritalStatus: {
+                married: 'திருமணமானவர்',
+                unmarried: 'திருமணமாகாதவர்',
+                widow: 'விதவை',
+                widower: 'விதவர்'
+            },
+            cookType: {
+                vegetarian: 'சைவம்',
+                nonVegetarian: 'அசைவம்',
+                both: 'இரண்டும்'
+            },
+            leavePreference: {
+                monthly: 'மாதாந்திரம்',
+                cumulative: 'ஒரே முறையாக'
+            },
+            riceOrRoti: {
+                rice: 'அரிசி',
+                roti: 'ரொட்டி',
+                both: 'இரண்டும்'
+            }
+        },
         placeholders: {
             fullName: 'உதாரணம்: சுனிதா குமாரி',
             age: 'உதாரணம்: 28',
-            hasChildren: 'உதாரணம்: 2 குழந்தைகள் (வயது 4 மற்றும் 7)',
+            childrenDetails: 'உதாரணம்: 2 குழந்தைகள் (வயது 4 மற்றும் 7)',
             localReference: 'உதாரணம்: ரமேஷ் சிங் - 9876543210',
             speakOtherLanguages: 'உதாரணம்: ஆங்கிலம், பஞ்சாபி',
             canDrive: 'உதாரணம்: கார் மற்றும் ஸ்கூட்டர்',
             wakeUpTime: 'உதாரணம்: காலை 5:30',
             regularMedicines: 'உதாரணம்: இரத்த அழுத்த மாத்திரை',
             healthConditions: 'உதாரணம்: ஏதும் இல்லை',
-            foodRestrictions: 'உதாரணம்: மாட்டிறைச்சி / பன்றி இறைச்சி இல்லை',
+            foodRestrictions: 'உதாரணம்: மாட்டிறैச்சி / பன்றி இறைச்சி இல்லை',
             foodAllergies: 'உதாரணம்: வேர்க்கடலை ஒவ்வாமை',
             formalTraining: 'உதாரணம்: வீட்டு செவிலியர் பயிற்சியில் 3 மாத படிப்பு',
             specificTrainingNeeded: 'உதாரணம்: செமி-ஆட்டோமேட்டிக் வாஷிங் மெஷின் கற்க வேண்டும்',
@@ -320,6 +440,13 @@ export const translations: Record<Language, any> = {
     te: {
         label: 'తెలుగు',
         title: 'హెల్పర్ ఇంటర్వ్యూ ప్రశ్నపత్రం',
+        common: {
+            yes: 'అవును',
+            no: 'కాదు',
+            select: 'ఎంచుకోండి...',
+            submit: 'ఇంటర్వ్యూ వివరాలను సమర్పించండి',
+            submitting: 'సమర్పిస్తున్నారు...'
+        },
         sections: {
             basic: '1. ప్రాథమిక సమాచారం',
             workPrefs: '2. పని అభిరుచులు',
@@ -333,8 +460,9 @@ export const translations: Record<Language, any> = {
         fields: {
             fullName: 'పూర్తి పేరు',
             age: 'వయస్సు',
-            maritalStatus: 'వివాహ స్థితి (వివాహిత / అవివాహిత / విధవ / విధురుడు)',
-            hasChildren: 'మీకు పిల్లలు ఉన్నారా? ఉంటే ఎంత మంది మరియు వారి వయస్సు ఎంత?',
+            maritalStatus: 'వైవాహిక స్థితి',
+            hasChildren: 'మీకు పిల్లలు ఉన్నారా?',
+            childrenDetails: 'ఉంటే ఎంత మంది మరియు వారి వయస్సు ఎంత?',
             localReference: 'మీకు స్థానిక రిఫరెన్స్ ఉందా? ఉంటే ఫోన్ నంబర్ ఇవ్వండి',
             hasSmartphone: 'మీ వద్ద స్మార్ట్ఫోన్ ఉందా?',
             speakHindi: 'మీరు హిందీ మాట్లాడగలరా?',
@@ -342,7 +470,7 @@ export const translations: Record<Language, any> = {
             readWriteHindi: 'మీరు హిందీ చదవడం మరియు రాయడం వచ్చా?',
             workInterests: 'మీరు ఏ రకమైన పని చేయాలని కోరుకుంటున్నారు? (వంట / హౌస్కీపింగ్ / పిల్లల సంరక్షణ / వృద్ధుల సంరక్షణ / అన్ని పనులు)',
             comfortableCooking: 'వంట చేయడంలో మీకు సౌకర్యంగా ఉందా?',
-            cookType: 'శాకాహారం, మాంసాహారం లేదా రెండింటిని వండగలరా?',
+            cookType: 'మీరు ఏ రకమైన ఆహారం వండగలరు?',
             prepareMilletDietary: 'మిల్లెట్ లేదా డైట్ ఫుడ్ చేయగలరా?',
             comfortableHousekeeping: 'ఇంటి శుభ్రత పనులు చేయగలరా?',
             willingCleanBathrooms: 'బాత్రూమ్ శుభ్రం చేయడానికి సిద్ధంగా ఉన్నారా?',
@@ -379,10 +507,32 @@ export const translations: Record<Language, any> = {
             followHouseRules: 'ఇంటి నియమాలను పాటించడానికి సిద్ధంగా ఉన్నారా?',
             consentText: 'నేను ఇచ్చిన సమాచారం నిజమైనది. ధృవీకరణ మరియు నియామక ప్రయోజనాల కోసం నా వ్యక్తిగత వివరాలను పంచుకోవడానికి నేను సమ్మతిస్తున్నాను.'
         },
+        options: {
+            maritalStatus: {
+                married: 'వివాహితుడు/రాలు',
+                unmarried: 'అవివాహితుడు/రాలు',
+                widow: 'విధవ',
+                widower: 'విధరుడు'
+            },
+            cookType: {
+                vegetarian: 'శాకాహారం',
+                nonVegetarian: 'మాంసాహారం',
+                both: 'రెండూ'
+            },
+            leavePreference: {
+                monthly: 'నెలవారీ',
+                cumulative: 'ఒకేసారి'
+            },
+            riceOrRoti: {
+                rice: 'అన్నం',
+                roti: 'రోటీ',
+                both: 'రెండూ'
+            }
+        },
         placeholders: {
             fullName: 'ఉదాహరణకు: సునీత కుమారి',
             age: 'ఉదాహరణకు: 28',
-            hasChildren: 'ఉదాహరణకు: 2 పిల్లలు (వయస్సు 4 మరియు 7)',
+            childrenDetails: 'ఉదాహరణకు: 2 పిల్లలు (వయస్సు 4 మరియు 7)',
             localReference: 'ఉదాహరణకు: రమేష్ సింగ్ - 9876543210',
             speakOtherLanguages: 'ఉదాహరణకు: ఇంగ్లీష్, పంజాబీ',
             canDrive: 'ఉదాహరణకు: కారు మరియు స్కూటర్',
@@ -391,7 +541,7 @@ export const translations: Record<Language, any> = {
             healthConditions: 'ఉదాహరణకు: ఏమీ లేదు',
             foodRestrictions: 'ఉదాహరణకు: గొడ్డు మాంసం / పంది మాంసం లేదు',
             foodAllergies: 'ఉదాహరణకు: వేరుశనగ అలర్జీ',
-            formalTraining: 'ఉదాహರಣకు: హోమ్ నర్సింగ్‌లో 3 నెలల కోర్సు',
+            formalTraining: 'ఉదాహరణకు: హోమ్ నర్సింగ్‌లో 3 నెలల కోర్సు',
             specificTrainingNeeded: 'ఉదాహరణకు: సెమీ ఆటోమేటిక్ వాషింగ్ మెషీన్ నేర్చుకోవాలి',
             personalHabits: 'ఉదాహరణకు: ఏమీ లేదు'
         }

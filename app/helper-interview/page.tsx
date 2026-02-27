@@ -153,16 +153,25 @@ export default function HelperInterviewPage() {
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.maritalStatus} *</label>
                                     <select name="maritalStatus" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="">Select...</option>
-                                        <option value="Married">Married</option>
-                                        <option value="Unmarried">Unmarried</option>
-                                        <option value="Widow">Widow</option>
-                                        <option value="Widower">Widower</option>
+                                        <option value="">{t.common.select}</option>
+                                        <option value="Married">{t.options.maritalStatus.married}</option>
+                                        <option value="Unmarried">{t.options.maritalStatus.unmarried}</option>
+                                        <option value="Widow">{t.options.maritalStatus.widow}</option>
+                                        <option value="Widower">{t.options.maritalStatus.widower}</option>
                                     </select>
                                 </div>
-                                <div>
-                                    <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.hasChildren} *</label>
-                                    <input type="text" name="hasChildren" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.hasChildren} />
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.hasChildren} *</label>
+                                        <select name="hasChildren" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
+                                            <option value="Yes">{t.common.yes}</option>
+                                            <option value="No">{t.common.no}</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.childrenDetails}</label>
+                                        <input type="text" name="childrenDetails" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50" placeholder={t.placeholders.childrenDetails} />
+                                    </div>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.localReference} *</label>
@@ -171,15 +180,15 @@ export default function HelperInterviewPage() {
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.hasSmartphone} *</label>
                                     <select name="hasSmartphone" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.speakHindi} *</label>
                                     <select name="speakHindi" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
@@ -189,8 +198,8 @@ export default function HelperInterviewPage() {
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.readWriteHindi} *</label>
                                     <select name="readWriteHindi" required className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                             </div>
@@ -217,79 +226,79 @@ export default function HelperInterviewPage() {
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.comfortableCooking}</label>
                                     <select name="comfortableCooking" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.cookType}</label>
                                     <select name="cookType" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Vegetarian">Vegetarian</option>
-                                        <option value="Non-Vegetarian">Non-Vegetarian</option>
-                                        <option value="Both">Both</option>
+                                        <option value="Vegetarian">{t.options.cookType.vegetarian}</option>
+                                        <option value="Non-Vegetarian">{t.options.cookType.nonVegetarian}</option>
+                                        <option value="Both">{t.options.cookType.both}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.prepareMilletDietary}</label>
                                     <select name="prepareMilletDietary" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.comfortableHousekeeping}</label>
                                     <select name="comfortableHousekeeping" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.willingCleanBathrooms}</label>
                                     <select name="willingCleanBathrooms" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.knowIroning}</label>
                                     <select name="knowIroning" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.operateWashingMachine}</label>
                                     <select name="operateWashingMachine" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.useAppliances}</label>
                                     <select name="useAppliances" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.comfortableKids}</label>
                                     <select name="comfortableKids" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.comfortableElderly}</label>
                                     <select name="comfortableElderly" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.dropChildrenBusStop}</label>
                                     <select name="dropChildrenBusStop" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
@@ -313,50 +322,50 @@ export default function HelperInterviewPage() {
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.earlyStart}</label>
                                     <select name="earlyStart" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.comfortablePets}</label>
                                     <select name="comfortablePets" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.nonVegHome}</label>
                                     <select name="nonVegHome" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.phoneDuringWork}</label>
                                     <select name="phoneDuringWork" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.socialMediaWork}</label>
                                     <select name="socialMediaWork" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.manageMultipleTasks}</label>
                                     <select name="manageMultipleTasks" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.runBehindChildren}</label>
                                     <select name="runBehindChildren" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                             </div>
@@ -380,29 +389,29 @@ export default function HelperInterviewPage() {
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.monthlyLeave}</label>
                                     <select name="monthlyLeave" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.leavePreference}</label>
                                     <select name="leavePreference" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Monthly">Monthly</option>
-                                        <option value="All Together">All Together</option>
+                                        <option value="Monthly">{t.options.leavePreference.monthly}</option>
+                                        <option value="All Together">{t.options.leavePreference.cumulative}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.restTimeNeeded}</label>
                                     <select name="restTimeNeeded" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.menstrualCycleComfort}</label>
                                     <select name="menstrualCycleComfort" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                             </div>
@@ -418,9 +427,9 @@ export default function HelperInterviewPage() {
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.riceOrRoti}</label>
                                     <select name="riceOrRoti" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Rice">Rice</option>
-                                        <option value="Roti">Roti</option>
-                                        <option value="Both">Both</option>
+                                        <option value="Rice">{t.options.riceOrRoti.rice}</option>
+                                        <option value="Roti">{t.options.riceOrRoti.roti}</option>
+                                        <option value="Both">{t.options.riceOrRoti.both}</option>
                                     </select>
                                 </div>
                                 <div>
@@ -434,8 +443,8 @@ export default function HelperInterviewPage() {
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.vegNonVegPreference}</label>
                                     <select name="vegNonVegPreference" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                                 <div className="md:col-span-2">
@@ -467,8 +476,8 @@ export default function HelperInterviewPage() {
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.openToTraining}</label>
                                     <select name="openToTraining" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                             </div>
@@ -488,8 +497,8 @@ export default function HelperInterviewPage() {
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.followHouseRules}</label>
                                     <select name="followHouseRules" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="Yes">{t.common.yes}</option>
+                                        <option value="No">{t.common.no}</option>
                                     </select>
                                 </div>
                             </div>
@@ -520,12 +529,12 @@ export default function HelperInterviewPage() {
                                 {isSubmitting ? (
                                     <>
                                         <ArrowPathIcon className="animate-spin -ml-1 mr-3 h-6 w-6 text-white" />
-                                        Submitting...
+                                        {t.common.submitting}
                                     </>
                                 ) : (
                                     <>
                                         <PaperAirplaneIcon className="-ml-1 mr-3 h-6 w-6 text-white" />
-                                        Submit Interview Details
+                                        {t.common.submit}
                                     </>
                                 )}
                             </button>
