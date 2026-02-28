@@ -10,7 +10,6 @@ import {
     CheckCircleIcon,
     ClockIcon,
     HeartIcon,
-    UserGroupIcon,
     ShieldCheckIcon,
     UserPlusIcon,
     BanknotesIcon,
@@ -73,6 +72,20 @@ export default function HelperJobsPage() {
                         { label: 'Helper Jobs', href: '/helper-jobs' },
                         { label: 'Jharkhand' }
                     ]}
+                    rightContent={
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm relative -top-7 md:-top-0 lg:-top-0">
+                            <span className="text-gray-500 font-medium whitespace-nowrap">हिंदी</span>
+                            <Link
+                                href="/helper-jobs/jharkhand/hin"
+                                className="w-10 h-5 bg-teal-600 rounded-full p-1 relative transition-colors inline-block"
+                            >
+                                <div
+                                    className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"
+                                />
+                            </Link>
+                            <span className="text-gray-900 font-bold whitespace-nowrap">ENG</span>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section with Bright Colors */}
@@ -102,7 +115,7 @@ export default function HelperJobsPage() {
                                 <div className="col-span-3 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[10px] md:text-base font-medium flex items-center justify-center text-center leading-tight">✓ Free training</div>
                             </div>
 
-                            <div className="grid grid-cols-1 gap-2 md:gap-4 max-w-3xl mx-auto">
+                            <div className="grid grid-cols-2 gap-2 md:gap-4 max-w-3xl mx-auto">
                                 <Link
                                     href="/helper-registration"
                                     className="inline-flex items-center justify-center w-full bg-white text-teal-700 font-semibold text-sm sm:text-base md:text-lg py-3 px-1 md:py-4 md:px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300 text-center whitespace-nowrap"
