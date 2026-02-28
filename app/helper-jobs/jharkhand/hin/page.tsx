@@ -169,6 +169,7 @@ export default function HelperJobsJharkhandHinPage() {
                                 {
                                     state: "हाउसकीपिंग जॉब्स",
                                     slug: "housekeeping-jobs",
+                                    fullPath: "/helper-jobs/jharkhand/housekeeping-job-bangalore",
                                     desc: "घर की रोज़ सफाई करना, पोछा लगाना, बर्तन और कपड़े धोना और घर को साफ व व्यवस्थित रखना।",
                                     features: ["घर की रोज सफाई और पोछा करना", "बर्तन, कपड़े और लॉन्ड्री में मदद करना", "कमरों और फर्नीचर को साफ रखना", "लिव-इन या फुल-टाइम काम उपलब्ध"]
                                 },
@@ -217,7 +218,7 @@ export default function HelperJobsJharkhandHinPage() {
                             ].map((item, index) => (
                                 <Link
                                     key={index}
-                                    href={`/helper-jobs/hin/${item.slug}`}
+                                    href={item.fullPath || `/helper-jobs/hin/${item.slug}`}
                                     className="group bg-white rounded-2xl p-6 border border-teal-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block text-left relative overflow-hidden"
                                 >
                                     <h3 className="text-lg md:text-2xl font-bold text-teal-700 mb-3 group-hover:text-teal-800 relative z-10">{item.state}</h3>

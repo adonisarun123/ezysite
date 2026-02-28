@@ -169,6 +169,7 @@ export default function HelperJobsPage() {
                             {[
                                 {
                                     state: "Housekeeping Jobs",
+                                    fullPath: "/helper-jobs/jharkhand/housekeeping-job-bangalore",
                                     desc: "Clean and mop homes daily, wash dishes and clothes, and maintain neat and organised rooms.",
                                     features: ["Clean and mop the house every day", "Wash dishes, clothes, and help with laundry", "Keep rooms and furniture neat", "Live-in or full-time work available"]
                                 },
@@ -215,7 +216,7 @@ export default function HelperJobsPage() {
                             ].map((item, index) => (
                                 <Link
                                     key={index}
-                                    href={`/helper-jobs/${item.state.toLowerCase().replace(/\s+/g, '-')}`}
+                                    href={item.fullPath || `/helper-jobs/${item.state.toLowerCase().replace(/\s+/g, '-')}`}
                                     className="group bg-white rounded-2xl p-6 border border-teal-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block text-left relative overflow-hidden"
                                 >
                                     <h3 className="text-lg md:text-2xl font-bold text-teal-700 mb-3 group-hover:text-teal-800 relative z-10">{item.state}</h3>
