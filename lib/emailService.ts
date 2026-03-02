@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import pRetry from 'p-retry';
 import { EMAIL } from './constants';
 import { logger } from './logger';
-import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, EmailSendResult, LeadType } from '../types/email';
+import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType } from '../types/email';
 
 // Utility function to format phone numbers to bypass DLP (shows all digits with spaces)
 const formatPhoneForEmail = (phone: string): string => {
@@ -892,6 +892,282 @@ async function sendEmailWithRetry(
 }
 
 // Main email sending function
+const generateCustomerRequirementEmail = (formData: CustomerRequirementFormData): EmailContent => {
+  const formattedPhone = formatPhoneForEmail(formData.mobileNumber);
+
+  const tasksList = formData.tasks ? Object.entries(formData.tasks)
+    .filter(([_, value]) => value === true)
+    .map(([key, _]) => key.replace(/([A-Z])/g, ' $1').toLowerCase())
+    .join(', ') : 'None';
+
+  return {
+    subject: `New Customer Requirement: ${formData.customerName} - ${formData.serviceType}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto;">
+        <h2 style="color: #2563eb; background-color: #eff6ff; padding: 20px; border-radius: 8px; margin: 0 0 20px 0;">🏠 New Customer Requirement</h2>
+        
+        <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #334155;">Customer Details</h3>
+          <p><strong>Name:</strong> ${formData.customerName}</p>
+          <p><strong>Phone:</strong> <a href="tel:${formData.mobileNumber}" style="text-decoration: none; color: #1e40af;">${formattedPhone}</a></p>
+          <p><strong>Address:</strong> ${formData.houseNumber}, ${formData.apartmentName}, ${formData.areaLocality}</p>
+        </div>
+
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #1e293b;">Service Requirements</h3>
+          <p><strong>Service Type:</strong> ${formData.serviceType}${formData.serviceType === 'other' ? ` (${formData.serviceTypeOther})` : ''}</p>
+          <p><strong>Work Type:</strong> ${formData.workType}</p>
+          <p><strong>Timings:</strong> ${formData.workTiming.startTime} - ${formData.workTiming.endTime}</p>
+        </div>
+
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #1e293b;">Preferences</h3>
+          <p><strong>Age Preference:</strong> ${formData.agePreference?.replace('_', ' ') || 'No preference'}</p>
+          <p><strong>Gender Preference:</strong> ${formData.preferredGender || 'No preference'}</p>
+          <p><strong>Languages:</strong> ${formData.languages?.join(', ') || 'No preference'}</p>
+          <p><strong>House Rules:</strong> ${formData.houseRules || 'None'}</p>
+        </div>
+
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #1e293b;">Daily Routine & Household</h3>
+          <p><strong>Wake Up Early:</strong> ${formData.wakeUpEarly ? `Yes (at ${formData.wakeupTime || 'Not specified'})` : 'No'}</p>
+          <p><strong>Sleeping Time:</strong> ${formData.usualSleepingTime || 'Not specified'}</p>
+          <p><strong>Rest Time:</strong> ${formData.restTimeProvided ? `Yes (${formData.restTimeDetails})` : 'No'}</p>
+          <p><strong>Dietary Preference:</strong> ${formData.dietaryPreference === 'vegetarian' ? 'Vegetarian Only' : 'Vegetarian & Non-Vegetarian'}</p>
+          <p><strong>Food & Snacks:</strong> Tea/Snacks: ${formData.provideTeaSnacks ? 'Yes' : 'No'}, Meals: ${formData.provideMeals ? 'Yes' : 'No'}</p>
+          <p><strong>Food Arrangement:</strong> ${formData.foodArrangement || 'Not specified'}</p>
+          <p><strong>Personal Care Provided:</strong> ${formData.personalCareItems?.join(', ') || 'None'}</p>
+          <p><strong>Tasks:</strong> ${tasksList}</p>
+          <p><strong>Gas Stove:</strong> ${formData.gasStoveType || 'Not specified'}</p>
+          <p><strong>Drop Children:</strong> ${formData.dropChildrenBusStop ? 'Yes' : 'No'}</p>
+          <p><strong>House Details:</strong> Pets: ${formData.hasPets ? 'Yes' : 'No'}, Elderly: ${formData.hasElderly ? 'Yes' : 'No'}, Type: ${formData.houseType || 'Not specified'}</p>
+          <p><strong>Separate Room:</strong> ${formData.separateRoomProvided === true ? 'Yes' : formData.separateRoomProvided === false ? 'No' : 'Not specified'}</p>
+          <p><strong>BHK / House Size:</strong> ${formData.bhkType === 'other' ? formData.bhkOther || 'Other' : formData.bhkType?.toUpperCase() || 'Not specified'}</p>
+          <p><strong>Menstrual Restrictions:</strong> ${formData.kitchenRestrictionMenstrualPeriods ? 'Yes' : 'No'}</p>
+        </div>
+
+        <div style="background-color: #fffbeb; padding: 20px; border: 1px solid #fbbf24; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #92400e;">Policy Understandings</h3>
+          <p><strong>Emergency Leave:</strong> ${formData.emergencyLeaveOk ? 'Yes' : 'No'}</p>
+          <p><strong>Salary Policy:</strong> Agreed to pay by 7th, no advance salary, provide feedback within 1 month.</p>
+        </div>
+
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #e2e8f0;">
+        <p style="color: #64748b; font-size: 12px;">This email was automatically generated from the EzyHelpers website customer requirement form.</p>
+      </div>
+    `,
+    text: `
+New Customer Requirement: ${formData.customerName} - ${formData.serviceType}
+
+CUSTOMER DETAILS:
+- Name: ${formData.customerName}
+- Phone: ${formattedPhone}
+- Address: ${formData.houseNumber}, ${formData.apartmentName}, ${formData.areaLocality}
+
+SERVICE REQUIREMENTS:
+- Service Type: ${formData.serviceType}${formData.serviceType === 'other' ? ` (${formData.serviceTypeOther})` : ''}
+- Work Type: ${formData.workType}
+- Timings: ${formData.workTiming.startTime} - ${formData.workTiming.endTime}
+
+PREFERENCES:
+- Age Preference: ${formData.agePreference?.replace('_', ' ') || 'No preference'}
+- Gender Preference: ${formData.preferredGender || 'No preference'}
+- Languages: ${formData.languages?.join(', ') || 'No preference'}
+- House Rules: ${formData.houseRules || 'None'}
+
+DAILY ROUTINE & HOUSEHOLD:
+- Wake Up Early: ${formData.wakeUpEarly ? `Yes (at ${formData.wakeupTime || 'Not specified'})` : 'No'}
+- Sleeping Time: ${formData.usualSleepingTime || 'Not specified'}
+- Rest Time: ${formData.restTimeProvided ? `Yes (${formData.restTimeDetails})` : 'No'}
+- Dietary Preference: ${formData.dietaryPreference === 'vegetarian' ? 'Vegetarian Only' : 'Vegetarian & Non-Vegetarian'}
+- Food & Snacks: Tea/Snacks: ${formData.provideTeaSnacks ? 'Yes' : 'No'}, Meals: ${formData.provideMeals ? 'Yes' : 'No'}
+- Food Arrangement: ${formData.foodArrangement || 'Not specified'}
+- Personal Care Provided: ${formData.personalCareItems?.join(', ') || 'None'}
+- Tasks: ${tasksList}
+- Gas Stove: ${formData.gasStoveType || 'Not specified'}
+- Drop Children: ${formData.dropChildrenBusStop ? 'Yes' : 'No'}
+- House Details: Pets: ${formData.hasPets ? 'Yes' : 'No'}, Elderly: ${formData.hasElderly ? 'Yes' : 'No'}, Type: ${formData.houseType || 'Not specified'}
+- Separate Room: ${formData.separateRoomProvided === true ? 'Yes' : formData.separateRoomProvided === false ? 'No' : 'Not specified'}
+- BHK / House Size: ${formData.bhkType === 'other' ? formData.bhkOther || 'Other' : formData.bhkType?.toUpperCase() || 'Not specified'}
+- Menstrual Restrictions: ${formData.kitchenRestrictionMenstrualPeriods ? 'Yes' : 'No'}
+
+POLICY UNDERSTANDINGS:
+- Emergency Leave: ${formData.emergencyLeaveOk ? 'Yes' : 'No'}
+- Salary Policy: Agreed to pay by 7th, no advance salary, provide feedback within 1 month.
+
+---
+This email was automatically generated from the EzyHelpers website customer requirement form.
+    `,
+  };
+};
+
+const generateHelperInterviewEmail = (formData: HelperInterviewFormData): EmailContent => {
+  return {
+    subject: `Helper Interview Questionnaire: ${formData.fullName} - ${formData.language.toUpperCase()}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; line-height: 1.6; color: #333;">
+        <h2 style="color: #1e40af; background-color: #eff6ff; padding: 20px; border-radius: 8px; margin: 0 0 20px 0; border-left: 4px solid #1e40af;">📘 Helper Interview Questionnaire</h2>
+        
+        <div style="background-color: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #e2e8f0;">
+          <p style="margin: 0;"><strong>Submission ID:</strong> ${formData.requestId}</p>
+          <p style="margin: 5px 0 0 0;"><strong>Language Used:</strong> ${formData.language.toUpperCase()}</p>
+          <p style="margin: 5px 0 0 0;"><strong>Submitted On:</strong> ${new Date(formData.submittedAt).toLocaleString()}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">1. Basic Information</h3>
+          <p><strong>Full Name:</strong> ${formData.fullName}</p>
+          <p><strong>Age:</strong> ${formData.age}</p>
+          <p><strong>Marital Status:</strong> ${formData.maritalStatus}</p>
+          <p><strong>Has Children:</strong> ${formData.hasChildren}</p>
+          <p><strong>Local Reference:</strong> ${formData.localReference}</p>
+          <p><strong>Has Smartphone:</strong> ${formData.hasSmartphone}</p>
+          <p><strong>Speak Hindi:</strong> ${formData.speakHindi}</p>
+          <p><strong>Speak/Other Languages:</strong> ${formData.speakOtherLanguages}</p>
+          <p><strong>Read/Write Hindi:</strong> ${formData.readWriteHindi}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">2. Work Preferences</h3>
+          <p><strong>Interests:</strong> ${formData.workInterests.join(', ')}</p>
+          <p><strong>Cooking Comfort:</strong> ${formData.comfortableCooking}</p>
+          <p><strong>Cook Type:</strong> ${formData.cookType}</p>
+          <p><strong>Millet/Dietary Meals:</strong> ${formData.prepareMilletDietary}</p>
+          <p><strong>Housekeeping Comfort:</strong> ${formData.comfortableHousekeeping}</p>
+          <p><strong>Clean Bathrooms:</strong> ${formData.willingCleanBathrooms}</p>
+          <p><strong>Ironing:</strong> ${formData.knowIroning}</p>
+          <p><strong>Washing Machine:</strong> ${formData.operateWashingMachine}</p>
+          <p><strong>Appliances:</strong> ${formData.useAppliances}</p>
+          <p><strong>Children Care:</strong> ${formData.comfortableKids}</p>
+          <p><strong>Elderly Care:</strong> ${formData.comfortableElderly}</p>
+          <p><strong>Drop Children at Bus Stop:</strong> ${formData.dropChildrenBusStop}</p>
+          <p><strong>Driving Skills:</strong> ${formData.canDrive}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">3. Work Habits & Discipline</h3>
+          <p><strong>Wake up time:</strong> ${formData.wakeUpTime}</p>
+          <p><strong>Early start:</strong> ${formData.earlyStart}</p>
+          <p><strong>With pets:</strong> ${formData.comfortablePets}</p>
+          <p><strong>Non-veg home:</strong> ${formData.nonVegHome}</p>
+          <p><strong>Phone during work:</strong> ${formData.phoneDuringWork}</p>
+          <p><strong>Social media during work:</strong> ${formData.socialMediaWork}</p>
+          <p><strong>Multiple tasks:</strong> ${formData.manageMultipleTasks}</p>
+          <p><strong>Running behind children:</strong> ${formData.runBehindChildren}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">4. Health & Leave Policy</h3>
+          <p><strong>Regular medicines:</strong> ${formData.regularMedicines}</p>
+          <p><strong>Health conditions:</strong> ${formData.healthConditions}</p>
+          <p><strong>Monthly leave:</strong> ${formData.monthlyLeave}</p>
+          <p><strong>Leave preference:</strong> ${formData.leavePreference}</p>
+          <p><strong>Rest time:</strong> ${formData.restTimeNeeded}</p>
+          <p><strong>Menstrual cycle comfort:</strong> ${formData.menstrualCycleComfort}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">5. Food & Lifestyle Preferences</h3>
+          <p><strong>Eat same food:</strong> ${formData.eatSameFood}</p>
+          <p><strong>Veg/Non-veg based on household:</strong> ${formData.vegNonVegPreference}</p>
+          <p><strong>Food restrictions:</strong> ${formData.foodRestrictions}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">6. Training & Skills</h3>
+          <p><strong>Formal training:</strong> ${formData.formalTraining}</p>
+          <p><strong>Specific training needs:</strong> ${formData.specificTrainingNeeded}</p>
+          <p><strong>Open to training:</strong> ${formData.openToTraining}</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <h3 style="color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">7. Personal Habits</h3>
+          <p><strong>Smoking/Drinking/Tobacco:</strong> ${formData.personalHabits}</p>
+          <p><strong>Follow house rules:</strong> ${formData.followHouseRules}</p>
+        </div>
+
+        <div style="padding: 15px; background-color: #fefce8; border-radius: 8px; border: 1px solid #fef08a;">
+          <p style="margin: 0;"><strong>Legal Consent:</strong> ${formData.legalConsent ? 'YES' : 'NO'}</p>
+        </div>
+
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #e2e8f0;">
+        <p style="color: #64748b; font-size: 12px;">This email was automatically generated from the EzyHelpers Helper Interview Questionnaire.</p>
+      </div>
+    `,
+    text: `
+Helper Interview Questionnaire: ${formData.fullName} - ${formData.language.toUpperCase()}
+
+SUBMISSION DETAILS:
+- ID: ${formData.requestId}
+- Language: ${formData.language.toUpperCase()}
+- Submitted On: ${new Date(formData.submittedAt).toLocaleString()}
+
+1. BASIC INFORMATION
+- Name: ${formData.fullName}
+- Age: ${formData.age}
+- Marital Status: ${formData.maritalStatus}
+- Has Children: ${formData.hasChildren}
+- Local Reference: ${formData.localReference}
+- Has Smartphone: ${formData.hasSmartphone}
+- Speak Hindi: ${formData.speakHindi}
+- Speak/Other Languages: ${formData.speakOtherLanguages}
+- Read/Write Hindi: ${formData.readWriteHindi}
+
+2. WORK PREFERENCES
+- Interests: ${formData.workInterests.join(', ')}
+- Cooking Comfort: ${formData.comfortableCooking}
+- Cook Type: ${formData.cookType}
+- Millet/Dietary Meals: ${formData.prepareMilletDietary}
+- Housekeeping Comfort: ${formData.comfortableHousekeeping}
+- Clean Bathrooms: ${formData.willingCleanBathrooms}
+- Ironing: ${formData.knowIroning}
+- Washing Machine: ${formData.operateWashingMachine}
+- Appliances: ${formData.useAppliances}
+- Children Care: ${formData.comfortableKids}
+- Elderly Care: ${formData.comfortableElderly}
+- Drop Children at Bus Stop: ${formData.dropChildrenBusStop}
+- Driving Skills: ${formData.canDrive}
+
+3. WORK HABITS & DISCIPLINE
+- Wake up time: ${formData.wakeUpTime}
+- Early start: ${formData.earlyStart}
+- With pets: ${formData.comfortablePets}
+- Non-veg home: ${formData.nonVegHome}
+- Phone during work: ${formData.phoneDuringWork}
+- Social media during work: ${formData.socialMediaWork}
+- Multiple tasks: ${formData.manageMultipleTasks}
+- Running behind children: ${formData.runBehindChildren}
+
+4. HEALTH & LEAVE POLICY
+- Regular medicines: ${formData.regularMedicines}
+- Health conditions: ${formData.healthConditions}
+- Monthly leave: ${formData.monthlyLeave}
+- Leave preference: ${formData.leavePreference}
+- Rest time: ${formData.restTimeNeeded}
+- Menstrual cycle comfort: ${formData.menstrualCycleComfort}
+
+5. FOOD & LIFESTYLE PREFERENCES
+- Eat same food: ${formData.eatSameFood}
+- Veg/Non-veg based on household: ${formData.vegNonVegPreference}
+- Food restrictions: ${formData.foodRestrictions}
+
+6. TRAINING & SKILLS
+- Formal training: ${formData.formalTraining}
+- Specific training needs: ${formData.specificTrainingNeeded}
+- Open to training: ${formData.openToTraining}
+
+7. PERSONAL HABITS
+- Smoking/Drinking/Tobacco: ${formData.personalHabits}
+- Follow house rules: ${formData.followHouseRules}
+
+LEGAL CONSENT: ${formData.legalConsent ? 'YES' : 'NO'}
+
+---
+This email was automatically generated from the EzyHelpers Helper Interview Questionnaire.
+    `,
+  };
+};
+
 export const sendLeadEmail = async (
   leadType: LeadType,
   formData: any, // TODO: Create union type for all form data types
@@ -899,14 +1175,21 @@ export const sendLeadEmail = async (
   sourceUrl?: string
 ): Promise<EmailSendResult> => {
   try {
-    // Selective email routing based on lead type
     // hire_helper and general (contact form) use HIRE_CONTACT_EMAIL_RECIPIENTS
-    // Other forms use the default EMAIL_RECIPIENTS
     let emailRecipientsEnv: string;
 
     if (leadType === 'hire_helper' || leadType === 'general') {
-      // Use dedicated recipients for hire helper and contact forms
-      emailRecipientsEnv = process.env.HIRE_CONTACT_EMAIL_RECIPIENTS || process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
+      // Check if it's an on-demand helper lead from either form
+      const isHireHelperOnDemand = leadType === 'hire_helper' && formData.serviceType === 'on-demand';
+      const isGeneralOnDemand = leadType === 'general' && formData.service && typeof formData.service === 'string' && formData.service.toLowerCase().includes('on-demand');
+
+      if (isHireHelperOnDemand || isGeneralOnDemand) {
+        emailRecipientsEnv = 'saritha@ezyhelpers.com';
+      } else {
+        emailRecipientsEnv = process.env.HIRE_CONTACT_EMAIL_RECIPIENTS || process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
+      }
+    } else if (leadType === 'helper_interview') {
+      emailRecipientsEnv = process.env.HELPER_INTERVIEW_RECIPIENTS || 'suraj@ezyhelpers.com,priyanka@ezyhelpers.com,arun@ezyhelpers.com';
     } else {
       // Use default recipients for other forms (agent registration, helper registration, etc.)
       emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
@@ -949,8 +1232,14 @@ export const sendLeadEmail = async (
       case 'helper_registration':
         emailContent = generateHelperRegistrationEmail(formData);
         break;
+      case 'customer_requirement':
+        emailContent = generateCustomerRequirementEmail(formData);
+        break;
       case 'requirement':
         emailContent = generateRequirementLeadEmail({ ...formData, requestId: requestId || 'N/A', sourceUrl });
+        break;
+      case 'helper_interview':
+        emailContent = generateHelperInterviewEmail(formData);
         break;
       default:
         throw new Error('Invalid lead type');

@@ -14,7 +14,8 @@ export default function CTASection() {
     setSubmitStatus('submitting');
     setSubmitMessage('');
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = {
       name: formData.get('name') as string,
       phone: formData.get('phone') as string,
@@ -57,7 +58,7 @@ export default function CTASection() {
       trackFormComplete('cta_quick_quote');
 
       // Reset form and show success message
-      e.currentTarget.reset();
+      form.reset();
       setSubmitStatus('success');
       setSubmitMessage('Thank you! We\'ll contact you within 30 minutes.');
 
@@ -81,7 +82,7 @@ export default function CTASection() {
             Book Your Trusted Home Help Today!
           </h2>
           <p className="text-lg text-primary-100 max-w-3xl mx-auto mb-8">
-            Get reliable, efficient, and hassle-free housemaid services from EzyHelpers. 
+            Get reliable, efficient, and hassle-free housemaid services from EzyHelpers.
             It's quick to get the assistance you need for a comfortable home life.
           </p>
         </div>
@@ -90,15 +91,15 @@ export default function CTASection() {
           {/* CTA Buttons - Single column grid approach */}
           <div className="flex flex-col items-center justify-center space-y-6 w-full max-w-md mx-auto">
             {/* Primary CTA Button - Simplified flex layout */}
-            <Link 
-              href="/hire-helper" 
+            <Link
+              href="/hire-helper"
               className="w-full bg-white text-primary-600 font-semibold text-lg rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 inline-flex flex-row items-center justify-center gap-3 py-4 px-6 whitespace-nowrap"
               onClick={() => trackCTAClick('Book Verified Helper Now', 'cta_section', 'primary')}
             >
               <CheckBadgeIcon className="h-6 w-6 flex-shrink-0 self-center" />
               <span className="leading-none">Book Verified Helper Now</span>
             </Link>
-            
+
             {/* "or" Separator */}
             <div className="relative w-full max-w-sm">
               <div className="absolute inset-0 flex items-center">
@@ -108,10 +109,10 @@ export default function CTASection() {
                 <span className="text-primary-100 text-lg font-medium px-4">or</span>
               </div>
             </div>
-            
+
             {/* Secondary CTA Button - Simplified flex layout */}
-            <Link 
-              href="tel:+918031411776" 
+            <Link
+              href="tel:+918031411776"
               className="w-full bg-transparent border-2 border-white text-white font-semibold text-lg rounded-2xl hover:bg-white hover:text-primary-600 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 inline-flex flex-row items-center justify-center gap-3 py-4 px-6 whitespace-nowrap"
               onClick={() => trackPhoneClick('+918031411776', 'cta_section')}
             >
@@ -162,7 +163,7 @@ export default function CTASection() {
               </div>
               <div>
                 <label htmlFor="cta-service" className="sr-only">Service Type</label>
-                <select 
+                <select
                   id="cta-service"
                   name="service"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none text-gray-900"
@@ -181,7 +182,7 @@ export default function CTASection() {
               </div>
               <div>
                 <label htmlFor="cta-city" className="sr-only">City</label>
-                <select 
+                <select
                   id="cta-city"
                   name="city"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none text-gray-900"
@@ -209,11 +210,10 @@ export default function CTASection() {
 
               {/* Success/Error Message */}
               {submitMessage && (
-                <div className={`mt-4 p-3 rounded-lg text-center text-sm font-medium ${
-                  submitStatus === 'success'
+                <div className={`mt-4 p-3 rounded-lg text-center text-sm font-medium ${submitStatus === 'success'
                     ? 'bg-green-100 text-green-800 border border-green-200'
                     : 'bg-red-100 text-red-800 border border-red-200'
-                }`}>
+                  }`}>
                   {submitMessage}
                 </div>
               )}

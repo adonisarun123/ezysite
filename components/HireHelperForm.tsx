@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { ChevronRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackStepComplete, trackServiceSelect, trackBookingStart, trackBookingComplete } from '@/lib/analytics'
@@ -35,7 +36,7 @@ const services = [
 ]
 
 const cities = [
-  'Bangalore', 'Mumbai', 'Delhi', 'Noida', 'Nagpur', 
+  'Bangalore', 'Mumbai', 'Delhi', 'Noida', 'Nagpur',
   'Lucknow', 'Kanpur', 'Meerut', 'Bareilly'
 ]
 
@@ -63,18 +64,29 @@ export default function HireHelperForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [requestId, setRequestId] = useState<string | null>(null)
   const [hasTrackedStart, setHasTrackedStart] = useState(false)
+  const searchParams = useSearchParams()
 
-  // Track form start when component mounts
+  // Track form start when component mounts and check for URL parameters
   useEffect(() => {
     if (!hasTrackedStart) {
       trackFormStart('hire_helper_form', 'hire_helper_page');
       setHasTrackedStart(true);
+
+      const serviceParam = searchParams.get('service');
+      if (serviceParam && services.some(s => s.value === serviceParam)) {
+        setFormData(prev => ({ ...prev, serviceType: serviceParam }));
+        // Track the pre-selected service
+        const selectedService = services.find(s => s.value === serviceParam);
+        if (selectedService) {
+          trackServiceSelect(selectedService.label, serviceParam, 'hire_helper_form');
+        }
+      }
     }
-  }, [hasTrackedStart])
+  }, [hasTrackedStart, searchParams])
 
   const handleInputChange = (field: keyof FormData, value: string | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }))
-    
+
     // Track service selection
     if (field === 'serviceType' && typeof value === 'string') {
       const selectedService = services.find(s => s.value === value);
@@ -96,7 +108,7 @@ export default function HireHelperForm() {
   const validateStep = () => {
     const errors: { [key: string]: string } = {}
     const today = new Date()
-    today.setHours(0,0,0,0)
+    today.setHours(0, 0, 0, 0)
     const maxDate = new Date(today)
     maxDate.setMonth(maxDate.getMonth() + 1)
     if (step === 1) {
@@ -138,7 +150,7 @@ export default function HireHelperForm() {
   const validateAll = () => {
     const errors: { [key: string]: string } = {}
     const today = new Date()
-    today.setHours(0,0,0,0)
+    today.setHours(0, 0, 0, 0)
     const maxDate = new Date(today)
     maxDate.setMonth(maxDate.getMonth() + 1)
     if (!formData.name.trim()) {
@@ -178,11 +190,11 @@ export default function HireHelperForm() {
     if (validateStep()) {
       const newStep = Math.min(step + 1, 3);
       setStep(newStep);
-      
+
       // Track step completion
       const stepNames = ['Personal Information', 'Service Requirements', 'Additional Details'];
       trackStepComplete(stepNames[step - 1], step, 3);
-      
+
       // Track booking start when moving to step 2
       if (newStep === 2 && formData.city) {
         trackBookingStart(formData.serviceType || 'unknown', formData.city);
@@ -197,9 +209,9 @@ export default function HireHelperForm() {
       try {
         // Track form submission
         trackFormSubmit('hire_helper_form', formData);
-        
+
         const newRequestId = generateRequestId()
-        
+
         // Store in Supabase
         const { error } = await supabase.from('hire_helper_leads').insert([
           {
@@ -220,7 +232,7 @@ export default function HireHelperForm() {
           }
         ])
         if (error) throw error
-        
+
         // Send email notification
         try {
           const emailResponse = await fetch('/api/send-lead-email', {
@@ -258,14 +270,14 @@ export default function HireHelperForm() {
           console.error('Email sending error:', emailError);
           // Don't fail the form submission if email fails
         }
-        
+
         // Send webhook
         sendWebhook('hire_helper', formData, newRequestId).catch(console.error)
-        
+
         // Track successful form completion
         trackFormComplete('hire_helper_form', newRequestId);
         trackBookingComplete(formData.serviceType, formData.city, newRequestId);
-        
+
         setRequestId(newRequestId)
         setSubmitStatus('success')
       } catch (error) {
@@ -305,18 +317,16 @@ export default function HireHelperForm() {
         <div className="flex items-center justify-between mb-4">
           {[1, 2, 3].map((stepNum) => (
             <div key={stepNum} className="flex flex-col items-center">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                step >= stepNum ? 'bg-primary-500 text-white' : 'bg-gray-200 text-gray-600'
-              }`}>
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step >= stepNum ? 'bg-primary-500 text-white' : 'bg-gray-200 text-gray-600'
+                }`}>
                 {step > stepNum ? <CheckCircleIcon className="w-5 h-5" /> : stepNum}
               </div>
               <span className="mt-1 text-xs font-semibold text-primary-600 min-w-[60px] text-center">
-                {step > stepNum ? stepTitles[stepNum-1] : stepNum === step ? stepTitles[stepNum-1] : ''}
+                {step > stepNum ? stepTitles[stepNum - 1] : stepNum === step ? stepTitles[stepNum - 1] : ''}
               </span>
               {stepNum < 3 && (
-                <div className={`w-full h-1 mx-4 ${
-                  step > stepNum ? 'bg-primary-500' : 'bg-gray-200'
-                }`} />
+                <div className={`w-full h-1 mx-4 ${step > stepNum ? 'bg-primary-500' : 'bg-gray-200'
+                  }`} />
               )}
             </div>
           ))}
@@ -324,8 +334,8 @@ export default function HireHelperForm() {
         <div className="text-sm text-gray-600">
           Step {step} of 3: {
             step === 1 ? 'Personal Information' :
-            step === 2 ? 'Service Requirements' :
-            'Additional Details'
+              step === 2 ? 'Service Requirements' :
+                'Additional Details'
           }
         </div>
       </div>
@@ -337,7 +347,7 @@ export default function HireHelperForm() {
             <h2 className="text-2xl font-semibold text-gray-900 mb-6 font-display">
               Tell Us About Yourself
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -429,11 +439,10 @@ export default function HireHelperForm() {
                 {services.map(service => (
                   <div
                     key={service.value}
-                    className={`p-4 border rounded-lg cursor-pointer transition-all ${
-                      formData.serviceType === service.value
-                        ? 'border-primary-500 bg-primary-50'
-                        : 'border-gray-200 hover:border-gray-300'
-                    }`}
+                    className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceType === service.value
+                      ? 'border-primary-500 bg-primary-50'
+                      : 'border-gray-200 hover:border-gray-300'
+                      }`}
                     onClick={() => handleInputChange('serviceType', service.value)}
                   >
                     <div className="font-medium text-gray-900">{service.label}</div>

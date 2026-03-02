@@ -13,6 +13,7 @@ The main goal of EzyHelpers is to simplify the process of finding and hiring dom
 
 ### For Families/Customers:
 - **Service Booking**: Easy process to hire maids, cooks, nannies, and other domestic help
+- **Detailed Requirement Gathering**: Comprehensive multi-step form for customers to share specific household needs and policies <!-- NEW -->
 - **Multiple Service Types**: Live-in maids, full-time maids, part-time maids, on-demand helpers, babysitters/nannies, elderly care, cooks, and drivers
 - **Verified Professionals**: All helpers are background-checked and verified
 - **Quick Matching**: Services provided within 24-72 hours
@@ -45,7 +46,8 @@ The main goal of EzyHelpers is to simplify the process of finding and hiring dom
 1. Homepage - Hero section with CTAs, services overview, process explanation
 2. Services - Detailed pages for each service type
 3. Hire a Helper - Lead generation form for families
-4. For Helpers - Helper registration form
+4. Customer Requirements - Detailed 7-step requirement gathering form <!-- NEW -->
+5. For Helpers - Helper registration form
 5. About Us, Contact Us, Blog/Resources
 6. Registration Success Pages for helpers and agents
 

@@ -4,10 +4,10 @@ import puppeteer from 'puppeteer';
 export async function POST(request: NextRequest) {
   try {
     const { url } = await request.json();
-    
+
     if (!url) {
       return NextResponse.json(
-        { error: 'URL is required' }, 
+        { error: 'URL is required' },
         { status: 400 }
       );
     }
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
     });
 
     const page = await browser.newPage();
-    
+
     // Set viewport for consistent rendering
     await page.setViewport({
       width: 1200,
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
 
     // Wait for any dynamic content to load
     await page.waitForSelector('body', { timeout: 10000 });
-    
+
     // Add some custom styles for PDF
     await page.addStyleTag({
       content: `
@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
     await browser.close();
 
     // Return the PDF as a response
-    return new NextResponse(pdf, {
+    return new NextResponse(Buffer.from(pdf) as any, {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': 'attachment; filename="EzyHelpers-Executive-Summary.pdf"',
@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('PDF generation error:', error);
     return NextResponse.json(
-      { error: 'Failed to generate PDF' }, 
+      { error: 'Failed to generate PDF' },
       { status: 500 }
     );
   }

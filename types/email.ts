@@ -135,6 +135,130 @@ export interface HelperRegistrationFormData {
   internalNotes?: string;
 }
 
+export interface CustomerRequirementFormData {
+  customerName: string;
+  mobileNumber: string;
+  houseNumber: string;
+  areaLocality: string;
+  apartmentName: string;
+  serviceType: 'maid' | 'cook' | 'babysitter' | 'elderly_care' | 'other';
+  serviceTypeOther?: string;
+  workType: 'live_in' | 'full_time' | 'part_time';
+  workTiming: {
+    startTime: string;
+    endTime: string;
+  };
+  agePreference?: 'no_preference' | 'below_25' | 'below_30' | '30_45' | 'above_45';
+  preferredGender?: 'female' | 'male' | 'no_preference';
+  languages?: ('kannada' | 'hindi' | 'tamil' | 'telugu' | 'english' | 'no_preference')[];
+  houseRules?: string;
+  wakeUpEarly?: boolean;
+  wakeupTime?: string;
+  usualSleepingTime?: 'before_10pm' | '10_11pm' | 'after_11pm';
+  dietaryPreference?: 'vegetarian' | 'non_vegetarian';
+  personalCareItems?: string[];
+  restTimeProvided?: boolean;
+  restTimeDetails?: string;
+  provideTeaSnacks?: boolean;
+  provideMeals?: boolean;
+  foodArrangement?: 'same_as_family' | 'separate_food';
+  tasks?: {
+    ironing?: boolean;
+    wateringPlants?: boolean;
+    washingMachine?: boolean;
+    microwave?: boolean;
+    mixerOvenAirFryer?: boolean;
+  };
+  gasStoveType?: 'regular' | 'special';
+  dropChildrenBusStop?: boolean;
+  hasPets?: boolean;
+  hasElderly?: boolean;
+  houseType?: 'single_story' | 'duplex';
+  separateRoomProvided?: boolean;
+  bhkType?: '1bhk' | '2bhk' | '3bhk' | '4bhk' | 'other';
+  bhkOther?: string;
+  kitchenRestrictionMenstrualPeriods?: boolean;
+  emergencyLeaveOk?: boolean;
+  policyAcks: {
+    salaryBy7th: boolean;
+    noAdvanceSalary: boolean;
+    feedbackWithinOneMonth: boolean;
+    infoAccurate: boolean;
+    agreeToTerms: boolean;
+    contactConsent: boolean;
+  };
+  submittedAt?: string;
+  source?: 'website' | 'app' | 'whatsapp' | 'callcenter' | 'other';
+}
+
+export interface HelperInterviewFormData {
+  // Basic Information
+  fullName: string;
+  age: string;
+  maritalStatus: string;
+  hasChildren: string;
+  localReference: string;
+  hasSmartphone: string;
+  speakHindi: string;
+  speakOtherLanguages: string;
+  readWriteHindi: string;
+
+  // Work Preferences
+  workInterests: string[];
+  comfortableCooking: string;
+  cookType: string;
+  prepareMilletDietary: string;
+  comfortableHousekeeping: string;
+  willingCleanBathrooms: string;
+  knowIroning: string;
+  operateWashingMachine: string;
+  useAppliances: string;
+  comfortableKids: string;
+  comfortableElderly: string;
+  dropChildrenBusStop: string;
+  canDrive: string;
+
+  // Work Habits & Discipline
+  wakeUpTime: string;
+  earlyStart: string;
+  comfortablePets: string;
+  nonVegHome: string;
+  phoneDuringWork: string;
+  socialMediaWork: string;
+  manageMultipleTasks: string;
+  runBehindChildren: string;
+
+  // Health & Leave Policy
+  regularMedicines: string;
+  healthConditions: string;
+  monthlyLeave: string;
+  leavePreference: string;
+  restTimeNeeded: string;
+  menstrualCycleComfort: string;
+
+  // Food & Lifestyle Preferences
+  eatSameFood: string;
+  vegNonVegPreference: string;
+  foodRestrictions: string;
+
+  // Training & Skills
+  formalTraining: string;
+  specificTrainingNeeded: string;
+  openToTraining: string;
+
+  // Personal Habits
+  personalHabits: string;
+  followHouseRules: string;
+
+  // Consent
+  legalConsent: boolean;
+
+  // Meta
+  language: string;
+  submittedAt: string;
+  requestId: string;
+}
+
 export interface RequirementFormData {
   name: string;
   email: string;
@@ -157,7 +281,9 @@ export type LeadType =
   | 'general'
   | 'agent_registration'
   | 'helper_registration'
-  | 'requirement';
+  | 'requirement'
+  | 'customer_requirement'
+  | 'helper_interview';
 
 export interface EmailSendResult {
   success: boolean;
