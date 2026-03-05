@@ -107,7 +107,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                             </h1>
 
                             <div className="space-y-4 mb-6 max-w-5xl mx-auto mt-4">
-                                <p className="text-xs sm:text-sm md:text-xl text-teal-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none">
+                                <p className="text-xs sm:text-sm md:text-xl text-teal-50/90 leading-loose max-w-sm mx-auto md:max-w-none">
                                     बैंगलोर में घरेलू कुक की नौकरी अब आसान है। बेसिक इंडियन खाना बनाने वालों के लिए ईज़ीहेल्पर्स सुरक्षित घर, साफ़ जिम्मेदारियाँ और समय पर सैलरी के साथ भरोसेमंद काम दिलाता है।
                                 </p>
                             </div>
@@ -405,99 +405,71 @@ export default function HomeCookJobsBangaloreHindiPage() {
                         </div>
                     </div>
                 </section>
-                {/* Additional Information Section */}
+                {/* Additional Information Section (Responsibilities) */}
                 <section className="section-padding bg-white relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-white -z-10" />
                     <div className="container-custom">
-                        <div className="block md:flex gap-12 max-w-6xl mx-auto">
+                        <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto mt-12 mb-12">
                             {/* Responsibilities */}
-                            <div className="md:w-1/2 mb-12 md:mb-0">
-                                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 font-display">घरेलू रसोइया के काम की ज़िम्मेदारियाँ</h2>
-                                <div className="space-y-4">
-                                    <div className="flex items-start gap-4">
-                                        <p className="text-gray-700 text-lg">बैंगलोर में होम कुक के तौर पर आप रोज़ाना के किचन के काम संभालेंगे और यह पक्का करेंगे कि परिवार के लिए खाना आसानी से तैयार हो जाए।</p>
+                            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100 flex flex-col h-full">
+                                <div className="flex flex-col items-center gap-4 mb-6 text-center">
+                                    <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-teal-600">
+                                        <ClipboardDocumentListIcon className="w-7 h-7" />
                                     </div>
-                                    <div className="mt-4 mb-2">
-                                        <h3 className="text-xl font-bold text-gray-800">रोज़ाना के कामों में शामिल हैं:</h3>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                            <CheckCircleIcon className="w-5 h-5 text-teal-600" />
-                                        </div>
-                                        <p className="text-gray-700 text-lg">परिवार की पसंद के हिसाब से खाना बनाना — नॉर्थ इंडियन, साउथ इंडियन, चाइनीज़, वेज और नॉन-वेज खाना</p>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                            <CheckCircleIcon className="w-5 h-5 text-teal-600" />
-                                        </div>
-                                        <p className="text-gray-700 text-lg">खाने का सामान पहले से तैयार करना</p>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                            <CheckCircleIcon className="w-5 h-5 text-teal-600" />
-                                        </div>
-                                        <p className="text-gray-700 text-lg">बर्तन धोना और किचन काउंटर साफ़ करना</p>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                            <CheckCircleIcon className="w-5 h-5 text-teal-600" />
-                                        </div>
-                                        <p className="text-gray-700 text-lg">खाना सुरक्षित तरीके से स्टोर करना</p>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                            <CheckCircleIcon className="w-5 h-5 text-teal-600" />
-                                        </div>
-                                        <p className="text-gray-700 text-lg">किचन को साफ़ और स्वच्छतािक रखना</p>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                            <CheckCircleIcon className="w-5 h-5 text-teal-600" />
-                                        </div>
-                                        <p className="text-gray-700 text-lg">ज़रूरत पड़ने पर किराने की खरीदारी में मदद करना</p>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                            <CheckCircleIcon className="w-5 h-5 text-teal-600" />
-                                        </div>
-                                        <p className="text-gray-700 text-lg">रेसिपी को ध्यान से फ़ॉलो करना</p>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                            <CheckCircleIcon className="w-5 h-5 text-teal-600" />
-                                        </div>
-                                        <p className="text-gray-700 text-lg">समय पर खाना परोसना</p>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                            <CheckCircleIcon className="w-5 h-5 text-teal-600" />
-                                        </div>
-                                        <p className="text-gray-700 text-lg">चाय और आसान नाश्ता तैयार करना</p>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                            <CheckCircleIcon className="w-5 h-5 text-teal-600" />
-                                        </div>
-                                        <p className="text-gray-700 text-lg">परिवार को किराने की कमी के बारे में बताना</p>
-                                    </div>
+                                    <h2 className="text-2xl md:text-4xl font-bold text-gray-900 font-display leading-loose">घरेलू रसोइया के काम की ज़िम्मेदारियाँ</h2>
                                 </div>
-                            </div>
+                                <p className="text-gray-600 mb-6 font-medium text-center max-w-2xl mx-auto leading-loose">
+                                    बैंगलोर में होम कुक के तौर पर आप रोज़ाना के किचन के काम संभालेंगे और यह पक्का करेंगे कि परिवार के लिए खाना आसानी से तैयार हो जाए।
+                                </p>
 
-                            {/* Image Placeholder */}
-                            <div className="md:w-1/2 relative h-[400px] md:h-auto rounded-3xl overflow-hidden shadow-2xl">
-                                <div className="absolute inset-0 bg-teal-900/10"></div>
-                                <img
-                                    src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2070&auto=format&fit=crop"
-                                    alt="Home Cook preparing meals in Bangalore"
-                                    className="w-full h-full object-cover object-center"
-                                />
-                                <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-white/50 shadow-lg">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center">
-                                            <HeartIcon className="w-6 h-6 text-teal-600" />
-                                        </div>
-                                        <p className="font-bold text-gray-800">ताज़ा और सेहतमंद घर का खाना</p>
-                                    </div>
+                                <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-4 mt-4 leading-loose">रोज़ाना के कामों में शामिल हैं</h4>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-6">
+                                    <ul className="space-y-4">
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-700 font-medium">परिवार की पसंद के हिसाब से खाना बनाना — नॉर्थ इंडियन, साउथ इंडियन, चाइनीज़, वेज और नॉन-वेज खाना</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-700 font-medium">खाने का सामान पहले से तैयार करना</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-700 font-medium">बर्तन धोना और किचन काउंटर साफ़ करना</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-700 font-medium">खाना सुरक्षित तरीके से स्टोर करना</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-700 font-medium">किचन को साफ़ और स्वच्छतािक रखना</span>
+                                        </li>
+                                    </ul>
+
+                                    <ul className="space-y-4">
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-700 font-medium">ज़रूरत पड़ने पर किराने की खरीदारी में मदद करना</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-700 font-medium">रेसिपी को ध्यान से फ़ॉलो करना</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-700 font-medium">समय पर खाना परोसना</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-700 font-medium">चाय और आसान नाश्ता तैयार करना</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-700 font-medium">परिवार को किराने की कमी के बारे में बताना</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -637,112 +609,104 @@ export default function HomeCookJobsBangaloreHindiPage() {
 
                 {/* About EzyHelpers Section */}
                 <section className="section-padding bg-teal-900 text-white relative overflow-hidden text-sm md:text-base">
-                    <div className="absolute inset-0 z-0">
-                        <div className="absolute inset-0 bg-black/60"></div>
-                        <img
-                            src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2070&auto=format&fit=crop"
-                            alt="Background Kitchen"
-                            className="w-full h-full object-cover object-center mix-blend-overlay opacity-40"
-                        />
-                    </div>
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-teal-800 rounded-full blur-3xl opacity-50 -mr-20 -mt-20"></div>
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-800 rounded-full blur-3xl opacity-50 -ml-20 -mb-20"></div>
 
                     <div className="container-custom relative z-10">
-                        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
-                            <div className="md:w-1/2">
-                                <h2 className="text-3xl md:text-5xl font-bold mb-6 font-display text-white">ईज़ीहेल्पर्स के बारे में – भरोसेमंद घरेलू काम के जॉब्स</h2>
-                                <p className="text-xl md:text-2xl font-light mb-8 text-white leading-relaxed">
-                                    हम झारखंड और पूरे भारत के हेल्पर को <span className="font-bold text-white bg-teal-700/80 px-2 py-1 border-b-2 border-teal-400">बिना किसी फीस के सुरक्षित डोमेस्टिक हेल्पर जॉब्स</span> से जोड़ते हैं।
-                                </p>
+                        <div className="max-w-4xl mx-auto text-center mb-12">
+                            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-display text-white">ईज़ीहेल्पर्स के बारे में – भरोसेमंद घरेलू काम के जॉब्स</h2>
+                            <p className="text-xl md:text-2xl font-light mb-8 text-white leading-loose">
+                                हम झारखंड और पूरे भारत के हेल्पर को <span className="font-bold text-white bg-teal-700/80 px-2 py-1 border-b-2 border-teal-400">बिना किसी फीस के सुरक्षित डोमेस्टिक हेल्पर जॉब्स</span> से जोड़ते हैं।
+                            </p>
+                        </div>
 
-                                <div className="space-y-6">
-                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                                        <h3 className="text-teal-300 font-bold text-xl mb-2 flex items-center gap-2">
-                                            <HeartIcon className="w-6 h-6" /> हम इन पर ध्यान देते हैं:
-                                        </h3>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-                                            <ul className="space-y-3">
-                                                <li className="flex items-start gap-3">
-                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
-                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">बैंगलोर में इज्ज़तदार नौकरी</span>
-                                                </li>
-                                                <li className="flex items-start gap-3">
-                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
-                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">सुरक्षित और भरोसेमंद परिवार</span>
-                                                </li>
-                                            </ul>
-                                            <ul className="space-y-4 md:mt-0">
-                                                <li className="flex items-start gap-3">
-                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
-                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">हेल्पर की भलाई और लंबे समय तक समर्थन</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                                        <h3 className="text-teal-300 font-bold text-xl mb-2 flex items-center gap-2">
-                                            <ShieldCheckIcon className="w-6 h-6" /> हेल्पर ईज़ीहेल्पर्स पर भरोसा क्यों करते हैं
-                                        </h3>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-                                            <ul className="space-y-3">
-                                                <li className="flex items-start gap-3">
-                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
-                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">5,000+ हेल्पर को नौकरियां दी गई</span>
-                                                </li>
-                                                <li className="flex items-start gap-3">
-                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
-                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">10,000+ परिवारों को सपोर्ट किया</span>
-                                                </li>
-                                                <li className="flex items-start gap-3">
-                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
-                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">DWSSC और Skill India के साथ हेल्पर ट्रेनिंग</span>
-                                                </li>
-                                                <li className="flex items-start gap-3">
-                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
-                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">सिर्फ इज्ज़तदार घरों में प्लेसमेंट</span>
-                                                </li>
-                                            </ul>
-                                            <ul className="space-y-4 md:mt-0">
-                                                <li className="flex items-start gap-3">
-                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
-                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">काम शुरू होने से पहले पूरी जानकारी</span>
-                                                </li>
-                                                <li className="flex items-start gap-3">
-                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
-                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">प्लेसमेंट के बाद लगातार सपोर्ट</span>
-                                                </li>
-                                                <li className="flex items-start gap-3">
-                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
-                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">नौकरी बदलने में भी मदद</span>
-                                                </li>
-                                                <li className="flex items-start gap-3">
-                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
-                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">नियमित सैलरी और लंबे समय तक नौकरी</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                        <div className="max-w-4xl mx-auto space-y-6 text-left">
+                            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                                <h3 className="text-teal-300 font-bold text-xl mb-2 flex items-center gap-2">
+                                    <HeartIcon className="w-6 h-6" /> हम इन पर ध्यान देते हैं:
+                                </h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                                    <ul className="space-y-3">
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                            <span className="text-teal-50 text-sm md:text-lg font-medium">बैंगलोर में इज्ज़तदार नौकरी</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                            <span className="text-teal-50 text-sm md:text-lg font-medium">सुरक्षित और भरोसेमंद परिवार</span>
+                                        </li>
+                                    </ul>
+                                    <ul className="space-y-4 md:mt-0">
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                            <span className="text-teal-50 text-sm md:text-lg font-medium">हेल्पर की भलाई और लंबे समय तक समर्थन</span>
+                                        </li>
+                                    </ul>
                                 </div>
+                            </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-teal-900/50 rounded-2xl p-6 border border-teal-700/50 backdrop-blur-sm mt-8 max-w-5xl mx-auto">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-teal-800 rounded-full flex items-center justify-center flex-shrink-0 border border-teal-600">
-                                            <HeartIcon className="w-6 h-6 text-teal-300" />
-                                        </div>
-                                        <div>
-                                            <h4 className="text-sm text-teal-300 uppercase tracking-wider font-bold mb-1">हमारा मानना:</h4>
-                                            <p className="font-medium text-white">हेल्पर के लिए अच्छे घर, परिवारों के लिए अच्छे हेल्पर</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-teal-800 rounded-full flex items-center justify-center flex-shrink-0 border border-teal-600">
-                                            <GlobeAltIcon className="w-6 h-6 text-teal-300" />
-                                        </div>
-                                        <div>
-                                            <h4 className="text-sm text-teal-300 uppercase tracking-wider font-bold mb-1">जहाँ हम सेवा देते हैं</h4>
-                                            <p className="text-sm text-teal-50 line-clamp-2 pr-4">बैंगलोर, बरेली, मुंबई, हैदराबाद, दिल्ली एनसीआर, पुणे, ओडिशा और अन्य।</p>
-                                        </div>
-                                    </div>
+                            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                                <h3 className="text-teal-300 font-bold text-xl mb-2 flex items-center gap-2">
+                                    <ShieldCheckIcon className="w-6 h-6" /> हेल्पर ईज़ीहेल्पर्स पर भरोसा क्यों करते हैं
+                                </h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                                    <ul className="space-y-3">
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                            <span className="text-teal-50 text-sm md:text-lg font-medium">5,000+ हेल्पर को नौकरियां दी गई</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                            <span className="text-teal-50 text-sm md:text-lg font-medium">10,000+ परिवारों को सपोर्ट किया</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                            <span className="text-teal-50 text-sm md:text-lg font-medium">DWSSC और Skill India के साथ हेल्पर ट्रेनिंग</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                            <span className="text-teal-50 text-sm md:text-lg font-medium">सिर्फ इज्ज़तदार घरों में प्लेसमेंट</span>
+                                        </li>
+                                    </ul>
+                                    <ul className="space-y-4 md:mt-0">
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                            <span className="text-teal-50 text-sm md:text-lg font-medium">काम शुरू होने से पहले पूरी जानकारी</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                            <span className="text-teal-50 text-sm md:text-lg font-medium">प्लेसमेंट के बाद लगातार सपोर्ट</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                            <span className="text-teal-50 text-sm md:text-lg font-medium">नौकरी बदलने में भी मदद</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                            <span className="text-teal-50 text-sm md:text-lg font-medium">नियमित सैलरी और लंबे समय तक नौकरी</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-teal-900/50 rounded-2xl p-6 border border-teal-700/50 backdrop-blur-sm mt-8 max-w-4xl mx-auto">
+                            <div className="flex items-center gap-4 text-left">
+                                <div className="w-12 h-12 bg-teal-800 rounded-full flex items-center justify-center flex-shrink-0 border border-teal-600">
+                                    <HeartIcon className="w-6 h-6 text-teal-300" />
+                                </div>
+                                <div>
+                                    <h4 className="text-sm text-teal-300 uppercase tracking-wider font-bold mb-1">हमारा मानना:</h4>
+                                    <p className="font-medium text-white">हेल्पर के लिए अच्छे घर, परिवारों के लिए अच्छे हेल्पर</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4 text-left">
+                                <div className="w-12 h-12 bg-teal-800 rounded-full flex items-center justify-center flex-shrink-0 border border-teal-600">
+                                    <GlobeAltIcon className="w-6 h-6 text-teal-300" />
+                                </div>
+                                <div>
+                                    <h4 className="text-sm text-teal-300 uppercase tracking-wider font-bold mb-1">जहाँ हम सेवा देते हैं</h4>
+                                    <p className="text-sm text-teal-50 line-clamp-2 pr-4">बैंगलोर, बरेली, मुंबई, हैदराबाद, दिल्ली एनसीआर, पुणे, ओडिशा और अन्य।</p>
                                 </div>
                             </div>
                         </div>
@@ -763,7 +727,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                                     <AcademicCapIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">ट्रेनिंग और सर्टिफिकेट</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">काम की बुनियादी ट्रेनिंग के साथ-साथ आपको सर्टिफिकेट भी दिया जाएगा।</p>
+                                <p className="text-gray-600 font-medium leading-loose">काम की बुनियादी ट्रेनिंग के साथ-साथ आपको सर्टिफिकेट भी दिया जाएगा।</p>
                             </div>
 
                             {/* Stay Support */}
@@ -772,7 +736,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                                     <HomeIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">सुरक्षित रहने की जगह</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">नौकरी मिलने तक हमारे सुरक्षित महिला हॉस्टल में रुकने की सुविधा।</p>
+                                <p className="text-gray-600 font-medium leading-loose">नौकरी मिलने तक हमारे सुरक्षित महिला हॉस्टल में रुकने की सुविधा।</p>
                             </div>
 
                             {/* Safety & Security */}
@@ -781,7 +745,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                                     <ShieldCheckIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">पूरी सुरक्षा</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">भरोसेमंद काम, स्पष्ट नियम और ईज़ीहेल्पर्स का लगातार साथ।</p>
+                                <p className="text-gray-600 font-medium leading-loose">भरोसेमंद काम, स्पष्ट नियम और ईज़ीहेल्पर्स का लगातार साथ।</p>
                             </div>
 
                             {/* Look Professional */}
@@ -790,7 +754,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                                     <BriefcaseIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">प्रोफेशनल किट</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">काम के लिए एप्रन और ग्रूमिंग किट दी जाएगी।</p>
+                                <p className="text-gray-600 font-medium leading-loose">काम के लिए एप्रन और ग्रूमिंग किट दी जाएगी।</p>
                             </div>
 
                             {/* Timely Salary */}
@@ -799,7 +763,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                                     <AcademicCapIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">सही समय पर सैलरी</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">आपका पूरा वेतन आपको सीधा मिलेगा, ईज़ीहेल्पर्स कोई कमीशन नहीं लेता।</p>
+                                <p className="text-gray-600 font-medium leading-loose">आपका पूरा वेतन आपको सीधा मिलेगा, ईज़ीहेल्पर्स कोई कमीशन नहीं लेता।</p>
                             </div>
 
                             {/* Future Opportunities */}
@@ -808,7 +772,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                                     <GlobeAltIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">करियर में तरक्की</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">अच्छा काम करने पर ज़्यादा पैसे और विदेश के प्रोजेक्ट्स में भी मौका।</p>
+                                <p className="text-gray-600 font-medium leading-loose">अच्छा काम करने पर ज़्यादा पैसे और विदेश के प्रोजेक्ट्स में भी मौका।</p>
                             </div>
                         </div>
                     </div>

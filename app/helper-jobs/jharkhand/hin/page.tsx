@@ -176,6 +176,7 @@ export default function HelperJobsJharkhandHinPage() {
                                 {
                                     state: "कुकिंग / किचन हेल्पर जॉब्स",
                                     slug: "cooking-kitchen-helper-jobs",
+                                    fullPath: "/helper-jobs/home-cooks-job-bangalore/hin",
                                     desc: "परिवार के लिए शाकाहारी और मांसाहारी खाना बनाना, राशन संभालना और रसोई साफ रखना।",
                                     features: ["परिवार के लिए खाना बनाना", "खाने की व्यवस्था और राशन संभालने में मदद", "रसोई साफ और व्यवस्थित रखना", "लिव-इन या फुल-टाइम काम उपलब्ध"]
                                 },

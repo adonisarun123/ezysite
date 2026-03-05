@@ -175,6 +175,7 @@ export default function HelperJobsPage() {
                                 },
                                 {
                                     state: "Cooking / Kitchen Helper Jobs",
+                                    fullPath: "/helper-jobs/home-cooks-job-bangalore",
                                     desc: "Cook veg and non-veg meals, manage groceries, and keep the kitchen clean and organised.",
                                     features: ["Cook meals for the family (veg or non-veg)", "Help plan meals and manage groceries", "Keep the kitchen clean and organised.", "Live-in or full-time work available"]
                                 },
