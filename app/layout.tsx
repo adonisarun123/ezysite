@@ -117,6 +117,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" href="/grid.svg" as="image" type="image/svg+xml" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900&display=swap" rel="stylesheet" />
 
         {/* Critical CSS - Inline only the absolute essentials for LCP */}
         <style dangerouslySetInnerHTML={{
