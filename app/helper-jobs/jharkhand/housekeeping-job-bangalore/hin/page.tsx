@@ -101,7 +101,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                         { label: 'हाउसकीपिंग जॉब्स' }
                     ]}
                     rightContent={
-                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm relative -top-7 md:-top-0 lg:-top-0">
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
                             <span className="text-gray-900 font-bold whitespace-nowrap">हिंदी</span>
                             <Link
                                 href="/helper-jobs/jharkhand/housekeeping-job-bangalore"
