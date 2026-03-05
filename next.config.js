@@ -17,11 +17,11 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-  
+
   // Enable compression and optimization
   compress: true,
   swcMinify: true,
-  
+
   // Configure SWC for modern browsers
   compiler: {
     // Remove console.log in production
@@ -29,7 +29,7 @@ const nextConfig = {
     // Enable optimizations for modern JS
     styledComponents: false,
   },
-  
+
   // Target modern browsers only to reduce bundle size
   experimental: {
     // Enable modern build features
@@ -37,13 +37,13 @@ const nextConfig = {
     // Enable optimizations that are safe
     forceSwcTransforms: true,
     // Inline and remove unused CSS chunks to prevent 404s
-    optimizeCss: true,
+    optimizeCss: false,
     // Automatically rewrite package imports (Heroicons) to the exact path for better tree-shaking
     optimizePackageImports: ['@heroicons/react'],
     // Disable polyfills for modern browsers
     serverComponentsExternalPackages: [],
   },
-  
+
   // Webpack configuration for modern browsers to eliminate legacy JS
   webpack: (config, { dev, isServer }) => {
     if (dev) {
@@ -55,14 +55,14 @@ const nextConfig = {
     if (!dev && !isServer) {
       // Target modern browsers only - ES2022+ (eliminates more polyfills)
       config.target = ['web', 'es2022'];
-      
+
       // Completely disable polyfills
       config.resolve.fallback = {
         ...config.resolve.fallback,
         'core-js': false,
         'regenerator-runtime': false,
       };
-      
+
       // Optimize for modern browsers with aggressive tree-shaking
       config.optimization = {
         ...config.optimization,
@@ -72,7 +72,7 @@ const nextConfig = {
         innerGraph: true,
         // Minimize bundle size aggressively
         minimize: true,
-                // Simplified chunk splitting to reduce unused JS
+        // Simplified chunk splitting to reduce unused JS
         splitChunks: {
           chunks: 'all',
           minSize: 20000,
@@ -96,7 +96,7 @@ const nextConfig = {
           },
         },
       };
-      
+
       // Completely eliminate polyfills for modern features
       config.resolve.alias = {
         ...config.resolve.alias,
@@ -125,7 +125,7 @@ const nextConfig = {
         'regenerator-runtime': false,
         'regenerator-runtime/runtime': false,
       };
-      
+
       // Exclude unnecessary modules completely
       config.externals = {
         ...config.externals,
@@ -134,9 +134,9 @@ const nextConfig = {
         'regenerator-runtime': 'var {}',
         'regenerator-runtime/runtime': 'var {}',
       };
-      
+
       // Add plugins to further optimize
-      
+
       // Ignore polyfill modules
       const IgnorePlugin = require('webpack').IgnorePlugin;
       config.plugins.push(
@@ -148,19 +148,19 @@ const nextConfig = {
         })
       );
     }
-    
+
     return config;
   },
-  
+
   // Performance optimizations
   poweredByHeader: false,
   reactStrictMode: true,
-  
+
   // Disable ESLint during builds to avoid deployment failures
   eslint: {
     ignoreDuringBuilds: true,
   },
-  
+
   // Headers for better caching and performance
   async headers() {
     return [
@@ -193,7 +193,7 @@ const nextConfig = {
       },
     ]
   },
-  
+
   // Permanent redirects from legacy URLs to new structure
   async redirects() {
     return [
