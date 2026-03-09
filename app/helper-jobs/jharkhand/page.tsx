@@ -181,6 +181,7 @@ export default function HelperJobsPage() {
                                 },
                                 {
                                     state: "Nanny / Babysitter Jobs",
+                                    fullPath: "/helper-jobs/nanny-job-bangalore",
                                     desc: "Take care of children, feed them, assist with studies, and maintain hygiene and safety.",
                                     features: ["Take care of the children and feed them", "Help with homework and play", "Keep children safe and clean", "Live-in or full-time work available"]
                                 },
