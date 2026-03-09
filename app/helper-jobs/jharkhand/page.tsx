@@ -73,7 +73,7 @@ export default function HelperJobsPage() {
                         { label: 'Jharkhand' }
                     ]}
                     rightContent={
-                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm relative -top-7 md:-top-0 lg:-top-0">
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
                             <span className="text-gray-500 font-medium whitespace-nowrap">हिंदी</span>
                             <Link
                                 href="/helper-jobs/jharkhand/hin"
@@ -175,6 +175,7 @@ export default function HelperJobsPage() {
                                 },
                                 {
                                     state: "Cooking / Kitchen Helper Jobs",
+                                    fullPath: "/helper-jobs/home-cooks-job-bangalore",
                                     desc: "Cook veg and non-veg meals, manage groceries, and keep the kitchen clean and organised.",
                                     features: ["Cook meals for the family (veg or non-veg)", "Help plan meals and manage groceries", "Keep the kitchen clean and organised.", "Live-in or full-time work available"]
                                 },

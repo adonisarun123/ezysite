@@ -73,7 +73,7 @@ export default function HelperJobsJharkhandHinPage() {
                         { label: 'झारखंड' }
                     ]}
                     rightContent={
-                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm relative -top-7 md:-top-0 lg:-top-0">
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
                             <span className="text-gray-900 font-bold whitespace-nowrap">हिंदी</span>
                             <Link
                                 href="/helper-jobs/jharkhand"
@@ -176,6 +176,7 @@ export default function HelperJobsJharkhandHinPage() {
                                 {
                                     state: "कुकिंग / किचन हेल्पर जॉब्स",
                                     slug: "cooking-kitchen-helper-jobs",
+                                    fullPath: "/helper-jobs/home-cooks-job-bangalore/hin",
                                     desc: "परिवार के लिए शाकाहारी और मांसाहारी खाना बनाना, राशन संभालना और रसोई साफ रखना।",
                                     features: ["परिवार के लिए खाना बनाना", "खाने की व्यवस्था और राशन संभालने में मदद", "रसोई साफ और व्यवस्थित रखना", "लिव-इन या फुल-टाइम काम उपलब्ध"]
                                 },

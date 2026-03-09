@@ -5,89 +5,65 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import {
     BriefcaseIcon,
-    StarIcon,
-    PhoneIcon,
     CheckCircleIcon,
     ClockIcon,
-    HeartIcon,
-    ShieldCheckIcon,
-    UserPlusIcon,
-    BanknotesIcon,
-    GiftIcon,
-    BuildingOfficeIcon,
-    HomeModernIcon,
-    UserGroupIcon,
     HomeIcon,
     ClockIcon as ClockSolidIcon,
-    UserIcon,
-    GlobeAltIcon,
-    HandThumbUpIcon,
-    AcademicCapIcon,
-    ShieldCheckIcon as OutlineShieldCheckIcon,
-    HomeModernIcon as OutlineHomeModernIcon,
-    HeartIcon as OutlineHeartIcon,
-    ChartBarIcon,
-    BanknotesIcon as OutlineBanknotesIcon,
-    UserCircleIcon,
-    ChatBubbleLeftEllipsisIcon,
     SparklesIcon,
     ClipboardDocumentListIcon,
-    ArrowRightIcon
+    AcademicCapIcon,
+    UserIcon,
+    ShieldCheckIcon,
+    FireIcon,
+    StarIcon,
+    GlobeAltIcon,
+    HeartIcon
 } from '@heroicons/react/24/outline'
-
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 
 export const metadata: Metadata = {
-    title: 'Housekeeping Job in Bangalore for Helpers from Jharkhand',
-    description: 'Trusted Housekeeping Jobs for Jharkhand helpers in Bangalore. Free training, safe homes, food & room included. No fees. Apply now with EzyHelpers.',
+    title: 'Reliable Home Cooks Jobs in Bangalore for Jharkhand Helpers',
+    description: 'Get home cook jobs in Bangalore. Prepare daily meals, earn good salary. Live-in and part-time jobs available. Safe work for helpers. Join EzyHelpers.',
     openGraph: {
-        title: 'Housekeeping Job in Bangalore for Helpers from Jharkhand',
-        description: 'Trusted Housekeeping Jobs for Jharkhand helpers in Bangalore. Free training, safe homes, food & room included. No fees. Apply now with EzyHelpers.',
-        url: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/housekeeping-job-bangalore',
+        title: 'Reliable Home Cooks Jobs in Bangalore for Jharkhand Helpers',
+        description: 'Get home cook jobs in Bangalore. Prepare daily meals, earn good salary. Live-in and part-time jobs available. Safe work for helpers. Join EzyHelpers.',
+        url: 'https://www.ezyhelpers.com/helper-jobs/home-cooks-job-bangalore',
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/housekeeping-job-bangalore'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/home-cooks-job-bangalore'
     }
 }
 
 const faqs: FAQItem[] = [
     {
-        question: 'Do I need experience for Housekeeping helper jobs?',
-        answer: 'No. Freshers can apply. Training is provided before placement.',
+        question: 'Are live-in Home Cooks provided with food and a room?',
+        answer: 'Yes. Live-in Cooks receive free meals along with a room or sleeping space inside the family home.',
     },
     {
-        question: 'Will I get training before starting work?',
-        answer: 'Yes. Training includes cleaning methods, hygiene, behaviour, and safety practices.',
+        question: 'What are the daily duties of a Home Cook in Bangalore?',
+        answer: 'Daily duties include cooking meals, maintaining kitchen cleanliness, washing utensils, storing food safely, and following family recipes and timing.',
     },
     {
-        question: 'Are food and room provided in 24-Hour Live-In House cleaning jobs in Bangalore?',
-        answer: 'Yes. Live-in helpers receive meals and a room or sleeping space.',
+        question: 'Can I take rest during cooking hours?',
+        answer: 'Yes. Work hours and rest breaks are discussed before joining so you get proper rest.',
     },
     {
-        question: 'Do I need to pay money to get a job?',
-        answer: 'No. EzyHelpers does not charge any fees.',
+        question: 'What if I don’t know modern kitchen appliances?',
+        answer: 'We provide training on microwave, gas stove, mixer, oven, and other appliances before your placement.',
     },
     {
-        question: 'Can a husband and wife apply together?',
-        answer: 'Yes. Couples from Jharkhand are welcome.',
+        question: 'Can I combine cooking and simple cleaning duties?',
+        answer: 'Yes. Some families request light cleaning along with cooking, and the salary is adjusted accordingly.',
     },
     {
-        question: "Will someone guide me after reaching Bangalore?",
-        answer: 'Yes. Our team provides full support and guidance.',
-    },
-    {
-        question: "What documents are required?",
-        answer: 'Aadhaar card and local ID proof are required. We assist during verification.',
-    },
-    {
-        question: "Is there any agent involved?",
-        answer: 'No. We connect helpers directly with families without middlemen.',
+        question: 'Do I need prior experience to apply?',
+        answer: 'No. Freshers can apply if you know basic cooking and kitchen work.',
     }
 ]
 
-export default function HousekeepingJobsBangalorePage() {
+export default function HomeCookJobsBangalorePage() {
     return (
         <>
             <main className="min-h-screen">
@@ -97,14 +73,13 @@ export default function HousekeepingJobsBangalorePage() {
                     items={[
                         { label: 'Home', href: '/' },
                         { label: 'Helper Jobs', href: '/helper-jobs' },
-                        { label: 'Jharkhand', href: '/helper-jobs/jharkhand' },
-                        { label: 'Housekeeping Jobs' }
+                        { label: 'Home Cook Jobs' }
                     ]}
                     rightContent={
                         <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
                             <span className="text-gray-500 font-medium whitespace-nowrap">हिंदी</span>
                             <Link
-                                href="/helper-jobs/jharkhand/housekeeping-job-bangalore/hin"
+                                href="/helper-jobs/home-cooks-job-bangalore/hin"
                                 className="w-10 h-5 bg-teal-600 rounded-full p-1 relative transition-colors inline-block"
                             >
                                 <div
@@ -116,9 +91,8 @@ export default function HousekeepingJobsBangalorePage() {
                     }
                 />
 
-                {/* Hero Section with Bright Colors */}
+                {/* Hero Section */}
                 <section className="relative bg-gradient-to-br from-teal-800 via-teal-500 to-teal-700 text-white pt-8 pb-12 md:pt-20 md:pb-24 lg:pb-8 overflow-hidden">
-
                     <div className="absolute inset-0 opacity-20">
                         <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
                         <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -126,32 +100,39 @@ export default function HousekeepingJobsBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">Housekeeping Job in Bangalore for Jharkhand Helpers</h1>
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">
+                                Home Cooks Jobs in Bangalore for Jharkhand Helpers
+                            </h1>
 
-                            <p className="text-xs sm:text-sm md:text-2xl font-semibold mb-4 text-teal-100 max-w-5xl mx-auto">Looking for a safe Housekeeping Job outside Jharkhand?</p>
-
-                            <div className="space-y-4 mb-6 max-w-5xl mx-auto">
+                            <div className="space-y-4 mb-6 max-w-5xl mx-auto mt-4">
                                 <p className="text-xs sm:text-sm md:text-xl text-teal-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none">
-                                    EzyHelpers helps you find trusted House Cleaning Jobs in Bangalore with stable income, respectful families, proper training, and full support so you can work confidently.
+                                    Busy families in Bangalore are looking for fresh, home-style meals every day. If you can cook basic food and keep the kitchen clean, EzyHelpers helps you get safe Home Cook jobs with clear duties and a timely salary.
                                 </p>
                             </div>
-                            <div className="flex flex-wrap justify-center gap-2 max-w-5xl mx-auto px-1">
-                                <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:flex-1">✓ No registration charges</div>
-                                <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:flex-1">✓ Direct placement without agents</div>
-                                <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:w-auto">✓ Salary paid directly by the family</div>
+
+                            <div className="grid grid-cols-6 gap-2 mb-6 max-w-5xl mx-auto px-1 md:flex md:flex-wrap md:justify-center">
+                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[10px] md:text-base font-medium flex items-center justify-center text-center leading-tight">
+                                    ✓ No registration charges
+                                </div>
+                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[10px] md:text-base font-medium flex items-center justify-center text-center leading-tight">
+                                    ✓ Direct placement without agents
+                                </div>
+                                <div className="col-span-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[10px] md:text-base font-medium flex items-center justify-center text-center leading-tight">
+                                    ✓ Salary paid directly by the family
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Salary & Benefits Overivew Section */}
+                {/* Salary & Benefits Section */}
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
                             <span className="inline-block py-1 px-4 rounded-full bg-teal-100 text-teal-800 text-xs font-bold tracking-wider mb-4 border border-teal-200">
                                 Job Location: Bangalore
                             </span>
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Salary & Key Benefits Overview</h2>
+                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Salary and Key Benefits Overview</h2>
                         </div>
 
                         {/* Salary Cards - 3 Columns */}
@@ -162,12 +143,16 @@ export default function HousekeepingJobsBangalorePage() {
                                 <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-6 text-teal-600 group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white transition-all duration-300">
                                     <BriefcaseIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Live-In Housekeeping Jobs</h3>
-                                <div className="text-2xl md:text-3xl font-extrabold text-teal-600 mb-6">₹18,000 – ₹22,000<span className="text-sm font-medium text-gray-500 block mt-1">per month</span></div>
+                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Live-In Cook Jobs</h3>
+                                <div className="text-2xl md:text-3xl font-extrabold text-teal-600 mb-6">₹22,000 to ₹25,000<span className="text-sm font-medium text-gray-500 block mt-1">per month</span></div>
                                 <ul className="space-y-3">
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700 font-medium">Free stay + free food included</span>
+                                        <span className="text-gray-700 font-medium">Free stay and food provided</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-gray-700 font-medium">Long-term stable work</span>
                                     </li>
                                 </ul>
                             </div>
@@ -178,12 +163,16 @@ export default function HousekeepingJobsBangalorePage() {
                                 <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                                     <ClockIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Full-Time Housekeeping Jobs</h3>
-                                <div className="text-2xl md:text-3xl font-extrabold text-blue-600 mb-6">₹16,000 – ₹20,000<span className="text-sm font-medium text-gray-500 block mt-1">per month</span></div>
+                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Full-Time Cook Jobs</h3>
+                                <div className="text-2xl md:text-3xl font-extrabold text-blue-600 mb-6">₹16,000 to ₹20,000<span className="text-sm font-medium text-gray-500 block mt-1">per month</span></div>
                                 <ul className="space-y-3">
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700 font-medium">8–10 fixed working hours</span>
+                                        <span className="text-gray-700 font-medium">Fixed working hours</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-gray-700 font-medium">Weekly off included</span>
                                     </li>
                                 </ul>
                             </div>
@@ -194,113 +183,31 @@ export default function HousekeepingJobsBangalorePage() {
                                 <div className="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 text-purple-600 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
                                     <ClockIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Part-Time Housecleaning Jobs</h3>
-                                <div className="text-2xl md:text-3xl font-extrabold text-purple-600 mb-6">₹8,000 – ₹12,000<span className="text-sm font-medium text-gray-500 block mt-1">per month</span></div>
+                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Part-Time Cook Jobs</h3>
+                                <div className="text-2xl md:text-3xl font-extrabold text-purple-600 mb-6">₹8,000 to ₹12,000<span className="text-sm font-medium text-gray-500 block mt-1">per month</span></div>
                                 <ul className="space-y-3">
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700 font-medium">4–6 working hours</span>
+                                        <span className="text-gray-700 font-medium">Short working hours</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-gray-700 font-medium">Flexible shifts</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-
-                        {/* What You Get Grid */}
-                        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
-                            <div className="text-center mb-8">
-                                <h3 className="text-xl md:text-4xl font-bold text-gray-900 font-display">What You Get with EzyHelpers</h3>
-                                <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
-                            </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                                {[
-                                    { text: "Safe job placement", icon: ShieldCheckIcon },
-                                    { text: "Training before joining", icon: BriefcaseIcon },
-                                    { text: "Respectful families", icon: HeartIcon },
-                                    { text: "Long-term job opportunities", icon: StarIcon },
-                                    { text: "Direct and timely salary payment", icon: BanknotesIcon },
-                                ].map((item, index) => (
-                                    <div key={index} className={`flex items-center gap-4 bg-gray-50 p-4 rounded-xl border border-gray-100 ${index === 4 ? 'sm:col-span-2 md:col-span-1 md:col-start-2' : ''}`}>
-                                        <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
-                                            <item.icon className="w-5 h-5 text-teal-600" />
-                                        </div>
-                                        <span className="font-semibold text-gray-800">{item.text}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="flex justify-center mt-10">
-                                <Link
-                                    href="tel:+919876543210"
-                                    className="inline-flex items-center justify-center bg-teal-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-teal-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                                >
-                                    Call Now
-                                </Link>
-                            </div>
-                        </div>
                     </div>
                 </section>
 
-                {/* Where You Can Get Housekeeping Jobs Section */}
-                <section className="section-padding">
-                    <div className="container-custom">
-                        <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Where You Can Get Housekeeping Jobs in Bangalore</h2>
-                            <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                            {/* Apartments */}
-                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-6 items-start">
-                                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-teal-600">
-                                    <BuildingOfficeIcon className="w-8 h-8" />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Apartments</h3>
-                                    <p className="text-sm md:text-base text-gray-600">Daily cleaning and home support for working families.</p>
-                                </div>
-                            </div>
-
-                            {/* Gated Communities */}
-                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-6 items-start">
-                                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-teal-600">
-                                    <BuildingOfficeIcon className="w-8 h-8" />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Gated Communities</h3>
-                                    <p className="text-sm md:text-base text-gray-600">Regular housekeeping and maintenance work.</p>
-                                </div>
-                            </div>
-
-                            {/* Villas */}
-                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-6 items-start">
-                                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-teal-600">
-                                    <HomeModernIcon className="w-8 h-8" />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Villas</h3>
-                                    <p className="text-sm md:text-base text-gray-600">Full home care with stable long-term jobs.</p>
-                                </div>
-                            </div>
-
-                            {/* Family Homes */}
-                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-6 items-start">
-                                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-teal-600">
-                                    <UserGroupIcon className="w-8 h-8" />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Family Homes</h3>
-                                    <p className="text-sm md:text-base text-gray-600">Support families in managing daily household routines.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Types of Housekeeping Jobs Section */}
+                {/* Home Cooks Job Categories Section */}
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Types of Housekeeping Jobs in Bangalore</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Home Cooks Job Categories</h2>
+                            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                                As a Home Cook in Bangalore, your main role is to prepare meals and keep the kitchen clean while supporting families with their daily food needs. We guide you so you understand exactly what is expected.
+                            </p>
                             <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
                         </div>
 
@@ -310,8 +217,7 @@ export default function HousekeepingJobsBangalorePage() {
                                 <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mb-6 text-teal-600 flex-shrink-0">
                                     <HomeIcon className="w-8 h-8" />
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Live-In Housekeeping Jobs</h3>
-                                <p className="text-sm md:text-base text-gray-600 mb-6 font-medium">Best option for helpers coming from Jharkhand who need accommodation.</p>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Live-In Cooking Jobs in Bangalore</h3>
 
                                 <div className="space-y-6 flex-grow">
                                     {/* Type of Work */}
@@ -320,15 +226,15 @@ export default function HousekeepingJobsBangalorePage() {
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Stay in the employer&apos;s home</span>
+                                                <span className="text-sm md:text-base text-gray-600">You stay with the family with free room and meals</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Separate room or sleeping space is provided</span>
+                                                <span className="text-sm md:text-base text-gray-600">You cook daily meals and manage the kitchen</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Free meals included</span>
+                                                <span className="text-sm md:text-base text-gray-600">You follow the family&apos;s food preferences</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -339,15 +245,11 @@ export default function HousekeepingJobsBangalorePage() {
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Daily household cleaning</span>
+                                                <span className="text-sm md:text-base text-gray-600">Around 12 hours daily support</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Rest time during the day</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">2 monthly offs (decided before joining)</span>
+                                                <span className="text-sm md:text-base text-gray-600">2 leaves per month</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -358,20 +260,13 @@ export default function HousekeepingJobsBangalorePage() {
                                         <ul className="space-y-2 mb-4">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Helpers coming from Jharkhand</span>
+                                                <span className="text-sm md:text-base text-gray-600">Helpers who want to save rent and food expenses</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Helpers wanting to save rent and food expenses</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Helpers without accommodation in Bangalore</span>
+                                                <span className="text-sm md:text-base text-gray-600">Helpers willing to live with the family</span>
                                             </li>
                                         </ul>
-                                        <p className="text-[13px] md:text-sm text-teal-800 bg-teal-50 p-3 rounded-xl border border-teal-100 font-medium leading-snug">
-                                            24-hour live-in Housekeeping jobs are among the most secure opportunities in Bangalore.
-                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -381,8 +276,7 @@ export default function HousekeepingJobsBangalorePage() {
                                 <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600 flex-shrink-0">
                                     <ClockSolidIcon className="w-8 h-8" />
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Full-Time Housekeeping Jobs</h3>
-                                <p className="text-sm md:text-base text-gray-600 mb-6 font-medium">Ideal for helpers who prefer fixed work hours.</p>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Full-Time Cook Jobs in Bangalore</h3>
 
                                 <div className="space-y-6 flex-grow">
                                     {/* Type of Work */}
@@ -391,15 +285,15 @@ export default function HousekeepingJobsBangalorePage() {
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Fixed daily schedule</span>
+                                                <span className="text-sm md:text-base text-gray-600">You cook breakfast, lunch, and dinner</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Return home after work</span>
+                                                <span className="text-sm md:text-base text-gray-600">You maintain kitchen and dining cleanliness</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">No overnight stay</span>
+                                                <span className="text-sm md:text-base text-gray-600">You help with groceries when required</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -410,11 +304,11 @@ export default function HousekeepingJobsBangalorePage() {
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">8–10 hours per day</span>
+                                                <span className="text-sm md:text-base text-gray-600">8 to 10 hours per day</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">1 weekly off (discussed before joining)</span>
+                                                <span className="text-sm md:text-base text-gray-600">6 working days with weekly off</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -425,15 +319,11 @@ export default function HousekeepingJobsBangalorePage() {
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Helpers living with relatives or shared accommodation</span>
+                                                <span className="text-sm md:text-base text-gray-600">Helpers from Jharkhand seeking stable daily work</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Helpers seeking work-life balance</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Helpers preferring fixed schedules</span>
+                                                <span className="text-sm md:text-base text-gray-600">Helpers who prefer fixed schedules</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -445,8 +335,7 @@ export default function HousekeepingJobsBangalorePage() {
                                 <div className="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 text-purple-600 flex-shrink-0">
                                     <SparklesIcon className="w-8 h-8" />
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Part-Time Housecleaning Jobs</h3>
-                                <p className="text-sm md:text-base text-gray-600 mb-6 font-medium">Suitable for shorter working hours and focused cleaning tasks.</p>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Part-Time Jobs in Bangalore</h3>
 
                                 <div className="space-y-6 flex-grow">
                                     {/* Type of Work */}
@@ -455,15 +344,15 @@ export default function HousekeepingJobsBangalorePage() {
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Cleaning the kitchen, bathrooms, or living areas</span>
+                                                <span className="text-sm md:text-base text-gray-600">You cook selected meals such as breakfast or dinner</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Dusting and basic upkeep</span>
+                                                <span className="text-sm md:text-base text-gray-600">You clean the kitchen after cooking</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Maintaining daily cleanliness</span>
+                                                <span className="text-sm md:text-base text-gray-600">You arrange utensils and cooking areas</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -474,7 +363,11 @@ export default function HousekeepingJobsBangalorePage() {
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">4–6 hours daily (based on family needs)</span>
+                                                <span className="text-sm md:text-base text-gray-600">4 to 6 hours depending on family needs</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
+                                                <span className="text-sm md:text-base text-gray-600">Flexible shifts</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -485,73 +378,140 @@ export default function HousekeepingJobsBangalorePage() {
                                         <ul className="space-y-2 mb-4">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Helpers wanting flexible work</span>
+                                                <span className="text-sm md:text-base text-gray-600">Helpers wanting shorter working hours</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Helpers living nearby</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">Helpers managing multiple small jobs</span>
+                                                <span className="text-sm md:text-base text-gray-600">Helpers who prefer flexible cooking schedules</span>
                                             </li>
                                         </ul>
-                                        <p className="text-[13px] md:text-sm text-purple-800 bg-purple-50 p-3 rounded-xl border border-purple-100 font-medium leading-snug">
-                                            If you are searching for part-time house cleaning jobs in Bangalore near your location, this option is ideal.
-                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Additional Information Section (Responsibilities & Who Can Apply) */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-12">
-                            {/* Responsibilities */}
+                        <div className="flex justify-center mt-12">
+                            <Link
+                                href="tel:+919876543210"
+                                className="inline-flex items-center justify-center bg-teal-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-teal-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                            >
+                                Talk to Our Team
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Additional Information Section (Responsibilities) */}
+                <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto mt-12 mb-12">
+                    {/* Responsibilities */}
+                    <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100 flex flex-col h-full">
+                        <div className="flex flex-col items-center gap-4 mb-6 text-center">
+                            <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-teal-600">
+                                <ClipboardDocumentListIcon className="w-7 h-7" />
+                            </div>
+                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 font-display">Work Roles and Responsibilities</h2>
+                        </div>
+                        <p className="text-gray-600 mb-6 font-medium text-center max-w-2xl mx-auto">
+                            As a Home Cook in Bangalore, you will manage daily kitchen activities and make sure meal preparation runs smoothly for the family.
+                        </p>
+
+                        <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-4 mt-4">Daily Tasks Include</h4>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-6">
+                            <ul className="space-y-4">
+                                <li className="flex items-start gap-3">
+                                    <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-700 font-medium">Cook meals as per family choice, including North Indian, South Indian, Chinese, veg and non-veg food</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-700 font-medium">Prepare ingredients in advance</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-700 font-medium">Wash utensils and clean kitchen counters</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-700 font-medium">Store food safely</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-700 font-medium">Keep the kitchen organised and hygienic</span>
+                                </li>
+                            </ul>
+
+                            <ul className="space-y-4">
+                                <li className="flex items-start gap-3">
+                                    <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-700 font-medium">Assist with grocery shopping if required</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-700 font-medium">Follow recipes carefully</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-700 font-medium">Serve meals on time</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-700 font-medium">Prepare tea and simple snacks</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <span className="text-gray-700 font-medium">Inform families about grocery shortages</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Training Support and Cuisines Section */}
+                <section className="section-padding bg-gray-50">
+                    <div className="container-custom">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+                            {/* Training Support */}
                             <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100 flex flex-col h-full">
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-teal-600">
-                                        <ClipboardDocumentListIcon className="w-7 h-7" />
+                                    <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-blue-600">
+                                        <AcademicCapIcon className="w-7 h-7" />
                                     </div>
-                                    <h3 className="text-xl md:text-3xl font-bold text-gray-900 font-display">Housekeeping Work Responsibilities</h3>
+                                    <h3 className="text-xl md:text-3xl font-bold text-gray-900 font-display">Training Support</h3>
                                 </div>
-                                <p className="text-gray-600 mb-6 font-medium">Your daily duties may include:</p>
-                                <ul className="space-y-4 mb-6 flex-grow">
+                                <p className="text-gray-600 mb-6 font-medium">At EzyHelpers, we provide basic training before placement so you feel confident and prepared for your job.</p>
+
+                                <h4 className="font-bold text-gray-800 mb-4 px-2">Training Covers</h4>
+                                <ul className="space-y-4 mb-6 flex-grow px-2">
                                     <li className="flex items-start gap-3">
-                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">Sweeping and mopping floors</span>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+                                        <span className="text-gray-700">Kitchen safety and hygiene</span>
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">Cleaning rooms, kitchen, and bathrooms</span>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+                                        <span className="text-gray-700">Cooking for small and medium families</span>
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">Washing utensils</span>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+                                        <span className="text-gray-700">Safe grocery handling</span>
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">Dusting furniture and surfaces</span>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+                                        <span className="text-gray-700">Understanding family instructions</span>
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">Washing and folding clothes</span>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+                                        <span className="text-gray-700">Using kitchen appliances</span>
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">Simple kitchen assistance</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">Basic home organisation</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">Maintaining overall cleanliness</span>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+                                        <span className="text-gray-700">Learning English names of vegetables and ingredients</span>
                                     </li>
                                 </ul>
-                                <div className="bg-teal-50 border border-teal-100 rounded-xl p-4 mt-auto">
-                                    <p className="text-teal-800 font-medium text-sm text-center">
-                                        All duties are discussed clearly before joining.
+                                <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mt-auto">
+                                    <p className="text-blue-800 font-medium text-sm text-center">
+                                        This training helps you adjust easily to Home Cook jobs in Bangalore.
                                     </p>
                                 </div>
                             </div>
@@ -566,56 +526,127 @@ export default function HousekeepingJobsBangalorePage() {
                                 </div>
                                 <ul className="space-y-5 mb-6 flex-grow">
                                     <li className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 mt-1 pb-1">
-                                            <span className="text-blue-600 font-bold text-lg">1</span>
+                                        <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 mt-1 pb-1">
+                                            <span className="text-teal-600 font-bold text-lg">1</span>
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-gray-900 text-lg">Male & Female Housekeepers</h4>
+                                            <h4 className="font-bold text-gray-900 text-lg">Female Home Cooks</h4>
+                                            <p className="text-gray-600 text-sm">from Jharkhand</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 mt-1 pb-1">
-                                            <span className="text-blue-600 font-bold text-lg">2</span>
+                                        <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 mt-1 pb-1">
+                                            <span className="text-teal-600 font-bold text-lg">2</span>
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-gray-900 text-lg">Husband–Wife Couples</h4>
-                                            <p className="text-gray-600 text-sm">applying together</p>
+                                            <h4 className="font-bold text-gray-900 text-lg">Age: 18 to 45 years</h4>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 mt-1 pb-1">
-                                            <span className="text-blue-600 font-bold text-lg">3</span>
+                                        <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 mt-1 pb-1">
+                                            <span className="text-teal-600 font-bold text-lg">3</span>
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-gray-900 text-lg">Age: 18–45 years</h4>
+                                            <h4 className="font-bold text-gray-900 text-lg">Basic schooling is enough</h4>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 mt-1 pb-1">
-                                            <span className="text-blue-600 font-bold text-lg">4</span>
+                                        <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 mt-1 pb-1">
+                                            <span className="text-teal-600 font-bold text-lg">4</span>
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-gray-900 text-lg">Basic education is enough</h4>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 mt-1 pb-1">
-                                            <span className="text-blue-600 font-bold text-lg">5</span>
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 text-lg">Freshers and experienced helpers welcome</h4>
+                                            <h4 className="font-bold text-gray-900 text-lg">Freshers & experienced helpers</h4>
+                                            <p className="text-gray-600 text-sm">both are welcome</p>
                                         </div>
                                     </li>
                                 </ul>
-                                <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mt-auto">
+                                <div className="bg-teal-50 border border-teal-100 rounded-xl p-4 mt-auto">
                                     <div className="flex items-center gap-3">
-                                        <ShieldCheckIcon className="w-6 h-6 text-blue-600 flex-shrink-0" />
-                                        <p className="text-blue-800 font-medium text-sm">
-                                            Training is provided before placement, so you can start confidently.
+                                        <ShieldCheckIcon className="w-6 h-6 text-teal-600 flex-shrink-0" />
+                                        <p className="text-teal-800 font-medium text-sm">
+                                            Basic training is provided before placement.
                                         </p>
                                     </div>
                                 </div>
+                                <div className="mt-6 flex justify-center">
+                                    <Link
+                                        href="/helper-registration"
+                                        className="inline-flex items-center justify-center bg-teal-600 text-white font-bold py-3 px-8 rounded-xl hover:bg-teal-700 hover:shadow-lg transition-all duration-300 w-full"
+                                    >
+                                        Apply Today
+                                    </Link>
+                                </div>
                             </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                {/* Types of Cuisines Section */}
+                <section className="section-padding">
+                    <div className="container-custom">
+                        <div className="text-center mb-12">
+                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Types of Cuisines and Dishes You Will Prepare</h2>
+                            <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+                            {/* South Indian */}
+                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-start text-left">
+                                <div className="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 mb-6">
+                                    <FireIcon className="w-8 h-8" />
+                                </div>
+                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-3">South Indian Dishes</h3>
+                                <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">
+                                    Idli, Dosa, Upma, Sambhar, Rasam, Coconut Chutney, Lemon Rice, Curd Rice
+                                </p>
+                            </div>
+
+                            {/* North Indian */}
+                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-start text-left">
+                                <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 mb-6">
+                                    <StarIcon className="w-8 h-8" />
+                                </div>
+                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-3">North Indian Dishes</h3>
+                                <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">
+                                    Roti, Chapati, Dal, Sabzi, Paneer Curry, Gobi dishes, Vegetable rolls, Simple rice meals
+                                </p>
+                            </div>
+
+                            {/* Chinese */}
+                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-start text-left">
+                                <div className="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center text-yellow-600 mb-6">
+                                    <GlobeAltIcon className="w-8 h-8" />
+                                </div>
+                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-3">Chinese & Indo-Chinese</h3>
+                                <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">
+                                    Fried Rice, Chowmein, Noodles, Vegetable or Chicken Manchurian
+                                </p>
+                            </div>
+
+                            {/* Snacks */}
+                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-start text-left lg:col-start-1 lg:col-end-auto md:col-span-1">
+                                <div className="w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-600 mb-6">
+                                    <HeartIcon className="w-8 h-8" />
+                                </div>
+                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-3">Snacks and Light Meals</h3>
+                                <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">
+                                    Sandwiches, Toast, Bread rolls, Evening snacks
+                                </p>
+                            </div>
+
+                            {/* Veg and Non-Veg */}
+                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-start text-left lg:col-span-2 md:col-span-2">
+                                <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 mb-6">
+                                    <CheckCircleIcon className="w-8 h-8" />
+                                </div>
+                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-3">Vegetarian and Non-Vegetarian Cooking</h3>
+                                <p className="text-sm md:text-base text-gray-600 leading-relaxed font-medium">
+                                    Egg, Chicken, Fish, Paneer and daily vegetarian meals
+                                </p>
+                            </div>
+
                         </div>
                     </div>
                 </section>
@@ -630,85 +661,63 @@ export default function HousekeepingJobsBangalorePage() {
 
                             <div className="relative z-10">
                                 <div className="text-center max-w-3xl mx-auto mb-12">
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white">About EzyHelpers – Trusted Helper Jobs</h2>
+                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white">About EzyHelpers Trusted Helper Jobs</h2>
                                     <p className="text-teal-100 text-lg md:text-xl">
-                                        We connect helpers like you with safe Domestic Helper jobs across India without charging any fees.
+                                        We connect helpers with safe Domestic Helper jobs across India without charging any fees, and we support you throughout your journey.
                                     </p>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                                    {/* We Focus On */}
-                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-teal-700/50">
-                                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-teal-100 border-b border-teal-700/50 pb-3">
-                                            <HandThumbUpIcon className="w-6 h-6" /> We Focus On
+                                <div className="max-w-5xl mx-auto">
+                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-10 border border-teal-700/50">
+                                        <h3 className="text-xl md:text-2xl font-bold mb-8 flex justify-center items-center gap-2 text-teal-100 border-b border-teal-700/50 pb-4 text-center">
+                                            <ShieldCheckIcon className="w-8 h-8" /> Why Helpers Trust EzyHelpers
                                         </h3>
-                                        <ul className="space-y-3">
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                <span className="text-teal-50 text-sm md:text-base">Respectful jobs in Bangalore</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                <span className="text-teal-50 text-sm md:text-base">Strict safety and background checks</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                <span className="text-teal-50 text-sm md:text-base">Helper welfare and long-term support</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    {/* Why Helpers Trust EzyHelpers */}
-                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-teal-700/50 lg:col-span-2">
-                                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-teal-100 border-b border-teal-700/50 pb-3">
-                                            <ShieldCheckIcon className="w-6 h-6" /> Why Helpers Trust EzyHelpers
-                                        </h3>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-                                            <ul className="space-y-3">
-                                                <li className="flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">Provided jobs for 5,000+ helpers</span>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+                                            <ul className="space-y-4">
+                                                <li className="flex items-start gap-3">
+                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">Provided jobs for 5,000+ helpers</span>
                                                 </li>
-                                                <li className="flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">Supported 10,000+ families</span>
+                                                <li className="flex items-start gap-3">
+                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">Supported 10,000+ families</span>
                                                 </li>
-                                                <li className="flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">Training aligned with Domestic Workers Sector Skill Council (DWSSC) under Skill India</span>
+                                                <li className="flex items-start gap-3">
+                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">Training aligned with Domestic Workers Sector Skill Council (DWSSC) under Skill India</span>
                                                 </li>
-                                                <li className="flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">Placement only in respectful homes</span>
+                                                <li className="flex items-start gap-3">
+                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">Placement only in respectful homes</span>
                                                 </li>
-                                                <li className="flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">Duties are explained clearly before joining</span>
+                                                <li className="flex items-start gap-3">
+                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">Duties explained clearly before joining</span>
                                                 </li>
                                             </ul>
-                                            <ul className="space-y-3">
-                                                <li className="flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">Continuous support after placement</span>
+                                            <ul className="space-y-4 md:mt-0">
+                                                <li className="flex items-start gap-3">
+                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">Continuous support after placement</span>
                                                 </li>
-                                                <li className="flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">Help during misunderstandings or job issues</span>
+                                                <li className="flex items-start gap-3">
+                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">Help during misunderstandings or job issues</span>
                                                 </li>
-                                                <li className="flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">Assistance with job changes if needed</span>
+                                                <li className="flex items-start gap-3">
+                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">Assistance with job changes if needed</span>
                                                 </li>
-                                                <li className="flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">Regular salary and long-term work opportunities</span>
+                                                <li className="flex items-start gap-3">
+                                                    <CheckCircleIcon className="w-6 h-6 text-teal-300 flex-shrink-0 mt-0.5" />
+                                                    <span className="text-teal-50 text-sm md:text-lg font-medium">Regular salary and long-term work opportunities</span>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-teal-900/50 rounded-2xl p-6 border border-teal-700/50 backdrop-blur-sm">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-teal-900/50 rounded-2xl p-6 border border-teal-700/50 backdrop-blur-sm mt-8 max-w-5xl mx-auto">
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 bg-teal-800 rounded-full flex items-center justify-center flex-shrink-0 border border-teal-600">
                                             <HeartIcon className="w-6 h-6 text-teal-300" />
@@ -728,6 +737,7 @@ export default function HousekeepingJobsBangalorePage() {
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -757,13 +767,13 @@ export default function HousekeepingJobsBangalorePage() {
                                     <BriefcaseIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Look Professional</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">EzyHelpers Coat and grooming kit is provided.</p>
+                                <p className="text-gray-600 font-medium leading-relaxed">Coat and grooming kit provided.</p>
                             </div>
 
                             {/* Safety & Security */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group">
                                 <div className="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 text-purple-600 group-hover:scale-110 transition-transform duration-300">
-                                    <OutlineShieldCheckIcon className="w-7 h-7" />
+                                    <ShieldCheckIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Safety & Security</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">Clear work agreements and regular support.</p>
@@ -772,7 +782,7 @@ export default function HousekeepingJobsBangalorePage() {
                             {/* Stay Support */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group">
                                 <div className="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 text-pink-600 group-hover:scale-110 transition-transform duration-300">
-                                    <OutlineHomeModernIcon className="w-7 h-7" />
+                                    <HomeIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Stay Support</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">Stay at our women’s hostel if placement is delayed.</p>
@@ -781,7 +791,7 @@ export default function HousekeepingJobsBangalorePage() {
                             {/* Health Insurance */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group">
                                 <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-red-600 group-hover:scale-110 transition-transform duration-300">
-                                    <OutlineHeartIcon className="w-7 h-7" />
+                                    <HeartIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Health Insurance</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">Basic medical coverage for emergencies.</p>
@@ -790,25 +800,25 @@ export default function HousekeepingJobsBangalorePage() {
                             {/* Respectful Work Environment */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group">
                                 <div className="w-14 h-14 bg-yellow-50 rounded-2xl flex items-center justify-center mb-6 text-yellow-600 group-hover:scale-110 transition-transform duration-300">
-                                    <HandThumbUpIcon className="w-7 h-7" />
+                                    <UserIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">Respectful Work</h3>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Respectful Work Environment</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">Homes that treat you with respect.</p>
                             </div>
 
                             {/* Future Opportunities */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group">
                                 <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 text-indigo-600 group-hover:scale-110 transition-transform duration-300">
-                                    <ChartBarIcon className="w-7 h-7" />
+                                    <GlobeAltIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Future Opportunities</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">Good performance can lead to a higher salary or jobs in other cities/abroad.</p>
+                                <p className="text-gray-600 font-medium leading-relaxed">Good performance can lead to higher salary or jobs in other cities/abroad.</p>
                             </div>
 
                             {/* Timely Salary */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group">
                                 <div className="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-green-600 group-hover:scale-110 transition-transform duration-300">
-                                    <OutlineBanknotesIcon className="w-7 h-7" />
+                                    <ClockSolidIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Timely Salary</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">Paid directly by employers every month.</p>
@@ -817,7 +827,7 @@ export default function HousekeepingJobsBangalorePage() {
                             {/* Job Profile Creation */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group">
                                 <div className="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center mb-6 text-sky-600 group-hover:scale-110 transition-transform duration-300">
-                                    <UserCircleIcon className="w-7 h-7" />
+                                    <FireIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Job Profile Creation</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">Build a profile to get better maid jobs.</p>
@@ -826,7 +836,7 @@ export default function HousekeepingJobsBangalorePage() {
                             {/* Support at Every Step */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group lg:col-start-2">
                                 <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 text-orange-600 group-hover:scale-110 transition-transform duration-300">
-                                    <ChatBubbleLeftEllipsisIcon className="w-7 h-7" />
+                                    <ClipboardDocumentListIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Support at Every Step</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">Help from registration to after placement.</p>
@@ -847,7 +857,7 @@ export default function HousekeepingJobsBangalorePage() {
 
                                 <div className="flex-shrink-0 relative z-10 w-full md:w-auto flex justify-center">
                                     <div className="w-24 h-24 md:w-32 md:h-32 bg-pink-50 rounded-full flex items-center justify-center border-4 border-white shadow-lg">
-                                        <OutlineHomeModernIcon className="w-12 h-12 md:w-16 md:h-16 text-pink-500" />
+                                        <HomeIcon className="w-12 h-12 md:w-16 md:h-16 text-pink-500" />
                                     </div>
                                 </div>
 
@@ -858,12 +868,14 @@ export default function HousekeepingJobsBangalorePage() {
                                             Women helpers can stay at NEST anytime in Bangalore.
                                         </p>
                                         <p className="text-gray-600 text-lg">
-                                            Safe rooms, daily meals, and affordable stay help you settle comfortably before starting work.
+                                            The hostel offers safe, comfortable rooms, daily meals, and very affordable rates, making it easy for you to settle in and start your work.
                                         </p>
                                     </div>
                                     <Link href="/nest" className="inline-flex items-center gap-2 bg-pink-600 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-pink-200 hover:bg-pink-700 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
                                         Learn more about NEST
-                                        <ArrowRightIcon className="w-5 h-5" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                        </svg>
                                     </Link>
                                 </div>
                             </div>
@@ -878,7 +890,7 @@ export default function HousekeepingJobsBangalorePage() {
                             <div className="md:flex">
                                 <div className="md:w-5/12 bg-gradient-to-br from-yellow-400 to-orange-500 p-8 flex flex-col items-center justify-center text-center text-white">
                                     <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
-                                        <GiftIcon className="w-10 h-10 text-white" />
+                                        <StarIcon className="w-10 h-10 text-white" />
                                     </div>
                                     <h2 className="text-3xl md:text-4xl font-bold mb-2 font-display">Refer & Earn</h2>
                                     <h3 className="text-5xl md:text-6xl font-extrabold mb-2">₹500!</h3>
@@ -886,26 +898,26 @@ export default function HousekeepingJobsBangalorePage() {
                                 </div>
                                 <div className="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
                                     <p className="text-lg md:text-xl text-gray-800 font-bold mb-6">
-                                        Help friends from Jharkhand find trusted housekeeping or security jobs in Bangalore and earn rewards.
+                                        Help your friends from Jharkhand find trusted housekeeping or security jobs in Bangalore. You get ₹500 when they join.
                                     </p>
                                     <div className="space-y-4 mb-8">
                                         <div className="flex items-start gap-3">
                                             <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
                                                 <span className="text-green-600 font-bold text-sm">1</span>
                                             </div>
-                                            <span className="text-gray-700 font-medium">Share details via WhatsApp or call</span>
+                                            <span className="text-gray-700 font-medium">Share their details via WhatsApp or call us</span>
                                         </div>
                                         <div className="flex items-start gap-3">
                                             <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
                                                 <span className="text-green-600 font-bold text-sm">2</span>
                                             </div>
-                                            <span className="text-gray-700 font-medium">Provide name, age, and job preference</span>
+                                            <span className="text-gray-700 font-medium">Give your friend’s name, age, and job preference</span>
                                         </div>
                                         <div className="flex items-start gap-3">
                                             <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
                                                 <span className="text-green-600 font-bold text-sm">3</span>
                                             </div>
-                                            <span className="text-gray-700 font-bold">After successful placement, earn ₹500</span>
+                                            <span className="text-gray-700 font-bold">They join EzyHelpers, complete placement, and you earn ₹500</span>
                                         </div>
                                     </div>
                                     <Link href="#" className="inline-block text-center bg-teal-600 text-white font-bold text-lg py-3 px-8 rounded-xl hover:bg-teal-700 hover:shadow-xl transition-all duration-300">
@@ -917,11 +929,11 @@ export default function HousekeepingJobsBangalorePage() {
                     </div>
                 </section>
 
-                {/* How to Apply for Housekeeping Jobs */}
+                {/* How to Apply for a Bangalore Cooking Job */}
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Apply for Housekeeping Jobs</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How to Apply for a Bangalore Cooking Job</h2>
                         </div>
 
                         <div className="max-w-4xl mx-auto">
@@ -930,9 +942,9 @@ export default function HousekeepingJobsBangalorePage() {
                                 <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 md:w-1 bg-teal-200 rounded-full"></div>
 
                                 {[
-                                    { step: 1, title: "Contact EzyHelpers", desc: "Call or fill the online form. We explain job types, salary, and duties clearly." },
-                                    { step: 2, title: "Share Your Details", desc: "Provide name, age, skills, and experience." },
-                                    { step: 3, title: "Training & Placement", desc: "Complete training, verification, family interview, and start work with full support." }
+                                    { step: 1, title: "Contact EzyHelpers", desc: "Call us or fill the form so we can explain job details clearly to you." },
+                                    { step: 2, title: "Share Your Details", desc: "Tell us your name, age, experience, and cooking skills." },
+                                    { step: 3, title: "Training and Job Placement", desc: "Attend training, meet families, approve the job yourself, and start work with our full support." }
                                 ].map((item, index) => (
                                     <div key={index} className="relative flex items-center justify-center mb-12 last:mb-0">
                                         {/* Left Side */}
@@ -963,14 +975,19 @@ export default function HousekeepingJobsBangalorePage() {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </section>
 
-                        <div className="flex justify-center mt-12">
-                            <Link
-                                href="tel:+919876543210"
-                                className="inline-flex items-center justify-center bg-teal-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-teal-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                            >
-                                Call now
-                            </Link>
+                {/* FAQs Section */}
+                <section className="section-padding bg-teal-50">
+                    <div className="container-custom">
+                        <div className="max-w-3xl mx-auto">
+                            <div className="text-center mb-12">
+                                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Frequently Asked Questions</h2>
+                                <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
+                                <p className="text-gray-600 mt-6 text-lg">Have questions about our home cook jobs? Find answers to commonly asked questions below.</p>
+                            </div>
+                            <FAQAccordion faqs={faqs} />
                         </div>
                     </div>
                 </section>
@@ -979,29 +996,24 @@ export default function HousekeepingJobsBangalorePage() {
                 <section className="section-padding bg-teal-600 text-white">
                     <div className="container-custom">
                         <div className="max-w-4xl mx-auto text-center">
-                            <h2 className="text-2xl md:text-4xl font-bold mb-6 font-display text-white">Ready to Start Your Housekeeping Job?</h2>
-                            <p className="text-lg md:text-xl mb-6 text-teal-100">Thousands of helpers from Jharkhand trust us for safe jobs, steady income, and respectful workplaces.</p>
-                            <p className="text-lg md:text-xl mb-10 text-white font-medium">Register now or call today to begin your journey toward a secure Housekeeping Job in Bangalore.</p>
+                            <h2 className="text-2xl md:text-4xl font-bold mb-6 font-display text-white">Your Skills Deserve Respect</h2>
+                            <p className="text-lg md:text-xl mb-10 text-teal-100">Cooking is not just work; it is care, trust, and responsibility. Find families who value your effort and give you a place where your work truly matters.</p>
 
-                            <div className="flex flex-col md:flex-row gap-4 justify-center">
+                            <div className="flex justify-center">
                                 <Link
                                     href="/helper-registration"
                                     className="inline-flex items-center justify-center bg-white text-teal-700 font-bold text-lg py-4 px-10 rounded-xl hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300"
                                 >
-                                    Register
-                                </Link>
-                                <Link
-                                    href="tel:+919876543210"
-                                    className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-white/10 hover:scale-105 transition-all duration-300"
-                                >
-                                    Call Us
+                                    Find a Respectful Home
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </section>
+
             </main>
             <Footer />
         </>
     )
 }
+
