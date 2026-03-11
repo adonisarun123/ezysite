@@ -192,6 +192,7 @@ export default function HelperJobsPage() {
                                 },
                                 {
                                     state: "Elderly Care Jobs",
+                                    fullPath: "/helper-jobs/jharkhand/elderly-caretaker-job-bangalore",
                                     desc: "Support seniors with daily activities, provide companionship, and ensure a safe home environment.",
                                     features: ["Help older people with daily tasks", "Give companionship and emotional support", "Help with walking and personal care", "Friendly and safe home environment"]
                                 },
