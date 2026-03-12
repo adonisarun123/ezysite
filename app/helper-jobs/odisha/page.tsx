@@ -16,27 +16,26 @@ import {
     GiftIcon
 } from '@heroicons/react/24/outline'
 
-
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 
 export const metadata: Metadata = {
-    title: 'Helper Jobs in Bangalore – Apply from Jharkhand | EzyHelpers',
-    description: 'Find safe helper jobs in Bangalore. Jharkhand helpers can apply directly with no agents or fees. Respectful families, written agreement & full support.',
+    title: 'Odisha Helpers: Trusted House Helper Jobs in Bangalore',
+    description: 'Tired of low wages? Find House Helper Jobs in Bangalore for Odisha workers. Direct hiring for cooking, cleaning & caregiving. 100% Free Registration.',
     openGraph: {
-        title: 'Helper Jobs in Bangalore – Apply from Jharkhand | EzyHelpers',
-        description: 'Find safe helper jobs in Bangalore. Jharkhand helpers can apply directly with no agents or fees. Respectful families, written agreement & full support.',
-        url: 'https://www.ezyhelpers.com/helper-jobs/jharkhand',
+        title: 'Odisha Helpers: Trusted House Helper Jobs in Bangalore',
+        description: 'Tired of low wages? Find House Helper Jobs in Bangalore for Odisha workers. Direct hiring for cooking, cleaning & caregiving. 100% Free Registration.',
+        url: 'https://www.ezyhelpers.com/helper-jobs/odisha',
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/odisha'
     }
 }
 
 const faqs: FAQItem[] = [
     {
         question: 'Do I need to give my Aadhaar?',
-        answer: 'No physical document needed. WhatsApp us a copy of your Aadhaar, and we’ll complete the verification safely.',
+        answer: 'No physical document needed. WhatsApp us a copy of your Aadhaar, and we’ll complete verification safely.',
     },
     {
         question: 'How will I get my salary?',
@@ -55,8 +54,16 @@ const faqs: FAQItem[] = [
         answer: 'Yes! We arrange a video call with the family, and you only go if you feel comfortable.',
     },
     {
-        question: "What if I don't know the language in Bangalore?",
-        answer: 'Most families speak Hindi, and our team speaks Hindi too. We will make sure you can communicate easily before you join.',
+        question: "What if I don't know Kannada or local languages in Bangalore?",
+        answer: 'Most families speak Hindi, and our team speaks Hindi too. We ensure you can communicate easily before joining.',
+    },
+    {
+        question: "How long will I need to stay in the job?",
+        answer: 'Most families prefer helpers who stay longer, but you can switch jobs if needed. We ensure transitions are safe and smooth.',
+    },
+    {
+        question: "Can I see the family’s house before joining?",
+        answer: 'Yes! If the family/employer is comfortable, they may show you a video tour of their home. If not, you will still have a video call to talk with the family and understand the job before travelling.',
     }
 ]
 
@@ -70,26 +77,12 @@ export default function HelperJobsPage() {
                     items={[
                         { label: 'Home', href: '/' },
                         { label: 'Helper Jobs', href: '/helper-jobs' },
-                        { label: 'Jharkhand' }
+                        { label: 'Odisha' }
                     ]}
-                    rightContent={
-                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
-                            <span className="text-gray-500 font-medium whitespace-nowrap">हिंदी</span>
-                            <Link
-                                href="/helper-jobs/jharkhand/hin"
-                                className="w-10 h-5 bg-teal-600 rounded-full p-1 relative transition-colors inline-block"
-                            >
-                                <div
-                                    className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"
-                                />
-                            </Link>
-                            <span className="text-gray-900 font-bold whitespace-nowrap">ENG</span>
-                        </div>
-                    }
                 />
 
                 {/* Hero Section with Bright Colors */}
-                <section className="relative bg-gradient-to-br from-teal-800 via-teal-500 to-teal-700 text-white pt-8 pb-12 md:pt-20 md:pb-24 lg:pb-8 overflow-hidden">
+                <section className="relative bg-gradient-to-br from-purple-800 via-purple-500 to-purple-700 text-white pt-8 pb-12 md:pt-20 md:pb-24 lg:pb-8 overflow-hidden">
 
                     <div className="absolute inset-0 opacity-20">
                         <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
@@ -98,13 +91,11 @@ export default function HelperJobsPage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-2xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">Trusted Domestic Helper Jobs in Bangalore - Apply from Jharkhand Today</h1>
+                            <h1 className="text-2xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">Reliable House Helper Jobs in Bangalore for Helpers from Odisha</h1>
 
-                            <p className="text-sm sm:text-base md:text-2xl font-semibold mb-4 text-teal-100 max-w-5xl mx-auto">Do you want a job where you are treated well, paid on time, and supported?</p>
-
-                            <div className="space-y-4 mb-6 max-w-5xl mx-auto">
-                                <p className="text-sm sm:text-base md:text-xl text-teal-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none">
-                                    EzyHelpers helps helpers from Jharkhand get trusted domestic helper jobs directly with good families in Bangalore. There are no agents, and you don’t have to pay any fees.
+                            <div className="space-y-4 mb-6 max-w-5xl mx-auto mt-4">
+                                <p className="text-sm sm:text-base md:text-xl text-purple-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none">
+                                    EzyHelpers connects women from Odisha with safe, high-paying house helper jobs in Bangalore. Work directly with respectful families, get paid on time, and enjoy full support; no agents, no fees, just reliable work you can trust.
                                 </p>
                             </div>
                             <p className="text-sm sm:text-base md:text-xl font-semibold mb-6 text-yellow-300 max-w-4xl mx-auto">Why This Job Is Good for You</p>
@@ -118,7 +109,7 @@ export default function HelperJobsPage() {
                             <div className="grid grid-cols-2 gap-2 md:gap-4 max-w-3xl mx-auto">
                                 <Link
                                     href="/helper-registration"
-                                    className="inline-flex items-center justify-center w-full bg-white text-teal-700 font-semibold text-sm sm:text-base md:text-lg py-3 px-1 md:py-4 md:px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300 text-center whitespace-nowrap"
+                                    className="inline-flex items-center justify-center w-full bg-white text-purple-700 font-semibold text-sm sm:text-base md:text-lg py-3 px-1 md:py-4 md:px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300 text-center whitespace-nowrap"
                                 >
                                     Apply for Helper Jobs in Bangalore
                                 </Link>
@@ -138,20 +129,20 @@ export default function HelperJobsPage() {
                     <div className="container-custom">
                         <div className="grid grid-cols-4 md:grid-cols-4 gap-2 md:gap-8 text-center md:divide-x divide-gray-100 mt-4 mb-4">
                             <div>
-                                <div className="text-lg xs:text-xl md:text-4xl font-bold text-teal-600 mb-1 md:mb-2">5,000+</div>
-                                <div className="text-teal-600 text-[9px] xs:text-[10px] md:text-base font-medium leading-tight">Helpers Working</div>
+                                <div className="text-lg xs:text-xl md:text-4xl font-bold text-purple-600 mb-1 md:mb-2">5,000+</div>
+                                <div className="text-purple-600 text-[9px] xs:text-[10px] md:text-base font-medium leading-tight">Helpers Working</div>
                             </div>
                             <div>
-                                <div className="text-lg xs:text-xl md:text-4xl font-bold text-teal-600 mb-1 md:mb-2">9</div>
-                                <div className="text-teal-600 text-[9px] xs:text-[10px] md:text-base font-medium leading-tight">Job Categories</div>
+                                <div className="text-lg xs:text-xl md:text-4xl font-bold text-purple-600 mb-1 md:mb-2">9</div>
+                                <div className="text-purple-600 text-[9px] xs:text-[10px] md:text-base font-medium leading-tight">Job Categories</div>
                             </div>
                             <div>
-                                <div className="text-lg xs:text-xl md:text-4xl font-bold text-teal-600 mb-1 md:mb-2">100%</div>
-                                <div className="text-teal-600 text-[9px] xs:text-[10px] md:text-base font-medium leading-tight">Direct Salary From Employer</div>
+                                <div className="text-lg xs:text-xl md:text-4xl font-bold text-purple-600 mb-1 md:mb-2">100%</div>
+                                <div className="text-purple-600 text-[9px] xs:text-[10px] md:text-base font-medium leading-tight">Direct Salary From Employer</div>
                             </div>
                             <div>
-                                <div className="text-lg xs:text-xl md:text-4xl font-bold text-teal-600 mb-1 md:mb-2">₹0</div>
-                                <div className="text-teal-600 text-[9px] xs:text-[10px] md:text-base font-medium leading-tight">Registration/Placement Fees</div>
+                                <div className="text-lg xs:text-xl md:text-4xl font-bold text-purple-600 mb-1 md:mb-2">₹0</div>
+                                <div className="text-purple-600 text-[9px] xs:text-[10px] md:text-base font-medium leading-tight">Registration/Placement Fees</div>
                             </div>
                         </div>
                     </div>
@@ -161,68 +152,58 @@ export default function HelperJobsPage() {
                 <section id="find-jobs-by-state" className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Jobs for Jharkhand Helpers in Bangalore</h2>
-                            <p className="text-sm md:text-lg text-gray-600 max-w-3xl mx-auto">We have many types of jobs to match your skills. Click to apply or learn more!</p>
+                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Jobs for Odisha Helpers in Bangalore</h2>
+                            <p className="text-sm md:text-lg text-gray-600 max-w-3xl mx-auto">We offer multiple types of jobs to match your skills. Click to apply or learn more!</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                             {[
                                 {
                                     state: "Housekeeping Jobs",
-                                    fullPath: "/helper-jobs/jharkhand/housekeeping-job-bangalore",
-                                    desc: "Clean and mop homes daily, wash dishes and clothes, and maintain neat and organised rooms.",
+                                    desc: "Clean and maintain homes daily, wash dishes and clothes, and keep rooms tidy and organised.",
                                     features: ["Clean and mop the house every day", "Wash dishes, clothes, and help with laundry", "Keep rooms and furniture neat", "Live-in or full-time work available"]
                                 },
                                 {
                                     state: "Cooking / Kitchen Helper Jobs",
-                                    fullPath: "/helper-jobs/home-cooks-job-bangalore",
-                                    desc: "Cook veg and non-veg meals, manage groceries, and keep the kitchen clean and organised.",
-                                    features: ["Cook meals for the family (veg or non-veg)", "Help plan meals and manage groceries", "Keep the kitchen clean and organised.", "Live-in or full-time work available"]
+                                    desc: "Prepare veg and non-veg meals, manage groceries, and maintain a clean kitchen.",
+                                    features: ["Cook meals for the family (veg or non-veg)", "Help plan meals and manage groceries", "Keep the kitchen clean and organised", "Live-in or full-time work available"]
                                 },
                                 {
                                     state: "Nanny / Babysitter Jobs",
-                                    fullPath: "/helper-jobs/nanny-job-bangalore",
-                                    desc: "Take care of children, feed them, assist with studies, and maintain hygiene and safety.",
+                                    desc: "Take care of children, feed them, assist with studies, and maintain safety and hygiene.",
                                     features: ["Take care of the children and feed them", "Help with homework and play", "Keep children safe and clean", "Live-in or full-time work available"]
                                 },
                                 {
-                                    state: "West Bengal",
-                                    desc: "Stop Dealing With Local Job Insecurity And Move To Bangalore For Trusted Domestic Helper Jobs That Offer A Fixed Income And Full Support For Helpers.",
-                                    features: ["Babysitting, Cooking & Maid Jobs", "Full-Time & Live-In Roles", "Fixed Monthly Income", "Ongoing Support From Our Team", "No Registration Fee"]
-                                },
-                                {
                                     state: "Elderly Care Jobs",
-                                    fullPath: "/helper-jobs/jharkhand/elderly-caretaker-job-bangalore",
-                                    desc: "Support seniors with daily activities, provide companionship, and ensure a safe home environment.",
+                                    desc: "Support seniors with daily routines, provide companionship, and ensure safety at home.",
                                     features: ["Help older people with daily tasks", "Give companionship and emotional support", "Help with walking and personal care", "Friendly and safe home environment"]
                                 },
                                 {
                                     state: "Patient Care Jobs",
-                                    desc: "Assist sick people at home with daily routines, ensuring safety, comfort, and hygiene.",
+                                    desc: "Assist sick people at home with daily routines, ensuring comfort, hygiene, and safety.",
                                     features: ["Help sick people at home", "Assist with daily activities", "Make sure they are comfortable and safe", "Live-in or full-time work available"]
                                 },
                                 {
                                     state: "Live-in Housekeeping Couple Jobs",
-                                    desc: "Husband-wife teams manage daily household chores and maintain home cleanliness with provided accommodation.",
-                                    features: ["Husband-wife jobs for cleaning and housework", "Help with daily chores and home care", "Take care of the home surroundings", "Accommodation provided"]
+                                    desc: "Husband-wife teams manage household chores and maintain home cleanliness with accommodations.",
+                                    features: ["Husband-wife jobs for cleaning and housework", "Help with daily chores and home care", "Take care of house surroundings", "Accommodation provided"]
                                 },
                                 {
                                     state: "Couple Security Jobs",
-                                    desc: "Husband-wife pairs guard apartments or independent houses, monitor visitors, and follow training and guidance.",
+                                    desc: "Husband-wife pairs guard apartments or houses, monitor visitors, and follow guidance.",
                                     features: ["Husband-wife jobs to guard apartments or houses", "Keep home and family safe", "Check people entering or leaving", "Training and guidance provided"]
                                 },
                                 {
                                     state: "Japa Maid Jobs",
-                                    desc: "Care for mother and newborn after delivery; help with feeding, recovery, and live-in support.",
+                                    desc: "Care for mother and newborn after delivery, assist with feeding, recovery, and provide live-in support.",
                                     features: ["Take care of the mother and newborn after delivery", "Help feed and care for the baby", "Support the mother during recovery", "Live-in with full guidance"]
                                 }
                             ].map((item, index) => (
-                                <Link
+                                <div
                                     key={index}
-                                    href={item.fullPath || `/helper-jobs/${item.state.toLowerCase().replace(/\s+/g, '-')}`}
-                                    className="group bg-white rounded-2xl p-6 border border-teal-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block text-left relative overflow-hidden"
+                                    className="group bg-white rounded-2xl p-6 border border-purple-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block text-left relative overflow-hidden"
                                 >
-                                    <h3 className="text-lg md:text-2xl font-bold text-teal-700 mb-3 group-hover:text-teal-800 relative z-10">{item.state}</h3>
+                                    <h3 className="text-lg md:text-2xl font-bold text-purple-700 mb-3 group-hover:text-purple-800 relative z-10">{item.state}</h3>
 
                                     <p className="text-gray-700 text-sm md:text-sm mb-5 leading-relaxed font-medium relative z-10">
                                         {item.desc}
@@ -237,38 +218,37 @@ export default function HelperJobsPage() {
                                         ))}
                                     </div>
 
-                                    <div className="mt-6 font-semibold text-teal-600 text-sm group-hover:underline flex items-center gap-1 relative z-10">
+                                    <div className="mt-6 font-semibold text-purple-600 text-sm group-hover:underline flex items-center gap-1 relative z-10">
                                         Learn More <span>→</span>
                                     </div>
-                                </Link>
+                                </div>
                             ))}
                         </div>
                     </div>
                 </section>
 
                 {/* About & Trust Section */}
-                <section className="section-padding bg-teal-50">
+                <section className="section-padding bg-purple-50">
                     <div className="container-custom">
                         <div className="max-w-4xl mx-auto text-center mb-12">
-                            <span className="inline-block py-1 px-4 rounded-full bg-teal-600 text-white text-xs font-bold tracking-wider mb-4">
+                            <span className="inline-block py-1 px-4 rounded-full bg-purple-600 text-white text-xs font-bold tracking-wider mb-4">
                                 Why Bangalore
                             </span>
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-6 font-display">Why Bangalore Families Prefer Jharkhand Helpers</h2>
+                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-6 font-display">Why Bangalore Families Prefer Odisha Helpers</h2>
                             <p className="text-base md:text-xl text-gray-600 leading-relaxed">
-                                Bangalore employers specifically request helpers from Jharkhand for these qualities:
+                                Bangalore employers specifically request helpers from Odisha for these qualities:
                             </p>
                         </div>
 
                         <div className="max-w-4xl mx-auto">
                             <div className="flex flex-wrap justify-center gap-4">
                                 {[
-                                    "Trusted by families",
-                                    "Hard-working",
-                                    "Adjust easily",
-                                    "Good for security jobs",
-                                    "Stay longer in jobs"
+                                    "Patient and caring",
+                                    "Learn quickly and follow instructions",
+                                    "Stay longer in jobs",
+                                    "Respectful and polite"
                                 ].map((item, index) => (
-                                    <div key={index} className="bg-white px-3 py-1.5 md:px-6 md:py-3 rounded-full shadow-sm border border-teal-200 flex items-center gap-2 md:gap-3 hover:shadow-md transition-shadow duration-300">
+                                    <div key={index} className="bg-white px-3 py-1.5 md:px-6 md:py-3 rounded-full shadow-sm border border-purple-200 flex items-center gap-2 md:gap-3 hover:shadow-md transition-shadow duration-300">
                                         <div className="w-4 h-4 md:w-6 md:h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                                             <CheckCircleIcon className="w-3 h-3 md:w-4 md:h-4 text-green-600" />
                                         </div>
@@ -285,13 +265,13 @@ export default function HelperJobsPage() {
                     <div className="container-custom">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Why EzyHelpers Is Different From Local Agents</h2>
-                            <p className="text-lg text-gray-600">Comparison: Why Jharkhand Trusts EzyHelpers</p>
+                            <p className="text-lg text-gray-600">Comparison: Why Odisha Trusts EzyHelpers</p>
                         </div>
 
                         <div className="max-w-4xl mx-auto overflow-x-auto">
                             <table className="w-full border-collapse hidden md:table table-fixed">
                                 <thead>
-                                    <tr className="bg-teal-500">
+                                    <tr className="bg-purple-500">
                                         <th className="p-4 text-left text-white font-bold text-lg border-r border-white /20 w-1/2">Local Agent</th>
                                         <th className="p-4 text-left text-white font-bold text-lg w-1/2">EzyHelpers</th>
                                     </tr>
@@ -299,28 +279,32 @@ export default function HelperJobsPage() {
                                 <tbody>
                                     {[
                                         {
-                                            agent: "Take 1 month’s salary as commission",
-                                            ezy: "Free registration – keep full salary"
+                                            agent: "Take one month’s pay as commission",
+                                            ezy: "Free sign-up – keep full earnings"
                                         },
                                         {
-                                            agent: "Only verbal promises, can be broken anytime",
-                                            ezy: "Written agreement for salary, leave & work hours"
+                                            agent: "Only spoken promises can be broken anytime",
+                                            ezy: "Written contract for salary, leave & work hours"
                                         },
                                         {
-                                            agent: "No support if you face problems",
-                                            ezy: "Our helpline support anytime you need"
+                                            agent: "No help if any issues come up",
+                                            ezy: "Helpline available whenever needed"
                                         },
                                         {
                                             agent: "Work rules unclear or unfair",
-                                            ezy: "Clear work expectations from day one"
+                                            ezy: "Clear job expectations from day one"
                                         },
                                         {
-                                            agent: "Salary may be delayed or cut",
-                                            ezy: "Salary paid on time, no deductions"
+                                            agent: "Salary may be late or reduced",
+                                            ezy: "Salary paid on time, no cuts"
                                         },
                                         {
-                                            agent: "No emergency help or backup",
-                                            ezy: "Emergency support and safe stay if needed"
+                                            agent: "No backup or emergency support",
+                                            ezy: "Emergency support and safe stay provided"
+                                        },
+                                        {
+                                            agent: "No safe options if you want to leave",
+                                            ezy: "Change jobs safely if unhappy"
                                         }
                                     ].map((row, index) => (
                                         <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
@@ -344,31 +328,35 @@ export default function HelperJobsPage() {
                         <div className="md:hidden space-y-4 mt-6">
                             {[
                                 {
-                                    agent: "Take 1 month’s salary as commission",
-                                    ezy: "Free registration – keep full salary"
+                                    agent: "Take one month’s pay as commission",
+                                    ezy: "Free sign-up – keep full earnings"
                                 },
                                 {
-                                    agent: "Only verbal promises, can be broken anytime",
-                                    ezy: "Written agreement for salary, leave & work hours"
+                                    agent: "Only spoken promises can be broken anytime",
+                                    ezy: "Written contract for salary, leave & work hours"
                                 },
                                 {
-                                    agent: "No support if you face problems",
-                                    ezy: "Our helpline support anytime you need"
+                                    agent: "No help if any issues come up",
+                                    ezy: "Helpline available whenever needed"
                                 },
                                 {
                                     agent: "Work rules unclear or unfair",
-                                    ezy: "Clear work expectations from day one"
+                                    ezy: "Clear job expectations from day one"
                                 },
                                 {
-                                    agent: "Salary may be delayed or cut",
-                                    ezy: "Salary paid on time, no deductions"
+                                    agent: "Salary may be late or reduced",
+                                    ezy: "Salary paid on time, no cuts"
                                 },
                                 {
-                                    agent: "No emergency help or backup",
-                                    ezy: "Emergency support and safe stay if needed"
+                                    agent: "No backup or emergency support",
+                                    ezy: "Emergency support and safe stay provided"
+                                },
+                                {
+                                    agent: "No safe options if you want to leave",
+                                    ezy: "Change jobs safely if unhappy"
                                 }
                             ].map((row, index) => (
-                                <div key={index} className="bg-white rounded-xl border-2 border-teal-200 overflow-hidden shadow-md">
+                                <div key={index} className="bg-white rounded-xl border-2 border-purple-200 overflow-hidden shadow-md">
                                     <div className="p-4 bg-red-50 border-b border-gray-200">
                                         <div className="text-sm font-bold text-red-600 mb-1 flex items-center gap-2">
                                             <span className="text-lg">✗</span> Local Agent:
@@ -388,31 +376,31 @@ export default function HelperJobsPage() {
                 </section >
 
                 {/* Benefits For You */}
-                <section className="section-padding bg-gradient-to-br from-teal-50 to-blue-50">
+                <section className="section-padding bg-gradient-to-br from-purple-50 to-blue-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Salary & Benefits for Jharkhand Helpers</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Salary & Benefits for Odisha Helpers</h2>
                             <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
-                                Earn 3x More Than Jharkhand – With Security, Respect, and Dignity</p>
+                                Earn 3x More Than Odisha – With Security, Respect, and Dignity</p>
                         </div>
 
                         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                             {[
                                 { title: "Monthly Salary", desc: "₹20,000–₹35,000 depending on job type and experience.", icon: BanknotesIcon },
-                                { title: "Higher Pay", desc: "Earn 3x more than local jobs in Ranchi, Dhanbad, Jamshedpur & other villages.", icon: StarIcon },
-                                { title: "Direct Payment", desc: "Salary paid straight to your bank account. No delays or deductions.", icon: CheckCircleIcon },
+                                { title: "Higher Pay than Odisha", desc: "Earn 3x more than jobs in Bhubaneswar, Cuttack, Rourkela, and nearby towns.", icon: StarIcon },
+                                { title: "Direct Payment", desc: "Salary is paid directly to your bank account on time, with no deductions.", icon: CheckCircleIcon },
                                 { title: "Skill Growth", desc: "Improve your skills in cooking, care, and housekeeping through training.", icon: BriefcaseIcon },
-                                { title: "Accommodation", desc: "Private room with a bed, fan, and light (for live-in jobs).", icon: ShieldCheckIcon },
-                                { title: "Food", desc: "3 healthy meals daily provided by the family (for live-in jobs).", icon: HeartIcon },
+                                { title: "Accommodation", desc: "Private room with bed, fan, and light included for live-in jobs.", icon: ShieldCheckIcon },
+                                { title: "Food", desc: "Three healthy meals are provided daily for live-in positions.", icon: HeartIcon },
                                 { title: "Weekly Off", desc: "1 fixed day off per week (full-time) or 2 monthly offs (live-in jobs).", icon: ClockIcon },
                                 { title: "Emergency Support", desc: "Safe stay available at Nest women’s hostel if job changes or problems arise.", icon: PhoneIcon },
-                                { title: "Referral Bonus", desc: "Earn ₹500 when a friend or sister completes 1 month of work.", icon: UserPlusIcon }
+                                { title: "Referral Bonus", desc: "Earn ₹500 when a friend or sister completes one month of work.", icon: UserPlusIcon }
                             ].map((benefit, index) => (
-                                <div key={index} className="bg-white rounded-xl p-4 md:p-6 shadow-md border-2 border-teal-100 hover:shadow-lg transition-all duration-300 group">
-                                    <div className="w-10 h-10 md:w-12 md:h-12 bg-teal-50 rounded-full flex items-center justify-center mb-3 md:mb-4 text-teal-600 group-hover:scale-110 transition-transform">
+                                <div key={index} className="bg-white rounded-xl p-4 md:p-6 shadow-md border-2 border-purple-100 hover:shadow-lg transition-all duration-300 group">
+                                    <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-50 rounded-full flex items-center justify-center mb-3 md:mb-4 text-purple-600 group-hover:scale-110 transition-transform">
                                         <benefit.icon className="w-5 h-5 md:w-6 md:h-6" />
                                     </div>
-                                    <h3 className="text-lg md:text-xl font-bold text-teal-700 mb-2 md:mb-3">{benefit.title}</h3>
+                                    <h3 className="text-lg md:text-xl font-bold text-purple-700 mb-2 md:mb-3">{benefit.title}</h3>
                                     <p className="text-sm md:text-base text-gray-700 leading-relaxed">{benefit.desc}</p>
                                 </div>
                             ))}
@@ -430,7 +418,7 @@ export default function HelperJobsPage() {
                         <div className="max-w-4xl mx-auto">
                             <div className="relative">
                                 {/* Connecting Line */}
-                                <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 md:w-1 bg-teal-200 rounded-full"></div>
+                                <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 md:w-1 bg-purple-200 rounded-full"></div>
 
                                 {[
                                     { step: 1, title: "Register online or call us." },
@@ -450,7 +438,7 @@ export default function HelperJobsPage() {
                                         </div>
 
                                         {/* Center Circle */}
-                                        <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center w-8 h-8 md:w-16 md:h-16 bg-teal-600 text-white rounded-full font-bold text-sm md:text-2xl shadow-lg z-10 border-2 md:border-4 border-white">
+                                        <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center w-8 h-8 md:w-16 md:h-16 bg-purple-600 text-white rounded-full font-bold text-sm md:text-2xl shadow-lg z-10 border-2 md:border-4 border-white">
                                             {item.step}
                                         </div>
 
@@ -467,14 +455,14 @@ export default function HelperJobsPage() {
 
                         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
                             <Link
-                                href="/helper-jobs"
-                                className="inline-flex items-center justify-center bg-teal-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-teal-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                                href="/helper-registration"
+                                className="inline-flex items-center justify-center bg-purple-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                             >
-                                Apply for Bangalore Jobs Now
+                                Apply for Jobs in Bangalore
                             </Link>
                             <Link
                                 href="tel:+919876543210"
-                                className="inline-flex items-center justify-center bg-white text-teal-700 font-bold text-lg py-4 px-10 rounded-xl border-2 border-teal-600 hover:bg-teal-50 transition-all duration-300 transform hover:scale-105"
+                                className="inline-flex items-center justify-center bg-white text-purple-700 font-bold text-lg py-4 px-10 rounded-xl border-2 border-purple-600 hover:bg-purple-50 transition-all duration-300 transform hover:scale-105"
                             >
                                 Call Us
                             </Link>
@@ -497,7 +485,7 @@ export default function HelperJobsPage() {
                                 </div>
                                 <div className="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
                                     <p className="text-lg md:text-xl text-gray-800 font-bold mb-6">
-                                        Do you have a sister, friend, or neighbour from Jharkhand looking for work in Bangalore?
+                                        Do you have a sister, friend, or neighbour from Odisha looking for work in Bangalore?
                                     </p>
                                     <div className="space-y-4 mb-8">
                                         <div className="flex items-start gap-3">
@@ -513,7 +501,7 @@ export default function HelperJobsPage() {
                                             <span className="text-gray-700 font-bold">You earn ₹500*</span>
                                         </div>
                                     </div>
-                                    <p className="text-teal-600 font-bold text-lg bg-teal-50 py-2 px-4 rounded-lg text-center border border-teal-100">
+                                    <p className="text-purple-600 font-bold text-lg bg-purple-50 py-2 px-4 rounded-lg text-center border border-purple-100">
                                         No limit – keep referring and keep earning!
                                     </p>
                                 </div>
@@ -523,18 +511,21 @@ export default function HelperJobsPage() {
                 </section>
 
                 {/* CTA Section */}
-                < section className="section-padding bg-teal-600 text-white" >
+                < section className="section-padding bg-purple-600 text-white" >
                     <div className="container-custom">
                         <div className="max-w-4xl mx-auto text-center">
-                            <p className="text-xl md:text-4xl text-white font-bold mb-6 font-display">Join hundreds of helpers from Jharkhand who found safe and reliable work in Bangalore. Start your journey today!</p>
-                            <p className="text-xl mb-8 text-teal-100">Work with respect, earn more, and support your family back home.</p>
+                            <p className="text-xl md:text-3xl text-white font-bold mb-6 font-display">
+                                Support your family back home while working safely in Bangalore.
+                                <br className="hidden md:block" />
+                                Respect, good pay, and full support await you.
+                            </p>
 
                             <div className="flex flex-col md:flex-row gap-4 justify-center mt-8">
                                 <Link
                                     href="/helper-registration"
-                                    className="inline-flex items-center justify-center bg-white text-teal-700 font-bold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300"
+                                    className="inline-flex items-center justify-center bg-white text-purple-700 font-bold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300"
                                 >
-                                    Apply for Helper Jobs in Bangalore
+                                    Fill the Form & Start Your Journey Today!
                                 </Link>
                                 <Link
                                     href="#find-jobs-by-state"
@@ -551,7 +542,7 @@ export default function HelperJobsPage() {
                 < section className="section-padding bg-gray-50" >
                     <div className="container-custom">
                         <div className="max-w-3xl mx-auto text-center mb-10">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Common Questions from Jharkhand Helpers</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Common Questions from Odisha Helpers</h2>
                         </div>
                         <div className="max-w-4xl mx-auto">
                             <FAQAccordion faqs={faqs} />

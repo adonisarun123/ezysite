@@ -190,6 +190,7 @@ export default function HelperJobsJharkhandHinPage() {
                                 {
                                     state: "एल्डरली केयर जॉब्स",
                                     slug: "elderly-care-jobs",
+                                    fullPath: "/helper-jobs/jharkhand/elderly-caretaker-job-bangalore/hin",
                                     desc: "बुज़ुर्गों की रोज़ की जरूरतों में मदद करना और उन्हें साथ व देखभाल देना।",
                                     features: ["बुज़ुर्गों के रोज़ाना कामों में मदद", "साथ और भावनात्मक सहारा देना", "चलने-फिरने और पर्सनल केयर में सहायता", "सुरक्षित और अच्छा घर का माहौल"]
                                 },
