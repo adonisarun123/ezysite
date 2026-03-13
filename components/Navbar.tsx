@@ -34,7 +34,14 @@ const navigation: NavigationItem[] = [
   },
   { name: 'Hire Helper', href: '/hire-helper' },
   { name: 'Nest', href: '/nest', isNew: true },
-  { name: 'For Helpers', href: '/for-helpers' },
+  {
+    name: 'For Helpers',
+    href: '/for-helpers',
+    hasDropdown: true,
+    dropdownItems: [
+      { name: 'Helper Jobs', href: '/helper-jobs' },
+    ]
+  },
   { name: 'Blog', href: '/blog' },
   {
     name: 'About',
