@@ -75,6 +75,7 @@ export default function HousekeepingCoupleJobsBangaloreHindiPage() {
                 <Navbar />
 
                 <Breadcrumb
+                    sticky={true}
                     items={[
                         { label: 'Home', href: '/' },
                         { label: 'हेल्पर जॉब्स', href: '/helper-jobs/hin' },

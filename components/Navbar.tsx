@@ -87,7 +87,7 @@ export default function Navbar() {
     <>
       <header className={`fixed inset-x-0 z-40 transition-all duration-300 ${urgencyVisible ? 'top-12' : 'top-0'
         } ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white shadow-sm'}`}>
-        <div className="px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+        <div className="px-4 sm:px-6 lg:px-8 py-5 lg:py-7">
           <div className="mx-auto max-w-7xl">
             <nav className="flex items-center justify-between" aria-label="Global">
 

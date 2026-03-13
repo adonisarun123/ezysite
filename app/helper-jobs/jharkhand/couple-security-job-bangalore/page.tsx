@@ -83,6 +83,7 @@ export default function CoupleSecurityJobsBangalorePage() {
                 <Navbar />
 
                 <Breadcrumb
+                    sticky={true}
                     items={[
                         { label: 'Home', href: '/' },
                         { label: 'Helper Jobs', href: '/helper-jobs' },
@@ -91,16 +92,16 @@ export default function CoupleSecurityJobsBangalorePage() {
                     ]}
                     rightContent={
                         <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
-                            <span className="text-gray-900 font-bold whitespace-nowrap">हिंदी</span>
+                            <span className="text-gray-500 font-medium whitespace-nowrap">हिंदी</span>
                             <Link
                                 href="/helper-jobs/jharkhand/couple-security-job-bangalore/hin"
-                                className="w-10 h-5 bg-teal-600 rounded-full p-1 relative transition-colors inline-block"
+                                className="w-10 h-5 bg-indigo-600 rounded-full p-1 relative transition-colors inline-block"
                             >
                                 <div
-                                    className="w-3 h-3 bg-white rounded-full transition-transform translate-x-0"
+                                    className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"
                                 />
                             </Link>
-                            <span className="text-gray-500 font-medium whitespace-nowrap">ENG</span>
+                            <span className="text-gray-900 font-bold whitespace-nowrap">ENG</span>
                         </div>
                     }
                 />

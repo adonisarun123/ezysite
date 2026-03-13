@@ -71,6 +71,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
 
                 <div className="mb-4">
                     <Breadcrumb
+                        sticky={true}
                         items={[
                             { label: 'होम', href: '/hin' },
                             { label: 'हेल्पर जॉब्स', href: '/helper-jobs/hin' },

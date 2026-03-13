@@ -79,6 +79,7 @@ export default function HelperJobsPage() {
                 <Navbar />
 
                 <Breadcrumb
+                    sticky={true}
                     items={[
                         { label: 'होम', href: '/' },
                         { label: 'हेल्पर जॉब्स' }

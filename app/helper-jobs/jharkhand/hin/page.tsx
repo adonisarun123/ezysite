@@ -67,6 +67,7 @@ export default function HelperJobsJharkhandHinPage() {
                 <Navbar />
 
                 <Breadcrumb
+                    sticky={true}
                     items={[
                         { label: 'होम', href: '/' },
                         { label: 'हेल्पर जॉब्स', href: '/helper-jobs/hin' },

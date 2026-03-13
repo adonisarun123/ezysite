@@ -87,6 +87,7 @@ export default function JapaMaidJobBangaloreHindiPage() {
                 <Navbar />
 
                 <Breadcrumb
+                    sticky={true}
                     items={[
                         { label: 'Home', href: '/' },
                         { label: 'Helper Jobs', href: '/helper-jobs' },
