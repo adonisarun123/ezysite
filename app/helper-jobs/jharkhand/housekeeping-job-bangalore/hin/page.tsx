@@ -94,6 +94,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                 <Navbar />
 
                 <Breadcrumb
+                    sticky={true}
                     items={[
                         { label: 'होम', href: '/' },
                         { label: 'हेल्पर जॉब्स', href: '/helper-jobs/hin' },

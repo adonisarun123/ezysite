@@ -67,6 +67,7 @@ export default function HelperJobsJharkhandHinPage() {
                 <Navbar />
 
                 <Breadcrumb
+                    sticky={true}
                     items={[
                         { label: 'होम', href: '/' },
                         { label: 'हेल्पर जॉब्स', href: '/helper-jobs/hin' },
@@ -204,12 +205,14 @@ export default function HelperJobsJharkhandHinPage() {
                                 {
                                     state: "लिव-इन हाउसकीपिंग कपल जॉब्स",
                                     slug: "live-in-housekeeping-couple-jobs",
+                                    fullPath: "/helper-jobs/jharkhand/live-in-housekeeping-couple-job-bangalore/hin",
                                     desc: "पति-पत्नी मिलकर घर के काम संभालते हैं और घर की साफ-सफाई बनाए रखते हैं। रहने की सुविधा दी जाती है।",
                                     features: ["पति-पत्नी के लिए हाउसकीपिंग काम", "रोज़ाना घर के कामों में मदद", "घर और आसपास की देखभाल", "रहने की सुविधा उपलब्ध"]
                                 },
                                 {
                                     state: "कपल सिक्योरिटी जॉब्स",
                                     slug: "couple-security-jobs",
+                                    fullPath: "/helper-jobs/jharkhand/couple-security-job-bangalore/hin",
                                     desc: "पति-पत्नी मिलकर घर या अपार्टमेंट की सुरक्षा संभालते हैं और आने-जाने वालों पर नजर रखते हैं।",
                                     features: ["घर या अपार्टमेंट की सुरक्षा", "परिवार और घर को सुरक्षित रखना", "आने-जाने वालों की निगरानी", "ट्रेनिंग और पूरी सहायता"]
                                 },

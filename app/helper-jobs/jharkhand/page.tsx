@@ -67,6 +67,7 @@ export default function HelperJobsPage() {
                 <Navbar />
 
                 <Breadcrumb
+                    sticky={true}
                     items={[
                         { label: 'Home', href: '/' },
                         { label: 'Helper Jobs', href: '/helper-jobs' },
@@ -199,16 +200,19 @@ export default function HelperJobsPage() {
                                 },
                                 {
                                     state: "Live-in Housekeeping Couple Jobs",
+                                    fullPath: "/helper-jobs/jharkhand/live-in-housekeeping-couple-job-bangalore",
                                     desc: "Husband-wife teams manage daily household chores and maintain home cleanliness with provided accommodation.",
                                     features: ["Husband-wife jobs for cleaning and housework", "Help with daily chores and home care", "Take care of the home surroundings", "Accommodation provided"]
                                 },
                                 {
                                     state: "Couple Security Jobs",
+                                    fullPath: "/helper-jobs/jharkhand/couple-security-job-bangalore",
                                     desc: "Husband-wife pairs guard apartments or independent houses, monitor visitors, and follow training and guidance.",
                                     features: ["Husband-wife jobs to guard apartments or houses", "Keep home and family safe", "Check people entering or leaving", "Training and guidance provided"]
                                 },
                                 {
                                     state: "Japa Maid Jobs",
+                                    fullPath: "/helper-jobs/jharkhand/japa-maid-job-bangalore",
                                     desc: "Care for mother and newborn after delivery; help with feeding, recovery, and live-in support.",
                                     features: ["Take care of the mother and newborn after delivery", "Help feed and care for the baby", "Support the mother during recovery", "Live-in with full guidance"]
                                 }

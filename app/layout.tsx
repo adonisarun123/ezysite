@@ -34,6 +34,10 @@ const WhatsAppFloat = dynamic(() => import('../components/WhatsAppFloat'), {
   ssr: false,
   loading: () => null
 })
+const LanguageSelectorPopup = dynamic(() => import('../components/LanguageSelectorPopup'), {
+  ssr: false,
+  loading: () => null
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ezyhelpers.com'),
@@ -447,6 +451,7 @@ export default function RootLayout({
           <LLMOptimization />
           <UrgencyCTA />
           <WhatsAppFloat />
+          <LanguageSelectorPopup />
         </UrgencyProvider>
       </body>
     </html>
