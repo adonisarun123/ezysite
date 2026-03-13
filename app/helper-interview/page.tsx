@@ -441,7 +441,7 @@ export default function HelperInterviewPage() {
                                 <div>
                                     <label className="block text-sm font-bold text-slate-700 mb-2">{t.fields.howManyRotis}</label>
                                     <select name="howManyRotis" className="block w-full rounded-xl border-slate-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-3 bg-slate-50">
-                                        {Array.from({ length: 15 }, (_, i) => i + 1).map(num => (
+                                        {Array.from({ length: 16 }, (_, i) => i).map(num => (
                                             <option key={num} value={num}>{num}</option>
                                         ))}
                                     </select>
