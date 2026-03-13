@@ -186,11 +186,6 @@ export default function HelperJobsPage() {
                                     features: ["Take care of the children and feed them", "Help with homework and play", "Keep children safe and clean", "Live-in or full-time work available"]
                                 },
                                 {
-                                    state: "West Bengal",
-                                    desc: "Stop Dealing With Local Job Insecurity And Move To Bangalore For Trusted Domestic Helper Jobs That Offer A Fixed Income And Full Support For Helpers.",
-                                    features: ["Babysitting, Cooking & Maid Jobs", "Full-Time & Live-In Roles", "Fixed Monthly Income", "Ongoing Support From Our Team", "No Registration Fee"]
-                                },
-                                {
                                     state: "Elderly Care Jobs",
                                     fullPath: "/helper-jobs/jharkhand/elderly-caretaker-job-bangalore",
                                     desc: "Support seniors with daily activities, provide companionship, and ensure a safe home environment.",
@@ -198,6 +193,7 @@ export default function HelperJobsPage() {
                                 },
                                 {
                                     state: "Patient Care Jobs",
+                                    fullPath: "/helper-jobs/jharkhand/patient-care-job-bangalore",
                                     desc: "Assist sick people at home with daily routines, ensuring safety, comfort, and hygiene.",
                                     features: ["Help sick people at home", "Assist with daily activities", "Make sure they are comfortable and safe", "Live-in or full-time work available"]
                                 },

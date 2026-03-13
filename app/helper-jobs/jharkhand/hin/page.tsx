@@ -197,6 +197,7 @@ export default function HelperJobsJharkhandHinPage() {
                                 {
                                     state: "पेशेंट केयर जॉब्स",
                                     slug: "patient-care-jobs",
+                                    fullPath: "/helper-jobs/jharkhand/patient-care-job-bangalore/hin",
                                     desc: "घर पर बीमार व्यक्ति की देखभाल करना और उनकी सुरक्षा और आराम का ध्यान रखना।",
                                     features: ["घर पर मरीज की देखभाल", "रोज़ाना कामों में सहायता", "आराम और सुरक्षा निश्चित", "लिव-इन या फुल-टाइम काम उपलब्ध"]
                                 },
