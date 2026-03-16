@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useUrgency } from './UrgencyContext'
 
 interface BreadcrumbItem {
   label: string
@@ -9,11 +12,21 @@ interface BreadcrumbProps {
   items: BreadcrumbItem[]
   className?: string
   rightContent?: React.ReactNode
+  sticky?: boolean
 }
 
-export default function Breadcrumb({ items, className = "", rightContent }: BreadcrumbProps) {
+export default function Breadcrumb({ items, className = "", rightContent, sticky = false }: BreadcrumbProps) {
+  const { isUrgencyVisible } = useUrgency()
+
+  const stickyClasses = sticky
+    ? `sticky z-30 transition-all duration-300 ${isUrgencyVisible
+      ? 'top-[calc(48px+80px)] lg:top-[calc(48px+96px)]'
+      : 'top-[80px] lg:top-[96px]'
+    } shadow-md`
+    : ''
+
   return (
-    <section className={`bg-gray-100 py-4 ${className}`}>
+    <section className={`bg-gray-100 py-4 ${className} ${stickyClasses}`}>
       <div className="container-custom flex items-center justify-between">
         <nav className="text-sm" aria-label="Breadcrumb">
           <ol className="flex items-center space-x-2">
