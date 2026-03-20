@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import NestCTA from '@/components/NestCTA'
 import {
   BoltIcon,
   ClockIcon,
@@ -602,7 +603,8 @@ export default function OnDemandHelpersPage() {
           </div>
         </section>
 
-        <Footer />
+              <NestCTA />
+      <Footer />
       </main>
     </>
   )

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
+import NestCTA from '@/components/NestCTA'
 import {
   HomeIcon,
   ShieldCheckIcon,
@@ -794,6 +795,7 @@ export default function BangaloreLiveInMaidPage() {
 
       </main>
 
+            <NestCTA />
       <Footer />
     </>
   )

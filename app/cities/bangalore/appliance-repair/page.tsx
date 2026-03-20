@@ -35,6 +35,7 @@ export const metadata: Metadata = {
 }
 
 import FAQAccordion from '@/components/FAQAccordion'
+import NestCTA from '@/components/NestCTA'
 
 export default function BangaloreApplianceRepairPage() {
   const breadcrumbs = [
@@ -477,7 +478,8 @@ export default function BangaloreApplianceRepairPage() {
           </div>
         </section>
 
-        <Footer />
+              <NestCTA />
+      <Footer />
       </main>
     </>
   )

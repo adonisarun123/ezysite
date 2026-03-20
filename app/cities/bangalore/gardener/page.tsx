@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
 import FAQAccordion from '@/components/FAQAccordion'
+import NestCTA from '@/components/NestCTA'
 import {
   MapPinIcon,
   SparklesIcon,
@@ -545,7 +546,8 @@ export default function BangaloreGardenerPage() {
           </div>
         </section>
 
-        <Footer />
+              <NestCTA />
+      <Footer />
       </main>
     </>
   )

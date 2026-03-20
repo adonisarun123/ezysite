@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FAQAccordion from '@/components/FAQAccordion'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
+import NestCTA from '@/components/NestCTA'
 import {
   HomeIcon,
   ShieldCheckIcon,
@@ -697,6 +698,7 @@ export default function BangaloreFullTimeMaidPage() {
         </section>
       </main>
 
+            <NestCTA />
       <Footer />
     </>
   )

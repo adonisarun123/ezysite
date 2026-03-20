@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   BuildingLibraryIcon, 
   HeartIcon, 
   HomeIcon, 
@@ -277,6 +278,7 @@ export default function LucknowPage() {
           </div>
         </section>
       </div>
+            <NestCTA />
       <Footer />
     </main>
   )

@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   HomeIcon, 
   ShieldCheckIcon, 
   ClockIcon, 
@@ -598,6 +599,7 @@ export default function LiveInMaidsPage() {
         </div>
       </section>
 
+            <NestCTA />
       <Footer />
       </main>
     </>
