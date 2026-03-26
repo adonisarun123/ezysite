@@ -159,7 +159,18 @@ export default function BabysitterServices() {
     <main className="min-h-screen">
       <Navbar />
       <div className="bg-white">
-        {/* ... existing content ... */}
+        <section className="py-16 bg-gradient-to-br from-primary-50 to-blue-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Professional Babysitter Services in Bareilly
+              </h1>
+              <p className="text-lg md:text-xl text-gray-600">
+                Safe, caring, and trusted babysitting support for your children
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
       <NestCTA />
       <Footer />

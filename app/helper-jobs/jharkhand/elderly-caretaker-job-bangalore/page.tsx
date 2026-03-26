@@ -48,7 +48,12 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore/hin',
+            'x-default': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore'
+        }
     }
 }
 

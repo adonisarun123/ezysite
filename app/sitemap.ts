@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ezyhelpers.com'
+  const baseUrl = 'https://www.ezyhelpers.com'
   const currentDate = new Date().toISOString()
 
   // Core pages with high priority
@@ -132,11 +132,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'painters',
     'deep-cleaning',
     'appliance-repair',
-    'on-demand-helpers'
+    'on-demand-helpers',
+    'ac-repair',
+    'babysitter',
+    'english-speaking-babysitters',
+    'house-shifting',
+    'japa',
+    'pest-control',
+    'premium-chauffeur-service',
+    'professional-chef-for-home',
+    'sofa-cleaning'
   ].map(service => ({
     url: `${baseUrl}/services/${service}`,
     lastModified: currentDate,
-    changeFrequency: 'weekly' as const,
+    changeFrequency: 'monthly' as const,
     priority: 0.8
   }))
 
@@ -145,6 +154,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'delhi',
     'mumbai',
     'bangalore',
+    'hyderabad',
     'noida',
     'lucknow',
     'kanpur',
@@ -176,12 +186,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'painter',
     'home-deep-cleaning',
     'appliance-repair',
-    'on-demand-helper'
+    'on-demand-helper',
+    'chauffeur-service',
+    'educated-babysitter',
+    'home-chef'
   ].map(service => ({
     url: `${baseUrl}/cities/bangalore/${service}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
-    priority: 0.65
+    priority: 0.7
   }))
 
   // Bareilly city-specific service pages
@@ -198,12 +211,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'electrician',
     'plumber',
     'painting',
-    'home-cleaning',
+    'home-deep-cleaning',
     'appliance-repair',
     'ac-repair',
     'on-demand-helper',
     'pest-control',
-    'house-shifting'
+    'house-shifting',
+    'sofa-cleaning'
   ].map(service => ({
     url: `${baseUrl}/cities/bareilly/${service}`,
     lastModified: currentDate,
@@ -233,16 +247,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ]
 
-  const caseStudiesList: MetadataRoute.Sitemap = [
-    'working-couple-bangalore-live-in-maid',
-    'elderly-care-bareilly-parents',
-    'apartment-association-cooks-cleaners'
-  ].map(slug => ({
-    url: `${baseUrl}/case-studies/${slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7
-  }))
+  const caseStudiesList: MetadataRoute.Sitemap = []
 
   // Special landing pages
   const landingPages: MetadataRoute.Sitemap = [
@@ -251,34 +256,114 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.7
+    },
+    {
+      url: `${baseUrl}/Lp/live-in-maid-bareilly`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7
     }
   ]
 
-  // Helper registration & leads
+  // Helper jobs pages
+  const helperJobPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/helper-jobs`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.6
+    },
+    {
+      url: `${baseUrl}/helper-jobs/home-cooks-job-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6
+    },
+    {
+      url: `${baseUrl}/helper-jobs/nanny-job-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/couple-security-job-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/elderly-caretaker-job-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/housekeeping-job-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/japa-maid-job-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/live-in-housekeeping-couple-job-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/patient-care-job-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6
+    },
+    {
+      url: `${baseUrl}/helper-jobs/odisha`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    }
+  ]
+
+  // Helper registration
   const helperPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/helper-registration`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.5
-    },
+    }
+  ]
+
+  // Other missing pages
+  const otherPages: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/helper-success`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.3
-    },
-    {
-      url: `${baseUrl}/agent-registration`,
+      url: `${baseUrl}/customer-requirements`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.5
     },
     {
-      url: `${baseUrl}/agent-success`,
+      url: `${baseUrl}/helper-interview`,
       lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.3
+      changeFrequency: 'monthly',
+      priority: 0.5
+    },
+    {
+      url: `${baseUrl}/helper-leads`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.5
     }
   ]
 
@@ -308,7 +393,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...caseStudyPages,
     ...caseStudiesList,
     ...landingPages,
+    ...helperJobPages,
     ...helperPages,
+    ...otherPages,
     ...businessPages
   ]
 }

@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: "https://www.ezyhelpers.com/helper-jobs/nanny-job-bangalore",
+        languages: {
+            "en": "https://www.ezyhelpers.com/helper-jobs/nanny-job-bangalore",
+            "hi": "https://www.ezyhelpers.com/helper-jobs/nanny-job-bangalore/hin",
+            "x-default": "https://www.ezyhelpers.com/helper-jobs/nanny-job-bangalore"
+        }
     },
 };
 
@@ -1090,7 +1095,7 @@ export default function NannyJobsBangalorePage() {
                                     </p>
                                     <div className="mt-auto">
                                         <Link
-                                            href="/nest-hostel"
+                                            href="/nest"
                                             className="inline-flex items-center text-rose-600 font-bold hover:text-rose-700 transition-colors group text-lg"
                                         >
                                             Learn more about NEST

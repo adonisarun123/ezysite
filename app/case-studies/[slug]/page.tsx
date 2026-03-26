@@ -174,7 +174,7 @@ const RESPECT_RETENTION_SECTIONS = {
     )
 };
 
-const CASE_STUDY_EXTRA_CONTENT: Record<string, { preChallenge?: JSX.Element; postResults?: JSX.Element }> = {
+const CASE_STUDY_EXTRA_CONTENT: Record<string, { preChallenge?: React.ReactNode; postResults?: React.ReactNode }> = {
     'respect-equals-retention': RESPECT_RETENTION_SECTIONS,
     'chhote-break-bade-results': {
         preChallenge: (
@@ -627,7 +627,7 @@ const CASE_STUDY_EXTRA_CONTENT: Record<string, { preChallenge?: JSX.Element; pos
 };
 
 interface Props {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -640,7 +640,8 @@ export async function generateMetadata(
     { params }: Props,
     parent: ResolvingMetadata
 ): Promise<Metadata> {
-    const caseStudy = getCaseStudy(params.slug);
+    const { slug } = await params;
+    const caseStudy = getCaseStudy(slug);
 
     if (!caseStudy) {
         return {
@@ -670,8 +671,9 @@ export async function generateMetadata(
     };
 }
 
-export default function CaseStudyDetailPage({ params }: Props) {
-    const caseStudy = getCaseStudy(params.slug);
+export default async function CaseStudyDetailPage({ params }: Props) {
+    const { slug } = await params;
+    const caseStudy = getCaseStudy(slug);
 
     if (!caseStudy) {
         notFound();
@@ -679,7 +681,7 @@ export default function CaseStudyDetailPage({ params }: Props) {
 
     const extraSections = CASE_STUDY_EXTRA_CONTENT[caseStudy.slug];
 
-    const related = getRelatedCaseStudies(params.slug, 3);
+    const related = getRelatedCaseStudies(slug, 3);
 
     const jsonLd = {
         "@context": "https://schema.org",

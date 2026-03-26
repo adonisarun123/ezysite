@@ -240,7 +240,7 @@ export default function BareillyDriversPage() {
               <div className="bg-gray-50 rounded-2xl p-6">
                 <h3 className="font-bold mb-2">Home Deep Cleaning</h3>
                 <p className="text-gray-600">Thorough cleaning for sparkling homes in Bareilly.</p>
-                <Link href="/cities/bareilly/home-cleaning" className="text-blue-600 font-semibold mt-2 inline-block">Learn About Deep Cleaning</Link>
+                <Link href="/cities/bareilly/home-deep-cleaning" className="text-blue-600 font-semibold mt-2 inline-block">Learn About Deep Cleaning</Link>
               </div>
             </div>
           </div>

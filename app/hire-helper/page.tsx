@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
-import React from 'react'
+import React, { Suspense } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import dynamic from 'next/dynamic'
+import HireHelperForm from '@/components/HireHelperForm'
 import { CheckCircleIcon, PhoneIcon, ChatBubbleLeftRightIcon, BoltIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   }
 }
 
-const HireHelperForm = dynamic(() => import('@/components/HireHelperForm'), { ssr: false })
 
 export default function HireHelperPage() {
   return (
@@ -73,7 +72,9 @@ export default function HireHelperPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Form */}
             <div className="lg:col-span-2">
-              <HireHelperForm />
+              <Suspense fallback={<div className="text-center py-12 text-gray-500">Loading form...</div>}>
+                <HireHelperForm />
+              </Suspense>
             </div>
 
             {/* Contact Options */}

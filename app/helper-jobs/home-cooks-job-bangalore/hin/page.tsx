@@ -32,7 +32,12 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/home-cooks-job-bangalore/hin'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/home-cooks-job-bangalore/hin',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/home-cooks-job-bangalore',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/home-cooks-job-bangalore/hin',
+            'x-default': 'https://www.ezyhelpers.com/helper-jobs/home-cooks-job-bangalore'
+        }
     }
 }
 

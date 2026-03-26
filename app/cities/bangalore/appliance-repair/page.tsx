@@ -17,7 +17,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Electrical Appliance Repair in Bangalore | TV, AC, Fridge Fix',
+  title: 'Appliance Repair in Bangalore | EzyHelpers',
   description:
     'Fix all home appliances in Bangalore. TV, AC, fridge, washing machine repair. Expert technicians, doorstep service.',
   openGraph: {

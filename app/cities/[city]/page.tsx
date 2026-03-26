@@ -5,13 +5,14 @@ import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 
 interface PageProps {
-  params: {
-    city: string
-  }
+  params: Promise<{
+    city: string 
+  }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const cityName = params.city.charAt(0).toUpperCase() + params.city.slice(1)
+  const { city } = await params;
+  const cityName = city.charAt(0).toUpperCase() + city.slice(1)
 
   return {
     title: `Domestic Help Services in ${cityName} | EzyHelpers`,
@@ -20,20 +21,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `Home Services in ${cityName} - EzyHelpers`,
       description: `Get verified domestic help in ${cityName}. Professional maids, cooks, nannies & more. Background-checked staff for your peace of mind.`,
-      url: `https://ezyhelpers.com/cities/${params.city}`,
+      url: `https://www.ezyhelpers.com/cities/${city}`,
       type: 'website',
       siteName: 'EzyHelpers',
       locale: 'en_IN',
     },
     alternates: {
-      canonical: `https://ezyhelpers.com/cities/${params.city}`
+      canonical: `https://www.ezyhelpers.com/cities/${city}`
     }
   }
 }
 
-export default function CityPage({ params }: PageProps) {
-  const cityName = params.city.charAt(0).toUpperCase() + params.city.slice(1)
-
+export default async function CityPage({ params }: PageProps) {
+  const { city } = await params;
+  const cityName = city.charAt(0).toUpperCase() + city.slice(1)
   return (
     <main className="min-h-screen">
       <Navbar />

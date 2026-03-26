@@ -165,10 +165,11 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
 
-  // Headers for better caching and performance
+  // Headers for better caching, security and performance
   async headers() {
     return [
       {
+        // Security + no-cache for all HTML pages
         source: '/(.*)',
         headers: [
           {
@@ -180,18 +181,42 @@ const nextConfig = {
             value: 'SAMEORIGIN'
           },
           {
+            // HTML should never be cached immutably — use no-cache so browsers
+            // always revalidate. Static assets below override this with long TTL.
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(self)'
+          },
+        ],
+      },
+      {
+        // Cache static assets (JS/CSS/fonts) for 1 year — safe because filenames are content-hashed
+        source: '/_next/static/(.*)',
+        headers: [
+          {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
           },
         ],
       },
       {
-        // Cache static assets for 1 year
-        source: '/_next/static/(.*)',
+        // Cache public images and other static files for 30 days
+        source: '/(.*\.(?:jpg|jpeg|png|gif|webp|svg|ico|woff2|woff|ttf|otf))',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: 'public, max-age=2592000, stale-while-revalidate=86400',
           },
         ],
       },
@@ -256,6 +281,8 @@ const nextConfig = {
       { source: '/blog/generally-we-dont-verify-our-helpers-why', destination: '/blog', permanent: true },
       // 29
       { source: '/services/travel-nanny', destination: '/cities/bangalore/travel-nanny', permanent: true },
+      // 30 - Duplicate page consolidation: live-in-maid (singular) -> live-in-maids (plural canonical)
+      { source: '/cities/bangalore/live-in-maid', destination: '/cities/bangalore/live-in-maids', permanent: true },
     ]
   },
 }

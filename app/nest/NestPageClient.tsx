@@ -187,7 +187,7 @@ export default function NestPageClient() {
               </div>
 
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight font-display">
-                Nest – <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-200 to-rose-100">Domestic Worker Accommodation</span> in Bangalore
+                Nest – Domestic Worker Accommodation in Bangalore
               </h1>
               <p className="text-xl text-rose-100 mb-8 leading-relaxed font-light">
                 The "Nest" by EzyHelpers is India's first <span className="text-white font-medium">women-only domestic helper hostel</span>, offering short-term and long-term stays for maids and helpers who need a safe and comfortable place to stay.
@@ -557,7 +557,7 @@ export default function NestPageClient() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Hostel",
+            "@type": "LodgingBusiness",
             "name": "Nest by EzyHelpers - Domestic Worker Accommodation",
             "description": "India's first women-only domestic helper hostel in Bangalore offering safe, affordable short-term and long-term stays with meals and free skill training.",
             "url": "https://www.ezyhelpers.com/nest",

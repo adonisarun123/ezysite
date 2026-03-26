@@ -46,7 +46,12 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/patient-care-job-bangalore'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/patient-care-job-bangalore',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/patient-care-job-bangalore',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/patient-care-job-bangalore/hin',
+            'x-default': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/patient-care-job-bangalore'
+        }
     }
 }
 

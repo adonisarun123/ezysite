@@ -6,7 +6,7 @@ import Footer from '../../components/Footer'
 import Breadcrumb from '../../components/Breadcrumb'
 
 export const metadata: Metadata = {
-  title: 'How It Works | EzyHelpers - Simple Steps to Find Your Perfect Helper',
+  title: 'How It Works | Find Your Helper | EzyHelpers',
   description: 'Discover how easy it is to find verified, reliable home helpers with EzyHelpers. Our simple 4-step process connects you with trusted professionals for all your household needs.',
   keywords: 'how it works, find helpers, home services, maid booking, helper recruitment, verified professionals',
   openGraph: {

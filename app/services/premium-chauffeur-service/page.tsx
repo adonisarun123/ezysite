@@ -586,7 +586,7 @@ export default function ChauffeurServicePage() {
                                 <div className="flex items-center text-purple-600 font-semibold">Learn More</div>
                             </Link>
 
-                            <Link href="/services/japa-nanny-services" className="group bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-8 border border-indigo-100 hover:border-indigo-300 hover:shadow-lg transition-all duration-300">
+                            <Link href="/services/japa" className="group bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-8 border border-indigo-100 hover:border-indigo-300 hover:shadow-lg transition-all duration-300">
                                 <UserGroupIcon className="h-12 w-12 text-indigo-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Japa Services</h3>
                                 <p className="text-gray-600 mb-4">Experienced Japa maids providing new mothers with recovery support, newborn care, and traditional Postnatal assistance.</p>

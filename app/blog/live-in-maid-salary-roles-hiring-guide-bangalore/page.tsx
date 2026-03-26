@@ -19,7 +19,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Live-In Maid Bangalore: Complete Salary Guide & Hiring Tips (2024)',
+  title: 'Live-In Maid Bangalore: Salary Guide & Hiring Tips',
   description: 'Looking for a live-in maid in Bangalore? Get detailed salary information, hiring tips, and safety guidelines. Find reliable, verified help for your home.',
   keywords: ['live in maid bangalore', 'maid salary bangalore', 'hire maid bangalore', 'domestic help bangalore', 'full time maid', 'live in helper'],
   openGraph: {
@@ -138,8 +138,8 @@ export default function LiveInMaidGuide() {
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  h1: ({ children }) => <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-8 first:mt-0">{children}</h1>,
-                  h2: ({ children }) => <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8 first:mt-0">{children}</h2>,
+                  h1: ({ children }) => <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-8 first:mt-0">{children}</h2>,
+                  h2: ({ children }) => <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8 first:mt-0">{children}</h3>,
                   h3: ({ children }) => <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3 mt-6">{children}</h3>,
                   h4: ({ children }) => <h4 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 mt-4">{children}</h4>,
                   p: ({ children }) => <p className="text-gray-700 mb-4 leading-relaxed">{children}</p>,

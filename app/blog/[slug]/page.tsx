@@ -11,7 +11,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -182,8 +182,8 @@ const blogFAQs = {
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const post = posts.find(p => p.id === params.slug)
-
+  const { slug } = await params;
+  const post = posts.find((p) => p.id === slug);
   if (!post) {
     return {
       title: 'Post Not Found | EzyHelpers Blog',
@@ -214,13 +214,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ] : undefined
     },
     alternates: {
-      canonical: `https://ezyhelpers.com/blog/${post.id}`
+      canonical: `https://www.ezyhelpers.com/blog/${post.id}`
     }
   }
 }
 
-export default function BlogPost({ params }: PageProps) {
-  const post = posts.find((p) => p.id === params.slug);
+export default async function BlogPost({ params }: PageProps) {
+  const { slug } = await params;
+  const post = posts.find((p) => p.id === slug);
   if (!post) return notFound();
 
   const markdown = post.content;

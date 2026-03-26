@@ -203,11 +203,7 @@ export default function OrganizationSchema() {
       "Driver Services",
       "Home Management"
     ],
-    "slogan": "Trusted House Maid Services & Complete Home Help",
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "EzyHelpers Private Limited"
-    }
+    "slogan": "Trusted House Maid Services & Complete Home Help"
   }
 
   return (

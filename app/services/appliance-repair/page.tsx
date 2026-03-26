@@ -21,11 +21,11 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Home Appliance Repair Services | Expert Technicians | EzyHelpers',
+  title: 'Home Appliance Repair | Expert Technicians | EzyHelpers',
   description: 'Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India.',
   keywords: 'appliance repair, refrigerator repair, washing machine repair, microwave oven repair, AC repair, gas stove repair, geyser repair, TV repair, chimney repair, home appliance service',
   alternates: {
-    canonical: 'https://www.ezyhelpers.com/services/appliance-repair'
+    canonical: 'https://ezyhelpers.com/services/appliance-repair'
   }
 }
 

@@ -9,6 +9,8 @@ interface FAQSchemaProps {
 }
 
 export default function FAQSchema({ faqs, aboutPage }: FAQSchemaProps) {
+  const today = new Date().toISOString().split('T')[0];
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -22,15 +24,13 @@ export default function FAQSchema({ faqs, aboutPage }: FAQSchemaProps) {
           "@type": "Organization",
           "name": "EzyHelpers"
         },
-        "dateCreated": "2024-01-01",
         "upvoteCount": 0,
         "url": aboutPage || "https://ezyhelpers.com"
       },
       "author": {
-        "@type": "Organization", 
+        "@type": "Organization",
         "name": "EzyHelpers"
       },
-      "dateCreated": "2024-01-01",
       "upvoteCount": 0
     })),
     "about": {
@@ -44,15 +44,15 @@ export default function FAQSchema({ faqs, aboutPage }: FAQSchemaProps) {
       "url": "https://ezyhelpers.com"
     },
     "publisher": {
-      "@type": "Organization", 
+      "@type": "Organization",
       "name": "EzyHelpers",
       "logo": {
         "@type": "ImageObject",
         "url": "https://ezyhelpers.com/ezyhelper_logo_new.png"
       }
     },
-    "datePublished": "2024-01-01",
-    "dateModified": "2024-01-01",
+    "datePublished": today,
+    "dateModified": today,
     "inLanguage": "en-IN"
   }
 

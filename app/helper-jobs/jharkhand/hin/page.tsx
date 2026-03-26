@@ -29,7 +29,12 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/hin'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/hin',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/jharkhand',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/hin',
+            'x-default': 'https://www.ezyhelpers.com/helper-jobs/jharkhand'
+        }
     }
 }
 

@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
-import dynamic from 'next/dynamic'
 import { OrganizationSchema, WebSiteSchema } from '../components/schema'
 import { UrgencyProvider } from '../components/UrgencyContext'
+import ClientOnlyWidgets from '../components/ClientOnlyWidgets'
 
 // Optimize font loading with preload and display swap
 const inter = Inter({
@@ -21,26 +21,10 @@ const poppins = Poppins({
   preload: true,
 })
 
-// Dynamic imports for non-critical components to reduce initial bundle size
-const LLMOptimization = dynamic(() => import('../components/LLMOptimization'), {
-  ssr: false,
-  loading: () => null
-})
-const UrgencyCTA = dynamic(() => import('../components/UrgencyCTA'), {
-  ssr: false,
-  loading: () => null
-})
-const WhatsAppFloat = dynamic(() => import('../components/WhatsAppFloat'), {
-  ssr: false,
-  loading: () => null
-})
-const LanguageSelectorPopup = dynamic(() => import('../components/LanguageSelectorPopup'), {
-  ssr: false,
-  loading: () => null
-})
+
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ezyhelpers.com'),
+  metadataBase: new URL('https://www.ezyhelpers.com'),
   title: 'Trusted House Help Service | EzyHelpers',
   description: "India's #1 house help service platform. Get verified maids, cooks, nannies & drivers in 24-72hrs. 10,000+ trusted families.",
   keywords: ['house help service', 'domestic help', 'maids', 'cooks', 'nannies', 'drivers', 'verified helpers', 'home services India'],
@@ -64,11 +48,11 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com',
+    canonical: 'https://www.ezyhelpers.com',
     languages: {
-      'en-US': 'https://ezyhelpers.com',
-      'hi-IN': 'https://ezyhelpers.com/hi'
-    }
+      'en': 'https://www.ezyhelpers.com',
+      'x-default': 'https://www.ezyhelpers.com',
+    },
   },
   openGraph: {
     title: 'EzyHelpers - Trusted House Maid Services & Complete Home Help',
@@ -76,7 +60,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     siteName: 'EzyHelpers',
-    url: 'https://ezyhelpers.com',
+    url: 'https://www.ezyhelpers.com',
     images: [
       {
         url: '/og-image.jpg',
@@ -94,10 +78,10 @@ export const metadata: Metadata = {
     creator: '@ezyhelpers',
     images: [
       {
-        url: 'https://ezyhelpers.com/ezyhelper_logo_new.png',
-        width: 1200,
-        height: 630,
-        alt: 'EzyHelpers - Home Services'
+        url: 'https://www.ezyhelpers.com/twitter-card.jpg',
+        width: 800,
+        height: 418,
+        alt: 'EzyHelpers - Trusted Home Help Services in India'
       }
     ]
   },
@@ -114,7 +98,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Preload critical resources first */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -404,54 +388,20 @@ export default function RootLayout({
         {/* TrustBox script */}
         <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
         {/* End TrustBox script */}
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "EzyHelpers",
-              "url": "https://ezyhelpers.com",
-              "logo": "https://ezyhelpers.com/ezyhelper_logo_new.png",
-              "sameAs": [
-                "https://www.facebook.com/ezyhelpers",
-                "https://twitter.com/ezyhelpers",
-                "https://www.linkedin.com/company/ezyhelpers"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91-9972571005",
-                "contactType": "customer service",
-                "areaServed": "IN",
-                "availableLanguage": ["English", "Hindi"]
-              }
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "url": "https://ezyhelpers.com",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://ezyhelpers.com/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
-            })
-          }}
-        />
       </head>
-      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`} suppressHydrationWarning>
+        {/* Skip to main content — visible on keyboard focus for screen reader / keyboard users */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:text-sm focus:font-semibold focus:rounded-lg focus:shadow-lg focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <UrgencyProvider>
-          {children}
-          <LLMOptimization />
-          <UrgencyCTA />
-          <WhatsAppFloat />
-          <LanguageSelectorPopup />
+          <div id="main-content">
+            {children}
+          </div>
+          <ClientOnlyWidgets />
         </UrgencyProvider>
       </body>
     </html>

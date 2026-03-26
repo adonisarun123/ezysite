@@ -27,11 +27,11 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Get 24/7 Help with Expert Live in Maid Services– Book Instantly',
+  title: 'Live-In Maid Services | 24/7 Dedicated Home Help',
   description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
   keywords: 'live-in maid, 24-hour maid, live in house maid, housekeeping, cooking, babysitting, elderly care',
   alternates: {
-    canonical: 'https://www.ezyhelpers.com/services/live-in-maids'
+    canonical: 'https://ezyhelpers.com/services/live-in-maids'
   }
 }
 
