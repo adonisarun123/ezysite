@@ -84,30 +84,6 @@ export default function MaidVerificationGuide() {
             {post.excerpt}
           </p>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <div className="bg-white/80 backdrop-blur rounded-xl p-6 shadow-sm border border-gray-100">
-              <div className="flex items-center gap-3 mb-3">
-                <ShieldCheckIcon className="w-6 h-6 text-blue-600" />
-                <h3 className="font-semibold text-gray-900">Police Verification</h3>
-              </div>
-              <p className="text-gray-600">7-15 days for complete background checks</p>
-            </div>
-            <div className="bg-white/80 backdrop-blur rounded-xl p-6 shadow-sm border border-gray-100">
-              <div className="flex items-center gap-3 mb-3">
-                <DocumentCheckIcon className="w-6 h-6 text-blue-600" />
-                <h3 className="font-semibold text-gray-900">Document Check</h3>
-              </div>
-              <p className="text-gray-600">Aadhaar, address proof, and ID validation</p>
-            </div>
-            <div className="bg-white/80 backdrop-blur rounded-xl p-6 shadow-sm border border-gray-100">
-              <div className="flex items-center gap-3 mb-3">
-                <ExclamationTriangleIcon className="w-6 h-6 text-blue-600" />
-                <h3 className="font-semibold text-gray-900">Safety First</h3>
-              </div>
-              <p className="text-gray-600">Professional verification prevents 90% of issues</p>
-            </div>
-          </div>
         </div>
       </section>
 
