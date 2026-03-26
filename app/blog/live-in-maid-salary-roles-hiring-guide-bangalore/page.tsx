@@ -88,31 +88,6 @@ export default function LiveInMaidGuide() {
           <p className="text-xl text-gray-600 max-w-3xl">
             {post.excerpt}
           </p>
-
-          {/* Quick Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <div className="bg-white/80 backdrop-blur rounded-xl p-6 shadow-sm border border-gray-100">
-              <div className="flex items-center gap-3 mb-3">
-                <CurrencyRupeeIcon className="w-6 h-6 text-blue-600" />
-                <h3 className="font-semibold text-gray-900">Salary Range</h3>
-              </div>
-              <p className="text-gray-600">₹15,000 - ₹30,000/month based on area and role</p>
-            </div>
-            <div className="bg-white/80 backdrop-blur rounded-xl p-6 shadow-sm border border-gray-100">
-              <div className="flex items-center gap-3 mb-3">
-                <UserGroupIcon className="w-6 h-6 text-blue-600" />
-                <h3 className="font-semibold text-gray-900">Popular Areas</h3>
-              </div>
-              <p className="text-gray-600">Koramangala, Indiranagar, Whitefield, HSR Layout</p>
-            </div>
-            <div className="bg-white/80 backdrop-blur rounded-xl p-6 shadow-sm border border-gray-100">
-              <div className="flex items-center gap-3 mb-3">
-                <ShieldCheckIcon className="w-6 h-6 text-blue-600" />
-                <h3 className="font-semibold text-gray-900">Safety First</h3>
-              </div>
-              <p className="text-gray-600">Complete verification & background checks included</p>
-            </div>
-          </div>
         </div>
       </section>
 
