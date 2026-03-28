@@ -41,7 +41,7 @@
     "framer-motion": "^10.16.16",
     "libphonenumber-js": "^1.12.24",
     "lucide-react": "^0.294.0",
-    "next": "^14.2.30",
+    "next": "14.2.35",
     "nodemailer": "^6.10.1",
     "p-retry": "^7.1.0",
     "postcss": "^8.4.32",
