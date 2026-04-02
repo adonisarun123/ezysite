@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
 import FAQAccordion from '@/components/FAQAccordion'
+import NestCTA from '@/components/NestCTA'
 import {
   MapPinIcon,
   BoltIcon,
@@ -455,7 +456,8 @@ export default function BangaloreElectricianPage() {
           </div>
         </section>
 
-        <Footer />
+              <NestCTA />
+      <Footer />
       </main>
     </>
   )

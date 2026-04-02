@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
+import NestCTA from '@/components/NestCTA'
 import {
   HeartIcon,
   ShieldCheckIcon,
@@ -526,7 +527,8 @@ export default function BangaloreElderlyCarePage() {
           </div>
         </section>
 
-        <Footer />
+              <NestCTA />
+      <Footer />
       </main>
     </>
   )

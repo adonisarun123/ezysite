@@ -29,6 +29,7 @@ import {
 } from '@heroicons/react/24/outline'
 import BreadcrumbSchema from '@/components/schema/BreadcrumbSchema'
 import FAQSchema from '@/components/schema/FAQSchema'
+import NestCTA from '@/components/NestCTA'
 
 export const metadata: Metadata = {
   title: 'Travel Nanny in Bangalore | Flexible Vacation Babysitters',
@@ -663,6 +664,7 @@ export default function TravelNannyPage() {
         </div>
       </section>
       
+            <NestCTA />
       <Footer />
     </main>
   )

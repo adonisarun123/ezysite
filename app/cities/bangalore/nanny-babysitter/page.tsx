@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
 import FAQAccordion from '@/components/FAQAccordion'
+import NestCTA from '@/components/NestCTA'
 import {
   UserGroupIcon,
   HeartIcon,
@@ -560,7 +561,8 @@ export default function BangaloreNannyBabysitterPage() {
           </div>
         </section>
 
-        <Footer />
+              <NestCTA />
+      <Footer />
       </main>
     </>
   )

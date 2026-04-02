@@ -2,7 +2,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   SparklesIcon, 
   ClockIcon, 
   HeartIcon, 
@@ -584,6 +585,7 @@ export default function CooksPage() {
         </div>
       </section>
       
+            <NestCTA />
       <Footer />
     </main>
   )

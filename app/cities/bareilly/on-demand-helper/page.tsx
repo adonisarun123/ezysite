@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CheckCircleIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import NestCTA from '@/components/NestCTA'
 
 export const metadata: Metadata = {
   title: 'Instant Maid Service in Bareilly – Same-Day Help',
@@ -313,6 +314,7 @@ export default function BareillyOnDemandHelperPage() {
           </div>
         </section>
       </main>
+            <NestCTA />
       <Footer />
     </>
   )

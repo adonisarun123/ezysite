@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import NestCTA from '@/components/NestCTA'
 import {
   ClockIcon,
   ShieldCheckIcon,
@@ -374,6 +375,7 @@ export default function BareillyHomeCleaning() {
 
       </main>
 
+            <NestCTA />
       <Footer />
     </>
   )

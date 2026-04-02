@@ -25,6 +25,7 @@ import {
   ShieldExclamationIcon
 } from '@heroicons/react/24/outline'
 import { Metadata } from 'next'
+import NestCTA from '@/components/NestCTA'
 
 export const metadata: Metadata = {
   title: 'House Maid Service in Bareilly – Safe & Verified',
@@ -493,6 +494,7 @@ export default function BareillyPage() {
           </div>
         </section>
       </div>
+            <NestCTA />
       <Footer />
     </main>
   )

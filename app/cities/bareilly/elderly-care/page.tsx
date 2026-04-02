@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion from '@/components/FAQAccordion'
 import { PhoneIcon } from '@heroicons/react/24/outline'
+import NestCTA from '@/components/NestCTA'
 
 export const metadata: Metadata = {
   title: 'Caretaker for Elderly in Bareilly – Compassionate Support',
@@ -323,6 +324,7 @@ export default function BareillyElderlyCare() {
         </section>
 
       </main>
+            <NestCTA />
       <Footer />
     </>
   )

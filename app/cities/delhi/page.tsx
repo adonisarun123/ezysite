@@ -5,7 +5,8 @@ import OptimizedSection from '@/components/optimized/OptimizedSection'
 import OptimizedCard from '@/components/optimized/OptimizedCard'
 import OptimizedHeader from '@/components/optimized/OptimizedHeader'
 import { LocalBusinessSchema, BreadcrumbSchema } from '@/components/schema'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   BuildingLibraryIcon, 
   HeartIcon, 
   HomeIcon, 
@@ -597,6 +598,7 @@ export default function DelhiPage() {
         </div>
       </section>
       </div>
+            <NestCTA />
       <Footer />
     </main>
   )

@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   BuildingOffice2Icon, 
   HeartIcon, 
   HomeIcon, 
@@ -277,6 +278,7 @@ export default function NagpurPage() {
           </div>
         </section>
       </div>
+            <NestCTA />
       <Footer />
     </main>
   )

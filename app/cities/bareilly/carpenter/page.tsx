@@ -4,7 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   ClockIcon, 
   PhoneIcon, 
   ArrowRightIcon,
@@ -368,6 +369,7 @@ export default function BareillyCarpentersPage() {
         </section>
       </main>
       
+            <NestCTA />
       <Footer />
     </>
   )

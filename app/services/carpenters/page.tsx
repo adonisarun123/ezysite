@@ -4,7 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import FAQAccordion from '@/components/FAQAccordion'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   CommandLineIcon,
   CheckCircleIcon,
   StarIcon,
@@ -428,6 +429,7 @@ export default function CarpentersPage() {
         </div>
       </section>
       
+            <NestCTA />
       <Footer />
     </main>
   )

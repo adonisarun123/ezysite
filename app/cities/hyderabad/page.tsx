@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   ComputerDesktopIcon, 
   HomeIcon, 
   CheckCircleIcon,
@@ -547,6 +548,7 @@ export default function HyderabadPage() {
         </div>
       </section>
       </div>
+            <NestCTA />
       <Footer />
     </main>
   )

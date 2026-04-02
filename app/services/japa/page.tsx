@@ -2,7 +2,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   HeartIcon, 
   ShieldCheckIcon, 
   ClockIcon, 
@@ -444,6 +445,7 @@ export default function JapaPage() {
         </div>
       </section>
       
+            <NestCTA />
       <Footer />
     </main>
   )

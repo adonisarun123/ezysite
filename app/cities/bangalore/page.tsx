@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
+import NestCTA from '@/components/NestCTA'
 import {
   ComputerDesktopIcon,
   HomeIcon,
@@ -638,6 +639,7 @@ export default function BangalorePage() {
           </div>
         </section>
       </div>
+            <NestCTA />
       <Footer />
     </main>
   )

@@ -5,7 +5,8 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion from '@/components/FAQAccordion'
 
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   CheckCircleIcon,
   PhoneIcon
 } from '@heroicons/react/24/outline'
@@ -314,6 +315,7 @@ export default function BareillyLiveInMaidPage() {
 
       </main>
       
+            <NestCTA />
       <Footer />
     </>
   )

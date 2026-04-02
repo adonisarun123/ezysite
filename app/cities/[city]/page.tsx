@@ -1,11 +1,12 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
-// ... other imports ...
+import Footer from '@/components/Footer'
+import NestCTA from '@/components/NestCTA'
 
 interface PageProps {
-  params: { 
-    city: string 
+  params: {
+    city: string
   }
 }
 
@@ -32,11 +33,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default function CityPage({ params }: PageProps) {
   const cityName = params.city.charAt(0).toUpperCase() + params.city.slice(1)
-  
+
   return (
-    <div>
+    <main className="min-h-screen">
       <Navbar />
       {/* Rest of the component JSX */}
-    </div>
+      <NestCTA />
+      <Footer />
+    </main>
   )
 } 

@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   BoltIcon,
   CheckCircleIcon,
   StarIcon,
@@ -513,6 +514,7 @@ export default function ElectriciansPage() {
         </div>
       </section>
       
+            <NestCTA />
       <Footer />
     </main>
   )

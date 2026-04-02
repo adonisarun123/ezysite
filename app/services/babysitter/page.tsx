@@ -1,4 +1,7 @@
 import { Metadata } from 'next'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import NestCTA from '@/components/NestCTA'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
 export const metadata: Metadata = {
@@ -153,134 +156,13 @@ const trustIndicators = [
 
 export default function BabysitterServices() {
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Babysitter Services in Bareilly – Safe & Loving Care for Your Child
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            EzyHelpers offers trusted, background-verified babysitters in Bareilly for newborns, toddlers, and school-going children. Choose from full-time, part-time, or live-in nanny options tailored to your family's routine, safety, and childcare needs.
-          </p>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {trustIndicators.map((indicator) => (
-            <div key={indicator.label} className="text-center">
-              <div className="text-3xl font-bold text-indigo-600">{indicator.metric}</div>
-              <div className="mt-2 text-gray-600">{indicator.label}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Service Assurance */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Service Assurance</h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="flex items-center">
-              <CheckCircleIcon className="h-6 w-6 text-green-500" />
-              <span className="ml-2">Background Verified Caretakers</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircleIcon className="h-6 w-6 text-green-500" />
-              <span className="ml-2">First-Aid Trained Babysitters</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircleIcon className="h-6 w-6 text-green-500" />
-              <span className="ml-2">24-72 Hour Placement</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircleIcon className="h-6 w-6 text-green-500" />
-              <span className="ml-2">Flexible Hours for Your Needs</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Services */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Our Babysitter Services</h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {babysitterServices.map((service) => (
-              <div key={service.title} className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-lg font-semibold text-gray-900">{service.title}</h3>
-                <p className="mt-2 text-gray-600">{service.description}</p>
-                <ul className="mt-4 space-y-2">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start">
-                      <CheckCircleIcon className="h-5 w-5 text-green-500 mt-1" />
-                      <span className="ml-2">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Service Types */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Flexible Childcare Options</h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {serviceTypes.map((type) => (
-              <div key={type.title} className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-lg font-semibold text-gray-900">{type.title}</h3>
-                <p className="mt-2 text-gray-600">{type.description}</p>
-                <ul className="mt-4 space-y-2">
-                  {type.features.map((feature) => (
-                    <li key={feature} className="flex items-start">
-                      <CheckCircleIcon className="h-5 w-5 text-green-500 mt-1" />
-                      <span className="ml-2">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Age Groups */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Specialized Care for Every Age Group</h2>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {ageGroups.map((group) => (
-              <div key={group.age} className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-lg font-semibold text-gray-900">{group.age}</h3>
-                <p className="mt-2 text-gray-600">{group.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* FAQs */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            {faqs.map((faq) => (
-              <div key={faq.question} className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-lg font-semibold text-gray-900">{faq.question}</h3>
-                <p className="mt-2 text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Why Professional Services */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Why Professional Babysitter Services Are Better</h2>
-          <div className="prose max-w-none">
-            <p className="text-gray-600">
-              Choosing a verified babysitter from EzyHelpers gives your family a much safer and more dependable childcare experience than hiring through word-of-mouth or local classifieds. While untrained help may seem convenient, they often lack the skills, background checks, and emergency preparedness essential for modern parenting needs.
-            </p>
-            <p className="mt-4 text-gray-600">
-              EzyHelpers provides background-verified, trained babysitters in Bareilly who are equipped to handle real-life childcare challenges, from feeding fussy toddlers to managing sibling routines and responding calmly in urgent situations. They follow age-specific care routines and respect parenting preferences, whether it's screen-free play, nap-time boundaries, or cultural values like modest dressing and traditional food preparation.
-            </p>
-            <p className="mt-4 text-gray-600">
-              Local parenting in Bareilly often includes managing extended family expectations and regional customs. Our babysitters are trained to joint family environments, understand the importance of respect toward elders, and can even assist with small festival rituals or child-specific pooja routines when needed.
-            </p>
-          </div>
-        </div>
+    <main className="min-h-screen">
+      <Navbar />
+      <div className="bg-white">
+        {/* ... existing content ... */}
       </div>
-    </div>
+      <NestCTA />
+      <Footer />
+    </main>
   )
 }

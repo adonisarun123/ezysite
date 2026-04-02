@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   WrenchScrewdriverIcon,
   CheckCircleIcon,
   StarIcon,
@@ -459,6 +460,7 @@ export default function ApplianceRepairPage() {
         </div>
       </section>
 
+            <NestCTA />
       <Footer />
     </main>
   )

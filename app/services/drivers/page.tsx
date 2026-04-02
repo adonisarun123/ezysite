@@ -2,7 +2,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   TruckIcon, 
   ClockIcon, 
   ShieldCheckIcon, 
@@ -578,6 +579,7 @@ export default function DriversPage() {
         </div>
       </section>
       
+            <NestCTA />
       <Footer />
     </main>
   )

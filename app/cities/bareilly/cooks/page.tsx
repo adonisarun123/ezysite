@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion from '@/components/FAQAccordion'
 import { PhoneIcon, CheckCircleIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
+import NestCTA from '@/components/NestCTA'
 
 export const metadata: Metadata = {
   title: 'Hire Cooks in Bareilly – Daily or Event-Based Help',
@@ -367,6 +368,7 @@ export default function BareillyCooksPage() {
         </section>
       </main>
       
+            <NestCTA />
       <Footer />
     </>
   )

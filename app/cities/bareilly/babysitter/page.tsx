@@ -5,7 +5,8 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion from '@/components/FAQAccordion'
 
-import { 
+import NestCTA from '@/components/NestCTA'
+import {
   PhoneIcon, 
   CheckCircleIcon,
   ArrowRightIcon,
@@ -419,6 +420,7 @@ export default function BareillyBabysitterPage() {
 
       </main>
       
+            <NestCTA />
       <Footer />
     </>
   )

@@ -1,11 +1,12 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
-// ... other imports ...
+import Footer from '@/components/Footer'
+import NestCTA from '@/components/NestCTA'
 
 interface PageProps {
-  params: { 
-    service: string 
+  params: {
+    service: string
   }
 }
 
@@ -38,11 +39,13 @@ export default function ServicePage({ params }: PageProps) {
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
-  
+
   return (
-    <div>
+    <main className="min-h-screen">
       <Navbar />
       {/* Rest of the component JSX */}
-    </div>
+      <NestCTA />
+      <Footer />
+    </main>
   )
 } 

@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import { PhoneIcon, CheckCircleIcon, HomeIcon } from '@heroicons/react/24/outline'
+import NestCTA from '@/components/NestCTA'
 
 export const metadata: Metadata = {
   title: 'Newborn Babycare in Bareilly – Trained Japa Maids',
@@ -384,6 +385,7 @@ export default function BareillyJapa() {
         </section>
       </main>
 
+            <NestCTA />
       <Footer />
     </>
   )
