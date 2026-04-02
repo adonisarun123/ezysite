@@ -29,19 +29,19 @@ export default function HiringDomesticHelperPage() {
                 <TagIcon className="w-5 h-5" />
                 <span className="text-sm">Guide • Domestic Help • Safety</span>
               </div>
-              
+
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                 The Complete Guide to
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-pink-300">
                   Hiring a Domestic Helper
                 </span>
               </h1>
-              
+
               <p className="text-xl text-violet-100 max-w-3xl mx-auto leading-relaxed">
-                Everything you need to know about finding, hiring, and managing domestic help in India. 
+                Everything you need to know about finding, hiring, and managing domestic help in India.
                 From background checks to legal considerations.
               </p>
-              
+
               <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-violet-200">
                 <div className="flex items-center space-x-2">
                   <CalendarDaysIcon className="w-4 h-4" />
@@ -62,53 +62,33 @@ export default function HiringDomesticHelperPage() {
 
         {/* Article Content */}
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="prose prose-lg max-w-none">
+          <div className="prose-blog max-w-none">
             {/* Introduction */}
-            <div className="bg-violet-50 border-l-4 border-violet-400 rounded-r-2xl p-6 mb-8">
+            <div className="border-l-4 border-violet-400 pl-6 mb-12">
               <div className="flex items-start space-x-3">
                 <LightBulbIcon className="w-6 h-6 text-violet-600 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Quick Summary</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    Hiring domestic help requires careful consideration of background verification, legal documentation, 
-                    clear job expectations, and ongoing management. This guide covers everything from initial screening 
+                    Hiring domestic help requires careful consideration of background verification, legal documentation,
+                    clear job expectations, and ongoing management. This guide covers everything from initial screening
                     to building a long-term working relationship.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Table of Contents */}
-            <div className="bg-gray-50 rounded-2xl p-6 mb-12">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Table of Contents</h2>
-              <nav className="space-y-2">
-                {[
-                  { title: "Understanding Your Needs", anchor: "#understanding-needs" },
-                  { title: "Finding Reliable Candidates", anchor: "#finding-candidates" },
-                  { title: "Background Verification Process", anchor: "#background-verification" },
-                  { title: "Interview and Selection", anchor: "#interview-selection" },
-                  { title: "Legal Documentation", anchor: "#legal-documentation" },
-                  { title: "Setting Clear Expectations", anchor: "#clear-expectations" },
-                  { title: "Trial Period Management", anchor: "#trial-period" },
-                  { title: "Building Long-term Relationships", anchor: "#long-term-relationships" }
-                ].map((item, index) => (
-                  <a key={index} href={item.anchor} className="block text-violet-600 hover:text-violet-800 hover:underline transition-colors">
-                    {index + 1}. {item.title}
-                  </a>
-                ))}
-              </nav>
-            </div>
 
             {/* Section 1 */}
             <section id="understanding-needs" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">1. Understanding Your Needs</h2>
-              
+
               <p className="text-gray-700 leading-relaxed mb-6">
-                Before beginning your search for domestic help, it's crucial to clearly define what you need. 
+                Before beginning your search for domestic help, it's crucial to clearly define what you need.
                 This foundational step will save you time and ensure you find the right person for your household.
               </p>
 
-              <div className="bg-blue-50 rounded-2xl p-6 mb-6">
+              <div className="mt-8 mb-12">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Key Questions to Ask Yourself:</h3>
                 <ul className="space-y-3">
                   {[
@@ -131,14 +111,14 @@ export default function HiringDomesticHelperPage() {
             {/* Section 2 */}
             <section id="finding-candidates" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">2. Finding Reliable Candidates</h2>
-              
+
               <p className="text-gray-700 leading-relaxed mb-6">
-                There are several ways to find domestic help, each with its own advantages and considerations. 
+                There are several ways to find domestic help, each with its own advantages and considerations.
                 Here are the most effective methods:
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div className="bg-green-50 rounded-2xl p-6">
+                <div className="py-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">✅ Recommended Methods</h3>
                   <ul className="space-y-2">
                     <li className="text-gray-700">• Professional agencies like EzyHelpers</li>
@@ -147,8 +127,8 @@ export default function HiringDomesticHelperPage() {
                     <li className="text-gray-700">• Community recommendations</li>
                   </ul>
                 </div>
-                
-                <div className="bg-red-50 rounded-2xl p-6">
+
+                <div className="py-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">⚠️ Approach with Caution</h3>
                   <ul className="space-y-2">
                     <li className="text-gray-700">• Unverified online classifieds</li>
@@ -163,14 +143,14 @@ export default function HiringDomesticHelperPage() {
             {/* Section 3 */}
             <section id="background-verification" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">3. Background Verification Process</h2>
-              
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 rounded-r-2xl p-6 mb-6">
+
+              <div className="border-l-4 border-yellow-400 pl-6 mb-12">
                 <div className="flex items-start space-x-3">
                   <ExclamationTriangleIcon className="w-6 h-6 text-yellow-600 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Critical Safety Step</h3>
                     <p className="text-gray-700">
-                      Background verification is non-negotiable when hiring domestic help. This step protects your family 
+                      Background verification is non-negotiable when hiring domestic help. This step protects your family
                       and property while ensuring you hire trustworthy individuals.
                     </p>
                   </div>
@@ -178,48 +158,46 @@ export default function HiringDomesticHelperPage() {
               </div>
 
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Essential Verification Steps:</h3>
-              
+
               <div className="space-y-4 mb-6">
                 {[
-                  { 
-                    title: "Police Verification", 
+                  {
+                    title: "Police Verification",
                     description: "Obtain police clearance certificate from their local police station",
                     importance: "Critical"
                   },
-                  { 
-                    title: "Identity Documentation", 
+                  {
+                    title: "Identity Documentation",
                     description: "Verify Aadhaar card, PAN card, and other government-issued IDs",
                     importance: "Essential"
                   },
-                  { 
-                    title: "Address Verification", 
+                  {
+                    title: "Address Verification",
                     description: "Confirm current and permanent addresses with supporting documents",
                     importance: "Important"
                   },
-                  { 
-                    title: "Reference Checks", 
+                  {
+                    title: "Reference Checks",
                     description: "Contact previous employers and get detailed feedback",
                     importance: "Essential"
                   },
-                  { 
-                    title: "Medical Certificate", 
+                  {
+                    title: "Medical Certificate",
                     description: "Ensure they're in good health and free from communicable diseases",
                     importance: "Important"
                   }
                 ].map((item, index) => (
                   <div key={index} className="bg-white border border-gray-200 rounded-xl p-4">
                     <div className="flex items-start space-x-3">
-                      <div className={`w-3 h-3 rounded-full mt-2 ${
-                        item.importance === 'Critical' ? 'bg-red-500' :
-                        item.importance === 'Essential' ? 'bg-orange-500' : 'bg-yellow-500'
-                      }`} />
+                      <div className={`w-3 h-3 rounded-full mt-2 ${item.importance === 'Critical' ? 'bg-red-500' :
+                          item.importance === 'Essential' ? 'bg-orange-500' : 'bg-yellow-500'
+                        }`} />
                       <div>
                         <h4 className="font-semibold text-gray-900">{item.title}</h4>
                         <p className="text-gray-600 text-sm mt-1">{item.description}</p>
-                        <span className={`inline-block mt-2 px-2 py-1 text-xs rounded-full ${
-                          item.importance === 'Critical' ? 'bg-red-100 text-red-800' :
-                          item.importance === 'Essential' ? 'bg-orange-100 text-orange-800' : 'bg-yellow-100 text-yellow-800'
-                        }`}>
+                        <span className={`inline-block mt-2 px-2 py-1 text-xs rounded-full ${item.importance === 'Critical' ? 'bg-red-100 text-red-800' :
+                            item.importance === 'Essential' ? 'bg-orange-100 text-orange-800' : 'bg-yellow-100 text-yellow-800'
+                          }`}>
                           {item.importance}
                         </span>
                       </div>
@@ -232,13 +210,13 @@ export default function HiringDomesticHelperPage() {
             {/* Section 4 */}
             <section id="interview-selection" className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">4. Interview and Selection</h2>
-              
+
               <p className="text-gray-700 leading-relaxed mb-6">
-                The interview process is your opportunity to assess not just skills, but also personality fit and reliability. 
+                The interview process is your opportunity to assess not just skills, but also personality fit and reliability.
                 Here's how to conduct effective interviews:
               </p>
 
-              <div className="bg-violet-50 rounded-2xl p-6 mb-6">
+              <div className="mt-8 mb-12">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Interview Checklist:</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -264,19 +242,19 @@ export default function HiringDomesticHelperPage() {
             </section>
 
             {/* Call to Action */}
-            <div className="bg-gradient-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
-              <HeartIcon className="w-12 h-12 text-violet-200 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-4">Need Help Finding Verified Domestic Help?</h3>
-              <p className="text-violet-100 mb-6 max-w-2xl mx-auto">
-                Skip the hassle of verification and interviews. EzyHelpers provides pre-verified, 
-                trained domestic helpers with complete background checks and comprehensive skill training.
+            <div className="mt-20 p-10 bg-blue-700 rounded-3xl text-center text-white shadow-xl shadow-violet-100">
+              <HeartIcon className="w-12 h-12 text-violet-300 mx-auto mb-6" />
+              <h3 className="text-3xl font-bold mb-4 tracking-tight">Need Help Finding Verified Domestic Help?</h3>
+              <p className="text-violet-100 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+                Skip the hassle of complex verification and interviews. EzyHelpers provides pre-verified,
+                trained domestic helpers with deep background screenings and skill evaluations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/hire-helper" className="bg-white text-violet-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+                <Link href="/hire-helper" className="bg-white text-violet-900 hover:bg-violet-50 font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105">
                   Find Verified Helpers
                 </Link>
-                <Link href="/blog" className="border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-violet-600 transition-colors">
-                  Read More Articles
+                <Link href="/blog" className="border-2 border-white/30 text-white hover:bg-white/10 font-bold py-4 px-10 rounded-full transition-all duration-300">
+                  More Articles
                 </Link>
               </div>
             </div>

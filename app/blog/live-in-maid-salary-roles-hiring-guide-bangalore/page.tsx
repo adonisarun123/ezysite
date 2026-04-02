@@ -7,7 +7,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import TableOfContents from '@/components/TableOfContents';
 import {
   CalendarDaysIcon,
   ClockIcon,
@@ -61,7 +60,7 @@ export default function LiveInMaidGuide() {
             <ArrowLeftIcon className="w-4 h-4 mr-1" />
             Back to Blog
           </Link>
-          
+
           <div className="flex flex-wrap items-center gap-4 mb-8">
             <span className="inline-flex items-center gap-1 text-sm font-medium text-blue-600">
               <TagIcon className="w-4 h-4" /> {post.category}
@@ -82,10 +81,10 @@ export default function LiveInMaidGuide() {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-display">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-display leading-tight">
             {post.title}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl">
+          <p className="text-xl text-gray-800 max-w-3xl font-medium">
             {post.excerpt}
           </p>
 
@@ -118,19 +117,9 @@ export default function LiveInMaidGuide() {
 
       {/* Content */}
       <article className="section-padding">
-        <div className="container-custom max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            {/* Table of Contents - Desktop Sidebar */}
-            <div className="lg:col-span-1 order-2 lg:order-1">
-              <TableOfContents content={post.content} className="hidden lg:block" />
-            </div>
-
-            {/* Main Content */}
-            <div className="lg:col-span-3 order-1 lg:order-2">
-              {/* Table of Contents - Mobile */}
-              <TableOfContents content={post.content} className="block lg:hidden mb-8" />
-
-              <div className="prose prose-lg prose-blue mx-auto">
+        <div className="container-custom max-w-4xl mx-auto">
+          {/* Main Content */}
+          <div className="prose-blog">
             {/* Featured Image */}
             {post.image && (
               <div className="relative h-[400px] rounded-2xl overflow-hidden mb-12 shadow-xl">
@@ -145,8 +134,8 @@ export default function LiveInMaidGuide() {
             )}
 
             {/* Article Content */}
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100 prose prose-lg prose-blue max-w-none">
-              <ReactMarkdown 
+            <div className="prose-blog max-w-none">
+              <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
                   h1: ({ children }) => <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-8 first:mt-0">{children}</h1>,
@@ -173,7 +162,7 @@ export default function LiveInMaidGuide() {
             </div>
 
             {/* Author Info */}
-            <div className="mt-12 p-6 bg-gray-50 rounded-xl">
+            <div className="mt-12 py-8 border-t border-gray-100">
               <p className="text-sm text-gray-600 mb-2">Written by</p>
               <h3 className="text-lg font-semibold text-gray-900">{post.author}</h3>
               <p className="text-gray-600">Hiring and Placement Expert at EzyHelpers</p>
@@ -194,21 +183,19 @@ export default function LiveInMaidGuide() {
             )}
 
             {/* CTA */}
-            <div className="mt-12 p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl text-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="mt-20 p-10 bg-blue-700 rounded-3xl text-center text-white shadow-xl shadow-blue-100">
+              <h3 className="text-3xl font-bold mb-4 tracking-tight">
                 Ready to Hire a Live-In Maid in Bangalore?
               </h3>
-              <p className="text-gray-600 mb-6">
-                Let EzyHelpers find you verified, reliable live-in help that matches your requirements and budget.
+              <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+                Let EzyHelpers find you verified, reliable live-in help that matches your unique household requirements and budget perfectly.
               </p>
               <Link
                 href="/hire-helper"
-                className="btn-primary inline-block"
+                className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 inline-block"
               >
-                Hire Verified Help Now
+                Start Your Search Today
               </Link>
-            </div>
-              </div>
             </div>
           </div>
         </div>

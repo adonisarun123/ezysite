@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'via.placeholder.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'ik.imagekit.io',
+      },
     ],
     // Enable modern image formats for better compression
     formats: ['image/webp', 'image/avif'],
