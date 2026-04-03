@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import UrgencyCTA from '@/components/UrgencyCTA';
 import FAQWithTracking from '@/components/FAQWithTracking';
 import { posts } from '@/lib/blogData';
@@ -182,7 +183,7 @@ const blogFAQs = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const post = posts.find(p => p.id === params.slug)
-  
+
   if (!post) {
     return {
       title: 'Post Not Found | EzyHelpers Blog',
@@ -226,47 +227,80 @@ export default function BlogPost({ params }: PageProps) {
   const faqs = blogFAQs[post.id as keyof typeof blogFAQs] || [];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       <UrgencyCTA />
       <Navbar />
 
-      {/* Header */}
-      <header className="section-padding bg-gradient-to-br from-indigo-50 via-blue-50 to-white">
-        <div className="container-custom max-w-3xl mx-auto text-center">
-          <span className="inline-block mb-4 text-sm font-medium text-blue-600 uppercase tracking-wide">
+      {/* Hero Image */}
+      {post.image && (
+        <div className="w-full bg-gray-50 pt-8 pb-12">
+          <div className="container-custom max-w-4xl mx-auto px-4">
+            <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-gray-200">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Article Header & Content */}
+      <article className="prose-blog mx-auto px-4 py-16 max-w-3xl">
+        <div className="mb-12 text-center md:text-left">
+          <span className="inline-block mb-4 text-sm font-bold text-blue-600 uppercase tracking-[0.2em]">
             {post.category}
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-display text-gray-900">
-            {post.title}
-          </h1>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
-            <span className="flex items-center gap-1">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm text-gray-400 font-medium border-y border-gray-100 py-4">
+            <span className="flex items-center gap-2">
               <CalendarDaysIcon className="w-4 h-4" /> {post.date}
             </span>
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-2">
               <ClockIcon className="w-4 h-4" /> {post.readTime}
             </span>
           </div>
         </div>
-      </header>
 
-      {/* Article */}
-      <article className="prose prose-indigo mx-auto px-4 py-16 max-w-3xl dark:prose-invert">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            h1: ({ children }) => <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 mt-4 leading-tight font-display">{children}</h1>,
+            h2: ({ children }) => <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-12 pb-2 border-b-2 border-blue-500 w-fit">{children}</h2>,
+            h3: ({ children }) => <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 mt-8">{children}</h3>,
+            p: ({ children }) => <p className="text-gray-700 mb-6 leading-relaxed text-lg">{children}</p>,
+            ul: ({ children }) => <ul className="list-disc pl-6 mb-8 space-y-3">{children}</ul>,
+            li: ({ children }) => <li className="text-gray-700 leading-relaxed text-lg">{children}</li>,
+            strong: ({ children }) => <strong className="font-bold text-gray-900">{children}</strong>,
+            a: ({ href, children }) => <a href={href} className="text-blue-600 font-semibold underline decoration-2 underline-offset-4 hover:text-blue-800 transition-colors">{children}</a>,
+            table: ({ children }) => (
+              <div className="overflow-x-auto my-8 rounded-xl border border-gray-200">
+                <table className="min-w-full divide-y divide-gray-200">{children}</table>
+              </div>
+            ),
+            thead: ({ children }) => <thead className="bg-gray-50">{children}</thead>,
+            th: ({ children }) => <th className="px-6 py-4 text-left text-sm font-bold text-gray-900 uppercase tracking-wider">{children}</th>,
+            td: ({ children }) => <td className="px-6 py-4 text-sm text-gray-700 border-t border-gray-100">{children}</td>,
+          }}
+        >
+          {markdown}
+        </ReactMarkdown>
       </article>
 
       {/* FAQ Section */}
       {faqs.length > 0 && (
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-white border-y border-gray-100">
           <div className="container-custom max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-              <p className="text-lg text-gray-600">
-                Common questions about {post.title.toLowerCase()}
+              <h2 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">Frequently Asked Questions</h2>
+              <p className="text-lg text-gray-600 font-medium">
+                Common questions about finding domestic help in India
               </p>
             </div>
-            <FAQWithTracking 
-              faqs={faqs} 
+            <FAQWithTracking
+              faqs={faqs}
               category={`blog-${post.category.toLowerCase()}`}
               className="max-w-3xl mx-auto"
             />
@@ -275,15 +309,16 @@ export default function BlogPost({ params }: PageProps) {
       )}
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-center">
+      <section className="section-padding bg-blue-700 text-white text-center">
         <div className="container-custom max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6 font-display">Need Trusted Help at Home?</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
-            <a href="/hire-helper" className="bg-white text-indigo-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-200 hover:transform hover:scale-105 w-full text-center">
+          <h2 className="text-3xl font-bold mb-4 font-display tracking-tight">Ready to Find Trusted Help at Home?</h2>
+          <p className="text-blue-100 mb-10 text-lg">Join 10,000+ families who trust EzyHelpers for their daily home support.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/hire-helper" className="bg-white text-blue-700 hover:bg-blue-50 font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-900/20">
               Book a Helper Now
             </a>
-            <a href="tel:+919972571005" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 font-semibold py-3 px-6 rounded-lg transition-all duration-200 hover:transform hover:scale-105 w-full text-center">
-              Call +91 99725 71005
+            <a href="tel:+918031411776" className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-bold py-4 px-10 rounded-full transition-all duration-300">
+              Call Us Now
             </a>
           </div>
         </div>
