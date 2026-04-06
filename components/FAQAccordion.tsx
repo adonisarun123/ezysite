@@ -1,6 +1,6 @@
 "use client";
 
-import { Disclosure, Transition } from "@headlessui/react";
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import React from "react";
 
@@ -15,27 +15,23 @@ export default function FAQAccordion({ faqs }: { faqs: FAQItem[] }) {
   return (
     <div className="space-y-4">
       {faqs.map((faq, index) => (
-        <Disclosure key={index}>
+        <Disclosure key={index} as="div">
           {({ open }) => (
             <div className="bg-white rounded-xl shadow-sm">
-              <Disclosure.Button className="w-full flex items-center justify-between text-left px-6 py-4">
+              <DisclosureButton className="w-full flex items-center justify-between text-left px-6 py-4">
                 <span className="text-lg font-bold text-gray-900">{faq.question}</span>
                 <ChevronDownIcon
                   className={`h-5 w-5 text-gray-500 transition-transform ${open ? "rotate-180" : ""}`}
                 />
-              </Disclosure.Button>
-              <Transition
-                enter="transition duration-200 ease-out"
-                enterFrom="transform scale-y-95 opacity-0"
-                enterTo="transform scale-y-100 opacity-100"
-                leave="transition duration-150 ease-in"
-                leaveFrom="transform scale-y-100 opacity-100"
-                leaveTo="transform scale-y-95 opacity-0"
-              >
-                <Disclosure.Panel className="px-6 pb-6 text-gray-600">
+              </DisclosureButton>
+              <div className="overflow-hidden">
+                <DisclosurePanel
+                  transition
+                  className="px-6 pb-6 text-gray-600 origin-top transition duration-200 ease-out data-[closed]:scale-y-95 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150"
+                >
                   <p className="leading-relaxed whitespace-pre-line">{faq.answer}</p>
-                </Disclosure.Panel>
-              </Transition>
+                </DisclosurePanel>
+              </div>
             </div>
           )}
         </Disclosure>

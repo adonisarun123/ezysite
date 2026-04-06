@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: https://ezyhelpers.com
-  }
+    canonical: 'https://www.ezyhelpers.com/services/full-time-maids',
+  },
 }
 
 export default function FullTimeMaidsPage() {
