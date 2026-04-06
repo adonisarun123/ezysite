@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Maid Verification in India: Safe & Trusted Domestic Help',
     description: 'Learn how to verify and hire trusted domestic help safely.',
-    url: 'https://ezyhelpers.com/blog/complete-guide-to-maid-verification-and-background-check-in-india',
+    url: 'https://www.ezyhelpers.com/blog/complete-guide-to-maid-verification-and-background-check-in-india',
     type: 'article',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/blog/complete-guide-to-maid-verification-and-background-check-in-india'
+    canonical: 'https://www.ezyhelpers.com/blog/complete-guide-to-maid-verification-and-background-check-in-india'
   }
 }
 

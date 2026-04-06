@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How It Works | EzyHelpers - Simple Steps to Find Your Perfect Helper',
     description: 'Discover how easy it is to find verified, reliable home helpers with EzyHelpers. Our simple 4-step process connects you with trusted professionals.',
-    url: 'https://ezyhelpers.com/how-it-works',
+    url: 'https://www.ezyhelpers.com/how-it-works',
     siteName: 'EzyHelpers',
     images: [
       {
-        url: 'https://ezyhelpers.com/og-image.jpg',
+        url: 'https://www.ezyhelpers.com/og-image.jpg',
         width: 1200,
         height: 630,
       },

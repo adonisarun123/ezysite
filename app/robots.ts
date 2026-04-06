@@ -10,15 +10,10 @@ export default function robots(): MetadataRoute.Robots {
           '/api/',
           '/private/',
           '/admin/',
-          '/*.json$',
           '/search',
           '/thank-you'
         ]
       },
-      {
-        userAgent: 'GPTBot',
-        disallow: '/'
-      }
     ],
     sitemap: 'https://www.ezyhelpers.com/sitemap.xml',
     host: 'https://www.ezyhelpers.com'

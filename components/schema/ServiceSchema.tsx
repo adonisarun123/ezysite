@@ -30,26 +30,19 @@ export default function ServiceSchema({
     "provider": {
       "@type": "LocalBusiness",
       "name": "EzyHelpers",
-      "url": "https://ezyhelpers.com",
-      "telephone": "+91-80-31411776",
+      "url": "https://www.ezyhelpers.com",
+      "telephone": "+918031411776",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "IN",
         "addressRegion": "Karnataka",
         "addressLocality": "Bangalore"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "10000",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     },
       "availableChannel": {
       "@type": "ServiceChannel",
       "serviceUrl": serviceUrl,
-      "servicePhone": "+91-80-31411776",
+      "servicePhone": "+918031411776",
       "availableLanguage": ["English", "Hindi"]
     },
     "areaServed": availableInLocation.map(location => ({
@@ -67,12 +60,11 @@ export default function ServiceSchema({
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
-      "price": "Contact for pricing",
       "priceCurrency": "INR",
-      "validFrom": "2024-01-01",
       "seller": {
         "@type": "Organization",
-        "name": "EzyHelpers"
+        "name": "EzyHelpers",
+        "url": "https://www.ezyhelpers.com"
       },
       "itemCondition": "https://schema.org/NewCondition"
     },

@@ -41,9 +41,9 @@ export const metadata: Metadata = {
 
 export default function TravelNannyPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Bangalore", url: "https://ezyhelpers.com/cities/bangalore" },
-    { name: "Travel Nanny", url: "https://ezyhelpers.com/cities/bangalore/travel-nanny" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Bangalore", url: "https://www.ezyhelpers.com/cities/bangalore" },
+    { name: "Travel Nanny", url: "https://www.ezyhelpers.com/cities/bangalore/travel-nanny" }
   ]
 
   const serviceAssurance = [

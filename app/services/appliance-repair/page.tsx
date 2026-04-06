@@ -25,15 +25,15 @@ export const metadata: Metadata = {
   description: 'Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India.',
   keywords: 'appliance repair, refrigerator repair, washing machine repair, microwave oven repair, AC repair, gas stove repair, geyser repair, TV repair, chimney repair, home appliance service',
   alternates: {
-    canonical: 'https://ezyhelpers.com/services/appliance-repair'
+    canonical: 'https://www.ezyhelpers.com/services/appliance-repair'
   }
 }
 
 export default function ApplianceRepairPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Services", url: "https://ezyhelpers.com/services" },
-    { name: "Appliance Repair", url: "https://ezyhelpers.com/services/appliance-repair" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Services", url: "https://www.ezyhelpers.com/services" },
+    { name: "Appliance Repair", url: "https://www.ezyhelpers.com/services/appliance-repair" }
   ]
 
   const applianceServices = [
@@ -129,7 +129,7 @@ export default function ApplianceRepairPage() {
   return (
     <main className="min-h-screen">
       <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/services/appliance-repair" />
+      <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/appliance-repair" />
       
       <Navbar />
       

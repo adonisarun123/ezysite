@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Nest - Domestic Worker Accommodation in Bangalore',
     description: 'Safe & Affordable Maid Stay. India\'s first women-only domestic helper hostel.',
     type: 'website',
-    url: 'https://ezyhelpers.com/nest',
+    url: 'https://www.ezyhelpers.com/nest',
   }
 }
 

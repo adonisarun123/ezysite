@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.ezyhelpers.com',
     languages: {
-      'en': 'https://www.ezyhelpers.com',
+      'en-IN': 'https://www.ezyhelpers.com',
       'x-default': 'https://www.ezyhelpers.com',
     },
   },

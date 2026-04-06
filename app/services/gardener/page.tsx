@@ -30,9 +30,9 @@ export const metadata: Metadata = {
 
 export default function GardenerPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Services", url: "https://ezyhelpers.com/services" },
-    { name: "Gardener", url: "https://ezyhelpers.com/services/gardener" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Services", url: "https://www.ezyhelpers.com/services" },
+    { name: "Gardener", url: "https://www.ezyhelpers.com/services/gardener" }
   ]
 
   const gardenerServices = [
@@ -116,7 +116,7 @@ export default function GardenerPage() {
   return (
     <main className="min-h-screen">
       <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/services/gardener" />
+      <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/gardener" />
       
       <Navbar />
       

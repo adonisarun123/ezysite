@@ -4,8 +4,8 @@ export default function OrganizationSchema() {
     "@type": ["Organization", "LocalBusiness"],
     "name": "EzyHelpers",
     "legalName": "EzyHelpers Private Limited",
-    "url": "https://ezyhelpers.com",
-    "logo": "https://ezyhelpers.com/ezyhelper_logo_new.png",
+    "url": "https://www.ezyhelpers.com",
+    "logo": "https://www.ezyhelpers.com/ezyhelper_logo_new.png",
     "description": "India's most trusted platform for verified domestic help services including maids, cooks, nannies, drivers, and elderly care professionals.",
     "foundingDate": "2020",
     "founder": {
@@ -23,7 +23,7 @@ export default function OrganizationSchema() {
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+91-80-31411776",
+        "telephone": "+918031411776",
         "contactType": "customer service",
         "availableLanguage": ["English", "Hindi"],
         "hoursAvailable": {
@@ -36,7 +36,7 @@ export default function OrganizationSchema() {
         }
       }
     ],
-    "telephone": "+91-80-31411776",
+    "telephone": "+918031411776",
     "email": "info@ezyhelpers.com",
     "sameAs": [
       "https://www.facebook.com/ezyhelpers",
@@ -176,13 +176,6 @@ export default function OrganizationSchema() {
           }
         }
       ]
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "10000",
-      "bestRating": "5",
-      "worstRating": "1"
     },
     "priceRange": "₹₹",
     "currenciesAccepted": "INR",

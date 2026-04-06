@@ -99,7 +99,7 @@ function scanDirectory(dir: string, baseDir: string = dir): string[] {
   return pages
 }
 
-export function generateSitemapEntries(baseUrl: string = 'https://ezyhelpers.com'): SitemapEntry[] {
+export function generateSitemapEntries(baseUrl: string = 'https://www.ezyhelpers.com'): SitemapEntry[] {
   const appDir = path.join(process.cwd(), 'app')
   const detectedPages = scanDirectory(appDir)
   
@@ -116,7 +116,7 @@ export function generateSitemapEntries(baseUrl: string = 'https://ezyhelpers.com
 }
 
 // Manual pages that might not be auto-detected
-export function getManualPages(baseUrl: string = 'https://ezyhelpers.com'): SitemapEntry[] {
+export function getManualPages(baseUrl: string = 'https://www.ezyhelpers.com'): SitemapEntry[] {
   const manualPages = [
     // Dynamic blog posts that exist
     '/blog/hiring-domestic-helper',

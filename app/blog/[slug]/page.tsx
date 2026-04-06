@@ -198,7 +198,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://ezyhelpers.com/blog/${post.id}`,
+      url: `https://www.ezyhelpers.com/blog/${post.id}`,
       type: 'article',
       siteName: 'EzyHelpers',
       locale: 'en_IN',

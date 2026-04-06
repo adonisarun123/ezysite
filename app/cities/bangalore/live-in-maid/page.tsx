@@ -34,23 +34,23 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Live-In Maid Services in Bangalore | 24/7 Home Help',
     description: 'Background-verified live-in maids for Bangalore families. Cooking, cleaning, childcare, and elder care with quick placement across the city.',
-    url: 'https://ezyhelpers.com/cities/bangalore/live-in-maid',
+    url: 'https://www.ezyhelpers.com/cities/bangalore/live-in-maid',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/cities/bangalore/live-in-maid'
+    canonical: 'https://www.ezyhelpers.com/cities/bangalore/live-in-maid'
   }
 }
 
 export default function BangaloreLiveInMaidPage() {
   // Breadcrumbs for schema
   const breadcrumbs = [
-    { name: 'Home', url: 'https://ezyhelpers.com' },
-    { name: 'Cities', url: 'https://ezyhelpers.com/cities' },
-    { name: 'Bangalore', url: 'https://ezyhelpers.com/cities/bangalore' },
-    { name: 'Live-In Maid', url: 'https://ezyhelpers.com/cities/bangalore/live-in-maid' }
+    { name: 'Home', url: 'https://www.ezyhelpers.com' },
+    { name: 'Services', url: 'https://www.ezyhelpers.com/services' },
+    { name: 'Bangalore', url: 'https://www.ezyhelpers.com/cities/bangalore' },
+    { name: 'Live-In Maid', url: 'https://www.ezyhelpers.com/cities/bangalore/live-in-maid' }
   ]
 
   // Services section from markdown
@@ -319,7 +319,7 @@ export default function BangaloreLiveInMaidPage() {
       <main className="min-h-screen">
         {/* Schema Markup */}
         <BreadcrumbSchema items={breadcrumbs} />
-        <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/cities/bangalore/live-in-maid" />
+        <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/cities/bangalore/live-in-maid" />
         <LocalBusinessSchema {...localBusinessProps} />
 
         <Navbar />

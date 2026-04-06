@@ -39,10 +39,10 @@ import NestCTA from '@/components/NestCTA'
 
 export default function BangaloreApplianceRepairPage() {
   const breadcrumbs = [
-    { name: 'Home', url: 'https://ezyhelpers.com' },
-    { name: 'Cities', url: 'https://ezyhelpers.com/cities' },
-    { name: 'Bangalore', url: 'https://ezyhelpers.com/cities/bangalore' },
-    { name: 'Appliance Repair', url: 'https://ezyhelpers.com/cities/bangalore/appliance-repair' }
+    { name: 'Home', url: 'https://www.ezyhelpers.com' },
+    { name: 'Services', url: 'https://www.ezyhelpers.com/services' },
+    { name: 'Bangalore', url: 'https://www.ezyhelpers.com/cities/bangalore' },
+    { name: 'Appliance Repair', url: 'https://www.ezyhelpers.com/cities/bangalore/appliance-repair' }
   ]
 
   const trustBadges = [
@@ -228,7 +228,7 @@ export default function BangaloreApplianceRepairPage() {
       <main className="min-h-screen">
         {/* Schema */}
         <BreadcrumbSchema items={breadcrumbs} />
-        <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/cities/bangalore/appliance-repair" />
+        <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/cities/bangalore/appliance-repair" />
         <LocalBusinessSchema {...localBusinessProps} />
 
         <Navbar />

@@ -26,9 +26,9 @@ import {
 export default function DelhiPage() {
   // Schema data for Delhi
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Cities", url: "https://ezyhelpers.com" },
-    { name: "Delhi Services", url: "https://ezyhelpers.com/cities/delhi" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Services", url: "https://www.ezyhelpers.com/services" },
+    { name: "Delhi Services", url: "https://www.ezyhelpers.com/cities/delhi" }
   ]
 
   // Delhi-specific coordinates (approximate city center)

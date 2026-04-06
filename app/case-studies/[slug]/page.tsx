@@ -697,7 +697,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             "name": "EzyHelpers",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://ezyhelpers.com/ezyhelper_logo_new.png"
+                "url": "https://www.ezyhelpers.com/ezyhelper_logo_new.png"
             }
         },
         "datePublished": caseStudy.publishedAt || "2023-01-01",

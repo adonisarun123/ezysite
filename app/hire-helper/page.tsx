@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hire Verified Domestic Help - Quick Booking Process',
     description: 'Book reliable domestic help through EzyHelpers. Verified staff, transparent pricing, and hassle-free process.',
-    url: 'https://ezyhelpers.com/hire-helper',
+    url: 'https://www.ezyhelpers.com/hire-helper',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/hire-helper'
+    canonical: 'https://www.ezyhelpers.com/hire-helper'
   }
 }
 

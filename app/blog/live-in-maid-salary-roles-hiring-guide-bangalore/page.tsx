@@ -25,13 +25,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Live-In Maid Bangalore: Salary Guide & Hiring Tips',
     description: 'Complete guide to hiring live-in maids in Bangalore with current salary ranges, roles, and verified hiring process.',
-    url: 'https://ezyhelpers.com/blog/live-in-maid-salary-roles-hiring-guide-bangalore',
+    url: 'https://www.ezyhelpers.com/blog/live-in-maid-salary-roles-hiring-guide-bangalore',
     type: 'article',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/blog/live-in-maid-salary-roles-hiring-guide-bangalore'
+    canonical: 'https://www.ezyhelpers.com/blog/live-in-maid-salary-roles-hiring-guide-bangalore'
   }
 }
 

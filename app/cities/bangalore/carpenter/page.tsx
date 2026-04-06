@@ -35,10 +35,10 @@ export const metadata: Metadata = {
 
 export default function BangaloreCarpenterPage() {
   const breadcrumbs = [
-    { name: 'Home', url: 'https://ezyhelpers.com' },
-    { name: 'Cities', url: 'https://ezyhelpers.com/cities' },
-    { name: 'Bangalore', url: 'https://ezyhelpers.com/cities/bangalore' },
-    { name: 'Carpentry Repair', url: 'https://ezyhelpers.com/cities/bangalore/carpenter' }
+    { name: 'Home', url: 'https://www.ezyhelpers.com' },
+    { name: 'Services', url: 'https://www.ezyhelpers.com/services' },
+    { name: 'Bangalore', url: 'https://www.ezyhelpers.com/cities/bangalore' },
+    { name: 'Carpentry Repair', url: 'https://www.ezyhelpers.com/cities/bangalore/carpenter' }
   ]
 
   const trustBadges = [
@@ -170,7 +170,7 @@ export default function BangaloreCarpenterPage() {
       <main className="min-h-screen">
         {/* Schema */}
         <BreadcrumbSchema items={breadcrumbs} />
-        <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/cities/bangalore/carpenter" />
+        <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/cities/bangalore/carpenter" />
         <LocalBusinessSchema {...localBusinessProps} />
 
         <Navbar />

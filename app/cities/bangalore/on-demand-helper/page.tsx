@@ -43,10 +43,10 @@ export const metadata: Metadata = {
 
 export default function BangaloreOnDemandHelperPage() {
   const breadcrumbs = [
-    { name: 'Home', url: 'https://ezyhelpers.com' },
-    { name: 'Cities', url: 'https://ezyhelpers.com/cities' },
-    { name: 'Bangalore', url: 'https://ezyhelpers.com/cities/bangalore' },
-    { name: 'On-Demand Helper', url: 'https://ezyhelpers.com/cities/bangalore/on-demand-helper' }
+    { name: 'Home', url: 'https://www.ezyhelpers.com' },
+    { name: 'Services', url: 'https://www.ezyhelpers.com/services' },
+    { name: 'Bangalore', url: 'https://www.ezyhelpers.com/cities/bangalore' },
+    { name: 'On-Demand Helper', url: 'https://www.ezyhelpers.com/cities/bangalore/on-demand-helper' }
   ]
 
   const reasons = [
@@ -220,7 +220,7 @@ export default function BangaloreOnDemandHelperPage() {
       <main className="min-h-screen">
         {/* Schema */}
         <BreadcrumbSchema items={breadcrumbs} />
-        <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/cities/bangalore/on-demand-helper" />
+        <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/cities/bangalore/on-demand-helper" />
         <LocalBusinessSchema {...localBusinessProps} />
 
         <Navbar />

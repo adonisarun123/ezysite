@@ -32,8 +32,8 @@ export default function LocalBusinessSchema({
     "name": `EzyHelpers ${cityName}`,
     "alternateName": `EzyHelpers - Domestic Help Services in ${cityName}`,
     "description": `Professional domestic help services in ${cityName}, ${stateName}. Verified maids, cooks, nannies, drivers, and elderly care professionals. Trusted by thousands of families.`,
-    "url": `https://ezyhelpers.com/cities/${cityName.toLowerCase().replace(/\s+/g, '-')}`,
-    "telephone": "+91-80-31411776",
+    "url": `https://www.ezyhelpers.com/cities/${cityName.toLowerCase().replace(/\s+/g, '-')}`,
+    "telephone": "+918031411776",
     "email": "info@ezyhelpers.com",
     "address": {
       "@type": "PostalAddress",
@@ -58,7 +58,7 @@ export default function LocalBusinessSchema({
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-80-31411776",
+      "telephone": "+918031411776",
       "contactType": "customer service",
       "availableLanguage": ["English", "Hindi"],
       "hoursAvailable": {
@@ -69,13 +69,6 @@ export default function LocalBusinessSchema({
         "opens": "00:00",
         "closes": "23:59"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "10000",
-      "bestRating": "5",
-      "worstRating": "1"
     },
     "priceRange": "₹₹",
     "currenciesAccepted": "INR",
@@ -114,14 +107,14 @@ export default function LocalBusinessSchema({
     "parentOrganization": {
       "@type": "Organization",
       "name": "EzyHelpers",
-      "url": "https://ezyhelpers.com"
+      "url": "https://www.ezyhelpers.com"
     },
     "brand": {
       "@type": "Brand",
       "name": "EzyHelpers"
     },
-    "logo": "https://ezyhelpers.com/ezyhelper_logo_new.png",
-    "image": "https://ezyhelpers.com/ezyhelper_logo_new.png",
+    "logo": "https://www.ezyhelpers.com/ezyhelper_logo_new.png",
+    "image": "https://www.ezyhelpers.com/ezyhelper_logo_new.png",
     "sameAs": [
       "https://www.facebook.com/ezyhelpers",
       "https://www.instagram.com/ezyhelpers", 

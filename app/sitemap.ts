@@ -1,4 +1,6 @@
 import { MetadataRoute } from 'next'
+import { posts } from '@/lib/blogData'
+import { caseStudies } from '@/app/case-studies/data/caseStudies'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.ezyhelpers.com'
@@ -138,10 +140,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'english-speaking-babysitters',
     'house-shifting',
     'japa',
+    'japa-nanny-services',
     'pest-control',
     'premium-chauffeur-service',
     'professional-chef-for-home',
-    'sofa-cleaning'
+    'sofa-cleaning',
+    'patient-care-services-at-home',
+    'dog-pet-sitters',
+    'special-needs-caregiver'
   ].map(service => ({
     url: `${baseUrl}/services/${service}`,
     lastModified: currentDate,
@@ -225,17 +231,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65
   }))
 
-  // Blog posts
+  // Blog posts (dynamic from blogData + standalone legacy route)
   const blogPosts: MetadataRoute.Sitemap = [
-    'hiring-a-domestic-helper',
-    'complete-guide-to-maid-verification-and-background-check-in-india',
-    'live-in-maid-salary-roles-hiring-guide-bangalore'
-  ].map(slug => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6
-  }))
+    ...posts.map((post) => ({
+      url: `${baseUrl}/blog/${post.id}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6
+    })),
+    {
+      url: `${baseUrl}/blog/hiring-a-domestic-helper`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6
+    }
+  ]
 
   // Case Studies
   const caseStudyPages: MetadataRoute.Sitemap = [
@@ -247,7 +257,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ]
 
-  const caseStudiesList: MetadataRoute.Sitemap = []
+  const caseStudiesList: MetadataRoute.Sitemap = caseStudies.map((cs) => ({
+    url: `${baseUrl}/case-studies/${cs.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.65
+  }))
 
   // Special landing pages
   const landingPages: MetadataRoute.Sitemap = [
@@ -329,6 +344,66 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/helper-jobs/odisha`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    },
+    {
+      url: `${baseUrl}/helper-jobs/hin`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    },
+    {
+      url: `${baseUrl}/helper-jobs/home-cooks-job-bangalore/hin`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    },
+    {
+      url: `${baseUrl}/helper-jobs/nanny-job-bangalore/hin`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/hin`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/couple-security-job-bangalore/hin`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/elderly-caretaker-job-bangalore/hin`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/housekeeping-job-bangalore/hin`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/japa-maid-job-bangalore/hin`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/live-in-housekeeping-couple-job-bangalore/hin`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.55
+    },
+    {
+      url: `${baseUrl}/helper-jobs/jharkhand/patient-care-job-bangalore/hin`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.55
