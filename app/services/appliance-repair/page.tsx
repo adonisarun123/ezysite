@@ -127,11 +127,83 @@ export default function ApplianceRepairPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/services/appliance-repair" />
-      
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "Can I get same-day appliance repair at home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, EzyHelpers offers same-day appliance repair service in most Indian cities. If you book early, we can usually send a technician within a few hours. It's perfect for urgent problems like a non-working fridge, washing machine, or AC, especially during summer or busy days."
+              }
+            },{
+              "@type": "Question",
+              "name": "What types of appliances do you repair at home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We repair all major home appliances, including refrigerators, washing machines, ACs, microwaves, geysers, kitchen chimneys, dishwashers, and TVs. Our experienced technicians can handle common issues and support most Indian households with reliable doorstep service for popular appliance models and brands."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you offer emergency appliance repair services near me?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we provide emergency appliance repair services in case of urgent breakdowns like fridge failure or AC not cooling. Just call us, and we'll try to send a nearby technician as quickly as possible based on your area and service availability."
+              }
+            },{
+              "@type": "Question",
+              "name": "Which appliance brands do your technicians service?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our appliance technicians repair all major brands such as LG, Samsung, Whirlpool, IFB, Bosch, Godrej, Haier, Voltas, and more. Whether it's a high-end or budget model, we have experts certified to fix issues across most Indian and international appliance brands."
+              }
+            },{
+              "@type": "Question",
+              "name": "Is doorstep appliance repair service available?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our appliance repair service is 100% doorstep-based. The technician visits your home with the required tools and spare parts. You don’t need to carry the appliance anywhere; everything is checked, repaired, and tested at your location for maximum convenience."
+              }
+            },{
+              "@type": "Question",
+              "name": "How do I know if my appliance should be repaired or replaced?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our technician will inspect the appliance and give an honest opinion. If repair is cost-effective and safe, we proceed. If not, we may suggest replacement. Your long-term savings, safety, and convenience always guide our recommendations."
+              }
+            },{
+              "@type": "Question",
+              "name": "Is the inspection or diagnosis free before repair?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer free inspection for most appliance repairs. The technician checks the problem, explains the solution, and gives you a price estimate before starting the repair. This helps you decide confidently without any upfront commitment."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can you repair old or discontinued appliances?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we repair older appliances if spare parts are still available. Our appliance repair technicians are skilled in handling discontinued or vintage models and will let you know if the repair is practical or if replacement makes more sense."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you provide installation services for new appliances?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer professional installation for appliances like air conditioners, geysers, washing machines, and kitchen chimneys. Our technicians ensure proper connections, safe setup, and full testing so the appliance works correctly from the start."
+              }
+            }]
+          })
+        }}
+      />
+      <main className="min-h-screen">
+        <BreadcrumbSchema items={breadcrumbs} />
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white pt-28 pb-20 overflow-hidden">
@@ -148,10 +220,7 @@ export default function ApplianceRepairPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
-              Expert Home Appliance
-              <span className="block bg-gradient-to-r from-white to-red-100 bg-clip-text text-transparent">
-                Repair Services
-              </span>
+              Expert Home Appliance Repair Services
             </h1>
             
             <p className="text-xl lg:text-2xl text-red-100 mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -463,5 +532,6 @@ export default function ApplianceRepairPage() {
             <NestCTA />
       <Footer />
     </main>
+    </>
   )
 }

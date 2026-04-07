@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: 'Trusted & Verified House Help Service in India | EzyHelpers',
   description: "Find safe & verified house help service across India. EzyHelpers connects you with trained maids for daily chores, cleaning, cooking & more.",
   keywords: 'house help service, domestic help, maids, cooks, nannies, drivers, verified helpers, home services India',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/',
+  },
 }
 
 export default function Home() {

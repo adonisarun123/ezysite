@@ -63,8 +63,96 @@ export default function DriversPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "Are EzyHelpers drivers licensed and experienced?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all EzyHelpers drivers have valid Indian driving licences and years of experience. They are experienced in safe driving, know how to handle different vehicles, and are well-versed with local traffic rules and city roads."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can EzyHelpers drivers handle all types of cars?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our drivers are skilled in driving hatchbacks, sedans, SUVs, and luxury cars. We ensure the driver assigned to you is experienced with your specific vehicle type for smooth and safe driving."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I book a driver for outstation travel through EzyHelpers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we provide experienced drivers for outstation and intercity travel. Whether it’s a weekend getaway, a business trip, or a pilgrimage, our drivers ensure a safe, comfortable, and well-planned journey."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you provide drivers for airport pickup and drop-off?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, EzyHelpers offers reliable airport transfer services. Our drivers assist with luggage, manage traffic delays, and ensure on-time arrival or pickup, making airport travel stress-free and smooth."
+              }
+            },{
+              "@type": "Question",
+              "name": "Are EzyHelpers drivers familiar with local roads and traffic?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our drivers know local routes, shortcuts, and traffic conditions well. Their experience helps save travel time and avoid congested areas, especially during peak hours."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do EzyHelpers drivers maintain car hygiene and condition?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our drivers are trained to maintain basic vehicle hygiene. They clean interiors, check fuel and tyre pressure, and keep your car ready for daily use."
+              }
+            },{
+              "@type": "Question",
+              "name": "Are driver services from EzyHelpers suitable for corporate travel?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer professional drivers for business travel and corporate clients. Our drivers are well-groomed and punctual and maintain formal conduct, ideal for executives, meetings, and client pickups."
+              }
+            },{
+              "@type": "Question",
+              "name": "What is the salary of a car driver in India?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The salary of a car driver in India depends on factors like work hours, location, type of vehicle, and whether the role is part-time, full-time, or live-in. At EzyHelpers, we help match you with professional drivers based on your specific travel needs and schedule."
+              }
+            },{
+              "@type": "Question",
+              "name": "What is the difference between a driver and a chauffeur?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A driver primarily focuses on transporting passengers from one location to another. A chauffeur, on the other hand, offers a more premium experience, often including etiquette, grooming standards, vehicle maintenance, and formal client interactions. EzyHelpers provides both types based on your service preferences."
+              }
+            },{
+              "@type": "Question",
+              "name": "How to get a driver in India?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To hire a driver in India, simply contact a reliable service like EzyHelpers. We provide licensed, background-verified drivers for daily commutes, school runs, airport transfers, and outstation trips. You can choose from part-time, full-time, live-in, or on-demand options based on your schedule."
+              }
+            },{
+              "@type": "Question",
+              "name": "What are the duties of a private hire driver?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A private hire driver is responsible for safe and timely transportation, maintaining vehicle cleanliness, route planning, assisting passengers, and ensuring a comfortable ride. EzyHelpers ensures all drivers are trained to handle these tasks professionally for your peace of mind."
+              }
+            }]
+          })
+        }}
+      />
+      <main className="min-h-screen">
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-700 via-gray-600 to-gray-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
@@ -81,7 +169,7 @@ export default function DriversPage() {
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M25 0L35 10 25 20 15 10z M35 10L45 20 35 30 25 20z M15 10L25 20 15 30 5 20z M5 20L15 30 5 40 -5 30z M25 20L35 30 25 40 15 30z M45 20L50 25 45 30 40 25z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
           }}></div>
         </div>
-
+ 
         <div className="container-custom relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -92,12 +180,9 @@ export default function DriversPage() {
                   <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
                   <span className="text-sm font-semibold">Licensed & Verified Drivers</span>
                 </div>
-
+ 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Professional Drivers
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Safe & Reliable Transport
-                  </span>
+                  Professional Drivers – Safe & Reliable Transport
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
@@ -582,5 +667,6 @@ export default function DriversPage() {
             <NestCTA />
       <Footer />
     </main>
+    </>
   )
-} 
+}

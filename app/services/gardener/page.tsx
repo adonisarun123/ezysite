@@ -114,11 +114,83 @@ export default function GardenerPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/services/gardener" />
-      
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "Can I book a gardener for one-time garden cleaning or planting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can hire a gardener for one-time services like garden cleaning, new plant installation, or seasonal garden prep. It’s perfect for those who need help occasionally or want a quick garden refresh before festivals or events."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do your gardeners help with plant selection for Indian weather?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Our gardeners suggest plants based on your region’s climate, sunlight, soil type, and your preferences. Whether you want flowering plants, herbs, or low-maintenance greens, we help you pick the best ones for Indian conditions."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I customise the gardening service based on my space?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Definitely. Whether you want a kitchen garden, flower bed, or peaceful Zen-style layout, we customise garden design, plants, and setup to match your space, lifestyle, and vision, be it balcony, terrace, or lawn."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do your gardening services support organic gardening?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we promote chemical-free gardening using organic manure, composting, natural pest control, and eco-friendly soil enhancers. It’s safe for your family, pets, and the environment."
+              }
+            },{
+              "@type": "Question",
+              "name": "How often do I really need a gardener at home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on your garden size and the season. During active growing months, a weekly or bi-weekly visit helps keep things in shape. In cooler or off-seasons, monthly visits are usually enough. Regular care keeps your plants healthy and your garden looking fresh without becoming overgrown."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you offer lawn mowing and grass cutting services?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our garden maintenance includes lawn mowing, grass trimming, fertilization, weed control, and edging. We help keep your lawn neat, green, and ready for every season."
+              }
+            },{
+              "@type": "Question",
+              "name": "What common garden problems can your gardeners solve?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our expert home gardeners fix issues like plant pests, leaf yellowing, fungal infections, overgrowth, dry soil, and poor drainage. We restore your garden’s health with safe, effective, and long-lasting solutions."
+              }
+            },{
+              "@type": "Question",
+              "name": "How do I take care of my plants between gardener visits?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We provide simple DIY garden care tips like watering schedules, pruning methods, plant feeding, and soil aeration. These help you maintain your garden's health and beauty between our gardener’s visits."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you offer balcony and terrace gardening services? What’s included?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, EzyHelpers offers complete balcony and terrace gardening solutions. Whether you live in an apartment or have limited outdoor space, our gardeners can design and maintain beautiful green areas. Services include soil preparation, planter arrangements, vertical stands, waterproofing suggestions, plant selection (flowers, veggies, or decoratives), and ongoing care. We help you create a lush, functional garden even in the heart of the city."
+              }
+            }]
+          })
+        }}
+      />
+      <main className="min-h-screen">
+        <BreadcrumbSchema items={breadcrumbs} />
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white pt-28 pb-20 overflow-hidden">
@@ -135,10 +207,7 @@ export default function GardenerPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
-              Bring Your Garden to Life
-              <span className="block bg-gradient-to-r from-white to-green-100 bg-clip-text text-transparent">
-                with Expert Care
-              </span>
+              Bring Your Garden to Life with Expert Care
             </h1>
             
             <p className="text-xl lg:text-2xl text-green-100 mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -512,5 +581,6 @@ export default function GardenerPage() {
             <NestCTA />
       <Footer />
     </main>
+    </>
   )
-} 
+}

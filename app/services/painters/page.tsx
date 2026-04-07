@@ -134,11 +134,97 @@ export default function PaintersPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/services/painters" />
-      
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "Do EzyHelpers painters offer a free site inspection before painting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we provide a free site visit. Our painters assess surface conditions, understand your requirements and recommend suitable painting methods and materials, ensuring accurate estimates and the right approach for your home’s painting needs."
+              }
+            },{
+              "@type": "Question",
+              "name": "How much does home painting cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Painting charges depend on area size, paint type, surface preparation, and whether it’s interior or exterior work. We provide competitive, transparent pricing with detailed free estimates after a site visit."
+              }
+            },{
+              "@type": "Question",
+              "name": "What paint brands do you use for home painting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We use trusted brands like Asian Paints, Berger, Nerolac, and Dulux. Based on your budget, surface type, and finish preference, our team will recommend the best paints for long-lasting and beautiful results."
+              }
+            },{
+              "@type": "Question",
+              "name": "Is same-day house painting service available?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Same-day painting may be possible for small tasks like touch-ups or single walls. For full room or house painting, advance booking is recommended to ensure proper preparation and quality workmanship."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can your painters help me choose paint colors and finishes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our painters offer color consultation to help you select shades, finishes, and combinations that match your furniture, lighting, and style. We guide you using swatches, visual tools, and practical advice for the best outcome."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do painters handle wall preparation before painting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. We prepare all surfaces by cleaning, crack-filling, sanding, and priming. Proper surface preparation is crucial for smooth paint application, longer durability, and professional-looking results in Indian home environments."
+              }
+            },{
+              "@type": "Question",
+              "name": "What should I do to prepare my home before painters arrive?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Please move furniture away from walls, take down wall décor, and cover fragile items. Our painters also protect floors and furniture with plastic sheets or covers to ensure cleanliness during the job."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do your painters clean up after completing the work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our painters ensure a full post-painting cleanup. We remove all tools, paint cans, and waste, leaving your home clean, organised, and ready to use immediately after the painting is done."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I hire painters for small jobs like one room or wall touch-ups?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can. We handle all job sizes, from full home painting to quick touch-ups, single rooms, or wall patches. No task is too small for our experienced and professional painters."
+              }
+            },{
+              "@type": "Question",
+              "name": "What’s the best season to get house painting done?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The dry season (typically October to March) is best for painting, as it allows faster drying and a better finish. Avoid the monsoon, as humidity can affect paint adhesion and quality."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do I need to buy paint separately, or is it included in the service?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can choose either. We offer packages with or without paint. Our team can help you choose the right brand and finish, and even procure it for you at market price or with discounts."
+              }
+            }]
+          })
+        }}
+      />
+      <main className="min-h-screen">
+        <BreadcrumbSchema items={breadcrumbs} />
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 text-white pt-28 pb-20 overflow-hidden">
@@ -155,10 +241,7 @@ export default function PaintersPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
-              Transform Your Home with
-              <span className="block bg-gradient-to-r from-white to-purple-100 bg-clip-text text-transparent">
-                Expert Painting
-              </span>
+              Transform Your Home with Expert Painting
             </h1>
             
             <p className="text-xl lg:text-2xl text-purple-100 mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -519,5 +602,6 @@ export default function PaintersPage() {
             <NestCTA />
       <Footer />
     </main>
+    </>
   )
 }

@@ -106,6 +106,114 @@ export default function LiveInMaidsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What services does a live-in maid provide?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A live-in maid stays in your home full-time and works up to 12 hours a day. She focuses on one task only, such as housekeeping, cooking, babysitting (child care), or elderly care. You can choose the type of help your family needs most."
+              }
+            },{
+              "@type": "Question",
+              "name": "Are live-in maids background-verified?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all our live-in maids are background verified. We check Aadhaar, local address (if available), and basic identity. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind."
+              }
+            },{
+              "@type": "Question",
+              "name": "Does a live-in maid handle multiple household tasks?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, each live-in maid is trained for one specific task only, either cleaning, cooking, child care, or elder care. This ensures better quality and focus. Minor extra help may be provided only if both sides agree."
+              }
+            },{
+              "@type": "Question",
+              "name": "How is a live-in maid different from a full-time or part-time maid?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A live-in maid stays at your home 24x7 and works a structured 12-hour shift every day. In contrast, full-time and part-time maids come from outside and leave after completing their 8–10 hour or 2–6 hour shifts."
+              }
+            },{
+              "@type": "Question",
+              "name": "What is the difference between a live-in maid and a full-time maid?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A live-in maid lives in your home and offers full-day support, while a full-time maid comes daily but does not stay overnight. Live-in maids offer better continuity and are ideal for families who need a reliable, round-the-clock presence."
+              }
+            },{
+              "@type": "Question",
+              "name": "What are the working hours for a live-in maid?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Live-in maids work for 12 hours a day with a fixed schedule. They stay 24 hours at your home but are not expected to work all day or during the night."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do I need to provide accommodation for the live-in maid?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. You’ll need to provide a room (private or shared) with basic facilities like a bed, mattress, or cot, and bathroom access. A comfortable space helps the maid feel at home and do her job better."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I hire a live-in maid just for cooking or babysitting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. You can hire a live-in maid specifically for cooking, housekeeping, child care, or elderly care. Each maid is trained in only one area and is placed based on your exact household needs."
+              }
+            },{
+              "@type": "Question",
+              "name": "How fast can EzyHelpers place a live-in maid in my home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In most cases, we can place a live-in maid within 24 to 72 hours after understanding your needs. You’ll get profiles of trained and background-verified maids to choose from quickly."
+              }
+            },{
+              "@type": "Question",
+              "name": "What qualifications or training do EzyHelpers' live-in maids have?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our live-in maids are trained in their specific roles, whether it’s hygiene and cleaning, cooking meals, child safety and development, or senior care. We also verify their previous work experience and ensure they’re ready for real-life tasks."
+              }
+            },{
+              "@type": "Question",
+              "name": "How many off days do live-in maids get?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every live-in maid is entitled to two days off per month. These can be decided in advance by mutual agreement. Respecting off days helps the maid stay motivated and refreshed."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I interview the live-in maid before hiring?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We arrange interviews with 2–3 shortlisted maids via phone or video call. You can speak to them, ask questions, and choose the one that feels right for your home."
+              }
+            },{
+              "@type": "Question",
+              "name": "Is the pricing for live-in maid services fixed?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pricing is flexible and depends on the role (cooking, cleaning, etc.), the maid’s experience, and your location. We offer transparent rates without hidden charges, and you pay directly to the helper. Contact us for a detailed quote."
+              }
+            },{
+              "@type": "Question",
+              "name": "Is there a trial period for live-in maids?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer a trial period if you’d like to assess the maid before finalising. However, many families skip the trial once they’re satisfied after the interview. We leave the choice up to you."
+              }
+            }]
+          })
+        }}
+      />
       <main className="min-h-screen">
         <Navbar />
       

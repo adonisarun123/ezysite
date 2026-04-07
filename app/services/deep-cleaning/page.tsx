@@ -20,9 +20,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Full House Deep Cleaning in Bareilly – Book Experts Now',
-  description: 'Get home deep cleaning in Bareilly for kitchen, bathroom, and entire house sanitization. Experienced cleaners ensure spotless, hygienic results.',
-  keywords: 'deep cleaning bareilly, home cleaning bareilly, bathroom cleaning bareilly, kitchen cleaning bareilly',
+  title: 'House Cleaning Services | Deep Cleaning Experts | EzyHelpers',
+  description: 'Professional house cleaning services including deep cleaning, sanitization & maintenance. Expert cleaners available across major cities',
+  keywords: 'deep cleaning, home cleaning, bathroom cleaning, kitchen cleaning, professional house cleaning',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/deep-cleaning'
+  }
 }
 
 export default function DeepCleaningPage() {
@@ -135,11 +138,104 @@ export default function DeepCleaningPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/services/deep-cleaning" />
-      
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "Do I need to stay home during deep cleaning?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, it’s not mandatory. You can attend the initial walkthrough, explain your cleaning needs, and then step out. Many clients hand over keys and return to a sparkling clean home. Just keep valuables safe and accessible areas clear."
+              }
+            },{
+              "@type": "Question",
+              "name": "Is deep cleaning different from regular house cleaning?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, deep cleaning is more detailed. It covers hard-to-reach spots like behind appliances, inside cabinets, and under furniture. It’s ideal for moving in after renovations or festive cleaning before Diwali or weddings."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do your home cleaners bring their own cleaning supplies and equipment?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our team comes with all cleaning materials, including vacuum cleaners, scrubbers, microfibre cloths, and safe disinfectants. You don’t need to arrange anything for the service."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I book deep cleaning for today or urgently?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Same-day cleaning is available based on location and team availability. For larger homes or post-renovation jobs, booking 24–48 hours in advance is recommended to ensure slot availability."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you offer post-renovation or post-painting cleaning?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we specialise in post-renovation and post-paint cleaning. Our team removes paint splatters, cement dust, and debris, making your home ready for use after construction or wall painting."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I book only kitchen or bathroom deep cleaning?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer room-specific deep cleaning. You can book just a kitchen, bathroom, or sofa cleaning if required. These services are ideal for maintenance between full house cleans."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you provide move-in or move-out cleaning for tenants and homeowners?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our move-in/move-out cleaning includes floor scrubbing, wall stain removal, and appliance interiors, perfect before shifting into a new house or handing it back to the landlord."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can you clean appliances and furniture, too?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we clean refrigerators, microwaves, chimneys, sofas, and mattresses. We use fabric-safe shampoos and steam tools to remove stains, grease, and odor from upholstery and appliances."
+              }
+            },{
+              "@type": "Question",
+              "name": "How is the deep cleaning price calculated?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Deep cleaning charges depend on various factors like the size of your home (1BHK, 2BHK, etc.), total carpet area, number of bathrooms, and the type of cleaning required. Prices may vary based on add-ons such as kitchen degreasing, sofa shampooing, mattress cleaning, wall or ceiling dust removal, and post-renovation cleanup. We offer a transparent quote after understanding your specific needs, no hidden charges, no surprises."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do your cleaners help with decluttering and organizing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our cleaners do light tidying and basic organization as part of the deep cleaning process, like arranging items, clearing surfaces, and putting things back in place. For full home decluttering or expert-level organizing (like wardrobes, kitchens, or storage areas), we can connect you with our trusted professional organizing partners."
+              }
+            },{
+              "@type": "Question",
+              "name": "What is the best time to book a home deep cleaning service?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The ideal time to schedule deep cleaning is before major festivals, after renovation or painting work, when shifting homes, or during seasonal changes like pre-monsoon or post-winter. Regular deep cleaning every 3 to 6 months also helps maintain hygiene, prevent dust buildup, and keep your home fresh and allergy-free."
+              }
+            },{
+              "@type": "Question",
+              "name": "How often should I get my home deep cleaned?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For best results, we recommend deep cleaning every 3 to 6 months. Homes with children, pets, or high footfall may benefit from more frequent cleaning to maintain hygiene and reduce dust and allergens."
+              }
+            }]
+          })
+        }}
+      />
+      <main className="min-h-screen">
+        <BreadcrumbSchema items={breadcrumbs} />
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-cyan-600 via-cyan-700 to-cyan-800 text-white pt-28 pb-20 overflow-hidden">
@@ -156,10 +252,7 @@ export default function DeepCleaningPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
-              Professional House Cleaning
-              <span className="block bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent">
-                for a Healthier Home
-              </span>
+              Professional House Cleaning for a Healthier Home
             </h1>
             
             <p className="text-xl lg:text-2xl text-cyan-100 mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -560,5 +653,6 @@ export default function DeepCleaningPage() {
             <NestCTA />
       <Footer />
     </main>
+    </>
   )
 }

@@ -123,9 +123,97 @@ export default function CarpentersPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <BreadcrumbSchema items={breadcrumbs} />
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What types of carpenter services does EzyHelpers provide?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "EzyHelpers offers a full range of carpenter services, including furniture repair, modular kitchen installation, wardrobe fitting, door/window repair, wood polishing, and custom woodwork for homes and offices. Whether it’s new furniture or fixing old items, our expert carpenters are experienced in all kinds of residential and commercial projects."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I book a carpenter for same-day service?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, based on availability, you can get same-day carpenter service in many cities across India. Whether it’s urgent furniture repair, door fixing, or installation, we aim to connect you with a reliable local carpenter quickly."
+              }
+            },{
+              "@type": "Question",
+              "name": "What is the cost of hiring a carpenter?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Carpentry charges depend on work type, material, and labor. EzyHelpers offers free site visits and provides a detailed quote after inspection. We ensure transparent pricing with no hidden charges, whether it’s a small repair or a full furniture project."
+              }
+            },{
+              "@type": "Question",
+              "name": "How quickly can a carpenter reach my home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We usually assign a local carpenter within 24 hours. In many cases, we provide same-day or next-day carpenter visits, especially for urgent repair work. Timely service is our top priority."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do your carpenters work with all types of wood?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our expert carpenters are experienced to work with teak, plywood, MDF, engineered wood, and other materials. We also help you choose the right wood for durability, style, and budget, based on the Indian climate and usage."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you offer carpenter services for modular furniture and kitchens?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. We provide expert carpentry for modular kitchens, wardrobes, TV units, and space-saving furniture. Our carpenters follow modern designs and install everything as per your home layout."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you offer emergency carpenter services near me?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer emergency carpentry services in major Indian cities. For broken furniture, jammed doors, or urgent safety issues, we try to send a carpenter to your location as quickly as possible."
+              }
+            },{
+              "@type": "Question",
+              "name": "Will the carpenter bring tools and materials?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our carpenters come prepared with essential tools. If specific materials are needed, they’ll inform you in advance or help procure them at the best rates locally."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I schedule the carpenter at my convenient time?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can choose a time slot that suits your availability. We offer flexible bookings so our carpenter arrives at your home or office as per your schedule."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you offer furniture assembly and dismantling?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we provide carpenter services for furniture assembly, dismantling, and shifting support. Whether it’s a new bed, table, or wardrobe, our carpenters will install it securely at your home."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I hire a carpenter for small repair work only?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Of course. You can book us for minor repairs like loose hinges, broken legs, creaking doors, or damaged handles. No job is too small; we fix everything with care."
+              }
+            }]
+          })
+        }}
+      />
+      <main className="min-h-screen">
+        <BreadcrumbSchema items={breadcrumbs} />
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-yellow-600 via-yellow-700 to-yellow-800 text-white pt-28 pb-20 overflow-hidden">
@@ -142,10 +230,7 @@ export default function CarpentersPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
-              Find the Best Carpenter
-              <span className="block bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
-                Services
-              </span>
+              Find the Best Carpenter Services
             </h1>
             
             <p className="text-xl lg:text-2xl text-yellow-100 mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -421,7 +506,6 @@ export default function CarpentersPage() {
           </div>
 
           {/* SEO Schema for FAQs */}
-          <FAQSchema faqs={faqs} />
 
           <div className="max-w-4xl mx-auto">
             <FAQAccordion faqs={faqs} />
@@ -432,5 +516,6 @@ export default function CarpentersPage() {
             <NestCTA />
       <Footer />
     </main>
+    </>
   )
-} 
+}

@@ -25,7 +25,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
-  description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call 080-31411776 for instant help.',
+  description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
   keywords: 'on-demand maid, emergency maid, same day maid, urgent house help, instant booking, hourly pricing',
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/on-demand-helpers'
@@ -140,6 +140,72 @@ export default function OnDemandHelpersPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What is an on-demand maid service?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An on-demand maid service helps you get quick household support when you need it most. EzyHelpers offers same-day emergency maids for cleaning, cooking, babysitting, and care. It is ideal for unexpected situations and short-term help. You can book it for just a few hours without any long-term contract."
+              }
+            },{
+              "@type": "Question",
+              "name": "How quickly can I get an on-demand maid?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "EzyHelpers can send an on-demand maid within a few hours of your request. We offer same-day service across most locations. For faster response, it is best to book early, especially during weekends or holidays."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do I need to pay upfront, or can I pay after the emergency service is completed?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can pay after the service is completed. We accept multiple payment methods, including cash, UPI, and card. The total charge is confirmed before the service begins, and payment is only required once you're satisfied with the help provided."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I request a female helper for emergency babysitting or elderly care?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can request a female helper. We understand that families may prefer female support for services like babysitting or elder care. Just let us know your preference while booking. We try our best to match it, depending on availability."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I cancel my emergency booking if my situation changes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can cancel your emergency booking. However, since these services are fast and same-day, some charges may apply if the helper is already on the way. For best results, inform our support team as early as possible."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I hire an on-demand cook for same-day meals?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer on-demand cooks for same-day meal preparation. They can help with cooking meals for your family, small parties, or guests. They also help with groceries, menu planning, and kitchen cleaning. You can request this service for a few hours or for a full day."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I choose the language my emergency helper speaks?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can mention your preferred language when booking. Most of our helpers speak both local languages and basic English. We will try to match you with someone who can communicate clearly with your family."
+              }
+            },{
+              "@type": "Question",
+              "name": "How is emergency service different from regular part-time maid service?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Emergency maid services are for urgent, same-day help. You can book them instantly for short periods without contracts. Part-time services are scheduled regularly with fixed timings and long-term arrangements. Emergency services are quicker but may cost slightly more per hour."
+              }
+            }]
+          })
+        }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -171,10 +237,7 @@ export default function OnDemandHelpersPage() {
                   </div>
 
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                    On-Demand Maid Services
-                    <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                      Instant Help When You Need It Most
-                    </span>
+                    On-Demand Maid Services – Instant Help When You Need It Most
                   </h1>
 
                   <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">

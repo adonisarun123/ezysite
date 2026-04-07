@@ -113,6 +113,86 @@ export default function PartTimeMaidsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What is a part-time maid service?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A part-time maid service means you get a trained house helper who comes to your home for a few hours each day. They handle things like cleaning, cooking, or babysitting, depending on what you need. Unlike a full-time or live-in maid, a part-time maid works for a fixed number of hours and goes home after their shift, giving you the support you need without a long-term stay."
+              }
+            },{
+              "@type": "Question",
+              "name": "How many hours do part-time maids work per day?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Part-time maids usually work between 2 to 6 hours a day. The exact number of hours depends on your requirements and the tasks you want them to do. You can set a schedule that works for you, daily, alternate days, or even just a few days a week."
+              }
+            },{
+              "@type": "Question",
+              "name": "What services do part-time maids provide?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Part-time maids offer different types of help based on your needs. We provide:\nHousekeeping: Sweeping, mopping, dusting, kitchen and bathroom cleaning, laundry, and room organisation\nCooking: Meal planning, food prep, cooking, and kitchen cleaning\nBabysitting: Feeding, child supervision, homework help, and school pickup or drop-off\nElderly care: Bathing, dressing, medication reminders, and emotional support\nSpecific tasks: Like laundry, dishwashing, bathroom cleaning, or organizing storage areas\nSo, whether you need help every day or just with a few chores, a part-time house maid can be the right fit."
+              }
+            },{
+              "@type": "Question",
+              "name": "How much does a part-time maid cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The cost of a part-time maid depends on how many hours you need help and the type of service you choose. EzyHelpers offers affordable hourly rates with no hidden charges. You can choose from daily, weekly, or customized plans based on your home’s needs."
+              }
+            },{
+              "@type": "Question",
+              "name": "Are part-time maids’ backgrounds verified?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, every part-time maid provided by EzyHelpers is 100 percent background verified. We check their ID, past experience, and references and also make sure they’re trained in home hygiene. Your safety and trust come first."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I schedule part-time maid visits weekly instead of daily?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. You can choose how often you want a part-time maid to come. Some customers need daily visits, while others prefer 2 or 3 times a week. The service is flexible; you can set a routine that suits your home and budget."
+              }
+            },{
+              "@type": "Question",
+              "name": "What happens if my part-time maid does not show up?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If your assigned part-time maid is absent or unavailable, we’ll arrange a replacement within 24 hours. EzyHelpers takes punctuality seriously, and we make sure your home tasks don’t get delayed."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do part-time maids work on Sundays?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most part-time maids take one weekly day off, and that’s usually Sunday. But if you need service on Sundays, we can try to match you with someone available. It’s best to confirm this during the booking."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I hire a part-time maid for specific household tasks only?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, of course. You can hire a part-time maid for just one task like bathroom cleaning, ironing, or dishwashing. These are called specific-task services and are great if you don’t need help with everything, just one or two chores."
+              }
+            },{
+              "@type": "Question",
+              "name": "Are duties of part-time maids fixed in advance?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all tasks are discussed and agreed upon before the maid starts work. This helps avoid confusion later. For example, if you hire a maid for cooking, she won’t be expected to also do laundry unless that was decided upfront."
+              }
+            }]
+          })
+        }}
+      />
       <main className="min-h-screen">
         <Navbar />
       

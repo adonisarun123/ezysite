@@ -60,8 +60,103 @@ export default function CooksPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "Are the home cooks from EzyHelpers background-verified?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all our home cooks are fully background-verified. We check the Aadhaar card and address proof. Many are trained under Skill India or DWSSC programs, ensuring hygienic, reliable, and professional cook services for your home."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I hire a home cook who follows a specific diet or food plan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Our home cooks are trained to prepare diabetic meals, Jain food, low-salt diets, and allergy-safe dishes. Just share your dietary restrictions or health preferences, and we’ll assign a cook who understands your meal plan and follows it with care."
+              }
+            },{
+              "@type": "Question",
+              "name": "Is it possible to book a cook for parties or special occasions?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can hire a personal chef through EzyHelpers for family functions, birthdays, or festive gatherings. Our on-demand cooks can prepare large meals, traditional dishes, and guest-friendly menus, giving you a stress-free, home-style food experience during special events."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do your cooks follow proper kitchen hygiene and cleanliness?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, kitchen hygiene is a top priority at EzyHelpers. Our cooks maintain clean cooking areas, wash hands often, use safe food storage methods, and follow proper kitchen hygiene practices while ensuring every meal is safe, healthy, and prepared in a clean environment."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can your cooks prepare baby food and meals for senior citizens?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our home cooks are trained to prepare soft, nutritious meals for babies and elderly family members. They understand age-specific needs, low-spice requirements, and gentle textures, ensuring healthy, suitable meals for both infants and senior citizens in your home."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I get a home cook who can prepare both vegetarian and non-vegetarian dishes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer home cooks comfortable with both veg and non-veg preparations. Whether you prefer South Indian, North Indian, or multi-cuisine options, we’ll match you with a cook who fits your food habits and household preferences."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I choose cooking hours based on my daily routine?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our cooking services are fully flexible. You can hire a cook for morning breakfast, afternoon lunch, or evening dinner based on your routine. We match your preferred time slot with a cook who’s available and ready to serve at your convenience."
+              }
+            },{
+              "@type": "Question",
+              "name": "Is there a trial period before hiring a full-time cook?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, EzyHelpers offers a trial period so you can test the cook’s food quality, hygiene, and compatibility. If you’re satisfied, you can continue. If not, we’ll provide a replacement until you find a cook who suits your family’s needs."
+              }
+            },{
+              "@type": "Question",
+              "name": "How are EzyHelpers cooks different from local cooks?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "EzyHelpers cooks are trained, verified, and reliable. Unlike local cooks, they follow hygiene protocols, handle various cuisines, and come with customer support. You get consistent quality, safety, and a hassle-free home cooking experience every day."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I request a male home cook instead of a female one?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, based on your cooking preferences, cuisine type, and comfort, we offer both male and female cooks. Whether you need a strong cook for bulk meals or someone experienced in traditional recipes, we’ll match the right person to your home."
+              }
+            },{
+              "@type": "Question",
+              "name": "What is the salary of a home cook in India?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A home cook’s salary in India varies based on experience, location, type of meals prepared, and whether the job is live-in or daily. EzyHelpers connects families with skilled home cooks who are trained to prepare hygienic, tasty meals and adapt to specific dietary requirements and regional tastes."
+              }
+            },{
+              "@type": "Question",
+              "name": "Is it good to hire a cook at home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, hiring a home cook offers convenience, consistent meal quality, and more family time. A trained cook can handle your daily meals, follow your preferred style of cooking, and reduce the stress of meal prep. EzyHelpers makes it easy to find reliable domestic cooks who fit your lifestyle and food habits."
+              }
+            }]
+          })
+        }}
+      />
+      <main className="min-h-screen">
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-orange-700 via-orange-600 to-orange-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
@@ -78,7 +173,7 @@ export default function CooksPage() {
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='90' height='90' viewBox='0 0 90 90' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M45 0C20.147 0 0 20.147 0 45s20.147 45 45 45 45-20.147 45-45S69.853 0 45 0zm0 80C25.118 80 10 64.882 10 45S25.118 10 45 10s35 15.118 35 35-15.118 35-35 35z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
           }}></div>
         </div>
-
+ 
         <div className="container-custom relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -89,12 +184,9 @@ export default function CooksPage() {
                   <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
                   <span className="text-sm font-semibold">Professional Cooks</span>
                 </div>
-
+ 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Professional Cooks
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Delicious Meals Daily
-                  </span>
+                  Professional Cooks – Delicious Meals Daily
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
@@ -588,5 +680,6 @@ export default function CooksPage() {
             <NestCTA />
       <Footer />
     </main>
+    </>
   )
 }

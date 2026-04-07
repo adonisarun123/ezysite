@@ -114,7 +114,66 @@ export default function DogPetSittersPage() {
 
     return (
         <main className="min-h-screen font-sans">
-            <Navbar />
+            <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [{
+                        "@type": "Question",
+                        "name": "What is the difference between a dog sitter and a dog walker?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A dog walker mainly takes your dog for walks. A dog sitter provides full care, including feeding, playtime, medicines, and staying at home if needed."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Is dog sitting suitable for puppies?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Dog sitters help with puppy feeding, potty timing, play, and basic training routines."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Can I book a dog sitter for a few hours?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Hourly dog sitting is available for short errands or events."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "What if my dog doesn’t like strangers?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No problem. Sitters introduce themselves slowly, let your dog get used to their voice and presence, and build trust before starting regular care."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Can Dog sitters help with grooming?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Home dog sitters can help with light grooming like brushing and paw cleaning."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Are sitters available in my city?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Our dog sitters are available in major Indian cities, depending on caregiver availability."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "How long will it take for my dog to bond with the sitter?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Most dogs take a few days to a week to get comfortable. Gentle introductions, play, and routine care help your dog feel secure faster."
+                        }
+                    }]
+                })
+            }}
+        />
+        <Navbar />
 
             <Breadcrumb
                 items={[

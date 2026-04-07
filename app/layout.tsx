@@ -40,7 +40,7 @@ const LanguageSelectorPopup = dynamic(() => import('../components/LanguageSelect
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ezyhelpers.com'),
+  metadataBase: new URL('https://www.ezyhelpers.com'),
   title: 'Trusted House Help Service | EzyHelpers',
   description: "India's #1 house help service platform. Get verified maids, cooks, nannies & drivers in 24-72hrs. 10,000+ trusted families.",
   keywords: ['house help service', 'domestic help', 'maids', 'cooks', 'nannies', 'drivers', 'verified helpers', 'home services India'],
@@ -64,10 +64,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com',
+    canonical: 'https://www.ezyhelpers.com/',
     languages: {
-      'en-US': 'https://ezyhelpers.com',
-      'hi-IN': 'https://ezyhelpers.com/hi'
+      'en-US': 'https://www.ezyhelpers.com/',
+      'hi-IN': 'https://www.ezyhelpers.com/hi'
     }
   },
   openGraph: {
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     siteName: 'EzyHelpers',
-    url: 'https://ezyhelpers.com',
+    url: 'https://www.ezyhelpers.com',
     images: [
       {
         url: '/og-image.jpg',
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     creator: '@ezyhelpers',
     images: [
       {
-        url: 'https://ezyhelpers.com/ezyhelper_logo_new.png',
+        url: 'https://www.ezyhelpers.com/ezyhelper_logo_new.png',
         width: 1200,
         height: 630,
         alt: 'EzyHelpers - Home Services'
@@ -412,8 +412,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "EzyHelpers",
-              "url": "https://ezyhelpers.com",
-              "logo": "https://ezyhelpers.com/ezyhelper_logo_new.png",
+              "url": "https://www.ezyhelpers.com",
+              "logo": "https://www.ezyhelpers.com/ezyhelper_logo_new.png",
               "sameAs": [
                 "https://www.facebook.com/ezyhelpers",
                 "https://twitter.com/ezyhelpers",
@@ -435,10 +435,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "url": "https://ezyhelpers.com",
+              "url": "https://www.ezyhelpers.com",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://ezyhelpers.com/search?q={search_term_string}",
+                "target": "https://www.ezyhelpers.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             })
