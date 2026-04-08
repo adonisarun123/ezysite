@@ -1,0 +1,38 @@
+# EzyHelpers
+
+> Trusted and verified house help service in India. We connect families with background-checked domestic helpers including maids, nannies, cooks, drivers, elderly caregivers, and more.
+
+## About
+EzyHelpers is India's trusted platform for hiring verified domestic helpers. We serve cities including Bangalore and Bareilly, offering full-time maids, part-time maids, live-in maids, nannies, babysitters, cooks, drivers, elderly care, gardeners, and various home services.
+
+## Services
+- Full-Time Maids
+- Part-Time Maids
+- Live-In Maids
+- Nanny & Babysitter
+- Cooks
+- Drivers
+- Elderly Care
+- On-Demand Helpers
+- Home Deep Cleaning
+- Appliance Repair
+- Pest Control
+- House Shifting
+
+## Cities Served
+- Bangalore
+- Bareilly
+
+## Contact
+- Website: https://www.ezyhelpers.com
+- Phone: Available on website
+
+## Links
+- Home: https://www.ezyhelpers.com
+- Services: https://www.ezyhelpers.com/services
+- Careers: https://www.ezyhelpers.com/careers
+- About: https://www.ezyhelpers.com/about
+- Contact: https://www.ezyhelpers.com/contact
+- How It Works: https://www.ezyhelpers.com/how-it-works
+- FAQs: https://www.ezyhelpers.com/faqs
+- Blog: https://www.ezyhelpers.com/blog

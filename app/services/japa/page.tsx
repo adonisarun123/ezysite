@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Newborn Babycare in Bareilly – Trained Japa Maids',
     description: 'Looking for newborn babycare in Bareilly? Hire trained Japa maids for postnatal care, baby feeding, massage, and support—safe, gentle, and experienced help.',
-    url: 'https://ezyhelpers.com/services/japa',
+    url: 'https://www.ezyhelpers.com/services/japa',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/services/japa'
+    canonical: 'https://www.ezyhelpers.com/services/japa'
   }
 }
 

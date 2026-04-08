@@ -477,7 +477,7 @@ Organised platforms ensure:
 ## Conclusion
 Part-time maid services are a practical, affordable, and trustworthy solution for diverse Indian families. By debunking myths, families can gain cleaner homes and greater peace of mind.
 
-Discover the benefits on EzyHelpers’ Live-In Maids Service page (https://ezyhelpers.com/live-in-maid-bangalore/).`;
+Discover the benefits on EzyHelpers’ Live-In Maids Service page (https://www.ezyhelpers.com/cities/bangalore/live-in-maid).`;
 
 const domesticHelpEtiquetteContent = `# Domestic Help Etiquette: Building a Great Working Relationship
 

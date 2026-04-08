@@ -477,7 +477,7 @@ export default function HelperRegistrationPage() {
                 />
               </div>
               <div className="text-white">
-                <h1 className="text-2xl font-bold">EzyHelpers</h1>
+                <span className="text-2xl font-bold">EzyHelpers</span>
                 <p className="text-blue-100 text-sm">Trusted Home Help Network</p>
               </div>
             </div>

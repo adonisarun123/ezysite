@@ -5,15 +5,16 @@ import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 
 interface PageProps {
-  params: {
+  params: Promise<{ 
     city: string
-    service: string
-  }
+    service: string 
+  }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const cityName = params.city.charAt(0).toUpperCase() + params.city.slice(1)
-  const serviceName = params.service
+  const { city, service } = await params;
+  const cityName = city.charAt(0).toUpperCase() + city.slice(1)
+  const serviceName = service
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
@@ -21,24 +22,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${serviceName} in ${cityName} | Verified Help | EzyHelpers`,
     description: `Get verified ${serviceName.toLowerCase()} services in ${cityName}. Professional, background-checked staff for your home needs. Book trusted help today!`,
-    keywords: `${serviceName.toLowerCase()} ${cityName}, ${params.service} services ${cityName}, verified ${params.service} ${cityName}, domestic help ${cityName}`,
+    keywords: `${serviceName.toLowerCase()} ${cityName}, ${service} services ${cityName}, verified ${service} ${cityName}, domestic help ${cityName}`,
     openGraph: {
       title: `${serviceName} Services in ${cityName} - EzyHelpers`,
       description: `Professional ${serviceName.toLowerCase()} services in ${cityName}. Verified staff, competitive rates, and reliable service guaranteed.`,
-      url: `https://ezyhelpers.com/cities/${params.city}/${params.service}`,
+      url: `https://www.ezyhelpers.com/cities/${city}/${service}`,
       type: 'website',
       siteName: 'EzyHelpers',
       locale: 'en_IN',
     },
     alternates: {
-      canonical: `https://ezyhelpers.com/cities/${params.city}/${params.service}`
+      canonical: `https://www.ezyhelpers.com/cities/${city}/${service}`
     }
   }
 }
 
-export default function CityServicePage({ params }: PageProps) {
-  const cityName = params.city.charAt(0).toUpperCase() + params.city.slice(1)
-  const serviceName = params.service
+export default async function CityServicePage({ params }: PageProps) {
+  const { city, service } = await params;
+  const cityName = city.charAt(0).toUpperCase() + city.slice(1)
+  const serviceName = service
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')

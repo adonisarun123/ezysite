@@ -159,7 +159,7 @@ export default function ACRepairPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/book-service" className="group bg-white text-blue-800 hover:bg-blue-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
+              <Link href="/book-now" className="group bg-white text-blue-800 hover:bg-blue-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
                 <span className="flex items-center justify-center">
                   Book AC Repair Now
                   <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -290,7 +290,7 @@ export default function ACRepairPage() {
             Fix your AC issues quickly with EzyHelpers. Stay cool and worry-free during Bareilly's hot summer.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/book-service" className="inline-flex items-center bg-white text-blue-600 hover:bg-gray-100 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
+            <Link href="/book-now" className="inline-flex items-center bg-white text-blue-600 hover:bg-gray-100 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
               Book AC Repair Now
               <ArrowRightIcon className="h-5 w-5 ml-2" />
             </Link>

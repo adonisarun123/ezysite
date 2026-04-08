@@ -39,10 +39,10 @@ export const metadata: Metadata = {
 
 export default function BangaloreElderlyCarePage() {
   const breadcrumbs = [
-    { name: 'Home', url: 'https://ezyhelpers.com' },
-    { name: 'Cities', url: 'https://ezyhelpers.com/cities' },
-    { name: 'Bangalore', url: 'https://ezyhelpers.com/cities/bangalore' },
-    { name: 'Elderly Care', url: 'https://ezyhelpers.com/cities/bangalore/elderly-care' }
+    { name: 'Home', url: 'https://www.ezyhelpers.com' },
+    { name: 'Services', url: 'https://www.ezyhelpers.com/services' },
+    { name: 'Bangalore', url: 'https://www.ezyhelpers.com/cities/bangalore' },
+    { name: 'Elderly Care', url: 'https://www.ezyhelpers.com/cities/bangalore/elderly-care' }
   ]
 
   const whyNeedCare = [
@@ -208,7 +208,7 @@ export default function BangaloreElderlyCarePage() {
       <main className="min-h-screen">
         {/* Schema */}
         <BreadcrumbSchema items={breadcrumbs} />
-        <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/cities/bangalore/elderly-care" />
+        <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/cities/bangalore/elderly-care" />
         <LocalBusinessSchema {...localBusinessProps} />
 
         <Navbar />

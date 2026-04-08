@@ -211,10 +211,7 @@ export default function ContactPageClient() {
             </div>
             
             <h1 className="text-4xl md:text-6xl text-white font-bold mb-6 leading-tight">
-              Get in Touch with
-              <span className="block bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
-                EzyHelpers
-              </span>
+              Contact EzyHelpers for Home Help
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">

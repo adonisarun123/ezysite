@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import {
   Bars3Icon,
   XMarkIcon,
@@ -49,6 +50,7 @@ const navigation: NavigationItem[] = [
     hasDropdown: true,
     dropdownItems: [
       { name: 'About Us', href: '/about' },
+      { name: 'Careers', href: '/careers' },
       { name: 'Executive Summary', href: '/executive-summary' },
     ]
   },
@@ -60,6 +62,15 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const { isUrgencyVisible } = useUrgency()
+  const pathname = usePathname()
+
+  // Returns true if this nav item's href matches the current path
+  const isActive = (item: NavigationItem): boolean => {
+    if (item.href === '/') return pathname === '/'
+    // For dropdown parents (Services -> /services, About -> /about)
+    // highlight if the current path starts with the item's href prefix
+    return pathname === item.href || pathname.startsWith(item.href + '/')
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,7 +134,11 @@ export default function Navbar() {
                       >
                         <Link
                           href={item.href}
-                          className="flex items-center gap-1 text-[15px] font-medium text-gray-700 hover:text-primary-600 transition-colors duration-200 outline-none"
+                          className={`flex items-center gap-1 text-[15px] font-medium transition-colors duration-200 outline-none ${
+                            isActive(item)
+                              ? 'text-primary-600 font-semibold border-b-2 border-primary-600 pb-0.5'
+                              : 'text-gray-700 hover:text-primary-600'
+                          }`}
                         >
                           {item.name}
                           <ChevronDownIcon
@@ -151,7 +166,11 @@ export default function Navbar() {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="flex items-center gap-1.5 text-[15px] font-medium text-gray-700 hover:text-primary-600 transition-colors duration-200"
+                        className={`flex items-center gap-1.5 text-[15px] font-medium transition-colors duration-200 ${
+                          isActive(item)
+                            ? 'text-primary-600 font-semibold border-b-2 border-primary-600 pb-0.5'
+                            : 'text-gray-700 hover:text-primary-600'
+                        }`}
                       >
                         {/* Only show icon if it exists AND it's not the Home item (to avoid the 3 lines on desktop) */}
                         {item.icon && item.name !== 'Home' && <item.icon className="h-5 w-5 text-gray-500" />}
@@ -237,7 +256,11 @@ export default function Navbar() {
                       <div key={item.name} className="space-y-1">
                         <Link
                           href={item.href}
-                          className="flex items-center justify-between -mx-3 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                          className={`flex items-center justify-between -mx-3 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 ${
+                            isActive(item)
+                              ? 'text-primary-600 bg-primary-50'
+                              : 'text-gray-900 hover:bg-gray-50'
+                          }`}
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {item.name}
@@ -259,7 +282,11 @@ export default function Navbar() {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="group -mx-3 flex items-center gap-x-3 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        className={`group -mx-3 flex items-center gap-x-3 rounded-lg px-3 py-2.5 text-base font-semibold leading-7 ${
+                          isActive(item)
+                            ? 'text-primary-600 bg-primary-50'
+                            : 'text-gray-900 hover:bg-gray-50'
+                        }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.icon && <item.icon className="h-5 w-5 text-gray-400 group-hover:text-primary-600" aria-hidden="true" />}

@@ -8,52 +8,18 @@ interface FAQSchemaProps {
   aboutPage?: string
 }
 
-export default function FAQSchema({ faqs, aboutPage }: FAQSchemaProps) {
+export default function FAQSchema({ faqs, aboutPage: _aboutPage }: FAQSchemaProps) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    "mainEntity": faqs.map((faq) => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
         "text": faq.answer,
-        "author": {
-          "@type": "Organization",
-          "name": "EzyHelpers"
-        },
-        "dateCreated": "2024-01-01",
-        "upvoteCount": 0,
-        "url": aboutPage || "https://ezyhelpers.com"
       },
-      "author": {
-        "@type": "Organization", 
-        "name": "EzyHelpers"
-      },
-      "dateCreated": "2024-01-01",
-      "upvoteCount": 0
     })),
-    "about": {
-      "@type": "Thing",
-      "name": "Domestic Help Services",
-      "description": "Professional domestic help and home care services"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "EzyHelpers",
-      "url": "https://ezyhelpers.com"
-    },
-    "publisher": {
-      "@type": "Organization", 
-      "name": "EzyHelpers",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://ezyhelpers.com/ezyhelper_logo_new.png"
-      }
-    },
-    "datePublished": "2024-01-01",
-    "dateModified": "2024-01-01",
-    "inLanguage": "en-IN"
   }
 
   return (

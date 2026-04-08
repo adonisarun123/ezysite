@@ -40,6 +40,7 @@ const footerLinks = {
   ],
   company: [
     { name: 'About Us', href: '/about' },
+    { name: 'Careers', href: '/careers' },
     { name: 'How It Works', href: '/how-it-works' },
     { name: 'For Helpers', href: '/for-helpers' },
     { name: 'Helper Registration', href: '/helper-registration' },
@@ -285,7 +286,7 @@ export default function Footer() {
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
-              <p>© 2025 EzyHelpers. All rights reserved.</p>
+              <p>© 2026 EzyHelpers. All rights reserved.</p>
               <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-center">
                 <span>Registered with DWSSC & Skill India</span>
                 <span className="hidden sm:inline">•</span>

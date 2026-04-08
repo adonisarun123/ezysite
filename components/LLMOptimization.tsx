@@ -182,7 +182,7 @@ export default function LLMOptimization() {
     contactInformation: {
       phone: "+91-80-31411776",
       email: "info@ezyhelpers.com",
-      website: "https://ezyhelpers.com",
+      website: "https://www.ezyhelpers.com",
       businessHours: "24/7 availability",
       responseTime: "30 minutes for initial contact"
     }

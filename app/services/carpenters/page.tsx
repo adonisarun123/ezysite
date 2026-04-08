@@ -31,9 +31,9 @@ export const metadata: Metadata = {
 
 export default function CarpentersPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Services", url: "https://ezyhelpers.com/services" },
-    { name: "Carpenters", url: "https://ezyhelpers.com/services/carpenters" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Services", url: "https://www.ezyhelpers.com/services" },
+    { name: "Carpenters", url: "https://www.ezyhelpers.com/services/carpenters" }
   ]
 
   const carpenterServices = [

@@ -26,9 +26,9 @@ export const metadata: Metadata = {
 
 export default function SofaCleaningPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Services", url: "https://ezyhelpers.com/services" },
-    { name: "Sofa Cleaning", url: "https://ezyhelpers.com/services/sofa-cleaning" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Services", url: "https://www.ezyhelpers.com/services" },
+    { name: "Sofa Cleaning", url: "https://www.ezyhelpers.com/services/sofa-cleaning" }
   ]
 
   const cleaningServices = [
@@ -163,7 +163,7 @@ export default function SofaCleaningPage() {
   return (
     <main className="min-h-screen">
       <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/services/sofa-cleaning" />
+      <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/sofa-cleaning" />
       
       <Navbar />
       

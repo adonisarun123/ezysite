@@ -5,13 +5,14 @@ import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 
 interface PageProps {
-  params: {
-    service: string
-  }
+  params: Promise<{
+    service: string 
+  }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const serviceName = params.service
+  const { service } = await params;
+  const serviceName = service
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
@@ -19,23 +20,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${serviceName} Services | Professional & Verified | EzyHelpers`,
     description: `Get reliable ${serviceName.toLowerCase()} services from verified professionals. Background-checked staff, flexible timing options, and competitive rates.`,
-    keywords: `${serviceName.toLowerCase()}, ${params.service} services, verified ${params.service}, professional ${params.service}, domestic help`,
+    keywords: `${serviceName.toLowerCase()}, ${service} services, verified ${service}, professional ${service}, domestic help`,
     openGraph: {
       title: `Professional ${serviceName} Services - EzyHelpers`,
       description: `Book trusted ${serviceName.toLowerCase()} services. Verified staff, quality service, and complete peace of mind guaranteed.`,
-      url: `https://ezyhelpers.com/services/${params.service}`,
+      url: `https://www.ezyhelpers.com/services/${service}`,
       type: 'website',
       siteName: 'EzyHelpers',
       locale: 'en_IN',
     },
     alternates: {
-      canonical: `https://ezyhelpers.com/services/${params.service}`
+      canonical: `https://www.ezyhelpers.com/services/${service}`
     }
   }
 }
 
-export default function ServicePage({ params }: PageProps) {
-  const serviceName = params.service
+export default async function ServicePage({ params }: PageProps) {
+  const { service } = await params;
+  const serviceName = service
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')

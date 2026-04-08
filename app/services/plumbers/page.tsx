@@ -30,9 +30,9 @@ export const metadata: Metadata = {
 
 export default function PlumbersPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Services", url: "https://ezyhelpers.com/services" },
-    { name: "Plumbers", url: "https://ezyhelpers.com/services/plumbers" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Services", url: "https://www.ezyhelpers.com/services" },
+    { name: "Plumbers", url: "https://www.ezyhelpers.com/services/plumbers" }
   ]
 
   const plumbingServices = [

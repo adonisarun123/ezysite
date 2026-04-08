@@ -30,13 +30,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Join EzyHelpers - Domestic Service Provider Opportunities',
     description: 'Start your career with EzyHelpers. Regular work, competitive pay, and professional growth opportunities for domestic service providers.',
-    url: 'https://ezyhelpers.com/join-as-helper',
+    url: 'https://www.ezyhelpers.com/join-as-helper',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/join-as-helper'
+    canonical: 'https://www.ezyhelpers.com/join-as-helper'
   }
 }
 

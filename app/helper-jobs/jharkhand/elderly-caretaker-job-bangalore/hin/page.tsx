@@ -44,11 +44,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'झारखंड हेल्पर्स के लिए बैंगलोर में एल्डर केयरटेकर जॉब्स',
         description: 'बेंगलुरु में केयरटेकर जॉब्स जिसमें साफ़ काम, सुरक्षित घर, ट्रेनिंग और नियमित महीने की सैलरी हो। लिव-इन और फुल-टाइम बुज़ुर्गों की देखभाल का काम।',
-        url: 'https://ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore/hin',
+        url: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore/hin',
         type: 'website',
         images: [
             {
-                url: 'https://ezyhelpers.com/images/elderly-caretaker-og.jpg',
+                url: 'https://www.ezyhelpers.com/images/elderly-caretaker-og.jpg',
                 width: 1200,
                 height: 630,
                 alt: 'झारखंड हेल्पर्स के लिए बैंगलोर में एल्डर केयरटेकर जॉब्स',
@@ -56,7 +56,12 @@ export const metadata: Metadata = {
         ],
     },
     alternates: {
-        canonical: 'https://ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore/hin',
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore/hin',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore/hin',
+            'x-default': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/elderly-caretaker-job-bangalore'
+        }
     },
 }
 

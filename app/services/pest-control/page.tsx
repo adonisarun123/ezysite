@@ -27,9 +27,9 @@ export const metadata: Metadata = {
 
 export default function PestControlPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Services", url: "https://ezyhelpers.com/services" },
-    { name: "Pest Control", url: "https://ezyhelpers.com/services/pest-control" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Services", url: "https://www.ezyhelpers.com/services" },
+    { name: "Pest Control", url: "https://www.ezyhelpers.com/services/pest-control" }
   ]
 
   const pestServices = [
@@ -135,7 +135,7 @@ export default function PestControlPage() {
   return (
     <main className="min-h-screen">
       <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/services/pest-control" />
+      <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/pest-control" />
       
       <Navbar />
       
