@@ -50,8 +50,12 @@ export default async function CareerJobPage({ params }: Props) {
   const job = getJobBySlug(slug)
   if (!job) notFound()
 
-  const applySubject = encodeURIComponent(`Application: ${job.title}`)
-  const applyHref = `mailto:info@ezyhelpers.com?subject=${applySubject}`
+  const applyEmail = job.applyEmail ?? 'info@ezyhelpers.com'
+  const applyParams = new URLSearchParams({ subject: `Application: ${job.title}` })
+  if (job.applyBodyPrompt) {
+    applyParams.set('body', job.applyBodyPrompt)
+  }
+  const applyHref = `mailto:${applyEmail}?${applyParams.toString()}`
 
   return (
     <div className="min-h-screen bg-[#fbfbfd] text-[#1d1d1f]">
@@ -133,6 +137,22 @@ export default async function CareerJobPage({ params }: Props) {
                   </ul>
                 </section>
               )}
+
+              {job.extraSections?.map((section) => (
+                <section key={section.title}>
+                  <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#86868b]">
+                    {section.title}
+                  </h2>
+                  <ul className="mt-6 space-y-4 text-[17px] leading-relaxed text-[#6e6e73]">
+                    {section.items.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-primary-500" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
             </article>
 
             <aside className="lg:pt-2">
@@ -169,6 +189,12 @@ export default async function CareerJobPage({ params }: Props) {
                     Posted {formatPosted(job.postedAt)}
                   </p>
                 </div>
+                {job.applyBodyPrompt && (
+                  <p className="text-xs leading-relaxed text-[#6e6e73]">
+                    Your email app will open with a short prompt to answer: how you would automate
+                    operations at EzyHelpers. Attach your CV before sending.
+                  </p>
+                )}
                 <a
                   href={applyHref}
                   className="flex w-full items-center justify-center rounded-full bg-[#1d1d1f] py-3.5 text-sm font-medium text-white transition hover:bg-black"

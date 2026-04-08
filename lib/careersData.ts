@@ -1,3 +1,8 @@
+export type JobOpeningExtraSection = {
+  title: string
+  items: string[]
+}
+
 export type JobOpening = {
   slug: string
   title: string
@@ -11,6 +16,12 @@ export type JobOpening = {
   responsibilities: string[]
   requirements: string[]
   niceToHave?: string[]
+  /** Optional blocks (e.g. key projects, KPIs, why join) rendered after Nice to have */
+  extraSections?: JobOpeningExtraSection[]
+  /** Mailto address for Apply (defaults to info@ezyhelpers.com on the job page) */
+  applyEmail?: string
+  /** Prefilled mailto body, e.g. prompt for candidates to answer */
+  applyBodyPrompt?: string
 }
 
 /** Slugs that use a custom route under `app/careers/<slug>/` (excluded from `[slug]` static generation). */
@@ -46,6 +57,77 @@ export const jobOpenings: JobOpening[] = [
       'SQL / spreadsheets / Notion or similar',
       'Prior startup, marketplace, or ops exposure',
     ],
+  },
+  {
+    slug: 'ai-first-associate-product-manager',
+    title: 'AI-First Associate Product Manager (APM)',
+    department: 'Product',
+    location: 'Bangalore (HSR Layout)',
+    type: 'Full-time',
+    team: 'Product & automation',
+    postedAt: '2026-04-07',
+    excerpt:
+      'Own the execution engine for our tech and AI layer: turn Sales, Sourcing, and Ops problems into shipped automations, tools, and dashboards — with a full task pipeline and founder access.',
+    intro:
+      'EzyHelpers connects households with verified domestic help across housekeeping, cooking, elderly care, and childcare. We are shifting to a tech-first, AI-powered operations platform where Sales, Sourcing, Operations, and CX run on systems, automation, and intelligence. This role is the central execution engine for that layer: you find problems, structure them as product work, and keep ideas moving from spec to production.',
+    responsibilities: [
+      'Work with Sales, Sourcing, Operations, and founders to spot repetitive workflows, inefficiencies, and gaps; turn them into AI automations, internal tools, dashboards, and process fixes.',
+      'Own the task pipeline end to end: maintain a continuous queue of work, break ideas into simple PRDs and small executable tasks, and prioritise by business impact, speed to deploy, and revenue or efficiency gain.',
+      'Partner with developers and leverage no-code and AI tools (e.g. Lovable, GPT workflows) for fast build cycles; write clear specs, understand system logic, and test outputs rigorously — deep coding is not required.',
+      'Own production and deployment: move features from idea through dev, testing, and release; keep release tracking, version notes, and bug visibility so you are the last-mile owner of execution.',
+      'Build and evolve dashboards for sales performance, sourcing efficiency, placement and replacement metrics; use Supabase and internal systems to turn raw data into decisions.',
+      'Run feedback loops with sales, field officers, and customers; continuously improve helper onboarding and the customer placement journey.',
+      'Implement AI and automation where it matters: e.g. call summaries, WhatsApp flows, smarter matching, auto MIS — always tied to measurable ops outcomes.',
+    ],
+    requirements: [
+      'Roughly 1–3 years in a product, ops-tech, or high-ownership role; mindset and execution matter more than exact tenure.',
+      'Strong problem-solving and ability to break complex workflows into shippable slices.',
+      'High ownership: you push work across the line, not only document it.',
+      'Solid product thinking — structured written specs, clear acceptance criteria, and judgment on trade-offs.',
+    ],
+    niceToHave: [
+      'No-code tools (Lovable, Zapier, or similar).',
+      'Basic SQL and familiarity with Supabase or similar data stores.',
+      'Hands-on use of AI tools (ChatGPT, automation workflows).',
+      'CRM exposure and experience in operations-heavy or marketplace businesses.',
+      'Mindset we value: execution over perfection, systems thinking, speed, iteration, data-informed decisions, AI-first instincts.',
+    ],
+    extraSections: [
+      {
+        title: 'Key projects',
+        items: [
+          'CHAP system enhancements',
+          'Requirement management app',
+          'Helper tracking and field-officer tracking apps',
+          'AI-based CRM improvements',
+          'Sales and sourcing dashboards',
+          'Automation for WhatsApp and TeleCMI workflows',
+          'Internal productivity tools (RACI, task trackers, and similar)',
+        ],
+      },
+      {
+        title: 'Success metrics',
+        items: [
+          'Features shipped per month',
+          'Consistency of the task pipeline (minimal idle dev time)',
+          'Reduction in manual processes',
+          'Improvements in placement success, helper utilisation, and sales conversion',
+          'Adoption of internal tools across teams',
+        ],
+      },
+      {
+        title: 'Why join',
+        items: [
+          'Work directly with founders',
+          'Build systems from 0 → 1 → scale with outsized ownership from day one',
+          'Exposure across AI, product, operations, and growth',
+          'Credible path toward product leadership as the function matures',
+        ],
+      },
+    ],
+    applyEmail: 'contact@ezyhelpers.com',
+    applyBodyPrompt:
+      'Hi,\n\nI am applying for the AI-First Associate Product Manager role.\n\nHow I would automate operations in a domestic helper platform like EzyHelpers:\n\n',
   },
   {
     slug: 'operations-lead-field-quality',
