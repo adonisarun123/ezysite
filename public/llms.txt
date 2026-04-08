@@ -30,6 +30,7 @@ EzyHelpers is India's trusted platform for hiring verified domestic helpers. We 
 ## Links
 - Home: https://www.ezyhelpers.com
 - Services: https://www.ezyhelpers.com/services
+- Careers: https://www.ezyhelpers.com/careers
 - About: https://www.ezyhelpers.com/about
 - Contact: https://www.ezyhelpers.com/contact
 - How It Works: https://www.ezyhelpers.com/how-it-works

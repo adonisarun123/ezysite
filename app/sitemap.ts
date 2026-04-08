@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { posts } from '@/lib/blogData'
 import { caseStudies } from '@/app/case-studies/data/caseStudies'
+import { jobOpenings } from '@/lib/careersData'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.ezyhelpers.com'
@@ -19,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8
+    },
+    {
+      url: `${baseUrl}/careers`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.75
     },
     {
       url: `${baseUrl}/contact`,
@@ -458,6 +465,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ]
 
+  const careerJobPages: MetadataRoute.Sitemap = jobOpenings.map((j) => ({
+    url: `${baseUrl}/careers/${j.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.65
+  }))
+
   return [
     ...corePages,
     ...services,
@@ -471,6 +485,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...helperJobPages,
     ...helperPages,
     ...otherPages,
-    ...businessPages
+    ...businessPages,
+    ...careerJobPages
   ]
 }

@@ -40,6 +40,7 @@ const footerLinks = {
   ],
   company: [
     { name: 'About Us', href: '/about' },
+    { name: 'Careers', href: '/careers' },
     { name: 'How It Works', href: '/how-it-works' },
     { name: 'For Helpers', href: '/for-helpers' },
     { name: 'Helper Registration', href: '/helper-registration' },

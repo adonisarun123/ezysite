@@ -275,6 +275,22 @@ export interface RequirementFormData {
   databaseSaved?: boolean;
 }
 
+export interface CareersChiefOfStaffFormData {
+  fullName: string
+  email: string
+  phone: string
+  linkedinUrl?: string
+  portfolioUrl?: string
+  problemSolved: string
+  improveThirtyDays: string
+  builtSomething: string
+  whyNotHireYou: string
+  submittedAt?: string
+  sourceUrl?: string
+  /** Original filename when a résumé/CV was attached */
+  resumeFileName?: string
+}
+
 export type LeadType =
   | 'contact'
   | 'hire_helper'
@@ -283,7 +299,8 @@ export type LeadType =
   | 'helper_registration'
   | 'requirement'
   | 'customer_requirement'
-  | 'helper_interview';
+  | 'helper_interview'
+  | 'careers_chief_of_staff';
 
 export interface EmailSendResult {
   success: boolean;

@@ -50,6 +50,7 @@ const navigation: NavigationItem[] = [
     hasDropdown: true,
     dropdownItems: [
       { name: 'About Us', href: '/about' },
+      { name: 'Careers', href: '/careers' },
       { name: 'Executive Summary', href: '/executive-summary' },
     ]
   },
