@@ -22,6 +22,8 @@ export type JobOpening = {
   applyEmail?: string
   /** Prefilled mailto body, e.g. prompt for candidates to answer */
   applyBodyPrompt?: string
+  /** When true, the job page shows an inline application form (see careers/[slug]/page.tsx) */
+  hasApplicationForm?: boolean
 }
 
 /** Slugs that use a custom route under `app/careers/<slug>/` (excluded from `[slug]` static generation). */
@@ -126,8 +128,7 @@ export const jobOpenings: JobOpening[] = [
       },
     ],
     applyEmail: 'contact@ezyhelpers.com',
-    applyBodyPrompt:
-      'Hi,\n\nI am applying for the AI-First Associate Product Manager role.\n\nHow I would automate operations in a domestic helper platform like EzyHelpers:\n\n',
+    hasApplicationForm: true,
   },
   {
     slug: 'operations-lead-field-quality',

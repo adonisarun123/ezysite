@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import { CAREERS_DEDICATED_PAGE_SLUGS, getJobBySlug, jobOpenings } from '@/lib/careersData'
+import ApmApplicationForm from '@/components/careers/ApmApplicationForm'
 import { ArrowLeftIcon, MapPinIcon, ClockIcon, BuildingOffice2Icon } from '@heroicons/react/24/outline'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -56,6 +57,7 @@ export default async function CareerJobPage({ params }: Props) {
     applyParams.set('body', job.applyBodyPrompt)
   }
   const applyHref = `mailto:${applyEmail}?${applyParams.toString()}`
+  const showInlineForm = Boolean(job.hasApplicationForm)
 
   return (
     <div className="min-h-screen bg-[#fbfbfd] text-[#1d1d1f]">
@@ -189,18 +191,38 @@ export default async function CareerJobPage({ params }: Props) {
                     Posted {formatPosted(job.postedAt)}
                   </p>
                 </div>
-                {job.applyBodyPrompt && (
+                {job.applyBodyPrompt && !showInlineForm && (
                   <p className="text-xs leading-relaxed text-[#6e6e73]">
                     Your email app will open with a short prompt to answer: how you would automate
                     operations at EzyHelpers. Attach your CV before sending.
                   </p>
                 )}
-                <a
-                  href={applyHref}
-                  className="flex w-full items-center justify-center rounded-full bg-[#1d1d1f] py-3.5 text-sm font-medium text-white transition hover:bg-black"
-                >
-                  Apply for this role
-                </a>
+                {showInlineForm ? (
+                  <a
+                    href="#apply"
+                    className="flex w-full items-center justify-center rounded-full bg-[#1d1d1f] py-3.5 text-sm font-medium text-white transition hover:bg-black"
+                  >
+                    Apply online
+                  </a>
+                ) : (
+                  <a
+                    href={applyHref}
+                    className="flex w-full items-center justify-center rounded-full bg-[#1d1d1f] py-3.5 text-sm font-medium text-white transition hover:bg-black"
+                  >
+                    Apply for this role
+                  </a>
+                )}
+                {showInlineForm && (
+                  <p className="text-center text-xs text-[#86868b]">
+                    Prefer email?{' '}
+                    <a
+                      href={applyHref}
+                      className="font-medium text-primary-600 underline-offset-4 hover:underline"
+                    >
+                      {applyEmail}
+                    </a>
+                  </p>
+                )}
                 <Link
                   href="/contact"
                   className="block text-center text-sm font-medium text-primary-600 underline-offset-4 hover:underline"
@@ -210,6 +232,29 @@ export default async function CareerJobPage({ params }: Props) {
               </div>
             </aside>
           </div>
+
+          {showInlineForm && (
+            <section
+              id="apply"
+              className="scroll-mt-28 mt-16 border-t border-black/[0.06] pt-16 sm:mt-20 sm:pt-20"
+            >
+              <div className="mx-auto max-w-2xl">
+                <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#86868b]">
+                  Apply
+                </h2>
+                <p className="mt-3 font-display text-2xl font-semibold tracking-tight text-[#1d1d1f] sm:text-3xl">
+                  Application form
+                </p>
+                <p className="mt-4 text-[17px] leading-relaxed text-[#6e6e73]">
+                  Submit your details and written answers below. You may attach a CV (PDF or Word,
+                  up to 5 MB). Submissions are sent to our hiring inbox.
+                </p>
+                <div className="mt-10 rounded-2xl border border-black/[0.06] bg-white p-6 shadow-sm sm:p-10">
+                  <ApmApplicationForm />
+                </div>
+              </div>
+            </section>
+          )}
         </div>
       </main>
 

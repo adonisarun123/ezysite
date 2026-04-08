@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import pRetry from 'p-retry';
 import { EMAIL } from './constants';
 import { logger } from './logger';
-import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData } from '../types/email';
+import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData } from '../types/email';
 
 // Utility function to format phone numbers to bypass DLP (shows all digits with spaces)
 const formatPhoneForEmail = (phone: string): string => {
@@ -1232,6 +1232,57 @@ ${formData.sourceUrl ? `Source: ${formData.sourceUrl}` : ''}
   };
 };
 
+const generateCareersApmEmail = (formData: CareersApmFormData): EmailContent => {
+  const formattedPhone = formatPhoneForEmail(formData.phone);
+  const block = (label: string, text: string) => `
+        <div style="background-color:#fff;padding:16px 20px;border:1px solid #e5e7eb;border-radius:8px;margin:0 0 16px;">
+          <h3 style="margin:0 0 8px;color:#111827;font-size:14px;">${escapeHtml(label)}</h3>
+          <p style="margin:0;white-space:pre-wrap;color:#374151;font-size:14px;line-height:1.55;">${escapeHtml(text)}</p>
+        </div>`;
+
+  return {
+    subject: `AI-First APM Application — ${formData.fullName}`,
+    html: `
+      <div style="font-family:system-ui,-apple-system,sans-serif;max-width:640px;margin:0 auto;">
+        <h2 style="color:#0074C8;">AI-First Associate Product Manager — New Application</h2>
+        <div style="background:#f9fafb;padding:16px 20px;border-radius:8px;margin:16px 0;">
+          <p style="margin:4px 0;"><strong>Name:</strong> ${escapeHtml(formData.fullName)}</p>
+          <p style="margin:4px 0;"><strong>Email:</strong> <a href="mailto:${escapeHtml(formData.email)}">${escapeHtml(formData.email)}</a></p>
+          <p style="margin:4px 0;"><strong>Phone:</strong> ${formattedPhone}</p>
+          ${formData.linkedinUrl ? `<p style="margin:4px 0;"><strong>LinkedIn:</strong> <a href="${escapeHtml(formData.linkedinUrl)}">${escapeHtml(formData.linkedinUrl)}</a></p>` : ''}
+          ${formData.portfolioUrl ? `<p style="margin:4px 0;"><strong>Portfolio / other:</strong> <a href="${escapeHtml(formData.portfolioUrl)}">${escapeHtml(formData.portfolioUrl)}</a></p>` : ''}
+          ${formData.resumeFileName ? `<p style="margin:4px 0;"><strong>CV / résumé:</strong> attached (${escapeHtml(formData.resumeFileName)})</p>` : '<p style="margin:4px 0;color:#6b7280;font-size:13px;">CV / résumé: not attached</p>'}
+          ${formData.submittedAt ? `<p style="margin:4px 0;color:#6b7280;font-size:13px;">Submitted: ${escapeHtml(formData.submittedAt)}</p>` : ''}
+        </div>
+        ${block('1. Relevant experience', formData.relevantExperience)}
+        ${block('2. How would you automate operations at EzyHelpers?', formData.automationOperations)}
+        ${block('3. Keeping the dev task pipeline full', formData.taskPipelineApproach)}
+        ${formData.additionalNotes ? block('4. Additional notes', formData.additionalNotes) : ''}
+        ${formData.sourceUrl ? `<p style="font-size:12px;color:#6b7280;"><strong>Source:</strong> <a href="${escapeHtml(formData.sourceUrl)}">${escapeHtml(formData.sourceUrl)}</a></p>` : ''}
+      </div>
+    `,
+    text: `
+AI-First Associate Product Manager — Application
+
+Name: ${formData.fullName}
+Email: ${formData.email}
+Phone: ${formattedPhone}
+${formData.linkedinUrl ? `LinkedIn: ${formData.linkedinUrl}\n` : ''}${formData.portfolioUrl ? `Portfolio: ${formData.portfolioUrl}\n` : ''}${formData.resumeFileName ? `CV / résumé: attached (${formData.resumeFileName})\n` : `CV / résumé: not attached\n`}${formData.submittedAt ? `Submitted: ${formData.submittedAt}\n` : ''}
+
+1. Relevant experience:
+${formData.relevantExperience}
+
+2. How would you automate operations at EzyHelpers?
+${formData.automationOperations}
+
+3. Keeping the dev task pipeline full:
+${formData.taskPipelineApproach}
+${formData.additionalNotes ? `\n4. Additional notes:\n${formData.additionalNotes}\n` : ''}
+${formData.sourceUrl ? `Source: ${formData.sourceUrl}` : ''}
+    `.trim(),
+  };
+};
+
 export type SendLeadEmailOptions = {
   attachments?: NonNullable<nodemailer.SendMailOptions['attachments']>
 }
@@ -1259,7 +1310,7 @@ export const sendLeadEmail = async (
       }
     } else if (leadType === 'helper_interview') {
       emailRecipientsEnv = process.env.HELPER_INTERVIEW_RECIPIENTS || 'suraj@ezyhelpers.com,priyanka@ezyhelpers.com,arun@ezyhelpers.com';
-    } else if (leadType === 'careers_chief_of_staff') {
+    } else if (leadType === 'careers_chief_of_staff' || leadType === 'careers_apm') {
       emailRecipientsEnv =
         process.env.CAREERS_EMAIL_RECIPIENTS || 'contact@ezyhelpers.com';
     } else {
@@ -1315,6 +1366,9 @@ export const sendLeadEmail = async (
         break;
       case 'careers_chief_of_staff':
         emailContent = generateCareersChiefOfStaffEmail(formData as CareersChiefOfStaffFormData);
+        break;
+      case 'careers_apm':
+        emailContent = generateCareersApmEmail(formData as CareersApmFormData);
         break;
       default:
         throw new Error('Invalid lead type');

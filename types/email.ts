@@ -291,6 +291,21 @@ export interface CareersChiefOfStaffFormData {
   resumeFileName?: string
 }
 
+export interface CareersApmFormData {
+  fullName: string
+  email: string
+  phone: string
+  linkedinUrl?: string
+  portfolioUrl?: string
+  relevantExperience: string
+  automationOperations: string
+  taskPipelineApproach: string
+  additionalNotes?: string
+  submittedAt?: string
+  sourceUrl?: string
+  resumeFileName?: string
+}
+
 export type LeadType =
   | 'contact'
   | 'hire_helper'
@@ -300,7 +315,8 @@ export type LeadType =
   | 'requirement'
   | 'customer_requirement'
   | 'helper_interview'
-  | 'careers_chief_of_staff';
+  | 'careers_chief_of_staff'
+  | 'careers_apm';
 
 export interface EmailSendResult {
   success: boolean;
