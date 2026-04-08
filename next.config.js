@@ -283,6 +283,12 @@ const nextConfig = {
       { source: '/services/travel-nanny', destination: '/cities/bangalore/travel-nanny', permanent: true },
       // 30 - Duplicate page consolidation: live-in-maid (singular) -> live-in-maids (plural canonical)
       { source: '/cities/bangalore/live-in-maid', destination: '/cities/bangalore/live-in-maids', permanent: true },
+      // 31 - Careers: Field Officer role slug rename
+      {
+        source: '/careers/operations-lead-field-quality',
+        destination: '/careers/field-officer-bangalore',
+        permanent: true,
+      },
     ]
   },
 }
