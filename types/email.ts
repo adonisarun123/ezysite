@@ -306,6 +306,22 @@ export interface CareersApmFormData {
   resumeFileName?: string
 }
 
+export interface CareersSalesExecutiveFormData {
+  fullName: string
+  email: string
+  phone: string
+  linkedinUrl?: string
+  languagesProficiency: string
+  salesExperienceSummary: string
+  dealOrFollowUpStory: string
+  targetDiscipline: string
+  noticePeriod?: string
+  additionalNotes?: string
+  submittedAt?: string
+  sourceUrl?: string
+  resumeFileName: string
+}
+
 export type LeadType =
   | 'contact'
   | 'hire_helper'
@@ -316,7 +332,8 @@ export type LeadType =
   | 'customer_requirement'
   | 'helper_interview'
   | 'careers_chief_of_staff'
-  | 'careers_apm';
+  | 'careers_apm'
+  | 'careers_sales_executive';
 
 export interface EmailSendResult {
   success: boolean;

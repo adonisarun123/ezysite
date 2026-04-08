@@ -24,6 +24,8 @@ export type JobOpening = {
   applyBodyPrompt?: string
   /** When true, the job page shows an inline application form (see careers/[slug]/page.tsx) */
   hasApplicationForm?: boolean
+  /** Which form to render when hasApplicationForm is true (defaults to apm if omitted) */
+  applicationForm?: 'apm' | 'sales_executive'
 }
 
 /** Slugs that use a custom route under `app/careers/<slug>/` (excluded from `[slug]` static generation). */
@@ -129,6 +131,89 @@ export const jobOpenings: JobOpening[] = [
     ],
     applyEmail: 'contact@ezyhelpers.com',
     hasApplicationForm: true,
+    applicationForm: 'apm',
+  },
+  {
+    slug: 'sales-executive-bangalore',
+    title: 'Sales Executive',
+    department: 'Sales',
+    location: 'Bangalore (HSR Layout · on-site)',
+    type: 'Full-time',
+    team: 'Sales & growth',
+    postedAt: '2026-03-16',
+    excerpt:
+      'Convert family inquiries into registrations and placements: inbound and outbound calls, clear explanations of how EzyHelpers works, disciplined CRM hygiene, and teamwork with sourcing and ops.',
+    intro:
+      'EzyHelpers helps urban households hire verified domestic professionals — maids, cooks, nannies, elderly caregivers, drivers, and more. Our sales team is the first voice families hear: you qualify needs, explain plans and pricing with transparency, and guide people to a confident “yes” while ops delivers a strong match. This is a full-time, office-based role in Bangalore for someone who likes talking to people, owns follow-ups, and thrives when targets are clear.',
+    responsibilities: [
+      'Handle inbound and outbound sales calls with customers seeking domestic help; qualify budget, role type, timing, location, and household preferences.',
+      'Explain EzyHelpers’ service model, verification approach, process steps, plans, and charges clearly — no jargon, no pressure tactics.',
+      'Guide interested customers through registration, payment or confirmation steps, and next milestones with calm professionalism.',
+      'Follow up persistently on warm leads (calls, WhatsApp where appropriate) until closure or a clean disqualification — with notes every time.',
+      'Maintain accurate lead data, call outcomes, and pipeline stages in CRM, spreadsheets, or internal tools your manager defines.',
+      'Coordinate with sourcing and operations so customer promises in sales match what the field team can fulfil; flag mismatches early.',
+      'Handle common objections (price, trust, timelines) with empathy; escalate edge cases to your lead when needed.',
+      'Track personal and team targets (calls, registrations, confirmations, revenue contribution) and participate in daily or weekly sales huddles.',
+      'Support repeat enquiries, renewals, or upsell paths where the playbook applies.',
+    ],
+    requirements: [
+      'Strong spoken communication and persuasion — confident, respectful, never pushy.',
+      'Ability to conduct sales conversations in English, Hindi, and Kannada (customers switch languages often).',
+      'Solid listening skills: you can restate a family’s problem before you pitch.',
+      'Disciplined follow-up habits; you treat “no answer yet” as a state to manage, not ignore.',
+      'Comfort in a target-driven environment (individual and team KPIs).',
+      'Basic hands-on comfort with CRM tools, Google Sheets / Excel, or similar — we will train you on our stack.',
+      'Currently based in Bangalore (or able to relocate and work daily from our HSR Layout office).',
+    ],
+    niceToHave: [
+      '1–3 years in tele-sales, inside sales, retail or service sales, or customer acquisition.',
+      'Exposure to domestic staffing, recruitment, home services, edtech sales, or other high-trust consumer categories.',
+      'Familiarity with Bangalore neighbourhoods and how families talk about household help.',
+      'Prior use of diallers, WhatsApp Business, or ticketing tools alongside CRM.',
+    ],
+    extraSections: [
+      {
+        title: 'Key performance indicators',
+        items: [
+          'Leads worked and calls / meaningful conversations completed',
+          'Follow-ups logged on time',
+          'Customer registrations and service confirmations closed',
+          'Placements or revenue attributed to your pipeline',
+          'Lead-to-conversion ratio and funnel hygiene',
+          'Contribution from repeat or renewal opportunities where applicable',
+        ],
+      },
+      {
+        title: 'What we are looking for',
+        items: [
+          'Someone who genuinely enjoys speaking with customers',
+          'Trust-building and closure without aggressive hard-selling',
+          'Neat records and predictable follow-through',
+          'Ownership of personal targets and tight collaboration with operations for delivery',
+        ],
+      },
+      {
+        title: 'Why join EzyHelpers',
+        items: [
+          'Meaningful category — you help real families and workers every week',
+          'Direct line of sight to revenue and growth',
+          'Fast-paced, feedback-rich sales culture',
+          'Room to grow into senior executive or team lead paths as we scale',
+        ],
+      },
+      {
+        title: 'Work setup and compensation',
+        items: [
+          'Full-time role based at our Bangalore office (HSR Layout) — not remote.',
+          'Standard weekday hours; occasional flexibility during peak inquiry windows may be needed (aligned with your manager).',
+          'Competitive fixed compensation plus performance-linked incentives — structure discussed with shortlisted candidates.',
+          'Tools provided or supported: CRM, telephony / dialler as applicable, spreadsheets, and internal playbooks.',
+        ],
+      },
+    ],
+    applyEmail: 'contact@ezyhelpers.com',
+    hasApplicationForm: true,
+    applicationForm: 'sales_executive',
   },
   {
     slug: 'operations-lead-field-quality',
