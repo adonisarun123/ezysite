@@ -1,19 +1,10 @@
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import ChiefOfStaffApplicationForm from '@/components/careers/ChiefOfStaffApplicationForm'
-import {
-  CheckIcon,
-  XMarkIcon,
-  ArrowRightIcon,
-  BoltIcon,
-  ChartBarIcon,
-  UserGroupIcon,
-  WrenchScrewdriverIcon,
-  LightBulbIcon,
-} from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
   title: "Chief of Staff Intern → Full-Time | Founder's Office | EzyHelpers",
@@ -34,26 +25,11 @@ export const metadata: Metadata = {
 }
 
 const workItems = [
-  {
-    icon: WrenchScrewdriverIcon,
-    text: 'Fix broken processes across sales, sourcing, and operations',
-  },
-  {
-    icon: ChartBarIcon,
-    text: 'Build dashboards — helpers, placements, conversions, replacements',
-  },
-  {
-    icon: UserGroupIcon,
-    text: 'Work directly with founders on prioritisation and key decisions',
-  },
-  {
-    icon: BoltIcon,
-    text: 'Execute projects end to end — no “handoff culture”',
-  },
-  {
-    icon: LightBulbIcon,
-    text: 'Spot bottlenecks, propose fixes, and ship',
-  },
+  'Fix broken processes across sales, sourcing, and operations',
+  'Build dashboards for helpers, placements, conversions, and replacements',
+  'Work directly with founders on prioritisation and key decisions',
+  'Own projects end to end — no handoff culture',
+  'Spot bottlenecks, propose fixes, and ship',
 ]
 
 const goodFit = [
@@ -64,170 +40,174 @@ const goodFit = [
 ]
 
 const notFit = [
-  'You want a highly structured “typical internship”',
+  'You want a highly structured, typical internship',
   'You need constant step-by-step guidance',
-  'You are collecting logos for a resume only',
+  'You are mainly collecting company names for a résumé',
 ]
 
 const youGet = [
-  'Direct founder access',
-  'Real business exposure — not PowerPoint theatre',
-  'A real shot at conversion to full-time if you deliver',
-  'Learning density we think feels like 2–3 years in 3 months — if you lean in',
+  'Direct access to founders on real decisions',
+  'Exposure to how a marketplace and ops-heavy business runs — not slide decks',
+  'A credible path to full-time if you deliver',
+  'Compressed learning: we aim for the density of several years in a few months, if you lean in',
 ]
 
 const processSteps = [
   {
     step: '1',
-    title: 'Application (screen for thinkers)',
-    body: 'Short form below. We read every answer — quality of thinking matters more than polish.',
+    title: 'Application',
+    body: 'Short form below. We read every answer — clarity of thinking matters more than perfect English.',
   },
   {
     step: '2',
-    title: 'Assignment round',
-    body: 'Example: “Helper supply vs demand in Bangalore — 1-page plan to improve supply.” Or: “Design a dashboard for placements, replacements, and helper efficiency.”',
+    title: 'Assignment',
+    body: 'Example: helper supply vs demand in Bangalore — one-page plan to improve supply. Or: sketch a dashboard for placements, replacements, and helper efficiency.',
   },
   {
     step: '3',
-    title: 'Founder call (~30 min)',
-    body: 'Clarity, energy, ownership. Not fancy English. Not degree flex.',
+    title: 'Founder conversation',
+    body: 'About 30 minutes. We care about judgment, energy, and ownership — not degrees or buzzwords.',
   },
   {
     step: '4',
-    title: 'Trial week (optional)',
-    body: 'One real task — fix a process, build a tracker, improve a flow. We often know within days.',
+    title: 'Trial week (sometimes)',
+    body: 'One real task: fix a process, build a tracker, or improve a flow. Often we know quickly whether it is a fit.',
   },
 ]
 
+function SectionLabel({ children }: { children: ReactNode }) {
+  return <p className="text-sm font-medium text-primary-600">{children}</p>
+}
+
 export default function ChiefOfStaffInternPage() {
   return (
-    <div className="min-h-screen bg-[#fbfbfd] text-[#1d1d1f]">
+    <div className="min-h-screen bg-[#f8f9fa] font-sans text-[#202124] antialiased">
       <Navbar />
 
       <Breadcrumb
+        variant="minimal"
+        separator="chevron"
         items={[
           { label: 'Home', href: '/' },
           { label: 'Careers', href: '/careers' },
-          { label: "Chief of Staff Intern" },
+          { label: 'Chief of Staff Intern' },
         ]}
       />
 
-      <main>
-        {/* Hero */}
-        <section className="relative overflow-hidden bg-[#1d1d1f] text-white">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_0%,rgba(0,116,200,0.25),transparent)]" />
-          <div className="relative mx-auto max-w-4xl px-6 py-20 sm:px-8 sm:py-28 lg:px-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">
-              Founder&apos;s office · Internship
-            </p>
-            <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.25rem]">
+      <main id="main-content">
+        {/* Hero — light, typographic */}
+        <section className="border-b border-[#dadce0] bg-white">
+          <div className="mx-auto max-w-3xl px-6 pb-16 pt-12 sm:px-8 sm:pb-20 sm:pt-16 lg:px-10">
+            <SectionLabel>Founder&apos;s office · Internship</SectionLabel>
+            <h1 className="mt-3 text-[2rem] font-medium leading-[1.2] tracking-tight sm:text-4xl sm:leading-[1.15]">
               Chief of Staff Intern
-              <span className="mt-2 block text-lg font-normal text-white/75 sm:text-xl lg:text-2xl">
-                → Full-time role
-              </span>
             </h1>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl">
-              3 months. High intensity. Real ownership.
-              <span className="mt-3 block text-base text-white/65 sm:text-lg">
-                If you perform — you don&apos;t stay an intern.
-              </span>
+            <p className="mt-3 text-lg text-[#5f6368] sm:text-xl">
+              Path to full-time role · High ownership · Real operations work
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <p className="mt-8 text-base leading-relaxed text-[#3c4043] sm:text-lg">
+              Three months, high intensity, real responsibility. If you perform, this is not a
+              box-tick internship — we want future operators.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-2">
+              {['Bangalore · Hybrid', '3 months', 'Rolling applications'].map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center rounded-full bg-[#f1f3f4] px-3 py-1 text-sm text-[#3c4043]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
                 href="#apply"
-                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-[#1d1d1f] transition hover:bg-white/90"
+                className="inline-flex items-center justify-center rounded-full bg-primary-600 px-6 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
               >
-                Apply now
-                <ArrowRightIcon className="ml-2 h-4 w-4" />
+                Apply
               </a>
               <Link
                 href="/careers"
-                className="inline-flex items-center justify-center rounded-full border border-white/25 px-8 py-3.5 text-sm font-medium text-white transition hover:border-white/40"
+                className="text-sm font-medium text-primary-600 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
               >
                 All openings
               </Link>
             </div>
+            <p className="mt-6 text-sm text-[#5f6368]">
+              Typical follow-up: within about two weeks if there is a fit. Check spam folders.
+            </p>
           </div>
         </section>
 
-        {/* Why exists */}
-        <section className="border-b border-black/[0.06] bg-white py-20 sm:py-24">
-          <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#86868b]">
-              Why this role exists
-            </p>
-            <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-              Real company. Real bandwidth limits.
+        {/* Why */}
+        <section className="border-b border-[#dadce0] bg-[#f8f9fa] py-14 sm:py-20">
+          <div className="mx-auto max-w-2xl px-6 sm:px-8 lg:px-10">
+            <SectionLabel>Why this role exists</SectionLabel>
+            <h2 className="mt-2 text-2xl font-medium tracking-tight sm:text-[1.75rem]">
+              Real problems, limited founder bandwidth
             </h2>
-            <div className="mt-10 space-y-6 text-[17px] leading-[1.65] text-[#6e6e73]">
+            <div className="mt-8 space-y-5 text-base leading-[1.7] text-[#3c4043]">
               <p>
-                At EzyHelpers, we&apos;re solving a hard, real-world problem — connecting households
-                with reliable, verified domestic help at scale.
+                EzyHelpers connects households with reliable, verified domestic help at scale —
+                operations, trust, and matching all have to work in the real world.
               </p>
               <p>
-                This role exists because founders don&apos;t have the bandwidth to solve everything —
-                but the problems still need solving. We&apos;re looking for someone who treats that
-                gap as their job, not someone else&apos;s.
+                Founders cannot personally run every initiative. This role exists for someone who
+                treats the gap between strategy and execution as their job: fix what is broken,
+                measure what matters, and ship.
               </p>
             </div>
           </div>
         </section>
 
-        {/* What you'll do */}
-        <section className="border-b border-black/[0.06] bg-[#fbfbfd] py-20 sm:py-24">
-          <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#86868b]">
-              What you&apos;ll actually do
-            </p>
-            <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-              No fluff. Real work.
+        {/* Work */}
+        <section className="border-b border-[#dadce0] bg-white py-14 sm:py-20">
+          <div className="mx-auto max-w-2xl px-6 sm:px-8 lg:px-10">
+            <SectionLabel>What you will do</SectionLabel>
+            <h2 className="mt-2 text-2xl font-medium tracking-tight sm:text-[1.75rem]">
+              Concrete work, not busywork
             </h2>
-            <ul className="mt-12 space-y-6">
-              {workItems.map(({ icon: Icon, text }) => (
-                <li key={text} className="flex gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-black/[0.06]">
-                    <Icon className="h-5 w-5 text-primary-600" />
-                  </span>
-                  <span className="pt-2 text-[17px] leading-relaxed text-[#374151]">{text}</span>
+            <ul className="mt-10 space-y-4 border-l-2 border-[#e8eaed] pl-5">
+              {workItems.map((text) => (
+                <li key={text} className="text-base leading-relaxed text-[#3c4043]">
+                  {text}
                 </li>
               ))}
             </ul>
           </div>
         </section>
 
-        {/* Filter */}
-        <section className="border-b border-black/[0.06] bg-white py-20 sm:py-24">
-          <div className="mx-auto max-w-5xl px-6 sm:px-8 lg:px-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#86868b]">
-              Who this is for
-            </p>
-            <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-              We want fewer, better applicants.
+        {/* Fit */}
+        <section className="border-b border-[#dadce0] bg-[#f8f9fa] py-14 sm:py-20">
+          <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10">
+            <SectionLabel>Fit</SectionLabel>
+            <h2 className="mt-2 text-2xl font-medium tracking-tight sm:text-[1.75rem]">
+              We would rather have fewer strong applicants
             </h2>
-            <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-12">
-              <div className="rounded-2xl border border-emerald-200/80 bg-emerald-50/40 p-8">
-                <h3 className="flex items-center gap-2 font-display text-lg font-semibold text-emerald-950">
-                  <CheckIcon className="h-5 w-5 text-emerald-600" />
-                  You&apos;ll do well if
-                </h3>
-                <ul className="mt-6 space-y-4 text-[15px] leading-relaxed text-emerald-900/85">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#5f6368]">
+              Being direct saves your time and ours. If the list on the right sounds closer to you,
+              other programmes may be a better match — and that is okay.
+            </p>
+            <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:gap-8">
+              <div className="rounded-2xl border border-[#dadce0] bg-white p-6 sm:p-8">
+                <h3 className="text-base font-medium text-[#202124]">Likely a good fit</h3>
+                <ul className="mt-6 space-y-3 text-sm leading-relaxed text-[#3c4043] sm:text-base">
                   {goodFit.map((t) => (
                     <li key={t} className="flex gap-3">
-                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary-600" aria-hidden />
                       {t}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="rounded-2xl border border-red-200/70 bg-red-50/35 p-8">
-                <h3 className="flex items-center gap-2 font-display text-lg font-semibold text-red-950">
-                  <XMarkIcon className="h-5 w-5 text-red-600" />
-                  Not for you if
-                </h3>
-                <ul className="mt-6 space-y-4 text-[15px] leading-relaxed text-red-900/85">
+              <div className="rounded-2xl border border-[#dadce0] bg-white p-6 sm:p-8">
+                <h3 className="text-base font-medium text-[#202124]">Probably not a fit</h3>
+                <ul className="mt-6 space-y-3 text-sm leading-relaxed text-[#3c4043] sm:text-base">
                   {notFit.map((t) => (
                     <li key={t} className="flex gap-3">
-                      <XMarkIcon className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#80868b]" aria-hidden />
                       {t}
                     </li>
                   ))}
@@ -237,44 +217,36 @@ export default function ChiefOfStaffInternPage() {
           </div>
         </section>
 
-        {/* Brutal honesty */}
-        <section className="border-b border-black/[0.06] bg-[#1a1a1c] py-20 text-white sm:py-24">
-          <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
-              Brutal honesty
-            </p>
-            <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-              Read this before you apply.
+        {/* Expectations */}
+        <section className="border-b border-[#dadce0] bg-white py-14 sm:py-20">
+          <div className="mx-auto max-w-2xl px-6 sm:px-8 lg:px-10">
+            <SectionLabel>What to expect</SectionLabel>
+            <h2 className="mt-2 text-2xl font-medium tracking-tight sm:text-[1.75rem]">
+              Honest preview
             </h2>
-            <div className="mt-10 space-y-6 border-l-2 border-primary-500 pl-6 text-[17px] leading-[1.7] text-white/75">
-              <p>This will be intense.</p>
-              <p>There will be ambiguity.</p>
-              <p>There will be days where nothing feels clear.</p>
-              <p className="pt-2 text-white">
-                If you&apos;re looking for comfort — this is not it.
-                <br />
-                If you&apos;re looking for growth — this is exactly it.
-              </p>
+            <div className="mt-8 rounded-2xl border border-[#dadce0] bg-[#f8f9fa] p-6 sm:p-8">
+              <ul className="space-y-4 text-base leading-relaxed text-[#3c4043]">
+                <li>The pace and ambiguity will feel intense at times.</li>
+                <li>Some days the next step will not be obvious — we still expect you to move.</li>
+                <li>If you want maximum comfort and predictability, this is not the right role.</li>
+                <li className="pt-2 font-medium text-[#202124]">
+                  If you want steep growth and real leverage, it might be.
+                </li>
+              </ul>
             </div>
           </div>
         </section>
 
         {/* What you get */}
-        <section className="border-b border-black/[0.06] bg-[#fbfbfd] py-20 sm:py-24">
-          <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#86868b]">
-              What you get
-            </p>
-            <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-              Aspirational — but real.
+        <section className="border-b border-[#dadce0] bg-[#f8f9fa] py-14 sm:py-20">
+          <div className="mx-auto max-w-2xl px-6 sm:px-8 lg:px-10">
+            <SectionLabel>What you get</SectionLabel>
+            <h2 className="mt-2 text-2xl font-medium tracking-tight sm:text-[1.75rem]">
+              Why people take roles like this
             </h2>
-            <ul className="mt-10 space-y-5">
+            <ul className="mt-8 list-disc space-y-4 pl-5 text-base leading-relaxed text-[#3c4043] marker:text-primary-600">
               {youGet.map((t) => (
-                <li
-                  key={t}
-                  className="flex items-start gap-3 rounded-xl border border-black/[0.06] bg-white px-5 py-4 text-[16px] leading-relaxed text-[#374151]"
-                >
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" />
+                <li key={t} className="pl-1">
                   {t}
                 </li>
               ))}
@@ -282,44 +254,45 @@ export default function ChiefOfStaffInternPage() {
           </div>
         </section>
 
-        {/* Process + scorecard */}
-        <section className="border-b border-black/[0.06] bg-white py-20 sm:py-24">
-          <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#86868b]">
-              How hiring works
-            </p>
-            <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-              Built to find future operators — not “interns.”
+        {/* Process */}
+        <section className="border-b border-[#dadce0] bg-white py-14 sm:py-20">
+          <div className="mx-auto max-w-2xl px-6 sm:px-8 lg:px-10">
+            <SectionLabel>How hiring works</SectionLabel>
+            <h2 className="mt-2 text-2xl font-medium tracking-tight sm:text-[1.75rem]">
+              Simple stages, clear bar
             </h2>
             <ol className="mt-12 space-y-10">
               {processSteps.map((s) => (
-                <li key={s.step} className="flex gap-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1d1d1f] text-sm font-semibold text-white">
+                <li key={s.step} className="flex gap-4 sm:gap-5">
+                  <span
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-primary-600 text-sm font-semibold text-primary-600"
+                    aria-hidden
+                  >
                     {s.step}
                   </span>
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-[#1d1d1f]">{s.title}</h3>
-                    <p className="mt-2 text-[15px] leading-relaxed text-[#6e6e73]">{s.body}</p>
+                    <h3 className="text-base font-medium text-[#202124]">{s.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[#5f6368] sm:text-[15px]">
+                      {s.body}
+                    </p>
                   </div>
                 </li>
               ))}
             </ol>
 
-            <div className="mt-14 rounded-2xl border border-black/[0.08] bg-[#fbfbfd] p-8">
-              <h3 className="font-display text-lg font-semibold text-[#1d1d1f]">
-                Scorecard (how we review)
-              </h3>
-              <p className="mt-2 text-sm text-[#6e6e73]">
-                Each application is scored out of 10 on four dimensions — so hiring stays
-                objective, not gut-only.
+            <div className="mt-14 rounded-2xl border border-[#dadce0] bg-[#f8f9fa] p-6 sm:p-8">
+              <h3 className="text-base font-medium text-[#202124]">How we score applications</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#5f6368]">
+                Each application is rated out of 10 on four dimensions so review stays structured,
+                not only intuitive.
               </p>
-              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              <ul className="mt-5 flex flex-wrap gap-2">
                 {['Thinking', 'Execution', 'Ownership', 'Clarity'].map((d) => (
                   <li
                     key={d}
-                    className="rounded-lg bg-white px-4 py-3 text-sm font-medium text-[#374151] ring-1 ring-black/[0.05]"
+                    className="rounded-full bg-white px-3 py-1.5 text-sm text-[#3c4043] ring-1 ring-[#dadce0]"
                   >
-                    {d} — /10
+                    {d} /10
                   </li>
                 ))}
               </ul>
@@ -328,18 +301,18 @@ export default function ChiefOfStaffInternPage() {
         </section>
 
         {/* Application */}
-        <section id="apply" className="scroll-mt-28 bg-[#fbfbfd] py-20 sm:py-28">
+        <section id="apply" className="scroll-mt-28 bg-[#f8f9fa] py-16 sm:py-24">
           <div className="mx-auto max-w-2xl px-6 sm:px-8 lg:px-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#86868b]">
-              Application
-            </p>
-            <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-              Thoughtful answers beat resumes.
+            <SectionLabel>Apply</SectionLabel>
+            <h2 className="mt-2 text-2xl font-medium tracking-tight sm:text-[1.75rem]">
+              Written answers matter most
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-[#6e6e73]">
-              We use your written responses as the main filter. Take your time. Specificity wins.
+            <p className="mt-4 text-base leading-relaxed text-[#5f6368]">
+              Take your time. Specific examples beat generic claims. Résumé is optional; we read
+              what you write. Applications go to our team — not through automated CV screening for
+              this role.
             </p>
-            <div className="mt-12 rounded-2xl border border-black/[0.06] bg-white p-6 shadow-sm sm:p-10">
+            <div className="mt-10 rounded-2xl border border-[#dadce0] bg-white p-6 shadow-[0_1px_2px_rgba(60,64,67,0.08)] sm:p-10">
               <ChiefOfStaffApplicationForm />
             </div>
           </div>

@@ -5,6 +5,9 @@ import { useForm } from 'react-hook-form'
 import { chiefOfStaffApplicationSchema } from '@/lib/chiefOfStaffApplicationSchema'
 import { validateChiefOfStaffResume } from '@/lib/careersChiefOfStaffResume'
 
+const inputClass =
+  'mt-1.5 w-full rounded-lg border border-[#dadce0] bg-white px-4 py-3 text-[15px] text-[#202124] outline-none transition placeholder:text-[#80868b] focus:border-primary-600 focus:ring-1 focus:ring-primary-600'
+
 type FormFields = {
   fullName: string
   email: string
@@ -32,6 +35,8 @@ const defaultValues: FormFields = {
 type FieldKey = keyof FormFields
 type FieldErrorKey = FieldKey | 'resume'
 type FieldErrors = Partial<Record<FieldErrorKey | 'root', string>>
+
+const labelClass = 'block text-sm font-medium text-[#5f6368]'
 
 export default function ChiefOfStaffApplicationForm() {
   const resumeInputRef = useRef<HTMLInputElement>(null)
@@ -121,18 +126,16 @@ export default function ChiefOfStaffApplicationForm() {
 
   if (status === 'success') {
     return (
-      <div className="rounded-2xl border border-emerald-200 bg-emerald-50/80 p-8 text-center">
-        <p className="font-display text-lg font-semibold text-emerald-900">
-          Application received
-        </p>
-        <p className="mt-3 text-[15px] leading-relaxed text-emerald-800/90">
-          We read every submission. If there is a fit, you will hear from us within two
+      <div className="rounded-xl border border-[#ceead6] bg-[#e6f4ea] p-8 text-center">
+        <p className="text-lg font-medium text-[#137333]">Application received</p>
+        <p className="mt-3 text-sm leading-relaxed text-[#3c4043]">
+          We read every submission. If there is a fit, you will hear from us within about two
           weeks. Check spam folders just in case.
         </p>
         <button
           type="button"
           onClick={() => setStatus('idle')}
-          className="mt-6 text-sm font-medium text-emerald-800 underline-offset-4 hover:underline"
+          className="mt-6 text-sm font-medium text-primary-600 hover:underline"
         >
           Submit another response
         </button>
@@ -141,171 +144,169 @@ export default function ChiefOfStaffApplicationForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-7 font-sans">
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label htmlFor="fullName" className="block text-sm font-medium text-[#1d1d1f]">
-            Full name <span className="text-red-600">*</span>
+          <label htmlFor="fullName" className={labelClass}>
+            Full name <span className="text-[#d93025]">*</span>
           </label>
           <input
             id="fullName"
             {...register('fullName')}
-            className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] outline-none ring-primary-500/20 transition focus:border-primary-500 focus:ring-2"
+            className={inputClass}
             autoComplete="name"
           />
           {err('fullName') && (
-            <p className="mt-1 text-sm text-red-600">{err('fullName')}</p>
+            <p className="mt-1.5 text-sm text-[#d93025]">{err('fullName')}</p>
           )}
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-[#1d1d1f]">
-            Email <span className="text-red-600">*</span>
+          <label htmlFor="email" className={labelClass}>
+            Email <span className="text-[#d93025]">*</span>
           </label>
           <input
             id="email"
             type="email"
             {...register('email')}
-            className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] outline-none ring-primary-500/20 transition focus:border-primary-500 focus:ring-2"
+            className={inputClass}
             autoComplete="email"
           />
-          {err('email') && <p className="mt-1 text-sm text-red-600">{err('email')}</p>}
+          {err('email') && <p className="mt-1.5 text-sm text-[#d93025]">{err('email')}</p>}
         </div>
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-[#1d1d1f]">
-          Phone (WhatsApp OK) <span className="text-red-600">*</span>
+        <label htmlFor="phone" className={labelClass}>
+          Phone (WhatsApp OK) <span className="text-[#d93025]">*</span>
         </label>
         <input
           id="phone"
           type="tel"
           {...register('phone')}
-          className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] outline-none ring-primary-500/20 transition focus:border-primary-500 focus:ring-2"
+          className={inputClass}
           autoComplete="tel"
         />
-        {err('phone') && <p className="mt-1 text-sm text-red-600">{err('phone')}</p>}
+        {err('phone') && <p className="mt-1.5 text-sm text-[#d93025]">{err('phone')}</p>}
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label htmlFor="linkedinUrl" className="block text-sm font-medium text-[#1d1d1f]">
-            LinkedIn URL <span className="font-normal text-[#86868b]">(optional)</span>
+          <label htmlFor="linkedinUrl" className={labelClass}>
+            LinkedIn <span className="font-normal text-[#80868b]">(optional)</span>
           </label>
           <input
             id="linkedinUrl"
             {...register('linkedinUrl')}
             placeholder="https://"
-            className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] outline-none ring-primary-500/20 transition focus:border-primary-500 focus:ring-2"
+            className={inputClass}
           />
           {err('linkedinUrl') && (
-            <p className="mt-1 text-sm text-red-600">{err('linkedinUrl')}</p>
+            <p className="mt-1.5 text-sm text-[#d93025]">{err('linkedinUrl')}</p>
           )}
         </div>
         <div>
-          <label htmlFor="portfolioUrl" className="block text-sm font-medium text-[#1d1d1f]">
-            Portfolio / GitHub / other link{' '}
-            <span className="font-normal text-[#86868b]">(optional)</span>
+          <label htmlFor="portfolioUrl" className={labelClass}>
+            Portfolio or GitHub <span className="font-normal text-[#80868b]">(optional)</span>
           </label>
           <input
             id="portfolioUrl"
             {...register('portfolioUrl')}
             placeholder="https://"
-            className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] outline-none ring-primary-500/20 transition focus:border-primary-500 focus:ring-2"
+            className={inputClass}
           />
           {err('portfolioUrl') && (
-            <p className="mt-1 text-sm text-red-600">{err('portfolioUrl')}</p>
+            <p className="mt-1.5 text-sm text-[#d93025]">{err('portfolioUrl')}</p>
           )}
         </div>
       </div>
 
       <div>
-        <label htmlFor="resume" className="block text-sm font-medium text-[#1d1d1f]">
-          CV / résumé <span className="font-normal text-[#86868b]">(optional)</span>
+        <label htmlFor="resume" className={labelClass}>
+          CV or résumé <span className="font-normal text-[#80868b]">(optional)</span>
         </label>
-        <p className="mt-1 text-xs text-[#86868b]">PDF or Word, up to 5MB.</p>
+        <p className="mt-1 text-xs text-[#5f6368]">PDF or Word, up to 5 MB.</p>
         <input
           id="resume"
           ref={resumeInputRef}
           type="file"
           accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
           disabled={status === 'submitting'}
-          className="mt-2 block w-full text-[15px] text-[#374151] file:mr-4 file:rounded-lg file:border-0 file:bg-[#f5f5f7] file:px-4 file:py-2.5 file:text-sm file:font-medium file:text-[#1d1d1f] hover:file:bg-[#e8e8ed]"
+          className="mt-2 block w-full text-sm text-[#3c4043] file:mr-4 file:rounded-lg file:border file:border-[#dadce0] file:bg-[#f8f9fa] file:px-4 file:py-2 file:text-sm file:font-medium file:text-[#202124] hover:file:bg-[#f1f3f4]"
         />
-        {err('resume') && <p className="mt-1 text-sm text-red-600">{err('resume')}</p>}
+        {err('resume') && <p className="mt-1.5 text-sm text-[#d93025]">{err('resume')}</p>}
       </div>
 
       <div>
-        <label htmlFor="problemSolved" className="block text-sm font-medium text-[#1d1d1f]">
-          Tell us about a problem you solved <strong>without being told</strong>.{' '}
-          <span className="text-red-600">*</span>
+        <label htmlFor="problemSolved" className={labelClass}>
+          Describe a problem you solved without being told to{' '}
+          <span className="text-[#d93025]">*</span>
         </label>
-        <p className="mt-1 text-xs text-[#86868b]">Context, what you did, outcome. Be specific.</p>
+        <p className="mt-1 text-xs text-[#5f6368]">Context, what you did, outcome. Be specific.</p>
         <textarea
           id="problemSolved"
           {...register('problemSolved')}
           rows={5}
-          className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] leading-relaxed outline-none ring-primary-500/20 transition focus:border-primary-500 focus:ring-2"
+          className={`${inputClass} resize-y leading-relaxed`}
         />
         {err('problemSolved') && (
-          <p className="mt-1 text-sm text-red-600">{err('problemSolved')}</p>
+          <p className="mt-1.5 text-sm text-[#d93025]">{err('problemSolved')}</p>
         )}
       </div>
 
       <div>
-        <label htmlFor="improveThirtyDays" className="block text-sm font-medium text-[#1d1d1f]">
-          What would you improve at EzyHelpers if you had <strong>30 days</strong>?{' '}
-          <span className="text-red-600">*</span>
+        <label htmlFor="improveThirtyDays" className={labelClass}>
+          What would you improve at EzyHelpers in 30 days?{' '}
+          <span className="text-[#d93025]">*</span>
         </label>
-        <p className="mt-1 text-xs text-[#86868b]">
-          We value original thinking — it is fine if you have incomplete information.
+        <p className="mt-1 text-xs text-[#5f6368]">
+          Incomplete information is fine — we care how you think.
         </p>
         <textarea
           id="improveThirtyDays"
           {...register('improveThirtyDays')}
           rows={5}
-          className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] leading-relaxed outline-none ring-primary-500/20 transition focus:border-primary-500 focus:ring-2"
+          className={`${inputClass} resize-y leading-relaxed`}
         />
         {err('improveThirtyDays') && (
-          <p className="mt-1 text-sm text-red-600">{err('improveThirtyDays')}</p>
+          <p className="mt-1.5 text-sm text-[#d93025]">{err('improveThirtyDays')}</p>
         )}
       </div>
 
       <div>
-        <label htmlFor="builtSomething" className="block text-sm font-medium text-[#1d1d1f]">
-          Have you ever <strong>built something</strong>? (even small){' '}
-          <span className="text-red-600">*</span>
+        <label htmlFor="builtSomething" className={labelClass}>
+          Have you built something, even small? <span className="text-[#d93025]">*</span>
         </label>
         <textarea
           id="builtSomething"
           {...register('builtSomething')}
           rows={4}
-          className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] leading-relaxed outline-none ring-primary-500/20 transition focus:border-primary-500 focus:ring-2"
+          className={`${inputClass} resize-y leading-relaxed`}
         />
         {err('builtSomething') && (
-          <p className="mt-1 text-sm text-red-600">{err('builtSomething')}</p>
+          <p className="mt-1.5 text-sm text-[#d93025]">{err('builtSomething')}</p>
         )}
       </div>
 
       <div>
-        <label htmlFor="whyNotHireYou" className="block text-sm font-medium text-[#1d1d1f]">
-          <strong>Why should we not hire you?</strong> <span className="text-red-600">*</span>
+        <label htmlFor="whyNotHireYou" className={labelClass}>
+          Why should we not hire you? <span className="text-[#d93025]">*</span>
         </label>
-        <p className="mt-1 text-xs text-[#86868b]">Honesty and self-awareness count more than polish.</p>
+        <p className="mt-1 text-xs text-[#5f6368]">Honesty and self-awareness matter more than polish.</p>
         <textarea
           id="whyNotHireYou"
           {...register('whyNotHireYou')}
           rows={4}
-          className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] leading-relaxed outline-none ring-primary-500/20 transition focus:border-primary-500 focus:ring-2"
+          className={`${inputClass} resize-y leading-relaxed`}
         />
         {err('whyNotHireYou') && (
-          <p className="mt-1 text-sm text-red-600">{err('whyNotHireYou')}</p>
+          <p className="mt-1.5 text-sm text-[#d93025]">{err('whyNotHireYou')}</p>
         )}
       </div>
 
       {status === 'error' && (
-        <p className="text-sm text-red-600">
-          Something went wrong. Please try again, or email{' '}
-          <a href="mailto:contact@ezyhelpers.com" className="underline">
+        <p className="text-sm text-[#d93025]">
+          Something went wrong. Try again, or email{' '}
+          <a href="mailto:contact@ezyhelpers.com" className="font-medium text-primary-600 underline">
             contact@ezyhelpers.com
           </a>{' '}
           with the same answers.
@@ -315,7 +316,7 @@ export default function ChiefOfStaffApplicationForm() {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full rounded-full bg-[#1d1d1f] py-4 text-sm font-semibold text-white transition hover:bg-black disabled:opacity-60 sm:w-auto sm:min-w-[200px] sm:px-10"
+        className="w-full rounded-full bg-primary-600 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-primary-700 disabled:opacity-50 sm:w-auto sm:min-w-[200px] sm:px-10"
       >
         {status === 'submitting' ? 'Submitting…' : 'Submit application'}
       </button>
