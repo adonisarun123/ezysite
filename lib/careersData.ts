@@ -217,112 +217,80 @@ export const jobOpenings: JobOpening[] = [
   },
   {
     slug: 'operations-lead-field-quality',
-    title: 'Operations Lead, Field & Quality',
+    title: 'Field Officer',
     department: 'Operations',
-    location: 'Bangalore',
+    location: 'Bangalore (field travel · HSR office base)',
     type: 'Full-time',
-    team: 'City Operations',
-    postedAt: '2026-03-15',
+    team: 'Field operations',
+    postedAt: '2026-04-08',
     excerpt:
-      'Own helper onboarding, quality checks, and day-to-day delivery in one of our fastest-growing cities.',
+      'On-ground verification, quality checks, and helper touchpoints across Bangalore — you make our “verified help” promise real before a family ever books.',
     intro:
-      'You will sit at the centre of how families experience EzyHelpers — from verification to replacements. We are scaling thoughtful operations, not call-centre volume.',
+      'EzyHelpers matches households with domestic professionals — maids, cooks, nannies, caregivers, drivers, and more. Trust is everything: families need to know who is entering their home, and helpers deserve a fair, respectful process. Field Officers are our eyes and ears in the city. You visit helpers, run checks and interviews per playbook, capture evidence in our tools, and flag anything that does not meet the bar. You work closely with sourcing, city ops, and sometimes sales so placements are safe, accurate, and fast.',
     responsibilities: [
-      'Run and improve field verification, training touchpoints, and quality audits.',
-      'Partner with product and central ops on playbooks, SLAs, and city-specific nuances.',
-      'Coach a small ops pod; escalate patterns that should become product or policy.',
-      'Represent customer and helper feedback in weekly leadership reviews.',
+      'Conduct field visits and in-person verification steps for helpers (identity, address, references, and other checks defined in our SOPs).',
+      'Run structured interviews or screening conversations; assess fit, experience, and documentation; record outcomes clearly in CRM / internal apps the same day.',
+      'Capture photos, documents, and notes per policy; ensure files are complete and legible for audit and quality review.',
+      'Support helper onboarding touchpoints — briefings on expectations, app usage where applicable, and next steps after verification.',
+      'Perform quality audits, spot checks, or re-verifications when ops or leadership flags risk or repeat issues.',
+      'Coordinate with sourcing and city ops on schedules, priorities, and escalations; communicate delays or blockers early.',
+      'Represent EzyHelpers professionally with helpers and, when required, with families for in-person fit or clarification visits (as per playbook).',
+      'Follow safety guidelines for solo field work; use check-ins and reporting lines as defined by the company.',
+      'Maintain daily activity logs (visits, outcomes, mileage or time) so dashboards and SLAs stay accurate.',
     ],
     requirements: [
-      '4+ years in operations, marketplace ops, or high-trust services (healthcare, fintech, premium retail).',
-      'Comfort with data: spreadsheets, basic dashboards, and writing clear weekly notes.',
-      'Empathy for domestic workers and clarity with urban families — both matter.',
+      'Comfort with full-time field work across Bangalore — different neighbourhoods, traffic, and schedules.',
+      'Valid two-wheeler license and own vehicle preferred; ability to travel independently for most of the workday.',
+      'Strong smartphone skills: mobile apps, WhatsApp, maps, and uploading photos or forms without friction.',
+      'Clear communication in English and Hindi; Kannada is important for many local conversations — you should be able to hold basic professional dialogues in all three where needed.',
+      'High integrity and discretion when handling IDs, addresses, and personal data.',
+      'Reliable documentation habits — if it is not logged, it did not happen.',
+      'Respect for domestic workers; firm on standards without being dismissive or rude.',
     ],
     niceToHave: [
-      'Experience in staffing, home services, or gig platforms in India.',
-      'Hindi + English fluency; Kannada is a plus in Bangalore.',
+      '1–2 years in field verification, background checks, staffing, security, logistics, or gig / hyperlocal ops.',
+      'Experience with domestic help, facility services, or marketplace field teams in India.',
+      'Familiarity with Bangalore localities and commute patterns.',
+      'Prior use of CRM, ticketing, or field-force apps.',
     ],
-  },
-  {
-    slug: 'product-manager-growth-trust',
-    title: 'Product Manager, Growth & Trust',
-    department: 'Product',
-    location: 'Bangalore · Hybrid',
-    type: 'Hybrid',
-    team: 'Product',
-    postedAt: '2026-03-22',
-    excerpt:
-      'Shape verification, booking, and retention journeys for a category that runs on trust.',
-    intro:
-      'Domestic help is one of India’s largest labour markets and one of the least digitised. You will help families feel safe hiring and helpers feel respected — through product, not slogans.',
-    responsibilities: [
-      'Define and ship roadmap for trust surfaces: profiles, verification states, replacements.',
-      'Partner with engineering, design, and ops on experiments and rollouts.',
-      'Instrument funnels; turn ambiguous “trust” goals into measurable outcomes.',
+    extraSections: [
+      {
+        title: 'Typical day (illustrative)',
+        items: [
+          'Start from HSR or a defined reporting point; pick up the day’s visit list and priorities from ops.',
+          'Travel to helper locations; run verification and interviews; upload proof and notes.',
+          'Sync with sourcing or team lead on edge cases, rejections, or re-schedules.',
+          'End-of-day: close loops in tools, hand off open items, prep tomorrow’s route where possible.',
+        ],
+      },
+      {
+        title: 'How we measure success',
+        items: [
+          'Verification cases completed on time with complete, audit-ready records',
+          'Quality of field notes and adherence to SOPs',
+          'Accuracy (low rework / low dispute rate tied to verification gaps)',
+          'Collaboration signals from sourcing and city ops',
+          'Professional conduct in helper and customer interactions',
+        ],
+      },
+      {
+        title: 'Work setup',
+        items: [
+          'Full-time employment; primarily field-based with regular reporting into our Bangalore office (HSR Layout).',
+          'Compensation and field-allowance structure discussed with shortlisted candidates.',
+          'Company will share safety, dress, and conduct guidelines for field work.',
+        ],
+      },
+      {
+        title: 'Why join',
+        items: [
+          'Direct impact on family safety and helper dignity in a category that needs better standards',
+          'Clear growth path toward senior field, team lead, or city ops roles as we scale',
+          'Structured playbooks and tools — not arbitrary “figure it out” field work',
+        ],
+      },
     ],
-    requirements: [
-      '3+ years as a PM in consumer or marketplace products.',
-      'Track record of shipping with small engineering teams in ambiguous domains.',
-      'Written communication that works for leadership and frontline ops.',
-    ],
-    niceToHave: [
-      'Experience with regulated or high-emotion categories.',
-      'Comfort with SQL or analytics tools.',
-    ],
-  },
-  {
-    slug: 'full-stack-engineer',
-    title: 'Full-stack Engineer',
-    department: 'Engineering',
-    location: 'Bangalore · Hybrid',
-    type: 'Hybrid',
-    team: 'Engineering',
-    postedAt: '2026-04-01',
-    excerpt:
-      'Build the tools that match families with verified helpers — Next.js, APIs, and pragmatic craft.',
-    intro:
-      'Our stack is modern (Next.js, TypeScript, Tailwind) and our problems are human: scheduling, trust, and clear communication. We value small, reliable releases over hype.',
-    responsibilities: [
-      'Ship features across web and API layers with attention to performance and accessibility.',
-      'Collaborate on schema, SEO, and internal tools that ops teams use daily.',
-      'Participate in code review and help keep the codebase approachable.',
-    ],
-    requirements: [
-      'Strong TypeScript / JavaScript and React patterns.',
-      'Experience shipping production web apps; Next.js familiarity is ideal.',
-      'Respect for security and privacy when handling personal data.',
-    ],
-    niceToHave: [
-      'PostgreSQL / Supabase or similar.',
-      'Interest in India-specific UX (languages, networks, devices).',
-    ],
-  },
-  {
-    slug: 'customer-success-lead',
-    title: 'Customer Success Lead',
-    department: 'Customer',
-    location: 'Bareilly · Bangalore',
-    type: 'Full-time',
-    team: 'Customer Success',
-    postedAt: '2026-04-04',
-    excerpt:
-      'Lead how we resolve issues, retain families, and turn feedback into better service.',
-    intro:
-      'When something breaks in home help, people remember. You will build calm, fair processes so customers feel heard and helpers are treated with dignity.',
-    responsibilities: [
-      'Own escalations, replacements, and satisfaction loops with clear SLAs.',
-      'Train and align a lean CS team with ops and city leads.',
-      'Synthesise themes for product and leadership — one pagers, not noise.',
-    ],
-    requirements: [
-      '4+ years in customer success, account management, or service recovery.',
-      'Excellent phone and written communication in English and Hindi.',
-      'Comfort working across cities with different maturity levels.',
-    ],
-    niceToHave: [
-      'Experience in marketplaces or regulated services.',
-      'Exposure to CRM and ticketing workflows.',
-    ],
+    applyEmail: 'contact@ezyhelpers.com',
   },
 ]
 
