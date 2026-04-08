@@ -322,6 +322,23 @@ export interface CareersSalesExecutiveFormData {
   resumeFileName: string
 }
 
+/** Generic careers application (field ops, sourcing, etc.) — job identified by slug/title */
+export interface CareersRoleApplicationFormData {
+  jobSlug: string
+  jobTitle: string
+  fullName: string
+  email: string
+  phone: string
+  linkedinUrl?: string
+  relevantExperience: string
+  whyThisRole: string
+  noticePeriod?: string
+  additionalNotes?: string
+  submittedAt?: string
+  sourceUrl?: string
+  resumeFileName: string
+}
+
 export type LeadType =
   | 'contact'
   | 'hire_helper'
@@ -333,7 +350,8 @@ export type LeadType =
   | 'helper_interview'
   | 'careers_chief_of_staff'
   | 'careers_apm'
-  | 'careers_sales_executive';
+  | 'careers_sales_executive'
+  | 'careers_role_application';
 
 export interface EmailSendResult {
   success: boolean;

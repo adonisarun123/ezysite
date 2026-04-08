@@ -7,6 +7,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import { CAREERS_DEDICATED_PAGE_SLUGS, getJobBySlug, jobOpenings } from '@/lib/careersData'
 import ApmApplicationForm from '@/components/careers/ApmApplicationForm'
 import SalesExecutiveApplicationForm from '@/components/careers/SalesExecutiveApplicationForm'
+import CareersRoleApplicationForm from '@/components/careers/CareersRoleApplicationForm'
 import { ArrowLeftIcon, MapPinIcon, ClockIcon, BuildingOffice2Icon } from '@heroicons/react/24/outline'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -248,22 +249,28 @@ export default async function CareerJobPage({ params }: Props) {
                   Application form
                 </p>
                 <p className="mt-4 text-[17px] leading-relaxed text-[#6e6e73]">
-                  {inlineFormKind === 'sales_executive' ? (
+                  {inlineFormKind === 'apm' ? (
+                    <>
+                      Submit your details and written answers below. You may attach a CV (PDF or
+                      Word, up to 5 MB). Submissions are sent to our hiring inbox.
+                    </>
+                  ) : (
                     <>
                       Submit your details and answers below. A current CV is{' '}
                       <strong className="font-medium text-[#1d1d1f]">required</strong> (PDF or Word,
                       up to 5 MB). Submissions go to our hiring inbox.
-                    </>
-                  ) : (
-                    <>
-                      Submit your details and written answers below. You may attach a CV (PDF or
-                      Word, up to 5 MB). Submissions are sent to our hiring inbox.
                     </>
                   )}
                 </p>
                 <div className="mt-10 rounded-2xl border border-black/[0.06] bg-white p-6 shadow-sm sm:p-10">
                   {inlineFormKind === 'sales_executive' ? (
                     <SalesExecutiveApplicationForm />
+                  ) : inlineFormKind === 'role' ? (
+                    <CareersRoleApplicationForm
+                      jobSlug={job.slug}
+                      jobTitle={job.title}
+                      idPrefix={`careers-${job.slug}`}
+                    />
                   ) : (
                     <ApmApplicationForm />
                   )}

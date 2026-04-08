@@ -430,6 +430,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Other missing pages
   const otherPages: MetadataRoute.Sitemap = [
     {
+      url: `${baseUrl}/agent-registration`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.5
+    },
+    {
+      url: `${baseUrl}/agent-success`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.25
+    },
+    {
       url: `${baseUrl}/customer-requirements`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -446,6 +458,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.5
+    },
+    {
+      url: `${baseUrl}/helper-success`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.25
     }
   ]
 
@@ -465,6 +483,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ]
 
+  // One entry per open role (e.g. field-officer-bangalore, sourcing-lead-bangalore); dedicated routes like chief-of-staff-intern use the same slug here.
   const careerJobPages: MetadataRoute.Sitemap = jobOpenings.map((j) => ({
     url: `${baseUrl}/careers/${j.slug}`,
     lastModified: currentDate,

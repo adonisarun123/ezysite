@@ -25,7 +25,7 @@ export type JobOpening = {
   /** When true, the job page shows an inline application form (see careers/[slug]/page.tsx) */
   hasApplicationForm?: boolean
   /** Which form to render when hasApplicationForm is true (defaults to apm if omitted) */
-  applicationForm?: 'apm' | 'sales_executive'
+  applicationForm?: 'apm' | 'sales_executive' | 'role'
 }
 
 /** Slugs that use a custom route under `app/careers/<slug>/` (excluded from `[slug]` static generation). */
@@ -291,6 +291,8 @@ export const jobOpenings: JobOpening[] = [
       },
     ],
     applyEmail: 'contact@ezyhelpers.com',
+    hasApplicationForm: true,
+    applicationForm: 'role',
   },
   {
     slug: 'sourcing-lead-bangalore',
@@ -372,6 +374,8 @@ export const jobOpenings: JobOpening[] = [
       },
     ],
     applyEmail: 'contact@ezyhelpers.com',
+    hasApplicationForm: true,
+    applicationForm: 'role',
   },
 ]
 

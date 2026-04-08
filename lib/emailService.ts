@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import pRetry from 'p-retry';
 import { EMAIL } from './constants';
 import { logger } from './logger';
-import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData, CareersSalesExecutiveFormData } from '../types/email';
+import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData, CareersSalesExecutiveFormData, CareersRoleApplicationFormData } from '../types/email';
 
 // Utility function to format phone numbers to bypass DLP (shows all digits with spaces)
 const formatPhoneForEmail = (phone: string): string => {
@@ -1341,6 +1341,57 @@ ${formData.sourceUrl ? `Source: ${formData.sourceUrl}` : ''}
   }
 }
 
+const generateCareersRoleApplicationEmail = (
+  formData: CareersRoleApplicationFormData
+): EmailContent => {
+  const formattedPhone = formatPhoneForEmail(formData.phone)
+  const block = (label: string, text: string) => `
+        <div style="background-color:#fff;padding:16px 20px;border:1px solid #e5e7eb;border-radius:8px;margin:0 0 16px;">
+          <h3 style="margin:0 0 8px;color:#111827;font-size:14px;">${escapeHtml(label)}</h3>
+          <p style="margin:0;white-space:pre-wrap;color:#374151;font-size:14px;line-height:1.55;">${escapeHtml(text)}</p>
+        </div>`
+
+  return {
+    subject: `${formData.jobTitle} — Application — ${formData.fullName}`,
+    html: `
+      <div style="font-family:system-ui,-apple-system,sans-serif;max-width:640px;margin:0 auto;">
+        <h2 style="color:#0074C8;">Careers — ${escapeHtml(formData.jobTitle)}</h2>
+        <div style="background:#f9fafb;padding:16px 20px;border-radius:8px;margin:16px 0;">
+          <p style="margin:4px 0;"><strong>Role:</strong> ${escapeHtml(formData.jobTitle)} <span style="color:#6b7280;">(${escapeHtml(formData.jobSlug)})</span></p>
+          <p style="margin:4px 0;"><strong>Name:</strong> ${escapeHtml(formData.fullName)}</p>
+          <p style="margin:4px 0;"><strong>Email:</strong> <a href="mailto:${escapeHtml(formData.email)}">${escapeHtml(formData.email)}</a></p>
+          <p style="margin:4px 0;"><strong>Phone:</strong> ${formattedPhone}</p>
+          ${formData.linkedinUrl ? `<p style="margin:4px 0;"><strong>LinkedIn:</strong> <a href="${escapeHtml(formData.linkedinUrl)}">${escapeHtml(formData.linkedinUrl)}</a></p>` : ''}
+          <p style="margin:4px 0;"><strong>CV / résumé:</strong> attached (${escapeHtml(formData.resumeFileName)})</p>
+          ${formData.noticePeriod ? `<p style="margin:4px 0;"><strong>Notice period:</strong> ${escapeHtml(formData.noticePeriod)}</p>` : ''}
+          ${formData.submittedAt ? `<p style="margin:4px 0;color:#6b7280;font-size:13px;">Submitted: ${escapeHtml(formData.submittedAt)}</p>` : ''}
+        </div>
+        ${block('1. Relevant experience', formData.relevantExperience)}
+        ${block('2. Why this role at EzyHelpers', formData.whyThisRole)}
+        ${formData.additionalNotes ? block('3. Additional notes', formData.additionalNotes) : ''}
+        ${formData.sourceUrl ? `<p style="font-size:12px;color:#6b7280;"><strong>Source:</strong> <a href="${escapeHtml(formData.sourceUrl)}">${escapeHtml(formData.sourceUrl)}</a></p>` : ''}
+      </div>
+    `,
+    text: `
+${formData.jobTitle} — Application (slug: ${formData.jobSlug})
+
+Name: ${formData.fullName}
+Email: ${formData.email}
+Phone: ${formattedPhone}
+${formData.linkedinUrl ? `LinkedIn: ${formData.linkedinUrl}\n` : ''}CV / résumé: attached (${formData.resumeFileName})
+${formData.noticePeriod ? `Notice period: ${formData.noticePeriod}\n` : ''}${formData.submittedAt ? `Submitted: ${formData.submittedAt}\n` : ''}
+
+1. Relevant experience:
+${formData.relevantExperience}
+
+2. Why this role at EzyHelpers:
+${formData.whyThisRole}
+${formData.additionalNotes ? `\n3. Additional notes:\n${formData.additionalNotes}\n` : ''}
+${formData.sourceUrl ? `Source: ${formData.sourceUrl}` : ''}
+    `.trim(),
+  }
+}
+
 export type SendLeadEmailOptions = {
   attachments?: NonNullable<nodemailer.SendMailOptions['attachments']>
 }
@@ -1371,7 +1422,8 @@ export const sendLeadEmail = async (
     } else if (
       leadType === 'careers_chief_of_staff' ||
       leadType === 'careers_apm' ||
-      leadType === 'careers_sales_executive'
+      leadType === 'careers_sales_executive' ||
+      leadType === 'careers_role_application'
     ) {
       emailRecipientsEnv =
         process.env.CAREERS_EMAIL_RECIPIENTS || 'contact@ezyhelpers.com';
@@ -1435,6 +1487,11 @@ export const sendLeadEmail = async (
       case 'careers_sales_executive':
         emailContent = generateCareersSalesExecutiveEmail(
           formData as CareersSalesExecutiveFormData
+        );
+        break;
+      case 'careers_role_application':
+        emailContent = generateCareersRoleApplicationEmail(
+          formData as CareersRoleApplicationFormData
         );
         break;
       default:
