@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
@@ -8,6 +9,10 @@ export const metadata: Metadata = {
   title: 'Babysitter Services in Bareilly – Trusted Child Care',
   description: 'Book babysitter services in Bareilly for newborns, toddlers, or school-aged children. Safe, caring support for full-day or part-time needs.',
   keywords: 'babysitter services bareilly, home babysitter bareilly, child care bareilly, nanny services bareilly, baby care services bareilly',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/babysitter',
+    languages: selfReferencingLanguages('/services/babysitter'),
+  },
 }
 
 const babysitterServices = [

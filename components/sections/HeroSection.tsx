@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { useState, memo } from 'react'
 import { CheckCircleIcon, StarIcon, PhoneIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
-import { supabase } from '@/lib/supabaseClient'
 
 // Legacy stats kept for backward compatibility
 const stats = [
@@ -133,7 +132,7 @@ export default function HeroSection() {
     }
     
     try {
-      // Store in Supabase
+      const { supabase } = await import('@/lib/supabaseClient')
       const { error } = await supabase.from('leads').insert([
         {
           name: formData.name.trim(),

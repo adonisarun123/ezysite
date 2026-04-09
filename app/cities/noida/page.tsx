@@ -1,5 +1,7 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import {
@@ -10,6 +12,16 @@ import {
   PhoneIcon,
   MapPinIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Domestic Help in Noida & Greater Noida | EzyHelpers',
+  description:
+    'Verified maids, cooks, and home help in Noida sectors and Greater Noida. Book trusted domestic staff for apartments and gated communities.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/noida',
+    languages: selfReferencingLanguages('/cities/noida'),
+  },
+}
 
 export default function NoidaPage() {
   const localServices = [

@@ -1,6 +1,17 @@
 import React from 'react';
+import type { Metadata } from 'next';
+import { selfReferencingLanguages } from '@/lib/selfHreflang';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Refund Policy | EzyHelpers',
+  description: 'EzyHelpers refund policy for placement fees and service stages. Transparent terms for domestic help bookings.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/refund-policy',
+    languages: selfReferencingLanguages('/refund-policy'),
+  },
+};
 import {
   CurrencyDollarIcon,
   ClockIcon,

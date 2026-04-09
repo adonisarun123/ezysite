@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
@@ -27,8 +28,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       locale: 'en_IN',
     },
     alternates: {
-      canonical: `https://www.ezyhelpers.com/cities/${city}`
-    }
+      canonical: `https://www.ezyhelpers.com/cities/${city}`,
+      languages: selfReferencingLanguages(`/cities/${city}`),
+    },
   }
 }
 

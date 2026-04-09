@@ -128,18 +128,9 @@ export default function LocalBusinessSchema({
       `Elderly Care in ${cityName}`,
       `Cook Services in ${cityName}`,
       `Driver Services in ${cityName}`,
-      `Home Management in ${cityName}`
+      `Home Management in ${cityName}`,
+      "Homeowners, families, and working professionals seeking verified domestic help",
     ],
-    "audience": {
-      "@type": "Audience",
-      "audienceType": "Homeowners, Families, Working Professionals",
-      "geographicArea": {
-        "@type": "City",
-        "name": cityName,
-        "addressRegion": stateName,
-        "addressCountry": "IN"
-      }
-    },
     "additionalProperty": [
       {
         "@type": "PropertyValue",

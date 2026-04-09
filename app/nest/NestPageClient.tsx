@@ -583,7 +583,7 @@ export default function NestPageClient() {
             },
             "telephone": "+91-80-31411776",
             "priceRange": "₹299 - ₹10,500",
-            "offers": [
+            "makesOffer": [
               {
                 "@type": "Offer",
                 "name": "Helper Daily Stay",

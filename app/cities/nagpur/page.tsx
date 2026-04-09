@@ -1,5 +1,7 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import {
@@ -10,6 +12,16 @@ import {
   PhoneIcon,
   MapPinIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Domestic Help in Nagpur | Verified Maids & Home Services | EzyHelpers',
+  description:
+    'Hire verified maids, cooks, and home help in Nagpur — Sitabuldi, Sadar, Hingna, and nearby areas. Trusted domestic staff with EzyHelpers.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/nagpur',
+    languages: selfReferencingLanguages('/cities/nagpur'),
+  },
+}
 
 export default function NagpurPage() {
   const localServices = [

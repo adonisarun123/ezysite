@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import React from 'react'
 import NestPageClient from './NestPageClient'
 
@@ -6,6 +7,10 @@ export const metadata: Metadata = {
   title: 'Domestic Worker Accommodation in Bangalore | Nest',
   description: 'Affordable domestic worker hostel in Bangalore. Women-only helper stay with meals and basic facilities. Short-term and long-term maid stay available. Book now.',
   keywords: 'domestic worker accommodation Bangalore, maid hostel Bangalore, helper stay Bangalore, women-only hostel, domestic helper PG, affordable maid stay',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/nest',
+    languages: selfReferencingLanguages('/nest'),
+  },
   openGraph: {
     title: 'Nest - Domestic Worker Accommodation in Bangalore',
     description: 'Safe & Affordable Maid Stay. India\'s first women-only domestic helper hostel.',

@@ -1,5 +1,7 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import {
@@ -10,6 +12,16 @@ import {
   PhoneIcon,
   MapPinIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Domestic Help in Meerut | Verified Maids & Home Help | EzyHelpers',
+  description:
+    'Hire verified domestic help in Meerut for business families, professionals, and educational areas. Maids, cooks, and more via EzyHelpers.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/meerut',
+    languages: selfReferencingLanguages('/cities/meerut'),
+  },
+}
 
 export default function MeerutPage() {
   const localServices = [

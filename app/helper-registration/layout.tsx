@@ -1,24 +1,15 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: 'Helper Registration | EzyHelpers - Join Our Helper Network',
-  description: 'Register as a domestic helper with EzyHelpers. Find trusted families looking for maids, cooks, drivers, babysitters, and elderly care providers.',
-  keywords: 'helper registration, domestic helper jobs, maid jobs, cook jobs, driver jobs, babysitter jobs, EzyHelpers',
-  openGraph: {
-    title: 'Helper Registration | EzyHelpers',
-    description: 'Register as a domestic helper with EzyHelpers and connect with families who need your services.',
-    type: 'website',
+  title: 'Helper Registration | Join EzyHelpers',
+  description:
+    'Register as a domestic helper with EzyHelpers. Submit your profile for verified placements and fair work opportunities.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/helper-registration',
   },
-  robots: {
-    index: false, // Don't index registration page
-    follow: true,
-  }
 }
 
-export default function HelperRegisterLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return <>{children}</>
+export default function HelperRegistrationLayout({ children }: { children: ReactNode }) {
+  return children
 }

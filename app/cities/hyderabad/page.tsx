@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
@@ -21,7 +22,11 @@ import {
 export const metadata: Metadata = {
   title: 'Hire Reliable Maid for Home in Hyderabad | Trained Helpers',
   description: 'Find background-verified maids and helpers in Hyderabad for daily chores, cooking, babysitting, elderly care, driving, and home repairs, all in one place.',
-  keywords: 'maid for home Hyderabad, domestic helpers Hyderabad, verified maids Hyderabad, house help services Hyderabad'
+  keywords: 'maid for home Hyderabad, domestic helpers Hyderabad, verified maids Hyderabad, house help services Hyderabad',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/hyderabad',
+    languages: selfReferencingLanguages('/cities/hyderabad'),
+  },
 }
 
 export default function HyderabadPage() {

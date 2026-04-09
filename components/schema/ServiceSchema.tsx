@@ -80,10 +80,6 @@ export default function ServiceSchema({
         }
       }))
     },
-    "audience": {
-      "@type": "Audience",
-      "audienceType": "Homeowners, Families, Working Professionals"
-    },
     "serviceAudience": {
       "@type": "Audience",
       "audienceType": "Homeowners, Families, Working Professionals",

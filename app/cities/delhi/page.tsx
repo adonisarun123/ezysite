@@ -1,5 +1,7 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import OptimizedSection from '@/components/optimized/OptimizedSection'
 import OptimizedCard from '@/components/optimized/OptimizedCard'
@@ -22,6 +24,16 @@ import {
   TruckIcon,
   AcademicCapIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Domestic Help Services in Delhi | Verified Maids & Home Staff | EzyHelpers',
+  description:
+    'Book verified maids, cooks, nannies, drivers, and elderly care in Delhi. Background-checked domestic help for Lutyens, South Delhi, Dwarka, and across NCR.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/delhi',
+    languages: selfReferencingLanguages('/cities/delhi'),
+  },
+}
 
 export default function DelhiPage() {
   // Schema data for Delhi

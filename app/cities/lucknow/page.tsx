@@ -1,5 +1,7 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import {
@@ -10,6 +12,16 @@ import {
   PhoneIcon,
   MapPinIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Domestic Help in Lucknow | Verified Maids & Home Services | EzyHelpers',
+  description:
+    'Verified maids, cooks, and household help in Lucknow — Hazratganj, Gomti Nagar, and across the city. Trusted placements with EzyHelpers.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/lucknow',
+    languages: selfReferencingLanguages('/cities/lucknow'),
+  },
+}
 
 export default function LucknowPage() {
   const localServices = [

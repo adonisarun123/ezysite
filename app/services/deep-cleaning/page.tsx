@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -23,6 +24,10 @@ export const metadata: Metadata = {
   title: 'Full House Deep Cleaning in Bareilly – Book Experts Now',
   description: 'Get home deep cleaning in Bareilly for kitchen, bathroom, and entire house sanitization. Experienced cleaners ensure spotless, hygienic results.',
   keywords: 'deep cleaning bareilly, home cleaning bareilly, bathroom cleaning bareilly, kitchen cleaning bareilly',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/deep-cleaning',
+    languages: selfReferencingLanguages('/services/deep-cleaning'),
+  },
 }
 
 export default function DeepCleaningPage() {
