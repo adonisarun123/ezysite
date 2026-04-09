@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { whatsappSendUrl } from '@/lib/whatsappUrl'
 import Image from 'next/image'
 import { 
   CameraIcon, 
@@ -1165,7 +1166,7 @@ export default function AgentRegistrationPage() {
       {/* Help Contact */}
       <div className="fixed bottom-4 left-4 z-40">
         <Link
-          href="https://wa.me/919972571005?text=Hi! I need help with agent registration."
+          href={whatsappSendUrl('919972571005', 'Hi! I need help with agent registration.')}
           className="flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full shadow-lg transition-all duration-200 text-sm"
         >
           <PhoneIcon className="h-4 w-4 mr-2" />

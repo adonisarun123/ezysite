@@ -116,7 +116,7 @@ export default function HelperJobsPage() {
                                 </Link>
 
                                 <Link
-                                    href="tel:+919876543210"
+                                    href="tel:+919972571005"
                                     className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-sm sm:text-base md:text-lg py-3 px-1 md:py-4 md:px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300 text-center whitespace-nowrap"
                                 >
                                     Call Us
@@ -462,7 +462,7 @@ export default function HelperJobsPage() {
                                 Apply for Jobs in Bangalore
                             </Link>
                             <Link
-                                href="tel:+919876543210"
+                                href="tel:+919972571005"
                                 className="inline-flex items-center justify-center bg-white text-purple-700 font-bold text-lg py-4 px-10 rounded-xl border-2 border-purple-600 hover:bg-purple-50 transition-all duration-300 transform hover:scale-105"
                             >
                                 Call Us

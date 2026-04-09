@@ -235,7 +235,7 @@ export default function ElderlyCaretakerJobsBangalorePage() {
 
                             <div className="flex justify-center mt-10">
                                 <Link
-                                    href="tel:+919876543210"
+                                    href="tel:+919972571005"
                                     className="inline-flex items-center justify-center bg-blue-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-blue-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                                 >
                                     Call Now To Apply
@@ -516,7 +516,7 @@ export default function ElderlyCaretakerJobsBangalorePage() {
 
                         <div className="flex justify-center mt-12 mb-4">
                             <Link
-                                href="tel:+919876543210"
+                                href="tel:+919972571005"
                                 className="inline-flex items-center justify-center bg-blue-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-blue-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                             >
                                 Apply Now for Elderly Care Jobs
@@ -976,7 +976,7 @@ export default function ElderlyCaretakerJobsBangalorePage() {
 
                         <div className="flex justify-center mt-12">
                             <Link
-                                href="tel:+919876543210"
+                                href="tel:+919972571005"
                                 className="inline-flex items-center justify-center bg-blue-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-blue-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                             >
                                 Call Now to Start Your Job
@@ -1016,7 +1016,7 @@ export default function ElderlyCaretakerJobsBangalorePage() {
 
                             <div className="flex flex-col md:flex-row gap-4 justify-center">
                                 <Link
-                                    href="tel:+919876543210"
+                                    href="tel:+919972571005"
                                     className="inline-flex items-center justify-center bg-white text-blue-700 font-bold text-lg py-4 px-10 rounded-xl hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300"
                                 >
                                     Start Your New Journey

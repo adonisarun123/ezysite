@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { whatsappSendUrl } from '@/lib/whatsappUrl'
 import { 
   CheckCircleIcon, 
   PhoneIcon,
@@ -25,9 +26,8 @@ export default function SuccessPage() {
     }))
   }, [])
 
-  const whatsappMessage = encodeURIComponent(
-    "Hi! I just submitted my agent registration form. When can I expect verification updates?"
-  )
+  const whatsappMessage =
+    'Hi! I just submitted my agent registration form. When can I expect verification updates?'
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-green-900 flex items-center justify-center p-4">
@@ -88,7 +88,7 @@ export default function SuccessPage() {
           {/* Action Buttons */}
           <div className="space-y-3">
             <Link
-              href={`https://wa.me/919972571005?text=${whatsappMessage}`}
+              href={whatsappSendUrl('919972571005', whatsappMessage)}
               className="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
             >
               <PhoneIcon className="h-5 w-5 mr-2" />
