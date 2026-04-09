@@ -377,6 +377,358 @@ export const jobOpenings: JobOpening[] = [
     hasApplicationForm: true,
     applicationForm: 'role',
   },
+  {
+    slug: 'city-head-ghaziabad',
+    title: 'City Head – Ghaziabad',
+    department: 'City leadership',
+    location: 'Ghaziabad',
+    type: 'Full-time',
+    team: 'City P&L & growth',
+    postedAt: '2026-04-10',
+    excerpt:
+      'Own end-to-end business performance in Ghaziabad: P&L, demand and supply, operations, and local growth — building a high-efficiency, profitable city.',
+    intro:
+      'EzyHelpers connects households with verified domestic help at scale. The City Head for Ghaziabad drives the full city like a business unit: revenue and margins, lead generation and conversion, helper supply and field execution, placement quality, and team performance. You will partner with central teams while owning what happens on the ground across Ghaziabad’s micro-markets.',
+    responsibilities: [
+      'Own city P&L: placements, revenue, margins, and cost efficiency; improve unit economics over time.',
+      'Generate consistent demand through society tie-ups, referrals, local marketing, and disciplined sales conversion.',
+      'Ensure helper availability: sourcing channels, field officers, and a healthy supply–demand balance.',
+      'Run operations for a fast placement cycle with fewer escalations and delays; protect customer experience.',
+      'Lead the local team across sales, sourcing, and field; set targets, track performance, and drive accountability.',
+      'Uphold verification, documentation, and process compliance; keep system records accurate and audit-ready.',
+      'Build partnerships with societies, agents, and local networks to expand presence across Ghaziabad.',
+    ],
+    requirements: [
+      'Graduate.',
+      'Roughly 3–6 years in sales, operations, or business roles with ownership of outcomes and targets.',
+      'Proven ability to lead small teams and manage execution, not only planning.',
+      'Strong problem-solving mindset and comfort with ambiguity in a growing market.',
+      'Based in or able to work full-time from Ghaziabad.',
+    ],
+    niceToHave: [
+      'Experience in domestic staffing, home services, or marketplace city ops in India.',
+      'Exposure to P&L reporting, funnel metrics, and partnership-led growth.',
+    ],
+    extraSections: [
+      {
+        title: 'Key KPIs',
+        items: [
+          'Revenue and placements',
+          'Conversion rate',
+          'Supply availability',
+          'Cost efficiency',
+          'Customer satisfaction',
+          'Replacement rate',
+        ],
+      },
+      {
+        title: 'What you will gain',
+        items: [
+          'Ownership of a city-level business',
+          'Fast growth opportunities',
+          'Exposure to business strategy and execution',
+        ],
+      },
+    ],
+    applyEmail: 'contact@ezyhelpers.com',
+    hasApplicationForm: true,
+    applicationForm: 'role',
+  },
+  {
+    slug: 'city-head-chennai',
+    title: 'City Head – Chennai',
+    department: 'City leadership',
+    location: 'Chennai',
+    type: 'Full-time',
+    team: 'City launch & scale',
+    postedAt: '2026-04-10',
+    excerpt:
+      'Launch and scale Chennai: full P&L, supply and demand, operations, and team performance — from early growth to a stable, profitable market.',
+    intro:
+      'Chennai is a strategic expansion market for EzyHelpers. As City Head, you own the journey from early traction to a repeatable, profitable operation: demand generation, supply and verification, placement velocity, and local team building. You will represent EzyHelpers with societies and communities and ensure our “verified help” promise shows up in execution, not only in messaging.',
+    responsibilities: [
+      'Own city revenue and profitability; drive placements, margins, and operational efficiency.',
+      'Build demand through local marketing, apartment and society tie-ups, and referral networks with strong conversion discipline.',
+      'Build supply pipelines (agents, field networks) and ensure availability of verified, profile-ready helpers.',
+      'Run the placement lifecycle end to end: requirement → matching → placement → support; improve closure speed and satisfaction.',
+      'Hire, coach, and manage sales, sourcing, and field teams with clear daily accountability.',
+      'Ensure verification and documentation SOPs are followed and CHAP / internal systems stay clean.',
+      'Drive local partnerships and brand trust so EzyHelpers is a preferred name for domestic help in Chennai.',
+    ],
+    requirements: [
+      'Graduate; MBA is a plus.',
+      'Roughly 3–7 years combining sales and operations execution, ideally with team management.',
+      'Understanding of local market dynamics and ability to execute on the ground.',
+      'Leadership skills: clarity, follow-through, and performance culture.',
+      'Based in or able to relocate to Chennai full-time.',
+    ],
+    niceToHave: [
+      'Prior startup or marketplace experience.',
+      'Experience launching or scaling a new city or region.',
+    ],
+    extraSections: [
+      {
+        title: 'Key KPIs',
+        items: [
+          'Revenue and profitability',
+          'Placement volume',
+          'Conversion rate',
+          'Supply readiness',
+          'Customer satisfaction',
+          'Replacement rate',
+        ],
+      },
+      {
+        title: 'What you will gain',
+        items: [
+          'Build a new market from the ground up',
+          'High ownership and autonomy',
+          'Direct interaction with founders',
+          'Leadership growth opportunities',
+        ],
+      },
+    ],
+    applyEmail: 'contact@ezyhelpers.com',
+    hasApplicationForm: true,
+    applicationForm: 'role',
+  },
+  {
+    slug: 'city-head-hyderabad',
+    title: 'City Head – Hyderabad',
+    department: 'City leadership',
+    location: 'Hyderabad',
+    type: 'Full-time',
+    team: 'City P&L & growth',
+    postedAt: '2026-04-10',
+    excerpt:
+      'Act as the CEO of the Hyderabad city unit: P&L, revenue growth, supply–demand balance, operations, and team performance in a high-ownership role.',
+    intro:
+      'Hyderabad is a full P&L mandate. You own revenue, cost, and contribution margin; you build lead pipelines across digital, partnerships, societies, and referrals; you ensure verified helper supply keeps pace with demand; and you run operations from requirement through post-placement support. This role suits someone who thrives in a fast-paced startup and wants to scale a city from traction to a durable business.',
+    responsibilities: [
+      'Own monthly targets on placements, revenue, and contribution margins; optimise unit economics (e.g. CAC, cost per placement).',
+      'Scale demand: digital and local partnerships, society activations, referrals; manage lead → conversion funnel with central marketing alignment.',
+      'Own helper acquisition: sourcing team and field officers, agent and referral networks, healthy supply–demand ratio.',
+      'Drive operations excellence across requirement → sourcing → onboarding → placement → post-placement; reduce TAT, replacements, and escalations.',
+      'Hire, train, and manage sales, sourcing, and field teams with high accountability and daily performance tracking.',
+      'Enforce verification and compliance (e.g. Aadhaar, e-court where applicable), documentation completeness, and disciplined CHAP updates.',
+      'Expand via societies, RWAs, agents, and influencers; identify micro-markets for growth within Hyderabad.',
+    ],
+    requirements: [
+      'Graduate; MBA preferred but not mandatory.',
+      'Roughly 3–7 years across operations, sales, and/or business management with mandatory experience managing teams and targets.',
+      'Strong grasp of P&L and business metrics; data-informed decision making.',
+      'High ownership, problem-solving, and ability to thrive in ambiguity.',
+      'Based in or able to relocate to Hyderabad full-time.',
+    ],
+    niceToHave: [
+      'Marketplace or high-volume services experience in India.',
+      'Prior ownership of a geography or P&L line.',
+    ],
+    extraSections: [
+      {
+        title: 'Key KPIs',
+        items: [
+          'Monthly revenue and profitability',
+          'Successful placements',
+          'Cost per placement',
+          'Supply availability and quality',
+          'Lead → closure conversion',
+          'Customer satisfaction and repeat rate',
+          'Replacement rate reduction',
+        ],
+      },
+      {
+        title: 'What you will gain',
+        items: [
+          'Ownership of a complete business unit',
+          'Exposure to founders and strategic decisions',
+          'Path to senior leadership as the city scales',
+          '0 → scale market-building experience',
+        ],
+      },
+    ],
+    applyEmail: 'contact@ezyhelpers.com',
+    hasApplicationForm: true,
+    applicationForm: 'role',
+  },
+  {
+    slug: 'city-head-delhi',
+    title: 'City Head – Delhi',
+    department: 'City leadership',
+    location: 'Delhi',
+    type: 'Full-time',
+    team: 'City P&L & growth',
+    postedAt: '2026-04-10',
+    excerpt:
+      'Lead one of EzyHelpers’ highest-potential markets: P&L, aggressive growth, operations, and expansion across Delhi.',
+    intro:
+      'Delhi demands sharp execution at scale. You will own growth targets, revenue and city-level profitability, and the operating rhythm that connects demand, supply, placements, and customer experience. You build and lead a high-performance local team, deepen partnerships with premium societies and referral ecosystems, and use data to steer CAC, LTV, and supply–demand balance.',
+    responsibilities: [
+      'Drive aggressive growth and city-level P&L: revenue, margins, and profitability.',
+      'Scale high-quality leads through digital, partnerships, and on-ground activations; lift conversion consistently.',
+      'Build sourcing pipelines and ensure strong availability of verified helpers.',
+      'Run seamless placement journeys: reduce turnaround time and escalations.',
+      'Build and manage a high-performance local team with clear accountability.',
+      'Develop partnerships with premium societies and networks; strengthen referral flywheels.',
+    ],
+    requirements: [
+      'Graduate; MBA preferred.',
+      'Roughly 4–8 years in sales, operations, or general management with leadership experience.',
+      'Strong execution bias and comfort owning targets end to end.',
+      'Data-driven decision making on funnel, unit economics, and supply health.',
+      'Based in or able to work full-time from Delhi.',
+    ],
+    niceToHave: [
+      'Experience in consumer services, staffing, or marketplace businesses in metros.',
+    ],
+    extraSections: [
+      {
+        title: 'Key KPIs',
+        items: [
+          'Revenue growth',
+          'Placement volume',
+          'CAC vs LTV',
+          'Supply–demand balance',
+        ],
+      },
+    ],
+    applyEmail: 'contact@ezyhelpers.com',
+    hasApplicationForm: true,
+    applicationForm: 'role',
+  },
+  {
+    slug: 'city-head-bareilly',
+    title: 'City Head – Bareilly',
+    department: 'City leadership',
+    location: 'Bareilly',
+    type: 'Full-time',
+    team: 'City P&L & growth',
+    postedAt: '2026-04-10',
+    excerpt:
+      'Mini-CEO for Bareilly: own revenue, cost, profitability, supply, demand, field execution, and team performance end to end.',
+    intro:
+      'Bareilly is an owned city business for EzyHelpers. You run P&L and monthly targets on placements and margins, build local demand through inbound, societies, and marketing, and keep helper supply aligned with sales. You lead sales, sourcing, and field officers, enforce verification and CHAP discipline, and grow through apartments, agents, and local influencers.',
+    responsibilities: [
+      'Own revenue, cost, and profitability; hit monthly placement and margin targets; improve unit economics.',
+      'Build and manage local lead channels; convert inbound, society partnerships, and marketing into closed business.',
+      'Ensure consistent quality helper supply; manage sourcing and field officers; maintain supply–demand balance.',
+      'Optimise requirement → onboarding → placement flow; minimise escalations and improve satisfaction.',
+      'Hire, train, and manage sales, sourcing, and field teams with daily performance tracking.',
+      'Ensure verification and documentation completeness; maintain CHAP hygiene.',
+      'Expand via apartments, agents, and local partners with a clear city growth plan.',
+    ],
+    requirements: [
+      'Graduate; MBA preferred.',
+      'Roughly 3–7 years in operations, sales, or business roles with team and target ownership.',
+      'Business acumen and comfort with P&L-style thinking.',
+      'Problem-solving mindset and high ownership.',
+      'Based in or able to work full-time from Bareilly.',
+    ],
+    niceToHave: [
+      'Tier-2 / tier-3 city operating experience.',
+      'Domestic help or services category exposure.',
+    ],
+    extraSections: [
+      {
+        title: 'Key KPIs',
+        items: [
+          'Monthly revenue and profitability',
+          'Placements',
+          'Supply availability',
+          'Conversion rates',
+          'Customer satisfaction and repeat rate',
+        ],
+      },
+      {
+        title: 'What you will gain',
+        items: [
+          'Full ownership of a business unit',
+          'Direct exposure to founders',
+          'Path to senior leadership as we scale',
+        ],
+      },
+    ],
+    applyEmail: 'contact@ezyhelpers.com',
+    hasApplicationForm: true,
+    applicationForm: 'role',
+  },
+  {
+    slug: 'junior-hr-executive-bangalore',
+    title: 'Junior HR Executive',
+    department: 'People & HR',
+    location: 'Bangalore (HSR Layout · office)',
+    type: 'Full-time',
+    team: 'People operations',
+    postedAt: '2026-04-10',
+    excerpt:
+      'Operational HR at the intersection of helper onboarding, verification, internal hiring support, MIS, and coordination with sales, sourcing, and field — backbone of our workforce.',
+    intro:
+      'This is not a desk-only HR role. You will onboard domestic helpers end to end (verification, documentation, CHAP), support hiring for internal roles (sales, field, ops), maintain trackers and MIS, and coordinate tightly with sourcing and field so requirement → onboarding → placement stays fast. You care about accuracy, compliance, and a positive, disciplined workplace.',
+    responsibilities: [
+      'Own helper onboarding and documentation: Aadhaar and checks per process, complete files, accurate CHAP records; align with sourcing and field for profile readiness.',
+      'Support internal recruitment: scheduling, candidate coordination, pipeline tracking, and fast hiring TAT for roles such as sales executives and field officers.',
+      'Maintain HR operations and MIS: joiners, active employees, attrition, attendance and leaves; weekly and monthly reporting.',
+      'Track employee and helper lifecycle: induction, issues, replacements, and churn signals.',
+      'Support compliance with verification standards and HR policies; keep audit-ready records.',
+      'Coordinate daily with sales (requirements), sourcing (pipeline), and field officers (ground validation) to remove handoff delays.',
+      'Support engagement initiatives, employee queries, and a respectful, high-discipline culture.',
+    ],
+    requirements: [
+      'Graduate in any discipline; HR, BBA, or MBA is a plus.',
+      '0–2 years experience; freshers with strong execution and follow-through are welcome.',
+      'Strong communication in Hindi and basic English; Kannada is a plus.',
+      'High ownership, accountability, and coordination skills; comfortable with pace and multitasking.',
+      'Daily reporting discipline and responsiveness.',
+      'Full-time, work from office in Bangalore (HSR Layout).',
+    ],
+    niceToHave: [
+      'Prior exposure to HR, recruitment, or operations.',
+      'Blue-collar or high-volume hiring experience.',
+      'Comfort with Excel or Google Sheets.',
+    ],
+    extraSections: [
+      {
+        title: 'Key KPIs',
+        items: [
+          'Helpers onboarded per week',
+          'Documentation accuracy',
+          'Hiring TAT for internal roles',
+          'Attrition tracking support',
+          'Data accuracy in CHAP',
+          'Coordination efficiency (requirement → closure)',
+        ],
+      },
+      {
+        title: 'Working style',
+        items: [
+          'High responsiveness',
+          'Daily reporting discipline',
+          'Strong follow-up culture',
+          'Ability to juggle multiple workstreams',
+        ],
+      },
+      {
+        title: 'Growth path',
+        items: [
+          'HR Manager',
+          'Operations lead',
+          'People & culture lead',
+        ],
+      },
+      {
+        title: 'Why EzyHelpers',
+        items: [
+          'Hands-on exposure to high-scale operations',
+          'Real blue-collar workforce management',
+          'Direct exposure to founders and decisions',
+          'Impact-heavy role, not theory-only',
+        ],
+      },
+    ],
+    applyEmail: 'contact@ezyhelpers.com',
+    hasApplicationForm: true,
+    applicationForm: 'role',
+  },
 ]
 
 export function getJobBySlug(slug: string): JobOpening | undefined {
