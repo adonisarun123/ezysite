@@ -231,68 +231,80 @@ export default function HelperJobsPage() {
                             {[
                                 {
                                     state: "Jharkhand",
+                                    slug: "jharkhand",
                                     desc: "Stop Working For Low Local Wages And Move To Bangalore For High-Paying, Verified Jobs Where Your Safety And Dignity Come First.",
                                     features: ["Cooking, Cleaning, Baby & Elderly Care Jobs", "Live-In, Full-Time & Part-Time Options", "Clear Work Role Before Joining", "Fixed Monthly Income With Weekly Off", "Respectful Workplace"]
                                 },
                                 {
                                     state: "Odisha",
+                                    slug: "odisha",
                                     desc: "Avoid The Fear Of Uncertain Work And Dishonest Middlemen By Joining Respectful Bangalore Families Who Provide Written Contracts And Timely Monthly Salaries.",
                                     features: ["Housemaid, Cook & Childcare Jobs", "Live-In & Day Work Available", "Written Job Details Provided", "Safe Stay & Food For Live-In Jobs", "Fixed Monthly Salary"]
                                 },
                                 {
                                     state: "Assam",
-                                    desc: "Do Not Struggle With Limited Local Options Anymore; Apply For Stable Bangalore Jobs Where The Employer Pays Your Full Salary Directly And On-Time.",
-                                    features: ["Multiple Household Job Categories", "Flexible Work Options", "Direct Payment From Employer", "Long-Term Job Stability", "Safe Working Environment"]
+                                    slug: "assam",
+                                    desc: "Increase Your Income With Trusted Helper Jobs In Bangalore. Get Direct Hiring, Free Registration, Safe Maid Jobs, And Better Salaries With Full Support.",
+                                    features: ["Direct Salary From Employer", "Written Agreement Protects Rights", "Support Team Available Anytime", "Free Registration - Earn 100% Yourself", "Safe Working Environment"]
                                 },
                                 {
                                     state: "Bihar",
-                                    desc: "Tired Of Paying Heavy Commissions To Agents? EzyHelpers Help You Find Honest Work In Bangalore With Zero Fees And Total Job Security.",
-                                    features: ["Cook, Maid & Caregiver Jobs", "Support After Joining", "Clear Work Agreement", "Respectful Family Environment", "No Agent Fees"]
+                                    slug: "bihar",
+                                    desc: "Stop Working For Low Private Salaries In Bihar. Move To Bangalore For Stable House Helper Jobs, Better Pay, And A Safer Life With Respectful Families.",
+                                    features: ["Cook, Maid & Caregiver Jobs", "Direct Salary Payments On Time", "Clear Work Contract Every Time", "Respectful Family Environment", "No Agent Commissions Ever"]
                                 },
                                 {
                                     state: "Chhattisgarh",
+                                    slug: "chhattisgarh",
                                     desc: "Forget About Long Working Hours With No Rest; EzyHelpers Offers Fixed Timings, Weekly Holidays, And A Professional, Safe Working Environment For You.",
                                     features: ["Cleaning, Cooking & Home Support", "Full-Time & Live-In Positions", "Fixed Work Hours", "Support Even After Joining", "Safe And Trusted Homes"]
                                 },
                                 {
                                     state: "Uttar Pradesh",
-                                    desc: "Escape The Struggle Of Finding A Steady Income By Choosing Reliable Household Work In Bangalore With Fixed Leaves And On-Time Salaries Paid.",
-                                    features: ["Cooking, Housekeeping & Childcare", "Live-In & Full-Day Work Available", "Written Salary & Leave Terms", "Safe & Verified Homes Only", "Different Job Options"]
+                                    slug: "uttarpradesh",
+                                    desc: "Stop Trusting Local Agents Who Cheat You. Start Your Journey With EzyHelpers For A Secure House Maid Job In Bangalore With Written Agreements And Guaranteed Safety.",
+                                    features: ["Housekeeping, Cooking & Nanny Roles", "Direct Salary Payments From Family", "Written Job Agreement For Safety", "Free Basic Training For Helpers", "Respectful And Safe Workplace"]
                                 },
                                 {
                                     state: "Uttarakhand",
-                                    desc: "Stop Searching For Seasonal Work And Secure A Permanent, High-Paying Job In Bangalore With Direct Payments And No Hidden Agent Charges.",
-                                    features: ["Multiple Job Categories Available", "Flexible Work Hours", "Direct Salary From Employer", "No Agent Or Commission", "Easy Job Change If Needed"]
+                                    slug: "uttarakhand",
+                                    desc: "Leave Low-Paying Jobs Behind. EzyHelpers Helps Uttarakhand Helpers Get Maid Jobs In Bangalore With Respect, Safety, And A Better Salary Compared To Local Work.",
+                                    features: ["Multiple Maid Job Opportunities", "Private Room & Safe Stay Support", "Direct Salary Bank Transfers", "No Agent Commission Involved", "Easy Job Match Based On Skills"]
                                 },
                                 {
                                     state: "Madhya Pradesh",
-                                    desc: "Apply For Domestic Work In Bangalore And Discuss Salary And Duties Directly With Families.",
-                                    features: ["Cook, Maid & Elder Support Jobs", "Live-In & Full-Day Options", "Clear Job Expectations", "No Registration Charges", "Interview With The Family Before Joining"]
+                                    slug: "madhyapradesh",
+                                    desc: "Choose Safe Home Work Jobs In Bangalore Where MP Helpers Work With Respectful Families And Receive Full Guidance And Protection Throughout From EzyHelpers.",
+                                    features: ["Housekeeper, Cook & Nanny Roles", "Talk To Family Before Joining", "Fixed Monthly Payment On Time", "Support Team Available Always", "Safe Working Environment"]
                                 },
                                 {
                                     state: "Andhra Pradesh",
-                                    desc: "Stop Waiting For Delayed Payments; Employers In Bangalore Pay Your Full Salary Directly Into Your Bank Account On A Fixed Date Every Month.",
-                                    features: ["Flexible Work Hours", "Live-In & Full-Time Positions", "Direct Salary By Employer", "Quick Job Matching", "Regular Monthly Payment"]
+                                    slug: "andhrapradesh",
+                                    desc: "Connect With Bangalore's Trusted Families Through Domestic Job Opportunities. Choice To Accept Jobs, Video Calls Before Joining, And Fixed Monthly Payments.",
+                                    features: ["Flexible Household Job Roles", "Direct Salary Bank Transfers", "Video Call Interview With Family", "Safe Emergency Stay Support", "Support Team Assistance Anytime"]
                                 },
                                 {
                                     state: "Telangana",
+                                    slug: "telangana",
                                     desc: "Avoid Low-Paying Local Jobs And Secure A Stable Future In Bangalore With Direct Bank Payments And Respectful Families Who Value Your Work.",
                                     features: ["Cooking, Cleaning & Care Roles", "Apartment & Independent Home Jobs", "Clear Work Duties", "Free Room & Food", "Direct Bank Transfer Salary"]
                                 },
                                 {
                                     state: "Tamil Nadu",
+                                    slug: "tamilnadu",
                                     desc: "Do Not Settle For Verbal Promises That Change Later; Get A Written Job Agreement From EzyHelpers That Ensures Your Rights And Safety.",
                                     features: ["Housekeeping, Cooking & Care Jobs", "Help If Any Problem Arises", "Written Job Agreement", "Fixed Offs And Work Hours", "Free Job, No Commission"]
                                 },
                                 {
                                     state: "Kolkata",
+                                    slug: "kolkata",
                                     desc: "Stop Dealing With Local Job Insecurity And Move To Bangalore For Trusted Domestic Helper Jobs That Offer A Fixed Income And Full Support For Helpers.",
                                     features: ["Babysitting, Cooking & Maid Jobs", "Full-Time & Live-In Roles", "Fixed Monthly Income", "Ongoing Support From Our Team", "No Registration Fee"]
                                 }
                             ].map((item, index) => (
                                 <Link
                                     key={index}
-                                    href={`/helper-jobs/${item.state.toLowerCase().replace(/\s+/g, '-')}`}
+                                    href={`/helper-jobs/${item.slug}`}
                                     className="group bg-white rounded-2xl p-6 border border-purple-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block text-left relative overflow-hidden"
                                 >
                                     <h3 className="text-lg md:text-2xl font-bold text-purple-700 mb-3 group-hover:text-purple-800 relative z-10">{item.state}</h3>

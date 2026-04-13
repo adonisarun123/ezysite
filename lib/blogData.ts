@@ -1098,7 +1098,7 @@ export const posts: BlogPost[] = [
     category: 'Hiring Guide',
     featured: true,
     tags: ['live-in maid', 'bangalore', 'salary guide', 'hiring tips', 'domestic help'],
-    image: '/blog/live-in-maid-salary-roles-hiring-guide-bangalore.jpg',
+    image: 'https://ik.imagekit.io/M0nger/1%20(1).png',
     content: bangaloreMaidContent
   },
   {
@@ -1111,7 +1111,7 @@ export const posts: BlogPost[] = [
     category: 'Safety & Security',
     featured: true,
     tags: ['verification', 'safety', 'domestic help', 'background check', 'security'],
-    image: '/blog/complete-guide-to-maid-verification-and-background-check-in-india.jpg',
+    image: 'https://ik.imagekit.io/M0nger/2%20(1).png',
     content: verificationGuideContent
   },
   {
