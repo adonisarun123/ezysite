@@ -176,7 +176,7 @@ export default function RefundPolicyPage() {
                   {
                     icon: ShieldCheckIcon,
                     title: "Customer Protection",
-                    description: "You are eligible for a full refund if no helper is provided within 7 days of registration.",
+                    description: "You are eligible for a full refund if no helper profiles are provided within 7 days of registration.",
                     color: "text-emerald-600",
                     bgColor: "bg-emerald-50"
                   }
