@@ -361,7 +361,7 @@ export default function HelperJobsUPPage() {
                                     { step: 6, title: "Travel safely to Bangalore." },
                                     { step: 7, title: "Start your job with full support." }
                                 ].map((item, index) => (
-                                    <div key={index} className="relative flex items-center justify-center mb-8 last:mb-0">
+                                    <div key={index} className="relative flex items-center justify-center mb-16 last:mb-0">
                                         {/* Left Side */}
                                         <div className="w-5/12 text-right pr-6 md:pr-10">
                                             {index % 2 === 0 ? (
