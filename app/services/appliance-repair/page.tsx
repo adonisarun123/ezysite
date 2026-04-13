@@ -21,7 +21,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Home Appliance Repair Services | Expert Technicians | EzyHelpers',
+  title: 'Home Appliance Repair | Expert Technicians | EzyHelpers',
   description: 'Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India.',
   keywords: 'appliance repair, refrigerator repair, washing machine repair, microwave oven repair, AC repair, gas stove repair, geyser repair, TV repair, chimney repair, home appliance service',
   alternates: {
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
 
 export default function ApplianceRepairPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Services", url: "https://ezyhelpers.com/services" },
-    { name: "Appliance Repair", url: "https://ezyhelpers.com/services/appliance-repair" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Services", url: "https://www.ezyhelpers.com/services" },
+    { name: "Appliance Repair", url: "https://www.ezyhelpers.com/services/appliance-repair" }
   ]
 
   const applianceServices = [

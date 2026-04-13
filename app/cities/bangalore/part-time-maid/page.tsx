@@ -45,10 +45,10 @@ export const metadata: Metadata = {
 export default function BangalorePartTimeMaidPage() {
   // Breadcrumbs
   const breadcrumbs = [
-    { name: 'Home', url: 'https://ezyhelpers.com' },
-    { name: 'Cities', url: 'https://ezyhelpers.com/cities' },
-    { name: 'Bangalore', url: 'https://ezyhelpers.com/cities/bangalore' },
-    { name: 'Part-Time Maid', url: 'https://ezyhelpers.com/cities/bangalore/part-time-maid' }
+    { name: 'Home', url: 'https://www.ezyhelpers.com' },
+    { name: 'Services', url: 'https://www.ezyhelpers.com/services' },
+    { name: 'Bangalore', url: 'https://www.ezyhelpers.com/cities/bangalore' },
+    { name: 'Part-Time Maid', url: 'https://www.ezyhelpers.com/cities/bangalore/part-time-maid' }
   ]
 
   // Why choose part-time maids (from markdown bullets)
@@ -218,7 +218,7 @@ export default function BangalorePartTimeMaidPage() {
       <main className="min-h-screen">
         {/* Schema Markup */}
         <BreadcrumbSchema items={breadcrumbs} />
-        <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/cities/bangalore/part-time-maid" />
+        <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/cities/bangalore/part-time-maid" />
         <LocalBusinessSchema {...localBusinessProps} />
 
         <Navbar />

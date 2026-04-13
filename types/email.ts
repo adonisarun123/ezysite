@@ -275,6 +275,70 @@ export interface RequirementFormData {
   databaseSaved?: boolean;
 }
 
+export interface CareersChiefOfStaffFormData {
+  fullName: string
+  email: string
+  phone: string
+  linkedinUrl?: string
+  portfolioUrl?: string
+  problemSolved: string
+  improveThirtyDays: string
+  builtSomething: string
+  whyNotHireYou: string
+  submittedAt?: string
+  sourceUrl?: string
+  /** Original filename when a résumé/CV was attached */
+  resumeFileName?: string
+}
+
+export interface CareersApmFormData {
+  fullName: string
+  email: string
+  phone: string
+  linkedinUrl?: string
+  portfolioUrl?: string
+  relevantExperience: string
+  automationOperations: string
+  taskPipelineApproach: string
+  additionalNotes?: string
+  submittedAt?: string
+  sourceUrl?: string
+  resumeFileName?: string
+}
+
+export interface CareersSalesExecutiveFormData {
+  fullName: string
+  email: string
+  phone: string
+  linkedinUrl?: string
+  languagesProficiency: string
+  salesExperienceSummary: string
+  dealOrFollowUpStory: string
+  targetDiscipline: string
+  noticePeriod?: string
+  additionalNotes?: string
+  submittedAt?: string
+  sourceUrl?: string
+  resumeFileName: string
+}
+
+/** Generic careers application (field ops, sourcing, etc.) — job identified by slug/title */
+export interface CareersRoleApplicationFormData {
+  jobSlug: string
+  jobTitle: string
+  fullName: string
+  email: string
+  phone: string
+  linkedinUrl?: string
+  relevantExperience: string
+  whyThisRole: string
+  noticePeriod?: string
+  additionalNotes?: string
+  submittedAt?: string
+  sourceUrl?: string
+  resumeFileName: string
+}
+
 export type LeadType =
   | 'contact'
   | 'hire_helper'
@@ -283,7 +347,11 @@ export type LeadType =
   | 'helper_registration'
   | 'requirement'
   | 'customer_requirement'
-  | 'helper_interview';
+  | 'helper_interview'
+  | 'careers_chief_of_staff'
+  | 'careers_apm'
+  | 'careers_sales_executive'
+  | 'careers_role_application';
 
 export interface EmailSendResult {
   success: boolean;

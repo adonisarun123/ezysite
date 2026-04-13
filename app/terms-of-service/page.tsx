@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'EzyHelpers Terms of Service',
     description: 'Understand your rights and responsibilities when using EzyHelpers domestic services. Clear terms for a better service experience.',
-    url: 'https://ezyhelpers.com/terms-of-service',
+    url: 'https://www.ezyhelpers.com/terms-of-service',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/terms-of-service'
+    canonical: 'https://www.ezyhelpers.com/terms-of-service'
   }
 }
 

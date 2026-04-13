@@ -10,17 +10,12 @@ export default function robots(): MetadataRoute.Robots {
           '/api/',
           '/private/',
           '/admin/',
-          '/*.json$',
           '/search',
           '/thank-you'
         ]
       },
-      {
-        userAgent: 'GPTBot',
-        disallow: '/'
-      }
     ],
-    sitemap: 'https://ezyhelpers.com/sitemap.xml',
-    host: 'https://ezyhelpers.com'
+    sitemap: 'https://www.ezyhelpers.com/sitemap.xml',
+    host: 'https://www.ezyhelpers.com'
   }
 } 

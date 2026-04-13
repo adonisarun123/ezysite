@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
-import dynamic from 'next/dynamic'
 import { OrganizationSchema, WebSiteSchema } from '../components/schema'
 import { UrgencyProvider } from '../components/UrgencyContext'
+import ClientOnlyWidgets from '../components/ClientOnlyWidgets'
 
 // Optimize font loading with preload and display swap
 const inter = Inter({
@@ -21,23 +21,7 @@ const poppins = Poppins({
   preload: true,
 })
 
-// Dynamic imports for non-critical components to reduce initial bundle size
-const LLMOptimization = dynamic(() => import('../components/LLMOptimization'), {
-  ssr: false,
-  loading: () => null
-})
-const UrgencyCTA = dynamic(() => import('../components/UrgencyCTA'), {
-  ssr: false,
-  loading: () => null
-})
-const WhatsAppFloat = dynamic(() => import('../components/WhatsAppFloat'), {
-  ssr: false,
-  loading: () => null
-})
-const LanguageSelectorPopup = dynamic(() => import('../components/LanguageSelectorPopup'), {
-  ssr: false,
-  loading: () => null
-})
+
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ezyhelpers.com'),
@@ -114,7 +98,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Preload critical resources first */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -445,13 +429,19 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`} suppressHydrationWarning>
+        {/* Skip to main content — visible on keyboard focus for screen reader / keyboard users */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:text-sm focus:font-semibold focus:rounded-lg focus:shadow-lg focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <UrgencyProvider>
-          {children}
-          <LLMOptimization />
-          <UrgencyCTA />
-          <WhatsAppFloat />
-          <LanguageSelectorPopup />
+          <div id="main-content">
+            {children}
+          </div>
+          <ClientOnlyWidgets />
         </UrgencyProvider>
       </body>
     </html>

@@ -332,7 +332,7 @@ body {
 }
 
 .noto-sans-devanagari-hindi {
-  font-family: "Noto Sans Devanagari", sans-serif !important;
+  font-family: "Noto Sans Devanagari", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

@@ -7,7 +7,7 @@ import PageTracking from '@/components/PageTracking'
 import { ChartBarIcon, ArrowTrendingUpIcon, MapPinIcon, UsersIcon, CogIcon, BuildingOfficeIcon, ShieldCheckIcon, ClockIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'The Indian Domestic Helper Market: Market Overview, Challenges and Future Outlook',
+  title: 'Indian Domestic Helper Market: Overview & Outlook',
   description: 'Comprehensive analysis of India\'s domestic helper market - from its 50-90 million workforce to growth trends, formalization opportunities, and policy frameworks.',
   keywords: ['domestic helper market India', 'household help sector', 'domestic workers statistics', 'Indian maid service market', 'domestic help trends', 'formalization domestic workers'],
   openGraph: {

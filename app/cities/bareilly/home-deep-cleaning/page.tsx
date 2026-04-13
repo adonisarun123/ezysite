@@ -322,7 +322,7 @@ export default function BareillyHomeCleaning() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <Link href="/cities/bareilly/packers-and-movers" className="group bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
+              <Link href="/cities/bareilly/house-shifting" className="group bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
                 <WrenchScrewdriverIcon className="h-12 w-12 text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Packers & Movers Services</h3>
                 <p className="text-gray-600 mb-4">Safe, quick shifting of household items with careful packing.</p>

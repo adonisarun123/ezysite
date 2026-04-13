@@ -50,10 +50,10 @@ export default function BangaloreLiveInMaidsPage() {
   
   // Breadcrumb schema for SEO
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Cities", url: "https://ezyhelpers.com/cities" },
-    { name: "Bangalore", url: "https://ezyhelpers.com/cities/bangalore" },
-    { name: "Live-In Maids", url: "https://ezyhelpers.com/cities/bangalore/live-in-maids" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Services", url: "https://www.ezyhelpers.com/services" },
+    { name: "Bangalore", url: "https://www.ezyhelpers.com/cities/bangalore" },
+    { name: "Live-In Maids", url: "https://www.ezyhelpers.com/cities/bangalore/live-in-maids" }
   ]
 
   const liveInServices = [
@@ -252,7 +252,7 @@ export default function BangaloreLiveInMaidsPage() {
       <main className="min-h-screen">
         {/* Schema Markup */}
         <BreadcrumbSchema items={breadcrumbs} />
-        <FAQSchema faqs={faqs} aboutPage="https://ezyhelpers.com/cities/bangalore/live-in-maids" />
+        <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/cities/bangalore/live-in-maids" />
         <LocalBusinessSchema {...localBusinessProps} />
         
         <Navbar />

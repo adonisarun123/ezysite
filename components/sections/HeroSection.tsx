@@ -201,10 +201,7 @@ export default function HeroSection() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 font-display leading-tight">
-              Your Trusted{' '}
-              <span className="text-gradient">House Help</span>{' '}
-              & Complete{' '}
-              <span className="text-gradient">Home Care</span>
+              Trusted House Help Service in India
             </h1>
 
             {/* LCP Element - Optimized for fastest render */}

@@ -254,7 +254,7 @@ export default function BareillyElderlyCare() {
               <div className="bg-white rounded-2xl p-6 border border-gray-100">
                 <h3 className="font-bold mb-2">Housekeeping & Deep Cleaning</h3>
                 <p className="text-gray-600">Professional deep cleaning, sofa washing, and kitchen sanitisation.</p>
-                <Link href="/cities/bareilly/home-cleaning" className="text-purple-600 font-semibold mt-2 inline-block">Learn More About Cleaning Services</Link>
+                <Link href="/cities/bareilly/home-deep-cleaning" className="text-purple-600 font-semibold mt-2 inline-block">Learn More About Cleaning Services</Link>
               </div>
               <div className="bg-white rounded-2xl p-6 border border-gray-100">
                 <h3 className="font-bold mb-2">Cook Services in Bareilly</h3>

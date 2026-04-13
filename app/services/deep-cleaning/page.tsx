@@ -30,9 +30,9 @@ export const metadata: Metadata = {
 
 export default function DeepCleaningPage() {
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Services", url: "https://ezyhelpers.com/services" },
-    { name: "Deep Cleaning", url: "https://ezyhelpers.com/services/deep-cleaning" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Services", url: "https://www.ezyhelpers.com/services" },
+    { name: "Deep Cleaning", url: "https://www.ezyhelpers.com/services/deep-cleaning" }
   ]
 
   const cleaningServices = [

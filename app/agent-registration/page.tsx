@@ -402,7 +402,7 @@ export default function AgentRegistrationPage() {
                 />
               </div>
               <div className="text-white">
-                <h1 className="text-2xl font-bold">EzyHelpers</h1>
+                <span className="text-2xl font-bold">EzyHelpers</span>
                 <p className="text-teal-100 text-sm">Trusted Home Help Network</p>
               </div>
             </div>

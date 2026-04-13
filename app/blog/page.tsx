@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'EzyHelpers Blog - Home Services Insights & Tips',
     description: 'Get expert advice on managing your home with professional help. Tips on hiring, training, and working with domestic staff.',
-    url: 'https://ezyhelpers.com/blog',
+    url: 'https://www.ezyhelpers.com/blog',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/blog'
+    canonical: 'https://www.ezyhelpers.com/blog'
   }
 }
 

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Service Requirement Form | EzyHelpers',
     description: 'Submit your specific service requirements and we will connect you with the perfect helper.',
-    url: 'https://ezyhelpers.com/requirement',
+    url: 'https://www.ezyhelpers.com/requirement',
   },
 }
 

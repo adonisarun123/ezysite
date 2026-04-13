@@ -5,7 +5,7 @@ import ComprehensiveLeadForm from '@/components/ComprehensiveLeadForm'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata: Metadata = {
-  title: 'Complete Service Request Form | EzyHelpers',
+  title: 'Service Request | Find Your Helper | EzyHelpers',
   description: 'Submit a detailed service request to find the perfect domestic helper for your family. Comprehensive form to match you with verified maids, cooks, babysitters, drivers and more.',
   keywords: 'service request form, hire domestic help, maid booking form, cook hiring, babysitter request, driver booking, complete helper requirements',
   openGraph: {

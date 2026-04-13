@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'EzyHelpers Privacy Policy',
     description: 'Understanding how we protect your data and privacy at EzyHelpers. Clear information about data collection, usage, and your rights.',
-    url: 'https://ezyhelpers.com/privacy-policy',
+    url: 'https://www.ezyhelpers.com/privacy-policy',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://ezyhelpers.com/privacy-policy'
+    canonical: 'https://www.ezyhelpers.com/privacy-policy'
   }
 }
 

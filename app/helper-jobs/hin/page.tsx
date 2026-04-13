@@ -25,11 +25,16 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'बैंगलोर में डोमेस्टिक हेल्पर जॉब्स | फ्री जॉब्स | EzyHelpers',
         description: 'बैंगलोर में भरोसेमंद डोमेस्टिक हेल्पर जॉब्स के लिए अप्लाई करें। परिवारों से सीधे बात करें, फिक्स्ड सैलरी, छुट्टी, काम के घंटे और लगातार सपोर्ट पाएं।',
-        url: 'https://www.ezyhelpers.com/helper-jobs',
+        url: 'https://www.ezyhelpers.com/helper-jobs/hin',
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/hin',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/hin',
+            'x-default': 'https://www.ezyhelpers.com/helper-jobs'
+        }
     }
 }
 

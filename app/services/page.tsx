@@ -58,8 +58,8 @@ interface ServiceItem {
 export default function ServicesPage() {
   // Breadcrumb schema for services page
   const breadcrumbs = [
-    { name: "Home", url: "https://ezyhelpers.com" },
-    { name: "Services", url: "https://ezyhelpers.com/services" }
+    { name: "Home", url: "https://www.ezyhelpers.com" },
+    { name: "Services", url: "https://www.ezyhelpers.com/services" }
   ]
 
   // Combined FAQs for services page
@@ -348,7 +348,7 @@ export default function ServicesPage() {
       <main className="min-h-screen">
         {/* Schema Markup */}
         <BreadcrumbSchema items={breadcrumbs} />
-        <FAQSchema faqs={servicePageFAQs} aboutPage="https://ezyhelpers.com/services" />
+        <FAQSchema faqs={servicePageFAQs} aboutPage="https://www.ezyhelpers.com/services" />
 
         <Navbar />
 
