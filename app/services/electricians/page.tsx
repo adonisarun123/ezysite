@@ -124,11 +124,90 @@ export default function ElectriciansPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/electricians" />
-      
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "Are EzyHelpers' electricians certified and licensed?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all our electricians are licensed and certified as per Indian electrical safety norms. They are experienced in residential and commercial wiring, repairs, and installations, ensuring your home or business stays safe and compliant."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I book an electrician for same-day service?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, EzyHelpers offers same-day electrician service for urgent issues. Whether it’s a fuse problem or sudden power failure, our nearby electricians can reach your home quickly and fix it on the spot."
+              }
+            },{
+              "@type": "Question",
+              "name": "What common electrical issues do your electricians handle?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our electricians fix power cuts, tripping issues, short circuits, faulty switches, flickering lights, and wiring faults. We also troubleshoot appliance connection issues and overload problems, ensuring your home remains safe and functional."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you offer complete electrical inspections for homes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we provide detailed home electrical inspections. This includes wiring checks, load testing, switchboard analysis, and fault diagnosis to ensure everything is safe, up-to-date, and compliant with electrical safety guidelines."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can EzyHelpers install appliances like fans, geysers, or ACs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, EzyHelpers' electricians can install commonly used electrical appliances such as ceiling fans, wall fans, geysers (standard types), exhaust fans, light fixtures, tube lights, LED panels, switchboards, MCBs, and inverters. We ensure secure wiring, proper grounding, safety compliance, and thorough performance testing for every installation."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can you upgrade my old electrical system or switchboard?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Definitely. We perform wiring replacements, switchboard upgrades, and load-balancing work to make your electrical system safer and capable of handling today’s modern appliances and energy needs."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you provide electricians for both small and large electrical jobs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we handle everything from minor repairs like fixing a switch to large projects like full house rewiring or DB box installation. Our electricians carry all the tools to complete the job efficiently."
+              }
+            },{
+              "@type": "Question",
+              "name": "I don’t know what’s causing the electrical issue. Can you help?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Of course. Our electricians will perform a full electrical diagnosis to find and fix hidden problems. You don’t need to identify the issue; we’ll take care of everything from start to finish."
+              }
+            },{
+              "@type": "Question",
+              "name": "Is it safe to hire an online electrician for home repairs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, it is safe when booked through trusted platforms like EzyHelpers. All our electricians are background verified and certified. We ensure professional service with proper tools, safety gear, and transparent pricing, giving you reliable home repair without the risk of hiring unknown freelancers."
+              }
+            },{
+              "@type": "Question",
+              "name": "Is it safe to let the electrician work alone at home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, if you book through a trusted service like EzyHelpers. All our electricians are background-verified and trained to work professionally. We also share their details in advance, so you can feel secure even if they are working alone at your home."
+              }
+            }]
+          })
+        }}
+      />
+      <main className="min-h-screen">
+        <BreadcrumbSchema items={breadcrumbs} />
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white pt-28 pb-20 overflow-hidden">
@@ -145,10 +224,7 @@ export default function ElectriciansPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
-              Expert Electrician Services
-              <span className="block bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-                at Your Doorstep
-              </span>
+              Expert Electrician Services at Your Doorstep
             </h1>
             
             <p className="text-xl lg:text-2xl text-blue-100 mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -517,5 +593,6 @@ export default function ElectriciansPage() {
             <NestCTA />
       <Footer />
     </main>
+    </>
   )
-} 
+}

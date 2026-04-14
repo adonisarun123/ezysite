@@ -179,6 +179,81 @@ export default function JapaNannyServicesPage() {
                     ]}
                 />
 
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            "mainEntity": [{
+                                "@type": "Question",
+                                "name": "What does a Postpartum Care maid do at home?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "A Postpartum Care maid helps new mothers with gentle massages, rest routines, nutrition help, hygiene support, and daily recovery tasks after delivery, making the mother feel comfortable and supported every day at home."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "What distinguishes postpartum aftercare from general Childcare services?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Postpartum aftercare focuses on the mother’s healing, emotions, and recovery, plus newborn care, while general childcare focuses mainly on supervising children and taking care of their daily activities."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Is a Japa Maid a nurse or medical professional?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "No. Japa Maids are non-medical caregivers. They help with newborn routines and mother care but do not perform medical procedures because they are trained for support, not medical tasks."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Why should families choose a professional Japa Nanny?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Japa Nanny services offer specialized postnatal recovery support, ensuring mothers heal well physically and emotionally, with expert attention to infant and maternal needs."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Will a Japa Maid cook or do housekeeping?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "She will only do light chores like preparing simple food for the mother, washing baby items, and keeping the nursery clean. Heavy cleaning or complete cooking is not included as part of her duties."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "How long should I hire a Japa nanny?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Most families hire for 4–6 weeks. Some extend to 8–12 weeks for full support during recovery and newborn adjustment, depending on the mother’s comfort and healing needs."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "How is Japa Nanny pricing structured?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Pricing depends on duty type (live-in, day, or night), experience, and roles. We offer clear pricing with no hidden charges, so families know exactly what they are paying for."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "How is traditional Postpartum Care beneficial for new mothers?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Traditional care uses massages, warm oils, herbal methods, and special diets that strengthen recovery. Our Japa maids mix tradition with modern hygiene to support healing safely and effectively."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Can I hire a newborn caretaker for only night duty?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. A night-duty Japa Maid handles feeding, diaper changes, and soothing so the mother gets proper rest during the night without disturbance."
+                                    }
+                                }
+                            ]
+                        })
+                    }}
+                />
+
                 {/* Hero Section */}
                 <section className="relative bg-gradient-to-br from-rose-700 via-pink-600 to-rose-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
                     <div className="absolute inset-0 opacity-10">

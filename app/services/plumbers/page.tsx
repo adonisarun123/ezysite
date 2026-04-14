@@ -124,11 +124,90 @@ export default function PlumbersPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <BreadcrumbSchema items={breadcrumbs} />
-      <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/plumbers" />
-      
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What plumbing services does EzyHelpers offer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "EzyHelpers provides a full range of plumbing services, including leak repair, pipe replacement, drain cleaning, toilet repair, bathroom fittings, kitchen plumbing, water heater installation, and emergency plumbing support. Our certified plumbers handle both minor issues and large-scale plumbing jobs with professional care."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I get emergency plumber services 24/7?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, EzyHelpers offers 24/7 emergency plumber service for urgent problems like burst pipes, major leaks, or blocked drains. Our local plumbers respond quickly to control damage and restore your home’s plumbing system with minimal disruption."
+              }
+            },{
+              "@type": "Question",
+              "name": "Are your plumbers licensed and experienced?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all EzyHelpers plumbers are licensed and background verified. They have hands-on experience with Indian plumbing systems, are certified in safety standards, and can handle everything from repairs to full plumbing installations."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I book a same-day plumber near me?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, same-day plumbing service is available in most major Indian cities. Whether it’s a leaking tap, broken pipe, or clogged sink, our plumbers can reach your location quickly and start work the same day."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you handle both small plumbing repairs and big projects?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we cover all plumbing work, from fixing leaking taps to full bathroom plumbing and pipeline replacements. Our plumbers are experienced in managing small repairs as well as large installations and upgrades."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can your plumbers help with bathroom renovations?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our plumbers work on bathroom renovation projects, such as new fittings, pipelines, basin setups, shower installations, and drainage planning. We coordinate with your contractor or designer for seamless execution."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you fix geysers and water heater issues?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our plumbers handle the installation and repair of electric and gas water heaters. We fix geyser leaks, replace thermostats, repair heating elements, and ensure proper pipeline connection for safe usage."
+              }
+            },{
+              "@type": "Question",
+              "name": "How fast can a plumber reach my home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In urgent cases, we can dispatch a local plumber within a few hours, depending on your city. For non-emergency jobs, we usually schedule the visit within 24 hours of booking."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you supply plumbing materials like taps and pipes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we use quality plumbing supplies like ISI-marked pipes, branded taps, valves, and fittings. You can either use our materials or provide your own preferences before the job begins."
+              }
+            },{
+              "@type": "Question",
+              "name": "What if I only need a minor repair? Do I still need to book?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Definitely. We handle everything from minor repairs like dripping taps to major plumbing projects. No job is too small. Book online or give us a call, and we’ll take care of it."
+              }
+            }]
+          })
+        }}
+      />
+      <main className="min-h-screen">
+        <BreadcrumbSchema items={breadcrumbs} />
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-indigo-600 via-indigo-700 to-indigo-800 text-white pt-28 pb-20 overflow-hidden">
@@ -145,10 +224,7 @@ export default function PlumbersPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
-              Trusted Plumber Service for
-              <span className="block bg-gradient-to-r from-white to-indigo-100 bg-clip-text text-transparent">
-                Leak Repairs & More
-              </span>
+              Trusted Plumber Service for Leak Repairs & More
             </h1>
             
             <p className="text-xl lg:text-2xl text-indigo-100 mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -599,5 +675,6 @@ export default function PlumbersPage() {
             <NestCTA />
       <Footer />
     </main>
+    </>
   )
-} 
+}

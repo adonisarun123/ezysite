@@ -166,6 +166,59 @@ export default function ProfessionalChefPage() {
                     ]}
                 />
 
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            "mainEntity": [{
+                                "@type": "Question",
+                                "name": "What does a professional chef for home do?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "A professional chef for home prepares fresh, high-quality meals in your kitchen based on your family’s taste, diet needs, and daily routine. They handle menu planning, cooking, basic kitchen organisation, and ensure every meal is hygienic, nutritious, and well presented."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Can a home chef cook special diet food?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. Our home chefs prepare customised meals for vegetarian, vegan, keto, diabetic-friendly, gluten-free, and other health-based diets. Meals are planned according to medical advice, nutrition goals, and personal food preferences."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Can a chef cook both daily meals and special occasion food?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. A professional home chef can manage daily meals such as breakfast, lunch, and dinner, as well as special occasions like festivals, private parties, family functions, and business gatherings."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Is a trial available before booking a full-time home chef?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. EzyHelpers offers a 3-day trial at an additional cost so you can check the chef’s cooking style, taste, hygiene practices, and menu quality before confirming a long-term or event-based service."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "How much does it cost to hire a professional chef at home?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "The cost depends on the type of cuisine, number of meals, portion size, and service duration. Hiring a home chef is often cost-effective as it reduces restaurant orders, food waste, and daily cooking stress while offering quality meals at home."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "How is a professional home chef different from a regular home cook?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "A professional home chef is trained in multiple cuisines, menu planning, diet-based cooking, and food presentation. A regular home cook usually prepares basic daily meals like rice, roti, dal, and sabzi without advanced training or special diet planning."
+                                }
+                            }]
+                        })
+                    }}
+                />
+
                 {/* Hero Section - Updated Colors */}
                 <section className="relative bg-gradient-to-br from-orange-600 via-red-600 to-amber-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
 
@@ -176,7 +229,7 @@ export default function ProfessionalChefPage() {
 
                     <div className="container-custom relative z-10">
                         <div className="max-w-5xl mx-auto text-center">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Hire a Professional Chef for Home Gourmet Meals Every Day</h1>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Hire a Professional Chef for Home – Gourmet Meals Every Day</h1>
 
                             <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">Enjoy tasty, hygienic, and high-quality meals prepared at home with EzyHelpers. Hire a professional chef for home and enjoy customised dishes made for your family’s taste, health needs, and daily routine.</p>
 

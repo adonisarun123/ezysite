@@ -148,6 +148,65 @@ export default function EnglishSpeakingBabysittersPage() {
 
     return (
         <main className="min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [{
+                            "@type": "Question",
+                            "name": "What are English-speaking Babysitters and how are they different from regular Babysitters?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "English-speaking babysitters are trained caregivers who can talk fluently in English while taking care of your child. Unlike regular babysitters, they help children improve their English communication, vocabulary, and speaking confidence through daily interaction, stories, and small learning activities. They also ensure full safety, comfort, and routine care at home."
+                            }
+                        },{
+                            "@type": "Question",
+                            "name": "What is the minimum English fluency level of your English-speaking Nanny?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Our nannies are comfortable speaking and understanding English clearly. They can read storybooks, teach simple English words, talk meaningfully with children, and guide them in daily activities. Their fluency helps children learn in a natural, simple, and enjoyable way."
+                            }
+                        },{
+                            "@type": "Question",
+                            "name": "Are your English-speaking Babysitters background-verified?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes. Every Nanny goes through complete verification, including local address check, Aadhaar check, references, and skill assessment. If needed, police verification and health screening can also be arranged for extra safety and trust."
+                            }
+                        },{
+                            "@type": "Question",
+                            "name": "Can I request a trial period with the selected Babysitter?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes. You can take a short trial at an additional cost to see how your child responds to the babysitter. This trial helps you understand their behaviour, care style, communication, and comfort before confirming long-term service."
+                            }
+                        },{
+                            "@type": "Question",
+                            "name": "How much do English-speaking Babysitters cost?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "The cost depends on working hours, type of service (hourly, full-time, or live-in), number of children, and any special needs. EzyHelpers provides transparent pricing with no hidden fees, ensuring safe and professional care at a fair rate."
+                            }
+                        },{
+                            "@type": "Question",
+                            "name": "What qualifications do your educated Nannies have?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Our nannies are well-educated and trained in childcare. Most of them are DWSSC-trained and certified. They know how to manage routines, teach basic English, communicate politely, and take care of children responsibly."
+                            }
+                        },{
+                            "@type": "Question",
+                            "name": "Why choose a Nanny agency instead of finding a Babysitter independently?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "A professional agency like EzyHelpers gives you verified, trained, English-speaking babysitters. We handle all background checks, training, matching, and replacements. This gives you safety, support, and peace of mind—something you may not get when hiring independently."
+                            }
+                        }]
+                    })
+                }}
+            />
             <Navbar />
 
             <Breadcrumb

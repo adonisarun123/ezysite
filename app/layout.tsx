@@ -85,10 +85,10 @@ export const metadata: Metadata = {
     creator: '@ezyhelpers',
     images: [
       {
-        url: 'https://www.ezyhelpers.com/twitter-card.jpg',
-        width: 800,
-        height: 418,
-        alt: 'EzyHelpers - Trusted Home Help Services in India'
+        url: 'https://www.ezyhelpers.com/ezyhelper_logo_new.png',
+        width: 1200,
+        height: 630,
+        alt: 'EzyHelpers - Home Services'
       }
     ]
   },

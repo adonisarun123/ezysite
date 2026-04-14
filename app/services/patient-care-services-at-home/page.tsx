@@ -26,11 +26,11 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-    title: 'Reliable Home Patient Care Services You Can Trust',
-    description: 'Reliable Patient Care Services at home, providing comfort, recovery, and personalised attention from trained, verified home caregivers.',
+    title: 'Reliable Home Patient Care Taker Services You Can Trust',
+    description: 'Reliable patient care services at home providing comfort, recovery, and personalized attention from trained, verified home caregivers.',
     openGraph: {
-        title: 'Reliable Home Patient Care Services You Can Trust',
-        description: 'Reliable Patient Care Services at home, providing comfort, recovery, and personalised attention from trained, verified home caregivers.',
+        title: 'Reliable Home Patient Care Taker Services You Can Trust',
+        description: 'Reliable patient care services at home providing comfort, recovery, and personalized attention from trained, verified home caregivers.',
         url: 'https://www.ezyhelpers.com/services/patient-care-services-at-home',
         type: 'website',
     },
@@ -134,7 +134,80 @@ export default function PatientCareServicesPage() {
 
     return (
         <main className="min-h-screen">
-            <Navbar />
+            <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [{
+                        "@type": "Question",
+                        "name": "What is a patient care taker at home?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A patient care taker is a trained caregiver who helps with daily activities such as feeding, bathing, dressing, mobility, and medicine reminders. They are not nurses but provide supportive, non-medical home care for comfort and recovery."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Can your caregivers provide support for specific conditions?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Our caregivers assist patients recovering from surgery, those bedridden, elderly individuals, or anyone needing daily support. Care is tailored according to the patient’s health condition and family requirements."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Are your patient caregivers nurses?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Our in-home patient helpers are non-medical, trained attendants who help with daily activities. They do not have nursing licenses and cannot give injections or manage IVs. Their main role is to keep patients safe, comfortable, and cared for at home."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "When should I hire a patient care taker at home?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Hire a caregiver if your loved one has an ongoing illness, post-surgery recovery, or struggles with everyday tasks like dressing, bathing, or moving. They are also useful for immobile patients and families needing professional support."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Is elderly patient care at home necessary?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Home care ensures older patients receive help with daily activities, medicine reminders, and emotional support. It helps them maintain independence, dignity, and comfort at home."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Why hire a professional caregiver instead of managing care yourself?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Professional caregivers provide skilled, considerate, and consistent support, helping with faster recovery, reducing family stress, and ensuring dignity and comfort for patients."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Are male patient caretakers available?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. We provide both male and female caregivers. Male attendants are often preferred for physically demanding care or elder male patients. All caregivers are trained, respectful, and professional."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Will the caregiver administer medication?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Our Patient Caregivers provide medicine reminders and help track schedules. They do not make medical decisions or administer treatments independently."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Are your patient care services available in multiple cities?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Our patient caregivers are available in major Indian cities, depending on caregiver availability. This ensures future flexibility for local AI searches and broader service reach."
+                        }
+                    }]
+                })
+            }}
+        />
+        <Navbar />
 
             <Breadcrumb
                 items={[

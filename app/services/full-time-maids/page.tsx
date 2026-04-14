@@ -79,6 +79,86 @@ export default function FullTimeMaidsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What is a full-time maid service?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A full-time maid service offers professional household help who works 8 to 10 hours a day, 6 days a week. The maid focuses on one main task, like housekeeping, cooking, child care, or elderly care, so you get consistent and reliable support for your home."
+              }
+            },{
+              "@type": "Question",
+              "name": "How many hours does a full-time maid work daily?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Full-time maids usually work between 8 to 10 hours a day. You can choose the timing that fits your routine. Unlike live-in maids, they leave after their shift and do not stay overnight."
+              }
+            },{
+              "@type": "Question",
+              "name": "What services do full-time maids provide?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Full-time maids help with one key area based on your needs:\nHousekeeping: Cleaning, dusting, laundry, dishwashing, room organization\nCooking: Preparing meals, grocery handling, kitchen cleaning\nBabysitting: Feeding kids, school pickup and drop, homework help\nElderly Care: Bathing, mobility support, medication reminders, companionship"
+              }
+            },{
+              "@type": "Question",
+              "name": "Are full-time maids background verified?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all our full-time maids are fully verified. We check their Aadhaar, local address, and past experience. Police and medical checks can also be arranged if you need them."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can a full-time maid do multiple tasks like cooking and cleaning?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, each full-time maid is trained for one role only. For example, if you hire a cook, she will only handle kitchen-related tasks. However, if you need a little extra help, you can discuss it with her in advance and come to an agreement."
+              }
+            },{
+              "@type": "Question",
+              "name": "How much does a full-time maid cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The cost of a full-time maid depends on your city and the type of service you choose. Our rates are fair and transparent, with no hidden fees. Just contact EzyHelpers for a free quote based on your location and needs."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do full-time maids get weekly days off?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all full-time maids get one day off every week. You can decide this day together when you hire. You can also discuss public or religious holidays with the maid in advance."
+              }
+            },{
+              "@type": "Question",
+              "name": "What happens if my full-time maid does not show up?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Don’t worry. EzyHelpers offers a quick replacement if your maid is absent or unavailable. We always keep a backup option ready so your daily routine doesn’t get disrupted."
+              }
+            },{
+              "@type": "Question",
+              "name": "What support do I get after hiring a full-time maid?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Even after you hire a maid, we stay connected. Our team checks in regularly, helps resolve issues, and provides fast replacements if needed. We also track how things are going during the trial period to make sure everything is smooth."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do I need to provide meals?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In most cases, no. Full-time maids bring their own food. But if both you and the maid are comfortable, you can decide to provide meals. Just make sure to discuss this clearly during the hiring process."
+              }
+            }]
+          })
+        }}
+      />
       <main className="min-h-screen">
         <Navbar />
       

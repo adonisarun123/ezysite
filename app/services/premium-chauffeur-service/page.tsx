@@ -177,6 +177,95 @@ export default function ChauffeurServicePage() {
                     ]}
                 />
 
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            "mainEntity": [{
+                                "@type": "Question",
+                                "name": "Are EzyHelpers chauffeurs verified and licensed?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. All chauffeurs are fully verified through ID checks, address verification, driving licence validation, and background screening. This ensures safe, reliable, and trusted chauffeur services for every customer."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Do chauffeurs know how to handle automatic and manual luxury cars?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. Our chauffeurs are trained to drive both automatic and manual luxury vehicles. They understand smooth acceleration, careful braking, and vehicle-specific handling required for premium cars."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Is my privacy respected while using chauffeur services?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Absolutely. Our chauffeurs follow strict privacy and confidentiality guidelines. This makes the service suitable for business leaders, families, and clients who value discretion and professional behaviour."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "What happens if I need a replacement chauffeur?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "If a chauffeur replacement is required for any reason, EzyHelpers will arrange a suitable chauffeur. We recommend providing at least 15 days’ prior notice so we can ensure a smooth transition and match a replacement that meets your exact requirements."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Can I hire a chauffeur without a long-term contract?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. You can hire chauffeurs on a short-term or on-demand basis without long-term commitments. This is ideal for events, special occasions, or temporary travel needs"
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "How soon can I start the Premium Chauffeur Service?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Service can often begin quickly, depending on availability. Once you share your requirements and confirm the chauffeur, we coordinate a smooth and fast onboarding process."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Is the chauffeur dedicated only to my family or vehicle?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. When you choose a full-time or live-in chauffeur, the driver is dedicated exclusively to you and your vehicle during the service period."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Are chauffeurs trained to handle traffic and city driving conditions?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. Our chauffeurs are trained to manage city traffic, highways, peak-hour driving, and complex road conditions safely and calmly."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Is the chauffeur trained to handle breakdowns or emergencies?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. Chauffeurs have basic training to manage vehicle issues and stay calm during breakdowns while ensuring passenger safety."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Can I upgrade or change my service plan later?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. You can switch between full-time, part-time, or on-demand chauffeur services based on your changing needs. Pricing will also change in that case."
+                                }
+                            },{
+                                "@type": "Question",
+                                "name": "Is there customer support during the service period?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. EzyHelpers provides ongoing customer support throughout your chauffeur service for coordination and assistance."
+                                    }
+                                }
+                            ]
+                        })
+                    }}
+                />
+
                 {/* Hero Section */}
                 <section className="relative bg-gradient-to-br from-blue-900 via-indigo-950 to-slate-900 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
 

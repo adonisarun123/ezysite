@@ -67,8 +67,89 @@ export default function ElderlyCare() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What elderly care services can I get at home from EzyHelpers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "EzyHelpers offers professional in-home elderly care, including help with hygiene, mobility, daily tasks, medication reminders, and companionship. Our trained caretakers ensure seniors live safely and comfortably at home, receiving the attention and respect they deserve every day."
+              }
+            },{
+              "@type": "Question",
+              "name": "Are EzyHelpers’ caretakers trained to handle medical needs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our senior citizen caretakers are trained in basic medical support. They can give medication reminders, monitor vital signs, and assist during emergencies. Although they aren’t certified doctors or nurses, they offer dependable home assistance for elderly family members who require regular health supervision."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can elderly caretakers help with bathing and grooming seniors?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Our elderly care assistants help with bathing, grooming, dressing, and toileting. These hygiene tasks are performed gently and respectfully, ensuring your senior family member remains clean, comfortable, and treated with dignity at all times."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do your care providers assist with daily medications for the elderly?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our care providers provide medication reminders and help organise daily doses as per the doctor’s instructions. This ensures your elderly loved one takes the right medicines at the right time, supporting better health and regular treatment compliance."
+              }
+            },{
+              "@type": "Question",
+              "name": "Are EzyHelpers’ elderly caretakers' backgrounds verified?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all EzyHelpers caretakers are fully background verified with Aadhaar, address proof, and work history. We also provide health certificates upon request. Your family’s safety and trust are our top priorities in elderly care services."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you provide post-hospital recovery care for seniors at home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, EzyHelpers offers post-hospital care for seniors. Our caretakers help with recovery routines, monitor health, manage medications, and offer emotional support, ensuring a smooth, safe transition from hospital to home care."
+              }
+            },{
+              "@type": "Question",
+              "name": "Will the elderly care assistants maintain health logs and medication records?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our elderly care assistants can maintain basic health records, track medication timing, and note any changes in behavior or routine. These updates help families and doctors monitor progress and make informed decisions during checkups or emergencies."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can elderly assistants accompany seniors to appointments or walks?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our elderly care assistants can accompany seniors to doctor visits, therapy sessions, or daily walks. They provide both physical support and companionship, making every outing safer, easier, and more enjoyable."
+              }
+            },{
+              "@type": "Question",
+              "name": "Will the caretakers help with feeding, diapers, or physiotherapy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our elderly caretakers assist with feeding, adult diaper changes, and basic physiotherapy exercises as needed. These services are delivered with patience and professionalism to keep seniors comfortable and well-supported at home."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do I need to provide a room for a live-in elderly caretaker?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, if you hire a live-in elderly caretaker, you must provide a room, either private or shared, with basic amenities like a bed, mattress, and bathroom access. A comfortable stay helps the caretaker provide better round-the-clock care."
+              }
+            }]
+          })
+        }}
+      />
+      <main className="min-h-screen">
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
@@ -85,7 +166,7 @@ export default function ElderlyCare() {
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M30 0L35.98 16.91 52.19 7.72 44.72 23.07 60 30 44.72 36.93 52.19 52.28 35.98 43.09 30 60 24.02 43.09 7.81 52.28 15.28 36.93 0 30 15.28 23.07 7.81 7.72 24.02 16.91z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
           }}></div>
         </div>
-
+ 
         <div className="container-custom relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -96,12 +177,9 @@ export default function ElderlyCare() {
                   <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
                   <span className="text-sm font-semibold">Dignity & Comfort at Home</span>
                 </div>
-
+ 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Elderly Care
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Dignity & Comfort at Home
-                  </span>
+                  Elderly Care – Dignity & Comfort at Home
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
@@ -452,5 +530,6 @@ export default function ElderlyCare() {
             <NestCTA />
       <Footer />
     </main>
+    </>
   )
 }

@@ -59,8 +59,96 @@ export default function NannyBabysitterPage() {
   ]
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What is the difference between a babysitter and a nanny?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A babysitter is usually hired for short-term or occasional childcare, like during events or emergencies. A nanny provides long-term, full-time support. Nannies help with daily routines such as meals, learning activities, hygiene, and emotional care for your child."
+              }
+            },{
+              "@type": "Question",
+              "name": "How do you ensure the safety and reliability of your babysitters and nannies?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "All EzyHelpers babysitters and nannies are background-verified for safety. We check Aadhaar, address proof, and past job history. Police and medical checks are also available to ensure secure and professional childcare for your family."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do I need to provide a room for a live-in nanny?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, if you hire a live-in nanny, you need to provide a private or shared room with basic things like a bed, mattress, or cot, and bathroom access. Comfortable accommodation helps the nanny stay well-rested and care for your child better."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can I choose the babysitter or nanny myself?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can choose. We share profiles of verified babysitters and nannies based on your needs. You can talk to them via phone, video call, or in person and pick the one who feels right for your child and family."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you offer emergency or same-day babysitter services?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we provide same-day and emergency babysitting services. If you need last-minute help due to travel, work, or urgent plans, our trained babysitters can reach your home quickly to care for your child safely and professionally."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can the babysitter work around my office hours or changing schedule?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our babysitters are available for flexible hours. Whether you work early mornings, night shifts, or weekends or have a changing routine, we’ll match you with a caretaker whose timing fits your schedule."
+              }
+            },{
+              "@type": "Question",
+              "name": "What tasks does a babysitter help with besides watching the child?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our babysitters help with feeding, diaper changes, bathing, storytelling, homework, hygiene, and keeping the child engaged. They make sure your child is safe, clean, happy, and emotionally cared for throughout the day."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can one babysitter take care of more than one child?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, experienced babysitters can manage two or more children. They follow each child’s routine, including meals, hygiene, playtime, and study, while making sure all children stay safe, cared for, and attended to."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can the babysitter drop off or pick up my child from school or tuition?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, many of our babysitters can handle school and tuition pickups or drops. This service is arranged in advance to ensure safety, making it easier for working parents to manage their child’s daily routine."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you have babysitters trained for children with special needs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we provide babysitters trained in special needs care. They offer extra patience, simple communication, and personalised support, ensuring your child feels safe, included, and understood at all times."
+              }
+            },{
+              "@type": "Question",
+              "name": "How much does it cost to hire a babysitter or nanny?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Babysitting and nanny charges depend on service type; part-time, full-time, or live-in, and number of children. We provide affordable pricing with a personalised quote based on your exact childcare needs and schedule."
+              }
+            }]
+          })
+        }}
+      />
+      <main className="min-h-screen">
+        <Navbar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-pink-700 via-pink-600 to-pink-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
@@ -77,7 +165,7 @@ export default function NannyBabysitterPage() {
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M60 0C60 33.137 33.137 60 0 60s60 26.863 60 60 26.863-60 60-60S60 26.863 60 0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
           }}></div>
         </div>
-
+ 
         <div className="container-custom relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -88,12 +176,9 @@ export default function NannyBabysitterPage() {
                   <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
                   <span className="text-sm font-semibold">Child Safety Certified</span>
                 </div>
-
+ 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Nanny & Babysitter
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                    Expert Childcare You Trust
-                  </span>
+                  Nanny & Babysitter – Expert Childcare You Trust
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
@@ -529,6 +614,7 @@ export default function NannyBabysitterPage() {
       
             <NestCTA />
       <Footer />
-    </main>
+      </main>
+    </>
   )
-} 
+}

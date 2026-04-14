@@ -151,7 +151,73 @@ export default function SpecialNeedsCaregiverPage() {
 
     return (
         <main className="min-h-screen">
-            <Navbar />
+            <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": [{
+                        "@type": "Question",
+                        "name": "Can you provide Special Needs caregivers for specific conditions?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We do not provide medical or specialised disability caregivers. However, we offer trained Nanny helpers who assist children with special needs like autism, ADHD, Down syndrome, speech delay, learning difficulties, and mild physical challenges by supporting daily routines, hygiene, meals, supervision, and emotional comfort at home."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "What is a special needs Nanny at EzyHelpers?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A special needs Nanny at EzyHelpers is a trained home helper, not a therapist or medical professional. They support the child’s daily care, routines, and emotional well-being under the guidance of parents and doctors."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "What is the role of a special needs assistant?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A special needs assistant supports a Special Child by helping with daily activities, therapy routines, learning tasks, mobility, and behaviour management. Their role is to encourage independence while maintaining a calm, safe, and nurturing home environment for children with special abilities."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "How can parents get help for a special needs child?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Parents can hire a trained nanny helper who understands their child’s daily needs. EzyHelpers provides background-verified helpers who support routines, emotional care, and basic therapy activities at home."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "How long will it take for my child to bond with the caregiver?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Most children take a few weeks to feel comfortable. Regular routines, kind talking, and daily care help build trust slowly."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "What if the child resists routines or caregiver support?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Caregivers handle this calmly with patience and gentle encouragement. No force is used. The child’s comfort always comes first."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Are female caregivers available for girl children?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Families can request female caregivers for comfort and privacy. We ensure respectful, safe, and professional special needs home care based on every family’s preference."
+                        }
+                    },{
+                        "@type": "Question",
+                        "name": "Do caregivers provide therapy or medical treatment?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Our nanny helpers do not provide therapy or medical treatment. They only assist with exercises, routines, and care as instructed by parents or healthcare professionals."
+                        }
+                    }]
+                })
+            }}
+        />
+        <Navbar />
 
             <Breadcrumb
                 items={[
