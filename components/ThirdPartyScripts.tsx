@@ -35,43 +35,6 @@ fbq('init', '1223380436207834');
 fbq('track', 'PageView');`}
       </Script>
 
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-868JRCDRFW"
-        strategy="lazyOnload"
-        onLoad={() => {
-          const w = window as Window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void }
-          w.dataLayer = w.dataLayer || []
-          function gtag(...args: unknown[]) {
-            w.dataLayer!.push(args)
-          }
-          w.gtag = gtag
-          gtag('js', new Date())
-          gtag('config', 'G-868JRCDRFW', {
-            page_title: document.title,
-            page_location: window.location.href,
-            send_page_view: true,
-          })
-        }}
-      />
-
-      <Script id="gtag-send-event-helper" strategy="lazyOnload">
-        {`
-window.gtagSendEvent = function(url) {
-  if (typeof gtag !== 'function') {
-    if (typeof url === 'string') window.location.href = url;
-    return false;
-  }
-  var callback = function () {
-    if (typeof url === 'string') window.location.href = url;
-  };
-  gtag('event', 'form_complete', {
-    event_callback: callback,
-    event_timeout: 2000
-  });
-  return false;
-};`}
-      </Script>
-
       <Script id="tawk-to" strategy="lazyOnload">
         {`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
