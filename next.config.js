@@ -24,7 +24,6 @@ const nextConfig = {
 
   // Enable compression and optimization
   compress: true,
-  swcMinify: true,
 
   // Configure SWC for modern browsers
   compiler: {
@@ -33,6 +32,8 @@ const nextConfig = {
     // Enable optimizations for modern JS
     styledComponents: false,
   },
+
+  serverExternalPackages: [],
 
   // Target modern browsers only to reduce bundle size
   experimental: {
@@ -44,8 +45,6 @@ const nextConfig = {
     optimizeCss: false,
     // Automatically rewrite package imports (Heroicons) to the exact path for better tree-shaking
     optimizePackageImports: ['@heroicons/react', 'lucide-react', 'date-fns'],
-    // Disable polyfills for modern browsers
-    serverComponentsExternalPackages: [],
   },
 
   // Webpack configuration for modern browsers to eliminate legacy JS

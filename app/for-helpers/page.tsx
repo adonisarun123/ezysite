@@ -20,7 +20,8 @@ import {
   CalendarDaysIcon,
   UsersIcon,
   TrophyIcon,
-  HeartIcon
+  HeartIcon,
+  ChevronLeftIcon
 } from '@heroicons/react/24/outline';
 
 export default function ForHelpersPage() {
@@ -29,19 +30,19 @@ export default function ForHelpersPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
+
       {/* Language Selector Popup */}
-      <WorkingLanguageSelector 
+      <WorkingLanguageSelector
         isOpen={isOpen}
         onClose={closeSelector}
         onLanguageSelect={handleLanguageSelect}
       />
-      
+
       {/* Translation Notice */}
       <TranslationNotice />
-      
 
-      
+
+
       {/* Floating Language Button */}
       <button
         onClick={openSelector}
@@ -65,11 +66,11 @@ export default function ForHelpersPage() {
                     <span className="block text-yellow-300">Earn More, Work Smart</span>
                   </h1>
                   <p className="text-xl text-blue-100 leading-relaxed">
-                    Become part of India's fastest-growing home services platform. 
+                    Become part of India's fastest-growing home services platform.
                     Connect with customers who need your skills and build a thriving career.
                   </p>
                 </div>
-                
+
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/join-as-helper" className="group bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-center">
                     <span className="flex items-center justify-center gap-2">
@@ -85,7 +86,7 @@ export default function ForHelpersPage() {
                   </button>
                 </div>
               </div>
-              
+
               <div className="relative">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4">
@@ -129,7 +130,7 @@ export default function ForHelpersPage() {
                 Join thousands of helpers who have transformed their careers with our platform
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
@@ -191,6 +192,98 @@ export default function ForHelpersPage() {
           </div>
         </section>
 
+        {/* Find Jobs Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="space-y-12">
+              {/* Header: Full Width */}
+              <div className="text-center max-w-4xl mx-auto space-y-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                  Find Helper Jobs <span className="text-blue-600 block">in Bangalore</span>
+                </h2>
+                <p className="text-2xl text-gray-600 font-medium">
+                  Take the next step towards a better income.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  EzyHelpers helps you find jobs with trusted families who are actively hiring.
+                  You can explore jobs in Bangalore from your state, city, or region.
+                  Whether you have experience or not, we help you find the right job based on your skills and comfort.
+                </p>
+              </div>
+
+              {/* Benefits Banner: Full Width */}
+              <div className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 rounded-[2.5rem] p-8 text-white shadow-2xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-all duration-700"></div>
+                <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {[
+                    { icon: ClockIcon, text: "Flexible working hours" },
+                    { icon: StarIcon, text: "Jobs based on your skills" },
+                    { icon: HeartIcon, text: "Full support from EzyHelpers" },
+                    { icon: ShieldCheckIcon, text: "Simple and quick process" }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-4 group/item justify-center bg-white/5 p-4 rounded-2xl hover:bg-white/10 transition-all">
+                      <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                        <item.icon className="w-5 h-5 text-white" />
+                      </div>
+                      <span className="text-white font-bold text-sm">
+                        {item.text}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Job Opportunities: Full Width Grid */}
+              <div className="space-y-8">
+                <div className="flex items-center justify-center gap-3">
+                  <span className="w-12 h-1.5 bg-blue-600 rounded-full"></span>
+                  <h3 className="text-2xl font-bold text-gray-900">Available Job Opportunities</h3>
+                  <span className="w-12 h-1.5 bg-blue-600 rounded-full"></span>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    'Housekeeping Jobs',
+                    'Cooking Jobs',
+                    'Nanny / Babysitter Jobs',
+                    'Elderly Care Jobs',
+                    'Patient Care Jobs',
+                    'Live-in Housekeeping Couple Jobs',
+                    'Apartment Couple Security Jobs',
+                    'Japa Maid Jobs',
+                    'Live-in Couple for Farmhouse Jobs'
+                  ].map((job, idx) => (
+                    <div key={idx} className="flex items-center gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100 group hover:border-blue-200 hover:bg-blue-50 transition-all duration-300 hover:shadow-lg">
+                      <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center group-hover:text-blue-600 transition-colors">
+                        <StarIcon className="w-6 h-6 text-blue-500" />
+                      </div>
+                      <span className="text-gray-800 font-bold text-base">{job}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA Section: Bottom Centered */}
+              <div className="text-center space-y-8 pt-8">
+                <Link
+                  href="/helper-jobs"
+                  className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white font-black text-xl py-6 px-12 rounded-2xl transition-all shadow-2xl shadow-blue-900/20 gap-3 group hover:scale-[1.05]"
+                >
+                  Browse Jobs by Your Region
+                  <ChevronLeftIcon className="w-7 h-7 rotate-180" />
+                </Link>
+                <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-gray-500 font-semibold text-sm">
+                  <p>Can't find what you're looking for?</p>
+                  <Link href="tel:+919972571005" className="flex items-center gap-2 text-blue-600 hover:underline">
+                    <PhoneIcon className="w-4 h-4" />
+                    Contact Support: +91 9972571005
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* How It Works Section */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -202,7 +295,7 @@ export default function ForHelpersPage() {
                 Getting started is simple. Follow these easy steps to begin your journey.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 {
@@ -211,7 +304,7 @@ export default function ForHelpersPage() {
                   description: "Fill out our simple registration form with your details and skills."
                 },
                 {
-                  step: "02", 
+                  step: "02",
                   title: "Verification",
                   description: "Complete background verification and skill assessment."
                 },

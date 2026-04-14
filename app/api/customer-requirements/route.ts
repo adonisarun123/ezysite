@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+export const dynamic = 'force-dynamic'
 import { sendLeadEmail } from '@/lib/emailService'
 import { sendWebhook } from '@/lib/webhookService'
 import { logger } from '@/lib/logger'

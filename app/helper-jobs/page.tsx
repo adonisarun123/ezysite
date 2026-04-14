@@ -18,6 +18,8 @@ import {
 
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import ReferEarnSection from '@/components/ReferEarnSection'
+
 
 export const metadata: Metadata = {
     title: 'Domestic Helper Jobs in Bangalore | Free Jobs | EzyHelpers',
@@ -177,53 +179,6 @@ export default function HelperJobsPage() {
                     </div>
                 </section>
 
-                {/* Jobs Available Section */}
-                <section className="section-padding bg-gray-100">
-                    <div className="container-custom">
-                        <div className="text-center mb-6 md:mb-10">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Job Categories</h2>
-                            <p className="text-lg text-gray-600">Choose Work Based On Your Skills:</p>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-                            {[
-                                { title: "Housekeeping Jobs", desc: "Cleaning, Washing, Mopping, And Daily Housework.", icon: UserGroupIcon },
-                                { title: "Cooking Jobs", desc: "Veg / Non-Veg Home Cooking For Families.", icon: HeartIcon },
-                                { title: "Nanny / Babysitter", desc: "Baby Care, Feeding, And Child Supervision.", icon: BriefcaseIcon },
-                                { title: "Elderly Care", desc: "Daily Help And Support For Senior Citizens At Home.", icon: ShieldCheckIcon },
-                                { title: "Patient Care", desc: "Non-Medical Care And Daily Help For Patients At Home.", icon: UserGroupIcon },
-                                { title: "Live-in Couple Jobs", desc: "Husband-Wife Jobs For Cleaning, Maintenance, And Home Support With Stay.", icon: UserGroupIcon },
-                                { title: "Couple Security Jobs", desc: "Husband-Wife Watchman And Security Jobs For Apartment Buildings.", icon: UserGroupIcon },
-                                { title: "Japa Maid Jobs", desc: "Mother & Newborn Care After Delivery.", icon: UserGroupIcon },
-                                { title: "Farmhouse Couple Jobs", desc: "Husband-Wife Jobs For Farmhouse Care, Security, And Maintenance.", icon: UserGroupIcon }
-                            ].map((job, index) => (
-                                <div key={index} className="bg-white rounded-2xl p-4 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 group">
-                                    <div className="bg-purple-100 rounded-lg w-10 h-10 md:w-12 md:h-12 flex items-center justify-center mb-3 md:mb-4 text-purple-600 group-hover:scale-110 transition-transform">
-                                        <job.icon className="h-5 w-5 md:h-6 md:w-6" />
-                                    </div>
-                                    <h3 className="text-sm md:text-xl font-bold text-gray-900 mb-2 leading-tight">{job.title}</h3>
-                                    <p className="text-gray-600 text-xs md:text-sm leading-snug">{job.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="flex flex-wrap justify-center gap-4 mt-12">
-                            <Link
-                                href="/helper-registration"
-                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                            >
-                                Apply Now
-                            </Link>
-                            <Link
-                                href="tel:+919972571005"
-                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                            >
-                                Call Us
-                            </Link>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Find Helper jobs by State / Region */}
                 <section id="find-jobs-by-state" className="section-padding bg-white">
                     <div className="container-custom">
@@ -332,6 +287,52 @@ export default function HelperJobsPage() {
                                     </div>
                                 </Link>
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Jobs Available Section */}
+                <section className="section-padding bg-gray-100">
+                    <div className="container-custom">
+                        <div className="text-center mb-6 md:mb-10">
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Job Categories</h2>
+                            <p className="text-lg text-gray-600">Choose Work Based On Your Skills:</p>
+                        </div>
+
+                        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
+                            {[
+                                { title: "Housekeeping Jobs" },
+                                { title: "Cooking Jobs" },
+                                { title: "Nanny / Babysitter" },
+                                { title: "Elderly Care" },
+                                { title: "Patient Care" },
+                                { title: "Live-in Couple Jobs" },
+                                { title: "Couple Security Jobs" },
+                                { title: "Japa Maid Jobs" },
+                                { title: "Farmhouse Couple Jobs" }
+                            ].map((job, index) => (
+                                <div key={index} className="bg-white rounded-xl p-2 md:p-5 shadow-sm border border-gray-200/50 hover:shadow-md transition-all duration-300 flex items-center gap-2 md:gap-3">
+                                    <div className="flex-shrink-0 bg-purple-50 rounded-full p-0.5 md:p-1">
+                                        <CheckCircleIcon className="h-4 w-4 md:h-6 md:w-6 text-purple-600" />
+                                    </div>
+                                    <h3 className="text-[11px] md:text-lg font-bold text-gray-900 leading-tight">{job.title}</h3>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="flex flex-wrap justify-center gap-4 mt-12">
+                            <Link
+                                href="/helper-registration"
+                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                            >
+                                Apply Now
+                            </Link>
+                            <Link
+                                href="tel:+919972571005"
+                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                            >
+                                Call Us
+                            </Link>
                         </div>
                     </div>
                 </section>
@@ -572,7 +573,10 @@ export default function HelperJobsPage() {
                     </div>
                 </section>
 
+                <ReferEarnSection variant="purple" lang="en" />
+
                 {/* How to start your job */}
+
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-16">

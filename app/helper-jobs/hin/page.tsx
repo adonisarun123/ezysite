@@ -18,6 +18,8 @@ import {
 
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import ReferEarnSection from '@/components/ReferEarnSection'
+
 
 export const metadata: Metadata = {
     title: 'बैंगलोर में डोमेस्टिक हेल्पर जॉब्स | फ्री जॉब्स | EzyHelpers',
@@ -177,53 +179,6 @@ export default function HelperJobsPage() {
                     </div>
                 </section>
 
-                {/* Jobs Available Section */}
-                <section className="section-padding bg-gray-100">
-                    <div className="container-custom">
-                        <div className="text-center mb-6 md:mb-10">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">जॉब के प्रकार</h2>
-                            <p className="text-lg text-gray-600">अपने अनुभव और स्किल के अनुसार जॉब चुनें</p>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-                            {[
-                                { title: "हाउसकीपिंग जॉब्स", desc: "सफ़ाई, धुलाई, पोछा लगाना, और रोज़ाना घर का काम।", icon: UserGroupIcon },
-                                { title: "कुकिंग जॉब्स", desc: "परिवारों के लिए वेज / नॉन-वेज घर का खाना।", icon: HeartIcon },
-                                { title: "नैनी / बेबीसिटर", desc: "बेबी केयर, फीडिंग, और बच्चों की देखभाल और निगरानी।", icon: BriefcaseIcon },
-                                { title: "बुज़ुर्गों की देखभाल", desc: "घर पर बुज़ुर्गों की रोज़ाना देखभाल और मदद का काम।", icon: ShieldCheckIcon },
-                                { title: "पेशेंट केयर", desc: "घर पर पेशेंट के लिए नॉन-मेडिकल केयर और रोज़ाना मदद।", icon: UserGroupIcon },
-                                { title: "लिव-इन कपल जॉब्स", desc: "रहने के साथ सफ़ाई और घर संभालने में मदद के लिए पति-पत्नी की जॉब्स।", icon: UserGroupIcon },
-                                { title: "कपल सिक्योरिटी जॉब्स", desc: "अपार्टमेंट बिल्डिंग्स के लिए पति-पत्नी वॉचमैन और सिक्योरिटी जॉब्स।", icon: UserGroupIcon },
-                                { title: "जापा मेड जॉब्स", desc: "डिलीवरी के बाद माँ और नन्हे बच्चे की देखभाल।", icon: UserGroupIcon },
-                                { title: "फार्महाउस कपल जॉब्स", desc: "पति-पत्नी जॉब्स फार्महाउस की देखभाल, सिक्योरिटी और मेंटेनेंस के लिए।", icon: UserGroupIcon }
-                            ].map((job, index) => (
-                                <div key={index} className="bg-white rounded-2xl p-4 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 group">
-                                    <div className="bg-purple-100 rounded-lg w-10 h-10 md:w-12 md:h-12 flex items-center justify-center mb-3 md:mb-4 text-purple-600 group-hover:scale-110 transition-transform">
-                                        <job.icon className="h-5 w-5 md:h-6 md:w-6" />
-                                    </div>
-                                    <h3 className="text-sm md:text-xl font-bold text-gray-900 mb-2 leading-tight">{job.title}</h3>
-                                    <p className="text-gray-600 text-xs md:text-sm leading-snug">{job.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="flex flex-wrap justify-center gap-4 mt-12">
-                            <Link
-                                href="/helper-registration"
-                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                            >
-                                अभी अप्लाई करें
-                            </Link>
-                            <Link
-                                href="tel:+919972571005"
-                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                            >
-                                हमें कॉल करें
-                            </Link>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Find Helper jobs by State / Region */}
                 <section id="find-jobs-by-state" className="section-padding bg-white">
                     <div className="container-custom">
@@ -332,6 +287,52 @@ export default function HelperJobsPage() {
                                     </div>
                                 </Link>
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Jobs Available Section */}
+                <section className="section-padding bg-gray-100">
+                    <div className="container-custom">
+                        <div className="text-center mb-6 md:mb-10">
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">जॉब के प्रकार</h2>
+                            <p className="text-lg text-gray-600">अपने अनुभव और स्किल के अनुसार जॉब चुनें</p>
+                        </div>
+
+                        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
+                            {[
+                                { title: "हाउसकीपिंग जॉब्स" },
+                                { title: "कुकिंग जॉब्स" },
+                                { title: "नैनी / बेबीसिटर" },
+                                { title: "बुज़ुर्गों की देखभाल" },
+                                { title: "पेशेंट केयर" },
+                                { title: "लिव-इन कपल जॉब्स" },
+                                { title: "कपल सिक्योरिटी जॉब्स" },
+                                { title: "जापा मेड जॉब्स" },
+                                { title: "फार्महाउस कपल जॉब्स" }
+                            ].map((job, index) => (
+                                <div key={index} className="bg-white rounded-xl p-2 md:p-5 shadow-sm border border-gray-200/50 hover:shadow-md transition-all duration-300 flex items-center gap-2 md:gap-3">
+                                    <div className="flex-shrink-0 bg-purple-50 rounded-full p-0.5 md:p-1">
+                                        <CheckCircleIcon className="h-4 w-4 md:h-6 md:w-6 text-purple-600" />
+                                    </div>
+                                    <h3 className="noto-sans-devanagari-hindi text-[11px] md:text-lg font-bold text-gray-900 leading-tight">{job.title}</h3>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="flex flex-wrap justify-center gap-4 mt-12">
+                            <Link
+                                href="/helper-registration"
+                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                            >
+                                अभी अप्लाई करें
+                            </Link>
+                            <Link
+                                href="tel:+919972571005"
+                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                            >
+                                हमें कॉल करें
+                            </Link>
                         </div>
                     </div>
                 </section>
@@ -578,7 +579,10 @@ export default function HelperJobsPage() {
                     </div>
                 </section>
 
+                <ReferEarnSection variant="purple" lang="hi" />
+
                 {/* How to start your job */}
+
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-16">
