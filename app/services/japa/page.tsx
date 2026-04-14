@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -16,20 +17,24 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Newborn Babycare in Bareilly – Trained Japa Maids',
-  description: 'Looking for newborn babycare in Bareilly? Hire trained Japa maids for postnatal care, baby feeding, massage, and support—safe, gentle, and experienced help.',
-  keywords: 'japa maid bareilly, newborn babycare bareilly, postnatal care bareilly, baby massage bareilly, postpartum care bareilly',
+  title: 'Japa Maid & Newborn Babycare Services in India | EzyHelpers',
+  description:
+    'Hire trained Japa maids for newborn care, postpartum support, baby massage, and feeding—verified helpers available across major Indian cities via EzyHelpers.',
+  keywords:
+    'japa maid India, newborn babycare, postnatal care, baby massage malish, postpartum care, japa nanny India',
   openGraph: {
-    title: 'Newborn Babycare in Bareilly – Trained Japa Maids',
-    description: 'Looking for newborn babycare in Bareilly? Hire trained Japa maids for postnatal care, baby feeding, massage, and support—safe, gentle, and experienced help.',
+    title: 'Japa Maid & Newborn Babycare Across India | EzyHelpers',
+    description:
+      'Book experienced Japa maids for newborn care, mother recovery, and traditional postpartum support. Verified domestic help through EzyHelpers.',
     url: 'https://www.ezyhelpers.com/services/japa',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
   },
   alternates: {
-    canonical: 'https://www.ezyhelpers.com/services/japa'
-  }
+    canonical: 'https://www.ezyhelpers.com/services/japa',
+    languages: selfReferencingLanguages('/services/japa'),
+  },
 }
 
 export default function JapaPage() {

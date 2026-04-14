@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Script from 'next/script';
 import {
   PhoneIcon,
   EnvelopeIcon,
@@ -187,19 +186,6 @@ export default function ContactPageClient() {
 
   return (
     <>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-Y9VE0VN6HQ"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-Y9VE0VN6HQ');
-        `}
-      </Script>
-
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-indigo-900 via-blue-800 to-purple-900 text-white py-20">
         <div className="container mx-auto px-4">

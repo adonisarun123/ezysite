@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { whatsappSendUrl } from '@/lib/whatsappUrl'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
@@ -403,7 +404,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
 
                         <div className="flex justify-center mt-12">
                             <Link
-                                href="tel:+919876543210"
+                                href="tel:+919972571005"
                                 className="inline-flex items-center justify-center bg-teal-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-teal-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                             >
                                 हमारी टीम से बात करें
@@ -603,7 +604,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                                     </div>
 
                                     <div className="mt-10 flex justify-center md:justify-start">
-                                        <a href="tel:+919876543210" className="inline-block bg-white text-teal-900 font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all text-center border-2 border-white">
+                                        <a href="tel:+919972571005" className="inline-block bg-white text-teal-900 font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all text-center border-2 border-white">
                                             आज ही अप्लाई करें
                                         </a>
                                     </div>
@@ -858,7 +859,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                                             <span className="text-gray-700 font-bold">नौकरी शुरू होते ही अपना इनाम पाएं</span>
                                         </div>
                                     </div>
-                                    <Link href="https://wa.me/919876543210" className="inline-block text-center bg-orange-600 text-white font-bold text-lg py-4 px-8 rounded-xl hover:bg-orange-700 hover:shadow-xl transition-all duration-300">
+                                    <Link href={whatsappSendUrl('919972571005')} className="inline-block text-center bg-orange-600 text-white font-bold text-lg py-4 px-8 rounded-xl hover:bg-orange-700 hover:shadow-xl transition-all duration-300">
                                         अभी रेफर करें
                                     </Link>
                                 </div>
@@ -946,7 +947,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                                     अभी अप्लाई करें
                                 </Link>
                                 <Link
-                                    href="tel:+919876543210"
+                                    href="tel:+919972571005"
                                     className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-extrabold text-lg py-5 px-12 rounded-2xl hover:bg-white/10 hover:scale-105 transition-all duration-300"
                                 >
                                     9876543210 पर कॉल करें

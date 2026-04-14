@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { whatsappSendUrl } from '@/lib/whatsappUrl'
 import { PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import { 
   ComputerDesktopIcon,
@@ -251,7 +252,7 @@ export default function Footer() {
               </p>
               <div className="flex justify-center">
                 <Link 
-                  href="https://wa.me/919972571005" 
+                  href={whatsappSendUrl('919972571005')} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center bg-white text-primary-600 font-semibold px-8 py-4 rounded-xl hover:bg-gray-50 transition-all duration-200 transform hover:scale-105 shadow-lg"

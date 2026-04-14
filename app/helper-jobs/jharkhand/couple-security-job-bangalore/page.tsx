@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { whatsappSendUrl } from '@/lib/whatsappUrl'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
@@ -601,7 +602,7 @@ export default function CoupleSecurityJobsBangalorePage() {
                                             </div>
                                         </div>
                                         <Link
-                                            href="https://wa.me/918031411776"
+                                            href={whatsappSendUrl('918031411776')}
                                             className="inline-flex items-center justify-center gap-2 bg-green-600 text-white font-bold py-4 px-10 rounded-xl hover:bg-green-700 transition-all shadow-lg transform hover:scale-105 text-center"
                                         >
                                             <PhoneIcon className="w-5 h-5" /> Refer & Earn ₹500

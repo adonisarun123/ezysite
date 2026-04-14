@@ -1,9 +1,9 @@
-// Google Analytics Event Tracking Utility for EzyHelpers
+// Analytics events via dataLayer for Google Tag Manager
 // This file contains all the custom event tracking functions for user interactions
 
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
+    dataLayer?: Record<string, unknown>[];
   }
 }
 
@@ -67,25 +67,28 @@ interface EventParams {
 // Main tracking function
 export const trackEvent = (eventName: string, parameters: EventParams = {}) => {
   try {
-    if (typeof window !== 'undefined' && window.gtag) {
-      // Enhanced parameters with default values
-      const enhancedParams = {
-        event_category: parameters.event_category || 'general',
-        event_label: parameters.event_label || '',
-        value: parameters.value || 0,
-        page_title: parameters.page_title || document.title,
-        page_location: parameters.page_location || window.location.href,
-        timestamp: new Date().toISOString(),
-        user_agent: navigator.userAgent,
-        ...parameters.custom_parameters,
-      };
+    if (typeof window === 'undefined') return;
 
-      window.gtag('event', eventName, enhancedParams);
-      
-      // Console log for development (remove in production)
-      if (process.env.NODE_ENV === 'development') {
-        console.log('GA Event Tracked:', eventName, enhancedParams);
-      }
+    window.dataLayer = window.dataLayer || [];
+
+    const enhancedParams = {
+      event_category: parameters.event_category || 'general',
+      event_label: parameters.event_label || '',
+      value: parameters.value || 0,
+      page_title: parameters.page_title || document.title,
+      page_location: parameters.page_location || window.location.href,
+      timestamp: new Date().toISOString(),
+      user_agent: navigator.userAgent,
+      ...parameters.custom_parameters,
+    };
+
+    window.dataLayer.push({
+      event: eventName,
+      ...enhancedParams,
+    });
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log('dataLayer event:', eventName, enhancedParams);
     }
   } catch (error) {
     console.error('Error tracking event:', error);

@@ -1,10 +1,15 @@
 import type { Metadata } from 'next'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'National Database of Unorganised Workers | EzyHelpers',
   description: 'Access the National Database of Unorganised Workers (NDUW) dashboard for comprehensive insights into the unorganised workforce sector.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/nduw',
+    languages: selfReferencingLanguages('/nduw'),
+  },
 }
 
 export default function NDUWPage() {

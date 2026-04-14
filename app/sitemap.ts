@@ -185,7 +185,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const bangaloreServices: MetadataRoute.Sitemap = [
     'full-time-maid',
     'part-time-maid',
-    'live-in-maid',
+    // Canonical URL is /cities/bangalore/live-in-maids (singular live-in-maid redirects)
     'live-in-maids',
     'elderly-care',
     'nanny-babysitter',

@@ -17,7 +17,11 @@ export const metadata: Metadata = {
   description: "Find safe & verified house help service across India. EzyHelpers connects you with trained maids for daily chores, cleaning, cooking & more.",
   keywords: 'house help service, domestic help, maids, cooks, nannies, drivers, verified helpers, home services India',
   alternates: {
-    canonical: 'https://www.ezyhelpers.com/',
+    canonical: 'https://www.ezyhelpers.com',
+    languages: {
+      'en-IN': 'https://www.ezyhelpers.com',
+      'x-default': 'https://www.ezyhelpers.com',
+    },
   },
 }
 

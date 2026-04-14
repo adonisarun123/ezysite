@@ -43,7 +43,7 @@ const nextConfig = {
     // Inline and remove unused CSS chunks to prevent 404s
     optimizeCss: false,
     // Automatically rewrite package imports (Heroicons) to the exact path for better tree-shaking
-    optimizePackageImports: ['@heroicons/react'],
+    optimizePackageImports: ['@heroicons/react', 'lucide-react', 'date-fns'],
     // Disable polyfills for modern browsers
     serverComponentsExternalPackages: [],
   },

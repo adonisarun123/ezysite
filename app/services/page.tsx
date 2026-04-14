@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -36,6 +37,10 @@ export const metadata: Metadata = {
   title: 'Home Services | Maids, Cooks, Drivers & More | EzyHelpers',
   description: 'Complete home services including maids, cooks, drivers, electricians, plumbers & more. Professional, verified helpers for all your household needs.',
   keywords: 'home services, domestic help, maids, cooks, drivers, electricians, plumbers, household services, professional helpers',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services',
+    languages: selfReferencingLanguages('/services'),
+  },
 }
 
 interface ServiceItem {

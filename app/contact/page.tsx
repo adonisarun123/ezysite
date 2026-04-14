@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ContactPageClient from '../../components/ContactPageClient';
@@ -8,6 +9,10 @@ export const metadata: Metadata = {
   title: 'Contact Us | EzyHelpers Customer Support',
   description: 'Get in touch with EzyHelpers for all your home service needs. 24/7 customer support available. Call 080-31411776 or chat with us online.',
   keywords: 'contact EzyHelpers, customer support, home services help, domestic help support, helper booking support',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/contact',
+    languages: selfReferencingLanguages('/contact'),
+  },
   openGraph: {
     title: 'Contact EzyHelpers - 24/7 Customer Support',
     description: 'Need help with domestic services? Contact EzyHelpers anytime. Our team is ready to assist you with all your home service requirements.',

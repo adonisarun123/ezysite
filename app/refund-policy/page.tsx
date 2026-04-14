@@ -1,6 +1,17 @@
 import React from 'react';
+import type { Metadata } from 'next';
+import { selfReferencingLanguages } from '@/lib/selfHreflang';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Refund Policy | EzyHelpers',
+  description: 'EzyHelpers refund policy for placement fees and service stages. Transparent terms for domestic help bookings.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/refund-policy',
+    languages: selfReferencingLanguages('/refund-policy'),
+  },
+};
 import {
   CurrencyDollarIcon,
   ClockIcon,
@@ -165,7 +176,7 @@ export default function RefundPolicyPage() {
                   {
                     icon: ShieldCheckIcon,
                     title: "Customer Protection",
-                    description: "You are eligible for a full refund if no helper is provided within 7 days of registration.",
+                    description: "You are eligible for a full refund if no helper profiles are provided within 7 days of registration.",
                     color: "text-emerald-600",
                     bgColor: "bg-emerald-50"
                   }

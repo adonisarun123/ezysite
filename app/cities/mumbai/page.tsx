@@ -1,5 +1,7 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import {
@@ -18,6 +20,16 @@ import {
   TruckIcon,
   AcademicCapIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Domestic Help in Mumbai | Verified Maids & Home Services | EzyHelpers',
+  description:
+    'Hire verified maids, cooks, nannies, and drivers in Mumbai — Bandra, Andheri, Powai, Thane, Navi Mumbai, and more. Trusted domestic help with EzyHelpers.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/mumbai',
+    languages: selfReferencingLanguages('/cities/mumbai'),
+  },
+}
 
 export default function MumbaiPage() {
   const localServices = [

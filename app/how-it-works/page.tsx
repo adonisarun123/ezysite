@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
+import { whatsappSendUrl } from '@/lib/whatsappUrl'
 import { CheckCircleIcon, UserGroupIcon, ClockIcon, ShieldCheckIcon, StarIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import Navbar from '../../components/Navbar'
@@ -9,6 +11,10 @@ export const metadata: Metadata = {
   title: 'How It Works | Find Your Helper | EzyHelpers',
   description: 'Discover how easy it is to find verified, reliable home helpers with EzyHelpers. Our simple 4-step process connects you with trusted professionals for all your household needs.',
   keywords: 'how it works, find helpers, home services, maid booking, helper recruitment, verified professionals',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/how-it-works',
+    languages: selfReferencingLanguages('/how-it-works'),
+  },
   openGraph: {
     title: 'How It Works | EzyHelpers - Simple Steps to Find Your Perfect Helper',
     description: 'Discover how easy it is to find verified, reliable home helpers with EzyHelpers. Our simple 4-step process connects you with trusted professionals.',
@@ -238,7 +244,7 @@ export default function HowItWorksPage() {
                 Find Your Helper Now
               </Link>
               <Link
-                href="https://wa.me/919972571005"
+                href={whatsappSendUrl('919972571005')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-primary-500 text-white font-semibold px-8 py-4 rounded-xl hover:bg-primary-400 transition-all duration-200 transform hover:scale-105 border-2 border-primary-400"

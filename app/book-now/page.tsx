@@ -1,6 +1,17 @@
 import React from 'react';
+import type { Metadata } from 'next';
+import { selfReferencingLanguages } from '@/lib/selfHreflang';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Book Now | Schedule Home Services | EzyHelpers',
+  description: 'Book verified domestic help and home services with EzyHelpers. Quick scheduling for maids, cooks, nannies, and more.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/book-now',
+    languages: selfReferencingLanguages('/book-now'),
+  },
+};
 import {
   CalendarDaysIcon,
   ClockIcon,

@@ -1,5 +1,7 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import {
@@ -18,6 +20,16 @@ import {
   TruckIcon,
   AcademicCapIcon
 } from '@heroicons/react/24/outline'
+
+export const metadata: Metadata = {
+  title: 'Domestic Help in Kanpur | Verified Maids & Home Staff | EzyHelpers',
+  description:
+    'Book background-verified maids, cooks, nannies, and drivers in Kanpur for industrial, business, and residential households.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/cities/kanpur',
+    languages: selfReferencingLanguages('/cities/kanpur'),
+  },
+}
 
 export default function KanpurPage() {
   const localServices = [

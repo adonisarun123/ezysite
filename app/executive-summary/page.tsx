@@ -1,8 +1,13 @@
+import type { Metadata } from 'next'
+import { selfReferencingLanguages } from '@/lib/selfHreflang'
 
-
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Executive Summary - EzyHelpers',
   description: 'Comprehensive executive summary of EzyHelpers platform achievements and future roadmap.',
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/executive-summary',
+    languages: selfReferencingLanguages('/executive-summary'),
+  },
 }
 
 // Enhanced stats component with visual effects

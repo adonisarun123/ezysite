@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import React, { Suspense } from 'react'
+import { whatsappSendUrl } from '@/lib/whatsappUrl'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import HireHelperForm from '@/components/HireHelperForm'
@@ -97,7 +98,7 @@ export default function HireHelperPage() {
                   </a>
 
                   <a 
-                    href="https://wa.me/918031411776"
+                    href={whatsappSendUrl('918031411776')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow border border-gray-200"

@@ -127,7 +127,7 @@ ezyhelpers-website/
 
 - **Phone**: +91 9972571005
 - **Email**: contact@ezyhelpers.com
-- **WhatsApp**: [Chat with us](https://wa.me/919972571005)
+- **WhatsApp**: [Chat with us](https://api.whatsapp.com/send?phone=919972571005)
 
 ## 🏙️ Service Areas
 

@@ -398,7 +398,7 @@ export default function HomeCookJobsBangalorePage() {
 
                         <div className="flex justify-center mt-12">
                             <Link
-                                href="tel:+919876543210"
+                                href="tel:+919972571005"
                                 className="inline-flex items-center justify-center bg-teal-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-teal-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                             >
                                 Talk to Our Team
