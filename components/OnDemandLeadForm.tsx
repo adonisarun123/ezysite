@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { CheckCircleIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
+import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
 import { sendWebhook } from '@/lib/webhookService'
 
@@ -217,7 +218,7 @@ export default function OnDemandLeadForm({
       const hours = parseInt(slotHours, 10)
       const timingSummary = `Date: ${serviceDate}; Start: ${startTime}; Slot: ${hours} hours (min. 4h policy)`
 
-      const submissionData = {
+      const insertRow = buildHireHelperLeadInsertRow({
         name: name.trim(),
         phone: phone.trim(),
         email: email.trim(),
@@ -226,7 +227,7 @@ export default function OnDemandLeadForm({
         apartment: apartment.trim(),
         service: 'on-demand',
         duration: `${hours} hours`,
-        service_timings: timingSummary,
+        serviceTimings: timingSummary,
         startDate: serviceDate,
         specificRequirements: buildSpecificRequirements(),
         experience: '',
@@ -234,12 +235,31 @@ export default function OnDemandLeadForm({
         languages: '',
         additionalServices: workTypes.join(','),
         familySize: familySize || '',
-        preferredGender: preferredGender || ''
-      }
+        preferredGender: preferredGender || '',
+      })
 
-      trackFormSubmit('on_demand_lead_form', { ...submissionData, trackingSource })
+      trackFormSubmit('on_demand_lead_form', {
+        name: insertRow.name,
+        phone: insertRow.phone,
+        email: insertRow.email,
+        city: insertRow.city,
+        locality: insertRow.locality,
+        apartment: insertRow.apartment,
+        service: insertRow.service,
+        duration: insertRow.duration,
+        service_timings: insertRow.service_timings,
+        startDate: insertRow.start_date,
+        specificRequirements: insertRow.specific_requirements,
+        experience: insertRow.experience,
+        budget: insertRow.budget,
+        languages: insertRow.languages,
+        additionalServices: insertRow.additional_services,
+        familySize: insertRow.family_size,
+        preferredGender: insertRow.preferred_gender,
+        trackingSource,
+      })
 
-      const { error } = await supabase.from('hire_helper_leads').insert([submissionData])
+      const { error } = await supabase.from('hire_helper_leads').insert([insertRow])
       if (error) throw error
 
       try {
@@ -249,23 +269,23 @@ export default function OnDemandLeadForm({
           body: JSON.stringify({
             leadType: 'hire_helper',
             formData: {
-              name: submissionData.name,
-              phone: submissionData.phone,
-              email: submissionData.email,
-              city: submissionData.city,
-              locality: submissionData.locality,
-              apartment: submissionData.apartment,
+              name: insertRow.name,
+              phone: insertRow.phone,
+              email: insertRow.email,
+              city: insertRow.city,
+              locality: insertRow.locality,
+              apartment: insertRow.apartment,
               serviceType: 'on-demand',
-              duration: submissionData.duration,
+              duration: insertRow.duration,
               serviceTimings: timingSummary,
-              startDate: submissionData.startDate,
-              specificRequirements: submissionData.specificRequirements,
+              startDate: insertRow.start_date,
+              specificRequirements: insertRow.specific_requirements,
               experience: '',
               budget: '',
               languages: [],
               additionalServices: workTypes,
-              familySize: submissionData.familySize,
-              preferredGender: submissionData.preferredGender
+              familySize: insertRow.family_size,
+              preferredGender: insertRow.preferred_gender ?? '',
             },
             requestId: newRequestId,
             sourceUrl: typeof window !== 'undefined' ? window.location.href : ''
@@ -278,11 +298,24 @@ export default function OnDemandLeadForm({
       sendWebhook(
         'hire_helper',
         {
-          ...submissionData,
+          name: insertRow.name,
+          phone: insertRow.phone,
+          email: insertRow.email,
+          city: insertRow.city,
+          locality: insertRow.locality,
+          apartment: insertRow.apartment,
+          serviceType: 'on-demand',
+          duration: insertRow.duration,
+          serviceTimings: insertRow.service_timings,
+          startDate: insertRow.start_date,
+          specificRequirements: insertRow.specific_requirements,
+          experience: insertRow.experience,
+          budget: insertRow.budget,
           languages: [],
           additionalServices: workTypes,
-          serviceType: 'on-demand',
-          trackingSource
+          familySize: insertRow.family_size,
+          preferredGender: insertRow.preferred_gender ?? '',
+          trackingSource,
         },
         newRequestId
       ).catch(() => {})

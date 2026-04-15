@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { ChevronRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
+import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackStepComplete, trackServiceSelect, trackBookingStart, trackBookingComplete } from '@/lib/analytics'
 import { sendWebhook } from '@/lib/webhookService'
 
@@ -257,28 +258,30 @@ export default function HireHelperForm() {
         const newRequestId = generateRequestId()
 
         // Store in Supabase
-        const { error } = await supabase.from('hire_helper_leads').insert([
-          {
-            name: formData.name.trim(),
-            phone: formData.phone.trim(),
-            email: formData.email.trim(),
-            city: formData.city,
-            locality: formData.locality.trim(),
-            apartment: formData.apartment.trim(),
-            service: formData.serviceType,
-            duration: formData.duration,
-            service_timings: formData.serviceTimings.trim(),
-            startDate: formData.startDate,
-            specificRequirements: formData.specificRequirements,
-            experience: formData.experience,
-            budget: formData.budget,
-            languages: formData.languages.join(','),
-            additionalServices: formData.additionalServices.join(','),
-            familySize: formData.familySize,
-            preferredGender: formData.preferredGender
-          }
-        ])
-        if (error) throw error
+        const insertRow = buildHireHelperLeadInsertRow({
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
+          city: formData.city,
+          locality: formData.locality.trim(),
+          apartment: formData.apartment.trim(),
+          service: formData.serviceType,
+          duration: formData.duration,
+          serviceTimings: formData.serviceTimings.trim(),
+          startDate: formData.startDate,
+          specificRequirements: formData.specificRequirements,
+          experience: formData.experience,
+          budget: formData.budget,
+          languages: formData.languages.join(','),
+          additionalServices: formData.additionalServices.join(','),
+          familySize: formData.familySize,
+          preferredGender: formData.preferredGender,
+        })
+        const { error } = await supabase.from('hire_helper_leads').insert([insertRow])
+        if (error) {
+          console.error('hire_helper_leads insert failed:', error.message, error)
+          throw error
+        }
 
         // Send email notification
         try {

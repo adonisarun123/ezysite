@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { CheckCircleIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
+import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
 import { sendWebhook } from '@/lib/webhookService'
 
@@ -97,30 +98,28 @@ export default function AdLeadForm({
 
         // Prepare data for Supabase and Webhook
         // Mapping simple fields to complex schema
-        const submissionData = {
+        const insertRow = buildHireHelperLeadInsertRow({
           name: formData.name.trim(),
           phone: formData.phone.trim(),
           email: formData.email.trim(),
           city: city,
           locality: '',
           apartment: '',
-          service: 'live-in', // Hardcoded for this ad page
-          // Map message to specificRequirements
+          service: 'live-in',
           specificRequirements: formData.message.trim(),
-          // Default empty/null for others to match schema
           duration: '',
-          service_timings: '',
-          startDate: new Date().toISOString().split('T')[0], // Default to today
+          serviceTimings: '',
+          startDate: new Date().toISOString().split('T')[0],
           experience: '',
           budget: '',
-          languages: '', // Comma separated string in DB
+          languages: '',
           additionalServices: '',
           familySize: '',
-          preferredGender: ''
-        }
+          preferredGender: '',
+        })
 
         // Store in Supabase
-        const { error } = await supabase.from('hire_helper_leads').insert([submissionData])
+        const { error } = await supabase.from('hire_helper_leads').insert([insertRow])
 
         if (error) throw error
 
@@ -134,12 +133,23 @@ export default function AdLeadForm({
             body: JSON.stringify({
               leadType: 'hire_helper',
               formData: {
-                ...submissionData,
-                // Ensure arrays for email template if it expects them
+                name: insertRow.name,
+                phone: insertRow.phone,
+                email: insertRow.email,
+                city: insertRow.city,
+                locality: insertRow.locality,
+                apartment: insertRow.apartment,
+                serviceType: 'live-in',
+                duration: insertRow.duration,
+                serviceTimings: insertRow.service_timings,
+                startDate: insertRow.start_date,
+                specificRequirements: insertRow.specific_requirements,
+                experience: insertRow.experience,
+                budget: insertRow.budget,
                 languages: [],
                 additionalServices: [],
-                serviceType: 'live-in', // Consistency with original form field name
-                serviceTimings: '',
+                familySize: insertRow.family_size,
+                preferredGender: insertRow.preferred_gender ?? '',
               },
               requestId: newRequestId,
               sourceUrl: window.location.href
@@ -155,12 +165,29 @@ export default function AdLeadForm({
 
         // Send webhook
         // Note: sendWebhook expects the data structure. I'll pass the submissionData.
-        sendWebhook('hire_helper', {
-          ...submissionData,
-          languages: [],
-          additionalServices: [],
-          serviceType: 'live-in'
-        }, newRequestId).catch(console.error)
+        sendWebhook(
+          'hire_helper',
+          {
+            name: insertRow.name,
+            phone: insertRow.phone,
+            email: insertRow.email,
+            city: insertRow.city,
+            locality: insertRow.locality,
+            apartment: insertRow.apartment,
+            serviceType: 'live-in',
+            duration: insertRow.duration,
+            serviceTimings: insertRow.service_timings,
+            startDate: insertRow.start_date,
+            specificRequirements: insertRow.specific_requirements,
+            experience: insertRow.experience,
+            budget: insertRow.budget,
+            languages: [],
+            additionalServices: [],
+            familySize: insertRow.family_size,
+            preferredGender: insertRow.preferred_gender ?? '',
+          },
+          newRequestId
+        ).catch(console.error)
 
         // Track successful form completion
         trackFormComplete('ad_lead_form', newRequestId);
