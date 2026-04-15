@@ -378,6 +378,86 @@ export const jobOpenings: JobOpening[] = [
     applicationForm: 'role',
   },
   {
+    slug: 'supply-sourcing-executive-bangalore',
+    title: 'Supply Sourcing Executive',
+    department: 'Operations',
+    location: 'Bangalore (HSR Layout · on-site)',
+    type: 'Full-time',
+    team: 'Supply & sourcing',
+    postedAt: '2026-04-15',
+    excerpt:
+      'Tele-sourcing engine for verified helpers: outbound and inbound calls, complete profiles, disciplined CRM and follow-ups, and tight handoffs to field verification — you keep supply moving so sales can place with confidence.',
+    intro:
+      'EzyHelpers matches families with verified domestic professionals — live-in and full-time maids, part-time help, cooks, nannies, caregivers, drivers, and more. Sales only works when supply is real: accurate profiles, honest availability, and helpers who are ready for verification and placement. Supply Sourcing Executives are the voice of our supply funnel on the phone. You call leads and inbound interest, explain how we work with fairness and clarity, build structured profiles in our tools, chase documentation and follow-ups like a professional recruiter, and coordinate with Field Officers and sourcing leads so nothing stalls between “interested” and “ready to match.” This is a full-time, office-based role in HSR Layout for someone who likes high-volume calling, owns their pipeline, and cares about quality as much as volume.',
+    responsibilities: [
+      'Run outbound and inbound tele-sourcing campaigns to recruit helpers and job-seekers across categories (live-in, full-time, part-time, on-demand) using lead lists, referrals, and inbound callbacks as assigned.',
+      'Conduct structured phone screening: experience, role fit, salary expectations, location and timing, family constraints, and basic eligibility; capture outcomes clearly in CRM or internal tools the same day.',
+      'Build complete, accurate helper profiles — skills, work history, references where applicable, availability, and category — so matching and field verification are not reworked later.',
+      'Drive follow-up discipline: callbacks, document collection reminders, no-show recovery, and status updates until a lead is profiled, disqualified for a clear reason, or handed to field with a clean brief.',
+      'Maintain CRM / sheet hygiene: call logs, dispositions, next actions, and pipeline stages so dashboards, targets, and lead allocation stay truthful.',
+      'Coordinate with Field Officers and sourcing leadership on visit scheduling, priority geographies, and edge cases (documentation gaps, salary misalignment, risk flags).',
+      'Hit and track personal metrics: dials, meaningful connects, profiles created or advanced, verification handoffs, and conversion ratios defined by your manager.',
+      'Represent EzyHelpers professionally on every call — respectful tone with workers, no false promises on earnings or placements, and adherence to consent and data-handling norms.',
+      'Participate in daily or weekly huddles; share learnings on what messaging or lead sources convert; suggest improvements to scripts, lists, or process within the playbook.',
+    ],
+    requirements: [
+      'Strong spoken communication for high-volume phone work — clear, patient, and confident without sounding scripted or pushy.',
+      'Ability to hold professional conversations in English and Hindi; Kannada is important for many helper-side conversations in Bangalore.',
+      'Prior experience in tele-calling, recruitment calling, BPO/KPO outbound, inside sales, or high-volume customer/supplier outreach (roughly 6 months–3 years is typical; judgment and output matter more than exact tenure).',
+      'Comfort with targets and activity metrics (calls, connects, conversions) and honest self-reporting.',
+      'Basic digital literacy: CRM, spreadsheets, WhatsApp coordination, and typing notes while on calls or immediately after.',
+      'High ownership of your pipeline — you treat “no answer” and “call back Tuesday” as states to manage, not forget.',
+      'Full-time availability from our Bangalore office (HSR Layout); this is not a remote role.',
+    ],
+    niceToHave: [
+      'Blue-collar hiring, staffing agency, domestic help, gig, hyperlocal, or marketplace supply-side calling experience.',
+      'Familiarity with Bangalore neighbourhoods and how domestic workers describe roles and pay.',
+      'Exposure to diallers, click-to-call, or telephony integrated with CRM.',
+      'Any prior coordination with field teams or verification workflows.',
+    ],
+    extraSections: [
+      {
+        title: 'What success looks like',
+        items: [
+          'Consistent daily output: planned dials, connects, and logged outcomes',
+          'Strong lead → profile conversion without sacrificing accuracy',
+          'Low rework from field or matching due to sloppy or incomplete tele notes',
+          'Predictable follow-ups — fewer “lost” leads in the funnel',
+          'Professional helper experience on the phone (respect, clarity, no over-promising)',
+        ],
+      },
+      {
+        title: 'Key performance indicators',
+        items: [
+          'Call and connect volumes (as defined for your pod)',
+          'Profile creation and profile completeness rates',
+          'Time from first touch to verification-ready handoff',
+          'Conversion from sourced lead to active, placeable supply',
+          'CRM hygiene and on-time dispositioning',
+        ],
+      },
+      {
+        title: 'Work setup and compensation',
+        items: [
+          'Full-time employment based at our HSR Layout office with standard weekday hours; peak windows may align with helper availability (per team norms).',
+          'Competitive fixed pay plus performance-linked components where applicable — detailed with shortlisted candidates.',
+          'Tools: CRM, telephony or dialler as configured, internal playbooks, and training on profile templates.',
+        ],
+      },
+      {
+        title: 'Why join EzyHelpers',
+        items: [
+          'Direct impact on whether families get safe, timely matches',
+          'Clear path toward senior tele-sourcing, team lead, or broader sourcing ops as you prove throughput and quality',
+          'Structured playbooks in a category that still runs too much on chaos elsewhere',
+        ],
+      },
+    ],
+    applyEmail: 'contact@ezyhelpers.com',
+    hasApplicationForm: true,
+    applicationForm: 'role',
+  },
+  {
     slug: 'city-head-ghaziabad',
     title: 'City Head – Ghaziabad',
     department: 'City leadership',
