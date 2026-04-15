@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import OnDemandLeadForm from '@/components/OnDemandLeadForm'
 import {
   BoltIcon,
   ClockIcon,
@@ -233,7 +234,7 @@ export default function BangaloreOnDemandHelperPage() {
           </div>
 
           <div className="container-custom relative z-10">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                   <MapPinIcon className="h-5 w-5 text-yellow-300 mr-2" />
@@ -256,13 +257,13 @@ export default function BangaloreOnDemandHelperPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 px-4 lg:px-0">
-                  <Link href="/hire-helper" className="group relative bg-white text-primary-800 hover:bg-primary-50 font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
+                  <a href="#on-demand-booking" className="group relative bg-white text-primary-800 hover:bg-primary-50 font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-center">
                     <span className="relative z-10">
                       <span className="hidden sm:inline">Book On-Demand Maid</span>
                       <span className="sm:hidden">Book Now</span>
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-white to-primary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  </Link>
+                  </a>
                   <Link href="tel:+919972571005" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300">
                     <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
                     <span className="hidden sm:inline">Call for Emergency Helper</span>
@@ -286,17 +287,13 @@ export default function BangaloreOnDemandHelperPage() {
                 </div>
               </div>
 
-              <div className="hidden lg:block">
-                <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                  <div className="grid grid-cols-2 gap-6">
-                    {[SparklesIcon, HeartIcon, WrenchScrewdriverIcon, UserGroupIcon].map((Icon, idx) => (
-                      <div key={idx} className="group bg-white/20 rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-primary-500 hover:to-primary-600 transition-all duration-500 transform hover:scale-105 cursor-pointer">
-                        <Icon className="h-12 w-12 text-white mx-auto mb-3 group-hover:scale-110 transition-all duration-300" />
-                        <div className="text-white font-semibold text-sm">Service</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div className="w-full max-w-xl mx-auto lg:mx-0 lg:max-w-none">
+                <OnDemandLeadForm
+                  anchorId="on-demand-booking"
+                  fixedCity="Bangalore"
+                  variant="primary"
+                  trackingSource="bangalore_on_demand_helper_page"
+                />
               </div>
             </div>
           </div>
@@ -357,10 +354,10 @@ export default function BangaloreOnDemandHelperPage() {
                     </ul>
                     {service.title === 'Emergency Pet Care and Walking' && (
                       <div className="mt-4">
-                        <Link href="/hire-helper" className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
+                        <a href="#on-demand-booking" className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">
                           Get Emergency Pet Helper
                           <ArrowRightIcon className="h-4 w-4 ml-1" />
-                        </Link>
+                        </a>
                       </div>
                     )}
                   </div>
@@ -369,10 +366,10 @@ export default function BangaloreOnDemandHelperPage() {
             </div>
 
             <div className="text-center mt-12">
-              <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl">
+              <a href="#on-demand-booking" className="inline-flex items-center bg-primary-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl">
                 Book On-Demand Maid
                 <ArrowRightIcon className="h-5 w-5 ml-2" />
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -425,9 +422,9 @@ export default function BangaloreOnDemandHelperPage() {
                 ))}
               </ul>
               <div className="text-center mt-8">
-                <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors">
+                <a href="#on-demand-booking" className="inline-flex items-center bg-primary-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors">
                   Book Online – Instant Confirmation
-                </Link>
+                </a>
                 <div className="mt-4">
                   <Link href="tel:+919972571005" className="text-primary-700 font-semibold hover:underline">Call Now for Immediate Booking</Link>
                 </div>
@@ -445,9 +442,9 @@ export default function BangaloreOnDemandHelperPage() {
                 Whether it’s a spill, a guest, a sudden event, or an emergency cleaning task, EzyHelpers is here with trusted, fast, and skilled support.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/hire-helper" className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors shadow-lg hover:shadow-xl">
+                <a href="#on-demand-booking" className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors shadow-lg hover:shadow-xl text-center">
                   Book Online – Instant Confirmation
-                </Link>
+                </a>
                 <Link href="tel:+919972571005" className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">
                   Call Now for Immediate Booking
                 </Link>
@@ -501,10 +498,10 @@ export default function BangaloreOnDemandHelperPage() {
               </div>
               <div className="text-center mt-8">
                 <p className="text-gray-600 mb-4">And many more areas across Bangalore</p>
-                <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors">
+                <a href="#on-demand-booking" className="inline-flex items-center bg-primary-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors">
                   Check Service in Your Area
                   <ArrowRightIcon className="h-4 w-4 ml-2" />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -527,10 +524,8 @@ export default function BangaloreOnDemandHelperPage() {
           </div>
         </section>
 
-        
-
-              <NestCTA />
-      <Footer />
+        <NestCTA />
+        <Footer />
       </main>
     </>
   )

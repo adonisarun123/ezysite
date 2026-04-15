@@ -114,13 +114,38 @@ This email was automatically generated from the EzyHelpers website contact form.
   };
 };
 
+const HIRE_HELPER_DURATION_LABELS: Record<string, string> = {
+  'few-hours-once': 'Few hours / one-time visit',
+  'daily-partial': 'Daily (part of the day)',
+  'daily-full': 'Daily (full working day)',
+  '1-week': 'About 1 week',
+  '1-month': 'About 1 month',
+  '2-3-months': '2–3 months',
+  '6-months-plus': '6 months or longer',
+  ongoing: 'Ongoing / flexible',
+};
+
+const formatHireHelperDurationForEmail = (serviceType: string, durationKey: string) => {
+  if (serviceType === 'live-in') return 'N/A (24/7 live-in)';
+  if (!durationKey) return '—';
+  return HIRE_HELPER_DURATION_LABELS[durationKey] || durationKey;
+};
+
+const formatHireHelperTimingsForEmail = (serviceType: string, timings?: string) => {
+  if (serviceType === 'live-in') return '—';
+  return timings?.trim() || '—';
+};
+
 const generateHireHelperLeadEmail = (formData: {
   name: string;
   phone: string;
   email: string;
   city: string;
+  locality?: string;
+  apartment?: string;
   serviceType: string;
   duration: string;
+  serviceTimings?: string;
   startDate: string;
   specificRequirements: string;
   experience: string;
@@ -133,6 +158,8 @@ const generateHireHelperLeadEmail = (formData: {
   sourceUrl?: string;
 }) => {
   const formattedPhone = formatPhoneForEmail(formData.phone);
+  const durationLine = formatHireHelperDurationForEmail(formData.serviceType, formData.duration);
+  const timingsLine = formatHireHelperTimingsForEmail(formData.serviceType, formData.serviceTimings);
 
   return {
     subject: `New Hire Helper Lead: ${formData.serviceType} in ${formData.city}`,
@@ -145,11 +172,14 @@ const generateHireHelperLeadEmail = (formData: {
           <p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>
           <p><strong>Phone:</strong> <a href="tel:${formData.phone}" style="text-decoration: none; color: #1e40af;">${formattedPhone}</a></p>
           <p><strong>City:</strong> ${formData.city}</p>
+          <p><strong>Locality:</strong> ${formData.locality?.trim() || '—'}</p>
+          <p><strong>Apartment:</strong> ${formData.apartment?.trim() || '—'}</p>
         </div>
         <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #333;">Service Requirements</h3>
           <p><strong>Service Type:</strong> ${formData.serviceType}</p>
-          <p><strong>Duration:</strong> ${formData.duration}</p>
+          <p><strong>Preferred timings:</strong> ${timingsLine}</p>
+          <p><strong>Duration:</strong> ${durationLine}</p>
           <p><strong>Start Date:</strong> ${formData.startDate}</p>
           <p><strong>Experience Required:</strong> ${formData.experience}</p>
           <p><strong>Budget Range:</strong> ${formData.budget}</p>
@@ -184,10 +214,13 @@ Contact Information:
 - Email: ${formData.email}
 - Phone: ${formattedPhone}
 - City: ${formData.city}
+- Locality: ${formData.locality?.trim() || '—'}
+- Apartment: ${formData.apartment?.trim() || '—'}
 
 Service Requirements:
 - Service Type: ${formData.serviceType}
-- Duration: ${formData.duration}
+- Preferred timings: ${timingsLine}
+- Duration: ${durationLine}
 - Start Date: ${formData.startDate}
 - Experience Required: ${formData.experience}
 - Budget Range: ${formData.budget}

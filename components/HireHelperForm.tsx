@@ -12,8 +12,11 @@ interface FormData {
   phone: string
   email: string
   city: string
+  locality: string
+  apartment: string
   serviceType: string
   duration: string
+  serviceTimings: string
   startDate: string
   specificRequirements: string
   experience: string
@@ -42,6 +45,21 @@ const cities = [
 
 const languages = ['English', 'Hindi', 'Tamil', 'Telugu', 'Kannada', 'Malayalam', 'Bengali', 'Marathi']
 
+/** Shown only when service is not live-in */
+const DURATION_OPTIONS = [
+  { value: 'few-hours-once', label: 'Few hours / one-time visit' },
+  { value: 'daily-partial', label: 'Daily (part of the day)' },
+  { value: 'daily-full', label: 'Daily (full working day)' },
+  { value: '1-week', label: 'About 1 week' },
+  { value: '1-month', label: 'About 1 month' },
+  { value: '2-3-months', label: '2–3 months' },
+  { value: '6-months-plus', label: '6 months or longer' },
+  { value: 'ongoing', label: 'Ongoing / flexible' }
+]
+
+const requiresScheduleDetails = (serviceType: string) =>
+  Boolean(serviceType && serviceType !== 'live-in')
+
 export default function HireHelperForm() {
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState<FormData>({
@@ -49,8 +67,11 @@ export default function HireHelperForm() {
     phone: '',
     email: '',
     city: '',
+    locality: '',
+    apartment: '',
     serviceType: '',
     duration: '',
+    serviceTimings: '',
     startDate: '',
     specificRequirements: '',
     experience: '',
@@ -85,7 +106,14 @@ export default function HireHelperForm() {
   }, [hasTrackedStart, searchParams])
 
   const handleInputChange = (field: keyof FormData, value: string | string[]) => {
-    setFormData(prev => ({ ...prev, [field]: value }))
+    setFormData(prev => {
+      const next = { ...prev, [field]: value } as FormData
+      if (field === 'serviceType' && typeof value === 'string' && value === 'live-in') {
+        next.duration = ''
+        next.serviceTimings = ''
+      }
+      return next
+    })
 
     // Track service selection
     if (field === 'serviceType' && typeof value === 'string') {
@@ -142,6 +170,14 @@ export default function HireHelperForm() {
       if (!formData.familySize) {
         errors.familySize = 'Please select family size'
       }
+      if (requiresScheduleDetails(formData.serviceType)) {
+        if (!formData.serviceTimings.trim()) {
+          errors.serviceTimings = 'Please enter your preferred service timings'
+        }
+        if (!formData.duration) {
+          errors.duration = 'Please select how long you need the service'
+        }
+      }
     }
     setFormErrors(errors)
     return Object.keys(errors).length === 0
@@ -182,6 +218,14 @@ export default function HireHelperForm() {
     if (!formData.familySize) {
       errors.familySize = 'Please select family size'
     }
+    if (requiresScheduleDetails(formData.serviceType)) {
+      if (!formData.serviceTimings.trim()) {
+        errors.serviceTimings = 'Please enter your preferred service timings'
+      }
+      if (!formData.duration) {
+        errors.duration = 'Please select how long you need the service'
+      }
+    }
     setFormErrors(errors)
     return Object.keys(errors).length === 0
   }
@@ -219,8 +263,11 @@ export default function HireHelperForm() {
             phone: formData.phone.trim(),
             email: formData.email.trim(),
             city: formData.city,
+            locality: formData.locality.trim(),
+            apartment: formData.apartment.trim(),
             service: formData.serviceType,
             duration: formData.duration,
+            service_timings: formData.serviceTimings.trim(),
             startDate: formData.startDate,
             specificRequirements: formData.specificRequirements,
             experience: formData.experience,
@@ -247,8 +294,11 @@ export default function HireHelperForm() {
                 phone: formData.phone.trim(),
                 email: formData.email.trim(),
                 city: formData.city,
+                locality: formData.locality.trim(),
+                apartment: formData.apartment.trim(),
                 serviceType: formData.serviceType,
                 duration: formData.duration,
+                serviceTimings: formData.serviceTimings.trim(),
                 startDate: formData.startDate,
                 specificRequirements: formData.specificRequirements,
                 experience: formData.experience,
@@ -409,6 +459,33 @@ export default function HireHelperForm() {
                 </select>
                 {formErrors.city && <p className="text-xs text-red-500 mt-1">{formErrors.city}</p>}
               </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Locality
+                </label>
+                <input
+                  type="text"
+                  value={formData.locality}
+                  onChange={(e) => handleInputChange('locality', e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                  placeholder="Area within the city (e.g. HSR Layout, Janakpuri)"
+                />
+                <p className="text-xs text-gray-500 mt-1">Which part of the city you need help in</p>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Apartment
+                </label>
+                <input
+                  type="text"
+                  value={formData.apartment}
+                  onChange={(e) => handleInputChange('apartment', e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                  placeholder="Society, tower, flat or building name"
+                />
+              </div>
             </div>
 
             <div className="flex justify-end">
@@ -452,6 +529,46 @@ export default function HireHelperForm() {
               </div>
               {formErrors.serviceType && <p className="text-xs text-red-500 mt-1">{formErrors.serviceType}</p>}
             </div>
+
+            {requiresScheduleDetails(formData.serviceType) && (
+              <div className="space-y-6 rounded-xl border border-primary-100 bg-primary-50/40 p-5 md:p-6">
+                <p className="text-sm font-medium text-gray-800">
+                  Schedule for this service
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Preferred service timings *
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.serviceTimings}
+                      onChange={(e) => handleInputChange('serviceTimings', e.target.value)}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none bg-white"
+                      placeholder="e.g. 8 AM – 6 PM, Monday–Friday"
+                    />
+                    <p className="text-xs text-gray-500 mt-1">Hours and days you need the helper at home</p>
+                    {formErrors.serviceTimings && <p className="text-xs text-red-500 mt-1">{formErrors.serviceTimings}</p>}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Duration *
+                    </label>
+                    <select
+                      value={formData.duration}
+                      onChange={(e) => handleInputChange('duration', e.target.value)}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none bg-white"
+                    >
+                      <option value="">How long do you need the service?</option>
+                      {DURATION_OPTIONS.map((opt) => (
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                      ))}
+                    </select>
+                    {formErrors.duration && <p className="text-xs text-red-500 mt-1">{formErrors.duration}</p>}
+                  </div>
+                </div>
+              </div>
+            )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>

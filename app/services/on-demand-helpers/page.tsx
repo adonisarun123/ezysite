@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import OnDemandLeadForm from '@/components/OnDemandLeadForm'
 import {
   BoltIcon,
   ClockIcon,
@@ -227,7 +228,7 @@ export default function OnDemandHelpersPage() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
                 {/* Content Column */}
                 <div className="text-center lg:text-left">
                   {/* Trust Badge */}
@@ -262,9 +263,9 @@ export default function OnDemandHelpersPage() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                    <Link href="/hire-helper?service=on-demand" className="group relative bg-white text-trust-800 hover:bg-trust-50 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
+                    <a href="#on-demand-booking" className="group relative bg-white text-trust-800 hover:bg-trust-50 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-center">
                       <span className="relative z-10">Book an On-Demand Maid</span>
-                    </Link>
+                    </a>
                     <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
                       <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
                       <span className="hidden sm:inline">Call for Emergency Help</span>
@@ -289,37 +290,12 @@ export default function OnDemandHelpersPage() {
                   </div>
                 </div>
 
-                {/* Visual Column */}
-                <div className="relative hidden lg:block">
-                  <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                    {/* Service Icons Grid */}
-                    <div className="grid grid-cols-2 gap-6">
-                      <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-yellow-500 hover:to-orange-600 hover:shadow-2xl hover:shadow-yellow-500/25 transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer">
-                        <ClockIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-yellow-100 group-hover:scale-110 transition-all duration-300" />
-                        <div className="text-white font-semibold text-sm group-hover:text-yellow-100">Temp Support</div>
-                      </div>
-                      <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-red-500 hover:to-orange-600 hover:shadow-2xl hover:shadow-red-500/25 transition-all duration-500 transform hover:scale-105 hover:rotate-1 cursor-pointer">
-                        <BoltIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-red-100 group-hover:scale-110 transition-all duration-300" />
-                        <div className="text-white font-semibold text-sm group-hover:text-red-100">Emergency Clean</div>
-                      </div>
-                      <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-green-500 hover:to-emerald-600 hover:shadow-2xl hover:shadow-green-500/25 transition-all duration-500 transform hover:scale-105 hover:rotate-1 cursor-pointer">
-                        <ShieldCheckIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-green-100 group-hover:scale-110 transition-all duration-300" />
-                        <div className="text-white font-semibold text-sm group-hover:text-green-100">Childcare</div>
-                      </div>
-                      <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-fuchsia-500 hover:to-purple-600 hover:shadow-2xl hover:shadow-fuchsia-500/25 transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer">
-                        <ExclamationTriangleIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-fuchsia-100 group-hover:scale-110 transition-all duration-300" />
-                        <div className="text-white font-semibold text-sm group-hover:text-fuchsia-100">Quick Tasks</div>
-                      </div>
-                    </div>
-
-                    {/* Floating Elements */}
-                    <div className="absolute -top-4 -right-4 bg-red-400 text-red-900 rounded-full p-3 shadow-lg">
-                      <BoltIcon className="h-6 w-6" />
-                    </div>
-                    <div className="absolute -bottom-4 -left-4 bg-orange-400 text-orange-900 rounded-full p-3 shadow-lg">
-                      <ClockIcon className="h-6 w-6" />
-                    </div>
-                  </div>
+                <div className="w-full max-w-xl mx-auto lg:mx-0 lg:max-w-none">
+                  <OnDemandLeadForm
+                    anchorId="on-demand-booking"
+                    variant="trust"
+                    trackingSource="services_on_demand_helpers_page"
+                  />
                 </div>
               </div>
             </div>
@@ -381,10 +357,10 @@ export default function OnDemandHelpersPage() {
                         )}
                         {service.cta && (
                           <div className="mt-4">
-                            <Link href="/hire-helper?service=on-demand" className="inline-flex items-center text-trust-700 font-semibold hover:underline">
+                            <a href="#on-demand-booking" className="inline-flex items-center text-trust-700 font-semibold hover:underline">
                               {service.cta}
                               <ArrowRightIcon className="h-4 w-4 ml-1" />
-                            </Link>
+                            </a>
                           </div>
                         )}
                       </div>
@@ -524,12 +500,12 @@ export default function OnDemandHelpersPage() {
             <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Find Your Trusted On-Demand Maid with EzyHelpers Today!</h2>
             <p className="text-xl text-trust-100 mb-8 max-w-3xl mx-auto">Don't let emergencies or last-minute situations overwhelm you. With EzyHelpers, get reliable, background-verified emergency helpers who provide immediate support exactly when you need it most.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto px-4">
-              <Link
-                href="/hire-helper?service=on-demand"
+              <a
+                href="#on-demand-booking"
                 className="inline-flex items-center justify-center w-full bg-white text-trust-600 font-semibold text-lg py-4 px-6 rounded-xl border-2 border-trust-600 hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
               >
                 Book Your Emergency Helper
-              </Link>
+              </a>
 
               <Link
                 href="tel:+918031411776"
@@ -656,7 +632,7 @@ export default function OnDemandHelpersPage() {
                 Can't find what you're looking for? We have more services available!
               </p>
               <Link
-                href="/hire-helper"
+                href="/services"
                 className="inline-flex items-center bg-trust-600 text-white hover:bg-trust-700 font-semibold px-8 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 View All Services

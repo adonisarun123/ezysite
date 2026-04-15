@@ -22,8 +22,11 @@ export interface HireHelperFormData {
   phone: string;
   email: string;
   city: string;
+  locality: string;
+  apartment: string;
   serviceType: string;
   duration: string;
+  serviceTimings: string;
   startDate: string;
   specificRequirements: string;
   experience: string;

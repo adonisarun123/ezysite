@@ -102,11 +102,14 @@ export default function AdLeadForm({
           phone: formData.phone.trim(),
           email: formData.email.trim(),
           city: city,
+          locality: '',
+          apartment: '',
           service: 'live-in', // Hardcoded for this ad page
           // Map message to specificRequirements
           specificRequirements: formData.message.trim(),
           // Default empty/null for others to match schema
           duration: '',
+          service_timings: '',
           startDate: new Date().toISOString().split('T')[0], // Default to today
           experience: '',
           budget: '',
@@ -135,7 +138,8 @@ export default function AdLeadForm({
                 // Ensure arrays for email template if it expects them
                 languages: [],
                 additionalServices: [],
-                serviceType: 'live-in' // Consistency with original form field name
+                serviceType: 'live-in', // Consistency with original form field name
+                serviceTimings: '',
               },
               requestId: newRequestId,
               sourceUrl: window.location.href
