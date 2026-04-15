@@ -234,8 +234,8 @@ export default function BangaloreOnDemandHelperPage() {
           </div>
 
           <div className="container-custom relative z-10">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
-              <div className="text-center lg:text-left">
+            <div className="max-w-4xl mx-auto text-center lg:text-left">
+              <div>
                 <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                   <MapPinIcon className="h-5 w-5 text-yellow-300 mr-2" />
                   <span className="text-sm font-semibold">On-Demand Helpers Across Bangalore</span>
@@ -285,15 +285,6 @@ export default function BangaloreOnDemandHelperPage() {
                     <div className="text-primary-200 text-sm">Bookings Completed</div>
                   </div>
                 </div>
-              </div>
-
-              <div className="w-full max-w-xl mx-auto lg:mx-0 lg:max-w-none">
-                <OnDemandLeadForm
-                  anchorId="on-demand-booking"
-                  fixedCity="Bangalore"
-                  variant="primary"
-                  trackingSource="bangalore_on_demand_helper_page"
-                />
               </div>
             </div>
           </div>
@@ -503,6 +494,25 @@ export default function BangaloreOnDemandHelperPage() {
                   <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Book on-demand — form (before FAQs) */}
+        <section id="on-demand-booking" className="section-padding bg-white scroll-mt-24">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-display">Book on-demand help</h2>
+              <p className="text-lg text-gray-600">
+                Share your details below. Our team will confirm helper availability for your area and preferred date.
+              </p>
+            </div>
+            <div className="max-w-3xl mx-auto">
+              <OnDemandLeadForm
+                fixedCity="Bangalore"
+                variant="primary"
+                trackingSource="bangalore_on_demand_helper_page"
+              />
             </div>
           </div>
         </section>

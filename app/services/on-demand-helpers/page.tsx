@@ -227,10 +227,8 @@ export default function OnDemandHelpersPage() {
           </div>
 
           <div className="container-custom relative z-10">
-            <div className="max-w-5xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-12 items-start">
-                {/* Content Column */}
-                <div className="text-center lg:text-left">
+            <div className="max-w-4xl mx-auto text-center lg:text-left">
+                <div>
                   {/* Trust Badge */}
                   <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                     <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
@@ -289,15 +287,6 @@ export default function OnDemandHelpersPage() {
                     </div>
                   </div>
                 </div>
-
-                <div className="w-full max-w-xl mx-auto lg:mx-0 lg:max-w-none">
-                  <OnDemandLeadForm
-                    anchorId="on-demand-booking"
-                    variant="trust"
-                    trackingSource="services_on_demand_helpers_page"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -441,6 +430,21 @@ export default function OnDemandHelpersPage() {
                   <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Book on-demand — form (before FAQs) */}
+        <section id="on-demand-booking" className="section-padding bg-white scroll-mt-24">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-display">Book on-demand help</h2>
+              <p className="text-lg text-gray-600">
+                Tell us your city, locality, and what you need. Service dates start from tomorrow onwards through this form.
+              </p>
+            </div>
+            <div className="max-w-3xl mx-auto">
+              <OnDemandLeadForm variant="trust" trackingSource="services_on_demand_helpers_page" />
             </div>
           </div>
         </section>

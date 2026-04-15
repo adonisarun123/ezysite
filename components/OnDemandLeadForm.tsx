@@ -18,9 +18,7 @@ const WORK_TYPE_OPTIONS = [
   { id: 'elderly', label: 'Elderly care' },
   { id: 'pet', label: 'Pet care / dog walking' },
   { id: 'nursing', label: 'Patient or nursing support' },
-  { id: 'technical', label: 'Plumbing, electrical, or handyman' },
   { id: 'event', label: 'Event / party help' },
-  { id: 'errands', label: 'Shopping, errands, or pickup-drop' },
   { id: 'packing', label: 'Packing / moving help' },
   { id: 'other', label: 'Other (describe below)' }
 ] as const
@@ -28,7 +26,7 @@ const WORK_TYPE_OPTIONS = [
 const SLOT_HOURS = [4, 5, 6, 7, 8, 9, 10, 12] as const
 
 const URGENCY_OPTIONS = [
-  { value: 'same-day', label: 'Same day (subject to availability)' },
+  { value: 'urgent', label: 'Urgent — please prioritise my request' },
   { value: '24h', label: 'Within 24 hours' },
   { value: '3-days', label: 'Within 2–3 days' },
   { value: 'flexible', label: 'Flexible' }
@@ -119,10 +117,14 @@ export default function OnDemandLeadForm({
     })
   }
 
-  const minDateStr = () => {
+  /** Earliest selectable service date: tomorrow (T+1) in local time — same day not allowed */
+  const minServiceDateStr = () => {
     const t = new Date()
-    t.setHours(0, 0, 0, 0)
-    return t.toISOString().split('T')[0]
+    t.setDate(t.getDate() + 1)
+    const y = t.getFullYear()
+    const m = String(t.getMonth() + 1).padStart(2, '0')
+    const d = String(t.getDate()).padStart(2, '0')
+    return `${y}-${m}-${d}`
   }
 
   const validate = () => {
@@ -147,12 +149,11 @@ export default function OnDemandLeadForm({
       errors.workTypeOther = 'Please describe the “Other” work (at least 3 characters)'
     }
 
-    if (!serviceDate) errors.serviceDate = 'Choose the service date'
-    else {
-      const d = new Date(serviceDate + 'T12:00:00')
-      const today = new Date()
-      today.setHours(0, 0, 0, 0)
-      if (d < today) errors.serviceDate = 'Date cannot be in the past'
+    const minStr = minServiceDateStr()
+    if (!serviceDate) errors.serviceDate = 'Choose the date you need the service'
+    else if (serviceDate < minStr) {
+      errors.serviceDate =
+        'Service must be scheduled for tomorrow or later. Same-day bookings are not accepted through this form.'
     }
 
     if (!startTime) errors.startTime = 'Preferred start time is required'
@@ -169,6 +170,7 @@ export default function OnDemandLeadForm({
     const lines = [
       `[On-demand request — ${trackingSource}]`,
       '',
+      `Date of service: ${serviceDate}`,
       `Types of work: ${labels.join(', ')}`,
       workTypes.includes('other') && workTypeOther.trim() ? `Other details: ${workTypeOther.trim()}` : '',
       urgency ? `How soon: ${URGENCY_OPTIONS.find((u) => u.value === urgency)?.label || urgency}` : '',
@@ -298,9 +300,11 @@ export default function OnDemandLeadForm({
     }
   }
 
+  const wrapId = anchorId ? { id: anchorId } : {}
+
   if (submitStatus === 'success') {
     return (
-      <div id={anchorId} className={className}>
+      <div {...wrapId} className={className}>
       <div
         className={`rounded-2xl border p-6 md:p-8 text-center ${styles.panel}`}
       >
@@ -330,7 +334,7 @@ export default function OnDemandLeadForm({
   const inputClass = `w-full px-4 py-3 border border-gray-300 rounded-lg outline-none transition-shadow ${styles.focus} focus:ring-2`
 
   return (
-    <div id={anchorId} className={className}>
+    <div {...wrapId} className={className}>
     <div className={`rounded-2xl border overflow-hidden ${styles.panel}`}>
       <div className={`h-1.5 w-full bg-gradient-to-r ${styles.bar}`} />
       <div className="p-5 md:p-7">
@@ -441,23 +445,31 @@ export default function OnDemandLeadForm({
             )}
           </div>
 
+          <div className={`rounded-xl border p-4 md:p-5 ${styles.accentBox}`}>
+            <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-3">Date of service</h4>
+            <div className="max-w-md">
+              <label className="block text-sm font-medium text-gray-700 mb-1">When do you need the helper? *</label>
+              <input
+                className={inputClass}
+                type="date"
+                min={minServiceDateStr()}
+                value={serviceDate}
+                onChange={(e) => setServiceDate(e.target.value)}
+              />
+              <p className="text-xs text-gray-600 mt-1.5">
+                The earliest date you can choose is <strong>tomorrow</strong> (today is not available for this booking form).
+              </p>
+              {formErrors.serviceDate && <p className="text-xs text-red-600 mt-1">{formErrors.serviceDate}</p>}
+            </div>
+          </div>
+
           <div className={`rounded-xl border p-4 ${styles.accentBox}`}>
-            <p className="text-sm text-gray-800 leading-relaxed">
+            <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-2">Preferred timing on that day</h4>
+            <p className="text-sm text-gray-800 leading-relaxed mb-4">
               <span className="font-bold text-gray-900">Minimum booking slot is 4 hours.</span>{' '}
               Plan your preferred start time and how long you need the helper; shorter on-demand visits cannot be accepted.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Service date *</label>
-                <input
-                  className={inputClass}
-                  type="date"
-                  min={minDateStr()}
-                  value={serviceDate}
-                  onChange={(e) => setServiceDate(e.target.value)}
-                />
-                {formErrors.serviceDate && <p className="text-xs text-red-600 mt-1">{formErrors.serviceDate}</p>}
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Preferred start time *</label>
                 <input className={inputClass} type="time" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
