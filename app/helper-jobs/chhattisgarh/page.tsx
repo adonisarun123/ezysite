@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
+import ReferEarnSection from '@/components/ReferEarnSection'
 import {
     BriefcaseIcon,
     StarIcon,
@@ -12,8 +13,7 @@ import {
     HeartIcon,
     ShieldCheckIcon,
     UserPlusIcon,
-    BanknotesIcon,
-    GiftIcon
+    BanknotesIcon
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
@@ -89,11 +89,11 @@ export default function HelperJobsChhattisgarhPage() {
                             </p>
 
                             <p className="text-sm md:text-xl font-semibold mb-6 text-yellow-300 uppercase tracking-widest">Why This Job Is Good For You</p>
-                            
+
                             <div className="flex flex-wrap justify-center gap-3 mb-10">
                                 {[
-                                    'Respectful home environment', 
-                                    'No agent commission', 
+                                    'Respectful home environment',
+                                    'No agent commission',
                                     'Skill growth opportunity',
                                     'Supportive employers',
                                     'Clear job roles'
@@ -212,7 +212,7 @@ export default function HelperJobsChhattisgarhPage() {
                                         ))}
                                     </div>
                                     <div className="mt-6 font-bold text-orange-600 text-[10px] uppercase tracking-widest group-hover:underline flex items-center gap-1 relative z-10">
-                                        [Learn More] <span>→</span>
+                                        Learn More <span>→</span>
                                     </div>
                                 </div>
                             ))}
@@ -404,42 +404,7 @@ export default function HelperJobsChhattisgarhPage() {
                 </section>
 
                 {/* Refer & Earn Section */}
-                <section className="section-padding bg-yellow-50 border-y border-yellow-100">
-                    <div className="container-custom">
-                        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-yellow-200">
-                            <div className="md:flex">
-                                <div className="md:w-5/12 bg-gradient-to-br from-yellow-400 to-orange-500 p-8 flex flex-col items-center justify-center text-center text-white">
-                                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4 border border-white/20">
-                                        <GiftIcon className="w-8 h-8 text-white" />
-                                    </div>
-                                    <h2 className="text-2xl md:text-3xl font-bold mb-1 font-display leading-tight">Refer & Earn</h2>
-                                    <h3 className="text-4xl md:text-5xl font-black mb-1">₹500!</h3>
-                                    <p className="text-yellow-100 text-xs font-bold uppercase tracking-widest">*Terms and Conditions apply</p>
-                                </div>
-                                <div className="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
-                                    <p className="text-lg md:text-xl text-gray-800 font-bold mb-6">
-                                        Do you have a sister, friend, or neighbour from Chhattisgarh looking for work in Bangalore?
-                                    </p>
-                                    <div className="space-y-4 mb-8">
-                                        {[
-                                            'Refer them to work with EzyHelpers',
-                                            'They complete 1 month of work',
-                                            'You earn ₹500*'
-                                        ].map((item, idx) => (
-                                            <div key={idx} className="flex items-start gap-3">
-                                                <CheckCircleIcon className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                                                <span className="text-gray-600 font-bold text-sm md:text-base leading-none">{item}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="bg-orange-50 text-orange-700 font-black text-sm md:text-base py-3 px-6 rounded-xl text-center border border-orange-100 uppercase tracking-tight">
-                                        No limit – keep referring and keep earning!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <ReferEarnSection variant="orange" />
 
                 {/* CTA Section */}
                 <section className="section-padding bg-orange-600 text-white">

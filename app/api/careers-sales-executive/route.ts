@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+export const dynamic = 'force-dynamic'
 import { sendLeadEmail } from '@/lib/emailService'
 import { salesExecutiveApplicationSchema } from '@/lib/salesExecutiveApplicationSchema'
 import {
