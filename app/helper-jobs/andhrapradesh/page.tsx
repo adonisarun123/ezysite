@@ -85,11 +85,11 @@ export default function HelperJobsAndhraPage() {
                             </p>
 
                             <p className="text-sm md:text-xl font-semibold mb-6 text-yellow-300 uppercase tracking-widest">Why This Job Is Good For You</p>
-                            
+
                             <div className="flex flex-wrap justify-center gap-3 mb-10">
                                 {[
-                                    'Choice to accept or reject a job', 
-                                    'Video call before joining', 
+                                    'Choice to accept or reject a job',
+                                    'Video call before joining',
                                     'Fixed monthly payment'
                                 ].map((item, idx) => (
                                     <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20 text-xs md:text-sm font-medium">
@@ -206,7 +206,7 @@ export default function HelperJobsAndhraPage() {
                                         ))}
                                     </div>
                                     <div className="mt-6 font-bold text-cyan-600 text-[10px] uppercase tracking-widest group-hover:underline flex items-center gap-1 relative z-10">
-                                        [Learn More] <span>→</span>
+                                        Learn More <span>→</span>
                                     </div>
                                 </div>
                             ))}

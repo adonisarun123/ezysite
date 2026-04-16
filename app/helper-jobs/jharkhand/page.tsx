@@ -77,6 +77,20 @@ export default function HelperJobsJharkhandPage() {
                         { label: 'Helper Jobs', href: '/helper-jobs' },
                         { label: 'Jharkhand' }
                     ]}
+                    rightContent={
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
+                            <span className="text-gray-500 font-medium whitespace-nowrap">हिंदी</span>
+                            <Link
+                                href="/helper-jobs/jharkhand/hin"
+                                className="w-10 h-5 bg-teal-600 rounded-full p-1 relative transition-colors inline-block"
+                            >
+                                <div
+                                    className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"
+                                />
+                            </Link>
+                            <span className="text-gray-900 font-bold whitespace-nowrap">ENG</span>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -94,13 +108,13 @@ export default function HelperJobsJharkhandPage() {
                             </p>
 
                             <p className="text-sm md:text-xl font-semibold mb-6 text-yellow-300 uppercase tracking-widest">Why This Job Is Good For You</p>
-                            
+
                             <div className="flex flex-wrap justify-center gap-3 mb-10">
                                 {[
-                                    'Safe jobs in Bangalore', 
-                                    'Employer Pays Directly', 
-                                    'Written agreement', 
-                                    'Free training', 
+                                    'Safe jobs in Bangalore',
+                                    'Employer Pays Directly',
+                                    'Written agreement',
+                                    'Free training',
                                     'Family-like environment'
                                 ].map((item, idx) => (
                                     <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20 text-xs md:text-sm font-medium">
@@ -159,51 +173,61 @@ export default function HelperJobsJharkhandPage() {
                                 {
                                     title: "Housekeeping Jobs",
                                     desc: "Clean and maintain homes daily, wash dishes and clothes, and keep rooms tidy and organised.",
-                                    features: ["Clean and mop the house every day.", "Wash dishes, clothes, and help with laundry.", "Keep rooms and furniture neat.", "Sweep and mop floors properly.", "Manage dusting and bathroom cleaning.", "Live-in or full-time work available."]
+                                    features: ["Clean and mop the house every day.", "Wash dishes, clothes, and help with laundry.", "Keep rooms and furniture neat.", "Sweep and mop floors properly.", "Manage dusting and bathroom cleaning.", "Live-in or full-time work available."],
+                                    href: "/helper-jobs/jharkhand/housekeeping-job-bangalore"
                                 },
                                 {
                                     title: "Cooking / Kitchen Helper Jobs",
                                     desc: "Prepare veg and non-veg meals, manage groceries, and maintain a clean kitchen.",
-                                    features: ["Cook meals for the family (veg or non-veg).", "Help plan meals and manage groceries.", "Keep the kitchen clean and organised.", "Follow family recipes and preferences.", "Store and manage leftover food safely.", "Live-in or full-time maid job available."]
+                                    features: ["Cook meals for the family (veg or non-veg).", "Help plan meals and manage groceries.", "Keep the kitchen clean and organised.", "Follow family recipes and preferences.", "Store and manage leftover food safely.", "Live-in or full-time maid job available."],
+                                    href: "/helper-jobs/home-cooks-job-bangalore"
                                 },
                                 {
                                     title: "Nanny / Babysitter Jobs",
                                     desc: "Take care of children, feed them, assist with studies, and maintain safety and hygiene.",
-                                    features: ["Take care of the children and feed them.", "Help with homework and play.", "Keep children safe and clean.", "Put the children to sleep at night.", "Keep toys and rooms neat.", "Live-in or full-time work available."]
+                                    features: ["Take care of the children and feed them.", "Help with homework and play.", "Keep children safe and clean.", "Put the children to sleep at night.", "Keep toys and rooms neat.", "Live-in or full-time work available."],
+                                    href: "/helper-jobs/nanny-job-bangalore"
                                 },
                                 {
                                     title: "Elderly Care Jobs",
                                     desc: "Support seniors with daily routines, provide companionship, and ensure safety at home.",
-                                    features: ["Help older people with daily tasks.", "Give companionship and emotional support.", "Help with walking and personal care.", "Give medicines on time daily.", "Cook soft meals for older people.", "Friendly and safe home environment."]
+                                    features: ["Help older people with daily tasks.", "Give companionship and emotional support.", "Help with walking and personal care.", "Give medicines on time daily.", "Cook soft meals for older people.", "Friendly and safe home environment."],
+                                    href: "/helper-jobs/jharkhand/elderly-caretaker-job-bangalore"
                                 },
                                 {
                                     title: "Patient Care Jobs",
                                     desc: "Assist sick people at home with daily routines, ensuring comfort, hygiene, and safety.",
-                                    features: ["Help sick people at home daily.", "Assist with bathroom and eating.", "Make sure they are comfortable and safe.", "Monitor comfort and report issues.", "Follow doctor’s basic instructions.", "Live-in or full-time work available."]
+                                    features: ["Help sick people at home daily.", "Assist with bathroom and eating.", "Make sure they are comfortable and safe.", "Monitor comfort and report issues.", "Follow doctor’s basic instructions.", "Live-in or full-time work available."],
+                                    href: "/helper-jobs/jharkhand/patient-care-job-bangalore"
                                 },
                                 {
                                     title: "Live-in Housekeeping Couple Jobs",
                                     desc: "Husband-wife teams manage household chores and maintain home cleanliness with accommodations.",
-                                    features: ["Husband-wife jobs for cleaning and housework.", "Help with daily chores and home care.", "Take care of the home surroundings.", "Wash dishes, clothes, and help with laundry.", "Sweep and mop floors properly.", "Accommodation provided."]
+                                    features: ["Husband-wife jobs for cleaning and housework.", "Help with daily chores and home care.", "Take care of the home surroundings.", "Wash dishes, clothes, and help with laundry.", "Sweep and mop floors properly.", "Accommodation provided."],
+                                    href: "/helper-jobs/jharkhand/live-in-housekeeping-couple-job-bangalore"
                                 },
                                 {
                                     title: "Couple Security Jobs",
                                     desc: "Husband-wife pairs guard apartments or houses, monitor visitors, and follow guidance.",
-                                    features: ["Husband-wife jobs to guard apartments or houses.", "Keep home and family safe.", "Check people entering or leaving.", "Lock and open gates on time.", "Stay alert and report problems.", "Training and guidance provided."]
+                                    features: ["Husband-wife jobs to guard apartments or houses.", "Keep home and family safe.", "Check people entering or leaving.", "Lock and open gates on time.", "Stay alert and report problems.", "Training and guidance provided."],
+                                    href: "/helper-jobs/jharkhand/couple-security-job-bangalore"
                                 },
                                 {
                                     title: "Japa Maid Jobs",
                                     desc: "Care for mother and newborn after delivery, assist with feeding, recovery, and provide live-in support.",
-                                    features: ["Take care of the mother and newborn after delivery.", "Help feed and care for the baby.", "Support the mother during recovery.", "Keep baby clothes and the room clean.", "Stay awake at night if needed.", "Live-in with full guidance provided."]
+                                    features: ["Take care of the mother and newborn after delivery.", "Help feed and care for the baby.", "Support the mother during recovery.", "Keep baby clothes and the room clean.", "Stay awake at night if needed.", "Live-in with full guidance provided."],
+                                    href: "/helper-jobs/jharkhand/japa-maid-job-bangalore"
                                 },
                                 {
                                     title: "Live-in Couple For Farmhouse Jobs",
                                     desc: "Husband-wife teams maintain farmhouses, gardens, and property safety with live-in accommodation.",
-                                    features: ["Keep the farmhouse and garden clean daily.", "Water plants and maintain lawns.", "Monitor visitors and property security.", "Help with basic cooking if needed.", "Care for pets or birds on site.", "Private room with food provided."]
+                                    features: ["Keep the farmhouse and garden clean daily.", "Water plants and maintain lawns.", "Monitor visitors and property security.", "Help with basic cooking if needed.", "Care for pets or birds on site.", "Private room with food provided."],
+                                    href: "/helper-jobs/jharkhand/live-in-couple-farmhouse-job-bangalore"
                                 }
                             ].map((item, index) => (
-                                <div
+                                <Link
                                     key={index}
+                                    href={item.href}
                                     className="group bg-white rounded-2xl p-6 border border-teal-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block text-left relative overflow-hidden"
                                 >
                                     <h3 className="text-lg md:text-2xl font-bold text-teal-700 mb-3 group-hover:text-teal-800 relative z-10">{item.title}</h3>
@@ -217,9 +241,9 @@ export default function HelperJobsJharkhandPage() {
                                         ))}
                                     </div>
                                     <div className="mt-6 font-bold text-teal-600 text-[10px] uppercase tracking-widest group-hover:underline flex items-center gap-1 relative z-10">
-                                        [Learn More] <span>→</span>
+                                        Learn More <span>→</span>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>

@@ -89,11 +89,11 @@ export default function HelperJobsChhattisgarhPage() {
                             </p>
 
                             <p className="text-sm md:text-xl font-semibold mb-6 text-yellow-300 uppercase tracking-widest">Why This Job Is Good For You</p>
-                            
+
                             <div className="flex flex-wrap justify-center gap-3 mb-10">
                                 {[
-                                    'Respectful home environment', 
-                                    'No agent commission', 
+                                    'Respectful home environment',
+                                    'No agent commission',
                                     'Skill growth opportunity',
                                     'Supportive employers',
                                     'Clear job roles'
@@ -212,7 +212,7 @@ export default function HelperJobsChhattisgarhPage() {
                                         ))}
                                     </div>
                                     <div className="mt-6 font-bold text-orange-600 text-[10px] uppercase tracking-widest group-hover:underline flex items-center gap-1 relative z-10">
-                                        [Learn More] <span>→</span>
+                                        Learn More <span>→</span>
                                     </div>
                                 </div>
                             ))}

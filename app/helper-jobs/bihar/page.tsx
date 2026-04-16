@@ -93,13 +93,13 @@ export default function HelperJobsBiharPage() {
                             </p>
 
                             <p className="text-sm md:text-xl font-semibold mb-6 text-yellow-300 uppercase tracking-widest">Why This Job Is Good For You</p>
-                            
+
                             <div className="flex flex-wrap justify-center gap-3 mb-10">
                                 {[
-                                    'Safe environment in big cities', 
-                                    'Salary comes directly to you', 
-                                    'Legal work agreement', 
-                                    'New skills training', 
+                                    'Safe environment in big cities',
+                                    'Salary comes directly to you',
+                                    'Legal work agreement',
+                                    'New skills training',
                                     'Respectful employer families'
                                 ].map((item, idx) => (
                                     <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20 text-xs md:text-sm font-medium">
@@ -216,7 +216,7 @@ export default function HelperJobsBiharPage() {
                                         ))}
                                     </div>
                                     <div className="mt-6 font-bold text-indigo-600 text-[10px] uppercase tracking-widest group-hover:underline flex items-center gap-1 relative z-10">
-                                        [Learn More] <span>→</span>
+                                        Learn More <span>→</span>
                                     </div>
                                 </div>
                             ))}
@@ -234,9 +234,9 @@ export default function HelperJobsBiharPage() {
                         <div className="max-w-4xl mx-auto">
                             <div className="flex flex-wrap justify-center gap-4">
                                 {[
-                                    'Hardworking and sincere in daily work', 
-                                    'Honest and trustworthy nature', 
-                                    'Quick to understand instructions', 
+                                    'Hardworking and sincere in daily work',
+                                    'Honest and trustworthy nature',
+                                    'Quick to understand instructions',
                                     'Stay committed for a long time'
                                 ].map((item, index) => (
                                     <div key={index} className="bg-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-sm border border-indigo-200 flex items-center gap-2 md:gap-3 hover:shadow-md transition-all">

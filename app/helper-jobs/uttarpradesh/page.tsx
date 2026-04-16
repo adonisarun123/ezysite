@@ -85,13 +85,13 @@ export default function HelperJobsUPPage() {
                             </p>
 
                             <p className="text-sm md:text-xl font-semibold mb-6 text-yellow-300 uppercase tracking-widest">Why This Job Is Good for You</p>
-                            
+
                             <div className="flex flex-wrap justify-center gap-3 mb-10">
                                 {[
-                                    'Safe jobs in Bangalore', 
-                                    'Employer Pays Directly', 
-                                    'Written Agreement', 
-                                    'Free Training', 
+                                    'Safe jobs in Bangalore',
+                                    'Employer Pays Directly',
+                                    'Written Agreement',
+                                    'Free Training',
                                     'Respectful Environment'
                                 ].map((item, idx) => (
                                     <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20 text-xs md:text-sm font-medium">
@@ -208,7 +208,7 @@ export default function HelperJobsUPPage() {
                                         ))}
                                     </div>
                                     <div className="mt-6 font-bold text-amber-600 text-[10px] uppercase tracking-widest group-hover:underline flex items-center gap-1 relative z-10">
-                                        [Learn More] <span>→</span>
+                                        Learn More <span>→</span>
                                     </div>
                                 </div>
                             ))}
