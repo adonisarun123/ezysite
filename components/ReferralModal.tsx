@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, ChevronLeftIcon } from '@heroicons/react/24/outline';
 import { supabase } from '@/lib/supabaseClient';
 
@@ -126,13 +125,10 @@ export default function ReferralModal({ isOpen, onClose, lang }: ReferralModalPr
     };
 
     return (
-        <AnimatePresence>
+        <>
             {isOpen && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 bg-black/60 backdrop-blur-sm">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                    <div
                         className="bg-white rounded-[2rem] shadow-2xl max-w-lg w-full max-h-[calc(100vh-16px)] overflow-y-auto border border-gray-100"
                     >
                         {/* Header */}
@@ -293,9 +289,9 @@ export default function ReferralModal({ isOpen, onClose, lang }: ReferralModalPr
                                 </p>
                             )}
                         </form>
-                    </motion.div>
+                    </div>
                 </div>
             )}
-        </AnimatePresence>
+        </>
     );
 }

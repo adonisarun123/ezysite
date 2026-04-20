@@ -27,6 +27,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
     title: 'बैंगलोर में लिव-इन कपल हाउसकीपिंग जॉब्स अभी अप्लाई करें',
@@ -156,10 +157,10 @@ export default function HousekeepingCoupleJobsBangaloreHindiPage() {
                                 <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center mb-6 mx-auto text-orange-600">
                                     <BanknotesIcon className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2 leading-loose">बैंगलोर में लिव-इन हाउसकीपिंग कपल जॉब्स</h3>
-                                <div className="text-3xl font-black text-orange-600 mb-6 font-display tracking-tight leading-loose">
+                                <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight">बैंगलोर में लिव-इन हाउसकीपिंग कपल जॉब्स</h3>
+                                <div className="text-3xl font-extrabold text-orange-600 mb-6 font-display tracking-tight leading-tight">
                                     ₹30,000 से ₹35,000
-                                    <span className="text-[10px] font-bold text-gray-400 block uppercase pt-1 leading-loose">प्रति माह कुल सैलरी</span>
+                                    <span className="text-[10px] font-bold text-gray-400 block uppercase pt-1 leading-snug">प्रति माह कुल सैलरी</span>
                                 </div>
                                 <ul className="space-y-4 text-left flex-grow">
                                     <li className="flex items-start gap-3">
@@ -204,7 +205,7 @@ export default function HousekeepingCoupleJobsBangaloreHindiPage() {
                                 <div className="flex justify-center">
                                     <Link
                                         href="/helper-registration"
-                                        className="inline-flex items-center justify-center bg-orange-600 text-white font-black text-lg py-4 px-14 rounded-xl hover:bg-orange-700 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 shadow-xl w-full sm:w-auto text-center leading-loose"
+                                        className="inline-flex items-center justify-center bg-orange-600 text-white font-extrabold text-lg py-4 px-14 rounded-xl hover:bg-orange-700 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 shadow-xl w-full sm:w-auto text-center"
                                     >
                                         कपल जॉब्स के लिए अप्लाई करें
                                     </Link>
@@ -571,52 +572,8 @@ export default function HousekeepingCoupleJobsBangaloreHindiPage() {
                     </div>
                 </section>
 
-                {/* Refer & Earn Section */}
-                <section className="section-padding bg-orange-50 border-y border-orange-100">
-                    <div className="container-custom px-4">
-                        <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-orange-200">
-                            <div className="md:flex">
-                                <div className="md:w-5/12 bg-gradient-to-br from-orange-600 to-orange-800 p-10 flex flex-col items-center justify-center text-center text-white relative">
-                                    <div className="absolute inset-0 opacity-10 pointer-events-none">
-                                        <GiftIcon className="w-full h-full transform translate-x-10 translate-y-10" />
-                                    </div>
-                                    <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-6 shadow-inner">
-                                        <GiftIcon className="w-10 h-10 text-white" />
-                                    </div>
-                                    <h2 className="text-xl md:text-2xl font-bold mb-2 font-display leading-loose uppercase tracking-widest">रेफर / सिफ़ारिश करें </h2>
-                                    <h3 className="text-6xl md:text-7xl font-black mb-4 leading-none tracking-tighter">₹500!</h3>
-                                    <p className="text-orange-200 font-black text-sm uppercase tracking-widest">*नियम और शर्तें लागू</p>
-                                </div>
-                                <div className="md:w-7/12 p-8 md:p-12 flex flex-col justify-center">
-                                    <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 font-display leading-loose tracking-tight">दोस्त को रेफ़र करें और ₹500 कमाएं</h2>
-                                    <p className="text-lg text-gray-600 font-black mb-8 leading-loose">
-                                        EzyHelpers पर झारखंड के अपने दोस्तों और रिश्तेदारों को बैंगलोर में घरेलू काम की नौकरी दिलाने में मदद करें।
-                                    </p>
-                                    <div className="space-y-5 mb-10">
-                                        {[
-                                            "WhatsApp पर उनकी डिटेल्स शेयर करें या हमें कॉल करें",
-                                            "दोस्त का नाम, उम्र और जॉब पसंद बताएं",
-                                            "अगर वो ईज़ीहेल्पर्स जॉइन करते हैं, 1 महीना पूरा करते हैं, तो आप ₹500 कमाते हैं"
-                                        ].map((step, i) => (
-                                            <div key={i} className="flex items-start gap-4">
-                                                <div className="w-7 h-7 rounded-full bg-orange-600 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg shadow-orange-200 border-2 border-white">
-                                                    <span className="text-white text-xs font-black">{i + 1}</span>
-                                                </div>
-                                                <span className={`text-gray-700 font-bold text-base leading-loose ${i === 2 ? 'text-orange-700 font-black' : ''}`}>{step}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <Link
-                                        href={whatsappSendUrl('918031411776')}
-                                        className="inline-flex items-center justify-center gap-3 bg-green-600 text-white font-black py-5 px-10 rounded-2xl hover:bg-green-700 transition-all shadow-xl transform hover:scale-105 text-center leading-loose text-lg"
-                                    >
-                                        <PhoneIcon className="w-6 h-6" /> रेफर करें और ₹500 कमाएं
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/* Refer and Earn Section */}
+                <ReferEarnSection variant="orange" lang="hi" />
 
                 {/* How to Apply Section */}
                 <section className="section-padding bg-white">
@@ -650,16 +607,22 @@ export default function HousekeepingCoupleJobsBangaloreHindiPage() {
                                 ].map((item, index) => (
                                     <div key={index} className={`relative flex flex-col md:flex-row items-center mb-16 md:mb-24 last:mb-0 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                                         {/* Content Card */}
-                                        <div className="w-full md:w-[45%] mb-8 md:mb-0 transition-all duration-500 hover:scale-[1.03]">
+                                        <div className="w-full md:w-[45%] mb-8 md:mb-0 transition-all duration-500 hover:scale-[1.03] z-10">
                                             <div className="bg-white p-10 md:p-12 rounded-[3rem] border-2 border-orange-50 shadow-[0_20px_70px_-20px_rgba(249,115,22,0.15)] hover:shadow-[0_25px_80px_-20px_rgba(249,115,22,0.25)] relative overflow-hidden group">
                                                 <div className="absolute top-0 left-0 w-3 h-full bg-orange-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                                <h3 className="text-xl md:text-3xl font-black text-gray-900 mb-6 leading-loose font-display uppercase tracking-tight">{item.title}</h3>
-                                                <p className="text-gray-600 font-black leading-loose text-base md:text-lg opacity-80">{item.desc}</p>
+                                                
+                                                {/* Step circle for mobile (hidden on md+) */}
+                                                <div className="flex md:hidden w-16 h-16 bg-orange-600 text-white rounded-full items-center justify-center font-black text-2xl shadow-lg border-4 border-white mb-6">
+                                                    {item.step}
+                                                </div>
+
+                                                <h3 className="text-xl md:text-3xl font-extrabold text-gray-900 mb-6 leading-tight font-display uppercase tracking-tight">{item.title}</h3>
+                                                <p className="text-gray-600 font-bold leading-loose text-base md:text-lg opacity-80">{item.desc}</p>
                                             </div>
                                         </div>
 
-                                        {/* Center Number Circle */}
-                                        <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center z-20 pointer-events-none mb-10 md:mb-0">
+                                        {/* Center Number Circle for Desktop (hidden on sm/xs) */}
+                                        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 flex-col items-center justify-center z-20 pointer-events-none">
                                             <div className="w-20 h-20 md:w-28 md:h-28 bg-orange-600 text-white rounded-full flex items-center justify-center font-black text-3xl md:text-5xl shadow-[0_15px_45px_-10px_rgba(249,115,22,0.8)] border-8 border-white ring-4 ring-orange-50 relative overflow-hidden">
                                                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-700"></div>
                                                 <span className="relative z-10">{item.step}</span>

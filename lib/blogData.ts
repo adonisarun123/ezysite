@@ -13,21 +13,7 @@ export interface BlogPost {
 }
 
 // Store blog content directly in variables
-const marketOverviewContent = `# The Indian Domestic Helper Market: Comprehensive Analysis
 
-## Executive Summary
-
-India's domestic helper market represents one of the largest informal employment sectors globally, with an estimated workforce of **50-90 million people**. This massive industry, valued at approximately **₹1.2 trillion annually**, is experiencing unprecedented transformation driven by urbanization, rising incomes, and changing lifestyle patterns.
-
-## Market Size and Scope
-
-### Workforce Demographics
-- **Total Workers**: 50-90 million domestic helpers across India
-- **Gender Distribution**: 75% female, 25% male workers
-- **Age Profile**: Majority between 20-45 years
-- **Urban Concentration**: 60% in metropolitan cities
-
-[... Rest of the market overview content ...]`;
 
 const kitchenHygieneContent = `# Top Personal Kitchen Hygiene Tips Every Home Cook in India Should Follow
 
@@ -1114,18 +1100,7 @@ export const posts: BlogPost[] = [
     image: 'https://ik.imagekit.io/M0nger/2%20(1).png',
     content: verificationGuideContent
   },
-  {
-    id: 'market-overview',
-    title: 'The Indian Domestic Helper Market: Market Overview, Challenges and Future Outlook',
-    excerpt: 'Comprehensive analysis of India\'s domestic helper market - from its 50-90 million workforce to growth trends, formalization opportunities, and policy frameworks.',
-    author: 'Market Research Team',
-    date: 'December 15, 2024',
-    readTime: '15 min read',
-    category: 'Market Analysis',
-    featured: false,
-    tags: ['market analysis', 'domestic workers', 'industry trends', 'policy', 'formalization'],
-    content: marketOverviewContent
-  },
+
   {
     id: 'Top-Personal-Kitchen-Hygiene-Tips-Every-Home-Cook-in-India',
     title: 'Top Personal Kitchen Hygiene Tips Every Home Cook in India Should Follow',
