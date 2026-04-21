@@ -7,6 +7,7 @@ import ReferralModal from './ReferralModal';
 interface ReferEarnSectionProps {
     variant?: 'teal' | 'indigo' | 'violet' | 'sky' | 'emerald' | 'blue' | 'purple' | 'cyan' | 'orange' | 'rose' | 'amber';
     lang?: 'en' | 'hi';
+    location?: string;
 }
 
 const colorClasses = {
@@ -78,7 +79,7 @@ const colorClasses = {
     }
 };
 
-export default function ReferEarnSection({ variant = 'indigo', lang = 'en' }: ReferEarnSectionProps) {
+export default function ReferEarnSection({ variant = 'indigo', lang = 'en', location }: ReferEarnSectionProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { text, bg, border, buttonText } = colorClasses[variant] || colorClasses.indigo;
 
@@ -104,10 +105,10 @@ export default function ReferEarnSection({ variant = 'indigo', lang = 'en' }: Re
                                 </button>
                             </div>
                             <div className="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
-                                <p className="text-lg md:text-xl text-gray-800 font-bold mb-6">
+                                <p className="text-lg md:text-xl text-gray-800 font-bold mb-6 text-wrap">
                                     {lang === 'hi'
-                                        ? 'क्या आपकी कोई बहन, दोस्त या पड़ोसी बैंगलोर में काम की तलाश में है?'
-                                        : 'Do you have a sister, friend, or neighbour looking for work in Bangalore?'}
+                                        ? `क्या आपकी कोई बहन, दोस्त या पड़ोसी ${location ? `${location} से ` : ''}बैंगलोर में काम की तलाश में है?`
+                                        : `Do you have a sister, friend, or neighbour ${location ? `from ${location} ` : ''}looking for work in Bangalore?`}
                                 </p>
                                 <div className="space-y-4 mb-8">
                                     {(lang === 'hi'
