@@ -116,16 +116,46 @@ export default function BangaloreHomeDeepCleaningPage() {
   ]
 
   const faqs = [
-    { question: 'How often should I book home cleaning in Bangalore?', answer: 'It depends on your home and lifestyle. For working professionals with less time for regular cleaning, monthly deep cleaning is ideal. Families with kids or allergy concerns may benefit from services every two weeks. For general upkeep, a thorough cleaning every 3 to 4 months helps maintain hygiene and freshness.' },
-    { question: 'Are your cleaning products safe for children and pets?', answer: 'Yes, we use eco-friendly and non-toxic cleaning products that are completely safe for households with kids, elderly members, and pets. Our goal is to ensure deep cleanliness without compromising your family’s safety or indoor air quality.' },
-    { question: 'Do you clean windows and balconies in Bangalore homes?', answer: 'Yes, we clean windows, glass panels, grills, and balcony spaces. Bangalore’s dust and pollution can make these areas look dull. Our service brings back shine and cleanliness so your windows are spotless and balconies are inviting again.' },
-    { question: 'Do you offer apartment deep cleaning services?', answer: 'Yes, we specialise in deep cleaning services for apartments, gated communities, and high-rise buildings in Bangalore. Our team uses compact equipment suited for apartment layouts and ensures every corner is cleaned, including balconies and shared areas.' },
-    { question: 'How long does a deep cleaning take?', answer: 'Deep cleaning typically takes 4 to 8 hours, depending on your home’s size and the depth of cleaning required. If your home hasn’t been cleaned in a while, or if it\'s a post-renovation service, it may take a bit longer for the best results.' },
-    { question: 'What is the difference between regular house cleaning and deep cleaning?', answer: 'Regular house cleaning typically involves basic upkeep like dusting, sweeping, and wiping surfaces. Deep cleaning, on the other hand, reaches under furniture, scrubs stubborn stains, disinfects surfaces, and targets hidden dust and grime. It’s a more thorough, detailed, and hygienic cleaning solution.' },
-    { question: 'Is deep cleaning more expensive than regular cleaning?', answer: 'Yes, deep cleaning usually costs more than regular cleaning because it takes more time, involves stronger tools and products, and covers more areas in detail. It’s designed to deliver long-lasting cleanliness and better hygiene.' },
-    { question: 'What are the benefits of deep cleaning your house?', answer: 'Deep cleaning removes layers of dust, allergens, and bacteria that regular cleaning misses. It improves air quality, reduces health risks, and makes your home feel fresher. It also helps protect furniture and appliances, extending their lifespan with proper care.' },
-    { question: 'Can I book deep cleaning just for one room or area?', answer: 'Yes, you can choose to clean specific areas like only the kitchen, bathrooms, or balconies. We offer flexible plans based on your needs.' },
-    { question: 'Do I need to be at home during the deep cleaning service?', answer: 'Not necessarily. Many of our clients go about their day while we handle the cleaning professionally and securely. Our background-verified staff ensures secure and professional service, whether you\'re present or not.' }
+    {
+      question: "How often should I book home cleaning in Bangalore?",
+      answer: "It depends on your home and lifestyle. For working professionals with less time for regular cleaning, monthly deep cleaning is ideal. Families with kids or allergy concerns may benefit from services every two weeks. For general upkeep, a thorough cleaning every 3 to 4 months helps maintain hygiene and freshness."
+    },
+    {
+      question: "Are your cleaning products safe for children and pets?",
+      answer: "Yes, we use eco-friendly and non-toxic cleaning products that are completely safe for households with kids, elderly members, and pets. Our goal is to ensure deep cleanliness without compromising your family’s safety or indoor air quality."
+    },
+    {
+      question: "Do you clean windows and balconies in Bangalore homes?",
+      answer: "Yes, we clean windows, glass panels, grills, and balcony spaces. Bangalore’s dust and pollution can make these areas look dull. Our service brings back shine and cleanliness so your windows are spotless and balconies are inviting again."
+    },
+    {
+      question: "Do you offer apartment deep cleaning services?",
+      answer: "Yes, we specialise in deep cleaning services for apartments, gated communities, and high-rise buildings in Bangalore. Our team uses compact equipment suited for apartment layouts and ensures every corner is cleaned, including balconies and shared areas."
+    },
+    {
+      question: "How long does a deep cleaning take?",
+      answer: "Deep cleaning typically takes 4 to 8 hours, depending on your home’s size and the depth of cleaning required. If your home hasn’t been cleaned in a while, or if it's a post-renovation service, it may take a bit longer for the best results."
+    },
+    {
+      question: "What is the difference between regular house cleaning and deep cleaning?",
+      answer: "Regular house cleaning typically involves basic upkeep like dusting, sweeping, and wiping surfaces. Deep cleaning, on the other hand, reaches under furniture, scrubs stubborn stains, disinfects surfaces, and targets hidden dust and grime. It’s a more thorough, detailed, and hygienic cleaning solution."
+    },
+    {
+      question: "Is deep cleaning more expensive than regular cleaning?",
+      answer: "Yes, deep cleaning usually costs more than regular cleaning because it takes more time, involves stronger tools and products, and covers more areas in detail. It’s designed to deliver long-lasting cleanliness and better hygiene."
+    },
+    {
+      question: "What are the benefits of deep cleaning your house?",
+      answer: "Deep cleaning removes layers of dust, allergens, and bacteria that regular cleaning misses. It improves air quality, reduces health risks, and makes your home feel fresher. It also helps protect furniture and appliances, extending their lifespan with proper care."
+    },
+    {
+      question: "Can I book deep cleaning just for one room or area?",
+      answer: "Yes, you can choose to clean specific areas like only the kitchen, bathrooms, or balconies. We offer flexible plans based on your needs."
+    },
+    {
+      question: "Do I need to be at home during the deep cleaning service?",
+      answer: "Not necessarily. Many of our clients go about their day while we handle the cleaning professionally and securely. Our background-verified staff ensures secure and professional service, whether you're present or not."
+    }
   ]
 
   const localBusinessProps = {

@@ -102,16 +102,46 @@ export default function BangalorePainterPage() {
   }
 
   const faqs = [
-    { question: 'How long does interior painting take for a 2BHK apartment in Bangalore?', answer: 'For a standard 2BHK apartment, interior painting usually takes around 3 to 4 days. We follow a dust-free process and paint room by room, so you can stay comfortably at home while work is ongoing. If it’s monsoon season, drying time may be slightly longer depending on humidity.' },
-    { question: "Can you paint during Bangalore's monsoon season?", answer: 'Yes. We use quick-drying paints and plan around Bangalore’s unpredictable weather to avoid any delays or damage. As long as there\'s no heavy or prolonged rainfall, we can still complete both interior and exterior jobs with proper care.' },
-    { question: 'How do you protect furniture during painting?', answer: 'Before starting, we fully cover all furniture, flooring, and appliances with plastic sheets and protective drop cloths. We follow a room-by-room process, keeping your home tidy and liveable even during the painting.' },
-    { question: 'Can I get help choosing the right colours?', answer: "Definitely. We provide free colour consultation to help you pick shades that match your room size, natural lighting, mood, and décor. Whether you're looking for calm neutrals or vibrant accents, we guide you through the latest colour trends and paint finishes." },
-    { question: 'What kind of paint do you use?', answer: 'We use high-quality paints from trusted brands like Asian Paints, Nerolac, and Dulux. You can choose from budget-friendly options, standard emulsions, or luxury finishes depending on your needs and preferences.' },
-    { question: 'How much does it cost to paint exterior vs interior?', answer: 'The cost depends on the total area, wall condition, type of paint, and design choices. Exterior painting generally costs more due to weatherproofing needs, scaffolding, and surface preparation. Interior painting varies based on whether you choose basic colours or designer finishes. We provide a detailed quote after a free site visit.' },
-    { question: 'Do you offer painting for occupied homes without disruption?', answer: 'Yes, we specialise in painting homes where families continue to live. Our dust-free methods, planned scheduling, and daily cleanups ensure your routine stays undisturbed.' },
-    { question: 'Can I paint just one room or wall?', answer: 'Of course. Whether it’s a single accent wall, bedroom refresh, or kitchen repaint, we offer partial painting services with the same care and quality as full-home projects.' },
-    { question: 'Do you provide paint polishing for wood or metal?', answer: 'Yes, we offer painting and polishing services for doors, windows, grills, and furniture. Options include enamel, PU, and wood finishes, depending on your requirements.' },
-    { question: 'What if I need painting urgently or over a weekend?', answer: 'We offer flexible scheduling, including urgent bookings, weekends, and even night shifts if required. Just let us know your timeline, and we’ll plan accordingly.' }
+    {
+      question: "How long does interior painting take for a 2BHK apartment in Bangalore?",
+      answer: "For a standard 2BHK apartment, interior painting usually takes around 3 to 4 days. We follow a dust-free process and paint room by room, so you can stay comfortably at home while work is ongoing. If it’s monsoon season, drying time may be slightly longer depending on humidity."
+    },
+    {
+      question: "Can you paint during Bangalore's monsoon season?",
+      answer: "Yes. We use quick-drying paints and plan around Bangalore’s unpredictable weather to avoid any delays or damage. As long as there's no heavy or prolonged rainfall, we can still complete both interior and exterior jobs with proper care."
+    },
+    {
+      question: "How do you protect furniture during painting?",
+      answer: "Before starting, we fully cover all furniture, flooring, and appliances with plastic sheets and protective drop cloths. We follow a room-by-room process, keeping your home tidy and liveable even during the painting."
+    },
+    {
+      question: "Can I get help choosing the right colours?",
+      answer: "Definitely. We provide free colour consultation to help you pick shades that match your room size, natural lighting, mood, and décor. Whether you're looking for calm neutrals or vibrant accents, we guide you through the latest colour trends and paint finishes."
+    },
+    {
+      question: "What kind of paint do you use?",
+      answer: "We use high-quality paints from trusted brands like Asian Paints, Nerolac, and Dulux. You can choose from budget-friendly options, standard emulsions, or luxury finishes depending on your needs and preferences."
+    },
+    {
+      question: "How much does it cost to paint exterior vs interior?",
+      answer: "The cost depends on the total area, wall condition, type of paint, and design choices. Exterior painting generally costs more due to weatherproofing needs, scaffolding, and surface preparation. Interior painting varies based on whether you choose basic colours or designer finishes. We provide a detailed quote after a free site visit."
+    },
+    {
+      question: "Do you offer painting for occupied homes without disruption?",
+      answer: "Yes, we specialise in painting homes where families continue to live. Our dust-free methods, planned scheduling, and daily cleanups ensure your routine stays undisturbed."
+    },
+    {
+      question: "Can I paint just one room or wall?",
+      answer: "Of course. Whether it’s a single accent wall, bedroom refresh, or kitchen repaint, we offer partial painting services with the same care and quality as full-home projects."
+    },
+    {
+      question: "Do you provide paint polishing for wood or metal?",
+      answer: "Yes, we offer painting and polishing services for doors, windows, grills, and furniture. Options include enamel, PU, and wood finishes, depending on your requirements."
+    },
+    {
+      question: "What if I need painting urgently or over a weekend?",
+      answer: "We offer flexible scheduling, including urgent bookings, weekends, and even night shifts if required. Just let us know your timeline, and we’ll plan accordingly."
+    }
   ]
 
   const localBusinessProps = {
