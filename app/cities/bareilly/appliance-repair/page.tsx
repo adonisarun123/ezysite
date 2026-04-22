@@ -455,7 +455,9 @@ export default function BareillyApplianceRepairPage() {
               </Link>
             </div>
           </div>
-            {/* CTA Section */}
+        </section>
+
+        {/* CTA Section */}
         <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
@@ -557,8 +559,4 @@ export default function BareillyApplianceRepairPage() {
       <Footer />
     </>
   )
-}
- />
-    </>
-  )
-}
+}

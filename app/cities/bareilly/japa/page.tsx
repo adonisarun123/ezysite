@@ -434,7 +434,11 @@ export default function BareillyJapa() {
                   <div className={`${i === 0 ? 'text-rose-600' : i === 1 ? 'text-purple-600' : 'text-blue-600'} font-semibold`}>{e.cta}</div>
                 </Link>
               ))}
-                  {/* Final CTA: Welcome Your Newborn with Peace of Mind! */}
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA: Welcome Your Newborn with Peace of Mind! */}
         <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
@@ -530,12 +534,9 @@ export default function BareillyJapa() {
             />
           </div>
         </section>
-ion faqs={faqs} />
-          </div>
-        </section>
       </main>
 
-            <NestCTA />
+      <NestCTA />
       <Footer />
     </>
   )
