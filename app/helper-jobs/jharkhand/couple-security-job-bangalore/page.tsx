@@ -27,6 +27,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
     title: 'Live-in Couple Security jobs in Bangalore for Husband-Wife',
@@ -567,50 +568,8 @@ export default function CoupleSecurityJobsBangalorePage() {
                                 </div>
                             </div>
                         </div>
-                    </section>
-
-                    {/* Refer & Earn Section */}
-                    <section className="section-padding bg-indigo-50 border-y border-indigo-100">
-                        <div className="container-custom">
-                            <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-indigo-200">
-                                <div className="md:flex">
-                                    <div className="md:w-5/12 bg-gradient-to-br from-indigo-500 to-indigo-700 p-8 flex flex-col items-center justify-center text-center text-white">
-                                        <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
-                                            <GiftIcon className="w-10 h-10 text-white" />
-                                        </div>
-                                        <h2 className="text-3xl md:text-2xl font-bold mb-2 font-display">Refer and Earn</h2>
-                                        <h3 className="text-5xl md:text-6xl font-extrabold mb-2">₹500!</h3>
-                                        <p className="text-indigo-100 font-medium">*Terms and Conditions apply</p>
-                                    </div>
-                                    <div className="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
-                                        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display">Refer a Friend and Earn ₹500</h2>
-                                        <p className="text-lg text-gray-600 font-medium mb-6">
-                                            Help your friends and relatives from Jharkhand get a domestic work job in Bangalore on EzyHelpers.
-                                        </p>
-                                        <div className="space-y-4 mb-8">
-                                            <div className="flex items-start gap-3">
-                                                <CheckCircleIcon className="w-6 h-6 text-indigo-500 flex-shrink-0 mt-0.5" />
-                                                <span className="text-gray-700 font-medium">Share their details via WhatsApp or call us</span>
-                                            </div>
-                                            <div className="flex items-start gap-3">
-                                                <CheckCircleIcon className="w-6 h-6 text-indigo-500 flex-shrink-0 mt-0.5" />
-                                                <span className="text-gray-700 font-medium">Give your friend’s name, age, and job preference</span>
-                                            </div>
-                                            <div className="flex items-start gap-3">
-                                                <CheckCircleIcon className="w-6 h-6 text-indigo-500 flex-shrink-0 mt-0.5" />
-                                                <span className="text-gray-700 font-bold">They join EzyHelpers, complete placement, and you earn ₹500</span>
-                                            </div>
-                                        </div>
-                                        <Link
-                                            href={whatsappSendUrl('918031411776')}
-                                            className="inline-flex items-center justify-center gap-2 bg-green-600 text-white font-bold py-4 px-10 rounded-xl hover:bg-green-700 transition-all shadow-lg transform hover:scale-105 text-center"
-                                        >
-                                            <PhoneIcon className="w-5 h-5" /> Refer & Earn ₹500
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {/* Refer and Earn Section */}
+                        <ReferEarnSection variant="indigo" />
                     </section>
 
                     {/* How to Apply Section */}
@@ -622,19 +581,19 @@ export default function CoupleSecurityJobsBangalorePage() {
                                 <div className="w-24 h-1 bg-indigo-500 mx-auto mt-6 rounded-full"></div>
                             </div>
 
-                            <div className="max-w-4xl mx-auto">
-                                <div className="relative">
-                                    {/* Connecting Line */}
-                                    <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-indigo-100 rounded-full"></div>
+                            <div className="max-w-4xl mx-auto relative">
+                                {/* Connecting Line (hidden on mobile) */}
+                                <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-indigo-100 rounded-full hidden md:block"></div>
 
+                                <div className="space-y-12 md:space-y-0">
                                     {[
                                         { step: 1, title: "Contact EzyHelpers", desc: "Call or fill the online form to ask about duties, stay, or salary." },
                                         { step: 2, title: "Share Your Details", desc: "Give your name, age, experience, and skills." },
                                         { step: 3, title: "Training & Job Joining", desc: "Attend training, do a video interview, and start work with full support." }
                                     ].map((item, index) => (
-                                        <div key={index} className="relative flex items-center justify-center mb-12 last:mb-0">
-                                            {/* Left Side */}
-                                            <div className="w-5/12 text-right pr-8 md:pr-12">
+                                        <div key={index} className="relative flex flex-col md:flex-row items-center justify-center md:mb-12 last:mb-0">
+                                            {/* Left Side (Desktop only layout piece) */}
+                                            <div className="hidden md:block w-5/12 text-right pr-8 md:pr-12">
                                                 {index % 2 === 0 ? (
                                                     <div className="bg-indigo-50 p-6 rounded-2xl border border-indigo-100 shadow-sm transition-all hover:shadow-md">
                                                         <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
@@ -644,14 +603,18 @@ export default function CoupleSecurityJobsBangalorePage() {
                                             </div>
 
                                             {/* Center Circle */}
-                                            <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-indigo-600 text-white rounded-full font-bold text-xl md:text-2xl shadow-lg z-10 border-4 border-white">
+                                            <div className="relative md:absolute md:left-1/2 md:transform md:-translate-x-1/2 flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-indigo-600 text-white rounded-full font-bold text-xl md:text-2xl shadow-lg z-10 border-4 border-white mb-4 md:mb-0">
                                                 {item.step}
                                             </div>
 
-                                            {/* Right Side */}
-                                            <div className="w-5/12 text-left pl-8 md:pl-12">
+                                            {/* Mobile Content Card & Right Side Content */}
+                                            <div className="w-full md:w-5/12 text-center md:text-left md:pl-8 md:pl-12">
+                                                <div className={`md:hidden bg-indigo-50 p-6 rounded-2xl border border-indigo-100 shadow-sm`}>
+                                                    <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
+                                                    <p className="text-gray-600 text-sm font-medium leading-relaxed">{item.desc}</p>
+                                                </div>
                                                 {index % 2 !== 0 ? (
-                                                    <div className="bg-indigo-50 p-6 rounded-2xl border border-indigo-100 shadow-sm transition-all hover:shadow-md">
+                                                    <div className="hidden md:block bg-indigo-50 p-6 rounded-2xl border border-indigo-100 shadow-sm transition-all hover:shadow-md">
                                                         <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
                                                         <p className="text-gray-600 text-sm font-medium leading-relaxed">{item.desc}</p>
                                                     </div>

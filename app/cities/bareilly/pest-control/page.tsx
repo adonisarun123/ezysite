@@ -28,12 +28,10 @@ import {
 
 export const metadata: Metadata = {
   title: 'Pest Control for Home in Bareilly - Safe & Effective',
-  description:
-    'Book pest control for home in Bareilly to remove cockroaches, termites, ants, mosquitoes, and rodents safely using long-lasting treatments.',
+  description: 'Book pest control for home in Bareilly to eliminate cockroaches, termites, rodents, and ants using safe, odourless, long-lasting treatments.',
   openGraph: {
     title: 'Pest Control for Home in Bareilly - Safe & Effective',
-    description:
-      'Book pest control for home in Bareilly to remove cockroaches, termites, ants, mosquitoes, and rodents safely using long-lasting treatments.',
+    description: 'Book pest control for home in Bareilly to eliminate cockroaches, termites, rodents, and ants using safe, odourless, long-lasting treatments.',
     url: 'https://www.ezyhelpers.com/cities/bareilly/pest-control',
     type: 'website',
   },
@@ -43,6 +41,88 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyPestControl() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Do you offer same-day pest services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer same-day pest services in Bareilly. Our local, background-verified pest control experts respond quickly with effective solutions to eliminate pests and restore hygiene to your home without delay."
+      }
+    },{
+      "@type": "Question",
+      "name": "What types of pests do you treat in Bareilly homes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We treat a wide range of pests in Bareilly homes, including termites, cockroaches, ants, mosquitoes, rats, mice, bed bugs, and general bugs, using safe and effective pest control treatments."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you handle cockroach infestations in Bareilly kitchens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide specialised cockroach pest control in Bareilly, especially for kitchens. Our solutions are safe, fast-acting, and effective in eliminating roaches and keeping your kitchen hygienic."
+      }
+    },{
+      "@type": "Question",
+      "name": "What are the benefits of regular pest control in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Regular pest control in Bareilly prevents infestations, protects health, reduces allergies, and stops long-term damage to furniture and food. It keeps your home clean, safe, and stress-free all year round."
+      }
+    },{
+      "@type": "Question",
+      "name": "Is mosquito control available through EzyHelpers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers provides mosquito control using safe methods that reduce mosquito breeding and protect your family from mosquito-borne diseases."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you treat ant infestations in homes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide ant control service by targeting colonies and trails with safe, effective treatments that prevent them from returning."
+      }
+    },{
+      "@type": "Question",
+      "name": "How do you prevent pests from returning after treatment in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We prevent pest recurrence in Bareilly through targeted treatment, sealing entry points, hygiene tips, and follow-up services to maintain long-term pest-free conditions."
+      }
+    },{
+      "@type": "Question",
+      "name": "How often should I schedule pest control in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We recommend pest control every 3 to 6 months in Bareilly, depending on pest severity, season, and home conditions, to ensure ongoing protection."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are your pest control chemicals safe for children and pets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our pest control for homes uses child-safe and pet-friendly chemicals. We apply eco-friendly, odour-free treatments that are non-toxic and safe for kids, elderly people, and pets. Your family’s health and safety are our top priority."
+      }
+    },{
+      "@type": "Question",
+      "name": "How do you identify pest entry points and prevent future infestations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our pest services in Bareilly include a full inspection to find pest entry points like wall gaps, drain outlets, or window cracks. We seal these areas and apply preventive barriers to stop pests from returning, ensuring long-term protection for your home."
+      }
+    },{
+      "@type": "Question",
+      "name": "How do you handle pest control in food storage areas and kitchens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We take extra care while treating kitchens and food storage areas. We use food-safe, non-toxic pest control methods that target pests without contaminating your cooking or storage spaces, keeping your family and food protected."
+      }
+    }]
+  };
   const badges = [
     '✓ Verified Experts',
     '✓ Odour-Free Treatments',
@@ -200,6 +280,10 @@ export default function BareillyPestControl() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -212,7 +296,7 @@ export default function BareillyPestControl() {
         />
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -220,36 +304,44 @@ export default function BareillyPestControl() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
-                Professional Pest Control for Home in Bareilly
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
+                Professional Pest Control for Home in Bareilly—Safe & Effective Solutions
               </h1>
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">
-                Protect your home and family with expert pest control in Bareilly. We handle cockroaches, ants, mosquitoes, termites, rats, and other pests using safe, eco-friendly methods.
-              </p>
+              <h2 className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                Expert Pest Control in Bareilly for a Clean & Safe Home.
+              </h2>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center w-full bg-white text-emerald-700 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10 text-center">
+                <Link
+                  href="/hire-helper"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
+                >
                   Book Pest Control Now
                 </Link>
-                <Link href="tel:+918031411776" className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Emergency Pest Service
+
+                <Link
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
-              <div className="flex flex-wrap gap-3 mb-8 justify-center">
-                {badges.map((b, i) => (
-                  <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    {b}
-                  </div>
+              {/* Service Assurance Badges */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+                {badges.map((badge, idx) => (
+                  <span key={idx} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold">
+                    {badge}
+                  </span>
                 ))}
               </div>
 
-              <div className="grid grid-cols-3 md:grid-cols-3 gap-6 pt-6 border-t border-white/20 max-w-3xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 {metrics.map((m, i) => (
-                  <div key={i} className="text-center">
-                    <div className="text-2xl font-bold">{m.value}</div>
-                    <div className="text-emerald-100 text-sm">{m.label}</div>
+                  <div key={i} className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10 text-center">
+                    <div className="text-3xl font-extrabold text-white mb-1 leading-tight">{m.value}</div>
+                    <div className="text-indigo-100 font-medium text-sm">{m.label}</div>
                   </div>
                 ))}
               </div>
@@ -364,38 +456,104 @@ export default function BareillyPestControl() {
         </section>
 
         {/* Final CTA */}
-        <section className="section-padding bg-gradient-to-br from-emerald-600 to-teal-700 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Don't Let Pests Ruin Your Home's Comfort!</h2>
-              <p className="text-xl mb-8 text-emerald-100">Get pest control for your home in Bareilly quickly and safely with EzyHelpers. Our trusted professionals remove pests fast so you can enjoy a clean, safe, and comfortable home.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-emerald-700 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book Pest Control Now</Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"><PhoneIcon className="h-5 w-5 mr-2" />Call +91 9972571005</Link>
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
+                Don't Let Pests Ruin Your Home's Comfort!
+              </h2>
+              <p className="text-xl mb-8 text-indigo-100 font-medium font-body leading-relaxed">
+                Get pest control for your home in Bareilly quickly and safely with EzyHelpers. Our trusted professionals remove pests fast so you can enjoy a clean, safe, and comfortable home.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto font-display">
+                <Link
+                  href="/hire-helper"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
+                >
+                  Book Pest Control Now
+                </Link>
+
+                <Link
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Why Regular Pest Control Matters ... */}
+        {/* Why Regular Pest Control Matters */}
         <section className="section-padding bg-white">
-          <div className="container-custom text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Regular Pest Control Matters for Every Home in Bareilly</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed max-w-4xl mx-auto text-justify">
-              <p>Pest control is not just a one-time task. It is essential to keep your home safe and healthy. Bareilly’s seasonal weather, nearby fields, and humid conditions can attract termites, cockroaches, mosquitoes, and rodents.</p>
-              <p>At EzyHelpers, we focus on preventive pest management to stop pests before they become a problem. Our treatments are odour-free, child and pet-safe, and target entry points and breeding zones. Seasonal care options like monsoon cockroach control, termite inspection, and pre-winter rodent prevention ensure pests don’t return.</p>
-              <p>Regular pest control also reduces the risk of diseases like dengue, typhoid, and skin infections, which is important for families with children, elderly members, or pets. With EzyHelpers, you get fast relief, long-term protection, and peace of mind.</p>
+          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">
+              Why Regular Pest Control Matters
+            </h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg text-justify">
+              <p>Pest control is not just a one-time task. It is essential to keep your home safe and healthy. Bareilly’s seasonal weather and nearby fields can attract termites, cockroaches, mosquitoes, and rodents.</p>
+              <p className="font-medium text-indigo-900/80 italic">At EzyHelpers, we focus on preventive pest management. Our treatments are odour-free and child-safe, ensuring long-term relief from pests like cockroaches, ants, and bed bugs.</p>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom max-w-4xl mx-auto">
+          <div className="container-custom max-w-5xl">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion
+              faqs={[
+                {
+                  question: "Do you offer same-day pest services in Bareilly?",
+                  answer: "Yes, we offer same-day pest services in Bareilly. Our local, background-verified pest control experts respond quickly with effective solutions to eliminate pests and restore hygiene to your home without delay."
+                },
+                {
+                  question: "What types of pests do you treat in Bareilly homes?",
+                  answer: "We treat a wide range of pests in Bareilly homes, including termites, cockroaches, ants, mosquitoes, rats, mice, bed bugs, and general bugs, using safe and effective pest control treatments."
+                },
+                {
+                  question: "Do you handle cockroach infestations in Bareilly kitchens?",
+                  answer: "Yes, we provide specialised cockroach pest control in Bareilly, especially for kitchens. Our solutions are safe, fast-acting, and effective in eliminating roaches and keeping your kitchen hygienic."
+                },
+                {
+                  question: "What are the benefits of regular pest control in Bareilly?",
+                  answer: "Regular pest control in Bareilly prevents infestations, protects health, reduces allergies, and stops long-term damage to furniture and food. It keeps your home clean, safe, and stress-free all year round."
+                },
+                {
+                  question: "Is mosquito control available through EzyHelpers?",
+                  answer: "Yes, EzyHelpers provides mosquito control using safe methods that reduce mosquito breeding and protect your family from mosquito-borne diseases."
+                },
+                {
+                  question: "Do you treat ant infestations in homes?",
+                  answer: "Yes, we provide ant control service by targeting colonies and trails with safe, effective treatments that prevent them from returning."
+                },
+                {
+                  question: "How do you prevent pests from returning after treatment in Bareilly?",
+                  answer: "We prevent pest recurrence in Bareilly through targeted treatment, sealing entry points, hygiene tips, and follow-up services to maintain long-term pest-free conditions."
+                },
+                {
+                  question: "How often should I schedule pest control in Bareilly?",
+                  answer: "We recommend pest control every 3 to 6 months in Bareilly, depending on pest severity, season, and home conditions, to ensure ongoing protection."
+                },
+                {
+                  question: "Are your pest control chemicals safe for children and pets?",
+                  answer: "Yes, our pest control for homes uses child-safe and pet-friendly chemicals. We apply eco-friendly, odour-free treatments that are non-toxic and safe for kids, elderly people, and pets. Your family’s health and safety are our top priority."
+                },
+                {
+                  question: "How do you identify pest entry points and prevent future infestations?",
+                  answer: "Our pest services in Bareilly include a full inspection to find pest entry points like wall gaps, drain outlets, or window cracks. We seal these areas and apply preventive barriers to stop pests from returning, ensuring long-term protection for your home."
+                },
+                {
+                  question: "How do you handle pest control in food storage areas and kitchens?",
+                  answer: "We take extra care while treating kitchens and food storage areas. We use food-safe, non-toxic pest control methods that target pests without contaminating your cooking or storage spaces, keeping your family and food protected."
+                }
+              ]}
+            />
           </div>
         </section>
       </main>

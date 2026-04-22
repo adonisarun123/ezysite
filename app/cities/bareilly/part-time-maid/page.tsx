@@ -54,6 +54,88 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyPartTimeMaidPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is a part-time maid in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A part-time maid in Bareilly is a trained household helper who works for a few hours each day instead of living in your home. EzyHelpers provides reliable maids who visit your house for 2 to 6 hours to help with daily chores like cleaning, cooking, or even elder and child care, based on your routine and preferences."
+      }
+    },{
+      "@type": "Question",
+      "name": "How many hours does a part-time maid work in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typically, a part-time maid in Bareilly works between 2 to 6 hours per day. You can schedule their visits in the morning, afternoon, or evening based on what suits your household. EzyHelpers allows complete flexibility so you can get the help you need without disrupting your daily flow."
+      }
+    },{
+      "@type": "Question",
+      "name": "What does a part-time maid for cooking and cleaning in Bareilly do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A part-time maid for cooking and cleaning in Bareilly handles essential home chores such as: Housekeeping – Sweeping, mopping, dusting, bathroom cleaning, and laundry. Cooking – Daily meals, basic snacks, and kitchen cleanup. Babysitting – Feeding, bathing, playing, and helping with homework. Elderly care – Assisting with medication, hygiene, and companionship. Task-based help – Ironing clothes, dishwashing, wardrobe organization. You can hire them for one or multiple tasks depending on your needs."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are part-time maids in Bareilly safe and background verified?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, every part-time maid in Bareilly provided by EzyHelpers goes through a detailed background verification process. We check their Aadhaar, local address, and past experience. Police and medical checks can also be arranged if you need them. Plus, they are trained in hygiene and behaviour protocols."
+      }
+    },{
+      "@type": "Question",
+      "name": "What is the cost of hiring a part-time maid in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hiring a part-time maid in Bareilly is affordable and based on an hourly model. Prices vary depending on the number of hours you book and the specific tasks, like whether you want only cleaning or a part-time maid for cooking and cleaning in Bareilly. At EzyHelpers, all charges are transparent with no hidden fees."
+      }
+    },{
+      "@type": "Question",
+      "name": "Where in Bareilly are part-time maid services available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EzyHelpers provides part-time maid in Bareilly services across 20+ local areas, including Civil Lines, Model Town, Rajendra Nagar, Izzatnagar, and more. No matter where you live in the city, we can connect you to a reliable maid near you."
+      }
+    },{
+      "@type": "Question",
+      "name": "Does a part-time maid stay overnight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, a part-time maid in Bareilly does not stay at your home. They arrive during the scheduled hours and leave after completing the assigned work. This ensures both your privacy and timely support for your home needs."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I hire a part-time maid in Bareilly for morning or evening hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! You can hire a part-time maid in Bareilly for early mornings, late evenings, or any specific time slot that suits your routine. Whether it’s before school, after office hours, or around your prayer time, we provide maids who adjust to your timing preferences."
+      }
+    },{
+      "@type": "Question",
+      "name": "What is the minimum duration for part-time maid services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can book a part-time maid for cooking and cleaning in Bareilly for as little as 2 hours. We also offer customisable options like daily, alternate-day, weekly, or weekend-only services, so you pay only for what you need."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can part-time maids adjust to my work-from-home schedule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers understands the need for quiet and minimal disruption. Your part-time maid in Bareilly can adjust her tasks and timing to avoid interfering with your meetings or work hours, making her ideal for modern households."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I hire a part time maid for specific days like weekends?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! You can hire a part-time maid for cooking and cleaning in Bareilly just for weekends, alternate days, or selected weekdays. We offer flexible booking to match your lifestyle, whether you're busy only on Sundays or need help twice a week."
+      }
+    }]
+  };
 
   const whyChooseFeatures = [
     {
@@ -279,6 +361,10 @@ export default function BareillyPartTimeMaidPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -286,27 +372,31 @@ export default function BareillyPartTimeMaidPage() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'Part-Time Maid Service' }
+            { label: 'Part-Time House Maid' }
           ]}
         />
 
-        {/* Hero Section (markdown-aligned) */}
-        <section className="relative bg-gradient-to-br from-green-600 via-teal-600 to-blue-600 text-white pt-20 pb-24 lg:pb-28 overflow-hidden">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-28 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
           </div>
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Part-Time Maid in Bareilly</h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed">
-                If you need reliable home help without a full-time maid, EzyHelpers provides verified part-time maids in Bareilly. They work 2–6 hours a day and help with cleaning, cooking, and daily chores. Choose morning, afternoon, or evening support based on your schedule.
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white">
+                Part-Time Maid in Bareilly – Flexible, Daily Help That Fits Your Schedule
+              </h1>
+              <p className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed font-medium">
+                Get a part-time maid in Bareilly for morning or evening help. Choose trained maids for cleaning, cooking, or daily tasks as per your convenience.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-green-700 font-semibold text-lg py-4 px-8 rounded-xl shadow-md hover:bg-gray-100 transition-all">Book a Part-Time Maid</Link>
-                <Link href="tel:+918031411776" className="inline-flex items-center justify-center text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call Us for Quick Booking
+                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
+                  Book a Part-Time Maid
+                </Link>
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all">
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -499,30 +589,30 @@ export default function BareillyPartTimeMaidPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-green-600 to-teal-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 font-display leading-tight">
                 Find a Trusted Part-Time Maid in Bareilly with EzyHelpers Today
               </h2>
-              <p className="text-xl mb-8 text-green-100">
+              <p className="text-xl mb-8 text-indigo-100 font-medium">
                 EzyHelpers makes booking a part-time maid simple and quick. Choose cleaning, cooking or mixed services based on your daily needs and routine.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center bg-white text-green-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book Part-Time Maid Now
                 </Link>
 
                 <Link
                   href="tel:+918031411776"
-                  className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  className="group inline-flex items-center justify-center bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call 080-31411776
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
             </div>
@@ -542,8 +632,8 @@ export default function BareillyPartTimeMaidPage() {
             <div className="grid md:grid-cols-3 gap-8">
               <Link href="/cities/bareilly/full-time-maid" className="group bg-gradient-to-br from-sky-50 to-blue-50 rounded-2xl p-8 border border-blue-100 hover:border-blue-300 hover:shadow-lg transition-all duration-300">
                 <UsersIcon className="h-12 w-12 text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Driver Services</h3>
-                <p className="text-gray-600 mb-4">Hire background-verified drivers for your daily commute or family needs.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Full-Time Maid Services</h3>
+                <p className="text-gray-600 mb-4">Reliable daily help for all home chores without requiring a live-in stay.</p>
                 <div className="flex items-center text-blue-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </div>
@@ -551,8 +641,8 @@ export default function BareillyPartTimeMaidPage() {
 
               <Link href="/cities/bareilly/live-in-maid" className="group bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100 hover:border-purple-300 hover:shadow-lg transition-all duration-300">
                 <ClockIcon className="h-12 w-12 text-purple-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Home Deep Cleaning Services</h3>
-                <p className="text-gray-600 mb-4">Thorough cleaning of every room, appliance, and surface for a spotless home.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Live-In Maid Services</h3>
+                <p className="text-gray-600 mb-4">24/7 dedicated support who stay in your home and assist with daily chores.</p>
                 <div className="flex items-center text-purple-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </div>
@@ -560,8 +650,8 @@ export default function BareillyPartTimeMaidPage() {
 
               <Link href="/cities/bareilly/on-demand-helper" className="group bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border border-red-100 hover:border-yellow-300 hover:shadow-lg transition-all duration-300">
                 <BoltIcon className="h-12 w-12 text-yellow-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-xl font-bold text-yellow-900 mb-3">Full-Time Maid Services</h3>
-                <p className="text-gray-600 mb-4">Reliable daily help for all home chores without requiring a live-in stay.</p>
+                <h3 className="text-xl font-bold text-yellow-900 mb-3">Instant Maid Service</h3>
+                <p className="text-gray-600 mb-4">Instant household help for emergencies, guest visits, or special occasions.</p>
                 <div className="flex items-center text-yellow-600 font-semibold">
                   Learn More <ArrowRightIcon className="h-4 w-4 ml-2" />
                 </div>
@@ -571,7 +661,7 @@ export default function BareillyPartTimeMaidPage() {
             <div className="text-center mt-8">
               <Link
                 href="/cities/bareilly"
-                className="inline-flex items-center justify-center bg-green-600 text-white font-semibold text-lg py-4 px-8 rounded-xl hover:bg-green-700 transition-all duration-300"
+                className="inline-flex items-center justify-center bg-indigo-600 text-white font-bold text-lg py-4 px-10 rounded-2xl hover:bg-indigo-700 transition-all shadow-lg hover:shadow-indigo-500/20"
               >
                 View All Services in Bareilly
                 <ArrowRightIcon className="h-5 w-5 ml-2" />
@@ -581,12 +671,60 @@ export default function BareillyPartTimeMaidPage() {
         </section>
 
         {/* FAQs */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-custom max-w-4xl">
+        <section className="section-padding bg-white">
+          <div className="container-custom max-w-5xl">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion
+              faqs={[
+                {
+                  question: "What is a part-time maid in Bareilly?",
+                  answer: "A part-time maid in Bareilly is a trained household helper who works for a few hours each day instead of living in your home. EzyHelpers provides reliable maids who visit your house for 2 to 6 hours to help with daily chores like cleaning, cooking, or even elder and child care, based on your routine and preferences."
+                },
+                {
+                  question: "How many hours does a part-time maid work in Bareilly?",
+                  answer: "Typically, a part-time maid in Bareilly works between 2 to 6 hours per day. You can schedule their visits in the morning, afternoon, or evening based on what suits your household. EzyHelpers allows complete flexibility so you can get the help you need without disrupting your daily flow."
+                },
+                {
+                  question: "What does a part-time maid for cooking and cleaning in Bareilly do?",
+                  answer: "A part-time maid for cooking and cleaning in Bareilly handles essential home chores such as: Housekeeping – Sweeping, mopping, dusting, bathroom cleaning, and laundry. Cooking – Daily meals, basic snacks, and kitchen cleanup. Babysitting – Feeding, bathing, playing, and helping with homework. Elderly care – Assisting with medication, hygiene, and companionship. Task-based help – Ironing clothes, dishwashing, wardrobe organization. You can hire them for one or multiple tasks depending on your needs."
+                },
+                {
+                  question: "Are part-time maids in Bareilly safe and background verified?",
+                  answer: "Yes, every part-time maid in Bareilly provided by EzyHelpers goes through a detailed background verification process. We check their Aadhaar, local address, and past experience. Police and medical checks can also be arranged if you need them. Plus, they are trained in hygiene and behaviour protocols."
+                },
+                {
+                  question: "What is the cost of hiring a part-time maid in Bareilly?",
+                  answer: "Hiring a part-time maid in Bareilly is affordable and based on an hourly model. Prices vary depending on the number of hours you book and the specific tasks, like whether you want only cleaning or a part-time maid for cooking and cleaning in Bareilly. At EzyHelpers, all charges are transparent with no hidden fees."
+                },
+                {
+                  question: "Where in Bareilly are part-time maid services available?",
+                  answer: "EzyHelpers provides part-time maid in Bareilly services across 20+ local areas, including Civil Lines, Model Town, Rajendra Nagar, Izzatnagar, and more. No matter where you live in the city, we can connect you to a reliable maid near you."
+                },
+                {
+                  question: "Does a part-time maid stay overnight?",
+                  answer: "No, a part-time maid in Bareilly does not stay at your home. They arrive during the scheduled hours and leave after completing the assigned work. This ensures both your privacy and timely support for your home needs."
+                },
+                {
+                  question: "Can I hire a part-time maid in Bareilly for morning or evening hours?",
+                  answer: "Absolutely! You can hire a part-time maid in Bareilly for early mornings, late evenings, or any specific time slot that suits your routine. Whether it’s before school, after office hours, or around your prayer time, we provide maids who adjust to your timing preferences."
+                },
+                {
+                  question: "What is the minimum duration for part-time maid services?",
+                  answer: "You can book a part-time maid for cooking and cleaning in Bareilly for as little as 2 hours. We also offer customisable options like daily, alternate-day, weekly, or weekend-only services, so you pay only for what you need."
+                },
+                {
+                  question: "Can part-time maids adjust to my work-from-home schedule?",
+                  answer: "Yes, EzyHelpers understands the need for quiet and minimal disruption. Your part-time maid in Bareilly can adjust her tasks and timing to avoid interfering with your meetings or work hours, making her ideal for modern households."
+                },
+                {
+                  question: "Can I hire a part time maid for specific days like weekends?",
+                  answer: "Yes! You can hire a part-time maid for cooking and cleaning in Bareilly just for weekends, alternate days, or selected weekdays. We offer flexible booking to match your lifestyle, whether you're busy only on Sundays or need help twice a week."
+                }
+              ]}
+            />
           </div>
         </section>
       </main>

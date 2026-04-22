@@ -230,9 +230,8 @@ export default function BangaloreNannyBabysitterPage() {
                   <span className="text-sm font-semibold">Trusted Babysitters Across Bangalore</span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Babysitter for Home
-                  <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">Bangalore</span>
+                <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
+                  Babysitter for Home in Bangalore
                 </h1>
                 <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   Looking for a trusted babysitter for home in Bangalore? Get trusted, trained, and caring help for your child’s safety, learning, and daily routines, right in your home.

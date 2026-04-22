@@ -31,6 +31,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
     title: 'Live-in Couple Housekeeping Jobs in Bangalore Apply Now',
@@ -164,10 +165,10 @@ export default function HousekeepingCoupleJobsBangalorePage() {
                                 <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center mb-6 mx-auto text-orange-600">
                                     <BanknotesIcon className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2 leading-loose">Live-in Housekeeping Couple Jobs</h3>
-                                <div className="text-3xl font-black text-orange-600 mb-6 font-display tracking-tight leading-tight">
+                                <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight">Live-in Housekeeping Couple Jobs</h3>
+                                <div className="text-3xl font-extrabold text-orange-600 mb-6 font-display tracking-tight leading-tight">
                                     ₹30,000 to ₹35,000
-                                    <span className="text-[10px] font-bold text-gray-400 block uppercase pt-1 leading-loose">combined monthly salary</span>
+                                    <span className="text-[10px] font-bold text-gray-400 block uppercase pt-1 leading-snug">combined monthly salary</span>
                                 </div>
                                 <ul className="space-y-4 text-left flex-grow">
                                     <li className="flex items-start gap-3">
@@ -218,7 +219,7 @@ export default function HousekeepingCoupleJobsBangalorePage() {
                                 <div className="flex justify-center">
                                     <Link
                                         href="/helper-registration"
-                                        className="inline-flex items-center justify-center bg-orange-600 text-white font-black text-lg py-4 px-14 rounded-xl hover:bg-orange-700 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 shadow-xl w-full sm:w-auto text-center leading-loose"
+                                        className="inline-flex items-center justify-center bg-orange-600 text-white font-extrabold text-lg py-4 px-14 rounded-xl hover:bg-orange-700 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 shadow-xl w-full sm:w-auto text-center"
                                     >
                                         Apply for Couple Jobs
                                     </Link>
@@ -431,7 +432,7 @@ export default function HousekeepingCoupleJobsBangalorePage() {
                             ))}
                         </div>
                         <div className="text-center mt-12 px-4">
-                            <p className="text-orange-600 font-black text-lg md:text-2xl leading-loose">We help you choose work based on your skills and comfort.</p>
+                            <p className="text-orange-600 font-extrabold text-lg md:text-2xl leading-normal">We help you choose work based on your skills and comfort.</p>
                         </div>
                     </div>
                 </section>
@@ -592,49 +593,8 @@ export default function HousekeepingCoupleJobsBangalorePage() {
                     </div>
                 </section>
 
-                {/* Refer & Earn Section */}
-                <section className="section-padding bg-orange-50 border-y border-orange-100">
-                    <div className="container-custom px-4">
-                        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-orange-200">
-                            <div className="md:flex">
-                                <div className="md:w-5/12 bg-gradient-to-br from-orange-500 to-orange-700 p-8 flex flex-col items-center justify-center text-center text-white">
-                                    <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
-                                        <GiftIcon className="w-10 h-10 text-white" />
-                                    </div>
-                                    <h2 className="text-3xl md:text-2xl font-bold mb-2 font-display leading-loose">Refer and Earn</h2>
-                                    <h3 className="text-5xl md:text-6xl font-extrabold mb-2 leading-tight">₹500!</h3>
-                                    <p className="text-orange-100 font-bold">*Terms and Conditions apply</p>
-                                </div>
-                                <div className="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display leading-tight">Refer a Friend and Earn ₹500</h2>
-                                    <p className="text-lg text-gray-600 font-bold mb-6 leading-relaxed">
-                                        Help your friends and relatives from Jharkhand get a domestic work job in Bangalore on EzyHelpers.
-                                    </p>
-                                    <div className="space-y-4 mb-8">
-                                        {[
-                                            "Share their details via WhatsApp or call us",
-                                            "Give your friend’s name, age, and job preference",
-                                            "They join EzyHelpers, complete placement, and you earn ₹500"
-                                        ].map((step, i) => (
-                                            <div key={i} className="flex items-start gap-4 group">
-                                                <div className="w-6 h-6 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0 mt-0.5 border border-orange-100 group-hover:bg-orange-600 group-hover:border-orange-600 transition-colors">
-                                                    <CheckCircleIcon className="w-4 h-4 text-orange-500 group-hover:text-white" />
-                                                </div>
-                                                <span className={`text-gray-700 font-black leading-relaxed ${i === 2 ? 'text-orange-700' : ''}`}>{step}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <Link
-                                        href={whatsappSendUrl('918031411776')}
-                                        className="inline-flex items-center justify-center gap-2 bg-green-600 text-white font-black py-4 px-10 rounded-xl hover:bg-green-700 transition-all shadow-lg transform hover:scale-105 text-center leading-loose"
-                                    >
-                                        <PhoneIcon className="w-5 h-5" /> Refer & Earn ₹500
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/* Refer and Earn Section */}
+                <ReferEarnSection variant="orange" />
 
                 {/* Why Choose Section */}
                 <section className="section-padding bg-gray-50">
@@ -707,17 +667,23 @@ export default function HousekeepingCoupleJobsBangalorePage() {
                                 ].map((item, index) => (
                                     <div key={index} className={`relative flex flex-col md:flex-row items-center mb-16 md:mb-24 last:mb-0 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                                         {/* Content Card */}
-                                        <div className="w-full md:w-[42%] mb-8 md:mb-0 transition-all duration-300 hover:scale-[1.02]">
+                                        <div className="w-full md:w-[42%] mb-8 md:mb-0 transition-all duration-300 hover:scale-[1.02] z-10">
                                             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-gray-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(79,70,229,0.15)] relative overflow-hidden group">
                                                 <div className="absolute top-0 left-0 w-2 h-full bg-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                                <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-4 leading-loose">{item.title}</h3>
+                                                
+                                                {/* Step circle for mobile (hidden on md+) */}
+                                                <div className="flex md:hidden w-12 h-12 bg-indigo-600 text-white rounded-full items-center justify-center font-black text-xl shadow-lg border-2 border-white mb-4">
+                                                    {item.step}
+                                                </div>
+
+                                                <h3 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 leading-tight">{item.title}</h3>
                                                 <p className="text-gray-600 font-bold leading-relaxed text-sm md:text-base">{item.desc}</p>
                                             </div>
                                         </div>
 
-                                        {/* Center Number Circle */}
-                                        <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center z-20 pointer-events-none mb-4 md:mb-0">
-                                            <div className="w-14 h-14 md:w-20 md:h-20 bg-indigo-600 text-white rounded-full flex items-center justify-center font-black text-2xl md:text-4xl shadow-[0_10px_30px_-5px_rgba(79,70,229,0.8)] border-4 border-white mb-2">
+                                        {/* Center Number Circle for Desktop (hidden on sm/xs) */}
+                                        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 flex-col items-center justify-center z-20 pointer-events-none">
+                                            <div className="w-14 h-14 md:w-20 md:h-20 bg-indigo-600 text-white rounded-full flex items-center justify-center font-black text-2xl md:text-4xl shadow-[0_10px_30px_-5px_rgba(79,70,229,0.8)] border-4 border-white">
                                                 {item.step}
                                             </div>
                                         </div>

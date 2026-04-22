@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import MainContent from '@/components/MainContent';
 import CaseStudyCard from './components/CaseStudyCard';
 import CTASection from '@/components/sections/CTASection';
+import Link from 'next/link';
 import { caseStudies } from './data/caseStudies';
 
 export default function CaseStudiesPage() {
@@ -57,12 +58,12 @@ export default function CaseStudiesPage() {
                             </p>
 
                             <div className="flex flex-wrap gap-4">
-                                <a href="/hire-helper" className="btn-primary flex items-center gap-2 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                                <Link href="/hire-helper" className="btn-primary flex items-center gap-2 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all">
                                     Talk to Our Team
-                                </a>
-                                <a href="/services" className="px-6 py-3 rounded-xl border-2 border-primary-600 text-primary-600 font-semibold hover:bg-primary-50 transition-colors">
+                                </Link>
+                                <Link href="/services" className="px-6 py-3 rounded-xl border-2 border-primary-600 text-primary-600 font-semibold hover:bg-primary-50 transition-colors">
                                     See All Services
-                                </a>
+                                </Link>
                             </div>
                         </div>
 

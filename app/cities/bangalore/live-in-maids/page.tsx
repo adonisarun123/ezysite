@@ -285,11 +285,8 @@ export default function BangaloreLiveInMaidsPage() {
                     <span className="text-sm font-semibold">Serving All Bangalore Areas</span>
                   </div>
 
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                    Live-In Maid Services
-                    <span className="block text-white/90 text-3xl md:text-4xl lg:text-5xl mt-2 drop-shadow-lg">
-                      in Bangalore
-                    </span>
+                  <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
+                    Live-In Maid Services in Bangalore – Trusted Domestic Help for Your Home
                   </h1>
                   
                   <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">

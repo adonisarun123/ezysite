@@ -25,21 +25,101 @@ import {
 
 export const metadata: Metadata = {
   title: 'Air Conditioner Repair in Bareilly - AC Experts',
-  description:
-    'Looking for air conditioner repair in Bareilly? Get reliable AC service, gas refill, leak repair, and maintenance by trained, verified technicians.',
+  description: 'Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians.',
   openGraph: {
     title: 'Air Conditioner Repair in Bareilly - AC Experts',
-    description:
-      'Looking for air conditioner repair in Bareilly? Get reliable AC service, gas refill, leak repair, and maintenance by trained, verified technicians.',
-    url: 'https://www.ezyhelpers.com/cities/bareilly/ac-repair',
+    description: 'Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians.',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/air-conditioner-repair',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.ezyhelpers.com/cities/bareilly/ac-repair'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/air-conditioner-repair'
   }
 }
 
 export default function BareillyACRepair() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What services are included in air conditioner repair in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our air conditioner repair in Bareilly includes gas refilling, filter cleaning, thermostat repair, water leakage fixes, and full performance checks to keep your AC running efficiently during Bareilly's extreme heat."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can you fix the poor cooling performance in my AC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our AC technicians in Bareilly are trained to fix weak cooling caused by clogged filters, gas leaks, or thermostat issues. We ensure your AC cools effectively even during Bareilly's peak summer heat."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you clean or replace AC filters in Bareilly homes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer filter cleaning and replacement services to combat dust from Bareilly's construction zones. Clean filters help improve air quality and cooling efficiency in your home."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can you repair AC units damaged by voltage fluctuations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our AC repair in Bareilly includes fixing units affected by voltage fluctuations and power cuts. We check electrical connections and damaged parts like compressors or PCBs."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you fix AC water leakage problems in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we repair water leakage caused by humidity or blocked drainage. Our Bareilly AC technicians ensure proper drainage to avoid damage and odor issues."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can you remove bad odor and fungus from AC vents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we treat fungus and foul odors caused by monsoon moisture. Our deep cleaning services refresh AC vents, ensuring clean and healthy air."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you offer AC installation and uninstallation in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we handle AC installation and uninstallation for home shifting or upgrades. Our best AC technicians in Bareilly ensure a safe, professional setup."
+      }
+    },{
+      "@type": "Question",
+      "name": "What are the most common AC problems in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AC issues include poor cooling, filter clogging from dust, water leakage, voltage-related damage, and odor from fungus. We fix all these with expert care."
+      }
+    },{
+      "@type": "Question",
+      "name": "Is same-day AC repair available in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, same-day AC repair is available in Bareilly with EzyHelpers. Our local technicians ensure fast fixes, even during the summer rush."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can you help during emergency AC breakdowns in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer emergency AC repair support in Bareilly with fast technician dispatch and priority service to restore comfort quickly."
+      }
+    },{
+      "@type": "Question",
+      "name": "How do I know if my AC needs servicing in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your AC isn’t cooling properly, makes noise, leaks water, or smells musty, it’s time to call the best AC technician in Bareilly for a check-up."
+      }
+    }]
+  };
   const badges = [
     '✓ Verified AC Technicians',
     '✓ Emergency Same-Day Visits',
@@ -188,6 +268,10 @@ export default function BareillyACRepair() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -200,7 +284,7 @@ export default function BareillyACRepair() {
         />
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-cyan-600 via-sky-600 to-blue-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -208,36 +292,44 @@ export default function BareillyACRepair() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
-                Air Conditioner Repair in Bareilly
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
+                Air Conditioner Repair in Bareilly: Keep Your Cool with EzyHelpers!
               </h1>
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">
-                Bareilly summers are very hot, and a working AC is important for comfort. EzyHelpers provides fast, reliable, and budget-friendly air conditioner repair in Bareilly to keep your home cool, safe, and energy-efficient during the entire season.
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                Professional AC Service, Gas Refills, and Leak Fixes in Bareilly.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center w-full bg-white text-blue-700 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10 text-center">
+                <Link
+                  href="/hire-helper"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
+                >
                   Book AC Repair Now
                 </Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call for Emergency Support
+
+                <Link
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
-              <div className="flex flex-wrap gap-3 mb-8 justify-center">
-                {badges.map((b, i) => (
-                  <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    {b}
-                  </div>
+              {/* Service Assurance Badges */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+                {badges.map((badge, idx) => (
+                  <span key={idx} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold text-white">
+                    {badge}
+                  </span>
                 ))}
               </div>
 
-              <div className="grid grid-cols-3 md:grid-cols-3 gap-6 pt-6 border-t border-white/20 max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 {metrics.map((m, i) => (
-                  <div key={i} className="text-center">
-                    <div className="text-2xl font-bold">{m.value}</div>
-                    <div className="text-blue-100 text-sm">{m.label}</div>
+                  <div key={i} className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10 text-center">
+                    <div className="text-3xl font-extrabold text-white mb-1 leading-tight">{m.value}</div>
+                    <div className="text-indigo-100 font-medium text-sm">{m.label}</div>
                   </div>
                 ))}
               </div>
@@ -410,39 +502,105 @@ export default function BareillyACRepair() {
         </section>
 
         {/* Final CTA */}
-        <section className="section-padding bg-gradient-to-br from-cyan-600 to-blue-700 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Don’t Let AC Trouble Heat Up Your Home!</h2>
-              <p className="text-xl mb-8 text-blue-100">Fix AC issues quickly with EzyHelpers. Stay cool and stress-free during Bareilly’s hot weather. Book your AC technician today.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-blue-700 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book AC Repair Now</Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"><PhoneIcon className="h-5 w-5 mr-2" />Call +91 9972571005</Link>
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
+                Don’t Let AC Trouble Heat Up Your Home!
+              </h2>
+              <p className="text-xl mb-8 text-indigo-100 font-medium font-body leading-relaxed">
+                Fix AC issues quickly with EzyHelpers. Stay cool and stress-free during Bareilly’s hot weather. Book your AC technician today.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto font-display">
+                <Link
+                  href="/hire-helper"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
+                >
+                  Book AC Repair Now
+                </Link>
+
+                <Link
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Why Regular AC Maintenance Matters ... */}
+        {/* Why Regular AC Maintenance Matters */}
         <section className="section-padding bg-white">
-          <div className="container-custom max-w-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Regular AC Maintenance Matters for Every Bareilly Home</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed max-w-5xl mx-auto">
+          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">
+              Why Regular AC Maintenance Matters
+            </h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
               <p>Regular AC servicing keeps your AC running smoothly, saves electricity, and prevents sudden breakdowns. Bareilly’s dust, heat, and power fluctuations make AC maintenance very important.</p>
-              <p>Our air conditioner repair in Bareilly includes complete checks - filter cleaning, coil cleaning, gas level checks, drainage inspection, thermostat testing, and more. This keeps your AC cool even on the hottest days.</p>
-              <p>Regular servicing also prevents hidden issues like fungus, dust blockage, water leakage, and electrical damage. Ignoring these can affect your AC’s cooling and your family’s health.</p>
-              <p>EzyHelpers technicians understand Bareilly’s local weather and home needs. Whether it’s a split, window, or inverter AC, we ensure clean, long-lasting, and safe performance.</p>
+              <p className="font-medium text-indigo-900/80">Our air conditioner repair in Bareilly includes complete checks - filter cleaning, coil cleaning, gas level checks, and more, ensuring peak cooling performance.</p>
+              <p>Ignoring maintenance can lead to fungus, dust blockage, and electrical damage, affecting both your AC’s lifespan and your family’s health.</p>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom max-w-4xl mx-auto">
+          <div className="container-custom max-w-5xl">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion
+              faqs={[
+                {
+                  question: "What services are included in air conditioner repair in Bareilly?",
+                  answer: "Our air conditioner repair in Bareilly includes gas refilling, filter cleaning, thermostat repair, water leakage fixes, and full performance checks to keep your AC running efficiently during Bareilly's extreme heat."
+                },
+                {
+                  question: "Can you fix the poor cooling performance in my AC?",
+                  answer: "Yes, our AC technicians in Bareilly are trained to fix weak cooling caused by clogged filters, gas leaks, or thermostat issues. We ensure your AC cools effectively even during Bareilly's peak summer heat."
+                },
+                {
+                  question: "Do you clean or replace AC filters in Bareilly homes?",
+                  answer: "Yes, we offer filter cleaning and replacement services to combat dust from Bareilly's construction zones. Clean filters help improve air quality and cooling efficiency in your home."
+                },
+                {
+                  question: "Can you repair AC units damaged by voltage fluctuations?",
+                  answer: "Yes, our AC repair in Bareilly includes fixing units affected by voltage fluctuations and power cuts. We check electrical connections and damaged parts like compressors or PCBs."
+                },
+                {
+                  question: "Do you fix AC water leakage problems in Bareilly?",
+                  answer: "Yes, we repair water leakage caused by humidity or blocked drainage. Our Bareilly AC technicians ensure proper drainage to avoid damage and odor issues."
+                },
+                {
+                  question: "Can you remove bad odor and fungus from AC vents?",
+                  answer: "Yes, we treat fungus and foul odors caused by monsoon moisture. Our deep cleaning services refresh AC vents, ensuring clean and healthy air."
+                },
+                {
+                  question: "Do you offer AC installation and uninstallation in Bareilly?",
+                  answer: "Yes, we handle AC installation and uninstallation for home shifting or upgrades. Our best AC technicians in Bareilly ensure a safe, professional setup."
+                },
+                {
+                  question: "What are the most common AC problems in Bareilly?",
+                  answer: "AC issues include poor cooling, filter clogging from dust, water leakage, voltage-related damage, and odor from fungus. We fix all these with expert care."
+                },
+                {
+                  question: "Is same-day AC repair available in Bareilly?",
+                  answer: "Yes, same-day AC repair is available in Bareilly with EzyHelpers. Our local technicians ensure fast fixes, even during the summer rush."
+                },
+                {
+                  question: "Can you help during emergency AC breakdowns in Bareilly?",
+                  answer: "Yes, we offer emergency AC repair support in Bareilly with fast technician dispatch and priority service to restore comfort quickly."
+                },
+                {
+                  question: "How do I know if my AC needs servicing in Bareilly?",
+                  answer: "If your AC isn’t cooling properly, makes noise, leaks water, or smells musty, it’s time to call the best AC technician in Bareilly for a check-up."
+                }
+              ]}
+            />
           </div>
         </section>
       </main>

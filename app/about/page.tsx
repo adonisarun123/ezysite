@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next'
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Breadcrumb from '../../components/Breadcrumb';
@@ -176,9 +177,11 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-16">
                 <div className="group flex flex-col items-center space-y-4">
                   <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <img 
+                    <Image 
                       src="/affiliations/startup-india-logo.png" 
                       alt="Startup India - Government Initiative" 
+                      width={160}
+                      height={80}
                       className="h-20 w-auto object-contain"
                     />
                   </div>
@@ -186,9 +189,11 @@ export default function AboutPage() {
                 </div>
                 <div className="group flex flex-col items-center space-y-4">
                   <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <img 
+                    <Image 
                       src="/affiliations/nsdc-logo.png" 
                       alt="NSDC - National Skill Development Corporation" 
+                      width={160}
+                      height={80}
                       className="h-20 w-auto object-contain"
                     />
                   </div>

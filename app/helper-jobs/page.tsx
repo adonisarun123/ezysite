@@ -292,7 +292,7 @@ export default function HelperJobsPage() {
                 </section>
 
                 {/* Jobs Available Section */}
-                <section className="section-padding bg-gray-100">
+                <section id="job-categories" className="section-padding bg-gray-100">
                     <div className="container-custom">
                         <div className="text-center mb-6 md:mb-10">
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Job Categories</h2>
@@ -301,22 +301,26 @@ export default function HelperJobsPage() {
 
                         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
                             {[
-                                { title: "Housekeeping Jobs" },
-                                { title: "Cooking Jobs" },
-                                { title: "Nanny / Babysitter" },
-                                { title: "Elderly Care" },
-                                { title: "Patient Care" },
-                                { title: "Live-in Couple Jobs" },
-                                { title: "Couple Security Jobs" },
-                                { title: "Japa Maid Jobs" },
-                                { title: "Farmhouse Couple Jobs" }
+                                { title: "Housekeeping Jobs", slug: "jharkhand/housekeeping-job-bangalore" },
+                                { title: "Cooking Jobs", slug: "home-cooks-job-bangalore" },
+                                { title: "Nanny / Babysitter", slug: "nanny-job-bangalore" },
+                                { title: "Elderly Care", slug: "jharkhand/elderly-caretaker-job-bangalore" },
+                                { title: "Patient Care", slug: "jharkhand/patient-care-job-bangalore" },
+                                { title: "Live-in Couple Jobs", slug: "jharkhand/live-in-housekeeping-couple-job-bangalore" },
+                                { title: "Couple Security Jobs", slug: "jharkhand/couple-security-job-bangalore" },
+                                { title: "Japa Maid Jobs", slug: "jharkhand/japa-maid-job-bangalore" },
+                                { title: "Farmhouse Couple Jobs", slug: "jharkhand/live-in-couple-farmhouse-job-bangalore" }
                             ].map((job, index) => (
-                                <div key={index} className="bg-white rounded-xl p-2 md:p-5 shadow-sm border border-gray-200/50 hover:shadow-md transition-all duration-300 flex items-center gap-2 md:gap-3">
-                                    <div className="flex-shrink-0 bg-purple-50 rounded-full p-0.5 md:p-1">
+                                <Link
+                                    key={index}
+                                    href={`/helper-jobs/${job.slug}`}
+                                    className="bg-white rounded-xl p-2 md:p-5 shadow-sm border border-gray-200/50 hover:shadow-md transition-all duration-300 flex items-center gap-2 md:gap-3 group"
+                                >
+                                    <div className="flex-shrink-0 bg-purple-50 rounded-full p-0.5 md:p-1 group-hover:bg-purple-100 transition-colors">
                                         <CheckCircleIcon className="h-4 w-4 md:h-6 md:w-6 text-purple-600" />
                                     </div>
-                                    <h3 className="text-[11px] md:text-lg font-bold text-gray-900 leading-tight">{job.title}</h3>
-                                </div>
+                                    <h3 className="text-[11px] md:text-lg font-bold text-gray-900 leading-tight group-hover:text-purple-700 transition-colors">{job.title}</h3>
+                                </Link>
                             ))}
                         </div>
 
@@ -328,7 +332,7 @@ export default function HelperJobsPage() {
                                 Apply Now
                             </Link>
                             <Link
-                                href="tel:+919972571005"
+                                href="tel:+918031411776"
                                 className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                             >
                                 Call Us
@@ -421,10 +425,10 @@ export default function HelperJobsPage() {
                                 <p className="text-gray-700 leading-relaxed">We Regularly Check Your Safety And Work Conditions.</p>
                             </div>
 
-                            <div className="bg-white rounded-xl p-6 shadow-md border-2 border-purple-100 hover:shadow-lg transition-all duration-300">
+                            <Link href="#refer-earn" className="bg-white rounded-xl p-6 shadow-md border-2 border-purple-100 hover:shadow-lg transition-all duration-300 block text-left">
                                 <h3 className="text-xl font-bold text-purple-700 mb-3">Refer & Earn ₹500</h3>
                                 <p className="text-gray-700 leading-relaxed">Bring A Friend And Earn ₹500 After 1 Month.</p>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </section>
@@ -573,7 +577,9 @@ export default function HelperJobsPage() {
                     </div>
                 </section>
 
-                <ReferEarnSection variant="purple" lang="en" />
+                <div id="refer-earn" className="scroll-mt-20">
+                    <ReferEarnSection variant="purple" lang="en" />
+                </div>
 
                 {/* How to start your job */}
 

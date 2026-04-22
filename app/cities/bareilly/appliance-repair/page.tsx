@@ -60,6 +60,81 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyApplianceRepairPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What types of house appliance repairs are available in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EzyHelpers offers complete house appliance repairs in Bareilly for refrigerators, washing machines, microwaves, air conditioners, geysers, gas stoves, fans, and more. Whether your appliance has stopped working or is showing signs of a problem, our skilled home appliance technicians in Bareilly provide reliable same-day repair services with genuine parts and proper tools."
+      }
+    },{
+      "@type": "Question",
+      "name": "How fast can I get a home appliance technician in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With EzyHelpers, you can get a verified home appliance technician in Bareilly within 2 hours. We offer same-day appliance repair services for urgent issues. Our team responds quickly and arrives fully equipped to repair everything from fridges and washing machines to ACs and geysers."
+      }
+    },{
+      "@type": "Question",
+      "name": "What kinds of kitchen appliances do you repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We repair a variety of kitchen appliances, including gas stoves, chimneys, microwaves, and RO water purifiers. Whether it’s burner problems, chimney smoke leaks, or broken heating elements, our technicians offer complete kitchen appliance solutions."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can you help with emergency appliance repairs in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer emergency appliance repair service in Bareilly. Whether it’s a sudden fridge breakdown or a geyser failure at night, our technicians respond quickly to restore your appliance."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I schedule a home appliance repair at a convenient time in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers allows flexible scheduling for appliance repair in Bareilly. You can choose your preferred day and time, and our technician will arrive accordingly with all necessary tools and parts."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you offer repair services for both new and old appliances?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we repair both new and old appliances in Bareilly. Our home appliance technicians are skilled in handling outdated models as well as the latest smart appliances, providing safe and lasting solutions."
+      }
+    },{
+      "@type": "Question",
+      "name": "What happens if an appliance can’t be repaired immediately?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If an appliance needs additional parts or time, our technician will inform you clearly. We prioritise transparency and will schedule a quick follow-up visit to complete the repair at your convenience."
+      }
+    },{
+      "@type": "Question",
+      "name": "What types of microwaves do you repair in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We repair solo, grill, and convection microwave ovens in Bareilly. Our technicians fix heating issues, turntable problems, door errors, and electronic display faults across all popular brands."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you handle the installation of new appliances in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer installation services for appliances like washing machines, geysers, RO purifiers, and more in Bareilly. Proper setup ensures safety, efficiency, and long-term performance from day one."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I get a multi-appliance repair service in a single visit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can request repairs for multiple appliances in a single visit in Bareilly. Just let us know in advance, and we will send a technician prepared to handle multiple tasks."
+      }
+    }]
+  };
 
 
   const badges = [
@@ -151,6 +226,10 @@ export default function BareillyApplianceRepairPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -158,12 +237,12 @@ export default function BareillyApplianceRepairPage() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'House Appliance Repair Service' }
+            { label: 'Appliance Repair' }
           ]}
         />
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -171,38 +250,48 @@ export default function BareillyApplianceRepairPage() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
                 Professional House Appliance Repairs in Bareilly
               </h1>
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">
-                Get fast, reliable, same-day appliance repair services in Bareilly with EzyHelpers. Our trained technicians repair refrigerators, washing machines, geysers, and other home appliances quickly and safely so your home stays comfortable, working, and free from daily problems.
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                Fast, reliable, same-day appliance repair services in Bareilly.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center w-full bg-white text-blue-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
                   Book Appliance Repair Now
                 </Link>
-                <Link href="tel:+918031411776" className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Emergency Repair Service
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all">
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
-              <div className="flex flex-wrap gap-3 mb-8 justify-center">
-                {badges.map((b, i) => (
-                  <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    {b}
-                  </div>
+              <div className="flex flex-wrap gap-3 mb-10 justify-center">
+                {[
+                  'Verified Technicians',
+                  'Certified Specialists',
+                  'Multi-Brand Expertise'
+                ].map((badge, idx) => (
+                  <span key={idx} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold">
+                    ✓ {badge}
+                  </span>
                 ))}
               </div>
 
-              <div className="grid grid-cols-3 md:grid-cols-3 gap-6 pt-6 border-t border-white/20 max-w-3xl mx-auto">
-                {metrics.map((m, i) => (
-                  <div key={i} className="text-center">
-                    <div className="text-2xl font-bold">{m.value}</div>
-                    <div className="text-emerald-100 text-sm">{m.label}</div>
-                  </div>
-                ))}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                  <div className="text-3xl font-extrabold text-white mb-1">4.8★</div>
+                  <div className="text-indigo-100 font-medium">Customer Rating</div>
+                </div>
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                  <div className="text-3xl font-extrabold text-white mb-1 leading-tight">24/7</div>
+                  <div className="text-indigo-100 font-medium text-sm">Emergency Support</div>
+                </div>
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                  <div className="text-3xl font-extrabold text-white mb-1 leading-tight">2-Hour</div>
+                  <div className="text-indigo-100 font-medium text-sm">Response Time</div>
+                </div>
               </div>
             </div>
           </div>
@@ -369,63 +458,105 @@ export default function BareillyApplianceRepairPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
                 Don't Let Appliance Problems Slow You Down!
               </h2>
-              <p className="text-xl mb-8 text-blue-100">
+              <p className="text-xl mb-8 text-indigo-100 font-medium font-body">
                 Get fast appliance repair with EzyHelpers. Our trusted technicians fix issues quickly so your daily routine stays smooth and stress-free.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto font-display">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center bg-white text-blue-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book Appliance Repair Now
                 </Link>
 
                 <Link
-                  href="tel:+919972571005"
-                  className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call Us
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Why Regular Appliance Repair Matters ... */}
+        {/* Why Regular Appliance Repair Matters */}
         <section className="section-padding bg-white">
-          <div className="container-custom text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">How Regular Appliance Checkups Prevent Bigger Breakdowns in Bareilly Homes</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed max-w-4xl mx-auto text-justify">
-              <p>Bareilly’s hot weather, power cuts, and hard water put extra pressure on home appliances. Regular checkups are important to keep your appliances working well. At EzyHelpers, our trained technicians carry out quick and affordable checkups to prevent major breakdowns.</p>
-              <p>Small issues like heavy vibrations, low cooling, slow heating, or strange sounds are fixed early before they turn into bigger failures. Our technicians use proper tools and genuine parts to improve appliance performance and help reduce electricity bills.</p>
-              <p>Regular servicing helps families avoid sudden breakdowns during festivals, summers, or busy days. It is especially useful for working couples, elderly people, and anyone who needs appliances to work smoothly every day. Book a preventive checkup with EzyHelpers and enjoy worry-free appliance use.</p>
+          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">How Regular Checkups Prevent Breakdowns</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+              <p>Bareilly’s hot weather and power cuts put extra pressure on home appliances. Regular checkups are important to keep them working well.</p>
+              <p className="font-medium text-indigo-900/80">Small issues like heavy vibrations, low cooling, or strange sounds are fixed early before they turn into failures.</p>
+              <p>Our technicians use genuine parts to improve performance and help reduce electricity bills.</p>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom max-w-5xl">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <div className="max-w-4xl mx-auto">
-              <FAQAccordion faqs={faqs} />
-            </div>
+            <FAQAccordion
+              faqs={[
+                {
+                  question: "What types of house appliance repairs are available in Bareilly?",
+                  answer: "EzyHelpers offers complete house appliance repairs in Bareilly for refrigerators, washing machines, microwaves, air conditioners, geysers, gas stoves, fans, and more. Whether your appliance has stopped working or is showing signs of a problem, our skilled home appliance technicians in Bareilly provide reliable same-day repair services with genuine parts and proper tools."
+                },
+                {
+                  question: "How fast can I get a home appliance technician in Bareilly?",
+                  answer: "With EzyHelpers, you can get a verified home appliance technician in Bareilly within 2 hours. We offer same-day appliance repair services for urgent issues. Our team responds quickly and arrives fully equipped to repair everything from fridges and washing machines to ACs and geysers."
+                },
+                {
+                  question: "What kinds of kitchen appliances do you repair?",
+                  answer: "We repair a variety of kitchen appliances, including gas stoves, chimneys, microwaves, and RO water purifiers. Whether it’s burner problems, chimney smoke leaks, or broken heating elements, our technicians offer complete kitchen appliance solutions."
+                },
+                {
+                  question: "Can you help with emergency appliance repairs in Bareilly?",
+                  answer: "Yes, we offer emergency appliance repair service in Bareilly. Whether it’s a sudden fridge breakdown or a geyser failure at night, our technicians respond quickly to restore your appliance."
+                },
+                {
+                  question: "Can I schedule a home appliance repair at a convenient time in Bareilly?",
+                  answer: "Yes, EzyHelpers allows flexible scheduling for appliance repair in Bareilly. You can choose your preferred day and time, and our technician will arrive accordingly with all necessary tools and parts."
+                },
+                {
+                  question: "Do you offer repair services for both new and old appliances?",
+                  answer: "Yes, we repair both new and old appliances in Bareilly. Our home appliance technicians are skilled in handling outdated models as well as the latest smart appliances, providing safe and lasting solutions."
+                },
+                {
+                  question: "What happens if an appliance can’t be repaired immediately?",
+                  answer: "If an appliance needs additional parts or time, our technician will inform you clearly. We prioritise transparency and will schedule a quick follow-up visit to complete the repair at your convenience."
+                },
+                {
+                  question: "What types of microwaves do you repair in Bareilly?",
+                  answer: "We repair solo, grill, and convection microwave ovens in Bareilly. Our technicians fix heating issues, turntable problems, door errors, and electronic display faults across all popular brands."
+                },
+                {
+                  question: "Do you handle the installation of new appliances in Bareilly?",
+                  answer: "Yes, we offer installation services for appliances like washing machines, geysers, RO purifiers, and more in Bareilly. Proper setup ensures safety, efficiency, and long-term performance from day one."
+                },
+                {
+                  question: "Can I get a multi-appliance repair service in a single visit?",
+                  answer: "Yes, you can request repairs for multiple appliances in a single visit in Bareilly. Just let us know in advance, and we will send a technician prepared to handle multiple tasks."
+                }
+              ]}
+            />
           </div>
         </section>
       </main>
 
-            <NestCTA />
+      <NestCTA />
       <Footer />
     </>
   )
-}
+}

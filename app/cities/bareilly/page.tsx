@@ -58,24 +58,24 @@ export default function BareillyPage() {
 
       <div className="bg-background-primary">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white pt-32 pb-16">
+        <section className="bg-gradient-to-br from-indigo-700 via-indigo-600 to-indigo-800 text-white pt-32 pb-16">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <HomeIcon className="h-8 w-8 text-blue-600" />
+              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-white/20">
+                <HomeIcon className="h-8 w-8 text-white" />
               </div>
-              <h1 className="text-4xl md:text-5xl text-white font-bold mb-6 font-display">
+              <h1 className="text-4xl md:text-6xl text-white font-bold mb-6 font-display leading-tight">
                 Bareilly’s Most Reliable House Maid Services
               </h1>
-              <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                Find verified house maids and helpers in Bareilly for cleaning, cooking, childcare, home maintenance and repairs, and more. EzyHelpers offers trusted house helpers in Bareilly, ensuring trained staff and smooth household support with flexible schedules.
+              <p className="text-xl text-indigo-50 mb-8 leading-relaxed max-w-2xl mx-auto font-medium">
+                Find verified house maids and helpers in Bareilly for cleaning, cooking, childcare, and professional home support.
               </p>
 
               {/* Service Assurance Badges */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-4xl mx-auto">
                 {trustBadges.map((badge, i) => (
                   <div key={i} className="flex items-center justify-center text-center">
-                    <div className="w-full bg-white/10 rounded-lg py-3 px-3 text-sm text-blue-100 font-medium">
+                    <div className="w-full bg-white/10 rounded-xl py-3 px-3 text-sm text-white font-semibold backdrop-blur-md border border-white/10 shadow-lg">
                       {badge}
                     </div>
                   </div>
@@ -84,13 +84,13 @@ export default function BareillyPage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/hire-helper" className="inline-flex items-center bg-white text-blue-700 hover:bg-gray-100 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
+                <Link href="/hire-helper" className="inline-flex items-center bg-white text-indigo-700 hover:bg-indigo-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
                   Book Verified House Help
                   <ArrowRightIcon className="h-5 w-5 ml-2" />
                 </Link>
-                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call 080-31411776
+                  Call +91 80 3141 1776
                 </Link>
               </div>
             </div>
@@ -473,22 +473,22 @@ export default function BareillyPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="section-padding bg-gradient-to-r from-indigo-600 to-purple-700 text-white text-center">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center">
           <div className="container-custom">
-            <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">
+            <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 font-display leading-tight">
               Book Trusted House Helper Services in Bareilly Today
             </h2>
-            <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto font-medium">
               Join hundreds of happy customers who trust EzyHelpers for verified house helpers in Bareilly. Start today and make home life stress-free with dependable domestic help.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/hire-helper" className="inline-flex items-center bg-white text-indigo-600 hover:bg-gray-100 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
+              <Link href="/hire-helper" className="inline-flex items-center bg-white text-indigo-700 hover:bg-indigo-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
                 Book Your House Helper
                 <ArrowRightIcon className="h-5 w-5 ml-2" />
               </Link>
-              <Link href="tel:+918031411776" className="group inline-flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
+              <Link href="tel:+918031411776" className="group inline-flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
                 <PhoneIcon className="h-5 w-5 mr-2" />
-                Call 080-31411776
+                Call +91 80 3141 1776
               </Link>
             </div>
           </div>

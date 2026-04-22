@@ -138,7 +138,7 @@ export default function BangaloreChauffeurService() {
 
                     <div className="container-custom relative z-10">
                         <div className="max-w-5xl mx-auto text-center">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Chauffeur Service in Bangalore Professional Luxury Car Drivers</h1>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Chauffeur Service in Bangalore | Professional Luxury Car Drivers</h1>
 
                             <p className="text-lg lg:text-xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">Hire experienced and verified Chauffeurs in Bangalore for your luxury car. Whether it's daily commutes, events, or short-term travel, our drivers provide safe, reliable, and comfortable rides and are familiar with handling high-end cars in city traffic.</p>
 
