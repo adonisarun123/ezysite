@@ -31,19 +31,88 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyPainting() {
-  const faqs: FAQItem[] = [
-    { question: 'Do you offer exterior painting services in Bareilly?', answer: 'Yes. Our painters provide full exterior painting using weatherproof paints suitable for Bareilly’s heat, rain, and dust. We paint walls, balconies, terraces, and boundary gates.' },
-    { question: 'What areas of my home can you paint?', answer: 'We can paint bedrooms, halls, kitchens, bathrooms, balconies, gates, terraces, pooja rooms, and more. We also repair walls before painting.' },
-    { question: 'Do you help with colour selection?', answer: 'Yes, we offer free color consultation to help you choose shades that fit your home style and lighting.' },
-    { question: 'Can you paint wooden and metal surfaces?', answer: 'Yes. We provide wood polishing, varnishing, and anti-rust painting for metal grills, gates, and railings.' },
-    { question: 'Do you treat damp walls before painting?', answer: 'Yes. We apply damp-proof and anti-fungal coatings to prevent moisture problems and improve paint life.' },
-    { question: 'What repairs do you handle before painting?', answer: 'We fix cracks, damaged walls, uneven surfaces, peeling paint, and damp patches. We also apply putty and primer.' },
-    { question: 'Can I schedule painting as per my convenience?', answer: 'Yes. You can choose the date and time that works best for your family.' },
-    { question: 'Do you use putty and primer before painting?', answer: 'Always. Putty and primer help the paint stick well and give a smoother finish.' },
-    { question: 'Do you clean up after painting?', answer: 'Yes. After work, we remove paint marks, masking tape, and debris, leaving your home clean.' },
-    { question: 'Can I trust EzyHelpers for complete home painting?', answer: 'Yes. We provide end-to-end work—from color advice and surface prep to neat finishing and clean-up.' },
-    { question: 'Do you paint metal grills, gates, and railings?', answer: 'Yes. We use anti-rust paint to protect and freshen up all metal surfaces.' },
-  ]
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Do you offer exterior painting services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our house painters in Bareilly provide full exterior painting solutions. We use weatherproof paints that protect homes from Bareilly’s heat, rain, and dust. Services include painting of walls, terraces, balconies, and boundary gates for a fresh, lasting look."
+      }
+    },{
+      "@type": "Question",
+      "name": "What areas of my home can you paint in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our house painters in Bareilly can paint all areas of your home, including bedrooms, living rooms, kitchens, bathrooms, pooja rooms, balconies, terraces, gates, and more. We also offer surface repairs before painting to ensure the best results."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you help with choosing colours for my home in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our house painters in Bareilly offer free colour consultation as part of our painting services in Bareilly. Our experts help you choose shades that suit your home’s lighting, family preferences, and style goals."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can you paint wooden and metal surfaces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We offer wood polishing, varnishing for furniture, and anti-rust painting for grills, gates, and railings. These services enhance the look and durability of wooden and metal fixtures in your Bareilly homes."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do professional painting services in Bareilly include damp treatment before painting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our painting services include the treatment of damp patches with anti-fungal solutions before painting. This prevents moisture damage and ensures that the paint adheres properly and lasts longer, especially during Bareilly’s monsoon season."
+      }
+    },{
+      "@type": "Question",
+      "name": "What repairs do your painters handle before painting walls in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our house painters in Bareilly repair wall cracks, peeling paint, uneven surfaces, and damp patches. Our painters apply putty and primer for a smooth base, ensuring the paint lasts longer and looks flawless in your Bareilly home."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I schedule painting services around my availability in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer flexible scheduling. You can choose a time and date that fits your family’s routine. Our house painters in Bareilly will arrive as per your preference and complete the job efficiently."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you use putty and primer before painting in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we always use putty and primer as part of our wall preparation process. This ensures smooth surfaces, better paint adhesion, and long-lasting results in all Bareilly painting projects."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you clean up after painting is done in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We ensure complete post-painting clean-up. Our painters leave your space tidy, removing debris, used materials, and masking tape, so you can enjoy your freshly painted home without hassle."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I trust EzyHelpers for complete home painting in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. EzyHelpers provides end-to-end professional painting services in Bareilly. From colour advice and surface prep to finishing and cleanup, we are your trusted partner for safe, timely, and beautiful home transformations."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do your painters paint metal grills, gates, and railings in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our home painters in Bareilly paint metal grills, gates, and balcony railings using anti-rust paint to protect them and make them look fresh."
+      }
+    }]
+  };
 
   const whyChooseFeatures = [
     {
@@ -161,6 +230,10 @@ export default function BareillyPainting() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -168,13 +241,12 @@ export default function BareillyPainting() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'Painting Services' }
+            { label: 'Painting' }
           ]}
         />
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-purple-600 via-pink-600 to-red-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
-
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -182,50 +254,56 @@ export default function BareillyPainting() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                <PaintBrushIcon className="h-5 w-5 text-purple-300 mr-2" />
-                <span className="text-sm font-semibold">Professional Painting</span>
-              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
+                Professional Painting Services in Bareilly
+              </h1>
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                Expert house painters in Bareilly for beautiful home transformations.
+              </p>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Professional Painting Services in Bareilly</h1>
-
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">Get expert house painters in Bareilly for high-quality interior and exterior painting. We provide clean, fast, and beautiful finishing with premium materials and timely service.</p>
-
-              <div className="flex flex-wrap gap-3 mb-8 justify-center">
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Free On-Site Consultation</div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Clean & No-Mess Work Guarantee</div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Quick & Timely Completion</div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10 text-center">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center w-full bg-white text-purple-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
-                  Book Painting Service Now
+                  Book Painting Now
                 </Link>
 
                 <Link
                   href="tel:+918031411776"
-                  className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Free Color Consultation
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
-              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/20 max-w-2xl mx-auto">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">2-Day</div>
-                  <div className="text-purple-200 text-sm">Painting Start Guarantee</div>
+              {/* Service Assurance Badges */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+                {[
+                  'Skilled Painters',
+                  'Premium Paints',
+                  'Timely Completion',
+                  'Surface Preparation'
+                ].map((badge, idx) => (
+                  <span key={idx} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold">
+                    ✓ {badge}
+                  </span>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                  <div className="text-3xl font-extrabold text-white mb-1 leading-tight text-center text-center">50+</div>
+                  <div className="text-indigo-100 font-medium text-sm text-center">Color Options</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">50+</div>
-                  <div className="text-purple-200 text-sm">Color Options</div>
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                  <div className="text-3xl font-extrabold text-white mb-1 leading-tight text-center text-center text-center">2-Day</div>
+                  <div className="text-indigo-100 font-medium text-sm text-center">Start Guarantee</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">1,500+</div>
-                  <div className="text-purple-200 text-sm">Happy Homes Painted</div>
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                  <div className="text-3xl font-extrabold text-white mb-1 text-center text-center text-center leading-tight">1500+</div>
+                  <div className="text-indigo-100 font-medium text-sm text-center">Homes Painted</div>
                 </div>
               </div>
             </div>
@@ -459,26 +537,30 @@ export default function BareillyPainting() {
         </section>
 
         {/* Final CTA */}
-        <section className="section-padding bg-gradient-to-br from-purple-600 to-pink-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Don’t Let Dull Walls Ruin Your Home!</h2>
-              <p className="text-xl mb-8 text-purple-100">Book trusted professional painting services in Bareilly and enjoy fresh, bright, beautiful walls without stress.</p>
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
+                Don’t Let Dull Walls Ruin Your Home!
+              </h2>
+              <p className="text-xl mb-8 text-indigo-100 font-medium font-body leading-relaxed">
+                Book trusted professional painting services in Bareilly and enjoy fresh, bright, beautiful walls without stress.
+              </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto font-display">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center bg-white text-purple-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
-                  Book Painting Service Now
+                  Book Painting Now
                 </Link>
 
                 <Link
-                  href="tel:+919972571005"
-                  className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call +91 9972571005
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
             </div>
@@ -487,81 +569,73 @@ export default function BareillyPainting() {
 
         {/* Importance Section */}
         <section className="section-padding bg-white relative overflow-hidden">
-          <div className="container-custom relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                The Importance of Proper Surface Preparation Before Painting
-              </h2>
-              <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-                A strong, long-lasting paint job starts with good surface preparation. Bareilly homes often face issues like cracks, dampness, peeling paint, and dust buildup - especially after monsoons or long gaps between paint cycles.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              {/* Problem Side */}
-              <div className="bg-red-50 rounded-3xl p-8 border border-red-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="flex items-start mb-8">
-                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mr-5 shadow-sm border border-red-100 flex-shrink-0">
-                    <ExclamationTriangleIcon className="h-8 w-8 text-red-500" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 pt-2 leading-tight">Painting without fixing these problems leads to:</h3>
-                </div>
-                <div className="space-y-4">
-                  {['Peeling', 'Bubbling', 'Patchy colors', 'Short life of paint'].map((item, idx) => (
-                    <div key={idx} className="flex items-center bg-white p-4 rounded-xl border border-red-100 shadow-sm">
-                      <div className="w-2.5 h-2.5 rounded-full bg-red-500 mr-4"></div>
-                      <span className="text-gray-800 font-medium">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Solution Side */}
-              <div className="bg-green-50 rounded-3xl p-8 border border-green-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="flex items-start mb-8">
-                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mr-5 shadow-sm border border-green-100 flex-shrink-0">
-                    <CheckCircleIcon className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 pt-2 leading-tight">Our expert painters always follow a proper process:</h3>
-                </div>
-                <div className="space-y-4">
-                  {[
-                    'Scrape off old and loose paint',
-                    'Fill cracks and holes',
-                    'Apply anti-fungal treatment on damp walls',
-                    'Smooth the walls with putty',
-                    'Add primer for strong bonding',
-                    'Apply premium paints for flawless finishing'
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-center bg-white p-4 rounded-xl border border-green-100 shadow-sm">
-                      <CheckCircleIcon className="h-5 w-5 text-green-500 mr-4 flex-shrink-0" />
-                      <span className="text-gray-800 font-medium">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 md:p-10 text-center text-white shadow-xl max-w-4xl mx-auto">
-              <p className="text-xl md:text-2xl font-medium mb-2 leading-relaxed">
-                This step-by-step preparation makes your paint smoother, brighter, and long-lasting.
-              </p>
-              <p className="text-purple-200 text-lg">
-                With EzyHelpers house painters in Bareilly, you get a complete wall makeover—not just painting.
-              </p>
+          <div className="container-custom relative z-10 max-w-4xl border-l-4 border-indigo-600 pl-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">
+              Surface Preparation: The Secret to Long-Lasting Paint
+            </h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+              <p>Bareilly homes often face issues like cracks, dampness, and peeling paint, especially after the monsoon. Our expert painters follow a professional process to ensure your walls stay flawless for years.</p>
+              <p className="font-medium text-indigo-900/80 italic">We handle everything: scraping old paint, filling cracks, applying anti-fungal treatments, and finishing with putty and primer for a smooth, bright makeover.</p>
+              <p>Choosing EzyHelpers means you get more than just paint—you get a durable, beautiful transformation that protects your home.</p>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+          <div className="container-custom max-w-5xl">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <div className="max-w-4xl mx-auto">
-              <FAQAccordion faqs={faqs} />
-            </div>
+            <FAQAccordion
+              faqs={[
+                {
+                  question: "Do you offer exterior painting services in Bareilly?",
+                  answer: "Yes, our house painters in Bareilly provide full exterior painting solutions. We use weatherproof paints that protect homes from Bareilly’s heat, rain, and dust. Services include painting of walls, terraces, balconies, and boundary gates for a fresh, lasting look."
+                },
+                {
+                  question: "What areas of my home can you paint in Bareilly?",
+                  answer: "Our house painters in Bareilly can paint all areas of your home, including bedrooms, living rooms, kitchens, bathrooms, pooja rooms, balconies, terraces, gates, and more. We also offer surface repairs before painting to ensure the best results."
+                },
+                {
+                  question: "Do you help with choosing colours for my home in Bareilly?",
+                  answer: "Yes, our house painters in Bareilly offer free colour consultation as part of our painting services in Bareilly. Our experts help you choose shades that suit your home’s lighting, family preferences, and style goals."
+                },
+                {
+                  question: "Can you paint wooden and metal surfaces?",
+                  answer: "Absolutely. We offer wood polishing, varnishing for furniture, and anti-rust painting for grills, gates, and railings. These services enhance the look and durability of wooden and metal fixtures in your Bareilly homes."
+                },
+                {
+                  question: "Do professional painting services in Bareilly include damp treatment before painting?",
+                  answer: "Yes. Our painting services include the treatment of damp patches with anti-fungal solutions before painting. This prevents moisture damage and ensures that the paint adheres properly and lasts longer, especially during Bareilly’s monsoon season."
+                },
+                {
+                  question: "What repairs do your painters handle before painting walls in Bareilly?",
+                  answer: "Our house painters in Bareilly repair wall cracks, peeling paint, uneven surfaces, and damp patches. Our painters apply putty and primer for a smooth base, ensuring the paint lasts longer and looks flawless in your Bareilly home."
+                },
+                {
+                  question: "Can I schedule painting services around my availability in Bareilly?",
+                  answer: "Yes, we offer flexible scheduling. You can choose a time and date that fits your family’s routine. Our house painters in Bareilly will arrive as per your preference and complete the job efficiently."
+                },
+                {
+                  question: "Do you use putty and primer before painting in Bareilly?",
+                  answer: "Yes, we always use putty and primer as part of our wall preparation process. This ensures smooth surfaces, better paint adhesion, and long-lasting results in all Bareilly painting projects."
+                },
+                {
+                  question: "Do you clean up after painting is done in Bareilly?",
+                  answer: "Yes. We ensure complete post-painting clean-up. Our painters leave your space tidy, removing debris, used materials, and masking tape, so you can enjoy your freshly painted home without hassle."
+                },
+                {
+                  question: "Can I trust EzyHelpers for complete home painting in Bareilly?",
+                  answer: "Yes. EzyHelpers provides end-to-end professional painting services in Bareilly. From colour advice and surface prep to finishing and cleanup, we are your trusted partner for safe, timely, and beautiful home transformations."
+                },
+                {
+                  question: "Do your painters paint metal grills, gates, and railings in Bareilly?",
+                  answer: "Yes, our home painters in Bareilly paint metal grills, gates, and balcony railings using anti-rust paint to protect them and make them look fresh."
+                }
+              ]}
+            />
           </div>
         </section>
       </main>

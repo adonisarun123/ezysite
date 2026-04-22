@@ -22,6 +22,74 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyDriversPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Are drivers in Bareilly RTO licensed and verified?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all drivers in Bareilly provided by EzyHelpers are RTO licensed and background-verified. Our driver services in Bareilly ensure complete safety and trust by conducting thorough checks before assigning any driver to your family or trip."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I get emergency driver services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers offers emergency driver services in Bareilly, available 24/7. Whether it's a hospital visit, medical emergency, or urgent travel need, our drivers in Bareilly are trained for fast response and immediate availability within your area."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do drivers in Bareilly know local routes and traffic patterns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our drivers in Bareilly are local route experts who understand the city’s traffic, peak times, and alternate routes. Our driver services in Bareilly ensure faster, safer travel with less stress and fewer delays during daily commutes."
+      }
+    },{
+      "@type": "Question",
+      "name": "What is the difference between full-time and live-in drivers in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full-time drivers in Bareilly work 8–12 hours a day, ideal for regular commutes. Live-in drivers offer 24/7 availability for families with frequent travel. Both driver services in Bareilly are professional, verified, and tailored to your schedule."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do driver services in Bareilly include vehicle maintenance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our driver services in Bareilly cover basic vehicle support such as fuel management, mileage tracking, safe parking, and simple security checks. Drivers in Bareilly also help with cleanliness and timely fuel refills for smooth trips."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I hire a driver in Bareilly for just one day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers offers on-demand drivers in Bareilly for single-day travel, events, or emergencies. Our driver services in Bareilly are flexible and quick to arrange, with professional drivers available for immediate or short-term transportation needs."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do your drivers know local Bareilly routes well?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our drivers in Bareilly are highly familiar with all major areas, routes, and shortcuts. Driver services in Bareilly by EzyHelpers ensure timely arrivals, fewer delays, and a smoother experience for city, intercity, or urgent travel."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I hire a driver in Bareilly for flexible timing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our flexible driver services in Bareilly include part-time and on-demand options. You can book drivers in Bareilly for morning, evening, or specific-hour trips based on your schedule, even at short notice or weekends."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can drivers in Bareilly handle different types of vehicles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, drivers in Bareilly from EzyHelpers are trained to drive hatchbacks, sedans, SUVs, and automatic or manual vehicles. Our driver services in Bareilly match you with a suitable driver based on your car type and travel needs."
+      }
+    }]
+  };
   const serviceBadges = [
     'Local Route Experts',
     'Emergency Service',
@@ -37,6 +105,10 @@ export default function BareillyDriversPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -44,12 +116,12 @@ export default function BareillyDriversPage() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'Driver Services' }
+            { label: 'Drivers' }
           ]} 
         />
       
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -57,35 +129,35 @@ export default function BareillyDriversPage() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-display leading-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
                 Expert Drivers in Bareilly at Your Service
               </h1>
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">
-                Reliable, Safe, and Trusted Driver Services for Every Need
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                Reliable, Safe, and Trusted Driver Services for Every Need.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center w-full bg-white text-blue-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book a Driver Now
                 </Link>
 
                 <Link
                   href="tel:+918031411776"
-                  className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call 080-31411776
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
               {/* Service Assurance Badges */}
-              <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
                 {serviceBadges.map((b, i) => (
-                  <span key={i} className="text-sm bg-white/10 border border-white/20 rounded-full px-3 py-1">
-                    ✅ {b}
+                  <span key={i} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold">
+                    ✓ {b}
                   </span>
                 ))}
               </div>
@@ -93,9 +165,9 @@ export default function BareillyDriversPage() {
               {/* Highlight Metrics */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 {highlightMetrics.map((m, i) => (
-                  <div key={i} className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-                    <div className="text-3xl font-bold text-white mb-1">{m.value}</div>
-                    <div className="text-blue-100">{m.label}</div>
+                  <div key={i} className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                    <div className="text-3xl font-extrabold text-white mb-1">{m.value}</div>
+                    <div className="text-indigo-100 font-medium">{m.label}</div>
                   </div>
                 ))}
               </div>
@@ -249,16 +321,22 @@ export default function BareillyDriversPage() {
         
 
         {/* Final CTA */}
-        <section className="section-padding bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Get Your Trusted Driver Today!</h2>
-              <p className="text-xl mb-8 text-blue-100">Don't compromise on safe transportation. Book verified, experienced drivers in Bareilly for your daily travel needs now.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-blue-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book Online</Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call Now
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
+                Get Your Trusted Driver Today!
+              </h2>
+              <p className="text-xl mb-8 text-indigo-100 font-medium">
+                Don't compromise on safe transportation. Book verified, experienced drivers in Bareilly for your daily travel needs now.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
+                  Book Online
+                </Link>
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all">
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
             </div>
@@ -267,56 +345,60 @@ export default function BareillyDriversPage() {
 
         {/* Informational Section */}
         <section className="section-padding bg-white">
-          <div className="container-custom max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Professional Driver Services Matter for Your Family's Safety & Convenience</h2>
-            <p className="text-gray-700 mb-4">Hiring a professional driver in Bareilly through EzyHelpers isn’t just about getting from one place to another; it’s about ensuring every ride is safe, timely, and stress-free. Unlike informal or unverified drivers, our services are backed by a system that prioritises trust, discipline, and your daily comfort.</p>
-            <p className="text-gray-700 mb-4">Each EzyHelpers driver in Bareilly is RTO-licensed, background-verified, and trained to handle both routine travel and emergency situations with care. Whether you're sending your children to school, attending a business meeting, or transporting a senior to the hospital, our drivers know how to keep the journey smooth and secure.</p>
-            <p className="text-gray-700 mb-4">What sets our service apart is our focus on dependability. Drivers arrive on time, follow traffic rules diligently, and remain calm and courteous under all conditions. They also know Bareilly’s traffic patterns, shortcuts, and alternate routes, saving your time and avoiding unnecessary delays.</p>
-            <p className="text-gray-700">With EzyHelpers, you don’t have to worry about availability, delays, or inconsistent service. Our full-time, live-in, and on-demand driver options ensure that whether your needs are daily or occasional, we always have a solution that fits your schedule. You’ll always have someone dependable behind the wheel, so you and your loved ones can travel with confidence.</p>
+          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Professional Driver Services Matter</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+              <p>Hiring a professional driver in Bareilly through EzyHelpers isn’t just about getting from one place to another; it’s about safety.</p>
+              <p className="font-medium text-indigo-900/80">Each EzyHelpers driver in Bareilly is RTO-licensed, background-verified, and trained.</p>
+              <p>With EzyHelpers, you’ll always have someone dependable behind the wheel.</p>
+            </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
             <FAQAccordion
               faqs={[
                 {
-                  question: 'Are drivers in Bareilly RTO licensed and verified?',
-                  answer: 'Yes, all drivers in Bareilly provided by EzyHelpers are RTO licensed and background-verified. Our driver services in Bareilly ensure complete safety and trust by conducting thorough checks before assigning any driver to your family or trip.'
+                  question: "Are drivers in Bareilly RTO licensed and verified?",
+                  answer: "Yes, all drivers in Bareilly provided by EzyHelpers are RTO licensed and background-verified. Our driver services in Bareilly ensure complete safety and trust by conducting thorough checks before assigning any driver to your family or trip."
                 },
                 {
-                  question: 'Can I get emergency driver services in Bareilly?',
-                  answer: 'Yes, EzyHelpers offers emergency driver services in Bareilly, available 24/7. Whether it\'s a hospital visit, medical emergency, or urgent travel need, our drivers in Bareilly are trained for fast response and immediate availability within your area.'
+                  question: "Can I get emergency driver services in Bareilly?",
+                  answer: "Yes, EzyHelpers offers emergency driver services in Bareilly, available 24/7. Whether it's a hospital visit, medical emergency, or urgent travel need, our drivers in Bareilly are trained for fast response and immediate availability within your area."
                 },
                 {
-                  question: 'Do drivers in Bareilly know local routes and traffic patterns?',
-                  answer: 'Yes, our drivers in Bareilly are local route experts who understand the city’s traffic, peak times, and alternate routes. Our driver services in Bareilly ensure faster, safer travel with less stress and fewer delays during daily commutes.'
+                  question: "Do drivers in Bareilly know local routes and traffic patterns?",
+                  answer: "Yes, our drivers in Bareilly are local route experts who understand the city’s traffic, peak times, and alternate routes. Our driver services in Bareilly ensure faster, safer travel with less stress and fewer delays during daily commutes."
                 },
                 {
-                  question: 'What is the difference between full-time and live-in drivers in Bareilly?',
-                  answer: 'Full-time drivers in Bareilly work 8–12 hours a day, ideal for regular commutes. Live-in drivers offer 24/7 availability for families with frequent travel. Both driver services in Bareilly are professional, verified, and tailored to your schedule.'
+                  question: "What is the difference between full-time and live-in drivers in Bareilly?",
+                  answer: "Full-time drivers in Bareilly work 8–12 hours a day, ideal for regular commutes. Live-in drivers offer 24/7 availability for families with frequent travel. Both driver services in Bareilly are professional, verified, and tailored to your schedule."
                 },
                 {
-                  question: 'Do driver services in Bareilly include vehicle maintenance?',
-                  answer: 'Yes, our driver services in Bareilly cover basic vehicle support such as fuel management, mileage tracking, safe parking, and simple security checks. Drivers in Bareilly also help with cleanliness and timely fuel refills for smooth trips.'
+                  question: "Do driver services in Bareilly include vehicle maintenance?",
+                  answer: "Yes, our driver services in Bareilly cover basic vehicle support such as fuel management, mileage tracking, safe parking, and simple security checks. Drivers in Bareilly also help with cleanliness and timely fuel refills for smooth trips."
                 },
                 {
-                  question: 'Can I hire a driver in Bareilly for just one day?',
-                  answer: 'Yes, EzyHelpers offers on-demand drivers in Bareilly for single-day travel, events, or emergencies. Our driver services in Bareilly are flexible and quick to arrange, with professional drivers available for immediate or short-term transportation needs.'
+                  question: "Can I hire a driver in Bareilly for just one day?",
+                  answer: "Yes, EzyHelpers offers on-demand drivers in Bareilly for single-day travel, events, or emergencies. Our driver services in Bareilly are flexible and quick to arrange, with professional drivers available for immediate or short-term transportation needs."
                 },
                 {
-                  question: 'Do your drivers know local Bareilly routes well?',
-                  answer: 'Yes, our drivers in Bareilly are highly familiar with all major areas, routes, and shortcuts. Driver services in Bareilly by EzyHelpers ensure timely arrivals, fewer delays, and a smoother experience for city, intercity, or urgent travel.'
+                  question: "Do your drivers know local Bareilly routes well?",
+                  answer: "Yes, our drivers in Bareilly are highly familiar with all major areas, routes, and shortcuts. Driver services in Bareilly by EzyHelpers ensure timely arrivals, fewer delays, and a smoother experience for city, intercity, or urgent travel."
                 },
                 {
-                  question: 'Can I hire a driver in Bareilly for flexible timing?',
-                  answer: 'Yes, our flexible driver services in Bareilly include part-time and on-demand options. You can book drivers in Bareilly for morning, evening, or specific-hour trips based on your schedule, even at short notice or weekends.'
+                  question: "Can I hire a driver in Bareilly for flexible timing?",
+                  answer: "Yes, our flexible driver services in Bareilly include part-time and on-demand options. You can book drivers in Bareilly for morning, evening, or specific-hour trips based on your schedule, even at short notice or weekends."
                 },
                 {
-                  question: 'Can drivers in Bareilly handle different types of vehicles?',
-                  answer: 'Yes, drivers in Bareilly from EzyHelpers are trained to drive hatchbacks, sedans, SUVs, and automatic or manual vehicles. Our driver services in Bareilly match you with a suitable driver based on your car type and travel needs.'
+                  question: "Can drivers in Bareilly handle different types of vehicles?",
+                  answer: "Yes, drivers in Bareilly from EzyHelpers are trained to drive hatchbacks, sedans, SUVs, and automatic or manual vehicles. Our driver services in Bareilly match you with a suitable driver based on your car type and travel needs."
                 }
               ]}
             />

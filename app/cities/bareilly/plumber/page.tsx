@@ -37,6 +37,102 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyPlumber() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Can I get same-day plumbing repair in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, same-day plumbing repair is available in Bareilly through EzyHelpers. Our skilled plumbers provide fast service with quality fittings and complete solutions for urgent plumbing problems."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do professional plumbers in Bareilly handle pipe leakage repairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, professional plumbers in Bareilly handle pipe leakage repairs, including dripping pipes, hidden leaks, and seasonal blockages. They protect your walls and floors from water damage with lasting solutions."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do professional plumbers in Bareilly work on old homes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, professional plumbers in Bareilly work on old homes, including upgrading plumbing systems, repairing old bathroom fixtures, and handling traditional pipework in older Bareilly homes."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can EzyHelpers’ plumbers in Bareilly handle waterlogging issues?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our professional and experienced plumbers handle waterlogging issues by providing drainage solutions, clearing blocked drains, and repairing sewer lines to prevent water accumulation."
+      }
+    },{
+      "@type": "Question",
+      "name": "Why hire a professional plumber in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A professional plumber ensures safety, efficiency, and durability. They are background-verified, trained, and experienced with local fittings, drainage patterns, and hard water challenges. They diagnose root causes and use quality parts to prevent recurring plumbing issues."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do EzyHelpers plumbers offer same-day plumbing repairs in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers provides same-day plumbing repair in Bareilly. Verified local plumbers can address pipe leaks, blockages, bathroom fittings, and drainage problems quickly, often within 2 hours, ensuring your home is restored without delay."
+      }
+    },{
+      "@type": "Question",
+      "name": "What kinds of pipe issues do plumbers fix?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our Plumbers in Bareilly handle leaking pipes, burst pipes, hidden leak detection, seasonal blockages, and repair work. EzyHelpers’ verified plumbers ensure pipes are correctly sealed, preventing water damage and ensuring long-term system efficiency."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can plumbers repair bathroom fittings in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our local professional plumbers repair bathroom fittings. This includes fixing taps, faucets, showers, sink basins, and flush systems. EzyHelpers plumbers use quality components to ensure durable and functional solutions for all bathroom hardware."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do your plumbers address hard water problems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. EzyHelpers plumbers offer hard water treatment services in Bareilly, including installing water softeners. This helps prevent limescale buildup, extends piping lifespan, and protects fittings from hard-water-related damage."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you offer bore-well and hand pump repairs in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our plumbers have experience in repairing bore-wells and hand pumps. They handle mechanical issues, pressure problems, and seasonal wear, ensuring an uninterrupted groundwater supply for your home."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I schedule plumbing repairs at my convenience in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. EzyHelpers offers flexible plumbing repairs in Bareilly. You choose a time slot that suits your schedule, and our local professional plumbers arrive equipped to resolve issues efficiently."
+      }
+    },{
+      "@type": "Question",
+      "name": "How do you handle blocked drains or sewer lines in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our plumbers help in clearing blockages in drains and sewer pipes with modern tools, removing clogs fast and keeping your water flowing smoothly without bad smells or backups."
+      }
+    },{
+      "@type": "Question",
+      "name": "What types of plumbing installations can your plumbers handle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our professional plumbers in Bareilly can install pipes, bathroom fittings, water heaters, kitchen plumbing, drainage systems, and other complete plumbing solutions with safe and expert service."
+      }
+    }]
+  };
   const badges = [
     '✓ Verified Plumbers',
     '✓ Same-Day Repairs Available',
@@ -128,6 +224,10 @@ export default function BareillyPlumber() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -135,13 +235,12 @@ export default function BareillyPlumber() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'Plumber Services' }
+            { label: 'Plumber' }
           ]}
         />
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-600 via-cyan-600 to-teal-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
-
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -149,44 +248,56 @@ export default function BareillyPlumber() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Professional Plumbing Repair in Bareilly</h1>
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">Hire a trusted and skilled plumber in Bareilly for fast and reliable repairs. We fix leaks, blockages, pipe issues, tap problems, drainage troubles, and more to keep your home safe and running smoothly.</p>
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
+                Professional Plumbing Repair in Bareilly
+              </h1>
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                Trusted Plumber Near You – Fast and Reliable Home Repairs.
+              </p>
 
-              <div className="flex flex-wrap gap-3 mb-8 justify-center">
-                {badges.map((b, i) => (
-                  <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">{b}</div>
-                ))}
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center w-full bg-white text-blue-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book Plumbing Repair
                 </Link>
 
                 <Link
                   href="tel:+918031411776"
-                  className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-4 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
                 >
                   <PhoneIcon className="h-5 w-5 mr-1" />
-                  Emergency Plumbing Service
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-white/20 max-w-4xl mx-auto">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">30-Min</div>
-                  <div className="text-blue-200 text-sm">Callback for Booking Confirmation</div>
+              {/* Service Assurance Badges */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+                {[
+                  'Verified Plumbers',
+                  'Same-Day Repairs',
+                  'Quality Fittings',
+                  'Transparent Pricing'
+                ].map((badge, idx) => (
+                  <span key={idx} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold">
+                    ✓ {badge}
+                  </span>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                  <div className="text-3xl font-extrabold text-white mb-1 leading-tight text-center">2-Hour</div>
+                  <div className="text-indigo-100 font-medium text-sm text-center">Response Time</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">2-Hour</div>
-                  <div className="text-blue-200 text-sm">Response Time</div>
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                  <div className="text-3xl font-extrabold text-white mb-1 leading-tight text-center">100%</div>
+                  <div className="text-indigo-100 font-medium text-sm text-center">Work Satisfaction</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">100%</div>
-                  <div className="text-blue-200 text-sm">Work Satisfaction Guarantee</div>
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                  <div className="text-3xl font-extrabold text-white mb-1 text-center">30-Min</div>
+                  <div className="text-indigo-100 font-medium text-sm text-center">Fast Callback</div>
                 </div>
               </div>
             </div>
@@ -335,51 +446,111 @@ export default function BareillyPlumber() {
         </section>
 
         {/* Final CTA Copy */}
-        <section className="section-padding bg-gradient-to-br from-blue-600 to-cyan-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Don't Let Plumbing Issues Trouble You!</h2>
-              <p className="text-xl mb-8 text-blue-100">Get your plumbing repair in Bareilly done quickly and easily with EzyHelpers. Our trusted and trained plumbers solve your issues fast so your home remains safe and comfortable.</p>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
+                Don't Let Plumbing Issues Trouble You!
+              </h2>
+              <p className="text-xl mb-8 text-indigo-100 font-medium">
+                Get your plumbing repair in Bareilly done quickly and easily with EzyHelpers.
+              </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto font-display">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center bg-white text-blue-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book Plumbing Repair
                 </Link>
 
                 <Link
-                  href="tel:+919972571005"
-                  className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call +91 9972571005
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Why Regular Plumbing Service Matters ... */}
+        {/* Why Regular Plumbing Service Matters */}
         <section className="section-padding bg-white">
-          <div className="container-custom text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Professional Plumbing Services Matter for Your Home’s Safety & Comfort</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed max-w-4xl mx-auto text-justify">
-              <p>Hiring a professional plumber in Bareilly through EzyHelpers is about more than just fixing leaks. It ensures your home remains safe, comfortable, and free from recurring plumbing problems. Our background-verified and trained plumbers understand local challenges like hard water, old pipelines, seasonal leaks, and monsoon drainage blocks.</p>
-              <p>We focus on identifying the root cause of every issue and explain it clearly to you. Using high-quality materials and professional techniques, we ensure long-lasting repairs without shortcuts or temporary fixes. Every job is completed neatly, following proper safety standards to protect your home.</p>
-              <p>From burst pipes, clogged toilets, slow drains, to bathroom and water tank repairs, we provide comprehensive plumbing solutions. We also offer emergency support, preventive maintenance, and guaranteed timelines, keeping your Bareilly home running smoothly all year round.</p>
+          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Professional Plumbing Services Matter</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+              <p>Hiring a professional plumber through EzyHelpers is about more than just fixing leaks. It ensures your home remains safe and comfortable.</p>
+              <p className="font-medium text-indigo-900/80">Our plumbers understand local challenges like hard water, seasonal leaks, and monsoon drainage blocks.</p>
+              <p>We focus on identifying the root cause and provide long-lasting repairs using high-quality materials.</p>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom max-w-4xl mx-auto">
+          <div className="container-custom max-w-5xl">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion
+              faqs={[
+                {
+                  question: "Can I get same-day plumbing repair in Bareilly?",
+                  answer: "Yes, same-day plumbing repair is available in Bareilly through EzyHelpers. Our skilled plumbers provide fast service with quality fittings and complete solutions for urgent plumbing problems."
+                },
+                {
+                  question: "Do professional plumbers in Bareilly handle pipe leakage repairs?",
+                  answer: "Yes, professional plumbers in Bareilly handle pipe leakage repairs, including dripping pipes, hidden leaks, and seasonal blockages. They protect your walls and floors from water damage with lasting solutions."
+                },
+                {
+                  question: "Do professional plumbers in Bareilly work on old homes?",
+                  answer: "Yes, professional plumbers in Bareilly work on old homes, including upgrading plumbing systems, repairing old bathroom fixtures, and handling traditional pipework in older Bareilly homes."
+                },
+                {
+                  question: "Can EzyHelpers’ plumbers in Bareilly handle waterlogging issues?",
+                  answer: "Yes, our professional and experienced plumbers handle waterlogging issues by providing drainage solutions, clearing blocked drains, and repairing sewer lines to prevent water accumulation."
+                },
+                {
+                  question: "Why hire a professional plumber in Bareilly?",
+                  answer: "A professional plumber ensures safety, efficiency, and durability. They are background-verified, trained, and experienced with local fittings, drainage patterns, and hard water challenges. They diagnose root causes and use quality parts to prevent recurring plumbing issues."
+                },
+                {
+                  question: "Do EzyHelpers plumbers offer same-day plumbing repairs in Bareilly?",
+                  answer: "Yes, EzyHelpers provides same-day plumbing repair in Bareilly. Verified local plumbers can address pipe leaks, blockages, bathroom fittings, and drainage problems quickly, often within 2 hours, ensuring your home is restored without delay."
+                },
+                {
+                  question: "What kinds of pipe issues do plumbers fix?",
+                  answer: "Our Plumbers in Bareilly handle leaking pipes, burst pipes, hidden leak detection, seasonal blockages, and repair work. EzyHelpers’ verified plumbers ensure pipes are correctly sealed, preventing water damage and ensuring long-term system efficiency."
+                },
+                {
+                  question: "Can plumbers repair bathroom fittings in Bareilly?",
+                  answer: "Yes, our local professional plumbers repair bathroom fittings. This includes fixing taps, faucets, showers, sink basins, and flush systems. EzyHelpers plumbers use quality components to ensure durable and functional solutions for all bathroom hardware."
+                },
+                {
+                  question: "Do your plumbers address hard water problems?",
+                  answer: "Yes. EzyHelpers plumbers offer hard water treatment services in Bareilly, including installing water softeners. This helps prevent limescale buildup, extends piping lifespan, and protects fittings from hard-water-related damage."
+                },
+                {
+                  question: "Do you offer bore-well and hand pump repairs in Bareilly?",
+                  answer: "Yes, our plumbers have experience in repairing bore-wells and hand pumps. They handle mechanical issues, pressure problems, and seasonal wear, ensuring an uninterrupted groundwater supply for your home."
+                },
+                {
+                  question: "Can I schedule plumbing repairs at my convenience in Bareilly?",
+                  answer: "Absolutely. EzyHelpers offers flexible plumbing repairs in Bareilly. You choose a time slot that suits your schedule, and our local professional plumbers arrive equipped to resolve issues efficiently."
+                },
+                {
+                  question: "How do you handle blocked drains or sewer lines in Bareilly?",
+                  answer: "Our plumbers help in clearing blockages in drains and sewer pipes with modern tools, removing clogs fast and keeping your water flowing smoothly without bad smells or backups."
+                },
+                {
+                  question: "What types of plumbing installations can your plumbers handle?",
+                  answer: "Our professional plumbers in Bareilly can install pipes, bathroom fittings, water heaters, kitchen plumbing, drainage systems, and other complete plumbing solutions with safe and expert service."
+                }
+              ]}
+            />
           </div>
         </section>
       </main>

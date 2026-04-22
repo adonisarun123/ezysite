@@ -26,10 +26,10 @@ import {
 
 export const metadata: Metadata = {
   title: 'Sofa Cleaning Services in Bareilly - Stain & Odour Removal',
-  description: 'Book sofa cleaning in Bareilly for all sofa types. Remove dust, stains, and bad smells with safe, eco-friendly products and expert care.',
+  description: 'Book sofa cleaning in Bareilly for all types of fabric. Remove stains, dust, and bad smells with eco-friendly products and expert handling.',
   openGraph: {
     title: 'Sofa Cleaning Services in Bareilly - Stain & Odour Removal',
-    description: 'Book sofa cleaning in Bareilly for all sofa types. Remove dust, stains, and bad smells with safe, eco-friendly products and expert care.',
+    description: 'Book sofa cleaning in Bareilly for all types of fabric. Remove stains, dust, and bad smells with eco-friendly products and expert handling.',
     url: 'https://www.ezyhelpers.com/cities/bareilly/sofa-cleaning',
     type: 'website',
   },
@@ -39,6 +39,102 @@ export const metadata: Metadata = {
 }
 
 export default function BareillySofaCleaning() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Do you offer sofa cleaning at home in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers offers professional sofa cleaning at home in Bareilly. Our trained experts visit your home with advanced machines and eco-safe products. We clean sofas thoroughly at your doorstep without needing you to move furniture or carry it elsewhere."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you provide stain removal as part of sofa cleaning services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, stain removal is a key part of our sofa cleaning services in Bareilly. We treat tough stains from tea, coffee, food spills, grease, and more using safe techniques that don’t damage the sofa fabric or leather."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can you remove pet hair and pet smells from sofas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we remove pet hair, dander, and unpleasant pet odors during sofa cleaning at home in Bareilly. Our cleaning methods ensure the fabric is free from allergens and smells, making it safe and pleasant for your family and pets."
+      }
+    },{
+      "@type": "Question",
+      "name": "How do you clean leather sofas in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our leather sofa care service in Bareilly includes gentle cleaning, conditioning, and moisturising to maintain shine and prevent cracks. We avoid harsh chemicals and use products that protect leather from drying out or fading."
+      }
+    },{
+      "@type": "Question",
+      "name": "How long does sofa cleaning take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sofa cleaning at home in Bareilly usually depends on the size, number of seats, material type, and level of dirt. We work efficiently without compromising on quality."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you clean sofa cushions and pillows too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we clean daily-use cushions and pillows along with your sofa. This helps remove dirt, dust, and bacteria, restoring hygiene and comfort to your seating area."
+      }
+    },{
+      "@type": "Question",
+      "name": "What if I have an antique or delicate sofa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We handle antique and delicate sofas with extra care. Our experts use gentle cleaning techniques and soft brushes suitable for vintage or fragile fabric to preserve their look and structure."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can you remove allergens like dust mites during sofa cleaning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our deep sofa cleaning services in Bareilly target allergens like dust mites, pollen, and dander, making the sofa safer for people with asthma or allergies."
+      }
+    },{
+      "@type": "Question",
+      "name": "Is dry cleaning available for delicate sofa fabrics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide dry cleaning for delicate or non-water-resistant sofas. We inspect the fabric first and choose the safest method to clean it without causing damage."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you offer combo cleaning packages with other services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can combine sofa cleaning with mattress cleaning, deep home cleaning, or curtain washing. Ask us about bundled deals when booking to save time and cost."
+      }
+    },{
+      "@type": "Question",
+      "name": "Is same-day sofa cleaning available in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers provides same-day sofa cleaning at home in Bareilly for urgent needs. Whether you have guests arriving or a sudden spill, our team can reach your home quickly and deliver prompt, thorough cleaning."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you offer sofa shampooing services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our sofa cleaning services in Bareilly include deep shampooing using fabric-safe solutions. It removes embedded dirt, oil, and grime, leaving your sofa fresh and hygienic without damaging the upholstery."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I book sofa cleaning along with full home deep cleaning in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can easily combine sofa cleaning with full home deep cleaning in Bareilly. It’s a great way to refresh your entire living space in one go. Ask about available combo packages."
+      }
+    }]
+  };
   const badges = [
     '✓ Verified Cleaners',
     '✓ Same-Day Cleaning',
@@ -189,6 +285,10 @@ export default function BareillySofaCleaning() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -196,12 +296,12 @@ export default function BareillySofaCleaning() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'Sofa Cleaning Services' }
+            { label: 'Sofa Cleaning' }
           ]}
         />
 
-        {/* Hero Section: H1 + Intro + CTA + Badges + Metrics */}
-        <section className="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -209,25 +309,44 @@ export default function BareillySofaCleaning() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Professional Sofa Cleaning Services in Bareilly</h1>
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">Is your sofa looking dirty, dusty, or stained? Our trained professionals clean sofas deeply at home in Bareilly, making them fresh, hygienic, and comfortable for your family. We handle all types of sofas carefully so your home stays clean and healthy.</p>
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
+                Sofa Cleaning Services in Bareilly – Professional Sofa Cleaning at Home
+              </h1>
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                Book Sofa Cleaning Services in Bareilly - Stain & Odour Removal.
+              </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-3xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center w-full bg-white text-indigo-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book Sofa Cleaning Now</Link>
-                <Link href="tel:+918031411776" className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"><PhoneIcon className="h-5 w-5 mr-2" />Call Now for Same-Day Service</Link>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10 text-center">
+                <Link
+                  href="/hire-helper"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
+                >
+                  Book Sofa Cleaning Now
+                </Link>
+
+                <Link
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
+                </Link>
               </div>
 
-              <div className="flex flex-wrap gap-3 mb-8 justify-center">
-                {badges.map((b, i) => (
-                  <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">{b}</div>
+              {/* Service Assurance Badges */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+                {badges.map((badge, idx) => (
+                  <span key={idx} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold">
+                    {badge}
+                  </span>
                 ))}
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-white/20 mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 {metrics.map((m, i) => (
-                  <div key={i} className="text-center">
-                    <div className="text-2xl font-bold">{m.value}</div>
-                    <div className="text-indigo-200 text-sm">{m.label}</div>
+                  <div key={i} className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10 text-center">
+                    <div className="text-3xl font-extrabold text-white mb-1 leading-tight">{m.value}</div>
+                    <div className="text-indigo-100 font-medium text-sm">{m.label}</div>
                   </div>
                 ))}
               </div>
@@ -382,14 +501,31 @@ export default function BareillySofaCleaning() {
         </section>
 
         {/* Don’t Let a Dirty Sofa Spoil Your Home’s Look! (Final CTA) */}
-        <section className="section-padding bg-gradient-to-br from-indigo-600 to-purple-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Don’t Let a Dirty Sofa Spoil Your Home’s Look!</h2>
-              <p className="text-xl mb-8 text-indigo-100">Book professional sofa cleaning services in Bareilly and enjoy sparkling clean furniture without the hassle.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book Sofa Cleaning Now</Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"><PhoneIcon className="h-5 w-5 mr-2" />Call 080-31411776</Link>
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
+                Don’t Let a Dirty Sofa Spoil Your Home’s Look!
+              </h2>
+              <p className="text-xl mb-8 text-indigo-100 font-medium font-body leading-relaxed">
+                Book professional sofa cleaning services in Bareilly and enjoy sparkling clean furniture without the hassle.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto font-display">
+                <Link
+                  href="/hire-helper"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
+                >
+                  Book Sofa Cleaning Now
+                </Link>
+
+                <Link
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
+                </Link>
               </div>
             </div>
           </div>
@@ -397,21 +533,80 @@ export default function BareillySofaCleaning() {
 
         {/* Why Regular Sofa Cleaning at Home in Bareilly Matters */}
         <section className="section-padding bg-white">
-          <div className="container-custom mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Regular Sofa Cleaning at Home in Bareilly Matters</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed max-w-4xl mx-auto text-justify">
-              <p>Dusty sofas aren’t just unsightly - they can affect your family’s health. In Bareilly, dry weather, festival activity, and pollution contribute to dust buildup, making regular sofa cleaning essential. EzyHelpers provides deep cleaning that removes dirt, dust mites, pet hair, stains, and odor-causing bacteria using advanced machines and eco-friendly products, keeping your sofas safe for children, pets, and elders. Regular cleaning prevents allergens, extends the life of your furniture, and restores colors and softness. Whether it’s a fabric recliner, a leather L-shaped sofa, or delicate velvet, our services protect your family’s health, maintain indoor air quality, and save money on replacements. A clean sofa is more than furniture - it’s where your family relaxes, and memories are made.</p>
+          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">
+              Why Regular Sofa Cleaning Matters
+            </h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg text-justify">
+              <p>Dusty sofas aren’t just unsightly—they can affect your family’s health. In Bareilly, dry weather and pollution contribute to dust buildup, making regular sofa cleaning essential. EzyHelpers provides deep cleaning that removes dirt, dust mites, pet hair, stains, and odor-causing bacteria using advanced machines and eco-friendly products.</p>
+              <p className="font-medium text-indigo-900/80 italic">Regular cleaning prevents allergens, extends furniture life, and restores original colors and softness. Whether it’s a fabric recliner or a leather sofa, we protect your health and save you money on replacements.</p>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom max-w-4xl mx-auto">
+          <div className="container-custom max-w-5xl">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion
+              faqs={[
+                {
+                  question: "Do you offer sofa cleaning at home in Bareilly?",
+                  answer: "Yes, EzyHelpers offers professional sofa cleaning at home in Bareilly. Our trained experts visit your home with advanced machines and eco-safe products. We clean sofas thoroughly at your doorstep without needing you to move furniture or carry it elsewhere."
+                },
+                {
+                  question: "Do you provide stain removal as part of sofa cleaning services in Bareilly?",
+                  answer: "Yes, stain removal is a key part of our sofa cleaning services in Bareilly. We treat tough stains from tea, coffee, food spills, grease, and more using safe techniques that don’t damage the sofa fabric or leather."
+                },
+                {
+                  question: "Can you remove pet hair and pet smells from sofas?",
+                  answer: "Yes, we remove pet hair, dander, and unpleasant pet odors during sofa cleaning at home in Bareilly. Our cleaning methods ensure the fabric is free from allergens and smells, making it safe and pleasant for your family and pets."
+                },
+                {
+                  question: "How do you clean leather sofas in Bareilly?",
+                  answer: "Our leather sofa care service in Bareilly includes gentle cleaning, conditioning, and moisturising to maintain shine and prevent cracks. We avoid harsh chemicals and use products that protect leather from drying out or fading."
+                },
+                {
+                  question: "How long does sofa cleaning take?",
+                  answer: "Sofa cleaning at home in Bareilly usually depends on the size, number of seats, material type, and level of dirt. We work efficiently without compromising on quality."
+                },
+                {
+                  question: "Do you clean sofa cushions and pillows too?",
+                  answer: "Yes, we clean daily-use cushions and pillows along with your sofa. This helps remove dirt, dust, and bacteria, restoring hygiene and comfort to your seating area."
+                },
+                {
+                  question: "What if I have an antique or delicate sofa?",
+                  answer: "We handle antique and delicate sofas with extra care. Our experts use gentle cleaning techniques and soft brushes suitable for vintage or fragile fabric to preserve their look and structure."
+                },
+                {
+                  question: "Can you remove allergens like dust mites during sofa cleaning?",
+                  answer: "Yes, our deep sofa cleaning services in Bareilly target allergens like dust mites, pollen, and dander, making the sofa safer for people with asthma or allergies."
+                },
+                {
+                  question: "Is dry cleaning available for delicate sofa fabrics?",
+                  answer: "Yes, we provide dry cleaning for delicate or non-water-resistant sofas. We inspect the fabric first and choose the safest method to clean it without causing damage."
+                },
+                {
+                  question: "Do you offer combo cleaning packages with other services?",
+                  answer: "Yes, you can combine sofa cleaning with mattress cleaning, deep home cleaning, or curtain washing. Ask us about bundled deals when booking to save time and cost."
+                },
+                {
+                  question: "Is same-day sofa cleaning available in Bareilly?",
+                  answer: "Yes, EzyHelpers provides same-day sofa cleaning at home in Bareilly for urgent needs. Whether you have guests arriving or a sudden spill, our team can reach your home quickly and deliver prompt, thorough cleaning."
+                },
+                {
+                  question: "Do you offer sofa shampooing services in Bareilly?",
+                  answer: "Yes, our sofa cleaning services in Bareilly include deep shampooing using fabric-safe solutions. It removes embedded dirt, oil, and grime, leaving your sofa fresh and hygienic without damaging the upholstery."
+                },
+                {
+                  question: "Can I book sofa cleaning along with full home deep cleaning in Bareilly?",
+                  answer: "Yes, you can easily combine sofa cleaning with full home deep cleaning in Bareilly. It’s a great way to refresh your entire living space in one go. Ask about available combo packages."
+                }
+              ]}
+            />
           </div>
         </section>
       </main>

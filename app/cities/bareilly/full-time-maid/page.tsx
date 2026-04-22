@@ -9,19 +9,130 @@ import NestCTA from '@/components/NestCTA'
 
 export const metadata: Metadata = {
   title: 'Reliable Full-Time Maids in Bareilly – Daily Help',
-  description: 'Book a full time maid in Bareilly for complete home assistance including cleaning, cooking, laundry, and regular household maintenance.',
+  description: 'Book a full-time maid in Bareilly for complete home assistance, including cleaning, cooking, laundry, and regular household maintenance.',
   openGraph: {
     title: 'Reliable Full-Time Maids in Bareilly – Daily Help',
-    description: 'Book a full time maid in Bareilly for complete home assistance including cleaning, cooking, laundry, and regular household maintenance.',
+    description: 'Book a full-time maid in Bareilly for complete home assistance, including cleaning, cooking, laundry, and regular household maintenance.',
     url: 'https://www.ezyhelpers.com/cities/bareilly/full-time-maid',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.ezyhelpers.com/cities/bareilly/full-time-maid'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly'
   }
 }
 
 export default function BareillyFullTimeMaidPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is a full-time maid in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A full-time maid in Bareilly is a dedicated domestic helper who works daily at your home without staying overnight. These maids typically handle one major responsibility, like cleaning, cooking, childcare, or elderly care. With EzyHelpers' full-day maid service in Bareilly, you get trained professionals who support your household consistently and efficiently throughout the day."
+      }
+    },{
+      "@type": "Question",
+      "name": "How many hours does a full-day maid service in Bareilly offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A full-day maid service in Bareilly generally includes 8 to 10 hours of daily help. You can customise the working hours based on your routine, whether it's morning support for breakfast and cleaning or evening help with dinner and childcare. This ensures your home runs smoothly while giving the maid a structured work-life balance."
+      }
+    },{
+      "@type": "Question",
+      "name": "What kind of tasks does a full-time maid in Bareilly handle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our full-time maids in Bareilly offer specialised services across four main areas:\nHousekeeping: Sweeping, mopping, dusting, dishwashing, laundry, kitchen, and bathroom cleaning\nCooking: Preparing full meals (lunch/dinner), snacks, and handling groceries\nChildcare: Feeding, bathing, helping with homework, and supervising playtime\nElderly Care: Assisting with bathing, mobility, medication reminders, and emotional support\nYou can choose a maid based on your primary household need for more focused and quality service."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are full-time maids in Bareilly background verified?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all full-time maids in Bareilly provided by EzyHelpers are verified and background checked. We check Aadhaar, local address (if available), and basic identity for safety, reliability, and peace of mind. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind.\nThis is one of the biggest advantages of using a professional full-day maid service in Bareilly over hiring someone directly."
+      }
+    },{
+      "@type": "Question",
+      "name": "How much does it cost to hire a full-time maid in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The cost of hiring a full-time maid in Bareilly depends on the type of service you need, be it cleaning, cooking, childcare, or elder care. At EzyHelpers, we offer transparent and affordable pricing with no hidden fees. You’ll get a customised quote based on your home’s requirements, ensuring value for your money."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do full-day maid services in Bareilly include weekend work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, most full-day maid services in Bareilly include help for 6 days a week, with one weekly day off. If you have specific requirements for festival days or emergencies, those can be scheduled in advance. The goal is to maintain consistent household support without unexpected gaps."
+      }
+    },{
+      "@type": "Question",
+      "name": "Does a full-time maid in Bareilly stay overnight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, a full-time maid in Bareilly does not stay overnight. These maids work during the day for 8–10 hours and return home afterwards. If you’re looking for 24-hour or live-in support, we recommend our live-in maid services in Bareilly, which are designed for families who need round-the-clock help."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I hire a maid for a joint family in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We often place full-time maids in Bareilly who are experienced in managing joint family households. They understand traditional cooking styles, respect elderly members, and are efficient in handling multiple chores in larger families."
+      }
+    },{
+      "@type": "Question",
+      "name": "Will the maid understand our family’s traditions and customs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our maids are trained to align with Bareilly's cultural values and family routines. Whether it’s festival preparations, pooja routines, or dietary customs during fasting, our helpers respect and follow your traditions. That’s what makes our full-day maid service in Bareilly ideal for culturally rooted households."
+      }
+    },{
+      "@type": "Question",
+      "name": "What is the replacement policy for full-time maids in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EzyHelpers offers a quick replacement guarantee for all full-time maid services in Bareilly. If your maid is unavailable, falls sick, or doesn’t meet expectations, we provide a trained substitute without delay. This ensures your daily home routine isn’t disrupted."
+      }
+    },{
+      "@type": "Question",
+      "name": "Why should I use EzyHelpers instead of hiring a local full-time maid directly in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hiring directly may seem easier, but it comes with risks: no verification, no accountability, and no support if things go wrong. EzyHelpers provides:\nVerified and trained maids\nQuick replacements\nLegal documentation\nOngoing customer support\nProfessional service guarantees\nOur full day maid service in Bareilly takes the stress out of finding trustworthy, long-term domestic help."
+      }
+    },{
+      "@type": "Question",
+      "name": "What happens if my full-time maid takes sudden leave?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your full-time maid in Bareilly is unavailable due to illness or personal emergency, EzyHelpers provides quick replacement options to ensure you don’t face disruption in your home routine."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do full-day maid services in Bareilly cover pooja or festival preparations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, many of our maids are trained in traditional UP-style pooja preparations, cleaning before festivals like Diwali or Eid, and fasting meals. Our full-day maid service in Bareilly is ideal for culturally rooted households that need seasonal help."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I pause the service if I travel or don’t need the maid temporarily?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers allows flexible pause options for your full day maid service in Bareilly. Just inform us in advance and we’ll pause billing or reassign the maid as needed when you return."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do I need to provide food for the full-time maid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While not mandatory, families in Bareilly typically offer lunch or tea to their full-time maid during the workday. Full-time maids bring their own food. But if both you and the maid are comfortable, you can decide to provide meals. Just make sure to discuss this clearly during the hiring process."
+      }
+    }]
+  };
+
   const serviceBadges = [
     '100% Verified & Background-Checked',
     'Fixed Daily Hours (8–10 Hours)',
@@ -38,6 +149,10 @@ export default function BareillyFullTimeMaidPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
         
@@ -45,12 +160,12 @@ export default function BareillyFullTimeMaidPage() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'Full-Time Maid Service' }
+            { label: 'Full-Time House Maid' }
           ]} 
         />
       
       {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-indigo-600 via-violet-600 to-blue-600 text-white pt-20 pb-24 lg:pb-28 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-28 overflow-hidden">
 
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
@@ -59,26 +174,26 @@ export default function BareillyFullTimeMaidPage() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl text-white font-bold mb-6 font-display leading-tight">
                 Full-Time Maid in Bareilly – Consistent, Daily Help Without Overnight Stay
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed">
-                Let EzyHelpers take care of your home with our dedicated full-time maid in Bareilly. Each maid specialises in one key area: be it cleaning, cooking, childcare, or elderly care, ensuring your daily household needs are handled with care, professionalism, and cultural understanding.
+              <p className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed font-medium">
+                Let EzyHelpers take care of your home with our dedicated full-time maid in Bareilly. Each maid specialises in one key area: be it cleaning, cooking, childcare, or elderly care.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center bg-white text-indigo-700 font-semibold text-lg py-4 px-8 rounded-xl shadow-md hover:bg-gray-100 transition-all"
+                  className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book a Full-Time Maid
                 </Link>
                 <Link
-                  href="tel:+919972571005"
-                  className="inline-flex items-center justify-center text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all"
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call Now
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
@@ -263,18 +378,22 @@ export default function BareillyFullTimeMaidPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="section-padding bg-gradient-to-br from-orange-600 to-red-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Get Trusted Full-Time Help with EzyHelpers Today!</h2>
-              <p className="text-xl mb-8 text-orange-100">Tired of juggling work and home duties? Hire a reliable, trained, and respectful full-time maid in Bareilly from EzyHelpers today.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-orange-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book a Full-Time Maid</Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call for Free Consultation
-                </Link>
-              </div>
+            <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 font-display leading-tight">
+              Get Trusted Full-Time Help with EzyHelpers Today!
+            </h2>
+            <p className="text-xl mb-8 text-indigo-100 font-medium">
+              Tired of juggling work and home duties? Hire a reliable, trained, and respectful full-time maid in Bareilly from EzyHelpers today.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
+              <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
+                Book a Full-Time Maid
+              </Link>
+              <Link href="tel:+918031411776" className="group inline-flex items-center justify-center bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all">
+                <PhoneIcon className="h-5 w-5 mr-1" />
+                Call +91 80 3141 1776
+              </Link>
             </div>
           </div>
         </section>

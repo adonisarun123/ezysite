@@ -36,6 +36,74 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyCarpentersPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Do you repair beds, cupboards, and wardrobes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our professional carpenter home service in Bareilly includes repairing bed frames, cupboard doors, hinges, drawers, and wardrobes. We fix loose parts, reinforce structures, and ensure all functions work smoothly to extend furniture's lifespan and usability."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you assemble new furniture in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. EzyHelpers carpenters assemble new furniture and repair old furniture in Bareilly. Our verified professionals arrive equipped to set up beds, tables, cabinets, and more, saving you time and ensuring proper installation with no leftover parts or confusion."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are furniture assembly services available in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, professional furniture assembly services are available through our carpenter home service in Bareilly. Our skilled carpenters assemble new furniture and fix old pieces using the right tools and techniques, ensuring safe, sturdy, and accurate setup every time."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do EzyHelpers’ carpenters in Bareilly fix window and curtain rods?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We handle window and curtain rod installation and fixing. EzyHelpers carpenters ensure secure fitting of rods and blinds, checking stability and alignment so curtains and blinds operate smoothly and safely."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can you provide drill and hang services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our service includes drill and hang jobs like installing wall mounts, shelves, picture frames, curtain rods, and other fixtures in Bareilly homes. Carpenters use proper anchors and measurements to ensure a neat and level finish."
+      }
+    },{
+      "@type": "Question",
+      "name": "What types of furniture repairs do you handle in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer wooden furniture repair in Bareilly, including fixing broken chairs, tables, antique items, and more. EzyHelpers carpenters are skilled in traditional UP-style craftsmanship, ensuring restored furniture looks and functions beautifully while preserving heritage value."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you build mandir and pooja furniture in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We offer dedicated mandir and prayer area setup services in Bareilly. EzyHelpers carpenters craft beautifully designed wooden mandirs, pooja stands, and prayer benches with traditional aesthetics and fine craftsmanship suited to your spiritual needs."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can you repair doors and windows in Bareilly homes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Through our carpenter home service in Bareilly, you can fix squeaky doors, broken windows, and damaged frames. They fix common household issues like misaligned doors, loose hinges, or window pane damage to restore smooth operation and home security."
+      }
+    },{
+      "@type": "Question",
+      "name": "What areas of the home do you cover with carpenter home service in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EzyHelpers covers all household carpentry needs in Bareilly, including living room furniture repair, kitchen cabinets, bedroom wardrobes, pooja room work, balcony shelves, staircase railing repair, and more. We deliver a comprehensive carpentry upgrade for every area of your home."
+      }
+    }]
+  };
   const carpentryServices = [
     { title: 'Wooden Furniture Repair (Traditional UP Style)', description: 'Fix broken chairs, tables, and antique furniture with authentic craftsmanship.' },
     { title: 'Custom Storage Solutions for Joint Family Homes', description: 'Space-saving cupboards, wardrobes, and shelves for large families.' },
@@ -81,6 +149,10 @@ export default function BareillyCarpentersPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -88,12 +160,12 @@ export default function BareillyCarpentersPage() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'Carpenter Services' }
+            { label: 'Carpenter' }
           ]} 
         />
       
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-green-600 via-emerald-600 to-teal-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -101,62 +173,64 @@ export default function BareillyCarpentersPage() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                <WrenchScrewdriverIcon className="h-5 w-5 text-yellow-300 mr-2" />
-                <span className="text-sm font-semibold">Local Expertise & Traditional Skills</span>
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 mb-8">
+                <WrenchScrewdriverIcon className="h-5 w-5 text-indigo-200 mr-2" />
+                <span className="text-sm font-semibold tracking-wide">Local Expertise & Traditional Skills</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
-                Carpenter Home Service in Bareilly –
-                <span className="block text-green-200">Reliable & Skilled Carpenters for Your Home in Bareilly</span>
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
+                Carpenter Home Service in Bareilly – Reliable & Skilled Carpenters for Your Home
               </h1>
               
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">
-                EzyHelpers offers professional carpenters in Bareilly for reliable home repairs, beautiful custom woodwork, and exceptional craftsmanship to enhance your living space.
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                EzyHelpers offers professional carpenters in Bareilly for reliable home repairs and custom woodwork.
               </p>
 
-              <div className="flex flex-wrap gap-3 mb-10 justify-center">
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✅ Transparent Pricing & Local Expertise</div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✅ Same-Day Carpentry Repairs</div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✅ Locally Experienced Carpenters</div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✅ Skilled in Traditional & Modern Work</div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✅ Quality Tools & Premium Materials</div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center w-full bg-white text-green-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book Carpenter Now
                 </Link>
 
                 <Link
-                  href="tel:+919972571005"
-                  className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Same-Day Service Available
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
-              <div className="grid grid-cols-4 gap-6 pt-6 border-t border-white/20 max-w-3xl mx-auto">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">Bareilly's Choice</div>
-                  <div className="text-green-200 text-sm">For Home Carpentry</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">Safe & Certified</div>
-                  <div className="text-green-200 text-sm">Professional Carpenters</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">Fixed Pricing</div>
-                  <div className="text-green-200 text-sm">No Surprises</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">Always On Time</div>
-                  <div className="text-green-200 text-sm">For Your Convenience</div>
-                </div>
+              {/* Service Assurance Badges */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+                {[
+                  'Transparent Pricing',
+                  'Same-Day Repairs',
+                  'Locally Experienced',
+                  'Traditional & Modern Work',
+                  'Premium Materials'
+                ].map((badge, idx) => (
+                  <span key={idx} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold">
+                    ✓ {badge}
+                  </span>
+                ))}
+              </div>
+
+              {/* Highlight Metrics */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                {[
+                  { label: "Bareilly's Choice", sub: "For Home Carpentry" },
+                  { label: "Safe & Certified", sub: "Verified Pros" },
+                  { label: "Fixed Pricing", sub: "No Surprises" },
+                  { label: "Always On Time", sub: "Your Convenience" }
+                ].map((m, i) => (
+                  <div key={i} className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                    <div className="text-xl font-extrabold text-white mb-1 leading-tight">{m.label}</div>
+                    <div className="text-indigo-100 text-sm font-medium">{m.sub}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -316,27 +390,31 @@ export default function BareillyCarpentersPage() {
           </div>
         </section>
 
-        {/* CTA Section (placed before Maintenance and FAQs as per Markdown) */}
-        <section className="section-padding bg-gradient-to-br from-green-600 to-emerald-600 text-white">
+        {/* CTA Section */}
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Don't Let Furniture Problems Bother You!</h2>
-              <p className="text-xl mb-8 text-green-100">Get your carpenter home service in Bareilly handled quickly and reliably with EzyHelpers. Our trusted, professional carpenters solve your issues fast so you can relax in a hassle-free home.</p>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
+                Don't Let Furniture Problems Bother You!
+              </h2>
+              <p className="text-xl mb-8 text-indigo-100 font-medium">
+                Get your carpenter home service in Bareilly handled quickly and reliably with EzyHelpers.
+              </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center bg-white text-green-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book Carpenter Now
                 </Link>
                 
                 <Link
-                  href="tel:+919972571005"
-                  className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call +91 9972571005
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
             </div>
@@ -345,26 +423,36 @@ export default function BareillyCarpentersPage() {
 
         {/* Why Regular Carpentry Maintenance Matters */}
         <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Regular Carpentry Maintenance Matters for Bareilly Homes</h3>
-              <p className="text-gray-700 mb-4">Woodwork in Indian homes, especially in Bareilly’s traditional and joint family households, plays a crucial role in both function and heritage. At EzyHelpers, we believe that professional carpentry is not just about building new furniture but about preserving and enhancing your home through regular maintenance and skilled repairs.</p>
-              <p className="text-gray-700 mb-4">Over time, wooden furniture, doors, windows, and storage units suffer from wear and tear due to humidity, termites, seasonal changes, or simply daily use. Small issues like loose hinges, cracked panels, or swollen door frames, if ignored, can turn into costly replacements. Our professional carpenters in Bareilly are trained to spot these early signs and fix them efficiently, saving you time, money, and hassle.</p>
-              <p className="text-gray-700 mb-4">We handle everything from restoring antique wooden furniture and fixing pooja mandirs to repairing study desks, kitchen cabinets, and wardrobes. Whether you need to adjust a jammed drawer or reinforce a weak bed frame, our carpenters bring local knowledge, traditional UP-style craftsmanship, and modern tools to ensure long-lasting quality.</p>
-              <p className="text-gray-700">With EzyHelpers’ carpenter home service in Bareilly, you also get access to seasonal wood care, like using monsoon-resistant treatments to prevent warping or selecting cost-effective materials from trusted local markets. Regular inspections and upkeep not only enhance the look of your interiors but also extend the life of your woodwork.</p>
+          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Maintenance Matters</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+              <p>Woodwork in Indian homes plays a crucial role in both function and heritage.</p>
+              <p className="font-medium text-indigo-900/80">Small issues like loose hinges, if ignored, can turn into costly replacements.</p>
+              <p>With EzyHelpers, you get access to seasonal wood care and expert restoration.</p>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+          <div className="container-custom max-w-5xl">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <div className="max-w-4xl mx-auto">
-              <FAQAccordion faqs={faqs} />
-            </div>
+            <FAQAccordion
+              faqs={[
+                { question: "Do you repair beds, cupboards, and wardrobes?", answer: "Yes. Our professional carpenter home service in Bareilly includes repairing bed frames, cupboard doors, hinges, drawers, and wardrobes. We fix loose parts, reinforce structures, and ensure all functions work smoothly to extend furniture's lifespan and usability." },
+                { question: "Do you assemble new furniture in Bareilly?", answer: "Yes. EzyHelpers carpenters assemble new furniture and repair old furniture in Bareilly. Our verified professionals arrive equipped to set up beds, tables, cabinets, and more, saving you time and ensuring proper installation with no leftover parts or confusion." },
+                { question: "Are furniture assembly services available in Bareilly?", answer: "Yes, professional furniture assembly services are available through our carpenter home service in Bareilly. Our skilled carpenters assemble new furniture and fix old pieces using the right tools and techniques, ensuring safe, sturdy, and accurate setup every time." },
+                { question: "Do EzyHelpers’ carpenters in Bareilly fix window and curtain rods?", answer: "Yes. We handle window and curtain rod installation and fixing. EzyHelpers carpenters ensure secure fitting of rods and blinds, checking stability and alignment so curtains and blinds operate smoothly and safely." },
+                { question: "Can you provide drill and hang services in Bareilly?", answer: "Yes. Our service includes drill and hang jobs like installing wall mounts, shelves, picture frames, curtain rods, and other fixtures in Bareilly homes. Carpenters use proper anchors and measurements to ensure a neat and level finish." },
+                { question: "What types of furniture repairs do you handle in Bareilly?", answer: "We offer wooden furniture repair in Bareilly, including fixing broken chairs, tables, antique items, and more. EzyHelpers carpenters are skilled in traditional UP-style craftsmanship, ensuring restored furniture looks and functions beautifully while preserving heritage value." },
+                { question: "Do you build mandir and pooja furniture in Bareilly?", answer: "Yes. We offer dedicated mandir and prayer area setup services in Bareilly. EzyHelpers carpenters craft beautifully designed wooden mandirs, pooja stands, and prayer benches with traditional aesthetics and fine craftsmanship suited to your spiritual needs." },
+                { question: "Can you repair doors and windows in Bareilly homes?", answer: "Absolutely. Through our carpenter home service in Bareilly, you can fix squeaky doors, broken windows, and damaged frames. They fix common household issues like misaligned doors, loose hinges, or window pane damage to restore smooth operation and home security." },
+                { question: "What areas of the home do you cover with carpenter home service in Bareilly?", answer: "EzyHelpers covers all household carpentry needs in Bareilly, including living room furniture repair, kitchen cabinets, bedroom wardrobes, pooja room work, balcony shelves, staircase railing repair, and more. We deliver a comprehensive carpentry upgrade for every area of your home." }
+              ]}
+            />
           </div>
         </section>
       </main>

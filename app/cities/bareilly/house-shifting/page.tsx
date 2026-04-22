@@ -25,22 +25,116 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Household Shifting in Bareilly – Expert Packers	',
-  description:
-    'Looking for household shifting in Bareilly? Our professional movers handle packing, safe transport, and careful unpacking for a smooth move.',
+  title: 'Household Shifting in Bareilly – Expert Packers',
+  description: 'Looking for household shifting services in Bareilly? Our movers handle packing, safe transport, and careful unpacking for a smooth relocation.',
   openGraph: {
-    title: 'Household Shifting in Bareilly – Expert Packers	',
-    description:
-      'Looking for household shifting in Bareilly? Our professional movers handle packing, safe transport, and careful unpacking for a smooth move.',
-    url: 'https://www.ezyhelpers.com/cities/bareilly/house-shifting',
+    title: 'Household Shifting in Bareilly – Expert Packers',
+    description: 'Looking for household shifting services in Bareilly? Our movers handle packing, safe transport, and careful unpacking for a smooth relocation.',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/household-shifting',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.ezyhelpers.com/cities/bareilly/house-shifting'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/household-shifting'
   }
 }
 
 export default function BareillyHouseShifting() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What are household shifting services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Household shifting services in Bareilly include professional packing, loading, transporting, unloading, and setting up your belongings during a move. EzyHelpers ensures a smooth and safe transition from one home to another within the city or nearby areas."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you offer local house shifting in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers provides local house shifting in Bareilly for flats, independent homes, and rental properties. Our team handles everything from packing to safe transportation and setup of your household items within Bareilly city limits."
+      }
+    },{
+      "@type": "Question",
+      "name": "Is furniture dismantling and reassembly included in household shifting services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our household shifting services in Bareilly include dismantling bulky furniture like beds and wardrobes before moving and reassembling them at your new home, ensuring safety and convenience."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you handle fragile items during local house shifting in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we take extra care with fragile items such as glassware, mirrors, electronics, and decor by using bubble wrap, cushioning, and strong cartons to prevent damage during shifting in Bareilly."
+      }
+    },{
+      "@type": "Question",
+      "name": "How do you protect furniture during household shifting in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "During shifting, we carefully wrap all furniture using bubble wrap, foam padding, corrugated sheets, and thick blankets. This ensures maximum protection against scratches, dents, or damage throughout the moving process."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do your household shifting services in Bareilly include packing support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our household shifting services in Bareilly include full packing support using strong, protective materials for furniture, electronics, kitchen items, clothes, and more, ensuring a safe, worry-free move."
+      }
+    },{
+      "@type": "Question",
+      "name": "What size of vehicle do you use for local house shifting in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide suitable vehicles based on your home size. For local house shifting in Bareilly, we use mini trucks or medium-sized tempos for 1BHK, 2BHK, or similar household sizes."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do I need to arrange labour separately for house shifting in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Labour for loading, unloading, and handling your household items is included in our local house shifting services in Bareilly, so you don’t need to arrange anything separately."
+      }
+    },{
+      "@type": "Question",
+      "name": "What items can be shifted using EzyHelpers in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We shift all household items in Bareilly, including beds, sofas, mattresses, TVs, fridges, washing machines, kitchen utensils, and personal belongings, with complete safety and care."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you help set up furniture after shifting in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, once we unload your items at your new home, our Bareilly house-shifting team assists with placing and reassembling furniture as needed."
+      }
+    },{
+      "@type": "Question",
+      "name": "Is dismantling geysers, fans, or AC included in house shifting services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We help with basic uninstallation of fans and geysers as part of house shifting in Bareilly. AC uninstallation and installation should be done by a certified technician."
+      }
+    },{
+      "@type": "Question",
+      "name": "How early should I book household shifting services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To ensure availability, it's best to book household shifting services in Bareilly at least 2 to 3 days in advance, especially during weekends or end-of-month rushes."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can you help shift within the same locality in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide hyper-local house shifting in Bareilly, which is perfect for moving homes within the same apartment complex, colony, or neighbourhood."
+      }
+    }]
+  };
   const badges = [
     '✓ Verified Movers',
     '✓ Secure & Safe Transport',
@@ -202,6 +296,10 @@ export default function BareillyHouseShifting() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -213,8 +311,8 @@ export default function BareillyHouseShifting() {
           ]}
         />
 
-        {/* Hero Section: H1 + Intro + CTA + Badges + Metrics */}
-        <section className="relative bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -222,36 +320,44 @@ export default function BareillyHouseShifting() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
                 Professional Household Shifting Services in Bareilly
               </h1>
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">
-                Fast, safe, and reliable household shifting services in Bareilly for stress-free local or long-distance moves. We handle packing, loading, transport, and unpacking with care, ensuring your belongings reach their new home securely and on time.
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                Fast, safe, and reliable household shifting services in Bareilly for stress-free moves.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center w-full bg-white text-rose-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">
-                  Book Your Home Shifting
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10 text-center">
+                <Link
+                  href="/hire-helper"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
+                >
+                  Book Shifting Service Now
                 </Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Emergency Shifting Service
+
+                <Link
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
-              <div className="flex flex-wrap gap-3 mb-8 justify-center">
-                {badges.map((b, i) => (
-                  <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    {b}
-                  </div>
+              {/* Service Assurance Badges */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+                {badges.map((badge, idx) => (
+                  <span key={idx} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold">
+                    {badge}
+                  </span>
                 ))}
               </div>
 
-              <div className="grid grid-cols-3 md:grid-cols-3 gap-6 pt-6 border-t border-white/20 max-w-3xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 {metrics.map((m, i) => (
-                  <div key={i} className="text-center">
-                    <div className="text-2xl font-bold">{m.value}</div>
-                    <div className="text-rose-100 text-sm">{m.label}</div>
+                  <div key={i} className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10 text-center">
+                    <div className="text-3xl font-extrabold text-white mb-1 leading-tight">{m.value}</div>
+                    <div className="text-indigo-100 font-medium text-sm">{m.label}</div>
                   </div>
                 ))}
               </div>
@@ -366,39 +472,112 @@ export default function BareillyHouseShifting() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-rose-600 to-fuchsia-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Don’t Let Shifting Stress You Out!</h2>
-              <p className="text-xl mb-8 text-rose-100">Get trusted, affordable household shifting in Bareilly with EzyHelpers. Our experts ensure a smooth, damage-free move so you can settle into your new home with ease.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-rose-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book Shifting Service Now</Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"><PhoneIcon className="h-5 w-5 mr-2" />Call +91 9972571005</Link>
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
+                Don’t Let Shifting Stress You Out!
+              </h2>
+              <p className="text-xl mb-8 text-indigo-100 font-medium font-body leading-relaxed">
+                Get trusted, affordable household shifting in Bareilly with EzyHelpers. Our experts ensure a smooth, damage-free move so you can settle into your new home with ease.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto font-display">
+                <Link
+                  href="/hire-helper"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
+                >
+                  Book Shifting Service Now
+                </Link>
+
+                <Link
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all"
+                >
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Why Professional Household Shifting Matters ... */}
+        {/* Why Professional Household Shifting Matters */}
         <section className="section-padding bg-white">
-          <div className="container-custom">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center max-w-5xl mx-auto">Why Professional Household Shifting Matters for Every Bareilly Home</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed max-w-4xl mx-auto text-justify">
+          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">
+              Why Professional Household Shifting Matters
+            </h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg text-justify">
               <p>Shifting homes isn’t just moving things - it’s about keeping your valuables and memories safe. At EzyHelpers, we offer stress-free, damage-free home shifting tailored for Bareilly’s roads, traffic, and weather.</p>
-              <p>Whether moving within areas like Civil Lines or across the city to Rajendra Nagar, our professional team packs, transports, and unpacks your items carefully. We prevent common problems like broken items, last-minute delays, and poor handling of fragile belongings.</p>
-              <p>Using strong boxes, bubble wrap, and stretch film, we protect everything from wardrobes and glass tables to TVs, kitchenware, and idols. Our trained team manages traffic and seasonal challenges, saving you time, stress, and worry.</p>
-              <p>With EzyHelpers, your move is safe, smooth, and hassle-free - so you can focus on settling into your new home.</p>
+              <p className="font-medium text-indigo-900/80 italic">Whether moving within areas like Civil Lines or across the city to Rajendra Nagar, our professional team packs, transports, and unpacks your items carefully.</p>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom max-w-4xl">
+          <div className="container-custom max-w-5xl">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion
+              faqs={[
+                {
+                  question: "What are household shifting services in Bareilly?",
+                  answer: "Household shifting services in Bareilly include professional packing, loading, transporting, unloading, and setting up your belongings during a move. EzyHelpers ensures a smooth and safe transition from one home to another within the city or nearby areas."
+                },
+                {
+                  question: "Do you offer local house shifting in Bareilly?",
+                  answer: "Yes, EzyHelpers provides local house shifting in Bareilly for flats, independent homes, and rental properties. Our team handles everything from packing to safe transportation and setup of your household items within Bareilly city limits."
+                },
+                {
+                  question: "Is furniture dismantling and reassembly included in household shifting services in Bareilly?",
+                  answer: "Yes, our household shifting services in Bareilly include dismantling bulky furniture like beds and wardrobes before moving and reassembling them at your new home, ensuring safety and convenience."
+                },
+                {
+                  question: "Do you handle fragile items during local house shifting in Bareilly?",
+                  answer: "Yes, we take extra care with fragile items such as glassware, mirrors, electronics, and decor by using bubble wrap, cushioning, and strong cartons to prevent damage during shifting in Bareilly."
+                },
+                {
+                  question: "How do you protect furniture during household shifting in Bareilly?",
+                  answer: "During shifting, we carefully wrap all furniture using bubble wrap, foam padding, corrugated sheets, and thick blankets. This ensures maximum protection against scratches, dents, or damage throughout the moving process."
+                },
+                {
+                  question: "Do your household shifting services in Bareilly include packing support?",
+                  answer: "Yes, our household shifting services in Bareilly include full packing support using strong, protective materials for furniture, electronics, kitchen items, clothes, and more, ensuring a safe, worry-free move."
+                },
+                {
+                  question: "What size of vehicle do you use for local house shifting in Bareilly?",
+                  answer: "We provide suitable vehicles based on your home size. For local house shifting in Bareilly, we use mini trucks or medium-sized tempos for 1BHK, 2BHK, or similar household sizes."
+                },
+                {
+                  question: "Do I need to arrange labour separately for house shifting in Bareilly?",
+                  answer: "No. Labour for loading, unloading, and handling your household items is included in our local house shifting services in Bareilly, so you don’t need to arrange anything separately."
+                },
+                {
+                  question: "What items can be shifted using EzyHelpers in Bareilly?",
+                  answer: "We shift all household items in Bareilly, including beds, sofas, mattresses, TVs, fridges, washing machines, kitchen utensils, and personal belongings, with complete safety and care."
+                },
+                {
+                  question: "Do you help set up furniture after shifting in Bareilly?",
+                  answer: "Yes, once we unload your items at your new home, our Bareilly house-shifting team assists with placing and reassembling furniture as needed."
+                },
+                {
+                  question: "Is dismantling geysers, fans, or AC included in house shifting services in Bareilly?",
+                  answer: "We help with basic uninstallation of fans and geysers as part of house shifting in Bareilly. AC uninstallation and installation should be done by a certified technician."
+                },
+                {
+                  question: "How early should I book household shifting services in Bareilly?",
+                  answer: "To ensure availability, it's best to book household shifting services in Bareilly at least 2 to 3 days in advance, especially during weekends or end-of-month rushes."
+                },
+                {
+                  question: "Can you help shift within the same locality in Bareilly?",
+                  answer: "Yes, we provide hyper-local house shifting in Bareilly, which is perfect for moving homes within the same apartment complex, colony, or neighbourhood."
+                }
+              ]}
+            />
           </div>
         </section>
       </main>

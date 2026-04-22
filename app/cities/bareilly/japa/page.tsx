@@ -9,12 +9,10 @@ import NestCTA from '@/components/NestCTA'
 
 export const metadata: Metadata = {
   title: 'Newborn Babycare in Bareilly – Trained Japa Maids',
-  description:
-    'Looking for newborn babycare in Bareilly? Hire trained Japa maids for postnatal care, baby feeding, massage, and support—safe, gentle, and experienced help.',
+  description: 'Looking for newborn babycare in Bareilly? Hire trained Japa maids for postnatal care, baby feeding, massage, and support—safe, gentle, and experienced help.',
   openGraph: {
     title: 'Newborn Babycare in Bareilly – Trained Japa Maids',
-    description:
-      'Looking for newborn babycare in Bareilly? Hire trained Japa maids for postnatal care, baby feeding, massage, and support—safe, gentle, and experienced help.',
+    description: 'Looking for newborn babycare in Bareilly? Hire trained Japa maids for postnatal care, baby feeding, massage, and support—safe, gentle, and experienced help.',
     url: 'https://www.ezyhelpers.com/cities/bareilly/japa',
     type: 'website',
   },
@@ -24,6 +22,95 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyJapa() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What does a japa maid do as part of postpartum home care services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As part of postpartum home care services in Bareilly, a japa maid assists new mothers with recovery massages, hygiene support, rest guidance, emotional care, and traditional North Indian food preparation, ensuring smooth healing and comfort after childbirth."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you provide postpartum home care services for C-section recovery in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our postpartum home care services in Bareilly include gentle support for C-section recovery. Our trained Japa maids assist with safe movement, hygiene, massage, and personalized care routines to help mothers heal comfortably after surgery."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are Japa maids in Bareilly trained in baby massage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers Japa maids are trained in traditional baby massage (malish) as part of our newborn babycare in Bareilly. These massages support healthy digestion, better sleep, and physical development for newborns, using safe, gentle, and time-tested techniques."
+      }
+    },{
+      "@type": "Question",
+      "name": "What kind of postpartum food is prepared by Japa maids in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our japa maids prepare healing North Indian recipes such as panjiri, gond laddu, and methi paratha using fresh ingredients from Bareilly’s markets to help new mothers regain strength."
+      }
+    },{
+      "@type": "Question",
+      "name": "What hygiene measures are followed in postpartum home care in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EzyHelpers follows strict hygiene protocols, including handwashing, clean clothing, sanitization, and safe handling techniques to protect mothers and babies during postpartum home care in Bareilly."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I book newborn babycare services in Bareilly for night-time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. EzyHelpers offers night-shift baby caretakers who assist with feeding, diaper changes, and baby soothing throughout the night."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can your newborn baby caretakers support premature baby care in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our japa maids in Bareilly are trained to handle premature babies with extra care, feeding support, and delicate handling routines."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you offer newborn babycare services for twins or multiple babies in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our experienced Japa maids in Bareilly can care for twins or triplets, managing feeding, sleep, and hygiene needs efficiently."
+      }
+    },{
+      "@type": "Question",
+      "name": "What does newborn safety guidance include in your service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We teach safe holding, swaddling, burping, and sleeping practices to parents in Bareilly to ensure newborn safety at home."
+      }
+    },{
+      "@type": "Question",
+      "name": "What age of babies do your japa maids care for in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our japa maids in Bareilly primarily care for newborns up to 3 months, offering expert support during the most delicate period after birth."
+      }
+    },{
+      "@type": "Question",
+      "name": "Why is postpartum home care important for new mothers in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Postpartum home care in Bareilly helps mothers heal physically and emotionally after childbirth with structured routines, massage, nutrition, and gentle support for a smooth recovery at home."
+      }
+    },{
+      "@type": "Question",
+      "name": "What is the difference between a japa maid and a nanny in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A japa maid in Bareilly specialises in postpartum recovery, newborn babycare, and traditional massage, focusing on the mother’s rest and healing. A nanny typically provides broader childcare support for older babies and children, without specialised postpartum expertise."
+      }
+    }]
+  };
   const badges = [
     '✅ Verified & Background-Checked Japa Maids',
     '✅ Traditional Postpartum Expertise',
@@ -159,6 +246,10 @@ export default function BareillyJapa() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -170,8 +261,8 @@ export default function BareillyJapa() {
           ]}
         />
 
-        {/* Hero Section: H1 + Intro + CTA + Badges + Metrics */}
-        <section className="relative bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -179,36 +270,36 @@ export default function BareillyJapa() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
                 Expert Newborn Babycare in Bareilly
               </h1>
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 max-w-4xl mx-auto leading-relaxed font-medium">
                 Gentle, trained postpartum care and japa maid services for mother and baby in Bareilly, with trusted local experience and traditional practices.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center w-full bg-white text-rose-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
                   Book Newborn Babycare!
                 </Link>
-                <Link href="tel:+918031411776" className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call 080-31411776
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all">
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
-              <div className="flex flex-wrap gap-3 mb-8 justify-center">
+              <div className="flex flex-wrap gap-3 mb-10 justify-center">
                 {badges.map((b, i) => (
-                  <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
+                  <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5 text-sm font-semibold border border-white/10">
                     {b}
                   </div>
                 ))}
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 pt-6 border-t border-white/20 max-w-5xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 pt-10 border-t border-white/20 max-w-5xl mx-auto">
                 {metrics.map((m, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-2xl font-bold">{m.value}</div>
-                    <div className="text-rose-100 text-sm">{m.label}</div>
+                    <div className="text-2xl font-extrabold text-white">{m.value}</div>
+                    <div className="text-indigo-100 text-sm font-medium">{m.label}</div>
                   </div>
                 ))}
               </div>
@@ -343,19 +434,24 @@ export default function BareillyJapa() {
                   <div className={`${i === 0 ? 'text-rose-600' : i === 1 ? 'text-purple-600' : 'text-blue-600'} font-semibold`}>{e.cta}</div>
                 </Link>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA: Welcome Your Newborn with Peace of Mind! */}
-        <section className="section-padding bg-gradient-to-br from-rose-600 to-fuchsia-600 text-white">
+                  {/* Final CTA: Welcome Your Newborn with Peace of Mind! */}
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Welcome Your Newborn with Peace of Mind!</h2>
-              <p className="text-xl mb-8 text-rose-100">Let EzyHelpers provide the expert newborn babycare & Japa service in Bareilly that you deserve. Our trusted professionals are here to support you during this special time, allowing you to bond with your baby without worry.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-rose-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book Newborn Babycare Now!</Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"><PhoneIcon className="h-5 w-5 mr-2" />Call +91 9972571005</Link>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
+                Welcome Your Newborn with Peace of Mind!
+              </h2>
+              <p className="text-xl mb-8 text-indigo-100 font-medium leading-relaxed">
+                Let EzyHelpers provide the expert newborn babycare & Japa service in Bareilly that you deserve. Our trusted professionals are here to support you durante this special time.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
+                  Book Newborn Babycare Now!
+                </Link>
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all">
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
+                </Link>
               </div>
             </div>
           </div>
@@ -363,24 +459,78 @@ export default function BareillyJapa() {
 
         {/* Why Postpartum Home Care Is Essential... */}
         <section className="section-padding bg-white">
-          <div className="container-custom max-w-4xl">
+          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Postpartum Home Care Is Essential for Every New Mother in Bareilly</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p>Post-delivery care isn’t just about rest; it’s about structured healing, emotional support, and establishing a strong foundation for both mother and child. At EzyHelpers, our postpartum home care services in Bareilly focus on holistic recovery, blending trusted traditions with expert supervision to ensure mothers regain strength safely and confidently.</p>
-              <p>Our trained Japa maids in Bareilly provide not just physical care but emotional reassurance, allowing new mothers to bond with their newborn without stress or overwhelm. From warm oil massages and personal hygiene support to preparing energy-boosting North Indian meals like panjiri and gond laddu, every step is carefully planned for faster recovery and better well-being.</p>
-              <p>Our services go beyond basic help. Japa maids assist with safe umbilical cord care, soothing newborn massages (malish), feeding support, and teaching safe baby handling techniques, reducing the risk of infections, digestion issues, or poor feeding routines. For Caesarean mothers, they provide special assistance with mobility, posture, and wound care.</p>
-              <p>By choosing EzyHelpers’ Japa maid services in Bareilly, you are not only ensuring your comfort and safety but also laying a strong, healthy foundation for your newborn’s growth. Expert care at home gives new parents the space to rest, recover, and truly enjoy the early days of parenthood.</p>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+              <p>Post-delivery care isn’t just about rest; it’s about structured healing, emotional support, and establishing a strong foundation for both mother and child. At EzyHelpers, our postpartum home care services in Bareilly focus on holistic recovery.</p>
+              <p className="font-medium text-indigo-900/80">Our trained Japa maids in Bareilly provide not just physical care but emotional reassurance, allowing new mothers to bond with their newborn without stress or overwhelm.</p>
+              <p>By choosing EzyHelpers’ Japa maid services in Bareilly, you are not only ensuring your comfort and safety but also laying a strong, healthy foundation for your newborn’s growth.</p>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion
+              faqs={[
+                {
+                  question: "What does a japa maid do as part of postpartum home care services in Bareilly?",
+                  answer: "As part of postpartum home care services in Bareilly, a japa maid assists new mothers with recovery massages, hygiene support, rest guidance, emotional care, and traditional North Indian food preparation, ensuring smooth healing and comfort after childbirth."
+                },
+                {
+                  question: "Do you provide postpartum home care services for C-section recovery in Bareilly?",
+                  answer: "Yes, our postpartum home care services in Bareilly include gentle support for C-section recovery. Our trained Japa maids assist with safe movement, hygiene, massage, and personalized care routines to help mothers heal comfortably after surgery."
+                },
+                {
+                  question: "Are Japa maids in Bareilly trained in baby massage?",
+                  answer: "Yes, EzyHelpers Japa maids are trained in traditional baby massage (malish) as part of our newborn babycare in Bareilly. These massages support healthy digestion, better sleep, and physical development for newborns, using safe, gentle, and time-tested techniques."
+                },
+                {
+                  question: "What kind of postpartum food is prepared by Japa maids in Bareilly?",
+                  answer: "Our japa maids prepare healing North Indian recipes such as panjiri, gond laddu, and methi paratha using fresh ingredients from Bareilly’s markets to help new mothers regain strength."
+                },
+                {
+                  question: "What hygiene measures are followed in postpartum home care in Bareilly?",
+                  answer: "EzyHelpers follows strict hygiene protocols, including handwashing, clean clothing, sanitization, and safe handling techniques to protect mothers and babies during postpartum home care in Bareilly."
+                },
+                {
+                  question: "Can I book newborn babycare services in Bareilly for night-time?",
+                  answer: "Yes. EzyHelpers offers night-shift baby caretakers who assist with feeding, diaper changes, and baby soothing throughout the night."
+                },
+                {
+                  question: "Can your newborn baby caretakers support premature baby care in Bareilly?",
+                  answer: "Yes, our japa maids in Bareilly are trained to handle premature babies with extra care, feeding support, and delicate handling routines."
+                },
+                {
+                  question: "Do you offer newborn babycare services for twins or multiple babies in Bareilly?",
+                  answer: "Yes, our experienced Japa maids in Bareilly can care for twins or triplets, managing feeding, sleep, and hygiene needs efficiently."
+                },
+                {
+                  question: "What does newborn safety guidance include in your service?",
+                  answer: "We teach safe holding, swaddling, burping, and sleeping practices to parents in Bareilly to ensure newborn safety at home."
+                },
+                {
+                  question: "What age of babies do your japa maids care for in Bareilly?",
+                  answer: "Our japa maids in Bareilly primarily care for newborns up to 3 months, offering expert support during the most delicate period after birth."
+                },
+                {
+                  question: "Why is postpartum home care important for new mothers in Bareilly?",
+                  answer: "Postpartum home care in Bareilly helps mothers heal physically and emotionally after childbirth with structured routines, massage, nutrition, and gentle support for a smooth recovery at home."
+                },
+                {
+                  question: "What is the difference between a japa maid and a nanny in Bareilly?",
+                  answer: "A japa maid in Bareilly specialises in postpartum recovery, newborn babycare, and traditional massage, focusing on the mother’s rest and healing. A nanny typically provides broader childcare support for older babies and children, without specialised postpartum expertise."
+                }
+              ]}
+            />
+          </div>
+        </section>
+ion faqs={faqs} />
           </div>
         </section>
       </main>
