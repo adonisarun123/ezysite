@@ -66,11 +66,35 @@ export default function HelperLeadsPage() {
   const [manualCoords, setManualCoords] = useState({ lat: '', lng: '' })
   const [hasMounted, setHasMounted] = useState(false)
 
-  // Location detection on component mount
-  useEffect(() => {
-    setHasMounted(true)
-    detectLocation()
-  }, [])
+  const fallbackToIpLocation = async () => {
+    try {
+      const response = await fetch('https://ipapi.co/json/')
+      const data = await response.json()
+      
+      const location = {
+        ip: data.ip,
+        detected_city: data.city,
+        detected_region: data.region,
+        detected_country: data.country_name,
+        lat: data.latitude,
+        lng: data.longitude,
+        raw_geo: { ...data, precise_coords: false }
+      }
+      
+      setLocationData(location)
+      if (data.latitude && data.longitude) {
+        setManualCoords({ 
+          lat: data.latitude.toFixed(6), 
+          lng: data.longitude.toFixed(6) 
+        })
+      }
+      setLocationDetected(true)
+    } catch (error) {
+      console.log('IP location detection failed:', error)
+    } finally {
+      setLocationLoading(false)
+    }
+  }
 
   const detectLocation = async () => {
     setLocationLoading(true)
@@ -140,35 +164,12 @@ export default function HelperLeadsPage() {
     }
   }
 
-  const fallbackToIpLocation = async () => {
-    try {
-      const response = await fetch('https://ipapi.co/json/')
-      const data = await response.json()
-      
-      const location = {
-        ip: data.ip,
-        detected_city: data.city,
-        detected_region: data.region,
-        detected_country: data.country_name,
-        lat: data.latitude,
-        lng: data.longitude,
-        raw_geo: { ...data, precise_coords: false }
-      }
-      
-      setLocationData(location)
-      if (data.latitude && data.longitude) {
-        setManualCoords({ 
-          lat: data.latitude.toFixed(6), 
-          lng: data.longitude.toFixed(6) 
-        })
-      }
-      setLocationDetected(true)
-    } catch (error) {
-      console.log('IP location detection failed:', error)
-    } finally {
-      setLocationLoading(false)
-    }
-  }
+  // Location detection on component mount
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    setHasMounted(true)
+    detectLocation()
+  }, [])
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
