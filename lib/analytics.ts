@@ -1,9 +1,13 @@
-// Analytics events via dataLayer for Google Tag Manager
-// This file contains all the custom event tracking functions for user interactions
+// Analytics events: pushes to both Google Tag Manager (via dataLayer object form)
+// and Google Analytics 4 (via window.gtag) so events flow to GA4 directly while
+// the GTM container does not yet have GA4 tags wired up. Once GA4 tags are
+// configured inside GTM, the gtag() call below can be removed to avoid duplicate
+// hits to GA4.
 
 declare global {
   interface Window {
-    dataLayer?: Record<string, unknown>[];
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -82,13 +86,21 @@ export const trackEvent = (eventName: string, parameters: EventParams = {}) => {
       ...parameters.custom_parameters,
     };
 
+    // GTM-style push: any GTM tag with a Custom Event trigger on `eventName`
+    // will pick this up.
     window.dataLayer.push({
       event: eventName,
       ...enhancedParams,
     });
 
+    // gtag-style push: required for GA4 to receive the event directly while
+    // the GTM container has no GA4 tags configured.
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, enhancedParams);
+    }
+
     if (process.env.NODE_ENV === 'development') {
-      console.log('dataLayer event:', eventName, enhancedParams);
+      console.log('analytics event:', eventName, enhancedParams);
     }
   } catch (error) {
     console.error('Error tracking event:', error);

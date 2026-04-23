@@ -7,6 +7,13 @@ import Script from 'next/script'
  * Improves LCP and TBT vs parsing these in <head> during initial load.
  */
 export default function ThirdPartyScripts() {
+  // GTM (GTM-PGM9V53) is loaded in app/layout.tsx. We additionally load the
+  // GA4 gtag snippet here so events reach GA4 directly via window.gtag while
+  // the GTM container does not yet have GA4 tags published. Once the GA4
+  // Configuration + GA4 Event tags are wired inside GTM, this block can be
+  // removed to avoid double tracking.
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-868JRCDRFW'
+
   return (
     <>
       <Script
@@ -20,6 +27,43 @@ export default function ThirdPartyScripts() {
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "sq13l291nk");`}
+      </Script>
+
+      <Script
+        id="ga4-loader"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="ga4-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}', {
+            page_title: document.title,
+            page_location: window.location.href,
+            send_page_view: true
+          });
+        `}
+      </Script>
+
+      <Script id="gtag-send-event-helper" strategy="afterInteractive">
+        {`
+window.gtagSendEvent = function(url) {
+  if (typeof window.gtag !== 'function') {
+    if (typeof url === 'string') window.location.href = url;
+    return false;
+  }
+  var callback = function () {
+    if (typeof url === 'string') window.location.href = url;
+  };
+  window.gtag('event', 'form_complete', {
+    event_callback: callback,
+    event_timeout: 2000
+  });
+  return false;
+};`}
       </Script>
 
       <Script id="facebook-pixel" strategy="lazyOnload">
