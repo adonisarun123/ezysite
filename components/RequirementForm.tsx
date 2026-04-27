@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { CheckCircleIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
@@ -44,9 +45,9 @@ export default function RequirementForm() {
   })
   
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-  const [requestId, setRequestId] = useState<string | null>(null)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
   const [hasTrackedStart, setHasTrackedStart] = useState(false)
+  const router = useRouter()
 
   // Track form start when component mounts
   useEffect(() => {
@@ -341,8 +342,7 @@ export default function RequirementForm() {
         console.log('💾 Database saved:', databaseSaved)
         console.log('📧 Email status: Check above logs')
         
-        setRequestId(newRequestId)
-        setSubmitStatus('success')
+        router.push(`/thank-you?type=requirement&ref=${encodeURIComponent(newRequestId)}`)
         
       } catch (error) {
         // Track form error
@@ -373,50 +373,6 @@ export default function RequirementForm() {
         setSubmitStatus('error')
       }
     }
-  }
-
-  if (submitStatus === 'success') {
-    return (
-      <div className="text-center py-12">
-        <CheckCircleIcon className="w-16 h-16 mx-auto text-green-500 mb-6" />
-        <h2 className="text-3xl font-bold text-gray-900 mb-4 font-display">
-          Requirement Submitted Successfully!
-        </h2>
-        {requestId && (
-          <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6 max-w-md mx-auto">
-            <p className="text-sm text-green-700 mb-2">Your unique reference ID:</p>
-            <p className="text-2xl font-mono font-bold text-green-800">{requestId}</p>
-            <p className="text-xs text-green-600 mt-2">
-              {new Date().toLocaleString()}
-            </p>
-          </div>
-        )}
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Thank you for submitting your requirement! Our team has received your details and will contact you shortly 
-          with a personalized solution. Please save your reference ID for future communication.
-        </p>
-        <button
-          onClick={() => {
-            setSubmitStatus('idle')
-            setFormData({
-              name: '',
-              email: '',
-              contactNo: '',
-              areaOfService: '',
-              apartment: '',
-              latitude: null,
-              longitude: null,
-              requirementDescription: ''
-            })
-            setRequestId(null)
-            detectLocation()
-          }}
-          className="btn-primary"
-        >
-          Submit Another Requirement
-        </button>
-      </div>
-    )
   }
 
   return (

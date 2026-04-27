@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
 import { ChevronRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
 import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
@@ -83,10 +83,10 @@ export default function HireHelperForm() {
     preferredGender: ''
   })
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const [requestId, setRequestId] = useState<string | null>(null)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'error'>('idle')
   const [hasTrackedStart, setHasTrackedStart] = useState(false)
   const searchParams = useSearchParams()
+  const router = useRouter()
 
   // Track form start when component mounts and check for URL parameters
   useEffect(() => {
@@ -331,8 +331,7 @@ export default function HireHelperForm() {
         trackFormComplete('hire_helper_form', newRequestId);
         trackBookingComplete(formData.serviceType, formData.city, newRequestId);
 
-        setRequestId(newRequestId)
-        setSubmitStatus('success')
+        router.push(`/thank-you?type=hire&ref=${encodeURIComponent(newRequestId)}`)
       } catch (error) {
         // Track form error
         trackFormError('hire_helper_form', 'submission_error', error instanceof Error ? error.message : 'Unknown error');
@@ -346,21 +345,6 @@ export default function HireHelperForm() {
   const generateRequestId = () => {
     // Generate a simple 6-character uppercase alphanumeric string
     return Math.random().toString(36).substring(2, 8).toUpperCase()
-  }
-
-  if (submitStatus === 'success') {
-    return (
-      <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-        <CheckCircleIcon className="w-14 h-14 mx-auto text-primary-600" />
-        <h2 className="text-2xl font-semibold mt-4 font-display">Thanks for your enquiry!</h2>
-        {requestId && (
-          <p className="mt-3 text-sm text-gray-700">Your request ID:&nbsp;
-            <span className="font-mono font-semibold text-gray-900">{requestId}</span>
-          </p>
-        )}
-        <p className="mt-3 text-sm text-gray-700">Our team will reach out to you shortly.</p>
-      </div>
-    )
   }
 
   return (

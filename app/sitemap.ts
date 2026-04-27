@@ -442,12 +442,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5
     },
     {
-      url: `${baseUrl}/agent-success`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.25
-    },
-    {
       url: `${baseUrl}/customer-requirements`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -464,12 +458,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.5
-    },
-    {
-      url: `${baseUrl}/helper-success`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.25
     }
   ]
 

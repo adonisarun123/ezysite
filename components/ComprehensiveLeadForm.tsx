@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -16,7 +17,6 @@ import {
   CurrencyRupeeIcon,
   ChatBubbleLeftRightIcon,
   UserGroupIcon,
-  CheckCircleIcon
 } from '@heroicons/react/24/outline'
 
 interface FormData {
@@ -118,7 +118,7 @@ export default function ComprehensiveLeadForm() {
 
   const [errors, setErrors] = useState<FormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const router = useRouter()
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
@@ -216,27 +216,8 @@ export default function ComprehensiveLeadForm() {
       })
 
       if (response.ok) {
-        // Send webhook
         sendWebhook('comprehensive_lead', formData).catch(console.error)
-        
-        setIsSubmitted(true)
-        // Reset form
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          city: '',
-          service: '',
-          duration: '',
-          startDate: '',
-          specificRequirements: '',
-          experience: '',
-          budget: '',
-          languages: '',
-          additionalServices: '',
-          familySize: '',
-          preferredGender: ''
-        })
+        router.push('/thank-you?type=comprehensive')
       } else {
         throw new Error('Failed to submit form')
       }
@@ -246,28 +227,6 @@ export default function ComprehensiveLeadForm() {
     } finally {
       setIsSubmitting(false)
     }
-  }
-
-  if (isSubmitted) {
-    return (
-      <Card className="max-w-2xl mx-auto">
-        <CardContent className="p-8 text-center">
-          <div className="mb-6">
-            <CheckCircleIcon className="h-16 w-16 text-green-500 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-            <p className="text-gray-600">
-              Your service request has been submitted successfully. Our team will contact you within 2 hours to discuss your requirements.
-            </p>
-          </div>
-          <Button 
-            onClick={() => setIsSubmitted(false)}
-            className="bg-primary-600 hover:bg-primary-700"
-          >
-            Submit Another Request
-          </Button>
-        </CardContent>
-      </Card>
-    )
   }
 
   return (

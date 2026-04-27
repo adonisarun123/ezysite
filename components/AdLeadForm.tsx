@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { CheckCircleIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline'
+import { useRouter } from 'next/navigation'
+import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
 import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
@@ -30,8 +31,8 @@ export default function AdLeadForm({
     message: ''
   })
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-  const [requestId, setRequestId] = useState<string | null>(null)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
+  const router = useRouter()
   const [hasTrackedStart, setHasTrackedStart] = useState(false)
 
   // Track form start when component mounts
@@ -192,8 +193,7 @@ export default function AdLeadForm({
         // Track successful form completion
         trackFormComplete('ad_lead_form', newRequestId);
 
-        setRequestId(newRequestId)
-        setSubmitStatus('success')
+        router.push(`/thank-you?type=ad&ref=${encodeURIComponent(newRequestId)}`)
       } catch (error) {
         console.error('Form submission error:', error)
         // Track form error
@@ -201,35 +201,6 @@ export default function AdLeadForm({
         setSubmitStatus('error')
       }
     }
-  }
-
-  if (submitStatus === 'success') {
-    return (
-      <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-        <div className="w-16 h-16 bg-success-50 rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircleIcon className="w-10 h-10 text-success-500" />
-        </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2 font-display">Request Received!</h2>
-        {requestId && (
-          <p className="mb-4 text-sm text-gray-500">
-            Ref ID: <span className="font-mono font-medium text-gray-900">{requestId}</span>
-          </p>
-        )}
-        <p className="text-gray-600 mb-6">
-          Thank you for your interest. Our team will call you shortly to discuss your requirements.
-        </p>
-        <button
-          onClick={() => {
-            setFormData({ name: '', phone: '', email: '', message: '' })
-            setSubmitStatus('idle')
-            setRequestId(null)
-          }}
-          className="text-primary-600 font-medium hover:text-primary-700 hover:underline"
-        >
-          Submit another request
-        </button>
-      </div>
-    )
   }
 
   return (

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { CheckCircleIcon, PaperAirplaneIcon, CalendarDaysIcon, ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
@@ -29,8 +30,8 @@ export default function NestBookingForm() {
         message: ''
     })
     const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
-    const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-    const [requestId, setRequestId] = useState<string | null>(null)
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
+    const router = useRouter()
     const [hasTrackedStart, setHasTrackedStart] = useState(false)
 
     useEffect(() => {
@@ -188,47 +189,13 @@ export default function NestBookingForm() {
                 }
 
                 trackFormComplete('nest_booking_form', newRequestId)
-                setRequestId(newRequestId)
-                setSubmitStatus('success')
+                router.push(`/thank-you?type=nest&ref=${encodeURIComponent(newRequestId)}`)
             } catch (error) {
                 console.error('Submission error:', error)
                 trackFormError('nest_booking_form', 'submission_error', error instanceof Error ? error.message : 'Unknown')
                 setSubmitStatus('error')
             }
         }
-    }
-
-    if (submitStatus === 'success') {
-        return (
-            <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-                <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircleIcon className="w-10 h-10 text-green-500" />
-                </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Booking Request Received!</h2>
-                {requestId && (
-                    <p className="mb-4 text-sm text-gray-500">
-                        Ref ID: <span className="font-mono font-medium text-gray-900">{requestId}</span>
-                    </p>
-                )}
-                <p className="text-gray-600 mb-6">
-                    Our team will call you shortly to confirm your booking.
-                </p>
-                <button
-                    onClick={() => {
-                        setFormData({
-                            name: '', phone: '', email: '', bookingType: 'helper',
-                            checkInDate: '', checkOutDate: '', userType: '', message: ''
-                        })
-                        setSubmitStatus('idle')
-                        setRequestId(null)
-                        setStep(1)
-                    }}
-                    className="text-rose-600 font-medium hover:underline"
-                >
-                    Submit another request
-                </button>
-            </div>
-        )
     }
 
     return (

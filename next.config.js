@@ -288,6 +288,8 @@ const nextConfig = {
         destination: '/careers/field-officer-bangalore',
         permanent: true,
       },
+      { source: '/agent-success', destination: '/thank-you?type=agent', permanent: false },
+      { source: '/helper-success', destination: '/thank-you?type=helper', permanent: false },
     ]
   },
 }
