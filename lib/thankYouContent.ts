@@ -62,6 +62,14 @@ export function getThankYouCopy(type: string | undefined, ref?: string): ThankYo
           'Your on-demand helper request has been submitted. Our team will contact you shortly.',
         refLabel: ref || undefined,
       }
+    case 'on-demand-help':
+    case 'on_demand_help':
+      return {
+        headline: 'Payment received — booking in progress',
+        body:
+          'Thank you for completing payment for your hourly visit. We already have your slot and address from the booking flow; our Bangalore pilot team will align a helper with your chosen time and call you if anything needs confirmation.',
+        refLabel: ref || undefined,
+      }
     case 'comprehensive':
       return {
         headline: 'Service request received',

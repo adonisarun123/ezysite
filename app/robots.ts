@@ -11,7 +11,8 @@ export default function robots(): MetadataRoute.Robots {
           '/private/',
           '/admin/',
           '/search',
-          '/thank-you'
+          '/thank-you',
+          '/on-demand-help/thank-you'
         ]
       },
     ],

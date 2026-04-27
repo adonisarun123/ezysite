@@ -64,6 +64,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9
     },
     {
+      url: `${baseUrl}/on-demand-help`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85
+    },
+    {
       url: `${baseUrl}/join-as-helper`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
