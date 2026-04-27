@@ -25,7 +25,9 @@
     "optimize-performance": "node scripts/optimize-performance.js",
     "build:optimized": "npm run optimize-performance && npm run build",
     "generate-sitemap": "node scripts/generate-sitemap.js",
-    "validate-sitemap": "curl -s http://localhost:3000/sitemap.xml | head -10"
+    "validate-sitemap": "curl -s http://localhost:3000/sitemap.xml | head -10",
+    "test:on-demand-logic": "tsx scripts/verify-on-demand-help-logic.ts",
+    "test:on-demand-db": "tsx scripts/verify-on-demand-bookings-db.ts"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
@@ -75,10 +77,11 @@
     "eslint-config-next": "^15.0.0",
     "glob": "^10.3.10",
     "jsdom": "^27.0.1",
+    "tsx": "^4.21.0",
     "typescript": "5.9.3",
     "vitest": "^3.2.4"
   },
   "overrides": {
-    "vite": "^7.3.2"
+    "vite": "^6.3.5"
   }
 }

@@ -1,8 +1,9 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { supabase } from '@/lib/supabaseClient'
 import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
+import { buildOnDemandHelpSpecificRequirements, buildOnDemandHelpTimingSummary } from '@/lib/onDemandHelpLeadText'
+import { istVisitRangeUtcIso, rangesOverlapHalfOpenMs } from '@/lib/istDateTime'
 import {
   ON_DEMAND_HELP_AREAS,
   ON_DEMAND_HELP_CITY,
@@ -57,12 +58,20 @@ export default function OnDemandHelpWizard() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
-  const [apartment, setApartment] = useState('')
+  /** Gated society / apartment / layout name */
+  const [apartmentOrSocietyName, setApartmentOrSocietyName] = useState('')
+  /** Flat no., tower, floor, wing */
+  const [flatUnitDetails, setFlatUnitDetails] = useState('')
   const [landmark, setLandmark] = useState('')
   const [notes, setNotes] = useState('')
 
+  /** Busy visit intervals (epoch ms) for the selected IST day — hide overlapping slot starts. */
+  const [occupiedIntervals, setOccupiedIntervals] = useState<{ startMs: number; endMs: number }[]>([])
+  const [occupancyWarning, setOccupancyWarning] = useState(false)
+
   const [formErrors, setFormErrors] = useState<Record<string, string>>({})
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
+  const [submitConflictMessage, setSubmitConflictMessage] = useState<string | null>(null)
   const [paymentUnlocked, setPaymentUnlocked] = useState(false)
   const [hasTrackedStart, setHasTrackedStart] = useState(false)
 
@@ -81,10 +90,48 @@ export default function OnDemandHelpWizard() {
     if (step < 6) setPaymentUnlocked(false)
   }, [step])
 
+  useEffect(() => {
+    let cancelled = false
+    setOccupancyWarning(false)
+    fetch(`/api/on-demand-help/occupancy?date=${encodeURIComponent(serviceDate)}`)
+      .then(async (r) => {
+        const data = await r.json()
+        if (cancelled) return
+        if (r.ok && data.ok && Array.isArray(data.intervals)) {
+          setOccupiedIntervals(data.intervals)
+        } else {
+          setOccupiedIntervals([])
+          setOccupancyWarning(true)
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setOccupiedIntervals([])
+          setOccupancyWarning(true)
+        }
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [serviceDate])
+
   const slots = useMemo(() => {
     if (!durationHours) return []
-    return getAvailableSlotStarts(serviceDate, durationHours)
-  }, [serviceDate, durationHours])
+    const raw = getAvailableSlotStarts(serviceDate, durationHours)
+    return raw.filter((slotMin) => {
+      const { startMs, endMs } = istVisitRangeUtcIso(serviceDate, slotMin, durationHours)
+      const overlaps = occupiedIntervals.some((b) =>
+        rangesOverlapHalfOpenMs(startMs, endMs, b.startMs, b.endMs)
+      )
+      return !overlaps
+    })
+  }, [serviceDate, durationHours, occupiedIntervals])
+
+  useEffect(() => {
+    if (slotMinutes !== null && !slots.includes(slotMinutes)) {
+      setSlotMinutes(null)
+    }
+  }, [slots, slotMinutes])
 
   const toggleTask = (id: OnDemandHelpTaskId) => {
     setTaskIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]))
@@ -120,7 +167,12 @@ export default function OnDemandHelpWizard() {
       if (email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
         errors.email = 'Enter a valid email address'
       }
-      if (!apartment.trim()) errors.apartment = 'Flat / house no. & building name are required'
+      if (!apartmentOrSocietyName.trim() || apartmentOrSocietyName.trim().length < 2) {
+        errors.apartmentOrSocietyName = 'Apartment / society / layout name is required'
+      }
+      if (!flatUnitDetails.trim() || flatUnitDetails.trim().length < 2) {
+        errors.flatUnitDetails = 'Flat no., tower & floor are required'
+      }
     }
     setFormErrors(errors)
     return Object.keys(errors).length === 0
@@ -145,7 +197,12 @@ export default function OnDemandHelpWizard() {
     if (email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       errors.email = 'Enter a valid email address'
     }
-    if (!apartment.trim()) errors.apartment = 'Flat / house no. & building name are required'
+    if (!apartmentOrSocietyName.trim() || apartmentOrSocietyName.trim().length < 2) {
+      errors.apartmentOrSocietyName = 'Apartment / society / layout name is required'
+    }
+    if (!flatUnitDetails.trim() || flatUnitDetails.trim().length < 2) {
+      errors.flatUnitDetails = 'Flat no., tower & floor are required'
+    }
     setFormErrors(errors)
     return Object.keys(errors).length === 0
   }
@@ -168,7 +225,8 @@ export default function OnDemandHelpWizard() {
       !phone.trim() ||
       !/^[5-9][0-9]{9}$/.test(phone.trim()) ||
       (!!email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) ||
-      !apartment.trim()
+      apartmentOrSocietyName.trim().length < 2 ||
+      flatUnitDetails.trim().length < 2
     )
       return 5
     return 6
@@ -183,29 +241,6 @@ export default function OnDemandHelpWizard() {
 
   const generateRequestId = () => Math.random().toString(36).substring(2, 8).toUpperCase()
 
-  const buildSpecificRequirements = () => {
-    const labels = ON_DEMAND_HELP_TASKS.filter((t) => taskIds.includes(t.id)).map((t) => t.label)
-    const endMin =
-      durationHours !== null && slotMinutes !== null
-        ? endMinutesForSlot(slotMinutes, durationHours)
-        : null
-    const lines = [
-      `[On-demand help — ${ON_DEMAND_HELP_CITY} pilot /on-demand-help]`,
-      '',
-      `Locality: ${area}`,
-      `Tasks: ${labels.join('; ')}`,
-      durationHours !== null && slotMinutes !== null
-        ? `Visit: ${serviceDate} starting ${formatMinutesAsClock(slotMinutes)} (${durationHours}h; ends ${formatMinutesAsClock(endMin ?? 0)})`
-        : '',
-      landmark.trim() ? `Landmark: ${landmark.trim()}` : '',
-      notes.trim() ? `Notes:\n${notes.trim()}` : '',
-      '',
-      'Pilot coverage: HSR Layout, Sarjapur Road, BTM Layout, Haralur, Bellandur only.',
-      'Scheduling: bookings close at least 60 minutes before the chosen start time; visits run 9:00 AM–7:30 PM.',
-    ]
-    return lines.filter(Boolean).join('\n')
-  }
-
   const handleSaveLeadAndUnlockPayment = async () => {
     if (!validateAll()) {
       setStep(firstInvalidStep())
@@ -214,8 +249,23 @@ export default function OnDemandHelpWizard() {
     if (durationHours === null || slotMinutes === null || !area) return
 
     setSubmitStatus('submitting')
+    setSubmitConflictMessage(null)
     const newRequestId = generateRequestId()
-    const timingSummary = `Date: ${serviceDate}; Start: ${formatMinutesAsClock(slotMinutes)}; Duration: ${durationHours}h; Window 9:00 AM–7:30 PM`
+
+    const timingSummary = buildOnDemandHelpTimingSummary(serviceDate, slotMinutes, durationHours)
+    const specificRequirements = buildOnDemandHelpSpecificRequirements({
+      taskIds,
+      area: area as OnDemandHelpArea,
+      serviceDate,
+      slotMinutes,
+      durationHours,
+      apartmentOrSocietyName: apartmentOrSocietyName.trim(),
+      flatUnitDetails: flatUnitDetails.trim(),
+      landmark,
+      notes,
+    })
+
+    const apartmentCombined = `Society/Apartment: ${apartmentOrSocietyName.trim()} | Flat/Unit: ${flatUnitDetails.trim()}`
 
     const insertRow = buildHireHelperLeadInsertRow({
       name: name.trim(),
@@ -223,12 +273,12 @@ export default function OnDemandHelpWizard() {
       email: email.trim(),
       city: ON_DEMAND_HELP_CITY,
       locality: `${area} (on-demand pilot)`,
-      apartment: apartment.trim(),
+      apartment: apartmentCombined,
       service: 'on-demand-help',
       duration: `${durationHours} hours`,
       serviceTimings: timingSummary,
       startDate: serviceDate,
-      specificRequirements: buildSpecificRequirements(),
+      specificRequirements,
       experience: '',
       budget: '',
       languages: '',
@@ -238,6 +288,53 @@ export default function OnDemandHelpWizard() {
     })
 
     try {
+      const res = await fetch('/api/on-demand-help/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          taskIds,
+          area,
+          durationHours,
+          serviceDate,
+          slotMinutes,
+          name: name.trim(),
+          phone: phone.trim(),
+          email: email.trim(),
+          apartmentOrSocietyName: apartmentOrSocietyName.trim(),
+          flatUnitDetails: flatUnitDetails.trim(),
+          landmark,
+          notes,
+        }),
+      })
+
+      const payload = (await res.json().catch(() => ({}))) as {
+        error?: string
+        message?: string
+        ok?: boolean
+      }
+
+      if (res.status === 409) {
+        trackFormError(FORM_NAME, 'slot_conflict', payload.message || 'overlap')
+        setSubmitConflictMessage(
+          payload.message ||
+            'That slot was just taken. Only one visit runs at a time — pick another start time.'
+        )
+        setSubmitStatus('error')
+        return
+      }
+
+      if (res.status === 503) {
+        trackFormError(FORM_NAME, 'misconfigured', 'service role')
+        throw new Error(
+          payload.message ||
+            'Booking temporarily unavailable — server configuration incomplete. Please call +91 9972571005.'
+        )
+      }
+
+      if (!res.ok) {
+        throw new Error(payload.message || payload.error || res.statusText)
+      }
+
       trackFormSubmit(FORM_NAME, {
         name: insertRow.name,
         phone: insertRow.phone,
@@ -247,9 +344,6 @@ export default function OnDemandHelpWizard() {
         specificRequirements: insertRow.specific_requirements,
         serviceType: insertRow.service,
       })
-
-      const { error } = await supabase.from('hire_helper_leads').insert([insertRow])
-      if (error) throw error
 
       try {
         await fetch('/api/send-lead-email', {
@@ -315,6 +409,7 @@ export default function OnDemandHelpWizard() {
     } catch (e) {
       console.error(e)
       trackFormError(FORM_NAME, 'submit', String(e))
+      setSubmitConflictMessage(null)
       setSubmitStatus('error')
     }
   }
@@ -498,6 +593,12 @@ export default function OnDemandHelpWizard() {
                 selected duration (visit must end by 7:30 PM).
               </p>
             </div>
+            {occupancyWarning ? (
+              <p className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950">
+                Could not refresh live availability. If your chosen time fails on confirm, pick another slot — only one
+                visit runs at a time on this pilot.
+              </p>
+            ) : null}
             <div>
               <label htmlFor="svc-date" className="mb-1 block text-sm font-medium text-gray-800">
                 Date
@@ -585,13 +686,33 @@ export default function OnDemandHelpWizard() {
                 {formErrors.email && <p className="mt-1 text-sm text-red-600">{formErrors.email}</p>}
               </div>
               <div className="sm:col-span-2">
-                <label className="mb-1 block text-sm font-medium text-gray-800">Flat / house & building name</label>
+                <label className="mb-1 block text-sm font-medium text-gray-800">
+                  Apartment / society / layout name
+                </label>
                 <input
-                  value={apartment}
-                  onChange={(e) => setApartment(e.target.value)}
+                  value={apartmentOrSocietyName}
+                  onChange={(e) => setApartmentOrSocietyName(e.target.value)}
+                  placeholder="e.g. gated community or building name"
+                  className={`w-full rounded-lg border px-3 py-2 ${accent}`}
+                  autoComplete="organization"
+                />
+                {formErrors.apartmentOrSocietyName && (
+                  <p className="mt-1 text-sm text-red-600">{formErrors.apartmentOrSocietyName}</p>
+                )}
+              </div>
+              <div className="sm:col-span-2">
+                <label className="mb-1 block text-sm font-medium text-gray-800">
+                  Flat no., tower, floor & wing
+                </label>
+                <input
+                  value={flatUnitDetails}
+                  onChange={(e) => setFlatUnitDetails(e.target.value)}
+                  placeholder="e.g. Tower B, 4th floor, Flat 402"
                   className={`w-full rounded-lg border px-3 py-2 ${accent}`}
                 />
-                {formErrors.apartment && <p className="mt-1 text-sm text-red-600">{formErrors.apartment}</p>}
+                {formErrors.flatUnitDetails && (
+                  <p className="mt-1 text-sm text-red-600">{formErrors.flatUnitDetails}</p>
+                )}
               </div>
               <div className="sm:col-span-2">
                 <label className="mb-1 block text-sm font-medium text-gray-800">Landmark (optional)</label>
@@ -627,8 +748,16 @@ export default function OnDemandHelpWizard() {
                       <span className="font-medium">{summaryLines.tasks.join('; ')}</span>
                     </li>
                     <li>
-                      <span className="text-gray-600">Locality:</span>{' '}
+                      <span className="text-gray-600">Locality (area):</span>{' '}
                       <span className="font-medium">{summaryLines.area}</span>
+                    </li>
+                    <li>
+                      <span className="text-gray-600">Apartment / society:</span>{' '}
+                      <span className="font-medium">{apartmentOrSocietyName.trim()}</span>
+                    </li>
+                    <li>
+                      <span className="text-gray-600">Flat / unit:</span>{' '}
+                      <span className="font-medium">{flatUnitDetails.trim()}</span>
                     </li>
                     <li>
                       <span className="text-gray-600">Duration:</span>{' '}
@@ -648,11 +777,8 @@ export default function OnDemandHelpWizard() {
                       </span>
                     </li>
                     <li>
-                      <span className="text-gray-600">Address:</span>{' '}
-                      <span className="font-medium">
-                        {apartment.trim()}
-                        {landmark.trim() ? `; ${landmark.trim()}` : ''}
-                      </span>
+                      <span className="text-gray-600">Landmark:</span>{' '}
+                      <span className="font-medium">{landmark.trim() || '—'}</span>
                     </li>
                   </ul>
                 </div>
@@ -660,7 +786,13 @@ export default function OnDemandHelpWizard() {
                   Tap below to save this request with our team. You&apos;ll then see a secure Razorpay button for the{' '}
                   {durationHours}-hour package only.
                 </p>
-                {submitStatus === 'error' && (
+                {submitStatus === 'error' && submitConflictMessage && (
+                  <p className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950">
+                    {submitConflictMessage} You can go back to <strong className="font-semibold">Date &amp; start time</strong>{' '}
+                    and choose another slot.
+                  </p>
+                )}
+                {submitStatus === 'error' && !submitConflictMessage && (
                   <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
                     Something went wrong while saving. Please try again or call{' '}
                     <a href="tel:+919972571005" className="font-semibold underline">
