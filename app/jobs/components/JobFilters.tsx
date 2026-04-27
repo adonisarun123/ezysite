@@ -34,10 +34,13 @@ export default function JobFilters({
       aria-label="Search and filter jobs"
       className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm sm:p-6"
     >
-      <div className="grid gap-3 md:grid-cols-12">
+      <div className="grid items-end gap-3 md:grid-cols-12">
         <div className="md:col-span-12 lg:col-span-4">
-          <label htmlFor="job-search" className="sr-only">
-            Search jobs
+          <label
+            htmlFor="job-search"
+            className="mb-1 block text-xs font-semibold uppercase tracking-wide text-gray-500"
+          >
+            Search
           </label>
           <div className="relative">
             <MagnifyingGlassIcon
