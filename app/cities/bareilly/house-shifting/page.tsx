@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Household Shifting in Bareilly – Expert Packers',
     description: 'Looking for household shifting services in Bareilly? Our movers handle packing, safe transport, and careful unpacking for a smooth relocation.',
-    url: 'https://www.ezyhelpers.com/cities/bareilly/household-shifting',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/house-shifting',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.ezyhelpers.com/cities/bareilly/household-shifting'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/house-shifting'
   }
 }
 
