@@ -1,17 +1,11 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
+import type { CareStory } from '@/lib/careServices/clusterLanding/types'
 
-export type CareStory = {
-  quote: string
-  /** Substring of quote to emphasize (must appear exactly once, or whole quote renders plain) */
-  emphasisPhrase?: string
-  name: string
-  location: string
-  initials: string
-}
+export type { CareStory }
 
-export default function HomeHealthcareTestimonials({ stories }: { stories: CareStory[] }) {
+export default function CareClusterTestimonials({ stories }: { stories: CareStory[] }) {
   const [i, setI] = useState(0)
   const active = stories[i] ?? stories[0]
 
@@ -65,7 +59,7 @@ export default function HomeHealthcareTestimonials({ stories }: { stories: CareS
               role="tab"
               aria-selected={idx === i}
               onClick={() => go(idx)}
-              className={`h-1.5 rounded-full transition-all ${idx === i ? 'w-10 bg-neutral-900' : 'w-7 bg-neutral-300 hover:bg-neutral-400'}`}
+              className={`h-1.5 rounded-full transition-all ${idx === i ? 'w-10 bg-gradient-to-r from-primary-600 to-trust-500' : 'w-7 bg-neutral-300 hover:bg-primary-300'}`}
             />
           ))}
         </div>
