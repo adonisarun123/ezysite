@@ -94,7 +94,8 @@ export default function OnDemandHelpPage() {
           </div>
         </section>
 
-        <section className="relative z-[1] -mt-10 px-4 pb-24 sm:px-6 lg:px-8 max-md:pb-28">
+        {/* No negative margin — it pulled the card under the fixed nav / into the hero and looked like a broken overlay */}
+        <section className="relative z-[1] mx-auto mt-6 max-w-7xl px-4 pb-24 sm:mt-8 sm:px-6 lg:px-8 max-md:pb-28">
           <OnDemandHelpWizard />
         </section>
       </main>

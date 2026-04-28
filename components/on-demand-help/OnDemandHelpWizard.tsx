@@ -437,7 +437,7 @@ export default function OnDemandHelpWizard() {
   return (
     <div
       id="book-on-demand-help"
-      className="isolate scroll-mt-24 rounded-2xl border border-emerald-100 bg-gradient-to-b from-emerald-50/80 to-white p-6 pb-8 sm:p-10 sm:pb-10 shadow-lg"
+      className="isolate scroll-mt-28 rounded-2xl border border-emerald-100 bg-gradient-to-b from-emerald-50 to-white p-6 pb-8 sm:scroll-mt-32 sm:p-10 sm:pb-10 shadow-lg"
     >
       <div className="flex flex-col gap-8 border-b border-emerald-100/80 pb-8">
         <header className="text-center">
