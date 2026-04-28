@@ -59,14 +59,18 @@ const careComponents = {
     <h1 className="font-display text-3xl font-bold leading-tight tracking-tight text-gray-900 sm:text-4xl">{children}</h1>
   ),
   h2: ({ children }: { children?: React.ReactNode }) => (
-    <h2 className="font-display mt-10 scroll-mt-28 border-b-2 border-primary-100 pb-3 text-2xl font-bold text-gray-900 first:mt-0 sm:mt-12 sm:text-[1.65rem]">
+    <h2 className="font-display mt-10 scroll-mt-28 border-b border-emerald-100/90 pb-3.5 text-[clamp(1.2rem,2.8vw,1.65rem)] font-bold leading-snug text-gray-900 first:mt-0 sm:mt-12 sm:pb-4">
       {children}
     </h2>
   ),
   h3: ({ children }: { children?: React.ReactNode }) => (
-    <h3 className="font-display mt-8 text-xl font-semibold text-gray-900">{children}</h3>
+    <h3 className="font-display mt-7 text-[clamp(1.05rem,2.2vw,1.2rem)] font-semibold leading-snug text-gray-900 sm:mt-9">
+      {children}
+    </h3>
   ),
-  p: ({ children }: { children?: React.ReactNode }) => <p className="my-4 leading-relaxed text-gray-700">{children}</p>,
+  p: ({ children }: { children?: React.ReactNode }) => (
+    <p className="my-4 text-pretty leading-relaxed text-gray-700">{children}</p>
+  ),
   strong: ({ children }: { children?: React.ReactNode }) => (
     <strong className="font-semibold text-gray-900">{children}</strong>
   ),
