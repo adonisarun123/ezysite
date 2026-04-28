@@ -13,17 +13,11 @@ import {
   ShieldCheckIcon,
   UserGroupIcon,
   SparklesIcon,
-  MapPinIcon,
   AcademicCapIcon,
   ChatBubbleLeftRightIcon,
+  HomeIcon,
+  UserPlusIcon,
 } from '@heroicons/react/24/outline'
-
-const TRUST_STRIP_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [
-  UserGroupIcon,
-  MapPinIcon,
-  ClockIcon,
-  ShieldCheckIcon,
-]
 import type { CareClusterLandingConfig, HeroChipIcon } from '@/lib/careServices/clusterLanding/types'
 import { CLUSTER_TRUST_STRIP } from '@/lib/careServices/clusterLanding/configs'
 import { CARE_PILLAR_HREF, CARE_ENQUIRY_HREF } from '@/lib/careServices/registry'
@@ -56,6 +50,15 @@ const PILLAR_DECO_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [
   ChatBubbleLeftRightIcon,
 ]
 
+/** Airbnb-style pastel step panels (inspired by reference mock) */
+const PROCESS_PASTEL_BG = ['bg-[#FFF1D6]', 'bg-[#E5F2EB]', 'bg-[#FFE0D9]', 'bg-[#E8E4F3]'] as const
+const PROCESS_STEP_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [
+  ChatBubbleLeftRightIcon,
+  UserGroupIcon,
+  UserPlusIcon,
+  HomeIcon,
+]
+
 type Props = {
   config: CareClusterLandingConfig
   metaDescription: string
@@ -76,81 +79,87 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
         ]
 
   return (
-    <div className="min-h-screen bg-[#fbfbfd] text-neutral-900">
+    <div className="min-h-screen bg-white text-neutral-900">
       <Navbar />
 
-      <div className="relative z-30 border-b border-black/[0.06] bg-[#fbfbfd]/95 backdrop-blur-md">
+      <div className="relative z-30 border-b border-neutral-200 bg-white/95 backdrop-blur-md">
         <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6">
           <Breadcrumb variant="minimal" separator="chevron" items={breadcrumbItems} />
         </div>
       </div>
 
-      <header className="relative flex min-h-[min(88svh,800px)] flex-col items-center justify-center overflow-hidden px-4 pb-16 pt-12 text-center sm:px-6 sm:pb-20 sm:pt-16">
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(48,184,201,0.14),transparent_60%),radial-gradient(ellipse_60%_50%_at_90%_30%,rgba(255,107,139,0.08),transparent_55%),radial-gradient(ellipse_70%_60%_at_10%_70%,rgba(0,116,200,0.1),transparent_60%)]"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.45] [background-image:linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:72px_72px] [mask-image:radial-gradient(ellipse_70%_55%_at_50%_45%,black,transparent_78%)]"
-          aria-hidden
-        />
+      <header className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pb-14">
+          <div className="grid min-h-0 gap-2 overflow-hidden rounded-[28px] border border-neutral-200 bg-neutral-50 shadow-[0_6px_24px_rgba(0,0,0,0.06)] lg:grid-cols-2 lg:min-h-[420px] lg:gap-0">
+            <div className="relative flex flex-col justify-between bg-gradient-to-br from-[#FFE5E5] to-[#FFF1D6] p-8 text-left sm:p-10 lg:p-12">
+              <div className="pointer-events-none absolute bottom-[-60px] right-[-60px] h-56 w-56 rounded-full bg-primary-500/10 blur-2xl" aria-hidden />
+              <div className="relative">
+                <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/90 bg-white px-4 py-2 text-xs font-semibold text-neutral-800 shadow-[0_1px_2px_rgba(0,0,0,0.06),0_4px_14px_rgba(0,0,0,0.04)]">
+                  <span className="h-2 w-2 rounded-full bg-trust-500" />
+                  {config.eyebrow}
+                </p>
+                <h1 className="font-display text-[clamp(1.85rem,4.2vw,3rem)] font-semibold leading-[1.08] tracking-tight text-neutral-900">
+                  {config.hero.line1}
+                  <br />
+                  {config.hero.line2Before}
+                  <span className="text-primary-600">{config.hero.line2Accent}</span>
+                  {config.hero.line2After ?? ''}
+                </h1>
+                <p className="mt-5 max-w-lg text-pretty text-[17px] leading-relaxed text-neutral-600">{metaDescription}</p>
+              </div>
+              <div className="relative mt-8 flex flex-wrap gap-3">
+                <Link
+                  href={enquiryHref}
+                  className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-primary-600 px-6 py-3.5 text-[15px] font-semibold text-white shadow-[0_2px_8px_rgba(0,116,200,0.35)] transition hover:bg-primary-700"
+                >
+                  Request a callback
+                  <ArrowRightIcon className="h-4 w-4" aria-hidden />
+                </Link>
+                <a
+                  href="tel:+918031411776"
+                  className="inline-flex min-h-[48px] items-center gap-2 rounded-xl border border-neutral-900 bg-white px-6 py-3.5 text-[15px] font-semibold text-neutral-900 shadow-sm transition hover:bg-neutral-50"
+                >
+                  <PhoneIcon className="h-4 w-4" aria-hidden />
+                  080-31411776
+                </a>
+              </div>
+            </div>
 
-        <div className="relative z-10 mx-auto max-w-4xl">
-          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/[0.06] bg-white/80 px-4 py-2 text-xs font-medium text-neutral-600 shadow-sm backdrop-blur-md sm:text-[13px]">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            {config.eyebrow}
-          </p>
-
-          <h1 className="font-display text-[clamp(2.25rem,7vw,4.25rem)] font-bold leading-[1.08] tracking-tight text-neutral-950">
-            {config.hero.line1}
-            <br />
-            {config.hero.line2Before}
-            <span className="bg-gradient-to-r from-primary-600 via-teal-500 to-rose-500 bg-clip-text text-transparent">
-              {config.hero.line2Accent}
-            </span>
-            {config.hero.line2After ?? ''}
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-2xl text-pretty text-[clamp(1rem,2.4vw,1.25rem)] leading-relaxed text-neutral-600">
-            {metaDescription}
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href={enquiryHref}
-              className="inline-flex min-h-[48px] items-center gap-2 rounded-full bg-primary-600 px-7 py-3.5 text-[15px] font-semibold text-white shadow-lg shadow-primary-600/25 transition hover:bg-primary-700"
-            >
-              Request a callback
-              <ArrowRightIcon className="h-4 w-4" aria-hidden />
-            </Link>
-            <a
-              href="tel:+918031411776"
-              className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-black/10 bg-white/90 px-7 py-3.5 text-[15px] font-semibold text-neutral-900 shadow-sm backdrop-blur transition hover:bg-white"
-            >
-              <PhoneIcon className="h-4 w-4" aria-hidden />
-              080-31411776
-            </a>
+            <div className="grid min-h-[240px] grid-cols-2 grid-rows-2 gap-2 p-2 sm:min-h-[300px] sm:p-3 lg:min-h-0">
+              <div className="relative row-span-2 overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFB58C] to-[#FF7D5C] shadow-inner">
+                <span className="absolute bottom-3 left-3 rounded-lg bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-neutral-900 shadow-sm backdrop-blur-sm">
+                  Human-centred care
+                </span>
+              </div>
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#C8E4D3] to-[#6FB58F]">
+                <span className="absolute bottom-3 left-3 rounded-lg bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-neutral-900 shadow-sm backdrop-blur-sm">
+                  Verified network
+                </span>
+              </div>
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFD7A5] to-[#F4A05F]">
+                <span className="absolute bottom-3 left-3 rounded-lg bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-neutral-900 shadow-sm backdrop-blur-sm">
+                  Calm at home
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div className="mx-auto mt-14 flex max-w-4xl flex-wrap justify-center gap-3 sm:mt-20 sm:gap-4">
+          <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
             {config.heroChips.map(({ icon, title, sub, grad }) => {
               const Icon = HERO_ICONS[icon]
               return (
                 <div
                   key={title}
-                  className="flex max-w-[280px] flex-1 items-center gap-3 rounded-2xl border border-white/80 bg-white/75 px-4 py-3.5 shadow-[0_8px_32px_rgba(0,0,0,0.06)] backdrop-blur-md sm:min-w-[240px] sm:px-5"
+                  className="flex items-center gap-3 rounded-2xl bg-[#F7F7F2] px-4 py-3.5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] ring-1 ring-neutral-200/80"
                 >
-                  <div
-                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${grad} text-white shadow-md`}
-                  >
-                    <Icon className="h-5 w-5" aria-hidden />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
+                    <div className={`flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br ${grad} text-white`}>
+                      <Icon className="h-4 w-4" aria-hidden />
+                    </div>
                   </div>
-                  <div className="text-left">
-                    <strong className="block text-sm font-semibold text-neutral-900">{title}</strong>
-                    <span className="text-xs text-neutral-500">{sub}</span>
+                  <div className="min-w-0 text-left">
+                    <strong className="block text-xs font-bold text-neutral-900 sm:text-sm">{title}</strong>
+                    <span className="text-[11px] text-neutral-500 sm:text-xs">{sub}</span>
                   </div>
                 </div>
               )
@@ -177,14 +186,13 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-600">{config.difference.lede}</p>
 
-            <div className="mt-12 grid gap-4 lg:grid-cols-3 lg:items-stretch lg:gap-5">
-              <article className="relative flex min-h-[360px] flex-col justify-between overflow-hidden rounded-[28px] bg-gradient-to-br from-primary-800 via-primary-900 to-trust-900 p-8 text-white shadow-2xl shadow-primary-900/35 lg:min-h-[400px]">
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-[radial-gradient(ellipse_80%_100%_at_50%_0%,rgba(0,116,200,0.5),transparent_72%)]" />
+            <div className="mt-12 grid gap-5 lg:grid-cols-3 lg:items-stretch">
+              <article className="relative flex min-h-[360px] flex-col justify-between overflow-hidden rounded-[24px] border border-neutral-900 bg-neutral-900 p-8 text-white shadow-[0_12px_40px_rgba(0,0,0,0.18)] transition hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.22)] lg:min-h-[400px]">
                 <div className="relative">
-                  <span className="inline-block rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/95 backdrop-blur">
+                  <span className="inline-block rounded-full bg-primary-600 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-sm">
                     {config.difference.featured.tag}
                   </span>
-                  <h3 className="mt-6 font-display text-3xl font-bold tracking-tight text-white">{config.difference.featured.title}</h3>
+                  <h3 className="mt-6 font-display text-3xl font-semibold tracking-tight text-white">{config.difference.featured.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-white/75">{config.difference.featured.description}</p>
                   <ul className="mt-6 space-y-2.5 text-sm text-white/85">
                     {config.difference.featured.bullets.map((t) => (
@@ -195,7 +203,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                     ))}
                   </ul>
                 </div>
-                <Link href={enquiryHref} className="relative inline-flex items-center gap-1 text-sm font-semibold text-sky-300 hover:text-sky-200">
+                <Link href={enquiryHref} className="relative inline-flex items-center gap-1 text-sm font-semibold text-white underline decoration-white/35 underline-offset-4 hover:decoration-white">
                   {config.difference.featured.ctaLabel} <ArrowRightIcon className="h-4 w-4" aria-hidden />
                 </Link>
               </article>
@@ -203,7 +211,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
               {[config.difference.altLeft, config.difference.altRight].map((alt) => (
                 <article
                   key={alt.href}
-                  className="flex min-h-[360px] flex-col justify-between rounded-[28px] border border-black/[0.06] bg-[#f5f5f7] p-8 shadow-sm lg:min-h-[400px]"
+                  className="flex min-h-[360px] flex-col justify-between rounded-[24px] border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-lg lg:min-h-[400px]"
                 >
                   <div>
                     <span className="inline-block rounded-full bg-black/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-700">
@@ -221,7 +229,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
           </div>
         </section>
 
-        <section id="why" className="scroll-mt-28 bg-[#f5f5f7] px-4 py-16 sm:px-6 sm:py-24">
+        <section id="why" className="scroll-mt-28 bg-[#F7F7F2] px-4 py-16 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">{config.why.eyebrow}</p>
             <h2 className="mt-3 max-w-3xl font-display text-[clamp(1.65rem,4vw,2.75rem)] font-bold leading-tight tracking-tight text-neutral-950">
@@ -236,12 +244,14 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                 return (
                 <div
                   key={p.num}
-                  className={`flex h-full flex-col rounded-[28px] border border-white/80 bg-white p-8 shadow-sm ${
+                  className={`flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_10px_28px_rgba(0,0,0,0.12)] ${
                     p.span === 3 ? 'md:col-span-3' : 'md:col-span-2'
-                  } ${p.heartbeat ? 'relative overflow-hidden border-teal-100 bg-gradient-to-br from-white to-teal-50/50' : ''}`}
+                  } ${p.heartbeat ? 'relative overflow-hidden border-teal-200/80 bg-gradient-to-br from-white to-teal-50/80' : ''}`}
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <span className={`font-mono text-xs font-medium ${p.heartbeat ? 'text-teal-600/80' : 'text-neutral-400'}`}>
+                    <span
+                      className={`font-display text-3xl font-medium leading-none ${p.heartbeat ? 'text-teal-600' : 'text-primary-600'}`}
+                    >
                       {p.num}
                     </span>
                     <span
@@ -275,7 +285,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
           </div>
         </section>
 
-        <section id="services" className="scroll-mt-28 border-y border-black/[0.06] bg-[#fbfbfd] px-4 py-16 sm:px-6 sm:py-24">
+        <section id="services" className="scroll-mt-28 border-y border-neutral-200 bg-[#F7F7F2] px-4 py-16 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">{config.servicesIntro.eyebrow}</p>
             <h2 className="mt-3 font-display text-[clamp(1.65rem,4vw,2.75rem)] font-bold tracking-tight text-neutral-950">
@@ -289,14 +299,20 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
               {config.serviceCards.map((c) => (
                 <div
                   key={c.title}
-                  className={`snap-start flex min-h-[288px] w-[min(85vw,320px)] shrink-0 flex-col rounded-[22px] border bg-gradient-to-br p-6 shadow-sm sm:min-h-[300px] sm:w-[300px] ${toneClass[c.tone]}`}
+                  className="snap-start flex min-h-[300px] w-[min(85vw,320px)] shrink-0 flex-col overflow-hidden rounded-[24px] border border-neutral-200 bg-white p-3 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:min-h-[320px] sm:w-[300px]"
                 >
-                  <div className="flex min-h-0 flex-1 flex-col">
-                    <span className="text-[11px] font-bold uppercase tracking-wide text-neutral-600">{c.tag}</span>
-                    <h3 className="mt-3 font-display text-base font-bold leading-snug text-neutral-950 sm:text-lg">{c.title}</h3>
+                  <div
+                    className={`relative aspect-[1.05] w-full overflow-hidden rounded-2xl border bg-gradient-to-br p-0 ${toneClass[c.tone]}`}
+                  >
+                    <span className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-neutral-800 shadow-sm">
+                      {c.tag}
+                    </span>
+                  </div>
+                  <div className="flex min-h-0 flex-1 flex-col px-1.5 pt-4">
+                    <h3 className="font-display text-base font-bold leading-snug text-neutral-950 sm:text-lg">{c.title}</h3>
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">{c.body}</p>
                   </div>
-                  <div className="mt-auto flex justify-end pt-5 text-neutral-400">
+                  <div className="flex justify-end px-1.5 pb-1 pt-2 text-neutral-400">
                     <ArrowRightIcon className="h-5 w-5" aria-hidden />
                   </div>
                 </div>
@@ -314,87 +330,54 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
         </section>
 
         <section
-          className="relative overflow-hidden border-y border-primary-100/60 bg-gradient-to-b from-white via-primary-50/50 to-trust-50/40 px-4 py-12 sm:px-6 sm:py-16"
+          className="border-y border-neutral-800 bg-neutral-900 px-4 py-14 text-white sm:px-6 sm:py-16"
           aria-labelledby="care-trust-heading"
         >
-          <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_20%_20%,rgba(0,116,200,0.06),transparent_60%),radial-gradient(ellipse_45%_35%_at_90%_80%,rgba(0,175,170,0.08),transparent_58%)]"
-            aria-hidden
-          />
           <div className="relative mx-auto max-w-6xl">
             <p id="care-trust-heading" className="sr-only">
               Trust and scale at a glance
             </p>
-            <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
-              {CLUSTER_TRUST_STRIP.map((x, i) => {
-                const TrustIcon = TRUST_STRIP_ICONS[i] ?? UserGroupIcon
-                return (
-                  <div
-                    key={x.label}
-                    className="rounded-2xl border border-white/90 bg-white/85 p-5 shadow-[0_12px_40px_rgba(0,52,102,0.06)] backdrop-blur-[2px] transition hover:border-primary-200 hover:shadow-[0_16px_48px_rgba(0,52,102,0.09)]"
-                  >
-                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-trust-500 text-white shadow-md shadow-primary-900/15">
-                      <TrustIcon className="h-6 w-6" aria-hidden />
-                    </div>
-                    <p className="font-display text-[clamp(1.75rem,4.5vw,2.75rem)] font-bold leading-none tracking-tight text-primary-900">
-                      {x.num}
-                    </p>
-                    <p className="mt-2.5 text-xs font-medium leading-snug text-neutral-700 sm:text-sm">{x.label}</p>
-                  </div>
-                )
-              })}
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-10">
+              {CLUSTER_TRUST_STRIP.map((x) => (
+                <div key={x.label} className="text-left">
+                  <p className="font-display text-[clamp(1.75rem,4vw,2.75rem)] font-medium leading-none tracking-tight text-white">
+                    {x.num.replace(/\+|%/g, '')}
+                    {x.num.includes('+') && <em className="text-primary-400 not-italic">+</em>}
+                    {x.num.includes('%') && <em className="text-primary-400 not-italic">%</em>}
+                  </p>
+                  <p className="mt-2 text-sm leading-snug text-white/65">{x.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section
-          id="process"
-          className="relative isolate scroll-mt-28 overflow-hidden bg-primary-950 px-4 py-20 text-white sm:px-6 sm:py-28"
-        >
-          {/* Solid brand-dark base (primary-950 #001e40) — overlays stay subtle so the section never reads as “white” */}
-          <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-b from-primary-900 via-primary-950 to-[#031525]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute inset-0 opacity-50 mix-blend-screen bg-[radial-gradient(ellipse_75%_55%_at_20%_0%,rgba(61,184,255,0.22),transparent_58%)]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_55%_45%_at_95%_90%,rgba(0,175,170,0.2),transparent_60%)]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
-            aria-hidden
-          />
-
-          <div className="relative z-10 mx-auto max-w-6xl">
-            <p className="inline-flex rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-trust-200">
-              {config.processIntro.eyebrow}
-            </p>
-            <h2 className="mt-6 max-w-3xl font-display text-[clamp(1.85rem,4.25vw,2.85rem)] font-semibold leading-[1.15] tracking-tight text-white">
+        <section id="process" className="scroll-mt-28 bg-white px-4 py-16 sm:px-6 sm:py-24">
+          <div className="mx-auto max-w-6xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600">{config.processIntro.eyebrow}</p>
+            <h2 className="mt-3 max-w-3xl font-display text-[clamp(1.75rem,4vw,2.65rem)] font-semibold leading-tight tracking-tight text-neutral-900">
               {config.processIntro.title}
             </h2>
-            <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-neutral-200 sm:text-lg">
-              {config.processIntro.lede}
-            </p>
+            <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-neutral-600 sm:text-lg">{config.processIntro.lede}</p>
 
-            <div className="mt-12 flex flex-col gap-5 md:mt-16 md:gap-6">
-              {config.processSteps.map((step) => (
-                <div
-                  key={step.mark}
-                  className="flex flex-col gap-6 rounded-3xl border border-white/10 bg-white/[0.07] p-6 shadow-[0_28px_80px_rgba(0,0,0,0.45)] backdrop-blur-[8px] sm:flex-row sm:items-start sm:gap-8 sm:p-8"
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-gradient-to-br from-primary-600/50 to-trust-700/40 font-display text-lg font-semibold not-italic text-white shadow-inner shadow-black/20 sm:h-16 sm:w-16 sm:text-xl">
-                    {step.mark}
+            <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {config.processSteps.map((step, idx) => {
+                const StepIcon = PROCESS_STEP_ICONS[idx % PROCESS_STEP_ICONS.length]
+                const pastel = PROCESS_PASTEL_BG[idx % PROCESS_PASTEL_BG.length]
+                return (
+                  <div
+                    key={step.mark}
+                    className={`flex flex-col rounded-3xl p-7 shadow-[0_6px_20px_rgba(0,0,0,0.06)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.12)] ${pastel}`}
+                  >
+                    <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-[0_2px_6px_rgba(0,0,0,0.06)]">
+                      <StepIcon className="h-7 w-7 text-primary-600" aria-hidden />
+                    </div>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-primary-600">Step {step.mark}</p>
+                    <h3 className="mt-2 font-display text-lg font-bold tracking-tight text-neutral-900">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-600">{step.body}</p>
                   </div>
-                  <div className="min-w-0 flex-1 pt-0.5">
-                    <h3 className="font-display text-xl font-semibold tracking-tight text-white sm:text-2xl">{step.title}</h3>
-                    <p className="mt-3 text-[15px] leading-[1.7] text-neutral-200 sm:text-[17px]">{step.body}</p>
-                  </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>
@@ -436,55 +419,49 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
           </section>
         )}
 
-        <section
-          id="book"
-          className="relative isolate scroll-mt-28 overflow-hidden bg-primary-950 px-4 py-20 text-center sm:px-6 sm:py-28"
-        >
-          <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-primary-950 to-trust-900/40"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute inset-0 opacity-45 bg-[radial-gradient(ellipse_65%_50%_at_50%_15%,rgba(77,191,255,0.18),transparent_62%)]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent"
-            aria-hidden
-          />
-
-          <div className="relative z-10 mx-auto max-w-2xl px-2">
-            <h2 className="font-display text-[clamp(1.75rem,4.25vw,2.65rem)] font-semibold leading-[1.2] tracking-tight text-white">
-              <span className="block">{config.finalCta.titleBefore}</span>
-              <span className="mt-2 block text-trust-200">{config.finalCta.titleGradient}</span>
-            </h2>
-            <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-neutral-200 sm:text-lg">
-              {config.finalCta.lede}
-            </p>
-            <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
-              <Link
-                href={enquiryHref}
-                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-white px-9 py-3.5 text-base font-semibold text-primary-950 shadow-[0_12px_40px_rgba(0,0,0,0.35)] transition hover:bg-neutral-100"
-              >
-                Start your enquiry
-              </Link>
-              <a
-                href="tel:+918031411776"
-                className="inline-flex min-h-[52px] items-center justify-center rounded-full border-2 border-white/70 bg-transparent px-9 py-3.5 text-base font-semibold text-white transition hover:border-white hover:bg-white/10"
-              >
-                Call 080-31411776
-              </a>
+        <section id="book" className="scroll-mt-28 bg-[#F7F7F2] px-4 py-16 sm:px-6 sm:py-20">
+          <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[32px] bg-gradient-to-br from-[#FFE0D9] via-[#FFC4B0] to-[#FF8A65] p-8 shadow-[0_24px_60px_rgba(255,90,60,0.2)] sm:p-12 lg:p-14">
+            <div
+              className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-white/40 blur-3xl"
+              aria-hidden
+            />
+            <div className="relative grid gap-10 lg:grid-cols-[1.35fr_1fr] lg:items-center lg:gap-12">
+              <div className="text-left">
+                <h2 className="font-display text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.1] tracking-tight text-neutral-900">
+                  <span className="block">{config.finalCta.titleBefore}</span>
+                  <span className="mt-2 block text-primary-700">{config.finalCta.titleGradient}</span>
+                </h2>
+                <p className="mt-5 max-w-md text-base leading-relaxed text-neutral-800/90 sm:text-lg">{config.finalCta.lede}</p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                  <Link
+                    href={enquiryHref}
+                    className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-primary-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary-900/20 transition hover:bg-primary-700"
+                  >
+                    Start your enquiry
+                    <ArrowRightIcon className="h-4 w-4" aria-hidden />
+                  </Link>
+                  <a
+                    href="tel:+918031411776"
+                    className="inline-flex min-h-[52px] items-center justify-center rounded-xl border-2 border-neutral-900 bg-white/85 px-8 py-3.5 text-base font-semibold text-neutral-900 backdrop-blur-sm transition hover:bg-white"
+                  >
+                    Call 080-31411776
+                  </a>
+                </div>
+                {config.finalCta.showPillarLink !== false && (
+                  <p className="mt-8 text-sm text-neutral-800/80">
+                    <Link href={CARE_PILLAR_HREF} className="font-semibold underline decoration-neutral-900/25 underline-offset-4 hover:decoration-neutral-900">
+                      {config.finalCta.pillarLinkLabel ?? '← Home care services overview'}
+                    </Link>
+                  </p>
+                )}
+              </div>
+              <div className="relative hidden min-h-[200px] lg:flex lg:items-center lg:justify-center" aria-hidden>
+                <div className="relative h-52 w-52 rounded-full bg-white/35 shadow-inner ring-4 ring-white/50">
+                  <div className="absolute inset-6 rounded-full bg-gradient-to-br from-primary-400/40 to-trust-400/50" />
+                  <HeartIcon className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 text-white drop-shadow-md" />
+                </div>
+              </div>
             </div>
-            {config.finalCta.showPillarLink !== false && (
-              <p className="mt-12 text-sm text-neutral-300">
-                <Link
-                  href={CARE_PILLAR_HREF}
-                  className="font-medium text-white/90 underline decoration-white/30 underline-offset-4 transition hover:text-white hover:decoration-white"
-                >
-                  {config.finalCta.pillarLinkLabel ?? '← Home care services overview'}
-                </Link>
-              </p>
-            )}
           </div>
         </section>
       </main>

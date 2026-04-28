@@ -24,9 +24,9 @@ export default function CareClusterTestimonials({ stories }: { stories: CareStor
   const hasEm = emIdx >= 0 && emph
 
   return (
-    <section className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-[#FFF8F1] px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
       <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#fbfbfd_0%,#ffffff_45%,rgba(230,244,255,0.55)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#FFF8F1_0%,#ffffff_50%,#FFF8F1_100%)]"
         aria-hidden
       />
       <div
