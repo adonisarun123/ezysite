@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import { Inter, Noto_Sans_Devanagari, Poppins } from 'next/font/google'
+import { Inter, Noto_Sans_Devanagari, Poppins, Fraunces, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import { OrganizationSchema, WebSiteSchema } from '../components/schema'
 import { UrgencyProvider } from '../components/UrgencyContext'
@@ -21,6 +21,23 @@ const poppins = Poppins({
   display: 'swap',
   variable: '--font-poppins',
   preload: true,
+})
+
+/** Care cluster landing — Airbnb-style serif + humanist UI (scoped via Tailwind `font-careSerif` / `font-careUi`) */
+const careSerif = Fraunces({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-care-serif',
+  preload: false,
+  weight: ['400', '500', '600', '700'],
+})
+
+const careUi = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-care-ui',
+  preload: false,
+  weight: ['400', '500', '600', '700', '800'],
 })
 
 /** Hindi/Devanagari UI only — preload off so English LCP is not delayed */
@@ -126,7 +143,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <WebSiteSchema />
       </head>
       <body
-        className={`${inter.variable} ${poppins.variable} ${notoSansDevanagari.variable} font-sans antialiased`}
+        className={`${inter.variable} ${poppins.variable} ${notoSansDevanagari.variable} ${careSerif.variable} ${careUi.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
         <noscript>
