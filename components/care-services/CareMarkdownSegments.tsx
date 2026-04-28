@@ -59,7 +59,7 @@ const careComponents = {
     <h1 className="font-display text-3xl font-bold leading-tight tracking-tight text-gray-900 sm:text-4xl">{children}</h1>
   ),
   h2: ({ children }: { children?: React.ReactNode }) => (
-    <h2 className="font-display mt-12 scroll-mt-28 border-b border-gray-100 pb-2 text-2xl font-bold text-gray-900 sm:text-[1.65rem]">
+    <h2 className="font-display mt-10 scroll-mt-28 border-b-2 border-primary-100 pb-3 text-2xl font-bold text-gray-900 first:mt-0 sm:mt-12 sm:text-[1.65rem]">
       {children}
     </h2>
   ),

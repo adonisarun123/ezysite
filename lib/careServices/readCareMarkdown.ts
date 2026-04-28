@@ -108,6 +108,24 @@ function stripMdForSchema(text: string): string {
 }
 
 /** FAQ blocks use ### **Question** followed by answer paragraphs */
+/** Remove duplicate H1 from hero — returns plain title (no **) */
+export function extractH1AndRest(bodyMd: string): { h1Plain: string; rest: string } {
+  const m = bodyMd.match(/^\s*#\s+(.+?)\s*\n/)
+  if (!m) return { h1Plain: '', rest: bodyMd }
+  const h1Plain = m[1].replace(/\*\*/g, '').trim()
+  const rest = bodyMd.slice((m.index ?? 0) + m[0].length)
+  return { h1Plain, rest }
+}
+
+/** Remove FAQ block so we can render FAQAccordion separately */
+export function stripFaqSection(markdown: string): string {
+  const stripped = markdown.replace(
+    /\r?\n## \*\*Frequently Asked Questions\*\*\r?\n[\s\S]*?(?=\r?\n## \*\*|$)/,
+    ''
+  )
+  return stripped.replace(/^\s*\n+/, '').trimEnd()
+}
+
 export function extractCareFaqs(markdownBody: string): { question: string; answer: string }[] {
   const marker = '## **Frequently Asked Questions**'
   const idx = markdownBody.indexOf(marker)
