@@ -12,7 +12,7 @@ import {
   type OnDemandHelpTaskId,
 } from '@/lib/onDemandHelp'
 import { buildOnDemandHelpSpecificRequirements, buildOnDemandHelpTimingSummary } from '@/lib/onDemandHelpLeadText'
-import { getAvailableSlotStarts } from '@/lib/onDemandHelpSlots'
+import { getAvailableSlotStartsIst } from '@/lib/onDemandHelpSlots'
 
 const ALLOWED_AREAS = new Set<string>(ON_DEMAND_HELP_AREAS)
 const ALLOWED_DURATIONS = new Set<number>(ON_DEMAND_HELP_DURATIONS)
@@ -63,37 +63,66 @@ export async function POST(req: NextRequest) {
   const notes = typeof body.notes === 'string' ? body.notes.trim() : ''
 
   if (!Array.isArray(taskIdsRaw) || !isTaskIdArray(taskIdsRaw)) {
-    return NextResponse.json({ error: 'invalid_tasks' }, { status: 400 })
+    return NextResponse.json(
+      { error: 'invalid_tasks', message: 'Select at least one valid task and try again.' },
+      { status: 400 }
+    )
   }
   const taskIds = taskIdsRaw
 
   if (!ALLOWED_AREAS.has(area)) {
-    return NextResponse.json({ error: 'invalid_area' }, { status: 400 })
+    return NextResponse.json(
+      { error: 'invalid_area', message: 'Choose one of the listed pilot localities.' },
+      { status: 400 }
+    )
   }
   if (!isDurationHours(durationHours)) {
-    return NextResponse.json({ error: 'invalid_duration' }, { status: 400 })
+    return NextResponse.json(
+      { error: 'invalid_duration', message: 'Choose a 2h, 4h, 6h or 8h package.' },
+      { status: 400 }
+    )
   }
   if (!/^\d{4}-\d{2}-\d{2}$/.test(serviceDate)) {
-    return NextResponse.json({ error: 'invalid_date' }, { status: 400 })
+    return NextResponse.json({ error: 'invalid_date', message: 'Use a valid visit date.' }, { status: 400 })
   }
-  const allowedStarts = getAvailableSlotStarts(serviceDate, durationHours)
+  /** IST — must match browser pilot UX; server UTC was rejecting valid slots (e.g. 9:30 IST). */
+  const allowedStarts = getAvailableSlotStartsIst(serviceDate, durationHours)
   if (!allowedStarts.includes(slotMinutes)) {
-    return NextResponse.json({ error: 'invalid_slot' }, { status: 400 })
+    return NextResponse.json(
+      {
+        error: 'invalid_slot',
+        message:
+          'That start time is not available for this date and duration (service window 9:00 AM–7:30 PM IST, 60-minute advance rule). Refresh and pick another slot.',
+      },
+      { status: 400 }
+    )
   }
   if (name.length < 3) {
-    return NextResponse.json({ error: 'invalid_name' }, { status: 400 })
+    return NextResponse.json(
+      { error: 'invalid_name', message: 'Enter your full name (at least 3 characters).' },
+      { status: 400 }
+    )
   }
   if (!/^[5-9][0-9]{9}$/.test(phone)) {
-    return NextResponse.json({ error: 'invalid_phone' }, { status: 400 })
+    return NextResponse.json(
+      { error: 'invalid_phone', message: 'Enter a valid 10-digit Indian mobile number.' },
+      { status: 400 }
+    )
   }
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return NextResponse.json({ error: 'invalid_email' }, { status: 400 })
+    return NextResponse.json({ error: 'invalid_email', message: 'Enter a valid email address.' }, { status: 400 })
   }
   if (apartmentOrSocietyName.length < 2) {
-    return NextResponse.json({ error: 'invalid_apartment_name' }, { status: 400 })
+    return NextResponse.json(
+      { error: 'invalid_apartment_name', message: 'Enter your apartment / society / layout name.' },
+      { status: 400 }
+    )
   }
   if (flatUnitDetails.length < 2) {
-    return NextResponse.json({ error: 'invalid_unit_details' }, { status: 400 })
+    return NextResponse.json(
+      { error: 'invalid_unit_details', message: 'Enter flat number, tower and floor details.' },
+      { status: 400 }
+    )
   }
 
   const timingSummary = buildOnDemandHelpTimingSummary(serviceDate, slotMinutes, durationHours)

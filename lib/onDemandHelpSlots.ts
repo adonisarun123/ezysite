@@ -1,4 +1,8 @@
 import type { OnDemandHelpDurationHours } from './onDemandHelp'
+import { istInstantMs } from './istDateTime'
+
+/** Pilot is Bengaluru — all slot math uses Asia/Kolkata wall time (no DST). */
+export const ON_DEMAND_HELP_TIMEZONE = 'Asia/Kolkata' as const
 
 /** Service window: visits must finish by this minute-of-day (local). 19:30 */
 export const SERVICE_CLOSE_MINUTES = 19 * 60 + 30
@@ -78,4 +82,37 @@ export function endMinutesForSlot(startMinutes: number, durationHours: OnDemandH
 
 export function minSelectableDateLocal(now: Date = new Date()): string {
   return localYmd(now)
+}
+
+/** Today's calendar date YYYY-MM-DD in Asia/Kolkata. */
+export function todayYmdInIst(now: Date = new Date()): string {
+  return now.toLocaleDateString('en-CA', { timeZone: ON_DEMAND_HELP_TIMEZONE })
+}
+
+/** Minimum selectable date for the date picker (IST “today”). */
+export function minSelectableDateIst(now: Date = new Date()): string {
+  return todayYmdInIst(now)
+}
+
+/**
+ * Slot start times (minutes from midnight) in IST for the given calendar day.
+ * Same as the pilot UX regardless of server or browser default timezone.
+ */
+export function getAvailableSlotStartsIst(
+  dateStr: string,
+  durationHours: OnDemandHelpDurationHours,
+  now: Date = new Date()
+): number[] {
+  const maxStart = maxStartMinutesForDuration(durationHours)
+  const slots: number[] = []
+  const isToday = dateStr === todayYmdInIst(now)
+  const earliestEligibleMs = now.getTime() + 60 * 60 * 1000
+
+  for (let startMin = SERVICE_OPEN_MINUTES; startMin <= maxStart; startMin += SLOT_STEP_MINUTES) {
+    const slotInstantMs = istInstantMs(dateStr, startMin)
+    if (isToday && slotInstantMs < earliestEligibleMs) continue
+    slots.push(startMin)
+  }
+
+  return slots
 }

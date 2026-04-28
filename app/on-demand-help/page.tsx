@@ -27,7 +27,7 @@ export default function OnDemandHelpPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-20 pb-32 max-md:pb-40 md:pb-24">
         <section className="relative overflow-hidden bg-gradient-to-br from-emerald-700 via-teal-800 to-slate-900 text-white">
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-30 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
           <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
@@ -94,7 +94,7 @@ export default function OnDemandHelpPage() {
           </div>
         </section>
 
-        <section className="relative z-10 -mt-10 px-4 pb-20 sm:px-6 lg:px-8">
+        <section className="relative z-[1] -mt-10 px-4 pb-24 sm:px-6 lg:px-8 max-md:pb-28">
           <OnDemandHelpWizard />
         </section>
       </main>

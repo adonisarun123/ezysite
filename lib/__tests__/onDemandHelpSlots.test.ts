@@ -4,9 +4,13 @@ import {
   SERVICE_OPEN_MINUTES,
   endMinutesForSlot,
   getAvailableSlotStarts,
+  getAvailableSlotStartsIst,
   maxStartMinutesForDuration,
+  minSelectableDateIst,
   minSelectableDateLocal,
+  todayYmdInIst,
 } from '../onDemandHelpSlots'
+import { istInstantMs } from '../istDateTime'
 
 describe('onDemandHelpSlots', () => {
   describe('constants & pure helpers', () => {
@@ -31,7 +35,25 @@ describe('onDemandHelpSlots', () => {
     })
   })
 
-  describe('getAvailableSlotStarts (TZ Asia/Kolkata)', () => {
+  describe('getAvailableSlotStartsIst (Bangalore pilot — fixes server UTC vs IST)', () => {
+    it('includes 9:00 on a future IST date regardless of machine TZ', () => {
+      const slots = getAvailableSlotStartsIst('2030-01-15', 2, new Date('2030-01-10T12:00:00Z'))
+      expect(slots[0]).toBe(SERVICE_OPEN_MINUTES)
+    })
+
+    it('on “today” in IST filters slots before now+60m using IST wall clock', () => {
+      const now = new Date('2030-06-01T02:45:00.000Z')
+      expect(todayYmdInIst(now)).toBe('2030-06-01')
+      const earliestMs = now.getTime() + 60 * 60 * 1000
+      const slots = getAvailableSlotStartsIst('2030-06-01', 2, now)
+      expect(slots[0]).toBe(9 * 60 + 30)
+      for (const sm of slots) {
+        expect(istInstantMs('2030-06-01', sm)).toBeGreaterThanOrEqual(earliestMs)
+      }
+    })
+  })
+
+  describe('getAvailableSlotStarts (browser-local — legacy)', () => {
     const prevTz = process.env.TZ
 
     beforeAll(() => {
@@ -42,29 +64,22 @@ describe('onDemandHelpSlots', () => {
       process.env.TZ = prevTz
     })
 
-    it('includes 9:00 on a future date regardless of now', () => {
+    it('includes 9:00 on a future date when TZ is Kolkata', () => {
       const future = '2030-01-15'
       const slots = getAvailableSlotStarts(future, 2, new Date('2030-01-10T12:00:00+05:30'))
       expect(slots[0]).toBe(SERVICE_OPEN_MINUTES)
     })
-
-    it('on same day filters slots before now+60m', () => {
-      const dateStr = '2030-06-01'
-      const now = new Date('2030-06-01T08:15:00+05:30')
-      const slots = getAvailableSlotStarts(dateStr, 2, now)
-      const earliestAllowed = new Date(now.getTime() + 60 * 60 * 1000)
-      for (const sm of slots) {
-        const [y, m, d] = dateStr.split('-').map(Number)
-        const slotStart = new Date(y, m - 1, d, Math.floor(sm / 60), sm % 60, 0, 0)
-        expect(slotStart.getTime()).toBeGreaterThanOrEqual(earliestAllowed.getTime())
-      }
-    })
   })
 
-  describe('minSelectableDateLocal', () => {
+  describe('minSelectableDateLocal / ISt', () => {
     it('returns YYYY-MM-DD for provided instant', () => {
       const d = new Date('2031-07-04T18:00:00+05:30')
       expect(minSelectableDateLocal(d)).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+    })
+
+    it('minSelectableDateIst follows Asia/Kolkata calendar', () => {
+      const d = new Date('2031-07-04T18:00:00+05:30')
+      expect(minSelectableDateIst(d)).toBe('2031-07-04')
     })
   })
 })

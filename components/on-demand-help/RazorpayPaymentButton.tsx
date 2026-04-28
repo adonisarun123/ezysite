@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 
 /**
  * Razorpay Payment Button embed — injects script per official snippet so `data-payment_button_id` is honored.
+ * The checkout UI (including close/back) is controlled by Razorpay, not this app.
  */
 export default function RazorpayPaymentButton({
   paymentButtonId,

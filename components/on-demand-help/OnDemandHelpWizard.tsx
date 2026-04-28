@@ -18,8 +18,8 @@ import {
   endMinutesForSlot,
   formatMinutesAsClock,
   formatMinutesDisplay,
-  getAvailableSlotStarts,
-  minSelectableDateLocal,
+  getAvailableSlotStartsIst,
+  minSelectableDateIst,
 } from '@/lib/onDemandHelpSlots'
 import { trackFormComplete, trackFormError, trackFormStart, trackFormSubmit } from '@/lib/analytics'
 import { sendWebhook } from '@/lib/webhookService'
@@ -52,7 +52,7 @@ export default function OnDemandHelpWizard() {
   const [taskIds, setTaskIds] = useState<OnDemandHelpTaskId[]>([])
   const [area, setArea] = useState<OnDemandHelpArea | ''>('')
   const [durationHours, setDurationHours] = useState<OnDemandHelpDurationHours | null>(null)
-  const [serviceDate, setServiceDate] = useState(() => minSelectableDateLocal())
+  const [serviceDate, setServiceDate] = useState(() => minSelectableDateIst())
   const [slotMinutes, setSlotMinutes] = useState<number | null>(null)
 
   const [name, setName] = useState('')
@@ -72,6 +72,7 @@ export default function OnDemandHelpWizard() {
   const [formErrors, setFormErrors] = useState<Record<string, string>>({})
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
   const [submitConflictMessage, setSubmitConflictMessage] = useState<string | null>(null)
+  const [submitErrorHint, setSubmitErrorHint] = useState<string | null>(null)
   const [paymentUnlocked, setPaymentUnlocked] = useState(false)
   const [hasTrackedStart, setHasTrackedStart] = useState(false)
 
@@ -117,7 +118,7 @@ export default function OnDemandHelpWizard() {
 
   const slots = useMemo(() => {
     if (!durationHours) return []
-    const raw = getAvailableSlotStarts(serviceDate, durationHours)
+    const raw = getAvailableSlotStartsIst(serviceDate, durationHours)
     return raw.filter((slotMin) => {
       const { startMs, endMs } = istVisitRangeUtcIso(serviceDate, slotMin, durationHours)
       const overlaps = occupiedIntervals.some((b) =>
@@ -186,7 +187,7 @@ export default function OnDemandHelpWizard() {
     if (!durationHours) errors.durationHours = 'Choose a visit length'
     if (!serviceDate) errors.serviceDate = 'Choose a date'
     if (durationHours) {
-      const sl = getAvailableSlotStarts(serviceDate, durationHours)
+      const sl = getAvailableSlotStartsIst(serviceDate, durationHours)
       if (sl.length === 0) errors.slot = 'No slots available for this day — try another date'
       if (slotMinutes === null) errors.slotMinutes = 'Choose a start time'
       else if (!sl.includes(slotMinutes)) errors.slotMinutes = 'Pick a valid start time'
@@ -211,7 +212,7 @@ export default function OnDemandHelpWizard() {
     if (taskIds.length === 0) return 1
     if (!area) return 2
     if (!durationHours) return 3
-    const sl = durationHours ? getAvailableSlotStarts(serviceDate, durationHours) : []
+    const sl = durationHours ? getAvailableSlotStartsIst(serviceDate, durationHours) : []
     if (
       !serviceDate ||
       sl.length === 0 ||
@@ -250,6 +251,7 @@ export default function OnDemandHelpWizard() {
 
     setSubmitStatus('submitting')
     setSubmitConflictMessage(null)
+    setSubmitErrorHint(null)
     const newRequestId = generateRequestId()
 
     const timingSummary = buildOnDemandHelpTimingSummary(serviceDate, slotMinutes, durationHours)
@@ -410,6 +412,7 @@ export default function OnDemandHelpWizard() {
       console.error(e)
       trackFormError(FORM_NAME, 'submit', String(e))
       setSubmitConflictMessage(null)
+      setSubmitErrorHint(e instanceof Error ? e.message : 'Something went wrong. Please try again.')
       setSubmitStatus('error')
     }
   }
@@ -434,45 +437,51 @@ export default function OnDemandHelpWizard() {
   return (
     <div
       id="book-on-demand-help"
-      className="scroll-mt-24 rounded-2xl border border-emerald-100 bg-gradient-to-b from-emerald-50/80 to-white p-6 sm:p-10 shadow-lg"
+      className="isolate scroll-mt-24 rounded-2xl border border-emerald-100 bg-gradient-to-b from-emerald-50/80 to-white p-6 pb-8 sm:p-10 sm:pb-10 shadow-lg"
     >
-      <div className="mb-8 text-center">
-        <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">Book in a few steps</p>
-        <h2 className="mt-2 font-[family-name:var(--font-poppins)] text-2xl font-bold text-gray-900 sm:text-3xl">
-          Schedule your visit
-        </h2>
-        <p className="mx-auto mt-2 max-w-xl text-sm text-gray-600">
-          Same-day slots allowed when they meet the 60-minute advance rule. No instant or walk-in bookings on this
-          page.
-        </p>
+      <div className="flex flex-col gap-8 border-b border-emerald-100/80 pb-8">
+        <header className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700 sm:text-sm">
+            Book in a few steps
+          </p>
+          <h2 className="mt-3 font-[family-name:var(--font-poppins)] text-[1.65rem] font-bold leading-tight tracking-tight text-gray-900 sm:mt-4 sm:text-3xl">
+            Schedule your visit
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-gray-600 sm:mt-4">
+            Same-day slots allowed when they meet the 60-minute advance rule. No instant or walk-in bookings on this
+            page.
+          </p>
+        </header>
+
+        {/* Step indicator — horizontal scroll on narrow screens so pills don’t wrap into the heading */}
+        <nav aria-label="Booking steps" className="min-w-0">
+          <ol className="flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:justify-center sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
+            {STEP_LABELS.map((label, i) => {
+              const n = i + 1
+              const active = step === n
+              const done = step > n
+              return (
+                <li key={label} className="shrink-0 snap-start">
+                  <span
+                    className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium sm:text-sm ${
+                      active
+                        ? 'bg-emerald-600 text-white'
+                        : done
+                          ? 'bg-emerald-100 text-emerald-900'
+                          : 'bg-gray-100 text-gray-500'
+                    }`}
+                  >
+                    <span className="tabular-nums">{n}</span>
+                    <span className="hidden sm:inline">{label}</span>
+                  </span>
+                </li>
+              )
+            })}
+          </ol>
+        </nav>
       </div>
 
-      {/* Step indicator */}
-      <ol className="mb-8 flex flex-wrap justify-center gap-2 sm:gap-3">
-        {STEP_LABELS.map((label, i) => {
-          const n = i + 1
-          const active = step === n
-          const done = step > n
-          return (
-            <li key={label}>
-              <span
-                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium sm:text-sm ${
-                  active
-                    ? 'bg-emerald-600 text-white'
-                    : done
-                      ? 'bg-emerald-100 text-emerald-900'
-                      : 'bg-gray-100 text-gray-500'
-                }`}
-              >
-                <span className="tabular-nums">{n}</span>
-                <span className="hidden sm:inline">{label}</span>
-              </span>
-            </li>
-          )
-        })}
-      </ol>
-
-      <div className="mx-auto max-w-2xl">
+      <div className="mx-auto mt-8 max-w-2xl sm:mt-10">
         {/* Step 1 */}
         {step === 1 && (
           <div className="space-y-4">
@@ -606,7 +615,7 @@ export default function OnDemandHelpWizard() {
               <input
                 id="svc-date"
                 type="date"
-                min={minSelectableDateLocal()}
+                min={minSelectableDateIst()}
                 value={serviceDate}
                 onChange={(e) => setServiceDate(e.target.value)}
                 className={`w-full max-w-xs rounded-lg border px-3 py-2 text-gray-900 ${accent}`}
@@ -792,7 +801,10 @@ export default function OnDemandHelpWizard() {
                     and choose another slot.
                   </p>
                 )}
-                {submitStatus === 'error' && !submitConflictMessage && (
+                {submitStatus === 'error' && !submitConflictMessage && submitErrorHint && (
+                  <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">{submitErrorHint}</p>
+                )}
+                {submitStatus === 'error' && !submitConflictMessage && !submitErrorHint && (
                   <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
                     Something went wrong while saving. Please try again or call{' '}
                     <a href="tel:+919972571005" className="font-semibold underline">
@@ -818,14 +830,47 @@ export default function OnDemandHelpWizard() {
                 </button>
               </>
             ) : (
-              <div className="space-y-4 text-center">
+              <div className="space-y-5 text-center">
                 <CheckCircleIcon className="mx-auto h-12 w-12 text-emerald-600" aria-hidden />
                 <h3 className="text-xl font-semibold text-gray-900">Request saved</h3>
                 <p className="text-sm text-gray-600">
                   Complete payment for your <strong className="font-semibold text-gray-900">{durationHours}-hour</strong>{' '}
                   slot using the button below. Our team will align helper assignment with your chosen time.
                 </p>
-                <div className="flex justify-center pt-2">
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setPaymentUnlocked(false)
+                    setStep(5)
+                  }}
+                  className="mx-auto block text-sm font-semibold text-emerald-800 underline decoration-emerald-400 underline-offset-4 hover:text-emerald-950"
+                >
+                  ← Edit booking details before paying
+                </button>
+
+                <div className="mx-auto max-w-lg rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left text-sm text-slate-700 shadow-sm">
+                  <p className="font-semibold text-slate-900">How to exit the Razorpay payment popup</p>
+                  <p className="mt-2 text-slate-600">
+                    Razorpay opens its own checkout window — we can’t add a close button inside it. To go back:
+                  </p>
+                  <ul className="mt-2 list-inside list-disc space-y-1.5 text-slate-600">
+                    <li>
+                      Tap the <strong className="text-slate-800">← Back</strong> arrow at the top of Razorpay until the
+                      popup closes.
+                    </li>
+                    <li>
+                      On a computer, press{' '}
+                      <kbd className="rounded border border-slate-300 bg-white px-1.5 py-0.5 font-mono text-xs text-slate-800">
+                        Esc
+                      </kbd>{' '}
+                      or click the dimmed grey area outside the popup.
+                    </li>
+                    <li>On your phone, use the system Back button or back gesture.</li>
+                  </ul>
+                </div>
+
+                <div className="flex justify-center pt-1">
                   <RazorpayPaymentButton paymentButtonId={RAZORPAY_PAYMENT_BUTTON_IDS[durationHours]} />
                 </div>
                 <p className="text-xs text-gray-500">

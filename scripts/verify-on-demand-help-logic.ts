@@ -11,7 +11,7 @@ import {
 } from '../lib/istDateTime'
 import {
   maxStartMinutesForDuration,
-  getAvailableSlotStarts,
+  getAvailableSlotStartsIst,
   SERVICE_CLOSE_MINUTES,
 } from '../lib/onDemandHelpSlots'
 import {
@@ -53,8 +53,7 @@ function main() {
   })
   assert.ok(body.includes('Green Valley'))
 
-  process.env.TZ = 'Asia/Kolkata'
-  const slots = getAvailableSlotStarts('2030-01-15', 2, new Date('2030-01-10T12:00:00+05:30'))
+  const slots = getAvailableSlotStartsIst('2030-01-15', 2, new Date('2030-01-10T12:00:00+05:30'))
   assert.equal(slots[0], 9 * 60)
 
   console.log('verify-on-demand-help-logic: all checks passed.')
