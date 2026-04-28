@@ -1,4 +1,4 @@
-URL: /home-healthcare-services-bangalore/
+URL: /care-services/home-healthcare-services-bangalore/
 Meta Title: Home Healthcare Services in Bangalore | Medical + Daily Care Combined | EzyHelpers
 Meta Description: Home Healthcare Services in Bangalore by EzyHelpers. Medical nursing combined with daily care for post-surgical, chronic, and ICU-discharge patients. One service, one team.
 
@@ -19,7 +19,7 @@ EzyHelpers solves this by offering medical and non-medical home care under a sin
 
 **CTA: Call Us Now**
 
-> **Need only medical nursing (no daily care)?** See [Home Nursing Services](/home-nursing-services-bangalore/). **Need only daily personal care (no medical procedures)?** See [Caretaker Services](/caretaker-services-bangalore/) or [Patient Care Services](/patient-care-services-bangalore/).
+> **Need only medical nursing (no daily care)?** See [Home Nursing Services](/care-services/home-nursing-services-bangalore/). **Need only daily personal care (no medical procedures)?** See [Caretaker Services](/care-services/caretaker-services-bangalore/) or [Patient Care Services](/care-services/patient-care-services-bangalore/).
 
 ---
 
@@ -30,8 +30,8 @@ Most home care providers force you to choose: a nurse OR a caretaker. But many p
 | Service | Best For | What's Included |
 |---|---|---|
 | **Home Healthcare** (this page) | Patients needing both medical AND daily care | Coordinated nurse + caretaker placement, doctor-aligned care plan |
-| [Home Nursing Services](/home-nursing-services-bangalore/) | Patients needing medical procedures only | Wound care, IV, catheter, vital monitoring |
-| [Caretaker Services](/caretaker-services-bangalore/) | Patients needing daily personal care only | Hygiene, feeding, mobility, companionship |
+| [Home Nursing Services](/care-services/home-nursing-services-bangalore/) | Patients needing medical procedures only | Wound care, IV, catheter, vital monitoring |
+| [Caretaker Services](/care-services/caretaker-services-bangalore/) | Patients needing daily personal care only | Hygiene, feeding, mobility, companionship |
 
 If you're not sure which fits your situation, our team will help you decide in a 5-minute consultation.
 
@@ -251,12 +251,12 @@ Yes — that's exactly what home healthcare is. The nurse handles medical proced
 
 ## **Related Services**
 
-- **[Home Nursing Services](/home-nursing-services-bangalore/)** — When the patient needs only medical procedures (no daily care needed).
-- **[Patient Care Services](/patient-care-services-bangalore/)** — When the focus is daily care for a patient recovering from surgery or illness.
-- **[Caretaker Services](/caretaker-services-bangalore/)** — When the patient needs only daily personal care, no medical procedures.
-- **[Trained Attendant Services](/trained-attendant-services-bangalore/)** — For high-dependency patients (bedridden, neurological) needing skilled physical handling.
+- **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)** — When the patient needs only medical procedures (no daily care needed).
+- **[Patient Care Services](/care-services/patient-care-services-bangalore/)** — When the focus is daily care for a patient recovering from surgery or illness.
+- **[Caretaker Services](/care-services/caretaker-services-bangalore/)** — When the patient needs only daily personal care, no medical procedures.
+- **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)** — For high-dependency patients (bedridden, neurological) needing skilled physical handling.
 
-← Back to **[Home Care Services](/home-care-services-bangalore/)**
+← Back to **[Home Care Services](/care-services/home-care-services-bangalore/)**
 
 ---
 

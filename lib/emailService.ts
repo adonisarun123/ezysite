@@ -1430,14 +1430,14 @@ export type SendLeadEmailOptions = {
 }
 
 const CARE_TYPE_LABELS: Record<string, string> = {
-  'home-care-services-bangalore': 'Home Care Services (overview)',
-  'home-healthcare-services-bangalore': 'Home Healthcare Services',
-  'home-nursing-services-bangalore': 'Home Nursing Services',
-  'elderly-care-services-bangalore': 'Elderly Care Services',
-  'caretaker-services-bangalore': 'Caretaker Services',
-  'patient-care-services-bangalore': 'Patient Care Services',
-  'home-attendant-services-bangalore': 'Home Attendant Services',
-  'trained-attendant-services-bangalore': 'Trained Attendant Services',
+  'care-services/home-care-services-bangalore': 'Home Care Services (overview)',
+  'care-services/home-healthcare-services-bangalore': 'Home Healthcare Services',
+  'care-services/home-nursing-services-bangalore': 'Home Nursing Services',
+  'care-services/elderly-care-services-bangalore': 'Elderly Care Services',
+  'care-services/caretaker-services-bangalore': 'Caretaker Services',
+  'care-services/patient-care-services-bangalore': 'Patient Care Services',
+  'care-services/home-attendant-services-bangalore': 'Home Attendant Services',
+  'care-services/trained-attendant-services-bangalore': 'Trained Attendant Services',
   not_sure: 'Not sure — please advise',
 }
 

@@ -12,8 +12,6 @@ import {
 } from '@heroicons/react/24/outline'
 import { useUrgency } from './UrgencyContext'
 import { trackPhoneClick, trackCTAClick } from '@/lib/analytics'
-import { CARE_NAV_CLUSTERS, ALL_CARE_PATHS } from '@/lib/careServices/registry'
-
 interface NavigationItem {
   name: string
   href: string
@@ -37,13 +35,6 @@ const navigation: NavigationItem[] = [
     ]
   },
   { name: 'Hire Helper', href: '/hire-helper' },
-  {
-    name: 'Care Services',
-    href: '/home-care-services-bangalore',
-    hasDropdown: true,
-    dropdownClassName: 'min-w-[17rem] max-w-sm',
-    dropdownItems: [...CARE_NAV_CLUSTERS],
-  },
   { name: 'Nest', href: '/nest', isNew: true },
   {
     name: 'For Helpers',
@@ -76,7 +67,6 @@ export default function Navbar() {
 
   // Returns true if this nav item's href matches the current path
   const isActive = (item: NavigationItem): boolean => {
-    if (item.name === 'Care Services') return ALL_CARE_PATHS.has(pathname)
     if (item.href === '/') return pathname === '/'
     // For dropdown parents (Services -> /services, About -> /about)
     // highlight if the current path starts with the item's href prefix

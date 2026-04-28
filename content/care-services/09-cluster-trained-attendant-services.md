@@ -1,4 +1,4 @@
-URL: /trained-attendant-services-bangalore/
+URL: /care-services/trained-attendant-services-bangalore/
 Meta Title: Trained Attendant Services in Bangalore | Bedridden, Spinal, Neurological Care | EzyHelpers
 Meta Description: Trained Attendant Services in Bangalore by EzyHelpers. Skilled attendants for bedridden, post-spinal, neurological, and bariatric patients. High-dependency physical care.
 
@@ -19,7 +19,7 @@ At EzyHelpers, our trained attendants in Bangalore are selected specifically for
 
 **CTA: Call Us Now**
 
-> **Patient has general daily-care needs (not high-dependency)?** See [Home Attendant Services](/home-attendant-services-bangalore/) for routine attendant support. **Patient also needs medical procedures?** See [Home Nursing Services](/home-nursing-services-bangalore/) or [Home Healthcare Services](/home-healthcare-services-bangalore/) for combined arrangements.
+> **Patient has general daily-care needs (not high-dependency)?** See [Home Attendant Services](/care-services/home-attendant-services-bangalore/) for routine attendant support. **Patient also needs medical procedures?** See [Home Nursing Services](/care-services/home-nursing-services-bangalore/) or [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/) for combined arrangements.
 
 ---
 
@@ -34,7 +34,7 @@ Choose a trained attendant when:
 - The patient has had a **major surgery** with complex recovery requirements
 - The patient is **post-ICU** with high physical dependency
 
-For everyday daily-attendant needs (elderly support, post-recovery routine care, day/night/live-in flexibility), [Home Attendant Services](/home-attendant-services-bangalore/) is the better fit.
+For everyday daily-attendant needs (elderly support, post-recovery routine care, day/night/live-in flexibility), [Home Attendant Services](/care-services/home-attendant-services-bangalore/) is the better fit.
 
 ---
 
@@ -186,7 +186,7 @@ Call us to confirm trained attendant availability for your specific care needs.
 
 ### **What Is Not Included**
 
-- Medical nursing procedures requiring licensed credentials (see [Home Nursing Services](/home-nursing-services-bangalore/))
+- Medical nursing procedures requiring licensed credentials (see [Home Nursing Services](/care-services/home-nursing-services-bangalore/))
 - General household cleaning or domestic services
 - Cooking for the full household
 - Vehicle driving or outside errands
@@ -211,7 +211,7 @@ Call us to confirm trained attendant availability for your specific care needs.
 
 ### **How is a trained attendant different from a home attendant?**
 
-A [home attendant](/home-attendant-services-bangalore/) handles general daily care — elderly support, post-recovery, routine personal care, with flexible shift coverage. A trained attendant is specifically for high-dependency situations — bedridden, post-spinal, neurological, or bariatric patients — where skilled physical handling (transfers, repositioning, pressure-sore prevention) is essential.
+A [home attendant](/care-services/home-attendant-services-bangalore/) handles general daily care — elderly support, post-recovery, routine personal care, with flexible shift coverage. A trained attendant is specifically for high-dependency situations — bedridden, post-spinal, neurological, or bariatric patients — where skilled physical handling (transfers, repositioning, pressure-sore prevention) is essential.
 
 ### **Do trained attendants help with bedridden patients?**
 
@@ -219,7 +219,7 @@ Yes. Bedridden patient care is the most common scenario for trained attendants. 
 
 ### **Can a trained attendant work with a home nurse?**
 
-Yes. For patients who need both medical procedures and skilled physical handling, we can arrange a combined nurse + trained attendant placement, or see [Home Healthcare Services](/home-healthcare-services-bangalore/) for the coordinated package.
+Yes. For patients who need both medical procedures and skilled physical handling, we can arrange a combined nurse + trained attendant placement, or see [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/) for the coordinated package.
 
 ### **How quickly can you place a trained attendant?**
 
@@ -231,7 +231,7 @@ If the attendant is not the right fit for the patient or family, we will help ar
 
 ### **Are your trained attendants medically qualified?**
 
-Trained attendants are not licensed nurses — they handle non-medical physical care with training in safe patient handling. For medical procedures (wound care, IV, injections), we place a [home nurse](/home-nursing-services-bangalore/) instead, or both for combined care.
+Trained attendants are not licensed nurses — they handle non-medical physical care with training in safe patient handling. For medical procedures (wound care, IV, injections), we place a [home nurse](/care-services/home-nursing-services-bangalore/) instead, or both for combined care.
 
 ### **What is the registration or service fee?**
 
@@ -245,12 +245,12 @@ Yes. We provide flexible options including short-term care, post-hospital suppor
 
 ## **Related Services**
 
-- **[Home Attendant Services](/home-attendant-services-bangalore/)** — For general daily attendant needs (less complex than trained attendant scenarios).
-- **[Home Nursing Services](/home-nursing-services-bangalore/)** — When the patient needs medical procedures.
-- **[Home Healthcare Services](/home-healthcare-services-bangalore/)** — Combined nurse + trained attendant for complex medical + physical care.
-- **[Patient Care Services](/patient-care-services-bangalore/)** — Recovery-focused care for less complex patient situations.
+- **[Home Attendant Services](/care-services/home-attendant-services-bangalore/)** — For general daily attendant needs (less complex than trained attendant scenarios).
+- **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)** — When the patient needs medical procedures.
+- **[Home Healthcare Services](/care-services/home-healthcare-services-bangalore/)** — Combined nurse + trained attendant for complex medical + physical care.
+- **[Patient Care Services](/care-services/patient-care-services-bangalore/)** — Recovery-focused care for less complex patient situations.
 
-← Back to **[Home Care Services](/home-care-services-bangalore/)**
+← Back to **[Home Care Services](/care-services/home-care-services-bangalore/)**
 
 ---
 

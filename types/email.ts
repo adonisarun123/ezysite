@@ -347,7 +347,7 @@ export interface CareServicesLeadFormData {
   name: string
   email: string
   phone: string
-  /** Slug or value identifying service line, e.g. home-nursing-services-bangalore */
+  /** Slug or value identifying service line, e.g. care-services/home-nursing-services-bangalore */
   careType: string
   patientSummary: string
   locality?: string

@@ -1,4 +1,4 @@
-URL: /elderly-care-services-bangalore/
+URL: /care-services/elderly-care-services-bangalore/
 Meta Title: Elderly Care Services in Bangalore | Senior Citizen Caretakers, Live-In Care | EzyHelpers
 Meta Description: Elderly Care Services in Bangalore by EzyHelpers. Verified caretakers for senior citizens, dementia care, Parkinson's support, and live-in elderly care. Dignity-first approach.
 
@@ -19,7 +19,7 @@ EzyHelpers specialises in elderly care services in Bangalore that go beyond basi
 
 **CTA: Call Us Now**
 
-> **Need medical-grade nursing for your elderly parent?** See [Home Nursing Services](/home-nursing-services-bangalore/). **Looking for a general caretaker (not specifically for an elderly person)?** See [Caretaker Services](/caretaker-services-bangalore/).
+> **Need medical-grade nursing for your elderly parent?** See [Home Nursing Services](/care-services/home-nursing-services-bangalore/). **Looking for a general caretaker (not specifically for an elderly person)?** See [Caretaker Services](/care-services/caretaker-services-bangalore/).
 
 ---
 
@@ -186,7 +186,7 @@ Not sure if we serve your area? Call us, and we can confirm within minutes.
 
 ### **What Is Not Included**
 
-- Advanced clinical nursing procedures (for these, see [Home Nursing Services](/home-nursing-services-bangalore/))
+- Advanced clinical nursing procedures (for these, see [Home Nursing Services](/care-services/home-nursing-services-bangalore/))
 - General household cleaning
 - Cooking for the entire family
 - Driving or running outside errands
@@ -241,7 +241,7 @@ No. We do not impose any fixed contracts. The service can be arranged for a spec
 
 ### **What's the difference between elderly care and home nursing for seniors?**
 
-Elderly care focuses on daily personal support, companionship, dignity-first interaction, and age-related condition management. [Home nursing](/home-nursing-services-bangalore/) involves licensed medical procedures (wound care, IV, vital monitoring). For seniors who need both, we can place a combined arrangement or recommend [Home Healthcare Services](/home-healthcare-services-bangalore/).
+Elderly care focuses on daily personal support, companionship, dignity-first interaction, and age-related condition management. [Home nursing](/care-services/home-nursing-services-bangalore/) involves licensed medical procedures (wound care, IV, vital monitoring). For seniors who need both, we can place a combined arrangement or recommend [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/).
 
 ### **Is there any registration or service fee involved?**
 
@@ -255,12 +255,12 @@ In most cases, we can arrange a caretaker within the same day or the next day, d
 
 ## **Related Services**
 
-- **[Caretaker Services](/caretaker-services-bangalore/)** — General caretaker placement (for non-elderly patients or generic needs).
-- **[Home Nursing Services](/home-nursing-services-bangalore/)** — When your elderly parent needs medical procedures (wound care, IV, monitoring).
-- **[Home Healthcare Services](/home-healthcare-services-bangalore/)** — Combined medical + daily care for seniors with health conditions.
-- **[Patient Care Services](/patient-care-services-bangalore/)** — Recovery-focused care after surgery or hospitalisation.
+- **[Caretaker Services](/care-services/caretaker-services-bangalore/)** — General caretaker placement (for non-elderly patients or generic needs).
+- **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)** — When your elderly parent needs medical procedures (wound care, IV, monitoring).
+- **[Home Healthcare Services](/care-services/home-healthcare-services-bangalore/)** — Combined medical + daily care for seniors with health conditions.
+- **[Patient Care Services](/care-services/patient-care-services-bangalore/)** — Recovery-focused care after surgery or hospitalisation.
 
-← Back to **[Home Care Services](/home-care-services-bangalore/)**
+← Back to **[Home Care Services](/care-services/home-care-services-bangalore/)**
 
 ---
 

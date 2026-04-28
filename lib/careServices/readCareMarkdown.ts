@@ -9,7 +9,7 @@ export interface ParsedCarePage {
   schemaLine: string
   bodyMd: string
   breadcrumbParts: string[]
-  /** Normalized path without trailing slash, e.g. /home-care-services-bangalore */
+  /** Normalized path without trailing slash, e.g. /care-services/home-care-services-bangalore */
   pathname: string
 }
 

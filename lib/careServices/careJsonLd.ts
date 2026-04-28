@@ -1,4 +1,5 @@
 import type { ParsedCarePage } from './readCareMarkdown'
+import { CARE_PILLAR_HREF } from './registry'
 
 const SITE = 'https://www.ezyhelpers.com'
 
@@ -20,7 +21,7 @@ export function careBreadcrumbJsonLd(parsed: ParsedCarePage) {
       '@type': 'ListItem',
       position: 2,
       name: 'Care Services',
-      item: `${SITE}/home-care-services-bangalore`,
+      item: `${SITE}${CARE_PILLAR_HREF}`,
     })
   }
 
@@ -31,7 +32,7 @@ export function careBreadcrumbJsonLd(parsed: ParsedCarePage) {
       name: breadcrumbParts[2],
       item: currentUrl,
     })
-  } else if (pathname === '/home-care-services-bangalore') {
+  } else if (pathname === CARE_PILLAR_HREF) {
     elements[1] = {
       '@type': 'ListItem',
       position: 2,

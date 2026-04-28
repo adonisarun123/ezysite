@@ -1,4 +1,4 @@
-URL: /home-nursing-services-bangalore/
+URL: /care-services/home-nursing-services-bangalore/
 Meta Title: Home Nursing Services in Bangalore | Qualified Nurses for Wound, IV & Post-Surgical Care | EzyHelpers
 Meta Description: Home Nursing Services in Bangalore by EzyHelpers. Qualified nurses for post-surgical care, wound care, IV therapy, catheter management & chronic condition monitoring. Same-day placement.
 
@@ -19,7 +19,7 @@ EzyHelpers places verified, qualified home nurses across Bangalore for a wide ra
 
 **CTA: Call Us Now**
 
-> Looking for a service that combines medical and daily care? See [Home Healthcare Services](/home-healthcare-services-bangalore/) — our combined medical + non-medical home care offering. Need only daily personal care without medical procedures? See [Caretaker Services](/caretaker-services-bangalore/).
+> Looking for a service that combines medical and daily care? See [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/) — our combined medical + non-medical home care offering. Need only daily personal care without medical procedures? See [Caretaker Services](/care-services/caretaker-services-bangalore/).
 
 ---
 
@@ -226,7 +226,7 @@ Yes, trained nurses can give injections and handle IV therapy at home. This is d
 
 ### **What is the difference between a home nurse and a caretaker?**
 
-A home nurse is medically trained and handles health-related tasks like administering medicines, monitoring vitals, dressing wounds, and supporting treatment. A [caretaker](/caretaker-services-bangalore/) helps with daily activities like bathing, feeding, mobility, and companionship. Depending on the patient's needs, you can choose one or both — many families combine both for complete care.
+A home nurse is medically trained and handles health-related tasks like administering medicines, monitoring vitals, dressing wounds, and supporting treatment. A [caretaker](/care-services/caretaker-services-bangalore/) helps with daily activities like bathing, feeding, mobility, and companionship. Depending on the patient's needs, you can choose one or both — many families combine both for complete care.
 
 ### **Can a home nurse and a caretaker both be placed for the same patient?**
 
@@ -260,12 +260,12 @@ If you are not comfortable with the assigned nurse, you can request a replacemen
 
 ## **Related Services**
 
-- **[Home Healthcare Services](/home-healthcare-services-bangalore/)** — When the patient needs both medical nursing AND daily care under one arrangement.
-- **[Patient Care Services](/patient-care-services-bangalore/)** — For non-medical, recovery-focused patient care at home.
-- **[Trained Attendant Services](/trained-attendant-services-bangalore/)** — For high-dependency patients (bedridden, neurological) who need skilled physical handling.
-- **[Caretaker Services](/caretaker-services-bangalore/)** — For general daily caretaker needs without medical procedures.
+- **[Home Healthcare Services](/care-services/home-healthcare-services-bangalore/)** — When the patient needs both medical nursing AND daily care under one arrangement.
+- **[Patient Care Services](/care-services/patient-care-services-bangalore/)** — For non-medical, recovery-focused patient care at home.
+- **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)** — For high-dependency patients (bedridden, neurological) who need skilled physical handling.
+- **[Caretaker Services](/care-services/caretaker-services-bangalore/)** — For general daily caretaker needs without medical procedures.
 
-← Back to **[Home Care Services](/home-care-services-bangalore/)**
+← Back to **[Home Care Services](/care-services/home-care-services-bangalore/)**
 
 ---
 

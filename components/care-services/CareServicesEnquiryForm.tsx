@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { CheckCircleIcon } from '@heroicons/react/24/outline'
 import { CARE_SERVICE_TYPE_OPTIONS, CARE_URGENCY_OPTIONS } from '@/lib/careServices/careEnquiryOptions'
+import { CARE_PILLAR_HREF } from '@/lib/careServices/registry'
 
 const SITE = 'https://www.ezyhelpers.com'
 
@@ -126,7 +127,7 @@ export default function CareServicesEnquiryForm() {
           .
         </p>
         <Link
-          href="/home-care-services-bangalore"
+          href={CARE_PILLAR_HREF}
           className="mt-6 inline-flex items-center justify-center rounded-xl bg-primary-600 px-6 py-3 text-sm font-semibold text-white hover:bg-primary-700"
         >
           Back to Home Care Services

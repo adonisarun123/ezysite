@@ -290,6 +290,16 @@ const nextConfig = {
       },
       { source: '/agent-success', destination: '/thank-you?type=agent', permanent: false },
       { source: '/helper-success', destination: '/thank-you?type=helper', permanent: false },
+      // Care cluster moved under /care-services/ (2026)
+      { source: '/home-care-services-bangalore', destination: '/care-services/home-care-services-bangalore', permanent: true },
+      { source: '/home-healthcare-services-bangalore', destination: '/care-services/home-healthcare-services-bangalore', permanent: true },
+      { source: '/home-nursing-services-bangalore', destination: '/care-services/home-nursing-services-bangalore', permanent: true },
+      { source: '/elderly-care-services-bangalore', destination: '/care-services/elderly-care-services-bangalore', permanent: true },
+      { source: '/caretaker-services-bangalore', destination: '/care-services/caretaker-services-bangalore', permanent: true },
+      { source: '/patient-care-services-bangalore', destination: '/care-services/patient-care-services-bangalore', permanent: true },
+      { source: '/home-attendant-services-bangalore', destination: '/care-services/home-attendant-services-bangalore', permanent: true },
+      { source: '/trained-attendant-services-bangalore', destination: '/care-services/trained-attendant-services-bangalore', permanent: true },
+      { source: '/care-services-enquiry', destination: '/care-services/enquiry', permanent: true },
     ]
   },
 }

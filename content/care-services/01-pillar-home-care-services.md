@@ -1,4 +1,4 @@
-URL: /home-care-services-bangalore/
+URL: /care-services/home-care-services-bangalore/
 Meta Title: Home Care Services in Bangalore | Verified Caregivers, Nurses & Attendants | EzyHelpers
 Meta Description: Bangalore's trusted home care service. Choose from elderly care, home nursing, caretakers, attendants & post-surgery care. Verified, matched, same-day placement.
 
@@ -23,31 +23,31 @@ EzyHelpers has built one of Bangalore's most trusted home care services by focus
 
 Different patients need different kinds of help. Use this guide to find the right service for your situation.
 
-### **[Home Healthcare Services](/home-healthcare-services-bangalore/)**
+### **[Home Healthcare Services](/care-services/home-healthcare-services-bangalore/)**
 **For:** Patients needing both medical oversight and daily care under one arrangement.
 **Best when:** Your loved one is being discharged from hospital, has a chronic condition, or needs medical-grade care alongside daily support.
 
-### **[Home Nursing Services](/home-nursing-services-bangalore/)**
+### **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)**
 **For:** Patients who need a qualified nurse for medical procedures.
 **Best when:** Wound care, IV therapy, catheter management, post-surgical monitoring, or medication administration is required.
 
-### **[Elderly Care Services](/elderly-care-services-bangalore/)**
+### **[Elderly Care Services](/care-services/elderly-care-services-bangalore/)**
 **For:** Senior citizens and ageing parents.
 **Best when:** Daily companionship, dignity-first support, dementia/Parkinson's care, or live-in supervision is needed for older adults.
 
-### **[Caretaker Services](/caretaker-services-bangalore/)**
+### **[Caretaker Services](/care-services/caretaker-services-bangalore/)**
 **For:** Anyone needing a verified, full-time, or live-in caretaker.
 **Best when:** You're looking for a general-purpose caretaker (also called caregiver) for daily personal care, medication reminders, and companionship.
 
-### **[Patient Care Services](/patient-care-services-bangalore/)**
+### **[Patient Care Services](/care-services/patient-care-services-bangalore/)**
 **For:** Patients recovering from surgery or managing a specific medical condition at home.
 **Best when:** The focus is on a recovery or treatment situation rather than age-related needs.
 
-### **[Home Attendant Services](/home-attendant-services-bangalore/)**
+### **[Home Attendant Services](/care-services/home-attendant-services-bangalore/)**
 **For:** Day, night, full-time, or live-in attendants for routine daily support.
 **Best when:** You need flexible shift-based attendant coverage at home.
 
-### **[Trained Attendant Services](/trained-attendant-services-bangalore/)**
+### **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)**
 **For:** Bedridden, post-spinal, neurological, or other high-dependency patients.
 **Best when:** The patient needs skilled physical handling — transfers, repositioning, pressure-sore prevention.
 
@@ -171,7 +171,7 @@ Call us to confirm home care service availability in your specific area.
 
 ### **Which home care service is right for my family?**
 
-If your loved one needs medical procedures (wounds, IV, catheter), choose [Home Nursing Services](/home-nursing-services-bangalore/). If they need both medical and daily care, choose [Home Healthcare Services](/home-healthcare-services-bangalore/). For age-related daily support, choose [Elderly Care Services](/elderly-care-services-bangalore/). For a bedridden or high-dependency patient, see [Trained Attendant Services](/trained-attendant-services-bangalore/). If you're not sure, call us — we'll guide you in a 5-minute conversation.
+If your loved one needs medical procedures (wounds, IV, catheter), choose [Home Nursing Services](/care-services/home-nursing-services-bangalore/). If they need both medical and daily care, choose [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/). For age-related daily support, choose [Elderly Care Services](/care-services/elderly-care-services-bangalore/). For a bedridden or high-dependency patient, see [Trained Attendant Services](/care-services/trained-attendant-services-bangalore/). If you're not sure, call us — we'll guide you in a 5-minute conversation.
 
 ### **What's the difference between a home nurse, a caretaker, and an attendant?**
 

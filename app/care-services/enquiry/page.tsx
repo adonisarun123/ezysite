@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import CareServicesEnquiryForm from '@/components/care-services/CareServicesEnquiryForm'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
+import { CARE_PILLAR_HREF } from '@/lib/careServices/registry'
 import { PhoneIcon, CheckCircleIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
@@ -14,8 +15,8 @@ export const metadata: Metadata = {
     'Submit a care enquiry for Bengaluru: home nursing, elderly care, attendants, and more. Our team responds quickly.',
   robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://www.ezyhelpers.com/care-services-enquiry',
-    languages: selfReferencingLanguages('/care-services-enquiry'),
+    canonical: 'https://www.ezyhelpers.com/care-services/enquiry',
+    languages: selfReferencingLanguages('/care-services/enquiry'),
   },
 }
 
@@ -24,7 +25,6 @@ export default function CareServicesEnquiryPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      {/* Hero — matches hire-helper / care cluster tone */}
       <section className="relative overflow-hidden bg-gradient-to-br from-emerald-700 via-teal-800 to-slate-900 pt-24 pb-16 text-white lg:pb-20">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-25 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
         <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
@@ -32,8 +32,7 @@ export default function CareServicesEnquiryPage() {
             Bangalore care · Enquiry form
           </p>
           <h1 className="mx-auto max-w-3xl font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-            Tell us what kind of{' '}
-            <span className="text-emerald-200">home care</span> you need
+            Tell us what kind of <span className="text-emerald-200">home care</span> you need
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-emerald-50">
             Nurses, caretakers, and attendants — matched to your patient&apos;s situation. Same team as our verified
@@ -64,7 +63,7 @@ export default function CareServicesEnquiryPage() {
         separator="chevron"
         items={[
           { label: 'Home', href: '/' },
-          { label: 'Care Services', href: '/home-care-services-bangalore' },
+          { label: 'Care Services', href: CARE_PILLAR_HREF },
           { label: 'Enquiry' },
         ]}
       />
@@ -95,7 +94,7 @@ export default function CareServicesEnquiryPage() {
                     minutes.
                   </p>
                   <Link
-                    href="/home-care-services-bangalore"
+                    href={CARE_PILLAR_HREF}
                     className="mt-4 inline-flex text-sm font-semibold text-primary-600 hover:text-primary-700 hover:underline"
                   >
                     Home care services overview →

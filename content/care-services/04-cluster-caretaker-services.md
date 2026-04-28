@@ -1,4 +1,4 @@
-URL: /caretaker-services-bangalore/
+URL: /care-services/caretaker-services-bangalore/
 Meta Title: Caretaker & Caregiver Services in Bangalore | Verified, Same-Day Placement | EzyHelpers
 Meta Description: Caretaker Services in Bangalore by EzyHelpers. Verified caretakers and caregivers for elderly, post-surgery, and chronic patients. Same-day placement, free replacement.
 
@@ -19,7 +19,7 @@ We don't just provide a caretaker; we provide confidence, continuity, and ongoin
 
 **CTA: Call Us Now**
 
-> **Looking specifically for an elderly parent's caretaker?** See [Elderly Care Services](/elderly-care-services-bangalore/) for senior-specific matching. **Need medical procedures (wound care, IV, monitoring)?** See [Home Nursing Services](/home-nursing-services-bangalore/).
+> **Looking specifically for an elderly parent's caretaker?** See [Elderly Care Services](/care-services/elderly-care-services-bangalore/) for senior-specific matching. **Need medical procedures (wound care, IV, monitoring)?** See [Home Nursing Services](/care-services/home-nursing-services-bangalore/).
 
 ---
 
@@ -27,7 +27,7 @@ We don't just provide a caretaker; we provide confidence, continuity, and ongoin
 
 In India, the terms "caretaker" and "caregiver" are used interchangeably. Both refer to a trained, non-medical care professional who provides daily personal support — hygiene, feeding, mobility assistance, medication reminders, and companionship — for a patient or elderly person at home. Some service providers prefer one term over the other, but the role and responsibilities are essentially the same. At EzyHelpers, you can call them caretakers or caregivers. We provide the same verified professionals either way.
 
-A caretaker is different from a [home nurse](/home-nursing-services-bangalore/) (who handles medical procedures) and different from a [trained attendant](/trained-attendant-services-bangalore/) (who specialises in high-dependency physical handling such as bedridden or post-spinal care).
+A caretaker is different from a [home nurse](/care-services/home-nursing-services-bangalore/) (who handles medical procedures) and different from a [trained attendant](/care-services/trained-attendant-services-bangalore/) (who specialises in high-dependency physical handling such as bedridden or post-spinal care).
 
 ---
 
@@ -61,7 +61,7 @@ We offer caretaker services across multiple care arrangements because no two fam
 
 ### **Services We Provide**
 
-- Elderly caretaker services at home (also see [Elderly Care Services](/elderly-care-services-bangalore/) for senior-specific matching)
+- Elderly caretaker services at home (also see [Elderly Care Services](/care-services/elderly-care-services-bangalore/) for senior-specific matching)
 - Post-surgery recovery caretaker support
 - 24/7 live-in caretaker placements
 - Day shift and night shift caretakers
@@ -185,7 +185,7 @@ Call us to confirm caretaker availability in your specific neighbourhood. We can
 
 ### **What Is Not Included**
 
-- Medical or nursing procedures requiring hospital credentials (see [Home Nursing Services](/home-nursing-services-bangalore/))
+- Medical or nursing procedures requiring hospital credentials (see [Home Nursing Services](/care-services/home-nursing-services-bangalore/))
 - General household cleaning or domestic chores
 - Cooking for the entire family
 - Vehicle driving or off-premises errands
@@ -214,7 +214,7 @@ In India, the terms are used interchangeably to describe a non-medical care prof
 
 ### **What's the difference between a caretaker and a home nurse?**
 
-A caretaker provides non-medical daily support — hygiene, feeding, mobility, companionship, medication reminders. A [home nurse](/home-nursing-services-bangalore/) is medically trained and handles procedures like wound care, IV therapy, catheter management, and medication administration. Many families combine both for complete care.
+A caretaker provides non-medical daily support — hygiene, feeding, mobility, companionship, medication reminders. A [home nurse](/care-services/home-nursing-services-bangalore/) is medically trained and handles procedures like wound care, IV therapy, catheter management, and medication administration. Many families combine both for complete care.
 
 ### **How quickly can you arrange a caretaker in Bangalore?**
 
@@ -248,13 +248,13 @@ Yes. This is a common arrangement when a patient needs both medical procedures a
 
 ## **Related Services**
 
-- **[Elderly Care Services](/elderly-care-services-bangalore/)** — Specialised matching for senior citizens (dementia, Parkinson's, dignity-focused).
-- **[Home Nursing Services](/home-nursing-services-bangalore/)** — When the patient needs medical procedures.
-- **[Home Attendant Services](/home-attendant-services-bangalore/)** — Day, night, full-time, or live-in attendants for routine support.
-- **[Trained Attendant Services](/trained-attendant-services-bangalore/)** — High-dependency patients (bedridden, neurological, post-spinal).
-- **[Patient Care Services](/patient-care-services-bangalore/)** — Recovery-focused care for patients post-surgery or with chronic illness.
+- **[Elderly Care Services](/care-services/elderly-care-services-bangalore/)** — Specialised matching for senior citizens (dementia, Parkinson's, dignity-focused).
+- **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)** — When the patient needs medical procedures.
+- **[Home Attendant Services](/care-services/home-attendant-services-bangalore/)** — Day, night, full-time, or live-in attendants for routine support.
+- **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)** — High-dependency patients (bedridden, neurological, post-spinal).
+- **[Patient Care Services](/care-services/patient-care-services-bangalore/)** — Recovery-focused care for patients post-surgery or with chronic illness.
 
-← Back to **[Home Care Services](/home-care-services-bangalore/)**
+← Back to **[Home Care Services](/care-services/home-care-services-bangalore/)**
 
 ---
 

@@ -1,4 +1,4 @@
-URL: /patient-care-services-bangalore/
+URL: /care-services/patient-care-services-bangalore/
 Meta Title: Patient Care Services in Bangalore | Post-Surgery, Bedridden & Recovery Care | EzyHelpers
 Meta Description: Patient Care Services in Bangalore by EzyHelpers. Verified caretakers for post-surgical recovery, bedridden patients, and chronic illness. Same-day placement.
 
@@ -19,7 +19,7 @@ EzyHelpers provides patient care services in Bangalore that begin with this pati
 
 **CTA: Call Us Now**
 
-> **Patient also needs medical procedures (wound care, IV)?** See [Home Healthcare Services](/home-healthcare-services-bangalore/) for combined medical + daily care. **Need a high-dependency attendant (bedridden, post-spinal)?** See [Trained Attendant Services](/trained-attendant-services-bangalore/). **Patient is elderly with no specific medical condition?** [Elderly Care Services](/elderly-care-services-bangalore/) is designed for that.
+> **Patient also needs medical procedures (wound care, IV)?** See [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/) for combined medical + daily care. **Need a high-dependency attendant (bedridden, post-spinal)?** See [Trained Attendant Services](/care-services/trained-attendant-services-bangalore/). **Patient is elderly with no specific medical condition?** [Elderly Care Services](/care-services/elderly-care-services-bangalore/) is designed for that.
 
 ---
 
@@ -171,7 +171,7 @@ Call us to confirm availability in your specific area.
 
 ### **What Is Not Included**
 
-- Medical or clinical procedures requiring a trained nurse (see [Home Nursing Services](/home-nursing-services-bangalore/))
+- Medical or clinical procedures requiring a trained nurse (see [Home Nursing Services](/care-services/home-nursing-services-bangalore/))
 - House cleaning or full household work
 - Cooking for the entire family
 - Driving or external errands
@@ -196,7 +196,7 @@ Call us to confirm availability in your specific area.
 
 ### **How is patient care different from elderly care or caretaker services?**
 
-Patient care focuses on someone actively recovering from surgery or managing a specific medical condition — it's recovery-focused. [Elderly care](/elderly-care-services-bangalore/) focuses on age-related daily support and dignity for seniors. [Caretaker services](/caretaker-services-bangalore/) is the broad service-keyword for general personal care. Many situations overlap — call us if you're not sure which fits.
+Patient care focuses on someone actively recovering from surgery or managing a specific medical condition — it's recovery-focused. [Elderly care](/care-services/elderly-care-services-bangalore/) focuses on age-related daily support and dignity for seniors. [Caretaker services](/care-services/caretaker-services-bangalore/) is the broad service-keyword for general personal care. Many situations overlap — call us if you're not sure which fits.
 
 ### **How quickly can you arrange a patient caretaker?**
 
@@ -216,7 +216,7 @@ Yes. We offer flexible options including short-term, part-time, full-day, and li
 
 ### **What if my patient also needs medical procedures?**
 
-If the patient needs both daily care AND medical procedures (wound care, IV, monitoring), see [Home Healthcare Services](/home-healthcare-services-bangalore/) — a coordinated nurse + caretaker arrangement. If only nursing is needed, see [Home Nursing Services](/home-nursing-services-bangalore/).
+If the patient needs both daily care AND medical procedures (wound care, IV, monitoring), see [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/) — a coordinated nurse + caretaker arrangement. If only nursing is needed, see [Home Nursing Services](/care-services/home-nursing-services-bangalore/).
 
 ### **What is the registration or service fee?**
 
@@ -226,14 +226,14 @@ A one-time registration or service fee may apply. Our team will clearly explain 
 
 ## **Related Services**
 
-- **[Home Healthcare Services](/home-healthcare-services-bangalore/)** — When medical procedures are needed alongside patient care.
-- **[Home Nursing Services](/home-nursing-services-bangalore/)** — When only medical nursing is needed.
-- **[Trained Attendant Services](/trained-attendant-services-bangalore/)** — For high-dependency cases (bedridden, neurological, post-spinal).
-- **[Home Attendant Services](/home-attendant-services-bangalore/)** — For shift-based daily attendant support.
-- **[Elderly Care Services](/elderly-care-services-bangalore/)** — When the patient is a senior citizen.
-- **[Caretaker Services](/caretaker-services-bangalore/)** — General caretaker placement.
+- **[Home Healthcare Services](/care-services/home-healthcare-services-bangalore/)** — When medical procedures are needed alongside patient care.
+- **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)** — When only medical nursing is needed.
+- **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)** — For high-dependency cases (bedridden, neurological, post-spinal).
+- **[Home Attendant Services](/care-services/home-attendant-services-bangalore/)** — For shift-based daily attendant support.
+- **[Elderly Care Services](/care-services/elderly-care-services-bangalore/)** — When the patient is a senior citizen.
+- **[Caretaker Services](/care-services/caretaker-services-bangalore/)** — General caretaker placement.
 
-← Back to **[Home Care Services](/home-care-services-bangalore/)**
+← Back to **[Home Care Services](/care-services/home-care-services-bangalore/)**
 
 ---
 

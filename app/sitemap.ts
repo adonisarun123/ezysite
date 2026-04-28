@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { posts } from '@/lib/blogData'
 import { caseStudies } from '@/app/case-studies/data/caseStudies'
 import { jobOpenings } from '@/lib/careersData'
-import { CARE_NAV_CLUSTERS, CARE_PILLAR_HREF } from '@/lib/careServices/registry'
+import { CARE_ENQUIRY_HREF, CARE_NAV_CLUSTERS, CARE_PILLAR_HREF } from '@/lib/careServices/registry'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.ezyhelpers.com'
@@ -494,7 +494,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const careServicesBangalore: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/care-services-enquiry`,
+      url: `${baseUrl}${CARE_ENQUIRY_HREF}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.85
