@@ -38,7 +38,7 @@ export default function FAQAccordion({
                 <span
                   className={cn(
                     "pr-4 font-semibold text-gray-900 sm:font-bold",
-                    tone === "care" ? "text-base leading-snug sm:text-lg" : "text-lg font-bold"
+                    tone === "care" ? "text-[15px] font-semibold leading-snug sm:text-base" : "text-lg font-bold"
                   )}
                 >
                   {faq.question}

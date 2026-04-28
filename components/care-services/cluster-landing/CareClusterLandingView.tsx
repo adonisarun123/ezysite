@@ -1,3 +1,4 @@
+import type { ComponentType, SVGProps } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -12,8 +13,17 @@ import {
   ShieldCheckIcon,
   UserGroupIcon,
   SparklesIcon,
+  MapPinIcon,
+  AcademicCapIcon,
+  ChatBubbleLeftRightIcon,
 } from '@heroicons/react/24/outline'
-import type { ComponentType, SVGProps } from 'react'
+
+const TRUST_STRIP_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [
+  UserGroupIcon,
+  MapPinIcon,
+  ClockIcon,
+  ShieldCheckIcon,
+]
 import type { CareClusterLandingConfig, HeroChipIcon } from '@/lib/careServices/clusterLanding/types'
 import { CLUSTER_TRUST_STRIP } from '@/lib/careServices/clusterLanding/configs'
 import { CARE_PILLAR_HREF, CARE_ENQUIRY_HREF } from '@/lib/careServices/registry'
@@ -38,6 +48,14 @@ const HERO_ICONS: Record<HeroChipIcon, ComponentType<SVGProps<SVGSVGElement>>> =
   spark: SparklesIcon,
 }
 
+const PILLAR_DECO_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [
+  HeartIcon,
+  UserGroupIcon,
+  SparklesIcon,
+  AcademicCapIcon,
+  ChatBubbleLeftRightIcon,
+]
+
 type Props = {
   config: CareClusterLandingConfig
   metaDescription: string
@@ -61,7 +79,13 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
     <div className="min-h-screen bg-[#fbfbfd] text-neutral-900">
       <Navbar />
 
-      <header className="relative flex min-h-[min(92svh,880px)] flex-col items-center justify-center overflow-hidden px-4 pb-16 pt-28 text-center sm:px-6 sm:pb-24 sm:pt-32">
+      <div className="relative z-30 border-b border-black/[0.06] bg-[#fbfbfd]/95 backdrop-blur-md">
+        <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6">
+          <Breadcrumb variant="minimal" separator="chevron" items={breadcrumbItems} />
+        </div>
+      </div>
+
+      <header className="relative flex min-h-[min(88svh,800px)] flex-col items-center justify-center overflow-hidden px-4 pb-16 pt-12 text-center sm:px-6 sm:pb-20 sm:pt-16">
         <div
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(48,184,201,0.14),transparent_60%),radial-gradient(ellipse_60%_50%_at_90%_30%,rgba(255,107,139,0.08),transparent_55%),radial-gradient(ellipse_70%_60%_at_10%_70%,rgba(0,116,200,0.1),transparent_60%)]"
           aria-hidden
@@ -135,8 +159,6 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
         </div>
       </header>
 
-      <Breadcrumb variant="minimal" separator="chevron" items={breadcrumbItems} />
-
       <main>
         <section id="difference" className="scroll-mt-28 px-4 py-16 sm:px-6 sm:py-24 lg:py-28">
           <div className="mx-auto max-w-6xl">
@@ -155,14 +177,14 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-600">{config.difference.lede}</p>
 
-            <div className="mt-12 grid gap-4 lg:grid-cols-3 lg:gap-5">
-              <article className="relative flex min-h-[340px] flex-col justify-between overflow-hidden rounded-[28px] bg-gradient-to-br from-primary-800 via-primary-900 to-trust-900 p-8 text-white shadow-2xl shadow-primary-900/35 lg:min-h-[380px]">
+            <div className="mt-12 grid gap-4 lg:grid-cols-3 lg:items-stretch lg:gap-5">
+              <article className="relative flex min-h-[360px] flex-col justify-between overflow-hidden rounded-[28px] bg-gradient-to-br from-primary-800 via-primary-900 to-trust-900 p-8 text-white shadow-2xl shadow-primary-900/35 lg:min-h-[400px]">
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-[radial-gradient(ellipse_80%_100%_at_50%_0%,rgba(0,116,200,0.5),transparent_72%)]" />
                 <div className="relative">
                   <span className="inline-block rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/95 backdrop-blur">
                     {config.difference.featured.tag}
                   </span>
-                  <h3 className="mt-6 font-display text-3xl font-bold tracking-tight">{config.difference.featured.title}</h3>
+                  <h3 className="mt-6 font-display text-3xl font-bold tracking-tight text-white">{config.difference.featured.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-white/75">{config.difference.featured.description}</p>
                   <ul className="mt-6 space-y-2.5 text-sm text-white/85">
                     {config.difference.featured.bullets.map((t) => (
@@ -181,7 +203,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
               {[config.difference.altLeft, config.difference.altRight].map((alt) => (
                 <article
                   key={alt.href}
-                  className="flex min-h-[340px] flex-col justify-between rounded-[28px] border border-black/[0.06] bg-[#f5f5f7] p-8 shadow-sm lg:min-h-[380px]"
+                  className="flex min-h-[360px] flex-col justify-between rounded-[28px] border border-black/[0.06] bg-[#f5f5f7] p-8 shadow-sm lg:min-h-[400px]"
                 >
                   <div>
                     <span className="inline-block rounded-full bg-black/[0.06] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-700">
@@ -208,21 +230,35 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
               <span className="text-neutral-500">{config.why.titleLine2Muted}</span>
             </h2>
 
-            <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-6 md:gap-5">
-              {config.why.pillars.map((p) => (
+            <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-6 md:gap-5 md:items-stretch">
+              {config.why.pillars.map((p, idx) => {
+                const DecoIcon = PILLAR_DECO_ICONS[idx % PILLAR_DECO_ICONS.length]
+                return (
                 <div
                   key={p.num}
-                  className={`rounded-[28px] border border-white/80 bg-white p-8 shadow-sm ${
+                  className={`flex h-full flex-col rounded-[28px] border border-white/80 bg-white p-8 shadow-sm ${
                     p.span === 3 ? 'md:col-span-3' : 'md:col-span-2'
                   } ${p.heartbeat ? 'relative overflow-hidden border-teal-100 bg-gradient-to-br from-white to-teal-50/50' : ''}`}
                 >
-                  <span className={`font-mono text-xs font-medium ${p.heartbeat ? 'text-teal-600/80' : 'text-neutral-400'}`}>
-                    {p.num}
-                  </span>
-                  <h3 className="mt-4 font-display text-xl font-bold text-neutral-950 sm:text-2xl">{p.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-600">{p.description}</p>
+                  <div className="flex items-start justify-between gap-3">
+                    <span className={`font-mono text-xs font-medium ${p.heartbeat ? 'text-teal-600/80' : 'text-neutral-400'}`}>
+                      {p.num}
+                    </span>
+                    <span
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border shadow-sm ${
+                        p.heartbeat
+                          ? 'border-teal-200/80 bg-white text-teal-600'
+                          : 'border-primary-100 bg-primary-50 text-primary-600'
+                      }`}
+                      aria-hidden
+                    >
+                      <DecoIcon className="h-5 w-5" />
+                    </span>
+                  </div>
+                  <h3 className="mt-4 font-display text-lg font-bold leading-snug text-neutral-950 sm:text-xl">{p.title}</h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-600">{p.description}</p>
                   {p.heartbeat && (
-                    <svg viewBox="0 0 800 60" className="mt-6 h-12 w-full text-primary-500/80" preserveAspectRatio="none" aria-hidden>
+                    <svg viewBox="0 0 800 60" className="mt-auto h-12 w-full shrink-0 pt-6 text-primary-500/80" preserveAspectRatio="none" aria-hidden>
                       <polyline
                         fill="none"
                         stroke="currentColor"
@@ -233,7 +269,8 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                     </svg>
                   )}
                 </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>
@@ -248,18 +285,18 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
             <p className="mt-4 max-w-2xl text-lg text-neutral-600">{config.servicesIntro.lede}</p>
           </div>
           <div className="mt-10 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-14">
-            <div className="flex w-max snap-x snap-mandatory gap-4 px-4 sm:gap-5 lg:px-[max(1rem,calc((100vw-72rem)/2+1rem))]">
+            <div className="flex w-max snap-x snap-mandatory items-stretch gap-4 px-4 sm:gap-5 lg:px-[max(1rem,calc((100vw-72rem)/2+1rem))]">
               {config.serviceCards.map((c) => (
                 <div
                   key={c.title}
-                  className={`snap-start rounded-[22px] border bg-gradient-to-br p-6 shadow-sm ${toneClass[c.tone]} flex h-full min-h-[200px] w-[min(85vw,320px)] shrink-0 flex-col justify-between sm:w-[300px]`}
+                  className={`snap-start flex min-h-[288px] w-[min(85vw,320px)] shrink-0 flex-col rounded-[22px] border bg-gradient-to-br p-6 shadow-sm sm:min-h-[300px] sm:w-[300px] ${toneClass[c.tone]}`}
                 >
-                  <div>
+                  <div className="flex min-h-0 flex-1 flex-col">
                     <span className="text-[11px] font-bold uppercase tracking-wide text-neutral-600">{c.tag}</span>
-                    <h3 className="mt-3 font-display text-lg font-bold text-neutral-950">{c.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-600">{c.body}</p>
+                    <h3 className="mt-3 font-display text-base font-bold leading-snug text-neutral-950 sm:text-lg">{c.title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">{c.body}</p>
                   </div>
-                  <div className="mt-4 flex justify-end text-neutral-400">
+                  <div className="mt-auto flex justify-end pt-5 text-neutral-400">
                     <ArrowRightIcon className="h-5 w-5" aria-hidden />
                   </div>
                 </div>
@@ -276,14 +313,37 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
           </p>
         </section>
 
-        <section className="border-y border-black/[0.06] bg-white px-4 py-14 sm:px-6">
-          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-10 md:grid-cols-4 md:gap-8">
-            {CLUSTER_TRUST_STRIP.map((x) => (
-              <div key={x.label}>
-                <p className="font-display text-[clamp(2rem,5vw,3rem)] font-bold leading-none tracking-tight text-neutral-900">{x.num}</p>
-                <p className="mt-2 text-xs leading-snug text-neutral-500 sm:text-sm">{x.label}</p>
-              </div>
-            ))}
+        <section
+          className="relative overflow-hidden border-y border-primary-100/60 bg-gradient-to-b from-white via-primary-50/50 to-trust-50/40 px-4 py-12 sm:px-6 sm:py-16"
+          aria-labelledby="care-trust-heading"
+        >
+          <div
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_20%_20%,rgba(0,116,200,0.06),transparent_60%),radial-gradient(ellipse_45%_35%_at_90%_80%,rgba(0,175,170,0.08),transparent_58%)]"
+            aria-hidden
+          />
+          <div className="relative mx-auto max-w-6xl">
+            <p id="care-trust-heading" className="sr-only">
+              Trust and scale at a glance
+            </p>
+            <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+              {CLUSTER_TRUST_STRIP.map((x, i) => {
+                const TrustIcon = TRUST_STRIP_ICONS[i] ?? UserGroupIcon
+                return (
+                  <div
+                    key={x.label}
+                    className="rounded-2xl border border-white/90 bg-white/85 p-5 shadow-[0_12px_40px_rgba(0,52,102,0.06)] backdrop-blur-[2px] transition hover:border-primary-200 hover:shadow-[0_16px_48px_rgba(0,52,102,0.09)]"
+                  >
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-trust-500 text-white shadow-md shadow-primary-900/15">
+                      <TrustIcon className="h-6 w-6" aria-hidden />
+                    </div>
+                    <p className="font-display text-[clamp(1.75rem,4.5vw,2.75rem)] font-bold leading-none tracking-tight text-primary-900">
+                      {x.num}
+                    </p>
+                    <p className="mt-2.5 text-xs font-medium leading-snug text-neutral-700 sm:text-sm">{x.label}</p>
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </section>
 
@@ -298,7 +358,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
           <div className="relative mx-auto max-w-6xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-trust-200">{config.processIntro.eyebrow}</p>
             <h2 className="mt-3 font-display text-[clamp(1.65rem,4vw,2.75rem)] font-bold tracking-tight">{config.processIntro.title}</h2>
-            <p className="mt-4 max-w-2xl text-lg text-white/65">{config.processIntro.lede}</p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-sky-100/95 sm:text-lg">{config.processIntro.lede}</p>
 
             <div className="mt-14 space-y-12 md:space-y-16">
               {config.processSteps.map((step) => (
@@ -307,8 +367,8 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                     {step.mark}
                   </div>
                   <div className="max-w-3xl pt-1">
-                    <h3 className="font-display text-2xl font-semibold tracking-tight">{step.title}</h3>
-                    <p className="mt-3 text-base leading-relaxed text-white/65">{step.body}</p>
+                    <h3 className="font-display text-2xl font-semibold tracking-tight text-white">{step.title}</h3>
+                    <p className="mt-3 text-base leading-relaxed text-sky-50/95">{step.body}</p>
                   </div>
                 </div>
               ))}
@@ -319,7 +379,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
         <section id="conditions" className="scroll-mt-28 px-4 py-16 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">{config.conditionsIntro.eyebrow}</p>
-            <h2 className="mt-3 font-display text-[clamp(1.65rem,4vw,2.75rem)] font-bold tracking-tight text-neutral-950">
+            <h2 className="mt-3 font-display text-[clamp(1.45rem,3.5vw,2.35rem)] font-bold tracking-tight text-neutral-950">
               {config.conditionsIntro.titleLine1} <span className="text-neutral-400">{config.conditionsIntro.titleLine2Muted}</span>
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-neutral-600">{config.conditionsIntro.lede}</p>
@@ -343,7 +403,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
           <section id="faq" className="scroll-mt-28 border-t border-black/[0.06] bg-white px-4 py-16 sm:px-6 sm:py-24">
             <div className="mx-auto max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">Questions</p>
-              <h2 className="mt-3 font-display text-[clamp(1.65rem,4vw,2.25rem)] font-bold tracking-tight text-neutral-950">
+              <h2 className="mt-3 font-display text-[clamp(1.45rem,3.5vw,2rem)] font-bold tracking-tight text-neutral-950">
                 Straight answers. <span className="text-neutral-400">No jargon.</span>
               </h2>
               <div className="mt-10">
@@ -362,14 +422,14 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
             aria-hidden
           />
           <div className="relative mx-auto max-w-3xl">
-            <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight tracking-tight text-white">
+            <h2 className="font-display text-[clamp(1.65rem,4.25vw,2.85rem)] font-bold leading-tight tracking-tight text-white">
               {config.finalCta.titleBefore}
               <br />
               <span className="bg-gradient-to-r from-secondary-200 via-trust-200 to-primary-100 bg-clip-text text-transparent">
                 {config.finalCta.titleGradient}
               </span>
             </h2>
-            <p className="mt-5 text-lg text-white/65">{config.finalCta.lede}</p>
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-primary-50 sm:text-lg">{config.finalCta.lede}</p>
             <div className="mt-10 flex flex-wrap justify-center gap-3">
               <Link
                 href={enquiryHref}
@@ -379,16 +439,16 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
               </Link>
               <a
                 href="tel:+918031411776"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-full border-2 border-trust-300/40 px-8 py-3.5 text-base font-bold text-white backdrop-blur transition hover:border-trust-200/55 hover:bg-white/10"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full border-2 border-white/55 bg-white/10 px-8 py-3.5 text-base font-bold text-white shadow-sm backdrop-blur transition hover:border-white/75 hover:bg-white/18"
               >
                 Call 080-31411776
               </a>
             </div>
             {config.finalCta.showPillarLink !== false && (
-              <p className="mt-10 text-sm text-white/45">
+              <p className="mt-10 text-sm text-primary-100/90">
                 <Link
                   href={CARE_PILLAR_HREF}
-                  className="font-medium text-white/70 underline-offset-4 hover:text-white hover:underline"
+                  className="font-medium text-white underline-offset-4 hover:text-white hover:underline"
                 >
                   {config.finalCta.pillarLinkLabel ?? '← Home care services overview'}
                 </Link>
