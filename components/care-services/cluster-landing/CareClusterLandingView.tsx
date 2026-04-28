@@ -349,26 +349,49 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
 
         <section
           id="process"
-          className="relative scroll-mt-28 overflow-hidden bg-gradient-to-br from-primary-950 via-[#062238] to-trust-950 px-4 py-16 text-white sm:px-6 sm:py-24"
+          className="relative isolate scroll-mt-28 overflow-hidden bg-primary-950 px-4 py-20 text-white sm:px-6 sm:py-28"
         >
+          {/* Solid brand-dark base (primary-950 #001e40) — overlays stay subtle so the section never reads as “white” */}
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_15%_10%,rgba(0,180,255,0.14),transparent_55%),radial-gradient(ellipse_60%_45%_at_90%_85%,rgba(0,175,170,0.18),transparent_58%)]"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-b from-primary-900 via-primary-950 to-[#031525]"
             aria-hidden
           />
-          <div className="relative mx-auto max-w-6xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-trust-200">{config.processIntro.eyebrow}</p>
-            <h2 className="mt-3 font-display text-[clamp(1.65rem,4vw,2.75rem)] font-bold tracking-tight">{config.processIntro.title}</h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-sky-100/95 sm:text-lg">{config.processIntro.lede}</p>
+          <div
+            className="pointer-events-none absolute inset-0 opacity-50 mix-blend-screen bg-[radial-gradient(ellipse_75%_55%_at_20%_0%,rgba(61,184,255,0.22),transparent_58%)]"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_55%_45%_at_95%_90%,rgba(0,175,170,0.2),transparent_60%)]"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
+            aria-hidden
+          />
 
-            <div className="mt-14 space-y-12 md:space-y-16">
+          <div className="relative z-10 mx-auto max-w-6xl">
+            <p className="inline-flex rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-trust-200">
+              {config.processIntro.eyebrow}
+            </p>
+            <h2 className="mt-6 max-w-3xl font-display text-[clamp(1.85rem,4.25vw,2.85rem)] font-semibold leading-[1.15] tracking-tight text-white">
+              {config.processIntro.title}
+            </h2>
+            <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-neutral-200 sm:text-lg">
+              {config.processIntro.lede}
+            </p>
+
+            <div className="mt-12 flex flex-col gap-5 md:mt-16 md:gap-6">
               {config.processSteps.map((step) => (
-                <div key={step.mark} className="flex flex-col gap-5 md:flex-row md:gap-10">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-trust-400/35 bg-white/[0.08] font-display text-xl italic text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] md:h-20 md:w-20 md:text-2xl">
+                <div
+                  key={step.mark}
+                  className="flex flex-col gap-6 rounded-3xl border border-white/10 bg-white/[0.07] p-6 shadow-[0_28px_80px_rgba(0,0,0,0.45)] backdrop-blur-[8px] sm:flex-row sm:items-start sm:gap-8 sm:p-8"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/20 bg-gradient-to-br from-primary-600/50 to-trust-700/40 font-display text-lg font-semibold not-italic text-white shadow-inner shadow-black/20 sm:h-16 sm:w-16 sm:text-xl">
                     {step.mark}
                   </div>
-                  <div className="max-w-3xl pt-1">
-                    <h3 className="font-display text-2xl font-semibold tracking-tight text-white">{step.title}</h3>
-                    <p className="mt-3 text-base leading-relaxed text-sky-50/95">{step.body}</p>
+                  <div className="min-w-0 flex-1 pt-0.5">
+                    <h3 className="font-display text-xl font-semibold tracking-tight text-white sm:text-2xl">{step.title}</h3>
+                    <p className="mt-3 text-[15px] leading-[1.7] text-neutral-200 sm:text-[17px]">{step.body}</p>
                   </div>
                 </div>
               ))}
@@ -415,40 +438,48 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
 
         <section
           id="book"
-          className="relative scroll-mt-28 overflow-hidden bg-gradient-to-br from-primary-950 via-[#071c2e] to-trust-950 px-4 py-20 text-center sm:px-6 sm:py-28"
+          className="relative isolate scroll-mt-28 overflow-hidden bg-primary-950 px-4 py-20 text-center sm:px-6 sm:py-28"
         >
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_35%,rgba(0,116,200,0.28),transparent_68%),radial-gradient(ellipse_50%_40%_at_80%_90%,rgba(0,175,170,0.14),transparent_60%)]"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-primary-950 to-trust-900/40"
             aria-hidden
           />
-          <div className="relative mx-auto max-w-3xl">
-            <h2 className="font-display text-[clamp(1.65rem,4.25vw,2.85rem)] font-bold leading-tight tracking-tight text-white">
-              {config.finalCta.titleBefore}
-              <br />
-              <span className="bg-gradient-to-r from-secondary-200 via-trust-200 to-primary-100 bg-clip-text text-transparent">
-                {config.finalCta.titleGradient}
-              </span>
+          <div
+            className="pointer-events-none absolute inset-0 opacity-45 bg-[radial-gradient(ellipse_65%_50%_at_50%_15%,rgba(77,191,255,0.18),transparent_62%)]"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent"
+            aria-hidden
+          />
+
+          <div className="relative z-10 mx-auto max-w-2xl px-2">
+            <h2 className="font-display text-[clamp(1.75rem,4.25vw,2.65rem)] font-semibold leading-[1.2] tracking-tight text-white">
+              <span className="block">{config.finalCta.titleBefore}</span>
+              <span className="mt-2 block text-trust-200">{config.finalCta.titleGradient}</span>
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-primary-50 sm:text-lg">{config.finalCta.lede}</p>
-            <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-neutral-200 sm:text-lg">
+              {config.finalCta.lede}
+            </p>
+            <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
               <Link
                 href={enquiryHref}
-                className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-white px-8 py-3.5 text-base font-bold text-primary-900 shadow-xl shadow-primary-900/15 transition hover:bg-primary-50"
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-white px-9 py-3.5 text-base font-semibold text-primary-950 shadow-[0_12px_40px_rgba(0,0,0,0.35)] transition hover:bg-neutral-100"
               >
                 Start your enquiry
               </Link>
               <a
                 href="tel:+918031411776"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-full border-2 border-white/55 bg-white/10 px-8 py-3.5 text-base font-bold text-white shadow-sm backdrop-blur transition hover:border-white/75 hover:bg-white/18"
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full border-2 border-white/70 bg-transparent px-9 py-3.5 text-base font-semibold text-white transition hover:border-white hover:bg-white/10"
               >
                 Call 080-31411776
               </a>
             </div>
             {config.finalCta.showPillarLink !== false && (
-              <p className="mt-10 text-sm text-primary-100/90">
+              <p className="mt-12 text-sm text-neutral-300">
                 <Link
                   href={CARE_PILLAR_HREF}
-                  className="font-medium text-white underline-offset-4 hover:text-white hover:underline"
+                  className="font-medium text-white/90 underline decoration-white/30 underline-offset-4 transition hover:text-white hover:decoration-white"
                 >
                   {config.finalCta.pillarLinkLabel ?? '← Home care services overview'}
                 </Link>
