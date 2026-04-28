@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import pRetry from 'p-retry';
 import { EMAIL } from './constants';
 import { logger } from './logger';
-import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData, CareersSalesExecutiveFormData, CareersRoleApplicationFormData } from '../types/email';
+import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData, CareersSalesExecutiveFormData, CareersRoleApplicationFormData, CareServicesLeadFormData } from '../types/email';
 
 // Utility function to format phone numbers to bypass DLP (shows all digits with spaces)
 const formatPhoneForEmail = (phone: string): string => {
@@ -1429,6 +1429,93 @@ export type SendLeadEmailOptions = {
   attachments?: NonNullable<nodemailer.SendMailOptions['attachments']>
 }
 
+const CARE_TYPE_LABELS: Record<string, string> = {
+  'home-care-services-bangalore': 'Home Care Services (overview)',
+  'home-healthcare-services-bangalore': 'Home Healthcare Services',
+  'home-nursing-services-bangalore': 'Home Nursing Services',
+  'elderly-care-services-bangalore': 'Elderly Care Services',
+  'caretaker-services-bangalore': 'Caretaker Services',
+  'patient-care-services-bangalore': 'Patient Care Services',
+  'home-attendant-services-bangalore': 'Home Attendant Services',
+  'trained-attendant-services-bangalore': 'Trained Attendant Services',
+  not_sure: 'Not sure — please advise',
+}
+
+const URGENCY_LABELS: Record<string, string> = {
+  'same-day': 'Same day (if possible)',
+  '24-48h': 'Within 24–48 hours',
+  'this-week': 'This week',
+  planning: 'Planning / not urgent',
+}
+
+const escapeCareEmailHtml = (s: string) =>
+  String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+const generateCareServicesLeadEmail = (formData: CareServicesLeadFormData & { sourceUrl?: string }): EmailContent => {
+  const formattedPhone = formatPhoneForEmail(formData.phone)
+  const careLabelPlain = CARE_TYPE_LABELS[formData.careType] || formData.careType
+  const careLabelHtml = CARE_TYPE_LABELS[formData.careType] || escapeCareEmailHtml(formData.careType)
+  const urgencyLabel = URGENCY_LABELS[formData.urgency] || formData.urgency
+  const rawSource = formData.sourceUrl?.trim() || ''
+  const sourceDisplay = rawSource ? escapeCareEmailHtml(rawSource) : 'Not provided'
+  const sourceHref = rawSource ? escapeCareEmailHtml(rawSource) : '#'
+  const nameSafe = escapeCareEmailHtml(formData.name)
+  const localitySafe = escapeCareEmailHtml(formData.locality?.trim() || '—')
+
+  return {
+    subject: `New Bangalore care enquiry: ${careLabelPlain}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto;">
+        <h2 style="color: #0074C8;">New care services lead (Bangalore)</h2>
+        <div style="background-color: #e8f4fc; padding: 16px; border-radius: 8px; margin: 16px 0; border: 1px solid #b3d9f2;">
+          <p style="margin: 0 0 8px 0; font-size: 14px; color: #0c4a6e;"><strong>Source page (URL)</strong></p>
+          <p style="margin: 0; word-break: break-all;">
+            ${rawSource ? `<a href="${sourceHref}" target="_blank" rel="noopener noreferrer" style="color: #0369a1;">${sourceDisplay}</a>` : sourceDisplay}
+          </p>
+        </div>
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Contact</h3>
+          <p><strong>Name:</strong> ${nameSafe}</p>
+          <p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>
+          <p><strong>Phone:</strong> <a href="tel:${formData.phone}" style="text-decoration: none; color: #1e40af;">${formattedPhone}</a></p>
+        </div>
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+          <h3 style="margin-top: 0; color: #333;">Care request</h3>
+          <p><strong>Service line:</strong> ${careLabelHtml}</p>
+          <p><strong>Locality / area:</strong> ${localitySafe}</p>
+          <p><strong>Urgency:</strong> ${urgencyLabel}</p>
+          <h4 style="color: #333;">Situation / patient brief</h4>
+          <p style="white-space: pre-wrap;">${escapeCareEmailHtml(formData.patientSummary)}</p>
+          ${formData.notes?.trim() ? `<h4 style="color: #333;">Additional notes</h4><p style="white-space: pre-wrap;">${escapeCareEmailHtml(formData.notes)}</p>` : ''}
+        </div>
+        <hr style="margin: 24px 0; border: none; border-top: 1px solid #ddd;">
+        <p style="color: #666; font-size: 12px;">Submitted via the EzyHelpers Bangalore care services enquiry form.</p>
+      </div>
+    `,
+    text: `
+New care services lead (Bangalore)
+
+Source page (URL): ${rawSource || 'Not provided'}
+
+Contact:
+- Name: ${formData.name}
+- Email: ${formData.email}
+- Phone: ${formattedPhone}
+
+Care request:
+- Service line: ${careLabelPlain}
+- Locality / area: ${formData.locality?.trim() || '—'}
+- Urgency: ${urgencyLabel}
+
+Situation / patient brief:
+${formData.patientSummary}
+${formData.notes?.trim() ? `\nAdditional notes:\n${formData.notes}\n` : ''}
+---
+EzyHelpers care services enquiry form
+    `.trim(),
+  }
+}
+
 export const sendLeadEmail = async (
   leadType: LeadType,
   formData: any, // TODO: Create union type for all form data types
@@ -1452,6 +1539,10 @@ export const sendLeadEmail = async (
       }
     } else if (leadType === 'helper_interview') {
       emailRecipientsEnv = process.env.HELPER_INTERVIEW_RECIPIENTS || 'suraj@ezyhelpers.com,priyanka@ezyhelpers.com,arun@ezyhelpers.com';
+    } else if (leadType === 'care_services') {
+      emailRecipientsEnv =
+        process.env.CARE_SERVICES_EMAIL_RECIPIENTS ||
+        'contact@ezyhelpers.com,arun@ezyhelpers.com,suraj@ezyhelpers.com';
     } else if (
       leadType === 'careers_chief_of_staff' ||
       leadType === 'careers_apm' ||
@@ -1526,6 +1617,12 @@ export const sendLeadEmail = async (
         emailContent = generateCareersRoleApplicationEmail(
           formData as CareersRoleApplicationFormData
         );
+        break;
+      case 'care_services':
+        emailContent = generateCareServicesLeadEmail({
+          ...(formData as CareServicesLeadFormData),
+          sourceUrl: sourceUrl || (formData as CareServicesLeadFormData).sourceUrl,
+        });
         break;
       default:
         throw new Error('Invalid lead type');

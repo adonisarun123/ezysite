@@ -342,6 +342,20 @@ export interface CareersRoleApplicationFormData {
   resumeFileName: string
 }
 
+/** Bangalore care cluster / pillar enquiry (dedicated form) */
+export interface CareServicesLeadFormData {
+  name: string
+  email: string
+  phone: string
+  /** Slug or value identifying service line, e.g. home-nursing-services-bangalore */
+  careType: string
+  patientSummary: string
+  locality?: string
+  urgency: 'same-day' | '24-48h' | 'this-week' | 'planning'
+  notes?: string
+  sourceUrl?: string
+}
+
 export type LeadType =
   | 'contact'
   | 'hire_helper'
@@ -354,7 +368,8 @@ export type LeadType =
   | 'careers_chief_of_staff'
   | 'careers_apm'
   | 'careers_sales_executive'
-  | 'careers_role_application';
+  | 'careers_role_application'
+  | 'care_services';
 
 export interface EmailSendResult {
   success: boolean;

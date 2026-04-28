@@ -15,6 +15,7 @@ import {
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import TrustpilotClient from './TrustpilotClient'
+import { CARE_NAV_CLUSTERS, CARE_PILLAR_HREF } from '@/lib/careServices/registry'
 
 const footerLinks = {
   services: [
@@ -63,7 +64,7 @@ export default function Footer() {
       {/* Main Footer Content */}
       <div className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 lg:gap-12">
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-8">
@@ -191,6 +192,31 @@ export default function Footer() {
                   <li key={link.name}>
                     <Link 
                       href={link.href} 
+                      className="text-sm text-gray-300 hover:text-primary-400 transition-colors leading-relaxed"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Bangalore care cluster */}
+            <div>
+              <h3 className="text-lg font-semibold mb-8 font-display text-white">Care Services — Bangalore</h3>
+              <ul className="space-y-4">
+                <li>
+                  <Link
+                    href={CARE_PILLAR_HREF}
+                    className="text-sm font-medium text-gray-200 hover:text-primary-400 transition-colors leading-relaxed"
+                  >
+                    Home Care Services (overview)
+                  </Link>
+                </li>
+                {CARE_NAV_CLUSTERS.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
                       className="text-sm text-gray-300 hover:text-primary-400 transition-colors leading-relaxed"
                     >
                       {link.name}
