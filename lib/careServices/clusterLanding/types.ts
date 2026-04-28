@@ -2,10 +2,18 @@
 export type ClusterTone = 'c1' | 'c2' | 'c3' | 'c4' | 'c5' | 'c6'
 
 export type ServiceScrollCard = {
-  tag: string
+  /** Small label on image (legacy); omit when using `badge` only */
+  tag?: string
+  /** Optional pill on image (e.g. “Most requested”, “24×7”) */
+  badge?: string
   title: string
+  /** Primary descriptive line (tagline) */
   body: string
   tone: ClusterTone
+  rating?: string
+  detail?: string
+  priceBold?: string
+  priceRest?: string
 }
 
 export type CompareAltCard = {
@@ -24,6 +32,8 @@ export type PillarGridItem = {
   span?: 2 | 3
   /** Second wide card with ECG decoration */
   heartbeat?: boolean
+  /** Dark featured card (e.g. final “why us” tile) */
+  spotlight?: boolean
 }
 
 export type ProcessStep = {
@@ -32,7 +42,7 @@ export type ProcessStep = {
   body: string
 }
 
-export type HeroChipIcon = 'check' | 'heart' | 'clock' | 'shield' | 'user' | 'spark'
+export type HeroChipIcon = 'check' | 'heart' | 'clock' | 'shield' | 'user' | 'spark' | 'chat'
 
 export type HeroChip = {
   icon: HeroChipIcon
@@ -53,6 +63,12 @@ export type CareClusterLandingConfig = {
   /** Third breadcrumb label */
   breadcrumbCurrent: string
   eyebrow: string
+  /** Hero paragraph under H1; overrides page meta description in the hero band when set */
+  heroLead?: string
+  /** Captions for hero image tiles: tall left, top-right, bottom-right */
+  heroCaptions?: [string, string, string]
+  /** Primary hero CTA label */
+  primaryCtaLabel?: string
   hero: {
     line1: string
     line2Before: string

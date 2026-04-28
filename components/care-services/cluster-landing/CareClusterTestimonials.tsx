@@ -37,7 +37,7 @@ export default function CareClusterTestimonials({ stories }: { stories: CareStor
       <div className="relative mx-auto max-w-3xl">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-primary-600">Real families</p>
         <h2 className="mt-2 text-center font-display text-xl font-bold tracking-tight text-neutral-950 sm:text-2xl">
-          What people say about care with us
+          What people say <span className="text-neutral-500">about care with us</span>
         </h2>
 
         <div className="relative mt-10 rounded-[28px] border border-primary-100/90 bg-white/95 p-8 shadow-[0_24px_80px_rgba(0,52,102,0.08)] backdrop-blur-[2px] sm:p-10">
@@ -63,7 +63,7 @@ export default function CareClusterTestimonials({ stories }: { stories: CareStor
           </blockquote>
 
           <div className="mt-8 flex flex-col items-center gap-4 border-t border-neutral-100 pt-8 sm:flex-row sm:justify-center sm:gap-6">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-trust-500 text-sm font-bold text-white shadow-lg shadow-primary-900/20">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-trust-500 text-xs font-bold leading-tight text-white shadow-lg shadow-primary-900/20 sm:text-sm">
               {active.initials}
             </div>
             <div className="text-center sm:text-left">

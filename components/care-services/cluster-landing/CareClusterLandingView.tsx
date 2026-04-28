@@ -16,7 +16,7 @@ import {
   AcademicCapIcon,
   ChatBubbleLeftRightIcon,
   HomeIcon,
-  UserPlusIcon,
+  CheckCircleIcon,
 } from '@heroicons/react/24/outline'
 import type { CareClusterLandingConfig, HeroChipIcon } from '@/lib/careServices/clusterLanding/types'
 import { CLUSTER_TRUST_STRIP } from '@/lib/careServices/clusterLanding/configs'
@@ -40,6 +40,7 @@ const HERO_ICONS: Record<HeroChipIcon, ComponentType<SVGProps<SVGSVGElement>>> =
   shield: ShieldCheckIcon,
   user: UserGroupIcon,
   spark: SparklesIcon,
+  chat: ChatBubbleLeftRightIcon,
 }
 
 const PILLAR_DECO_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [
@@ -54,8 +55,8 @@ const PILLAR_DECO_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [
 const PROCESS_PASTEL_BG = ['bg-[#FFF1D6]', 'bg-[#E5F2EB]', 'bg-[#FFE0D9]', 'bg-[#E8E4F3]'] as const
 const PROCESS_STEP_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [
   ChatBubbleLeftRightIcon,
+  CheckCircleIcon,
   UserGroupIcon,
-  UserPlusIcon,
   HomeIcon,
 ]
 
@@ -68,6 +69,9 @@ type Props = {
 
 export default function CareClusterLandingView({ config, metaDescription, faqItems, pathname }: Props) {
   const enquiryHref = `${CARE_ENQUIRY_HREF}?source=${encodeURIComponent(pathname)}`
+  const heroLead = config.heroLead ?? metaDescription
+  const primaryCta = config.primaryCtaLabel ?? 'Request a callback'
+  const heroCap = config.heroCaptions
 
   const breadcrumbItems =
     pathname === CARE_PILLAR_HREF
@@ -105,14 +109,14 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                   <span className="text-primary-600">{config.hero.line2Accent}</span>
                   {config.hero.line2After ?? ''}
                 </h1>
-                <p className="mt-5 max-w-lg text-pretty text-[17px] leading-relaxed text-neutral-600">{metaDescription}</p>
+                <p className="mt-5 max-w-lg text-pretty text-[17px] leading-relaxed text-neutral-600">{heroLead}</p>
               </div>
               <div className="relative mt-8 flex flex-wrap gap-3">
                 <Link
                   href={enquiryHref}
                   className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-primary-600 px-6 py-3.5 text-[15px] font-semibold text-white shadow-[0_2px_8px_rgba(0,116,200,0.35)] transition hover:bg-primary-700"
                 >
-                  Request a callback
+                  {primaryCta}
                   <ArrowRightIcon className="h-4 w-4" aria-hidden />
                 </Link>
                 <a
@@ -128,17 +132,17 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
             <div className="grid min-h-[240px] grid-cols-2 grid-rows-2 gap-2 p-2 sm:min-h-[300px] sm:p-3 lg:min-h-0">
               <div className="relative row-span-2 overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFB58C] to-[#FF7D5C] shadow-inner">
                 <span className="absolute bottom-3 left-3 rounded-lg bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-neutral-900 shadow-sm backdrop-blur-sm">
-                  Human-centred care
+                  {heroCap?.[0] ?? 'Human-centred care'}
                 </span>
               </div>
               <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#C8E4D3] to-[#6FB58F]">
                 <span className="absolute bottom-3 left-3 rounded-lg bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-neutral-900 shadow-sm backdrop-blur-sm">
-                  Verified network
+                  {heroCap?.[1] ?? 'Verified network'}
                 </span>
               </div>
               <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFD7A5] to-[#F4A05F]">
                 <span className="absolute bottom-3 left-3 rounded-lg bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-neutral-900 shadow-sm backdrop-blur-sm">
-                  Calm at home
+                  {heroCap?.[2] ?? 'Calm at home'}
                 </span>
               </div>
             </div>
@@ -244,30 +248,40 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                 return (
                 <div
                   key={p.num}
-                  className={`flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_10px_28px_rgba(0,0,0,0.12)] ${
-                    p.span === 3 ? 'md:col-span-3' : 'md:col-span-2'
-                  } ${p.heartbeat ? 'relative overflow-hidden border-teal-200/80 bg-gradient-to-br from-white to-teal-50/80' : ''}`}
+                  className={`flex h-full flex-col rounded-[24px] border p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.12)] ${
+                    p.spotlight
+                      ? 'border-neutral-900 bg-neutral-900 hover:border-neutral-900'
+                      : `border-neutral-200 bg-white hover:border-neutral-900 ${p.heartbeat ? 'relative overflow-hidden border-teal-200/80 bg-gradient-to-br from-white to-teal-50/80' : ''}`
+                  } ${p.span === 3 ? 'md:col-span-3' : 'md:col-span-2'}`}
                 >
                   <div className="flex items-start justify-between gap-3">
                     <span
-                      className={`font-display text-3xl font-medium leading-none ${p.heartbeat ? 'text-teal-600' : 'text-primary-600'}`}
+                      className={`font-display text-3xl font-medium leading-none ${
+                        p.spotlight ? 'text-[#FF7D5C]' : p.heartbeat ? 'text-teal-600' : 'text-primary-600'
+                      }`}
                     >
                       {p.num}
                     </span>
                     <span
                       className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border shadow-sm ${
-                        p.heartbeat
-                          ? 'border-teal-200/80 bg-white text-teal-600'
-                          : 'border-primary-100 bg-primary-50 text-primary-600'
+                        p.spotlight
+                          ? 'border-white/20 bg-white/10 text-white'
+                          : p.heartbeat
+                            ? 'border-teal-200/80 bg-white text-teal-600'
+                            : 'border-primary-100 bg-primary-50 text-primary-600'
                       }`}
                       aria-hidden
                     >
                       <DecoIcon className="h-5 w-5" />
                     </span>
                   </div>
-                  <h3 className="mt-4 font-display text-lg font-bold leading-snug text-neutral-950 sm:text-xl">{p.title}</h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-600">{p.description}</p>
-                  {p.heartbeat && (
+                  <h3
+                    className={`mt-4 font-display text-lg font-bold leading-snug sm:text-xl ${p.spotlight ? 'text-white' : 'text-neutral-950'}`}
+                  >
+                    {p.title}
+                  </h3>
+                  <p className={`mt-3 flex-1 text-sm leading-relaxed ${p.spotlight ? 'text-white/70' : 'text-neutral-600'}`}>{p.description}</p>
+                  {p.heartbeat && !p.spotlight && (
                     <svg viewBox="0 0 800 60" className="mt-auto h-12 w-full shrink-0 pt-6 text-primary-500/80" preserveAspectRatio="none" aria-hidden>
                       <polyline
                         fill="none"
@@ -299,18 +313,37 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
               {config.serviceCards.map((c) => (
                 <div
                   key={c.title}
-                  className="snap-start flex min-h-[300px] w-[min(85vw,320px)] shrink-0 flex-col overflow-hidden rounded-[24px] border border-neutral-200 bg-white p-3 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:min-h-[320px] sm:w-[300px]"
+                  className="snap-start flex min-h-[300px] w-[min(85vw,320px)] shrink-0 cursor-pointer flex-col overflow-hidden rounded-[24px] border border-neutral-200 bg-white p-3 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:min-h-[320px] sm:w-[300px]"
                 >
                   <div
                     className={`relative aspect-[1.05] w-full overflow-hidden rounded-2xl border bg-gradient-to-br p-0 ${toneClass[c.tone]}`}
                   >
-                    <span className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-neutral-800 shadow-sm">
-                      {c.tag}
-                    </span>
+                    {(c.badge ?? c.tag) ? (
+                      <span className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-neutral-800 shadow-sm">
+                        {c.badge ?? c.tag}
+                      </span>
+                    ) : null}
                   </div>
                   <div className="flex min-h-0 flex-1 flex-col px-1.5 pt-4">
-                    <h3 className="font-display text-base font-bold leading-snug text-neutral-950 sm:text-lg">{c.title}</h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">{c.body}</p>
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="font-display text-base font-bold leading-snug text-neutral-950 sm:text-lg">{c.title}</h3>
+                      {c.rating ? (
+                        <span className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-neutral-900">
+                          <span className="text-amber-500" aria-hidden>
+                            ★
+                          </span>
+                          {c.rating}
+                        </span>
+                      ) : null}
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-600">{c.body}</p>
+                    {c.detail ? <p className="mt-1 text-sm text-neutral-600">{c.detail}</p> : null}
+                    {c.priceBold || c.priceRest ? (
+                      <p className="mt-2 text-sm text-neutral-900">
+                        {c.priceBold ? <strong className="font-bold">{c.priceBold}</strong> : null}
+                        {c.priceRest ?? ''}
+                      </p>
+                    ) : null}
                   </div>
                   <div className="flex justify-end px-1.5 pb-1 pt-2 text-neutral-400">
                     <ArrowRightIcon className="h-5 w-5" aria-hidden />
