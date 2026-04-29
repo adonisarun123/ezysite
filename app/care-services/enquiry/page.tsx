@@ -1,11 +1,9 @@
-import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import CareServicesEnquiryForm from '@/components/care-services/CareServicesEnquiryForm'
-import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import { CARE_PILLAR_HREF } from '@/lib/careServices/registry'
 import {
   HeroTileCalmHome,
@@ -23,16 +21,8 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/outline'
 
-export const metadata: Metadata = {
-  title: 'Request Home Care in Bangalore | EzyHelpers',
-  description:
-    'Submit a care enquiry for Bengaluru: home nursing, elderly care, attendants, and more. Our team responds quickly.',
-  robots: { index: true, follow: true },
-  alternates: {
-    canonical: 'https://www.ezyhelpers.com/care-services/enquiry',
-    languages: selfReferencingLanguages('/care-services/enquiry'),
-  },
-}
+// Metadata for this route lives in ./layout.tsx so the layout owns SEO/social
+// concerns (Open Graph, Twitter, hreflang, geo) and the page stays UI-only.
 
 const HERO_CHIPS = [
   {
