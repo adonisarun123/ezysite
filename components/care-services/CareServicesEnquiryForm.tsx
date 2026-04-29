@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { CheckCircleIcon } from '@heroicons/react/24/outline'
+import { CheckCircleIcon, ArrowRightIcon, PhoneIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline'
 import { CARE_SERVICE_TYPE_OPTIONS, CARE_URGENCY_OPTIONS } from '@/lib/careServices/careEnquiryOptions'
 import { CARE_PILLAR_HREF } from '@/lib/careServices/registry'
 
@@ -15,6 +15,16 @@ function inferCareTypeFromPath(path: string | null): string {
   const found = CARE_SERVICE_TYPE_OPTIONS.find((o) => o.value === key)
   return found ? found.value : 'not_sure'
 }
+
+/**
+ * Shared input/select/textarea styling — warm, generous radius, soft focus ring.
+ * Matches the Airbnb-inspired palette used by the enquiry hero and cluster pages.
+ */
+const FIELD_BASE =
+  'mt-1.5 block w-full rounded-2xl border border-neutral-200 bg-white px-4 py-3.5 text-[15px] text-neutral-900 placeholder:text-neutral-400 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition focus:border-[#FF385C] focus:outline-none focus:ring-4 focus:ring-[#FF385C]/15 hover:border-neutral-300'
+
+const LABEL_BASE = 'block text-sm font-semibold text-neutral-900'
+const REQUIRED_MARK = <span aria-hidden className="ml-1 text-[#FF385C]">*</span>
 
 export default function CareServicesEnquiryForm() {
   const searchParams = useSearchParams()
@@ -116,43 +126,65 @@ export default function CareServicesEnquiryForm() {
 
   if (status === 'success') {
     return (
-      <div className="rounded-2xl border border-emerald-200 bg-emerald-50/80 p-8 text-center shadow-sm">
-        <CheckCircleIcon className="mx-auto h-14 w-14 text-emerald-600" aria-hidden />
-        <h2 className="mt-4 font-display text-xl font-bold text-gray-900">Request received</h2>
-        <p className="mt-2 text-gray-700">
-          Our care team will reach out shortly. If your need is urgent, please call{' '}
-          <a href="tel:+918031411776" className="font-semibold text-primary-600 underline">
-            080-31411776
-          </a>
-          .
-        </p>
-        <Link
-          href={CARE_PILLAR_HREF}
-          className="mt-6 inline-flex items-center justify-center rounded-xl bg-primary-600 px-6 py-3 text-sm font-semibold text-white hover:bg-primary-700"
-        >
-          Back to Home Care Services
-        </Link>
+      <div className="relative overflow-hidden rounded-[28px] border border-[#00A699]/20 bg-gradient-to-br from-[#E5F2EB] to-white p-8 text-center shadow-[0_24px_60px_rgba(0,166,153,0.12)] sm:p-12">
+        <div
+          className="pointer-events-none absolute -bottom-12 -right-12 h-44 w-44 rounded-full bg-[#00A699]/15 blur-2xl"
+          aria-hidden
+        />
+        <div className="relative">
+          <CheckCircleIcon className="mx-auto h-14 w-14 text-[#00A699]" aria-hidden />
+          <h2 className="mt-5 font-careSerif text-2xl font-medium tracking-tight text-neutral-950 sm:text-[28px]">
+            Request received.
+          </h2>
+          <p className="mx-auto mt-3 max-w-md text-base leading-relaxed text-neutral-700">
+            Our care team will reach out shortly. If your need is urgent, please call{' '}
+            <a href="tel:+918031411776" className="font-semibold text-[#FF385C] underline underline-offset-4">
+              080-31411776
+            </a>
+            .
+          </p>
+          <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              href={CARE_PILLAR_HREF}
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#FF385C] px-6 py-3.5 text-[15px] font-semibold text-white shadow-[0_2px_8px_rgba(255,56,92,0.25)] transition hover:bg-[#E31C5F]"
+            >
+              Back to Home Care Services
+              <ArrowRightIcon className="h-4 w-4" aria-hidden />
+            </Link>
+            <a
+              href="tel:+918031411776"
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-neutral-900 bg-white px-6 py-3.5 text-[15px] font-semibold text-neutral-900 transition hover:bg-neutral-50"
+            >
+              <PhoneIcon className="h-4 w-4" aria-hidden />
+              080-31411776
+            </a>
+          </div>
+        </div>
       </div>
     )
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <p className="text-sm text-gray-600">
-        Tell us about your care need in Bengaluru. Fields marked <span className="text-red-600">*</span> are required.
+      <p className="text-sm leading-relaxed text-neutral-600">
+        Tell us about your care need in Bengaluru. Fields marked
+        <span className="mx-1 text-[#FF385C]" aria-hidden>
+          *
+        </span>
+        are required.
       </p>
 
       {resolvedSourceUrl && (
-        <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-700">
-          <span className="font-medium text-gray-900">You came from: </span>
-          <span className="break-all text-primary-700">{resolvedSourceUrl}</span>
+        <div className="rounded-2xl border border-neutral-200 bg-[#FFF8F1] px-4 py-3 text-sm text-neutral-700">
+          <span className="font-semibold text-neutral-900">You came from: </span>
+          <span className="break-all text-[#FF385C]">{resolvedSourceUrl}</span>
         </div>
       )}
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="care-name" className="block text-sm font-medium text-gray-900">
-            Full name <span className="text-red-600">*</span>
+          <label htmlFor="care-name" className={LABEL_BASE}>
+            Full name{REQUIRED_MARK}
           </label>
           <input
             id="care-name"
@@ -161,12 +193,13 @@ export default function CareServicesEnquiryForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+            placeholder="e.g. Anita Sharma"
+            className={FIELD_BASE}
           />
         </div>
         <div>
-          <label htmlFor="care-phone" className="block text-sm font-medium text-gray-900">
-            Mobile number <span className="text-red-600">*</span>
+          <label htmlFor="care-phone" className={LABEL_BASE}>
+            Mobile number{REQUIRED_MARK}
           </label>
           <input
             id="care-phone"
@@ -177,37 +210,38 @@ export default function CareServicesEnquiryForm() {
             placeholder="10-digit Indian mobile"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+            className={FIELD_BASE}
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="care-email" className="block text-sm font-medium text-gray-900">
-          Email <span className="text-red-600">*</span>
+        <label htmlFor="care-email" className={LABEL_BASE}>
+          Email{REQUIRED_MARK}
         </label>
         <input
           id="care-email"
           type="email"
           autoComplete="email"
           required
+          placeholder="you@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+          className={FIELD_BASE}
         />
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="care-type" className="block text-sm font-medium text-gray-900">
-            Type of care <span className="text-red-600">*</span>
+          <label htmlFor="care-type" className={LABEL_BASE}>
+            Type of care{REQUIRED_MARK}
           </label>
           <select
             id="care-type"
             required
             value={careType}
             onChange={(e) => setCareType(e.target.value)}
-            className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+            className={`${FIELD_BASE} appearance-none bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23484848%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M6%209l6%206%206-6%22%2F%3E%3C%2Fsvg%3E')] bg-[length:18px_18px] bg-[right_1rem_center] bg-no-repeat pr-11`}
           >
             {CARE_SERVICE_TYPE_OPTIONS.map((o) => (
               <option key={o.value} value={o.value}>
@@ -217,7 +251,7 @@ export default function CareServicesEnquiryForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="care-locality" className="block text-sm font-medium text-gray-900">
+          <label htmlFor="care-locality" className={LABEL_BASE}>
             Locality / area in Bengaluru
           </label>
           <input
@@ -226,33 +260,46 @@ export default function CareServicesEnquiryForm() {
             placeholder="e.g. HSR Layout, Koramangala"
             value={locality}
             onChange={(e) => setLocality(e.target.value)}
-            className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+            className={FIELD_BASE}
           />
         </div>
       </div>
 
-      <div>
-        <label htmlFor="care-urgency" className="block text-sm font-medium text-gray-900">
-          When do you need support? <span className="text-red-600">*</span>
-        </label>
-        <select
-          id="care-urgency"
-          required
-          value={urgency}
-          onChange={(e) => setUrgency(e.target.value)}
-          className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+      {/* Urgency — segmented pill control */}
+      <fieldset>
+        <legend className={LABEL_BASE}>
+          When do you need support?{REQUIRED_MARK}
+        </legend>
+        <div
+          role="radiogroup"
+          aria-label="Urgency"
+          className="mt-2.5 grid grid-cols-2 gap-2 sm:grid-cols-4"
         >
-          {CARE_URGENCY_OPTIONS.map((o) => (
-            <option key={o.value} value={o.value}>
-              {o.label}
-            </option>
-          ))}
-        </select>
-      </div>
+          {CARE_URGENCY_OPTIONS.map((o) => {
+            const active = urgency === o.value
+            return (
+              <button
+                key={o.value}
+                type="button"
+                role="radio"
+                aria-checked={active}
+                onClick={() => setUrgency(o.value)}
+                className={`min-h-[48px] rounded-2xl border px-3 py-2.5 text-[13px] font-semibold leading-tight transition ${
+                  active
+                    ? 'border-neutral-900 bg-neutral-900 text-white shadow-[0_2px_8px_rgba(0,0,0,0.18)]'
+                    : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-900'
+                }`}
+              >
+                {o.label}
+              </button>
+            )
+          })}
+        </div>
+      </fieldset>
 
       <div>
-        <label htmlFor="care-summary" className="block text-sm font-medium text-gray-900">
-          Briefly describe the patient&apos;s situation and what help you need <span className="text-red-600">*</span>
+        <label htmlFor="care-summary" className={LABEL_BASE}>
+          Briefly describe the patient&apos;s situation and what help you need{REQUIRED_MARK}
         </label>
         <textarea
           id="care-summary"
@@ -261,12 +308,12 @@ export default function CareServicesEnquiryForm() {
           value={patientSummary}
           onChange={(e) => setPatientSummary(e.target.value)}
           placeholder="Condition, mobility, medical tasks, shifts needed, languages preferred…"
-          className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+          className={FIELD_BASE}
         />
       </div>
 
       <div>
-        <label htmlFor="care-notes" className="block text-sm font-medium text-gray-900">
+        <label htmlFor="care-notes" className={LABEL_BASE}>
           Anything else we should know?
         </label>
         <textarea
@@ -274,30 +321,52 @@ export default function CareServicesEnquiryForm() {
           rows={3}
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
-          className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+          placeholder="Family preferences, scheduling notes, anything we should keep in mind."
+          className={FIELD_BASE}
         />
       </div>
 
       {errorMessage && (
-        <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">
-          {errorMessage}
+        <p
+          className="flex items-start gap-2 rounded-2xl border border-[#FF385C]/30 bg-[#FFE5E5]/60 px-4 py-3 text-sm text-[#9A1F3D]"
+          role="alert"
+        >
+          <ExclamationCircleIcon className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+          <span className="leading-snug">{errorMessage}</span>
         </p>
       )}
 
-      <div className="flex flex-wrap gap-4 pt-2">
+      <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center">
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-3 text-base font-semibold text-white shadow-md transition hover:from-blue-700 hover:to-blue-800 disabled:opacity-60"
+          className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-[#FF385C] px-8 py-3.5 text-base font-semibold text-white shadow-[0_4px_14px_rgba(255,56,92,0.35)] transition hover:bg-[#E31C5F] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-[#FF385C]"
         >
-          {status === 'submitting' ? 'Sending…' : 'Submit enquiry'}
+          {status === 'submitting' ? (
+            <>
+              <span
+                className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"
+                aria-hidden
+              />
+              Sending…
+            </>
+          ) : (
+            <>
+              Submit enquiry
+              <ArrowRightIcon className="h-4 w-4" aria-hidden />
+            </>
+          )}
         </button>
         <a
           href="tel:+918031411776"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-xl border-2 border-emerald-600 px-6 py-3 text-base font-semibold text-emerald-800 hover:bg-emerald-50"
+          className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl border-2 border-neutral-900 bg-white px-6 py-3.5 text-base font-semibold text-neutral-900 transition hover:bg-neutral-50"
         >
-          Call 080-31411776
+          <PhoneIcon className="h-4 w-4" aria-hidden />
+          080-31411776
         </a>
+        <span className="text-xs text-neutral-500 sm:ml-auto">
+          We respond within the hour on business days.
+        </span>
       </div>
     </form>
   )
