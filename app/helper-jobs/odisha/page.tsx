@@ -170,7 +170,7 @@ export default function HelperJobsOdishaPage() {
                                     title: "Cooking / Kitchen Helper Jobs",
                                     desc: "Prepare veg and non-veg meals, manage groceries, and maintain a clean kitchen.",
                                     features: ["Cook meals for the family (veg or non-veg).", "Help plan meals and manage groceries.", "Keep the kitchen clean and organised.", "Follow family recipes and preferences.", "Store and manage leftover food safely.", "Live-in or full-time maid job available."],
-                                    href: "/helper-jobs/home-cooks-job-bangalore"
+                                    href: "/helper-jobs/odisha/home-cook-jobs-in-bangalore"
                                 },
                                 {
                                     title: "Nanny / Babysitter Jobs",

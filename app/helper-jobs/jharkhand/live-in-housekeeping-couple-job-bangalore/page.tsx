@@ -594,7 +594,7 @@ export default function HousekeepingCoupleJobsBangalorePage() {
                 </section>
 
                 {/* Refer and Earn Section */}
-                <ReferEarnSection variant="orange" />
+                <ReferEarnSection variant="orange" location="Jharkhand" lang="en" />
 
                 {/* Why Choose Section */}
                 <section className="section-padding bg-gray-50">

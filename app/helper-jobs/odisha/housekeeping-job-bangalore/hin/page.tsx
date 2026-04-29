@@ -5,18 +5,12 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import {
     BriefcaseIcon,
-    StarIcon,
-    PhoneIcon,
     CheckCircleIcon,
     ClockIcon,
     HeartIcon,
     ShieldCheckIcon,
     UserPlusIcon,
     BanknotesIcon,
-    GiftIcon,
-    BuildingOfficeIcon,
-    HomeModernIcon,
-    UserGroupIcon,
     HomeIcon,
     ClockIcon as ClockSolidIcon,
     UserIcon,
@@ -35,83 +29,74 @@ import {
     ArrowRightIcon
 } from '@heroicons/react/24/outline'
 
-
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
-    title: 'झारखंड हेल्पर्स के लिए बैंगलोर में भरोसेमंद हाउसकीपिंग जॉब्स',
-    description: 'झारखंड से हेल्पर्स के लिए बैंगलोर में फुल-टाइम और लिव-इन हाउसकीपिंग जॉब्स। फिक्स्ड सैलरी, सम्मानित परिवार और पूरा सपोर्ट',
+    title: 'बैंगलोर में हाउसकीपिंग जॉब्स | सुरक्षित काम और अच्छी कमाई',
+    description: 'कम सैलरी पर काम करना बंद करें। बैंगलोर में हाउसकीपिंग जॉब्स पाएँ और अपने परिवार के लिए ज़्यादा पैसे बचाएँ। हर महीने पूरी सैलरी घर भेजें। आज ही अप्लाई करें।',
     openGraph: {
-        title: 'झारखंड हेल्पर्स के लिए बैंगलोर में भरोसेमंद हाउसकीपिंग जॉब्स',
-        description: 'झारखंड से हेल्पर्स के लिए बैंगलोर में फुल-टाइम और लिव-इन हाउसकीपिंग जॉब्स। फिक्स्ड सैलरी, सम्मानित परिवार और पूरा सपोर्ट',
-        url: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/housekeeping-job-bangalore/hin',
+        title: 'बैंगलोर में हाउसकीपिंग जॉब्स | सुरक्षित काम और अच्छी कमाई',
+        description: 'कम सैलरी पर काम करना बंद करें। बैंगलोर में हाउसकीपिंग जॉब्स पाएँ और अपने परिवार के लिए ज़्यादा पैसे बचाएँ। हर महीने पूरी सैलरी घर भेजें। आज ही अप्लाई करें।',
+        url: 'https://www.ezyhelpers.com/helper-jobs/odisha/housekeeping-job-bangalore/hin',
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand/housekeeping-job-bangalore/hin',
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/odisha/housekeeping-job-bangalore/hin',
         languages: {
-            'en': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/housekeeping-job-bangalore',
-            'hi': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/housekeeping-job-bangalore/hin',
-            'x-default': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/housekeeping-job-bangalore'
+            'en': 'https://www.ezyhelpers.com/helper-jobs/odisha/housekeeping-job-bangalore',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/odisha/housekeeping-job-bangalore/hin',
+            'x-default': 'https://www.ezyhelpers.com/helper-jobs/odisha/housekeeping-job-bangalore'
         }
     }
 }
 
 const faqs: FAQItem[] = [
     {
-        question: 'क्या मुझे हाउसकीपिंग हेल्पर जॉब्स के लिए अनुभव चाहिए?',
-        answer: 'नहीं। अगर आप नए हैं तो भी अप्लाई कर सकते हैं। पहले ट्रेनिंग दिया जाएगा।',
+        question: 'क्या हाउसकीपिंग जॉब के लिए अनुभव जरूरी है?',
+        answer: 'नहीं। चाहे आपके पास कोई अनुभव न हो फिर भी अप्लाई कर सकते हैं। जॉइन करने से पहले बेसिक ट्रेनिंग दी जाती है। अनुभव होने पर सैलरी बेहतर मिल सकती है।',
     },
     {
-        question: 'क्या मुझे काम शुरू करने से पहले ट्रेनिंग मिलेगी?',
-        answer: 'हाँ। इसमें साफ-सफाई के तरीके, हाइजीन, बात-चीत का तरीका और सुरक्षा से जुड़ी बातें सिखाई जाती हैं।',
+        question: 'क्या काम शुरू करने से पहले ट्रेनिंग मिलती है?',
+        answer: 'हाँ। सफाई, स्वच्छता, व्यवहार और सुरक्षा की ट्रेनिंग दी जाती है।',
     },
     {
-        question: 'क्या मुझे काम शुरू करने से पहले ट्रेनिंग मिलेगा?',
-        answer: 'हाँ। सफाई, स्वच्छता, व्यवहार और सुरक्षा सिखाई जाएगी।',
+        question: 'क्या जॉब पाने के लिए पैसे देने होते हैं?',
+        answer: 'नहीं। हाउसकीपिंग जॉब के लिए कोई फीस नहीं ली जाती।',
     },
     {
-        question: 'क्या लिव-इन जॉब्स में खाना और रहने की जगह मिलती है?',
-        answer: 'हाँ। अलग कमरा/रहने की जगह और खाना मिलेगा।',
+        question: 'कौन से डॉक्यूमेंट चाहिए?',
+        answer: 'आधार कार्ड और एक पहचान पत्र जरूरी है। बाकी प्रक्रिया में मदद की जाती है।',
     },
     {
-        question: 'क्या मुझे पैसे देने होंगे?',
-        answer: 'नहीं। हम कभी कोई फीस नहीं लेते।',
+        question: "सैलरी कब मिलती है?",
+        answer: 'हर महीने तय तारीख पर सैलरी सीधे परिवार द्वारा दी जाती है।',
     },
     {
-        question: "क्या पति-पत्नी एक साथ अप्लाई कर सकते हैं?",
-        answer: 'हाँ। झारखंड से कपल्स अप्लाई कर सकते हैं।',
-    },
-    {
-        question: "कौन से डॉक्यूमेंट चाहिए?",
-        answer: 'आधार कार्ड और लोकल ID प्रूफ। वेरिफ़िकेशन में मदद करेंगे।',
-    },
-    {
-        question: "क्या कोई एजेंट शामिल है?",
-        answer: 'नहीं। हम हेल्पर को सीधे परिवार से जोड़ते हैं।',
+        question: "अगर रहने की जगह नहीं है तो क्या करें?",
+        answer: 'लिव इन जॉब में घर में रहना होता है। अन्य स्थिति में रहने की व्यवस्था खुद करनी होती है। जरूरत होने पर हॉस्टल की सुविधा बताई जाती है।',
     }
 ]
 
-export default function HousekeepingJobsBangaloreHinPage() {
+export default function HousekeepingJobsOdishaBangaloreHindiPage() {
     return (
         <>
-            <main className="min-h-screen noto-sans-devanagari-hindi">
+            <main className="min-h-screen">
                 <Navbar />
 
                 <Breadcrumb
                     sticky={true}
                     items={[
                         { label: 'होम', href: '/' },
-                        { label: 'हेल्पर जॉब्स', href: '/helper-jobs/hin' },
-                        { label: 'झारखंड', href: '/helper-jobs/jharkhand/hin' },
+                        { label: 'हेल्पर जॉब्स', href: '/helper-jobs' },
+                        { label: 'ओडिशा', href: '/helper-jobs/odisha' },
                         { label: 'हाउसकीपिंग जॉब्स' }
                     ]}
                     rightContent={
                         <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
                             <span className="text-gray-900 font-bold whitespace-nowrap">हिंदी</span>
                             <Link
-                                href="/helper-jobs/jharkhand/housekeeping-job-bangalore"
+                                href="/helper-jobs/odisha/housekeeping-job-bangalore"
                                 className="w-10 h-5 bg-teal-600 rounded-full p-1 relative transition-colors inline-block"
                             >
                                 <div
@@ -133,13 +118,33 @@ export default function HousekeepingJobsBangaloreHinPage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">झारखंड के हेल्पर्स के लिए बैंगलोर में हाउसकीपिंग जॉब</h1>
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">ओडिशा हेल्पर्स के लिए बैंगलोर में हाउसकीपिंग जॉब्स</h1>
 
-                            <p className="text-xs sm:text-sm md:text-2xl font-semibold mb-4 text-teal-100 max-w-5xl mx-auto">ईज़ीहेल्पर्स में, हम आपको बैंगलोर में हाउसकीपिंग जॉब पाने में मदद करते हैं। हम आपको ऐसे परिवारों से जोड़ते हैं जो भरोसेमंद हैं, और आपको ट्रेनिंग, सुरक्षित माहौल और लंबे समय तक काम की सुविधा देते हैं।</p>
+                            <p className="text-xs sm:text-sm md:text-2xl font-semibold mb-4 text-teal-100 max-w-5xl mx-auto">क्या आप ओडिशा में हैं और बैंगलोर में ज़्यादा कमाना चाहते हैं?</p>
+
+                            <div className="space-y-4 mb-6 max-w-5xl mx-auto">
+                                <p className="text-xs sm:text-sm md:text-xl text-teal-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none">
+                                    हम आपको बैंगलोर में सुरक्षित और सम्मानजनक हाउसकीपिंग जॉब्स दिलाने में मदद करते हैं। यहाँ फिक्स्ड सैलरी, रहने का विकल्प और पूरा सपोर्ट मिलता है।
+                                </p>
+                            </div>
                             <div className="flex flex-wrap justify-center gap-2 max-w-5xl mx-auto px-1">
-                                <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:flex-1">✓ कोई रजिस्ट्रेशन फीस नहीं</div>
-                                <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:flex-1">✓ बिना एजेंट के सीधे जॉब प्लेसमेंट</div>
-                                <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:w-auto">✓ सैलरी सीधे परिवार द्वारा दी जाती है</div>
+                                <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:flex-1">✓ फ्री जॉब, कोई फीस नहीं</div>
+                                <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:flex-1">✓ सुरक्षित और सम्मानजनक घर</div>
+                                <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:w-auto">✓ हर महीने समय पर सैलरी</div>
+                            </div>
+                            <div className="flex justify-center mt-8 gap-4">
+                                <Link
+                                    href="/helper-registration"
+                                    className="bg-white text-teal-700 font-bold py-3 px-8 rounded-xl hover:bg-teal-50 transition-colors shadow-lg"
+                                >
+                                    आज ही अप्लाई करें
+                                </Link>
+                                <Link
+                                    href="tel:+919972571005"
+                                    className="bg-teal-900/50 backdrop-blur-sm text-white font-bold py-3 px-8 rounded-xl hover:bg-teal-900/70 border border-teal-500/30 transition-colors shadow-lg"
+                                >
+                                    हमारी टीम से बात करें
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -150,9 +155,10 @@ export default function HousekeepingJobsBangaloreHinPage() {
                     <div className="container-custom">
                         <div className="text-center mb-12">
                             <span className="inline-block py-1 px-4 rounded-full bg-teal-100 text-teal-800 text-xs font-bold tracking-wider mb-4 border border-teal-200">
-                                नौकरी का स्थान: बैंगलोर
+                                जॉब लोकेशन: बैंगलोर
                             </span>
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display">जॉब लोकेशन: बैंगलोर</h2>
+                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display">बैंगलोर में हाउसकीपिंग जॉब्स के लिए सैलरी</h2>
+                            <p className="text-gray-600 max-w-2xl mx-auto">आपकी सैलरी अनुभव, परिवार के आकार और काम के घंटों पर निर्भर करती है।</p>
                         </div>
 
                         {/* Salary Cards - 3 Columns */}
@@ -163,12 +169,12 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-6 text-teal-600 group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white transition-all duration-300">
                                     <BriefcaseIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">लिव-इन हाउसकीपिंग जॉब्स</h3>
-                                <div className="text-2xl md:text-3xl font-extrabold text-teal-600 mb-6">₹18,000 – ₹22,000<span className="text-sm font-medium text-gray-500 block mt-1">हर महीने</span></div>
+                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">लिव इन हाउसकीपिंग जॉब्स</h3>
+                                <div className="text-2xl md:text-3xl font-extrabold text-teal-600 mb-6">₹18,000 से ₹22,000</div>
                                 <ul className="space-y-3">
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700 font-medium">फ्री रहने और खाना शामिल</span>
+                                        <span className="text-gray-700 font-medium">रहना और खाना फ्री</span>
                                     </li>
                                 </ul>
                             </div>
@@ -179,12 +185,12 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                                     <ClockIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">फुल-टाइम हाउसकीपिंग जॉब्स</h3>
-                                <div className="text-2xl md:text-3xl font-extrabold text-blue-600 mb-6">₹16,000 – ₹20,000<span className="text-sm font-medium text-gray-500 block mt-1">हर महीने</span></div>
+                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">फुल टाइम हाउसकीपिंग जॉब्स</h3>
+                                <div className="text-2xl md:text-3xl font-extrabold text-blue-600 mb-6">₹16,000 से ₹20,000</div>
                                 <ul className="space-y-3">
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700 font-medium">8–10 घंटे काम के तय समय</span>
+                                        <span className="text-gray-700 font-medium">रोज 8 से 10 घंटे</span>
                                     </li>
                                 </ul>
                             </div>
@@ -195,12 +201,12 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 text-purple-600 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
                                     <ClockIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">पार्ट-टाइम हाउसक्लीनिंग जॉब्स</h3>
-                                <div className="text-2xl md:text-3xl font-extrabold text-purple-600 mb-6">₹8,000 – ₹12,000<span className="text-sm font-medium text-gray-500 block mt-1">हर महीने</span></div>
+                                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">पार्ट टाइम हाउसक्लीनिंग जॉब्स</h3>
+                                <div className="text-2xl md:text-3xl font-extrabold text-purple-600 mb-6">₹8,000 से ₹12,000</div>
                                 <ul className="space-y-3">
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700 font-medium">4–6 घंटे रोज़ाना काम</span>
+                                        <span className="text-gray-700 font-medium">रोज 4 से 6 घंटे</span>
                                     </li>
                                 </ul>
                             </div>
@@ -209,18 +215,19 @@ export default function HousekeepingJobsBangaloreHinPage() {
                         {/* What You Get Grid */}
                         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
                             <div className="text-center mb-8">
-                                <h3 className="text-xl md:text-4xl font-bold text-gray-900 font-display">और भी फायदे</h3>
+                                <h3 className="text-xl md:text-4xl font-bold text-gray-900 font-display">EzyHelpers को क्या अलग बनाता है</h3>
                                 <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                                 {[
-                                    { text: "सुरक्षित नौकरी का इंतज़ाम", icon: ShieldCheckIcon },
-                                    { text: "जुड़ने से पहले आसान ट्रेनिंग", icon: BriefcaseIcon },
-                                    { text: "सम्मानजनक परिवार", icon: HeartIcon },
-                                    { text: "लंबे समय तक चलने वाली नौकरी के मौके", icon: StarIcon },
-                                    { text: "सीधे और समय पर सैलरी", icon: BanknotesIcon },
+                                    { text: "फ्री जॉब, कोई फीस नहीं", icon: ShieldCheckIcon },
+                                    { text: "सीधे परिवार से जॉब, कोई एजेंट नहीं", icon: UserPlusIcon },
+                                    { text: "जॉइन करने से पहले काम और सैलरी साफ बताया जाता है", icon: ChatBubbleLeftEllipsisIcon },
+                                    { text: "हर महीने समय पर सैलरी", icon: BanknotesIcon },
+                                    { text: "ट्रेनिंग और सलाह", icon: AcademicCapIcon },
+                                    { text: "जॉब लगने के बाद भी मदद", icon: HeartIcon },
                                 ].map((item, index) => (
-                                    <div key={index} className={`flex items-center gap-4 bg-gray-50 p-4 rounded-xl border border-gray-100 ${index === 4 ? 'sm:col-span-2 md:col-span-1 md:col-start-2' : ''}`}>
+                                    <div key={index} className={`flex items-center gap-4 bg-gray-50 p-4 rounded-xl border border-gray-100`}>
                                         <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
                                             <item.icon className="w-5 h-5 text-teal-600" />
                                         </div>
@@ -234,64 +241,8 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                     href="tel:+919972571005"
                                     className="inline-flex items-center justify-center bg-teal-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-teal-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                                 >
-                                    अभी कॉल करें
+                                    आज ही हमसे संपर्क करें
                                 </Link>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Where You Can Get Housekeeping Jobs Section */}
-                <section className="section-padding">
-                    <div className="container-custom">
-                        <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display">बैंगलोर में हाउसकीपिंग जॉब कहाँ मिलती है</h2>
-                            <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                            {/* Apartments */}
-                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-6 items-start">
-                                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-teal-600">
-                                    <BuildingOfficeIcon className="w-8 h-8" />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">अपार्टमेंट</h3>
-                                    <p className="text-sm md:text-base text-gray-600">वर्किंग परिवारों के घर में रोज़ की सफाई और घर के काम में मदद।</p>
-                                </div>
-                            </div>
-
-                            {/* Gated Communities */}
-                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-6 items-start">
-                                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-teal-600">
-                                    <BuildingOfficeIcon className="w-8 h-8" />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">गेटेड सोसाइटी</h3>
-                                    <p className="text-sm md:text-base text-gray-600">नियमित हाउसकीपिंग और घर की देखभाल का काम।</p>
-                                </div>
-                            </div>
-
-                            {/* Villas */}
-                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-6 items-start">
-                                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-teal-600">
-                                    <HomeModernIcon className="w-8 h-8" />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">विला</h3>
-                                    <p className="text-sm md:text-base text-gray-600">पूरे घर की जिम्मेदारी के साथ पक्का और लंबे समय की नौकरी।</p>
-                                </div>
-                            </div>
-
-                            {/* Family Homes */}
-                            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-6 items-start">
-                                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-teal-600">
-                                    <UserGroupIcon className="w-8 h-8" />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">फैमिली होम</h3>
-                                    <p className="text-sm md:text-base text-gray-600">परिवार के हर दिन के घर के काम संभालने में सहायता।</p>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -301,7 +252,8 @@ export default function HousekeepingJobsBangaloreHinPage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">बैंगलोर में हाउसकीपिंग जॉब्स के प्रकार</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">बैंगलोर में घर की सफाई के जॉब्स के प्रकार</h2>
+                            <p className="text-gray-600 max-w-2xl mx-auto">ऐसा काम चुनें जो आपकी जरूरत और सुविधा के अनुसार हो।</p>
                             <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
                         </div>
 
@@ -311,65 +263,60 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mb-6 text-teal-600 flex-shrink-0">
                                     <HomeIcon className="w-8 h-8" />
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">लिव-इन हाउसकीपिंग जॉब्स (24/7 घर में रहकर काम)</h3>
-                                <p className="text-sm md:text-base text-gray-600 mb-6 font-medium">अगर आप झारखंड से आ रहे हैं और रहने की जगह चाहिए तो यह सबसे अच्छा विकल्प है।</p>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">बैंगलोर में लिव इन हाउसकीपिंग जॉब्स</h3>
+                                <p className="text-sm md:text-base text-gray-600 mb-6 font-medium">24 घंटे घर में रहकर काम करना</p>
 
                                 <div className="space-y-6 flex-grow">
                                     {/* Type of Work */}
                                     <div>
-                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">काम का प्रकार:</h4>
+                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">काम</h4>
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">घर में 24/7 रहकर सफाई और काम करना</span>
+                                                <span className="text-sm md:text-base text-gray-600">परिवार के घर में रहकर रोज सफाई और घर के काम करना।</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">अलग कमरा या सोने की जगह दी जाती है</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">दिन के तीन समय का खाना मुफ्त</span>
+                                                <span className="text-sm md:text-base text-gray-600">रसोई और घर के सामान्य कामों में परिवार की मदद करना।</span>
                                             </li>
                                         </ul>
                                     </div>
 
                                     {/* Work Hours */}
                                     <div>
-                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">काम के घंटे:</h4>
+                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">काम की व्यवस्था</h4>
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">रोज़ाना घर की सफाई</span>
+                                                <span className="text-sm md:text-base text-gray-600">अलग कमरा या सोने की जगह और खाना दिया जाता है।</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">दिन में आराम का समय</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">महीने में 2 छुट्टियाँ (पहले तय की जाती हैं)</span>
+                                                <span className="text-sm md:text-base text-gray-600">महीने में 2 छुट्टियाँ पहले से तय होती हैं।</span>
                                             </li>
                                         </ul>
                                     </div>
 
                                     {/* Best For */}
                                     <div>
-                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">यह किन लोगों के लिए सही है:</h4>
+                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">किसके लिए सही</h4>
                                         <ul className="space-y-2 mb-4">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">झारखंड से आने वाले हेल्पर</span>
+                                                <span className="text-sm md:text-base text-gray-600">यदि आपके पास पहले से अनुभव नहीं है</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">हेल्पर्स जो किराया और खाने का खर्च बचाना चाहते हैं</span>
+                                                <span className="text-sm md:text-base text-gray-600">जो बैंगलोर में रहने की जगह चाहते हैं</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">जो बैंगलोर में बिना रहने की जगह के हेल्पर हैं</span>
+                                                <span className="text-sm md:text-base text-gray-600">जो किराया और खाना बचाना चाहते हैं</span>
                                             </li>
                                         </ul>
+                                        <p className="text-[13px] md:text-sm text-teal-800 bg-teal-50 p-3 rounded-xl border border-teal-100 font-medium leading-snug">
+                                            <strong>क्यों चुनें:</strong> किराया और खाने का खर्च नहीं होता, इसलिए ज़्यादा बचत होती है।
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -379,61 +326,56 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600 flex-shrink-0">
                                     <ClockSolidIcon className="w-8 h-8" />
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">फुल-टाइम हाउसकीपिंग जॉब्स (पूरा दिन काम)</h3>
-                                <p className="text-sm md:text-base text-gray-600 mb-6 font-medium">अगर आप फिक्स्ड काम के घंटे चाहते हैं तो यह आपके लिए सही है।</p>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">बैंगलोर में फुल टाइम हाउसकीपिंग जॉब्स</h3>
+                                <p className="text-sm md:text-base text-gray-600 mb-6 font-medium">पूरा दिन की नौकरी करें और बाद में अपने रहने की जगह पर जाएँ।</p>
 
                                 <div className="space-y-6 flex-grow">
                                     {/* Type of Work */}
                                     <div>
-                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">काम का प्रकार:</h4>
+                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">काम</h4>
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">रोज़ काम के तय घंटे</span>
+                                                <span className="text-sm md:text-base text-gray-600">रोज तय घंटों तक सफाई और घर का काम।</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">काम के बाद अपने घर लौटना</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">रात में नहीं रहना</span>
+                                                <span className="text-sm md:text-base text-gray-600">काम खत्म होने के बाद वापस जा सकते हैं।</span>
                                             </li>
                                         </ul>
                                     </div>
 
                                     {/* Work Hours */}
                                     <div>
-                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">काम के घंटे:</h4>
+                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">काम के घंटे</h4>
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">रोज़ाना 8–10 घंटे</span>
+                                                <span className="text-sm md:text-base text-gray-600">रोज 8 से 10 घंटे।</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">हफ्ते में 1 छुट्टी (पहले तय)</span>
+                                                <span className="text-sm md:text-base text-gray-600">हफ्ते में 1 छुट्टी।</span>
                                             </li>
                                         </ul>
                                     </div>
 
                                     {/* Best For */}
                                     <div>
-                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">यह किन लोगों के लिए सही है</h4>
+                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">किसके लिए सही</h4>
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">रिश्तेदारों या शेयर वाले घर में रहने वाले हेल्पर</span>
+                                                <span className="text-sm md:text-base text-gray-600">जो नियमित समय पर काम करना चाहते हैं</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">काम और निजी जिंदगी संतुलित रखना चाहने वाले</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">तय समय पर काम करना पसंद करने वाले</span>
+                                                <span className="text-sm md:text-base text-gray-600">जो काम और निजी समय दोनों चाहते हैं</span>
                                             </li>
                                         </ul>
+                                        <p className="text-[13px] md:text-sm text-blue-800 bg-blue-50 p-3 rounded-xl border border-blue-100 mt-4 font-medium leading-snug">
+                                            <strong>क्यों चुनें:</strong> हर महीने फिक्स्ड सैलरी और नियमित काम मिलती है।
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -443,25 +385,21 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 text-purple-600 flex-shrink-0">
                                     <SparklesIcon className="w-8 h-8" />
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">पार्ट-टाइम हाउसकीपिंग जॉब्स (कुछ घंटे का काम)</h3>
-                                <p className="text-sm md:text-base text-gray-600 mb-6 font-medium">अगर आप कम घंटे काम करना चाहते हैं और अपने समय के अनुसार नौकरी चुनना पसंद करते हैं, तो यह सही है।</p>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">बैंगलोर में पार्ट टाइम हाउसकीपिंग जॉब्स</h3>
+                                <p className="text-sm md:text-base text-gray-600 mb-6 font-medium">कम घंटे काम करें और एक्स्ट्रा कमाई करें।</p>
 
                                 <div className="space-y-6 flex-grow">
                                     {/* Type of Work */}
                                     <div>
-                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">काम का प्रकार</h4>
+                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">काम</h4>
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">किचन, बाथरूम या लिविंग रूम जैसी जगहों की सफाई</span>
+                                                <span className="text-sm md:text-base text-gray-600">सफाई, बर्तन, किचन या बाथरूम का काम</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">फर्नीचर और जगहों पर धूल झाड़ना</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">रोज़ाना सफाई बनाए रखना</span>
+                                                <span className="text-sm md:text-base text-gray-600">रोज या हफ्ते में तय दिन</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -472,28 +410,31 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                         <ul className="space-y-2">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">परिवार की ज़रूरत के हिसाब से रोज़ाना 4–6 घंटे</span>
+                                                <span className="text-sm md:text-base text-gray-600">4 से 6 घंटे</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
+                                                <span className="text-sm md:text-base text-gray-600">सुबह या शाम की शिफ्ट</span>
                                             </li>
                                         </ul>
                                     </div>
 
                                     {/* Best For */}
                                     <div>
-                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">यह किन लोगों के लिए सही है</h4>
+                                        <h4 className="text-base md:text-lg font-bold text-gray-800 mb-3 border-b border-gray-100 pb-2">किसके लिए सही</h4>
                                         <ul className="space-y-2 mb-4">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">सुविधा के अनुसार काम चाहने वाले हेल्पर</span>
+                                                <span className="text-sm md:text-base text-gray-600">जो पास में रहते हैं</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">काम चाहने वाले हेल्पर</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base text-gray-600">कई छोटे काम संभालने वाले</span>
+                                                <span className="text-sm md:text-base text-gray-600">जो एक से ज्यादा घरों में काम करना चाहते हैं</span>
                                             </li>
                                         </ul>
+                                        <p className="text-[13px] md:text-sm text-purple-800 bg-purple-50 p-3 rounded-xl border border-purple-100 font-medium leading-snug">
+                                            <strong>क्यों चुनें:</strong> अपने समय के अनुसार काम और अलग से कमाई।
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -509,7 +450,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                     </div>
                                     <h3 className="text-xl md:text-3xl font-bold text-gray-900 font-display">हाउसकीपिंग के काम की ज़िम्मेदारियाँ</h3>
                                 </div>
-                                <p className="text-gray-600 mb-6 font-medium">आपके रोज़ाना के कामों में ये शामिल हो सकते हैं:</p>
+                                <p className="text-gray-600 mb-6 font-medium">आपके रोज के काम में ये शामिल हो सकते हैं:</p>
                                 <ul className="space-y-4 mb-6 flex-grow">
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -517,7 +458,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">कमरे, किचन और बाथरूम साफ़ करना</span>
+                                        <span className="text-gray-700">कमरे, किचन और बाथरूम साफ करना</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -525,28 +466,36 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">फर्नीचर और जगहों पर धूल झाड़ना</span>
+                                        <span className="text-gray-700">फर्नीचर, पंखे और शेल्फ की धूल साफ करना</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">पूरी सफाई बनाए रखना</span>
+                                        <span className="text-gray-700">कपड़े तह करना और आसान धुलाई में मदद</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">कपड़े धोना और तह करना</span>
+                                        <span className="text-gray-700">बिस्तर ठीक करना</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">किचन में मदद करना</span>
+                                        <span className="text-gray-700">कचरा बाहर निकालना</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-gray-700">जरूरी घर का काम</span>
+                                        <span className="text-gray-700">दरवाजे और खिड़की साफ करना</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-gray-700">किचन में हल्की मदद</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                                        <span className="text-gray-700">घर का सामान व्यवस्थित रखना</span>
                                     </li>
                                 </ul>
                                 <div className="bg-teal-50 border border-teal-100 rounded-xl p-4 mt-auto">
                                     <p className="text-teal-800 font-medium text-sm text-center">
-                                        हम सिर्फ़ वही काम शामिल करते हैं जो आपसे सहमति से तय किए गए हों, ताकि आपको सही पता हो कि क्या करना है।
+                                        जॉइन करने से पहले आपको पूरा काम साफ समझाया जाएगा।
                                     </p>
                                 </div>
                             </div>
@@ -565,7 +514,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                             <span className="text-blue-600 font-bold text-lg">1</span>
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-gray-900 text-lg">पुरुष और महिला हाउसकीपर</h4>
+                                            <h4 className="font-bold text-gray-900 text-lg">यह काम मुख्य रूप से महिलाओं के लिए है</h4>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-4">
@@ -573,7 +522,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                             <span className="text-blue-600 font-bold text-lg">2</span>
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-gray-900 text-lg">पति-पत्नी जोड़ा एक साथ अप्लाई कर सकते हैं</h4>
+                                            <h4 className="font-bold text-gray-900 text-lg">पुरुष और कपल (पति-पत्नी) भी आवेदन कर सकते है</h4>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-4">
@@ -581,7 +530,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                             <span className="text-blue-600 font-bold text-lg">3</span>
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-gray-900 text-lg">उम्र: 18–45 साल</h4>
+                                            <h4 className="font-bold text-gray-900 text-lg">उम्र 18 से 45 साल</h4>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-4">
@@ -589,7 +538,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                             <span className="text-blue-600 font-bold text-lg">4</span>
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-gray-900 text-lg">बेसिक पढ़ाई पर्याप्त</h4>
+                                            <h4 className="font-bold text-gray-900 text-lg">बेसिक पढ़ाई काफी है</h4>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-4">
@@ -597,7 +546,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                             <span className="text-blue-600 font-bold text-lg">5</span>
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-gray-900 text-lg">फ्रेशर्स और अनुभवी</h4>
+                                            <h4 className="font-bold text-gray-900 text-lg">नए और अनुभवी दोनों</h4>
                                         </div>
                                     </li>
                                 </ul>
@@ -605,7 +554,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                     <div className="flex items-center gap-3">
                                         <ShieldCheckIcon className="w-6 h-6 text-blue-600 flex-shrink-0" />
                                         <p className="text-blue-800 font-medium text-sm">
-                                            आज ही अप्लाई करें और बैंगलोर में भरोसेमंद घर की सफाई और देखभाल करने का जॉब पक्की करें।
+                                            अगर आप कमाई और बचत के लिए तैयार हैं, तो हम आपकी मदद करेंगे।
                                         </p>
                                     </div>
                                 </div>
@@ -626,7 +575,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="text-center max-w-3xl mx-auto mb-12">
                                     <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white">ईज़ीहेल्पर्स के बारे में – भरोसेमंद घरेलू काम के जॉब्स</h2>
                                     <p className="text-teal-100 text-lg md:text-xl">
-                                        हम झारखंड और पूरे भारत के हेल्पर को बिना किसी फीस के सुरक्षित डोमेस्टिक हेल्पर जॉब्स से जोड़ते हैं।
+                                        हम ओडिशा और पूरे भारत के हेल्पर्स को बिना किसी फीस के सुरक्षित डोमेस्टिक हेल्पर जॉब्स से जोड़ते हैं।
                                     </p>
                                 </div>
 
@@ -634,20 +583,20 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                     {/* We Focus On */}
                                     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-teal-700/50">
                                         <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-teal-100 border-b border-teal-700/50 pb-3">
-                                            <HandThumbUpIcon className="w-6 h-6" /> हम इन पर ध्यान देते हैं:
+                                            <HandThumbUpIcon className="w-6 h-6" /> हम इन बातों पर खास ध्यान देते हैं:
                                         </h3>
                                         <ul className="space-y-3">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                <span className="text-teal-50 text-sm md:text-base">बैंगलोर में इज्ज़तदार नौकरी</span>
+                                                <span className="text-teal-50 text-sm md:text-base">बैंगलोर में सम्मानजनक नौकरी</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                <span className="text-teal-50 text-sm md:text-base">सुरक्षित और भरोसेमंद परिवार</span>
+                                                <span className="text-teal-50 text-sm md:text-base">सुरक्षित और विश्वसनीय परिवार</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                <span className="text-teal-50 text-sm md:text-base">हेल्पर की भलाई और लंबे समय तक समर्थन</span>
+                                                <span className="text-teal-50 text-sm md:text-base">हेल्पर की सुरक्षा और लंबे समय तक साथ</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -661,11 +610,11 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                             <ul className="space-y-3">
                                                 <li className="flex items-start gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">5,000+ हेल्पर को नौकरियां दी गई</span>
+                                                    <span className="text-teal-50 text-sm md:text-base">5,000+ हेल्पर्स को नौकरी दिलाई</span>
                                                 </li>
                                                 <li className="flex items-start gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">10,000+ परिवारों को सपोर्ट किया</span>
+                                                    <span className="text-teal-50 text-sm md:text-base">10,000+ परिवारों को सेवा दी</span>
                                                 </li>
                                                 <li className="flex items-start gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
@@ -673,48 +622,39 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                                 </li>
                                                 <li className="flex items-start gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">सिर्फ इज्ज़तदार घरों में प्लेसमेंट</span>
-                                                </li>
-                                                <li className="flex items-start gap-2">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">काम शुरू होने से पहले पूरी जानकारी</span>
+                                                    <span className="text-teal-50 text-sm md:text-base">सिर्फ अच्छे और इज्ज़तदार घरों में प्लेसमेंट</span>
                                                 </li>
                                             </ul>
                                             <ul className="space-y-3">
                                                 <li className="flex items-start gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">प्लेसमेंट के बाद लगातार सपोर्ट</span>
+                                                    <span className="text-teal-50 text-sm md:text-base">काम शुरू होने से पहले पूरी और साफ जानकारी</span>
                                                 </li>
                                                 <li className="flex items-start gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">नौकरी बदलने में भी मदद</span>
+                                                    <span className="text-teal-50 text-sm md:text-base">प्लेसमेंट के बाद भी लगातार सपोर्ट</span>
                                                 </li>
                                                 <li className="flex items-start gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="text-teal-50 text-sm md:text-base">नियमित सैलरी और लंबे समय तक नौकरी</span>
+                                                    <span className="text-teal-50 text-sm md:text-base">जरूरत पड़ने पर नौकरी बदलने में मदद</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-teal-300 mt-2 flex-shrink-0"></div>
+                                                    <span className="text-teal-50 text-sm md:text-base">नियमित सैलरी और स्थायी काम</span>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-teal-900/50 rounded-2xl p-6 border border-teal-700/50 backdrop-blur-sm">
+                                <div className="grid grid-cols-1 gap-6 bg-teal-900/50 rounded-2xl p-6 border border-teal-700/50 backdrop-blur-sm">
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 bg-teal-800 rounded-full flex items-center justify-center flex-shrink-0 border border-teal-600">
                                             <HeartIcon className="w-6 h-6 text-teal-300" />
                                         </div>
                                         <div>
                                             <h4 className="text-sm text-teal-300 uppercase tracking-wider font-bold mb-1">हमारा विश्वास</h4>
-                                            <p className="font-medium text-white">हेल्पर्स के लिए अच्छे घर। परिवारों के लिए अच्छे हेल्पर्स।</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-teal-800 rounded-full flex items-center justify-center flex-shrink-0 border border-teal-600">
-                                            <GlobeAltIcon className="w-6 h-6 text-teal-300" />
-                                        </div>
-                                        <div>
-                                            <h4 className="text-sm text-teal-300 uppercase tracking-wider font-bold mb-1">हम कहाँ-कहाँ सेवाएँ देते हैं</h4>
-                                            <p className="text-sm text-teal-50 line-clamp-2 pr-4">बैंगलोर, बरेली, मुंबई, हैदराबाद, दिल्ली NCR, पुणे, ओडिशा और भी बहुत...</p>
+                                            <p className="font-medium text-white">हेल्पर के लिए अच्छे घर, और परिवारों के लिए भरोसेमंद हेल्पर</p>
                                         </div>
                                     </div>
                                 </div>
@@ -738,7 +678,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                     <AcademicCapIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">ट्रेनिंग और सर्टिफिकेट</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">सफाई, स्वच्छता और काम के सामान का बेसिक ट्रेनिंग</p>
+                                <p className="text-gray-600 font-medium leading-relaxed">सफाई, स्वच्छता और काम के उपकरणों की बेसिक ट्रेनिंग</p>
                             </div>
 
                             {/* Look Professional */}
@@ -747,7 +687,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                     <BriefcaseIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">हमेशा प्रोफेशनल दिखें</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">ईज़ीहेल्पर्स की कोट और साफ-सुथरा दिखने के लिए सामान</p>
+                                <p className="text-gray-600 font-medium leading-relaxed">ईज़ीहेल्पर्स की कोट और साफ-सुथरा रहने का सामान</p>
                             </div>
 
                             {/* Safety & Security */}
@@ -755,8 +695,8 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 text-purple-600 group-hover:scale-110 transition-transform duration-300">
                                     <OutlineShieldCheckIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">सुरक्षा और सुरक्षा समझौता</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">क्लियर वर्क एग्रीमेंट और लगातार मदद</p>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">सुरक्षा और स्पष्ट एग्रीमेंट</h3>
+                                <p className="text-gray-600 font-medium leading-relaxed">साफ वर्क एग्रीमेंट और लगातार मार्गदर्शन</p>
                             </div>
 
                             {/* Stay Support */}
@@ -764,8 +704,8 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 text-pink-600 group-hover:scale-110 transition-transform duration-300">
                                     <OutlineHomeModernIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">रहने की मदद</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">प्लेसमेंट में देर हो तो विमेंस हॉस्टल में रहना</p>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">रहने की सुविधा</h3>
+                                <p className="text-gray-600 font-medium leading-relaxed">प्लेसमेंट में देरी होने पर महिलाओं के लिए हॉस्टल सुविधा</p>
                             </div>
 
                             {/* Health Insurance */}
@@ -773,8 +713,8 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-red-600 group-hover:scale-110 transition-transform duration-300">
                                     <OutlineHeartIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">हेल्थ इंश्योरेंस कवरेज</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">बेसिक मेडिकल इमरजेंसी के लिए</p>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">हेल्थ इंश्योरेंस कवर</h3>
+                                <p className="text-gray-600 font-medium leading-relaxed">बेसिक मेडिकल इमरजेंसी के लिए सहायता</p>
                             </div>
 
                             {/* Respectful Work Environment */}
@@ -782,7 +722,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-14 h-14 bg-yellow-50 rounded-2xl flex items-center justify-center mb-6 text-yellow-600 group-hover:scale-110 transition-transform duration-300">
                                     <HandThumbUpIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">सम्मानजनक काम का माहौल</h3>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">सम्मानजनक कार्य वातावरण</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">जहाँ आपको इज्ज़त और अच्छा व्यवहार मिले</p>
                             </div>
 
@@ -791,8 +731,8 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 text-indigo-600 group-hover:scale-110 transition-transform duration-300">
                                     <ChartBarIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">भविष्य के मौके</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">अच्छे प्रदर्शन पर दूसरे शहर या विदेश में उच्च सैलरी</p>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">भविष्य के अवसर</h3>
+                                <p className="text-gray-600 font-medium leading-relaxed">अच्छा काम करने पर दूसरे शहर या विदेश में बेहतर सैलरी के मौके</p>
                             </div>
 
                             {/* Timely Salary */}
@@ -801,7 +741,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                     <OutlineBanknotesIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">समय पर सैलरी</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">डायरेक्ट पेमेंट परिवार/मालिक से</p>
+                                <p className="text-gray-600 font-medium leading-relaxed">परिवार/मालिक से डायरेक्ट भुगतान</p>
                             </div>
 
                             {/* Job Profile Creation */}
@@ -809,8 +749,8 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center mb-6 text-sky-600 group-hover:scale-110 transition-transform duration-300">
                                     <UserCircleIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">जॉब प्रोफ़ाइल बनाना</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">आपकी स्किल्स और काम का अनुभव से  बेहतर जॉब पाने के लिए</p>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">जॉब प्रोफाइल बनाना</h3>
+                                <p className="text-gray-600 font-medium leading-relaxed">आपकी स्किल और अनुभव के आधार पर बेहतर नौकरी के अवसर</p>
                             </div>
 
                             {/* Support at Every Step */}
@@ -818,8 +758,8 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 text-orange-600 group-hover:scale-110 transition-transform duration-300">
                                     <ChatBubbleLeftEllipsisIcon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">हर कदम पर सपोर्ट</h3>
-                                <p className="text-gray-600 font-medium leading-relaxed">रजिस्ट्रेशन से प्लेसमेंट तक</p>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">हर कदम पर साथ</h3>
+                                <p className="text-gray-600 font-medium leading-relaxed">रजिस्ट्रेशन से लेकर प्लेसमेंट तक पूरा सपोर्ट</p>
                             </div>
                         </div>
                     </div>
@@ -845,14 +785,11 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display">नेस्ट (NEST) – महिला हेल्पर्स के लिए सुरक्षित हॉस्टल</h2>
                                     <div className="space-y-4 mb-8">
                                         <p className="text-gray-600 text-lg">
-                                            बैंगलोर में महिलाएँ जरूरत पड़ने पर NEST में रह सकती हैं।
-                                        </p>
-                                        <p className="text-gray-600 text-lg">
-                                            सुरक्षित कमरे, रोज़ का खाना और किफायती सुविधा उपलब्ध है।
+                                            बैंगलोर में महिलाएँ जरूरत पड़ने पर NEST में रह सकती हैं।सुरक्षित कमरे, रोज़ का भोजन और किफायती सुविधा उपलब्ध है।
                                         </p>
                                     </div>
                                     <Link href="/nest" className="inline-flex items-center gap-2 bg-pink-600 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-pink-200 hover:bg-pink-700 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-                                        NEST के बारे में और जानें
+                                        नेस्ट के बारे में और जानें
                                         <ArrowRightIcon className="w-5 h-5" />
                                     </Link>
                                 </div>
@@ -862,13 +799,13 @@ export default function HousekeepingJobsBangaloreHinPage() {
                 </section>
 
                 {/* Refer a Friend and Earn ₹500 Section */}
-                <ReferEarnSection variant="teal" location="झारखंड" lang="hi" />
+                <ReferEarnSection variant="teal" lang="hi" location="ओडिशा" />
 
                 {/* How to Apply for Housekeeping Jobs */}
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">हाउसकीपिंग जॉब्स के लिए अप्लाई कैसे करें</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">घर की सफाई के जॉब्स के लिए अप्लाई कैसे करें</h2>
                         </div>
 
                         <div className="max-w-4xl mx-auto">
@@ -877,9 +814,12 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 md:w-1 bg-teal-200 rounded-full"></div>
 
                                 {[
-                                    { step: 1, title: "ईज़ीहेल्पर्स से संपर्क करें", desc: "कॉल करें या ऑनलाइन फ़ॉर्म भरें। हम आपको जॉब के प्रकार, और पूरी जानकारी बताते हैं।" },
-                                    { step: 2, title: "अपनी जानकारी साझा करें", desc: "हमें अपना नाम, उम्र, स्किल्स और सफाई, खाना बनाना या देखभाल का कोई भी अनुभव बताएं।" },
-                                    { step: 3, title: "ट्रेनिंग और नौकरी लगवाना", desc: "ट्रेनिंग लें, वेरिफ़िकेशन पूरा करें, परिवार के साथ इंटरव्यू दें और काम शुरू करें।" }
+                                    { step: 1, title: "ईज़ीहेल्पर्स से संपर्क करें", desc: "सैलरी, खाने और रहने की जानकारी के लिए हमें कॉल करें या फॉर्म भरें।" },
+                                    { step: 2, title: "अपनी जानकारी साझा करें", desc: "अपना नाम, उम्र और काम का अनुभव बताएं।" },
+                                    { step: 3, title: "जॉब की जानकारी", desc: "काम की जिम्मेदारियां, समय, सुरक्षा नियम और महीने की छुट्टियां साफ समझें।" },
+                                    { step: 4, title: "जॉब के लिए यात्रा करें", desc: "जॉइन करने से पहले बैंगलोर आएं और बेसिक ट्रेनिंग लें।" },
+                                    { step: 5, title: "जॉब इंटरव्यू", desc: "वीडियो कॉल पर परिवार से बात करें और नौकरी कन्फर्म करें।" },
+                                    { step: 6, title: "काम शुरू करें", desc: "ईज़ीहेल्पर्स के पूरे सपोर्ट के साथ अपनी नौकरी शुरू करें।" }
                                 ].map((item, index) => (
                                     <div key={index} className="relative flex items-center justify-center mb-12 last:mb-0">
                                         {/* Left Side */}
@@ -910,26 +850,17 @@ export default function HousekeepingJobsBangaloreHinPage() {
                                 ))}
                             </div>
                         </div>
-
-                        <div className="flex justify-center mt-12">
-                            <Link
-                                href="tel:+919972571005"
-                                className="inline-flex items-center justify-center bg-teal-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-teal-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                            >
-                                अभी कॉल करें
-                            </Link>
-                        </div>
                     </div>
                 </section>
 
                 {/* FAQ Section */}
                 <section className="section-padding bg-white">
                     <div className="container-custom">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">अक्सर पूछे जाने वाले सवाल (FAQs)</h2>
-                            <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
-                        </div>
-                        <div className="max-w-3xl mx-auto">
+                        <div className="max-w-4xl mx-auto">
+                            <div className="text-center mb-12">
+                                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+                                <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
+                            </div>
                             <FAQAccordion faqs={faqs} />
                         </div>
                     </div>
@@ -939,21 +870,22 @@ export default function HousekeepingJobsBangaloreHinPage() {
                 <section className="section-padding bg-teal-600 text-white">
                     <div className="container-custom">
                         <div className="max-w-4xl mx-auto text-center">
-                            <h2 className="text-2xl md:text-4xl font-bold mb-6 font-display text-white">क्या आप अपनी हाउसकीपिंग जॉब शुरू करने के लिए तैयार हैं?</h2>
-                            <p className="text-lg md:text-xl mb-6 text-teal-100">झारखंड के हजारों हेल्पर्स हम पर भरोसा करते हैं क्योंकि हम सुरक्षित घर, भरोसेमंद काम और सम्मानजनक माहौल देते हैं।</p>
+                            <h2 className="text-2xl md:text-4xl font-bold mb-6 font-display text-white">ओडिशा में जितना कमाते हैं उससे ज्यादा कमाएं।</h2>
+                            <p className="text-lg md:text-xl mb-4 text-teal-100">किराया नहीं देना। खाने का खर्च नहीं। कोई एजेंट कट नहीं।</p>
+                            <p className="text-lg md:text-xl mb-10 text-white font-medium">पक्की बचत और आगे बढ़ने का मौका।</p>
 
                             <div className="flex flex-col md:flex-row gap-4 justify-center">
                                 <Link
                                     href="/helper-registration"
                                     className="inline-flex items-center justify-center bg-white text-teal-700 font-bold text-lg py-4 px-10 rounded-xl hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300"
                                 >
-                                    रजिस्टर करें
+                                    अभी अप्लाई करें
                                 </Link>
                                 <Link
                                     href="tel:+919972571005"
                                     className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-white/10 hover:scale-105 transition-all duration-300"
                                 >
-                                    कॉल करें
+                                    हमसे संपर्क करें
                                 </Link>
                             </div>
                         </div>
