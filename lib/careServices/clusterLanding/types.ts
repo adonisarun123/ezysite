@@ -37,6 +37,12 @@ export type ServiceScrollCard = {
   priceRest?: string
   /** Inline SVG illustration shown inside the card's tinted image area. */
   illustration?: ServiceIllustration
+  /**
+   * Where the card should link to. Defaults to the enquiry form for
+   * cluster pages (cards describe arrangements within that cluster);
+   * the pillar page sets this to deep-link into the matching cluster.
+   */
+  href?: string
 }
 
 export type CompareAltCard = {

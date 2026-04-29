@@ -355,11 +355,15 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
               {config.serviceCards.map((c) => {
                 const Illustration = pickIllustration(c.illustration, c.tone)
                 const headerLabel = c.badge ?? c.tag
+                const cardHref = c.href ?? enquiryHref
+                const cardAriaLabel = c.href
+                  ? `${c.title} — learn more`
+                  : `${c.title} — request a callback`
                 return (
                   <Link
                     key={c.title}
-                    href={enquiryHref}
-                    aria-label={`${c.title} — request a callback`}
+                    href={cardHref}
+                    aria-label={cardAriaLabel}
                     className="group flex cursor-pointer flex-col rounded-[28px] outline-none transition focus-visible:ring-2 focus-visible:ring-[#FF385C] focus-visible:ring-offset-2"
                   >
                     <div
