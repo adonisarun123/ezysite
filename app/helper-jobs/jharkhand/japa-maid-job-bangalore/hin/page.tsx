@@ -31,6 +31,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
     title: 'बैंगलोर में जापा मेड जॉब | झारखंड के अनुभवी हेल्पर्स',
@@ -560,48 +561,7 @@ export default function JapaMaidJobBangaloreHindiPage() {
                 </section>
 
                 {/* Refer & Earn Section */}
-                <section className="section-padding bg-pink-50 border-y border-pink-100">
-                    <div className="container-custom px-4">
-                        <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-pink-200">
-                            <div className="md:flex">
-                                <div className="md:w-5/12 bg-gradient-to-br from-pink-600 to-pink-800 p-10 flex flex-col items-center justify-center text-center text-white relative">
-                                    <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-6 shadow-inner text-white">
-                                        <GiftIcon className="w-10 h-10" />
-                                    </div>
-                                    <h2 className="text-xl md:text-2xl font-bold mb-2 font-display leading-loose uppercase tracking-widest">किसी दोस्त को रेफर करें</h2>
-                                    <h3 className="text-6xl md:text-7xl font-black mb-4 leading-none tracking-tighter">₹500 कमाएं</h3>
-                                    <p className="text-pink-200 font-black text-sm uppercase tracking-widest">*नियम और शर्तें लागू</p>
-                                </div>
-                                <div className="md:w-7/12 p-8 md:p-12 flex flex-col justify-center">
-                                    <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 font-display leading-tight">किसी दोस्त को रेफर करें और ₹500 कमाएं</h2>
-                                    <p className="text-lg text-gray-600 font-black mb-8 leading-relaxed">
-                                        EzyHelpers पर झारखंड के अपने दोस्तों और रिश्तेदारों को बैंगलोर में घरेलू काम की नौकरी दिलाने में मदद करें।
-                                    </p>
-                                    <div className="space-y-5 mb-10">
-                                        {[
-                                            "WhatsApp पर उनकी डिटेल्स शेयर करें या हमें कॉल करें",
-                                            "अपने दोस्त का नाम, उम्र और जॉब प्रेफरेंस बताएं",
-                                            "वे EzyHelpers जॉइन करते हैं, प्लेसमेंट पूरा करते हैं, और आप ₹500 कमाते हैं"
-                                        ].map((step, i) => (
-                                            <div key={i} className="flex items-start gap-4">
-                                                <div className="w-7 h-7 rounded-full bg-pink-600 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg shadow-pink-200 border-2 border-white">
-                                                    <span className="text-white text-xs font-black">{i + 1}</span>
-                                                </div>
-                                                <span className={`text-gray-700 font-bold text-base leading-relaxed ${i === 2 ? 'text-pink-700 font-black' : ''}`}>{step}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <Link
-                                        href={whatsappSendUrl('918031411776')}
-                                        className="inline-flex items-center justify-center gap-3 bg-green-600 text-white font-black py-5 px-10 rounded-2xl hover:bg-green-700 transition-all shadow-xl transform hover:scale-105 text-center leading-loose text-lg"
-                                    >
-                                        <PhoneIcon className="w-6 h-6" /> रेफर करें और ₹500 कमाएं
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <ReferEarnSection variant="pink" location="झारखंड" lang="hi" />
 
                 {/* How to Apply Section */}
                 <section className="section-padding bg-white">

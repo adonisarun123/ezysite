@@ -525,7 +525,7 @@ export default function FarmhouseCoupleJobsBangalorePage() {
                 </section>
 
                 {/* Refer & Earn Section */}
-                <ReferEarnSection variant="teal" />
+                <ReferEarnSection variant="teal" location="Jharkhand" lang="en" />
 
                 {/* How to Apply Section */}
                 <section className="section-padding bg-white">

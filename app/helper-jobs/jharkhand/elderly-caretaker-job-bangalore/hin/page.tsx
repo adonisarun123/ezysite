@@ -37,6 +37,7 @@ import {
 
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
     title: 'झारखंड हेल्पर्स के लिए बैंगलोर में एल्डर केयरटेकर जॉब्स',
@@ -896,51 +897,7 @@ export default function ElderlyCaretakerJobsBangalorePage() {
                 </section>
 
                 {/* Refer a Friend and Earn ₹500 Section */}
-                <section className="section-padding bg-yellow-50 border-y border-yellow-100">
-                    <div className="container-custom">
-                        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-yellow-200">
-                            <div className="md:flex">
-                                <div className="md:w-5/12 bg-gradient-to-br from-yellow-400 to-orange-500 p-8 flex flex-col items-center justify-center text-center text-white">
-                                    <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
-                                        <GiftIcon className="w-10 h-10 text-white" />
-                                    </div>
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-2 font-display">रेफर करें और कमाएं</h2>
-                                    <h3 className="text-5xl md:text-6xl font-extrabold mb-2">₹500!</h3>
-                                    <p className="text-yellow-100 font-medium">*नियम और शर्तें लागू</p>
-                                </div>
-                                <div className="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
-                                    <p className="text-lg md:text-xl text-gray-800 font-bold mb-6">
-                                        EzyHelpers पर झारखंड के अपने दोस्तों और रिश्तेदारों को बैंगलोर में घरेलू काम की नौकरी दिलाने में मदद करें।
-                                    </p>
-                                    <h4 className="font-bold text-gray-900 text-lg mb-4">कैसे करें रेफर:</h4>
-                                    <div className="space-y-4 mb-8">
-                                        <div className="flex items-start gap-3">
-                                            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                <span className="text-green-600 font-bold text-sm">1</span>
-                                            </div>
-                                            <span className="text-gray-700 font-medium">WhatsApp पर उनकी डिटेल्स शेयर करें या हमें कॉल करें</span>
-                                        </div>
-                                        <div className="flex items-start gap-3">
-                                            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                <span className="text-green-600 font-bold text-sm">2</span>
-                                            </div>
-                                            <span className="text-gray-700 font-medium">दोस्त का नाम, उम्र और जॉब पसंद बताएं</span>
-                                        </div>
-                                        <div className="flex items-start gap-3">
-                                            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                <span className="text-green-600 font-bold text-sm">3</span>
-                                            </div>
-                                            <span className="text-gray-700 font-bold">अगर वो ईज़ीहेल्पर्स जॉइन करते हैं, 1 महीना पूरा करते हैं, तो आप ₹500 कमाते हैं</span>
-                                        </div>
-                                    </div>
-                                    <Link href="#" className="inline-block text-center bg-blue-600 text-white font-bold text-lg py-3 px-8 rounded-xl hover:bg-blue-700 hover:shadow-xl transition-all duration-300">
-                                        रेफर करें और ₹500 कमाएं
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <ReferEarnSection variant="blue" location="झारखंड" lang="hi" />
 
                 {/* How to Apply for Senior Caregiver Jobs */}
                 <section className="section-padding bg-gray-50">
