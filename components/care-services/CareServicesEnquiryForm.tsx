@@ -364,9 +364,13 @@ export default function CareServicesEnquiryForm() {
           <PhoneIcon className="h-4 w-4" aria-hidden />
           080-31411776
         </a>
-        <span className="text-xs text-neutral-500 sm:ml-auto">
-          We respond within the hour on business days.
-        </span>
+        <p className="text-xs leading-relaxed text-neutral-500 sm:ml-auto sm:max-w-xs sm:text-right">
+          We&apos;ll respond to your requirement within the next 24 hours.
+          <span className="mt-1 block text-neutral-600">
+            <strong className="font-semibold text-neutral-700">Please note:</strong> placements generally take about
+            7–10 working days, depending on the existing pipeline.
+          </span>
+        </p>
       </div>
     </form>
   )

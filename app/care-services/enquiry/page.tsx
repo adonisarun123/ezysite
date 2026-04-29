@@ -50,7 +50,7 @@ const HERO_CHIPS = [
   {
     Icon: ClockIcon,
     title: 'Rapid response',
-    sub: 'Often within the hour',
+    sub: 'Reply within 24 hours',
     grad: 'from-orange-500 to-amber-500',
   },
   {
@@ -211,8 +211,9 @@ export default function CareServicesEnquiryPage() {
                   A few details, <em className="font-careSerif font-normal italic text-[#FF385C]">that&apos;s all.</em>
                 </h2>
                 <p className="mt-3 max-w-2xl text-base leading-relaxed text-neutral-600">
-                  This goes straight to our care desk in Bangalore. We typically respond within the hour on business
-                  days.
+                  This goes straight to our care desk in Bangalore. We&apos;ll respond to your requirement within the
+                  next 24 hours — placements generally take about 7–10 working days, depending on the existing
+                  pipeline.
                 </p>
 
                 <div className="mt-8">
