@@ -23,7 +23,7 @@ import { CLUSTER_TRUST_STRIP } from '@/lib/careServices/clusterLanding/configs'
 import { CARE_PILLAR_HREF, CARE_ENQUIRY_HREF } from '@/lib/careServices/registry'
 import CareClusterTestimonials from './CareClusterTestimonials'
 import type { ClusterTone } from '@/lib/careServices/clusterLanding/types'
-import { HeroTileCalmHome, HeroTileCompanionship, HeroTileDailyRoutines } from './CareClusterHeroIllustrations'
+import { resolveHeroScene } from './CareClusterHeroScenes'
 import { pickIllustration } from './CareClusterServiceIllustrations'
 
 /**
@@ -89,6 +89,10 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
   const heroLead = config.heroLead ?? metaDescription
   const primaryCta = config.primaryCtaLabel ?? 'Request a callback'
   const heroCap = config.heroCaptions
+  const heroScene = resolveHeroScene(config.heroSceneId)
+  const HeroBigTile = heroScene.tiles[0].illustration
+  const HeroTopTile = heroScene.tiles[1].illustration
+  const HeroBottomTile = heroScene.tiles[2].illustration
 
   const breadcrumbItems =
     pathname === CARE_PILLAR_HREF
@@ -112,8 +116,8 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
       <header className="bg-white">
         <div className="mx-auto max-w-7xl px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pb-14">
           <div className="grid min-h-0 gap-2 overflow-hidden rounded-[28px] border border-neutral-200 bg-neutral-50 shadow-[0_6px_24px_rgba(0,0,0,0.06)] lg:grid-cols-2 lg:min-h-[420px] lg:gap-0">
-            <div className="relative flex flex-col justify-between bg-gradient-to-br from-[#FFE5E5] to-[#FFF1D6] p-8 text-left sm:p-10 lg:p-12">
-              <div className="pointer-events-none absolute bottom-[-60px] right-[-60px] h-56 w-56 rounded-full bg-[#FF385C]/12 blur-2xl" aria-hidden />
+            <div className={`relative flex flex-col justify-between bg-gradient-to-br ${heroScene.leftPanelGradient} p-8 text-left sm:p-10 lg:p-12`}>
+              <div className={`pointer-events-none absolute bottom-[-60px] right-[-60px] h-56 w-56 rounded-full ${heroScene.blobAccentClass} blur-2xl`} aria-hidden />
               <div className="relative">
                 <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/90 bg-white px-4 py-2 text-xs font-semibold text-[#484848] shadow-[0_1px_2px_rgba(0,0,0,0.06),0_4px_14px_rgba(0,0,0,0.04)]">
                   <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#00A699]" aria-hidden />
@@ -147,28 +151,30 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
             </div>
 
             <div className="grid min-h-[240px] grid-cols-2 grid-rows-2 gap-2 p-2 sm:min-h-[300px] sm:p-3 lg:min-h-0">
-              <div className="relative row-span-2 overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFB58C] to-[#FF7D5C] shadow-inner">
+              <div
+                className={`relative row-span-2 overflow-hidden rounded-2xl bg-gradient-to-br ${heroScene.tiles[0].tileGradient} shadow-inner`}
+              >
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-3 pt-6">
-                  <HeroTileCompanionship className="h-[min(88%,200px)] w-[88%] max-w-[210px]" />
+                  <HeroBigTile className="h-[min(88%,200px)] w-[88%] max-w-[210px]" />
                 </div>
                 <span className="absolute bottom-3 left-3 rounded-lg bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-[#222] shadow-sm backdrop-blur-sm">
-                  {heroCap?.[0] ?? 'Human-centred care'}
+                  {heroCap?.[0] ?? heroScene.tiles[0].caption}
                 </span>
               </div>
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#C8E4D3] to-[#6FB58F]">
+              <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${heroScene.tiles[1].tileGradient}`}>
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-2">
-                  <HeroTileDailyRoutines className="h-[min(82%,160px)] w-[82%] max-w-[180px]" />
+                  <HeroTopTile className="h-[min(82%,160px)] w-[82%] max-w-[180px]" />
                 </div>
                 <span className="absolute bottom-3 left-3 rounded-lg bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-[#222] shadow-sm backdrop-blur-sm">
-                  {heroCap?.[1] ?? 'Verified network'}
+                  {heroCap?.[1] ?? heroScene.tiles[1].caption}
                 </span>
               </div>
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFD7A5] to-[#F4A05F]">
+              <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${heroScene.tiles[2].tileGradient}`}>
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-2">
-                  <HeroTileCalmHome className="h-[min(82%,170px)] w-[78%] max-w-[185px]" />
+                  <HeroBottomTile className="h-[min(82%,170px)] w-[78%] max-w-[185px]" />
                 </div>
                 <span className="absolute bottom-3 left-3 rounded-lg bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-[#222] shadow-sm backdrop-blur-sm">
-                  {heroCap?.[2] ?? 'Calm at home'}
+                  {heroCap?.[2] ?? heroScene.tiles[2].caption}
                 </span>
               </div>
             </div>

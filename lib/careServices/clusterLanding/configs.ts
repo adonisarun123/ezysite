@@ -15,6 +15,7 @@ export const CLUSTER_LANDING_CONFIGS = {
   homeHealthcare: {
     breadcrumbCurrent: 'Home Healthcare Services',
     eyebrow: 'Bangalore · In-home medical care',
+    heroSceneId: 'healthcare',
     hero: {
       line1: 'Hospital-grade care.',
       line2Before: 'Brought home, ',
@@ -169,6 +170,7 @@ export const CLUSTER_LANDING_CONFIGS = {
   homeNursing: {
     breadcrumbCurrent: 'Home Nursing Services',
     eyebrow: 'Bangalore · Licensed home nurses',
+    heroSceneId: 'nursing',
     hero: {
       line1: 'Clinical procedures.',
       line2Before: 'Delivered at home, ',
@@ -298,6 +300,7 @@ export const CLUSTER_LANDING_CONFIGS = {
   elderlyCare: {
     breadcrumbCurrent: 'Elderly Care · Bangalore',
     eyebrow: 'Bangalore · Dignity-first',
+    heroSceneId: 'elderly',
     heroLead:
       'Verified caretakers for senior citizens, dementia care, Parkinson\'s support, and live-in elderly care — matched with empathy, not just availability.',
     heroCaptions: ['Companionship', 'Daily routines', 'A calm home'],
@@ -545,6 +548,7 @@ export const CLUSTER_LANDING_CONFIGS = {
   caretaker: {
     breadcrumbCurrent: 'Caretaker Services',
     eyebrow: 'Bangalore · Full-time & live-in caretakers',
+    heroSceneId: 'caretaker',
     hero: {
       line1: 'Daily care, covered.',
       line2Before: 'Matched with ',
@@ -665,6 +669,7 @@ export const CLUSTER_LANDING_CONFIGS = {
   patientCare: {
     breadcrumbCurrent: 'Patient Care Services',
     eyebrow: 'Bangalore · Recovery & illness at home',
+    heroSceneId: 'patient',
     hero: {
       line1: 'Recovery, supervised.',
       line2Before: 'At home, ',
@@ -785,6 +790,7 @@ export const CLUSTER_LANDING_CONFIGS = {
   homeAttendant: {
     breadcrumbCurrent: 'Home Attendant Services',
     eyebrow: 'Bangalore · Shift-based attendants',
+    heroSceneId: 'attendant',
     hero: {
       line1: 'Reliable shifts.',
       line2Before: 'For daily support ',
@@ -905,6 +911,7 @@ export const CLUSTER_LANDING_CONFIGS = {
   trainedAttendant: {
     breadcrumbCurrent: 'Trained Attendant Services',
     eyebrow: 'Bangalore · High-dependency handling',
+    heroSceneId: 'trained',
     hero: {
       line1: 'Skilled handling.',
       line2Before: 'For the most ',
@@ -1026,6 +1033,7 @@ export const CLUSTER_LANDING_CONFIGS = {
   pillar: {
     breadcrumbCurrent: 'Care Services',
     eyebrow: 'Bangalore · One starting point',
+    heroSceneId: 'pillar',
     hero: {
       line1: 'Every kind of care.',
       line2Before: 'One platform. ',

@@ -82,6 +82,24 @@ export type CareStory = {
   initials: string
 }
 
+/**
+ * Identifier for which hero "scene" (palette + illustration trio) the
+ * cluster page renders. Defined and registered in
+ * `components/care-services/cluster-landing/CareClusterHeroScenes.tsx`.
+ *
+ * Kept as a string union here (instead of importing the type from the
+ * scenes module) so this types file stays free of component imports.
+ */
+export type HeroSceneId =
+  | 'pillar'
+  | 'healthcare'
+  | 'nursing'
+  | 'elderly'
+  | 'caretaker'
+  | 'patient'
+  | 'attendant'
+  | 'trained'
+
 export type CareClusterLandingConfig = {
   /** Third breadcrumb label */
   breadcrumbCurrent: string
@@ -92,6 +110,8 @@ export type CareClusterLandingConfig = {
   heroCaptions?: [string, string, string]
   /** Primary hero CTA label */
   primaryCtaLabel?: string
+  /** Visual identity preset for the hero band — palette + 3-tile illustration mosaic. */
+  heroSceneId?: HeroSceneId
   hero: {
     line1: string
     line2Before: string
