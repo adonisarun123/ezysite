@@ -3,7 +3,13 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { CheckCircleIcon, ArrowRightIcon, PhoneIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline'
+import {
+  CheckCircleIcon,
+  ArrowRightIcon,
+  PhoneIcon,
+  ExclamationCircleIcon,
+  ClockIcon,
+} from '@heroicons/react/24/outline'
 import { CARE_SERVICE_TYPE_OPTIONS, CARE_URGENCY_OPTIONS } from '@/lib/careServices/careEnquiryOptions'
 import { CARE_PILLAR_HREF } from '@/lib/careServices/registry'
 
@@ -336,41 +342,48 @@ export default function CareServicesEnquiryForm() {
         </p>
       )}
 
-      <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center">
-        <button
-          type="submit"
-          disabled={status === 'submitting'}
-          className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-[#FF385C] px-8 py-3.5 text-base font-semibold text-white shadow-[0_4px_14px_rgba(255,56,92,0.35)] transition hover:bg-[#E31C5F] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-[#FF385C]"
-        >
-          {status === 'submitting' ? (
-            <>
-              <span
-                className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"
-                aria-hidden
-              />
-              Sending…
-            </>
-          ) : (
-            <>
-              Submit enquiry
-              <ArrowRightIcon className="h-4 w-4" aria-hidden />
-            </>
-          )}
-        </button>
-        <a
-          href="tel:+918031411776"
-          className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl border-2 border-neutral-900 bg-white px-6 py-3.5 text-base font-semibold text-neutral-900 transition hover:bg-neutral-50"
-        >
-          <PhoneIcon className="h-4 w-4" aria-hidden />
-          080-31411776
-        </a>
-        <p className="text-xs leading-relaxed text-neutral-500 sm:ml-auto sm:max-w-xs sm:text-right">
-          We&apos;ll respond to your requirement within the next 24 hours.
-          <span className="mt-1 block text-neutral-600">
-            <strong className="font-semibold text-neutral-700">Please note:</strong> placements generally take about
-            7–10 working days, depending on the existing pipeline.
-          </span>
-        </p>
+      <div className="space-y-4 pt-2">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <button
+            type="submit"
+            disabled={status === 'submitting'}
+            className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-[#FF385C] px-8 py-3.5 text-base font-semibold text-white shadow-[0_4px_14px_rgba(255,56,92,0.35)] transition hover:bg-[#E31C5F] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-[#FF385C]"
+          >
+            {status === 'submitting' ? (
+              <>
+                <span
+                  className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"
+                  aria-hidden
+                />
+                Sending…
+              </>
+            ) : (
+              <>
+                Submit enquiry
+                <ArrowRightIcon className="h-4 w-4" aria-hidden />
+              </>
+            )}
+          </button>
+          <a
+            href="tel:+918031411776"
+            className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl border-2 border-neutral-900 bg-white px-6 py-3.5 text-base font-semibold text-neutral-900 transition hover:bg-neutral-50"
+          >
+            <PhoneIcon className="h-4 w-4" aria-hidden />
+            080-31411776
+          </a>
+        </div>
+
+        <div className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-[#FFF8F1] px-4 py-3 text-left">
+          <ClockIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
+          <p className="text-xs leading-relaxed text-neutral-600 sm:text-[13px]">
+            We&apos;ll respond to your requirement within the next{' '}
+            <strong className="font-semibold text-neutral-900">24 hours</strong>.{' '}
+            <span className="text-neutral-500">
+              <strong className="font-semibold text-neutral-700">Please note:</strong> placements generally take about
+              7–10 working days, depending on the existing pipeline.
+            </span>
+          </p>
+        </div>
       </div>
     </form>
   )
