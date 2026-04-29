@@ -255,8 +255,21 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                     </span>
                     <h3 className="mt-6 font-careSerif text-2xl font-bold text-neutral-950">{alt.title}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-neutral-600">{alt.description}</p>
+                    {alt.bullets && alt.bullets.length > 0 ? (
+                      <ul className="mt-5 space-y-2.5 text-sm text-neutral-700">
+                        {alt.bullets.map((t) => (
+                          <li key={t} className="flex gap-2">
+                            <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
+                            <span className="leading-snug">{t}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
                   </div>
-                  <Link href={alt.href} className="inline-flex items-center gap-1 text-sm font-semibold text-[#FF385C] hover:text-[#E31C5F]">
+                  <Link
+                    href={alt.href}
+                    className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[#FF385C] hover:text-[#E31C5F]"
+                  >
                     {alt.linkLabel ?? 'Learn more'} <ArrowRightIcon className="h-4 w-4" aria-hidden />
                   </Link>
                 </article>

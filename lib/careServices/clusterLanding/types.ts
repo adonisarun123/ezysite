@@ -51,6 +51,12 @@ export type CompareAltCard = {
   description: string
   href: string
   linkLabel?: string
+  /**
+   * Concrete scope bullets so alt cards aren't hollow. Rendered as a
+   * coral-check list between the description and the link, mirroring
+   * the featured card's style. 4–5 items reads best.
+   */
+  bullets?: string[]
 }
 
 export type PillarGridItem = {
