@@ -24,14 +24,19 @@ import { CARE_PILLAR_HREF, CARE_ENQUIRY_HREF } from '@/lib/careServices/registry
 import CareClusterTestimonials from './CareClusterTestimonials'
 import type { ClusterTone } from '@/lib/careServices/clusterLanding/types'
 import { HeroTileCalmHome, HeroTileCompanionship, HeroTileDailyRoutines } from './CareClusterHeroIllustrations'
+import { pickIllustration } from './CareClusterServiceIllustrations'
 
+/**
+ * Service-card image gradients — mirror the inspiration HTML's category palette
+ * (peach, mint, sand, lavender, blush, sky) using Tailwind arbitrary values.
+ */
 const toneClass: Record<ClusterTone, string> = {
-  c1: 'from-sky-500/15 to-primary-500/5 border-sky-200/60',
-  c2: 'from-teal-500/15 to-emerald-500/5 border-teal-200/60',
-  c3: 'from-amber-500/15 to-orange-500/5 border-amber-200/60',
-  c4: 'from-violet-500/15 to-indigo-500/5 border-violet-200/60',
-  c5: 'from-rose-500/15 to-pink-500/5 border-rose-200/60',
-  c6: 'from-cyan-500/15 to-blue-500/5 border-cyan-200/60',
+  c1: 'from-[#FFD9CC] to-[#FFB39A] border-transparent',
+  c2: 'from-[#D4EDD9] to-[#9BC9A6] border-transparent',
+  c3: 'from-[#FFE9C7] to-[#F4C68C] border-transparent',
+  c4: 'from-[#DDD4F0] to-[#B5A3DD] border-transparent',
+  c5: 'from-[#FFD4D4] to-[#F19BAB] border-transparent',
+  c6: 'from-[#C9E2EE] to-[#91BDD7] border-transparent',
 }
 
 const HERO_ICONS: Record<HeroChipIcon, ComponentType<SVGProps<SVGSVGElement>>> = {
@@ -60,6 +65,17 @@ const PROCESS_STEP_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [
   UserGroupIcon,
   HomeIcon,
 ]
+
+/**
+ * If a condition string begins with an emoji/pictograph (e.g. "🧠 Dementia"),
+ * split it so the chip can render the icon in a tile and the rest as text.
+ */
+const LEADING_EMOJI_RE = /^(\p{Extended_Pictographic}(?:️)?(?:‍\p{Extended_Pictographic}(?:️)?)*)\s+(.*)$/u
+function splitConditionLabel(label: string): { icon: string | null; text: string } {
+  const match = label.match(LEADING_EMOJI_RE)
+  if (match) return { icon: match[1], text: match[2] }
+  return { icon: null, text: label }
+}
 
 type Props = {
   config: CareClusterLandingConfig
@@ -311,65 +327,80 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
 
         <section id="services" className="scroll-mt-28 border-y border-neutral-200 bg-[#F7F7F2] px-4 py-16 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">{config.servicesIntro.eyebrow}</p>
-            <h2 className="mt-3 font-careSerif text-[clamp(1.65rem,4vw,2.75rem)] font-bold tracking-tight text-neutral-950">
-              {config.servicesIntro.titleLine1}{' '}
-              <span className="text-neutral-500">{config.servicesIntro.titleLine2Muted}</span>
-            </h2>
-            <p className="mt-4 max-w-2xl text-lg text-neutral-600">{config.servicesIntro.lede}</p>
-          </div>
-          <div className="mt-10 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-14">
-            <div className="flex w-max snap-x snap-mandatory items-stretch gap-4 px-4 sm:gap-5 lg:px-[max(1rem,calc((100vw-72rem)/2+1rem))]">
-              {config.serviceCards.map((c) => (
-                <div
-                  key={c.title}
-                  className="snap-start flex min-h-[300px] w-[min(85vw,320px)] shrink-0 cursor-pointer flex-col overflow-hidden rounded-[24px] border border-neutral-200 bg-white p-3 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:min-h-[320px] sm:w-[300px]"
-                >
-                  <div
-                    className={`relative aspect-[1.05] w-full overflow-hidden rounded-2xl border bg-gradient-to-br p-0 ${toneClass[c.tone]}`}
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div className="max-w-2xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">{config.servicesIntro.eyebrow}</p>
+                <h2 className="mt-3 font-careSerif text-[clamp(1.65rem,4vw,2.5rem)] font-medium leading-tight tracking-tight text-neutral-950">
+                  {config.servicesIntro.titleLine1}{' '}
+                  <em className="font-careSerif font-normal italic text-neutral-500">{config.servicesIntro.titleLine2Muted}</em>
+                </h2>
+                <p className="mt-4 text-base text-neutral-600 sm:text-lg">{config.servicesIntro.lede}</p>
+              </div>
+              <Link
+                href={enquiryHref}
+                className="hidden items-center gap-1 text-sm font-semibold text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition hover:decoration-neutral-900 sm:inline-flex"
+              >
+                {config.servicesIntro.scrollHint ?? 'View all arrangements'}
+                <ArrowRightIcon className="h-4 w-4" aria-hidden />
+              </Link>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3">
+              {config.serviceCards.map((c) => {
+                const Illustration = pickIllustration(c.illustration, c.tone)
+                const headerLabel = c.badge ?? c.tag
+                return (
+                  <Link
+                    key={c.title}
+                    href={enquiryHref}
+                    aria-label={`${c.title} — request a callback`}
+                    className="group flex cursor-pointer flex-col rounded-[28px] outline-none transition focus-visible:ring-2 focus-visible:ring-[#FF385C] focus-visible:ring-offset-2"
                   >
-                    {(c.badge ?? c.tag) ? (
-                      <span className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-neutral-800 shadow-sm">
-                        {c.badge ?? c.tag}
-                      </span>
-                    ) : null}
-                  </div>
-                  <div className="flex min-h-0 flex-1 flex-col px-1.5 pt-4">
-                    <div className="flex items-start justify-between gap-2">
-                      <h3 className="font-careSerif text-base font-bold leading-snug text-neutral-950 sm:text-lg">{c.title}</h3>
-                      {c.rating ? (
-                        <span className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-neutral-900">
-                          <span className="text-amber-500" aria-hidden>
-                            ★
-                          </span>
-                          {c.rating}
+                    <div
+                      className={`relative aspect-[1.05] w-full overflow-hidden rounded-[24px] border bg-gradient-to-br shadow-[0_6px_20px_rgba(0,0,0,0.06)] transition group-hover:-translate-y-1 group-hover:shadow-[0_10px_28px_rgba(0,0,0,0.12)] ${toneClass[c.tone]}`}
+                    >
+                      {headerLabel ? (
+                        <span className="absolute left-3.5 top-3.5 z-[2] rounded-full bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-neutral-900 shadow-sm">
+                          {headerLabel}
                         </span>
                       ) : null}
+                      <span
+                        aria-hidden
+                        className="absolute right-3.5 top-3.5 z-[2] flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-sm backdrop-blur-sm transition group-hover:scale-110"
+                      >
+                        <HeartIcon className="h-4 w-4" />
+                      </span>
+                      <div className="absolute inset-0 flex items-center justify-center p-6">
+                        <Illustration className="h-[68%] w-[68%]" />
+                      </div>
                     </div>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-600">{c.body}</p>
-                    {c.detail ? <p className="mt-1 text-sm text-neutral-600">{c.detail}</p> : null}
-                    {c.priceBold || c.priceRest ? (
-                      <p className="mt-2 text-sm text-neutral-900">
-                        {c.priceBold ? <strong className="font-bold">{c.priceBold}</strong> : null}
-                        {c.priceRest ?? ''}
-                      </p>
-                    ) : null}
-                  </div>
-                  <div className="flex justify-end px-1.5 pb-1 pt-2 text-neutral-400">
-                    <ArrowRightIcon className="h-5 w-5" aria-hidden />
-                  </div>
-                </div>
-              ))}
+
+                    <div className="mt-4 px-1">
+                      <div className="flex items-start justify-between gap-3">
+                        <h3 className="font-careSerif text-base font-bold tracking-tight text-neutral-950 sm:text-[17px]">{c.title}</h3>
+                        {c.rating ? (
+                          <span className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-neutral-900">
+                            <span className="text-neutral-900" aria-hidden>
+                              ★
+                            </span>
+                            {c.rating}
+                          </span>
+                        ) : null}
+                      </div>
+                      <p className="mt-1 text-sm leading-relaxed text-neutral-600">{c.body}</p>
+                      {c.detail ? <p className="mt-1 text-sm text-neutral-600">{c.detail}</p> : null}
+                      {c.priceBold || c.priceRest ? (
+                        <p className="mt-1.5 text-sm text-neutral-900">
+                          {c.priceBold ? <strong className="font-bold">{c.priceBold}</strong> : null}
+                          {c.priceRest ?? ''}
+                        </p>
+                      ) : null}
+                    </div>
+                  </Link>
+                )
+              })}
             </div>
           </div>
-          <p className="mx-auto mt-6 max-w-6xl px-4 text-center text-xs text-neutral-500 sm:text-sm">
-            <span className="inline-flex items-center gap-1">
-              <ArrowRightIcon className="h-4 w-4 rotate-180 sm:hidden" aria-hidden />
-              Scroll for more
-            </span>
-            <span className="mx-2 hidden sm:inline">·</span>
-            <span className="mt-1 block sm:mt-0 sm:inline">{config.servicesIntro.scrollHint ?? 'Flexible arrangements · Ask us what fits'}</span>
-          </p>
         </section>
 
         <section
@@ -433,15 +464,27 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-neutral-600">{config.conditionsIntro.lede}</p>
             <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {config.conditions.map((label) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-3 rounded-2xl border border-black/[0.06] bg-white px-4 py-3.5 text-sm font-medium text-neutral-800 shadow-sm transition hover:border-[#FF385C]/35 hover:shadow-md"
-                >
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-[#FF385C] to-[#00A699]" />
-                  {label}
-                </div>
-              ))}
+              {config.conditions.map((label) => {
+                const { icon, text } = splitConditionLabel(label)
+                return (
+                  <div
+                    key={label}
+                    className="flex items-center gap-3 rounded-2xl border border-black/[0.06] bg-white px-4 py-3.5 text-sm font-medium text-neutral-800 shadow-sm transition hover:-translate-y-0.5 hover:border-[#FF385C]/35 hover:shadow-md"
+                  >
+                    {icon ? (
+                      <span
+                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#FFF8F1] text-base leading-none"
+                        aria-hidden
+                      >
+                        {icon}
+                      </span>
+                    ) : (
+                      <span className="h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-[#FF385C] to-[#00A699]" aria-hidden />
+                    )}
+                    <span className="min-w-0 leading-snug">{text}</span>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </section>

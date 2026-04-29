@@ -1,5 +1,26 @@
-/** Horizontal scroll cards */
+/** Service-card tone palette (matches Airbnb-inspired warm gradients). */
 export type ClusterTone = 'c1' | 'c2' | 'c3' | 'c4' | 'c5' | 'c6'
+
+/** Identifier for the inline SVG illustration shown inside the card image area. */
+export type ServiceIllustration =
+  | 'companionship'
+  | 'memory'
+  | 'medication'
+  | 'liveIn'
+  | 'meals'
+  | 'familyBridge'
+  | 'wound'
+  | 'iv'
+  | 'monitoring'
+  | 'mobility'
+  | 'bedCare'
+  | 'night'
+  | 'day'
+  | 'recovery'
+  | 'conversation'
+  | 'transfer'
+  | 'shield'
+  | 'heart'
 
 export type ServiceScrollCard = {
   /** Small label on image (legacy); omit when using `badge` only */
@@ -14,6 +35,8 @@ export type ServiceScrollCard = {
   detail?: string
   priceBold?: string
   priceRest?: string
+  /** Inline SVG illustration shown inside the card's tinted image area. */
+  illustration?: ServiceIllustration
 }
 
 export type CompareAltCard = {
