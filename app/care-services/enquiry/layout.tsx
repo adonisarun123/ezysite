@@ -35,11 +35,18 @@ export const metadata: Metadata = {
     canonical: `https://www.ezyhelpers.com${PATH}`,
     languages: selfReferencingLanguages(PATH),
   },
+  // The enquiry page is reachable with `?source=...` tracking variants
+  // (e.g. /care-services/enquiry?source=/care-services/caretaker-services-bangalore).
+  // Each variant otherwise produces a self-referencing hreflang that conflicts
+  // with the canonical URL (the bare /care-services/enquiry). Noindex'ing the
+  // page keeps it functional as a form target while removing the parameterised
+  // duplicates from the index entirely. See `alternates.canonical` above for
+  // the single canonical URL.
   robots: {
-    index: true,
+    index: false,
     follow: true,
     googleBot: {
-      index: true,
+      index: false,
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',

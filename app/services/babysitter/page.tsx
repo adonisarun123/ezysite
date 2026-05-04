@@ -6,9 +6,9 @@ import NestCTA from '@/components/NestCTA'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
 export const metadata: Metadata = {
-  title: 'Babysitter Services in Bareilly – Trusted Child Care',
-  description: 'Book babysitter services in Bareilly for newborns, toddlers, or school-aged children. Safe, caring support for full-day or part-time needs.',
-  keywords: 'babysitter services bareilly, home babysitter bareilly, child care bareilly, nanny services bareilly, baby care services bareilly',
+  title: 'Babysitter Services at Home – Verified Nannies | EzyHelpers',
+  description: 'Hire trusted babysitters at home for newborns, toddlers, and school-aged children. Live-in, full-time, and part-time nannies for safe, caring child care.',
+  keywords: 'babysitter services, home babysitter, child care at home, nanny services, baby care services, live-in nanny, part-time babysitter',
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/babysitter',
     languages: selfReferencingLanguages('/services/babysitter'),

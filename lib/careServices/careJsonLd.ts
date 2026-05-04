@@ -56,10 +56,24 @@ export function careServiceJsonLd(parsed: ParsedCarePage) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: name,
+    // The nested LocalBusiness must include `address` to satisfy schema.org
+    // validation. NAP must match the standalone careLocalBusinessJsonLd() and
+    // the footer.
     provider: {
       '@type': 'LocalBusiness',
       name: 'EzyHelpers',
       url: `${SITE}/`,
+      telephone: '+918031411776',
+      email: 'contact@ezyhelpers.com',
+      image: `${SITE}/ezyhelper_logo_new.png`,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'HSR Layout',
+        addressLocality: 'Bangalore',
+        addressRegion: 'Karnataka',
+        postalCode: '560102',
+        addressCountry: 'IN',
+      },
     },
     areaServed: {
       '@type': 'City',
