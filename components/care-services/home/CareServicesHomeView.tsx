@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion from '@/components/FAQAccordion'
 import {
   PhoneIcon,
@@ -556,14 +555,22 @@ export default function CareServicesHomeView() {
           }}
         />
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 sm:pb-28 sm:pt-8 lg:pb-32">
-          {/* Breadcrumb sits inside the hero, top-left, on the same warm radial backdrop */}
-          <div className="text-left">
-            <Breadcrumb
-              variant="minimal"
-              separator="chevron"
-              items={[{ label: 'Home', href: '/' }, { label: 'Care Services' }]}
-            />
-          </div>
+          {/* Breadcrumb — inline, transparent, lives inside the hero */}
+          <nav aria-label="Breadcrumb" className="text-left">
+            <ol className="flex flex-wrap items-center gap-x-1 text-sm text-neutral-500">
+              <li>
+                <Link href="/" className="transition-colors hover:text-neutral-900">
+                  Home
+                </Link>
+              </li>
+              <li className="select-none px-2 text-neutral-300" aria-hidden="true">
+                ›
+              </li>
+              <li>
+                <span className="font-medium text-neutral-900">Care Services</span>
+              </li>
+            </ol>
+          </nav>
 
           <div className="mt-10 text-center sm:mt-14 lg:mt-16">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
