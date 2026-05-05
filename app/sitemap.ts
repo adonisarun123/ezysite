@@ -517,37 +517,75 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.85
     })),
-    // High-intent SEO subpages
-    {
-      url: `${baseUrl}/care-services/stroke-care-at-home-bangalore`,
+    // High-intent SEO subpages — condition pages
+    ...[
+      'stroke-care-at-home-bangalore',
+      'dementia-alzheimers-care-bangalore',
+      'bedridden-patient-care-bangalore',
+      'post-surgery-recovery-bangalore',
+      'cancer-care-at-home-bangalore',
+      'parkinsons-care-at-home-bangalore',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const,
       priority: 0.85
-    },
-    {
-      url: `${baseUrl}/care-services/dementia-alzheimers-care-bangalore`,
+    })),
+    // Decision & cost guides
+    ...[
+      'home-nursing-cost-bangalore',
+      'home-nurse-vs-caretaker',
+      'live-in-vs-day-shift-caregiver',
+      'home-care-vs-old-age-home',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const,
       priority: 0.85
-    },
-    {
-      url: `${baseUrl}/care-services/home-nursing-cost-bangalore`,
+    })),
+    // Locality pages
+    ...[
+      'elderly-care-whitefield-bangalore',
+      'elderly-care-hsr-layout-bangalore',
+      'elderly-care-koramangala-bangalore',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.85
-    },
-    {
-      url: `${baseUrl}/care-services/elderly-care-whitefield-bangalore`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const,
       priority: 0.8
-    },
-    {
-      url: `${baseUrl}/care-services/home-nurse-vs-caretaker`,
+    })),
+    // Strategic pages
+    ...[
+      'insurance-and-home-care-bangalore',
+      'hospital-discharge-care-bangalore',
+      'nri-family-home-care-bangalore',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    }
+      changeFrequency: 'weekly' as const,
+      priority: 0.85
+    })),
+    // Trust & operations pages
+    ...[
+      'caregiver-verification-process',
+      'caregiver-training',
+      'care-leadership',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7
+    })),
+    // Interactive tools
+    ...[
+      'care-quiz',
+      'cost-calculator',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85
+    }))
   ]
 
   return [

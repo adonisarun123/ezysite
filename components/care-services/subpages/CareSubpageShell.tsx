@@ -38,6 +38,10 @@ type Props = {
   children: React.ReactNode
   /** Optional JSON-LD blocks injected in <head> via inline script */
   jsonLd?: Record<string, unknown>[]
+  /** E-E-A-T: medical reviewer with credentials. Renders below the hero CTAs. */
+  reviewedBy?: { name: string; credential: string; href?: string }
+  /** E-E-A-T: human-readable last review date, e.g. "May 2026" */
+  lastUpdated?: string
 }
 
 export function CareSubpageShell({
@@ -50,6 +54,8 @@ export function CareSubpageShell({
   enquirySource,
   children,
   jsonLd,
+  reviewedBy,
+  lastUpdated,
 }: Props) {
   const enquiryHref = `${CARE_ENQUIRY_HREF}?source=${encodeURIComponent(enquirySource)}`
 
@@ -125,6 +131,30 @@ export function CareSubpageShell({
                 {PHONE_DISPLAY}
               </a>
             </div>
+
+            {(reviewedBy || lastUpdated) && (
+              <p className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-neutral-500">
+                {reviewedBy ? (
+                  <span>
+                    Reviewed by{' '}
+                    {reviewedBy.href ? (
+                      <Link
+                        href={reviewedBy.href}
+                        className="font-semibold text-neutral-700 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-700"
+                      >
+                        {reviewedBy.name}, {reviewedBy.credential}
+                      </Link>
+                    ) : (
+                      <span className="font-semibold text-neutral-700">
+                        {reviewedBy.name}, {reviewedBy.credential}
+                      </span>
+                    )}
+                  </span>
+                ) : null}
+                {reviewedBy && lastUpdated ? <span aria-hidden>·</span> : null}
+                {lastUpdated ? <span>Last updated {lastUpdated}</span> : null}
+              </p>
+            )}
           </div>
         </div>
       </header>

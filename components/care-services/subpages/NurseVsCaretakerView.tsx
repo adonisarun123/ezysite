@@ -210,6 +210,8 @@ export default function NurseVsCaretakerView() {
       lede="Most families overspend or underspend in the first two weeks because nobody explains the difference. This is the difference — clearly, honestly, with examples."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
+      reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
+      lastUpdated="May 2026"
     >
       {/* Direct rule */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">

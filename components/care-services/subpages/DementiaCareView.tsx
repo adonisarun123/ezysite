@@ -155,6 +155,8 @@ export default function DementiaCareView() {
       lede="Dementia changes everything except who your loved one is. We place caregivers trained to remember that — through agitation, repetition, sundowning, and the long months when the disease asks more of the family than of the patient."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
+      reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
+      lastUpdated="May 2026"
     >
       {/* One-paragraph direct answer */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">

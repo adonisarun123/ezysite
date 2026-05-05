@@ -158,6 +158,8 @@ export default function StrokeCareView() {
       lede="Recovery from a stroke is a season, not a single event. We place caregivers who have walked alongside families through it before — matched to the recovery stage, not just the diagnosis."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
+      reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
+      lastUpdated="May 2026"
     >
       {/* Direct answer block (LLM-friendly) */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">

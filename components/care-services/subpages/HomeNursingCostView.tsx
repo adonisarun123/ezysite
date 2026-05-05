@@ -255,6 +255,8 @@ export default function HomeNursingCostView() {
       lede="Transparent ranges for every common arrangement — visits, shifts, 24-hour cover, and live-in placements. What changes the price, what doesn’t, and how to spend wisely without underpaying for care."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
+      reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
+      lastUpdated="May 2026"
     >
       {/* Direct answer card */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">

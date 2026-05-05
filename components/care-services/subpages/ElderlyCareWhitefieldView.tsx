@@ -216,6 +216,8 @@ export default function ElderlyCareWhitefieldView() {
       lede="Verified, matched caregivers across the entire Whitefield corridor — from ITPL to Varthur, Brookefield to Hoodi — typically reaching your home within 30 minutes."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
+      reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
+      lastUpdated="May 2026"
     >
       {/* Direct answer */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
