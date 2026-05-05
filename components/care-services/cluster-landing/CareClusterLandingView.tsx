@@ -2,7 +2,6 @@ import type { ComponentType, SVGProps } from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion from '@/components/FAQAccordion'
 import {
   PhoneIcon,
@@ -94,27 +93,43 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
   const HeroTopTile = heroScene.tiles[1].illustration
   const HeroBottomTile = heroScene.tiles[2].illustration
 
-  const breadcrumbItems =
-    pathname === CARE_PILLAR_HREF
-      ? [{ label: 'Home', href: '/' }, { label: 'Care Services' }]
-      : [
-          { label: 'Home', href: '/' },
-          { label: 'Care Services', href: CARE_PILLAR_HREF },
-          { label: config.breadcrumbCurrent },
-        ]
+  // Every page under /care-services/* shares the same shape:
+  //   Home  ›  Care Services  ›  <current page>
+  // "Care Services" links to the new hub at /care-services.
+  // The pillar page renders as the "Home Care Services" leaf so it's distinct from the hub.
+  const currentLabel =
+    pathname === CARE_PILLAR_HREF ? 'Home Care Services' : config.breadcrumbCurrent
 
   return (
     <div className="min-h-screen bg-white font-careUi text-[#222] antialiased">
       <Navbar />
 
-      <div className="relative z-30 border-b border-neutral-200 bg-white/95 backdrop-blur-md">
-        <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6">
-          <Breadcrumb variant="minimal" separator="chevron" items={breadcrumbItems} />
-        </div>
-      </div>
-
       <header className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pb-14">
+        <div className="mx-auto max-w-7xl px-4 pb-10 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pb-14">
+          {/* Inline, transparent breadcrumb — sits inside the hero, no separator bar */}
+          <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8">
+            <ol className="flex flex-wrap items-center gap-x-1 text-sm text-neutral-500">
+              <li>
+                <Link href="/" className="transition-colors hover:text-neutral-900">
+                  Home
+                </Link>
+              </li>
+              <li className="select-none px-2 text-neutral-300" aria-hidden="true">
+                ›
+              </li>
+              <li>
+                <Link href="/care-services" className="transition-colors hover:text-neutral-900">
+                  Care Services
+                </Link>
+              </li>
+              <li className="select-none px-2 text-neutral-300" aria-hidden="true">
+                ›
+              </li>
+              <li>
+                <span className="font-medium text-neutral-900">{currentLabel}</span>
+              </li>
+            </ol>
+          </nav>
           <div className="grid min-h-0 gap-2 overflow-hidden rounded-[28px] border border-neutral-200 bg-neutral-50 shadow-[0_6px_24px_rgba(0,0,0,0.06)] lg:grid-cols-2 lg:min-h-[420px] lg:gap-0">
             <div className={`relative flex flex-col justify-between bg-gradient-to-br ${heroScene.leftPanelGradient} p-8 text-left sm:p-10 lg:p-12`}>
               <div className={`pointer-events-none absolute bottom-[-60px] right-[-60px] h-56 w-56 rounded-full ${heroScene.blobAccentClass} blur-2xl`} aria-hidden />

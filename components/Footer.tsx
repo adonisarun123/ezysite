@@ -207,6 +207,14 @@ export default function Footer() {
               <ul className="space-y-4">
                 <li>
                   <Link
+                    href="/care-services"
+                    className="text-sm font-semibold text-white hover:text-primary-400 transition-colors leading-relaxed"
+                  >
+                    All Care Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href={CARE_PILLAR_HREF}
                     className="text-sm font-medium text-gray-200 hover:text-primary-400 transition-colors leading-relaxed"
                   >
