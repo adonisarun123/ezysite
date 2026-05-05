@@ -12,16 +12,12 @@ import {
     UserPlusIcon,
     BanknotesIcon,
     HomeIcon,
-    ClockIcon as ClockSolidIcon,
     UserIcon,
     GlobeAltIcon,
     HandThumbUpIcon,
     AcademicCapIcon,
-    ShieldCheckIcon as OutlineShieldCheckIcon,
     HomeModernIcon as OutlineHomeModernIcon,
-    HeartIcon as OutlineHeartIcon,
     ChartBarIcon,
-    BanknotesIcon as OutlineBanknotesIcon,
     UserCircleIcon,
     ChatBubbleLeftEllipsisIcon,
     SparklesIcon,
@@ -325,7 +321,7 @@ export default function HomeCookJobsOdishaBangalorePage() {
                             {/* Full-Time Card */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full flex-grow">
                                 <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600 flex-shrink-0">
-                                    <ClockSolidIcon className="w-8 h-8" />
+                                    <ClockIcon className="w-8 h-8" />
                                 </div>
                                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Full-Time Home Cook Jobs in Bangalore</h3>
 
@@ -701,7 +697,7 @@ export default function HomeCookJobsOdishaBangalorePage() {
                             {/* Safety & Security */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group">
                                 <div className="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 text-purple-600 group-hover:scale-110 transition-transform duration-300">
-                                    <OutlineShieldCheckIcon className="w-7 h-7" />
+                                    <ShieldCheckIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Safety & Security</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">Clear work agreements and regular support.</p>
@@ -719,7 +715,7 @@ export default function HomeCookJobsOdishaBangalorePage() {
                             {/* Health Insurance */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group">
                                 <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-red-600 group-hover:scale-110 transition-transform duration-300">
-                                    <OutlineHeartIcon className="w-7 h-7" />
+                                    <HeartIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Health Insurance</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">Basic medical coverage for emergencies.</p>
@@ -746,7 +742,7 @@ export default function HomeCookJobsOdishaBangalorePage() {
                             {/* Timely Salary */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group">
                                 <div className="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-green-600 group-hover:scale-110 transition-transform duration-300">
-                                    <OutlineBanknotesIcon className="w-7 h-7" />
+                                    <BanknotesIcon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Timely Salary</h3>
                                 <p className="text-gray-600 font-medium leading-relaxed">Paid directly by employers every month.</p>

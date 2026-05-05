@@ -12,20 +12,14 @@ import {
     UserPlusIcon,
     BanknotesIcon,
     HomeIcon,
-    ClockIcon as ClockSolidIcon,
-    UserIcon,
     GlobeAltIcon,
     HandThumbUpIcon,
     AcademicCapIcon,
-    ShieldCheckIcon as OutlineShieldCheckIcon,
     HomeModernIcon as OutlineHomeModernIcon,
-    HeartIcon as OutlineHeartIcon,
     ChartBarIcon,
-    BanknotesIcon as OutlineBanknotesIcon,
     UserCircleIcon,
     ChatBubbleLeftEllipsisIcon,
     SparklesIcon,
-    ClipboardDocumentListIcon,
     ArrowRightIcon,
     PhoneIcon,
     UserGroupIcon
@@ -234,7 +228,7 @@ export default function ElderlyCareJobsOdishaBangalorePage() {
                             {/* Full-Time Card */}
                             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full flex-grow">
                                 <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600 flex-shrink-0">
-                                    <ClockSolidIcon className="w-8 h-8" />
+                                    <ClockIcon className="w-8 h-8" />
                                 </div>
                                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Full-Time Elderly Care Helper Jobs</h3>
                                 <div className="space-y-6 flex-grow">
@@ -561,12 +555,12 @@ export default function ElderlyCareJobsOdishaBangalorePage() {
                             {[
                                 { title: "Training & Certificate", desc: "Basic training related to your job role, and a certificate will be given after completion.", icon: AcademicCapIcon, color: "violet" },
                                 { title: "Look Professional", desc: "EzyHelpers Coat and grooming kit is provided.", icon: BriefcaseIcon, color: "blue" },
-                                { title: "Safety & Security", desc: "Clear work agreements and regular support.", icon: OutlineShieldCheckIcon, color: "purple" },
+                                { title: "Safety & Security", desc: "Clear work agreements and regular support.", icon: ShieldCheckIcon, color: "purple" },
                                 { title: "Stay Support", desc: "Stay at our women’s hostel if placement is delayed.", icon: OutlineHomeModernIcon, color: "pink" },
-                                { title: "Health Insurance", desc: "Basic medical coverage for emergencies.", icon: OutlineHeartIcon, color: "red" },
+                                { title: "Health Insurance", desc: "Basic medical coverage for emergencies.", icon: HeartIcon, color: "red" },
                                 { title: "Respectful Work Environment", desc: "Homes that treat you with respect.", icon: HandThumbUpIcon, color: "yellow" },
                                 { title: "Future Opportunities", desc: "Good performance can lead to a higher salary or jobs in other cities/abroad.", icon: ChartBarIcon, color: "indigo" },
-                                { title: "Timely Salary", desc: "Paid directly by employers every month.", icon: OutlineBanknotesIcon, color: "green" },
+                                { title: "Timely Salary", desc: "Paid directly by employers every month.", icon: BanknotesIcon, color: "green" },
                                 { title: "Job Profile Creation", desc: "Build a profile to get better maid jobs.", icon: UserCircleIcon, color: "sky" },
                                 { title: "Support at Every Step", desc: "Help from registration to after placement.", icon: ChatBubbleLeftEllipsisIcon, color: "orange" }
                             ].map((item, index) => (

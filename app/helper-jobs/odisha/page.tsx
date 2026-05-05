@@ -13,8 +13,7 @@ import {
     HeartIcon,
     ShieldCheckIcon,
     UserPlusIcon,
-    BanknotesIcon,
-    ArrowRightIcon
+    BanknotesIcon
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'

@@ -12,27 +12,17 @@ import {
     UserPlusIcon,
     BanknotesIcon,
     HomeIcon,
-    ClockIcon as ClockSolidIcon,
-    UserIcon,
     GlobeAltIcon,
     HandThumbUpIcon,
     AcademicCapIcon,
-    ShieldCheckIcon as OutlineShieldCheckIcon,
     HomeModernIcon as OutlineHomeModernIcon,
-    HeartIcon as OutlineHeartIcon,
     ChartBarIcon,
-    BanknotesIcon as OutlineBanknotesIcon,
     UserCircleIcon,
     ChatBubbleLeftEllipsisIcon,
     SparklesIcon,
-    ClipboardDocumentListIcon,
     ArrowRightIcon,
     PhoneIcon,
-    UserGroupIcon,
-    InformationCircleIcon,
-    SunIcon,
-    UserIcon as OutlineUserIcon,
-    LifebuoyIcon
+    InformationCircleIcon
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
@@ -184,9 +174,9 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                         </div>
 
                         <div className="max-w-5xl mx-auto bg-white rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden border border-gray-100">
-                             <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-32 -mt-32"></div>
-                             
-                             <div className="relative z-10 space-y-8">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-32 -mt-32"></div>
+
+                            <div className="relative z-10 space-y-8">
                                 <p className="text-lg text-gray-700 font-bold leading-relaxed">
                                     In Bangalore, many families prefer Odisha helpers because they understand newborn hygiene, massage techniques, feeding routines, and mother recovery care. This is not regular maid work. This is full responsibility for the mother and newborn baby care.
                                 </p>
@@ -198,7 +188,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                             <SparklesIcon className="w-10 h-10" />
                                         </div>
                                         <div className="flex-grow">
-                                            <h3 className="text-2xl md:text-3xl font-bold mb-2 italic italic">Live-In Japa Maid Jobs in Bangalore</h3>
+                                            <h3 className="text-2xl md:text-3xl font-bold mb-2 italic">Live-In Japa Maid Jobs in Bangalore</h3>
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6">
                                                 <div>
                                                     <h4 className="text-violet-200 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2">
@@ -214,7 +204,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                                 </div>
                                                 <div>
                                                     <h4 className="text-violet-200 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2">
-                                                        <OutlineHeartIcon className="w-4 h-4" /> Best For
+                                                        <HeartIcon className="w-4 h-4" /> Best For
                                                     </h4>
                                                     <p className="text-white font-bold text-sm">Experienced women from Odisha who are confident in handling mother and newborn baby care in Japa Maid Jobs in Bangalore.</p>
                                                 </div>
@@ -234,7 +224,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                         </div>
                                     </div>
                                 </div>
-                             </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -250,7 +240,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                             <div className="bg-violet-50 rounded-3xl p-8 md:p-10 border border-violet-100 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all">
-                                 <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-60 -mr-16 -mt-16"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-60 -mr-16 -mt-16"></div>
                                 <h3 className="text-xl font-bold text-violet-900 mb-6 flex items-center gap-2 border-b border-violet-200 pb-4 relative z-10 italic">
                                     <SparklesIcon className="w-6 h-6" /> Daily Duties
                                 </h3>
@@ -275,7 +265,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                             </div>
 
                             <div className="bg-blue-50 rounded-3xl p-8 md:p-10 border border-blue-100 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all">
-                                 <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-60 -mr-16 -mt-16"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-60 -mr-16 -mt-16"></div>
                                 <h3 className="text-xl font-bold text-blue-900 mb-6 flex items-center gap-2 border-b border-blue-200 pb-4 relative z-10 italic">
                                     <InformationCircleIcon className="w-6 h-6" /> Additional Duties
                                 </h3>
@@ -306,7 +296,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                         </div>
 
                         <div className="max-w-4xl mx-auto overflow-hidden rounded-[3rem] border border-gray-200 shadow-2xl bg-white relative">
-                             <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-32 -mt-32"></div>
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-32 -mt-32"></div>
                             <table className="w-full text-left relative z-10">
                                 <thead className="bg-violet-600 text-white">
                                     <tr>
@@ -349,9 +339,9 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                         </div>
 
                         <div className="bg-violet-900 rounded-[3rem] p-8 md:p-12 text-white shadow-2xl relative overflow-hidden group">
-                             <div className="absolute inset-0 bg-gradient-to-br from-violet-800 to-violet-900 -z-10 group-hover:scale-105 transition-transform duration-500"></div>
-                             <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600 rounded-full blur-3xl opacity-20 -mr-20 -mt-20"></div>
-                            
+                            <div className="absolute inset-0 bg-gradient-to-br from-violet-800 to-violet-900 -z-10 group-hover:scale-105 transition-transform duration-500"></div>
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600 rounded-full blur-3xl opacity-20 -mr-20 -mt-20"></div>
+
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
                                 {[
                                     "Experienced women helpers only",
@@ -381,7 +371,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
 
                             <div className="relative z-10">
                                 <div className="text-center max-w-3xl mx-auto mb-12">
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic italic">About EzyHelpers – Trusted Helper Jobs</h2>
+                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic">About EzyHelpers – Trusted Helper Jobs</h2>
                                     <p className="text-violet-100 text-lg md:text-xl font-bold">
                                         We connect helpers like you with safe Domestic Helper jobs across India without charging any fees.
                                     </p>
@@ -459,7 +449,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                             <HeartIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic italic">Our Belief</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">Our Belief</h4>
                                             <p className="text-white italic">Good Homes for Helpers. Good Helpers for Families.</p>
                                         </div>
                                     </div>
@@ -468,7 +458,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                             <GlobeAltIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic italic">Locations We Serve</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">Locations We Serve</h4>
                                             <p className="text-sm text-violet-50">Bangalore, Bareilly, Mumbai, Hyderabad, Delhi NCR, Pune, Odisha and more.</p>
                                         </div>
                                     </div>
@@ -490,12 +480,12 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                             {[
                                 { title: "Training & Certificate", desc: "Basic training related to your job role, and a certificate will be given after completion.", icon: AcademicCapIcon, color: "violet" },
                                 { title: "Look Professional", desc: "EzyHelpers Coat and grooming kit is provided.", icon: BriefcaseIcon, color: "blue" },
-                                { title: "Safety & Security", desc: "Clear work agreements and regular support.", icon: OutlineShieldCheckIcon, color: "purple" },
+                                { title: "Safety & Security", desc: "Clear work agreements and regular support.", icon: ShieldCheckIcon, color: "purple" },
                                 { title: "Stay Support", desc: "Stay at our women’s hostel if placement is delayed.", icon: OutlineHomeModernIcon, color: "pink" },
-                                { title: "Health Insurance", desc: "Basic medical coverage for emergencies.", icon: OutlineHeartIcon, color: "red" },
+                                { title: "Health Insurance", desc: "Basic medical coverage for emergencies.", icon: HeartIcon, color: "red" },
                                 { title: "Respectful Work Environment", desc: "Homes that treat you with respect.", icon: HandThumbUpIcon, color: "yellow" },
                                 { title: "Future Opportunities", desc: "Good performance can lead to a higher salary or jobs in other cities/abroad.", icon: ChartBarIcon, color: "indigo" },
-                                { title: "Timely Salary", desc: "Paid directly by employers every month.", icon: OutlineBanknotesIcon, color: "green" },
+                                { title: "Timely Salary", desc: "Paid directly by employers every month.", icon: BanknotesIcon, color: "green" },
                                 { title: "Job Profile Creation", desc: "Build a profile to get better maid jobs.", icon: UserCircleIcon, color: "sky" },
                                 { title: "Support at Every Step", desc: "Help from registration to after placement.", icon: ChatBubbleLeftEllipsisIcon, color: "orange" }
                             ].map((item, index) => (
@@ -527,7 +517,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                 </div>
 
                                 <div className="relative z-10 flex-grow text-center md:text-left">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display italic italic leading-tight">NEST – Safe Hostel for Women Helpers</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display italic leading-tight">NEST – Safe Hostel for Women Helpers</h2>
                                     <div className="space-y-4 mb-8">
                                         <p className="text-gray-600 text-lg font-bold italic leading-relaxed">
                                             Women helpers can stay at NEST anytime in Bangalore. Safe rooms, daily meals, and affordable stay help you settle comfortably before starting work.
@@ -571,15 +561,15 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                         {item.step}
                                     </div>
                                     <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                                    <p className="text-gray-600 text-xs font-bold leading-relaxed italic leading-relaxed">{item.desc}</p>
+                                    <p className="text-gray-600 text-xs font-bold leading-relaxed italic">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
 
                         <div className="text-center mt-16 max-w-3xl mx-auto bg-violet-50 p-10 rounded-[3rem] border border-violet-100 shadow-2xl relative overflow-hidden">
-                             <div className="absolute top-0 right-0 w-32 h-32 bg-violet-100 rounded-full blur-3xl opacity-50 -mr-16 -mt-16"></div>
-                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display italic leading-tight italic px-4">Don't wait for a better opportunity to knock!</h3>
-                            <p className="text-gray-700 text-lg font-bold mb-8 italic italic leading-relaxed">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-violet-100 rounded-full blur-3xl opacity-50 -mr-16 -mt-16"></div>
+                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display italic leading-tight px-4">Don't wait for a better opportunity to knock!</h3>
+                            <p className="text-gray-700 text-lg font-bold mb-8 italic leading-relaxed">
                                 Experienced Japa Maids from Odisha are in high demand in Bangalore. Contact EzyHelpers Now!
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 max-w-md mx-auto sm:max-w-none">
@@ -604,7 +594,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight italic italic">
+                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight italic">
                                 Common Questions about Japa Maid Jobs
                             </h2>
                             <div className="w-32 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>

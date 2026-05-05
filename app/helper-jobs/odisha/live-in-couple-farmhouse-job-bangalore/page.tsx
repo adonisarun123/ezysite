@@ -6,35 +6,21 @@ import Breadcrumb from '@/components/Breadcrumb'
 import {
     BriefcaseIcon,
     CheckCircleIcon,
-    ClockIcon,
     HeartIcon,
     ShieldCheckIcon,
     UserPlusIcon,
     BanknotesIcon,
-    HomeIcon,
-    ClockIcon as ClockSolidIcon,
-    UserIcon,
     GlobeAltIcon,
     HandThumbUpIcon,
     AcademicCapIcon,
-    ShieldCheckIcon as OutlineShieldCheckIcon,
     HomeModernIcon as OutlineHomeModernIcon,
-    HeartIcon as OutlineHeartIcon,
     ChartBarIcon,
-    BanknotesIcon as OutlineBanknotesIcon,
     UserCircleIcon,
     ChatBubbleLeftEllipsisIcon,
     SparklesIcon,
-    ClipboardDocumentListIcon,
     ArrowRightIcon,
     PhoneIcon,
-    UserGroupIcon,
-    InformationCircleIcon,
-    TruckIcon,
-    SunIcon,
-    UserIcon as OutlineUserIcon,
-    LifebuoyIcon,
-    MapPinIcon
+    UserIcon as OutlineUserIcon
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
@@ -179,17 +165,17 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                         </div>
 
                         <div className="max-w-4xl mx-auto bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border border-gray-100 text-center md:text-left italic font-bold leading-relaxed">
-                            <p className="text-lg text-gray-700 font-bold leading-relaxed mb-6 italic font-bold">
+                            <p className="text-lg text-gray-700 font-bold leading-relaxed mb-6 italic">
                                 Live-in farmhouse caretaker jobs in Bangalore are good for married couples who want peaceful and steady work. These jobs are usually in private properties, villas, or farmhouses. Compared to heavy city housework, this work is calmer and more stable. You both manage property care as a team and stay together.
                             </p>
-                            <p className="text-violet-700 font-bold italic uppercase tracking-widest text-xs mb-8 italic font-bold leading-relaxed">Farmhouse owners in Bangalore trust couples from Odisha because of your honesty and discipline.</p>
+                            <p className="text-violet-700 font-bold uppercase tracking-widest text-xs mb-8 italic leading-relaxed">Farmhouse owners in Bangalore trust couples from Odisha because of your honesty and discipline.</p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-bold italic leading-relaxed">
                                 <div className="space-y-6">
-                                    <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-3 italic font-bold leading-relaxed italic">
+                                    <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-3 leading-relaxed italic">
                                         <OutlineUserIcon className="w-6 h-6 text-violet-600 font-bold italic leading-relaxed" /> Husband's duties
                                     </h3>
-                                    <ul className="space-y-3 font-bold text-gray-700 italic font-bold leading-relaxed">
+                                    <ul className="space-y-3 font-bold text-gray-700 italic leading-relaxed">
                                         {[
                                             "Garden maintenance and lawn care",
                                             "Property security and gatekeeping",
@@ -205,10 +191,10 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                                     </ul>
                                 </div>
                                 <div className="space-y-6">
-                                    <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-3 italic font-bold leading-relaxed italic">
+                                    <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-3 leading-relaxed italic">
                                         <HeartIcon className="w-6 h-6 text-pink-500 font-bold italic leading-relaxed" /> Wife's duties
                                     </h3>
-                                    <ul className="space-y-3 font-bold text-gray-700 italic font-bold leading-relaxed">
+                                    <ul className="space-y-3 font-bold text-gray-700 italic leading-relaxed">
                                         {[
                                             "Housekeeping of main house & guest rooms",
                                             "Cooking for owners and visitors",
@@ -225,11 +211,11 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                                 </div>
                             </div>
 
-                            <div className="mt-12 bg-violet-50 rounded-2xl p-8 border border-violet-100 font-bold italic leading-relaxed italic">
-                                <h3 className="text-lg font-bold text-violet-900 mb-4 flex items-center gap-2 italic font-bold leading-relaxed italic font-bold leading-relaxed italic">
-                                    <SparklesIcon className="w-6 h-6 font-bold italic leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed" /> Shared duties
+                            <div className="mt-12 bg-violet-50 rounded-2xl p-8 border border-violet-100 font-bold italic leading-relaxed">
+                                <h3 className="text-lg font-bold text-violet-900 mb-4 flex items-center gap-2 leading-relaxed italic">
+                                    <SparklesIcon className="w-6 h-6 font-bold italic leading-relaxed" /> Shared duties
                                 </h3>
-                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-bold text-gray-700 italic font-bold leading-relaxed italic font-bold leading-relaxed italic">
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-bold text-gray-700 italic leading-relaxed">
                                     {[
                                         "Helping during owner visits",
                                         "Looking after entire property alone",
@@ -261,29 +247,29 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                     <div className="container-custom">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Salary for Farmhouse Caretaker Jobs in Bangalore</h2>
-                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm text-center italic font-bold leading-relaxed italic">Salary depends on property size, experience, and responsibilities. We explain everything clearly before you travel.</p>
+                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm text-center leading-relaxed italic">Salary depends on property size, experience, and responsibilities. We explain everything clearly before you travel.</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 flex flex-col items-center text-center group hover:-translate-y-2 transition-all">
-                                <div className="w-20 h-20 bg-violet-50 rounded-2xl flex items-center justify-center text-violet-600 mb-6 group-hover:scale-110 transition-transform italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic">
-                                    <OutlineHomeModernIcon className="w-10 h-10 font-bold italic leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed" />
+                                <div className="w-20 h-20 bg-violet-50 rounded-2xl flex items-center justify-center text-violet-600 mb-6 group-hover:scale-110 transition-transform italic font-bold leading-relaxed">
+                                    <OutlineHomeModernIcon className="w-10 h-10 font-bold italic leading-relaxed" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-2 italic">Farmhouse Jobs in Bangalore for Couples</h3>
-                                <p className="text-violet-700 font-bold text-2xl md:text-3xl mb-4 italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic">₹22,000 to ₹30,000</p>
-                                <div className="space-y-2 font-bold text-gray-600 text-sm italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic">
+                                <p className="text-violet-700 font-bold text-2xl md:text-3xl mb-4 italic leading-relaxed ">₹22,000 to ₹30,000</p>
+                                <div className="space-y-2 font-bold text-gray-600 text-sm italic leading-relaxed ">
                                     <p>✓ Free accommodation inside property</p>
                                     <p>✓ Electricity & water usually included</p>
                                 </div>
                             </div>
                             <div className="bg-violet-900 rounded-3xl p-8 shadow-xl border border-violet-800 flex flex-col items-center text-center text-white group hover:-translate-y-2 transition-all">
-                                <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center text-violet-100 mb-6 group-hover:scale-110 transition-transform italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic">
-                                    <SparklesIcon className="w-10 h-10 font-bold italic leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed" />
+                                <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center text-violet-100 mb-6 group-hover:scale-110 transition-transform italic font-bold leading-relaxed">
+                                    <SparklesIcon className="w-10 h-10 font-bold italic leading-relaxed" />
                                 </div>
-                                <h3 className="text-xl font-bold mb-2 italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed">Live-in Farmhouse Caretaker Jobs</h3>
-                                <p className="text-violet-100 font-bold text-2xl md:text-3xl mb-4 italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed">₹25,000 to ₹35,000</p>
-                                <div className="space-y-2 font-bold text-violet-200 text-sm italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed">
+                                <h3 className="text-xl font-bold mb-2 italic leading-relaxed">Live-in Farmhouse Caretaker Jobs</h3>
+                                <p className="text-violet-100 font-bold text-2xl md:text-3xl mb-4 italic leading-relaxed">₹25,000 to ₹35,000</p>
+                                <div className="space-y-2 font-bold text-violet-200 text-sm italic leading-relaxed">
                                     <p>✓ 24-hour stay with food support</p>
                                     <p>✓ Sometimes groceries or allowance</p>
                                 </div>
@@ -297,8 +283,8 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12 font-bold italic">
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Who Can Apply</h2>
-                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm text-center italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed">You can apply for a private property couple jobs in Bangalore if:</p>
-                            <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold italic leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed"></div>
+                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm text-center italic leading-relaxed">You can apply for a private property couple jobs in Bangalore if:</p>
+                            <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold italic leading-relaxed"></div>
                         </div>
 
                         <div className="bg-white rounded-[3rem] p-8 md:p-12 border border-gray-100 shadow-xl font-bold italic">
@@ -311,9 +297,9 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                                     "Willing to take care of property respectfully",
                                     "Experience in farming/security is advantage"
                                 ].map((item, i) => (
-                                    <div key={i} className="flex items-center gap-3 bg-gray-50 p-4 rounded-2xl border border-gray-100 shadow-sm font-bold text-gray-700 italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed">
-                                        <CheckCircleIcon className="w-6 h-6 text-green-500 shrink-0 font-bold italic leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed" />
-                                        <span className="text-sm md:text-base font-bold italic leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed italic font-bold leading-relaxed">{item}</span>
+                                    <div key={i} className="flex items-center gap-3 bg-gray-50 p-4 rounded-2xl border border-gray-100 shadow-sm text-gray-700 italic font-bold leading-relaxed">
+                                        <CheckCircleIcon className="w-6 h-6 text-green-500 shrink-0 font-bold italic leading-relaxed" />
+                                        <span className="text-sm md:text-base font-bold italic leading-relaxed">{item}</span>
                                     </div>
                                 ))}
                             </div>
@@ -325,23 +311,23 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white font-bold italic">
                     <div className="container-custom font-bold italic">
                         <div className="bg-gradient-to-br from-violet-800 to-violet-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden font-bold italic">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600 rounded-full blur-3xl opacity-20 -mr-20 -mt-20 font-bold italic leading-relaxed italic"></div>
-                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-violet-500 rounded-full blur-3xl opacity-20 -ml-20 -mb-20 font-bold italic leading-relaxed italic"></div>
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600 rounded-full blur-3xl opacity-20 -mr-20 -mt-20 font-bold italic leading-relaxed"></div>
+                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-violet-500 rounded-full blur-3xl opacity-20 -ml-20 -mb-20 font-bold italic leading-relaxed"></div>
 
                             <div className="relative z-10 font-bold italic">
                                 <div className="text-center max-w-3xl mx-auto mb-12 font-bold italic">
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic italic font-bold leading-relaxed">About EzyHelpers – Trusted Helper Jobs</h2>
-                                    <p className="text-violet-100 text-lg md:text-xl font-bold italic font-bold leading-relaxed">
+                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic leading-relaxed">About EzyHelpers – Trusted Helper Jobs</h2>
+                                    <p className="text-violet-100 text-lg md:text-xl font-bold italic leading-relaxed">
                                         We connect helpers like you with safe Domestic Helper jobs across India without charging any fees.
                                     </p>
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 font-bold italic leading-relaxed">
                                     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-violet-700/50 font-bold italic leading-relaxed">
-                                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-violet-100 border-b border-violet-700/50 pb-3 uppercase tracking-tight italic font-bold leading-relaxed">
+                                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-violet-100 border-b border-violet-700/50 pb-3 uppercase tracking-tight italic leading-relaxed">
                                             <HandThumbUpIcon className="w-6 h-6 font-bold italic leading-relaxed" /> We Focus On
                                         </h3>
-                                        <ul className="space-y-3 font-bold text-violet-50 font-bold italic leading-relaxed">
+                                        <ul className="space-y-3 font-bold text-violet-50 italic leading-relaxed">
                                             <li className="flex items-start gap-2 italic">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0 font-bold italic leading-relaxed"></div>
                                                 <span className="text-sm md:text-base italic">Respectful jobs in Bangalore</span>
@@ -358,10 +344,10 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                                     </div>
 
                                     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-violet-700/50 lg:col-span-2 font-bold italic leading-relaxed">
-                                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-violet-100 border-b border-violet-700/50 pb-3 uppercase tracking-tight italic font-bold leading-relaxed">
+                                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-violet-100 border-b border-violet-700/50 pb-3 uppercase tracking-tight italic leading-relaxed">
                                             <ShieldCheckIcon className="w-6 h-6 font-bold italic leading-relaxed" /> Why Helpers Trust EzyHelpers
                                         </h3>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm md:text-base text-violet-50 font-bold italic font-bold leading-relaxed">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm md:text-base text-violet-50 font-bold italic leading-relaxed">
                                             <ul className="space-y-3 font-bold italic leading-relaxed">
                                                 <li className="flex items-start gap-2 italic">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0 font-bold italic leading-relaxed"></div>
@@ -408,7 +394,7 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                                             <HeartIcon className="w-6 h-6 font-bold italic leading-relaxed" />
                                         </div>
                                         <div className="font-bold italic leading-relaxed">
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic italic font-bold leading-relaxed">Our Belief</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic leading-relaxed">Our Belief</h4>
                                             <p className="text-white italic font-bold leading-relaxed">Good Homes for Helpers. Good Helpers for Families.</p>
                                         </div>
                                     </div>
@@ -417,7 +403,7 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                                             <GlobeAltIcon className="w-6 h-6 font-bold italic leading-relaxed" />
                                         </div>
                                         <div className="font-bold italic leading-relaxed">
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic italic font-bold leading-relaxed">Locations We Serve</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic leading-relaxed">Locations We Serve</h4>
                                             <p className="text-sm text-violet-50 italic font-bold leading-relaxed">Bangalore, Bareilly, Mumbai, Hyderabad, Delhi NCR, Pune, Odisha and more.</p>
                                         </div>
                                     </div>
@@ -431,7 +417,7 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50 font-bold italic leading-relaxed">
                     <div className="container-custom font-bold italic leading-relaxed">
                         <div className="text-center mb-16 px-4 font-bold italic leading-relaxed">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic font-bold leading-relaxed">Support and Benefits for Helpers at EzyHelpers</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-relaxed">Support and Benefits for Helpers at EzyHelpers</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold italic leading-relaxed"></div>
                         </div>
 
@@ -439,12 +425,12 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                             {[
                                 { title: "Training & Certificate", desc: "Basic training related to your job role, and a certificate will be given after completion.", icon: AcademicCapIcon, color: "violet" },
                                 { title: "Look Professional", desc: "EzyHelpers Coat and grooming kit is provided.", icon: BriefcaseIcon, color: "blue" },
-                                { title: "Safety & Security", desc: "Clear work agreements and regular support.", icon: OutlineShieldCheckIcon, color: "purple" },
+                                { title: "Safety & Security", desc: "Clear work agreements and regular support.", icon: ShieldCheckIcon, color: "purple" },
                                 { title: "Stay Support", desc: "Stay at our women’s hostel if placement is delayed.", icon: OutlineHomeModernIcon, color: "pink" },
-                                { title: "Health Insurance", desc: "Basic medical coverage for emergencies.", icon: OutlineHeartIcon, color: "red" },
+                                { title: "Health Insurance", desc: "Basic medical coverage for emergencies.", icon: HeartIcon, color: "red" },
                                 { title: "Respectful Work Environment", desc: "Homes that treat you with respect.", icon: HandThumbUpIcon, color: "yellow" },
                                 { title: "Future Opportunities", desc: "Good performance can lead to a higher salary or jobs in other cities/abroad.", icon: ChartBarIcon, color: "indigo" },
-                                { title: "Timely Salary", desc: "Paid directly by employers every month.", icon: OutlineBanknotesIcon, color: "green" },
+                                { title: "Timely Salary", desc: "Paid directly by employers every month.", icon: BanknotesIcon, color: "green" },
                                 { title: "Job Profile Creation", desc: "Build a profile to get better maid jobs.", icon: UserCircleIcon, color: "sky" },
                                 { title: "Support at Every Step", desc: "Help from registration to after placement.", icon: ChatBubbleLeftEllipsisIcon, color: "orange" }
                             ].map((item, index) => (
@@ -452,8 +438,8 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                                     <div className={`w-14 h-14 bg-${item.color}-50 rounded-2xl flex items-center justify-center mb-6 text-${item.color}-600 group-hover:scale-110 transition-transform duration-300 italic font-bold leading-relaxed`}>
                                         <item.icon className="w-7 h-7 font-bold italic leading-relaxed" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-gray-900 mb-3 uppercase tracking-tight italic font-bold leading-relaxed">{item.title}</h3>
-                                    <p className="text-gray-600 font-bold text-sm leading-relaxed italic font-bold leading-relaxed">{item.desc}</p>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-3 uppercase tracking-tight italic leading-relaxed">{item.title}</h3>
+                                    <p className="text-gray-600 font-bold text-sm leading-relaxed italic">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -476,15 +462,15 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                                 </div>
 
                                 <div className="relative z-10 flex-grow text-center md:text-left italic font-bold leading-relaxed">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display italic italic leading-tight italic font-bold leading-relaxed">NEST – Safe Hostel for Women Helpers</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display italic leading-relaxed">NEST – Safe Hostel for Women Helpers</h2>
                                     <div className="space-y-4 mb-8 font-bold italic leading-relaxed">
-                                        <p className="text-gray-600 text-lg font-bold italic leading-relaxed italic font-bold leading-relaxed">
+                                        <p className="text-gray-600 text-lg font-bold italic leading-relaxed">
                                             Women helpers can stay at NEST anytime in Bangalore. Safe rooms, daily meals, and affordable stay help you settle comfortably before starting work.
                                         </p>
                                     </div>
                                     <Link
                                         href="/nest-hostel"
-                                        className="inline-flex items-center gap-2 text-pink-600 font-bold text-lg hover:gap-3 transition-all group/cta font-bold italic leading-relaxed"
+                                        className="inline-flex items-center gap-2 text-pink-600 text-lg hover:gap-3 transition-all group/cta font-bold italic leading-relaxed"
                                     >
                                         Learn more about NEST <ArrowRightIcon className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform font-bold italic leading-relaxed" />
                                     </Link>
@@ -501,8 +487,8 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50 font-bold italic leading-relaxed">
                     <div className="container-custom font-bold italic leading-relaxed text-center">
                         <div className="text-center mb-16 px-4 font-bold italic leading-relaxed">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight italic font-bold leading-relaxed">How to Apply for Farmhouse Jobs in Bangalore for Couples</h2>
-                            <p className="text-gray-600 max-w-2xl mx-auto font-bold uppercase tracking-widest text-xs md:text-sm text-center italic leading-relaxed italic font-bold leading-relaxed">Six Simple Steps From Odisha to Your Job in Bangalore</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight">How to Apply for Farmhouse Jobs in Bangalore for Couples</h2>
+                            <p className="text-gray-600 max-w-2xl mx-auto font-bold uppercase tracking-widest text-xs md:text-sm text-center italic leading-relaxed">Six Simple Steps From Odisha to Your Job in Bangalore</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold italic leading-relaxed text-center"></div>
                         </div>
 
@@ -516,31 +502,31 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                                 { step: "6", title: "Start Working", desc: "Begin your patient care job with full support from EzyHelpers." }
                             ].map((item, index) => (
                                 <div key={index} className="bg-white rounded-2xl p-6 border border-gray-100 relative group hover:shadow-xl transition-all duration-300 italic font-bold leading-relaxed text-center">
-                                    <div className="w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 shadow-md group-hover:scale-110 transition-transform font-bold italic leading-relaxed text-center mx-auto">
+                                    <div className="w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center text-lg mb-4 shadow-md group-hover:scale-110 transition-transform font-bold italic leading-relaxed text-center mx-auto">
                                         {item.step}
                                     </div>
-                                    <h3 className="text-lg font-bold text-gray-900 mb-2 font-bold italic leading-relaxed text-center">{item.title}</h3>
-                                    <p className="text-gray-600 text-xs font-bold leading-relaxed italic leading-relaxed font-bold italic leading-relaxed text-center">{item.desc}</p>
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2 italic leading-relaxed text-center">{item.title}</h3>
+                                    <p className="text-gray-600 text-xs font-bold leading-relaxed italic text-center">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="text-center mt-16 max-w-3xl mx-auto bg-white p-10 rounded-[3rem] border border-violet-100 shadow-2xl relative overflow-hidden font-bold italic leading-relaxed text-center">
-                             <div className="absolute top-0 right-0 w-32 h-32 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-16 -mt-16 font-bold italic leading-relaxed"></div>
-                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display italic leading-tight italic px-4 italic font-bold leading-relaxed">Earn Double What You Earn in Odisha. Keep It All.</h3>
-                            <p className="text-gray-700 text-lg font-bold mb-8 italic italic leading-relaxed italic font-bold leading-relaxed">
+                        <div className="mt-16 max-w-3xl mx-auto bg-white p-10 rounded-[3rem] border border-violet-100 shadow-2xl relative overflow-hidden font-bold italic leading-relaxed text-center">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-16 -mt-16 font-bold italic leading-relaxed"></div>
+                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display leading-tight italic px-4">Earn Double What You Earn in Odisha. Keep It All.</h3>
+                            <p className="text-gray-700 text-lg font-bold mb-8 italic leading-relaxed">
                                 No rent to pay. No food costs. No agent cuts. You both work, you both save. Pure savings. Pure progress.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 max-w-md mx-auto sm:max-w-none font-bold italic leading-relaxed">
                                 <Link
                                     href="/helper-registration"
-                                    className="bg-violet-600 text-white font-bold py-4 px-12 rounded-xl hover:bg-violet-700 shadow-lg text-lg transform hover:scale-105 transition-all font-bold italic leading-relaxed"
+                                    className="bg-violet-600 text-white py-4 px-12 rounded-xl hover:bg-violet-700 shadow-lg text-lg transform hover:scale-105 transition-all font-bold italic leading-relaxed"
                                 >
                                     Apply Now
                                 </Link>
                                 <Link
                                     href="tel:+918031411776"
-                                    className="bg-white text-violet-700 font-bold py-4 px-12 rounded-xl border-2 border-violet-600 hover:bg-violet-50 transition-all text-lg shadow-sm font-bold italic leading-relaxed"
+                                    className="bg-white text-violet-700 py-4 px-12 rounded-xl border-2 border-violet-600 hover:bg-violet-50 transition-all text-lg shadow-sm font-bold italic leading-relaxed"
                                 >
                                     Call Us
                                 </Link>
@@ -553,7 +539,7 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white font-bold italic leading-relaxed">
                     <div className="container-custom max-w-4xl font-bold italic leading-relaxed">
                         <div className="text-center mb-12 px-4 font-bold italic leading-relaxed">
-                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight italic italic font-bold leading-relaxed">
+                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display italic leading-relaxed">
                                 Frequently Asked Questions
                             </h2>
                             <div className="w-32 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold italic leading-relaxed"></div>

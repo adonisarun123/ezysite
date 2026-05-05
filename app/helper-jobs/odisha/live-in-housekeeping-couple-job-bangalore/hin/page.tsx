@@ -6,29 +6,21 @@ import Breadcrumb from '@/components/Breadcrumb'
 import {
     BriefcaseIcon,
     CheckCircleIcon,
-    ClockIcon,
     HeartIcon,
     ShieldCheckIcon,
     UserPlusIcon,
     BanknotesIcon,
     HomeIcon,
-    ClockIcon as ClockSolidIcon,
-    UserIcon,
     GlobeAltIcon,
     HandThumbUpIcon,
     AcademicCapIcon,
-    ShieldCheckIcon as OutlineShieldCheckIcon,
     HomeModernIcon as OutlineHomeModernIcon,
-    HeartIcon as OutlineHeartIcon,
     ChartBarIcon,
-    BanknotesIcon as OutlineBanknotesIcon,
     UserCircleIcon,
     ChatBubbleLeftEllipsisIcon,
     SparklesIcon,
-    ClipboardDocumentListIcon,
     ArrowRightIcon,
     PhoneIcon,
-    UserGroupIcon,
     InformationCircleIcon,
     TruckIcon,
     SunIcon,
@@ -202,7 +194,7 @@ export default function HousekeepingCoupleJobsOdishaBangaloreHindiPage() {
 
                         <div className="mt-12 text-center max-w-3xl mx-auto bg-violet-900 text-white p-8 rounded-[3rem] shadow-2xl relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-violet-600 rounded-full blur-3xl opacity-20 -mr-16 -mt-16"></div>
-                            <h3 className="text-xl font-bold mb-4 italic italic">यह किन लोगों के लिए सही है</h3>
+                            <h3 className="text-xl font-bold mb-4 italic">यह किन लोगों के लिए सही है</h3>
                             <p className="text-lg font-bold text-violet-50 leading-relaxed">
                                 ओडिशा के ऐसे कपल जो बैंगलोर में सुरक्षित और लंबे समय तक चलने वाली जॉब चाहते हैं और अच्छी कमाई करना चाहते हैं।
                             </p>
@@ -257,7 +249,7 @@ export default function HousekeepingCoupleJobsOdishaBangaloreHindiPage() {
                                         { text: "सादा घर का खाना बनाना", icon: SparklesIcon },
                                         { text: "ड्राइविंग अगर लाइसेंस हो", icon: TruckIcon },
                                         { text: "बच्चों की देखभाल में मदद", icon: HeartIcon },
-                                        { text: "बुजुर्गों की देखभाल में मदद", icon: OutlineHeartIcon },
+                                        { text: "बुजुर्गों की देखभाल में मदद", icon: HeartIcon },
                                         { text: "बगीचे की देखभाल", icon: GlobeAltIcon },
                                         { text: "पालतू जानवरों की देखभाल", icon: OutlineUserIcon }
                                     ].map((item, i) => (
@@ -326,9 +318,9 @@ export default function HousekeepingCoupleJobsOdishaBangaloreHindiPage() {
                         </div>
 
                         <div className="max-w-5xl mx-auto bg-white rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden">
-                             <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-32 -mt-32"></div>
-                             
-                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10 items-center">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-32 -mt-32"></div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10 items-center">
                                 <div className="space-y-8">
                                     <div className="bg-violet-50 p-6 rounded-3xl border border-violet-100 flex items-center gap-6">
                                         <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-violet-600 shadow-sm font-bold text-2xl">₹</div>
@@ -358,7 +350,7 @@ export default function HousekeepingCoupleJobsOdishaBangaloreHindiPage() {
                                         अभी अप्लाई करें
                                     </Link>
                                 </div>
-                             </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -539,12 +531,12 @@ export default function HousekeepingCoupleJobsOdishaBangaloreHindiPage() {
                             {[
                                 { title: "ट्रेनिंग और सर्टिफिकेट", desc: "सफाई, स्वच्छता और काम के उपकरणों की बेसिक ट्रेनिंग।", icon: AcademicCapIcon, color: "violet" },
                                 { title: "हमेशा प्रोफेशनल दिखें", desc: "ईज़ीहेल्पर्स की कोट और साफ-सुथरा रहने का सामान।", icon: BriefcaseIcon, color: "blue" },
-                                { title: "सुरक्षा और स्पष्ट एग्रीमेंट", desc: "साफ वर्क एग्रीमेंट और लगातार मार्गदर्शन।", icon: OutlineShieldCheckIcon, color: "purple" },
+                                { title: "सुरक्षा और स्पष्ट एग्रीमेंट", desc: "साफ वर्क एग्रीमेंट और लगातार मार्गदर्शन।", icon: ShieldCheckIcon, color: "purple" },
                                 { title: "रहने की सुविधा", desc: "प्लेसमेंट में देरी होने पर महिलाओं के लिए हॉस्टल सुविधा।", icon: OutlineHomeModernIcon, color: "pink" },
-                                { title: "हेल्थ इंश्योरेंस कवर", desc: "बेसिक मेडिकल इमरजेंसी के लिए सहायता।", icon: OutlineHeartIcon, color: "red" },
+                                { title: "हेल्थ इंश्योरेंस कवर", desc: "बेसिक मेडिकल इमरजेंसी के लिए सहायता।", icon: HeartIcon, color: "red" },
                                 { title: "सम्मानजनक कार्य वातावरण", desc: "जहाँ आपको इज्ज़त और अच्छा व्यवहार मिले।", icon: HandThumbUpIcon, color: "yellow" },
                                 { title: "भविष्य के अवसर", desc: "अच्छा काम करने पर दूसरे शहर या विदेश में बेहतर सैलरी के मौके।", icon: ChartBarIcon, color: "indigo" },
-                                { title: "समय पर सैलरी", desc: "परिवार/मालिक से डायरेक्ट भुगतान।", icon: OutlineBanknotesIcon, color: "green" },
+                                { title: "समय पर सैलरी", desc: "परिवार/मालिक से डायरेक्ट भुगतान।", icon: BanknotesIcon, color: "green" },
                                 { title: "जॉब प्रोफाइल बनाना", desc: "आपकी स्किल और अनुभव के आधार पर बेहतर नौकरी के अवसर।", icon: UserCircleIcon, color: "sky" },
                                 { title: "हर कदम पर साथ", desc: "रजिस्ट्रेशन से लेकर प्लेसमेंट तक पूरा सपोर्ट।", icon: ChatBubbleLeftEllipsisIcon, color: "orange" }
                             ].map((item, index) => (
@@ -626,8 +618,8 @@ export default function HousekeepingCoupleJobsOdishaBangaloreHindiPage() {
                         </div>
 
                         <div className="text-center mt-16 max-w-3xl mx-auto bg-white p-10 rounded-[3rem] border border-violet-100 shadow-2xl relative overflow-hidden">
-                             <div className="absolute top-0 right-0 w-32 h-32 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-16 -mt-16"></div>
-                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display italic leading-tight px-4 italic">पति-पत्नी साथ काम करके अपने परिवार के लिए सुरक्षित भविष्य बना सकते हैं।</h3>
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-16 -mt-16"></div>
+                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display leading-tight px-4 italic">पति-पत्नी साथ काम करके अपने परिवार के लिए सुरक्षित भविष्य बना सकते हैं।</h3>
                             <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 max-w-md mx-auto sm:max-w-none">
                                 <Link
                                     href="/helper-registration"

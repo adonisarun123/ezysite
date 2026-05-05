@@ -12,27 +12,17 @@ import {
     UserPlusIcon,
     BanknotesIcon,
     HomeIcon,
-    ClockIcon as ClockSolidIcon,
-    UserIcon,
     GlobeAltIcon,
     HandThumbUpIcon,
     AcademicCapIcon,
-    ShieldCheckIcon as OutlineShieldCheckIcon,
     HomeModernIcon as OutlineHomeModernIcon,
-    HeartIcon as OutlineHeartIcon,
     ChartBarIcon,
-    BanknotesIcon as OutlineBanknotesIcon,
     UserCircleIcon,
     ChatBubbleLeftEllipsisIcon,
     SparklesIcon,
-    ClipboardDocumentListIcon,
     ArrowRightIcon,
     PhoneIcon,
-    UserGroupIcon,
-    InformationCircleIcon,
-    SunIcon,
-    UserIcon as OutlineUserIcon,
-    LifebuoyIcon
+    InformationCircleIcon
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
@@ -118,7 +108,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic leading-tight">बैंगलोर में माँ और नवजात शिशु की देखभाल के लिए जापा मेड जॉब्स</h1>
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display text-white whitespace-normal italic leading-tight">बैंगलोर में माँ और नवजात शिशु की देखभाल के लिए जापा मेड जॉब्स</h1>
 
                             <div className="space-y-4 mb-6 max-w-5xl mx-auto mt-4">
                                 <p className="text-xs sm:text-sm md:text-xl text-violet-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none font-medium">
@@ -186,7 +176,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight italic">बैंगलोर में जच्चा-बच्चा केयर हेल्पर जॉब कैटेगरी</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display leading-tight italic">बैंगलोर में जच्चा-बच्चा केयर हेल्पर जॉब कैटेगरी</h2>
                             <p className="text-gray-600 font-bold max-w-4xl mx-auto italic leading-relaxed">
                                 जापा मेड जॉब्स माँ और नवजात शिशु की देखभाल से जुड़ी होती हैं। परिवार डिलीवरी के बाद के समय में जच्चा-बच्चा केयर हेल्पर रखते हैं, क्योंकि उस समय माँ और बच्चे को खास देखभाल की जरूरत होती है।
                             </p>
@@ -194,9 +184,9 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                         </div>
 
                         <div className="max-w-5xl mx-auto bg-white rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden border border-gray-100">
-                             <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-32 -mt-32"></div>
-                             
-                             <div className="relative z-10 space-y-8">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-32 -mt-32"></div>
+
+                            <div className="relative z-10 space-y-8">
                                 <p className="text-lg text-gray-700 font-bold leading-relaxed">
                                     बैंगलोर में कई परिवार ओडिशा के हेल्पर्स को पसंद करते हैं क्योंकि उन्हें नवजात की सफाई, मसाज, दूध पिलाने का समय और माँ की रिकवरी की देखभाल का अनुभव होता है। यह सामान्य मेड का काम नहीं है। यह पूरी तरह माँ और नवजात शिशु की देखभाल की जिम्मेदारी वाला काम है।
                                 </p>
@@ -208,7 +198,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                                             <SparklesIcon className="w-10 h-10" />
                                         </div>
                                         <div className="flex-grow">
-                                            <h3 className="text-2xl md:text-3xl font-bold mb-2 italic italic">बैंगलोर में लिव-इन जापा मेड जॉब्स</h3>
+                                            <h3 className="text-2xl md:text-3xl font-bold mb-2 italic">बैंगलोर में लिव-इन जापा मेड जॉब्स</h3>
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6">
                                                 <div>
                                                     <h4 className="text-violet-200 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2 italic">
@@ -224,7 +214,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                                                 </div>
                                                 <div>
                                                     <h4 className="text-violet-200 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2 italic">
-                                                        <OutlineHeartIcon className="w-4 h-4" /> किन लोगों के लिए सही
+                                                        <HeartIcon className="w-4 h-4" /> किन लोगों के लिए सही
                                                     </h4>
                                                     <p className="text-white font-bold text-sm">ओडिशा के अनुभवी हेल्पर्स, जिनके पास माँ और नवजात शिशु की देखभाल का अनुभव है।</p>
                                                 </div>
@@ -244,7 +234,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                                         </div>
                                     </div>
                                 </div>
-                             </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -260,7 +250,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                             <div className="bg-violet-50 rounded-3xl p-8 md:p-10 border border-violet-100 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all">
-                                 <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-60 -mr-16 -mt-16"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-60 -mr-16 -mt-16"></div>
                                 <h3 className="text-xl font-bold text-violet-900 mb-6 flex items-center gap-2 border-b border-violet-200 pb-4 relative z-10 italic">
                                     <SparklesIcon className="w-6 h-6" /> रोज़ के काम
                                 </h3>
@@ -285,7 +275,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                             </div>
 
                             <div className="bg-blue-50 rounded-3xl p-8 md:p-10 border border-blue-100 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all">
-                                 <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-60 -mr-16 -mt-16"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-60 -mr-16 -mt-16"></div>
                                 <h3 className="text-xl font-bold text-blue-900 mb-6 flex items-center gap-2 border-b border-blue-200 pb-4 relative z-10 italic">
                                     <InformationCircleIcon className="w-6 h-6" /> अन्य काम
                                 </h3>
@@ -311,12 +301,12 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                     <div className="container-custom">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight">बैंगलोर में लिव-इन जापा मेड जॉब की सैलरी</h2>
-                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm max-w-2xl mx-auto italic leading-relaxed text-center italic">सैलरी आपके अनुभव, काम के समय और परिवार की जरूरत पर निर्भर करती है।</p>
+                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm max-w-2xl mx-auto leading-relaxed text-center italic">सैलरी आपके अनुभव, काम के समय और परिवार की जरूरत पर निर्भर करती है।</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
 
                         <div className="max-w-4xl mx-auto overflow-hidden rounded-[3rem] border border-gray-200 shadow-2xl bg-white relative">
-                             <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-32 -mt-32"></div>
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-32 -mt-32"></div>
                             <table className="w-full text-left relative z-10">
                                 <thead className="bg-violet-600 text-white">
                                     <tr>
@@ -368,9 +358,9 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                         </div>
 
                         <div className="bg-violet-900 rounded-[3rem] p-8 md:p-12 text-white shadow-2xl relative overflow-hidden group font-bold">
-                             <div className="absolute inset-0 bg-gradient-to-br from-violet-800 to-violet-900 -z-10 group-hover:scale-105 transition-transform duration-500"></div>
-                             <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600 rounded-full blur-3xl opacity-20 -mr-20 -mt-20"></div>
-                            
+                            <div className="absolute inset-0 bg-gradient-to-br from-violet-800 to-violet-900 -z-10 group-hover:scale-105 transition-transform duration-500"></div>
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600 rounded-full blur-3xl opacity-20 -mr-20 -mt-20"></div>
+
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10 font-bold italic">
                                 {[
                                     "अनुभवी हेल्पर हों",
@@ -399,7 +389,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
 
                             <div className="relative z-10">
                                 <div className="text-center max-w-3xl mx-auto mb-12">
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic italic">ईज़ीहेल्पर्स के बारे में – भरोसेमंद घरेलू काम के जॉब्स</h2>
+                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic">ईज़ीहेल्पर्स के बारे में – भरोसेमंद घरेलू काम के जॉब्स</h2>
                                     <p className="text-violet-100 text-lg md:text-xl font-bold italic">
                                         हम ओडिशा और पूरे भारत के हेल्पर्स को बिना किसी फीस के सुरक्षित डोमेस्टिक हेल्पर जॉब्स से जोड़ते हैं।
                                     </p>
@@ -477,7 +467,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                                             <HeartIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic italic">हमारा विश्वास</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">हमारा विश्वास</h4>
                                             <p className="text-white italic">हेल्पर के लिए अच्छे घर, और परिवारों के लिए भरोसेमंद हेल्पर</p>
                                         </div>
                                     </div>
@@ -486,7 +476,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                                             <GlobeAltIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic italic">सेवा के क्षेत्र</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">सेवा के क्षेत्र</h4>
                                             <p className="text-sm text-violet-50 italic">बैंगलोर, मुंबई, हैदराबाद, दिल्ली NCR, पुणे, ओडिशा और अन्य।</p>
                                         </div>
                                     </div>
@@ -508,12 +498,12 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                             {[
                                 { title: "ट्रेनिंग और सर्टिफिकेट", desc: "सफाई, स्वच्छता और काम के उपकरणों की बेसिक ट्रेनिंग।", icon: AcademicCapIcon, color: "violet" },
                                 { title: "हमेशा प्रोफेशनल दिखें", desc: "ईज़ीहेल्पर्स की कोट और साफ-सुथरा रहने का सामान।", icon: BriefcaseIcon, color: "blue" },
-                                { title: "सुरक्षा और स्पष्ट एग्रीमेंट", desc: "साफ वर्क एग्रीमेंट और लगातार मार्गदर्शन।", icon: OutlineShieldCheckIcon, color: "purple" },
+                                { title: "सुरक्षा और स्पष्ट एग्रीमेंट", desc: "साफ वर्क एग्रीमेंट और लगातार मार्गदर्शन।", icon: ShieldCheckIcon, color: "purple" },
                                 { title: "रहने की सुविधा", desc: "प्लेसमेंट में देरी होने पर महिलाओं के लिए हॉस्टल सुविधा।", icon: OutlineHomeModernIcon, color: "pink" },
-                                { title: "हेल्थ इंश्योरेंस कवर", desc: "बेसिक मेडिकल इमरजेंसी के लिए सहायता।", icon: OutlineHeartIcon, color: "red" },
+                                { title: "हेल्थ इंश्योरेंस कवर", desc: "बेसिक मेडिकल इमरजेंसी के लिए सहायता।", icon: HeartIcon, color: "red" },
                                 { title: "सम्मानजनक कार्य वातावरण", desc: "जहाँ आपको इज्ज़त और अच्छा व्यवहार मिले।", icon: HandThumbUpIcon, color: "yellow" },
                                 { title: "भविष्य के अवसर", desc: "अच्छा काम करने पर दूसरे शहर या विदेश में बेहतर सैलरी के मौके।", icon: ChartBarIcon, color: "indigo" },
-                                { title: "समय पर सैलरी", desc: "परिवार/मालिक से डायरेक्ट भुगतान।", icon: OutlineBanknotesIcon, color: "green" },
+                                { title: "समय पर सैलरी", desc: "परिवार/मालिक से डायरेक्ट भुगतान।", icon: BanknotesIcon, color: "green" },
                                 { title: "जॉब प्रोफाइल बनाना", desc: "आपकी स्किल और अनुभव के आधार पर बेहतर नौकरी के अवसर।", icon: UserCircleIcon, color: "sky" },
                                 { title: "हर कदम पर साथ", desc: "रजिस्ट्रेशन से लेकर प्लेसमेंट तक पूरा सपोर्ट।", icon: ChatBubbleLeftEllipsisIcon, color: "orange" }
                             ].map((item, index) => (
@@ -545,15 +535,15 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                                 </div>
 
                                 <div className="relative z-10 flex-grow text-center md:text-left italic font-bold">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display italic italic leading-tight italic font-bold">नेस्ट (NEST) – महिला हेल्पर्स के लिए सुरक्षित हॉस्टल</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display leading-tight italic">नेस्ट (NEST) – महिला हेल्पर्स के लिए सुरक्षित हॉस्टल</h2>
                                     <div className="space-y-4 mb-8 font-bold italic">
-                                        <p className="text-gray-600 text-lg font-bold italic leading-relaxed italic font-bold">
+                                        <p className="text-gray-600 text-lg font-bold italic leading-relaxed">
                                             बैंगलोर में महिलाएँ जरूरत पड़ने पर NEST में रह सकती हैं। सुरक्षित कमरे, रोज़ का भोजन और किफायती सुविधा उपलब्ध है।
                                         </p>
                                     </div>
                                     <Link
                                         href="/nest-hostel"
-                                        className="inline-flex items-center gap-2 text-pink-600 font-bold text-lg hover:gap-3 transition-all group/cta font-bold italic"
+                                        className="inline-flex items-center gap-2 text-pink-600 font-bold text-lg hover:gap-3 transition-all group/cta italic"
                                     >
                                         NEST के बारे में और जानें <ArrowRightIcon className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform font-bold italic" />
                                     </Link>
@@ -570,8 +560,8 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-white font-bold italic">
                     <div className="container-custom font-bold italic">
                         <div className="text-center mb-16 px-4 font-bold italic">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight italic font-bold">जच्चा-बच्चा केयर हेल्पर जॉब के लिए अप्लाई कैसे करें</h2>
-                            <p className="text-gray-600 max-w-2xl mx-auto font-bold uppercase tracking-widest text-xs md:text-sm text-center italic leading-relaxed italic font-bold">ईज़ीहेल्पर्स से संपर्क करें - 6 आसान कदम</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight">जच्चा-बच्चा केयर हेल्पर जॉब के लिए अप्लाई कैसे करें</h2>
+                            <p className="text-gray-600 max-w-2xl mx-auto font-bold uppercase tracking-widest text-xs md:text-sm text-center italic leading-relaxed">ईज़ीहेल्पर्स से संपर्क करें - 6 आसान कदम</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold italic"></div>
                         </div>
 
@@ -585,31 +575,31 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                                 { step: "6", title: "काम शुरू करें", desc: "ईज़ीहेल्पर्स के पूरे सपोर्ट के साथ अपनी नौकरी शुरू करें।" }
                             ].map((item, index) => (
                                 <div key={index} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 relative group hover:bg-white hover:shadow-xl transition-all duration-300 italic font-bold">
-                                    <div className="w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 shadow-md group-hover:scale-110 transition-transform font-bold italic">
+                                    <div className="w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 shadow-md group-hover:scale-110 transition-transform italic">
                                         {item.step}
                                     </div>
-                                    <h3 className="text-lg font-bold text-gray-900 mb-2 font-bold italic">{item.title}</h3>
-                                    <p className="text-gray-600 text-xs font-bold leading-relaxed italic leading-relaxed font-bold italic">{item.desc}</p>
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2 italic">{item.title}</h3>
+                                    <p className="text-gray-600 text-xs font-bold leading-relaxed italic">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
 
                         <div className="text-center mt-16 max-w-3xl mx-auto bg-violet-50 p-10 rounded-[3rem] border border-violet-100 shadow-2xl relative overflow-hidden font-bold italic">
-                             <div className="absolute top-0 right-0 w-32 h-32 bg-violet-100 rounded-full blur-3xl opacity-50 -mr-16 -mt-16 font-bold italic"></div>
-                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display italic leading-tight italic px-4 italic font-bold">एक बेहतर मौके का इंतज़ार न करें</h3>
-                            <p className="text-gray-700 text-lg font-bold mb-8 italic italic leading-relaxed italic font-bold">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-violet-100 rounded-full blur-3xl opacity-50 -mr-16 -mt-16 font-bold italic"></div>
+                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display italic leading-tight px-4">एक बेहतर मौके का इंतज़ार न करें</h3>
+                            <p className="text-gray-700 text-lg font-bold mb-8 italic leading-relaxed">
                                 ओडिशा की अनुभवी माँ और नवजात शिशु की देखभाल का काम बैंगलोर में बहुत मांग है। ईज़ीहेल्पर्स से संपर्क करें और सुरक्षित जॉब के साथ अपना भविष्य बेहतर बनाएं।
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 max-w-md mx-auto sm:max-w-none font-bold italic">
                                 <Link
                                     href="/helper-registration"
-                                    className="bg-violet-600 text-white font-bold py-4 px-12 rounded-xl hover:bg-violet-700 shadow-lg text-lg transform hover:scale-105 transition-all font-bold italic"
+                                    className="bg-violet-600 text-white py-4 px-12 rounded-xl hover:bg-violet-700 shadow-lg text-lg transform hover:scale-105 transition-all font-bold italic"
                                 >
                                     अभी रजिस्टर करें
                                 </Link>
                                 <Link
                                     href="tel:+918031411776"
-                                    className="bg-white text-violet-700 font-bold py-4 px-12 rounded-xl border-2 border-violet-600 hover:bg-violet-50 transition-all text-lg shadow-sm font-bold italic"
+                                    className="bg-white text-violet-700 py-4 px-12 rounded-xl border-2 border-violet-600 hover:bg-violet-50 transition-all text-lg shadow-sm font-bold italic"
                                 >
                                     हमें कॉल करें
                                 </Link>
@@ -622,7 +612,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-white font-bold italic">
                     <div className="container-custom max-w-4xl font-bold italic">
                         <div className="text-center mb-12 px-4 font-bold italic">
-                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight italic italic font-bold">
+                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight italic">
                                 अक्सर पूछे जाने वाले सवाल
                             </h2>
                             <div className="w-32 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold italic"></div>
