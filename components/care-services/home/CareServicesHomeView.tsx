@@ -544,16 +544,6 @@ export default function CareServicesHomeView() {
     <div className="min-h-screen bg-white font-careUi text-neutral-900 antialiased">
       <Navbar />
 
-      <div className="relative z-30 border-b border-neutral-200 bg-white/95 backdrop-blur-md">
-        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6">
-          <Breadcrumb
-            variant="minimal"
-            separator="chevron"
-            items={[{ label: 'Home', href: '/' }, { label: 'Care Services' }]}
-          />
-        </div>
-      </div>
-
       {/* ─────────────────── Hero ─────────────────── */}
       <header className="relative overflow-hidden bg-white">
         {/* subtle radial backdrop */}
@@ -565,11 +555,21 @@ export default function CareServicesHomeView() {
               'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,56,92,0.06) 0%, rgba(255,255,255,0) 60%)',
           }}
         />
-        <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-12 text-center sm:px-6 sm:pb-28 sm:pt-20 lg:pb-32 lg:pt-24">
-          <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-            <MapPinIcon className="h-3.5 w-3.5 text-[#FF385C]" aria-hidden />
-            Now serving Bangalore
-          </p>
+        <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 sm:pb-28 sm:pt-8 lg:pb-32">
+          {/* Breadcrumb sits inside the hero, top-left, on the same warm radial backdrop */}
+          <div className="text-left">
+            <Breadcrumb
+              variant="minimal"
+              separator="chevron"
+              items={[{ label: 'Home', href: '/' }, { label: 'Care Services' }]}
+            />
+          </div>
+
+          <div className="mt-10 text-center sm:mt-14 lg:mt-16">
+            <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+              <MapPinIcon className="h-3.5 w-3.5 text-[#FF385C]" aria-hidden />
+              Now serving Bangalore
+            </p>
 
           <h1 className="mx-auto mt-7 max-w-5xl font-careSerif text-[clamp(2.6rem,7vw,5.75rem)] font-medium leading-[1.02] tracking-[-0.035em] text-neutral-950">
             Care, brought home.
@@ -624,6 +624,7 @@ export default function CareServicesHomeView() {
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </header>
