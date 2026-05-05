@@ -144,7 +144,7 @@ export default function HousekeepingJobsOdishaBangalorePage() {
                                 <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:flex-1">✓ Safe & Respectful Homes</div>
                                 <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:w-auto">✓ On-Time Salary Every Month</div>
                             </div>
-                            <div className="flex justify-center mt-8 gap-4">
+                            <div className="flex flex-col sm:flex-row justify-center mt-8 gap-4 px-4 max-w-md mx-auto sm:max-w-none">
                                 <Link
                                     href="/helper-registration"
                                     className="bg-white text-teal-700 font-bold py-3 px-8 rounded-xl hover:bg-teal-50 transition-colors shadow-lg"
@@ -260,7 +260,7 @@ export default function HousekeepingJobsOdishaBangalorePage() {
                                 ))}
                             </div>
 
-                            <div className="flex justify-center mt-10">
+                            <div className="flex flex-col sm:flex-row justify-center mt-8 gap-4 px-4 max-w-md mx-auto sm:max-w-none">
                                 <Link
                                     href="tel:+919972571005"
                                     className="inline-flex items-center justify-center bg-teal-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-teal-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"

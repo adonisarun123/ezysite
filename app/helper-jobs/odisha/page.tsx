@@ -29,7 +29,11 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/odisha'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/odisha',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/odisha',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/odisha/hin'
+        }
     }
 }
 
@@ -81,6 +85,18 @@ export default function HelperJobsOdishaPage() {
                         { label: 'Helper Jobs', href: '/helper-jobs' },
                         { label: 'Odisha' }
                     ]}
+                    rightContent={
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
+                            <span className="text-gray-500 font-medium whitespace-nowrap">हिंदी</span>
+                            <Link
+                                href="/helper-jobs/odisha/hin"
+                                className="w-10 h-5 bg-violet-600 rounded-full p-1 relative transition-colors inline-block"
+                            >
+                                <div className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"></div>
+                            </Link>
+                            <span className="text-gray-900 font-bold whitespace-nowrap uppercase">ENG</span>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -176,13 +192,13 @@ export default function HelperJobsOdishaPage() {
                                     title: "Nanny / Babysitter Jobs",
                                     desc: "Take care of children, feed them, assist with studies, and maintain safety and hygiene.",
                                     features: ["Take care of the children and feed them.", "Help with homework and play.", "Keep children safe and clean.", "Put the children to sleep at night.", "Keep toys and rooms neat.", "Live-in or full-time work available."],
-                                    href: "/helper-jobs/nanny-job-bangalore"
+                                    href: "/helper-jobs/odisha/nanny-jobs-in-bangalore"
                                 },
                                 {
                                     title: "Elderly Care Jobs",
                                     desc: "Support seniors with daily routines, provide companionship, and ensure safety at home.",
                                     features: ["Help older people with daily tasks.", "Give companionship and emotional support.", "Help with walking and personal care.", "Give medicines on time daily.", "Cook soft meals for older people.", "Friendly and safe home environment."],
-                                    href: "/helper-jobs/odisha/elderly-caretaker-job-bangalore"
+                                    href: "/helper-jobs/odisha/elderly-care-job-bangalore"
                                 },
                                 {
                                     title: "Patient Care Jobs",

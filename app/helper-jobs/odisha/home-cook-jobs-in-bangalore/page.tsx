@@ -138,7 +138,7 @@ export default function HomeCookJobsOdishaBangalorePage() {
                                 <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:flex-1">✓ Defined Kitchen Duties</div>
                                 <div className="bg-white/10 backdrop-blur-sm rounded-full px-2 py-2 md:px-6 md:py-3 text-[9px] xs:text-xs md:text-base font-medium flex items-center justify-center text-center leading-tight sm:w-auto">✓ Direct Employer Payment</div>
                             </div>
-                            <div className="flex justify-center mt-8 gap-4">
+                            <div className="flex flex-col sm:flex-row justify-center mt-8 gap-4 px-4 max-w-md mx-auto sm:max-w-none">
                                 <Link
                                     href="/helper-registration"
                                     className="bg-white text-indigo-700 font-bold py-3 px-8 rounded-xl hover:bg-indigo-50 transition-colors shadow-lg"
@@ -254,7 +254,7 @@ export default function HomeCookJobsOdishaBangalorePage() {
                                 ))}
                             </div>
 
-                            <div className="flex justify-center mt-10">
+                            <div className="flex flex-col sm:flex-row justify-center mt-8 gap-4 px-4 max-w-md mx-auto sm:max-w-none">
                                 <Link
                                     href="/helper-registration"
                                     className="inline-flex items-center justify-center bg-indigo-600 text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-indigo-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"

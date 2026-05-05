@@ -301,26 +301,25 @@ export default function HelperJobsPage() {
 
                         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
                             {[
-                                { title: "Housekeeping Jobs", slug: "jharkhand/housekeeping-job-bangalore" },
-                                { title: "Cooking Jobs", slug: "home-cooks-job-bangalore" },
-                                { title: "Nanny / Babysitter", slug: "nanny-job-bangalore" },
-                                { title: "Elderly Care", slug: "jharkhand/elderly-caretaker-job-bangalore" },
-                                { title: "Patient Care", slug: "jharkhand/patient-care-job-bangalore" },
-                                { title: "Live-in Couple Jobs", slug: "jharkhand/live-in-housekeeping-couple-job-bangalore" },
-                                { title: "Couple Security Jobs", slug: "jharkhand/couple-security-job-bangalore" },
-                                { title: "Japa Maid Jobs", slug: "jharkhand/japa-maid-job-bangalore" },
-                                { title: "Farmhouse Couple Jobs", slug: "jharkhand/live-in-couple-farmhouse-job-bangalore" }
+                                { title: "Housekeeping Jobs" },
+                                { title: "Cooking Jobs" },
+                                { title: "Nanny / Babysitter" },
+                                { title: "Elderly Care" },
+                                { title: "Patient Care" },
+                                { title: "Live-in Couple Jobs" },
+                                { title: "Couple Security Jobs" },
+                                { title: "Japa Maid Jobs" },
+                                { title: "Farmhouse Couple Jobs" }
                             ].map((job, index) => (
-                                <Link
+                                <div
                                     key={index}
-                                    href={`/helper-jobs/${job.slug}`}
                                     className="bg-white rounded-xl p-2 md:p-5 shadow-sm border border-gray-200/50 hover:shadow-md transition-all duration-300 flex items-center gap-2 md:gap-3 group"
                                 >
                                     <div className="flex-shrink-0 bg-purple-50 rounded-full p-0.5 md:p-1 group-hover:bg-purple-100 transition-colors">
                                         <CheckCircleIcon className="h-4 w-4 md:h-6 md:w-6 text-purple-600" />
                                     </div>
                                     <h3 className="text-[11px] md:text-lg font-bold text-gray-900 leading-tight group-hover:text-purple-700 transition-colors">{job.title}</h3>
-                                </Link>
+                                </div>
                             ))}
                         </div>
 

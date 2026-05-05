@@ -28,7 +28,11 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/chhattisgarh'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/chhattisgarh',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/chhattisgarh',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/chhattisgarh/hin'
+        }
     }
 }
 
@@ -72,6 +76,18 @@ export default function HelperJobsChhattisgarhPage() {
                         { label: 'Helper Jobs', href: '/helper-jobs' },
                         { label: 'Chhattisgarh' }
                     ]}
+                    rightContent={
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
+                            <span className="text-gray-500 font-medium whitespace-nowrap">हिंदी</span>
+                            <Link
+                                href="/helper-jobs/chhattisgarh/hin"
+                                className="w-10 h-5 bg-orange-600 rounded-full p-1 relative transition-colors inline-block"
+                            >
+                                <div className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"></div>
+                            </Link>
+                            <span className="text-gray-900 font-bold whitespace-nowrap uppercase">ENG</span>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
