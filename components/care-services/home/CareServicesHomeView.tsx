@@ -351,19 +351,19 @@ const TONE_STYLES: Record<
     iconColor: 'text-[#0074C8]',
   },
   stone: {
-    section: 'bg-[#0E0F12] text-white',
-    eyebrow: 'text-[#FF7D5C]',
-    title: 'text-white',
-    body: 'text-white/70',
-    accent: 'text-[#FF7D5C]',
-    chip: 'bg-white/[0.06] text-white',
-    chipBorder: 'border-white/10',
-    cta: 'bg-white text-neutral-900 hover:bg-neutral-100',
-    artGrad: 'from-[#1E2026] via-[#16181D] to-[#0E0F12]',
-    artHalo: 'bg-[#FF7D5C]/20',
-    bigGlyph: 'text-white/[0.05]',
-    iconCircle: 'bg-white/[0.08] border border-white/10',
-    iconColor: 'text-[#FF7D5C]',
+    section: 'bg-[#F5F1EA] text-neutral-950',
+    eyebrow: 'text-[#B85432]',
+    title: 'text-neutral-950',
+    body: 'text-neutral-700',
+    accent: 'text-[#B85432]',
+    chip: 'bg-white text-neutral-900',
+    chipBorder: 'border-neutral-200',
+    cta: 'bg-neutral-900 text-white hover:bg-black',
+    artGrad: 'from-[#EAE2D2] via-[#E0D5C0] to-[#D2C3A8]',
+    artHalo: 'bg-[#B85432]/25',
+    bigGlyph: 'text-[#B85432]/15',
+    iconCircle: 'bg-white border border-[#B85432]/20',
+    iconColor: 'text-[#B85432]',
   },
   rose: {
     section: 'bg-[#FBF3F1] text-neutral-950',
@@ -426,19 +426,19 @@ const TONE_STYLES: Record<
     iconColor: 'text-[#6B4FBE]',
   },
   ink: {
-    section: 'bg-[#0B0B0F] text-white',
-    eyebrow: 'text-[#5EE0FF]',
-    title: 'text-white',
-    body: 'text-white/70',
-    accent: 'text-[#5EE0FF]',
-    chip: 'bg-white/[0.06] text-white',
-    chipBorder: 'border-white/10',
-    cta: 'bg-white text-neutral-900 hover:bg-neutral-100',
-    artGrad: 'from-[#181A22] via-[#11131A] to-[#0B0B0F]',
-    artHalo: 'bg-[#5EE0FF]/20',
-    bigGlyph: 'text-white/[0.05]',
-    iconCircle: 'bg-white/[0.08] border border-white/10',
-    iconColor: 'text-[#5EE0FF]',
+    section: 'bg-[#EFF2F6] text-neutral-950',
+    eyebrow: 'text-[#1F5E8C]',
+    title: 'text-neutral-950',
+    body: 'text-neutral-700',
+    accent: 'text-[#1F5E8C]',
+    chip: 'bg-white text-neutral-900',
+    chipBorder: 'border-neutral-200',
+    cta: 'bg-neutral-900 text-white hover:bg-black',
+    artGrad: 'from-[#DCE5EE] via-[#C8D5E2] to-[#A9BCD0]',
+    artHalo: 'bg-[#1F5E8C]/25',
+    bigGlyph: 'text-[#1F5E8C]/15',
+    iconCircle: 'bg-white border border-[#1F5E8C]/20',
+    iconColor: 'text-[#1F5E8C]',
   },
 }
 
@@ -615,7 +615,7 @@ export default function CareServicesHomeView() {
                 key={title}
                 className="flex flex-col items-start gap-3 rounded-2xl border border-neutral-200 bg-white p-5 text-left shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-neutral-900 text-white">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FFF0EA] text-[#FF385C] ring-1 ring-[#FF385C]/15">
                   <Icon className="h-[18px] w-[18px]" aria-hidden />
                 </span>
                 <div>
@@ -695,7 +695,6 @@ export default function CareServicesHomeView() {
         {SERVICES.map((s, idx) => {
           const t = TONE_STYLES[s.tone]
           const reverse = idx % 2 === 1
-          const isDark = s.tone === 'stone' || s.tone === 'ink'
           return (
             <section
               key={s.slug}
@@ -746,18 +745,14 @@ export default function CareServicesHomeView() {
                       </Link>
                       <Link
                         href={enquiryHref}
-                        className={`inline-flex min-h-[48px] items-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold transition ${
-                          isDark
-                            ? 'border-white/20 text-white hover:bg-white/5'
-                            : 'border-neutral-300 text-neutral-900 hover:bg-neutral-50'
-                        }`}
+                        className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-neutral-300 px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-50"
                       >
                         Talk to a care advisor
                       </Link>
                     </div>
 
                     {s.startingFrom ? (
-                      <p className={`mt-5 text-xs uppercase tracking-[0.18em] ${isDark ? 'text-white/50' : 'text-neutral-500'}`}>
+                      <p className="mt-5 text-xs uppercase tracking-[0.18em] text-neutral-500">
                         {s.startingFrom}
                       </p>
                     ) : null}
@@ -827,20 +822,24 @@ export default function CareServicesHomeView() {
             </div>
 
             <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-3">
-              {/* large dark spotlight */}
-              <article className="relative overflow-hidden rounded-[28px] bg-neutral-950 p-8 text-white sm:p-10 lg:col-span-2">
-                <span className="inline-block rounded-full bg-[#FF385C] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
+              {/* large warm spotlight — light surface, high contrast type */}
+              <article className="relative overflow-hidden rounded-[28px] border border-neutral-200 bg-gradient-to-br from-[#FFF6F2] via-[#FFF0EA] to-[#FFE4DA] p-8 sm:p-10 lg:col-span-2">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#FF385C]/15 blur-3xl"
+                />
+                <span className="relative inline-block rounded-full bg-[#FF385C] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
                   The matching difference
                 </span>
-                <h3 className="mt-6 font-careSerif text-3xl font-semibold tracking-tight sm:text-4xl">
+                <h3 className="relative mt-6 font-careSerif text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl">
                   Matching, not assignment.
                 </h3>
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
+                <p className="relative mt-4 max-w-2xl text-sm leading-relaxed text-neutral-700 sm:text-base">
                   Every placement begins with a detailed consultation about the patient’s medical history,
                   daily routine, condition and communication style. The shortlist is built on those
                   specifics — never on which caregiver happens to live nearest.
                 </p>
-                <ul className="mt-7 grid grid-cols-1 gap-x-8 gap-y-3 text-sm text-white/85 sm:grid-cols-2">
+                <ul className="relative mt-7 grid grid-cols-1 gap-x-8 gap-y-3 text-sm text-neutral-800 sm:grid-cols-2">
                   {[
                     'Condition-relevant experience',
                     'Language match where possible',
@@ -850,7 +849,7 @@ export default function CareServicesHomeView() {
                     'Week-one and ongoing follow-ups',
                   ].map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#5EE0FF]" aria-hidden />
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -961,13 +960,13 @@ export default function CareServicesHomeView() {
         </section>
 
         {/* ─────────────── Testimonials ─────────────── */}
-        <section className="border-y border-neutral-200 bg-[#0E0F12] px-4 py-20 text-white sm:px-6 sm:py-28">
+        <section className="border-y border-neutral-200 bg-[#FBF7F1] px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF7D5C]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">
                 Real families
               </p>
-              <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em]">
+              <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Stories from Bangalore homes.
               </h2>
             </div>
@@ -975,14 +974,19 @@ export default function CareServicesHomeView() {
               {TESTIMONIALS.map((t) => (
                 <figure
                   key={t.name}
-                  className="flex h-full flex-col justify-between rounded-[24px] border border-white/10 bg-white/[0.03] p-7 backdrop-blur"
+                  className="flex h-full flex-col justify-between rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
-                  <blockquote className="font-careSerif text-lg leading-snug text-white/90 sm:text-xl">
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-                  <figcaption className="mt-6 border-t border-white/10 pt-5 text-sm">
-                    <span className="block font-semibold text-white">{t.name}</span>
-                    <span className="block text-white/50">{t.place}</span>
+                  <div>
+                    <span aria-hidden className="font-careSerif text-5xl leading-none text-[#FF385C]/40">
+                      &ldquo;
+                    </span>
+                    <blockquote className="mt-2 font-careSerif text-lg leading-snug text-neutral-900 sm:text-xl">
+                      {t.quote}
+                    </blockquote>
+                  </div>
+                  <figcaption className="mt-6 border-t border-neutral-200 pt-5 text-sm">
+                    <span className="block font-semibold text-neutral-950">{t.name}</span>
+                    <span className="block text-neutral-500">{t.place}</span>
                   </figcaption>
                 </figure>
               ))}
@@ -1035,42 +1039,42 @@ export default function CareServicesHomeView() {
         </section>
 
         {/* ─────────────── Final CTA ─────────────── */}
-        <section className="relative overflow-hidden bg-neutral-950 px-4 py-24 text-white sm:px-6 sm:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#FFF1EC] via-[#FFE4DA] to-[#FFD3C2] px-4 py-24 sm:px-6 sm:py-32">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0"
-            style={{
-              background:
-                'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,56,92,0.18) 0%, rgba(0,0,0,0) 60%)',
-            }}
+            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-[#FF385C]/15 blur-3xl"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-[#FF7D5C]/20 blur-3xl"
           />
           <div className="relative mx-auto max-w-4xl text-center">
-            <h2 className="font-careSerif text-[clamp(2.25rem,6vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.025em]">
+            <h2 className="font-careSerif text-[clamp(2.25rem,6vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.025em] text-neutral-950">
               Care, beautifully arranged.
               <br />
-              <em className="font-careSerif font-normal italic text-[#FF7D5C]">In a single call.</em>
+              <em className="font-careSerif font-normal italic text-[#FF385C]">In a single call.</em>
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700">
               Tell us your situation. Our team responds within the hour, recommends the right service, and
               starts the matching process — at no cost.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href={enquiryHref}
-                className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-white px-7 py-4 text-[15px] font-semibold text-neutral-900 transition hover:bg-neutral-100 active:scale-[0.98]"
+                className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-neutral-900 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.18)] transition hover:bg-black hover:shadow-[0_8px_22px_rgba(0,0,0,0.25)] active:scale-[0.98]"
               >
                 Get matched today
                 <ArrowRightIcon className="h-4 w-4" aria-hidden />
               </Link>
               <a
                 href={CARE_PHONE_HREF}
-                className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-white/30 px-7 py-4 text-[15px] font-semibold text-white transition hover:bg-white/5"
+                className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-neutral-900/20 bg-white/80 px-7 py-4 text-[15px] font-semibold text-neutral-900 backdrop-blur transition hover:bg-white"
               >
                 <PhoneIcon className="h-4 w-4" aria-hidden />
                 {CARE_PHONE_DISPLAY}
               </a>
             </div>
-            <p className="mt-6 text-xs uppercase tracking-[0.2em] text-white/40">
+            <p className="mt-6 text-xs uppercase tracking-[0.2em] text-neutral-500">
               Now serving Bangalore · Other cities coming soon
             </p>
 
@@ -1080,7 +1084,7 @@ export default function CareServicesHomeView() {
                 <li key={c.href}>
                   <Link
                     href={c.href}
-                    className="inline-flex items-center rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-xs font-semibold text-white/80 transition hover:border-white/40 hover:bg-white/10 hover:text-white"
+                    className="inline-flex items-center rounded-full border border-neutral-900/15 bg-white/70 px-4 py-2 text-xs font-semibold text-neutral-800 backdrop-blur transition hover:border-neutral-900/40 hover:bg-white hover:text-neutral-950"
                   >
                     {c.name}
                   </Link>
