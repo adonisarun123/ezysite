@@ -494,6 +494,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const careServicesBangalore: MetadataRoute.Sitemap = [
     {
+      url: `${baseUrl}/care-services`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95
+    },
+    {
       url: `${baseUrl}${CARE_ENQUIRY_HREF}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
@@ -510,7 +516,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.85
-    }))
+    })),
+    // High-intent SEO subpages
+    {
+      url: `${baseUrl}/care-services/stroke-care-at-home-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85
+    },
+    {
+      url: `${baseUrl}/care-services/dementia-alzheimers-care-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85
+    },
+    {
+      url: `${baseUrl}/care-services/home-nursing-cost-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85
+    },
+    {
+      url: `${baseUrl}/care-services/elderly-care-whitefield-bangalore`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8
+    },
+    {
+      url: `${baseUrl}/care-services/home-nurse-vs-caretaker`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8
+    }
   ]
 
   return [
