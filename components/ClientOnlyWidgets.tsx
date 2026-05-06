@@ -22,6 +22,12 @@ const WhatsAppFloat = dynamic(() => import('./WhatsAppFloat'), {
   loading: () => null
 })
 
+/** Care-specific WhatsApp widget — renders only on /care-services/* paths. */
+const CareWhatsAppFloat = dynamic(() => import('./care-services/CareWhatsAppFloat'), {
+  ssr: false,
+  loading: () => null
+})
+
 const LanguageSelectorPopup = dynamic(() => import('./LanguageSelectorPopup'), {
   ssr: false,
   loading: () => null
@@ -33,6 +39,7 @@ export default function ClientOnlyWidgets() {
       <LLMOptimization />
       <UrgencyCTA />
       <WhatsAppFloat />
+      <CareWhatsAppFloat />
       <LanguageSelectorPopup />
     </>
   )

@@ -585,7 +585,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.85
-    }))
+    })),
+    // Reference / glossary
+    {
+      url: `${baseUrl}/care-services/care-glossary`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75
+    }
   ]
 
   return [

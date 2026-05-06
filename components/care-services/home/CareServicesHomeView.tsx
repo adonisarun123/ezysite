@@ -1,7 +1,10 @@
+'use client'
+
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FAQAccordion from '@/components/FAQAccordion'
+import { trackCareCTAClick, trackCarePhoneClick } from '@/lib/analytics'
 import {
   PhoneIcon,
   ArrowRightIcon,
@@ -593,6 +596,7 @@ export default function CareServicesHomeView() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <Link
               href={enquiryHref}
+              onClick={() => trackCareCTAClick('Find the right caregiver', '/care-services#hero')}
               className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-neutral-900 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_2px_10px_rgba(0,0,0,0.18)] transition hover:bg-black hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] active:scale-[0.98]"
             >
               Find the right caregiver
@@ -600,6 +604,7 @@ export default function CareServicesHomeView() {
             </Link>
             <a
               href={CARE_PHONE_HREF}
+              onClick={() => trackCarePhoneClick(CARE_PHONE_DISPLAY, '/care-services#hero')}
               className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-neutral-300 bg-white px-7 py-4 text-[15px] font-semibold text-neutral-900 shadow-sm transition hover:border-neutral-900 hover:bg-neutral-50"
             >
               <PhoneIcon className="h-4 w-4" aria-hidden />
@@ -1069,6 +1074,7 @@ export default function CareServicesHomeView() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href={enquiryHref}
+                onClick={() => trackCareCTAClick('Get matched today', '/care-services#footer-cta')}
                 className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-neutral-900 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.18)] transition hover:bg-black hover:shadow-[0_8px_22px_rgba(0,0,0,0.25)] active:scale-[0.98]"
               >
                 Get matched today
@@ -1076,6 +1082,7 @@ export default function CareServicesHomeView() {
               </Link>
               <a
                 href={CARE_PHONE_HREF}
+                onClick={() => trackCarePhoneClick(CARE_PHONE_DISPLAY, '/care-services#footer-cta')}
                 className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-neutral-900/20 bg-white/80 px-7 py-4 text-[15px] font-semibold text-neutral-900 backdrop-blur transition hover:bg-white"
               >
                 <PhoneIcon className="h-4 w-4" aria-hidden />
@@ -1104,6 +1111,77 @@ export default function CareServicesHomeView() {
       </main>
 
       <Footer />
+
+      {/* ─────────── Hub-level JSON-LD ─────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ezyhelpers.com/' },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Care Services',
+                item: 'https://www.ezyhelpers.com/care-services',
+              },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: 'Home Care Services in Bangalore',
+            serviceType: 'Home Care',
+            url: 'https://www.ezyhelpers.com/care-services',
+            description:
+              'One platform for every kind of home care in Bangalore — verified nurses, caretakers and attendants, matched to your family.',
+            areaServed: { '@type': 'City', name: 'Bangalore' },
+            provider: {
+              '@type': 'LocalBusiness',
+              name: 'EzyHelpers',
+              url: 'https://www.ezyhelpers.com/',
+              telephone: '+918031411776',
+              email: 'contact@ezyhelpers.com',
+              image: 'https://www.ezyhelpers.com/ezyhelper_logo_new.png',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'HSR Layout',
+                addressLocality: 'Bangalore',
+                addressRegion: 'Karnataka',
+                postalCode: '560102',
+                addressCountry: 'IN',
+              },
+            },
+            offers: SERVICES.map((s) => ({
+              '@type': 'Offer',
+              name: s.title,
+              description: s.oneLiner,
+              url: `https://www.ezyhelpers.com${s.href}`,
+            })),
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: FAQ_ITEMS.map((f) => ({
+              '@type': 'Question',
+              name: f.question,
+              acceptedAnswer: { '@type': 'Answer', text: f.answer },
+            })),
+          }),
+        }}
+      />
     </div>
   )
 }

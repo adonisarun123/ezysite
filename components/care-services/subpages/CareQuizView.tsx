@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
 import {
   CheckIcon,
@@ -10,6 +10,11 @@ import {
   PhoneIcon,
 } from '@heroicons/react/24/outline'
 import { CareSubpageShell, SectionHeader } from './CareSubpageShell'
+import {
+  trackCareQuizComplete,
+  trackCareCTAClick,
+  trackCarePhoneClick,
+} from '@/lib/analytics'
 
 const PATH = '/care-services/care-quiz'
 
@@ -199,6 +204,19 @@ export default function CareQuizView() {
   const progress = Math.round((totalAnswered / QUESTIONS.length) * 100)
   const r = showResult ? RESULTS[winner] : null
 
+  // Fire conversion event the first time the result is rendered.
+  useEffect(() => {
+    if (showResult && r) {
+      trackCareQuizComplete(r.title, {
+        score_combined: tally.combined,
+        score_caretaker: tally.caretaker,
+        score_nurse: tally.nurse,
+        score_attendant: tally.attendant,
+      })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showResult])
+
   const choose = (qi: number, oi: number) => {
     const next = [...answers]
     next[qi] = oi
@@ -330,6 +348,7 @@ export default function CareQuizView() {
                 <div className="mt-8 flex flex-wrap items-center gap-3">
                   <Link
                     href={r.href}
+                    onClick={() => trackCareCTAClick(`Explore: ${r.title}`, `${PATH}#result`)}
                     className="inline-flex min-h-[48px] items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-black active:scale-[0.98]"
                   >
                     Explore this service
@@ -337,6 +356,7 @@ export default function CareQuizView() {
                   </Link>
                   <Link
                     href={`/care-services/enquiry?source=${encodeURIComponent(PATH)}&suggested=${encodeURIComponent(r.title)}`}
+                    onClick={() => trackCareCTAClick('Talk to a care advisor', `${PATH}#result`)}
                     className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-neutral-900/30 bg-white/80 px-6 py-3 text-sm font-semibold text-neutral-900 backdrop-blur transition hover:bg-white"
                   >
                     Talk to a care advisor
@@ -397,6 +417,7 @@ export default function CareQuizView() {
           </p>
           <a
             href="tel:+918031411776"
+            onClick={() => trackCarePhoneClick('080-31411776', `${PATH}#bottom-cta`)}
             className="mt-7 inline-flex min-h-[52px] items-center gap-2 rounded-full bg-neutral-900 px-7 py-4 text-[15px] font-semibold text-white transition hover:bg-black"
           >
             <PhoneIcon className="h-4 w-4" aria-hidden />

@@ -1,8 +1,11 @@
+'use client'
+
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { PhoneIcon, ArrowRightIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import { CARE_ENQUIRY_HREF } from '@/lib/careServices/registry'
+import { trackCareCTAClick, trackCarePhoneClick } from '@/lib/analytics'
 
 /**
  * Shared shell for all /care-services/* SEO subpages (condition, locality,
@@ -58,6 +61,20 @@ export function CareSubpageShell({
   lastUpdated,
 }: Props) {
   const enquiryHref = `${CARE_ENQUIRY_HREF}?source=${encodeURIComponent(enquirySource)}`
+
+  /* ───── Auto-generated BreadcrumbList JSON-LD for every subpage ───── */
+  const SITE = 'https://www.ezyhelpers.com'
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Care Services', item: `${SITE}/care-services` },
+      { '@type': 'ListItem', position: 3, name: currentLabel, item: `${SITE}${enquirySource}` },
+    ],
+  }
+
+  const allJsonLd = [breadcrumbLd, ...(jsonLd ?? [])]
 
   return (
     <div className="min-h-screen bg-white font-careUi text-neutral-900 antialiased">
@@ -118,6 +135,7 @@ export function CareSubpageShell({
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href={enquiryHref}
+                onClick={() => trackCareCTAClick(primaryCtaLabel, `${enquirySource}#hero`)}
                 className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-neutral-900 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_2px_10px_rgba(0,0,0,0.18)] transition hover:bg-black hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] active:scale-[0.98]"
               >
                 {primaryCtaLabel}
@@ -125,6 +143,7 @@ export function CareSubpageShell({
               </Link>
               <a
                 href={PHONE_HREF}
+                onClick={() => trackCarePhoneClick(PHONE_DISPLAY, `${enquirySource}#hero`)}
                 className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-neutral-300 bg-white px-7 py-4 text-[15px] font-semibold text-neutral-900 shadow-sm transition hover:border-neutral-900 hover:bg-neutral-50"
               >
                 <PhoneIcon className="h-4 w-4" aria-hidden />
@@ -163,7 +182,7 @@ export function CareSubpageShell({
 
       <Footer />
 
-      {jsonLd?.map((blob, i) => (
+      {allJsonLd.map((blob, i) => (
         <script
           key={i}
           type="application/ld+json"
@@ -211,6 +230,7 @@ export function CareSubpageClosingCTA({
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <Link
             href={enquiryHref}
+            onClick={() => trackCareCTAClick(primaryCtaLabel, `${enquirySource}#footer-cta`)}
             className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-neutral-900 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.18)] transition hover:bg-black active:scale-[0.98]"
           >
             {primaryCtaLabel}
@@ -218,6 +238,7 @@ export function CareSubpageClosingCTA({
           </Link>
           <a
             href={PHONE_HREF}
+            onClick={() => trackCarePhoneClick(PHONE_DISPLAY, `${enquirySource}#footer-cta`)}
             className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-neutral-900/20 bg-white/80 px-7 py-4 text-[15px] font-semibold text-neutral-900 backdrop-blur transition hover:bg-white"
           >
             <PhoneIcon className="h-4 w-4" aria-hidden />

@@ -367,6 +367,7 @@ export default function StrokeCareView() {
           { label: 'Trained Attendant', href: '/care-services/trained-attendant-services-bangalore' },
           { label: 'Patient Care', href: '/care-services/patient-care-services-bangalore' },
           { label: 'Cost guide', href: '/care-services/home-nursing-cost-bangalore' },
+          { label: 'Care glossary', href: '/care-services/care-glossary' },
         ]}
       />
     </CareSubpageShell>

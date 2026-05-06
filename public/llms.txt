@@ -46,6 +46,9 @@ EzyHelpers operates two parallel businesses: (1) general home services (full-tim
 - Cost Calculator (interactive): https://www.ezyhelpers.com/care-services/cost-calculator
 - Care Assessment Quiz (interactive): https://www.ezyhelpers.com/care-services/care-quiz
 
+## Reference
+- Home Care Glossary (definitions of NG tube, PEG, GNM, sundowning, TPA and ~50 other home-care terms): https://www.ezyhelpers.com/care-services/care-glossary
+
 ## Locality Pages (Bangalore)
 - Elderly Care in Whitefield: https://www.ezyhelpers.com/care-services/elderly-care-whitefield-bangalore
 - Elderly Care in HSR Layout: https://www.ezyhelpers.com/care-services/elderly-care-hsr-layout-bangalore

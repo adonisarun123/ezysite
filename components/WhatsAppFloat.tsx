@@ -1,10 +1,19 @@
 'use client'
 
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import { trackWhatsAppClick } from '@/lib/analytics';
 import { whatsappSendUrl } from '@/lib/whatsappUrl';
 
 const WhatsAppFloat: React.FC = () => {
+  const pathname = usePathname();
+
+  // Care pages render their own context-aware widget (CareWhatsAppFloat).
+  // Suppress this global one there so the two never overlap.
+  if (pathname && pathname.startsWith('/care-services')) {
+    return null;
+  }
+
   const phoneNumber = '+919972571005';
   const message = 'Hi! I would like to know more about your services.';
   

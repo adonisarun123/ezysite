@@ -1,9 +1,14 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRightIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { CareSubpageShell, SectionHeader } from './CareSubpageShell'
+import {
+  trackCareCalculatorInteraction,
+  trackCareCalculatorQuoteRequest,
+  trackCarePhoneClick,
+} from '@/lib/analytics'
 
 const PATH = '/care-services/cost-calculator'
 
@@ -84,6 +89,27 @@ export default function CostCalculatorView() {
   const enquiryHref =
     `/care-services/enquiry?source=${encodeURIComponent(PATH)}` +
     `&role=${role}&mode=${mode}&complexity=${complexity}`
+
+  // Debounced analytics — fire once after the user stops fiddling with inputs
+  // for 800ms. Skip the very first render (initial state) to avoid noise.
+  const firstRender = useRef(true)
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false
+      return
+    }
+    const t = window.setTimeout(() => {
+      trackCareCalculatorInteraction(
+        role,
+        mode,
+        complexity,
+        Math.round(finalLow),
+        Math.round(finalHigh),
+      )
+    }, 800)
+    return () => window.clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [role, mode, complexity, outerBangalore, nightShift])
 
   return (
     <CareSubpageShell
@@ -267,6 +293,7 @@ export default function CostCalculatorView() {
               <div className="mt-7 flex flex-col gap-3">
                 <Link
                   href={enquiryHref}
+                  onClick={() => trackCareCalculatorQuoteRequest(role, mode, complexity)}
                   className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-black active:scale-[0.98]"
                 >
                   Get an exact quote
@@ -341,6 +368,7 @@ export default function CostCalculatorView() {
           </p>
           <a
             href="tel:+918031411776"
+            onClick={() => trackCarePhoneClick('080-31411776', `${PATH}#bottom-cta`)}
             className="mt-7 inline-flex min-h-[52px] items-center gap-2 rounded-full bg-neutral-900 px-7 py-4 text-[15px] font-semibold text-white transition hover:bg-black"
           >
             <PhoneIcon className="h-4 w-4" aria-hidden />
