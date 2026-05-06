@@ -359,3 +359,27 @@ body {
     right: 16px !important;
   }
 }
+
+/* On /care-services/* pages we render our own bottom-right WhatsApp pill via
+   <CareWhatsAppFloat />. The Tawk.to bubble would overlap it, so we flip the
+   Tawk widget to the bottom-LEFT for these pages only. The body.care-page
+   class is toggled by CareWhatsAppFloat.tsx based on pathname. */
+body.care-page #tawk-bubble,
+body.care-page .tawk-flex-right,
+body.care-page iframe[title*="chat" i],
+body.care-page iframe[id^="tawk"],
+body.care-page .tawk-min-container {
+  left: 24px !important;
+  right: auto !important;
+}
+
+@media (max-width: 768px) {
+  body.care-page #tawk-bubble,
+  body.care-page .tawk-flex-right,
+  body.care-page iframe[title*="chat" i],
+  body.care-page iframe[id^="tawk"],
+  body.care-page .tawk-min-container {
+    left: 16px !important;
+    right: auto !important;
+  }
+}

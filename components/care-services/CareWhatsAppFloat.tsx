@@ -117,6 +117,21 @@ export default function CareWhatsAppFloat() {
     [pathname],
   )
 
+  // Add a `care-page` class to <body> while we're on /care-services/*.
+  // This lets globals.css move the Tawk.to widget to the left side of the
+  // viewport so it doesn't overlap our right-side WhatsApp pill.
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    if (onCarePath) {
+      document.body.classList.add('care-page')
+    } else {
+      document.body.classList.remove('care-page')
+    }
+    return () => {
+      document.body.classList.remove('care-page')
+    }
+  }, [onCarePath])
+
   const message = useMemo(() => messageForPath(pathname), [pathname])
 
   if (!onCarePath || !mounted || dismissed) return null
