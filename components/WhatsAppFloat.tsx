@@ -28,7 +28,7 @@ const WhatsAppFloat: React.FC = () => {
   return (
     <div
       className="fixed z-40 cursor-pointer transition-transform duration-300 hover:scale-110 active:scale-95 touch-manipulation
-                 max-md:bottom-28 max-md:left-4 max-md:right-auto max-md:top-auto max-md:translate-y-0
+                 max-md:bottom-6 max-md:right-4 max-md:left-auto max-md:top-auto max-md:translate-y-0
                  md:top-1/2 md:right-6 md:left-auto md:bottom-auto md:-translate-y-1/2"
       onClick={handleWhatsAppClick}
       aria-label="Chat on WhatsApp"
