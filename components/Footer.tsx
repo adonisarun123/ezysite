@@ -307,7 +307,7 @@ export default function Footer() {
                       24<span className="text-primary-400">×</span>7
                     </div>
                     <div className="mt-1 text-xs leading-snug text-gray-400 sm:text-sm">
-                      support available
+                      emergency support available
                     </div>
                   </div>
                 </div>
@@ -357,6 +357,30 @@ export default function Footer() {
                 rather than the broken-looking "Trustpilot" stub. */}
             <div className="mt-8 hidden">
               <TrustpilotClient />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Trustpilot Reviews Section */}
+      <div className="border-t border-white/5 bg-gray-900 py-12 lg:py-16">
+        <div className="px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-400">
+                What families say
+              </p>
+              <h3 className="mt-3 text-2xl font-bold text-white sm:text-3xl lg:text-4xl font-display">
+                Trusted Reviews from Real Families
+              </h3>
+              <div className="mt-8">
+                <iframe
+                  src="https://widget.trustpilot.com/trustboxes/7e97cb00-8e5c-11eb-96c6-0242ac130003/index.html?templateId=5406e65db0d04a09e042b5fc&businessUnitId=616f8f9b5cb58c71e0b25a1a#locale=en-US&styleHeight=500px&styleWidth=100%&theme=dark&stars=4%2C5"
+                  title="Customer reviews powered by Trustpilot"
+                  className="h-[500px] w-full rounded-2xl border-0"
+                  style={{ minHeight: '500px' }}
+                />
+              </div>
             </div>
           </div>
         </div>
