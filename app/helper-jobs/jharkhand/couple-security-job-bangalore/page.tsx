@@ -569,7 +569,7 @@ export default function CoupleSecurityJobsBangalorePage() {
                             </div>
                         </div>
                         {/* Refer and Earn Section */}
-                        <ReferEarnSection variant="indigo" />
+                        <ReferEarnSection variant="indigo" location="Jharkhand" lang="en" />
                     </section>
 
                     {/* How to Apply Section */}
@@ -608,7 +608,7 @@ export default function CoupleSecurityJobsBangalorePage() {
                                             </div>
 
                                             {/* Mobile Content Card & Right Side Content */}
-                                            <div className="w-full md:w-5/12 text-center md:text-left md:pl-8 md:pl-12">
+                                            <div className="w-full md:w-5/12 text-center md:text-left md:pl-8">
                                                 <div className={`md:hidden bg-indigo-50 p-6 rounded-2xl border border-indigo-100 shadow-sm`}>
                                                     <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
                                                     <p className="text-gray-600 text-sm font-medium leading-relaxed">{item.desc}</p>

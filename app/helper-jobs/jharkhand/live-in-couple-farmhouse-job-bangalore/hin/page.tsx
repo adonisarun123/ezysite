@@ -519,7 +519,7 @@ export default function FarmhouseCoupleJobsBangaloreHindiPage() {
                 </section>
 
                 {/* Refer and Earn Section */}
-                <ReferEarnSection variant="teal" lang="hi" />
+                <ReferEarnSection variant="teal" location="झारखंड" lang="hi" />
 
                 {/* Apply Steps */}
                 <section className="section-padding bg-white">

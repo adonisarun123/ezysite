@@ -5,7 +5,7 @@ import { GiftIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 import ReferralModal from './ReferralModal';
 
 interface ReferEarnSectionProps {
-    variant?: 'teal' | 'indigo' | 'violet' | 'sky' | 'emerald' | 'blue' | 'purple' | 'cyan' | 'orange' | 'rose' | 'amber';
+    variant?: 'teal' | 'indigo' | 'violet' | 'sky' | 'emerald' | 'blue' | 'purple' | 'cyan' | 'orange' | 'rose' | 'amber' | 'pink';
     lang?: 'en' | 'hi';
     location?: string;
 }
@@ -76,6 +76,12 @@ const colorClasses = {
         bg: 'bg-amber-50',
         border: 'border-amber-100',
         buttonText: 'text-amber-700'
+    },
+    pink: {
+        text: 'text-pink-500',
+        bg: 'bg-pink-50',
+        border: 'border-pink-100',
+        buttonText: 'text-pink-700'
     }
 };
 
