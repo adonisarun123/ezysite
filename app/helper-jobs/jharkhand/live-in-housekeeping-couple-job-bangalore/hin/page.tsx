@@ -573,7 +573,7 @@ export default function HousekeepingCoupleJobsBangaloreHindiPage() {
                 </section>
 
                 {/* Refer and Earn Section */}
-                <ReferEarnSection variant="orange" lang="hi" />
+                <ReferEarnSection variant="orange" location="झारखंड" lang="hi" />
 
                 {/* How to Apply Section */}
                 <section className="section-padding bg-white">

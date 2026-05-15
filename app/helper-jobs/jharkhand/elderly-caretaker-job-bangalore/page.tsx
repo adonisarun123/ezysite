@@ -877,7 +877,7 @@ export default function ElderlyCaretakerJobsBangalorePage() {
                                     </Link>
                                 </div>
                             </div>
-                            <ReferEarnSection variant="rose" />
+                            <ReferEarnSection variant="blue" location="Jharkhand" lang="en" />
                         </div>
                     </div>
                 </section>

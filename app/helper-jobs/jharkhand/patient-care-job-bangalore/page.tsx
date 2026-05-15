@@ -35,6 +35,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
     title: 'Live-in Patient Care Jobs Bangalore: Earn upto ₹35k/month',
@@ -594,52 +595,7 @@ export default function PatientCareJobsBangalorePage() {
                 </section>
 
                 {/* Refer Section */}
-                <section className="section-padding bg-white">
-                    <div className="container-custom">
-                        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-yellow-100">
-                            {/* Left Side - Orange/Yellow Gradient */}
-                            <div className="md:w-[38%] bg-gradient-to-b from-yellow-400 via-orange-500 to-orange-600 p-8 flex flex-col items-center justify-center text-center text-white">
-                                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-                                    <GiftIcon className="w-8 h-8 text-white" />
-                                </div>
-                                <h3 className="text-xl md:text-3xl font-extrabold mb-1 font-display uppercase tracking-tight">Refer & Earn</h3>
-                                <div className="text-4xl md:text-6xl font-black mb-3">₹500!</div>
-                                <p className="text-[10px] md:text-xs opacity-90 font-bold">*Terms and Conditions apply</p>
-                            </div>
-
-                            {/* Right Side - Content */}
-                            <div className="md:w-[62%] p-8 md:p-10 flex flex-col justify-center">
-                                <h4 className="text-lg md:text-2xl font-black text-gray-900 mb-6 leading-tight">
-                                    Help your friends and relatives from Jharkhand get a domestic work job in Bangalore on EzyHelpers.
-                                </h4>
-
-                                <p className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4">How to Refer:</p>
-
-                                <ul className="space-y-4 mb-8">
-                                    {[
-                                        'Share their details via WhatsApp or call us',
-                                        'Give your friend’s name, age, and job preference',
-                                        'They join EzyHelpers, complete placement, and you earn ₹500'
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="flex items-start gap-4">
-                                            <div className="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center flex-shrink-0 border border-indigo-100 mt-0.5">
-                                                <span className="text-xs font-bold text-indigo-600">{idx + 1}</span>
-                                            </div>
-                                            <span className="text-gray-700 font-bold text-sm md:text-base leading-snug">{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <Link
-                                    href="/helper-registration"
-                                    className="inline-flex items-center justify-center bg-indigo-600 text-white font-black py-4 px-8 rounded-xl hover:bg-indigo-700 transition-all shadow-lg hover:shadow-2xl text-center"
-                                >
-                                    Refer & Earn ₹500
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <ReferEarnSection variant="indigo" location="Jharkhand" lang="en" />
 
                 {/* How to Apply Section */}
                 <section className="section-padding bg-white">
