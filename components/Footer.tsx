@@ -52,6 +52,7 @@ const footerLinks = {
     { name: 'Contact Us', href: '/contact' },
     { name: 'National Database', href: '/nduw' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms & Policies', href: '/terms-and-policies' },
     { name: 'Terms of Service', href: '/terms-of-service' },
     { name: 'Refund Policy', href: '/refund-policy' },
   ],
