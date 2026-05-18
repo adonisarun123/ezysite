@@ -68,6 +68,20 @@ export default function HelperJobsTamilNaduPage() {
                         { label: 'Helper Jobs', href: '/helper-jobs' },
                         { label: 'Tamil Nadu' }
                     ]}
+                    rightContent={
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
+                            <span className="text-gray-500 font-medium whitespace-nowrap uppercase">हिंदी</span>
+                            <Link
+                                href="/helper-jobs/tamilnadu/hin"
+                                className="w-10 h-5 bg-cyan-600 rounded-full p-1 relative transition-colors inline-block"
+                            >
+                                <div
+                                    className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"
+                                />
+                            </Link>
+                            <span className="text-gray-900 font-bold whitespace-nowrap uppercase">ENG</span>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
