@@ -577,7 +577,7 @@ export default function ElderlyCareJobsOdishaBangaloreHindiPage() {
                                         </p>
                                     </div>
                                     <Link
-                                        href="/nest-hostel"
+                                        href="/contact"
                                         className="inline-flex items-center gap-2 text-pink-600 font-bold text-lg hover:gap-3 transition-all group"
                                     >
                                         NEST के बारे में और जानें <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -469,10 +469,10 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                                         </p>
                                     </div>
                                     <Link
-                                        href="/nest-hostel"
+                                        href="/contact"
                                         className="inline-flex items-center gap-2 text-pink-600 text-lg hover:gap-3 transition-all group/cta font-bold italic leading-relaxed"
                                     >
-                                        Learn more about NEST <ArrowRightIcon className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform font-bold italic leading-relaxed" />
+                                        Contact us about accommodation <ArrowRightIcon className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform font-bold italic leading-relaxed" />
                                     </Link>
                                 </div>
                             </div>

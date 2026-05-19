@@ -796,7 +796,7 @@ export default function HomeCookJobsOdishaBangalorePage() {
                                         </p>
                                     </div>
                                     <Link href="/nest" className="inline-flex items-center gap-2 bg-pink-600 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-pink-200 hover:bg-pink-700 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-                                        Learn more about NEST
+                                        Contact us about accommodation
                                         <ArrowRightIcon className="w-5 h-5" />
                                     </Link>
                                 </div>

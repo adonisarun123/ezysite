@@ -524,10 +524,10 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                         </p>
                                     </div>
                                     <Link
-                                        href="/nest-hostel"
+                                        href="/contact"
                                         className="inline-flex items-center gap-2 text-pink-600 font-bold text-lg hover:gap-3 transition-all group/cta"
                                     >
-                                        Learn more about NEST <ArrowRightIcon className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform" />
+                                        Contact us about accommodation <ArrowRightIcon className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform" />
                                     </Link>
                                 </div>
                             </div>

@@ -224,6 +224,7 @@ export default function HelperJobsJharkhandHinPage() {
                                 {
                                     state: "जपा मेड जॉब्स",
                                     slug: "japa-maid-jobs",
+                                    fullPath: "/helper-jobs/jharkhand/japa-maid-job-bangalore/hin",
                                     desc: "डिलीवरी के बाद माँ और नवजात शिशु की देखभाल करना और सुधार में मदद करना।",
                                     features: ["माँ और शिशु की देखभाल", "बच्चे को खिलाने और संभालने में मदद", "माँ की रिकवरी में सहायता", "लिव-इन सुविधा और पूरी सहायता"]
                                 }
