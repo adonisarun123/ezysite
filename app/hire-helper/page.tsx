@@ -67,6 +67,104 @@ export default function HireHelperPage() {
         </div>
       </section>
 
+      {/* Information Section */}
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Why Thousands of Families Choose EzyHelpers</h2>
+            
+            <p className="text-lg text-gray-700 text-center mb-12">
+              Finding reliable domestic help shouldn't be stressful. EzyHelpers has revolutionized the way Indian families 
+              hire domestic staff by providing a comprehensive platform that ensures quality, safety, and peace of mind.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">Our Service Categories</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Live-in Maids:</strong> Full-time residential help for complete household management</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Part-time Help:</strong> Flexible hourly assistance for specific tasks</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Specialized Cooks:</strong> Expert chefs for regional and international cuisines</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Baby Care:</strong> Trained nannies and Japa maids for newborn and infant care</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Elder Care:</strong> Compassionate attendants for senior family members</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Drivers:</strong> Licensed and experienced chauffeurs for safe transportation</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">Our Verification Process</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Identity Verification:</strong> Aadhaar-based authentication for all helpers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Background Checks:</strong> Police verification and reference validation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Skills Assessment:</strong> Practical evaluation of capabilities</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Health Screening:</strong> Medical checks and vaccination verification</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Training Programs:</strong> Continuous skill development and safety protocols</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircleIcon className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span><strong>Regular Updates:</strong> Ongoing monitoring and performance reviews</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-blue-50 rounded-lg p-8 text-center">
+              <h3 className="text-2xl font-semibold text-blue-900 mb-4">Ready to Find Your Perfect Helper?</h3>
+              <p className="text-blue-800 mb-6">
+                Join over 10,000 satisfied families who trust EzyHelpers for their domestic help needs. 
+                Complete our simple form below and we'll match you with the right helper within 24-48 hours.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-blue-800">
+                <div className="space-y-2">
+                  <p>✓ No hidden fees or commissions</p>
+                  <p>✓ Direct salary payments to helpers</p>
+                  <p>✓ 24/7 customer support available</p>
+                  <p>✓ Free replacement guarantee</p>
+                </div>
+                <div className="space-y-2">
+                  <p>✓ Real-time tracking and updates</p>
+                  <p>✓ Mobile app for easy management</p>
+                  <p>✓ Dedicated relationship managers</p>
+                  <p>✓ Emergency assistance hotline</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Form Section */}
       <section id="hire-form" className="section-padding bg-background-primary scroll-mt-24 lg:scroll-mt-32">
         <div className="container-custom">

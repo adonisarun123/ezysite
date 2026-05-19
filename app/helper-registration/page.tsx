@@ -107,6 +107,7 @@ const specialitiesList = [
 
 
 export default function HelperRegistrationPage() {
+  // SEO and content improvement: Add descriptive text content to improve text-to-HTML ratio
   const [currentSection, setCurrentSection] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [locationLoading, setLocationLoading] = useState(true)
@@ -529,6 +530,54 @@ export default function HelperRegistrationPage() {
                 }`}
               />
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* SEO Content Section */}
+      <div className="bg-white py-8 border-b">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">Join India's Most Trusted Helper Network</h1>
+          <p className="text-lg text-gray-600 mb-6">
+            Register as a verified domestic helper and connect with thousands of families across India. 
+            EzyHelpers provides secure employment opportunities with background verification, 
+            fair wages, and professional support throughout your career.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-blue-50 p-4 rounded-lg">
+              <h3 className="font-semibold text-gray-900 mb-2">Verified Opportunities</h3>
+              <p className="text-gray-700 text-sm">
+                Work with pre-verified families who value professional domestic help. 
+                All employers undergo background checks for your safety and security.
+              </p>
+            </div>
+            <div className="bg-green-50 p-4 rounded-lg">
+              <h3 className="font-semibold text-gray-900 mb-2">Fair Compensation</h3>
+              <p className="text-gray-700 text-sm">
+                Earn competitive wages with transparent payment terms. Direct salary 
+                payments ensure you receive full compensation for your valuable work.
+              </p>
+            </div>
+            <div className="bg-purple-50 p-4 rounded-lg">
+              <h3 className="font-semibold text-gray-900 mb-2">Professional Growth</h3>
+              <p className="text-gray-700 text-sm">
+                Access skill development programs, training opportunities, and career 
+                advancement support to enhance your professional capabilities.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
+            <h3 className="font-semibold text-amber-900 mb-3">Why Choose EzyHelpers?</h3>
+            <div className="text-left text-amber-800 space-y-2">
+              <p>• <strong>10,000+ families</strong> trust our platform for domestic help services</p>
+              <p>• <strong>100% Aadhaar verification</strong> ensures your credentials are properly documented</p>
+              <p>• <strong>24/7 support</strong> available for any assistance during your employment</p>
+              <p>• <strong>Multiple cities</strong> including Bangalore, Delhi, Mumbai, Hyderabad, and more</p>
+              <p>• <strong>Flexible work options</strong> - live-in, full-time, part-time, or on-demand</p>
+              <p>• <strong>Safe working environment</strong> with regular check-ins and feedback systems</p>
+            </div>
           </div>
         </div>
       </div>
