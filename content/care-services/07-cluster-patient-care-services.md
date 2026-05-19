@@ -1,5 +1,5 @@
 URL: /care-services/patient-care-services-bangalore/
-Meta Title: Patient Care Services in Bangalore | Post-Surgery, Bedridden & Recovery Care | EzyHelpers
+Meta Title: Patient Care Bangalore | Post-Surgery & Recovery | EzyHelpers
 Meta Description: Patient Care Services in Bangalore by EzyHelpers. Verified caretakers for post-surgical recovery, bedridden patients, and chronic illness. Same-day placement.
 
 Breadcrumb: Home > Care Services > Patient Care Services

@@ -1,5 +1,5 @@
 URL: /care-services/trained-attendant-services-bangalore/
-Meta Title: Trained Attendant Services in Bangalore | Bedridden, Spinal, Neurological Care | EzyHelpers
+Meta Title: Trained Attendants Bangalore | Specialized Care | EzyHelpers
 Meta Description: Trained Attendant Services in Bangalore by EzyHelpers. Skilled attendants for bedridden, post-spinal, neurological, and bariatric patients. High-dependency physical care.
 
 Breadcrumb: Home > Care Services > Trained Attendant Services

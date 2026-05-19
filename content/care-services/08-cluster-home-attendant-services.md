@@ -1,5 +1,5 @@
 URL: /care-services/home-attendant-services-bangalore/
-Meta Title: Home Attendant Services in Bangalore | Day, Night, Live-In Attendants | EzyHelpers
+Meta Title: Home Attendant Services Bangalore | Day & Night | EzyHelpers
 Meta Description: Home Attendant Services in Bangalore by EzyHelpers. Day shift, night shift, full-time, and live-in attendants for daily patient and elderly care. Verified, same-day placement.
 
 Breadcrumb: Home > Care Services > Home Attendant Services

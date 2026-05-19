@@ -1,5 +1,5 @@
 URL: /care-services/home-care-services-bangalore/
-Meta Title: Home Care Services in Bangalore | Verified Caregivers, Nurses & Attendants | EzyHelpers
+Meta Title: Home Care Services Bangalore | Verified Staff | EzyHelpers
 Meta Description: Bangalore's trusted home care service. Choose from elderly care, home nursing, caretakers, attendants & post-surgery care. Verified, matched, same-day placement.
 
 Breadcrumb: Home > Care Services
