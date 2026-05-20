@@ -134,7 +134,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                         <div className="max-w-4xl mx-auto text-center mb-10">
                             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display">What Makes EzyHelpers Different</h2>
                             <p className="text-base md:text-lg text-gray-600 font-medium mb-8">We focus on your safety, income, and long-term support so you can work without stress and build a better future for yourself and your family.</p>
-                            
+
                             <div className="flex flex-wrap justify-center gap-4 mb-8">
                                 {[
                                     'Free Job, No Fees',
@@ -151,7 +151,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                                     </div>
                                 ))}
                             </div>
-                            
+
                             <p className="text-sm font-bold text-orange-700 italic">We provide verified home cook jobs in Bangalore for both freshers and experienced helpers. Whether you are a veg cook, a non-veg cook, or a multi-cuisine cook, we guide you properly and support you even after you start working.</p>
                         </div>
                     </div>
@@ -258,7 +258,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                                 <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Salary for Home Cook Jobs in Bangalore</h2>
                                 <p className="text-base md:text-lg text-gray-600 font-medium">We always explain the salary clearly before you travel from Assam so there is no confusion.</p>
                             </div>
-                            
+
                             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
                                 <div className="overflow-x-auto">
                                     <table className="w-full text-left">
@@ -293,7 +293,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                                     </table>
                                 </div>
                             </div>
-                            
+
                             <p className="text-center text-sm font-bold text-gray-700 mt-6">Your salary depends on your cooking experience, the type of food you can cook, and the work type.</p>
 
                             <div className="mt-8 text-center">
@@ -339,7 +339,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                         </div>
                     </div>
                 </section>
-                
+
                 {/* Cooking Categories and Specialisations */}
                 <section className="section-padding bg-gray-50 border-t border-gray-100">
                     <div className="container-custom">
@@ -357,7 +357,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                                     { title: "Basic Snacks and Tea Preparation", desc: "Prepare tea, coffee, and simple snacks like Poha, Upma, or light evening items for the family." }
                                 ].map((item, index) => (
                                     <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                                        <h3 className="font-bold text-gray-900 mb-2 uppercase tracking-tight text-orange-600">{item.title}</h3>
+                                        <h3 className="font-bold mb-2 uppercase tracking-tight text-orange-600">{item.title}</h3>
                                         <p className="text-sm text-gray-600 font-medium leading-relaxed">{item.desc}</p>
                                     </div>
                                 ))}
@@ -404,7 +404,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                                 <h2 className="text-2xl md:text-4xl font-bold mb-4 font-display text-white">About EzyHelpers – Your Trusted Partner</h2>
                                 <p className="text-lg text-orange-100 font-medium">We connect helpers like you with trusted cooking jobs in Bangalore and across India without charging any fees.</p>
                             </div>
-                            
+
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                                 <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
                                     <h3 className="font-bold text-yellow-300 uppercase tracking-widest mb-4 flex items-center gap-2">
@@ -447,7 +447,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                                     </ul>
                                 </div>
                             </div>
-                            
+
                             <div className="text-center bg-black/20 p-4 rounded-xl border border-white/10">
                                 <p className="text-sm font-medium"><span className="font-bold text-yellow-300">Locations We Serve:</span> Bangalore | Bareilly | Mumbai | Hyderabad | Delhi NCR | Pune | Odisha, and more.</p>
                             </div>
@@ -462,7 +462,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                             <div className="text-center mb-12">
                                 <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Support and Benefits for Helpers at EzyHelpers</h2>
                             </div>
-                            
+
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                                 {[
                                     { title: "Training and Certificate", desc: "You get basic training for your job role. A certificate is given after you finish.", icon: AcademicCapIcon },
@@ -496,21 +496,21 @@ export default function HomeCookJobsAssamBangalorePage() {
                             <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
                                 <HomeIcon className="w-48 h-48 text-orange-600" />
                             </div>
-                            
+
                             <div className="relative z-10">
                                 <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display">NEST – Safe Hostel for Women Helpers</h2>
                                 <p className="text-lg text-gray-700 mb-8">Worried about where to stay in Bangalore? NEST is our safe hostel, specially for women helpers from Assam.</p>
-                                
+
                                 <div className="flex flex-wrap justify-center gap-4 mb-8">
                                     <span className="bg-white px-4 py-2 rounded-full font-bold text-orange-800 shadow-sm border border-orange-100">Safe rooms</span>
                                     <span className="bg-white px-4 py-2 rounded-full font-bold text-orange-800 shadow-sm border border-orange-100">Daily meals</span>
                                     <span className="bg-white px-4 py-2 rounded-full font-bold text-orange-800 shadow-sm border border-orange-100">Affordable stay</span>
                                 </div>
-                                
+
                                 <p className="text-md font-bold text-orange-700 italic mb-8 max-w-2xl mx-auto">
                                     You can settle comfortably before your job starts without stress or last-minute problems.
                                 </p>
-                                
+
                                 <Link href="/nest" className="inline-flex items-center justify-center bg-orange-600 text-white font-bold text-base py-3 px-8 rounded-xl hover:bg-orange-700 transition-all shadow-md">
                                     Learn More About NEST
                                 </Link>
