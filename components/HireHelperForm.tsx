@@ -32,9 +32,9 @@ interface FormData {
 }
 
 const employmentTypes = [
-  { value: 'live-in', label: 'Live-in Maid', description: '24/7 support at home' },
-  { value: 'full-time', label: 'Full-time Maid', description: 'Daily 8-10 hours' },
-  { value: 'part-time', label: 'Part-time Maid', description: 'Few hours daily' },
+  { value: 'live-in', label: 'Live-in Helper', description: '24/7 support at home' },
+  { value: 'full-time', label: 'Full-time Helper', description: 'Daily 8-10 hours' },
+  { value: 'part-time', label: 'Part-time Helper', description: 'Few hours daily' },
   { value: 'on-demand', label: 'On-demand Helper', description: 'As needed basis' },
 ]
 
@@ -130,8 +130,6 @@ export default function HireHelperForm() {
           next.duration = ''
           next.serviceTimings = ''
         }
-        next.serviceRole = ''
-        next.otherRole = ''
       }
       return next
     })
@@ -564,65 +562,65 @@ export default function HireHelperForm() {
               Service Requirements
             </h2>
 
-            {/* Employment Type Selection */}
+            {/* Role Selection - shown first */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-4">
-                What type of service do you need? *
+                What primary role do you need help with? *
               </label>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {employmentTypes.map(type => (
+                {serviceRoles.map(role => (
                   <div
-                    key={type.value}
-                    className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceType === type.value
+                    key={role.value}
+                    className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceRole === role.value
                       ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
                       : 'border-gray-200 hover:border-gray-300'
                       }`}
-                    onClick={() => handleInputChange('serviceType', type.value)}
+                    onClick={() => setFormData(prev => ({ ...prev, serviceRole: role.value, otherRole: role.value !== 'others' ? '' : prev.otherRole }))}
                   >
-                    <div className="font-medium text-gray-900">{type.label}</div>
-                    <div className="text-sm text-gray-600">{type.description}</div>
+                    <div className="font-medium text-gray-900">{role.label}</div>
+                    <div className="text-sm text-gray-600">{role.description}</div>
                   </div>
                 ))}
               </div>
-              {formErrors.serviceType && <p className="text-xs text-red-500 mt-1">{formErrors.serviceType}</p>}
+              {formErrors.serviceRole && <p className="text-xs text-red-500 mt-1">{formErrors.serviceRole}</p>}
+
+              {formData.serviceRole === 'others' && (
+                <div className="mt-4">
+                  <input
+                    type="text"
+                    value={formData.otherRole}
+                    onChange={(e) => setFormData(prev => ({ ...prev, otherRole: e.target.value }))}
+                    aria-invalid={!!formErrors.otherRole}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                    placeholder="Please specify the role you need..."
+                  />
+                  {formErrors.otherRole && <p className="text-xs text-red-500 mt-1">{formErrors.otherRole}</p>}
+                </div>
+              )}
             </div>
 
-            {/* Role Selection - shown after employment type is chosen */}
-            {formData.serviceType && (
+            {/* Employment Type Selection - shown after role is chosen */}
+            {formData.serviceRole && (
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-4">
-                  What role do you need help with? *
+                  What type of helper service do you need? *
                 </label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {serviceRoles.map(role => (
+                  {employmentTypes.map(type => (
                     <div
-                      key={role.value}
-                      className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceRole === role.value
+                      key={type.value}
+                      className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceType === type.value
                         ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
                         : 'border-gray-200 hover:border-gray-300'
                         }`}
-                      onClick={() => setFormData(prev => ({ ...prev, serviceRole: role.value, otherRole: role.value !== 'others' ? '' : prev.otherRole }))}
+                      onClick={() => handleInputChange('serviceType', type.value)}
                     >
-                      <div className="font-medium text-gray-900">{role.label}</div>
-                      <div className="text-sm text-gray-600">{role.description}</div>
+                      <div className="font-medium text-gray-900">{type.label}</div>
+                      <div className="text-sm text-gray-600">{type.description}</div>
                     </div>
                   ))}
                 </div>
-                {formErrors.serviceRole && <p className="text-xs text-red-500 mt-1">{formErrors.serviceRole}</p>}
-
-                {formData.serviceRole === 'others' && (
-                  <div className="mt-4">
-                    <input
-                      type="text"
-                      value={formData.otherRole}
-                      onChange={(e) => setFormData(prev => ({ ...prev, otherRole: e.target.value }))}
-                      aria-invalid={!!formErrors.otherRole}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
-                      placeholder="Please specify the role you need..."
-                    />
-                    {formErrors.otherRole && <p className="text-xs text-red-500 mt-1">{formErrors.otherRole}</p>}
-                  </div>
-                )}
+                {formErrors.serviceType && <p className="text-xs text-red-500 mt-1">{formErrors.serviceType}</p>}
               </div>
             )}
 

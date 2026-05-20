@@ -8,8 +8,8 @@ import { CheckCircleIcon, PhoneIcon, ChatBubbleLeftRightIcon, BoltIcon } from '@
 
 export const metadata: Metadata = {
   title: 'Hire Domestic Help | Quick & Easy Booking | EzyHelpers',
-  description: 'Book verified domestic help in minutes. Easy process to hire maids, cooks, nannies & more. Background-checked staff, flexible timing options available.',
-  keywords: 'hire domestic help, book maid service, hire cook, hire nanny, domestic staff booking',
+  description: 'Book verified domestic help in minutes. Easy process to hire helpers, cooks, nannies & more. Background-checked staff, flexible timing options available.',
+  keywords: 'hire domestic help, book helper service, hire cook, hire nanny, domestic staff booking',
   openGraph: {
     title: 'Hire Verified Domestic Help - Quick Booking Process',
     description: 'Book reliable domestic help through EzyHelpers. Verified staff, transparent pricing, and hassle-free process.',
@@ -84,7 +84,7 @@ export default function HireHelperPage() {
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
                     <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span><strong>Live-in Maids:</strong> Full-time residential help for complete household management</span>
+                    <span><strong>Live-in Helpers:</strong> Full-time residential help for complete household management</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -96,7 +96,7 @@ export default function HireHelperPage() {
                   </li>
                   <li className="flex items-start">
                     <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span><strong>Baby Care:</strong> Trained nannies and Japa maids for newborn and infant care</span>
+                    <span><strong>Baby Care:</strong> Trained nannies and Japa helpers for newborn and infant care</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircleIcon className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
