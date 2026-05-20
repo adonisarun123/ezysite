@@ -158,6 +158,7 @@ export default function CareServicesEnquiryForm() {
   const [notes, setNotes] = useState('')
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const [honeypot, setHoneypot] = useState('')
   const [referrerUrl, setReferrerUrl] = useState<string | undefined>(undefined)
   const [hasFiredStart, setHasFiredStart] = useState(false)
 
@@ -204,6 +205,7 @@ export default function CareServicesEnquiryForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (status === 'submitting') return
     setErrorMessage(null)
 
     if (!name.trim() || !email.trim() || !phone.trim() || !patientSummary.trim()) {
@@ -229,6 +231,7 @@ export default function CareServicesEnquiryForm() {
 
     const body = {
       leadType: 'care_services' as const,
+      website: honeypot,
       formData: {
         name: name.trim(),
         email: email.trim(),
@@ -308,7 +311,18 @@ export default function CareServicesEnquiryForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6" aria-busy={status === 'submitting'}>
+      {/* Honeypot field - hidden from real users, traps bots */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        style={{ position: 'absolute', left: '-9999px', width: 0, height: 0, opacity: 0 }}
+      />
       <p className="text-sm leading-relaxed text-neutral-600">
         Tell us about your care need in Bengaluru. Fields marked
         <span className="mx-1 text-[#FF385C]" aria-hidden>

@@ -3,4 +3,6 @@ export { default as WebSiteSchema } from './WebSiteSchema'
 export { default as ServiceSchema } from './ServiceSchema'
 export { default as BreadcrumbSchema, generateServiceBreadcrumbs, generateCityBreadcrumbs, generateBlogBreadcrumbs } from './BreadcrumbSchema'
 export { default as FAQSchema, generalFAQs, serviceFAQs } from './FAQSchema'
-export { default as LocalBusinessSchema } from './LocalBusinessSchema' 
+export { default as LocalBusinessSchema } from './LocalBusinessSchema'
+export { default as JobPostingSchema } from './JobPostingSchema'
+ 

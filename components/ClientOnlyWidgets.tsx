@@ -33,6 +33,16 @@ const LanguageSelectorPopup = dynamic(() => import('./LanguageSelectorPopup'), {
   loading: () => null
 })
 
+const MobileStickyCTA = dynamic(() => import('./MobileStickyCTA'), {
+  ssr: false,
+  loading: () => null
+})
+
+const CookieConsent = dynamic(() => import('./CookieConsent'), {
+  ssr: false,
+  loading: () => null
+})
+
 export default function ClientOnlyWidgets() {
   return (
     <>
@@ -41,6 +51,8 @@ export default function ClientOnlyWidgets() {
       <WhatsAppFloat />
       <CareWhatsAppFloat />
       <LanguageSelectorPopup />
+      <MobileStickyCTA />
+      <CookieConsent />
     </>
   )
 }

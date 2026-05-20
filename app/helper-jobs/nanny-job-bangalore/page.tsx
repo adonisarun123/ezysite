@@ -22,6 +22,7 @@ import {
 
 import FAQAccordion, { FAQItem } from "@/components/FAQAccordion";
 import ReferEarnSection from "@/components/ReferEarnSection";
+import { JobPostingSchema } from "@/components/schema";
 
 
 export const metadata: Metadata = {
@@ -84,6 +85,14 @@ const faqs: FAQItem[] = [
 export default function NannyJobsBangalorePage() {
     return (
         <>
+            <JobPostingSchema
+                title="Nanny / Babysitter Job in Bangalore"
+                description="Safe Nanny and Babysitter jobs in Bangalore for female helpers with verified homes, fixed work, training, and long-term job support."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: "Bangalore", addressRegion: "Karnataka", addressCountry: "IN" }}
+            />
             <main className="min-h-screen">
                 <Navbar />
 

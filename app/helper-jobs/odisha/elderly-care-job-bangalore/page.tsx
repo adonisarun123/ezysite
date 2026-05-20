@@ -27,6 +27,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'Elderly Care Jobs in Bangalore – Senior Care Work',
@@ -97,7 +98,15 @@ export default function ElderlyCareJobsOdishaBangalorePage() {
     return (
         <>
             <main className="min-h-screen">
-                <Navbar />
+                <JobPostingSchema
+                title="Elderly Care Job in Bangalore"
+                description="Elderly care jobs in Bangalore for helpers from Odisha. Verified homes, fair pay, training, and long-term job stability."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: "Bangalore", addressRegion: "Karnataka", addressCountry: "IN" }}
+            />
+            <Navbar />
 
                 <Breadcrumb
                     sticky={true}

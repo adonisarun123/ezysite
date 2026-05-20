@@ -84,16 +84,27 @@ export default function RequirementForm() {
           longitude
         }))
 
-        // Try to get human-readable address
+        // Try to get human-readable address (skip if no Mapbox token configured)
+        const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+        if (!mapboxToken) {
+          setLocationState({
+            isDetecting: false,
+            isDetected: true,
+            error: null,
+            address: `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`
+          })
+          return
+        }
+
         try {
           const response = await fetch(
-            `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?access_token=${process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN || 'pk.your_mapbox_token_here'}`
+            `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?access_token=${mapboxToken}`
           )
-          
+
           if (response.ok) {
             const data = await response.json()
             const address = data.features?.[0]?.place_name || `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`
-            
+
             setLocationState({
               isDetecting: false,
               isDetected: true,

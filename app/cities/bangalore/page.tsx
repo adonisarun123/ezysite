@@ -3,6 +3,9 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
+
+// ISR: revalidate hourly
+export const revalidate = 3600
 import NestCTA from '@/components/NestCTA'
 import {
   ComputerDesktopIcon,

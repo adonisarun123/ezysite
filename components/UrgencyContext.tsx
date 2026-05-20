@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
 
 interface UrgencyContextType {
   isUrgencyVisible: boolean
@@ -16,6 +16,18 @@ const UrgencyContext = createContext<UrgencyContextType>({
 export function UrgencyProvider({ children, defaultVisible = false }: { children: ReactNode; defaultVisible?: boolean }) {
   const [isUrgencyVisible, setIsUrgencyVisible] = useState(defaultVisible)
 
+  // Mirror urgency state onto <html data-urgency-visible="..."> so CSS in
+  // globals.css can drive layout (e.g. main padding) without prop drilling
+  // a client context into otherwise-server-rendered components.
+  useEffect(() => {
+    const root = document.documentElement
+    if (isUrgencyVisible) {
+      root.setAttribute('data-urgency-visible', 'true')
+    } else {
+      root.removeAttribute('data-urgency-visible')
+    }
+  }, [isUrgencyVisible])
+
   return (
     <UrgencyContext.Provider value={{ isUrgencyVisible, setIsUrgencyVisible }}>
       {children}
@@ -26,4 +38,4 @@ export function UrgencyProvider({ children, defaultVisible = false }: { children
 export function useUrgency(): UrgencyContextType {
   const context = useContext(UrgencyContext)
   return context
-} 
+}

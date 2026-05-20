@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import crypto from 'crypto'
 import { createSupabaseAdmin } from '@/lib/supabaseAdmin'
 import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
 import { istVisitRangeUtcIso } from '@/lib/istDateTime'
@@ -13,6 +14,18 @@ import {
 } from '@/lib/onDemandHelp'
 import { buildOnDemandHelpSpecificRequirements, buildOnDemandHelpTimingSummary } from '@/lib/onDemandHelpLeadText'
 import { getAvailableSlotStartsIst } from '@/lib/onDemandHelpSlots'
+import { checkRateLimit } from '@/lib/auth'
+
+function timingSafeEqualHex(a: string, b: string): boolean {
+  try {
+    const ab = Buffer.from(a, 'hex')
+    const bb = Buffer.from(b, 'hex')
+    if (ab.length !== bb.length || ab.length === 0) return false
+    return crypto.timingSafeEqual(ab, bb)
+  } catch {
+    return false
+  }
+}
 
 const ALLOWED_AREAS = new Set<string>(ON_DEMAND_HELP_AREAS)
 const ALLOWED_DURATIONS = new Set<number>(ON_DEMAND_HELP_DURATIONS)
@@ -30,12 +43,25 @@ function isTaskIdArray(ids: unknown[]): ids is OnDemandHelpTaskId[] {
  * Atomically reserves a visit window (global single-booking constraint) and inserts hire_helper_leads.
  */
 export async function POST(req: NextRequest) {
+  // Rate limit: 5 req / 10 min per IP
+  const ip =
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    req.headers.get('x-real-ip') ||
+    'unknown'
+  const rl = checkRateLimit(`POST:${req.nextUrl.pathname}:${ip}`, 5, 600_000)
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { success: false, error: 'rate_limited' },
+      { status: 429 }
+    )
+  }
+
   const admin = createSupabaseAdmin()
   if (!admin) {
     return NextResponse.json(
       {
         error: 'server_misconfigured',
-        message: 'Booking service is not configured (SUPABASE_SERVICE_ROLE_KEY).',
+        message: 'Booking service is not configured.',
       },
       { status: 503 }
     )
@@ -46,6 +72,48 @@ export async function POST(req: NextRequest) {
     body = await req.json()
   } catch {
     return NextResponse.json({ error: 'invalid_json' }, { status: 400 })
+  }
+
+  // Honeypot check
+  if (body && typeof body === 'object' && typeof (body as any).website === 'string' && (body as any).website.trim() !== '') {
+    return NextResponse.json({ ok: true, bookingId: null })
+  }
+
+  // Razorpay payment verification
+  const orderId = typeof body.orderId === 'string' ? body.orderId.trim() : ''
+  const paymentId = typeof body.paymentId === 'string' ? body.paymentId.trim() : ''
+  const paymentSignature = typeof body.paymentSignature === 'string' ? body.paymentSignature.trim() : ''
+  const razorpaySecret = process.env.RAZORPAY_KEY_SECRET
+  const skipPaymentCheck = process.env.SKIP_PAYMENT_VERIFICATION === 'true'
+
+  if (!razorpaySecret) {
+    if (skipPaymentCheck) {
+      console.warn('[on-demand-help/book] RAZORPAY_KEY_SECRET not set; SKIP_PAYMENT_VERIFICATION=true so allowing through')
+    } else {
+      console.error('[on-demand-help/book] RAZORPAY_KEY_SECRET not set and SKIP_PAYMENT_VERIFICATION is not true; rejecting')
+      return NextResponse.json(
+        { error: 'payment_verification_unavailable' },
+        { status: 400 }
+      )
+    }
+  } else {
+    if (!orderId || !paymentId || !paymentSignature) {
+      return NextResponse.json(
+        { error: 'payment_missing', message: 'Payment confirmation is required.' },
+        { status: 400 }
+      )
+    }
+    const expected = crypto
+      .createHmac('sha256', razorpaySecret)
+      .update(`${orderId}|${paymentId}`)
+      .digest('hex')
+    if (!timingSafeEqualHex(expected, paymentSignature)) {
+      console.error('[on-demand-help/book] payment signature mismatch', { orderId, paymentId })
+      return NextResponse.json(
+        { error: 'payment_invalid', message: 'Payment confirmation could not be verified.' },
+        { status: 400 }
+      )
+    }
   }
 
   const taskIdsRaw = body.taskIds
@@ -193,7 +261,7 @@ export async function POST(req: NextRequest) {
       )
     }
     console.error('[on-demand-help/book] booking insert', bookingErr)
-    return NextResponse.json({ error: 'booking_failed', message: bookingErr.message }, { status: 500 })
+    return NextResponse.json({ error: 'booking_failed' }, { status: 500 })
   }
 
   const bookingId = bookingRow?.id as string
@@ -203,7 +271,7 @@ export async function POST(req: NextRequest) {
   if (leadErr) {
     await admin.from('on_demand_help_bookings').delete().eq('id', bookingId)
     console.error('[on-demand-help/book] lead insert', leadErr)
-    return NextResponse.json({ error: 'lead_failed', message: leadErr.message }, { status: 500 })
+    return NextResponse.json({ error: 'lead_failed' }, { status: 500 })
   }
 
   return NextResponse.json({ ok: true, bookingId })

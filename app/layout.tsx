@@ -17,10 +17,10 @@ const inter = Inter({
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['600', '700'],
   display: 'swap',
   variable: '--font-poppins',
-  preload: true,
+  preload: false,
 })
 
 /** Care cluster landing — Airbnb-style serif + humanist UI (scoped via Tailwind `font-careSerif` / `font-careUi`) */
@@ -37,13 +37,13 @@ const careUi = Plus_Jakarta_Sans({
   display: 'swap',
   variable: '--font-care-ui',
   preload: false,
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700'],
 })
 
 /** Hindi/Devanagari UI only — preload off so English LCP is not delayed */
 const notoSansDevanagari = Noto_Sans_Devanagari({
   subsets: ['devanagari'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '700'],
   display: 'swap',
   variable: '--font-noto-devanagari',
   preload: false,
@@ -124,7 +124,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script id="google-tag-manager" strategy="beforeInteractive">
+        <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -136,6 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#0074C8" />
 
         {/* Core Schema Markup */}
@@ -143,7 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <WebSiteSchema />
       </head>
       <body
-        className={`${inter.variable} ${poppins.variable} ${notoSansDevanagari.variable} ${careSerif.variable} ${careUi.variable} font-sans antialiased`}
+        className={`${inter.variable} ${poppins.variable} ${notoSansDevanagari.variable} ${careSerif.variable} ${careUi.variable} font-sans antialiased pb-16 lg:pb-0`}
         suppressHydrationWarning
       >
         <noscript>
@@ -163,9 +164,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           Skip to main content
         </a>
         <UrgencyProvider>
-          <div id="main-content">
+          <main id="main-content">
             {children}
-          </div>
+          </main>
           <ClientOnlyWidgets />
         </UrgencyProvider>
         <ThirdPartyScripts />

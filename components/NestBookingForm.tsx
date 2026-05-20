@@ -31,6 +31,7 @@ export default function NestBookingForm() {
     })
     const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
+    const [honeypot, setHoneypot] = useState('')
     const router = useRouter()
     const [hasTrackedStart, setHasTrackedStart] = useState(false)
 
@@ -152,6 +153,7 @@ export default function NestBookingForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
+        if (submitStatus === 'submitting') return
         if (validateStep1() && validateStep2()) {
             setSubmitStatus('submitting')
             try {
@@ -182,7 +184,7 @@ export default function NestBookingForm() {
                     await fetch('/api/send-nest-lead-email', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ formData: submissionData, requestId: newRequestId })
+                        body: JSON.stringify({ formData: submissionData, requestId: newRequestId, website: honeypot })
                     })
                 } catch (emailError) {
                     console.error('Email error:', emailError)
@@ -225,7 +227,18 @@ export default function NestBookingForm() {
                 {step === 1 ? 'Tell us about yourself' : 'Choose your dates'}
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-3.5">
+            <form onSubmit={handleSubmit} className="space-y-3.5" aria-busy={submitStatus === 'submitting'}>
+                {/* Honeypot field - hidden from real users, traps bots */}
+                <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    style={{ position: 'absolute', left: '-9999px', width: 0, height: 0, opacity: 0 }}
+                />
                 {step === 1 && (
                     <>
                         <div>

@@ -22,6 +22,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { supabase } from '@/lib/supabaseClient'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackChatStart, trackPhoneClick } from '@/lib/analytics'
+import { LoadingSpinner } from '@/components/ui/loading-spinner'
 
 export default function ContactPageClient() {
   const [formData, setFormData] = useState({
@@ -34,6 +35,8 @@ export default function ContactPageClient() {
   })
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'error'>('idle')
+  const [submitting, setSubmitting] = useState(false)
+  const [honeypot, setHoneypot] = useState('')
   const router = useRouter()
 
   useEffect(() => {
@@ -78,19 +81,21 @@ export default function ContactPageClient() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+    if (submitting) return
+
     trackFormStart('contact_form', 'contact_page')
-    
+
     if (!validateForm()) {
       trackFormError('contact_form', 'validation_failed', 'Form validation failed')
       return
     }
 
     setSubmitStatus('idle')
+    setSubmitting(true)
 
     try {
       trackFormSubmit('contact_form', formData)
-      
+
       // Save to Supabase
       const { error } = await supabase
         .from('leads')
@@ -112,6 +117,7 @@ export default function ContactPageClient() {
       // Send email via API
       const emailPayload = {
         leadType: 'general',
+        website: honeypot,
         formData: {
           name: formData.name,
           phone: formData.phone,
@@ -124,9 +130,9 @@ export default function ContactPageClient() {
           }
         }
       };
-      
+
       console.log('Sending email payload:', emailPayload);
-      
+
       const response = await fetch('/api/send-lead-email', {
         method: 'POST',
         headers: {
@@ -142,11 +148,13 @@ export default function ContactPageClient() {
       const confirmId = `CNT-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substr(2, 4).toUpperCase()}`
       trackFormComplete('contact_form')
       router.push(`/thank-you?type=contact&ref=${encodeURIComponent(confirmId)}`)
-      
+
     } catch (error) {
       console.error('Error submitting form:', error)
       setSubmitStatus('error')
       trackFormError('contact_form', 'submission_failed', 'Form submission failed')
+    } finally {
+      setSubmitting(false)
     }
   }
 
@@ -229,73 +237,99 @@ export default function ContactPageClient() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6" aria-busy={submitting}>
+                {/* Honeypot field - hidden from real users, traps bots */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  style={{ position: 'absolute', left: '-9999px', width: 0, height: 0, opacity: 0 }}
+                />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-name" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <input
                       type="text"
-                      id="name"
+                      id="contact-name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
+                      aria-invalid={!!formErrors.name}
+                      aria-describedby={formErrors.name ? 'contact-name-error' : undefined}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                         formErrors.name ? 'border-red-500' : 'border-gray-300'
                       }`}
                       placeholder="Enter your full name"
                     />
-                    {formErrors.name && <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>}
+                    {formErrors.name && <p id="contact-name-error" role="alert" className="text-red-500 text-sm mt-1">{formErrors.name}</p>}
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-phone" className="block text-sm font-medium text-gray-700 mb-2">
                       Phone Number *
                     </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
-                        formErrors.phone ? 'border-red-500' : 'border-gray-300'
-                      }`}
-                      placeholder="Enter your phone number"
-                    />
-                    {formErrors.phone && <p className="text-red-500 text-sm mt-1">{formErrors.phone}</p>}
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm pointer-events-none select-none">+91</span>
+                      <input
+                        type="tel"
+                        id="contact-phone"
+                        name="phone"
+                        inputMode="tel"
+                        maxLength={10}
+                        pattern="[5-9][0-9]{9}"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        aria-invalid={!!formErrors.phone}
+                        aria-describedby={formErrors.phone ? 'contact-phone-error' : 'contact-phone-hint'}
+                        className={`w-full pl-12 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
+                          formErrors.phone ? 'border-red-500' : 'border-gray-300'
+                        }`}
+                        placeholder="9XXXXXXXXX"
+                      />
+                    </div>
+                    <p id="contact-phone-hint" className="text-xs text-gray-500 mt-1">10-digit mobile number, no country code needed</p>
+                    {formErrors.phone && <p id="contact-phone-error" role="alert" className="text-red-500 text-sm mt-1">{formErrors.phone}</p>}
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="contact-email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email Address *
                   </label>
                   <input
                     type="email"
-                    id="email"
+                    id="contact-email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
+                    aria-invalid={!!formErrors.email}
+                    aria-describedby={formErrors.email ? 'contact-email-error' : undefined}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                       formErrors.email ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="Enter your email address"
                   />
-                  {formErrors.email && <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>}
+                  {formErrors.email && <p id="contact-email-error" role="alert" className="text-red-500 text-sm mt-1">{formErrors.email}</p>}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-service" className="block text-sm font-medium text-gray-700 mb-2">
                       Service Required *
                     </label>
                     <select
-                      id="service"
+                      id="contact-service"
                       name="service"
                       value={formData.service}
                       onChange={handleInputChange}
+                      aria-invalid={!!formErrors.service}
+                      aria-describedby={formErrors.service ? 'contact-service-error' : undefined}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                         formErrors.service ? 'border-red-500' : 'border-gray-300'
                       }`}
@@ -305,18 +339,20 @@ export default function ContactPageClient() {
                         <option key={service} value={service}>{service}</option>
                       ))}
                     </select>
-                    {formErrors.service && <p className="text-red-500 text-sm mt-1">{formErrors.service}</p>}
+                    {formErrors.service && <p id="contact-service-error" role="alert" className="text-red-500 text-sm mt-1">{formErrors.service}</p>}
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-city" className="block text-sm font-medium text-gray-700 mb-2">
                       City *
                     </label>
                     <select
-                      id="city"
+                      id="contact-city"
                       name="city"
                       value={formData.city}
                       onChange={handleInputChange}
+                      aria-invalid={!!formErrors.city}
+                      aria-describedby={formErrors.city ? 'contact-city-error' : undefined}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                         formErrors.city ? 'border-red-500' : 'border-gray-300'
                       }`}
@@ -326,33 +362,38 @@ export default function ContactPageClient() {
                         <option key={city} value={city}>{city}</option>
                       ))}
                     </select>
-                    {formErrors.city && <p className="text-red-500 text-sm mt-1">{formErrors.city}</p>}
+                    {formErrors.city && <p id="contact-city-error" role="alert" className="text-red-500 text-sm mt-1">{formErrors.city}</p>}
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="contact-message" className="block text-sm font-medium text-gray-700 mb-2">
                     Message *
                   </label>
                   <textarea
-                    id="message"
+                    id="contact-message"
                     name="message"
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
+                    aria-invalid={!!formErrors.message}
+                    aria-describedby={formErrors.message ? 'contact-message-error' : undefined}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                       formErrors.message ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="Tell us about your requirements..."
                   ></textarea>
-                  {formErrors.message && <p className="text-red-500 text-sm mt-1">{formErrors.message}</p>}
+                  {formErrors.message && <p id="contact-message-error" role="alert" className="text-red-500 text-sm mt-1">{formErrors.message}</p>}
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-colors duration-200"
+                  className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                  disabled={submitting}
+                  aria-disabled={submitting}
                 >
-                  Send Message
+                  {submitting && <LoadingSpinner size="sm" />}
+                  {submitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
                 </>

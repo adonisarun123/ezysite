@@ -4,9 +4,15 @@ export interface ThankYouCopy {
   refLabel?: string
 }
 
+/** Allowed shape for ?ref= — short alphanumeric/dash token */
+const REF_REGEX = /^[A-Za-z0-9-]{4,32}$/
+
 /** Query param ?type=… from forms → page copy */
 export function getThankYouCopy(type: string | undefined, ref?: string): ThankYouCopy {
   const t = (type || '').toLowerCase().trim()
+  // Sanitize the ref param — discard anything that doesn't match the strict allow pattern.
+  const safeRef = typeof ref === 'string' && REF_REGEX.test(ref) ? ref : undefined
+  ref = safeRef
   const refNote =
     ref && ref.length > 0
       ? ' Save this reference for follow-up with our team.'

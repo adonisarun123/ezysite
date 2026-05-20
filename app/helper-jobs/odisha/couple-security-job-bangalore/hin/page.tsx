@@ -79,7 +79,7 @@ const faqs: FAQItem[] = [
 export default function CoupleSecurityJobsOdishaBangaloreHindiPage() {
     return (
         <>
-            <main className="min-h-screen noto-sans-devanagari-hindi">
+            <div lang="hi" className="min-h-screen noto-sans-devanagari-hindi">
                 <Navbar />
 
                 <Breadcrumb
@@ -607,7 +607,7 @@ export default function CoupleSecurityJobsOdishaBangaloreHindiPage() {
                 </section>
 
                 <Footer />
-            </main>
+            </div>
         </>
     )
 }

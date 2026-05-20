@@ -131,16 +131,20 @@ async function saveToDatabase(agentData: Omit<AgentData, 'createdAt' | 'updatedA
       return { success: false, error: error.message }
     }
 
-    console.log('Agent registration saved to Supabase:', {
-      id: agentData.id,
-      agencyName: agentData.agencyName,
-      ownerName: agentData.ownerName,
-      email: agentData.email,
-      phone: agentData.primaryPhone,
-      city: agentData.city,
-      state: agentData.state,
-      servicesOffered: agentData.servicesOffered
-    })
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('Agent registration saved to Supabase:', {
+        id: agentData.id,
+        agencyName: agentData.agencyName,
+        ownerName: agentData.ownerName,
+        email: agentData.email,
+        phone: agentData.primaryPhone,
+        city: agentData.city,
+        state: agentData.state,
+        servicesOffered: agentData.servicesOffered
+      })
+    } else {
+      console.log('Agent registration saved', { id: agentData.id })
+    }
     
     return { success: true }
   } catch (error) {
@@ -151,8 +155,27 @@ async function saveToDatabase(agentData: Omit<AgentData, 'createdAt' | 'updatedA
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 5 req / 10 min per IP
+    const ip =
+      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+      request.headers.get('x-real-ip') ||
+      'unknown'
+    const rl = checkRateLimit(`POST:${request.nextUrl.pathname}:${ip}`, 5, 600_000)
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { success: false, error: 'rate_limited' },
+        { status: 429 }
+      )
+    }
+
     const formData = await request.formData()
-    
+
+    // Honeypot check
+    const honeypot = formData.get('website')
+    if (typeof honeypot === 'string' && honeypot.trim() !== '') {
+      return NextResponse.json({ success: true })
+    }
+
     // Extract and validate basic fields
     const agencyName = formData.get('agencyName') as string
     const registrationNumber = formData.get('registrationNumber') as string
@@ -332,8 +355,9 @@ export async function POST(request: NextRequest) {
     const saveResult = await saveToDatabase(agentData)
     
     if (!saveResult.success) {
+      console.error('agents save failed', saveResult.error)
       return NextResponse.json(
-        { error: 'Failed to save registration data', details: saveResult.error },
+        { error: 'request_failed' },
         { status: 500 }
       )
     }

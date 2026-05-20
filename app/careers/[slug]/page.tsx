@@ -9,6 +9,7 @@ import ApmApplicationForm from '@/components/careers/ApmApplicationForm'
 import SalesExecutiveApplicationForm from '@/components/careers/SalesExecutiveApplicationForm'
 import CareersRoleApplicationForm from '@/components/careers/CareersRoleApplicationForm'
 import { ArrowLeftIcon, MapPinIcon, ClockIcon, BuildingOffice2Icon } from '@heroicons/react/24/outline'
+import { JobPostingSchema } from '@/components/schema'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -64,6 +65,14 @@ export default async function CareerJobPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-[#fbfbfd] text-[#1d1d1f]">
+      <JobPostingSchema
+        title={job.title}
+        description={job.excerpt}
+        datePosted="2026-01-01"
+        validThrough="2027-01-01"
+        employmentType="FULL_TIME"
+        jobLocation={{ addressLocality: 'Bangalore', addressRegion: 'Karnataka', addressCountry: 'IN' }}
+      />
       <Navbar />
 
       <Breadcrumb

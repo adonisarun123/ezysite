@@ -7,6 +7,7 @@ import { supabase } from '@/lib/supabaseClient'
 import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackStepComplete, trackServiceSelect, trackBookingStart, trackBookingComplete } from '@/lib/analytics'
 import { sendWebhook } from '@/lib/webhookService'
+import { LoadingSpinner } from '@/components/ui/loading-spinner'
 
 interface FormData {
   name: string
@@ -84,6 +85,8 @@ export default function HireHelperForm() {
   })
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'error'>('idle')
+  const [submitting, setSubmitting] = useState(false)
+  const [honeypot, setHoneypot] = useState('')
   const [hasTrackedStart, setHasTrackedStart] = useState(false)
   const searchParams = useSearchParams()
   const router = useRouter()
@@ -250,93 +253,97 @@ export default function HireHelperForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (validateAll()) {
-      try {
-        // Track form submission
-        trackFormSubmit('hire_helper_form', formData);
+    if (submitting) return
+    if (!validateAll()) return
+    setSubmitting(true)
+    try {
+      // Track form submission
+      trackFormSubmit('hire_helper_form', formData);
 
-        const newRequestId = generateRequestId()
+      const newRequestId = generateRequestId()
 
-        // Store in Supabase
-        const insertRow = buildHireHelperLeadInsertRow({
-          name: formData.name.trim(),
-          phone: formData.phone.trim(),
-          email: formData.email.trim(),
-          city: formData.city,
-          locality: formData.locality.trim(),
-          apartment: formData.apartment.trim(),
-          service: formData.serviceType,
-          duration: formData.duration,
-          serviceTimings: formData.serviceTimings.trim(),
-          startDate: formData.startDate,
-          specificRequirements: formData.specificRequirements,
-          experience: formData.experience,
-          budget: formData.budget,
-          languages: formData.languages.join(','),
-          additionalServices: formData.additionalServices.join(','),
-          familySize: formData.familySize,
-          preferredGender: formData.preferredGender,
-        })
-        const { error } = await supabase.from('hire_helper_leads').insert([insertRow])
-        if (error) {
-          console.error('hire_helper_leads insert failed:', error.message, error)
-          throw error
-        }
-
-        // Send email notification
-        try {
-          const emailResponse = await fetch('/api/send-lead-email', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              leadType: 'hire_helper',
-              formData: {
-                name: formData.name.trim(),
-                phone: formData.phone.trim(),
-                email: formData.email.trim(),
-                city: formData.city,
-                locality: formData.locality.trim(),
-                apartment: formData.apartment.trim(),
-                serviceType: formData.serviceType,
-                duration: formData.duration,
-                serviceTimings: formData.serviceTimings.trim(),
-                startDate: formData.startDate,
-                specificRequirements: formData.specificRequirements,
-                experience: formData.experience,
-                budget: formData.budget,
-                languages: formData.languages,
-                additionalServices: formData.additionalServices,
-                familySize: formData.familySize,
-                preferredGender: formData.preferredGender
-              },
-              requestId: newRequestId,
-              sourceUrl: window.location.href
-            })
-          });
-
-          if (!emailResponse.ok) {
-            console.error('Failed to send email notification');
-          }
-        } catch (emailError) {
-          console.error('Email sending error:', emailError);
-          // Don't fail the form submission if email fails
-        }
-
-        // Send webhook
-        sendWebhook('hire_helper', formData, newRequestId).catch(console.error)
-
-        // Track successful form completion
-        trackFormComplete('hire_helper_form', newRequestId);
-        trackBookingComplete(formData.serviceType, formData.city, newRequestId);
-
-        router.push(`/thank-you?type=hire&ref=${encodeURIComponent(newRequestId)}`)
-      } catch (error) {
-        // Track form error
-        trackFormError('hire_helper_form', 'submission_error', error instanceof Error ? error.message : 'Unknown error');
-        setSubmitStatus('error')
+      // Store in Supabase
+      const insertRow = buildHireHelperLeadInsertRow({
+        name: formData.name.trim(),
+        phone: formData.phone.trim(),
+        email: formData.email.trim(),
+        city: formData.city,
+        locality: formData.locality.trim(),
+        apartment: formData.apartment.trim(),
+        service: formData.serviceType,
+        duration: formData.duration,
+        serviceTimings: formData.serviceTimings.trim(),
+        startDate: formData.startDate,
+        specificRequirements: formData.specificRequirements,
+        experience: formData.experience,
+        budget: formData.budget,
+        languages: formData.languages.join(','),
+        additionalServices: formData.additionalServices.join(','),
+        familySize: formData.familySize,
+        preferredGender: formData.preferredGender,
+      })
+      const { error } = await supabase.from('hire_helper_leads').insert([insertRow])
+      if (error) {
+        console.error('hire_helper_leads insert failed:', error.message, error)
+        throw error
       }
+
+      // Send email notification
+      try {
+        const emailResponse = await fetch('/api/send-lead-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            leadType: 'hire_helper',
+            website: honeypot,
+            formData: {
+              name: formData.name.trim(),
+              phone: formData.phone.trim(),
+              email: formData.email.trim(),
+              city: formData.city,
+              locality: formData.locality.trim(),
+              apartment: formData.apartment.trim(),
+              serviceType: formData.serviceType,
+              duration: formData.duration,
+              serviceTimings: formData.serviceTimings.trim(),
+              startDate: formData.startDate,
+              specificRequirements: formData.specificRequirements,
+              experience: formData.experience,
+              budget: formData.budget,
+              languages: formData.languages,
+              additionalServices: formData.additionalServices,
+              familySize: formData.familySize,
+              preferredGender: formData.preferredGender
+            },
+            requestId: newRequestId,
+            sourceUrl: window.location.href
+          })
+        });
+
+        if (!emailResponse.ok) {
+          console.error('Failed to send email notification');
+        }
+      } catch (emailError) {
+        console.error('Email sending error:', emailError);
+        // Don't fail the form submission if email fails
+      }
+
+      // Send webhook
+      sendWebhook('hire_helper', { ...formData, website: honeypot }, newRequestId).catch(console.error)
+
+      // Track successful form completion
+      trackFormComplete('hire_helper_form', newRequestId);
+      trackBookingComplete(formData.serviceType, formData.city, newRequestId);
+
+      router.push(`/thank-you?type=hire&ref=${encodeURIComponent(newRequestId)}`)
+    } catch (error) {
+      // Track form error
+      trackFormError('hire_helper_form', 'submission_error', error instanceof Error ? error.message : 'Unknown error');
+      setSubmitStatus('error')
+    } finally {
+      setSubmitting(false)
     }
   }
 
@@ -377,7 +384,18 @@ export default function HireHelperForm() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} aria-busy={submitting}>
+        {/* Honeypot field - hidden from real users, traps bots */}
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          style={{ position: 'absolute', left: '-9999px', width: 0, height: 0, opacity: 0 }}
+        />
         {/* Step 1: Personal Information */}
         {step === 1 && (
           <div className="space-y-6">
@@ -387,56 +405,76 @@ export default function HireHelperForm() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="hire-name" className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name *
                 </label>
                 <input
+                  id="hire-name"
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
+                  aria-invalid={!!formErrors.name}
+                  aria-describedby={formErrors.name ? 'hire-name-error' : undefined}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                   placeholder="Enter your full name"
                 />
-                {formErrors.name && <p className="text-xs text-red-500 mt-1">{formErrors.name}</p>}
+                {formErrors.name && <p id="hire-name-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.name}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="hire-phone" className="block text-sm font-medium text-gray-700 mb-2">
                   Phone Number *
                 </label>
-                <input
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
-                  placeholder="080-31411776"
-                />
-                {formErrors.phone && <p className="text-xs text-red-500 mt-1">{formErrors.phone}</p>}
+                <div className="relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm pointer-events-none select-none">+91</span>
+                  <input
+                    id="hire-phone"
+                    type="tel"
+                    required
+                    inputMode="tel"
+                    maxLength={10}
+                    pattern="[5-9][0-9]{9}"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value.replace(/\D/g, ''))}
+                    aria-invalid={!!formErrors.phone}
+                    aria-describedby={formErrors.phone ? 'hire-phone-error' : 'hire-phone-hint'}
+                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                    placeholder="9XXXXXXXXX"
+                  />
+                </div>
+                <p id="hire-phone-hint" className="text-xs text-gray-500 mt-1">10-digit mobile number, no country code needed</p>
+                {formErrors.phone && <p id="hire-phone-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.phone}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="hire-email" className="block text-sm font-medium text-gray-700 mb-2">
                   Email Address
                 </label>
                 <input
+                  id="hire-email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
+                  aria-invalid={!!formErrors.email}
+                  aria-describedby={formErrors.email ? 'hire-email-error' : undefined}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                   placeholder="your@email.com"
                 />
+                {formErrors.email && <p id="hire-email-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.email}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="hire-city" className="block text-sm font-medium text-gray-700 mb-2">
                   City *
                 </label>
                 <select
+                  id="hire-city"
                   required
                   value={formData.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
+                  aria-invalid={!!formErrors.city}
+                  aria-describedby={formErrors.city ? 'hire-city-error' : undefined}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                 >
                   <option value="">Select your city</option>
@@ -444,7 +482,7 @@ export default function HireHelperForm() {
                     <option key={city} value={city}>{city}</option>
                   ))}
                 </select>
-                {formErrors.city && <p className="text-xs text-red-500 mt-1">{formErrors.city}</p>}
+                {formErrors.city && <p id="hire-city-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.city}</p>}
               </div>
 
               <div>
@@ -524,26 +562,32 @@ export default function HireHelperForm() {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="hire-serviceTimings" className="block text-sm font-medium text-gray-700 mb-2">
                       Preferred service timings *
                     </label>
                     <input
+                      id="hire-serviceTimings"
                       type="text"
                       value={formData.serviceTimings}
                       onChange={(e) => handleInputChange('serviceTimings', e.target.value)}
+                      aria-invalid={!!formErrors.serviceTimings}
+                      aria-describedby={formErrors.serviceTimings ? 'hire-serviceTimings-error' : 'hire-serviceTimings-hint'}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none bg-white"
                       placeholder="e.g. 8 AM – 6 PM, Monday–Friday"
                     />
-                    <p className="text-xs text-gray-500 mt-1">Hours and days you need the helper at home</p>
-                    {formErrors.serviceTimings && <p className="text-xs text-red-500 mt-1">{formErrors.serviceTimings}</p>}
+                    <p id="hire-serviceTimings-hint" className="text-xs text-gray-500 mt-1">Hours and days you need the helper at home</p>
+                    {formErrors.serviceTimings && <p id="hire-serviceTimings-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.serviceTimings}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="hire-duration" className="block text-sm font-medium text-gray-700 mb-2">
                       Duration *
                     </label>
                     <select
+                      id="hire-duration"
                       value={formData.duration}
                       onChange={(e) => handleInputChange('duration', e.target.value)}
+                      aria-invalid={!!formErrors.duration}
+                      aria-describedby={formErrors.duration ? 'hire-duration-error' : undefined}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none bg-white"
                     >
                       <option value="">How long do you need the service?</option>
@@ -551,7 +595,7 @@ export default function HireHelperForm() {
                         <option key={opt.value} value={opt.value}>{opt.label}</option>
                       ))}
                     </select>
-                    {formErrors.duration && <p className="text-xs text-red-500 mt-1">{formErrors.duration}</p>}
+                    {formErrors.duration && <p id="hire-duration-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.duration}</p>}
                   </div>
                 </div>
               </div>
@@ -559,26 +603,32 @@ export default function HireHelperForm() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="hire-startDate" className="block text-sm font-medium text-gray-700 mb-2">
                   When do you need to start? *
                 </label>
                 <input
+                  id="hire-startDate"
                   type="date"
                   required
                   value={formData.startDate}
                   onChange={(e) => handleInputChange('startDate', e.target.value)}
+                  aria-invalid={!!formErrors.startDate}
+                  aria-describedby={formErrors.startDate ? 'hire-startDate-error' : undefined}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                 />
-                {formErrors.startDate && <p className="text-xs text-red-500 mt-1">{formErrors.startDate}</p>}
+                {formErrors.startDate && <p id="hire-startDate-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.startDate}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="hire-familySize" className="block text-sm font-medium text-gray-700 mb-2">
                   Family Size
                 </label>
                 <select
+                  id="hire-familySize"
                   value={formData.familySize}
                   onChange={(e) => handleInputChange('familySize', e.target.value)}
+                  aria-invalid={!!formErrors.familySize}
+                  aria-describedby={formErrors.familySize ? 'hire-familySize-error' : undefined}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                 >
                   <option value="">Select family size</option>
@@ -587,7 +637,7 @@ export default function HireHelperForm() {
                   <option value="5-6">5-6 members</option>
                   <option value="7+">7+ members</option>
                 </select>
-                {formErrors.familySize && <p className="text-xs text-red-500 mt-1">{formErrors.familySize}</p>}
+                {formErrors.familySize && <p id="hire-familySize-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.familySize}</p>}
               </div>
             </div>
 
@@ -707,18 +757,22 @@ export default function HireHelperForm() {
                 type="button"
                 onClick={prevStep}
                 className="btn-outline"
+                disabled={submitting}
               >
                 Previous
               </button>
               <button
                 type="submit"
-                className="btn-primary"
+                className="btn-primary flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                disabled={submitting}
+                aria-disabled={submitting}
               >
-                Submit Request
+                {submitting && <LoadingSpinner size="sm" />}
+                {submitting ? 'Submitting...' : 'Submit Request'}
               </button>
             </div>
             {submitStatus === 'error' && (
-              <p className="text-red-600 text-sm mt-2">There was an error submitting your request. Please try again.</p>
+              <p role="alert" className="text-red-600 text-sm mt-2">There was an error submitting your request. Please try again.</p>
             )}
           </div>
         )}

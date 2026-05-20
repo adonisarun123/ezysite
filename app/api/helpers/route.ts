@@ -122,6 +122,14 @@ function validateIFSC(ifsc: string): boolean {
   return /^[A-Z]{4}0[A-Z0-9]{6}$/.test(ifsc.toUpperCase())
 }
 
+function calculateAge(dob: Date): number {
+  const now = new Date()
+  let age = now.getFullYear() - dob.getFullYear()
+  const monthDiff = now.getMonth() - dob.getMonth()
+  if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < dob.getDate())) age--
+  return age
+}
+
 // Save helper data to Supabase database
 async function saveToDatabase(helperData: Omit<HelperData, 'createdAt' | 'updatedAt'>): Promise<{ success: boolean; error?: string }> {
   try {
@@ -175,16 +183,20 @@ async function saveToDatabase(helperData: Omit<HelperData, 'createdAt' | 'update
       return { success: false, error: error.message }
     }
 
-    console.log('Helper registration saved to Supabase:', {
-      id: helperData.id,
-      name: `${helperData.firstName} ${helperData.lastName}`,
-      type: helperData.helperType,
-      phone: helperData.primaryPhone,
-      experience: helperData.experienceMonths,
-      specialities: helperData.specialities,
-      location: helperData.currentLocality,
-      listedBy: helperData.listedBy
-    })
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('Helper registration saved to Supabase:', {
+        id: helperData.id,
+        name: `${helperData.firstName} ${helperData.lastName}`,
+        type: helperData.helperType,
+        phone: helperData.primaryPhone,
+        experience: helperData.experienceMonths,
+        specialities: helperData.specialities,
+        location: helperData.currentLocality,
+        listedBy: helperData.listedBy
+      })
+    } else {
+      console.log('Helper registration saved', { id: helperData.id })
+    }
     
     return { success: true }
   } catch (error) {
@@ -195,8 +207,27 @@ async function saveToDatabase(helperData: Omit<HelperData, 'createdAt' | 'update
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 5 req / 10 min per IP
+    const ip =
+      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+      request.headers.get('x-real-ip') ||
+      'unknown'
+    const rl = checkRateLimit(`POST:${request.nextUrl.pathname}:${ip}`, 5, 600_000)
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { success: false, error: 'rate_limited' },
+        { status: 429 }
+      )
+    }
+
     const formData = await request.formData()
-    
+
+    // Honeypot check
+    const honeypot = formData.get('website')
+    if (typeof honeypot === 'string' && honeypot.trim() !== '') {
+      return NextResponse.json({ success: true })
+    }
+
     // Extract and validate basic fields
     const helperType = formData.get('helperType') as string
     const firstName = formData.get('firstName') as string
@@ -261,11 +292,16 @@ export async function POST(request: NextRequest) {
     if (!dateOfBirth) {
       errors.push('Date of birth is required')
     } else {
-      const age = new Date().getFullYear() - new Date(dateOfBirth).getFullYear()
-      if (age < VALIDATION.MIN_AGE) {
-        errors.push(`Must be at least ${VALIDATION.MIN_AGE} years old`)
-      } else if (age > VALIDATION.MAX_AGE) {
-        errors.push(`Must be under ${VALIDATION.MAX_AGE} years old`)
+      const dob = new Date(dateOfBirth)
+      if (!Number.isFinite(dob.getTime())) {
+        errors.push('Date of birth is invalid')
+      } else {
+        const age = calculateAge(dob)
+        if (age < VALIDATION.MIN_AGE) {
+          errors.push(`Must be at least ${VALIDATION.MIN_AGE} years old`)
+        } else if (age > VALIDATION.MAX_AGE) {
+          errors.push(`Must be under ${VALIDATION.MAX_AGE} years old`)
+        }
       }
     }
     
@@ -406,8 +442,9 @@ export async function POST(request: NextRequest) {
     const saveResult = await saveToDatabase(helperData)
     
     if (!saveResult.success) {
+      console.error('helpers save failed', saveResult.error)
       return NextResponse.json(
-        { error: 'Failed to save registration data', details: saveResult.error },
+        { error: 'request_failed' },
         { status: 500 }
       )
     }

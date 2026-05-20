@@ -72,7 +72,7 @@ const faqs: FAQItem[] = [
 export default function HomeCookJobsBangaloreHindiPage() {
     return (
         <div className="noto-sans-devanagari-hindi">
-            <main className="min-h-screen">
+            <div lang="hi" className="min-h-screen">
                 <Navbar />
 
                 <div className="mb-4">
@@ -956,7 +956,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
             <Footer />
         </div>
     )

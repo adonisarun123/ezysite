@@ -83,7 +83,7 @@ const faqs: FAQItem[] = [
 export default function FarmhouseCoupleJobsBangaloreHindiPage() {
     return (
         <>
-            <main className="min-h-screen">
+            <div lang="hi" className="min-h-screen">
                 <Navbar />
 
                 <Breadcrumb
@@ -606,7 +606,7 @@ export default function FarmhouseCoupleJobsBangaloreHindiPage() {
                 </section>
 
                 <Footer />
-            </main>
+            </div>
         </>
     )
 }

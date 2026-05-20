@@ -3,6 +3,10 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+
+// ISR: revalidate hourly
+export const revalidate = 3600
+import AvailableInCities from '@/components/AvailableInCities'
 import {
   UserGroupIcon, 
   HeartIcon, 
@@ -613,6 +617,14 @@ export default function NannyBabysitterPage() {
       </section>
       
             <NestCTA />
+            <AvailableInCities
+        serviceSlug="nanny-babysitter"
+        serviceName="Nanny & Babysitter"
+        cities={[
+          { name: "Bangalore", href: "/cities/bangalore/nanny-babysitter" },
+          { name: "Bareilly", href: "/cities/bareilly/babysitter" },
+        ]}
+      />
       <Footer />
       </main>
     </>

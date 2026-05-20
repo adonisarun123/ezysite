@@ -31,6 +31,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'Earn More: Housekeeping Jobs in Bangalore for You',
@@ -94,7 +95,15 @@ export default function HousekeepingJobsOdishaBangalorePage() {
     return (
         <>
             <main className="min-h-screen">
-                <Navbar />
+                <JobPostingSchema
+                title="Housekeeping Job in Bangalore"
+                description="Housekeeping jobs in Bangalore for helpers from Odisha. Verified families, fixed work hours, training, and long-term support."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: "Bangalore", addressRegion: "Karnataka", addressCountry: "IN" }}
+            />
+            <Navbar />
 
                 <Breadcrumb
                     sticky={true}

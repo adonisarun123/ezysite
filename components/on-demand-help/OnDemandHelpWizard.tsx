@@ -71,6 +71,7 @@ export default function OnDemandHelpWizard() {
 
   const [formErrors, setFormErrors] = useState<Record<string, string>>({})
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
+  const [honeypot, setHoneypot] = useState('')
   const [submitConflictMessage, setSubmitConflictMessage] = useState<string | null>(null)
   const [submitErrorHint, setSubmitErrorHint] = useState<string | null>(null)
   const [paymentUnlocked, setPaymentUnlocked] = useState(false)
@@ -306,6 +307,7 @@ export default function OnDemandHelpWizard() {
           flatUnitDetails: flatUnitDetails.trim(),
           landmark,
           notes,
+          website: honeypot,
         }),
       })
 
@@ -439,6 +441,17 @@ export default function OnDemandHelpWizard() {
       id="book-on-demand-help"
       className="isolate scroll-mt-28 rounded-2xl border border-emerald-100 bg-gradient-to-b from-emerald-50 to-white p-6 pb-8 sm:scroll-mt-32 sm:p-10 sm:pb-10 shadow-lg"
     >
+      {/* Honeypot field - hidden from real users, traps bots */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        style={{ position: 'absolute', left: '-9999px', width: 0, height: 0, opacity: 0 }}
+      />
       <div className="flex flex-col gap-8 border-b border-emerald-100/80 pb-8">
         <header className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700 sm:text-sm">

@@ -229,6 +229,39 @@ export default async function BlogPost({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.title,
+            description: post.excerpt,
+            image: post.image
+              ? (post.image.startsWith('http') ? post.image : `https://www.ezyhelpers.com${post.image}`)
+              : 'https://www.ezyhelpers.com/og-image.jpg',
+            datePublished: post.date,
+            dateModified: post.date,
+            author: {
+              '@type': 'Organization',
+              name: post.author ?? 'EzyHelpers',
+              url: 'https://www.ezyhelpers.com',
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'EzyHelpers',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.ezyhelpers.com/ezyhelper_logo_new.png',
+              },
+            },
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': `https://www.ezyhelpers.com/blog/${post.id}`,
+            },
+          }),
+        }}
+      />
       <UrgencyCTA />
       <Navbar />
 
@@ -256,9 +289,9 @@ export default async function BlogPost({ params }: PageProps) {
             {post.category}
           </span>
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm text-gray-400 font-medium border-y border-gray-100 py-4">
-            <span className="flex items-center gap-2">
+            <time dateTime={post.date} className="flex items-center gap-2">
               <CalendarDaysIcon className="w-4 h-4" /> {post.date}
-            </span>
+            </time>
             <span className="flex items-center gap-2">
               <ClockIcon className="w-4 h-4" /> {post.readTime}
             </span>
@@ -268,7 +301,7 @@ export default async function BlogPost({ params }: PageProps) {
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
-            h1: ({ children }) => <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 mt-4 leading-tight font-display">{children}</h1>,
+            h1: ({ children }) => <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 mt-4 leading-tight font-display">{children}</h2>,
             h2: ({ children }) => <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-12 pb-2 border-b-2 border-blue-500 w-fit">{children}</h2>,
             h3: ({ children }) => <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 mt-8">{children}</h3>,
             p: ({ children }) => <p className="text-gray-700 mb-6 leading-relaxed text-lg">{children}</p>,

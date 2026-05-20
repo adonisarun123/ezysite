@@ -109,7 +109,7 @@ export default function CareServicePageView({ filename }: { filename: string }) 
         />
 
         <Navbar />
-        <main id="main-content">
+        <div>
           {/* Hero — fluid mesh, organic wave, responsive type */}
           <section className="relative overflow-hidden pt-16 text-white sm:pt-20">
             {/* Base mesh + depth */}
@@ -274,7 +274,7 @@ export default function CareServicePageView({ filename }: { filename: string }) 
               </div>
             </div>
           </section>
-        </main>
+        </div>
         <Footer />
       </div>
     </>

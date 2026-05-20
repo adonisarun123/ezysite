@@ -6,7 +6,7 @@ import { CARE_ENQUIRY_HREF, CARE_NAV_CLUSTERS, CARE_PILLAR_HREF } from '@/lib/ca
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.ezyhelpers.com'
-  const currentDate = new Date().toISOString()
+  const currentDate = process.env.BUILD_DATE ?? '2026-05-20T00:00:00.000Z'
 
   // Core pages with high priority
   const corePages: MetadataRoute.Sitemap = [
@@ -45,12 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8
-    },
-    {
-      url: `${baseUrl}/jobs`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.85
     },
     {
       url: `${baseUrl}/faqs`,
@@ -156,10 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'appliance-repair',
     'on-demand-helpers',
     'ac-repair',
-    'babysitter',
-    'english-speaking-babysitters',
     'house-shifting',
-    'japa',
     'japa-nanny-services',
     'pest-control',
     'premium-chauffeur-service',
@@ -284,21 +275,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65
   }))
 
-  // Special landing pages
-  const landingPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/Lp/live-in-maid-bangalore`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7
-    },
-    {
-      url: `${baseUrl}/Lp/live-in-maid-bareilly`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7
-    }
-  ]
+  // Special landing pages (excluded — noindex)
+  const landingPages: MetadataRoute.Sitemap = []
 
   // Helper jobs pages
   const helperJobPages: MetadataRoute.Sitemap = [

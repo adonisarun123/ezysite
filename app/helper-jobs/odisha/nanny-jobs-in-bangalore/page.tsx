@@ -32,6 +32,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'Nanny Jobs in Bangalore – Earn Well with Trusted Families',
@@ -90,7 +91,15 @@ export default function NannyJobsOdishaBangalorePage() {
     return (
         <>
             <main className="min-h-screen">
-                <Navbar />
+                <JobPostingSchema
+                title="Nanny Job in Bangalore"
+                description="Nanny and babysitter jobs in Bangalore for helpers from Odisha. Verified homes, fixed work hours, training, long-term support."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: "Bangalore", addressRegion: "Karnataka", addressCountry: "IN" }}
+            />
+            <Navbar />
 
                 <Breadcrumb
                     sticky={true}
