@@ -17,6 +17,8 @@ interface FormData {
   locality: string
   apartment: string
   serviceType: string
+  serviceRole: string
+  otherRole: string
   duration: string
   serviceTimings: string
   startDate: string
@@ -29,15 +31,25 @@ interface FormData {
   preferredGender: string
 }
 
-const services = [
+const employmentTypes = [
   { value: 'live-in', label: 'Live-in Maid', description: '24/7 support at home' },
   { value: 'full-time', label: 'Full-time Maid', description: 'Daily 8-10 hours' },
   { value: 'part-time', label: 'Part-time Maid', description: 'Few hours daily' },
   { value: 'on-demand', label: 'On-demand Helper', description: 'As needed basis' },
-  { value: 'babysitter', label: 'Babysitter/Nanny', description: 'Child care specialist' },
+]
+
+const serviceRoles = [
+  { value: 'baby-care', label: 'Baby Care/Nanny', description: 'Child care specialist' },
   { value: 'elderly-care', label: 'Elderly Care', description: 'Senior care assistant' },
+  { value: 'general-housekeeping', label: 'General Housekeeping', description: 'Cleaning & household tasks' },
   { value: 'cook', label: 'Cook', description: 'Meal preparation' },
-  { value: 'driver', label: 'Driver', description: 'Transportation service' }
+  { value: 'driver', label: 'Driver', description: 'Transportation service' },
+  { value: 'others', label: 'Others', description: 'Please specify below' },
+]
+
+const services = [
+  ...employmentTypes,
+  ...serviceRoles,
 ]
 
 const cities = [
@@ -72,6 +84,8 @@ export default function HireHelperForm() {
     locality: '',
     apartment: '',
     serviceType: '',
+    serviceRole: '',
+    otherRole: '',
     duration: '',
     serviceTimings: '',
     startDate: '',
@@ -98,10 +112,9 @@ export default function HireHelperForm() {
       setHasTrackedStart(true);
 
       const serviceParam = searchParams.get('service');
-      if (serviceParam && services.some(s => s.value === serviceParam)) {
+      if (serviceParam && employmentTypes.some(s => s.value === serviceParam)) {
         setFormData(prev => ({ ...prev, serviceType: serviceParam }));
-        // Track the pre-selected service
-        const selectedService = services.find(s => s.value === serviceParam);
+        const selectedService = employmentTypes.find(s => s.value === serviceParam);
         if (selectedService) {
           trackServiceSelect(selectedService.label, serviceParam, 'hire_helper_form');
         }
@@ -112,16 +125,20 @@ export default function HireHelperForm() {
   const handleInputChange = (field: keyof FormData, value: string | string[]) => {
     setFormData(prev => {
       const next = { ...prev, [field]: value } as FormData
-      if (field === 'serviceType' && typeof value === 'string' && value === 'live-in') {
-        next.duration = ''
-        next.serviceTimings = ''
+      if (field === 'serviceType' && typeof value === 'string') {
+        if (value === 'live-in') {
+          next.duration = ''
+          next.serviceTimings = ''
+        }
+        next.serviceRole = ''
+        next.otherRole = ''
       }
       return next
     })
 
     // Track service selection
     if (field === 'serviceType' && typeof value === 'string') {
-      const selectedService = services.find(s => s.value === value);
+      const selectedService = employmentTypes.find(s => s.value === value);
       if (selectedService) {
         trackServiceSelect(selectedService.label, value, 'hire_helper_form');
       }
@@ -160,6 +177,12 @@ export default function HireHelperForm() {
     } else if (step === 2) {
       if (!formData.serviceType) {
         errors.serviceType = 'Please select a service type'
+      }
+      if (!formData.serviceRole) {
+        errors.serviceRole = 'Please select a role'
+      }
+      if (formData.serviceRole === 'others' && !formData.otherRole.trim()) {
+        errors.otherRole = 'Please specify the role you need'
       }
       if (!formData.startDate) {
         errors.startDate = 'Please select a start date'
@@ -208,6 +231,12 @@ export default function HireHelperForm() {
     }
     if (!formData.serviceType) {
       errors.serviceType = 'Please select a service type'
+    }
+    if (!formData.serviceRole) {
+      errors.serviceRole = 'Please select a role'
+    }
+    if (formData.serviceRole === 'others' && !formData.otherRole.trim()) {
+      errors.otherRole = 'Please specify the role you need'
     }
     if (!formData.startDate) {
       errors.startDate = 'Please select a start date'
@@ -263,6 +292,7 @@ export default function HireHelperForm() {
       const newRequestId = generateRequestId()
 
       // Store in Supabase
+      const roleLabel = formData.serviceRole === 'others' ? formData.otherRole.trim() : formData.serviceRole
       const insertRow = buildHireHelperLeadInsertRow({
         name: formData.name.trim(),
         phone: formData.phone.trim(),
@@ -270,7 +300,7 @@ export default function HireHelperForm() {
         city: formData.city,
         locality: formData.locality.trim(),
         apartment: formData.apartment.trim(),
-        service: formData.serviceType,
+        service: `${formData.serviceType} - ${roleLabel}`,
         duration: formData.duration,
         serviceTimings: formData.serviceTimings.trim(),
         startDate: formData.startDate,
@@ -306,6 +336,7 @@ export default function HireHelperForm() {
               locality: formData.locality.trim(),
               apartment: formData.apartment.trim(),
               serviceType: formData.serviceType,
+              serviceRole: formData.serviceRole === 'others' ? formData.otherRole.trim() : formData.serviceRole,
               duration: formData.duration,
               serviceTimings: formData.serviceTimings.trim(),
               startDate: formData.startDate,
@@ -533,27 +564,67 @@ export default function HireHelperForm() {
               Service Requirements
             </h2>
 
+            {/* Employment Type Selection */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-4">
                 What type of service do you need? *
               </label>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {services.map(service => (
+                {employmentTypes.map(type => (
                   <div
-                    key={service.value}
-                    className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceType === service.value
-                      ? 'border-primary-500 bg-primary-50'
+                    key={type.value}
+                    className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceType === type.value
+                      ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
                       : 'border-gray-200 hover:border-gray-300'
                       }`}
-                    onClick={() => handleInputChange('serviceType', service.value)}
+                    onClick={() => handleInputChange('serviceType', type.value)}
                   >
-                    <div className="font-medium text-gray-900">{service.label}</div>
-                    <div className="text-sm text-gray-600">{service.description}</div>
+                    <div className="font-medium text-gray-900">{type.label}</div>
+                    <div className="text-sm text-gray-600">{type.description}</div>
                   </div>
                 ))}
               </div>
               {formErrors.serviceType && <p className="text-xs text-red-500 mt-1">{formErrors.serviceType}</p>}
             </div>
+
+            {/* Role Selection - shown after employment type is chosen */}
+            {formData.serviceType && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-4">
+                  What role do you need help with? *
+                </label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {serviceRoles.map(role => (
+                    <div
+                      key={role.value}
+                      className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceRole === role.value
+                        ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
+                        : 'border-gray-200 hover:border-gray-300'
+                        }`}
+                      onClick={() => setFormData(prev => ({ ...prev, serviceRole: role.value, otherRole: role.value !== 'others' ? '' : prev.otherRole }))}
+                    >
+                      <div className="font-medium text-gray-900">{role.label}</div>
+                      <div className="text-sm text-gray-600">{role.description}</div>
+                    </div>
+                  ))}
+                </div>
+                {formErrors.serviceRole && <p className="text-xs text-red-500 mt-1">{formErrors.serviceRole}</p>}
+
+                {formData.serviceRole === 'others' && (
+                  <div className="mt-4">
+                    <input
+                      type="text"
+                      value={formData.otherRole}
+                      onChange={(e) => setFormData(prev => ({ ...prev, otherRole: e.target.value }))}
+                      aria-invalid={!!formErrors.otherRole}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                      placeholder="Please specify the role you need..."
+                    />
+                    {formErrors.otherRole && <p className="text-xs text-red-500 mt-1">{formErrors.otherRole}</p>}
+                  </div>
+                )}
+              </div>
+            )}
 
             {requiresScheduleDetails(formData.serviceType) && (
               <div className="space-y-6 rounded-xl border border-primary-100 bg-primary-50/40 p-5 md:p-6">
