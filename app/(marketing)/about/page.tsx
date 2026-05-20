@@ -5,9 +5,7 @@ import Link from 'next/link';
 // ISR: revalidate hourly
 export const revalidate = 3600
 import Image from 'next/image';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
-import Breadcrumb from '../../components/Breadcrumb';
+import Breadcrumb from '@/components/Breadcrumb';
 import {
   HeartIcon,
   ShieldCheckIcon,
@@ -41,9 +39,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-      
-      <Breadcrumb 
+      <Breadcrumb
         items={[
           { label: 'Home', href: '/' },
           { label: 'About Us' }
@@ -383,7 +379,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
-} 
+}

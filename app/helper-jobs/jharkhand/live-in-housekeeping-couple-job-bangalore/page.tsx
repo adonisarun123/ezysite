@@ -32,6 +32,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'Live-in Couple Housekeeping Jobs in Bangalore Apply Now',
@@ -86,6 +87,15 @@ const faqs: FAQItem[] = [
 export default function HousekeepingCoupleJobsBangalorePage() {
     return (
         <>
+            <JobPostingSchema
+                title="Live-in Couple Housekeeping Jobs in Bangalore"
+                description="Husband-wife live-in housekeeping couple jobs in Bangalore for helpers from Jharkhand. Stay together, earn together with food, accommodation, and job support. No fees."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: 'Bangalore', addressRegion: 'Karnataka', addressCountry: 'IN' }}
+                applicantLocationRequirements="IN"
+            />
             <main className="min-h-screen">
                 <Navbar />
 

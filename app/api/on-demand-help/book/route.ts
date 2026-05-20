@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import crypto from 'crypto'
 import { createSupabaseAdmin } from '@/lib/supabaseAdmin'
 import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
 import { istVisitRangeUtcIso } from '@/lib/istDateTime'
@@ -16,16 +15,10 @@ import { buildOnDemandHelpSpecificRequirements, buildOnDemandHelpTimingSummary }
 import { getAvailableSlotStartsIst } from '@/lib/onDemandHelpSlots'
 import { checkRateLimit } from '@/lib/auth'
 
-function timingSafeEqualHex(a: string, b: string): boolean {
-  try {
-    const ab = Buffer.from(a, 'hex')
-    const bb = Buffer.from(b, 'hex')
-    if (ab.length !== bb.length || ab.length === 0) return false
-    return crypto.timingSafeEqual(ab, bb)
-  } catch {
-    return false
-  }
-}
+const ALLOWED_ORIGINS = new Set<string>([
+  'https://www.ezyhelpers.com',
+  'https://ezyhelpers.com',
+])
 
 const ALLOWED_AREAS = new Set<string>(ON_DEMAND_HELP_AREAS)
 const ALLOWED_DURATIONS = new Set<number>(ON_DEMAND_HELP_DURATIONS)
@@ -43,6 +36,22 @@ function isTaskIdArray(ids: unknown[]): ids is OnDemandHelpTaskId[] {
  * Atomically reserves a visit window (global single-booking constraint) and inserts hire_helper_leads.
  */
 export async function POST(req: NextRequest) {
+  // Origin enforcement — this endpoint creates leads + reserves slots from the
+  // wizard on www.ezyhelpers.com only. The Razorpay Payment Button is hosted
+  // by Razorpay (no JS signature returned to us), so payment status is
+  // reconciled asynchronously via Razorpay webhook to /api/webhook-forward.
+  const origin = req.headers.get('origin') || ''
+  const referer = req.headers.get('referer') || ''
+  const skipOriginCheck = process.env.SKIP_ORIGIN_CHECK === 'true'
+  if (!skipOriginCheck) {
+    const originOk = origin && ALLOWED_ORIGINS.has(origin)
+    const refererOk =
+      referer && [...ALLOWED_ORIGINS].some((o) => referer.startsWith(o + '/') || referer === o)
+    if (!originOk && !refererOk) {
+      return NextResponse.json({ error: 'forbidden_origin' }, { status: 403 })
+    }
+  }
+
   // Rate limit: 5 req / 10 min per IP
   const ip =
     req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
@@ -79,42 +88,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, bookingId: null })
   }
 
-  // Razorpay payment verification
-  const orderId = typeof body.orderId === 'string' ? body.orderId.trim() : ''
-  const paymentId = typeof body.paymentId === 'string' ? body.paymentId.trim() : ''
-  const paymentSignature = typeof body.paymentSignature === 'string' ? body.paymentSignature.trim() : ''
-  const razorpaySecret = process.env.RAZORPAY_KEY_SECRET
-  const skipPaymentCheck = process.env.SKIP_PAYMENT_VERIFICATION === 'true'
-
-  if (!razorpaySecret) {
-    if (skipPaymentCheck) {
-      console.warn('[on-demand-help/book] RAZORPAY_KEY_SECRET not set; SKIP_PAYMENT_VERIFICATION=true so allowing through')
-    } else {
-      console.error('[on-demand-help/book] RAZORPAY_KEY_SECRET not set and SKIP_PAYMENT_VERIFICATION is not true; rejecting')
-      return NextResponse.json(
-        { error: 'payment_verification_unavailable' },
-        { status: 400 }
-      )
-    }
-  } else {
-    if (!orderId || !paymentId || !paymentSignature) {
-      return NextResponse.json(
-        { error: 'payment_missing', message: 'Payment confirmation is required.' },
-        { status: 400 }
-      )
-    }
-    const expected = crypto
-      .createHmac('sha256', razorpaySecret)
-      .update(`${orderId}|${paymentId}`)
-      .digest('hex')
-    if (!timingSafeEqualHex(expected, paymentSignature)) {
-      console.error('[on-demand-help/book] payment signature mismatch', { orderId, paymentId })
-      return NextResponse.json(
-        { error: 'payment_invalid', message: 'Payment confirmation could not be verified.' },
-        { status: 400 }
-      )
-    }
-  }
+  // NOTE on payment flow: this endpoint creates an UNPAID lead + reserves a
+  // visit slot. The wizard then shows a Razorpay Payment Button (hosted, no
+  // JS-side signature available). Payment confirmation is delivered to
+  // /api/webhook-forward by Razorpay and reconciled out-of-band (status moves
+  // from `pending` → `paid` on the booking row). Same-origin + rate-limit
+  // + honeypot above are the spam controls. If you later switch to Razorpay
+  // Checkout (Orders API + JS handler), reinstate HMAC verification of
+  // razorpay_signature here.
 
   const taskIdsRaw = body.taskIds
   const area = typeof body.area === 'string' ? body.area.trim() : ''

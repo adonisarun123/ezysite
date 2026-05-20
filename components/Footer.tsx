@@ -70,12 +70,12 @@ export default function Footer() {
               <div className="flex items-center space-x-2 mb-8">
                 <div className="w-10 h-10 bg-transparent rounded-lg flex items-center justify-center">
                   <Image
-                    src="/ezyhelper_logo_new.png"
+                    src="/ezyhelper_logo_96.png"
                     alt="EzyHelpers Logo"
                     width={40}
                     height={40}
                     className="object-contain"
-                    priority
+                    loading="lazy"
                   />
                 </div>
                 <span className="text-xl font-bold font-display">EzyHelpers</span>

@@ -25,6 +25,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'Live-in Couple For Farmhouse Jobs in Bangalore',
@@ -70,6 +71,15 @@ const faqs: FAQItem[] = [
 export default function FarmhouseCoupleJobsOdishaBangalorePage() {
     return (
         <>
+            <JobPostingSchema
+                title="Live-in Couple For Farmhouse Jobs in Bangalore"
+                description="Peaceful farmhouse caretaker jobs in Bangalore for couples from Odisha. Live together, save more, zero placement fees. Direct employer salary, on-site stay, property care duties, and steady income."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: 'Bangalore', addressRegion: 'Karnataka', addressCountry: 'IN' }}
+                applicantLocationRequirements="IN"
+            />
             <main className="min-h-screen">
                 <Navbar />
 

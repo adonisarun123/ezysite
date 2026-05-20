@@ -32,6 +32,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'बैंगलोर में लिव-इन कपल फार्महाउस जॉब्स | पति-पत्नी',
@@ -86,6 +87,15 @@ const faqs: FAQItem[] = [
 export default function FarmhouseCoupleJobsBangalorePage() {
     return (
         <>
+            <JobPostingSchema
+                title="Live-in Couple Farmhouse Jobs in Bangalore"
+                description="Live-in farmhouse caretaker jobs for husband-wife teams from Jharkhand. Maintenance, security, gardening duties. Free food, accommodation, and good salary."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: 'Bangalore', addressRegion: 'Karnataka', addressCountry: 'IN' }}
+                applicantLocationRequirements="IN"
+            />
             <main className="min-h-screen">
                 <Navbar />
 

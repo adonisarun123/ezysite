@@ -4,74 +4,24 @@ import pRetry from 'p-retry';
 import { EMAIL } from './constants';
 import { logger } from './logger';
 import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData, CareersSalesExecutiveFormData, CareersRoleApplicationFormData, CareServicesLeadFormData } from '../types/email';
+import {
+  createTransporter,
+  safe,
+  formatPhoneForEmail,
+  formatCoordinatesForEmail,
+  formatIDForEmail,
+  formatAccountForEmail,
+} from './emails/transport';
 
-// Defensive HTML-escape helper for any value interpolated into an HTML email string.
-const safe = (v: unknown): string => escapeHtml(String(v ?? ''));
-
-// Utility function to format phone numbers to bypass DLP (shows all digits with spaces)
-const formatPhoneForEmail = (phone: string): string => {
-  if (!phone || phone.length < 8) return phone;
-  const cleaned = phone.replace(/\D/g, '');
-
-  // For 10-digit numbers: 999 999 9999 (spaces break DLP pattern)
-  if (cleaned.length === 10) {
-    return `${cleaned.slice(0, 3)} ${cleaned.slice(3, 6)} ${cleaned.slice(6)}`;
-  }
-
-  // For 11+ digit numbers (with country code): +91 999 999 9999
-  if (cleaned.length > 10) {
-    const countryCode = cleaned.slice(0, cleaned.length - 10);
-    const remaining = cleaned.slice(-10);
-    return `+${countryCode} ${remaining.slice(0, 3)} ${remaining.slice(3, 6)} ${remaining.slice(6)}`;
-  }
-
-  // For shorter numbers: add spaces every 3-4 digits
-  return cleaned.match(/.{1,4}/g)?.join(' ') || phone;
-};
-
-// Utility function to format coordinates to bypass DLP
-const formatCoordinatesForEmail = (latitude: number, longitude: number): string => {
-  // Format as degrees with some precision but break the exact pattern
-  return `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
-};
-
-// Utility function to format ID numbers to bypass DLP (shows all characters with spaces)
-const formatIDForEmail = (idNumber: string): string => {
-  if (!idNumber || idNumber.length < 6) return idNumber;
-
-  // Add spaces every 4 characters to break consecutive patterns
-  return idNumber.match(/.{1,4}/g)?.join(' ') || idNumber;
-};
-
-// Utility function to format account numbers to bypass DLP (shows all digits with spaces)
-const formatAccountForEmail = (accountNumber: string): string => {
-  if (!accountNumber || accountNumber.length < 8) return accountNumber;
-
-  // Add spaces every 4 digits to break consecutive patterns
-  return accountNumber.match(/.{1,4}/g)?.join(' ') || accountNumber;
-};
-
-// Email transporter — pooled singleton so we reuse SMTP connections across
-// requests instead of opening a fresh socket for every email. The first call
-// constructs the transport; later calls return the cached instance.
-// Typed as `any` to keep call sites compatible with both pool/non-pool variants.
-let cachedTransporter: nodemailer.Transporter | null = null;
-
-const createTransporter = (): nodemailer.Transporter => {
-  if (cachedTransporter) return cachedTransporter;
-  cachedTransporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: process.env.SMTP_PORT === '465', // true for 465, false for other ports
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-    pool: true,
-    maxConnections: 5,
-    maxMessages: 100,
-  }) as nodemailer.Transporter;
-  return cachedTransporter;
+// Re-export the transport helpers for any external caller importing them from
+// `@/lib/emailService` directly (kept for backwards compatibility).
+export {
+  createTransporter,
+  safe,
+  formatPhoneForEmail,
+  formatCoordinatesForEmail,
+  formatIDForEmail,
+  formatAccountForEmail,
 };
 
 // Email templates
