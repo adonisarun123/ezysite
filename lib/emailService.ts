@@ -1695,7 +1695,7 @@ export const sendEzyNestBookingEmail = async (
       .filter(Boolean)
       .join(', ');
 
-    let mailOptions: any = {
+    const mailOptions: any = {
       from: process.env.SMTP_USER,
       to: adminEmail,
       replyTo: bookingDetails.email || process.env.SMTP_USER,
