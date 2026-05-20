@@ -29,6 +29,13 @@ interface FormData {
   additionalServices: string[]
   familySize: string
   preferredGender: string
+  houseType: string
+  numberOfRooms: string
+  cookFoodType: string
+  cookMeals: string[]
+  religion: string
+  hasPet: string
+  hasHelperRoom: string
 }
 
 const employmentTypes = [
@@ -95,7 +102,14 @@ export default function HireHelperForm() {
     languages: [],
     additionalServices: [],
     familySize: '',
-    preferredGender: ''
+    preferredGender: '',
+    houseType: '',
+    numberOfRooms: '',
+    cookFoodType: '',
+    cookMeals: [],
+    religion: '',
+    hasPet: '',
+    hasHelperRoom: '',
   })
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'error'>('idle')
@@ -129,6 +143,8 @@ export default function HireHelperForm() {
         if (value === 'live-in') {
           next.duration = ''
           next.serviceTimings = ''
+        } else {
+          next.hasHelperRoom = ''
         }
       }
       return next
@@ -173,14 +189,14 @@ export default function HireHelperForm() {
         errors.city = 'Please select a city'
       }
     } else if (step === 2) {
-      if (!formData.serviceType) {
-        errors.serviceType = 'Please select a service type'
-      }
       if (!formData.serviceRole) {
         errors.serviceRole = 'Please select a role'
       }
       if (formData.serviceRole === 'others' && !formData.otherRole.trim()) {
         errors.otherRole = 'Please specify the role you need'
+      }
+      if (!formData.serviceType) {
+        errors.serviceType = 'Please select a service type'
       }
       if (!formData.startDate) {
         errors.startDate = 'Please select a start date'
@@ -193,7 +209,24 @@ export default function HireHelperForm() {
         }
       }
       if (!formData.familySize) {
-        errors.familySize = 'Please select family size'
+        errors.familySize = 'Please select number of family members'
+      }
+      if (!formData.houseType) {
+        errors.houseType = 'Please select your house type'
+      }
+      if (!formData.numberOfRooms) {
+        errors.numberOfRooms = 'Please select number of rooms'
+      }
+      if (formData.serviceRole === 'cook') {
+        if (!formData.cookFoodType) {
+          errors.cookFoodType = 'Please select food type'
+        }
+        if (formData.cookFoodType && formData.cookMeals.length === 0) {
+          errors.cookMeals = 'Please select at least one meal'
+        }
+      }
+      if (formData.serviceType === 'live-in' && !formData.hasHelperRoom) {
+        errors.hasHelperRoom = 'Please indicate if you have a separate room'
       }
       if (requiresScheduleDetails(formData.serviceType)) {
         if (!formData.serviceTimings.trim()) {
@@ -227,14 +260,14 @@ export default function HireHelperForm() {
     if (!formData.city) {
       errors.city = 'Please select a city'
     }
-    if (!formData.serviceType) {
-      errors.serviceType = 'Please select a service type'
-    }
     if (!formData.serviceRole) {
       errors.serviceRole = 'Please select a role'
     }
     if (formData.serviceRole === 'others' && !formData.otherRole.trim()) {
       errors.otherRole = 'Please specify the role you need'
+    }
+    if (!formData.serviceType) {
+      errors.serviceType = 'Please select a service type'
     }
     if (!formData.startDate) {
       errors.startDate = 'Please select a start date'
@@ -247,7 +280,24 @@ export default function HireHelperForm() {
       }
     }
     if (!formData.familySize) {
-      errors.familySize = 'Please select family size'
+      errors.familySize = 'Please select number of family members'
+    }
+    if (!formData.houseType) {
+      errors.houseType = 'Please select your house type'
+    }
+    if (!formData.numberOfRooms) {
+      errors.numberOfRooms = 'Please select number of rooms'
+    }
+    if (formData.serviceRole === 'cook') {
+      if (!formData.cookFoodType) {
+        errors.cookFoodType = 'Please select food type'
+      }
+      if (formData.cookFoodType && formData.cookMeals.length === 0) {
+        errors.cookMeals = 'Please select at least one meal'
+      }
+    }
+    if (formData.serviceType === 'live-in' && !formData.hasHelperRoom) {
+      errors.hasHelperRoom = 'Please indicate if you have a separate room'
     }
     if (requiresScheduleDetails(formData.serviceType)) {
       if (!formData.serviceTimings.trim()) {
@@ -291,6 +341,21 @@ export default function HireHelperForm() {
 
       // Store in Supabase
       const roleLabel = formData.serviceRole === 'others' ? formData.otherRole.trim() : formData.serviceRole
+      const cookDetails = formData.serviceRole === 'cook'
+        ? ` | Food: ${formData.cookFoodType} | Meals: ${formData.cookMeals.join(', ')}`
+        : ''
+      const householdDetails = [
+        formData.houseType && `House: ${formData.houseType}`,
+        formData.numberOfRooms && `Rooms: ${formData.numberOfRooms}`,
+        formData.religion && `Religion: ${formData.religion}`,
+        formData.hasPet && `Pet: ${formData.hasPet}`,
+        formData.serviceType === 'live-in' && formData.hasHelperRoom && `Helper room: ${formData.hasHelperRoom}`,
+      ].filter(Boolean).join(' | ')
+      const fullRequirements = [
+        formData.specificRequirements,
+        cookDetails,
+        householdDetails,
+      ].filter(Boolean).join('\n')
       const insertRow = buildHireHelperLeadInsertRow({
         name: formData.name.trim(),
         phone: formData.phone.trim(),
@@ -302,7 +367,7 @@ export default function HireHelperForm() {
         duration: formData.duration,
         serviceTimings: formData.serviceTimings.trim(),
         startDate: formData.startDate,
-        specificRequirements: formData.specificRequirements,
+        specificRequirements: fullRequirements,
         experience: formData.experience,
         budget: formData.budget,
         languages: formData.languages.join(','),
@@ -344,7 +409,14 @@ export default function HireHelperForm() {
               languages: formData.languages,
               additionalServices: formData.additionalServices,
               familySize: formData.familySize,
-              preferredGender: formData.preferredGender
+              preferredGender: formData.preferredGender,
+              houseType: formData.houseType,
+              numberOfRooms: formData.numberOfRooms,
+              cookFoodType: formData.serviceRole === 'cook' ? formData.cookFoodType : '',
+              cookMeals: formData.serviceRole === 'cook' ? formData.cookMeals : [],
+              religion: formData.religion,
+              hasPet: formData.hasPet,
+              hasHelperRoom: formData.serviceType === 'live-in' ? formData.hasHelperRoom : '',
             },
             requestId: newRequestId,
             sourceUrl: window.location.href
@@ -575,7 +647,13 @@ export default function HireHelperForm() {
                       ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
                       : 'border-gray-200 hover:border-gray-300'
                       }`}
-                    onClick={() => setFormData(prev => ({ ...prev, serviceRole: role.value, otherRole: role.value !== 'others' ? '' : prev.otherRole }))}
+                    onClick={() => setFormData(prev => ({
+                      ...prev,
+                      serviceRole: role.value,
+                      otherRole: role.value !== 'others' ? '' : prev.otherRole,
+                      cookFoodType: role.value !== 'cook' ? '' : prev.cookFoodType,
+                      cookMeals: role.value !== 'cook' ? [] : prev.cookMeals,
+                    }))}
                   >
                     <div className="font-medium text-gray-900">{role.label}</div>
                     <div className="text-sm text-gray-600">{role.description}</div>
@@ -670,6 +748,86 @@ export default function HireHelperForm() {
               </div>
             )}
 
+            {/* Cook-specific: Food type & meals */}
+            {formData.serviceRole === 'cook' && (
+              <div className="space-y-6 rounded-xl border border-amber-200 bg-amber-50/40 p-5 md:p-6">
+                <p className="text-sm font-medium text-gray-800">Cooking Preferences</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Food Type *
+                    </label>
+                    <select
+                      value={formData.cookFoodType}
+                      onChange={(e) => handleInputChange('cookFoodType', e.target.value)}
+                      aria-invalid={!!formErrors.cookFoodType}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none bg-white"
+                    >
+                      <option value="">Select food type</option>
+                      <option value="veg">Vegetarian</option>
+                      <option value="non-veg">Non-Vegetarian</option>
+                      <option value="both">Both Veg & Non-Veg</option>
+                    </select>
+                    {formErrors.cookFoodType && <p className="text-xs text-red-500 mt-1">{formErrors.cookFoodType}</p>}
+                  </div>
+
+                  {formData.cookFoodType && (
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Meals Required *
+                      </label>
+                      <div className="space-y-2">
+                        {['Breakfast', 'Lunch', 'Dinner'].map(meal => (
+                          <label key={meal} className="flex items-center cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={formData.cookMeals.includes(meal)}
+                              onChange={() => {
+                                setFormData(prev => ({
+                                  ...prev,
+                                  cookMeals: prev.cookMeals.includes(meal)
+                                    ? prev.cookMeals.filter(m => m !== meal)
+                                    : [...prev.cookMeals, meal]
+                                }))
+                              }}
+                              className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                            />
+                            <span className="ml-2 text-sm text-gray-700">{meal}</span>
+                          </label>
+                        ))}
+                      </div>
+                      {formErrors.cookMeals && <p className="text-xs text-red-500 mt-1">{formErrors.cookMeals}</p>}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Live-in specific: Separate room */}
+            {formData.serviceType === 'live-in' && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Do you have a separate room for the helper? *
+                </label>
+                <div className="flex gap-4">
+                  {[{ value: 'yes', label: 'Yes' }, { value: 'no', label: 'No' }].map(opt => (
+                    <div
+                      key={opt.value}
+                      className={`flex-1 p-4 border rounded-lg cursor-pointer text-center transition-all ${formData.hasHelperRoom === opt.value
+                        ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
+                        : 'border-gray-200 hover:border-gray-300'
+                        }`}
+                      onClick={() => handleInputChange('hasHelperRoom', opt.value)}
+                    >
+                      <div className="font-medium text-gray-900">{opt.label}</div>
+                    </div>
+                  ))}
+                </div>
+                {formErrors.hasHelperRoom && <p className="text-xs text-red-500 mt-1">{formErrors.hasHelperRoom}</p>}
+              </div>
+            )}
+
+            {/* Household Details */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="hire-startDate" className="block text-sm font-medium text-gray-700 mb-2">
@@ -690,7 +848,7 @@ export default function HireHelperForm() {
 
               <div>
                 <label htmlFor="hire-familySize" className="block text-sm font-medium text-gray-700 mb-2">
-                  Family Size
+                  No. of Family Members *
                 </label>
                 <select
                   id="hire-familySize"
@@ -707,6 +865,85 @@ export default function HireHelperForm() {
                   <option value="7+">7+ members</option>
                 </select>
                 {formErrors.familySize && <p id="hire-familySize-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.familySize}</p>}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  House Type *
+                </label>
+                <select
+                  value={formData.houseType}
+                  onChange={(e) => handleInputChange('houseType', e.target.value)}
+                  aria-invalid={!!formErrors.houseType}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                >
+                  <option value="">Select house type</option>
+                  <option value="apartment">Apartment</option>
+                  <option value="individual-house">Individual House</option>
+                  <option value="standalone-house">Standalone House</option>
+                  <option value="villa">Villa</option>
+                </select>
+                {formErrors.houseType && <p className="text-xs text-red-500 mt-1">{formErrors.houseType}</p>}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  No. of Rooms *
+                </label>
+                <select
+                  value={formData.numberOfRooms}
+                  onChange={(e) => handleInputChange('numberOfRooms', e.target.value)}
+                  aria-invalid={!!formErrors.numberOfRooms}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                >
+                  <option value="">Select number of rooms</option>
+                  <option value="1">1 Room (1 BHK)</option>
+                  <option value="2">2 Rooms (2 BHK)</option>
+                  <option value="3">3 Rooms (3 BHK)</option>
+                  <option value="4">4 Rooms (4 BHK)</option>
+                  <option value="5+">5+ Rooms</option>
+                </select>
+                {formErrors.numberOfRooms && <p className="text-xs text-red-500 mt-1">{formErrors.numberOfRooms}</p>}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Religion
+                </label>
+                <select
+                  value={formData.religion}
+                  onChange={(e) => handleInputChange('religion', e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                >
+                  <option value="">No preference</option>
+                  <option value="hindu">Hindu</option>
+                  <option value="muslim">Muslim</option>
+                  <option value="christian">Christian</option>
+                  <option value="sikh">Sikh</option>
+                  <option value="buddhist">Buddhist</option>
+                  <option value="jain">Jain</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Do you have a pet at home?
+                </label>
+                <div className="flex gap-4">
+                  {[{ value: 'yes', label: 'Yes' }, { value: 'no', label: 'No' }].map(opt => (
+                    <div
+                      key={opt.value}
+                      className={`flex-1 p-3 border rounded-lg cursor-pointer text-center transition-all ${formData.hasPet === opt.value
+                        ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
+                        : 'border-gray-200 hover:border-gray-300'
+                        }`}
+                      onClick={() => handleInputChange('hasPet', opt.value)}
+                    >
+                      <div className="font-medium text-gray-900">{opt.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
