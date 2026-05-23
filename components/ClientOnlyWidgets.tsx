@@ -43,6 +43,12 @@ const CookieConsent = dynamic(() => import('./CookieConsent'), {
   loading: () => null
 })
 
+/** First-visit service selector modal — auto-shown on homepage; remembers choice for 30 days. */
+const ServiceSelectorModal = dynamic(() => import('./ServiceSelector'), {
+  ssr: false,
+  loading: () => null
+})
+
 export default function ClientOnlyWidgets() {
   return (
     <>
@@ -51,6 +57,7 @@ export default function ClientOnlyWidgets() {
       <WhatsAppFloat />
       <CareWhatsAppFloat />
       <LanguageSelectorPopup />
+      <ServiceSelectorModal mode="modal" />
       <MobileStickyCTA />
       <CookieConsent />
     </>
