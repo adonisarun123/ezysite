@@ -8,16 +8,15 @@
  *   - Domestic Helper + Bareilly   -> /cities/bareilly
  *   - Care Giver                   -> /care-services
  *
- * Two render modes (controlled by the `mode` prop):
- *   1. "modal"   - Auto-shown overlay on first visit. Dismissible. Hidden for
- *                  30 days after a choice is made (localStorage).
- *   2. "section" - Inline homepage section. Always visible. No persistence
- *                  side-effects beyond what the modal sets.
+ * Visual language matches /care-services:
+ *   - Fraunces serif (font-careSerif) for headlines
+ *   - Plus Jakarta Sans (font-careUi) for UI
+ *   - Coral #FF385C accent, warm pastel surfaces, dark neutrals
+ *   - Apple-style rounded-full pill buttons, italic emphasis, uppercase eyebrows
  *
- * Flow (both modes):
- *   Step 1: Pick "Domestic Helper" or "Care Giver".
- *   Step 2 (Helper only): Pick "Bangalore" or "Bareilly".
- *   Care Giver routes immediately from Step 1.
+ * Two render modes:
+ *   1. "modal"   - First-visit overlay on the homepage; 30-day localStorage memory.
+ *   2. "section" - Inline homepage section. Always rendered.
  */
 
 import { useEffect, useState, useCallback } from 'react'
@@ -29,14 +28,14 @@ import {
   MapPinIcon,
   ArrowLeftIcon,
   ArrowRightIcon,
-  CheckBadgeIcon,
+  ArrowLongRightIcon,
+  ShieldCheckIcon,
 } from '@heroicons/react/24/outline'
 
 const STORAGE_KEY = 'ezy_service_selector_v1'
 const DAYS_TO_REMEMBER = 30
-const SHOW_DELAY_MS = 1500 // brief delay so the page paints first
+const SHOW_DELAY_MS = 1500
 
-type Choice = 'helper' | 'caregiver'
 type City = 'bangalore' | 'bareilly'
 
 const DESTINATIONS: Record<string, string> = {
@@ -46,10 +45,6 @@ const DESTINATIONS: Record<string, string> = {
 }
 
 interface ServiceSelectorProps {
-  /**
-   * "modal"   = overlay popup auto-shown on first visit (use in ClientOnlyWidgets).
-   * "section" = inline block always rendered (use on the homepage body).
-   */
   mode: 'modal' | 'section'
 }
 
@@ -60,6 +55,10 @@ interface ServiceSelectorProps {
 function isDismissed(): boolean {
   if (typeof window === 'undefined') return true
   try {
+    const sessionDismiss = sessionStorage.getItem(
+      'ezy_service_selector_session_dismiss'
+    )
+    if (sessionDismiss === '1') return true
     const raw = window.localStorage.getItem(STORAGE_KEY)
     if (!raw) return false
     const parsed = JSON.parse(raw) as { expiresAt?: number }
@@ -81,7 +80,7 @@ function rememberChoice() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Shared inner UI (used by both modal + inline section)              */
+/*  Shared inner UI                                                    */
 /* ------------------------------------------------------------------ */
 
 function SelectorBody({
@@ -100,81 +99,105 @@ function SelectorBody({
   compact?: boolean
 }) {
   return (
-    <div className={compact ? 'p-6 sm:p-8' : 'p-6 sm:p-10'}>
+    <div className={`font-careUi ${compact ? 'p-6 sm:p-10' : 'p-8 sm:p-12'}`}>
       {/* Step indicator */}
-      <div className="flex items-center justify-center gap-2 mb-5">
+      <div className="mb-6 flex items-center justify-center gap-2">
         <span
-          className={`h-1.5 rounded-full transition-all duration-300 ${
-            step === 1 ? 'w-8 bg-primary-500' : 'w-4 bg-primary-200'
+          className={`h-1 rounded-full transition-all duration-300 ${
+            step === 1 ? 'w-10 bg-[#FF385C]' : 'w-4 bg-neutral-200'
           }`}
         />
         <span
-          className={`h-1.5 rounded-full transition-all duration-300 ${
-            step === 2 ? 'w-8 bg-primary-500' : 'w-4 bg-primary-200'
+          className={`h-1 rounded-full transition-all duration-300 ${
+            step === 2 ? 'w-10 bg-[#FF385C]' : 'w-4 bg-neutral-200'
           }`}
         />
       </div>
 
       {step === 1 ? (
         <>
-          <div className="text-center mb-7">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-text-primary mb-2">
+          <div className="text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF385C]">
+              Two choices. One careful match.
+            </p>
+            <h2 className="mx-auto mt-4 max-w-2xl font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
               Who do you need help from?
+              <br />
+              <em className="font-careSerif font-normal italic text-[#FF385C]">
+                We&apos;ll guide you from here.
+              </em>
             </h2>
-            <p className="text-text-secondary text-sm sm:text-base">
-              Choose the type of helper and we&apos;ll take you to the right page.
+            <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-neutral-600 sm:text-lg">
+              Tell us whether you&apos;re looking for everyday help at home, or
+              care for someone you love.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
             {/* Domestic Helper card */}
             <button
               type="button"
               onClick={onPickHelper}
-              className="group relative text-left bg-white rounded-2xl border-2 border-neutral-100 hover:border-primary-500 p-5 sm:p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-primary-200"
               aria-label="Choose Domestic Helper"
+              className="group relative overflow-hidden rounded-[28px] border border-neutral-200 bg-gradient-to-br from-[#F2F7FB] via-[#E8F2F8] to-[#D6E8F4] p-7 text-left transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(0,116,200,0.45)] focus:outline-none focus:ring-2 focus:ring-[#0074C8]/40 focus:ring-offset-2 sm:p-8"
             >
-              <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-primary-50 group-hover:bg-primary-500 transition-colors mb-4">
-                <HomeModernIcon className="w-7 h-7 text-primary-500 group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="font-display text-lg font-bold text-text-primary mb-1">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[#0074C8]/15 blur-3xl"
+              />
+              <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#0074C8] ring-1 ring-[#0074C8]/20">
+                <HomeModernIcon className="h-6 w-6" aria-hidden />
+              </span>
+              <p className="relative mt-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0074C8]">
+                Everyday home help
+              </p>
+              <h3 className="relative mt-2 font-careSerif text-2xl font-semibold leading-tight tracking-tight text-neutral-950 sm:text-3xl">
                 Domestic Helper
               </h3>
-              <p className="text-sm text-text-secondary leading-snug">
-                Maids, cooks, nannies, drivers &amp; more for your home.
+              <p className="relative mt-3 text-sm leading-relaxed text-neutral-700">
+                Maids, cooks, nannies, drivers and more — matched to your home
+                and routine.
               </p>
-              <div className="mt-4 flex items-center text-sm font-semibold text-primary-600 group-hover:text-primary-700">
+              <span className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900">
                 Continue
-                <ArrowRightIcon className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" />
-              </div>
+                <ArrowLongRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </span>
             </button>
 
             {/* Care Giver card */}
             <button
               type="button"
               onClick={onPickCareGiver}
-              className="group relative text-left bg-white rounded-2xl border-2 border-neutral-100 hover:border-trust-500 p-5 sm:p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-trust-200"
               aria-label="Choose Care Giver"
+              className="group relative overflow-hidden rounded-[28px] border border-neutral-200 bg-gradient-to-br from-[#FFF6F2] via-[#FFE4DA] to-[#FBC0AE] p-7 text-left transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(255,56,92,0.5)] focus:outline-none focus:ring-2 focus:ring-[#FF385C]/40 focus:ring-offset-2 sm:p-8"
             >
-              <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-trust-50 group-hover:bg-trust-500 transition-colors mb-4">
-                <HeartIcon className="w-7 h-7 text-trust-500 group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="font-display text-lg font-bold text-text-primary mb-1">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[#FF385C]/20 blur-3xl"
+              />
+              <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#FF385C] ring-1 ring-[#FF385C]/20">
+                <HeartIcon className="h-6 w-6" aria-hidden />
+              </span>
+              <p className="relative mt-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF385C]">
+                Care, brought home
+              </p>
+              <h3 className="relative mt-2 font-careSerif text-2xl font-semibold leading-tight tracking-tight text-neutral-950 sm:text-3xl">
                 Care Giver
               </h3>
-              <p className="text-sm text-text-secondary leading-snug">
-                Compassionate elderly &amp; patient care at home.
+              <p className="relative mt-3 text-sm leading-relaxed text-neutral-700">
+                Compassionate nurses, elderly &amp; patient care — verified and
+                matched, not assigned.
               </p>
-              <div className="mt-4 flex items-center text-sm font-semibold text-trust-600 group-hover:text-trust-700">
+              <span className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900">
                 Continue
-                <ArrowRightIcon className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" />
-              </div>
+                <ArrowLongRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </span>
             </button>
           </div>
 
-          <div className="mt-6 flex items-center justify-center gap-2 text-xs text-text-secondary">
-            <CheckBadgeIcon className="w-4 h-4 text-success-500" />
-            <span>Background-verified helpers &middot; 10,000+ families trust us</span>
+          <div className="mt-9 flex items-center justify-center gap-2 text-xs uppercase tracking-[0.18em] text-neutral-500">
+            <ShieldCheckIcon className="h-4 w-4 text-[#FF385C]" aria-hidden />
+            <span>Verified helpers &middot; 10,000+ families trust us</span>
           </div>
         </>
       ) : (
@@ -182,60 +205,74 @@ function SelectorBody({
           <button
             type="button"
             onClick={() => setStep(1)}
-            className="inline-flex items-center text-sm font-semibold text-text-secondary hover:text-primary-600 mb-4 group"
+            className="group mb-6 inline-flex items-center text-sm font-semibold text-neutral-500 transition hover:text-neutral-900"
           >
-            <ArrowLeftIcon className="w-4 h-4 mr-1.5 transition-transform group-hover:-translate-x-0.5" />
+            <ArrowLeftIcon className="mr-1.5 h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
             Back
           </button>
 
-          <div className="text-center mb-7">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-text-primary mb-2">
-              Which city are you in?
+          <div className="text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF385C]">
+              One more step
+            </p>
+            <h2 className="mx-auto mt-4 max-w-2xl font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
+              Where are you?
+              <br />
+              <em className="font-careSerif font-normal italic text-[#FF385C]">
+                We&apos;ll take it from there.
+              </em>
             </h2>
-            <p className="text-text-secondary text-sm sm:text-base">
-              Select your location to see services available near you.
+            <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-neutral-600 sm:text-lg">
+              Pick your city to see verified helpers available near you.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
             <button
               type="button"
               onClick={() => onPickCity('bangalore')}
-              className="group text-left bg-white rounded-2xl border-2 border-neutral-100 hover:border-primary-500 p-5 sm:p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-primary-200"
+              className="group relative overflow-hidden rounded-[28px] border border-neutral-200 bg-white p-7 text-left transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_14px_36px_-18px_rgba(0,0,0,0.35)] focus:outline-none focus:ring-2 focus:ring-neutral-900/30 focus:ring-offset-2 sm:p-8"
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary-50 group-hover:bg-primary-500 transition-colors mb-3">
-                <MapPinIcon className="w-6 h-6 text-primary-500 group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="font-display text-lg font-bold text-text-primary">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F2F7FB] text-[#0074C8] ring-1 ring-[#0074C8]/15">
+                <MapPinIcon className="h-6 w-6" aria-hidden />
+              </span>
+              <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                Karnataka
+              </p>
+              <h3 className="mt-2 font-careSerif text-2xl font-semibold leading-tight tracking-tight text-neutral-950 sm:text-3xl">
                 Bangalore
               </h3>
-              <p className="text-sm text-text-secondary mt-1">
-                Karnataka &middot; All localities
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                Verified maids, cooks, nannies &amp; drivers across all
+                Bangalore localities.
               </p>
-              <div className="mt-3 flex items-center text-sm font-semibold text-primary-600">
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900">
                 View services
-                <ArrowRightIcon className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" />
-              </div>
+                <ArrowLongRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </span>
             </button>
 
             <button
               type="button"
               onClick={() => onPickCity('bareilly')}
-              className="group text-left bg-white rounded-2xl border-2 border-neutral-100 hover:border-primary-500 p-5 sm:p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-primary-200"
+              className="group relative overflow-hidden rounded-[28px] border border-neutral-200 bg-white p-7 text-left transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_14px_36px_-18px_rgba(0,0,0,0.35)] focus:outline-none focus:ring-2 focus:ring-neutral-900/30 focus:ring-offset-2 sm:p-8"
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary-50 group-hover:bg-primary-500 transition-colors mb-3">
-                <MapPinIcon className="w-6 h-6 text-primary-500 group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="font-display text-lg font-bold text-text-primary">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F2F7FB] text-[#0074C8] ring-1 ring-[#0074C8]/15">
+                <MapPinIcon className="h-6 w-6" aria-hidden />
+              </span>
+              <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                Uttar Pradesh
+              </p>
+              <h3 className="mt-2 font-careSerif text-2xl font-semibold leading-tight tracking-tight text-neutral-950 sm:text-3xl">
                 Bareilly
               </h3>
-              <p className="text-sm text-text-secondary mt-1">
-                Uttar Pradesh &middot; All localities
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                Trusted household helpers serving families across Bareilly.
               </p>
-              <div className="mt-3 flex items-center text-sm font-semibold text-primary-600">
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900">
                 View services
-                <ArrowRightIcon className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" />
-              </div>
+                <ArrowLongRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </span>
             </button>
           </div>
         </>
@@ -255,16 +292,13 @@ export default function ServiceSelector({ mode }: ServiceSelectorProps) {
   const [visible, setVisible] = useState(false)
   const [mounted, setMounted] = useState(false)
 
-  /* Modal mode: decide on mount whether to auto-show */
+  /* Modal mode: decide whether to auto-show */
   useEffect(() => {
     setMounted(true)
     if (mode !== 'modal') return
-
-    // Only auto-show on the homepage (and homepage variants)
     const allowed = pathname === '/' || pathname === ''
     if (!allowed) return
     if (isDismissed()) return
-
     const t = setTimeout(() => setVisible(true), SHOW_DELAY_MS)
     return () => clearTimeout(t)
   }, [mode, pathname])
@@ -281,7 +315,7 @@ export default function ServiceSelector({ mode }: ServiceSelectorProps) {
     }
   }, [mode, visible])
 
-  /* Esc to close (modal only) */
+  /* Esc to close */
   useEffect(() => {
     if (mode !== 'modal' || !visible) return
     const handler = (e: KeyboardEvent) => {
@@ -293,7 +327,6 @@ export default function ServiceSelector({ mode }: ServiceSelectorProps) {
 
   const closeModal = useCallback(() => {
     setVisible(false)
-    // Soft-dismiss (no choice made): hide for the rest of this session only
     try {
       sessionStorage.setItem('ezy_service_selector_session_dismiss', '1')
     } catch {
@@ -321,39 +354,48 @@ export default function ServiceSelector({ mode }: ServiceSelectorProps) {
 
     return (
       <div
-        className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in"
+        className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-neutral-950/55 p-4 backdrop-blur-sm animate-fade-in"
         role="dialog"
         aria-modal="true"
         aria-labelledby="service-selector-title"
         onClick={closeModal}
       >
         <div
-          className="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden animate-slide-up"
+          className="relative my-8 w-full max-w-3xl overflow-hidden rounded-[32px] bg-white shadow-[0_30px_70px_-20px_rgba(0,0,0,0.45)] ring-1 ring-neutral-200/70 animate-slide-up"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Top accent strip */}
-          <div className="h-2 bg-gradient-to-r from-primary-500 via-secondary-500 to-trust-500" />
+          {/* warm radial backdrop, matching care-services hero */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,56,92,0.07) 0%, rgba(255,255,255,0) 60%)',
+            }}
+          />
 
           <button
             type="button"
             onClick={closeModal}
             aria-label="Close"
-            className="absolute top-4 right-4 z-10 p-2 rounded-full text-neutral-500 hover:text-text-primary hover:bg-neutral-100 transition-all"
+            className="absolute right-5 top-5 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white/90 text-neutral-500 backdrop-blur transition hover:border-neutral-900 hover:text-neutral-900"
           >
-            <XMarkIcon className="w-5 h-5" />
+            <XMarkIcon className="h-4 w-4" />
           </button>
 
           <span id="service-selector-title" className="sr-only">
             Choose a service
           </span>
 
-          <SelectorBody
-            step={step}
-            setStep={setStep}
-            onPickHelper={handlePickHelper}
-            onPickCareGiver={handlePickCareGiver}
-            onPickCity={handlePickCity}
-          />
+          <div className="relative">
+            <SelectorBody
+              step={step}
+              setStep={setStep}
+              onPickHelper={handlePickHelper}
+              onPickCareGiver={handlePickCareGiver}
+              onPickCity={handlePickCity}
+            />
+          </div>
         </div>
       </div>
     )
@@ -363,27 +405,41 @@ export default function ServiceSelector({ mode }: ServiceSelectorProps) {
   return (
     <section
       id="service-selector"
-      className="bg-gradient-to-b from-background-primary to-white py-12 sm:py-16"
+      className="relative overflow-hidden bg-white font-careUi"
       aria-labelledby="service-selector-section-title"
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-6 sm:mb-8">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 text-primary-700 text-xs font-bold uppercase tracking-wider">
-            <CheckBadgeIcon className="w-4 h-4" />
+      {/* warm radial backdrop */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255,56,92,0.05) 0%, rgba(255,255,255,0) 60%)',
+        }}
+      />
+
+      <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-28">
+        <div className="text-center">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF385C]">
             Find help in 30 seconds
-          </span>
+          </p>
           <h2
             id="service-selector-section-title"
-            className="font-display text-3xl sm:text-4xl font-bold text-text-primary mt-3"
+            className="mx-auto mt-4 max-w-3xl font-careSerif text-[clamp(2rem,5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950"
           >
-            What kind of help do you need?
+            Choose what you need.
+            <br />
+            <em className="font-careSerif font-normal italic text-[#FF385C]">
+              We&apos;ll take you there.
+            </em>
           </h2>
-          <p className="text-text-secondary mt-2 max-w-xl mx-auto">
-            Tell us what you&apos;re looking for and we&apos;ll take you straight to the right service.
+          <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-neutral-600 sm:text-lg">
+            Two simple paths — everyday domestic help for your home, or
+            compassionate caregivers for someone you love.
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-lg ring-1 ring-neutral-100">
+        <div className="mt-12 overflow-hidden rounded-[36px] border border-neutral-200 bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
           <SelectorBody
             step={step}
             setStep={setStep}
