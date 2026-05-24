@@ -108,6 +108,7 @@ const generateHireHelperLeadEmail = (formData: {
   locality?: string;
   apartment?: string;
   serviceType: string;
+  serviceRole?: string;
   duration: string;
   serviceTimings?: string;
   startDate: string;
@@ -118,6 +119,13 @@ const generateHireHelperLeadEmail = (formData: {
   additionalServices: string[];
   familySize: string;
   preferredGender: string;
+  houseType?: string;
+  numberOfRooms?: string;
+  cookFoodType?: string;
+  cookMeals?: string[];
+  religion?: string;
+  hasPet?: string;
+  hasHelperRoom?: string;
   requestId: string;
   sourceUrl?: string;
 }) => {
@@ -125,8 +133,26 @@ const generateHireHelperLeadEmail = (formData: {
   const durationLine = formatHireHelperDurationForEmail(formData.serviceType, formData.duration);
   const timingsLine = formatHireHelperTimingsForEmail(formData.serviceType, formData.serviceTimings);
 
+  const isCook = formData.serviceRole === 'cook';
+  const isLiveIn = formData.serviceType === 'live-in';
+
+  const cookHtml = isCook && formData.cookFoodType ? `
+          <p><strong>Food Type:</strong> ${safe(formData.cookFoodType)}</p>
+          <p><strong>Meals Required:</strong> ${safe(formData.cookMeals?.join(', ') || '—')}</p>` : '';
+
+  const helperRoomHtml = isLiveIn && formData.hasHelperRoom ? `
+          <p><strong>Separate Room for Helper:</strong> ${safe(formData.hasHelperRoom)}</p>` : '';
+
+  const cookText = isCook && formData.cookFoodType
+    ? `- Food Type: ${formData.cookFoodType}\n- Meals Required: ${formData.cookMeals?.join(', ') || '—'}`
+    : '';
+
+  const helperRoomText = isLiveIn && formData.hasHelperRoom
+    ? `- Separate Room for Helper: ${formData.hasHelperRoom}`
+    : '';
+
   return {
-    subject: `New Hire Helper Lead: ${formData.serviceType} in ${formData.city}`,
+    subject: `New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #f1750a;">New Hire Helper Lead Received</h2>
@@ -141,15 +167,26 @@ const generateHireHelperLeadEmail = (formData: {
         </div>
         <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #333;">Service Requirements</h3>
+          <p><strong>Primary Role:</strong> ${safe(formData.serviceRole || '—')}</p>
           <p><strong>Service Type:</strong> ${safe(formData.serviceType)}</p>
-          <p><strong>Preferred timings:</strong> ${safe(timingsLine)}</p>
+          <p><strong>Preferred Timings:</strong> ${safe(timingsLine)}</p>
           <p><strong>Duration:</strong> ${safe(durationLine)}</p>
-          <p><strong>Start Date:</strong> ${safe(formData.startDate)}</p>
-          <p><strong>Experience Required:</strong> ${safe(formData.experience)}</p>
-          <p><strong>Budget Range:</strong> ${safe(formData.budget)}</p>
+          <p><strong>Start Date:</strong> ${safe(formData.startDate)}</p>${cookHtml}${helperRoomHtml}
+        </div>
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Household Details</h3>
           <p><strong>Family Size:</strong> ${safe(formData.familySize)}</p>
-          <p><strong>Preferred Gender:</strong> ${safe(formData.preferredGender)}</p>
-          <p><strong>Languages:</strong> ${safe(formData.languages.join(', '))}</p>
+          <p><strong>House Type:</strong> ${safe(formData.houseType || '—')}</p>
+          <p><strong>No. of Rooms:</strong> ${safe(formData.numberOfRooms || '—')}</p>
+          <p><strong>Religion:</strong> ${safe(formData.religion || 'No preference')}</p>
+          <p><strong>Pet at Home:</strong> ${safe(formData.hasPet || '—')}</p>
+        </div>
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Helper Preferences</h3>
+          <p><strong>Preferred Gender:</strong> ${safe(formData.preferredGender || 'No preference')}</p>
+          <p><strong>Experience Required:</strong> ${safe(formData.experience || 'No preference')}</p>
+          <p><strong>Budget Range:</strong> ${safe(formData.budget || '—')}</p>
+          <p><strong>Languages:</strong> ${safe(formData.languages.join(', ') || '—')}</p>
           <p><strong>Additional Services:</strong> ${safe(formData.additionalServices.join(', ') || 'None')}</p>
         </div>
         <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
@@ -169,7 +206,7 @@ const generateHireHelperLeadEmail = (formData: {
       </div>
     `,
     text: `
-New Hire Helper Lead: ${formData.serviceType} in ${formData.city}
+New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}
 
 Request ID: ${formData.requestId}
 
@@ -182,15 +219,26 @@ Contact Information:
 - Apartment: ${formData.apartment?.trim() || '—'}
 
 Service Requirements:
+- Primary Role: ${formData.serviceRole || '—'}
 - Service Type: ${formData.serviceType}
-- Preferred timings: ${timingsLine}
+- Preferred Timings: ${timingsLine}
 - Duration: ${durationLine}
 - Start Date: ${formData.startDate}
-- Experience Required: ${formData.experience}
-- Budget Range: ${formData.budget}
+${cookText}
+${helperRoomText}
+
+Household Details:
 - Family Size: ${formData.familySize}
-- Preferred Gender: ${formData.preferredGender}
-- Languages: ${formData.languages.join(', ')}
+- House Type: ${formData.houseType || '—'}
+- No. of Rooms: ${formData.numberOfRooms || '—'}
+- Religion: ${formData.religion || 'No preference'}
+- Pet at Home: ${formData.hasPet || '—'}
+
+Helper Preferences:
+- Preferred Gender: ${formData.preferredGender || 'No preference'}
+- Experience Required: ${formData.experience || 'No preference'}
+- Budget Range: ${formData.budget || '—'}
+- Languages: ${formData.languages.join(', ') || '—'}
 - Additional Services: ${formData.additionalServices.join(', ') || 'None'}
 
 Specific Requirements:
