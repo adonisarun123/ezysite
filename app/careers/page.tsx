@@ -3,7 +3,14 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
-import { CAREERS_DEDICATED_PAGE_SLUGS, jobOpenings } from '@/lib/careersData'
+import {
+  CAREERS_DEDICATED_PAGE_SLUGS,
+  JOB_CATEGORY_BLURBS,
+  JOB_CATEGORY_ORDER,
+  jobOpenings,
+  type JobCategory,
+  type JobOpening,
+} from '@/lib/careersData'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
@@ -53,7 +60,26 @@ function formatPosted(dateStr: string) {
   })
 }
 
+function groupJobsByCategory(jobs: JobOpening[]): Array<{
+  category: JobCategory
+  jobs: JobOpening[]
+}> {
+  const grouped = new Map<JobCategory, JobOpening[]>()
+  for (const job of jobs) {
+    const list = grouped.get(job.category) ?? []
+    list.push(job)
+    grouped.set(job.category, list)
+  }
+  // Render in the order defined by JOB_CATEGORY_ORDER; skip empty categories.
+  return JOB_CATEGORY_ORDER.filter((c) => grouped.has(c)).map((category) => ({
+    category,
+    jobs: grouped.get(category)!,
+  }))
+}
+
 export default function CareersPage() {
+  const groupedRoles = groupJobsByCategory(jobOpenings)
+
   return (
     <div className="min-h-screen bg-[#fbfbfd] text-[#1d1d1f]">
       <Navbar />
@@ -178,44 +204,97 @@ export default function CareersPage() {
               there is mutual fit, we will get back within two weeks.
             </p>
 
-            <ul className="mt-14 space-y-4">
-              {jobOpenings.map((job) => (
-                <li key={job.slug}>
-                  <Link
-                    href={`/careers/${job.slug}`}
-                    className="group flex flex-col gap-4 rounded-2xl border border-black/[0.06] bg-[#fbfbfd] p-6 transition duration-300 hover:border-black/[0.12] hover:bg-white hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)] sm:flex-row sm:items-center sm:justify-between sm:p-8"
+            {/* Category quick-jump chips */}
+            {groupedRoles.length > 1 ? (
+              <nav
+                aria-label="Job categories"
+                className="mt-10 flex flex-wrap gap-2"
+              >
+                {groupedRoles.map(({ category, jobs }) => (
+                  <a
+                    key={category}
+                    href={`#cat-${category.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}`}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-black/[0.08] bg-white px-3.5 py-1.5 text-xs font-medium text-[#1d1d1f] transition hover:border-black/20 hover:bg-[#fbfbfd]"
                   >
-                    <div>
-                      <div className="flex flex-wrap items-center gap-2">
-                        <h3 className="font-display text-lg font-semibold text-[#1d1d1f] group-hover:text-primary-600 sm:text-xl">
-                          {job.title}
+                    {category}
+                    <span className="text-[#86868b]">·</span>
+                    <span className="text-[#86868b]">{jobs.length}</span>
+                  </a>
+                ))}
+              </nav>
+            ) : null}
+
+            <div className="mt-14 space-y-16">
+              {groupedRoles.map(({ category, jobs }) => {
+                const anchorId = `cat-${category
+                  .replace(/[^a-z0-9]+/gi, '-')
+                  .toLowerCase()}`
+                return (
+                  <section
+                    key={category}
+                    id={anchorId}
+                    aria-labelledby={`${anchorId}-heading`}
+                    className="scroll-mt-28"
+                  >
+                    <div className="flex flex-col gap-2 border-b border-black/[0.06] pb-5 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+                      <div>
+                        <h3
+                          id={`${anchorId}-heading`}
+                          className="font-display text-2xl font-semibold tracking-tight text-[#1d1d1f] sm:text-3xl"
+                        >
+                          {category}
                         </h3>
-                        {CAREERS_DEDICATED_PAGE_SLUGS.has(job.slug) ? (
-                          <span className="rounded-full border border-primary-200 bg-primary-50 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-primary-700">
-                            Essay application
-                          </span>
-                        ) : null}
+                        <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-[#6e6e73]">
+                          {JOB_CATEGORY_BLURBS[category]}
+                        </p>
                       </div>
-                      <p className="mt-2 text-sm text-[#86868b]">
-                        {job.team} · {job.location} · {job.type}
-                      </p>
-                      <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#6e6e73]">
-                        {job.excerpt}
-                      </p>
-                    </div>
-                    <div className="flex shrink-0 items-center gap-3 sm:flex-col sm:items-end">
-                      <span className="text-xs text-[#86868b]">
-                        Posted {formatPosted(job.postedAt)}
-                      </span>
-                      <span className="inline-flex items-center gap-1 text-sm font-medium text-primary-600">
-                        Learn more
-                        <ArrowRightIcon className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                      <span className="text-xs font-medium text-[#86868b]">
+                        {jobs.length} {jobs.length === 1 ? 'role' : 'roles'}
                       </span>
                     </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+
+                    <ul className="mt-6 space-y-4">
+                      {jobs.map((job) => (
+                        <li key={job.slug}>
+                          <Link
+                            href={`/careers/${job.slug}`}
+                            className="group flex flex-col gap-4 rounded-2xl border border-black/[0.06] bg-[#fbfbfd] p-6 transition duration-300 hover:border-black/[0.12] hover:bg-white hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)] sm:flex-row sm:items-center sm:justify-between sm:p-8"
+                          >
+                            <div>
+                              <div className="flex flex-wrap items-center gap-2">
+                                <h4 className="font-display text-lg font-semibold text-[#1d1d1f] group-hover:text-primary-600 sm:text-xl">
+                                  {job.title}
+                                </h4>
+                                {CAREERS_DEDICATED_PAGE_SLUGS.has(job.slug) ? (
+                                  <span className="rounded-full border border-primary-200 bg-primary-50 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-primary-700">
+                                    Essay application
+                                  </span>
+                                ) : null}
+                              </div>
+                              <p className="mt-2 text-sm text-[#86868b]">
+                                {job.team} · {job.location} · {job.type}
+                              </p>
+                              <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#6e6e73]">
+                                {job.excerpt}
+                              </p>
+                            </div>
+                            <div className="flex shrink-0 items-center gap-3 sm:flex-col sm:items-end">
+                              <span className="text-xs text-[#86868b]">
+                                Posted {formatPosted(job.postedAt)}
+                              </span>
+                              <span className="inline-flex items-center gap-1 text-sm font-medium text-primary-600">
+                                Learn more
+                                <ArrowRightIcon className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                              </span>
+                            </div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )
+              })}
+            </div>
 
             {jobOpenings.length === 0 && (
               <p className="mt-10 text-[17px] text-[#6e6e73]">

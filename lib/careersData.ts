@@ -3,10 +3,24 @@ export type JobOpeningExtraSection = {
   items: string[]
 }
 
+export type JobCategory =
+  | "Founder's Office"
+  | 'Product & Engineering'
+  | 'Sales'
+  | 'Operations'
+  | 'City Leadership'
+  | 'People & HR'
+  | 'Care Services'
+  | 'Specialist Care'
+  | 'Business Development'
+  | 'Marketing & Content'
+
 export type JobOpening = {
   slug: string
   title: string
   department: string
+  /** High-level grouping used to render category sections on the careers page */
+  category: JobCategory
   location: string
   type: 'Full-time' | 'Contract' | 'Hybrid' | 'Internship'
   team: string
@@ -28,6 +42,44 @@ export type JobOpening = {
   applicationForm?: 'apm' | 'sales_executive' | 'role'
 }
 
+/** Ordered category list. Determines the section order on the /careers page. */
+export const JOB_CATEGORY_ORDER: JobCategory[] = [
+  "Founder's Office",
+  'Product & Engineering',
+  'Sales',
+  'Operations',
+  'City Leadership',
+  'People & HR',
+  'Care Services',
+  'Specialist Care',
+  'Business Development',
+  'Marketing & Content',
+]
+
+/** Short description shown under each category heading on the /careers page. */
+export const JOB_CATEGORY_BLURBS: Record<JobCategory, string> = {
+  "Founder's Office":
+    "Work alongside the founders on the highest-leverage problems across the business.",
+  'Product & Engineering':
+    'Build the tech and AI layer that powers sales, sourcing, operations, and CX.',
+  Sales:
+    'First voice families hear — qualify needs, explain plans, and guide families to the right help.',
+  Operations:
+    'The engine that keeps placements, supply, and quality running every day.',
+  'City Leadership':
+    'Own a city like a business unit — P&L, supply, demand, and a local team.',
+  'People & HR':
+    'Onboarding, MIS, and the workforce backbone that keeps placements moving.',
+  'Care Services':
+    'Field caregivers who go to homes — elder care, patient care, and live-in roles.',
+  'Specialist Care':
+    'Trained for specific conditions — dementia, post-surgery, and clinical home visits.',
+  'Business Development':
+    'Build partnerships with hospitals, vendors, and referral networks across the city.',
+  'Marketing & Content':
+    'Brand voice, growth performance, and the content that helps families decide.',
+}
+
 /** Slugs that use a custom route under `app/careers/<slug>/` (excluded from `[slug]` static generation). */
 export const CAREERS_DEDICATED_PAGE_SLUGS: ReadonlySet<string> = new Set([
   'chief-of-staff-intern',
@@ -39,6 +91,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'chief-of-staff-intern',
     title: "Chief of Staff Intern → Full-Time (Founder's Office)",
     department: "Founder's Office",
+    category: "Founder's Office",
     location: 'Bangalore · Hybrid',
     type: 'Internship',
     team: "Founder's Office",
@@ -66,6 +119,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'ai-first-associate-product-manager',
     title: 'AI-First Associate Product Manager (APM)',
     department: 'Product',
+    category: 'Product & Engineering',
     location: 'Bangalore (HSR Layout)',
     type: 'Full-time',
     team: 'Product & automation',
@@ -137,6 +191,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'sales-executive-bangalore',
     title: 'Sales Executive',
     department: 'Sales',
+    category: 'Sales',
     location: 'Bangalore (HSR Layout · on-site)',
     type: 'Full-time',
     team: 'Sales & growth',
@@ -219,6 +274,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'field-officer-bangalore',
     title: 'Field Officer',
     department: 'Operations',
+    category: 'Operations',
     location: 'Bangalore (field travel · HSR office base)',
     type: 'Full-time',
     team: 'Field operations',
@@ -298,6 +354,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'sourcing-lead-bangalore',
     title: 'Sourcing Lead (Field + Tele)',
     department: 'Operations',
+    category: 'Operations',
     location: 'Bangalore (HSR office · field + floor)',
     type: 'Full-time',
     team: 'Supply & sourcing',
@@ -381,6 +438,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'supply-sourcing-executive-bangalore',
     title: 'Supply Sourcing Executive',
     department: 'Operations',
+    category: 'Operations',
     location: 'Bangalore (HSR Layout · on-site)',
     type: 'Full-time',
     team: 'Supply & sourcing',
@@ -461,6 +519,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'city-head-ghaziabad',
     title: 'City Head – Ghaziabad',
     department: 'City leadership',
+    category: 'City Leadership',
     location: 'Ghaziabad',
     type: 'Full-time',
     team: 'City P&L & growth',
@@ -518,6 +577,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'city-head-chennai',
     title: 'City Head – Chennai',
     department: 'City leadership',
+    category: 'City Leadership',
     location: 'Chennai',
     type: 'Full-time',
     team: 'City launch & scale',
@@ -576,6 +636,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'city-head-hyderabad',
     title: 'City Head – Hyderabad',
     department: 'City leadership',
+    category: 'City Leadership',
     location: 'Hyderabad',
     type: 'Full-time',
     team: 'City P&L & growth',
@@ -635,6 +696,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'city-head-delhi',
     title: 'City Head – Delhi',
     department: 'City leadership',
+    category: 'City Leadership',
     location: 'Delhi',
     type: 'Full-time',
     team: 'City P&L & growth',
@@ -680,6 +742,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'city-head-bareilly',
     title: 'City Head – Bareilly',
     department: 'City leadership',
+    category: 'City Leadership',
     location: 'Bareilly',
     type: 'Full-time',
     team: 'City P&L & growth',
@@ -736,6 +799,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'junior-hr-executive-bangalore',
     title: 'Junior HR Executive',
     department: 'People & HR',
+    category: 'People & HR',
     location: 'Bangalore (HSR Layout · office)',
     type: 'Full-time',
     team: 'People operations',
@@ -813,6 +877,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'elder-care-attendant-bangalore',
     title: 'Elder Care Attendant',
     department: 'Care Services',
+    category: 'Care Services',
     location: 'Bangalore (across the city · within 10 km of your address)',
     type: 'Full-time',
     team: 'Field caregiving',
@@ -896,6 +961,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'patient-care-attendant-bangalore',
     title: 'Patient Care Attendant',
     department: 'Care Services',
+    category: 'Care Services',
     location: 'Bangalore (placements often align with discharging hospital location)',
     type: 'Full-time',
     team: 'Field caregiving',
@@ -980,6 +1046,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'live-in-caregiver-bangalore',
     title: 'Live-in Caregiver',
     department: 'Care Services',
+    category: 'Care Services',
     location: 'Bangalore (placement matched to your area and the patient’s need)',
     type: 'Full-time',
     team: 'Field caregiving',
@@ -1053,6 +1120,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'dementia-care-specialist-bangalore',
     title: 'Dementia Care Specialist',
     department: 'Care Services',
+    category: 'Specialist Care',
     location: 'Bangalore (match-prioritised for language and household culture)',
     type: 'Full-time',
     team: 'Specialist caregiving',
@@ -1135,6 +1203,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'home-nursing-assistant-bangalore',
     title: 'Home Nursing Assistant',
     department: 'Care Services',
+    category: 'Specialist Care',
     location: 'Bangalore-wide (visits clustered geographically to minimise riding time)',
     type: 'Full-time',
     team: 'Clinical home visits',
@@ -1216,6 +1285,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'care-supervisor-bangalore',
     title: 'Care Supervisor',
     department: 'Operations',
+    category: 'Operations',
     location: 'Bangalore (assigned zone — East, West, South, North, or Central)',
     type: 'Full-time',
     team: 'Field operations',
@@ -1288,6 +1358,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'care-manager-operations-bangalore',
     title: 'Care Manager (24×7 Operations)',
     department: 'Operations',
+    category: 'Operations',
     location: 'Bangalore (EzyHelpers office, Indiranagar)',
     type: 'Full-time',
     team: 'Central operations',
@@ -1361,6 +1432,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'caregiver-trainer-bangalore',
     title: 'Caregiver Trainer',
     department: 'Operations',
+    category: 'Operations',
     location: 'Bangalore (training space, Indiranagar · with field visits across the city)',
     type: 'Full-time',
     team: 'Training & curriculum',
@@ -1432,6 +1504,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'vendor-partner-onboarding-specialist-bangalore',
     title: 'Vendor & Partner Onboarding Specialist',
     department: 'Operations',
+    category: 'Operations',
     location: 'Bangalore-wide (heavy intra-city travel for vendor site visits)',
     type: 'Full-time',
     team: 'Partnerships & vendors',
@@ -1505,6 +1578,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'hospital-partnerships-manager-bangalore',
     title: 'Hospital Partnerships Manager',
     department: 'Business Development',
+    category: 'Business Development',
     location: 'Bangalore (heavy intra-city travel)',
     type: 'Full-time',
     team: 'Partnerships & growth',
@@ -1579,6 +1653,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'content-brand-lead-bangalore',
     title: 'Content & Brand Lead',
     department: 'Marketing',
+    category: 'Marketing & Content',
     location: 'Bangalore (hybrid · 2 days in Indiranagar office, 3 remote)',
     type: 'Hybrid',
     team: 'Marketing & content',
@@ -1651,6 +1726,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'family-care-counsellor-sales-bangalore',
     title: 'Family Care Counsellor (Inbound Sales)',
     department: 'Sales',
+    category: 'Sales',
     location: 'Bangalore (EzyHelpers office, Indiranagar)',
     type: 'Full-time',
     team: 'Family acquisition',
@@ -1725,6 +1801,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'digital-marketing-strategist-bangalore',
     title: 'Digital Marketing Strategist',
     department: 'Marketing',
+    category: 'Marketing & Content',
     location: 'Bangalore (hybrid · 2 days at Indiranagar office, 3 remote)',
     type: 'Hybrid',
     team: 'Growth & performance',
@@ -1799,6 +1876,7 @@ export const jobOpenings: JobOpening[] = [
     slug: 'technical-content-writer-bangalore',
     title: 'Technical Content Writer',
     department: 'Marketing',
+    category: 'Marketing & Content',
     location: 'Bangalore (hybrid · 2 days in Indiranagar office, 3 remote)',
     type: 'Hybrid',
     team: 'Clinical content',
