@@ -32,6 +32,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'Japa Maid Job in Bangalore | Experienced Jharkhand Helpers',
@@ -86,6 +87,15 @@ const faqs: FAQItem[] = [
 export default function JapaMaidJobBangalorePage() {
     return (
         <>
+            <JobPostingSchema
+                title="Japa Maid Jobs in Bangalore"
+                description="Live-in Japa maid / newborn care jobs in Bangalore for experienced women from Jharkhand. Safe homes, food, accommodation, and direct employer support."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: 'Bangalore', addressRegion: 'Karnataka', addressCountry: 'IN' }}
+                applicantLocationRequirements="IN"
+            />
             <main className="min-h-screen">
                 <Navbar />
 

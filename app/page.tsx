@@ -4,13 +4,16 @@ import Footer from '@/components/Footer'
 import UrgencyCTA from '@/components/UrgencyCTA'
 import MainContent from '@/components/MainContent'
 import HeroSection from '@/components/sections/HeroSection'
+import ServiceSelector from '@/components/ServiceSelector'
 import ServicesSection from '@/components/sections/ServicesSection'
 import ProcessSection from '@/components/sections/ProcessSection'
 import CitiesSection from '@/components/sections/CitiesSection'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import CTASection from '@/components/sections/CTASection'
-import { UrgencyProvider } from '@/components/UrgencyContext'
+
+// ISR: revalidate homepage every hour
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'Trusted & Verified House Help Service in India | EzyHelpers',
@@ -27,11 +30,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <UrgencyProvider defaultVisible={true}>
+    <>
       <UrgencyCTA />
       <Navbar />
       <MainContent>
         <HeroSection />
+        <ServiceSelector mode="section" />
         <WhyChooseUsSection />
         <ServicesSection />
         <ProcessSection />
@@ -40,6 +44,6 @@ export default function Home() {
         <CTASection />
         <Footer />
       </MainContent>
-    </UrgencyProvider>
+    </>
   )
 } 

@@ -81,7 +81,7 @@ const faqs: FAQItem[] = [
 export default function HousekeepingJobsOdishaBangaloreHindiPage() {
     return (
         <>
-            <main className="min-h-screen">
+            <div lang="hi" className="min-h-screen">
                 <Navbar />
 
                 <Breadcrumb
@@ -891,7 +891,7 @@ export default function HousekeepingJobsOdishaBangaloreHindiPage() {
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
             <Footer />
         </>
     )

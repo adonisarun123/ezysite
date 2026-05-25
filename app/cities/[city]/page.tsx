@@ -1,48 +1,24 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
-import { selfReferencingLanguages } from '@/lib/selfHreflang'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import NestCTA from '@/components/NestCTA'
+import { notFound } from 'next/navigation'
 
-interface PageProps {
-  params: Promise<{
-    city: string 
-  }>
+// Every legitimate city has a concrete static directory under app/cities/.
+// This dynamic catch-all only exists to satisfy the Next.js segment shape; it
+// must never serve content for an unknown slug. Locking it down:
+//   - generateStaticParams returns [] so nothing is pre-rendered here
+//   - dynamicParams = false makes Next.js 404 any slug not in that empty list
+//   - the body calls notFound() as a belt-and-braces guard
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+  return []
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { city } = await params;
-  const cityName = city.charAt(0).toUpperCase() + city.slice(1)
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: `Domestic Help Services in ${cityName} | EzyHelpers`,
-    description: `Find reliable domestic help services in ${cityName}. Verified maids, cooks, nannies, drivers & more. Book trusted home services with EzyHelpers today!`,
-    keywords: `domestic help ${cityName}, maid services ${cityName}, home services ${cityName}, cook services ${cityName}, nanny services ${cityName}`,
-    openGraph: {
-      title: `Home Services in ${cityName} - EzyHelpers`,
-      description: `Get verified domestic help in ${cityName}. Professional maids, cooks, nannies & more. Background-checked staff for your peace of mind.`,
-      url: `https://www.ezyhelpers.com/cities/${city}`,
-      type: 'website',
-      siteName: 'EzyHelpers',
-      locale: 'en_IN',
-    },
-    alternates: {
-      canonical: `https://www.ezyhelpers.com/cities/${city}`,
-      languages: selfReferencingLanguages(`/cities/${city}`),
-    },
+    robots: { index: false, follow: false },
   }
 }
 
-export default async function CityPage({ params }: PageProps) {
-  const { city } = await params;
-  const cityName = city.charAt(0).toUpperCase() + city.slice(1)
-  return (
-    <main className="min-h-screen">
-      <Navbar />
-      {/* Rest of the component JSX */}
-      <NestCTA />
-      <Footer />
-    </main>
-  )
-} 
+export default async function CityPage() {
+  notFound()
+}

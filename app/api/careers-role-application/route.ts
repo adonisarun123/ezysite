@@ -7,6 +7,7 @@ import {
   safeAttachmentFilename,
 } from '@/lib/careersChiefOfStaffResume'
 import { logger } from '@/lib/logger'
+import { checkRateLimit } from '@/lib/auth'
 
 function textEntry(formData: FormData, key: string): string {
   const v = formData.get(key)
@@ -15,6 +16,19 @@ function textEntry(formData: FormData, key: string): string {
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 5 req / 10 min per IP
+    const ip =
+      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+      request.headers.get('x-real-ip') ||
+      'unknown'
+    const rl = checkRateLimit(`POST:${request.nextUrl.pathname}:${ip}`, 5, 600_000)
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { success: false, error: 'rate_limited' },
+        { status: 429 }
+      )
+    }
+
     const contentType = request.headers.get('content-type') || ''
     if (!contentType.includes('multipart/form-data')) {
       return NextResponse.json(
@@ -24,6 +38,12 @@ export async function POST(request: NextRequest) {
     }
 
     const formData = await request.formData()
+
+    // Honeypot check
+    const honeypot = formData.get('website')
+    if (typeof honeypot === 'string' && honeypot.trim() !== '') {
+      return NextResponse.json({ success: true })
+    }
 
     const raw = {
       jobSlug: textEntry(formData, 'jobSlug'),

@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Air Conditioner Repair in Bareilly - AC Experts',
     description: 'Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians.',
-    url: 'https://www.ezyhelpers.com/cities/bareilly/air-conditioner-repair',
+    url: 'https://www.ezyhelpers.com/cities/bareilly/ac-repair',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.ezyhelpers.com/cities/bareilly/air-conditioner-repair'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/ac-repair'
   }
 }
 

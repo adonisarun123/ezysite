@@ -81,7 +81,7 @@ const faqs: FAQItem[] = [
 export default function NannyJobsOdishaBangaloreHindiPage() {
     return (
         <>
-            <main className="min-h-screen noto-sans-devanagari-hindi">
+            <div lang="hi" className="min-h-screen noto-sans-devanagari-hindi">
                 <Navbar />
 
                 <Breadcrumb
@@ -601,7 +601,7 @@ export default function NannyJobsOdishaBangaloreHindiPage() {
                                         </p>
                                     </div>
                                     <Link
-                                        href="/nest-hostel"
+                                        href="/contact"
                                         className="inline-flex items-center gap-2 text-pink-600 font-bold text-lg hover:gap-3 transition-all group"
                                     >
                                         नेस्ट के बारे में और जानें <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -679,7 +679,7 @@ export default function NannyJobsOdishaBangaloreHindiPage() {
                 </section>
 
                 <Footer />
-            </main>
+            </div>
         </>
     )
 }

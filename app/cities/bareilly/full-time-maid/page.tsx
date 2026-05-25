@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.ezyhelpers.com/cities/bareilly'
+    canonical: 'https://www.ezyhelpers.com/cities/bareilly/full-time-maid'
   }
 }
 

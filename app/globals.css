@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* React DayPicker styles */
-@import 'react-day-picker/dist/style.css';
+/* React DayPicker styles are imported on-demand by calendar components */
 
 /* Calendar customizations */
 .rdp {
@@ -136,16 +135,36 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     font-family: var(--font-inter), system-ui, sans-serif;
     background-color: #F9FBFF;
     color: #2B2B2B;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-poppins), system-ui, sans-serif;
     color: #2B2B2B;
+  }
+
+  /* Top padding for the MainContent wrapper (home, market-overview, case-studies).
+     Driven by CSS via the `data-urgency-visible` attribute on <html> set by
+     UrgencyProvider — no more client-only context switching for padding. */
+  [data-main-content] {
+    padding-top: 5rem;
+  }
+  @screen lg {
+    [data-main-content] {
+      padding-top: 6rem;
+    }
+  }
+  :root[data-urgency-visible="true"] [data-main-content] {
+    padding-top: 8rem;
+  }
+  @screen lg {
+    :root[data-urgency-visible="true"] [data-main-content] {
+      padding-top: 9rem;
+    }
   }
 }
 
@@ -357,5 +376,29 @@ body {
 
   .tawk-flex-right {
     right: 16px !important;
+  }
+}
+
+/* On /care-services/* pages we render our own bottom-right WhatsApp pill via
+   <CareWhatsAppFloat />. The Tawk.to bubble would overlap it, so we flip the
+   Tawk widget to the bottom-LEFT for these pages only. The body.care-page
+   class is toggled by CareWhatsAppFloat.tsx based on pathname. */
+body.care-page #tawk-bubble,
+body.care-page .tawk-flex-right,
+body.care-page iframe[title*="chat" i],
+body.care-page iframe[id^="tawk"],
+body.care-page .tawk-min-container {
+  left: 24px !important;
+  right: auto !important;
+}
+
+@media (max-width: 768px) {
+  body.care-page #tawk-bubble,
+  body.care-page .tawk-flex-right,
+  body.care-page iframe[title*="chat" i],
+  body.care-page iframe[id^="tawk"],
+  body.care-page .tawk-min-container {
+    left: 16px !important;
+    right: auto !important;
   }
 }

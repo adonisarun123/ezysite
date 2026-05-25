@@ -16,9 +16,9 @@ const features = [
   {
     icon: ShieldCheckIcon,
     title: '100% Verified & Background Checked',
-    description: 'Every helper undergoes rigorous police verification, skill assessment, and training. DWSSC registered professionals you can trust.',
+    description: 'Every helper undergoes rigorous police verification*, skill assessment, and training. DWSSC registered professionals you can trust.',
     stats: '10,000+ helpers verified',
-    badge: 'Police Verified',
+    badge: 'Police Verified*',
     color: 'trust',
     highlight: true
   },
@@ -265,6 +265,13 @@ export default function WhyChooseUsSection() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary-500/5 to-secondary-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
+        </div>
+
+        {/* Police Verification Note */}
+        <div className="mt-12 text-center">
+          <p className="text-sm text-text-secondary italic">
+            * Police verification is conducted when specifically requested by customers
+          </p>
         </div>
 
         {/* Bottom CTA */}

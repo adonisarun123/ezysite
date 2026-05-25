@@ -14,6 +14,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Domestic Help in Nagpur | Verified Maids & Home Services | EzyHelpers',
   description:
     'Hire verified maids, cooks, and home help in Nagpur — Sitabuldi, Sadar, Hingna, and nearby areas. Trusted domestic staff with EzyHelpers.',

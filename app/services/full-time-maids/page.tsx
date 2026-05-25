@@ -3,6 +3,10 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+
+// ISR: revalidate hourly
+export const revalidate = 3600
+import AvailableInCities from '@/components/AvailableInCities'
 import {
   ShieldCheckIcon, 
   HomeIcon, 
@@ -653,6 +657,14 @@ export default function FullTimeMaidsPage() {
       </section>
       
             <NestCTA />
+            <AvailableInCities
+        serviceSlug="full-time-maids"
+        serviceName="Full-Time Maids"
+        cities={[
+          { name: "Bangalore", href: "/cities/bangalore/full-time-maid" },
+          { name: "Bareilly", href: "/cities/bareilly/full-time-maid" },
+        ]}
+      />
       <Footer />
       </main>
     </>

@@ -22,6 +22,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 
 export const metadata: Metadata = {
@@ -73,6 +74,14 @@ const faqs: FAQItem[] = [
 export default function HomeCookJobsBangalorePage() {
     return (
         <>
+            <JobPostingSchema
+                title="Home Cook Job in Bangalore"
+                description="Home cook jobs in Bangalore for verified helpers. Reliable households, fixed work hours, fair pay, and long-term job stability."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: "Bangalore", addressRegion: "Karnataka", addressCountry: "IN" }}
+            />
             <main className="min-h-screen">
                 <Navbar />
 

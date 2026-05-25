@@ -3,6 +3,9 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import UrgencyCTA from '@/components/UrgencyCTA';
 import Link from 'next/link';
+
+// ISR: revalidate hourly
+export const revalidate = 3600
 import Image from 'next/image';
 import {
   CalendarDaysIcon,

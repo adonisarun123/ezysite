@@ -1,16 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { sendLeadEmail } from '@/lib/emailService'
 import { logger } from '@/lib/logger'
+import { checkRateLimit } from '@/lib/auth'
 import { HelperInterviewFormData } from '@/types/email'
 
 export async function POST(request: NextRequest) {
     try {
-        const formData = await request.json() as HelperInterviewFormData
+        // Rate limit: 5 req / 10 min per IP
+        const ip =
+            request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+            request.headers.get('x-real-ip') ||
+            'unknown'
+        const rl = checkRateLimit(`POST:${request.nextUrl.pathname}:${ip}`, 5, 600_000)
+        if (!rl.allowed) {
+            return NextResponse.json(
+                { success: false, error: 'rate_limited' },
+                { status: 429 }
+            )
+        }
+
+        const formData = await request.json() as HelperInterviewFormData & { website?: string }
+
+        // Honeypot check
+        if (formData && typeof (formData as any).website === 'string' && (formData as any).website.trim() !== '') {
+            return NextResponse.json({ success: true }, { status: 200 })
+        }
 
         // Basic Validation
         if (!formData.fullName || !formData.age || !formData.maritalStatus) {
             return NextResponse.json(
-                { error: 'Missing required fields' },
+                { error: 'validation_failed' },
                 { status: 400 }
             )
         }

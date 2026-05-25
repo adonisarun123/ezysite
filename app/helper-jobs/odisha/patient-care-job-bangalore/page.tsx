@@ -34,6 +34,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'Live-in Patient care jobs in Bangalore for Odisha Helpers',
@@ -92,7 +93,15 @@ export default function PatientCareJobsOdishaBangalorePage() {
     return (
         <>
             <main className="min-h-screen">
-                <Navbar />
+                <JobPostingSchema
+                title="Patient Care Job in Bangalore"
+                description="Patient care jobs in Bangalore for helpers from Odisha. Verified households, training, fair pay, and stable employment."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: "Bangalore", addressRegion: "Karnataka", addressCountry: "IN" }}
+            />
+            <Navbar />
 
                 <Breadcrumb
                     sticky={true}
@@ -598,10 +607,10 @@ export default function PatientCareJobsOdishaBangalorePage() {
                                         </p>
                                     </div>
                                     <Link
-                                        href="/nest-hostel"
+                                        href="/contact"
                                         className="inline-flex items-center gap-2 text-pink-600 font-bold text-lg hover:gap-3 transition-all group"
                                     >
-                                        Learn more about NEST <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                        Contact us about accommodation <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                 </div>
                             </div>

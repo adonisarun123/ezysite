@@ -25,6 +25,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'Live-in Couple For Farmhouse Jobs in Bangalore',
@@ -70,6 +71,15 @@ const faqs: FAQItem[] = [
 export default function FarmhouseCoupleJobsOdishaBangalorePage() {
     return (
         <>
+            <JobPostingSchema
+                title="Live-in Couple For Farmhouse Jobs in Bangalore"
+                description="Peaceful farmhouse caretaker jobs in Bangalore for couples from Odisha. Live together, save more, zero placement fees. Direct employer salary, on-site stay, property care duties, and steady income."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: 'Bangalore', addressRegion: 'Karnataka', addressCountry: 'IN' }}
+                applicantLocationRequirements="IN"
+            />
             <main className="min-h-screen">
                 <Navbar />
 
@@ -469,10 +479,10 @@ export default function FarmhouseCoupleJobsOdishaBangalorePage() {
                                         </p>
                                     </div>
                                     <Link
-                                        href="/nest-hostel"
+                                        href="/contact"
                                         className="inline-flex items-center gap-2 text-pink-600 text-lg hover:gap-3 transition-all group/cta font-bold italic leading-relaxed"
                                     >
-                                        Learn more about NEST <ArrowRightIcon className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform font-bold italic leading-relaxed" />
+                                        Contact us about accommodation <ArrowRightIcon className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform font-bold italic leading-relaxed" />
                                     </Link>
                                 </div>
                             </div>

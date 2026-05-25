@@ -22,7 +22,29 @@ const WhatsAppFloat = dynamic(() => import('./WhatsAppFloat'), {
   loading: () => null
 })
 
+/** Care-specific WhatsApp widget — renders only on /care-services/* paths. */
+const CareWhatsAppFloat = dynamic(() => import('./care-services/CareWhatsAppFloat'), {
+  ssr: false,
+  loading: () => null
+})
+
 const LanguageSelectorPopup = dynamic(() => import('./LanguageSelectorPopup'), {
+  ssr: false,
+  loading: () => null
+})
+
+const MobileStickyCTA = dynamic(() => import('./MobileStickyCTA'), {
+  ssr: false,
+  loading: () => null
+})
+
+const CookieConsent = dynamic(() => import('./CookieConsent'), {
+  ssr: false,
+  loading: () => null
+})
+
+/** First-visit service selector modal — auto-shown on homepage; remembers choice for 30 days. */
+const ServiceSelectorModal = dynamic(() => import('./ServiceSelector'), {
   ssr: false,
   loading: () => null
 })
@@ -33,7 +55,11 @@ export default function ClientOnlyWidgets() {
       <LLMOptimization />
       <UrgencyCTA />
       <WhatsAppFloat />
+      <CareWhatsAppFloat />
       <LanguageSelectorPopup />
+      <ServiceSelectorModal mode="modal" />
+      <MobileStickyCTA />
+      <CookieConsent />
     </>
   )
 }

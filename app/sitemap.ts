@@ -2,10 +2,11 @@ import { MetadataRoute } from 'next'
 import { posts } from '@/lib/blogData'
 import { caseStudies } from '@/app/case-studies/data/caseStudies'
 import { jobOpenings } from '@/lib/careersData'
+import { CARE_ENQUIRY_HREF, CARE_NAV_CLUSTERS, CARE_PILLAR_HREF } from '@/lib/careServices/registry'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.ezyhelpers.com'
-  const currentDate = new Date().toISOString()
+  const currentDate = process.env.BUILD_DATE ?? '2026-05-20T00:00:00.000Z'
 
   // Core pages with high priority
   const corePages: MetadataRoute.Sitemap = [
@@ -56,6 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9
+    },
+    {
+      url: `${baseUrl}/on-demand-help`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85
     },
     {
       url: `${baseUrl}/join-as-helper`,
@@ -143,10 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'appliance-repair',
     'on-demand-helpers',
     'ac-repair',
-    'babysitter',
-    'english-speaking-babysitters',
     'house-shifting',
-    'japa',
     'japa-nanny-services',
     'pest-control',
     'premium-chauffeur-service',
@@ -271,21 +275,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65
   }))
 
-  // Special landing pages
-  const landingPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/Lp/live-in-maid-bangalore`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7
-    },
-    {
-      url: `${baseUrl}/Lp/live-in-maid-bareilly`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7
-    }
-  ]
+  // Special landing pages (excluded — noindex)
+  const landingPages: MetadataRoute.Sitemap = []
 
   // Helper jobs pages
   const helperJobPages: MetadataRoute.Sitemap = [
@@ -436,12 +427,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5
     },
     {
-      url: `${baseUrl}/agent-success`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.25
-    },
-    {
       url: `${baseUrl}/customer-requirements`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -458,12 +443,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.5
-    },
-    {
-      url: `${baseUrl}/helper-success`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.25
     }
   ]
 
@@ -491,8 +470,112 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65
   }))
 
+  const careServicesBangalore: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/care-services`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95
+    },
+    {
+      url: `${baseUrl}${CARE_ENQUIRY_HREF}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85
+    },
+    {
+      url: `${baseUrl}${CARE_PILLAR_HREF}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9
+    },
+    ...CARE_NAV_CLUSTERS.map((c) => ({
+      url: `${baseUrl}${c.href}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85
+    })),
+    // High-intent SEO subpages — condition pages
+    ...[
+      'stroke-care-at-home-bangalore',
+      'dementia-alzheimers-care-bangalore',
+      'bedridden-patient-care-bangalore',
+      'post-surgery-recovery-bangalore',
+      'cancer-care-at-home-bangalore',
+      'parkinsons-care-at-home-bangalore',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85
+    })),
+    // Decision & cost guides
+    ...[
+      'home-nursing-cost-bangalore',
+      'home-nurse-vs-caretaker',
+      'live-in-vs-day-shift-caregiver',
+      'home-care-vs-old-age-home',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85
+    })),
+    // Locality pages
+    ...[
+      'elderly-care-whitefield-bangalore',
+      'elderly-care-hsr-layout-bangalore',
+      'elderly-care-koramangala-bangalore',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8
+    })),
+    // Strategic pages
+    ...[
+      'insurance-and-home-care-bangalore',
+      'hospital-discharge-care-bangalore',
+      'nri-family-home-care-bangalore',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85
+    })),
+    // Trust & operations pages
+    ...[
+      'caregiver-verification-process',
+      'caregiver-training',
+      'care-leadership',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7
+    })),
+    // Interactive tools
+    ...[
+      'care-quiz',
+      'cost-calculator',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85
+    })),
+    // Reference / glossary
+    {
+      url: `${baseUrl}/care-services/care-glossary`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75
+    }
+  ]
+
   return [
     ...corePages,
+    ...careServicesBangalore,
     ...services,
     ...cities,
     ...bangaloreServices,

@@ -72,7 +72,7 @@ const faqs: FAQItem[] = [
 export default function JapaMaidJobsOdishaBangaloreHindiPage() {
     return (
         <>
-            <main className="min-h-screen noto-sans-devanagari-hindi">
+            <div lang="hi" className="min-h-screen noto-sans-devanagari-hindi">
                 <Navbar />
 
                 <Breadcrumb
@@ -542,7 +542,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                                         </p>
                                     </div>
                                     <Link
-                                        href="/nest-hostel"
+                                        href="/contact"
                                         className="inline-flex items-center gap-2 text-pink-600 font-bold text-lg hover:gap-3 transition-all group/cta italic"
                                     >
                                         NEST के बारे में और जानें <ArrowRightIcon className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform font-bold italic" />
@@ -622,7 +622,7 @@ export default function JapaMaidJobsOdishaBangaloreHindiPage() {
                 </section>
 
                 <Footer />
-            </main>
+            </div>
         </>
     )
 }

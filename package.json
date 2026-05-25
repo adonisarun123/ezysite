@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/adonisarun123/ezysite.git"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -22,7 +25,9 @@
     "optimize-performance": "node scripts/optimize-performance.js",
     "build:optimized": "npm run optimize-performance && npm run build",
     "generate-sitemap": "node scripts/generate-sitemap.js",
-    "validate-sitemap": "curl -s http://localhost:3000/sitemap.xml | head -10"
+    "validate-sitemap": "curl -s http://localhost:3000/sitemap.xml | head -10",
+    "test:on-demand-logic": "tsx scripts/verify-on-demand-help-logic.ts",
+    "test:on-demand-db": "tsx scripts/verify-on-demand-bookings-db.ts"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
@@ -38,11 +43,9 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
-    "framer-motion": "^11.18.2",
     "libphonenumber-js": "^1.12.24",
-    "lucide-react": "^0.577.0",
-    "next": "^15.5.14",
-    "nodemailer": "^8.0.4",
+    "next": "^15.5.15",
+    "nodemailer": "^8.0.5",
     "p-retry": "^7.1.0",
     "postcss": "^8.4.32",
     "puppeteer": "^24.13.0",
@@ -54,14 +57,13 @@
     "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^3.3.0",
-    "tailwindcss-animate": "^1.0.7",
     "zod": "^4.1.12"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
-    "@types/node": "^22.12.0",
+    "@types/node": "^24.0.0",
     "@types/nodemailer": "^7.0.11",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -72,7 +74,11 @@
     "eslint-config-next": "^15.0.0",
     "glob": "^10.3.10",
     "jsdom": "^27.0.1",
+    "tsx": "^4.21.0",
     "typescript": "5.9.3",
     "vitest": "^3.2.4"
+  },
+  "overrides": {
+    "vite": "^6.3.5"
   }
 }

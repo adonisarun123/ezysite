@@ -1,3 +1,5 @@
+import pRetry from 'p-retry'
+
 export async function sendWebhook(formType: string, formData: any, requestId?: string) {
   const isBrowser = typeof window !== 'undefined'
   const payload = {
@@ -9,18 +11,23 @@ export async function sendWebhook(formType: string, formData: any, requestId?: s
 
   try {
     if (isBrowser) {
-      // Use internal forwarder to avoid CORS and hide external URL
-      const response = await fetch('/api/webhook-forward', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
-
-      if (!response.ok) {
-        const text = await response.text().catch(() => '')
-        console.error('Webhook forward failed (client):', response.status, response.statusText, text)
-        return { success: false, error: `Forward failed: ${response.status}` }
-      }
+      // Use internal forwarder to avoid CORS and hide external URL.
+      // Retry transient failures (network blips, 5xx) with exponential backoff.
+      await pRetry(
+        async () => {
+          const response = await fetch('/api/webhook-forward', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          })
+          if (!response.ok) {
+            const text = await response.text().catch(() => '')
+            throw new Error(`webhook ${response.status} ${response.statusText} ${text}`)
+          }
+          return response
+        },
+        { retries: 3, minTimeout: 500, factor: 2 }
+      )
       return { success: true }
     } else {
       // Server-side: send directly to external webhook
@@ -30,21 +37,25 @@ export async function sendWebhook(formType: string, formData: any, requestId?: s
         return { success: false, error: 'No webhook URL configured' }
       }
 
-      const response = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
-
-      if (!response.ok) {
-        const text = await response.text().catch(() => '')
-        console.error('Webhook error (server):', response.status, response.statusText, text)
-        return { success: false, error: `Webhook failed: ${response.status}` }
-      }
+      await pRetry(
+        async () => {
+          const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          })
+          if (!response.ok) {
+            const text = await response.text().catch(() => '')
+            throw new Error(`webhook ${response.status} ${response.statusText} ${text}`)
+          }
+          return response
+        },
+        { retries: 3, minTimeout: 500, factor: 2 }
+      )
       return { success: true }
     }
   } catch (error) {
-    console.error('Webhook error:', error)
+    console.error('Webhook error after retries:', error)
     return { success: false, error: String(error) }
   }
 }
