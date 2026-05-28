@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Breadcrumb from '@/components/Breadcrumb'
 import { CAREERS_DEDICATED_PAGE_SLUGS, getJobBySlug, jobOpenings } from '@/lib/careersData'
 import ApmApplicationForm from '@/components/careers/ApmApplicationForm'
 import SalesExecutiveApplicationForm from '@/components/careers/SalesExecutiveApplicationForm'
@@ -22,6 +21,8 @@ import {
   ShieldCheckIcon,
   EnvelopeIcon,
   ChatBubbleLeftRightIcon,
+  ChevronRightIcon,
+  HomeIcon,
 } from '@heroicons/react/24/outline'
 import { JobPostingSchema } from '@/components/schema'
 
@@ -166,12 +167,30 @@ export default async function CareerJobPage({ params }: Props) {
       />
       <Navbar />
 
-      <Breadcrumb
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Careers', href: '/careers' },
-          { label: job.title },
-        ]}
+      {/* Breadcrumb structured data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ezyhelpers.com/' },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Careers',
+                item: 'https://www.ezyhelpers.com/careers',
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: job.title,
+                item: `https://www.ezyhelpers.com/careers/${job.slug}`,
+              },
+            ],
+          }),
+        }}
       />
 
       <main className="pb-16 sm:pb-24">
@@ -194,6 +213,38 @@ export default async function CareerJobPage({ params }: Props) {
           <div className="pointer-events-none absolute -bottom-40 -left-40 h-[28rem] w-[28rem] rounded-full bg-white/[0.07] blur-3xl" />
 
           <div className="relative mx-auto max-w-6xl px-6 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
+            {/* Inline breadcrumb */}
+            <nav aria-label="Breadcrumb" className="mb-8">
+              <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-white/80">
+                <li>
+                  <Link
+                    href="/"
+                    className="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 transition hover:bg-white/10 hover:text-white"
+                  >
+                    <HomeIcon className="h-3.5 w-3.5" />
+                    <span>Home</span>
+                  </Link>
+                </li>
+                <li className="flex items-center text-white/50">
+                  <ChevronRightIcon className="h-3.5 w-3.5" />
+                </li>
+                <li>
+                  <Link
+                    href="/careers"
+                    className="rounded-md px-1.5 py-0.5 transition hover:bg-white/10 hover:text-white"
+                  >
+                    Careers
+                  </Link>
+                </li>
+                <li className="flex items-center text-white/50">
+                  <ChevronRightIcon className="h-3.5 w-3.5" />
+                </li>
+                <li className="font-medium text-white">
+                  <span className="line-clamp-1 px-1.5 py-0.5">{job.title}</span>
+                </li>
+              </ol>
+            </nav>
+
             <Link
               href="/careers"
               className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm ring-1 ring-white/20 transition hover:bg-white/20"

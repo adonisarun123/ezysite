@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Breadcrumb from '@/components/Breadcrumb'
 import {
   CAREERS_DEDICATED_PAGE_SLUGS,
   JOB_CATEGORY_BLURBS,
@@ -27,6 +26,8 @@ import {
   PresentationChartLineIcon,
   ChatBubbleLeftRightIcon,
   HomeModernIcon,
+  HomeIcon,
+  ChevronRightIcon,
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
@@ -210,7 +211,25 @@ export default function CareersPage() {
     <div className="min-h-screen bg-background-primary text-text-primary">
       <Navbar />
 
-      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Careers' }]} />
+      {/* Breadcrumb structured data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.ezyhelpers.com/' },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Careers',
+                item: 'https://www.ezyhelpers.com/careers',
+              },
+            ],
+          }),
+        }}
+      />
 
       <main>
         {/* ============== HERO ============== */}
@@ -229,6 +248,27 @@ export default function CareersPage() {
           <div className="pointer-events-none absolute -bottom-40 -left-40 h-[28rem] w-[28rem] rounded-full bg-white/[0.07] blur-3xl" />
 
           <div className="relative mx-auto max-w-6xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-28">
+            {/* Inline breadcrumb */}
+            <nav aria-label="Breadcrumb" className="mb-6">
+              <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-white/80">
+                <li>
+                  <Link
+                    href="/"
+                    className="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 transition hover:bg-white/10 hover:text-white"
+                  >
+                    <HomeIcon className="h-3.5 w-3.5" />
+                    <span>Home</span>
+                  </Link>
+                </li>
+                <li className="flex items-center text-white/50">
+                  <ChevronRightIcon className="h-3.5 w-3.5" />
+                </li>
+                <li className="font-medium text-white">
+                  <span className="px-1.5 py-0.5">Careers</span>
+                </li>
+              </ol>
+            </nav>
+
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white ring-1 ring-white/25">
               <BriefcaseIcon className="h-3.5 w-3.5" />
               Careers at EzyHelpers
