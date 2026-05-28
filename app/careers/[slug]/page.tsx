@@ -63,31 +63,32 @@ function formatPosted(dateStr: string) {
   })
 }
 
-// Color theming per job category — gives each section a distinctive accent
+// Brand-aligned category theming — only primary blue, secondary blue, and trust teal.
+// All gradients use deep, saturated shades for strong white-text contrast.
 const CATEGORY_THEME: Record<
   string,
   { gradient: string; chip: string; chipBorder: string; accent: string }
 > = {
   "Founder's Office": {
-    gradient: 'from-primary-700 via-primary-600 to-secondary-600',
+    gradient: 'from-primary-800 via-primary-700 to-primary-600',
     chip: 'bg-primary-50 text-primary-700',
     chipBorder: 'border-primary-200',
     accent: 'text-primary-600',
   },
   'Product & Engineering': {
-    gradient: 'from-secondary-700 via-secondary-600 to-trust-600',
+    gradient: 'from-primary-700 via-primary-600 to-secondary-700',
     chip: 'bg-secondary-50 text-secondary-700',
     chipBorder: 'border-secondary-200',
     accent: 'text-secondary-700',
   },
   Sales: {
-    gradient: 'from-accent-600 via-accent-500 to-primary-600',
-    chip: 'bg-accent-50 text-accent-700',
-    chipBorder: 'border-accent-200',
-    accent: 'text-accent-600',
+    gradient: 'from-primary-700 via-primary-600 to-secondary-600',
+    chip: 'bg-primary-50 text-primary-700',
+    chipBorder: 'border-primary-200',
+    accent: 'text-primary-600',
   },
   Operations: {
-    gradient: 'from-primary-700 via-primary-600 to-trust-600',
+    gradient: 'from-primary-700 via-primary-600 to-trust-700',
     chip: 'bg-primary-50 text-primary-700',
     chipBorder: 'border-primary-200',
     accent: 'text-primary-600',
@@ -99,31 +100,31 @@ const CATEGORY_THEME: Record<
     accent: 'text-primary-700',
   },
   'People & HR': {
-    gradient: 'from-trust-600 via-trust-500 to-primary-600',
+    gradient: 'from-trust-700 via-trust-600 to-primary-700',
     chip: 'bg-trust-50 text-trust-700',
     chipBorder: 'border-trust-200',
     accent: 'text-trust-700',
   },
   'Care Services': {
-    gradient: 'from-trust-700 via-trust-600 to-success-600',
+    gradient: 'from-trust-700 via-trust-600 to-primary-700',
     chip: 'bg-trust-50 text-trust-700',
     chipBorder: 'border-trust-200',
     accent: 'text-trust-700',
   },
   'Specialist Care': {
-    gradient: 'from-trust-700 via-primary-600 to-secondary-600',
+    gradient: 'from-trust-800 via-trust-700 to-primary-700',
     chip: 'bg-trust-50 text-trust-700',
     chipBorder: 'border-trust-200',
     accent: 'text-trust-700',
   },
   'Business Development': {
-    gradient: 'from-accent-600 via-primary-600 to-secondary-600',
-    chip: 'bg-accent-50 text-accent-700',
-    chipBorder: 'border-accent-200',
-    accent: 'text-accent-600',
+    gradient: 'from-primary-700 via-primary-600 to-trust-700',
+    chip: 'bg-primary-50 text-primary-700',
+    chipBorder: 'border-primary-200',
+    accent: 'text-primary-600',
   },
   'Marketing & Content': {
-    gradient: 'from-secondary-600 via-primary-600 to-accent-500',
+    gradient: 'from-secondary-700 via-primary-600 to-primary-700',
     chip: 'bg-secondary-50 text-secondary-700',
     chipBorder: 'border-secondary-200',
     accent: 'text-secondary-700',
@@ -178,17 +179,19 @@ export default async function CareerJobPage({ params }: Props) {
         <section
           className={`relative overflow-hidden bg-gradient-to-br ${theme.gradient} text-white`}
         >
-          {/* Decorative pattern */}
+          {/* Subtle dot pattern (low opacity so it doesn't interfere with text) */}
           <div
-            className="pointer-events-none absolute inset-0 opacity-[0.12]"
+            className="pointer-events-none absolute inset-0 opacity-[0.06]"
             style={{
               backgroundImage:
                 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-              backgroundSize: '24px 24px',
+              backgroundSize: '28px 28px',
             }}
           />
-          <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+          {/* Soft dark vignette for guaranteed text contrast */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/15" />
+          <div className="pointer-events-none absolute -top-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-white/[0.07] blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-40 -left-40 h-[28rem] w-[28rem] rounded-full bg-white/[0.07] blur-3xl" />
 
           <div className="relative mx-auto max-w-6xl px-6 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
             <Link
@@ -214,11 +217,11 @@ export default async function CareerJobPage({ params }: Props) {
               )}
             </div>
 
-            <h1 className="mt-6 max-w-4xl font-display text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
+            <h1 className="mt-6 max-w-4xl font-display text-3xl font-bold leading-[1.15] tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-5xl xl:text-[3.5rem]">
               {job.title}
             </h1>
 
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/90 sm:text-xl">
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/95 sm:text-xl">
               {job.excerpt}
             </p>
 
