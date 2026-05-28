@@ -2101,14 +2101,14 @@ export const jobOpenings: JobOpening[] = [
     title: 'Field Recruiter / Business Development Executive — PAN India',
     department: 'Operations · Supply & Sourcing',
     category: 'Business Development',
-    location: 'Work From Home + Field-Based (PAN India · serving Bengaluru and other locations)',
+    location: 'Field-Based (PAN India · serving Bengaluru and other locations)',
     type: 'Full-time',
     team: 'Field Recruitment & Business Development',
     postedAt: '2026-05-28',
     excerpt:
-      'Recruit domestic helpers, caregivers, babysitters, cooks, and housekeeping staff from local cities and nearby villages. Work-from-home + field-based, flexible hours, immediate joining.',
+      'Recruit domestic helpers, caregivers, babysitters, cooks, and housekeeping staff from local cities and nearby villages. Field-based role with flexible hours, immediate joining.',
     intro:
-      'EzyHelpers is looking for passionate, confident, and proactive people to help us recruit domestic helpers, caregivers, babysitters, cooks, and housekeeping staff from local cities and nearby villages — serving Bengaluru and other locations.\n\nThe ideal candidate is comfortable travelling locally, meeting people, building grassroots connections, and sourcing reliable helpers. This role combines work-from-home flexibility with hands-on field work in your local area, giving you direct impact on candidate sourcing for one of India\'s fastest-growing domestic staffing platforms.',
+      'EzyHelpers is looking for passionate, confident, and proactive people to help us recruit domestic helpers, caregivers, babysitters, cooks, and housekeeping staff from local cities and nearby villages — serving Bengaluru and other locations.\n\nThe ideal candidate is comfortable travelling locally, meeting people, building grassroots connections, and sourcing reliable helpers. This is a field-based role with hands-on work in your local area, giving you direct impact on candidate sourcing for one of India\'s fastest-growing domestic staffing platforms.',
     responsibilities: [
       'Find and recruit domestic helpers and caregivers from local cities and villages.',
       'Source candidates across multiple roles: Housekeeping, Baby Care, Elderly Care, Cooking, Live-in Helpers, and Caregivers.',
@@ -2142,7 +2142,7 @@ export const jobOpenings: JobOpening[] = [
           'Referral incentives.',
           'Performance-based incentives.',
           'Growth opportunities.',
-          'Flexible work culture (work-from-home + field-based).',
+          'Flexible work culture with field-based work.',
         ],
       },
       {
@@ -2158,7 +2158,7 @@ export const jobOpenings: JobOpening[] = [
       {
         title: 'Work setup',
         items: [
-          'Location: Work From Home + Field-Based Work.',
+          'Location: Field-Based Work across PAN India.',
           'Job Type: Full-Time · Flexible Hours.',
           'Joining: Immediate.',
         ],
