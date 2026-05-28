@@ -13,7 +13,10 @@ import {
     UserGroupIcon,
     ShieldCheckIcon,
     UserPlusIcon,
-    BanknotesIcon
+    BanknotesIcon,
+    ArrowRightIcon,
+    SparklesIcon,
+    GiftIcon
 } from '@heroicons/react/24/outline'
 
 
@@ -140,9 +143,11 @@ export default function HelperJobsPage() {
                             <div className="grid grid-cols-2 gap-2 md:gap-4 max-w-3xl mx-auto">
                                 <Link
                                     href="/helper-registration"
-                                    className="inline-flex items-center justify-center w-full bg-white text-purple-700 font-semibold text-sm sm:text-base md:text-lg py-3 px-1 md:py-4 md:px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300 text-center whitespace-nowrap"
+                                    className="group relative inline-flex items-center justify-center gap-1.5 md:gap-2 w-full bg-white text-purple-700 font-bold text-xs sm:text-base md:text-lg py-3 px-2 md:py-4 md:px-6 rounded-xl shadow-lg shadow-black/20 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 text-center whitespace-nowrap overflow-hidden"
                                 >
-                                    फ्री रजिस्ट्रेशन
+                                    <SparklesIcon className="h-4 w-4 md:h-5 md:w-5 text-yellow-500" />
+                                    <span>अभी अप्लाई करें — मुफ़्त!</span>
+                                    <ArrowRightIcon className="h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
                                 </Link>
 
                                 <Link
@@ -152,6 +157,12 @@ export default function HelperJobsPage() {
                                     अपने आस-पास जॉब्स ढूंढें
                                 </Link>
                             </div>
+
+                            {/* Free badge under the primary CTA */}
+                            <p className="mt-3 text-xs md:text-sm text-yellow-300 font-semibold flex items-center justify-center gap-1.5">
+                                <GiftIcon className="h-4 w-4" />
+                                कोई रजिस्ट्रेशन फ़ीस नहीं · 100% फ्री
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -323,14 +334,17 @@ export default function HelperJobsPage() {
                         <div className="flex flex-wrap justify-center gap-4 mt-12">
                             <Link
                                 href="/helper-registration"
-                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                                className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-xl shadow-lg shadow-purple-300/50 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
                             >
-                                अभी अप्लाई करें
+                                <SparklesIcon className="h-5 w-5 text-yellow-300" />
+                                अभी अप्लाई करें — मुफ़्त!
+                                <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                             </Link>
                             <Link
                                 href="tel:+919972571005"
-                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                                className="inline-flex items-center justify-center gap-2 bg-white text-purple-700 font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-xl border-2 border-purple-600 hover:bg-purple-50 transition-all duration-300"
                             >
+                                <PhoneIcon className="h-5 w-5" />
                                 हमें कॉल करें
                             </Link>
                         </div>
@@ -558,23 +572,37 @@ export default function HelperJobsPage() {
                         </div>
                     </div>
 
-                    <div className="mt-16 text-center max-w-4xl mx-auto bg-purple-50 rounded-2xl p-8 border border-purple-100">
-                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">आज ही अपनी हेल्पर जॉब जर्नी शुरू करें</h3>
-                        <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
-                            ओडिशा, झारखंड, बंगाल, बिहार, असम और दूसरे राज्यों के हजारों हेल्पर्स से जुड़ें, जिन्हें EzyHelpers के ज़रिए सुरक्षित काम और स्टेबल इनकम मिली है।</p>
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <Link
-                                href="/helper-registration"
-                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                            >
-                                हेल्पर जॉब्स के लिए अप्लाई करें
-                            </Link>
-                            <Link
-                                href="tel:+919811223344"
-                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                            >
-                                हमें कॉल करें
-                            </Link>
+                    <div className="relative mt-16 max-w-4xl mx-auto overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600 via-purple-700 to-blue-700 p-8 md:p-12 text-center shadow-2xl">
+                        {/* Decorative glow */}
+                        <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+                        <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+
+                        <div className="relative z-10">
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-yellow-400 px-4 py-1.5 text-xs md:text-sm font-bold text-purple-900 shadow-md">
+                                <GiftIcon className="h-4 w-4" />
+                                100% फ्री · कोई फ़ीस नहीं
+                            </span>
+                            <h3 className="mt-4 text-2xl md:text-4xl font-bold text-white">आज ही अपनी हेल्पर जॉब जर्नी शुरू करें</h3>
+                            <p className="mt-4 text-base md:text-xl text-purple-50 leading-relaxed max-w-3xl mx-auto">
+                                ओडिशा, झारखंड, बंगाल, बिहार, असम और दूसरे राज्यों के हजारों हेल्पर्स से जुड़ें, जिन्हें EzyHelpers के ज़रिए सुरक्षित काम और स्टेबल इनकम मिली है।
+                            </p>
+                            <div className="mt-8 flex flex-wrap justify-center gap-4">
+                                <Link
+                                    href="/helper-registration"
+                                    className="group inline-flex items-center justify-center gap-2 bg-white text-purple-700 font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-xl shadow-lg shadow-black/30 hover:bg-gray-100 hover:-translate-y-0.5 transition-all duration-300"
+                                >
+                                    <SparklesIcon className="h-5 w-5 text-yellow-500" />
+                                    अभी अप्लाई करें — मुफ़्त!
+                                    <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                                </Link>
+                                <Link
+                                    href="tel:+919811223344"
+                                    className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-xl ring-2 ring-white/30 hover:bg-white/20 transition-all duration-300"
+                                >
+                                    <PhoneIcon className="h-5 w-5" />
+                                    हमें कॉल करें
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -615,14 +643,17 @@ export default function HelperJobsPage() {
                         <div className="mt-12 flex flex-wrap justify-center gap-4">
                             <Link
                                 href="/helper-registration"
-                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                                className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-xl shadow-lg shadow-purple-300/50 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
                             >
-                                हेल्पर जॉब्स के लिए अप्लाई करें
+                                <SparklesIcon className="h-5 w-5 text-yellow-300" />
+                                अभी अप्लाई करें — मुफ़्त!
+                                <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                             </Link>
                             <Link
                                 href="tel:+918031411776"
-                                className="inline-flex items-center justify-center bg-purple-600 text-white font-semibold text-lg py-4 px-10 rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                                className="inline-flex items-center justify-center gap-2 bg-white text-purple-700 font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-xl border-2 border-purple-600 hover:bg-purple-50 transition-all duration-300"
                             >
+                                <PhoneIcon className="h-5 w-5" />
                                 हमें कॉल करें
                             </Link>
                         </div>
@@ -630,19 +661,45 @@ export default function HelperJobsPage() {
                 </section>
 
                 {/* CTA Section */}
-                <section className="section-padding bg-gradient-to-br from-blue-600 to-purple-600 text-white">
-                    <div className="container-custom">
-                        <div className="max-w-4xl mx-auto text-center">
-                            <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">क्या आप अपना करियर शुरू करने के लिए तैयार हैं?</h2>
-                            <p className="text-xl mb-8 text-purple-100">आज ही EzyHelpers से जुड़ें और भरोसेमंद परिवारों से जुड़ें जो आपके काम और कौशल की कद्र करते हैं।</p>
+                <section className="section-padding relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-purple-800 text-white">
+                    {/* Decorative glow */}
+                    <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+                    <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
 
-                            <div className="gap-6 max-w-2xl mx-auto">
+                    <div className="container-custom relative z-10">
+                        <div className="max-w-4xl mx-auto text-center">
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-yellow-400 px-4 py-1.5 text-xs md:text-sm font-bold text-purple-900 shadow-md">
+                                <GiftIcon className="h-4 w-4" />
+                                रजिस्ट्रेशन 100% फ्री है
+                            </span>
+                            <h2 className="mt-5 text-3xl md:text-5xl text-white font-bold mb-4 font-display">क्या आप अपना करियर शुरू करने के लिए तैयार हैं?</h2>
+                            <p className="text-base md:text-xl mb-10 text-purple-100 leading-relaxed">
+                                आज ही EzyHelpers से जुड़ें और भरोसेमंद परिवारों से जुड़ें जो आपके काम और कौशल की कद्र करते हैं।
+                            </p>
+
+                            <div className="flex flex-wrap justify-center gap-4">
+                                <Link
+                                    href="/helper-registration"
+                                    className="group inline-flex items-center justify-center gap-2 bg-white text-purple-700 font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-xl shadow-xl shadow-black/30 hover:bg-gray-100 hover:-translate-y-0.5 transition-all duration-300"
+                                >
+                                    <SparklesIcon className="h-5 w-5 text-yellow-500" />
+                                    अभी अप्लाई करें — मुफ़्त!
+                                    <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                                </Link>
                                 <Link
                                     href="tel:+918031411776"
-                                    className="inline-flex items-center justify-center bg-white text-purple-700 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                                    className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-xl ring-2 ring-white/40 hover:bg-white/20 transition-all duration-300"
                                 >
-                                    रजिस्टर करने के लिए अभी कॉल करें – यह फ्री है!
+                                    <PhoneIcon className="h-5 w-5" />
+                                    रजिस्टर के लिए कॉल करें
                                 </Link>
+                            </div>
+
+                            {/* Trust strip */}
+                            <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm md:text-base text-purple-100">
+                                <span className="inline-flex items-center gap-1.5"><CheckCircleIcon className="h-4 w-4 text-green-400" /> कोई एजेंट नहीं</span>
+                                <span className="inline-flex items-center gap-1.5"><CheckCircleIcon className="h-4 w-4 text-green-400" /> कोई कमीशन नहीं</span>
+                                <span className="inline-flex items-center gap-1.5"><CheckCircleIcon className="h-4 w-4 text-green-400" /> लिखा हुआ एग्रीमेंट</span>
                             </div>
                         </div>
                     </div>
