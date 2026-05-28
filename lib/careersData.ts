@@ -2096,6 +2096,79 @@ export const jobOpenings: JobOpening[] = [
     hasApplicationForm: true,
     applicationForm: 'role',
   },
+  {
+    slug: 'field-recruiter-business-development-executive-pan-india',
+    title: 'Field Recruiter / Business Development Executive — PAN India',
+    department: 'Operations · Supply & Sourcing',
+    category: 'Business Development',
+    location: 'Work From Home + Field-Based (PAN India · serving Bengaluru and other locations)',
+    type: 'Full-time',
+    team: 'Field Recruitment & Business Development',
+    postedAt: '2026-05-28',
+    excerpt:
+      'Recruit domestic helpers, caregivers, babysitters, cooks, and housekeeping staff from local cities and nearby villages. Work-from-home + field-based, flexible hours, immediate joining.',
+    intro:
+      'EzyHelpers is looking for passionate, confident, and proactive people to help us recruit domestic helpers, caregivers, babysitters, cooks, and housekeeping staff from local cities and nearby villages — serving Bengaluru and other locations.\n\nThe ideal candidate is comfortable travelling locally, meeting people, building grassroots connections, and sourcing reliable helpers. This role combines work-from-home flexibility with hands-on field work in your local area, giving you direct impact on candidate sourcing for one of India\'s fastest-growing domestic staffing platforms.',
+    responsibilities: [
+      'Find and recruit domestic helpers and caregivers from local cities and villages.',
+      'Source candidates across multiple roles: Housekeeping, Baby Care, Elderly Care, Cooking, Live-in Helpers, and Caregivers.',
+      'Build partnerships with local agents, villages, training centres, and communities.',
+      'Conduct helper screening and provide onboarding support.',
+      'Coordinate closely with the Bengaluru operations team.',
+      'Drive mobilisation and referral hiring programs.',
+      'Maintain a strong pipeline of candidates through field visits and references.',
+    ],
+    requirements: [
+      'Hindi is a must — proficiency is essential for this role.',
+      'Good communication skills.',
+      'Local language knowledge preferred.',
+      'Comfortable with field work and local travel.',
+      'Strong convincing and networking skills.',
+      'Experience in recruitment, sales, field work, or manpower hiring is preferred.',
+      'Freshers with strong local connections are welcome to apply.',
+    ],
+    niceToHave: [
+      'Prior experience as a recruiter, mobiliser, or BD executive in staffing, NGO, microfinance, insurance, or skill-mission programmes.',
+      'Existing relationships with local agents, training institutes, panchayats, or community groups.',
+      'Experience sourcing candidates from villages and tier-2/3 towns for metro placements.',
+      'Smartphone literacy — WhatsApp, basic CRM, photo upload, Google Maps.',
+      'A second regional language beyond Hindi.',
+    ],
+    extraSections: [
+      {
+        title: 'Salary & benefits',
+        items: [
+          'Attractive salary.',
+          'Referral incentives.',
+          'Performance-based incentives.',
+          'Growth opportunities.',
+          'Flexible work culture (work-from-home + field-based).',
+        ],
+      },
+      {
+        title: 'Why join EzyHelpers',
+        items: [
+          'Be part of a fast-growing domestic staffing platform.',
+          'Opportunity to work across multiple cities.',
+          'Strong support and incentive programs.',
+          'Work closely with operations and hiring teams.',
+          'Build local networks and grow into leadership roles.',
+        ],
+      },
+      {
+        title: 'Work setup',
+        items: [
+          'Location: Work From Home + Field-Based Work.',
+          'Job Type: Full-Time · Flexible Hours.',
+          'Joining: Immediate.',
+        ],
+      },
+    ],
+    applyEmail: 'careers@ezyhelpers.com',
+    applyBodyPrompt: 'Please include:\n1. Your CV or a brief note covering your work history and current location.\n2. Your city/town and the area(s) you can cover for field work.\n3. Languages you speak (Hindi is mandatory; mention any local languages).\n4. Any prior experience in recruitment, sales, field work, or manpower hiring.\n5. Your earliest joining date and current/expected salary.\n\nSubject line: Field Recruiter — [Your City/Town]',
+    hasApplicationForm: true,
+    applicationForm: 'role',
+  },
 ]
 
 export function getJobBySlug(slug: string): JobOpening | undefined {
