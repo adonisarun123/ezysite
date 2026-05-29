@@ -83,6 +83,12 @@ export default function HomeCookJobsAssamBangalorePage() {
                         { label: 'Assam', href: '/helper-jobs/assam' },
                         { label: 'Home Cook Jobs in Bangalore' }
                     ]}
+                    rightContent={
+                        <div className="flex gap-2">
+                            <span className="text-xs font-bold bg-orange-100 text-orange-800 px-2 py-1 rounded-md">English</span>
+                            <Link href="/helper-jobs/assam/home-cook-jobs-bangalore/hin" className="text-xs font-medium text-gray-500 hover:text-orange-600 transition-colors px-2 py-1 rounded-md hover:bg-orange-50">हिन्दी</Link>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -94,8 +100,8 @@ export default function HomeCookJobsAssamBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">Home Cook Jobs in Bangalore for Assam Helpers</h1>
-                            <p className="text-sm md:text-xl text-orange-50/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium italic">
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">Home Cook Jobs in Bangalore for Assam Helpers</h1>
+                            <p className="text-sm md:text-xl text-orange-50/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium">
                                 People from Assam are appreciated for their delicious cooking skills and hardworking nature. We help you find safe and respectful cooking work with trusted families in Bangalore.
                             </p>
 
@@ -152,7 +158,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                                 ))}
                             </div>
 
-                            <p className="text-sm font-bold text-orange-700 italic">We provide verified home cook jobs in Bangalore for both freshers and experienced helpers. Whether you are a veg cook, a non-veg cook, or a multi-cuisine cook, we guide you properly and support you even after you start working.</p>
+                            <p className="text-sm font-bold text-orange-700">We provide verified home cook jobs in Bangalore for both freshers and experienced helpers. Whether you are a veg cook, a non-veg cook, or a multi-cuisine cook, we guide you properly and support you even after you start working.</p>
                         </div>
                     </div>
                 </section>
@@ -507,7 +513,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                                     <span className="bg-white px-4 py-2 rounded-full font-bold text-orange-800 shadow-sm border border-orange-100">Affordable stay</span>
                                 </div>
 
-                                <p className="text-md font-bold text-orange-700 italic mb-8 max-w-2xl mx-auto">
+                                <p className="text-md font-bold text-orange-700 mb-8 max-w-2xl mx-auto">
                                     You can settle comfortably before your job starts without stress or last-minute problems.
                                 </p>
 
@@ -572,7 +578,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                         </div>
 
                         <div className="text-center mt-12 mb-8">
-                            <p className="text-sm md:text-base font-bold text-orange-700 italic">Getting a cooking job is simple and fast with us. No confusion, no agents, and full guidance from start to work. Contact us now and get started.</p>
+                            <p className="text-sm md:text-base font-bold text-orange-700">Getting a cooking job is simple and fast with us. No confusion, no agents, and full guidance from start to work. Contact us now and get started.</p>
                         </div>
 
                         <div className="flex flex-col sm:flex-row justify-center gap-4">

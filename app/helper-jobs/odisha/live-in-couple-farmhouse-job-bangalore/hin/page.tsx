@@ -118,7 +118,7 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">ओडिशा के कपल्स के लिए बैंगलोर में फार्महाउस जॉब्स</h1>
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal ">ओडिशा के कपल्स के लिए बैंगलोर में फार्महाउस जॉब्स</h1>
 
                             <div className="space-y-4 mb-6 max-w-5xl mx-auto mt-4">
                                 <p className="text-xs sm:text-sm md:text-xl text-violet-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none font-medium">
@@ -153,12 +153,12 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">जॉब की जगह: बैंगलोर</h2>
+                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">जॉब की जगह: बैंगलोर</h2>
                         </div>
 
                         <div className="bg-violet-50 rounded-3xl p-8 md:p-12 shadow-xl border border-violet-100 max-w-6xl mx-auto">
                             <div className="text-center mb-8">
-                                <h3 className="text-xl md:text-4xl font-bold text-gray-900 font-display italic">EzyHelpers को क्या अलग बनाता है</h3>
+                                <h3 className="text-xl md:text-4xl font-bold text-gray-900 font-display ">EzyHelpers को क्या अलग बनाता है</h3>
                                 <div className="w-24 h-1 bg-violet-500 mx-auto mt-4 rounded-full"></div>
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -186,7 +186,7 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight">बैंगलोर में 24 घंटे रहने वाले पति-पत्नी के लिए फार्महाउस जॉब</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display  leading-tight">बैंगलोर में 24 घंटे रहने वाले पति-पत्नी के लिए फार्महाउस जॉब</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
 
@@ -198,9 +198,9 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                                     बैंगलोर में लिव-इन फार्महाउस या निजी संपत्ति की देखभाल का काम उन शादीशुदा जोड़ा के लिए सही हैं जो शांत और पक्का काम चाहते हैं। यह काम अक्सर निजी फार्महाउस, विला या बड़ी संपत्तियों में होता है। शहर के भारी घरेलू काम की तुलना में यह काम ज्यादा शांत होता है। पति-पत्नी दोनों मिलकर संपत्ति की देखभाल करते हैं और साथ रहते हैं।
                                 </p>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-bold italic leading-relaxed">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-bold  leading-relaxed">
                                     <div className="bg-violet-50 rounded-2xl p-6 border border-violet-100">
-                                        <h3 className="text-xl font-bold text-violet-900 mb-6 flex items-center gap-2 border-b border-violet-200 pb-4 italic">
+                                        <h3 className="text-xl font-bold text-violet-900 mb-6 flex items-center gap-2 border-b border-violet-200 pb-4 ">
                                             <OutlineUserIcon className="w-6 h-6" /> पति के काम
                                         </h3>
                                         <ul className="space-y-4 text-gray-700">
@@ -219,7 +219,7 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                                         </ul>
                                     </div>
                                     <div className="bg-pink-50 rounded-2xl p-6 border border-pink-100">
-                                        <h3 className="text-xl font-bold text-pink-900 mb-6 flex items-center gap-2 border-b border-pink-200 pb-4 italic">
+                                        <h3 className="text-xl font-bold text-pink-900 mb-6 flex items-center gap-2 border-b border-pink-200 pb-4 ">
                                             <HeartIcon className="w-6 h-6" /> पत्नी के काम
                                         </h3>
                                         <ul className="space-y-4 text-gray-700">
@@ -241,7 +241,7 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
 
                                 <div className="bg-violet-900 text-white rounded-[2rem] p-8 md:p-12 shadow-xl relative overflow-hidden group">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-violet-600 rounded-full blur-3xl opacity-20 -mr-16 -mt-16"></div>
-                                    <h3 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2 italic">
+                                    <h3 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2 ">
                                         <SparklesIcon className="w-8 h-8" /> दोनों मिलकर
                                     </h3>
                                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-bold text-violet-50 mb-8">
@@ -275,8 +275,8 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight">बैंगलोर में फार्महाउस केयरटेकर जॉब्स की सैलरी</h2>
-                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm max-w-2xl mx-auto italic leading-relaxed text-center">सैलरी संपत्ति के आकार, अनुभव और जिम्मेदारियों पर निर्भर करती है।</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display  leading-tight">बैंगलोर में फार्महाउस केयरटेकर जॉब्स की सैलरी</h2>
+                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm max-w-2xl mx-auto  leading-relaxed text-center">सैलरी संपत्ति के आकार, अनुभव और जिम्मेदारियों पर निर्भर करती है।</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
 
@@ -285,31 +285,31 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                             <table className="w-full text-left relative z-10">
                                 <thead className="bg-violet-600 text-white">
                                     <tr>
-                                        <th className="p-6 font-bold uppercase tracking-widest text-xs md:text-sm italic">जॉब का प्रकार</th>
-                                        <th className="p-6 font-bold uppercase tracking-widest text-xs md:text-sm text-center italic">महीने की सैलरी</th>
-                                        <th className="p-6 font-bold uppercase tracking-widest text-xs md:text-sm text-center italic hidden md:table-cell">सुविधाएँ</th>
+                                        <th className="p-6 font-bold uppercase tracking-widest text-xs md:text-sm ">जॉब का प्रकार</th>
+                                        <th className="p-6 font-bold uppercase tracking-widest text-xs md:text-sm text-center ">महीने की सैलरी</th>
+                                        <th className="p-6 font-bold uppercase tracking-widest text-xs md:text-sm text-center  hidden md:table-cell">सुविधाएँ</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-100">
                                     <tr className="hover:bg-violet-50 transition-colors">
-                                        <td className="p-6 font-bold text-gray-900 italic">कपल फार्महाउस जॉब्स</td>
+                                        <td className="p-6 font-bold text-gray-900 ">कपल फार्महाउस जॉब्स</td>
                                         <td className="p-6 font-bold text-violet-700 text-lg md:text-3xl text-center">₹22,000 से ₹30,000</td>
-                                        <td className="p-6 text-gray-600 text-sm font-bold hidden md:table-cell italic">
+                                        <td className="p-6 text-gray-600 text-sm font-bold hidden md:table-cell ">
                                             <p>• रहने की जगह</p>
                                             <p>• बिजली/पानी शामिल</p>
                                         </td>
                                     </tr>
                                     <tr className="hover:bg-violet-50 transition-colors">
-                                        <td className="p-6 font-bold text-gray-900 italic">लिव-इन फार्महाउस केयरटेकर</td>
+                                        <td className="p-6 font-bold text-gray-900 ">लिव-इन फार्महाउस केयरटेकर</td>
                                         <td className="p-6 font-bold text-violet-700 text-lg md:text-3xl text-center">₹25,000 से ₹35,000</td>
-                                        <td className="p-6 text-gray-600 text-sm font-bold hidden md:table-cell italic">
+                                        <td className="p-6 text-gray-600 text-sm font-bold hidden md:table-cell ">
                                             <p>• 24 घंटे रहने की सुविधा</p>
                                             <p>• कभी-कभी किराने की मदद</p>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <div className="p-8 bg-violet-900 text-white text-center font-bold italic relative md:hidden">
+                            <div className="p-8 bg-violet-900 text-white text-center font-bold  relative md:hidden">
                                 <p className="mb-2 uppercase tracking-widest text-[10px] opacity-70">सुविधाएँ</p>
                                 <p>रहने की जगह, बिजली, पानी और कभी-कभी किराने की मदद शामिल है।</p>
                             </div>
@@ -329,13 +329,13 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">कौन अप्लाई कर सकता है</h2>
-                            <p className="text-gray-600 font-bold max-w-2xl mx-auto italic leading-relaxed text-center">बैंगलोर में निजी संपत्ति, घर या जमीन की देखभाल की जॉब के लिए अप्लाई कर सकते हैं अगर:</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">कौन अप्लाई कर सकता है</h2>
+                            <p className="text-gray-600 font-bold max-w-2xl mx-auto  leading-relaxed text-center">बैंगलोर में निजी संपत्ति, घर या जमीन की देखभाल की जॉब के लिए अप्लाई कर सकते हैं अगर:</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
 
                         <div className="bg-white rounded-[3rem] p-8 md:p-12 border border-gray-100 shadow-xl font-bold">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-bold italic">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-bold ">
                                 {[
                                     "शादीशुदा कपल हों",
                                     "उम्र 21 से 50 साल के बीच हो",
@@ -344,7 +344,7 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                                     "संपत्ति की जिम्मेदारी से देखभाल करने को तैयार हों",
                                     "खेती, सुरक्षा या सफाई का अनुभव होने पर और अच्छा माना जाता है"
                                 ].map((item, i) => (
-                                    <div key={i} className="flex items-center gap-3 bg-gray-50 p-4 rounded-2xl border border-gray-100 shadow-sm font-bold text-gray-700 italic">
+                                    <div key={i} className="flex items-center gap-3 bg-gray-50 p-4 rounded-2xl border border-gray-100 shadow-sm font-bold text-gray-700 ">
                                         <CheckCircleIcon className="w-6 h-6 text-green-500 shrink-0" />
                                         <span className="text-sm md:text-base leading-tight">{item}</span>
                                     </div>
@@ -363,39 +363,39 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
 
                             <div className="relative z-10">
                                 <div className="text-center max-w-3xl mx-auto mb-12">
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic">ईज़ीहेल्पर्स के बारे में – भरोसेमंद घरेलू काम के जॉब्स</h2>
-                                    <p className="text-violet-100 text-lg md:text-xl font-bold italic">
+                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white ">ईज़ीहेल्पर्स के बारे में – भरोसेमंद घरेलू काम के जॉब्स</h2>
+                                    <p className="text-violet-100 text-lg md:text-xl font-bold ">
                                         हम ओडिशा और पूरे भारत के हेल्पर्स को बिना किसी फीस के सुरक्षित डोमेस्टिक हेल्पर जॉब्स से जोड़ते हैं।
                                     </p>
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                                     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-violet-700/50">
-                                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-violet-100 border-b border-violet-700/50 pb-3 uppercase tracking-tight italic">
+                                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-violet-100 border-b border-violet-700/50 pb-3 uppercase tracking-tight ">
                                             <HandThumbUpIcon className="w-6 h-6" /> हम इन बातों पर ध्यान देते हैं:
                                         </h3>
-                                        <ul className="space-y-3 font-bold text-violet-50 italic">
-                                            <li className="flex items-start gap-2 italic">
+                                        <ul className="space-y-3 font-bold text-violet-50 ">
+                                            <li className="flex items-start gap-2 ">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
                                                 <span className="text-sm md:text-base">बैंगलोर में सम्मानजनक नौकरी</span>
                                             </li>
-                                            <li className="flex items-start gap-2 italic">
+                                            <li className="flex items-start gap-2 ">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
                                                 <span className="text-sm md:text-base">सुरक्षित और विश्वसनीय परिवार</span>
                                             </li>
-                                            <li className="flex items-start gap-2 italic">
+                                            <li className="flex items-start gap-2 ">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
                                                 <span className="text-sm md:text-base">हेल्पर की सुरक्षा और लंबे समय तक साथ</span>
                                             </li>
                                         </ul>
                                     </div>
 
-                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-violet-700/50 lg:col-span-2 italic">
+                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-violet-700/50 lg:col-span-2 ">
                                         <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-violet-100 border-b border-violet-700/50 pb-3 uppercase tracking-tight">
                                             <ShieldCheckIcon className="w-6 h-6" /> हेल्पर ईज़ीहेल्पर्स पर भरोसा क्यों करते हैं
                                         </h3>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm md:text-base text-violet-50 font-bold italic">
-                                            <ul className="space-y-3 italic">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm md:text-base text-violet-50 font-bold ">
+                                            <ul className="space-y-3 ">
                                                 <li className="flex items-start gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
                                                     <span>5,000+ हेल्पर्स को नौकरी दिलाई</span>
@@ -406,27 +406,27 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                                                 </li>
                                                 <li className="flex items-start gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
-                                                    <span className="leading-tight italic">DWSSC और Skill India के साथ ट्रेनिंग</span>
+                                                    <span className="leading-tight ">DWSSC और Skill India के साथ ट्रेनिंग</span>
                                                 </li>
-                                                <li className="flex items-start gap-2 italic">
+                                                <li className="flex items-start gap-2 ">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
                                                     <span>सिर्फ अच्छे और इज्ज़तदार घरों में प्लेसमेंट</span>
                                                 </li>
                                             </ul>
-                                            <ul className="space-y-3 italic">
+                                            <ul className="space-y-3 ">
                                                 <li className="flex items-start gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
                                                     <span>काम शुरू होने से पहले पूरी जानकारी</span>
                                                 </li>
-                                                <li className="flex items-start gap-2 italic">
+                                                <li className="flex items-start gap-2 ">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
                                                     <span>प्लेसमेंट के बाद भी लगातार सपोर्ट</span>
                                                 </li>
-                                                <li className="flex items-start gap-2 italic">
+                                                <li className="flex items-start gap-2 ">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
                                                     <span>जरूरत पड़ने पर नौकरी बदलने में मदद</span>
                                                 </li>
-                                                <li className="flex items-start gap-2 italic">
+                                                <li className="flex items-start gap-2 ">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
                                                     <span>नियमित सैलरी और स्थायी काम</span>
                                                 </li>
@@ -435,23 +435,23 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-violet-900/50 rounded-2xl p-6 border border-violet-700/50 backdrop-blur-sm font-bold italic">
-                                    <div className="flex items-center gap-4 italic">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-violet-900/50 rounded-2xl p-6 border border-violet-700/50 backdrop-blur-sm font-bold ">
+                                    <div className="flex items-center gap-4 ">
                                         <div className="w-12 h-12 bg-violet-800 rounded-full flex items-center justify-center flex-shrink-0 border border-violet-600 text-violet-300 shadow-lg">
                                             <HeartIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">हमारा विश्वास</h4>
-                                            <p className="text-white italic">हेल्पर के लिए अच्छे घर, और परिवारों के लिए भरोसेमंद हेल्पर</p>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">हमारा विश्वास</h4>
+                                            <p className="text-white ">हेल्पर के लिए अच्छे घर, और परिवारों के लिए भरोसेमंद हेल्पर</p>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-4 italic">
+                                    <div className="flex items-center gap-4 ">
                                         <div className="w-12 h-12 bg-violet-800 rounded-full flex items-center justify-center flex-shrink-0 border border-violet-600 text-violet-300 shadow-lg">
                                             <GlobeAltIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">सेवा के क्षेत्र</h4>
-                                            <p className="text-sm text-violet-50 italic">बैंगलोर, मुंबई, हैदराबाद, दिल्ली NCR, पुणे, ओडिशा और अन्य।</p>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">सेवा के क्षेत्र</h4>
+                                            <p className="text-sm text-violet-50 ">बैंगलोर, मुंबई, हैदराबाद, दिल्ली NCR, पुणे, ओडिशा और अन्य।</p>
                                         </div>
                                     </div>
                                 </div>
@@ -461,14 +461,14 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                 </section>
 
                 {/* Support and Benefits Section */}
-                <section className="section-padding bg-gray-50 font-bold italic">
-                    <div className="container-custom italic font-bold">
-                        <div className="text-center mb-16 px-4 italic font-bold">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">ईज़ीहेल्पर्स में हेल्पर्स के लिए सपोर्ट और फायदे</h2>
-                            <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold italic"></div>
+                <section className="section-padding bg-gray-50 font-bold ">
+                    <div className="container-custom  font-bold">
+                        <div className="text-center mb-16 px-4  font-bold">
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">ईज़ीहेल्पर्स में हेल्पर्स के लिए सपोर्ट और फायदे</h2>
+                            <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold "></div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto font-bold italic">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto font-bold ">
                             {[
                                 { title: "ट्रेनिंग और सर्टिफिकेट", desc: "सफाई, स्वच्छता और काम के उपकरणों की बेसिक ट्रेनिंग।", icon: AcademicCapIcon, color: "violet" },
                                 { title: "हमेशा प्रोफेशनल दिखें", desc: "ईज़ीहेल्पर्स की कोट और साफ-सुथरा रहने का सामान।", icon: BriefcaseIcon, color: "blue" },
@@ -481,12 +481,12 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                                 { title: "जॉब प्रोफाइल बनाना", desc: "आपकी स्किल और अनुभव के आधार पर बेहतर नौकरी के अवसर।", icon: UserCircleIcon, color: "sky" },
                                 { title: "हर कदम पर साथ", desc: "रजिस्ट्रेशन से लेकर प्लेसमेंट तक पूरा सपोर्ट।", icon: ChatBubbleLeftEllipsisIcon, color: "orange" }
                             ].map((item, index) => (
-                                <div key={index} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group italic">
-                                    <div className={`w-14 h-14 bg-${item.color}-50 rounded-2xl flex items-center justify-center mb-6 text-${item.color}-600 group-hover:scale-110 transition-transform duration-300 italic`}>
+                                <div key={index} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group ">
+                                    <div className={`w-14 h-14 bg-${item.color}-50 rounded-2xl flex items-center justify-center mb-6 text-${item.color}-600 group-hover:scale-110 transition-transform duration-300 `}>
                                         <item.icon className="w-7 h-7" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-gray-900 mb-3 uppercase tracking-tight italic">{item.title}</h3>
-                                    <p className="text-gray-600 font-bold text-sm leading-relaxed italic">{item.desc}</p>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-3 uppercase tracking-tight ">{item.title}</h3>
+                                    <p className="text-gray-600 font-bold text-sm leading-relaxed ">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -494,32 +494,32 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                 </section>
 
                 {/* NEST Hostel Section */}
-                <section className="section-padding bg-white relative overflow-hidden font-bold italic">
-                    <div className="absolute inset-0 bg-gradient-to-br from-pink-50 to-white -z-10 font-bold italic" />
-                    <div className="container-custom font-bold italic">
-                        <div className="max-w-4xl mx-auto font-bold italic">
-                            <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl border border-pink-100 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-12 group italic">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-pink-100 rounded-full blur-3xl opacity-60 -mr-16 -mt-16 group-hover:scale-110 transition-transform font-bold italic"></div>
-                                <div className="absolute bottom-0 left-0 w-32 h-32 bg-pink-50 rounded-full blur-3xl opacity-60 -ml-16 -mb-16 font-bold italic"></div>
+                <section className="section-padding bg-white relative overflow-hidden font-bold ">
+                    <div className="absolute inset-0 bg-gradient-to-br from-pink-50 to-white -z-10 font-bold " />
+                    <div className="container-custom font-bold ">
+                        <div className="max-w-4xl mx-auto font-bold ">
+                            <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl border border-pink-100 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-12 group ">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-pink-100 rounded-full blur-3xl opacity-60 -mr-16 -mt-16 group-hover:scale-110 transition-transform font-bold "></div>
+                                <div className="absolute bottom-0 left-0 w-32 h-32 bg-pink-50 rounded-full blur-3xl opacity-60 -ml-16 -mb-16 font-bold "></div>
 
-                                <div className="flex-shrink-0 relative z-10 w-full md:w-auto flex justify-center italic font-bold">
-                                    <div className="w-24 h-24 md:w-32 md:h-32 bg-pink-50 rounded-full flex items-center justify-center border-4 border-white shadow-lg group-hover:rotate-12 transition-transform italic font-bold">
-                                        <OutlineHomeModernIcon className="w-12 h-12 md:w-16 md:h-16 text-pink-500 font-bold italic" />
+                                <div className="flex-shrink-0 relative z-10 w-full md:w-auto flex justify-center  font-bold">
+                                    <div className="w-24 h-24 md:w-32 md:h-32 bg-pink-50 rounded-full flex items-center justify-center border-4 border-white shadow-lg group-hover:rotate-12 transition-transform  font-bold">
+                                        <OutlineHomeModernIcon className="w-12 h-12 md:w-16 md:h-16 text-pink-500 font-bold " />
                                     </div>
                                 </div>
 
-                                <div className="relative z-10 flex-grow text-center md:text-left italic font-bold">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display leading-tight italic">नेस्ट (NEST) – महिला हेल्पर्स के लिए सुरक्षित हॉस्टल</h2>
-                                    <div className="space-y-4 mb-8 font-bold italic">
-                                        <p className="text-gray-600 text-lg font-bold italic leading-relaxed">
+                                <div className="relative z-10 flex-grow text-center md:text-left  font-bold">
+                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display leading-tight ">नेस्ट (NEST) – महिला हेल्पर्स के लिए सुरक्षित हॉस्टल</h2>
+                                    <div className="space-y-4 mb-8 font-bold ">
+                                        <p className="text-gray-600 text-lg font-bold  leading-relaxed">
                                             बैंगलोर में महिलाएँ जरूरत पड़ने पर NEST में रह सकती हैं। सुरक्षित कमरे, रोज़ का भोजन और किफायती सुविधा उपलब्ध है।
                                         </p>
                                     </div>
                                     <Link
                                         href="/nest-hostel"
-                                        className="inline-flex items-center gap-2 text-pink-600 text-lg hover:gap-3 transition-all group/cta font-bold italic"
+                                        className="inline-flex items-center gap-2 text-pink-600 text-lg hover:gap-3 transition-all group/cta font-bold "
                                     >
-                                        NEST के बारे में और जानें <ArrowRightIcon className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform font-bold italic" />
+                                        NEST के बारे में और जानें <ArrowRightIcon className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform font-bold " />
                                     </Link>
                                 </div>
                             </div>
@@ -531,15 +531,15 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                 <ReferEarnSection variant="violet" lang="hi" location="Odisha" />
 
                 {/* How to Apply */}
-                <section className="section-padding bg-gray-50 font-bold italic">
-                    <div className="container-custom font-bold italic">
-                        <div className="text-center mb-16 px-4 font-bold italic">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight">फार्महाउस जॉब्स के लिए अप्लाई कैसे करें</h2>
-                            <p className="text-gray-600 max-w-2xl mx-auto uppercase tracking-widest text-xs md:text-sm text-center italic leading-relaxed font-bold">ईज़ीहेल्पर्स से संपर्क करें - 6 आसान कदम</p>
-                            <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold italic"></div>
+                <section className="section-padding bg-gray-50 font-bold ">
+                    <div className="container-custom font-bold ">
+                        <div className="text-center mb-16 px-4 font-bold ">
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display  leading-tight">फार्महाउस जॉब्स के लिए अप्लाई कैसे करें</h2>
+                            <p className="text-gray-600 max-w-2xl mx-auto uppercase tracking-widest text-xs md:text-sm text-center  leading-relaxed font-bold">ईज़ीहेल्पर्स से संपर्क करें - 6 आसान कदम</p>
+                            <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold "></div>
                         </div>
 
-                        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 font-bold italic">
+                        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 font-bold ">
                             {[
                                 { step: "1", title: "ईज़ीहेल्पर्स से संपर्क करें", desc: "सैलरी, खाने और रहने की जानकारी के लिए हमें कॉल करें या फॉर्म भरें।" },
                                 { step: "2", title: "अपनी जानकारी साझा करें", desc: "अपना नाम, उम्र और काम का अनुभव बताएं।" },
@@ -548,29 +548,29 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                                 { step: "5", title: "जॉब इंटरव्यू", desc: "वीडियो कॉल पर परिवार से बात करें, चयनित हों और नौकरी कन्फर्म करें।" },
                                 { step: "6", title: "काम शुरू करें", desc: "ईज़ीहेल्पर्स के पूरे सपोर्ट के साथ अपनी नौकरी शुरू करें।" }
                             ].map((item, index) => (
-                                <div key={index} className="bg-white rounded-2xl p-6 border border-gray-100 relative group hover:shadow-xl transition-all duration-300 italic font-bold">
-                                    <div className="w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center text-lg mb-4 shadow-md group-hover:scale-110 transition-transform font-bold italic">
+                                <div key={index} className="bg-white rounded-2xl p-6 border border-gray-100 relative group hover:shadow-xl transition-all duration-300  font-bold">
+                                    <div className="w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center text-lg mb-4 shadow-md group-hover:scale-110 transition-transform font-bold ">
                                         {item.step}
                                     </div>
-                                    <h3 className="text-lg font-bold text-gray-900 mb-2 italic">{item.title}</h3>
-                                    <p className="text-gray-600 text-xs font-bold leading-relaxed italic">{item.desc}</p>
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2 ">{item.title}</h3>
+                                    <p className="text-gray-600 text-xs font-bold leading-relaxed ">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="text-center mt-16 max-w-3xl mx-auto bg-violet-50 p-10 rounded-[3rem] border border-violet-100 shadow-2xl relative overflow-hidden font-bold italic">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-violet-100 rounded-full blur-3xl opacity-50 -mr-16 -mt-16 font-bold italic"></div>
-                            <h3 className="text-xl md:text-3xl text-violet-900 mb-4 font-display italic leading-tight px-4 font-bold">एक बेहतर मौके का इंतज़ार न करें</h3>
-                            <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 max-w-md mx-auto sm:max-w-none font-bold italic">
+                        <div className="text-center mt-16 max-w-3xl mx-auto bg-violet-50 p-10 rounded-[3rem] border border-violet-100 shadow-2xl relative overflow-hidden font-bold ">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-violet-100 rounded-full blur-3xl opacity-50 -mr-16 -mt-16 font-bold "></div>
+                            <h3 className="text-xl md:text-3xl text-violet-900 mb-4 font-display  leading-tight px-4 font-bold">एक बेहतर मौके का इंतज़ार न करें</h3>
+                            <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 max-w-md mx-auto sm:max-w-none font-bold ">
                                 <Link
                                     href="/helper-registration"
-                                    className="bg-violet-600 text-white py-4 px-12 rounded-xl hover:bg-violet-700 shadow-lg text-lg transform hover:scale-105 transition-all font-bold italic"
+                                    className="bg-violet-600 text-white py-4 px-12 rounded-xl hover:bg-violet-700 shadow-lg text-lg transform hover:scale-105 transition-all font-bold "
                                 >
                                     अभी रजिस्टर करें
                                 </Link>
                                 <Link
                                     href="tel:+918031411776"
-                                    className="bg-white text-violet-700 py-4 px-12 rounded-xl border-2 border-violet-600 hover:bg-violet-50 transition-all text-lg shadow-sm font-bold italic"
+                                    className="bg-white text-violet-700 py-4 px-12 rounded-xl border-2 border-violet-600 hover:bg-violet-50 transition-all text-lg shadow-sm font-bold "
                                 >
                                     हमें कॉल करें
                                 </Link>
@@ -580,13 +580,13 @@ export default function FarmhouseCoupleJobsOdishaBangaloreHindiPage() {
                 </section>
 
                 {/* FAQs Section */}
-                <section className="section-padding bg-white font-bold italic">
-                    <div className="container-custom max-w-4xl font-bold italic">
-                        <div className="text-center mb-12 px-4 font-bold italic">
-                            <h2 className="text-2xl md:text-4xl text-gray-900 mb-4 font-display leading-tight italic font-bold">
+                <section className="section-padding bg-white font-bold ">
+                    <div className="container-custom max-w-4xl font-bold ">
+                        <div className="text-center mb-12 px-4 font-bold ">
+                            <h2 className="text-2xl md:text-4xl text-gray-900 mb-4 font-display leading-tight  font-bold">
                                 अक्सर पूछे जाने वाले सवाल
                             </h2>
-                            <div className="w-32 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold italic"></div>
+                            <div className="w-32 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50 font-bold "></div>
                         </div>
                         <FAQAccordion faqs={faqs} />
                     </div>
