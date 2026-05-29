@@ -1550,6 +1550,11 @@ export const sendLeadEmail = async (
       emailRecipientsEnv =
         process.env.CARE_SERVICES_EMAIL_RECIPIENTS ||
         'contact@ezyhelpers.com,arun@ezyhelpers.com,suraj@ezyhelpers.com';
+    } else if (leadType === 'helper_registration') {
+      // Helper registration leads go to multiple team members
+      emailRecipientsEnv =
+        process.env.HELPER_REGISTRATION_RECIPIENTS ||
+        'suraj@ezyhelpers.com,contact@ezyhelpers.com,lokesh@ezyhelpers.com,arun@ezyhelpers.com';
     } else if (
       leadType === 'careers_chief_of_staff' ||
       leadType === 'careers_apm' ||
