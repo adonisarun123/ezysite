@@ -111,6 +111,20 @@ export default function PatientCareJobsOdishaBangalorePage() {
                         { label: 'Odisha', href: '/helper-jobs/odisha' },
                         { label: 'Patient Care Jobs' }
                     ]}
+                    rightContent={
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
+                            <span className="text-gray-500 font-medium whitespace-nowrap uppercase">हिंदी</span>
+                            <Link
+                                href="/helper-jobs/odisha/patient-care-job-bangalore/hin"
+                                className="w-10 h-5 bg-violet-600 rounded-full p-1 relative transition-colors inline-block"
+                            >
+                                <div
+                                    className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"
+                                />
+                            </Link>
+                            <span className="text-gray-900 font-bold whitespace-nowrap uppercase">ENG</span>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -122,7 +136,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">Patient Care Jobs in Bangalore for Odisha Helpers</h1>
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal ">Patient Care Jobs in Bangalore for Odisha Helpers</h1>
 
                             <div className="space-y-4 mb-6 max-w-5xl mx-auto mt-4">
                                 <p className="text-xs sm:text-sm md:text-xl text-violet-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none">
@@ -157,7 +171,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Job Location: Bangalore</h2>
+                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Job Location: Bangalore</h2>
                         </div>
 
                         <div className="bg-violet-50 rounded-3xl p-8 md:p-12 shadow-xl border border-violet-100 max-w-6xl mx-auto">
@@ -190,7 +204,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Live-in Patient Care Helper Job Details</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Live-in Patient Care Helper Job Details</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -231,7 +245,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                                         </li>
                                     ))}
                                 </ul>
-                                <p className="mt-6 text-violet-800 font-bold bg-violet-50 p-4 rounded-xl border border-violet-100 italic">
+                                <p className="mt-6 text-violet-800 font-bold bg-violet-50 p-4 rounded-xl border border-violet-100 ">
                                     These are non-medical Patient care jobs. You help with daily living support inside the home.
                                 </p>
                             </div>
@@ -265,7 +279,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                                         <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-white">
                                             <HomeIcon className="w-7 h-7" />
                                         </div>
-                                        <h3 className="text-2xl font-bold italic">Work Detail</h3>
+                                        <h3 className="text-2xl font-bold ">Work Detail</h3>
                                     </div>
                                     <p className="text-lg text-violet-50 mb-6 font-medium leading-relaxed">
                                         You stay in the patient’s home and provide support when needed. You get a clean sleeping space and 3 meals daily free.
@@ -278,7 +292,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
 
                                 <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
                                     <div>
-                                        <h3 className="text-2xl font-bold italic mb-6">Best For</h3>
+                                        <h3 className="text-2xl font-bold  mb-6">Best For</h3>
                                         <p className="text-lg text-violet-50 mb-6 font-medium">
                                             Helpers who want safe, long-term live-in senior care work in Bangalore and want to save maximum money.
                                         </p>
@@ -297,7 +311,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Non-Medical Patient Care Work Responsibilities</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Non-Medical Patient Care Work Responsibilities</h2>
                             <p className="text-violet-700 font-bold uppercase tracking-widest text-sm mb-4">Safety First - Non-Medical Support Only</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto rounded-full"></div>
                         </div>
@@ -306,7 +320,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                             <div className="absolute top-0 right-0 w-48 h-48 bg-violet-50 rounded-full -mr-24 -mt-24"></div>
                             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 border-b border-gray-100 pb-4 italic">Daily Patient Care Duties Include</h3>
+                                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 border-b border-gray-100 pb-4 ">Daily Patient Care Duties Include</h3>
                                     <ul className="space-y-4">
                                         {[
                                             "Helping with bathing and brushing",
@@ -327,7 +341,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 border-b border-gray-100 pb-4 italic">Extra Duties Only if Discussed</h3>
+                                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 border-b border-gray-100 pb-4 ">Extra Duties Only if Discussed</h3>
                                     <ul className="space-y-4 mb-8">
                                         {[
                                             "Helping the patient move from bed to a wheelchair",
@@ -353,7 +367,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Salary for Patient Care Jobs in Bangalore</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Salary for Patient Care Jobs in Bangalore</h2>
                             <p className="text-gray-600 font-bold uppercase tracking-widest text-sm">Salary depends on the patient's condition, responsibility, and your experience.</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
@@ -393,7 +407,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Who Can Apply</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Who Can Apply</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
                         <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl border border-gray-100">
@@ -447,7 +461,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
 
                             <div className="relative z-10">
                                 <div className="text-center max-w-3xl mx-auto mb-12">
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic">About EzyHelpers – Trusted Helper Jobs</h2>
+                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white ">About EzyHelpers – Trusted Helper Jobs</h2>
                                     <p className="text-violet-100 text-lg md:text-xl font-bold">
                                         We connect helpers like you with safe Domestic Helper jobs across India without charging any fees.
                                     </p>
@@ -529,7 +543,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                                             <HeartIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">Our Belief</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">Our Belief</h4>
                                             <p className="text-white">Good Homes for Helpers. Good Helpers for Families.</p>
                                         </div>
                                     </div>
@@ -538,7 +552,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                                             <GlobeAltIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">Locations We Serve</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">Locations We Serve</h4>
                                             <p className="text-sm text-violet-50">Bangalore, Bareilly, Mumbai, Hyderabad, Delhi NCR, Pune, Odisha and more.</p>
                                         </div>
                                     </div>
@@ -552,7 +566,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Support and Benefits for Helpers at EzyHelpers</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Support and Benefits for Helpers at EzyHelpers</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -597,7 +611,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                                 </div>
 
                                 <div className="relative z-10 flex-grow text-center md:text-left">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display italic">NEST – Safe Hostel for Women Helpers</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display ">NEST – Safe Hostel for Women Helpers</h2>
                                     <div className="space-y-4 mb-8">
                                         <p className="text-gray-600 text-lg font-bold">
                                             Women helpers can stay at NEST anytime in Bangalore.
@@ -625,7 +639,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">How to Apply for Patient Care Jobs</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">How to Apply for Patient Care Jobs</h2>
                             <p className="text-gray-600 max-w-2xl mx-auto font-bold uppercase tracking-widest text-sm">We guide you step by step and help you start work safely and confidently.</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
@@ -650,7 +664,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                         </div>
 
                         <div className="text-center mt-16 max-w-3xl mx-auto bg-violet-50 p-10 rounded-[3rem] border border-violet-100 shadow-sm">
-                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display italic">Build a stable future for your family in Odisha.</h3>
+                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display ">Build a stable future for your family in Odisha.</h3>
                             <p className="text-gray-700 text-lg font-bold mb-8">
                                 Stop worrying about uncertain work. Join other helpers from our state who are already working safely.
                             </p>
@@ -676,7 +690,7 @@ export default function PatientCareJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight italic">
+                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight ">
                                 Common Questions about Patient Care Jobs
                             </h2>
                             <div className="w-32 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>

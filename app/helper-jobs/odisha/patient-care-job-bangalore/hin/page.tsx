@@ -123,7 +123,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">ओडिशा हेल्पर्स के लिए बैंगलोर में पेशेंट केयर जॉब्स</h1>
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal ">ओडिशा हेल्पर्स के लिए बैंगलोर में पेशेंट केयर जॉब्स</h1>
 
                             <div className="space-y-4 mb-6 max-w-5xl mx-auto mt-4">
                                 <p className="text-xs sm:text-sm md:text-xl text-violet-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none font-medium">
@@ -158,7 +158,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">जॉब लोकेशन: बैंगलोर</h2>
+                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">जॉब लोकेशन: बैंगलोर</h2>
                         </div>
 
                         <div className="bg-violet-50 rounded-3xl p-8 md:p-12 shadow-xl border border-violet-100 max-w-6xl mx-auto">
@@ -191,7 +191,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">लिव-इन पेशेंट केयर हेल्पर जॉब डिटेल्स</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">लिव-इन पेशेंट केयर हेल्पर जॉब डिटेल्स</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -232,7 +232,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                                         </li>
                                     ))}
                                 </ul>
-                                <div className="mt-6 text-violet-800 font-bold bg-violet-50 p-4 rounded-xl border border-violet-100 italic text-sm">
+                                <div className="mt-6 text-violet-800 font-bold bg-violet-50 p-4 rounded-xl border border-violet-100  text-sm">
                                     ये नॉन-मेडिकल पेशेंट केयर जॉब्स हैं। इसमें अस्पताल का इलाज या मशीन चलाना शामिल नहीं है।
                                 </div>
                             </div>
@@ -256,8 +256,8 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-violet-500 rounded-full blur-3xl opacity-20 -ml-20 -mb-20"></div>
 
                             <div className="relative z-10 text-center mb-12">
-                                <h2 className="text-3xl md:text-5xl font-bold mb-4 font-display italic">बैंगलोर में 24 घंटे लिव-इन पेशेंट केयर जॉब्स</h2>
-                                <p className="text-violet-100 text-lg md:text-xl font-bold italic">ओडिशा के कई हेल्पर्स इस तरह का काम चुनते हैं।</p>
+                                <h2 className="text-3xl md:text-5xl font-bold mb-4 font-display ">बैंगलोर में 24 घंटे लिव-इन पेशेंट केयर जॉब्स</h2>
+                                <p className="text-violet-100 text-lg md:text-xl font-bold ">ओडिशा के कई हेल्पर्स इस तरह का काम चुनते हैं।</p>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
@@ -266,7 +266,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                                         <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-white">
                                             <HomeIcon className="w-7 h-7" />
                                         </div>
-                                        <h3 className="text-2xl font-bold italic">काम का प्रकार</h3>
+                                        <h3 className="text-2xl font-bold ">काम का प्रकार</h3>
                                     </div>
                                     <p className="text-lg text-violet-50 mb-6 font-bold leading-relaxed">
                                         आप मरीज़ के घर पर रहते हैं और रोज़ाना देखभाल में मदद करते हैं।
@@ -284,7 +284,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
 
                                 <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
                                     <div>
-                                        <h3 className="text-2xl font-bold italic mb-6">किसके लिए सही है</h3>
+                                        <h3 className="text-2xl font-bold  mb-6">किसके लिए सही है</h3>
                                         <ul className="space-y-3 font-bold text-violet-100 mb-6">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
@@ -319,7 +319,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
 
                             <div className="relative z-10">
                                 <div className="text-center max-w-3xl mx-auto mb-12">
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic">ईज़ीहेल्पर्स के बारे में – भरोसेमंद घरेलू काम के जॉब्स</h2>
+                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white ">ईज़ीहेल्पर्स के बारे में – भरोसेमंद घरेलू काम के जॉब्स</h2>
                                     <p className="text-violet-100 text-lg md:text-xl font-bold">
                                         हम ओडिशा और पूरे भारत के हेल्पर्स को बिना किसी फीस के सुरक्षित डोमेस्टिक हेल्पर जॉब्स से जोड़ते हैं।
                                     </p>
@@ -393,7 +393,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                                             <HeartIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">हमारा विश्वास</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">हमारा विश्वास</h4>
                                             <p className="text-white">हेल्पर के लिए अच्छे घर, और परिवारों के लिए भरोसेमंद हेल्पर</p>
                                         </div>
                                     </div>
@@ -402,7 +402,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                                             <GlobeAltIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">सेवा के क्षेत्र</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">सेवा के क्षेत्र</h4>
                                             <p className="text-sm text-violet-50">बैंगलोर, मुंबई, हैदराबाद, दिल्ली NCR, पुणे, ओडिशा और अन्य।</p>
                                         </div>
                                     </div>
@@ -416,7 +416,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">ईज़ीहेल्पर्स में हेल्पर्स के लिए सपोर्ट और फायदे</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">ईज़ीहेल्पर्स में हेल्पर्स के लिए सपोर्ट और फायदे</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -461,7 +461,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                                 </div>
 
                                 <div className="relative z-10 flex-grow text-center md:text-left">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display italic">नेस्ट (NEST) – महिला हेल्पर्स के लिए सुरक्षित हॉस्टल</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display ">नेस्ट (NEST) – महिला हेल्पर्स के लिए सुरक्षित हॉस्टल</h2>
                                     <div className="space-y-4 mb-8">
                                         <p className="text-gray-600 text-lg font-bold">
                                             बैंगलोर में महिलाएँ जरूरत पड़ने पर NEST में रह सकती हैं। सुरक्षित कमरे, रोज़ का भोजन और किफायती सुविधा उपलब्ध है।
@@ -486,7 +486,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">मरीज की देखभाल का काम के लिए अप्लाई कैसे करें</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">मरीज की देखभाल का काम के लिए अप्लाई कैसे करें</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -510,7 +510,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                         </div>
 
                         <div className="text-center mt-16 max-w-3xl mx-auto bg-violet-50 p-8 rounded-3xl border border-violet-100 shadow-sm">
-                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display italic">ओडिशा में अपने परिवार के लिए बेहतर भविष्य बनाएं</h3>
+                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display ">ओडिशा में अपने परिवार के लिए बेहतर भविष्य बनाएं</h3>
                             <p className="text-gray-700 text-lg font-bold mb-8">
                                 पक्का काम मिलने से आप अपने परिवार की अच्छी तरह मदद कर सकते हैं।बैंगलोर में कई हेल्पर्स पहले से सुरक्षित तरीके से काम कर रहे हैं।
                             </p>
@@ -536,7 +536,7 @@ export default function PatientCareJobsOdishaBangaloreHindiPage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight italic">
+                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight ">
                                 अक्सर पूछे जाने वाले सवाल
                             </h2>
                             <div className="w-32 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>

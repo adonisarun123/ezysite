@@ -174,56 +174,66 @@ export default function HelperJobsAssamHindiPage() {
                             {[
                                 {
                                     title: "घर की सफाई का काम",
+                                    slug: "housekeeping-job-bangalore",
                                     desc: "रोज़ घर साफ रखना, बर्तन और कपड़े धोना, कमरे व्यवस्थित रखना।",
                                     features: ["रोज़ घर साफ और सुथरा रखना", "बर्तन, कपड़े और चादरें धोना", "कमरे ठीक और साफ रखना", "झाड़ू-पोंछा लगाना", "धूल साफ करना और बाथरूम साफ रखना", "रहने का या पूरे दिन (रोज़ 8–10 घंटे) का काम मिल सकता है"]
                                 },
                                 {
                                     title: "खाना बनाने का काम",
+                                    slug: "home-cook-jobs-bangalore",
                                     desc: "शाकाहारी और मांसाहारी खाना बनाएँ, राशन का ध्यान रखें, रसोई साफ रखें।",
                                     features: ["रोज़ परिवार के लिए खाना बनाना", "राशन और खर्चे का ध्यान रखना", "रसोई और बर्तन साफ रखना", "घर वालों की पसंद का खाना बनाना", "बचा हुआ खाना सही तरीके से रखना", "रहने का या पूरे दिन (रोज़ 8–10 घंटे) का काम मिल सकता है"]
                                 },
                                 {
                                     title: "बच्चों की देखभाल का काम",
+                                    slug: "nanny-jobs-bangalore",
                                     desc: "बच्चों को संभालना, खाना खिलाना और उनका पूरा ध्यान रखना।",
                                     features: ["बच्चों को हर रोज़ समय पर खाना खिलाना", "उनके साथ खेलना", "पढ़ाई में मदद करना", "उन्हें सुलाना", "खिलौने और कमरा साफ रखें", "रहने का या पूरे दिन (रोज़ 8–10 घंटे) का काम मिल सकता है"]
                                 },
                                 {
                                     title: "बुज़ुर्गों की देखभाल का काम",
+                                    slug: "elderly-care-jobs-bangalore",
                                     desc: "घर के बड़े-बुज़ुर्गों का ध्यान रखना, उनके साथ रहना, उनकी मदद करना।",
                                     features: ["बुज़ुर्गों को चलने और नहाने में मदद करना", "समय पर दवाइयाँ देना", "उनसे बात करना और साथ रहना", "उनके लिए खाना बनाना", "हमेशा घर में उनकी सुरक्षा का ध्यान रखना", "उनका ध्यान रखना"]
                                 },
                                 {
                                     title: "बीमार व्यक्ति की देखभाल का काम",
+                                    slug: "patient-care-job-bangalore",
                                     desc: "घर पर बीमार व्यक्ति की मदद, उनका आराम और साफ-सफाई का ध्यान।",
                                     features: ["रोज़ बीमार व्यक्ति की मदद करना", "बाथरूम जाने और खाने में मदद करना", "चादरें बदलें और साफ रखना", "स्वास्थ्य में किसी भी प्रकार का बदलाव होने पर तुरंत सूचित करना", "डॉक्टर की सलाह के अनुसार देखभाल करना", "रहने का या पूरे दिन (रोज़ 8–10 घंटे) का काम मिल सकता है"]
                                 },
                                 {
                                     title: "पति-पत्नी के लिए घर का काम",
+                                    slug: "live-in-couple-housekeeping-jobs-bangalore",
                                     desc: "पति-पत्नी मिलकर घर का सारा काम करते हैं। रहने की जगह दी जाती है।",
                                     features: ["पति-पत्नी मिलकर घर संभालना", "कमरे, रसोई और बगीचा साफ करना", "सफाई और कचरा उठाना", "ज़रूरत हो तो जानवरों का भी ध्यान रखना", "अलग रहने की जगह मिलती है", "दोनों मिलकर कमाएँ"]
                                 },
                                 {
                                     title: "पति-पत्नी के लिए चौकीदारी का काम",
+                                    slug: "live-in-apartment-caretaker-jobs-bangalore",
                                     desc: "पति-पत्नी मिलकर अपार्टमेंट या घर की रखवाली करते हैं।",
                                     features: ["मिलकर अपार्टमेंट या घर की रखवाली करना", "दिन और रात आने-जाने वालों पर ध्यान रखना", "समय पर गेट बंद और खोलना", "जो भी निर्देश दिए जाएं, उनका पालन करना", "हमेशा सतर्क रहना और समस्या बताना", "दोनों के लिए रहने की जगह मिलती है"]
                                 },
                                 {
                                     title: "जापा सहायक का काम",
+                                    slug: "japa-maid-job-bangalore",
                                     desc: "बच्चा होने के बाद माँ और नवजात शिशु की देखभाल करना।",
                                     features: ["माँ और नवजात शिशु की देखभाल करना", "दूध पिलाने और डकार दिलाने में मदद करें", "माँ के आराम और ठीक होने में साथ देना", "बच्चे के कपड़े और कमरा साफ रखना", "ज़रूरत हो तो रात को भी जागना", "24 घंटे रहने का काम, परिवार की पूरी मदद"]
                                 },
                                 {
                                     title: "फार्महाउस के लिए पति-पत्नी का काम",
+                                    slug: "husband-wife-farmhouse-job-bangalore",
                                     desc: "पति-पत्नी मिलकर फार्महाउस की देखभाल और सुरक्षा करते हैं।",
                                     features: ["रोज़ फार्महाउस और बगीचा साफ रखना", "पौधों को पानी दें और देखभाल करना", "ज़रूरत हो तो खाना भी बनाना", "आने-जाने वालों और जगह पर ध्यान रखना", "वहाँ रहने वाले जानवरों का भी ख्याल रखना", "खाने के साथ कमरा मिलेगा"]
                                 }
                             ].map((item, index) => (
-                                <div
+                                <Link
                                     key={index}
+                                    href={`/helper-jobs/assam/${item.slug}/hin`}
                                     className="group bg-white rounded-2xl p-6 border border-emerald-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block text-left relative overflow-hidden"
                                 >
                                     <h3 className="text-lg md:text-2xl font-bold text-emerald-700 mb-3 group-hover:text-emerald-800 relative z-10">{item.title}</h3>
-                                    <p className="text-gray-700 text-sm mb-5 leading-relaxed font-medium relative z-10 italic">{item.desc}</p>
+                                    <p className="text-gray-700 text-sm mb-5 leading-relaxed font-medium relative z-10">{item.desc}</p>
                                     <div className="space-y-2 relative z-10">
                                         {item.features.map((feature, fIndex) => (
                                             <div key={fIndex} className="flex items-start gap-2">
@@ -235,7 +245,7 @@ export default function HelperJobsAssamHindiPage() {
                                     <div className="mt-6 font-bold text-emerald-600 text-[10px] uppercase tracking-widest group-hover:underline flex items-center gap-1 relative z-10">
                                         और जानें <span>→</span>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>

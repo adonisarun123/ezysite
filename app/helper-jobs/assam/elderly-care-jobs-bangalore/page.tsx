@@ -87,6 +87,12 @@ export default function ElderlyCareJobsAssamBangalorePage() {
                         { label: 'Assam', href: '/helper-jobs/assam' },
                         { label: 'Elderly Care Jobs in Bangalore' }
                     ]}
+                    rightContent={
+                        <div className="flex gap-2">
+                            <span className="text-xs font-bold bg-teal-100 text-teal-800 px-2 py-1 rounded-md">English</span>
+                            <Link href="/helper-jobs/assam/elderly-care-jobs-bangalore/hin" className="text-xs font-medium text-gray-500 hover:text-teal-600 transition-colors px-2 py-1 rounded-md hover:bg-teal-50">हिन्दी</Link>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -98,8 +104,8 @@ export default function ElderlyCareJobsAssamBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">Old Age Caretaker Jobs in Bangalore for Assam Helpers</h1>
-                            <p className="text-sm md:text-xl text-teal-50/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium italic">
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">Old Age Caretaker Jobs in Bangalore for Assam Helpers</h1>
+                            <p className="text-sm md:text-xl text-teal-50/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium">
                                 Are you from Assam and want to support your family with a stable income? Start old age caretaker jobs in Bangalore where your care is valued, and your earnings help your loved ones live better.
                             </p>
 
@@ -156,7 +162,7 @@ export default function ElderlyCareJobsAssamBangalorePage() {
                                 ))}
                             </div>
                             
-                            <p className="text-sm font-bold text-teal-700 italic max-w-3xl mx-auto mb-8">We provide verified old-age caretaker jobs in Bangalore for both freshers and experienced helpers. Whether you are new or experienced, we guide you at every step and support you even after you start working.</p>
+                            <p className="text-sm font-bold text-teal-700 max-w-3xl mx-auto mb-8">We provide verified old-age caretaker jobs in Bangalore for both freshers and experienced helpers. Whether you are new or experienced, we guide you at every step and support you even after you start working.</p>
 
                             <Link
                                 href="tel:+918031411776"
@@ -504,7 +510,7 @@ export default function ElderlyCareJobsAssamBangalorePage() {
                                     <span className="bg-white px-4 py-2 rounded-full font-bold text-teal-800 shadow-sm border border-teal-100">Affordable stay</span>
                                 </div>
                                 
-                                <p className="text-md font-bold text-teal-700 italic mb-8 max-w-2xl mx-auto">
+                                <p className="text-md font-bold text-teal-700 mb-8 max-w-2xl mx-auto">
                                     You can settle comfortably before your job starts without stress.
                                 </p>
                                 

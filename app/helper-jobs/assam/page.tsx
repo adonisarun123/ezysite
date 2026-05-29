@@ -174,56 +174,66 @@ export default function HelperJobsAssamPage() {
                             {[
                                 {
                                     title: "Housemaid Jobs in Bangalore",
+                                    slug: "housekeeping-job-bangalore",
                                     desc: "Clean and maintain homes daily, wash dishes and clothes, and keep rooms tidy and organised.",
                                     features: ["Clean and maintain homes daily.", "Wash dishes, clothes, and linen.", "Keep rooms tidy and organised.", "Sweep and mop floors properly.", "Manage dusting and bathroom cleaning.", "Live-in or full-time maid job in Bangalore available."]
                                 },
                                 {
                                     title: "Cooking / Kitchen Helper Jobs",
+                                    slug: "home-cook-jobs-bangalore",
                                     desc: "Prepare veg and non-veg meals, manage groceries, and maintain a clean kitchen.",
                                     features: ["Cook meals for the family every day.", "Help plan groceries and budgets.", "Keep kitchen counters and vessels clean.", "Follow family recipes and preferences.", "Store and manage leftover food safely.", "Live-in or full-time maid job available."]
                                 },
                                 {
                                     title: "Nanny / Babysitter Jobs",
+                                    slug: "nanny-jobs-bangalore",
                                     desc: "Take care of children, feed them, and maintain safety and hygiene.",
                                     features: ["Feed children on time daily.", "Help with school homework and play.", "Bathe and dress little ones safely.", "Put the children to sleep at night.", "Keep toys and rooms clean.", "Live-in or full-time helper job in Bangalore available."]
                                 },
                                 {
                                     title: "Elderly Care Jobs",
+                                    slug: "elderly-care-jobs-bangalore",
                                     desc: "Support seniors with daily routines, provide companionship, and ensure safety at home.",
                                     features: ["Help seniors walk and bathe.", "Give medicines on time daily.", "Talk and keep them company.", "Cook soft meals for older people.", "Ensure home safety always.", "Emotional support and companionship"]
                                 },
                                 {
                                     title: "Patient Care Jobs",
+                                    slug: "patient-care-job-bangalore",
                                     desc: "Assist sick people at home with daily routines, ensuring comfort, hygiene, and safety.",
                                     features: ["Help sick people at home daily.", "Assist with bathroom and eating.", "Change bedsheets and keep clean.", "Monitor comfort and report issues.", "Follow doctor’s basic instructions.", "Live-in or full-time maid job in Bangalore available."]
                                 },
                                 {
                                     title: "Live-in Housekeeping Couple Jobs",
+                                    slug: "live-in-couple-housekeeping-jobs-bangalore",
                                     desc: "Husband-wife manage household chores and maintain home cleanliness with accommodation.",
                                     features: ["Husband-wife couple manage homes.", "Clean rooms, kitchen, and garden.", "Help with laundry and garbage.", "Take care of pets if needed.", "Separate accommodation provided.", "Both earn together safely in this maid job in Bangalore."]
                                 },
                                 {
                                     title: "Couple Security Jobs",
+                                    slug: "live-in-apartment-caretaker-jobs-bangalore",
                                     desc: "Husband-wife couple guards apartments or houses, monitors visitors, and follows guidance.",
                                     features: ["Guard apartments or houses together.", "Monitor visitors during the day and night.", "Lock and open gates on time.", "Follow the security guard training given.", "Stay alert and report problems.", "Accommodation provided for both."]
                                 },
                                 {
                                     title: "Japa Maid Jobs",
+                                    slug: "japa-maid-job-bangalore",
                                     desc: "Care for mother and newborn after delivery, assist with feeding, recovery, and provide live-in support in a maid job in Bangalore.",
                                     features: ["Care for the mother and the newborn baby.", "Help with feeding and burping.", "Support the mother’s rest and recovery.", "Keep baby clothes and the room clean.", "Stay awake at night if needed.", "Live-in with full family support in this helper job in Bangalore."]
                                 },
                                 {
                                     title: "Live-in Couple For Farmhouse Jobs",
+                                    slug: "husband-wife-farmhouse-job-bangalore",
                                     desc: "Husband-wife teams maintain farmhouses, gardens, and property safety with live-in accommodation in a helper job in Bangalore.",
                                     features: ["Keep the farmhouse and garden clean daily.", "Water plants and maintain lawns.", "Help with basic cooking if needed.", "Monitor visitors and property security.", "Care for pets or birds on site.", "Private room with food provided."]
                                 }
                             ].map((item, index) => (
-                                <div
+                                <Link
                                     key={index}
+                                    href={`/helper-jobs/assam/${item.slug}`}
                                     className="group bg-white rounded-2xl p-6 border border-emerald-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block text-left relative overflow-hidden"
                                 >
                                     <h3 className="text-lg md:text-2xl font-bold text-emerald-700 mb-3 group-hover:text-emerald-800 relative z-10">{item.title}</h3>
-                                    <p className="text-gray-700 text-sm mb-5 leading-relaxed font-medium relative z-10 italic">{item.desc}</p>
+                                    <p className="text-gray-700 text-sm mb-5 leading-relaxed font-medium relative z-10">{item.desc}</p>
                                     <div className="space-y-2 relative z-10">
                                         {item.features.map((feature, fIndex) => (
                                             <div key={fIndex} className="flex items-start gap-2">
@@ -235,7 +245,7 @@ export default function HelperJobsAssamPage() {
                                     <div className="mt-6 font-bold text-emerald-600 text-[10px] uppercase tracking-widest group-hover:underline flex items-center gap-1 relative z-10">
                                         Learn More <span>→</span>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>

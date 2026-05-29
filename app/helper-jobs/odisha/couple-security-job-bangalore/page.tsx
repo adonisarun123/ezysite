@@ -104,6 +104,20 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                         { label: 'Odisha', href: '/helper-jobs/odisha' },
                         { label: 'Couple Security Jobs' }
                     ]}
+                    rightContent={
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
+                            <span className="text-gray-500 font-medium whitespace-nowrap uppercase">हिंदी</span>
+                            <Link
+                                href="/helper-jobs/odisha/couple-security-job-bangalore/hin"
+                                className="w-10 h-5 bg-violet-600 rounded-full p-1 relative transition-colors inline-block"
+                            >
+                                <div
+                                    className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"
+                                />
+                            </Link>
+                            <span className="text-gray-900 font-bold whitespace-nowrap uppercase">ENG</span>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -115,7 +129,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">Live-in Husband-Wife Security Job in Bangalore for Odisha Helpers</h1>
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal ">Live-in Husband-Wife Security Job in Bangalore for Odisha Helpers</h1>
 
                             <div className="space-y-4 mb-6 max-w-5xl mx-auto mt-4">
                                 <p className="text-xs sm:text-sm md:text-xl text-violet-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none">
@@ -150,7 +164,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Job Location: Bangalore</h2>
+                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Job Location: Bangalore</h2>
                         </div>
 
                         <div className="bg-violet-50 rounded-3xl p-8 md:p-12 shadow-xl border border-violet-100 max-w-6xl mx-auto">
@@ -191,7 +205,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Types of Security & Caretaker Jobs in Bangalore</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Types of Security & Caretaker Jobs in Bangalore</h2>
                             <p className="text-gray-600 max-w-2xl mx-auto font-medium">Choose the role that best matches your strength and comfort.</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-4 rounded-full"></div>
                         </div>
@@ -204,7 +218,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                                     </div>
                                     <div className="flex-grow">
                                         <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Live-in Husband-Wife Security Job in Bangalore</h3>
-                                        <p className="text-violet-600 font-bold mb-6 italic">Stay and work together in the same property</p>
+                                        <p className="text-violet-600 font-bold mb-6 ">Stay and work together in the same property</p>
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                             <div>
@@ -251,7 +265,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Salary for Live-in Couple Security Jobs in Bangalore</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Salary for Live-in Couple Security Jobs in Bangalore</h2>
                             <p className="text-gray-600 font-bold uppercase tracking-widest text-sm">Salary depends on property size, experience, and responsibilities.</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
@@ -305,7 +319,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Security Work Responsibilities for Couples from Odisha</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Security Work Responsibilities for Couples from Odisha</h2>
                             <p className="text-gray-600 font-medium max-w-3xl mx-auto">Families respect Odisha couples for loyalty and discipline. In a Live-in Husband-Wife Security Job in Bangalore, your duties may include:</p>
                         </div>
 
@@ -339,7 +353,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Who Can Apply</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Who Can Apply</h2>
                             <p className="text-gray-600 font-medium">You and your spouse can apply if:</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
@@ -381,7 +395,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
 
                             <div className="relative z-10">
                                 <div className="text-center max-w-3xl mx-auto mb-12">
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic">About EzyHelpers – Trusted Helper Jobs</h2>
+                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white ">About EzyHelpers – Trusted Helper Jobs</h2>
                                     <p className="text-violet-100 text-lg md:text-xl font-bold">
                                         We connect helpers like you with safe Domestic Helper jobs across India without charging any fees.
                                     </p>
@@ -463,7 +477,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                                             <HeartIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">Our Belief</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">Our Belief</h4>
                                             <p className="text-white">Good Homes for Helpers. Good Helpers for Families.</p>
                                         </div>
                                     </div>
@@ -472,7 +486,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                                             <GlobeAltIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">Locations We Serve</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">Locations We Serve</h4>
                                             <p className="text-sm text-violet-50">Bangalore, Bareilly, Mumbai, Hyderabad, Delhi NCR, Pune, Odisha and more.</p>
                                         </div>
                                     </div>
@@ -486,7 +500,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Support and Benefits for Helpers at EzyHelpers</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Support and Benefits for Helpers at EzyHelpers</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -531,7 +545,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                                 </div>
 
                                 <div className="relative z-10 flex-grow text-center md:text-left">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display italic">NEST – Safe Hostel for Women Helpers</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display ">NEST – Safe Hostel for Women Helpers</h2>
                                     <div className="space-y-4 mb-8">
                                         <p className="text-gray-600 text-lg font-bold">
                                             Women helpers can stay at NEST anytime in Bangalore.
@@ -559,7 +573,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">How to Apply for Live-in Couple Jobs</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">How to Apply for Live-in Couple Jobs</h2>
                             <p className="text-gray-600 max-w-2xl mx-auto font-bold uppercase tracking-widest text-sm text-center">Six Simple Steps From Your Village in Odisha to Your New Workplace</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
@@ -584,7 +598,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                         </div>
 
                         <div className="text-center mt-16 max-w-3xl mx-auto bg-violet-50 p-10 rounded-[3rem] border border-violet-100 shadow-sm">
-                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display italic">Work together as a couple and earn a steady income in Bangalore.</h3>
+                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display ">Work together as a couple and earn a steady income in Bangalore.</h3>
                             <p className="text-gray-700 text-lg font-bold mb-8">
                                 Start your work journey safely with EzyHelpers, from registration to joining and post-placement.
                             </p>
@@ -610,7 +624,7 @@ export default function CoupleSecurityJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight italic">
+                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight ">
                                 Common Questions about Couple Security Jobs
                             </h2>
                             <div className="w-32 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>

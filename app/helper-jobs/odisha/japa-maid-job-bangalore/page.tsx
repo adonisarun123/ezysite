@@ -96,6 +96,20 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                         { label: 'Odisha', href: '/helper-jobs/odisha' },
                         { label: 'Japa Maid Jobs' }
                     ]}
+                    rightContent={
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
+                            <span className="text-gray-500 font-medium whitespace-nowrap uppercase">हिंदी</span>
+                            <Link
+                                href="/helper-jobs/odisha/japa-maid-job-bangalore/hin"
+                                className="w-10 h-5 bg-violet-600 rounded-full p-1 relative transition-colors inline-block"
+                            >
+                                <div
+                                    className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"
+                                />
+                            </Link>
+                            <span className="text-gray-900 font-bold whitespace-nowrap uppercase">ENG</span>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -107,7 +121,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">Japa Maid Jobs in Bangalore for Mother and Newborn Care For Helpers from Odisha</h1>
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal ">Japa Maid Jobs in Bangalore for Mother and Newborn Care For Helpers from Odisha</h1>
 
                             <div className="space-y-4 mb-6 max-w-5xl mx-auto mt-4">
                                 <p className="text-xs sm:text-sm md:text-xl text-violet-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none font-medium">
@@ -142,12 +156,12 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Job Location: Bangalore</h2>
+                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Job Location: Bangalore</h2>
                         </div>
 
                         <div className="bg-violet-50 rounded-3xl p-8 md:p-12 shadow-xl border border-violet-100 max-w-6xl mx-auto">
                             <div className="text-center mb-8">
-                                <h3 className="text-xl md:text-4xl font-bold text-gray-900 font-display italic">What makes EzyHelpers different</h3>
+                                <h3 className="text-xl md:text-4xl font-bold text-gray-900 font-display ">What makes EzyHelpers different</h3>
                                 <div className="w-24 h-1 bg-violet-500 mx-auto mt-4 rounded-full"></div>
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -175,8 +189,8 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Japa Maid Job Categories in Bangalore</h2>
-                            <p className="text-gray-600 font-bold max-w-4xl mx-auto italic leading-relaxed">
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Japa Maid Job Categories in Bangalore</h2>
+                            <p className="text-gray-600 font-bold max-w-4xl mx-auto  leading-relaxed">
                                 Japa Maid jobs come under mother and newborn care work. Families hire Japa Maids during the post-delivery period when both mother and baby need special attention.
                             </p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
@@ -197,7 +211,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                             <SparklesIcon className="w-10 h-10" />
                                         </div>
                                         <div className="flex-grow">
-                                            <h3 className="text-2xl md:text-3xl font-bold mb-2 italic">Live-In Japa Maid Jobs in Bangalore</h3>
+                                            <h3 className="text-2xl md:text-3xl font-bold mb-2 ">Live-In Japa Maid Jobs in Bangalore</h3>
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6">
                                                 <div>
                                                     <h4 className="text-violet-200 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2">
@@ -242,15 +256,15 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight">Japa Maid Work Responsibilities</h2>
-                            <p className="text-gray-600 font-bold max-w-3xl mx-auto italic leading-relaxed">When you take Japa Maid Jobs in Bangalore, your duties are only related to mother and newborn baby care.</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display  leading-tight">Japa Maid Work Responsibilities</h2>
+                            <p className="text-gray-600 font-bold max-w-3xl mx-auto  leading-relaxed">When you take Japa Maid Jobs in Bangalore, your duties are only related to mother and newborn baby care.</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                             <div className="bg-violet-50 rounded-3xl p-8 md:p-10 border border-violet-100 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-60 -mr-16 -mt-16"></div>
-                                <h3 className="text-xl font-bold text-violet-900 mb-6 flex items-center gap-2 border-b border-violet-200 pb-4 relative z-10 italic">
+                                <h3 className="text-xl font-bold text-violet-900 mb-6 flex items-center gap-2 border-b border-violet-200 pb-4 relative z-10 ">
                                     <SparklesIcon className="w-6 h-6" /> Daily Duties
                                 </h3>
                                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-bold text-gray-700 relative z-10">
@@ -275,7 +289,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
 
                             <div className="bg-blue-50 rounded-3xl p-8 md:p-10 border border-blue-100 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-60 -mr-16 -mt-16"></div>
-                                <h3 className="text-xl font-bold text-blue-900 mb-6 flex items-center gap-2 border-b border-blue-200 pb-4 relative z-10 italic">
+                                <h3 className="text-xl font-bold text-blue-900 mb-6 flex items-center gap-2 border-b border-blue-200 pb-4 relative z-10 ">
                                     <InformationCircleIcon className="w-6 h-6" /> Additional Duties
                                 </h3>
                                 <ul className="space-y-4 font-bold text-gray-700 relative z-10">
@@ -299,8 +313,8 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight">Salary for Live-In Japa Maid Jobs in Bangalore</h2>
-                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm max-w-2xl mx-auto italic leading-relaxed text-center">Your salary depends on experience, working hours, and family needs. We explain everything clearly before you join.</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display  leading-tight">Salary for Live-In Japa Maid Jobs in Bangalore</h2>
+                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm max-w-2xl mx-auto  leading-relaxed text-center">Your salary depends on experience, working hours, and family needs. We explain everything clearly before you join.</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
 
@@ -317,14 +331,14 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                 </thead>
                                 <tbody className="divide-y divide-gray-100">
                                     <tr className="hover:bg-violet-50 transition-colors group">
-                                        <td className="p-6 font-bold text-gray-900 italic text-sm md:text-base">Live-In Mother and Newborn Care</td>
+                                        <td className="p-6 font-bold text-gray-900  text-sm md:text-base">Live-In Mother and Newborn Care</td>
                                         <td className="p-6 font-bold text-violet-700 text-lg md:text-2xl text-center">₹25,000 to ₹30,000</td>
-                                        <td className="p-6 text-gray-600 font-bold text-center italic text-sm md:text-base">Included</td>
-                                        <td className="p-6 text-gray-600 font-bold text-center italic text-sm md:text-base">Included</td>
+                                        <td className="p-6 text-gray-600 font-bold text-center  text-sm md:text-base">Included</td>
+                                        <td className="p-6 text-gray-600 font-bold text-center  text-sm md:text-base">Included</td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <div className="p-8 bg-violet-900 text-white text-center font-bold italic relative">
+                            <div className="p-8 bg-violet-900 text-white text-center font-bold  relative">
                                 Food and stay are included in Live-In Japa Maid Jobs in Bangalore.
                             </div>
                         </div>
@@ -343,7 +357,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Who Can Apply</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Who Can Apply</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -380,7 +394,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
 
                             <div className="relative z-10">
                                 <div className="text-center max-w-3xl mx-auto mb-12">
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic">About EzyHelpers – Trusted Helper Jobs</h2>
+                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white ">About EzyHelpers – Trusted Helper Jobs</h2>
                                     <p className="text-violet-100 text-lg md:text-xl font-bold">
                                         We connect helpers like you with safe Domestic Helper jobs across India without charging any fees.
                                     </p>
@@ -394,15 +408,15 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                         <ul className="space-y-3 font-bold text-violet-50">
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base italic">Respectful jobs in Bangalore</span>
+                                                <span className="text-sm md:text-base ">Respectful jobs in Bangalore</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base italic">Strict safety and background checks</span>
+                                                <span className="text-sm md:text-base ">Strict safety and background checks</span>
                                             </li>
                                             <li className="flex items-start gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
-                                                <span className="text-sm md:text-base italic">Helper welfare and long-term support</span>
+                                                <span className="text-sm md:text-base ">Helper welfare and long-term support</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -411,7 +425,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                         <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-violet-100 border-b border-violet-700/50 pb-3 uppercase tracking-tight">
                                             <ShieldCheckIcon className="w-6 h-6" /> Why Helpers Trust EzyHelpers
                                         </h3>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm md:text-base text-violet-50 font-bold italic">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm md:text-base text-violet-50 font-bold ">
                                             <ul className="space-y-3">
                                                 <li className="flex items-start gap-2">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-violet-300 mt-2 flex-shrink-0"></div>
@@ -458,8 +472,8 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                             <HeartIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">Our Belief</h4>
-                                            <p className="text-white italic">Good Homes for Helpers. Good Helpers for Families.</p>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">Our Belief</h4>
+                                            <p className="text-white ">Good Homes for Helpers. Good Helpers for Families.</p>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-4">
@@ -467,7 +481,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                             <GlobeAltIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">Locations We Serve</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">Locations We Serve</h4>
                                             <p className="text-sm text-violet-50">Bangalore, Bareilly, Mumbai, Hyderabad, Delhi NCR, Pune, Odisha and more.</p>
                                         </div>
                                     </div>
@@ -481,7 +495,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-16 px-4">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Support and Benefits for Helpers at EzyHelpers</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Support and Benefits for Helpers at EzyHelpers</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
 
@@ -526,9 +540,9 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                 </div>
 
                                 <div className="relative z-10 flex-grow text-center md:text-left">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display italic leading-tight">NEST – Safe Hostel for Women Helpers</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display  leading-tight">NEST – Safe Hostel for Women Helpers</h2>
                                     <div className="space-y-4 mb-8">
-                                        <p className="text-gray-600 text-lg font-bold italic leading-relaxed">
+                                        <p className="text-gray-600 text-lg font-bold  leading-relaxed">
                                             Women helpers can stay at NEST anytime in Bangalore. Safe rooms, daily meals, and affordable stay help you settle comfortably before starting work.
                                         </p>
                                     </div>
@@ -551,8 +565,8 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-16 px-4">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight">How to Apply for Japa Maid Jobs</h2>
-                            <p className="text-gray-600 max-w-2xl mx-auto font-bold uppercase tracking-widest text-xs md:text-sm text-center italic leading-relaxed">Six Simple Steps From Your Village in Odisha to Your Workplace in Bangalore</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display  leading-tight">How to Apply for Japa Maid Jobs</h2>
+                            <p className="text-gray-600 max-w-2xl mx-auto font-bold uppercase tracking-widest text-xs md:text-sm text-center  leading-relaxed">Six Simple Steps From Your Village in Odisha to Your Workplace in Bangalore</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
 
@@ -570,15 +584,15 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                                         {item.step}
                                     </div>
                                     <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                                    <p className="text-gray-600 text-xs font-bold leading-relaxed italic">{item.desc}</p>
+                                    <p className="text-gray-600 text-xs font-bold leading-relaxed ">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
 
                         <div className="text-center mt-16 max-w-3xl mx-auto bg-violet-50 p-10 rounded-[3rem] border border-violet-100 shadow-2xl relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-violet-100 rounded-full blur-3xl opacity-50 -mr-16 -mt-16"></div>
-                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display italic leading-tight px-4">Don't wait for a better opportunity to knock!</h3>
-                            <p className="text-gray-700 text-lg font-bold mb-8 italic leading-relaxed">
+                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display  leading-tight px-4">Don't wait for a better opportunity to knock!</h3>
+                            <p className="text-gray-700 text-lg font-bold mb-8  leading-relaxed">
                                 Experienced Japa Maids from Odisha are in high demand in Bangalore. Contact EzyHelpers Now!
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 max-w-md mx-auto sm:max-w-none">
@@ -603,7 +617,7 @@ export default function JapaMaidJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight italic">
+                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight ">
                                 Common Questions about Japa Maid Jobs
                             </h2>
                             <div className="w-32 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
