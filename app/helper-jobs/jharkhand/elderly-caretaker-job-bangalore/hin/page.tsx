@@ -104,7 +104,7 @@ const faqs: FAQItem[] = [
 export default function ElderlyCaretakerJobsBangalorePage() {
     return (
         <>
-            <main className="min-h-screen">
+            <div lang="hi" className="min-h-screen">
                 <Navbar />
 
                 <Breadcrumb
@@ -1001,7 +1001,7 @@ export default function ElderlyCaretakerJobsBangalorePage() {
 
 
 
-            </main>
+            </div>
             <Footer />
         </>
     )

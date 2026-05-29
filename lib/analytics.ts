@@ -1,9 +1,13 @@
-// Analytics events via dataLayer for Google Tag Manager
-// This file contains all the custom event tracking functions for user interactions
+// Analytics events: pushes to both Google Tag Manager (via dataLayer object form)
+// and Google Analytics 4 (via window.gtag) so events flow to GA4 directly while
+// the GTM container does not yet have GA4 tags wired up. Once GA4 tags are
+// configured inside GTM, the gtag() call below can be removed to avoid duplicate
+// hits to GA4.
 
 declare global {
   interface Window {
-    dataLayer?: Record<string, unknown>[];
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -82,13 +86,21 @@ export const trackEvent = (eventName: string, parameters: EventParams = {}) => {
       ...parameters.custom_parameters,
     };
 
+    // GTM-style push: any GTM tag with a Custom Event trigger on `eventName`
+    // will pick this up.
     window.dataLayer.push({
       event: eventName,
       ...enhancedParams,
     });
 
+    // gtag-style push: required for GA4 to receive the event directly while
+    // the GTM container has no GA4 tags configured.
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, enhancedParams);
+    }
+
     if (process.env.NODE_ENV === 'development') {
-      console.log('dataLayer event:', eventName, enhancedParams);
+      console.log('analytics event:', eventName, enhancedParams);
     }
   } catch (error) {
     console.error('Error tracking event:', error);
@@ -389,4 +401,113 @@ export const trackError = (errorType: string, errorMessage: string, errorLocatio
       page_url: window.location.href
     }
   });
-}; 
+};
+
+/* ──────────────────────────────────────────────────────────────────────────
+ * Care-services-specific tracking
+ * Distinct event names so they're addressable in GTM/GA4 without colliding
+ * with the general site funnel.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+/** Fired when a visitor reaches a result on the /care-services/care-quiz wizard. */
+export const trackCareQuizComplete = (recommendation: string, scoreBreakdown: Record<string, number>) => {
+  trackEvent('care_quiz_complete', {
+    event_category: 'care_engagement',
+    event_label: recommendation,
+    value: 1,
+    custom_parameters: {
+      recommendation,
+      ...scoreBreakdown,
+      conversion_type: 'micro_conversion',
+    },
+  })
+}
+
+/** Fired when a visitor changes any input on the cost calculator. */
+export const trackCareCalculatorInteraction = (
+  role: string,
+  mode: string,
+  complexity: string,
+  estimatedLow: number,
+  estimatedHigh: number,
+) => {
+  trackEvent('care_calculator_interaction', {
+    event_category: 'care_engagement',
+    event_label: `${role}/${mode}/${complexity}`,
+    custom_parameters: {
+      care_role: role,
+      coverage_mode: mode,
+      complexity,
+      estimate_low: estimatedLow,
+      estimate_high: estimatedHigh,
+    },
+  })
+}
+
+/** Fired when a visitor clicks "Get an exact quote" from the calculator. */
+export const trackCareCalculatorQuoteRequest = (role: string, mode: string, complexity: string) => {
+  trackEvent('care_calculator_quote_request', {
+    event_category: 'care_engagement',
+    event_label: `${role}/${mode}/${complexity}`,
+    value: 1,
+    custom_parameters: {
+      care_role: role,
+      coverage_mode: mode,
+      complexity,
+      conversion_type: 'micro_conversion',
+    },
+  })
+}
+
+/** Fired when a care enquiry form is successfully submitted. */
+export const trackCareEnquirySubmit = (formData: Record<string, unknown>) => {
+  trackEvent('care_enquiry_submit', {
+    event_category: 'conversion',
+    event_label: String(formData.careType ?? 'unknown'),
+    value: 1,
+    custom_parameters: {
+      care_type: formData.careType,
+      urgency: formData.urgency,
+      locality: formData.locality,
+      conversion_type: 'lead_generation',
+    },
+  })
+}
+
+/** Fired the first time a user types into the care enquiry form. */
+export const trackCareEnquiryStart = (sourcePath: string | null) => {
+  trackEvent('care_enquiry_start', {
+    event_category: 'care_engagement',
+    event_label: sourcePath ?? 'direct',
+    custom_parameters: {
+      source_path: sourcePath ?? 'direct',
+    },
+  })
+}
+
+/** Fired when a primary CTA on a care page is clicked. */
+export const trackCareCTAClick = (ctaText: string, location: string) => {
+  trackEvent('care_cta_click', {
+    event_category: 'care_engagement',
+    event_label: ctaText,
+    custom_parameters: {
+      cta_text: ctaText,
+      cta_location: location,
+    },
+  })
+}
+
+/** Fired when a phone CTA on a care page is clicked. */
+export const trackCarePhoneClick = (phoneNumber: string, location: string) => {
+  trackEvent('care_phone_click', {
+    event_category: 'care_communication',
+    event_label: phoneNumber,
+    value: 1,
+    custom_parameters: {
+      phone_number: phoneNumber,
+      click_location: location,
+      contact_method: 'phone',
+      conversion_type: 'micro_conversion',
+    },
+  })
+}

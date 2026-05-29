@@ -146,3 +146,22 @@ export const CACHE_TTL = {
   API_RESPONSE: 60, // 1 minute
   USER_SESSION: 86400, // 24 hours
 } as const;
+
+// Central contact info — single source of truth.
+// NOTE: there are still many hardcoded tel: / wa.me usages across the codebase.
+// Migrate call sites to these constants in future passes.
+export const CONTACT = {
+  primaryPhone: '+918031411776',
+  primaryPhoneDisplay: '080-31411776',
+  primaryPhoneHref: 'tel:+918031411776',
+  whatsappNumber: '+918031411776',
+  whatsappHref: 'https://api.whatsapp.com/send?phone=918031411776&text=Hi%2C%20I%20need%20a%20helper',
+  bookingsPhone: '+919972571005',
+  bookingsPhoneDisplay: '+91 99725 71005',
+  bookingsPhoneHref: 'tel:+919972571005',
+  primaryEmail: 'info@ezyhelpers.com',
+  contactEmail: 'contact@ezyhelpers.com',
+  websiteUrl: 'https://www.ezyhelpers.com',
+  brandName: 'EzyHelpers',
+  twitterHandle: '@ezyhelpers',
+} as const;

@@ -82,7 +82,7 @@ const faqs: FAQItem[] = [
 export default function HomeCookJobsOdishaBangaloreHindiPage() {
     return (
         <>
-            <main className="min-h-screen">
+            <div lang="hi" className="min-h-screen">
                 <Navbar />
 
                 <Breadcrumb
@@ -882,7 +882,7 @@ export default function HomeCookJobsOdishaBangaloreHindiPage() {
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
             <Footer />
         </>
     )

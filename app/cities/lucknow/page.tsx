@@ -14,6 +14,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Domestic Help in Lucknow | Verified Maids & Home Services | EzyHelpers',
   description:
     'Verified maids, cooks, and household help in Lucknow — Hazratganj, Gomti Nagar, and across the city. Trusted placements with EzyHelpers.',

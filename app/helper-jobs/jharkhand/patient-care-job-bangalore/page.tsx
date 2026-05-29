@@ -36,6 +36,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'Live-in Patient Care Jobs Bangalore: Earn upto ₹35k/month',
@@ -90,6 +91,16 @@ const faqs: FAQItem[] = [
 export default function PatientCareJobsBangalorePage() {
     return (
         <>
+            <JobPostingSchema
+                title="Live-in Patient Care Jobs in Bangalore"
+                description="Live-in patient care jobs in Bangalore for helpers from Jharkhand. Earn up to ₹35,000/month. Direct employer salary, training, accommodation, and 2 days off per month."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: 'Bangalore', addressRegion: 'Karnataka', addressCountry: 'IN' }}
+                applicantLocationRequirements="IN"
+                baseSalary={{ currency: 'INR', value: { minValue: 25000, maxValue: 35000 }, unitText: 'MONTH' }}
+            />
             <main className="min-h-screen">
                 <Navbar />
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
-import { CheckCircleIcon } from '@heroicons/react/24/outline'
+import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabaseClient'
 import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
@@ -94,9 +94,9 @@ export default function OnDemandLeadForm({
   const [familySize, setFamilySize] = useState('')
   const [otherDetails, setOtherDetails] = useState('')
   const [formErrors, setFormErrors] = useState<Record<string, string>>({})
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-  const [requestId, setRequestId] = useState<string | null>(null)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
   const [hasTrackedStart, setHasTrackedStart] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     if (!hasTrackedStart) {
@@ -204,7 +204,6 @@ export default function OnDemandLeadForm({
     setOtherDetails('')
     setFormErrors({})
     setSubmitStatus('idle')
-    setRequestId(null)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -321,8 +320,7 @@ export default function OnDemandLeadForm({
       ).catch(() => {})
 
       trackFormComplete('on_demand_lead_form', newRequestId)
-      setRequestId(newRequestId)
-      setSubmitStatus('success')
+      router.push(`/thank-you?type=on_demand&ref=${encodeURIComponent(newRequestId)}`)
     } catch (err) {
       trackFormError(
         'on_demand_lead_form',
@@ -334,35 +332,6 @@ export default function OnDemandLeadForm({
   }
 
   const wrapId = anchorId ? { id: anchorId } : {}
-
-  if (submitStatus === 'success') {
-    return (
-      <div {...wrapId} className={className}>
-      <div
-        className={`rounded-2xl border p-6 md:p-8 text-center ${styles.panel}`}
-      >
-        <CheckCircleIcon className="w-14 h-14 mx-auto text-success-500" />
-        <h3 className="text-xl font-bold text-gray-900 mt-4 font-display">Request received</h3>
-        {requestId && (
-          <p className="mt-2 text-sm text-gray-600">
-            Reference:{' '}
-            <span className="font-mono font-semibold text-gray-900">{requestId}</span>
-          </p>
-        )}
-        <p className="mt-3 text-gray-600 text-sm max-w-md mx-auto">
-          Our team will contact you shortly to confirm helper availability and next steps.
-        </p>
-        <button
-          type="button"
-          onClick={resetForm}
-          className={`mt-6 text-sm font-semibold hover:underline ${variant === 'trust' ? 'text-trust-700' : 'text-primary-700'}`}
-        >
-          Submit another request
-        </button>
-      </div>
-      </div>
-    )
-  }
 
   const inputClass = `w-full px-4 py-3 border border-gray-300 rounded-lg outline-none transition-shadow ${styles.focus} focus:ring-2`
 

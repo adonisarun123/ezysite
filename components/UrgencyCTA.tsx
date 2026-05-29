@@ -1,11 +1,28 @@
 'use client'
 
+import { useEffect } from 'react'
 import { PhoneIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { CheckBadgeIcon } from '@heroicons/react/24/solid'
 import { useUrgency } from './UrgencyContext'
 
-export default function UrgencyCTA() {
+interface UrgencyCTAProps {
+  /**
+   * When true (default), the banner mounts visible. Pages that don't render
+   * this component (most of the site) leave the urgency state at the
+   * UrgencyProvider's default (hidden).
+   */
+  defaultVisible?: boolean
+}
+
+export default function UrgencyCTA({ defaultVisible = true }: UrgencyCTAProps = {}) {
   const { isUrgencyVisible, setIsUrgencyVisible } = useUrgency()
+
+  // On first mount, opt this page into showing the banner. Once the user
+  // dismisses it, we keep it hidden for the rest of the session.
+  useEffect(() => {
+    if (defaultVisible) setIsUrgencyVisible(true)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   if (!isUrgencyVisible) return null
 

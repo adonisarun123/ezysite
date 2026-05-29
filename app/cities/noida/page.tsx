@@ -14,6 +14,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Domestic Help in Noida & Greater Noida | EzyHelpers',
   description:
     'Verified maids, cooks, and home help in Noida sectors and Greater Noida. Book trusted domestic staff for apartments and gated communities.',

@@ -1,11 +1,11 @@
 # EzyHelpers
 
-> Trusted and verified house help service in India. We connect families with background-checked domestic helpers including maids, nannies, cooks, drivers, elderly caregivers, and more.
+> Trusted and verified house help service in India. We connect families with background-checked domestic helpers including maids, nannies, cooks, drivers, elderly caregivers, and a dedicated Care Services division for home nursing, dementia, post-stroke and patient care in Bangalore.
 
 ## About
-EzyHelpers is India's trusted platform for hiring verified domestic helpers. We serve cities including Bangalore and Bareilly, offering full-time maids, part-time maids, live-in maids, nannies, babysitters, cooks, drivers, elderly care, gardeners, and various home services.
+EzyHelpers operates two parallel businesses: (1) general home services (full-time maids, part-time maids, live-in maids, nannies, cooks, drivers, on-demand helpers) across multiple Indian cities, and (2) a dedicated Care Services division (nurses, caretakers, trained attendants) currently in Bangalore. Every caregiver passes Aadhaar verification, ID checks, in-person interview, and condition-relevant experience review before placement. Same-day placement is attempted across 16+ Bangalore localities. Free replacement is offered if the placement is not working.
 
-## Services
+## General Home Services
 - Full-Time Maids
 - Part-Time Maids
 - Live-In Maids
@@ -19,15 +19,59 @@ EzyHelpers is India's trusted platform for hiring verified domestic helpers. We 
 - Pest Control
 - House Shifting
 
-## Cities Served
+## Care Services (Bangalore)
+- All Care Services hub: https://www.ezyhelpers.com/care-services
+- Home Care Services pillar: https://www.ezyhelpers.com/care-services/home-care-services-bangalore
+- Home Healthcare Services: https://www.ezyhelpers.com/care-services/home-healthcare-services-bangalore
+- Home Nursing Services: https://www.ezyhelpers.com/care-services/home-nursing-services-bangalore
+- Elderly Care Services: https://www.ezyhelpers.com/care-services/elderly-care-services-bangalore
+- Caretaker Services: https://www.ezyhelpers.com/care-services/caretaker-services-bangalore
+- Patient Care Services: https://www.ezyhelpers.com/care-services/patient-care-services-bangalore
+- Home Attendant Services: https://www.ezyhelpers.com/care-services/home-attendant-services-bangalore
+- Trained Attendant Services: https://www.ezyhelpers.com/care-services/trained-attendant-services-bangalore
+
+## Condition-Specific Care
+- Stroke Care at Home: https://www.ezyhelpers.com/care-services/stroke-care-at-home-bangalore
+- Dementia & Alzheimer's Care: https://www.ezyhelpers.com/care-services/dementia-alzheimers-care-bangalore
+- Bedridden Patient Care: https://www.ezyhelpers.com/care-services/bedridden-patient-care-bangalore
+- Post-Surgery Recovery: https://www.ezyhelpers.com/care-services/post-surgery-recovery-bangalore
+- Cancer Care at Home: https://www.ezyhelpers.com/care-services/cancer-care-at-home-bangalore
+- Parkinson's Care at Home: https://www.ezyhelpers.com/care-services/parkinsons-care-at-home-bangalore
+
+## Decision & Cost Guides
+- Home Nurse vs Caretaker: https://www.ezyhelpers.com/care-services/home-nurse-vs-caretaker
+- Live-in vs Day-Shift Caregiver: https://www.ezyhelpers.com/care-services/live-in-vs-day-shift-caregiver
+- Home Care vs Old Age Home: https://www.ezyhelpers.com/care-services/home-care-vs-old-age-home
+- Home Nursing Cost Guide: https://www.ezyhelpers.com/care-services/home-nursing-cost-bangalore
+- Cost Calculator (interactive): https://www.ezyhelpers.com/care-services/cost-calculator
+- Care Assessment Quiz (interactive): https://www.ezyhelpers.com/care-services/care-quiz
+
+## Reference
+- Home Care Glossary (definitions of NG tube, PEG, GNM, sundowning, TPA and ~50 other home-care terms): https://www.ezyhelpers.com/care-services/care-glossary
+
+## Locality Pages (Bangalore)
+- Elderly Care in Whitefield: https://www.ezyhelpers.com/care-services/elderly-care-whitefield-bangalore
+- Elderly Care in HSR Layout: https://www.ezyhelpers.com/care-services/elderly-care-hsr-layout-bangalore
+- Elderly Care in Koramangala: https://www.ezyhelpers.com/care-services/elderly-care-koramangala-bangalore
+
+## Trust & Operations
+- Caregiver Verification Process: https://www.ezyhelpers.com/care-services/caregiver-verification-process
+- Caregiver Training Curriculum: https://www.ezyhelpers.com/care-services/caregiver-training
+- Care Leadership (medical reviewer): https://www.ezyhelpers.com/care-services/care-leadership
+- Hospital Discharge Care: https://www.ezyhelpers.com/care-services/hospital-discharge-care-bangalore
+- Insurance & Home Care: https://www.ezyhelpers.com/care-services/insurance-and-home-care-bangalore
+- Home Care for NRI Families: https://www.ezyhelpers.com/care-services/nri-family-home-care-bangalore
+
+## Cities Served (general home services)
 - Bangalore
 - Bareilly
 
 ## Contact
 - Website: https://www.ezyhelpers.com
-- Phone: Available on website
+- Care services phone: +91-80-31411776
+- Care enquiry form: https://www.ezyhelpers.com/care-services/enquiry
 
-## Links
+## Site Sections
 - Home: https://www.ezyhelpers.com
 - Services: https://www.ezyhelpers.com/services
 - Careers: https://www.ezyhelpers.com/careers

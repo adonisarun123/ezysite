@@ -28,6 +28,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'Live-in Couple Security jobs in Bangalore for Husband-Wife',
@@ -86,6 +87,15 @@ const faqs: FAQItem[] = [
 export default function CoupleSecurityJobsBangalorePage() {
     return (
         <>
+            <JobPostingSchema
+                title="Live-in Couple Security Jobs in Bangalore"
+                description="Husband-wife live-in security jobs in Bangalore apartments for couples from Jharkhand. Separate room, daily food included. Safe, long-term placements."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: 'Bangalore', addressRegion: 'Karnataka', addressCountry: 'IN' }}
+                applicantLocationRequirements="IN"
+            />
             <main className="min-h-screen">
                 <Navbar />
 

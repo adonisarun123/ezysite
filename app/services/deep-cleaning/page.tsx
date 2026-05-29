@@ -21,9 +21,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Full House Deep Cleaning in Bareilly – Book Experts Now',
-  description: 'Get home deep cleaning in Bareilly for kitchen, bathroom, and entire house sanitization. Experienced cleaners ensure spotless, hygienic results.',
-  keywords: 'deep cleaning bareilly, home cleaning bareilly, bathroom cleaning bareilly, kitchen cleaning bareilly',
+  title: 'Home Deep Cleaning Services – Book Verified Experts | EzyHelpers',
+  description: 'Book professional home deep cleaning for kitchens, bathrooms, and full-house sanitization. Background-verified cleaners deliver spotless, hygienic results.',
+  keywords: 'home deep cleaning, house deep cleaning services, kitchen deep cleaning, bathroom sanitization, full house cleaning, professional cleaners',
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/deep-cleaning',
     languages: selfReferencingLanguages('/services/deep-cleaning'),

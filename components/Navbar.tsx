@@ -12,7 +12,6 @@ import {
 } from '@heroicons/react/24/outline'
 import { useUrgency } from './UrgencyContext'
 import { trackPhoneClick, trackCTAClick } from '@/lib/analytics'
-
 interface NavigationItem {
   name: string
   href: string
@@ -20,6 +19,8 @@ interface NavigationItem {
   isNew?: boolean
   hasDropdown?: boolean
   dropdownItems?: { name: string; href: string }[]
+  /** Tailwind width classes for dropdown panel */
+  dropdownClassName?: string
 }
 
 const navigation: NavigationItem[] = [
@@ -110,7 +111,7 @@ export default function Navbar() {
                     <span className="sr-only">EzyHelpers</span>
                     <div className="w-10 h-10 relative flex-shrink-0">
                       <Image
-                        src="/ezyhelper_logo_new.png"
+                        src="/ezyhelper_logo_96.png"
                         alt="EzyHelpers Logo"
                         fill
                         className="object-contain"
@@ -148,7 +149,11 @@ export default function Navbar() {
                         </Link>
 
                         {openDropdown === item.name && (
-                          <div className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
+                          <div
+                            className={`absolute top-full left-0 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50 ${
+                              item.dropdownClassName ?? 'w-48'
+                            }`}
+                          >
                             {item.dropdownItems?.map((dropdownItem) => (
                               <Link
                                 key={dropdownItem.name}
@@ -229,7 +234,7 @@ export default function Navbar() {
               <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
                 <div className="w-8 h-8 relative flex-shrink-0">
                   <Image
-                    src="/ezyhelper_logo_new.png"
+                    src="/ezyhelper_logo_96.png"
                     alt="EzyHelpers Logo"
                     fill
                     className="object-contain"

@@ -28,6 +28,7 @@ import {
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import ReferEarnSection from '@/components/ReferEarnSection'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
     title: 'Safe Home Cook Jobs in Bangalore for Odisha Helpers',
@@ -86,7 +87,15 @@ export default function HomeCookJobsOdishaBangalorePage() {
     return (
         <>
             <main className="min-h-screen">
-                <Navbar />
+                <JobPostingSchema
+                title="Home Cook Job in Bangalore"
+                description="Home cook jobs in Bangalore for helpers from Odisha. Verified families, fixed hours, fair pay, and long-term placement."
+                datePosted="2026-01-01"
+                validThrough="2027-01-01"
+                employmentType="FULL_TIME"
+                jobLocation={{ addressLocality: "Bangalore", addressRegion: "Karnataka", addressCountry: "IN" }}
+            />
+            <Navbar />
 
                 <Breadcrumb
                     sticky={true}
@@ -796,7 +805,7 @@ export default function HomeCookJobsOdishaBangalorePage() {
                                         </p>
                                     </div>
                                     <Link href="/nest" className="inline-flex items-center gap-2 bg-pink-600 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-pink-200 hover:bg-pink-700 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-                                        Learn more about NEST
+                                        Contact us about accommodation
                                         <ArrowRightIcon className="w-5 h-5" />
                                     </Link>
                                 </div>

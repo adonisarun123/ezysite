@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, memo } from 'react'
 import { CheckCircleIcon, StarIcon, PhoneIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
+import { LoadingSpinner } from '@/components/ui/loading-spinner'
 
 // Legacy stats kept for backward compatibility
 const stats = [
@@ -101,6 +102,8 @@ export default function HeroSection() {
   })
 
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [submitting, setSubmitting] = useState(false)
+  const [honeypot, setHoneypot] = useState('')
 
   const validate = () => {
     const errors: typeof formErrors = { name: '', phone: '', service: '', city: '' }
@@ -126,11 +129,13 @@ export default function HeroSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+    if (submitting) return
+
     if (!validate()) {
       return; // Stop here if validation fails
     }
-    
+
+    setSubmitting(true)
     try {
       const { supabase } = await import('@/lib/supabaseClient')
       const { error } = await supabase.from('leads').insert([
@@ -142,7 +147,7 @@ export default function HeroSection() {
         }
       ])
       if (error) throw error
-      
+
       // Send email notification
       try {
         const emailResponse = await fetch('/api/send-lead-email', {
@@ -152,6 +157,7 @@ export default function HeroSection() {
           },
           body: JSON.stringify({
             leadType: 'general',
+            website: honeypot,
             formData: {
               name: formData.name.trim(),
               phone: formData.phone.trim(),
@@ -171,12 +177,14 @@ export default function HeroSection() {
         console.error('Email sending error:', emailError);
         // Don't fail the form submission if email fails
       }
-      
+
       setSubmitStatus('success')
       setFormData({ name: '', phone: '', service: '', city: '' })
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error')
+    } finally {
+      setSubmitting(false)
     }
   }
 
@@ -270,36 +278,63 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-3">
+              <form onSubmit={handleSubmit} className="space-y-3" aria-busy={submitting}>
+                {/* Honeypot field - hidden from real users, traps bots */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  style={{ position: 'absolute', left: '-9999px', width: 0, height: 0, opacity: 0 }}
+                />
+                <label htmlFor="hero-name" className="sr-only">Your Name</label>
                 <input
                   id="hero-name"
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
+                  aria-invalid={!!formErrors.name}
+                  aria-describedby={formErrors.name ? 'hero-name-error' : undefined}
                   className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
                   placeholder="Your Name"
                   aria-label="Your Name"
                 />
-                {formErrors.name && <p className="text-xs text-red-500 mt-1">{formErrors.name}</p>}
+                {formErrors.name && <p id="hero-name-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.name}</p>}
 
-                <input
-                  id="hero-phone"
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
-                  placeholder="Phone Number (+91 XXXXX XXXXX)"
-                  aria-label="Phone Number"
-                />
-                {formErrors.phone && <p className="text-xs text-red-500 mt-1">{formErrors.phone}</p>}
+                <label htmlFor="hero-phone" className="sr-only">Phone Number</label>
+                <div className="relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm pointer-events-none select-none">+91</span>
+                  <input
+                    id="hero-phone"
+                    type="tel"
+                    name="phone"
+                    inputMode="tel"
+                    maxLength={10}
+                    pattern="[5-9][0-9]{9}"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    aria-invalid={!!formErrors.phone}
+                    aria-describedby={formErrors.phone ? 'hero-phone-error' : 'hero-phone-hint'}
+                    className="w-full pl-12 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
+                    placeholder="9XXXXXXXXX"
+                    aria-label="Phone Number"
+                  />
+                </div>
+                <p id="hero-phone-hint" className="text-xs text-gray-500">10-digit mobile number, no country code needed</p>
+                {formErrors.phone && <p id="hero-phone-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.phone}</p>}
 
+                <label htmlFor="hero-service" className="sr-only">Select Service</label>
                 <select
                   id="hero-service"
                   name="service"
                   value={formData.service}
                   onChange={handleInputChange}
+                  aria-invalid={!!formErrors.service}
+                  aria-describedby={formErrors.service ? 'hero-service-error' : undefined}
                   className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
                   aria-label="Select Service Type"
                 >
@@ -308,13 +343,16 @@ export default function HeroSection() {
                     <option key={service} value={service}>{service}</option>
                   ))}
                 </select>
-                {formErrors.service && <p className="text-xs text-red-500 mt-1">{formErrors.service}</p>}
+                {formErrors.service && <p id="hero-service-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.service}</p>}
 
+                <label htmlFor="hero-city" className="sr-only">Select City</label>
                 <select
                   id="hero-city"
                   name="city"
                   value={formData.city}
                   onChange={handleInputChange}
+                  aria-invalid={!!formErrors.city}
+                  aria-describedby={formErrors.city ? 'hero-city-error' : undefined}
                   className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
                   aria-label="Select City"
                 >
@@ -323,16 +361,19 @@ export default function HeroSection() {
                     <option key={city} value={city}>{city}</option>
                   ))}
                 </select>
-                {formErrors.city && <p className="text-xs text-red-500 mt-1">{formErrors.city}</p>}
+                {formErrors.city && <p id="hero-city-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.city}</p>}
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm"
+                  disabled={submitting}
+                  aria-disabled={submitting}
+                  className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Get Free Consultation Now
+                  {submitting && <LoadingSpinner size="sm" />}
+                  {submitting ? 'Submitting...' : 'Get Free Consultation Now'}
                 </button>
-                {submitStatus === 'success' && <p className="text-green-600 text-sm mt-2">Lead submitted successfully!</p>}
-                {submitStatus === 'error' && <p className="text-red-600 text-sm mt-2">There was an error submitting your lead. Please try again.</p>}
+                {submitStatus === 'success' && <p role="status" className="text-green-600 text-sm mt-2">Lead submitted successfully!</p>}
+                {submitStatus === 'error' && <p role="alert" className="text-red-600 text-sm mt-2">There was an error submitting your lead. Please try again.</p>}
               </form>
 
               <div className="mt-3 text-center">

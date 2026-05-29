@@ -20,6 +20,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Hire Reliable Maid for Home in Hyderabad | Trained Helpers',
   description: 'Find background-verified maids and helpers in Hyderabad for daily chores, cooking, babysitting, elderly care, driving, and home repairs, all in one place.',
   keywords: 'maid for home Hyderabad, domestic helpers Hyderabad, verified maids Hyderabad, house help services Hyderabad',

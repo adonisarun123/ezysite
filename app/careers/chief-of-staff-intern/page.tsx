@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import ChiefOfStaffApplicationForm from '@/components/careers/ChiefOfStaffApplicationForm'
+import { JobPostingSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
   title: "Chief of Staff Intern → Full-Time | Founder's Office | EzyHelpers",
@@ -82,6 +83,14 @@ function SectionLabel({ children }: { children: ReactNode }) {
 export default function ChiefOfStaffInternPage() {
   return (
     <div className="min-h-screen bg-[#f8f9fa] font-sans text-[#202124] antialiased">
+      <JobPostingSchema
+        title="Chief of Staff Intern"
+        description="3 months. High intensity. Real ownership. Chief of Staff Intern in the Founder's Office at EzyHelpers — domestic help, verified at scale."
+        datePosted="2026-01-01"
+        validThrough="2027-01-01"
+        employmentType="INTERN"
+        jobLocation={{ addressLocality: 'Bangalore', addressRegion: 'Karnataka', addressCountry: 'IN' }}
+      />
       <Navbar />
 
       <Breadcrumb
@@ -94,7 +103,7 @@ export default function ChiefOfStaffInternPage() {
         ]}
       />
 
-      <main id="main-content">
+      <div>
         {/* Hero — light, typographic */}
         <section className="border-b border-[#dadce0] bg-white">
           <div className="mx-auto max-w-3xl px-6 pb-16 pt-12 sm:px-8 sm:pb-20 sm:pt-16 lg:px-10">
@@ -317,7 +326,7 @@ export default function ChiefOfStaffInternPage() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
 
       <Footer />
     </div>
