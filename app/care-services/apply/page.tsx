@@ -4,6 +4,7 @@ import { Suspense, useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CandidateApplicationForm from '@/components/care-services/CandidateApplicationForm'
+import { useUrgency } from '@/components/UrgencyContext'
 import { trackCandidateLanguageSwitch } from '@/lib/analytics'
 import {
   BanknotesIcon,
@@ -94,6 +95,7 @@ const BENEFIT_ICONS = [
 
 export default function CandidateApplyPage() {
   const [lang, setLang] = useState<Lang>('en')
+  const { isUrgencyVisible } = useUrgency()
   const c = C[lang]
 
   const switchLang = (l: Lang) => {
@@ -106,8 +108,18 @@ export default function CandidateApplyPage() {
     <div className={`min-h-screen bg-white text-neutral-900 ${lang === 'hi' ? 'font-sans' : ''}`}>
       <Navbar />
 
-      {/* language toggle bar */}
-      <div className="sticky top-0 z-30 border-b border-neutral-200 bg-white/95 backdrop-blur">
+      {/* data-main-content makes globals.css pad the fixed Navbar (and the
+          promo banner when open: 8rem/9rem), so the hero is never hidden. */}
+      <div data-main-content>
+        {/* language toggle bar — sticks just below the fixed Navbar, matching
+            the Breadcrumb offset (banner 48px + nav 80/96px). */}
+        <div
+          className={`sticky z-30 border-b border-neutral-200 bg-white/95 backdrop-blur transition-all duration-300 ${
+            isUrgencyVisible
+              ? 'top-[calc(48px+80px)] lg:top-[calc(48px+96px)]'
+              : 'top-[80px] lg:top-[96px]'
+          }`}
+        >
         <div className="mx-auto flex max-w-6xl items-center justify-end px-4 py-2 sm:px-6">
           <div className="inline-flex overflow-hidden rounded-full border border-primary-500 text-sm font-bold">
             <button
@@ -200,6 +212,7 @@ export default function CandidateApplyPage() {
           </a>
         </div>
       </section>
+      </div>
 
       <Footer />
     </div>
