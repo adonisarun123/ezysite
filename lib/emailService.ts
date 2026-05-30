@@ -3,7 +3,7 @@ import { escapeHtml } from '@/lib/sanitize';
 import pRetry from 'p-retry';
 import { EMAIL } from './constants';
 import { logger } from './logger';
-import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData, CareersSalesExecutiveFormData, CareersRoleApplicationFormData, CareServicesLeadFormData } from '../types/email';
+import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData, CareersSalesExecutiveFormData, CareersRoleApplicationFormData, CareServicesLeadFormData, CandidateApplicationFormData } from '../types/email';
 import {
   createTransporter,
   safe,
@@ -1523,6 +1523,60 @@ EzyHelpers care services enquiry form
   }
 }
 
+const generateCandidateApplicationEmail = (
+  formData: CandidateApplicationFormData & { sourceUrl?: string }
+): EmailContent => {
+  const formattedPhone = formatPhoneForEmail(formData.mobile)
+  const typeDisplay =
+    formData.candidateType === 'Other' && formData.otherRole?.trim()
+      ? `Other — ${formData.otherRole.trim()}`
+      : formData.candidateType
+  const rawSource = formData.sourceUrl?.trim() || ''
+  const sourceDisplay = rawSource ? escapeCareEmailHtml(rawSource) : 'Not provided'
+  const langDisplay = formData.language === 'hi' ? 'Hindi' : 'English'
+
+  return {
+    subject: `New candidate application: ${typeDisplay} (${formData.area})`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto;">
+        <h2 style="color: #0074C8;">New caregiver / nursing candidate application</h2>
+        <div style="background-color: #e8f4fc; padding: 16px; border-radius: 8px; margin: 16px 0; border: 1px solid #b3d9f2;">
+          <p style="margin: 0 0 8px 0; font-size: 14px; color: #0c4a6e;"><strong>Source page (URL)</strong></p>
+          <p style="margin: 0; word-break: break-all;">
+            ${rawSource ? `<a href="${safe(sourceDisplay)}" target="_blank" rel="noopener noreferrer" style="color: #0369a1;">${safe(sourceDisplay)}</a>` : sourceDisplay}
+          </p>
+        </div>
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Candidate</h3>
+          <p><strong>Name:</strong> ${safe(escapeCareEmailHtml(formData.name))}</p>
+          <p><strong>Mobile:</strong> <a href="tel:${safe(formData.mobile)}" style="text-decoration: none; color: #1e40af;">${safe(formattedPhone)}</a></p>
+          <p><strong>Candidate type:</strong> ${safe(escapeCareEmailHtml(typeDisplay))}</p>
+          <p><strong>Area of residence:</strong> ${safe(escapeCareEmailHtml(formData.area))}</p>
+          <p><strong>Consent to call:</strong> ${safe(escapeCareEmailHtml(formData.consentToCall))}</p>
+          <p><strong>Form language:</strong> ${safe(langDisplay)}</p>
+        </div>
+        <hr style="margin: 24px 0; border: none; border-top: 1px solid #ddd;">
+        <p style="color: #666; font-size: 12px;">Submitted via the EzyHelpers caregiver careers application form.</p>
+      </div>
+    `,
+    text: `
+New caregiver / nursing candidate application
+
+Source page (URL): ${rawSource || 'Not provided'}
+
+Candidate:
+- Name: ${formData.name}
+- Mobile: ${formattedPhone}
+- Candidate type: ${typeDisplay}
+- Area of residence: ${formData.area}
+- Consent to call: ${formData.consentToCall}
+- Form language: ${langDisplay}
+---
+EzyHelpers caregiver careers application form
+    `.trim(),
+  }
+}
+
 export const sendLeadEmail = async (
   leadType: LeadType,
   formData: any, // TODO: Create union type for all form data types
@@ -1546,7 +1600,8 @@ export const sendLeadEmail = async (
       }
     } else if (leadType === 'helper_interview') {
       emailRecipientsEnv = process.env.HELPER_INTERVIEW_RECIPIENTS || 'suraj@ezyhelpers.com,priyanka@ezyhelpers.com,arun@ezyhelpers.com';
-    } else if (leadType === 'care_services') {
+    } else if (leadType === 'care_services' || leadType === 'candidate_application') {
+      // Candidate (caregiver/nursing) applications reuse the care-services desk list.
       emailRecipientsEnv =
         process.env.CARE_SERVICES_EMAIL_RECIPIENTS ||
         'contact@ezyhelpers.com,arun@ezyhelpers.com,suraj@ezyhelpers.com';
@@ -1634,6 +1689,12 @@ export const sendLeadEmail = async (
         emailContent = generateCareServicesLeadEmail({
           ...(formData as CareServicesLeadFormData),
           sourceUrl: sourceUrl || (formData as CareServicesLeadFormData).sourceUrl,
+        });
+        break;
+      case 'candidate_application':
+        emailContent = generateCandidateApplicationEmail({
+          ...(formData as CandidateApplicationFormData),
+          sourceUrl: sourceUrl || (formData as CandidateApplicationFormData).sourceUrl,
         });
         break;
       default:

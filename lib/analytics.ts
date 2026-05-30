@@ -511,3 +511,42 @@ export const trackCarePhoneClick = (phoneNumber: string, location: string) => {
     },
   })
 }
+
+/* ───────────── Caregiver / nursing candidate application (FB ads) ─────────────
+ * Map `candidate_application_submit` to the Meta Pixel "Lead" event inside the
+ * GTM container (GTM-PGM9V53), exactly like the care enquiry conversion. */
+
+/** Fired the first time a candidate interacts with the application form. */
+export const trackCandidateApplicationStart = (sourcePath: string | null) => {
+  trackEvent('candidate_application_start', {
+    event_category: 'careers_engagement',
+    event_label: sourcePath ?? 'direct',
+    custom_parameters: {
+      source_path: sourcePath ?? 'direct',
+    },
+  })
+}
+
+/** Fired on a successful candidate application submit (conversion → Pixel Lead). */
+export const trackCandidateApplicationSubmit = (formData: Record<string, unknown>) => {
+  trackEvent('candidate_application_submit', {
+    event_category: 'conversion',
+    event_label: String(formData.candidateType ?? 'unknown'),
+    value: 1,
+    custom_parameters: {
+      candidate_type: formData.candidateType,
+      area: formData.area,
+      language: formData.language,
+      conversion_type: 'lead_generation',
+    },
+  })
+}
+
+/** Fired when the candidate switches the page language. */
+export const trackCandidateLanguageSwitch = (lang: 'en' | 'hi') => {
+  trackEvent('language_switch', {
+    event_category: 'careers_engagement',
+    event_label: lang,
+    custom_parameters: { language: lang, page: 'candidate_application' },
+  })
+}
