@@ -1608,11 +1608,17 @@ export const sendLeadEmail = async (
       }
     } else if (leadType === 'helper_interview') {
       emailRecipientsEnv = process.env.HELPER_INTERVIEW_RECIPIENTS || 'suraj@ezyhelpers.com,priyanka@ezyhelpers.com,arun@ezyhelpers.com';
-    } else if (leadType === 'care_services' || leadType === 'candidate_application') {
-      // Candidate (caregiver/nursing) applications reuse the care-services desk list.
+    } else if (leadType === 'care_services') {
       emailRecipientsEnv =
         process.env.CARE_SERVICES_EMAIL_RECIPIENTS ||
         'contact@ezyhelpers.com,arun@ezyhelpers.com,suraj@ezyhelpers.com';
+    } else if (leadType === 'candidate_application') {
+      // Caregiver/nursing candidate applications (the /care-services/apply FB ad
+      // page) go to the care-services desk PLUS ankit@ and priyanka@ — separate
+      // from care_services enquiries so the two lists can diverge.
+      emailRecipientsEnv =
+        process.env.CANDIDATE_APPLICATION_RECIPIENTS ||
+        'contact@ezyhelpers.com,arun@ezyhelpers.com,suraj@ezyhelpers.com,ankit@ezyhelpers.com,priyanka@ezyhelpers.com';
     } else if (leadType === 'helper_registration') {
       // Helper registration leads go to multiple team members
       emailRecipientsEnv =
