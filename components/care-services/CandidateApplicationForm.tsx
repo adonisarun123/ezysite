@@ -54,6 +54,7 @@ const T = {
     sucTitle: 'Application received!',
     sucBody:
       'Thank you. Our hiring team will call you within 24 hours on the number you provided.',
+    sucRef: 'Your application ID',
     sucCall: 'Or call us now: 080-31411776',
   },
   hi: {
@@ -87,6 +88,7 @@ const T = {
     sucTitle: 'आवेदन प्राप्त हुआ!',
     sucBody:
       'धन्यवाद। हमारी भर्ती टीम 24 घंटे के भीतर आपके दिए गए नंबर पर कॉल करेगी।',
+    sucRef: 'आपका आवेदन आईडी',
     sucCall: 'या अभी कॉल करें: 080-31411776',
   },
 } as const
@@ -99,6 +101,7 @@ export default function CandidateApplicationForm({ lang }: Props) {
   const [candidateType, setCandidateType] = useState('')
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errors, setErrors] = useState<Record<string, string>>({})
+  const [applicationId, setApplicationId] = useState('')
   const startedRef = useRef(false)
 
   const onFirstInteraction = () => {
@@ -149,11 +152,14 @@ export default function CandidateApplicationForm({ lang }: Props) {
         body: JSON.stringify(data),
       })
       if (!res.ok) throw new Error('request_failed')
+      const json = await res.json().catch(() => ({}))
+      if (json?.applicationId) setApplicationId(json.applicationId)
       setStatus('success')
       trackCandidateApplicationSubmit({
         candidateType,
         area: data.area,
         language: lang,
+        applicationId: json?.applicationId,
       })
     } catch {
       setStatus('error')
@@ -168,6 +174,11 @@ export default function CandidateApplicationForm({ lang }: Props) {
         </div>
         <h2 className="text-xl font-bold text-neutral-900">{t.sucTitle}</h2>
         <p className="mt-2 text-neutral-600">{t.sucBody}</p>
+        {applicationId && (
+          <p className="mx-auto mt-4 inline-block rounded-lg bg-neutral-100 px-4 py-2 text-sm text-neutral-700">
+            {t.sucRef}: <span className="font-mono font-bold text-neutral-900">{applicationId}</span>
+          </p>
+        )}
         <a
           href="tel:+918031411776"
           className="mt-5 inline-flex items-center gap-2 rounded-full bg-green-600 px-6 py-3 font-bold text-white hover:bg-green-700"

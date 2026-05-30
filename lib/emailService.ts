@@ -1534,12 +1534,18 @@ const generateCandidateApplicationEmail = (
   const rawSource = formData.sourceUrl?.trim() || ''
   const sourceDisplay = rawSource ? escapeCareEmailHtml(rawSource) : 'Not provided'
   const langDisplay = formData.language === 'hi' ? 'Hindi' : 'English'
+  const appId = formData.applicationId?.trim() || 'N/A'
 
   return {
-    subject: `New candidate application: ${typeDisplay} (${formData.area})`,
+    subject: `New candidate application: ${typeDisplay} (${formData.area}) — ${appId}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto;">
         <h2 style="color: #0074C8;">New caregiver / nursing candidate application</h2>
+        <div style="background-color: #f1f5f9; padding: 14px 16px; border-radius: 8px; margin: 16px 0; border: 1px solid #cbd5e1;">
+          <p style="margin: 0; font-size: 14px; color: #334155;"><strong>Application ID:</strong>
+            <span style="font-family: monospace; background-color: #e1e8f0; padding: 2px 8px; border-radius: 4px; font-size: 15px;">${safe(escapeCareEmailHtml(appId))}</span>
+          </p>
+        </div>
         <div style="background-color: #e8f4fc; padding: 16px; border-radius: 8px; margin: 16px 0; border: 1px solid #b3d9f2;">
           <p style="margin: 0 0 8px 0; font-size: 14px; color: #0c4a6e;"><strong>Source page (URL)</strong></p>
           <p style="margin: 0; word-break: break-all;">
@@ -1561,6 +1567,8 @@ const generateCandidateApplicationEmail = (
     `,
     text: `
 New caregiver / nursing candidate application
+
+Application ID: ${appId}
 
 Source page (URL): ${rawSource || 'Not provided'}
 

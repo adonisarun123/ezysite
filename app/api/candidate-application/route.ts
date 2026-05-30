@@ -76,15 +76,22 @@ export async function POST(request: NextRequest) {
       normalizeEzySourceUrl(body.sourceUrl) ||
       normalizeEzySourceUrl(`${SITE_ORIGIN}/care-services/apply`);
 
+    // Unique application ID, e.g. CAND-LXR8K2-7QF3 (matches the site's
+    // requestId convention used by helper-interview leads).
+    const applicationId = `CAND-${Date.now().toString(36).toUpperCase()}-${Math.random()
+      .toString(36)
+      .substring(2, 6)
+      .toUpperCase()}`;
+
     const result = await sendLeadEmail(
       'candidate_application',
-      { ...formData, sourceUrl: normalizedSource },
-      undefined,
+      { ...formData, applicationId, sourceUrl: normalizedSource },
+      applicationId,
       normalizedSource
     );
 
     if (result.success) {
-      return NextResponse.json({ success: true, message: 'Application received' });
+      return NextResponse.json({ success: true, message: 'Application received', applicationId });
     }
 
     console.error('candidate-application failure', result.error);

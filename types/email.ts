@@ -371,6 +371,8 @@ export interface CandidateApplicationFormData {
   consentToCall: string
   /** Form language at submit time: 'en' | 'hi' */
   language?: string
+  /** Unique application ID, e.g. CAND-LXR8K2-7QF3 */
+  applicationId?: string
   sourceUrl?: string
 }
 
