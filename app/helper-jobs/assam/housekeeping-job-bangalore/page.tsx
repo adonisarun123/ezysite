@@ -99,6 +99,12 @@ export default function HousekeepingJobsAssamBangalorePage() {
                         { label: 'Assam', href: '/helper-jobs/assam' },
                         { label: 'Housekeeping Jobs in Bangalore' }
                     ]}
+                    rightContent={
+                        <div className="flex gap-2">
+                            <span className="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-1 rounded-md">English</span>
+                            <Link href="/helper-jobs/assam/housekeeping-job-bangalore/hin" className="text-xs font-medium text-gray-500 hover:text-emerald-600 transition-colors px-2 py-1 rounded-md hover:bg-emerald-50">हिन्दी</Link>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -110,8 +116,8 @@ export default function HousekeepingJobsAssamBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">Housekeeping Jobs in Bangalore for Assam Helpers</h1>
-                            <p className="text-sm md:text-xl text-emerald-50/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium italic">
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">Housekeeping Jobs in Bangalore for Assam Helpers</h1>
+                            <p className="text-sm md:text-xl text-emerald-50/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium">
                                 Are you in Assam and ready to earn more in Bangalore? We help you get safe and respectful Housekeeping jobs in Bangalore with fixed salary, free stay options, and full support from us. You can send your full salary home every month.
                             </p>
 
@@ -492,7 +498,7 @@ export default function HousekeepingJobsAssamBangalorePage() {
                                     <span className="bg-white px-4 py-2 rounded-full font-bold text-emerald-800 shadow-sm border border-emerald-100">Affordable stay</span>
                                 </div>
 
-                                <p className="text-md font-bold text-emerald-700 italic mb-8 max-w-2xl mx-auto">
+                                <p className="text-md font-bold text-emerald-700 mb-8 max-w-2xl mx-auto">
                                     You settle comfortably before your job starts. No stress. No last-minute panic.
                                 </p>
 

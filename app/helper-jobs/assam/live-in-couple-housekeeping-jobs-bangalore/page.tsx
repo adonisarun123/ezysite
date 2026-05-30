@@ -93,6 +93,12 @@ export default function LiveInCoupleHousekeepingJobsAssamBangalorePage() {
                         { label: 'Assam', href: '/helper-jobs/assam' },
                         { label: 'Live-in Couple Housekeeping Jobs' }
                     ]}
+                    rightContent={
+                        <div className="flex gap-2">
+                            <span className="text-xs font-bold bg-indigo-100 text-indigo-800 px-2 py-1 rounded-md">English</span>
+                            <Link href="/helper-jobs/assam/live-in-couple-housekeeping-jobs-bangalore/hin" className="text-xs font-medium text-gray-500 hover:text-indigo-600 transition-colors px-2 py-1 rounded-md hover:bg-indigo-50">हिन्दी</Link>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -104,8 +110,8 @@ export default function LiveInCoupleHousekeepingJobsAssamBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">Live-in Couple Jobs for Housekeeping in Bangalore</h1>
-                            <p className="text-sm md:text-xl text-indigo-100/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium italic">
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">Live-in Couple Jobs for Housekeeping in Bangalore</h1>
+                            <p className="text-sm md:text-xl text-indigo-100/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium">
                                 Are you a husband and wife from Assam searching for stable income and safe work in Bangalore? We help couples get Couple Housekeeping Work in Bangalore with a fixed salary, free stay, food, and full support. Find trusted husband-wife house work in Bangalore with stable income and long-term opportunities.
                             </p>
 
@@ -523,7 +529,7 @@ export default function LiveInCoupleHousekeepingJobsAssamBangalorePage() {
                                     <span className="bg-white px-4 py-2 rounded-full font-bold text-indigo-800 shadow-sm border border-indigo-200">Affordable stay</span>
                                 </div>
                                 
-                                <p className="text-md font-bold text-indigo-700 italic mb-8 max-w-2xl mx-auto">
+                                <p className="text-md font-bold text-indigo-700 mb-8 max-w-2xl mx-auto">
                                     You settle comfortably before your job starts. No stress. No last-minute panic.
                                 </p>
                                 

@@ -95,6 +95,20 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                         { label: 'Odisha', href: '/helper-jobs/odisha' },
                         { label: 'Housekeeping Couple Jobs' }
                     ]}
+                    rightContent={
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
+                            <span className="text-gray-500 font-medium whitespace-nowrap uppercase">हिंदी</span>
+                            <Link
+                                href="/helper-jobs/odisha/live-in-housekeeping-couple-job-bangalore/hin"
+                                className="w-10 h-5 bg-violet-600 rounded-full p-1 relative transition-colors inline-block"
+                            >
+                                <div
+                                    className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"
+                                />
+                            </Link>
+                            <span className="text-gray-900 font-bold whitespace-nowrap uppercase">ENG</span>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -106,7 +120,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">Live-in Couple Jobs for Housekeeping in Bangalore</h1>
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal ">Live-in Couple Jobs for Housekeeping in Bangalore</h1>
 
                             <div className="space-y-4 mb-6 max-w-5xl mx-auto mt-4">
                                 <p className="text-xs sm:text-sm md:text-xl text-violet-50/90 leading-relaxed max-w-sm mx-auto md:max-w-none font-medium">
@@ -141,7 +155,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">What 24-Hour Couple Jobs in Bangalore Offer</h2>
+                            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">What 24-Hour Couple Jobs in Bangalore Offer</h2>
                             <p className="text-gray-600 font-bold max-w-2xl mx-auto">In a Live in Couple job in Bangalore for housekeeping, you both stay inside the employer’s house.</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
@@ -157,14 +171,14 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                                         <item.icon className="w-8 h-8" />
                                     </div>
                                     <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                                    <p className="text-gray-600 font-bold leading-relaxed italic text-sm">{item.desc}</p>
+                                    <p className="text-gray-600 font-bold leading-relaxed  text-sm">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
 
                         <div className="mt-12 text-center max-w-3xl mx-auto bg-violet-900 text-white p-8 rounded-[3rem] shadow-2xl relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-violet-600 rounded-full blur-3xl opacity-20 -mr-16 -mt-16"></div>
-                            <h3 className="text-xl font-bold mb-4 italic">Best Suitable For</h3>
+                            <h3 className="text-xl font-bold mb-4 ">Best Suitable For</h3>
                             <p className="text-lg font-bold text-violet-50 leading-relaxed">
                                 Couples from Odisha who want a safe, long-term Live-in-Couple job in Bangalore for husband and wife with stable income.
                             </p>
@@ -182,8 +196,8 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Work Responsibilities for Live-in Couples</h2>
-                            <p className="text-gray-600 font-bold max-w-3xl mx-auto italic">Families in Bangalore value couples from Odisha for teamwork and honesty.</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Work Responsibilities for Live-in Couples</h2>
+                            <p className="text-gray-600 font-bold max-w-3xl mx-auto ">Families in Bangalore value couples from Odisha for teamwork and honesty.</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -238,8 +252,8 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Types of Live-in Couple Jobs in Bangalore</h2>
-                            <p className="text-gray-600 font-bold uppercase tracking-widest text-sm italic">Choose work that matches both your skills and comfort.</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Types of Live-in Couple Jobs in Bangalore</h2>
+                            <p className="text-gray-600 font-bold uppercase tracking-widest text-sm ">Choose work that matches both your skills and comfort.</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -261,7 +275,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                                     ].map((item, i) => (
                                         <tr key={i} className="hover:bg-violet-50 transition-colors">
                                             <td className="p-4 md:p-6 text-violet-900 text-sm md:text-base">{item.type}</td>
-                                            <td className="p-4 md:p-6 text-gray-700 text-xs md:text-sm italic">{item.best}</td>
+                                            <td className="p-4 md:p-6 text-gray-700 text-xs md:text-sm ">{item.best}</td>
                                             <td className="p-4 md:p-6 text-gray-600 text-xs md:text-sm">{item.benefit}</td>
                                         </tr>
                                     ))}
@@ -283,8 +297,8 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight">Salary for Live-in Couple Jobs in Bangalore</h2>
-                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm max-w-2xl mx-auto italic leading-relaxed">Everything is explained clearly before you travel from Odisha.</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display  leading-tight">Salary for Live-in Couple Jobs in Bangalore</h2>
+                            <p className="text-gray-600 font-bold uppercase tracking-widest text-xs md:text-sm max-w-2xl mx-auto  leading-relaxed">Everything is explained clearly before you travel from Odisha.</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -296,7 +310,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                                     <div className="bg-violet-50 p-6 rounded-3xl border border-violet-100 flex items-center gap-6">
                                         <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-violet-600 shadow-sm font-bold text-2xl">₹</div>
                                         <div>
-                                            <h4 className="text-violet-800 font-bold uppercase tracking-widest text-xs mb-1 italic">Monthly Salary</h4>
+                                            <h4 className="text-violet-800 font-bold uppercase tracking-widest text-xs mb-1 ">Monthly Salary</h4>
                                             <p className="text-violet-900 font-bold text-2xl md:text-3xl">₹30,000 - ₹35,000</p>
                                         </div>
                                     </div>
@@ -314,7 +328,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                                 <div className="bg-violet-900 text-white p-8 md:p-12 rounded-[2rem] shadow-xl relative group">
                                     <div className="absolute inset-0 bg-violet-800 rounded-[2rem] transform group-hover:scale-105 transition-transform -z-10"></div>
                                     <h4 className="text-violet-200 font-bold uppercase tracking-widest text-xs mb-4">Savings Benefit</h4>
-                                    <p className="text-2xl md:text-3xl font-bold font-display italic leading-tight">Most of your income can be saved and sent back to Odisha</p>
+                                    <p className="text-2xl md:text-3xl font-bold font-display  leading-tight">Most of your income can be saved and sent back to Odisha</p>
                                     <Link
                                         href="/helper-registration"
                                         className="inline-flex items-center justify-center bg-white text-violet-700 font-bold py-3 px-10 rounded-xl mt-8 hover:bg-violet-50 transition-colors shadow-lg"
@@ -331,7 +345,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Who Can Apply for Live-in Couple Jobs</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Who Can Apply for Live-in Couple Jobs</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -359,7 +373,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-16 px-4">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Why Live-in Housekeeping Couple Jobs Works Best for Odisha Couples</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Why Live-in Housekeeping Couple Jobs Works Best for Odisha Couples</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -375,7 +389,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                                         <item.icon className="w-8 h-8" />
                                     </div>
                                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-white transition-colors">{item.title}</h3>
-                                    <p className="text-gray-600 font-bold text-sm leading-relaxed group-hover:text-violet-50 transition-colors italic">{item.desc}</p>
+                                    <p className="text-gray-600 font-bold text-sm leading-relaxed group-hover:text-violet-50 transition-colors ">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -399,7 +413,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
 
                             <div className="relative z-10">
                                 <div className="text-center max-w-3xl mx-auto mb-12">
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white italic">About EzyHelpers – Trusted Helper Jobs</h2>
+                                    <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-white ">About EzyHelpers – Trusted Helper Jobs</h2>
                                     <p className="text-violet-100 text-lg md:text-xl font-bold">
                                         We connect helpers like you with safe Domestic Helper jobs across India without charging any fees.
                                     </p>
@@ -477,7 +491,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                                             <HeartIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">Our Belief</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">Our Belief</h4>
                                             <p className="text-white">Good Homes for Helpers. Good Helpers for Families.</p>
                                         </div>
                                     </div>
@@ -486,7 +500,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                                             <GlobeAltIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 italic">Locations We Serve</h4>
+                                            <h4 className="text-xs text-violet-300 uppercase tracking-wider font-bold mb-1 ">Locations We Serve</h4>
                                             <p className="text-sm text-violet-50">Bangalore, Bareilly, Mumbai, Hyderabad, Delhi NCR, Pune, Odisha and more.</p>
                                         </div>
                                     </div>
@@ -500,7 +514,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-16 px-4">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic">Support and Benefits for Helpers at EzyHelpers</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display ">Support and Benefits for Helpers at EzyHelpers</h2>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
 
@@ -545,7 +559,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                                 </div>
 
                                 <div className="relative z-10 flex-grow text-center md:text-left">
-                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display italic">NEST – Safe Hostel for Women Helpers</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-display ">NEST – Safe Hostel for Women Helpers</h2>
                                     <div className="space-y-4 mb-8">
                                         <p className="text-gray-600 text-lg font-bold">
                                             Women helpers can stay at NEST anytime in Bangalore. Safe rooms, daily meals, and affordable stay help you settle comfortably before starting work.
@@ -570,8 +584,8 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-gray-50">
                     <div className="container-custom">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display italic leading-tight">How to Apply for Live-in Couple Jobs</h2>
-                            <p className="text-gray-600 max-w-2xl mx-auto font-bold uppercase tracking-widest text-xs md:text-sm text-center italic">Six Simple Steps From Your Village in Odisha to Your New Workplace</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display  leading-tight">How to Apply for Live-in Couple Jobs</h2>
+                            <p className="text-gray-600 max-w-2xl mx-auto font-bold uppercase tracking-widest text-xs md:text-sm text-center ">Six Simple Steps From Your Village in Odisha to Your New Workplace</p>
                             <div className="w-24 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
 
@@ -589,15 +603,15 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                                         {item.step}
                                     </div>
                                     <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                                    <p className="text-gray-600 text-xs font-bold leading-relaxed italic">{item.desc}</p>
+                                    <p className="text-gray-600 text-xs font-bold leading-relaxed ">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
 
                         <div className="text-center mt-16 max-w-3xl mx-auto bg-white p-10 rounded-[3rem] border border-violet-100 shadow-2xl relative overflow-hidden">
                              <div className="absolute top-0 right-0 w-32 h-32 bg-violet-50 rounded-full blur-3xl opacity-50 -mr-16 -mt-16"></div>
-                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display italic leading-tight px-4">Apply now and start a safer, better future with EzyHelpers</h3>
-                            <p className="text-gray-700 text-lg font-bold mb-8 italic">
+                            <h3 className="text-xl md:text-3xl font-bold text-violet-900 mb-4 font-display  leading-tight px-4">Apply now and start a safer, better future with EzyHelpers</h3>
+                            <p className="text-gray-700 text-lg font-bold mb-8 ">
                                 If you and your spouse want to work together, stay together, and earn with dignity, this Live-in Couple job in Bangalore for husband and wife is the right opportunity for you.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 max-w-md mx-auto sm:max-w-none">
@@ -622,7 +636,7 @@ export default function HousekeepingCoupleJobsOdishaBangalorePage() {
                 <section className="section-padding bg-white">
                     <div className="container-custom max-w-4xl">
                         <div className="text-center mb-12 px-4">
-                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight italic">
+                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display leading-tight ">
                                 Frequently Asked Questions
                             </h2>
                             <div className="w-32 h-1 bg-violet-500 mx-auto mt-6 rounded-full opacity-50"></div>

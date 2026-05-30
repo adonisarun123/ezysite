@@ -91,6 +91,12 @@ export default function NannyJobsAssamBangalorePage() {
                         { label: 'Assam', href: '/helper-jobs/assam' },
                         { label: 'Nanny Jobs in Bangalore' }
                     ]}
+                    rightContent={
+                        <div className="flex gap-2">
+                            <span className="text-xs font-bold bg-rose-100 text-rose-800 px-2 py-1 rounded-md">English</span>
+                            <Link href="/helper-jobs/assam/nanny-jobs-bangalore/hin" className="text-xs font-medium text-gray-500 hover:text-rose-600 transition-colors px-2 py-1 rounded-md hover:bg-rose-50">हिन्दी</Link>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -102,8 +108,8 @@ export default function NannyJobsAssamBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">Nanny Jobs in Bangalore for Assam Helpers</h1>
-                            <p className="text-sm md:text-xl text-rose-50/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium italic">
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">Nanny Jobs in Bangalore for Assam Helpers</h1>
+                            <p className="text-sm md:text-xl text-rose-50/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium">
                                 Start your journey from Assam to Bangalore with safe nanny jobs. Care for children, earn a steady income, and work in respectful homes with full support from EzyHelpers.
                             </p>
 
@@ -160,7 +166,7 @@ export default function NannyJobsAssamBangalorePage() {
                                 ))}
                             </div>
                             
-                            <p className="text-sm font-bold text-rose-700 italic max-w-3xl mx-auto mb-8">We provide verified nanny jobs in Bangalore and babysitter jobs in Bangalore for both freshers and experienced helpers. We guide you even after you start working so you feel safe and confident.</p>
+                            <p className="text-sm font-bold text-rose-700 max-w-3xl mx-auto mb-8">We provide verified nanny jobs in Bangalore and babysitter jobs in Bangalore for both freshers and experienced helpers. We guide you even after you start working so you feel safe and confident.</p>
 
                             <Link
                                 href="/helper-registration"
@@ -386,7 +392,7 @@ export default function NannyJobsAssamBangalorePage() {
                                     ))}
                                 </ul>
                             </div>
-                            <p className="text-center text-sm font-bold text-rose-700 italic">This training helps you work professionally and safely in any home.</p>
+                            <p className="text-center text-sm font-bold text-rose-700">This training helps you work professionally and safely in any home.</p>
                         </div>
                     </div>
                 </section>
@@ -532,7 +538,7 @@ export default function NannyJobsAssamBangalorePage() {
                                     <span className="bg-white px-4 py-2 rounded-full font-bold text-rose-800 shadow-sm border border-rose-100">Affordable stay</span>
                                 </div>
                                 
-                                <p className="text-md font-bold text-rose-700 italic mb-8 max-w-2xl mx-auto">
+                                <p className="text-md font-bold text-rose-700 mb-8 max-w-2xl mx-auto">
                                     You settle comfortably before your job starts. No stress. No last-minute panic.
                                 </p>
                                 
