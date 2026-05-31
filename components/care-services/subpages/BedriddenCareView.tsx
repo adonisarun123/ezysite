@@ -136,10 +136,10 @@ export default function BedriddenCareView() {
     >
       {/* Direct answer */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#FBF3F1] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Bedridden patient care should be done by a <em className="italic text-[#FF385C]">trained attendant</em>,
+            Bedridden patient care should be done by a <em className="italic text-primary-500">trained attendant</em>,
             not a general caretaker. The work — repositioning every two hours, twice-daily skin
             inspection, dignified incontinence care, and safe transfers — is unforgiving of inexperience.
             EzyHelpers places trained attendants live-in for ₹24,000–₹34,000/month.
@@ -162,7 +162,7 @@ export default function BedriddenCareView() {
                 key={title}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFF0EA] text-[#FF385C] ring-1 ring-[#FF385C]/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950 sm:text-xl">
@@ -176,7 +176,7 @@ export default function BedriddenCareView() {
       </section>
 
       {/* Red flags */}
-      <section className="bg-[#FBF3F1] px-4 py-20 sm:px-6 sm:py-24">
+      <section className="bg-primary-50 px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
@@ -192,11 +192,11 @@ export default function BedriddenCareView() {
                 {RED_FLAGS.map((s) => (
                   <li
                     key={s}
-                    className="flex items-start gap-2 rounded-2xl border border-[#FF385C]/20 bg-white px-4 py-3.5"
+                    className="flex items-start gap-2 rounded-2xl border border-primary-500/20 bg-white px-4 py-3.5"
                   >
                     <span
                       aria-hidden
-                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-[#FF385C]"
+                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-primary-500"
                     />
                     <span className="text-sm leading-snug text-neutral-800">{s}</span>
                   </li>
@@ -235,7 +235,7 @@ export default function BedriddenCareView() {
                 key={b}
                 className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-[#F7F7F2] px-4 py-3.5"
               >
-                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
+                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
                 <span className="text-sm leading-snug text-neutral-800">{b}</span>
               </li>
             ))}

@@ -160,11 +160,11 @@ export default function DementiaCareView() {
     >
       {/* One-paragraph direct answer */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#FBF3F1] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Dementia care at home in Bangalore should be matched to the{' '}
-            <em className="italic text-[#FF385C]">stage</em> of cognitive decline — not the calendar.
+            <em className="italic text-primary-500">stage</em> of cognitive decline — not the calendar.
             Early-stage families need companionship and routine. Moderate-stage families need behavioural
             expertise. Advanced-stage families need a trained attendant who is steady through difficulty.
             EzyHelpers places caregivers with stage-appropriate experience and re-matches as the disease
@@ -188,7 +188,7 @@ export default function DementiaCareView() {
                 key={s.n}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="inline-flex w-fit rounded-full bg-[#FF385C]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[#FF385C]">
+                <span className="inline-flex w-fit rounded-full bg-primary-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-500">
                   {s.n} stage
                 </span>
                 <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950 sm:text-2xl">
@@ -198,7 +198,7 @@ export default function DementiaCareView() {
                 <ul className="mt-5 space-y-2 text-sm text-neutral-700">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
                       {b}
                     </li>
                   ))}
@@ -210,7 +210,7 @@ export default function DementiaCareView() {
       </section>
 
       {/* Common behaviours */}
-      <section className="bg-[#FBF3F1] px-4 py-20 sm:px-6 sm:py-24">
+      <section className="bg-primary-50 px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             eyebrow="What we’re trained for"
@@ -224,7 +224,7 @@ export default function DementiaCareView() {
                 key={title}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFF0EA] text-[#FF385C] ring-1 ring-[#FF385C]/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950">{title}</h3>
@@ -250,7 +250,7 @@ export default function DementiaCareView() {
                 key={p}
                 className="flex items-start gap-4 rounded-2xl border border-neutral-200 bg-[#F7F7F2] px-5 py-4"
               >
-                <span className="font-careSerif text-2xl font-medium text-[#FF385C]">
+                <span className="font-careSerif text-2xl font-medium text-primary-500">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className="text-sm leading-snug text-neutral-800 sm:text-base">{p}</span>
@@ -286,7 +286,7 @@ export default function DementiaCareView() {
                     key={b}
                     className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5"
                   >
-                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
+                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
                     <span className="text-sm leading-snug text-neutral-800">{b}</span>
                   </li>
                 ))}

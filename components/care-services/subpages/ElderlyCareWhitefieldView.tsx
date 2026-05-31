@@ -221,11 +221,11 @@ export default function ElderlyCareWhitefieldView() {
     >
       {/* Direct answer */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#FBF3F1] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Elderly care in Whitefield means caregivers placed within{' '}
-            <em className="italic text-[#FF385C]">30 minutes</em> of your apartment, briefed on your
+            <em className="italic text-primary-500">30 minutes</em> of your apartment, briefed on your
             preferred hospital — Manipal, Sakra, Vydehi, Columbia Asia — and matched to the language and
             routine your parent is used to. Whether you’re an IT-corridor family with an office to run to
             or an NRI child handling everything from abroad.
@@ -248,7 +248,7 @@ export default function ElderlyCareWhitefieldView() {
                 key={title}
                 className="flex items-start gap-4 rounded-[24px] border border-neutral-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFF0EA] text-[#FF385C] ring-1 ring-[#FF385C]/15">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <div>
@@ -275,13 +275,13 @@ export default function ElderlyCareWhitefieldView() {
               <article
                 key={c.title}
                 className={`flex h-full flex-col rounded-[24px] border bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)] ${
-                  c.highlight ? 'border-[#FF385C]/40' : 'border-neutral-200'
+                  c.highlight ? 'border-primary-500/40' : 'border-neutral-200'
                 }`}
               >
                 <div className="flex items-center justify-between">
                   <h3 className="font-careSerif text-xl font-bold tracking-tight text-neutral-950">{c.title}</h3>
                   {c.highlight ? (
-                    <span className="rounded-full bg-[#FF385C]/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#FF385C]">
+                    <span className="rounded-full bg-primary-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-primary-500">
                       Most popular
                     </span>
                   ) : null}
@@ -312,7 +312,7 @@ export default function ElderlyCareWhitefieldView() {
                 key={a}
                 className="flex items-center gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5 text-sm font-medium text-neutral-800"
               >
-                <MapPinIcon className="h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
+                <MapPinIcon className="h-4 w-4 shrink-0 text-primary-500" aria-hidden />
                 {a}
               </div>
             ))}
@@ -332,7 +332,7 @@ export default function ElderlyCareWhitefieldView() {
           <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {HOSPITALS.map((h) => (
               <div key={h} className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-4">
-                <BuildingOffice2Icon className="h-5 w-5 shrink-0 text-[#0074C8]" aria-hidden />
+                <BuildingOffice2Icon className="h-5 w-5 shrink-0 text-primary-500" aria-hidden />
                 <span className="text-sm font-medium text-neutral-900">{h}</span>
               </div>
             ))}
@@ -358,7 +358,7 @@ export default function ElderlyCareWhitefieldView() {
                   key={line}
                   className="flex items-start gap-5 rounded-2xl border border-neutral-200 bg-[#F7F7F2] px-5 py-4"
                 >
-                  <span className="font-careSerif text-lg font-medium text-[#FF385C] sm:text-xl min-w-[3.5rem]">
+                  <span className="font-careSerif text-lg font-medium text-primary-500 sm:text-xl min-w-[3.5rem]">
                     {time}
                   </span>
                   <span className="text-sm leading-snug text-neutral-800 sm:text-base">{rest.join(' — ')}</span>
@@ -384,7 +384,7 @@ export default function ElderlyCareWhitefieldView() {
                 className="flex h-full flex-col justify-between rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
                 <div>
-                  <span aria-hidden className="font-careSerif text-5xl leading-none text-[#FF385C]/40">
+                  <span aria-hidden className="font-careSerif text-5xl leading-none text-primary-500/40">
                     &ldquo;
                   </span>
                   <blockquote className="mt-2 font-careSerif text-base leading-snug text-neutral-900 sm:text-lg">

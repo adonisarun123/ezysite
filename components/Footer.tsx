@@ -14,7 +14,7 @@ import {
   BuildingStorefrontIcon
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
-import { CARE_NAV_CLUSTERS, CARE_PILLAR_HREF } from '@/lib/careServices/registry'
+import { CARE_NAV_PILLARS } from '@/lib/careServices/registry'
 
 const footerLinks = {
   services: [
@@ -211,15 +211,7 @@ export default function Footer() {
                     All Care Services
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href={CARE_PILLAR_HREF}
-                    className="text-sm font-medium text-gray-200 hover:text-primary-400 transition-colors leading-relaxed"
-                  >
-                    Home Care Services (overview)
-                  </Link>
-                </li>
-                {CARE_NAV_CLUSTERS.map((link) => (
+                {CARE_NAV_PILLARS.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}

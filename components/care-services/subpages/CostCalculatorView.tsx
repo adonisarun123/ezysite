@@ -148,7 +148,7 @@ export default function CostCalculatorView() {
                       onClick={() => setRole(r)}
                       className={`rounded-2xl border px-3 py-3 text-sm font-semibold capitalize transition ${
                         role === r
-                          ? 'border-[#FF385C] bg-[#FBF3F1] text-neutral-950'
+                          ? 'border-primary-500 bg-primary-50 text-neutral-950'
                           : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-900'
                       }`}
                     >
@@ -171,7 +171,7 @@ export default function CostCalculatorView() {
                       onClick={() => setMode(m)}
                       className={`flex w-full items-start justify-between gap-4 rounded-2xl border px-4 py-3 text-left transition ${
                         mode === m
-                          ? 'border-[#FF385C] bg-[#FBF3F1]'
+                          ? 'border-primary-500 bg-primary-50'
                           : 'border-neutral-200 bg-white hover:border-neutral-900'
                       }`}
                     >
@@ -182,7 +182,7 @@ export default function CostCalculatorView() {
                       <span
                         aria-hidden
                         className={`mt-1 inline-block h-3 w-3 shrink-0 rounded-full ${
-                          mode === m ? 'bg-[#FF385C]' : 'bg-neutral-200'
+                          mode === m ? 'bg-primary-500' : 'bg-neutral-200'
                         }`}
                       />
                     </button>
@@ -209,7 +209,7 @@ export default function CostCalculatorView() {
                       onClick={() => setComplexity(c.v)}
                       className={`rounded-2xl border px-3 py-3 text-left transition ${
                         complexity === c.v
-                          ? 'border-[#FF385C] bg-[#FBF3F1]'
+                          ? 'border-primary-500 bg-primary-50'
                           : 'border-neutral-200 bg-white hover:border-neutral-900'
                       }`}
                     >
@@ -234,7 +234,7 @@ export default function CostCalculatorView() {
                     type="checkbox"
                     checked={outerBangalore}
                     onChange={(e) => setOuterBangalore(e.target.checked)}
-                    className="mt-1 h-5 w-5 cursor-pointer accent-[#FF385C]"
+                    className="mt-1 h-5 w-5 cursor-pointer accent-primary-500"
                   />
                 </label>
                 <label
@@ -253,7 +253,7 @@ export default function CostCalculatorView() {
                     checked={nightShift}
                     disabled={mode !== 'shift'}
                     onChange={(e) => setNightShift(e.target.checked)}
-                    className="mt-1 h-5 w-5 cursor-pointer accent-[#FF385C] disabled:cursor-not-allowed"
+                    className="mt-1 h-5 w-5 cursor-pointer accent-primary-500 disabled:cursor-not-allowed"
                   />
                 </label>
               </fieldset>
@@ -262,8 +262,8 @@ export default function CostCalculatorView() {
 
           {/* Result */}
           <div className="lg:col-span-5">
-            <div className="sticky top-6 rounded-[28px] border border-neutral-200 bg-gradient-to-br from-[#FFF6F2] via-[#FFF0EA] to-[#FFE4DA] p-6 shadow-[0_4px_24px_rgba(0,0,0,0.06)] sm:p-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">
+            <div className="sticky top-6 rounded-[28px] border border-neutral-200 bg-gradient-to-br from-primary-50 via-primary-50 to-primary-100 p-6 shadow-[0_4px_24px_rgba(0,0,0,0.06)] sm:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
                 Your estimate
               </p>
               <h3 className="mt-3 font-careSerif text-3xl font-medium leading-tight tracking-tight text-neutral-950 sm:text-4xl">
@@ -339,7 +339,7 @@ export default function CostCalculatorView() {
                 key={b}
                 className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5"
               >
-                <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#FF385C]" aria-hidden />
+                <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden />
                 <span className="text-sm leading-snug text-neutral-800">{b}</span>
               </li>
             ))}
@@ -359,7 +359,7 @@ export default function CostCalculatorView() {
 
       {/* Talk it through */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-gradient-to-br from-[#FFF1EC] via-[#FFE4DA] to-[#FFD3C2] p-8 text-center sm:p-12">
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200 p-8 text-center sm:p-12">
           <h3 className="font-careSerif text-2xl font-medium leading-tight tracking-tight text-neutral-950 sm:text-3xl">
             Want a precise number, not a range?
           </h3>

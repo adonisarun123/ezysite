@@ -112,9 +112,9 @@ export default function HospitalDischargeView() {
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0074C8]">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Discharge home care should be set up <em className="italic text-[#0074C8]">before discharge</em>,
+            Discharge home care should be set up <em className="italic text-primary-500">before discharge</em>,
             not after. With 24 hours’ notice, we shortlist, brief and place a caregiver who arrives at the
             home before the patient does. Across Manipal, Apollo, Fortis, Sakra, Narayana, Aster, and the
             other major Bangalore hospitals.
@@ -136,7 +136,7 @@ export default function HospitalDischargeView() {
                 key={t.when}
                 className="flex items-start gap-5 rounded-2xl border border-neutral-200 bg-[#F7F7F2] px-6 py-5"
               >
-                <span className="font-careSerif text-lg font-medium text-[#FF385C] sm:text-xl min-w-[4.5rem]">
+                <span className="font-careSerif text-lg font-medium text-primary-500 sm:text-xl min-w-[4.5rem]">
                   {t.when}
                 </span>
                 <div>
@@ -160,7 +160,7 @@ export default function HospitalDischargeView() {
           <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {HOSPITALS.map((h) => (
               <div key={h} className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-4">
-                <BuildingOffice2Icon className="mt-0.5 h-5 w-5 shrink-0 text-[#0074C8]" aria-hidden />
+                <BuildingOffice2Icon className="mt-0.5 h-5 w-5 shrink-0 text-primary-500" aria-hidden />
                 <span className="text-sm font-medium text-neutral-900">{h}</span>
               </div>
             ))}
@@ -183,7 +183,7 @@ export default function HospitalDischargeView() {
                 key={c}
                 className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-[#F7F7F2] px-4 py-3.5"
               >
-                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#0074C8]" aria-hidden />
+                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
                 <span className="text-sm leading-snug text-neutral-800">{c}</span>
               </li>
             ))}

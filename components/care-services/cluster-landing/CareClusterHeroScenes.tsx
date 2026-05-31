@@ -69,7 +69,7 @@ function HeroTileHomeWithHeart({ className }: IllustrationProps) {
       <rect x="68" y="116" width="64" height="52" rx="4" fill="#FFE0D9" />
       <path
         d="M100 132 C 96 124, 82 124, 82 138 C 82 150, 100 158, 100 158 C 100 158, 118 150, 118 138 C 118 124, 104 124, 100 132 Z"
-        fill="#FF385C"
+        fill="#0074C8"
       />
       <rect x="90" y="56" width="20" height="22" fill="#FFB58C" />
       <path d="M100 50 L 156 100 L 44 100 Z" fill="none" stroke="#FF7D5C" strokeWidth="3" strokeLinejoin="round" />
@@ -101,7 +101,7 @@ function HeroTileStethoscope({ className }: IllustrationProps) {
       <circle cx="100" cy="138" r="20" fill="#FFFFFF" stroke="#3F2418" strokeWidth="4" />
       <path
         d="M100 130 C 96 124, 86 124, 86 134 C 86 144, 100 152, 100 152 C 100 152, 114 144, 114 134 C 114 124, 104 124, 100 130 Z"
-        fill="#FF385C"
+        fill="#0074C8"
       />
       <circle cx="158" cy="50" r="20" fill="rgba(255,255,255,0.45)" />
     </svg>
@@ -325,7 +325,7 @@ export type HeroScene = {
 export const HERO_SCENES: Record<HeroSceneId, HeroScene> = {
   pillar: {
     leftPanelGradient: 'from-[#FFE7E7] to-[#FFF8E8]',
-    blobAccentClass: 'bg-[#FF385C]/12',
+    blobAccentClass: 'bg-primary-500/12',
     tiles: [
       {
         illustration: HeroTileHeartHands,
@@ -358,7 +358,7 @@ export const HERO_SCENES: Record<HeroSceneId, HeroScene> = {
       },
       {
         illustration: HeroTileIvStand,
-        tileGradient: 'from-[#FFD9CC] to-[#FF9A82]',
+        tileGradient: 'from-primary-100 to-primary-400',
         caption: 'Hospital-grade routines',
       },
       {
@@ -386,19 +386,19 @@ export const HERO_SCENES: Record<HeroSceneId, HeroScene> = {
       },
       {
         illustration: HeroTileClipboard,
-        tileGradient: 'from-[#FFE9C7] to-[#F4C68C]',
+        tileGradient: 'from-primary-100 to-[#F4C68C]',
         caption: 'Daily nursing log',
       },
     ],
   },
 
   elderly: {
-    leftPanelGradient: 'from-[#FFE5E5] to-[#FFF1D6]',
-    blobAccentClass: 'bg-[#FF385C]/12',
+    leftPanelGradient: 'from-primary-100 to-primary-50',
+    blobAccentClass: 'bg-primary-500/12',
     tiles: [
       {
         illustration: HeroTileCompanionship,
-        tileGradient: 'from-[#FFB58C] to-[#FF7D5C]',
+        tileGradient: 'from-primary-400 to-primary-400',
         caption: 'Companionship',
         scale: 'lg',
       },
@@ -416,7 +416,7 @@ export const HERO_SCENES: Record<HeroSceneId, HeroScene> = {
   },
 
   caretaker: {
-    leftPanelGradient: 'from-[#FFF1D6] to-[#FFE9D6]',
+    leftPanelGradient: 'from-primary-50 to-[#FFE9D6]',
     blobAccentClass: 'bg-[#F4A05F]/20',
     tiles: [
       {
@@ -427,12 +427,12 @@ export const HERO_SCENES: Record<HeroSceneId, HeroScene> = {
       },
       {
         illustration: HeroTileWalker,
-        tileGradient: 'from-[#FFD9CC] to-[#FF9A82]',
+        tileGradient: 'from-primary-100 to-primary-400',
         caption: 'Mobility & meals',
       },
       {
         illustration: HeroTileCompanionship,
-        tileGradient: 'from-[#FFE9C7] to-[#F4C68C]',
+        tileGradient: 'from-primary-100 to-[#F4C68C]',
         caption: 'Steady companionship',
       },
     ],
@@ -462,12 +462,12 @@ export const HERO_SCENES: Record<HeroSceneId, HeroScene> = {
   },
 
   attendant: {
-    leftPanelGradient: 'from-[#E6F1FA] to-[#FFF1D6]',
+    leftPanelGradient: 'from-[#E6F1FA] to-primary-50',
     blobAccentClass: 'bg-[#5891C2]/15',
     tiles: [
       {
         illustration: HeroTileSunMoon,
-        tileGradient: 'from-[#FFE9C7] to-[#F4C68C]',
+        tileGradient: 'from-primary-100 to-[#F4C68C]',
         caption: 'Day & night cover',
         scale: 'lg',
       },
@@ -501,7 +501,7 @@ export const HERO_SCENES: Record<HeroSceneId, HeroScene> = {
       },
       {
         illustration: HeroTileNurseGloves,
-        tileGradient: 'from-[#FFE0D9] to-[#F8B19A]',
+        tileGradient: 'from-primary-100 to-[#F8B19A]',
         caption: 'Pressure-area care',
       },
     ],

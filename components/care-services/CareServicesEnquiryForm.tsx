@@ -113,10 +113,10 @@ function buildStarterSummary({
  * Matches the Airbnb-inspired palette used by the enquiry hero and cluster pages.
  */
 const FIELD_BASE =
-  'mt-1.5 block w-full rounded-2xl border border-neutral-200 bg-white px-4 py-3.5 text-[15px] text-neutral-900 placeholder:text-neutral-400 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition focus:border-[#FF385C] focus:outline-none focus:ring-4 focus:ring-[#FF385C]/15 hover:border-neutral-300'
+  'mt-1.5 block w-full rounded-2xl border border-neutral-200 bg-white px-4 py-3.5 text-[15px] text-neutral-900 placeholder:text-neutral-400 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/15 hover:border-neutral-300'
 
 const LABEL_BASE = 'block text-sm font-semibold text-neutral-900'
-const REQUIRED_MARK = <span aria-hidden className="ml-1 text-[#FF385C]">*</span>
+const REQUIRED_MARK = <span aria-hidden className="ml-1 text-primary-500">*</span>
 
 export default function CareServicesEnquiryForm() {
   const searchParams = useSearchParams()
@@ -284,7 +284,7 @@ export default function CareServicesEnquiryForm() {
           </h2>
           <p className="mx-auto mt-3 max-w-md text-base leading-relaxed text-neutral-700">
             Our care team will reach out shortly. If your need is urgent, please call{' '}
-            <a href="tel:+918031411776" className="font-semibold text-[#FF385C] underline underline-offset-4">
+            <a href="tel:+918031411776" className="font-semibold text-primary-500 underline underline-offset-4">
               080-31411776
             </a>
             .
@@ -292,7 +292,7 @@ export default function CareServicesEnquiryForm() {
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href={CARE_PILLAR_HREF}
-              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#FF385C] px-6 py-3.5 text-[15px] font-semibold text-white shadow-[0_2px_8px_rgba(255,56,92,0.25)] transition hover:bg-[#E31C5F]"
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-primary-500 px-6 py-3.5 text-[15px] font-semibold text-white shadow-[0_2px_8px_rgba(0,116,200,0.25)] transition hover:bg-primary-600"
             >
               Back to Home Care Services
               <ArrowRightIcon className="h-4 w-4" aria-hidden />
@@ -325,15 +325,15 @@ export default function CareServicesEnquiryForm() {
       />
       <p className="text-sm leading-relaxed text-neutral-600">
         Tell us about your care need in Bengaluru. Fields marked
-        <span className="mx-1 text-[#FF385C]" aria-hidden>
+        <span className="mx-1 text-primary-500" aria-hidden>
           *
         </span>
         are required.
       </p>
 
       {(resolvedSourceUrl || suggestedParam || roleParam || modeParam || complexityParam || conditionParam) && (
-        <div className="rounded-2xl border border-[#FF385C]/20 bg-[#FFF8F1] px-4 py-4 text-sm text-neutral-700">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#FF385C]">
+        <div className="rounded-2xl border border-primary-500/20 bg-primary-50 px-4 py-4 text-sm text-neutral-700">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-500">
             Context from your visit
           </p>
           <ul className="mt-2 space-y-1">
@@ -372,7 +372,7 @@ export default function CareServicesEnquiryForm() {
             {resolvedSourceUrl ? (
               <li>
                 <span className="font-semibold text-neutral-900">From: </span>
-                <span className="break-all text-[#FF385C]">{resolvedSourceUrl}</span>
+                <span className="break-all text-primary-500">{resolvedSourceUrl}</span>
               </li>
             ) : null}
           </ul>
@@ -529,7 +529,7 @@ export default function CareServicesEnquiryForm() {
 
       {errorMessage && (
         <p
-          className="flex items-start gap-2 rounded-2xl border border-[#FF385C]/30 bg-[#FFE5E5]/60 px-4 py-3 text-sm text-[#9A1F3D]"
+          className="flex items-start gap-2 rounded-2xl border border-primary-500/30 bg-primary-100/60 px-4 py-3 text-sm text-[#9A1F3D]"
           role="alert"
         >
           <ExclamationCircleIcon className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
@@ -542,7 +542,7 @@ export default function CareServicesEnquiryForm() {
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-[#FF385C] px-8 py-3.5 text-base font-semibold text-white shadow-[0_4px_14px_rgba(255,56,92,0.35)] transition hover:bg-[#E31C5F] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-[#FF385C]"
+            className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-primary-500 px-8 py-3.5 text-base font-semibold text-white shadow-[0_4px_14px_rgba(0,116,200,0.35)] transition hover:bg-primary-600 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-primary-500"
           >
             {status === 'submitting' ? (
               <>
@@ -568,8 +568,8 @@ export default function CareServicesEnquiryForm() {
           </a>
         </div>
 
-        <div className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-[#FFF8F1] px-4 py-3 text-left">
-          <ClockIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
+        <div className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-primary-50 px-4 py-3 text-left">
+          <ClockIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
           <p className="text-xs leading-relaxed text-neutral-600 sm:text-[13px]">
             We&apos;ll respond to your requirement within the next{' '}
             <strong className="font-semibold text-neutral-900">24 hours</strong>.{' '}

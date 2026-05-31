@@ -202,7 +202,7 @@ export default function CaregiverTrainingView() {
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-careSerif text-3xl font-medium text-[#FF385C]">{m.n}</span>
+                  <span className="font-careSerif text-3xl font-medium text-primary-500">{m.n}</span>
                   <span className="rounded-full bg-neutral-900/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-700">
                     {m.hours}
                   </span>
@@ -218,7 +218,7 @@ export default function CaregiverTrainingView() {
       </section>
 
       {/* Specialisations */}
-      <section className="bg-[#FBF3F1] px-4 py-20 sm:px-6 sm:py-24">
+      <section className="bg-primary-50 px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             eyebrow="Specialisations"
@@ -232,13 +232,13 @@ export default function CaregiverTrainingView() {
                 key={title}
                 className="flex items-start gap-5 rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFF0EA] text-[#FF385C] ring-1 ring-[#FF385C]/15">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <div>
                   <div className="flex items-center gap-3">
                     <h3 className="font-careSerif text-lg font-bold tracking-tight text-neutral-950">{title}</h3>
-                    <span className="rounded-full bg-[#FF385C]/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-[#FF385C]">
+                    <span className="rounded-full bg-primary-500/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-500">
                       {hours}
                     </span>
                   </div>
@@ -301,7 +301,7 @@ export default function CaregiverTrainingView() {
                 key={b}
                 className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5"
               >
-                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#0074C8]" aria-hidden />
+                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
                 <span className="text-sm leading-snug text-neutral-800">{b}</span>
               </li>
             ))}
