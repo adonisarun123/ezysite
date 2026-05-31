@@ -393,7 +393,7 @@ export default function CareServicesHomeView() {
                 return (
                   <article
                     key={p.slug}
-                    className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-neutral-200 bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:border-neutral-300 hover:shadow-[0_14px_34px_rgba(0,0,0,0.09)] sm:p-7"
+                    className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-neutral-200 bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:border-neutral-300 hover:shadow-[0_14px_34px_rgba(0,0,0,0.09)] focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2 sm:p-7"
                   >
                     <span
                       aria-hidden
@@ -412,7 +412,10 @@ export default function CareServicesHomeView() {
                     </div>
 
                     <h3 className="relative mt-5 font-careSerif text-xl font-bold leading-tight tracking-tight text-neutral-950 sm:text-2xl">
-                      <Link href={pillarHref} className="after:absolute after:inset-0 after:content-['']">
+                      <Link
+                        href={pillarHref}
+                        className="outline-none after:absolute after:inset-0 after:content-['']"
+                      >
                         {p.label}
                       </Link>
                     </h3>
@@ -429,7 +432,7 @@ export default function CareServicesHomeView() {
                           <li key={n.slug}>
                             <Link
                               href={`/care-services/${n.slug}`}
-                              className={`inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition ${tone.chip}`}
+                              className={`inline-flex min-h-[36px] items-center rounded-full border px-3 py-2 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-1 ${tone.chip}`}
                             >
                               {n.label}
                             </Link>
@@ -600,6 +603,9 @@ export default function CareServicesHomeView() {
                 </figure>
               ))}
             </div>
+            <p className="mt-8 text-center text-xs text-neutral-400">
+              Illustrative stories representative of typical family experiences.
+            </p>
           </div>
         </section>
 

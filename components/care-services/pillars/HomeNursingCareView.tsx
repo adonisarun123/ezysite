@@ -552,6 +552,9 @@ export default function HomeNursingCareView() {
                 </figure>
               ))}
             </div>
+            <p className="mt-8 text-center text-xs text-neutral-400">
+              Illustrative stories representative of typical patient recoveries.
+            </p>
           </div>
         </section>
 

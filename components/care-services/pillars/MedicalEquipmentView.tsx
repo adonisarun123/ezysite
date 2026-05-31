@@ -325,7 +325,7 @@ export default function MedicalEquipmentView() {
       </header>
 
       {/* ─────────────────── Trust ribbon ─────────────────── */}
-      <section className="border-y border-neutral-200 bg-neutral-900 px-4 py-10 text-white sm:px-6">
+      <section aria-label="Why families trust our medical equipment service" className="border-y border-neutral-200 bg-neutral-900 px-4 py-10 text-white sm:px-6">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
           {TRUST_RIBBON.map(({ icon: Icon, title, sub }) => (
             <div key={title} className="flex items-start gap-3">
@@ -554,9 +554,9 @@ export default function MedicalEquipmentView() {
                   key={t.name}
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-sm"
                 >
-                  <div className="flex gap-0.5 text-accent-500" aria-hidden>
+                  <div className="flex gap-0.5 text-accent-500" aria-label="5 out of 5 stars">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <StarIcon key={i} className="h-4 w-4 fill-current" />
+                      <StarIcon key={i} className="h-4 w-4 fill-current" aria-hidden />
                     ))}
                   </div>
                   <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-neutral-700">

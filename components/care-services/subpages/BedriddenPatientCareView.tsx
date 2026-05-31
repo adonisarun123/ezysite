@@ -4,7 +4,6 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import { getNestedService } from '@/lib/careServices/newServices'
-import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('bedridden-patient-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
@@ -86,7 +85,7 @@ const FAQS = [
   {
     question: 'What does bedridden patient care cost in Bangalore?',
     answer:
-      `Live-in bedridden care in Bangalore typically starts from around ₹24,000/month (${formatPriceWithNote(SERVICE.priceKey)}), reflecting the higher skill and round-the-clock attention required. A free consultation gives you a precise estimate based on the patient’s needs.`,
+      'Cost depends on the intensity of care needed — bedridden care requires trained attendants skilled in safe handling, repositioning and pressure-sore prevention, so it costs more than general caretaking. A free consultation gives you a precise, transparent estimate based on the patient’s needs.',
   },
   {
     question: 'Can the attendant manage catheter and feeding tubes?',

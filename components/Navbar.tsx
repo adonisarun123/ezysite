@@ -34,6 +34,21 @@ const navigation: NavigationItem[] = [
       { name: 'Bareilly', href: '/cities/bareilly' },
     ]
   },
+  {
+    name: 'Care Services',
+    href: '/care-services',
+    hasDropdown: true,
+    dropdownClassName: 'w-72',
+    dropdownItems: [
+      { name: 'All Care Services', href: '/care-services' },
+      { name: 'Elder Care at Home', href: '/care-services/elder-care-at-home-bangalore' },
+      { name: 'Home Nursing Care', href: '/care-services/home-nursing-care-bangalore' },
+      { name: 'Medical Equipment Rental & Buy', href: '/care-services/medical-equipment-rental-bangalore' },
+      { name: 'Physiotherapy at Home', href: '/care-services/physiotherapy-at-home-bangalore' },
+      { name: 'Critical Care at Home (ICU)', href: '/care-services/critical-care-at-home-bangalore' },
+      { name: 'Palliative Care at Home', href: '/care-services/palliative-care-at-home-bangalore' },
+    ],
+  },
   { name: 'Hire Helper', href: '/hire-helper' },
   { name: 'Nest', href: '/nest', isNew: true },
   {
@@ -333,10 +348,14 @@ export default function Navbar() {
           </div>
         </div>
       </header>
-      {/* Spacer to prevent content overlap when banner is not visible */}
-      {!urgencyVisible && (
-        <div className="h-20 lg:h-24" aria-hidden="true"></div>
-      )}
+      {/* Spacer to prevent content overlap with the fixed header.
+          Must ALWAYS render: when the urgency banner is visible the header is
+          pushed down to top-12 (48px), so the spacer grows by that amount —
+          otherwise the page content slides up under the header. */}
+      <div
+        className={`${urgencyVisible ? 'h-32 lg:h-36' : 'h-20 lg:h-24'} transition-all duration-300`}
+        aria-hidden="true"
+      ></div>
     </>
   )
 }

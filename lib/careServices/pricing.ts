@@ -157,26 +157,53 @@ const UNIT_LABEL: Record<CarePriceUnit, string> = {
   custom: '',
 }
 
+/**
+ * GLOBAL PRICE-DISPLAY SWITCH.
+ *
+ * The business decision (2026) is to NOT show ₹ amounts on public care pages —
+ * pricing is given after a free consultation so the quote matches the patient's
+ * actual needs. The numeric data above is retained (backend-ready) but every
+ * public price string resolves to a soft, conversion-friendly label.
+ *
+ * Flip to `true` to surface real ₹ amounts everywhere (single switch — no
+ * consumer code changes needed).
+ */
+export const SHOW_PRICES = false
+
+/** Soft, no-number label shown when SHOW_PRICES is false. */
+const SOFT_PRICE_LABEL = 'Custom plans'
+
 /** Format a raw amount with the centralised currency + grouping. */
 export function formatAmount(amount: number): string {
   return `${CARE_CURRENCY.symbol}${amount.toLocaleString(CARE_CURRENCY.locale)}`
 }
 
 /**
- * Human-readable price string, e.g. "₹18,000/month" or "Custom plans".
- * Used on cards, hero badges and pillar pages.
+ * Human-readable price string. With SHOW_PRICES off this returns a soft label
+ * (e.g. "Custom plans") instead of a ₹ amount.
  */
 export function formatPrice(key: CarePriceKey): string {
   const p = CARE_PRICING[key]
   if (!p) return ''
-  if (p.amount === null) return p.label ?? 'Custom plans'
+  if (!SHOW_PRICES) return p.label ?? SOFT_PRICE_LABEL
+  if (p.amount === null) return p.label ?? SOFT_PRICE_LABEL
   return `${formatAmount(p.amount)}${UNIT_LABEL[p.unit]}`
 }
 
-/** Price string prefixed with its note, e.g. "Live-in from ₹18,000/month". */
+/**
+ * Price string prefixed with its note. With SHOW_PRICES off, returns a soft,
+ * benefit-led label with NO ₹ amount (e.g. "Flexible plans — get a free quote").
+ */
 export function formatPriceWithNote(key: CarePriceKey): string {
   const p = CARE_PRICING[key]
   if (!p) return ''
+  if (!SHOW_PRICES) {
+    // Custom-quote services keep their bespoke (number-free) note; everything
+    // else gets a consistent, conversion-friendly call to action — never a
+    // number, and never a dangling "from".
+    if (p.amount === null && p.note) return p.note
+    return 'Flexible plans · free quote'
+  }
   const price = formatPrice(key)
   return p.note ? `${p.note} ${price}` : price
 }

@@ -4,7 +4,6 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import { getNestedService } from '@/lib/careServices/newServices'
-import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('dementia-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
@@ -92,7 +91,7 @@ const FAQS = [
   {
     question: 'What does dementia care at home cost in Bangalore?',
     answer:
-      `Live-in dementia care in Bangalore typically starts from around ₹22,000/month (${formatPriceWithNote(SERVICE.priceKey)}) and rises with stage and complexity. Day shifts and companionship hours are more affordable. A free consultation gives you a precise estimate for your situation.`,
+      'Cost depends on the stage and intensity of care needed — day shifts and companionship hours are more affordable, while live-in and advanced-stage dementia care cost more because they need specialised, round-the-clock support. A free consultation gives you a precise, transparent estimate for your situation.',
   },
   {
     question: 'Can the same caregiver continue as the dementia progresses?',

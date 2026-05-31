@@ -11,7 +11,6 @@ import {
   ArrowRightIcon,
   ArrowLongRightIcon,
   ArrowDownIcon,
-  CheckIcon,
   HeartIcon,
   ShieldCheckIcon,
   ClockIcon,
@@ -159,7 +158,7 @@ const FAQS = [
   {
     question: 'What does elder care at home in Bangalore cost?',
     answer:
-      'Live-in elder care in Bangalore typically starts from around ₹18,000/month and rises with complexity — dementia, Parkinson’s or bedridden care usually run ₹22,000–₹24,000/month and up. Companionship-only and day-shift arrangements are more affordable. We give you a precise quote after a free consultation that matches the plan to your parent’s actual needs.',
+      'Cost depends on the level of care — companionship and day-shift arrangements are the most affordable, while live-in, dementia, Parkinson’s or bedridden care cost more because they need specialised, round-the-clock support. Rather than quote a misleading flat rate, we give you a precise, transparent price after a free consultation that matches the plan to your parent’s actual needs.',
   },
   {
     question: 'What is the difference between a general caretaker and specialised elder care?',
@@ -531,6 +530,9 @@ export default function ElderCareAtHomeView() {
                 </figure>
               ))}
             </div>
+            <p className="mt-8 text-center text-xs text-neutral-400">
+              Illustrative stories representative of typical family experiences.
+            </p>
           </div>
         </section>
 

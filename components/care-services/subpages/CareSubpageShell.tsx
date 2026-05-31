@@ -251,7 +251,7 @@ export function CareSubpageClosingCTA({
               <li key={r.href}>
                 <Link
                   href={r.href}
-                  className="inline-flex items-center gap-1 rounded-full border border-neutral-900/15 bg-white/70 px-4 py-2 text-xs font-semibold text-neutral-800 backdrop-blur transition hover:border-neutral-900/40 hover:bg-white"
+                  className="inline-flex min-h-[44px] items-center gap-1 rounded-full border border-neutral-900/15 bg-white/70 px-4 py-2 text-xs font-semibold text-neutral-800 backdrop-blur transition hover:border-neutral-900/40 hover:bg-white"
                 >
                   {r.label}
                   <ChevronRightIcon className="h-3.5 w-3.5" aria-hidden />
