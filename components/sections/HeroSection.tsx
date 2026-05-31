@@ -196,7 +196,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background-primary via-primary-50/30 to-secondary-50/30 pt-12 lg:pt-16">
+    <section className="relative overflow-hidden bg-gradient-to-br from-background-primary via-primary-50/30 to-secondary-50/30 pt-4 lg:pt-6">
       <div className="relative container-custom pb-16 lg:pb-24">
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-start">
           <div className="lg:col-span-7">
