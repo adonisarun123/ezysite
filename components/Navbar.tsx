@@ -59,17 +59,6 @@ const navigation: NavigationItem[] = [
       { name: 'Helper Jobs', href: '/helper-jobs' },
     ]
   },
-  { name: 'Blog', href: '/blog' },
-  {
-    name: 'About',
-    href: '/about',
-    hasDropdown: true,
-    dropdownItems: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Executive Summary', href: '/executive-summary' },
-    ]
-  },
   { name: 'Contact', href: '/contact' },
 ]
 
