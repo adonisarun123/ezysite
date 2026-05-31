@@ -147,25 +147,11 @@
     color: #2B2B2B;
   }
 
-  /* Top padding for the MainContent wrapper (home, market-overview, case-studies).
-     Driven by CSS via the `data-urgency-visible` attribute on <html> set by
-     UrgencyProvider — no more client-only context switching for padding. */
-  [data-main-content] {
-    padding-top: 5rem;
-  }
-  @screen lg {
-    [data-main-content] {
-      padding-top: 6rem;
-    }
-  }
-  :root[data-urgency-visible="true"] [data-main-content] {
-    padding-top: 8rem;
-  }
-  @screen lg {
-    :root[data-urgency-visible="true"] [data-main-content] {
-      padding-top: 9rem;
-    }
-  }
+  /* Header offset is handled entirely by the spacer <div> rendered inside
+     <Navbar/> (see components/Navbar.tsx) — the single source of truth for
+     every page. The previous [data-main-content] padding-top rules were
+     removed because they double-counted with that spacer and left a large
+     gap under the header. Do not re-add padding-top here. */
 }
 
 @layer components {

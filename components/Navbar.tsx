@@ -337,12 +337,14 @@ export default function Navbar() {
           </div>
         </div>
       </header>
-      {/* Spacer to prevent content overlap with the fixed header.
-          Must ALWAYS render: when the urgency banner is visible the header is
-          pushed down to top-12 (48px), so the spacer grows by that amount —
-          otherwise the page content slides up under the header. */}
+      {/* Spacer that reserves exactly the height of the fixed header so page
+          content starts right below it. Heights match the header's real size:
+          banner closed → navbar only (5rem / 6rem); banner open → navbar is
+          pushed to top-12, so add the 48px banner (8rem / 9rem). This is the
+          SINGLE source of header offset site-wide (the old
+          [data-main-content] CSS padding was removed to avoid double-counting). */}
       <div
-        className={`${urgencyVisible ? 'h-32 lg:h-36' : 'h-20 lg:h-24'} transition-all duration-300`}
+        className={`${urgencyVisible ? 'h-32 lg:h-36' : 'h-20 lg:h-24'} transition-[height] duration-300`}
         aria-hidden="true"
       ></div>
     </>
