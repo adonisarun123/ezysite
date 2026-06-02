@@ -1631,7 +1631,8 @@ export const sendLeadEmail = async (
       leadType === 'careers_role_application'
     ) {
       emailRecipientsEnv =
-        process.env.CAREERS_EMAIL_RECIPIENTS || 'contact@ezyhelpers.com';
+        process.env.CAREERS_EMAIL_RECIPIENTS ||
+        'contact@ezyhelpers.com,arun@ezyhelpers.com,suraj@ezyhelpers.com';
     } else {
       // Use default recipients for other forms (agent registration, helper registration, etc.)
       emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
