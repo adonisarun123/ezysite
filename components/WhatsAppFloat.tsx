@@ -5,7 +5,7 @@ import { trackWhatsAppClick } from '@/lib/analytics';
 import { whatsappSendUrl } from '@/lib/whatsappUrl';
 
 const WhatsAppFloat: React.FC = () => {
-  const phoneNumber = '+919972571005';
+  const phoneNumber = '+919008596005';
   const message = 'Hi! I would like to know more about your services.';
   
   const handleWhatsAppClick = () => {
