@@ -24,6 +24,31 @@ export {
   formatAccountForEmail,
 };
 
+// Address that must be copied on every outbound lead/notification email site-wide.
+const ALWAYS_CC_EMAIL = 'contact@ezyhelpers.com';
+
+/**
+ * Normalise a comma-separated recipient string into a clean, de-duplicated
+ * "a@x.com, b@y.com" list, and guarantee ALWAYS_CC_EMAIL is always included.
+ * De-duplication is case-insensitive. Used by every send path so that
+ * contact@ezyhelpers.com receives a copy of all emails across the site.
+ */
+const buildRecipientList = (recipientsEnv: string): string => {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  const add = (email: string) => {
+    const trimmed = email.trim();
+    if (!trimmed) return;
+    const key = trimmed.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    out.push(trimmed);
+  };
+  recipientsEnv.split(',').forEach(add);
+  add(ALWAYS_CC_EMAIL);
+  return out.join(', ');
+};
+
 // Email templates
 const generateContactLeadEmail = (formData: ContactFormData): EmailContent => {
   const formattedPhone = formatPhoneForEmail(formData.phone);
@@ -1638,17 +1663,8 @@ export const sendLeadEmail = async (
       emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
     }
 
-    if (!emailRecipientsEnv) {
-      console.error('EMAIL_RECIPIENTS or ADMIN_EMAIL environment variable not set');
-      return { success: false, error: 'Email recipients not configured' };
-    }
-
-    // Split by comma and trim whitespace
-    const adminEmail = emailRecipientsEnv
-      .split(',')
-      .map(email => email.trim())
-      .filter(Boolean)
-      .join(', ');
+    // Always copy contact@ezyhelpers.com, even if no other recipients are configured.
+    const adminEmail = buildRecipientList(emailRecipientsEnv);
 
     if (!adminEmail) {
       console.error('No valid email recipients found');
@@ -1766,13 +1782,9 @@ export const sendEzyNestBookingEmail = async (
       }
     });
 
-    // Get email recipients from environment variables
+    // Get email recipients from environment variables (always copies contact@ezyhelpers.com)
     const emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
-    const adminEmail = emailRecipientsEnv
-      .split(',')
-      .map(email => email.trim())
-      .filter(Boolean)
-      .join(', ');
+    const adminEmail = buildRecipientList(emailRecipientsEnv);
 
     const mailOptions: any = {
       from: process.env.SMTP_USER,
@@ -1825,16 +1837,8 @@ export const sendNestLeadEmail = async (
     const formattedPhone = formatPhoneForEmail(formData.phone)
     const emailRecipientsEnv = process.env.NEST_LEADS_EMAIL || process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || ''
 
-    if (!emailRecipientsEnv) {
-      console.error('NEST_LEADS_EMAIL, EMAIL_RECIPIENTS or ADMIN_EMAIL environment variable not set')
-      return { success: false, error: 'Email recipients not configured' }
-    }
-
-    const adminEmail = emailRecipientsEnv
-      .split(',')
-      .map(email => email.trim())
-      .filter(Boolean)
-      .join(', ')
+    // Always copy contact@ezyhelpers.com, even if no other recipients are configured.
+    const adminEmail = buildRecipientList(emailRecipientsEnv)
 
     if (!adminEmail) {
       console.error('No valid email recipients found')
