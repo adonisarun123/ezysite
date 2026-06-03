@@ -1,8 +1,9 @@
 "use client"
 
+import 'react-day-picker/dist/style.css'
 import React, { useState } from "react"
 import { format, addMonths, subMonths, startOfWeek, addDays, isSameDay, isSameMonth, startOfMonth, endOfMonth, endOfWeek } from "date-fns"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline"
 import { cn } from "@/lib/utils"
 
 interface CompactCalendarProps {
@@ -35,7 +36,7 @@ export function CompactCalendar({
           className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"
           type="button"
         >
-          <ChevronLeft className="h-4 w-4 text-gray-600" />
+          <ChevronLeftIcon className="h-4 w-4 text-gray-600" />
         </button>
         <h3 className="text-sm font-semibold text-gray-800">
           {format(currentDate, "MMMM yyyy")}
@@ -45,7 +46,7 @@ export function CompactCalendar({
           className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"
           type="button"
         >
-          <ChevronRight className="h-4 w-4 text-gray-600" />
+          <ChevronRightIcon className="h-4 w-4 text-gray-600" />
         </button>
       </div>
     )

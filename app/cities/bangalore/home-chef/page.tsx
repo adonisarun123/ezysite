@@ -43,16 +43,57 @@ export const metadata: Metadata = {
 
 export default function BangaloreHomeChef() {
     const faqs: FAQItem[] = [
-        { question: 'What is the difference between a Professional Chef and a regular home cook?', answer: 'A professional Home Chef is trained only for cooking. They plan menus, cook with proper methods, maintain hygiene, and focus on food quality.A regular home cook may also do cleaning or other housework, but our chefs only do cooking. They are not for household chores.' },
-        { question: 'Can I take a trial before hiring a Home Chef?', answer: 'Yes. EzyHelpers provides a 3-day paid trial. During the trial, you can check:\n• Taste of food\n• Clean cooking\n• Punctuality\n• Comfort with the chef\nAfter that, you can decide whether to continue.' },
-        { question: 'How much does it cost to hire a Home Chef in Bangalore?', answer: 'The cost depends on:\n• Part-time chef\n• Full-time chef\n• Live-in chef\n• Short-term or event cooking\nPrices are shared clearly based on working hours and the number of meals. There are no hidden charges.' },
-        { question: 'Do Home Chefs cook both vegetarian and non-vegetarian food?', answer: 'Yes. Chefs can cook both veg and non-veg food. They follow separate cooking and hygiene practices as per your family’s preference.' },
-        { question: 'Can Home Chefs cook festival and special occasion food?', answer: 'Yes. Home Chefs in Bangalore can prepare food for festivals like Diwali, Pongal, and Eid, as well as birthdays, anniversaries, and family gatherings. Special menus can be planned in advance based on the occasion.' },
-        { question: 'Is hiring a full-time Home Chef better than ordering food daily?', answer: 'For many families, yes. A full-time Home Chef in Bangalore cooks fresh meals at home, which are cleaner, healthier, and better suited to your taste than daily outside food. It also helps maintain regular meal timings and better food quality.' },
-        { question: 'Can EzyHelpers chefs use modern kitchen appliances?', answer: 'Yes. EzyHelpers chefs are trained to safely use induction cooktops, ovens, microwaves, mixers, blenders, and other modern kitchen appliances commonly used in homes.' },
-        { question: 'Can one chef cook all types of cuisines for my family?', answer: 'Most chefs specialise in one or two cuisines to ensure authentic taste and consistent quality. However, we also have multi-cuisine chefs available for families who want a variety of dishes. Typically, it takes 5–7 days to find the perfect match, and sometimes we can arrange one even quicker based on availability.' },
-        { question: 'Are the Home Chefs verified, and what kind of verification do they undergo?', answer: 'Yes. All EzyHelpers Home Chefs are thoroughly verified before placement. Verification includes Aadhar verification, local address verification, and skill assessment to ensure they are trained, reliable, and the right fit for your household.' },
-        { question: 'What if I’m not satisfied with the chef or need a replacement?', answer: 'If you are not fully satisfied with your assigned chef, EzyHelpers provides a replacement within one week or 15 days. You will need to notify us 15 days prior to the replacement.' },
+        {
+            question: "What is the difference between a Professional Chef and a regular home cook?",
+            answer: `A professional Home Chef is trained only for cooking. They plan menus, cook with proper methods, maintain hygiene, and focus on food quality.
+A regular home cook may also do cleaning or other housework, but our chefs only do cooking. They are not for household chores.`
+        },
+        {
+            question: "Can I take a trial before hiring a Home Chef?",
+            answer: `Yes. EzyHelpers provides a 3-day paid trial. During the trial, you can check:
+Taste of food
+Clean cooking
+Punctuality
+Comfort with the chef
+After that, you can decide whether to continue.`
+        },
+        {
+            question: "How much does it cost to hire a Home Chef in Bangalore?",
+            answer: `The cost depends on:
+Part-time chef
+Full-time chef
+Live-in chef
+Short-term or event cooking
+Prices are shared clearly based on working hours and the number of meals. There are no hidden charges.`
+        },
+        {
+            question: "Do Home Chefs cook both vegetarian and non-vegetarian food?",
+            answer: "Yes. Chefs can cook both veg and non-veg food. They follow separate cooking and hygiene practices as per your family’s preference."
+        },
+        {
+            question: "Can Home Chefs cook festival and special occasion food?",
+            answer: "Yes. Home Chefs in Bangalore can prepare food for festivals like Diwali, Pongal, and Eid, as well as birthdays, anniversaries, and family gatherings. Special menus can be planned in advance based on the occasion."
+        },
+        {
+            question: "Is hiring a full-time Home Chef better than ordering food daily?",
+            answer: "For many families, yes. A full-time Home Chef in Bangalore cooks fresh meals at home, which are cleaner, healthier, and better suited to your taste than daily outside food. It also helps maintain regular meal timings and better food quality."
+        },
+        {
+            question: "Can EzyHelpers chefs use modern kitchen appliances?",
+            answer: "Yes. EzyHelpers chefs are trained to safely use induction cooktops, ovens, microwaves, mixers, blenders, and other modern kitchen appliances commonly used in homes."
+        },
+        {
+            question: "Can one chef cook all types of cuisines for my family?",
+            answer: "Most chefs specialise in one or two cuisines to ensure authentic taste and consistent quality. However, we also have multi-cuisine chefs available for families who want a variety of dishes. Typically, it takes 5–7 days to find the perfect match, and sometimes we can arrange one even quicker based on availability."
+        },
+        {
+            question: "Are the Home Chefs verified, and what kind of verification do they undergo?",
+            answer: "Yes. All EzyHelpers Home Chefs are thoroughly verified before placement. Verification includes Aadhar verification, local address verification, and skill assessment to ensure they are trained, reliable, and the right fit for your household."
+        },
+        {
+            question: "What if I’m not satisfied with the chef or need a replacement?",
+            answer: "If you are not fully satisfied with your assigned chef, EzyHelpers provides a replacement within one week or 15 days. You will need to notify us 15 days prior to the replacement."
+        }
     ]
 
     const whyneed = [
@@ -187,7 +228,7 @@ export default function BangaloreHomeChef() {
 
                     <div className="container-custom relative z-10">
                         <div className="max-w-5xl mx-auto text-center">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Home Chef in Bangalore Professional Chefs for Everyday Home Cooking</h1>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Home Chef in Bangalore | Professional Chefs for Everyday Home Cooking</h1>
 
                             <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">EzyHelpers offers trained professional Home Chefs in Bangalore who focus on menu-based, high-quality cooking, hygiene, and presentation. Perfect for families who want better food quality, variety, and consistency, not just daily routine cooking.</p>
 

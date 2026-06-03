@@ -13,10 +13,10 @@ import {
 
 export const metadata: Metadata = {
   title: 'Verified Live-In Maids in Bareilly – 12-Hour Daily Support',
-  description: 'Hire a verified live in house maid in Bareilly for all-day support. Our maids stay with you and assist with cooking, cleaning, and daily household needs.',
+  description: 'Hire a verified live-in house maid in Bareilly for all-day support. Our maids stay with you and assist with cooking, cleaning, and daily household needs.',
   openGraph: {
     title: 'Verified Live-In Maids in Bareilly – 12-Hour Daily Support',
-    description: 'Hire a verified live in house maid in Bareilly for all-day support. Our maids stay with you and assist with cooking, cleaning, and daily household needs.',
+    description: 'Hire a verified live-in house maid in Bareilly for all-day support. Our maids stay with you and assist with cooking, cleaning, and daily household needs.',
     url: 'https://www.ezyhelpers.com/cities/bareilly/live-in-maid',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -28,8 +28,102 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyLiveInMaidPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is a live-in maid, and how does it work in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A live-in maid in Bareilly is a domestic helper who stays at your home and helps with daily tasks like cooking, cleaning, and caregiving. She typically works up to 12 hours a day but remains available for basic support throughout the day and night."
+      }
+    },{
+      "@type": "Question",
+      "name": "How fast can I hire a live-in maid in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With EzyHelpers, you can hire a live-in maid in Bareilly within 24 to 72 hours. We maintain a ready database of verified candidates for quick placement based on your needs."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are EzyHelpers' live-in house maids in Bareilly verified and safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all live-in house maids in Bareilly from EzyHelpers are background verified. We check the Aadhaar local address if available and basic identity. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind."
+      }
+    },{
+      "@type": "Question",
+      "name": "What services do live-in maids provide in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Live-in maids in Bareilly offer dedicated support based on specific household needs. Their services include Housekeeping – cleaning, laundry, dishwashing. Cooking – preparing UP-style meals and regional dishes. Elderly care – helping with hygiene, mobility, and medication reminders. Childcare – feeding, bathing, and engaging with children. One maid usually handles only one type of task. For example, a cooking maid will not do cleaning or baby care. You can hire different maids for different roles, such as a cook, a cleaner, a nanny, or an elderly caretaker, based on your family's needs."
+      }
+    },{
+      "@type": "Question",
+      "name": "What is the cost of hiring a live-in maid in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EzyHelpers offers transparent monthly pricing for live-in house maid in Bareilly with no hidden fees. The exact cost depends on specific services required. Contact EzyHelpers for detailed pricing based on your household needs."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do live-in maids in Bareilly speak Hindi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all our maids are fluent in Hindi and understand the regional language. This makes day-to-day communication easy for your family and elders."
+      }
+    },{
+      "@type": "Question",
+      "name": "What are the working hours for live-in maids in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Live-in maids usually work up to 12 hours a day with proper rest and breaks. Since they stay at your home, they can provide occasional help beyond working hours if needed."
+      }
+    },{
+      "@type": "Question",
+      "name": "How many leave days does a live-in maid get in a month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most maids take 2 fixed leave days per month. These are planned in advance so your household does not get disrupted."
+      }
+    },{
+      "@type": "Question",
+      "name": "What living arrangements should I provide for a live-in maid in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a live-in house maid in Bareilly, you need to provide a room, private or shared, with basic facilities like a bed, mattress or cot along with access to a bathroom. These arrangements ensure the maids comfort and maintain your family's privacy."
+      }
+    },{
+      "@type": "Question",
+      "name": "What if the maid is not suitable or leaves the job?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EzyHelpers provides replacement support. If the maid does not match your expectations or leaves, we help you find a suitable replacement quickly."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are the maids trained for elderly or bedridden care?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we have maids trained in elderly support, including hygiene care, mobility assistance and routine health monitoring for conditions like diabetes or joint pain."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do live-in maids in Bareilly know local cooking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, live-in maids in Bareilly are skilled in UP-style cooking and family traditions. They can prepare regional dishes like Tehri Bedai Halwa Kheer and understand festival foods and fasting rules."
+      }
+    }]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
         
@@ -37,12 +131,12 @@ export default function BareillyLiveInMaidPage() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'Live-In Maid Service' }
+            { label: 'Live-In House Maid' }
           ]} 
         />
       
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-indigo-600 via-violet-600 to-blue-700 text-white pt-20 pb-24 lg:pb-28 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-28 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -50,20 +144,20 @@ export default function BareillyLiveInMaidPage() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl text-white font-bold mb-6 font-display leading-tight">
                 Live-in House Maid in Bareilly – Trusted Help for Your Home, 24/7
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed">
-                EzyHelpers connects you with trained, verified, Hindi-speaking live-in house maids in Bareilly for cooking, cleaning, elderly care, and complete home support. Our maids understand your cultural values, food preferences, and family lifestyle, providing reliable care throughout the day.
+              <p className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed font-medium">
+                EzyHelpers connects you with trained, verified, Hindi-speaking live-in house maids in Bareilly for cooking, cleaning, elderly care, and complete home support.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-semibold text-lg py-4 px-8 rounded-xl shadow-md hover:bg-gray-100 transition-all">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
                   Book a Live-In Maid
                 </Link>
-                <Link href="tel:+918031411776" className="inline-flex items-center justify-center text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call 080-31411776
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all">
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
@@ -296,18 +390,54 @@ export default function BareillyLiveInMaidPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
             <FAQAccordion
               faqs={[
-                { question: 'What is a live-in maid, and how does it work in Bareilly?', answer: 'A live-in maid in Bareilly is a domestic helper who stays at your home and helps with daily tasks like cooking, cleaning, and caregiving. She typically works up to 12 hours a day but remains available for basic support throughout the day and night.' },
-                { question: 'How fast can I hire a live-in maid in Bareilly?', answer: 'With EzyHelpers, you can hire a live-in maid in Bareilly within 24 to 72 hours. We maintain a ready database of verified candidates for quick placement based on your needs.' },
-                { question: "Are EzyHelpers' live-in house maids in Bareilly verified and safe?", answer: 'Yes, all live-in house maids in Bareilly from EzyHelpers are background verified. We check the Aadhaar local address if available and basic identity. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind' },
-                { question: 'What services do live-in maids provide in Bareilly?', answer: 'Live-in maids in Bareilly offer dedicated support based on specific household needs. Their services include Housekeeping – cleaning, laundry, dishwashing; Cooking – preparing UP-style meals and regional dishes; Elderly care – helping with hygiene, mobility, and medication reminders; Childcare – feeding, bathing, and engaging with children. One maid usually handles only one type of task.' },
-                { question: 'What is the cost of hiring a live-in maid in Bareilly?', answer: 'EzyHelpers offers transparent monthly pricing for live-in house maid in Bareilly with no hidden fees. The exact cost depends on specific services required. Contact EzyHelpers for detailed pricing based on your household needs.' },
-                { question: 'Do live-in maids in Bareilly speak Hindi?', answer: 'Yes, all our maids are fluent in Hindi and understand the regional language. This makes day-to-day communication easy for your family and elders.' },
-                { question: 'What are the working hours for live-in maids in Bareilly?', answer: 'Live-in maids usually work up to 12 hours a day with proper rest and breaks. Since they stay at your home, they can provide occasional help beyond working hours if needed.' },
-                { question: 'How many leave days does a live-in maid get in a month?', answer: 'Most maids take 2 fixed leave days per month. These are planned in advance so your household does not get disrupted.' },
-                { question: 'What living arrangements should I provide for a live-in maid in Bareilly?', answer: "For a live-in house maid in Bareilly, you need to provide a room, private or shared, with basic facilities like a bed, mattress or cot along with access to a bathroom. These arrangements ensure the maid's comfort and maintain your family's privacy." },
-                { question: 'What if the maid is not suitable or leaves the job?', answer: 'EzyHelpers provides replacement support. If the maid does not match your expectations or leaves, we help you find a suitable replacement quickly.' },
-                { question: 'Are the maids trained for elderly or bedridden care?', answer: 'Yes, we have maids trained in elderly support, including hygiene care, mobility assistance and routine health monitoring for conditions like diabetes or joint pain.' },
-                { question: 'Do live-in maids in Bareilly know local cooking?', answer: 'Yes, live-in maids in Bareilly are skilled in UP-style cooking and family traditions. They can prepare regional dishes like Tehri, Bedai, Halwa, Kheer and understand festival foods and fasting rules.' }
+                {
+                  question: "What is a live-in maid, and how does it work in Bareilly?",
+                  answer: "A live-in maid in Bareilly is a domestic helper who stays at your home and helps with daily tasks like cooking, cleaning, and caregiving. She typically works up to 12 hours a day but remains available for basic support throughout the day and night."
+                },
+                {
+                  question: "How fast can I hire a live-in maid in Bareilly?",
+                  answer: "With EzyHelpers, you can hire a live-in maid in Bareilly within 24 to 72 hours. We maintain a ready database of verified candidates for quick placement based on your needs."
+                },
+                {
+                  question: "Are EzyHelpers' live-in house maids in Bareilly verified and safe?",
+                  answer: "Yes, all live-in house maids in Bareilly from EzyHelpers are background verified. We check the Aadhaar local address if available and basic identity. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind."
+                },
+                {
+                  question: "What services do live-in maids provide in Bareilly?",
+                  answer: "Live-in maids in Bareilly offer dedicated support based on specific household needs. Their services include Housekeeping – cleaning, laundry, dishwashing; Cooking – preparing UP-style meals and regional dishes; Elderly care – helping with hygiene, mobility, and medication reminders; Childcare – feeding, bathing, and engaging with children. One maid usually handles only one type of task. For example, a cooking maid will not do cleaning or baby care. You can hire different maids for different roles, such as a cook, a cleaner, a nanny, or an elderly caretaker, based on your family's needs."
+                },
+                {
+                  question: "What is the cost of hiring a live-in maid in Bareilly?",
+                  answer: "EzyHelpers offers transparent monthly pricing for live-in house maid in Bareilly with no hidden fees. The exact cost depends on specific services required. Contact EzyHelpers for detailed pricing based on your household needs."
+                },
+                {
+                  question: "Do live-in maids in Bareilly speak Hindi?",
+                  answer: "Yes, all our maids are fluent in Hindi and understand the regional language. This makes day-to-day communication easy for your family and elders."
+                },
+                {
+                  question: "What are the working hours for live-in maids in Bareilly?",
+                  answer: "Live-in maids usually work up to 12 hours a day with proper rest and breaks. Since they stay at your home, they can provide occasional help beyond working hours if needed."
+                },
+                {
+                  question: "How many leave days does a live-in maid get in a month?",
+                  answer: "Most maids take 2 fixed leave days per month. These are planned in advance so your household does not get disrupted."
+                },
+                {
+                  question: "What living arrangements should I provide for a live-in maid in Bareilly?",
+                  answer: "For a live-in house maid in Bareilly, you need to provide a room, private or shared, with basic facilities like a bed, mattress or cot along with access to a bathroom. These arrangements ensure the maid's comfort and maintain your family's privacy."
+                },
+                {
+                  question: "What if the maid is not suitable or leaves the job?",
+                  answer: "EzyHelpers provides replacement support. If the maid does not match your expectations or leaves, we help you find a suitable replacement quickly."
+                },
+                {
+                  question: "Are the maids trained for elderly or bedridden care?",
+                  answer: "Yes, we have maids trained in elderly support, including hygiene care, mobility assistance and routine health monitoring for conditions like diabetes or joint pain."
+                },
+                {
+                  question: "Do live-in maids in Bareilly know local cooking?",
+                  answer: "Yes, live-in maids in Bareilly are skilled in UP-style cooking and family traditions. They can prepare regional dishes like Tehri Bedai Halwa Kheer and understand festival foods and fasting rules."
+                }
               ]}
             />
           </div>

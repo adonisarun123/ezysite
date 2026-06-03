@@ -1,11 +1,10 @@
-# Modern browsers only - no polyfills needed
-# This eliminates 47KB+ of legacy JavaScript polyfills
+# Modern browsers only — no legacy polyfills needed.
+# Paired with Next 15's defaults, this strips ~47KB of polyfill JS.
 
-> 0.5%
-Chrome >= 88
-Firefox >= 85
-Safari >= 14
-Edge >= 88
-not IE 11
+chrome >= 110
+firefox >= 110
+safari >= 16
+edge >= 110
 not dead
-not op_mini all 
+not IE 11
+not op_mini all

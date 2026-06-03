@@ -1,6 +1,7 @@
 'use client'
 
-import React from 'react'
+import React, { useRef } from 'react'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import NestBookingForm from '@/components/NestBookingForm'
 import FAQAccordion from '@/components/FAQAccordion'
@@ -17,10 +18,40 @@ import {
   MapPinIcon,
   CalendarDaysIcon,
   BuildingOfficeIcon,
-  AcademicCapIcon
+  AcademicCapIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon
 } from '@heroicons/react/24/outline'
 
 export default function NestPageClient() {
+  const galleryRef = useRef<HTMLDivElement>(null)
+
+  const galleryImages = [
+    {
+      src: 'https://ik.imagekit.io/vlries1el/EzyHelpers/website-images/EzyHelpers-Hostel-Building.jpg?updatedAt=1780378054050',
+      alt: 'Nest by EzyHelpers domestic worker hostel building in Bangalore'
+    },
+    {
+      src: 'https://ik.imagekit.io/vlries1el/EzyHelpers/website-images/EzyHelpers-Hostel-Entry-gate.jpg?updatedAt=1780378093768',
+      alt: 'Entry gate of the Nest women-only helper hostel'
+    },
+    {
+      src: 'https://ik.imagekit.io/vlries1el/EzyHelpers/website-images/EzyHelpers-Hostel-Bedroom.jpg?updatedAt=1780378131659',
+      alt: 'Comfortable bedroom at the Nest helper hostel'
+    },
+    {
+      src: 'https://ik.imagekit.io/vlries1el/EzyHelpers/website-images/EzyHelpers-Hostel-Kitchen.jpg?updatedAt=1780378006096',
+      alt: 'Hygienic kitchen at the Nest helper hostel'
+    }
+  ]
+
+  const scrollGallery = (direction: 'left' | 'right') => {
+    const el = galleryRef.current
+    if (!el) return
+    const amount = el.clientWidth * 0.85
+    el.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' })
+  }
+
   const whoCanStay = [
     {
       title: 'Helpers from other states or cities',
@@ -523,6 +554,61 @@ export default function NestPageClient() {
               <PhoneIcon className="h-5 w-5" />
               Call: 080-31411776
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="section-padding bg-rose-50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Take a Look Inside Nest</h2>
+            <div className="w-24 h-1 bg-rose-400 mx-auto rounded-full mb-4"></div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Real photos of our safe, women-only helper hostel in Bangalore</p>
+          </div>
+
+          <div className="relative max-w-5xl mx-auto">
+            {/* Slider track */}
+            <div
+              ref={galleryRef}
+              className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-1 px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            >
+              {galleryImages.map((image, idx) => (
+                <div
+                  key={idx}
+                  className="relative snap-center shrink-0 w-[85%] sm:w-[70%] md:w-[48%] lg:w-[45%] aspect-[4/3] rounded-3xl overflow-hidden shadow-lg border border-rose-100 bg-white"
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 640px) 85vw, (max-width: 1024px) 48vw, 45vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Navigation arrows */}
+            <button
+              type="button"
+              onClick={() => scrollGallery('left')}
+              aria-label="Previous image"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/3 z-20 w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-rose-600 hover:bg-rose-600 hover:text-white transition-colors"
+            >
+              <ChevronLeftIcon className="h-6 w-6" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollGallery('right')}
+              aria-label="Next image"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-1/3 z-20 w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-rose-600 hover:bg-rose-600 hover:text-white transition-colors"
+            >
+              <ChevronRightIcon className="h-6 w-6" />
+            </button>
           </div>
         </div>
       </section>

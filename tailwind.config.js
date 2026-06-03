@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
@@ -99,6 +98,9 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         display: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
+        /** Elderly / care cluster landings — Fraunces + Plus Jakarta (see app/layout.tsx) */
+        careSerif: ['var(--font-care-serif)', 'Georgia', 'serif'],
+        careUi: ['var(--font-care-ui)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',

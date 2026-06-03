@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,14 +8,18 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          '/private/',
-          '/admin/',
-          '/search',
-          '/thank-you'
-        ]
+          '/agent-success',
+          '/helper-success',
+          '/thank-you',
+          '/on-demand-help/thank-you',
+          '/helper-leads',
+          '/helper-interview',
+          '/customer-requirements',
+          '/Lp/',
+        ],
       },
     ],
     sitemap: 'https://www.ezyhelpers.com/sitemap.xml',
-    host: 'https://www.ezyhelpers.com'
+    host: 'https://www.ezyhelpers.com',
   }
-} 
+}

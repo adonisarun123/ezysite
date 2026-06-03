@@ -173,54 +173,44 @@ export default function BangaloreGardenerPage() {
 
   const faqs = [
     {
-      question: 'How often should I schedule garden maintenance?',
-      answer:
-        'It depends on the plant types, but we recommend weekly or monthly visits to ensure a healthy garden.'
+      question: "How often should I schedule garden maintenance?",
+      answer: "It depends on the plant types, but we recommend weekly or monthly visits to ensure a healthy garden."
     },
     {
-      question: 'Can gardeners help set up an organic kitchen garden?',
-      answer:
-        'Yes, they can grow vegetables and herbs using organic, chemical-free methods that are safe and healthy for your family.'
+      question: "Can gardeners help set up an organic kitchen garden?",
+      answer: "Yes, they can grow vegetables and herbs using organic, chemical-free methods that are safe and healthy for your family."
     },
     {
-      question: 'Do gardeners treat plant diseases and pests?',
-      answer:
-        'Yes, our experienced gardeners can detect issues early and use organic methods to manage pests and diseases safely.'
+      question: "Do gardeners treat plant diseases and pests?",
+      answer: "Yes, our experienced gardeners can detect issues early and use organic methods to manage pests and diseases safely."
     },
     {
-      question: 'Do gardeners offer low-maintenance garden options?',
-      answer:
-        'Yes, they can suggest drought-tolerant plants and design easy-care gardens that are perfect for busy people who want greenery without daily effort.'
+      question: "Do gardeners offer low-maintenance garden options?",
+      answer: "Yes, they can suggest drought-tolerant plants and design easy-care gardens that are perfect for busy people who want greenery without daily effort."
     },
     {
-      question: 'Can gardeners arrange seasonal flowers for special occasions?',
-      answer:
-        'Yes, they plant seasonal blooms and can create flower setups for festivals or events to keep your garden fresh and colourful.'
+      question: "Can gardeners arrange seasonal flowers for special occasions?",
+      answer: "Yes, they plant seasonal blooms and can create flower setups for festivals or events to keep your garden fresh and colourful."
     },
     {
-      question: 'Do gardeners offer help with garden planning and design?',
-      answer:
-        'Yes, they give expert advice on garden layout, plant selection, and styling, whether it&rsquo;s for a small balcony or a large villa garden.'
+      question: "Do gardeners offer help with garden planning and design?",
+      answer: "Yes, they give expert advice on garden layout, plant selection, and styling, whether it's for a small balcony or a large villa garden."
     },
     {
-      question: 'How do I find a gardener in my area?',
-      answer:
-        'To find a gardener near you, simply visit EzyHelpers or call our helpline. We connect you with experienced local gardeners for home gardens, balconies, villas, and apartment spaces, matched to your exact location and needs.'
+      question: "How do I find a gardener in my area?",
+      answer: "To find a gardener near you, simply visit EzyHelpers or call our helpline. We connect you with experienced local gardeners for home gardens, balconies, villas, and apartment spaces, matched to your exact location and needs."
     },
     {
-      question: 'How to pick a gardener?',
-      answer:
-        'Look for experience, plant knowledge, and service reliability. At EzyHelpers, all our gardeners are pre-verified and skilled in different garden styles, including organic, terrace, and villa setups.'
+      question: "How to pick a gardener?",
+      answer: "Look for experience, plant knowledge, and service reliability. At EzyHelpers, all our gardeners are pre-verified and skilled in different garden styles, including organic, terrace, and villa setups."
     },
     {
-      question: 'What can a gardener do?',
-      answer:
-        'Gardeners handle planting, pruning, soil preparation, composting, pest control, lawn care, and full garden design.'
+      question: "What can a gardener do?",
+      answer: "Gardeners handle planting, pruning, soil preparation, composting, pest control, lawn care, and full garden design."
     },
     {
-      question: 'What are the duties of a gardener?',
-      answer:
-        'A gardener&rsquo;s main duties include watering, weeding, pruning, fertilising, disease control, seasonal planting, and general garden upkeep. With EzyHelpers, you can expect trained gardeners who take full care of your plants, ensuring healthy growth and beautiful, green surroundings all year round.'
+      question: "What are the duties of a gardener?",
+      answer: "A gardener’s main duties include watering, weeding, pruning, fertilising, disease control, seasonal planting, and general garden upkeep. With EzyHelpers, you can expect trained gardeners who take full care of your plants, ensuring healthy growth and beautiful, green surroundings all year round."
     }
   ]
 
@@ -488,60 +478,7 @@ export default function BangaloreGardenerPage() {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
-              <FAQAccordion
-                faqs={[
-                  {
-                    question: 'How often should I schedule garden maintenance?',
-                    answer:
-                      'It depends on the plant types, but we recommend weekly or monthly visits to ensure a healthy garden.'
-                  },
-                  {
-                    question: 'Can gardeners help set up an organic kitchen garden?',
-                    answer:
-                      'Yes, they can grow vegetables and herbs using organic, chemical-free methods that are safe and healthy for your family.'
-                  },
-                  {
-                    question: 'Do gardeners treat plant diseases and pests?',
-                    answer:
-                      'Yes, our experienced gardeners can detect issues early and use organic methods to manage pests and diseases safely.'
-                  },
-                  {
-                    question: 'Do gardeners offer low-maintenance garden options?',
-                    answer:
-                      'Yes, they can suggest drought-tolerant plants and design easy-care gardens that are perfect for busy people who want greenery without daily effort.'
-                  },
-                  {
-                    question: 'Can gardeners arrange seasonal flowers for special occasions?',
-                    answer:
-                      'Yes, they plant seasonal blooms and can create flower setups for festivals or events to keep your garden fresh and colourful.'
-                  },
-                  {
-                    question: 'Do gardeners offer help with garden planning and design?',
-                    answer:
-                      'Yes, they give expert advice on garden layout, plant selection, and styling, whether it&rsquo;s for a small balcony or a large villa garden.'
-                  },
-                  {
-                    question: 'How do I find a gardener in my area?',
-                    answer:
-                      'To find a gardener near you, simply visit EzyHelpers or call our helpline. We connect you with experienced local gardeners for home gardens, balconies, villas, and apartment spaces, matched to your exact location and needs.'
-                  },
-                  {
-                    question: 'How to pick a gardener?',
-                    answer:
-                      'Look for experience, plant knowledge, and service reliability. At EzyHelpers, all our gardeners are pre-verified and skilled in different garden styles, including organic, terrace, and villa setups.'
-                  },
-                  {
-                    question: 'What can a gardener do?',
-                    answer:
-                      'Gardeners handle planting, pruning, soil preparation, composting, pest control, lawn care, and full garden design.'
-                  },
-                  {
-                    question: 'What are the duties of a gardener?',
-                    answer:
-                      'A gardener&rsquo;s main duties include watering, weeding, pruning, fertilising, disease control, seasonal planting, and general garden upkeep. With EzyHelpers, you can expect trained gardeners who take full care of your plants, ensuring healthy growth and beautiful, green surroundings all year round.'
-                  }
-                ]}
-              />
+              <FAQAccordion faqs={faqs} />
             </div>
           </div>
         </section>

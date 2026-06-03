@@ -1,12 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
 import { ChevronRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
 import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
 import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackStepComplete, trackServiceSelect, trackBookingStart, trackBookingComplete } from '@/lib/analytics'
 import { sendWebhook } from '@/lib/webhookService'
+import { LoadingSpinner } from '@/components/ui/loading-spinner'
 
 interface FormData {
   name: string
@@ -16,6 +17,8 @@ interface FormData {
   locality: string
   apartment: string
   serviceType: string
+  serviceRole: string
+  otherRole: string
   duration: string
   serviceTimings: string
   startDate: string
@@ -26,17 +29,34 @@ interface FormData {
   additionalServices: string[]
   familySize: string
   preferredGender: string
+  houseType: string
+  numberOfRooms: string
+  cookFoodType: string
+  cookMeals: string[]
+  religion: string
+  hasPet: string
+  hasHelperRoom: string
 }
 
-const services = [
-  { value: 'live-in', label: 'Live-in Maid', description: '24/7 support at home' },
-  { value: 'full-time', label: 'Full-time Maid', description: 'Daily 8-10 hours' },
-  { value: 'part-time', label: 'Part-time Maid', description: 'Few hours daily' },
+const employmentTypes = [
+  { value: 'live-in', label: 'Live-in Helper', description: '24/7 support at home' },
+  { value: 'full-time', label: 'Full-time Helper', description: 'Daily 8-10 hours' },
+  { value: 'part-time', label: 'Part-time Helper', description: 'Few hours daily' },
   { value: 'on-demand', label: 'On-demand Helper', description: 'As needed basis' },
-  { value: 'babysitter', label: 'Babysitter/Nanny', description: 'Child care specialist' },
+]
+
+const serviceRoles = [
+  { value: 'baby-care', label: 'Baby Care/Nanny', description: 'Child care specialist' },
   { value: 'elderly-care', label: 'Elderly Care', description: 'Senior care assistant' },
+  { value: 'general-housekeeping', label: 'General Housekeeping', description: 'Cleaning & household tasks' },
   { value: 'cook', label: 'Cook', description: 'Meal preparation' },
-  { value: 'driver', label: 'Driver', description: 'Transportation service' }
+  { value: 'driver', label: 'Driver', description: 'Transportation service' },
+  { value: 'others', label: 'Others', description: 'Please specify below' },
+]
+
+const services = [
+  ...employmentTypes,
+  ...serviceRoles,
 ]
 
 const cities = [
@@ -71,6 +91,8 @@ export default function HireHelperForm() {
     locality: '',
     apartment: '',
     serviceType: '',
+    serviceRole: '',
+    otherRole: '',
     duration: '',
     serviceTimings: '',
     startDate: '',
@@ -80,13 +102,22 @@ export default function HireHelperForm() {
     languages: [],
     additionalServices: [],
     familySize: '',
-    preferredGender: ''
+    preferredGender: '',
+    houseType: '',
+    numberOfRooms: '',
+    cookFoodType: '',
+    cookMeals: [],
+    religion: '',
+    hasPet: '',
+    hasHelperRoom: '',
   })
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const [requestId, setRequestId] = useState<string | null>(null)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'error'>('idle')
+  const [submitting, setSubmitting] = useState(false)
+  const [honeypot, setHoneypot] = useState('')
   const [hasTrackedStart, setHasTrackedStart] = useState(false)
   const searchParams = useSearchParams()
+  const router = useRouter()
 
   // Track form start when component mounts and check for URL parameters
   useEffect(() => {
@@ -95,10 +126,9 @@ export default function HireHelperForm() {
       setHasTrackedStart(true);
 
       const serviceParam = searchParams.get('service');
-      if (serviceParam && services.some(s => s.value === serviceParam)) {
+      if (serviceParam && employmentTypes.some(s => s.value === serviceParam)) {
         setFormData(prev => ({ ...prev, serviceType: serviceParam }));
-        // Track the pre-selected service
-        const selectedService = services.find(s => s.value === serviceParam);
+        const selectedService = employmentTypes.find(s => s.value === serviceParam);
         if (selectedService) {
           trackServiceSelect(selectedService.label, serviceParam, 'hire_helper_form');
         }
@@ -109,16 +139,20 @@ export default function HireHelperForm() {
   const handleInputChange = (field: keyof FormData, value: string | string[]) => {
     setFormData(prev => {
       const next = { ...prev, [field]: value } as FormData
-      if (field === 'serviceType' && typeof value === 'string' && value === 'live-in') {
-        next.duration = ''
-        next.serviceTimings = ''
+      if (field === 'serviceType' && typeof value === 'string') {
+        if (value === 'live-in') {
+          next.duration = ''
+          next.serviceTimings = ''
+        } else {
+          next.hasHelperRoom = ''
+        }
       }
       return next
     })
 
     // Track service selection
     if (field === 'serviceType' && typeof value === 'string') {
-      const selectedService = services.find(s => s.value === value);
+      const selectedService = employmentTypes.find(s => s.value === value);
       if (selectedService) {
         trackServiceSelect(selectedService.label, value, 'hire_helper_form');
       }
@@ -155,6 +189,12 @@ export default function HireHelperForm() {
         errors.city = 'Please select a city'
       }
     } else if (step === 2) {
+      if (!formData.serviceRole) {
+        errors.serviceRole = 'Please select a role'
+      }
+      if (formData.serviceRole === 'others' && !formData.otherRole.trim()) {
+        errors.otherRole = 'Please specify the role you need'
+      }
       if (!formData.serviceType) {
         errors.serviceType = 'Please select a service type'
       }
@@ -169,7 +209,24 @@ export default function HireHelperForm() {
         }
       }
       if (!formData.familySize) {
-        errors.familySize = 'Please select family size'
+        errors.familySize = 'Please select number of family members'
+      }
+      if (!formData.houseType) {
+        errors.houseType = 'Please select your house type'
+      }
+      if (!formData.numberOfRooms) {
+        errors.numberOfRooms = 'Please select number of rooms'
+      }
+      if (formData.serviceRole === 'cook') {
+        if (!formData.cookFoodType) {
+          errors.cookFoodType = 'Please select food type'
+        }
+        if (formData.cookFoodType && formData.cookMeals.length === 0) {
+          errors.cookMeals = 'Please select at least one meal'
+        }
+      }
+      if (formData.serviceType === 'live-in' && !formData.hasHelperRoom) {
+        errors.hasHelperRoom = 'Please indicate if you have a separate room'
       }
       if (requiresScheduleDetails(formData.serviceType)) {
         if (!formData.serviceTimings.trim()) {
@@ -203,6 +260,12 @@ export default function HireHelperForm() {
     if (!formData.city) {
       errors.city = 'Please select a city'
     }
+    if (!formData.serviceRole) {
+      errors.serviceRole = 'Please select a role'
+    }
+    if (formData.serviceRole === 'others' && !formData.otherRole.trim()) {
+      errors.otherRole = 'Please specify the role you need'
+    }
     if (!formData.serviceType) {
       errors.serviceType = 'Please select a service type'
     }
@@ -217,7 +280,24 @@ export default function HireHelperForm() {
       }
     }
     if (!formData.familySize) {
-      errors.familySize = 'Please select family size'
+      errors.familySize = 'Please select number of family members'
+    }
+    if (!formData.houseType) {
+      errors.houseType = 'Please select your house type'
+    }
+    if (!formData.numberOfRooms) {
+      errors.numberOfRooms = 'Please select number of rooms'
+    }
+    if (formData.serviceRole === 'cook') {
+      if (!formData.cookFoodType) {
+        errors.cookFoodType = 'Please select food type'
+      }
+      if (formData.cookFoodType && formData.cookMeals.length === 0) {
+        errors.cookMeals = 'Please select at least one meal'
+      }
+    }
+    if (formData.serviceType === 'live-in' && !formData.hasHelperRoom) {
+      errors.hasHelperRoom = 'Please indicate if you have a separate room'
     }
     if (requiresScheduleDetails(formData.serviceType)) {
       if (!formData.serviceTimings.trim()) {
@@ -250,94 +330,121 @@ export default function HireHelperForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (validateAll()) {
-      try {
-        // Track form submission
-        trackFormSubmit('hire_helper_form', formData);
+    if (submitting) return
+    if (!validateAll()) return
+    setSubmitting(true)
+    try {
+      // Track form submission
+      trackFormSubmit('hire_helper_form', formData);
 
-        const newRequestId = generateRequestId()
+      const newRequestId = generateRequestId()
 
-        // Store in Supabase
-        const insertRow = buildHireHelperLeadInsertRow({
-          name: formData.name.trim(),
-          phone: formData.phone.trim(),
-          email: formData.email.trim(),
-          city: formData.city,
-          locality: formData.locality.trim(),
-          apartment: formData.apartment.trim(),
-          service: formData.serviceType,
-          duration: formData.duration,
-          serviceTimings: formData.serviceTimings.trim(),
-          startDate: formData.startDate,
-          specificRequirements: formData.specificRequirements,
-          experience: formData.experience,
-          budget: formData.budget,
-          languages: formData.languages.join(','),
-          additionalServices: formData.additionalServices.join(','),
-          familySize: formData.familySize,
-          preferredGender: formData.preferredGender,
-        })
-        const { error } = await supabase.from('hire_helper_leads').insert([insertRow])
-        if (error) {
-          console.error('hire_helper_leads insert failed:', error.message, error)
-          throw error
-        }
-
-        // Send email notification
-        try {
-          const emailResponse = await fetch('/api/send-lead-email', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              leadType: 'hire_helper',
-              formData: {
-                name: formData.name.trim(),
-                phone: formData.phone.trim(),
-                email: formData.email.trim(),
-                city: formData.city,
-                locality: formData.locality.trim(),
-                apartment: formData.apartment.trim(),
-                serviceType: formData.serviceType,
-                duration: formData.duration,
-                serviceTimings: formData.serviceTimings.trim(),
-                startDate: formData.startDate,
-                specificRequirements: formData.specificRequirements,
-                experience: formData.experience,
-                budget: formData.budget,
-                languages: formData.languages,
-                additionalServices: formData.additionalServices,
-                familySize: formData.familySize,
-                preferredGender: formData.preferredGender
-              },
-              requestId: newRequestId,
-              sourceUrl: window.location.href
-            })
-          });
-
-          if (!emailResponse.ok) {
-            console.error('Failed to send email notification');
-          }
-        } catch (emailError) {
-          console.error('Email sending error:', emailError);
-          // Don't fail the form submission if email fails
-        }
-
-        // Send webhook
-        sendWebhook('hire_helper', formData, newRequestId).catch(console.error)
-
-        // Track successful form completion
-        trackFormComplete('hire_helper_form', newRequestId);
-        trackBookingComplete(formData.serviceType, formData.city, newRequestId);
-
-        setRequestId(newRequestId)
-        setSubmitStatus('success')
-      } catch (error) {
-        // Track form error
-        trackFormError('hire_helper_form', 'submission_error', error instanceof Error ? error.message : 'Unknown error');
-        setSubmitStatus('error')
+      // Store in Supabase
+      const roleLabel = formData.serviceRole === 'others' ? formData.otherRole.trim() : formData.serviceRole
+      const cookDetails = formData.serviceRole === 'cook'
+        ? ` | Food: ${formData.cookFoodType} | Meals: ${formData.cookMeals.join(', ')}`
+        : ''
+      const householdDetails = [
+        formData.houseType && `House: ${formData.houseType}`,
+        formData.numberOfRooms && `Rooms: ${formData.numberOfRooms}`,
+        formData.religion && `Religion: ${formData.religion}`,
+        formData.hasPet && `Pet: ${formData.hasPet}`,
+        formData.serviceType === 'live-in' && formData.hasHelperRoom && `Helper room: ${formData.hasHelperRoom}`,
+      ].filter(Boolean).join(' | ')
+      const fullRequirements = [
+        formData.specificRequirements,
+        cookDetails,
+        householdDetails,
+      ].filter(Boolean).join('\n')
+      const insertRow = buildHireHelperLeadInsertRow({
+        name: formData.name.trim(),
+        phone: formData.phone.trim(),
+        email: formData.email.trim(),
+        city: formData.city,
+        locality: formData.locality.trim(),
+        apartment: formData.apartment.trim(),
+        service: `${formData.serviceType} - ${roleLabel}`,
+        duration: formData.duration,
+        serviceTimings: formData.serviceTimings.trim(),
+        startDate: formData.startDate,
+        specificRequirements: fullRequirements,
+        experience: formData.experience,
+        budget: formData.budget,
+        languages: formData.languages.join(','),
+        additionalServices: formData.additionalServices.join(','),
+        familySize: formData.familySize,
+        preferredGender: formData.preferredGender,
+      })
+      const { error } = await supabase.from('hire_helper_leads').insert([insertRow])
+      if (error) {
+        console.error('hire_helper_leads insert failed:', error.message, error)
+        throw error
       }
+
+      // Send email notification
+      try {
+        const emailResponse = await fetch('/api/send-lead-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            leadType: 'hire_helper',
+            website: honeypot,
+            formData: {
+              name: formData.name.trim(),
+              phone: formData.phone.trim(),
+              email: formData.email.trim(),
+              city: formData.city,
+              locality: formData.locality.trim(),
+              apartment: formData.apartment.trim(),
+              serviceType: formData.serviceType,
+              serviceRole: formData.serviceRole === 'others' ? formData.otherRole.trim() : formData.serviceRole,
+              duration: formData.duration,
+              serviceTimings: formData.serviceTimings.trim(),
+              startDate: formData.startDate,
+              specificRequirements: formData.specificRequirements,
+              experience: formData.experience,
+              budget: formData.budget,
+              languages: formData.languages,
+              additionalServices: formData.additionalServices,
+              familySize: formData.familySize,
+              preferredGender: formData.preferredGender,
+              houseType: formData.houseType,
+              numberOfRooms: formData.numberOfRooms,
+              cookFoodType: formData.serviceRole === 'cook' ? formData.cookFoodType : '',
+              cookMeals: formData.serviceRole === 'cook' ? formData.cookMeals : [],
+              religion: formData.religion,
+              hasPet: formData.hasPet,
+              hasHelperRoom: formData.serviceType === 'live-in' ? formData.hasHelperRoom : '',
+            },
+            requestId: newRequestId,
+            sourceUrl: window.location.href
+          })
+        });
+
+        if (!emailResponse.ok) {
+          console.error('Failed to send email notification');
+        }
+      } catch (emailError) {
+        console.error('Email sending error:', emailError);
+        // Don't fail the form submission if email fails
+      }
+
+      // Send webhook
+      sendWebhook('hire_helper', { ...formData, website: honeypot }, newRequestId).catch(console.error)
+
+      // Track successful form completion
+      trackFormComplete('hire_helper_form', newRequestId);
+      trackBookingComplete(formData.serviceType, formData.city, newRequestId);
+
+      router.push(`/thank-you?type=hire&ref=${encodeURIComponent(newRequestId)}`)
+    } catch (error) {
+      // Track form error
+      trackFormError('hire_helper_form', 'submission_error', error instanceof Error ? error.message : 'Unknown error');
+      setSubmitStatus('error')
+    } finally {
+      setSubmitting(false)
     }
   }
 
@@ -346,21 +453,6 @@ export default function HireHelperForm() {
   const generateRequestId = () => {
     // Generate a simple 6-character uppercase alphanumeric string
     return Math.random().toString(36).substring(2, 8).toUpperCase()
-  }
-
-  if (submitStatus === 'success') {
-    return (
-      <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-        <CheckCircleIcon className="w-14 h-14 mx-auto text-primary-600" />
-        <h2 className="text-2xl font-semibold mt-4 font-display">Thanks for your enquiry!</h2>
-        {requestId && (
-          <p className="mt-3 text-sm text-gray-700">Your request ID:&nbsp;
-            <span className="font-mono font-semibold text-gray-900">{requestId}</span>
-          </p>
-        )}
-        <p className="mt-3 text-sm text-gray-700">Our team will reach out to you shortly.</p>
-      </div>
-    )
   }
 
   return (
@@ -393,7 +485,18 @@ export default function HireHelperForm() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} aria-busy={submitting}>
+        {/* Honeypot field - hidden from real users, traps bots */}
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          style={{ position: 'absolute', left: '-9999px', width: 0, height: 0, opacity: 0 }}
+        />
         {/* Step 1: Personal Information */}
         {step === 1 && (
           <div className="space-y-6">
@@ -403,56 +506,76 @@ export default function HireHelperForm() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="hire-name" className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name *
                 </label>
                 <input
+                  id="hire-name"
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
+                  aria-invalid={!!formErrors.name}
+                  aria-describedby={formErrors.name ? 'hire-name-error' : undefined}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                   placeholder="Enter your full name"
                 />
-                {formErrors.name && <p className="text-xs text-red-500 mt-1">{formErrors.name}</p>}
+                {formErrors.name && <p id="hire-name-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.name}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="hire-phone" className="block text-sm font-medium text-gray-700 mb-2">
                   Phone Number *
                 </label>
-                <input
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
-                  placeholder="080-31411776"
-                />
-                {formErrors.phone && <p className="text-xs text-red-500 mt-1">{formErrors.phone}</p>}
+                <div className="relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm pointer-events-none select-none">+91</span>
+                  <input
+                    id="hire-phone"
+                    type="tel"
+                    required
+                    inputMode="tel"
+                    maxLength={10}
+                    pattern="[5-9][0-9]{9}"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value.replace(/\D/g, ''))}
+                    aria-invalid={!!formErrors.phone}
+                    aria-describedby={formErrors.phone ? 'hire-phone-error' : 'hire-phone-hint'}
+                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                    placeholder="9XXXXXXXXX"
+                  />
+                </div>
+                <p id="hire-phone-hint" className="text-xs text-gray-500 mt-1">10-digit mobile number, no country code needed</p>
+                {formErrors.phone && <p id="hire-phone-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.phone}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="hire-email" className="block text-sm font-medium text-gray-700 mb-2">
                   Email Address
                 </label>
                 <input
+                  id="hire-email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
+                  aria-invalid={!!formErrors.email}
+                  aria-describedby={formErrors.email ? 'hire-email-error' : undefined}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                   placeholder="your@email.com"
                 />
+                {formErrors.email && <p id="hire-email-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.email}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="hire-city" className="block text-sm font-medium text-gray-700 mb-2">
                   City *
                 </label>
                 <select
+                  id="hire-city"
                   required
                   value={formData.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
+                  aria-invalid={!!formErrors.city}
+                  aria-describedby={formErrors.city ? 'hire-city-error' : undefined}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                 >
                   <option value="">Select your city</option>
@@ -460,7 +583,7 @@ export default function HireHelperForm() {
                     <option key={city} value={city}>{city}</option>
                   ))}
                 </select>
-                {formErrors.city && <p className="text-xs text-red-500 mt-1">{formErrors.city}</p>}
+                {formErrors.city && <p id="hire-city-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.city}</p>}
               </div>
 
               <div>
@@ -511,27 +634,73 @@ export default function HireHelperForm() {
               Service Requirements
             </h2>
 
+            {/* Role Selection - shown first */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-4">
-                What type of service do you need? *
+                What primary role do you need help with? *
               </label>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {services.map(service => (
+                {serviceRoles.map(role => (
                   <div
-                    key={service.value}
-                    className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceType === service.value
-                      ? 'border-primary-500 bg-primary-50'
+                    key={role.value}
+                    className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceRole === role.value
+                      ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
                       : 'border-gray-200 hover:border-gray-300'
                       }`}
-                    onClick={() => handleInputChange('serviceType', service.value)}
+                    onClick={() => setFormData(prev => ({
+                      ...prev,
+                      serviceRole: role.value,
+                      otherRole: role.value !== 'others' ? '' : prev.otherRole,
+                      cookFoodType: role.value !== 'cook' ? '' : prev.cookFoodType,
+                      cookMeals: role.value !== 'cook' ? [] : prev.cookMeals,
+                    }))}
                   >
-                    <div className="font-medium text-gray-900">{service.label}</div>
-                    <div className="text-sm text-gray-600">{service.description}</div>
+                    <div className="font-medium text-gray-900">{role.label}</div>
+                    <div className="text-sm text-gray-600">{role.description}</div>
                   </div>
                 ))}
               </div>
-              {formErrors.serviceType && <p className="text-xs text-red-500 mt-1">{formErrors.serviceType}</p>}
+              {formErrors.serviceRole && <p className="text-xs text-red-500 mt-1">{formErrors.serviceRole}</p>}
+
+              {formData.serviceRole === 'others' && (
+                <div className="mt-4">
+                  <input
+                    type="text"
+                    value={formData.otherRole}
+                    onChange={(e) => setFormData(prev => ({ ...prev, otherRole: e.target.value }))}
+                    aria-invalid={!!formErrors.otherRole}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                    placeholder="Please specify the role you need..."
+                  />
+                  {formErrors.otherRole && <p className="text-xs text-red-500 mt-1">{formErrors.otherRole}</p>}
+                </div>
+              )}
             </div>
+
+            {/* Employment Type Selection - shown after role is chosen */}
+            {formData.serviceRole && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-4">
+                  What type of helper service do you need? *
+                </label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {employmentTypes.map(type => (
+                    <div
+                      key={type.value}
+                      className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceType === type.value
+                        ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
+                        : 'border-gray-200 hover:border-gray-300'
+                        }`}
+                      onClick={() => handleInputChange('serviceType', type.value)}
+                    >
+                      <div className="font-medium text-gray-900">{type.label}</div>
+                      <div className="text-sm text-gray-600">{type.description}</div>
+                    </div>
+                  ))}
+                </div>
+                {formErrors.serviceType && <p className="text-xs text-red-500 mt-1">{formErrors.serviceType}</p>}
+              </div>
+            )}
 
             {requiresScheduleDetails(formData.serviceType) && (
               <div className="space-y-6 rounded-xl border border-primary-100 bg-primary-50/40 p-5 md:p-6">
@@ -540,26 +709,32 @@ export default function HireHelperForm() {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="hire-serviceTimings" className="block text-sm font-medium text-gray-700 mb-2">
                       Preferred service timings *
                     </label>
                     <input
+                      id="hire-serviceTimings"
                       type="text"
                       value={formData.serviceTimings}
                       onChange={(e) => handleInputChange('serviceTimings', e.target.value)}
+                      aria-invalid={!!formErrors.serviceTimings}
+                      aria-describedby={formErrors.serviceTimings ? 'hire-serviceTimings-error' : 'hire-serviceTimings-hint'}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none bg-white"
                       placeholder="e.g. 8 AM – 6 PM, Monday–Friday"
                     />
-                    <p className="text-xs text-gray-500 mt-1">Hours and days you need the helper at home</p>
-                    {formErrors.serviceTimings && <p className="text-xs text-red-500 mt-1">{formErrors.serviceTimings}</p>}
+                    <p id="hire-serviceTimings-hint" className="text-xs text-gray-500 mt-1">Hours and days you need the helper at home</p>
+                    {formErrors.serviceTimings && <p id="hire-serviceTimings-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.serviceTimings}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="hire-duration" className="block text-sm font-medium text-gray-700 mb-2">
                       Duration *
                     </label>
                     <select
+                      id="hire-duration"
                       value={formData.duration}
                       onChange={(e) => handleInputChange('duration', e.target.value)}
+                      aria-invalid={!!formErrors.duration}
+                      aria-describedby={formErrors.duration ? 'hire-duration-error' : undefined}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none bg-white"
                     >
                       <option value="">How long do you need the service?</option>
@@ -567,34 +742,120 @@ export default function HireHelperForm() {
                         <option key={opt.value} value={opt.value}>{opt.label}</option>
                       ))}
                     </select>
-                    {formErrors.duration && <p className="text-xs text-red-500 mt-1">{formErrors.duration}</p>}
+                    {formErrors.duration && <p id="hire-duration-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.duration}</p>}
                   </div>
                 </div>
               </div>
             )}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Cook-specific: Food type & meals */}
+            {formData.serviceRole === 'cook' && (
+              <div className="space-y-6 rounded-xl border border-amber-200 bg-amber-50/40 p-5 md:p-6">
+                <p className="text-sm font-medium text-gray-800">Cooking Preferences</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Food Type *
+                    </label>
+                    <select
+                      value={formData.cookFoodType}
+                      onChange={(e) => handleInputChange('cookFoodType', e.target.value)}
+                      aria-invalid={!!formErrors.cookFoodType}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none bg-white"
+                    >
+                      <option value="">Select food type</option>
+                      <option value="veg">Vegetarian</option>
+                      <option value="non-veg">Non-Vegetarian</option>
+                      <option value="both">Both Veg & Non-Veg</option>
+                    </select>
+                    {formErrors.cookFoodType && <p className="text-xs text-red-500 mt-1">{formErrors.cookFoodType}</p>}
+                  </div>
+
+                  {formData.cookFoodType && (
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Meals Required *
+                      </label>
+                      <div className="space-y-2">
+                        {['Breakfast', 'Lunch', 'Dinner'].map(meal => (
+                          <label key={meal} className="flex items-center cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={formData.cookMeals.includes(meal)}
+                              onChange={() => {
+                                setFormData(prev => ({
+                                  ...prev,
+                                  cookMeals: prev.cookMeals.includes(meal)
+                                    ? prev.cookMeals.filter(m => m !== meal)
+                                    : [...prev.cookMeals, meal]
+                                }))
+                              }}
+                              className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                            />
+                            <span className="ml-2 text-sm text-gray-700">{meal}</span>
+                          </label>
+                        ))}
+                      </div>
+                      {formErrors.cookMeals && <p className="text-xs text-red-500 mt-1">{formErrors.cookMeals}</p>}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Live-in specific: Separate room */}
+            {formData.serviceType === 'live-in' && (
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Do you have a separate room for the helper? *
+                </label>
+                <div className="flex gap-4">
+                  {[{ value: 'yes', label: 'Yes' }, { value: 'no', label: 'No' }].map(opt => (
+                    <div
+                      key={opt.value}
+                      className={`flex-1 p-4 border rounded-lg cursor-pointer text-center transition-all ${formData.hasHelperRoom === opt.value
+                        ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
+                        : 'border-gray-200 hover:border-gray-300'
+                        }`}
+                      onClick={() => handleInputChange('hasHelperRoom', opt.value)}
+                    >
+                      <div className="font-medium text-gray-900">{opt.label}</div>
+                    </div>
+                  ))}
+                </div>
+                {formErrors.hasHelperRoom && <p className="text-xs text-red-500 mt-1">{formErrors.hasHelperRoom}</p>}
+              </div>
+            )}
+
+            {/* Household Details */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="hire-startDate" className="block text-sm font-medium text-gray-700 mb-2">
                   When do you need to start? *
                 </label>
                 <input
+                  id="hire-startDate"
                   type="date"
                   required
                   value={formData.startDate}
                   onChange={(e) => handleInputChange('startDate', e.target.value)}
+                  aria-invalid={!!formErrors.startDate}
+                  aria-describedby={formErrors.startDate ? 'hire-startDate-error' : undefined}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                 />
-                {formErrors.startDate && <p className="text-xs text-red-500 mt-1">{formErrors.startDate}</p>}
+                {formErrors.startDate && <p id="hire-startDate-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.startDate}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Family Size
+                <label htmlFor="hire-familySize" className="block text-sm font-medium text-gray-700 mb-2">
+                  No. of Family Members *
                 </label>
                 <select
+                  id="hire-familySize"
                   value={formData.familySize}
                   onChange={(e) => handleInputChange('familySize', e.target.value)}
+                  aria-invalid={!!formErrors.familySize}
+                  aria-describedby={formErrors.familySize ? 'hire-familySize-error' : undefined}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
                 >
                   <option value="">Select family size</option>
@@ -603,7 +864,86 @@ export default function HireHelperForm() {
                   <option value="5-6">5-6 members</option>
                   <option value="7+">7+ members</option>
                 </select>
-                {formErrors.familySize && <p className="text-xs text-red-500 mt-1">{formErrors.familySize}</p>}
+                {formErrors.familySize && <p id="hire-familySize-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.familySize}</p>}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  House Type *
+                </label>
+                <select
+                  value={formData.houseType}
+                  onChange={(e) => handleInputChange('houseType', e.target.value)}
+                  aria-invalid={!!formErrors.houseType}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                >
+                  <option value="">Select house type</option>
+                  <option value="apartment">Apartment</option>
+                  <option value="individual-house">Individual House</option>
+                  <option value="standalone-house">Standalone House</option>
+                  <option value="villa">Villa</option>
+                </select>
+                {formErrors.houseType && <p className="text-xs text-red-500 mt-1">{formErrors.houseType}</p>}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  No. of Rooms *
+                </label>
+                <select
+                  value={formData.numberOfRooms}
+                  onChange={(e) => handleInputChange('numberOfRooms', e.target.value)}
+                  aria-invalid={!!formErrors.numberOfRooms}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                >
+                  <option value="">Select number of rooms</option>
+                  <option value="1">1 Room (1 BHK)</option>
+                  <option value="2">2 Rooms (2 BHK)</option>
+                  <option value="3">3 Rooms (3 BHK)</option>
+                  <option value="4">4 Rooms (4 BHK)</option>
+                  <option value="5+">5+ Rooms</option>
+                </select>
+                {formErrors.numberOfRooms && <p className="text-xs text-red-500 mt-1">{formErrors.numberOfRooms}</p>}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Religion
+                </label>
+                <select
+                  value={formData.religion}
+                  onChange={(e) => handleInputChange('religion', e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                >
+                  <option value="">No preference</option>
+                  <option value="hindu">Hindu</option>
+                  <option value="muslim">Muslim</option>
+                  <option value="christian">Christian</option>
+                  <option value="sikh">Sikh</option>
+                  <option value="buddhist">Buddhist</option>
+                  <option value="jain">Jain</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Do you have a pet at home?
+                </label>
+                <div className="flex gap-4">
+                  {[{ value: 'yes', label: 'Yes' }, { value: 'no', label: 'No' }].map(opt => (
+                    <div
+                      key={opt.value}
+                      className={`flex-1 p-3 border rounded-lg cursor-pointer text-center transition-all ${formData.hasPet === opt.value
+                        ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
+                        : 'border-gray-200 hover:border-gray-300'
+                        }`}
+                      onClick={() => handleInputChange('hasPet', opt.value)}
+                    >
+                      <div className="font-medium text-gray-900">{opt.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -723,18 +1063,22 @@ export default function HireHelperForm() {
                 type="button"
                 onClick={prevStep}
                 className="btn-outline"
+                disabled={submitting}
               >
                 Previous
               </button>
               <button
                 type="submit"
-                className="btn-primary"
+                className="btn-primary flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                disabled={submitting}
+                aria-disabled={submitting}
               >
-                Submit Request
+                {submitting && <LoadingSpinner size="sm" />}
+                {submitting ? 'Submitting...' : 'Submit Request'}
               </button>
             </div>
             {submitStatus === 'error' && (
-              <p className="text-red-600 text-sm mt-2">There was an error submitting your request. Please try again.</p>
+              <p role="alert" className="text-red-600 text-sm mt-2">There was an error submitting your request. Please try again.</p>
             )}
           </div>
         )}

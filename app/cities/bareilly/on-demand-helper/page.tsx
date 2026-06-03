@@ -24,8 +24,81 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyOnDemandHelperPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "How quickly can I get an instant maid service in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can get an instant maid service in Bareilly within just 2–4 hours of booking through EzyHelpers. Whether it's emergency cleaning, cooking, or elderly care, we provide quick helpers in Bareilly on the same day, based on availability, for urgent or last-minute needs."
+      }
+    },{
+      "@type": "Question",
+      "name": "What types of quick helper services does EzyHelpers offer in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EzyHelpers offers a wide range of quick helper services in Bareilly through our trusted instant maid service. These include: Same-day deep cleaning and post-event cleanup; On-demand cooking (including fasting and traditional meals); Babysitting and childcare; Elderly support and companion care; Basic nursing and patient assistance at home; Technical home maintenance services like plumbing, electrical, and carpentry; Event support for functions and religious gatherings. All helpers are trained and ready for one-time or emergency assignments."
+      }
+    },{
+      "@type": "Question",
+      "name": "How much does instant maid service in Bareilly cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The cost of instant maid service in Bareilly is based on transparent hourly pricing. There are no hidden fees or lock-in commitments; you pay only after the work is completed to your satisfaction. Whether it’s a one-time deep clean or an urgent home maintenance service, we keep pricing clear and fair."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I get emergency cleaning on the same day in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can! EzyHelpers provides same-day emergency cleaning as part of our instant maid service in Bareilly. Within 2–4 hours of booking, our quick helpers arrive fully equipped for sweeping, mopping, kitchen sanitization, bathroom cleaning, and even post-party mess cleanup."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do your quick helpers in Bareilly speak Hindi and understand local needs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our quick helpers in Bareilly are fluent in Hindi and well-acquainted with local customs, traditions, and cooking styles. Whether it’s preparing Bareilly-style meals or assisting elders with pooja routines, our instant maid service matches you with culturally aware and sensitive professionals."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I book a quick helper in Bareilly for one-time tasks only?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, definitely. EzyHelpers lets you hire a quick helper in Bareilly for single-use or short-term tasks like festival preparation, guest cleanup, or urgent home maintenance services. There’s no need to commit to a long-term plan; just book as needed, when needed."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are instant maid services available during festivals or public holidays in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers provides instant maid service in Bareilly even during festivals and holidays. Whether it’s Diwali cleaning, Eid preparations, or Navratri fasting meal support, we ensure quick helpers are available when regular help is unavailable."
+      }
+    },{
+      "@type": "Question",
+      "name": "What happens if my booked quick helper in Bareilly cancels at the last minute?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the rare case of a cancellation, EzyHelpers offers a quick replacement guarantee. Our team will immediately assign another verified quick helper in Bareilly to ensure your home maintenance service or emergency task is not disrupted."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I book a quick helper in Bareilly for technical services like plumbing or appliance repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our instant maid service in Bareilly also includes trained technicians for home maintenance services like plumbing, electrical repairs, and appliance fixes. You can book these services instantly with no long wait."
+      }
+    }]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
         
@@ -33,12 +106,12 @@ export default function BareillyOnDemandHelperPage() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'Instant Maid Service' }
+            { label: 'Instant Help' }
           ]} 
         />
       
-        {/* Hero Section aligned with markdown */}
-        <section className="relative bg-gradient-to-br from-red-600 via-orange-600 to-yellow-500 text-white pt-20 pb-24 lg:pb-28 overflow-hidden">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-28 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -46,18 +119,20 @@ export default function BareillyOnDemandHelperPage() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Instant Maid Service in Bareilly – Quick Help When You Need It Most</h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed">
-                Need urgent domestic assistance? EzyHelpers offers instant maid service in Bareilly, ideal for emergency situations, sudden guests, last-minute cooking, or one-time events. Whether it’s a spill before a function or urgent elder care, our trained and verified quick helpers in Bareilly are just a call away, available within 2–4 hours!
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white">
+                Instant Maid Service in Bareilly – Quick Help When You Need It Most
+              </h1>
+              <p className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed font-medium">
+                Need urgent domestic assistance? EzyHelpers offers instant maid service in Bareilly, ideal for emergency situations, sudden guests, or one-time events. Our quick helpers are available within 2–4 hours!
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-red-700 font-semibold text-lg py-4 px-8 rounded-xl shadow-md hover:bg-gray-100 transition-all">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
                   Book an Instant Maid
                 </Link>
-                <Link href="tel:+918031411776" className="inline-flex items-center justify-center text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call 080-31411776
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all">
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
@@ -278,16 +353,22 @@ export default function BareillyOnDemandHelperPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="section-padding bg-gradient-to-br from-red-600 to-orange-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Get a Trusted Quick Helper in Bareilly – EzyHelpers is Just a Call Away</h2>
-              <p className="text-xl mb-8 text-red-100">From last-minute events to daily home emergencies, our quick helpers in Bareilly and instant maid service in Bareilly are your reliable local solution. Fast, trained, and background-verified help for all home maintenance services is just a call away.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-red-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book Instant Help Now</Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call for Same-Day Assistance
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 font-display leading-tight">
+                Get a Trusted Quick Helper in Bareilly – EzyHelpers is Just a Call Away
+              </h2>
+              <p className="text-xl mb-8 text-indigo-100 font-medium">
+                From last-minute events to daily home emergencies, our quick helpers and instant maid services in Bareilly are your reliable local solution.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
+                  Book Instant Help Now
+                </Link>
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all">
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
             </div>
@@ -295,20 +376,50 @@ export default function BareillyOnDemandHelperPage() {
         </section>
 
         {/* FAQs */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-white">
           <div className="container-custom max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
             <FAQAccordion
               faqs={[
-                { question: 'How quickly can I get an instant maid service in Bareilly?', answer: 'You can get an instant maid service in Bareilly within just 2–4 hours of booking through EzyHelpers. Whether it\'s emergency cleaning, cooking, or elderly care, we provide quick helpers in Bareilly on the same day, based on availability, for urgent or last-minute needs.' },
-                { question: 'What types of quick helper services does EzyHelpers offer in Bareilly?', answer: 'EzyHelpers offers a wide range of quick helper services in Bareilly through our trusted instant maid service. These include: Same-day deep cleaning and post-event cleanup; On-demand cooking (including fasting and traditional meals); Babysitting and childcare; Elderly support and companion care; Basic nursing and patient assistance at home; Technical home maintenance services like plumbing, electrical, and carpentry; Event support for functions and religious gatherings. All helpers are trained and ready for one-time or emergency assignments.' },
-                { question: 'How much does instant maid service in Bareilly cost?', answer: 'The cost of instant maid service in Bareilly is based on transparent hourly pricing. There are no hidden fees or lock-in commitments; you pay only after the work is completed to your satisfaction. Whether it’s a one-time deep clean or an urgent home maintenance service, we keep pricing clear and fair.' },
-                { question: 'Can I get emergency cleaning on the same day in Bareilly?', answer: 'Yes, you can! EzyHelpers provides same-day emergency cleaning as part of our instant maid service in Bareilly. Within 2–4 hours of booking, our quick helpers arrive fully equipped for sweeping, mopping, kitchen sanitization, bathroom cleaning, and even post-party mess cleanup.' },
-                { question: 'Do your quick helpers in Bareilly speak Hindi and understand local needs?', answer: 'Yes, our quick helpers in Bareilly are fluent in Hindi and well-acquainted with local customs, traditions, and cooking styles. Whether it’s preparing Bareilly-style meals or assisting elders with pooja routines, our instant maid service matches you with culturally aware and sensitive professionals.' },
-                { question: 'Can I book a quick helper in Bareilly for one-time tasks only?', answer: 'Yes, definitely. EzyHelpers lets you hire a quick helper in Bareilly for single-use or short-term tasks like festival preparation, guest cleanup, or urgent home maintenance services. There’s no need to commit to a long-term plan; just book as needed, when needed.' },
-                { question: 'Are instant maid services available during festivals or public holidays in Bareilly?', answer: 'Yes, EzyHelpers provides instant maid service in Bareilly even during festivals and holidays. Whether it’s Diwali cleaning, Eid preparations, or Navratri fasting meal support, we ensure quick helpers are available when regular help is unavailable.' },
-                { question: 'What happens if my booked quick helper in Bareilly cancels at the last minute?', answer: 'In the rare case of a cancellation, EzyHelpers offers a quick replacement guarantee. Our team will immediately assign another verified quick helper in Bareilly to ensure your home maintenance service or emergency task is not disrupted.' },
-                { question: 'Can I book a quick helper in Bareilly for technical services like plumbing or appliance repair?', answer: 'Yes. Our instant maid service in Bareilly also includes trained technicians for home maintenance services like plumbing, electrical repairs, and appliance fixes. You can book these services instantly with no long wait.' }
+                {
+                  question: "How quickly can I get an instant maid service in Bareilly?",
+                  answer: "You can get an instant maid service in Bareilly within just 2–4 hours of booking through EzyHelpers. Whether it's emergency cleaning, cooking, or elderly care, we provide quick helpers in Bareilly on the same day, based on availability, for urgent or last-minute needs."
+                },
+                {
+                  question: "What types of quick helper services does EzyHelpers offer in Bareilly?",
+                  answer: "EzyHelpers offers a wide range of quick helper services in Bareilly through our trusted instant maid service. These include: Same-day deep cleaning and post-event cleanup; On-demand cooking (including fasting and traditional meals); Babysitting and childcare; Elderly support and companion care; Basic nursing and patient assistance at home; Technical home maintenance services like plumbing, electrical, and carpentry; Event support for functions and religious gatherings. All helpers are trained and ready for one-time or emergency assignments."
+                },
+                {
+                  question: "How much does instant maid service in Bareilly cost?",
+                  answer: "The cost of instant maid service in Bareilly is based on transparent hourly pricing. There are no hidden fees or lock-in commitments; you pay only after the work is completed to your satisfaction. Whether it’s a one-time deep clean or an urgent home maintenance service, we keep pricing clear and fair."
+                },
+                {
+                  question: "Can I get emergency cleaning on the same day in Bareilly?",
+                  answer: "Yes, you can! EzyHelpers provides same-day emergency cleaning as part of our instant maid service in Bareilly. Within 2–4 hours of booking, our quick helpers arrive fully equipped for sweeping, mopping, kitchen sanitization, bathroom cleaning, and even post-party mess cleanup."
+                },
+                {
+                  question: "Do your quick helpers in Bareilly speak Hindi and understand local needs?",
+                  answer: "Yes, our quick helpers in Bareilly are fluent in Hindi and well-acquainted with local customs, traditions, and cooking styles. Whether it’s preparing Bareilly-style meals or assisting elders with pooja routines, our instant maid service matches you with culturally aware and sensitive professionals."
+                },
+                {
+                  question: "Can I book a quick helper in Bareilly for one-time tasks only?",
+                  answer: "Yes, definitely. EzyHelpers lets you hire a quick helper in Bareilly for single-use or short-term tasks like festival preparation, guest cleanup, or urgent home maintenance services. There’s no need to commit to a long-term plan; just book as needed, when needed."
+                },
+                {
+                  question: "Are instant maid services available during festivals or public holidays in Bareilly?",
+                  answer: "Yes, EzyHelpers provides instant maid service in Bareilly even during festivals and holidays. Whether it’s Diwali cleaning, Eid preparations, or Navratri fasting meal support, we ensure quick helpers are available when regular help is unavailable."
+                },
+                {
+                  question: "What happens if my booked quick helper in Bareilly cancels at the last minute?",
+                  answer: "In the rare case of a cancellation, EzyHelpers offers a quick replacement guarantee. Our team will immediately assign another verified quick helper in Bareilly to ensure your home maintenance service or emergency task is not disrupted."
+                },
+                {
+                  question: "Can I book a quick helper in Bareilly for technical services like plumbing or appliance repair?",
+                  answer: "Yes. Our instant maid service in Bareilly also includes trained technicians for home maintenance services like plumbing, electrical repairs, and appliance fixes. You can book these services instantly with no long wait."
+                }
               ]}
             />
           </div>

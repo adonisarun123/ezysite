@@ -22,6 +22,102 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyElderlyCare() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What does daily personal care include for elderly at home in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Daily personal care by a caretaker for elderly at home in Bareilly includes bathing, grooming, dressing, toilet assistance, and maintaining hygiene. EzyHelpers’ home elder care services in Bareilly ensure seniors feel clean, comfortable, and cared for with dignity and respect."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do elderly caretakers in Bareilly help with medicine management?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, under our home elder care services in Bareilly, caretakers for elderly at home help with timely medication reminders and dosage assistance as per doctor’s advice, ensuring seniors maintain their health routines safely and consistently."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do your elderly caretakers in Bareilly help with personal hygiene?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our caretaker for elderly at home in Bareilly assists with hygiene tasks such as bathing, grooming, dressing, and cleanliness. EzyHelpers ensures seniors receive respectful and supportive hygiene care at home."
+      }
+    },{
+      "@type": "Question",
+      "name": "What kind of meals do your caretakers prepare for seniors in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our home elder care services in Bareilly include preparing healthy and locally preferred meals. Caretakers for elderly at home consider dietary restrictions, personal taste, and medical needs while cooking for seniors."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I get a caretaker for post-hospital recovery at home in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers offers caretakes in Bareilly trained in post-hospital recovery. Our services include medication support, diet monitoring, rest assistance, and safe mobility during the recovery period."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do elderly care assistants help elderly people with mobility in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our caretakers for elderly at home in Bareilly support safe movement within the home. As part of our home elder care services in Bareilly, they help with walking, standing, sitting, and preventing falls."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are your caregivers trained in elder safety and emergency response?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers’ caretaker for elderly at home in Bareilly is trained in elder safety, including fall prevention, emergency support, and care for chronic conditions like diabetes and high blood pressure."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you offer elder care for seniors with memory loss in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our home elder care services in Bareilly include support for seniors with memory issues. Caretakers provide calm, patient, and structured care for conditions like forgetfulness and confusion."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do elderly caretakers in Bareilly provide night-time assistance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, a live-in caretaker for elderly at home in Bareilly offers full night-time assistance. Our home elder care services cover late-night bathroom help, medication support, and comfort during sleep disturbances."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you provide male and female senior care assistants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers provides both male and female caretaker for elderly at home in Bareilly. Families can choose based on preference and comfort, with all caregivers fully trained and verified."
+      }
+    },{
+      "@type": "Question",
+      "name": "How does EzyHelpers ensure quality in home elder care services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EzyHelpers maintains high standards for home elder care services in Bareilly by selecting trained, background-verified caregivers. We offer regular monitoring, family feedback, and active support to ensure consistent elder care quality."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are elderly caretakers in Bareilly available for recovering patients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our caretaker for the elderly are trained to care for recovering seniors. EzyHelpers provides post-hospital home elder care services that include medicine management, nutrition, and gentle physical support."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are the caretakers trained to handle medical equipment or devices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While they are not medical professionals, our caretakers for elderly at home in Bareilly are trained to assist with basic medical equipment under supervision. As part of our home elder care services in Bareilly, they can help with tasks like checking blood pressure, using digital thermometers, and supporting doctor-advised routines safely and confidently."
+      }
+    }]
+  };
   const serviceBadges = [
     'Background Verified Caretakers',
     'Compassionate Care',
@@ -37,6 +133,10 @@ export default function BareillyElderlyCare() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -44,12 +144,12 @@ export default function BareillyElderlyCare() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'Elderly Care Services' }
+            { label: 'Elderly Care' }
           ]} 
         />
       
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -57,34 +157,34 @@ export default function BareillyElderlyCare() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-display leading-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
                 Caretaker for Elderly at Home in Bareilly – Trustworthy Support for Your Loved Ones
               </h1>
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">
-                Get verified, trained caretakers for elderly at home in Bareilly for daily support, health monitoring, and compassionate care, ensuring your elders feel safe and cared for at home.
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                Get verified, trained caretakers for elderly at home in Bareilly for daily support, health monitoring, and compassionate care.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center w-full bg-white text-purple-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book Elderly Care
                 </Link>
 
                 <Link
                   href="tel:+918031411776"
-                  className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call 080-31411776
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
               {/* Service Assurance Badges */}
-              <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
                 {serviceBadges.map((b, i) => (
-                  <span key={i} className="text-sm bg-white/10 border border-white/20 rounded-full px-3 py-1">
+                  <span key={i} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold">
                     ✓ {b}
                   </span>
                 ))}
@@ -93,9 +193,9 @@ export default function BareillyElderlyCare() {
               {/* Highlight Metrics */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 {highlightMetrics.map((m, i) => (
-                  <div key={i} className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-                    <div className="text-3xl font-bold text-white mb-1">{m.value}</div>
-                    <div className="text-purple-100">{m.label}</div>
+                  <div key={i} className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                    <div className="text-3xl font-extrabold text-white mb-1">{m.value}</div>
+                    <div className="text-indigo-100 font-medium">{m.label}</div>
                   </div>
                 ))}
               </div>
@@ -271,16 +371,22 @@ export default function BareillyElderlyCare() {
         </section>
 
         {/* Final CTA */}
-        <section className="section-padding bg-gradient-to-br from-purple-600 to-blue-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Book our Home Senior Care Services today!</h2>
-              <p className="text-xl mb-8 text-purple-100">Don’t leave your loved ones alone. EzyHelpers provides trusted, local, and compassionate elder care in Bareilly.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-purple-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300">Book Elder Care</Link>
-                <Link href="tel:+919972571005" className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call for Quick Caretaker
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
+                Book our Home Senior Care Services today!
+              </h2>
+              <p className="text-xl mb-8 text-indigo-100 font-medium">
+                Don’t leave your loved ones alone. EzyHelpers provides trusted, local, and compassionate elder care in Bareilly.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
+                  Book Elder Care
+                </Link>
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all">
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
             </div>
@@ -289,35 +395,77 @@ export default function BareillyElderlyCare() {
 
         {/* Our Caregiving Philosophy */}
         <section className="section-padding bg-white">
-          <div className="container-custom max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Our Caregiving Philosophy: Compassionate Care You Can Trust</h2>
-            <p className="text-gray-700 mb-4">At EzyHelpers, we understand that choosing a caretaker for elderly at home in Bareilly is not just a practical decision, it’s deeply emotional. That’s why we focus on building a team of caregivers who are not only skilled and trained but also genuinely compassionate and respectful toward seniors. Each caregiver we select reflects our values of trust, empathy, and responsibility.</p>
-            <p className="text-gray-700 mb-4">Our home elder care services in Bareilly begin with hiring individuals who naturally connect with elderly people, those who are patient, warm-hearted, and attentive to the needs of ageing individuals. Whether your loved one needs help walking, reminders for medicines, or simply someone to talk to, our caretakers offer care that is both professional and deeply human.</p>
-            <p className="text-gray-700 mb-4">We train all caretakers in essential elder care practices, including hygiene support, fall prevention, chronic illness care (like diabetes and blood pressure), and safe mobility assistance. They also learn how to support memory-related issues like forgetfulness or confusion with calmness and reassurance.</p>
-            <p className="text-gray-700">What makes our approach truly personal is our effort to match each elder with a caretaker who understands their daily routine, language preference, and family culture. Whether it’s respecting religious habits, dietary customs, or simply chatting about old memories, we ensure your loved one feels valued and at ease.</p>
-            <p className="text-gray-700 mt-4">With EzyHelpers’ home elder care services in Bareilly, your family gains not just a helper, but a reliable companion who treats your elder with the dignity, attention, and kindness they truly deserve.</p>
+          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Our Caregiving Philosophy</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+              <p>At EzyHelpers, we understand that choosing a caretaker for elderly at home in Bareilly is not just a practical decision, it’s deeply emotional.</p>
+              <p className="font-medium text-indigo-900/80">Our home elder care services in Bareilly begin with hiring individuals who naturally connect with elderly people.</p>
+              <p>With EzyHelpers’ home elder care services in Bareilly, your family gains not just a helper, but a reliable companion.</p>
+            </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">FAQs</h2>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
             <FAQAccordion
               faqs={[
-                { question: 'What does daily personal care include for elderly at home in Bareilly?', answer: 'Daily personal care by a caretaker for elderly at home in Bareilly includes bathing, grooming, dressing, toilet assistance, and maintaining hygiene. EzyHelpers’ home elder care services in Bareilly ensure seniors feel clean, comfortable, and cared for with dignity and respect.' },
-                { question: 'Do elderly caretakers in Bareilly help with medicine management?', answer: 'Yes, under our home elder care services in Bareilly, caretakers for elderly at home help with timely medication reminders and dosage assistance as per doctor’s advice, ensuring seniors maintain their health routines safely and consistently.' },
-                { question: 'Do your elderly caretakers in Bareilly help with personal hygiene?', answer: 'Yes, our caretaker for elderly at home in Bareilly assists with hygiene tasks such as bathing, grooming, dressing, and cleanliness. EzyHelpers ensures seniors receive respectful and supportive hygiene care at home.' },
-                { question: 'What kind of meals do your caretakers prepare for seniors in Bareilly?', answer: 'Our home elder care services in Bareilly include preparing healthy and locally preferred meals. Caretakers for elderly at home consider dietary restrictions, personal taste, and medical needs while cooking for seniors.' },
-                { question: 'Can I get a caretaker for post-hospital recovery at home in Bareilly?', answer: 'Yes, EzyHelpers offers caretakes in Bareilly trained in post-hospital recovery. Our services include medication support, diet monitoring, rest assistance, and safe mobility during the recovery period.' },
-                { question: 'Do elderly care assistants help elderly people with mobility in Bareilly?', answer: 'Yes, our caretakers for elderly at home in Bareilly support safe movement within the home. As part of our home elder care services in Bareilly, they help with walking, standing, sitting, and preventing falls.' },
-                { question: 'Are your caregivers trained in elder safety and emergency response?', answer: 'Yes, EzyHelpers’ caretaker for elderly at home in Bareilly is trained in elder safety, including fall prevention, emergency support, and care for chronic conditions like diabetes and high blood pressure.' },
-                { question: 'Do you offer elder care for seniors with memory loss in Bareilly?', answer: 'Yes, our home elder care services in Bareilly include support for seniors with memory issues. Caretakers provide calm, patient, and structured care for conditions like forgetfulness and confusion.' },
-                { question: 'Do elderly caretakers in Bareilly provide night-time assistance?', answer: 'Yes, a live-in caretaker for elderly at home in Bareilly offers full night-time assistance. Our home elder care services cover late-night bathroom help, medication support, and comfort during sleep disturbances.' },
-                { question: 'Do you provide male and female senior care assistants?', answer: 'Yes, EzyHelpers provides both male and female caretaker for elderly at home in Bareilly. Families can choose based on preference and comfort, with all caregivers fully trained and verified.' },
-                { question: 'How does EzyHelpers ensure quality in home elder care services in Bareilly?', answer: 'EzyHelpers maintains high standards for home elder care services in Bareilly by selecting trained, background-verified caregivers. We offer regular monitoring, family feedback, and active support to ensure consistent elder care quality.' },
-                { question: 'Are elderly caretakers in Bareilly available for recovering patients?', answer: 'Yes, our caretaker for the elderly are trained to care for recovering seniors. EzyHelpers provides post-hospital home elder care services that include medicine management, nutrition, and gentle physical support.' },
-                { question: 'Are the caretakers trained to handle medical equipment or devices?', answer: 'While they are not medical professionals, our caretakers for elderly at home in Bareilly are trained to assist with basic medical equipment under supervision. As part of our home elder care services in Bareilly, they can help with tasks like checking blood pressure, using digital thermometers, and supporting doctor-advised routines safely and confidently.' }
+                {
+                  question: "What does daily personal care include for elderly at home in Bareilly?",
+                  answer: "Daily personal care by a caretaker for elderly at home in Bareilly includes bathing, grooming, dressing, toilet assistance, and maintaining hygiene. EzyHelpers’ home elder care services in Bareilly ensure seniors feel clean, comfortable, and cared for with dignity and respect."
+                },
+                {
+                  question: "Do elderly caretakers in Bareilly help with medicine management?",
+                  answer: "Yes, under our home elder care services in Bareilly, caretakers for elderly at home help with timely medication reminders and dosage assistance as per doctor’s advice, ensuring seniors maintain their health routines safely and consistently."
+                },
+                {
+                  question: "Do your elderly caretakers in Bareilly help with personal hygiene?",
+                  answer: "Yes, our caretaker for elderly at home in Bareilly assists with hygiene tasks such as bathing, grooming, dressing, and cleanliness. EzyHelpers ensures seniors receive respectful and supportive hygiene care at home."
+                },
+                {
+                  question: "What kind of meals do your caretakers prepare for seniors in Bareilly?",
+                  answer: "Our home elder care services in Bareilly include preparing healthy and locally preferred meals. Caretakers for elderly at home consider dietary restrictions, personal taste, and medical needs while cooking for seniors."
+                },
+                {
+                  question: "Can I get a caretaker for post-hospital recovery at home in Bareilly?",
+                  answer: "Yes, EzyHelpers offers caretakes in Bareilly trained in post-hospital recovery. Our services include medication support, diet monitoring, rest assistance, and safe mobility during the recovery period."
+                },
+                {
+                  question: "Do elderly care assistants help elderly people with mobility in Bareilly?",
+                  answer: "Yes, our caretakers for elderly at home in Bareilly support safe movement within the home. As part of our home elder care services in Bareilly, they help with walking, standing, sitting, and preventing falls."
+                },
+                {
+                  question: "Are your caregivers trained in elder safety and emergency response?",
+                  answer: "Yes, EzyHelpers’ caretaker for elderly at home in Bareilly is trained in elder safety, including fall prevention, emergency support, and care for chronic conditions like diabetes and high blood pressure."
+                },
+                {
+                  question: "Do you offer elder care for seniors with memory loss in Bareilly?",
+                  answer: "Yes, our home elder care services in Bareilly include support for seniors with memory issues. Caretakers provide calm, patient, and structured care for conditions like forgetfulness and confusion."
+                },
+                {
+                  question: "Do elderly caretakers in Bareilly provide night-time assistance?",
+                  answer: "Yes, a live-in caretaker for elderly at home in Bareilly offers full night-time assistance. Our home elder care services cover late-night bathroom help, medication support, and comfort during sleep disturbances."
+                },
+                {
+                  question: "Do you provide male and female senior care assistants?",
+                  answer: "Yes, EzyHelpers provides both male and female caretaker for elderly at home in Bareilly. Families can choose based on preference and comfort, with all caregivers fully trained and verified."
+                },
+                {
+                  question: "How does EzyHelpers ensure quality in home elder care services in Bareilly?",
+                  answer: "EzyHelpers maintains high standards for home elder care services in Bareilly by selecting trained, background-verified caregivers. We offer regular monitoring, family feedback, and active support to ensure consistent elder care quality."
+                },
+                {
+                  question: "Are elderly caretakers in Bareilly available for recovering patients?",
+                  answer: "Yes, our caretaker for the elderly are trained to care for recovering seniors. EzyHelpers provides post-hospital home elder care services that include medicine management, nutrition, and gentle physical support."
+                },
+                {
+                  question: "Are the caretakers trained to handle medical equipment or devices?",
+                  answer: "While they are not medical professionals, our caretakers for elderly at home in Bareilly are trained to assist with basic medical equipment under supervision. As part of our home elder care services in Bareilly, they can help with tasks like checking blood pressure, using digital thermometers, and supporting doctor-advised routines safely and confidently."
+                }
               ]}
             />
           </div>

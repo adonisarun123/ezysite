@@ -15,14 +15,11 @@ import {
 
 export const metadata: Metadata = {
   title: 'Babysitter Services in Bareilly – Trusted Child Care',
-  description:
-    'Book babysitter services in Bareilly for newborns, toddlers, or school-aged children. Safe, caring support for full-day or part-time needs.',
-  keywords:
-    'babysitter Bareilly, nanny services Bareilly, child care Bareilly, baby care Bareilly, verified babysitter, trained nanny',
+  description: 'Book babysitter services in Bareilly for newborns, toddlers, or school-aged children. Safe, caring support for full-day or part-time needs.',
+  keywords: 'babysitter Bareilly, nanny services Bareilly, child care Bareilly, baby care Bareilly, verified babysitter, trained nanny',
   openGraph: {
     title: 'Babysitter Services in Bareilly – Trusted Child Care',
-    description:
-      'Book babysitter services in Bareilly for newborns, toddlers, or school-aged children. Safe, caring support for full-day or part-time needs.',
+    description: 'Book babysitter services in Bareilly for newborns, toddlers, or school-aged children. Safe, caring support for full-day or part-time needs.',
     url: 'https://www.ezyhelpers.com/cities/bareilly/babysitter',
     type: 'website'
   },
@@ -32,6 +29,96 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyBabysitterPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Can home babysitters in Bareilly handle children with special needs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EzyHelpers provides trained home babysitters in Bareilly who can care for children with special needs. They offer patient, personalised support and are equipped to handle medical, developmental, or behavioural requirements with care and confidence."
+      }
+    },{
+      "@type": "Question",
+      "name": "How do I know my child will be safe with a home babysitter in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your child’s safety is our highest priority. Every home babysitter in Bareilly provided by EzyHelpers is thoroughly background verified using Aadhaar and valid address proof. Upon request, we also offer optional police verification and medical screening for added assurance. With our careful screening process, you can trust that your child is in safe, responsible hands."
+      }
+    },{
+      "@type": "Question",
+      "name": "What are the benefits of choosing professional babysitter services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choosing professional babysitter services in Bareilly from EzyHelpers gives you access to trained, background-verified caretakers who follow age-appropriate routines, are emergency-ready, understand cultural values, and are supported by our ongoing service team, unlike unverified local help."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do babysitter services in Bareilly include specialised care for newborns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, babysitter services in Bareilly include expert care for newborns (0–6 months), covering feeding, diaper changes, hygiene, and sleep routines. We also provide Japa maids in Bareilly for traditional postnatal care for mothers and babies."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are home babysitters in Bareilly trained to manage emotional needs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, every home babysitter in Bareilly is trained to support children emotionally. They manage tantrums, separation anxiety, and mood swings using child-friendly, patient care methods that build trust and comfort."
+      }
+    },{
+      "@type": "Question",
+      "name": "What is the difference between a babysitter and a Japa maid in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A babysitter in Bareilly provides daily care like feeding, playtime, and homework help. In contrast, a Japa maid in Bareilly focuses on postnatal care for newborns and mothers, including massage, bathing, and recovery support after childbirth."
+      }
+    },{
+      "@type": "Question",
+      "name": "How much do babysitter services in Bareilly cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Babysitter services in Bareilly are priced based on service type: live-in, full-time, or part-time. EzyHelpers offers flexible plans with clear pricing. Contact us for a custom quote based on your schedule and needs."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do home babysitters in Bareilly help with potty training?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, home babysitters in Bareilly are trained to support potty training for toddlers. They use gentle, consistent methods and coordinate with parents to reinforce routines at home."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are babysitters in Bareilly fluent in Hindi and English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, babysitters in Bareilly are fluent in Hindi and English. They can engage children with Hindi lullabies and traditional games and also support English learning, especially for preschool and school-age kids."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can home babysitters in Bareilly manage twins or multiple children?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, experienced home babysitters in Bareilly are well-equipped to care for twins or multiple children. Live-in options are ideal for managing different sleep and feeding schedules while giving each child personalised care."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are babysitter services in Bareilly available for evening events?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, part-time babysitter services in Bareilly are perfect for evenings, social events, and short-term needs. Flexible scheduling and weekend availability make them ideal for busy parents needing temporary support."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can home babysitters in Bareilly supervise both indoor and outdoor play?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Every home babysitter in Bareilly ensures children enjoy both safe indoor games and supervised outdoor play, keeping them active, happy, and engaged."
+      }
+    }]
+  };
+
   const serviceAssuranceBadges = [
     'Background Verified Caretakers',
     'Personalized Matching',
@@ -142,6 +229,10 @@ export default function BareillyBabysitterPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -154,7 +245,7 @@ export default function BareillyBabysitterPage() {
         />
       
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-pink-600 via-rose-600 to-red-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
 
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
@@ -164,32 +255,32 @@ export default function BareillyBabysitterPage() {
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
               <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                <HeartIcon className="h-5 w-5 text-pink-300 mr-2" />
+                <HeartIcon className="h-5 w-5 text-indigo-300 mr-2" />
                 <span className="text-sm font-semibold">Safe & Loving Child Care</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
                 Babysitter Services in Bareilly – Safe & Loving Care for Your Child
               </h1>
               
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">
-                EzyHelpers offers trusted, background-verified babysitters in Bareilly for newborns, toddlers, and school-going children. Choose from full-time, part-time, or live-in nanny options tailored to your family’s routine, safety, and childcare needs.
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                EzyHelpers offers trusted, background-verified babysitters in Bareilly for newborns, toddlers, and school-going children. Choose from full-time, part-time, or live-in nanny options.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center w-full bg-white text-pink-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book a Babysitter Today
                 </Link>
 
                 <Link
-                  href="tel:+919972571005"
-                  className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-6 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call for Trusted Babysitter
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
               {/* Badges */}
@@ -363,30 +454,30 @@ export default function BareillyBabysitterPage() {
         </section>
 
         {/* CTA: Book Your Babysitter in Bareilly Today */}
-        <section className="section-padding bg-gradient-to-br from-pink-600 to-rose-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 font-display leading-tight">
                 Book Your Babysitter in Bareilly Today
               </h2>
-              <p className="text-xl mb-8 text-pink-100">
+              <p className="text-xl mb-8 text-indigo-100 font-medium">
                 With EzyHelpers, finding the right babysitter in Bareilly is safe, simple, and fast. Let us help you care for your little one while you focus on work and life.
               </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center bg-white text-pink-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book Babysitter Services
                 </Link>
                 
                 <Link
-                  href="tel:+919972571005"
-                  className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call Now
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
             </div>
@@ -396,25 +487,74 @@ export default function BareillyBabysitterPage() {
         {/* Why Professional Babysitter Services Are Better */}
         <section className="section-padding bg-white">
           <div className="container-custom">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why Professional Babysitter Services Are Better Than Unverified Local Help</h2>
-              <p className="text-gray-700 mb-4">Choosing a verified babysitter from EzyHelpers gives your family a much safer and more dependable childcare experience than hiring through word-of-mouth or local classifieds. While untrained help may seem convenient, they often lack the skills, background checks, and emergency preparedness essential for modern parenting needs.</p>
-              <p className="text-gray-700 mb-4">EzyHelpers provides background-verified, trained babysitters in Bareilly who are equipped to handle real-life childcare challenges, from feeding fussy toddlers to managing sibling routines and responding calmly in urgent situations. They follow age-specific care routines and respect parenting preferences, whether it’s screen-free play, nap-time boundaries, or cultural values like modest dressing and traditional food preparation.</p>
-              <p className="text-gray-700 mb-4">Local parenting in Bareilly often includes managing extended family expectations and regional customs. Our babysitters are trained to joint family environments, understand the importance of respect toward elders, and can even assist with small festival rituals or child-specific pooja routines when needed.</p>
-              <p className="text-gray-700">Unlike unverified maids or neighbours, our babysitters come with EzyHelpers support, ensuring families always have reliable assistance for replacements, concerns, or schedule adjustments. We provide flexible packages, transparent hiring, and ongoing coordination, ensuring that both your child and your household remain happy and stress-free.</p>
+            <div className="max-w-5xl mx-auto border-l-4 border-indigo-600 pl-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Professional Babysitter Services Are Better Than Unverified Local Help</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Choosing a verified babysitter from EzyHelpers gives your family a much safer and more dependable childcare experience than hiring through word-of-mouth or local classifieds. While untrained help may seem convenient, they often lack the skills, background checks, and emergency preparedness essential for modern parenting needs.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed font-medium text-indigo-900/80">EzyHelpers provides background-verified, trained babysitters in Bareilly who are equipped to handle real-life childcare challenges, from feeding fussy toddlers to managing sibling routines and responding calmly in urgent situations.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Local parenting in Bareilly often includes managing extended family expectations and regional customs. Our babysitters are trained to joint family environments, understand the importance of respect toward elders, and can even assist with small festival rituals or child-specific pooja routines when needed.</p>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <div className="max-w-4xl mx-auto">
-              <FAQAccordion faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
-            </div>
+            <FAQAccordion
+              faqs={[
+                {
+                  question: "Can home babysitters in Bareilly handle children with special needs?",
+                  answer: "Yes, EzyHelpers provides trained home babysitters in Bareilly who can care for children with special needs. They offer patient, personalised support and are equipped to handle medical, developmental, or behavioural requirements with care and confidence."
+                },
+                {
+                  question: "How do I know my child will be safe with a home babysitter in Bareilly?",
+                  answer: "Your child’s safety is our highest priority. Every home babysitter in Bareilly provided by EzyHelpers is thoroughly background verified using Aadhaar and valid address proof. Upon request, we also offer optional police verification and medical screening for added assurance. With our careful screening process, you can trust that your child is in safe, responsible hands."
+                },
+                {
+                  question: "What are the benefits of choosing professional babysitter services in Bareilly?",
+                  answer: "Choosing professional babysitter services in Bareilly from EzyHelpers gives you access to trained, background-verified caretakers who follow age-appropriate routines, are emergency-ready, understand cultural values, and are supported by our ongoing service team, unlike unverified local help."
+                },
+                {
+                  question: "Do babysitter services in Bareilly include specialised care for newborns?",
+                  answer: "Yes, babysitter services in Bareilly include expert care for newborns (0–6 months), covering feeding, diaper changes, hygiene, and sleep routines. We also provide Japa maids in Bareilly for traditional postnatal care for mothers and babies."
+                },
+                {
+                  question: "Are home babysitters in Bareilly trained to manage emotional needs?",
+                  answer: "Yes, every home babysitter in Bareilly is trained to support children emotionally. They manage tantrums, separation anxiety, and mood swings using child-friendly, patient care methods that build trust and comfort."
+                },
+                {
+                  question: "What is the difference between a babysitter and a Japa maid in Bareilly?",
+                  answer: "A babysitter in Bareilly provides daily care like feeding, playtime, and homework help. In contrast, a Japa maid in Bareilly focuses on postnatal care for newborns and mothers, including massage, bathing, and recovery support after childbirth."
+                },
+                {
+                  question: "How much do babysitter services in Bareilly cost?",
+                  answer: "Babysitter services in Bareilly are priced based on service type: live-in, full-time, or part-time. EzyHelpers offers flexible plans with clear pricing. Contact us for a custom quote based on your schedule and needs."
+                },
+                {
+                  question: "Do home babysitters in Bareilly help with potty training?",
+                  answer: "Yes, home babysitters in Bareilly are trained to support potty training for toddlers. They use gentle, consistent methods and coordinate with parents to reinforce routines at home."
+                },
+                {
+                  question: "Are babysitters in Bareilly fluent in Hindi and English?",
+                  answer: "Yes, babysitters in Bareilly are fluent in Hindi and English. They can engage children with Hindi lullabies and traditional games and also support English learning, especially for preschool and school-age kids."
+                },
+                {
+                  question: "Can home babysitters in Bareilly manage twins or multiple children?",
+                  answer: "Yes, experienced home babysitters in Bareilly are well-equipped to care for twins or multiple children. Live-in options are ideal for managing different sleep and feeding schedules while giving each child personalised care."
+                },
+                {
+                  question: "Are babysitter services in Bareilly available for evening events?",
+                  answer: "Yes, part-time babysitter services in Bareilly are perfect for evenings, social events, and short-term needs. Flexible scheduling and weekend availability make them ideal for busy parents needing temporary support."
+                },
+                {
+                  question: "Can home babysitters in Bareilly supervise both indoor and outdoor play?",
+                  answer: "Absolutely. Every home babysitter in Bareilly ensures children enjoy both safe indoor games and supervised outdoor play, keeping them active, happy, and engaged."
+                }
+              ]}
+            />
           </div>
         </section>
 

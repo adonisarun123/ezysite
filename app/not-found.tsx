@@ -15,7 +15,7 @@ export default function NotFound() {
   return (
     <>
       
-      <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <Navbar />
         
         {/* 404 Hero Section */}
@@ -185,7 +185,7 @@ export default function NotFound() {
         </section>
 
         <Footer />
-      </main>
+      </div>
     </>
   )
-} 
+}

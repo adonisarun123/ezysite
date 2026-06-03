@@ -26,6 +26,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Domestic Help Services in Delhi | Verified Maids & Home Staff | EzyHelpers',
   description:
     'Book verified maids, cooks, nannies, drivers, and elderly care in Delhi. Background-checked domestic help for Lutyens, South Delhi, Dwarka, and across NCR.',

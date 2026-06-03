@@ -104,14 +104,38 @@ export default function BangalorePlumberPage() {
   ]
 
   const faqs = [
-    { question: 'Is plumbing help available for apartments in Bangalore?', answer: 'Yes, our plumber services in Bangalore specialise in apartment complexes and high-rise buildings. We understand space constraints, neighbour considerations, and building-specific plumbing systems.' },
-    { question: 'Do your plumbers handle bathroom renovation for traditional homes?', answer: 'Yes, our bathroom renovation support includes complete upgrades for older homes, modern fixture installation, and space optimisation that is perfect for traditional houses.' },
-    { question: 'Can I schedule a plumbing inspection before moving into a flat?', answer: 'Yes, our pre-move plumbing inspections ensure that your new flat has leak-free and functional plumbing. It&rsquo;s a smart step to avoid post-move hassles or unexpected repair costs.' },
-    { question: 'Do plumbers repair both PVC and metal plumbing systems?', answer: 'Yes. Our trained plumbers handle all types of plumbing systems, including PVC, CPVC, GI, PEX, and copper piping, using tools and techniques suited for each material.' },
-    { question: 'What causes frequent drain blockages in homes?', answer: 'Drain blockages in homes are often caused by hair accumulation, soap residue, food particles, and hard water mineral deposits. Kitchen drains may also clog due to oil and grease buildup. Our drain cleaning service uses high-pressure water jetting to effectively remove all obstructions.' },
-    { question: 'Do I need to buy the parts, or will your plumber bring them?', answer: 'No need to worry. Our plumbers come fully prepared. When you book our house plumbing repair service in Bangalore, they will first inspect the issue and recommend the necessary parts. If replacements are needed, they&rsquo;ll either carry them or source genuine parts from trusted local suppliers. You won&rsquo;t have to visit a store or guess what&rsquo;s needed; we handle everything transparently and efficiently.' },
-    { question: 'Do your plumbers work on Sundays or public holidays?', answer: 'Yes, absolutely. Our plumber services in Bangalore are available seven days a week, including Sundays and public holidays. We understand that plumbing emergencies don&rsquo;t follow a calendar. Our verified plumbers are always ready to provide prompt, doorstep plumbing support.' },
-    { question: 'How do I hire a local plumber in Bangalore?', answer: 'With EzyHelpers, finding a reliable plumber nearby is no trouble at all. Just visit our website or call our customer support to book a certified plumber near you. We&rsquo;ll match you with a background-verified and experienced plumbing professional based on your location and service need. You can also schedule services for weekends or emergency slots. No need to search endlessly or deal with unreliable handymen.' }
+    {
+      question: "Is plumbing help available for apartments in Bangalore?",
+      answer: "Yes, our plumber services in Bangalore specialise in apartment complexes and high-rise buildings. We understand space constraints, neighbour considerations, and building-specific plumbing systems."
+    },
+    {
+      question: "Do your plumbers handle bathroom renovation for traditional homes?",
+      answer: "Yes, our bathroom renovation support includes complete upgrades for older homes, modern fixture installation, and space optimisation that is perfect for traditional houses."
+    },
+    {
+      question: "Can I schedule a plumbing inspection before moving into a flat?",
+      answer: "Yes, our pre-move plumbing inspections ensure that your new flat has leak-free and functional plumbing. It’s a smart step to avoid post-move hassles or unexpected repair costs."
+    },
+    {
+      question: "Do plumbers repair both PVC and metal plumbing systems?",
+      answer: "Yes. Our trained plumbers handle all types of plumbing systems, including PVC, CPVC, GI, PEX, and copper piping, using tools and techniques suited for each material."
+    },
+    {
+      question: "What causes frequent drain blockages in homes?",
+      answer: "Drain blockages in homes are often caused by hair accumulation, soap residue, food particles, and hard water mineral deposits. Kitchen drains may also clog due to oil and grease buildup. Our drain cleaning service uses high-pressure water jetting to effectively remove all obstructions."
+    },
+    {
+      question: "Do I need to buy the parts, or will your plumber bring them?",
+      answer: "No need to worry. Our plumbers come fully prepared. When you book our house plumbing repair service in Bangalore, they will first inspect the issue and recommend the necessary parts. If replacements are needed, they’ll either carry them or source genuine parts from trusted local suppliers. You won’t have to visit a store or guess what’s needed; we handle everything transparently and efficiently."
+    },
+    {
+      question: "Do your plumbers work on Sundays or public holidays?",
+      answer: "Yes, absolutely. Our plumber services in Bangalore are available seven days a week, including Sundays and public holidays. We understand that plumbing emergencies don’t follow a calendar. Our verified plumbers are always ready to provide prompt, doorstep plumbing support."
+    },
+    {
+      question: "How do I hire a local plumber in Bangalore?",
+      answer: "With EzyHelpers, finding a reliable plumber nearby is no trouble at all. Just visit our website or call our customer support to book a certified plumber near you. We’ll match you with a background-verified and experienced plumbing professional based on your location and service need. You can also schedule services for weekends or emergency slots. No need to search endlessly or deal with unreliable handymen."
+    }
   ]
 
   const localBusinessProps = {

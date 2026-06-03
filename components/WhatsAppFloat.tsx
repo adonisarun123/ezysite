@@ -1,11 +1,20 @@
 'use client'
 
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import { trackWhatsAppClick } from '@/lib/analytics';
 import { whatsappSendUrl } from '@/lib/whatsappUrl';
 
 const WhatsAppFloat: React.FC = () => {
-  const phoneNumber = '+919008596005';
+  const pathname = usePathname();
+
+  // Care pages render their own context-aware widget (CareWhatsAppFloat).
+  // Suppress this global one there so the two never overlap.
+  if (pathname && pathname.startsWith('/care-services')) {
+    return null;
+  }
+
+  const phoneNumber = '+919972571005';
   const message = 'Hi! I would like to know more about your services.';
   
   const handleWhatsAppClick = () => {
@@ -17,11 +26,12 @@ const WhatsAppFloat: React.FC = () => {
   };
 
   return (
-    <div 
-      className="fixed top-1/2 right-6 -translate-y-1/2 z-50 cursor-pointer transform transition-all duration-300 hover:scale-110 
-                 md:top-1/2 md:-translate-y-1/2 
-                 sm:top-3/4 sm:-translate-y-1/4 sm:right-4"
+    <div
+      className="fixed z-40 cursor-pointer transition-transform duration-300 hover:scale-110 active:scale-95 touch-manipulation
+                 max-md:bottom-6 max-md:right-4 max-md:left-auto max-md:top-auto max-md:translate-y-0
+                 md:top-1/2 md:right-6 md:left-auto md:bottom-auto md:-translate-y-1/2"
       onClick={handleWhatsAppClick}
+      aria-label="Chat on WhatsApp"
     >
       <div className="bg-green-500 hover:bg-green-600 rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse">
         <svg

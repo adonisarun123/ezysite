@@ -14,6 +14,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Domestic Help in Meerut | Verified Maids & Home Help | EzyHelpers',
   description:
     'Hire verified domestic help in Meerut for business families, professionals, and educational areas. Maids, cooks, and more via EzyHelpers.',

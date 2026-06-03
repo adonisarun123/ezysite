@@ -22,6 +22,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Domestic Help in Kanpur | Verified Maids & Home Staff | EzyHelpers',
   description:
     'Book background-verified maids, cooks, nannies, and drivers in Kanpur for industrial, business, and residential households.',

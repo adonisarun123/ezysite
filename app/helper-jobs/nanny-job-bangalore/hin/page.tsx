@@ -80,7 +80,7 @@ const faqs: FAQItem[] = [
 export default function NannyJobsBangalorePage() {
   return (
     <>
-      <main className="min-h-screen">
+      <div lang="hi" className="min-h-screen">
         <Navbar />
 
         <Breadcrumb
@@ -1301,7 +1301,7 @@ export default function NannyJobsBangalorePage() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
       <Footer />
     </>
   );

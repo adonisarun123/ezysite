@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
+import ReferEarnSection from '@/components/ReferEarnSection'
 import {
     BriefcaseIcon,
     StarIcon,
@@ -13,7 +14,6 @@ import {
     ShieldCheckIcon,
     UserPlusIcon,
     BanknotesIcon,
-    GiftIcon,
     ArrowRightIcon
 } from '@heroicons/react/24/outline'
 
@@ -29,7 +29,11 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/assam',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/assam/hin'
+        }
     }
 }
 
@@ -77,6 +81,18 @@ export default function HelperJobsAssamPage() {
                         { label: 'Helper Jobs', href: '/helper-jobs' },
                         { label: 'Assam' }
                     ]}
+                    rightContent={
+                        <div className="flex items-center space-x-2 text-sm bg-white px-3 py-1 pb-1.5 rounded-full shadow-sm shrink-0">
+                            <span className="text-gray-500 font-medium whitespace-nowrap">हिंदी</span>
+                            <Link
+                                href="/helper-jobs/assam/hin"
+                                className="w-10 h-5 bg-emerald-600 rounded-full p-1 relative transition-colors inline-block"
+                            >
+                                <div className="w-3 h-3 bg-white rounded-full transition-transform translate-x-5"></div>
+                            </Link>
+                            <span className="text-gray-900 font-bold whitespace-nowrap uppercase">ENG</span>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -94,13 +110,13 @@ export default function HelperJobsAssamPage() {
                             </p>
 
                             <p className="text-sm md:text-xl font-semibold mb-6 text-yellow-300 uppercase tracking-widest">Why This Job Is Good For You</p>
-                            
+
                             <div className="flex flex-wrap justify-center gap-3 mb-10">
                                 {[
-                                    'Safe helper job in Bangalore', 
-                                    'Employer Pays Directly', 
-                                    'Written agreement', 
-                                    'Free training', 
+                                    'Safe helper job in Bangalore',
+                                    'Employer Pays Directly',
+                                    'Written agreement',
+                                    'Free training',
                                     'Family-like environment'
                                 ].map((item, idx) => (
                                     <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20 text-xs md:text-sm font-medium">
@@ -158,56 +174,66 @@ export default function HelperJobsAssamPage() {
                             {[
                                 {
                                     title: "Housemaid Jobs in Bangalore",
+                                    slug: "housekeeping-job-bangalore",
                                     desc: "Clean and maintain homes daily, wash dishes and clothes, and keep rooms tidy and organised.",
                                     features: ["Clean and maintain homes daily.", "Wash dishes, clothes, and linen.", "Keep rooms tidy and organised.", "Sweep and mop floors properly.", "Manage dusting and bathroom cleaning.", "Live-in or full-time maid job in Bangalore available."]
                                 },
                                 {
                                     title: "Cooking / Kitchen Helper Jobs",
+                                    slug: "home-cook-jobs-bangalore",
                                     desc: "Prepare veg and non-veg meals, manage groceries, and maintain a clean kitchen.",
                                     features: ["Cook meals for the family every day.", "Help plan groceries and budgets.", "Keep kitchen counters and vessels clean.", "Follow family recipes and preferences.", "Store and manage leftover food safely.", "Live-in or full-time maid job available."]
                                 },
                                 {
                                     title: "Nanny / Babysitter Jobs",
+                                    slug: "nanny-jobs-bangalore",
                                     desc: "Take care of children, feed them, and maintain safety and hygiene.",
                                     features: ["Feed children on time daily.", "Help with school homework and play.", "Bathe and dress little ones safely.", "Put the children to sleep at night.", "Keep toys and rooms clean.", "Live-in or full-time helper job in Bangalore available."]
                                 },
                                 {
                                     title: "Elderly Care Jobs",
+                                    slug: "elderly-care-jobs-bangalore",
                                     desc: "Support seniors with daily routines, provide companionship, and ensure safety at home.",
                                     features: ["Help seniors walk and bathe.", "Give medicines on time daily.", "Talk and keep them company.", "Cook soft meals for older people.", "Ensure home safety always.", "Emotional support and companionship"]
                                 },
                                 {
                                     title: "Patient Care Jobs",
+                                    slug: "patient-care-job-bangalore",
                                     desc: "Assist sick people at home with daily routines, ensuring comfort, hygiene, and safety.",
                                     features: ["Help sick people at home daily.", "Assist with bathroom and eating.", "Change bedsheets and keep clean.", "Monitor comfort and report issues.", "Follow doctor’s basic instructions.", "Live-in or full-time maid job in Bangalore available."]
                                 },
                                 {
                                     title: "Live-in Housekeeping Couple Jobs",
+                                    slug: "live-in-couple-housekeeping-jobs-bangalore",
                                     desc: "Husband-wife manage household chores and maintain home cleanliness with accommodation.",
                                     features: ["Husband-wife couple manage homes.", "Clean rooms, kitchen, and garden.", "Help with laundry and garbage.", "Take care of pets if needed.", "Separate accommodation provided.", "Both earn together safely in this maid job in Bangalore."]
                                 },
                                 {
                                     title: "Couple Security Jobs",
+                                    slug: "live-in-apartment-caretaker-jobs-bangalore",
                                     desc: "Husband-wife couple guards apartments or houses, monitors visitors, and follows guidance.",
                                     features: ["Guard apartments or houses together.", "Monitor visitors during the day and night.", "Lock and open gates on time.", "Follow the security guard training given.", "Stay alert and report problems.", "Accommodation provided for both."]
                                 },
                                 {
                                     title: "Japa Maid Jobs",
+                                    slug: "japa-maid-job-bangalore",
                                     desc: "Care for mother and newborn after delivery, assist with feeding, recovery, and provide live-in support in a maid job in Bangalore.",
                                     features: ["Care for the mother and the newborn baby.", "Help with feeding and burping.", "Support the mother’s rest and recovery.", "Keep baby clothes and the room clean.", "Stay awake at night if needed.", "Live-in with full family support in this helper job in Bangalore."]
                                 },
                                 {
                                     title: "Live-in Couple For Farmhouse Jobs",
+                                    slug: "husband-wife-farmhouse-job-bangalore",
                                     desc: "Husband-wife teams maintain farmhouses, gardens, and property safety with live-in accommodation in a helper job in Bangalore.",
                                     features: ["Keep the farmhouse and garden clean daily.", "Water plants and maintain lawns.", "Help with basic cooking if needed.", "Monitor visitors and property security.", "Care for pets or birds on site.", "Private room with food provided."]
                                 }
                             ].map((item, index) => (
-                                <div
+                                <Link
                                     key={index}
+                                    href={`/helper-jobs/assam/${item.slug}`}
                                     className="group bg-white rounded-2xl p-6 border border-emerald-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block text-left relative overflow-hidden"
                                 >
                                     <h3 className="text-lg md:text-2xl font-bold text-emerald-700 mb-3 group-hover:text-emerald-800 relative z-10">{item.title}</h3>
-                                    <p className="text-gray-700 text-sm mb-5 leading-relaxed font-medium relative z-10 italic">{item.desc}</p>
+                                    <p className="text-gray-700 text-sm mb-5 leading-relaxed font-medium relative z-10">{item.desc}</p>
                                     <div className="space-y-2 relative z-10">
                                         {item.features.map((feature, fIndex) => (
                                             <div key={fIndex} className="flex items-start gap-2">
@@ -217,9 +243,9 @@ export default function HelperJobsAssamPage() {
                                         ))}
                                     </div>
                                     <div className="mt-6 font-bold text-emerald-600 text-[10px] uppercase tracking-widest group-hover:underline flex items-center gap-1 relative z-10">
-                                        [Learn More] <span>→</span>
+                                        Learn More <span>→</span>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -408,43 +434,8 @@ export default function HelperJobsAssamPage() {
                     </div>
                 </section>
 
-                {/* Refer & Earn Section - UPDATED DESIGN FROM IMAGE */}
-                <section className="section-padding bg-yellow-50 border-y border-yellow-100">
-                    <div className="container-custom">
-                        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-yellow-200">
-                            <div className="md:flex">
-                                <div className="md:w-5/12 bg-gradient-to-br from-yellow-400 to-orange-500 p-8 flex flex-col items-center justify-center text-center text-white">
-                                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4 border border-white/20">
-                                        <GiftIcon className="w-8 h-8 text-white" />
-                                    </div>
-                                    <h2 className="text-2xl md:text-3xl font-bold mb-1 font-display leading-tight">Refer & Earn</h2>
-                                    <h3 className="text-4xl md:text-5xl font-black mb-1">₹500!</h3>
-                                    <p className="text-yellow-100 text-xs font-bold uppercase tracking-widest">*Terms and Conditions apply</p>
-                                </div>
-                                <div className="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
-                                    <p className="text-lg md:text-xl text-gray-800 font-bold mb-6">
-                                        Do you have a sister, friend, or neighbour from Assam looking for work in Bangalore?
-                                    </p>
-                                    <div className="space-y-4 mb-8">
-                                        {[
-                                            'Refer them to work with EzyHelpers',
-                                            'They complete 1 month of work',
-                                            'You earn ₹500*'
-                                        ].map((item, idx) => (
-                                            <div key={idx} className="flex items-start gap-3">
-                                                <CheckCircleIcon className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                                                <span className="text-gray-600 font-bold text-sm md:text-base leading-none">{item}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="bg-emerald-50 text-emerald-700 font-black text-sm md:text-base py-3 px-6 rounded-xl text-center border border-emerald-100 uppercase tracking-tight">
-                                        No limit – keep referring and keep earning!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/* Refer & Earn Section */}
+                <ReferEarnSection variant="emerald" />
 
                 {/* CTA Section - UPDATED DESIGN FROM IMAGE */}
                 <section className="section-padding bg-emerald-600 text-white">

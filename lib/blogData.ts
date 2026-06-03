@@ -13,21 +13,7 @@ export interface BlogPost {
 }
 
 // Store blog content directly in variables
-const marketOverviewContent = `# The Indian Domestic Helper Market: Comprehensive Analysis
 
-## Executive Summary
-
-India's domestic helper market represents one of the largest informal employment sectors globally, with an estimated workforce of **50-90 million people**. This massive industry, valued at approximately **₹1.2 trillion annually**, is experiencing unprecedented transformation driven by urbanization, rising incomes, and changing lifestyle patterns.
-
-## Market Size and Scope
-
-### Workforce Demographics
-- **Total Workers**: 50-90 million domestic helpers across India
-- **Gender Distribution**: 75% female, 25% male workers
-- **Age Profile**: Majority between 20-45 years
-- **Urban Concentration**: 60% in metropolitan cities
-
-[... Rest of the market overview content ...]`;
 
 const kitchenHygieneContent = `# Top Personal Kitchen Hygiene Tips Every Home Cook in India Should Follow
 
@@ -1114,21 +1100,10 @@ export const posts: BlogPost[] = [
     image: 'https://ik.imagekit.io/M0nger/2%20(1).png',
     content: verificationGuideContent
   },
-  {
-    id: 'market-overview',
-    title: 'The Indian Domestic Helper Market: Market Overview, Challenges and Future Outlook',
-    excerpt: 'Comprehensive analysis of India\'s domestic helper market - from its 50-90 million workforce to growth trends, formalization opportunities, and policy frameworks.',
-    author: 'Market Research Team',
-    date: 'December 15, 2024',
-    readTime: '15 min read',
-    category: 'Market Analysis',
-    featured: false,
-    tags: ['market analysis', 'domestic workers', 'industry trends', 'policy', 'formalization'],
-    content: marketOverviewContent
-  },
+
   {
     id: 'Top-Personal-Kitchen-Hygiene-Tips-Every-Home-Cook-in-India',
-    title: 'Top Personal Kitchen Hygiene Tips Every Home Cook in India Should Follow',
+    title: 'Kitchen Hygiene Tips for Home Cooks in India',
     excerpt: 'Hiring a home cook in India requires strict personal Kitchen Hygiene. From clean hands to safe storage, these tips keep your family meals safe.',
     author: 'Expert Team',
     date: 'April 2, 2026',
@@ -1140,7 +1115,7 @@ export const posts: BlogPost[] = [
   },
   {
     id: 'Companionship-Care-for-Seniors',
-    title: 'Companionship Care for Seniors: Why It Matters and How Families Can Support Elderly Loved Ones',
+    title: 'Companionship Care for Seniors: Support Guide',
     excerpt: 'Companionship care helps older adults stay socially engaged and emotionally secure. Learn how to support your elderly loved ones at home.',
     author: 'Care Team',
     date: 'April 2, 2026',
@@ -1152,7 +1127,7 @@ export const posts: BlogPost[] = [
   },
   {
     id: 'Beyond-the-9-to-5',
-    title: 'Beyond the 9-to-5: Why 24/7 Live-In Nannies Are Bangalore\'s Newest Essential',
+    title: 'Why 24/7 Live-In Nannies Are Bangalore Essential',
     excerpt: 'In Bangalore\'s fast-paced tech world, 24/7 live-in nannies have become an indispensable lifeline for busy nuclear families.',
     author: 'Nanny Experts',
     date: 'April 2, 2026',
@@ -1164,7 +1139,7 @@ export const posts: BlogPost[] = [
   },
   {
     id: 'The-Ultimate-Guide-to-Finding-Trusted-Domestic-Help-Services-in-Bareilly',
-    title: 'The Ultimate Guide to Finding Trusted Domestic Help Services in Bareilly',
+    title: 'Trusted Domestic Help Guide for Bareilly',
     excerpt: 'Finding reliable domestic help in Bareilly can be challenging. This guide covers everything from costs to safety checks for local families.',
     author: 'Bareilly Guide',
     date: 'April 2, 2026',
@@ -1176,7 +1151,7 @@ export const posts: BlogPost[] = [
   },
   {
     id: 'Breaking-the-Myths',
-    title: 'Breaking the Myths: Why Part-Time Maids Are Perfect for Every Indian Household',
+    title: 'Why Part-Time Maids Perfect for Indian Homes',
     excerpt: 'Debunking common misconceptions about part-time maids. Learn why professional domestic help is a reliable and affordable solution.',
     author: 'Household Experts',
     date: 'April 2, 2026',
@@ -1200,7 +1175,7 @@ export const posts: BlogPost[] = [
   },
   {
     id: 'North-Indian-vs-South-Indian-Live-in-Cooks',
-    title: 'North Indian vs South Indian Live-in Cooks: What Bangalore Families Should Choose',
+    title: 'North vs South Indian Cooks: Bangalore Guide',
     excerpt: 'The ultimate guide to choosing the right live-in cook for your Bangalore home based on your food preferences and lifestyle.',
     author: 'Cuisine Experts',
     date: 'April 2, 2026',
@@ -1212,7 +1187,7 @@ export const posts: BlogPost[] = [
   },
   {
     id: 'The-Evolution-of-House-Maid-Services-in-India',
-    title: 'The Evolution of House Maid Services in India: 1990 vs. 2026',
+    title: 'House Maid Services Evolution: 1990 vs. 2026',
     excerpt: 'How the domestic help industry in India transformed from an informal word-of-mouth network into a professional, tech-driven sector.',
     author: 'Industry Analysis',
     date: 'April 2, 2026',

@@ -37,6 +37,7 @@ import {
 
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
     title: 'झारखंड हेल्पर्स के लिए बैंगलोर में भरोसेमंद हाउसकीपिंग जॉब्स',
@@ -95,7 +96,7 @@ const faqs: FAQItem[] = [
 export default function HousekeepingJobsBangaloreHinPage() {
     return (
         <>
-            <main className="min-h-screen noto-sans-devanagari-hindi">
+            <div lang="hi" className="min-h-screen noto-sans-devanagari-hindi">
                 <Navbar />
 
                 <Breadcrumb
@@ -861,50 +862,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                 </section>
 
                 {/* Refer a Friend and Earn ₹500 Section */}
-                <section className="section-padding bg-yellow-50 border-y border-yellow-100">
-                    <div className="container-custom">
-                        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-yellow-200">
-                            <div className="md:flex">
-                                <div className="md:w-5/12 bg-gradient-to-br from-yellow-400 to-orange-500 p-8 flex flex-col items-center justify-center text-center text-white">
-                                    <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
-                                        <GiftIcon className="w-10 h-10 text-white" />
-                                    </div>
-                                    <h2 className="text-3xl md:text-4xl font-bold mb-2 font-display">रेफर करें और कमाएं</h2>
-                                    <h3 className="text-5xl md:text-6xl font-extrabold mb-2">₹500!</h3>
-                                    <p className="text-yellow-100 font-medium">*नियम और शर्तें लागू</p>
-                                </div>
-                                <div className="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
-                                    <p className="text-lg md:text-xl text-gray-800 font-bold mb-6">
-                                        -झारखंड के दोस्तों को बैंगलोर में घरेलू काम की नौकरी दिलाने में मदद करें।
-                                    </p>
-                                    <div className="space-y-4 mb-8">
-                                        <div className="flex items-start gap-3">
-                                            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                <span className="text-green-600 font-bold text-sm">1</span>
-                                            </div>
-                                            <span className="text-gray-700 font-medium">WhatsApp पर डिटेल्स भेजें या कॉल करें</span>
-                                        </div>
-                                        <div className="flex items-start gap-3">
-                                            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                <span className="text-green-600 font-bold text-sm">2</span>
-                                            </div>
-                                            <span className="text-gray-700 font-medium">नाम, उम्र और जॉब पसंद बताएं</span>
-                                        </div>
-                                        <div className="flex items-start gap-3">
-                                            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                <span className="text-green-600 font-bold text-sm">3</span>
-                                            </div>
-                                            <span className="text-gray-700 font-bold">दोस्त 1 महीना पूरा करे → ₹500 पाएं</span>
-                                        </div>
-                                    </div>
-                                    <Link href="#" className="inline-block text-center bg-teal-600 text-white font-bold text-lg py-3 px-8 rounded-xl hover:bg-teal-700 hover:shadow-xl transition-all duration-300">
-                                        रेफर करें और ₹500 कमाएं
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <ReferEarnSection variant="teal" location="झारखंड" lang="hi" />
 
                 {/* How to Apply for Housekeeping Jobs */}
                 <section className="section-padding bg-gray-50">
@@ -1001,7 +959,7 @@ export default function HousekeepingJobsBangaloreHinPage() {
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
             <Footer />
         </>
     )

@@ -22,6 +22,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Domestic Help in Mumbai | Verified Maids & Home Services | EzyHelpers',
   description:
     'Hire verified maids, cooks, nannies, and drivers in Mumbai — Bandra, Andheri, Powai, Thane, Navi Mumbai, and more. Trusted domestic help with EzyHelpers.',

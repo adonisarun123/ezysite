@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import {
   MagnifyingGlassIcon,
   ChevronDownIcon,
@@ -256,9 +257,9 @@ export default function FAQPageClient() {
                 <p className="text-gray-600 mb-4">
                   Learn about our different services and find the right helper for your needs.
                 </p>
-                <a href="/services" className="text-indigo-600 hover:text-indigo-800 font-medium">
+                <Link href="/services" className="text-indigo-600 hover:text-indigo-800 font-medium">
                   View Services →
-                </a>
+                </Link>
               </div>
               
               <div className="bg-white rounded-lg shadow-md p-6 text-center">
@@ -267,9 +268,9 @@ export default function FAQPageClient() {
                 <p className="text-gray-600 mb-4">
                   Understand our verification process and safety measures for your peace of mind.
                 </p>
-                <a href="/about" className="text-green-600 hover:text-green-800 font-medium">
+                <Link href="/about" className="text-green-600 hover:text-green-800 font-medium">
                   Learn More →
-                </a>
+                </Link>
               </div>
               
               <div className="bg-white rounded-lg shadow-md p-6 text-center">
@@ -278,9 +279,9 @@ export default function FAQPageClient() {
                 <p className="text-gray-600 mb-4">
                   Read testimonials and success stories from our satisfied customers.
                 </p>
-                <a href="/blog" className="text-yellow-600 hover:text-yellow-800 font-medium">
+                <Link href="/blog" className="text-yellow-600 hover:text-yellow-800 font-medium">
                   Read Stories →
-                </a>
+                </Link>
               </div>
             </div>
           </div>

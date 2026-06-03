@@ -193,7 +193,7 @@ export default function BangaloreEducatedBabysitter() {
 
                     <div className="container-custom relative z-10">
                         <div className="max-w-7xl mx-auto text-center">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Educated Babysitter in Bangalore Professional Childcare You Can Trust</h1>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">Educated Babysitter in Bangalore | Professional Childcare You Can Trust</h1>
 
                             <p className="text-lg lg:text-xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">Our Educated Babysitter in Bangalore supports busy families with safe childcare focused on learning, English communication, homework help, and flexible schedules, ensuring trusted home care for children of all ages.</p>
 

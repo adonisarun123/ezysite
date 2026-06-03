@@ -142,59 +142,48 @@ export default function BangaloreCooksPage() {
 
   const faqs = [
     {
-      question: 'How can I find a reliable cook for home in Bangalore?',
-      answer:
-        'EzyHelpers connects you with verified and experienced home cooks in Bangalore who undergo background checks and cooking skill assessments. We share shortlisted profiles based on your dietary needs, preferred cuisine, and schedule for a perfect home cooking match.'
+      question: "How can I find a reliable cook for home in Bangalore?",
+      answer: "EzyHelpers connects you with verified and experienced home cooks in Bangalore who undergo background checks and cooking skill assessments. We share shortlisted profiles based on your dietary needs, preferred cuisine, and schedule for a perfect home cooking match."
     },
     {
-      question: 'Do your home cooks accommodate dietary restrictions?',
-      answer:
-        'Yes, our cooks are experienced enough to prepare meals according to your health needs. Whether it’s diabetic-friendly, Jain food, vegan, or low-sodium diets, EzyHelpers ensures you get a cook who understands and respects your dietary preferences.'
+      question: "Do your home cooks accommodate dietary restrictions?",
+      answer: "Yes, our cooks are experienced enough to prepare meals according to your health needs. Whether it’s diabetic-friendly, Jain food, vegan, or low-sodium diets, EzyHelpers ensures you get a cook who understands and respects your dietary preferences."
     },
     {
-      question: 'Will your home cooks help with grocery and vegetable shopping in Bangalore?',
-      answer:
-        'Yes, many of our home cooks in Bangalore assist with daily or weekly grocery and vegetable shopping. They can visit local markets or nearby stores to purchase fresh ingredients or accompany you when required. This ensures meals are prepared with fresh, timely ingredients while saving you time and effort.'
+      question: "Will your home cooks help with grocery and vegetable shopping in Bangalore?",
+      answer: "Yes, many of our home cooks in Bangalore assist with daily or weekly grocery and vegetable shopping. They can visit local markets or nearby stores to purchase fresh ingredients or accompany you when required. This ensures meals are prepared with fresh, timely ingredients while saving you time and effort."
     },
     {
-      question: 'Can your cook prepare meals for office tiffins?',
-      answer:
-        'Absolutely. Many Bangalore families trust EzyHelpers’ cooks to prepare home-style meals for office tiffins. It’s a healthier, more cost-effective alternative to restaurant food, especially for busy professionals seeking nutritious lunch options.'
+      question: "Can your cook prepare meals for office tiffins?",
+      answer: "Absolutely. Many Bangalore families trust EzyHelpers’ cooks to prepare home-style meals for office tiffins. It’s a healthier, more cost-effective alternative to restaurant food, especially for busy professionals seeking nutritious lunch options."
     },
     {
-      question: 'How do you ensure food safety and kitchen hygiene?',
-      answer:
-        'At EzyHelpers, we train all home cooks on kitchen safety, personal hygiene, and clean cooking practices. We make sure cooking is clean and safe by using clean utensils, storing food properly, and training cooks in personal hygiene practices.'
+      question: "How do you ensure food safety and kitchen hygiene?",
+      answer: "At EzyHelpers, we train all home cooks on kitchen safety, personal hygiene, and clean cooking practices. We make sure cooking is clean and safe by using clean utensils, storing food properly, and training cooks in personal hygiene practices."
     },
     {
-      question: 'Can I hire a cook for specific cuisines?',
-      answer:
-        'Yes. EzyHelpers provides multi-cuisine home cooks trained in South Indian (Karnataka, Kerala, and Tamil), North Indian, Bengali, Gujarati, and Chinese cuisines, which are perfect for Bangalore’s diverse families.'
+      question: "Can I hire a cook for specific cuisines?",
+      answer: "Yes. EzyHelpers provides multi-cuisine home cooks trained in South Indian (Karnataka, Kerala, and Tamil), North Indian, Bengali, Gujarati, and Chinese cuisines, which are perfect for Bangalore’s diverse families."
     },
     {
-      question: 'Is hiring a home cook a good idea?',
-      answer:
-        'Hiring a cook is one of the best ways to save time and eat healthier. With a reliable cook, you get fresh meals according to your taste, less stress over daily cooking, and improved work-life balance, especially helpful for working couples and elders.'
+      question: "Is hiring a home cook a good idea?",
+      answer: "Hiring a cook is one of the best ways to save time and eat healthier. With a reliable cook, you get fresh meals according to your taste, less stress over daily cooking, and improved work-life balance, especially helpful for working couples and elders."
     },
     {
-      question: 'What is the salary of a female cook in Bangalore?',
-      answer:
-        'The salary of a female home cook in Bangalore depends on her experience, working hours, and specific duties. On average, part-time female cooks earn ₹6,000 to ₹10,000 per month, while full-time cooks typically earn ₹12,000 to ₹20,000 per month. Live-in cooks may charge upwards of ₹25,000/month with added responsibilities.'
+      question: "What is the salary of a female cook in Bangalore?",
+      answer: "The salary of a female home cook in Bangalore depends on her experience, working hours, and specific duties. On average, part-time female cooks earn ₹6,000 to ₹10,000 per month, while full-time cooks typically earn ₹12,000 to ₹20,000 per month. Live-in cooks may charge upwards of ₹25,000/month with added responsibilities."
     },
     {
-      question: 'Can I get a temporary cook for a few weeks or events in Bangalore?',
-      answer:
-        'Yes, EzyHelpers offers temporary cook services in Bangalore for short-term needs like family functions or when your regular cook is on leave. You can book skilled cooks for a few days, weeks, or just for a special occasion. Our flexible service ensures you get fresh, home-style food without any long-term commitment.'
+      question: "Can I get a temporary cook for a few weeks or events in Bangalore?",
+      answer: "Yes, EzyHelpers offers temporary cook services in Bangalore for short-term needs like family functions or when your regular cook is on leave. You can book skilled cooks for a few days, weeks, or just for a special occasion. Our flexible service ensures you get fresh, home-style food without any long-term commitment."
     },
     {
-      question: 'Are male cooks available for home cooking in Bangalore?',
-      answer:
-        'Yes, EzyHelpers provides both male and female home cooks in Bangalore. Many male cooks are experienced in handling bulk meal preparation, special diets, or cooking for large families. If you have a gender preference, let us know during booking, and we’ll match you with the right home cook for your needs.'
+      question: "Are male cooks available for home cooking in Bangalore?",
+      answer: "Yes, EzyHelpers provides both male and female home cooks in Bangalore. Many male cooks are experienced in handling bulk meal preparation, special diets, or cooking for large families. If you have a gender preference, let us know during booking, and we’ll match you with the right home cook for your needs."
     },
     {
-      question: 'Can I hire a cook for elderly care diets in Bangalore?',
-      answer:
-        'Absolutely. Our trained home cooks in Bangalore can prepare meals that are suitable for elderly family members, including soft food, low-oil dishes, diabetic-friendly recipes, or food suited for age-related health conditions. Whether it\'s a special diet chart from a doctor or simple, easy-to-digest home food, our cooks handle it with care and attention.'
+      question: "Can I hire a cook for elderly care diets in Bangalore?",
+      answer: "Absolutely. Our trained home cooks in Bangalore can prepare meals that are suitable for elderly family members, including soft food, low-oil dishes, diabetic-friendly recipes, or food suited for age-related health conditions. Whether it's a special diet chart from a doctor or simple, easy-to-digest home food, our cooks handle it with care and attention."
     }
   ]
 

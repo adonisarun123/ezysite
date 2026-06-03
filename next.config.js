@@ -15,16 +15,17 @@ const nextConfig = {
         hostname: 'ik.imagekit.io',
       },
     ],
-    // Enable modern image formats for better compression
-    formats: ['image/webp', 'image/avif'],
+    // Enable modern image formats for better compression (AVIF first for best compression)
+    formats: ['image/avif', 'image/webp'],
     // Enable image optimization
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Cache optimized images for 1 year
+    minimumCacheTTL: 31536000,
   },
 
   // Enable compression and optimization
   compress: true,
-  swcMinify: true,
 
   // Configure SWC for modern browsers
   compiler: {
@@ -34,6 +35,8 @@ const nextConfig = {
     styledComponents: false,
   },
 
+  serverExternalPackages: ['puppeteer', 'puppeteer-core', 'nodemailer'],
+
   // Target modern browsers only to reduce bundle size
   experimental: {
     // Enable modern build features
@@ -41,119 +44,17 @@ const nextConfig = {
     // Enable optimizations that are safe
     forceSwcTransforms: true,
     // Inline and remove unused CSS chunks to prevent 404s
-    optimizeCss: false,
-    // Automatically rewrite package imports (Heroicons) to the exact path for better tree-shaking
-    optimizePackageImports: ['@heroicons/react', 'lucide-react', 'date-fns'],
-    // Disable polyfills for modern browsers
-    serverComponentsExternalPackages: [],
-  },
-
-  // Webpack configuration for modern browsers to eliminate legacy JS
-  webpack: (config, { dev, isServer }) => {
-    if (dev) {
-      // Disable filesystem cache that sometimes leads to missing pack.gz errors in dev
-      config.cache = {
-        type: 'memory',
-      }
-    }
-    if (!dev && !isServer) {
-      // Target modern browsers only - ES2022+ (eliminates more polyfills)
-      config.target = ['web', 'es2022'];
-
-      // Completely disable polyfills
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        'core-js': false,
-        'regenerator-runtime': false,
-      };
-
-      // Optimize for modern browsers with aggressive tree-shaking
-      config.optimization = {
-        ...config.optimization,
-        // Enable maximum optimizations
-        usedExports: true,
-        sideEffects: false,
-        innerGraph: true,
-        // Minimize bundle size aggressively
-        minimize: true,
-        // Simplified chunk splitting to reduce unused JS
-        splitChunks: {
-          chunks: 'all',
-          minSize: 20000,
-          maxSize: 244000,
-          cacheGroups: {
-            default: false,
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              chunks: 'all',
-              priority: 20,
-              reuseExistingChunk: true,
-            },
-            common: {
-              minChunks: 2,
-              chunks: 'all',
-              enforce: true,
-              priority: 10,
-              reuseExistingChunk: true,
-            },
-          },
-        },
-      };
-
-      // Completely eliminate polyfills for modern features
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        // Eliminate ALL legacy polyfills
-        'core-js': false,
-        'core-js/stable': false,
-        'core-js/modules/es.array.at': false,
-        'core-js/modules/es.array.flat': false,
-        'core-js/modules/es.array.flat-map': false,
-        'core-js/modules/es.object.from-entries': false,
-        'core-js/modules/es.object.has-own': false,
-        'core-js/modules/es.string.trim-start': false,
-        'core-js/modules/es.string.trim-end': false,
-        'core-js/modules/es.promise': false,
-        'core-js/modules/es.promise.finally': false,
-        'core-js/modules/es.array.includes': false,
-        'core-js/modules/es.string.includes': false,
-        'core-js/modules/es.array.find': false,
-        'core-js/modules/es.array.find-index': false,
-        'core-js/modules/es.object.assign': false,
-        'core-js/modules/es.symbol': false,
-        'core-js/modules/es.symbol.iterator': false,
-        'core-js/modules/es.array.iterator': false,
-        'core-js/modules/es.string.iterator': false,
-        'core-js/modules/web.dom-collections.iterator': false,
-        'regenerator-runtime': false,
-        'regenerator-runtime/runtime': false,
-      };
-
-      // Exclude unnecessary modules completely
-      config.externals = {
-        ...config.externals,
-        'core-js': 'var {}',
-        'core-js/stable': 'var {}',
-        'regenerator-runtime': 'var {}',
-        'regenerator-runtime/runtime': 'var {}',
-      };
-
-      // Add plugins to further optimize
-
-      // Ignore polyfill modules
-      const IgnorePlugin = require('webpack').IgnorePlugin;
-      config.plugins.push(
-        new IgnorePlugin({
-          resourceRegExp: /^core-js/,
-        }),
-        new IgnorePlugin({
-          resourceRegExp: /^regenerator-runtime/,
-        })
-      );
-    }
-
-    return config;
+    optimizeCss: true,
+    // Automatically rewrite package imports to the exact path for better tree-shaking
+    optimizePackageImports: [
+      '@heroicons/react',
+      'date-fns',
+      '@radix-ui/react-dialog',
+      '@radix-ui/react-select',
+      'react-hook-form',
+      'libphonenumber-js',
+      'zod',
+    ],
   },
 
   // Performance optimizations
@@ -161,6 +62,7 @@ const nextConfig = {
   reactStrictMode: true,
 
   // Disable ESLint during builds to avoid deployment failures
+  // TODO: re-enable lint at build once existing warnings are addressed
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -181,10 +83,10 @@ const nextConfig = {
             value: 'SAMEORIGIN'
           },
           {
-            // HTML should never be cached immutably — use no-cache so browsers
-            // always revalidate. Static assets below override this with long TTL.
+            // HTML uses ISR-friendly caching: browser revalidates, CDN caches for 1h,
+            // SWR allows serving stale up to 24h while revalidating in background.
             key: 'Cache-Control',
-            value: 'public, max-age=0, must-revalidate',
+            value: 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
           },
           {
             key: 'X-Content-Type-Options',
@@ -197,6 +99,18 @@ const nextConfig = {
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=(self)'
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload'
+          },
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin-allow-popups'
+          },
+          {
+            key: 'Content-Security-Policy-Report-Only',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net https://*.facebook.com https://*.facebook.net https://*.trustpilot.com https://widget.trustpilot.com https://translate.google.com https://translate.googleapis.com https://www.google.com https://www.gstatic.com https://*.tawk.to https://embed.tawk.to https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.trustpilot.com https://translate.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.facebook.com https://*.tawk.to wss://*.tawk.to https://*.clarity.ms https://api.razorpay.com https://lumberjack.razorpay.com; frame-src https://www.googletagmanager.com https://*.facebook.com https://*.tawk.to https://*.trustpilot.com https://www.google.com https://td.doubleclick.net https://api.razorpay.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
           },
         ],
       },
@@ -289,6 +203,23 @@ const nextConfig = {
         destination: '/careers/field-officer-bangalore',
         permanent: true,
       },
+      { source: '/agent-success', destination: '/thank-you?type=agent', permanent: false },
+      { source: '/helper-success', destination: '/thank-you?type=helper', permanent: false },
+      // Care cluster moved under /care-services/ (2026)
+      { source: '/home-care-services-bangalore', destination: '/care-services/home-care-services-bangalore', permanent: true },
+      { source: '/home-healthcare-services-bangalore', destination: '/care-services/home-healthcare-services-bangalore', permanent: true },
+      { source: '/home-nursing-services-bangalore', destination: '/care-services/home-nursing-services-bangalore', permanent: true },
+      { source: '/elderly-care-services-bangalore', destination: '/care-services/elderly-care-services-bangalore', permanent: true },
+      { source: '/caretaker-services-bangalore', destination: '/care-services/caretaker-services-bangalore', permanent: true },
+      { source: '/patient-care-services-bangalore', destination: '/care-services/patient-care-services-bangalore', permanent: true },
+      { source: '/home-attendant-services-bangalore', destination: '/care-services/home-attendant-services-bangalore', permanent: true },
+      { source: '/trained-attendant-services-bangalore', destination: '/care-services/trained-attendant-services-bangalore', permanent: true },
+      { source: '/care-services-enquiry', destination: '/care-services/enquiry', permanent: true },
+      // SEO consolidation: cannibalization fixes
+      { source: '/services/japa', destination: '/services/japa-nanny-services', permanent: true },
+      { source: '/services/babysitter', destination: '/services/nanny-babysitter', permanent: true },
+      { source: '/services/english-speaking-babysitters', destination: '/services/nanny-babysitter', permanent: true },
+      { source: '/jobs', destination: '/helper-jobs', permanent: true },
     ]
   },
 }

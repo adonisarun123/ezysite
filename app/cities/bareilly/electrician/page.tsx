@@ -28,10 +28,10 @@ import {
 
 export const metadata: Metadata = {
   title: 'Trusted Electrician in Bareilly - Fast Home Fixes',
-  description: 'Looking for an electrician in Bareilly? Book expert help for fan fittings, switches, wiring issues, and home power problems.',
+  description: 'Looking for an electrician in Bareilly? Book expert service for fan fittings, switches, wiring issues, and power problems at your home.',
   openGraph: {
     title: 'Trusted Electrician in Bareilly - Fast Home Fixes',
-    description: 'Looking for an electrician in Bareilly? Book expert help for fan fittings, switches, wiring issues, and home power problems.',
+    description: 'Looking for an electrician in Bareilly? Book expert service for fan fittings, switches, wiring issues, and power problems at your home.',
     url: 'https://www.ezyhelpers.com/cities/bareilly/electrician',
     type: 'website',
   },
@@ -41,6 +41,81 @@ export const metadata: Metadata = {
 }
 
 export default function BareillyElectricianPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "How can I find a trusted electrician in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can find a trusted electrician in Bareilly through EzyHelpers. Our skilled and certified electricians are locally experienced, background-verified, and equipped with proper tools and safety gear to handle all electrical repairs with complete safety and compliance."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are electricians in Bareilly available for house wiring services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, electricians in Bareilly are available for house wiring services, including safe installation and repairs for both old and new homes. Our certified electricians handle complete house wiring with proper safety standards and modern electrical codes."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I get same-day electrical repair services in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can get same-day electrical repair services in Bareilly through EzyHelpers. Our skilled electricians provide fast, same-day service for switch repairs, fan installations, wiring issues, and other electrical problems with transparent pricing."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do electricians in Bareilly handle switch and socket repairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, electricians in Bareilly handle switch and socket repairs, including fixing loose connections, faulty switches, damaged sockets, and electrical connection issues. Our certified electricians ensure safe and proper functioning of all electrical switches and outlets."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are fan and light installation services available in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, fan and light installation services are available from electricians in Bareilly. Our certified electricians provide proper fitting for ceiling fans, lights, chandeliers, and other electrical fixtures with safe wiring and secure installation."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do electricians in Bareilly handle old house wiring repairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, electricians in Bareilly handle old house wiring repairs, including fixing damaged wires in traditional homes, upgrading outdated electrical systems, and safe rewiring for older constructions with modern safety standards and proper electrical codes."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do your electricians repair ceiling fans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, electricians in Bareilly repair ceiling fans, including fixing wobbling fans, slow speed problems, motor issues, and electrical connection faults. Our skilled electricians ensure proper fan functioning with safe electrical connections and mechanical repairs."
+      }
+    },{
+      "@type": "Question",
+      "name": "What services do EzyHelpers' electricians in Bareilly offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our electricians in Bareilly provide house wiring, fan and light installation, switch/socket repairs, inverter and UPS installation, circuit breaker repairs, generator setup, safety checks, and emergency electrical services for homes."
+      }
+    },{
+      "@type": "Question",
+      "name": "What safety checks do your electricians perform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our electricians in Bareilly perform complete safety inspections, including checking for short circuits, loose wires, overloaded circuits, and faulty switchboards to prevent future hazards."
+      }
+    },{
+      "@type": "Question",
+      "name": "Are your electricians licensed to work in Bareilly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all electricians provided by EzyHelpers are licensed, certified, and trained to deliver safe electrical services in Bareilly homes according to standard electrical codes."
+      }
+    }]
+  };
   const faqs: FAQItem[] = [
     {
       question: 'How can I find a trusted electrician in Bareilly?',
@@ -175,6 +250,10 @@ export default function BareillyElectricianPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen">
         <Navbar />
 
@@ -182,12 +261,12 @@ export default function BareillyElectricianPage() {
           items={[
             { label: 'Home', href: '/' },
             { label: 'Bareilly', href: '/cities/bareilly' },
-            { label: 'Electrician Services' }
+            { label: 'Electrician' }
           ]}
         />
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-yellow-600 via-orange-600 to-red-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -195,54 +274,62 @@ export default function BareillyElectricianPage() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                <BoltIcon className="h-5 w-5 text-yellow-300 mr-2" />
-                <span className="text-sm font-semibold">Safe & Licensed Electrical Work</span>
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 mb-8">
+                <BoltIcon className="h-5 w-5 text-indigo-200 mr-2" />
+                <span className="text-sm font-semibold tracking-wide text-white">Safe & Licensed Electrical Work</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
                 Professional Electrician in Bareilly
               </h1>
 
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto">
-                Facing power cuts or wiring faults? Our certified electricians in Bareilly offer safe, reliable, and quick electrical repair services for every home.
+              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+                Trusted Electrical Repair Services for All Your Home Needs.
               </p>
 
-              <div className="flex flex-wrap gap-3 mb-10 justify-center">
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Verified Electricians</div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Same-Day Electrical Service</div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Clear & Upfront Pricing</div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center w-full bg-white text-yellow-600 font-semibold text-lg py-4 px-6 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book Electrician Now
                 </Link>
 
                 <Link
-                  href="tel:+919972571005"
-                  className="inline-flex items-center justify-center w-full bg-transparent text-white font-semibold text-lg py-4 px-4 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Emergency Electrical Service
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
 
-              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/20 max-w-2xl mx-auto">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">4.9★</div>
-                  <div className="text-yellow-200 text-sm">Customer Rating</div>
+              {/* Service Assurance Badges */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+                {[
+                  'Verified Electricians',
+                  'Same-Day Electrical Service',
+                  'Clear & Upfront Pricing',
+                  'Certified Experts'
+                ].map((badge, idx) => (
+                  <span key={idx} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold text-white">
+                    ✓ {badge}
+                  </span>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10 text-center">
+                  <div className="text-3xl font-extrabold text-white mb-1">4.9★</div>
+                  <div className="text-indigo-100 font-medium">Customer Rating</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">100%</div>
-                  <div className="text-yellow-200 text-sm">Safe Electrical Work</div>
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10 text-center">
+                  <div className="text-3xl font-extrabold text-white mb-1">100%</div>
+                  <div className="text-indigo-100 font-medium text-sm">Safe Electrical Work</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">2-Hour</div>
-                  <div className="text-yellow-200 text-sm">Response Time</div>
+                <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10 text-center">
+                  <div className="text-3xl font-extrabold text-white mb-1 leading-tight">2-Hour</div>
+                  <div className="text-indigo-100 font-medium text-sm">Response Time</div>
                 </div>
               </div>
             </div>
@@ -427,30 +514,30 @@ export default function BareillyElectricianPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-yellow-600 to-orange-600 text-white">
+        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">
+              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
                 Don't Let Electrical Problems Disturb Your Home!
               </h2>
-              <p className="text-xl mb-8 text-yellow-100">
+              <p className="text-xl mb-8 text-indigo-100 font-medium">
                 Book a trusted electrician in Bareilly with EzyHelpers. From small switch issues to full wiring work, we fix everything with safety and care.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto font-display">
                 <Link
                   href="/hire-helper"
-                  className="inline-flex items-center justify-center bg-white text-yellow-600 font-semibold text-lg py-4 px-8 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
                 >
                   Book Electrician Now
                 </Link>
 
                 <Link
-                  href="tel:+919972571005"
-                  className="inline-flex items-center justify-center bg-transparent text-white font-semibold text-lg py-4 px-8 rounded-xl border-2 border-white hover:bg-white/10 transition-all duration-300"
+                  href="tel:+918031411776"
+                  className="group inline-flex items-center justify-center w-full sm:w-auto bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all"
                 >
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  Call Us
+                  <PhoneIcon className="h-5 w-5 mr-1" />
+                  Call +91 80 3141 1776
                 </Link>
               </div>
             </div>
@@ -459,25 +546,67 @@ export default function BareillyElectricianPage() {
 
         {/* Why Choosing a Local Electrician in Bareilly Makes a Difference */}
         <section className="section-padding bg-white">
-          <div className="container-custom text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Choosing a Local Electrician in Bareilly Makes a Difference</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed max-w-4xl mx-auto text-justify">
-              <p>Hiring a local electrician ensures faster service and a better understanding of Bareilly’s common electrical problems. Our certified electricians know how power supply behaves in different areas of Bareilly — whether it’s summer voltage fluctuations, old wiring in older homes, or frequent load-based tripping.</p>
-              <p>Local electricians reach your home faster, identify the issue quickly, and offer safe repairs without delay. They understand the local usage pattern, the type of wiring commonly used in Bareilly homes, and the common causes of tripping or power cuts.</p>
-              <p>EzyHelpers electricians carry proper safety gear, ID cards, and tools. Every repair — big or small — is done safely and correctly. Whether you need a quick fuse fix or want to prepare for summer outages, our professionals keep your home safe and working smoothly.</p>
+          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Why Choose a Local Electrician</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+              <p>Hiring a local electrician ensures faster service and a better understanding of Bareilly’s common electrical problems.</p>
+              <p className="font-medium text-indigo-900/80">Local electricians reach your home faster and identify issues like voltage fluctuations or load-based tripping.</p>
+              <p>EzyHelpers electricians carry proper safety gear, ID cards, and tools for safe repairs.</p>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+          <div className="container-custom max-w-5xl">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
+              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
-            <div className="max-w-4xl mx-auto">
-              <FAQAccordion faqs={faqs} />
-            </div>
+            <FAQAccordion
+              faqs={[
+                {
+                  question: "How can I find a trusted electrician in Bareilly?",
+                  answer: "You can find a trusted electrician in Bareilly through EzyHelpers. Our skilled and certified electricians are locally experienced, background-verified, and equipped with proper tools and safety gear to handle all electrical repairs with complete safety and compliance."
+                },
+                {
+                  question: "Are electricians in Bareilly available for house wiring services?",
+                  answer: "Yes, electricians in Bareilly are available for house wiring services, including safe installation and repairs for both old and new homes. Our certified electricians handle complete house wiring with proper safety standards and modern electrical codes."
+                },
+                {
+                  question: "Can I get same-day electrical repair services in Bareilly?",
+                  answer: "Yes, you can get same-day electrical repair services in Bareilly through EzyHelpers. Our skilled electricians provide fast, same-day service for switch repairs, fan installations, wiring issues, and other electrical problems with transparent pricing."
+                },
+                {
+                  question: "Do electricians in Bareilly handle switch and socket repairs?",
+                  answer: "Yes, electricians in Bareilly handle switch and socket repairs, including fixing loose connections, faulty switches, damaged sockets, and electrical connection issues. Our certified electricians ensure safe and proper functioning of all electrical switches and outlets."
+                },
+                {
+                  question: "Are fan and light installation services available in Bareilly?",
+                  answer: "Yes, fan and light installation services are available from electricians in Bareilly. Our certified electricians provide proper fitting for ceiling fans, lights, chandeliers, and other electrical fixtures with safe wiring and secure installation."
+                },
+                {
+                  question: "Do electricians in Bareilly handle old house wiring repairs?",
+                  answer: "Yes, electricians in Bareilly handle old house wiring repairs, including fixing damaged wires in traditional homes, upgrading outdated electrical systems, and safe rewiring for older constructions with modern safety standards and proper electrical codes."
+                },
+                {
+                  question: "Do your electricians repair ceiling fans?",
+                  answer: "Yes, electricians in Bareilly repair ceiling fans, including fixing wobbling fans, slow speed problems, motor issues, and electrical connection faults. Our skilled electricians ensure proper fan functioning with safe electrical connections and mechanical repairs."
+                },
+                {
+                  question: "What services do EzyHelpers' electricians in Bareilly offer?",
+                  answer: "Our electricians in Bareilly provide house wiring, fan and light installation, switch/socket repairs, inverter and UPS installation, circuit breaker repairs, generator setup, safety checks, and emergency electrical services for homes."
+                },
+                {
+                  question: "What safety checks do your electricians perform?",
+                  answer: "Our electricians in Bareilly perform complete safety inspections, including checking for short circuits, loose wires, overloaded circuits, and faulty switchboards to prevent future hazards."
+                },
+                {
+                  question: "Are your electricians licensed to work in Bareilly?",
+                  answer: "Yes, all electricians provided by EzyHelpers are licensed, certified, and trained to deliver safe electrical services in Bareilly homes according to standard electrical codes."
+                }
+              ]}
+            />
           </div>
         </section>
       </main>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { apmApplicationSchema } from '@/lib/apmApplicationSchema'
 import { validateChiefOfStaffResume } from '@/lib/careersChiefOfStaffResume'
@@ -39,8 +40,9 @@ type FieldErrorKey = FieldKey | 'resume'
 type FieldErrors = Partial<Record<FieldErrorKey | 'root', string>>
 
 export default function ApmApplicationForm() {
+  const router = useRouter()
   const resumeInputRef = useRef<HTMLInputElement>(null)
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
 
   const {
@@ -113,9 +115,9 @@ export default function ApmApplicationForm() {
         setStatus('error')
         return
       }
-      setStatus('success')
       reset(defaultValues)
       if (resumeInputRef.current) resumeInputRef.current.value = ''
+      router.push('/thank-you?type=career')
     } catch {
       setStatus('error')
     }
@@ -123,25 +125,6 @@ export default function ApmApplicationForm() {
 
   const err = (name: FieldKey | 'resume') =>
     fieldErrors[name] || (name !== 'resume' ? rhfErrors[name as FieldKey]?.message : undefined)
-
-  if (status === 'success') {
-    return (
-      <div className="rounded-xl border border-[#ceead6] bg-[#e6f4ea] p-8 text-center">
-        <p className="text-lg font-medium text-[#137333]">Application received</p>
-        <p className="mt-3 text-sm leading-relaxed text-[#3c4043]">
-          Thank you. If there is a fit, we will get back within about two weeks. Check spam folders
-          just in case.
-        </p>
-        <button
-          type="button"
-          onClick={() => setStatus('idle')}
-          className="mt-6 text-sm font-medium text-primary-600 hover:underline"
-        >
-          Submit another application
-        </button>
-      </div>
-    )
-  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-7 font-sans">

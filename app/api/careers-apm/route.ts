@@ -6,6 +6,7 @@ import {
   safeAttachmentFilename,
 } from '@/lib/careersChiefOfStaffResume'
 import { logger } from '@/lib/logger'
+import { checkRateLimit } from '@/lib/auth'
 
 function textEntry(formData: FormData, key: string): string {
   const v = formData.get(key)
@@ -14,6 +15,12 @@ function textEntry(formData: FormData, key: string): string {
 
 async function handleJsonBody(request: NextRequest) {
   const body = await request.json()
+
+  // Honeypot check (JSON path)
+  if (body && typeof body.website === 'string' && body.website.trim() !== '') {
+    return NextResponse.json({ success: true })
+  }
+
   const parsed = apmApplicationSchema.safeParse(body)
 
   if (!parsed.success) {
@@ -49,6 +56,12 @@ async function handleJsonBody(request: NextRequest) {
 
 async function handleMultipartBody(request: NextRequest) {
   const formData = await request.formData()
+
+  // Honeypot check (multipart path)
+  const honeypot = formData.get('website')
+  if (typeof honeypot === 'string' && honeypot.trim() !== '') {
+    return NextResponse.json({ success: true })
+  }
 
   const raw = {
     fullName: textEntry(formData, 'fullName'),
@@ -126,6 +139,19 @@ async function handleMultipartBody(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 5 req / 10 min per IP
+    const ip =
+      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+      request.headers.get('x-real-ip') ||
+      'unknown'
+    const rl = checkRateLimit(`POST:${request.nextUrl.pathname}:${ip}`, 5, 600_000)
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { success: false, error: 'rate_limited' },
+        { status: 429 }
+      )
+    }
+
     const contentType = request.headers.get('content-type') || ''
 
     if (contentType.includes('multipart/form-data')) {

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Executive Summary - EzyHelpers',
@@ -215,9 +216,11 @@ export default function ExecutiveSummary() {
             <div className="flex justify-center items-center space-x-16">
               <div className="text-center group cursor-pointer">
                 <div className="w-32 h-32 bg-white rounded-xl shadow-md flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow duration-300">
-                  <img 
+                  <Image 
                     src="/affiliations/nsdc-logo.png" 
                     alt="NSDC - National Skill Development Corporation" 
+                    width={96}
+                    height={96}
                     className="w-24 h-24 object-contain"
                   />
                 </div>
@@ -227,9 +230,11 @@ export default function ExecutiveSummary() {
               
               <div className="text-center group cursor-pointer">
                 <div className="w-32 h-32 bg-white rounded-xl shadow-md flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow duration-300">
-                  <img 
+                  <Image 
                     src="/affiliations/startup-india-logo.png" 
                     alt="Startup India - Government Initiative" 
+                    width={96}
+                    height={96}
                     className="w-24 h-24 object-contain"
                   />
                 </div>

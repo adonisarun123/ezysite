@@ -342,6 +342,40 @@ export interface CareersRoleApplicationFormData {
   resumeFileName: string
 }
 
+/** Bangalore care cluster / pillar enquiry (dedicated form) */
+export interface CareServicesLeadFormData {
+  name: string
+  email: string
+  phone: string
+  /** Slug or value identifying service line, e.g. care-services/home-nursing-services-bangalore */
+  careType: string
+  patientSummary: string
+  locality?: string
+  urgency: 'same-day' | '24-48h' | 'this-week' | 'planning'
+  notes?: string
+  sourceUrl?: string
+}
+
+/** Candidate job application (ANM/GNM/GDA/caregiver) — Facebook ad landing page */
+export interface CandidateApplicationFormData {
+  name: string
+  /** 10-digit Indian mobile */
+  mobile: string
+  /** ANM | GNM | GDA | Other */
+  candidateType: string
+  /** Free-text role when candidateType === 'Other' */
+  otherRole?: string
+  /** City / locality of residence */
+  area: string
+  /** 'Yes' once the consent checkbox is ticked */
+  consentToCall: string
+  /** Form language at submit time: 'en' | 'hi' */
+  language?: string
+  /** Unique application ID, e.g. CAND-LXR8K2-7QF3 */
+  applicationId?: string
+  sourceUrl?: string
+}
+
 export type LeadType =
   | 'contact'
   | 'hire_helper'
@@ -354,7 +388,9 @@ export type LeadType =
   | 'careers_chief_of_staff'
   | 'careers_apm'
   | 'careers_sales_executive'
-  | 'careers_role_application';
+  | 'careers_role_application'
+  | 'care_services'
+  | 'candidate_application';
 
 export interface EmailSendResult {
   success: boolean;

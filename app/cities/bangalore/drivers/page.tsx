@@ -166,16 +166,46 @@ export default function BangaloreDriversPage() {
   
 
   const faqs = [
-    { question: 'What makes your car driver in Bangalore service different?', answer: 'Our drivers are specially trained in Bangalore’s traffic with strong local knowledge of IT corridors, residential areas, and major connectivity routes. Each driver is background-verified and skilled in navigating city shortcuts and safe paths.' },
-    { question: 'Do you provide personal drivers in Bangalore for elderly care?', answer: 'Absolutely. Our drivers are trained to assist elderly passengers with patient driving, medical appointment coordination, and clear communication with family members.' },
-    { question: 'What vehicle types can your drivers handle?', answer: 'Our chauffeur drivers in Bangalore are experienced to operate all car types: hatchbacks, sedans, SUVs, and even high-end luxury vehicles, with proper licensing and experience.' },
-    { question: 'Do you provide drivers familiar with Bangalore’s IT corridors?', answer: 'Yes. Our drivers have strong route expertise across key IT corridors like Outer Ring Road, Sarjapur Road, and Whitefield, ensuring faster commutes through Bangalore’s major corporate zones.' },
-    { question: 'Do you provide one-time chauffeur drivers in Bangalore for special events?', answer: 'Yes, we offer one-time chauffeur drivers in Bangalore for special occasions like weddings, corporate events, and private gatherings. Our drivers arrive on time, dressed professionally, and ensure smooth, respectful service throughout the event for you and your guests.' },
-    { question: 'Can I book a driver for airport drop or intercity travel?', answer: 'Definitely. We handle airport transfers with real-time flight tracking and also offer intercity driving for leisure, business, or family travel.' },
-    { question: 'Can I hire a driver in Bangalore just for one day or a few hours?', answer: 'Yes, we offer on-demand drivers in Bangalore for a few hours, full-day, or one-time events. Whether it’s a wedding, airport pickup, or urgent hospital visit, you can hire an experienced chauffeur whenever needed, without long-term commitments.' },
-    { question: 'What is the cost of hiring a car driver in Bangalore?', answer: 'Driver costs in Bangalore depend on the duration and type of service: hourly, daily, live-in, or outstation. Call us for exact rates; our pricing is transparent, with no hidden charges, and customised to your travel needs.' },
-    { question: 'Can I get a driver who speaks Kannada or Hindi in Bangalore?', answer: 'Yes, we have multilingual drivers in Bangalore who can communicate in Kannada, Hindi, Tamil, and English. This makes communication easier for your family, elderly members, or clients with language preferences.' },
-    { question: 'Is fuel cost included in your driver service pricing in Bangalore?', answer: 'No, our charges cover the driver’s service only. Fuel expenses are borne by the client. However, our drivers assist in monitoring fuel usage, planning refills, and choosing trusted petrol stations on your route.' }
+    {
+      question: "What makes your car driver in Bangalore service different?",
+      answer: "Our drivers are specially trained in Bangalore’s traffic with strong local knowledge of IT corridors, residential areas, and major connectivity routes. Each driver is background-verified and skilled in navigating city shortcuts and safe paths."
+    },
+    {
+      question: "Do you provide personal drivers in Bangalore for elderly care?",
+      answer: "Absolutely. Our drivers are trained to assist elderly passengers with patient driving, medical appointment coordination, and clear communication with family members."
+    },
+    {
+      question: "What vehicle types can your drivers handle?",
+      answer: "Our chauffeur drivers in Bangalore are experienced to operate all car types: hatchbacks, sedans, SUVs, and even high-end luxury vehicles, with proper licensing and experience."
+    },
+    {
+      question: "Do you provide drivers familiar with Bangalore’s IT corridors?",
+      answer: "Yes. Our drivers have strong route expertise across key IT corridors like Outer Ring Road, Sarjapur Road, and Whitefield, ensuring faster commutes through Bangalore’s major corporate zones."
+    },
+    {
+      question: "Do you provide one-time chauffeur drivers in Bangalore for special events?",
+      answer: "Yes, we offer one-time chauffeur drivers in Bangalore for special occasions like weddings, corporate events, and private gatherings. Our drivers arrive on time, dressed professionally, and ensure smooth, respectful service throughout the event for you and your guests."
+    },
+    {
+      question: "Can I book a driver for airport drop or intercity travel?",
+      answer: "Definitely. We handle airport transfers with real-time flight tracking and also offer intercity driving for leisure, business, or family travel."
+    },
+    {
+      question: "Can I hire a driver in Bangalore just for one day or a few hours?",
+      answer: "Yes, we offer on-demand drivers in Bangalore for a few hours, full-day, or one-time events. Whether it’s a wedding, airport pickup, or urgent hospital visit, you can hire an experienced chauffeur whenever needed, without long-term commitments."
+    },
+    {
+      question: "What is the cost of hiring a car driver in Bangalore?",
+      answer: "Driver costs in Bangalore depend on the duration and type of service: hourly, daily, live-in, or outstation. Call us for exact rates; our pricing is transparent, with no hidden charges, and customised to your travel needs."
+    },
+    {
+      question: "Can I get a driver who speaks Kannada or Hindi in Bangalore?",
+      answer: "Yes, we have multilingual drivers in Bangalore who can communicate in Kannada, Hindi, Tamil, and English. This makes communication easier for your family, elderly members, or clients with language preferences."
+    },
+    {
+      question: "Is fuel cost included in your driver service pricing in Bangalore?",
+      answer: "No, our charges cover the driver’s service only. Fuel expenses are borne by the client. However, our drivers assist in monitoring fuel usage, planning refills, and choosing trusted petrol stations on your route."
+    }
   ]
 
   const localBusinessProps = {

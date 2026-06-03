@@ -6,7 +6,7 @@ import MainContent from '@/components/MainContent';
 import CTASection from '@/components/sections/CTASection';
 import CaseStudyCard from '../components/CaseStudyCard';
 import { getCaseStudy, getRelatedCaseStudies, caseStudies } from '../data/caseStudies';
-import { CheckCircleIcon, StarIcon, ArrowLeftIcon } from 'lucide-react';
+import { CheckCircleIcon, StarIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 const RESPECT_LOYALTY_ACTIONS = [
