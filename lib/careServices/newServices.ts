@@ -175,6 +175,26 @@ export const CARE_PILLARS: Record<CarePillarSlug, CarePillar> = {
         priceKey: 'ms-als-care',
         icon: 'PuzzlePieceIcon',
       },
+      {
+        slug: 'arthritis-joint-pain-care-at-home-bangalore',
+        label: 'Arthritis & Joint Pain Care',
+        title: 'Arthritis & Joint Pain Support Care at Home in Bangalore',
+        tagline: 'Pain-sensitive daily support for arthritis, joint pain and osteoporosis.',
+        description:
+          'Arthritis and joint pain support care at home in Bangalore — pain-sensitive help with bathing, dressing, walking, stairs and daily routine for seniors with arthritis or osteoporosis.',
+        priceKey: 'arthritis-care',
+        icon: 'HandRaisedIcon',
+      },
+      {
+        slug: 'respiratory-copd-care-at-home-bangalore',
+        label: 'Respiratory & COPD Care',
+        title: 'Respiratory & COPD Support Care at Home in Bangalore',
+        tagline: 'Daily support for breathlessness, COPD and oxygen-assisted living.',
+        description:
+          'Respiratory and COPD support care at home in Bangalore — walking and positioning support, medicine reminders and breathlessness monitoring for elders with COPD or chronic breathing difficulty.',
+        priceKey: 'respiratory-care',
+        icon: 'CloudIcon',
+      },
     ],
   },
 

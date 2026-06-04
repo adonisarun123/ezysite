@@ -4,12 +4,25 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('multiple-sclerosis-als-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Multiple sclerosis', 'ALS / MND', 'Progressive weakness', 'Fatigue', 'Swallowing changes'],
+  careNeeds: [
+    'Mobility and transfer support as strength changes',
+    'Fatigue-paced daily routines',
+    'Swallowing-aware feeding support',
+    'Hygiene and positioning care',
+    'Equipment-aware assistance (wheelchair, hospital bed)',
+    'Emotional support for patient and family',
+  ],
+}
 
 const CONDITION_INFO: ConditionInfo = {
   conditionName: 'Multiple sclerosis & ALS',
@@ -197,6 +210,8 @@ export default function MsAlsCareView() {
       </section>
 
       <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {SECTIONS.map((sec, idx) => (
         <section

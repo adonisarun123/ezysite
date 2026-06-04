@@ -4,11 +4,24 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 
 const SERVICE = getNestedService('dementia-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Memory loss', 'Confusion', 'Wandering', 'Behavioural changes', 'Sundowning', 'Sleep disturbance'],
+  careNeeds: [
+    'Memory support and gentle orientation',
+    'Supervision to prevent wandering',
+    'Help with bathing, dressing, meals and medicines',
+    'Calm handling of confusion, repetition, anger or fear',
+    'Safety monitoring at home',
+    'Emotional companionship through the day',
+  ],
+}
 
 const CONDITION_INFO: ConditionInfo = {
   conditionName: 'Dementia',
@@ -201,6 +214,8 @@ export default function DementiaCareAtHomeView() {
       </section>
 
       <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {/* Rich sections */}
       {SECTIONS.map((sec, idx) => (

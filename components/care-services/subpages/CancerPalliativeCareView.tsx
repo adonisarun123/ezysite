@@ -8,12 +8,25 @@ import {
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 
 const SLUG = 'cancer-palliative-care-at-home-bangalore'
 const PATH = `/care-services/${SLUG}`
 const SERVICE = getNestedService(SLUG)
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Treatment recovery', 'Weakness & fatigue', 'Advanced illness', 'Appetite loss'],
+  careNeeds: [
+    'Weakness and fatigue support',
+    'Hygiene care',
+    'Feeding support',
+    'Medicine reminders',
+    'Hospital visit assistance',
+    'Monitoring appetite, vomiting, pain, fever and dehydration signs (alerts family/doctor)',
+  ],
+}
 
 const CONDITION_INFO: ConditionInfo = {
   conditionName: 'Cancer & palliative needs',
@@ -201,6 +214,8 @@ export default function CancerPalliativeCareView() {
       </section>
 
       <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {/* Sections */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">

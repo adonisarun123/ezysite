@@ -25,6 +25,8 @@ import {
   ArrowPathIcon,
   BeakerIcon,
   PuzzlePieceIcon,
+  CloudIcon,
+  HandRaisedIcon,
 } from '@heroicons/react/24/outline'
 import CareHeroQuickForm from '../CareHeroQuickForm'
 import { getPillar } from '@/lib/careServices/newServices'
@@ -61,6 +63,8 @@ const NESTED_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   ArrowPathIcon,
   BeakerIcon,
   PuzzlePieceIcon,
+  CloudIcon,
+  HandRaisedIcon,
 }
 
 const TRUST_RIBBON = [

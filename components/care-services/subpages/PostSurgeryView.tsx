@@ -8,8 +8,21 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 
 const PATH = '/care-services/post-surgery-recovery-bangalore'
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Knee replacement', 'Hip replacement', 'Spine surgery', 'Cardiac surgery', 'Fracture recovery', 'General surgery'],
+  careNeeds: [
+    'Mobility support and fall prevention',
+    'Medicine reminders on schedule',
+    'Wound observation (medical dressing by nurses we arrange)',
+    'Bathing and hygiene support',
+    'Doctor follow-up coordination',
+    'Recovery routine and rest management',
+  ],
+}
 
 const PHASES = [
   {
@@ -138,6 +151,8 @@ export default function PostSurgeryView() {
           </p>
         </div>
       </section>
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">

@@ -4,12 +4,25 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('parkinsons-care-at-home-bangalore-elder')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Tremors', 'Stiffness', 'Walking difficulty', 'Balance issues', 'Freezing episodes'],
+  careNeeds: [
+    'Walking support and fall prevention',
+    'Assistance during tremors or stiffness',
+    'Meal and medicine timing support',
+    'Help with bathing, dressing and toileting',
+    'Monitoring freezing episodes and sudden imbalance',
+    'Daily routine that keeps good days steady',
+  ],
+}
 
 const CONDITION_INFO: ConditionInfo = {
   conditionName: 'Parkinson’s disease',
@@ -197,6 +210,8 @@ export default function ParkinsonsCareElderView() {
       </section>
 
       <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {SECTIONS.map((sec, idx) => (
         <section

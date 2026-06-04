@@ -4,12 +4,25 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('post-fall-mobility-care-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Fall risk', 'Walker/wheelchair users', 'Bathroom safety', 'Night-time risk', 'Transfer support'],
+  careNeeds: [
+    'Walking assistance',
+    'Bathroom support',
+    'Bed and chair transfer support',
+    'Night-time assistance',
+    'Fall-risk observation around the home',
+    'Support for elders using walker, stick, wheelchair or commode chair',
+  ],
+}
 
 const CONDITION_INFO: ConditionInfo = {
   conditionName: 'Falls in seniors',
@@ -197,6 +210,8 @@ export default function PostFallMobilityCareView() {
       </section>
 
       <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {SECTIONS.map((sec, idx) => (
         <section

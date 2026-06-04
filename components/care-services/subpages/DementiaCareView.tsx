@@ -12,9 +12,22 @@ import {
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/dementia-alzheimers-care-bangalore'
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Memory loss', 'Confusion', 'Wandering', 'Behavioural changes', 'Sundowning', 'Sleep disturbance'],
+  careNeeds: [
+    'Memory support and gentle orientation',
+    'Supervision to prevent wandering',
+    'Help with bathing, dressing, meals and medicines',
+    'Calm handling of confusion, repetition, anger or fear',
+    'Safety monitoring at home',
+    'Emotional companionship through the day',
+  ],
+}
 
 const CONDITION_INFO: ConditionInfo = {
   conditionName: 'Dementia',
@@ -220,6 +233,8 @@ export default function DementiaCareView() {
       </section>
 
       <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {/* Stages */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">

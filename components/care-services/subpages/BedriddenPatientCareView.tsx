@@ -3,10 +3,25 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import { getNestedService } from '@/lib/careServices/newServices'
 
 const SERVICE = getNestedService('bedridden-patient-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Complete bedside care', 'Long-term immobility', 'Diaper care', 'Bed sores risk', 'Tube feeding (nurse-supported)'],
+  careNeeds: [
+    'Bed bath and oral hygiene',
+    'Diaper changing with dignity',
+    'Feeding assistance',
+    'Two-hourly position changing',
+    'Bed-sore prevention and skin checks',
+    'Linen changing',
+    'Basic vitals observation',
+    'Emotional comfort and presence',
+  ],
+}
 
 /* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
@@ -148,6 +163,8 @@ export default function BedriddenPatientCareView() {
           ))}
         </div>
       </section>
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {SECTIONS.map((sec, idx) => (
         <section

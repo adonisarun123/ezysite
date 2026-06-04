@@ -4,12 +4,26 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('diabetes-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Type 2 diabetes', 'Sugar fluctuations', 'Foot-care risk', 'Diet management'],
+  careNeeds: [
+    'Meal timing support',
+    'Medicine reminders',
+    'Walking support',
+    'Foot care observation',
+    'Wound observation',
+    'Sugar monitoring support with family-provided glucometer and instructions',
+    'Emergency alert if sweating, dizziness, confusion or weakness occurs',
+  ],
+}
 
 const CONDITION_INFO: ConditionInfo = {
   conditionName: 'Type 2 diabetes in seniors',
@@ -197,6 +211,8 @@ export default function DiabetesCareView() {
       </section>
 
       <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {SECTIONS.map((sec, idx) => (
         <section

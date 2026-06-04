@@ -518,6 +518,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       'diabetes-care-at-home-bangalore',
       'multiple-sclerosis-als-care-at-home-bangalore',
       'post-stroke-speech-rehab-at-home-bangalore',
+      'arthritis-joint-pain-care-at-home-bangalore',
+      'respiratory-copd-care-at-home-bangalore',
     ].map((slug) => ({
       url: `${baseUrl}/care-services/${slug}`,
       lastModified: currentDate,

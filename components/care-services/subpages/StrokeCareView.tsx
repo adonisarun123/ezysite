@@ -13,9 +13,22 @@ import {
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/stroke-care-at-home-bangalore'
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['One-side weakness', 'Speech difficulty', 'Swallowing changes', 'Post-stroke recovery', 'Paralysis'],
+  careNeeds: [
+    'Bed-to-chair transfer support',
+    'Assisted walking',
+    'Feeding support with swallowing awareness',
+    'Bathing and toileting assistance',
+    'Physiotherapy coordination',
+    'Monitoring speech, swallowing, weakness and mood changes',
+  ],
+}
 
 const CONDITION_INFO: ConditionInfo = {
   conditionName: 'Stroke',
@@ -222,6 +235,8 @@ export default function StrokeCareView() {
       </section>
 
       <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {/* Phases of stroke care */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">

@@ -58,6 +58,8 @@ export type CarePriceKey =
   | 'respite-care'
   | 'diabetes-care'
   | 'ms-als-care'
+  | 'arthritis-care'
+  | 'respiratory-care'
   // Nursing nested
   | 'wound-care'
   | 'iv-therapy'
@@ -117,6 +119,8 @@ export const CARE_PRICING: Record<CarePriceKey, CarePrice> = {
   'respite-care': { amount: 1200, unit: 'day', note: '12-hr shift from' },
   'diabetes-care': { amount: 18000, unit: 'mo', note: 'From' },
   'ms-als-care': { amount: 26000, unit: 'mo', note: 'Live-in from' },
+  'arthritis-care': { amount: 18000, unit: 'mo', note: 'From' },
+  'respiratory-care': { amount: 22000, unit: 'mo', note: 'From' },
 
   // ── Nursing nested ───────────────────────────────────────
   'wound-care': { amount: 600, unit: 'visit', note: 'Per dressing from' },

@@ -10,9 +10,24 @@ import {
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/bedridden-patient-care-bangalore'
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Complete bedside care', 'Long-term immobility', 'Diaper care', 'Bed sores risk', 'Tube feeding (nurse-supported)'],
+  careNeeds: [
+    'Bed bath and oral hygiene',
+    'Diaper changing with dignity',
+    'Feeding assistance',
+    'Two-hourly position changing',
+    'Bed-sore prevention and skin checks',
+    'Linen changing',
+    'Basic vitals observation',
+    'Emotional comfort and presence',
+  ],
+}
 
 const CONDITION_INFO: ConditionInfo = {
   conditionName: 'Long-term immobility',
@@ -194,6 +209,8 @@ export default function BedriddenCareView() {
       </section>
 
       <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {/* Protocol */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">

@@ -4,12 +4,25 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('post-stroke-speech-rehab-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Aphasia', 'Slurred speech', 'Swallowing difficulty', 'Communication loss'],
+  careNeeds: [
+    'Structured speech and language exercises',
+    'Swallow-safe mealtime support',
+    'Daily home practice between sessions',
+    'Family coaching for communication',
+    'Progress tracking and review',
+    'Coordination with neuro physiotherapy',
+  ],
+}
 
 const CONDITION_INFO: ConditionInfo = {
   conditionName: 'Post-stroke aphasia & dysphagia',
@@ -197,6 +210,8 @@ export default function PostStrokeSpeechRehabView() {
       </section>
 
       <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {SECTIONS.map((sec, idx) => (
         <section

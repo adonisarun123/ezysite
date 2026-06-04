@@ -9,9 +9,22 @@ import {
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
 import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/parkinsons-care-at-home-bangalore'
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Tremors', 'Stiffness', 'Walking difficulty', 'Balance issues', 'Freezing episodes'],
+  careNeeds: [
+    'Walking support and fall prevention',
+    'Assistance during tremors or stiffness',
+    'Meal and medicine timing support',
+    'Help with bathing, dressing and toileting',
+    'Monitoring freezing episodes and sudden imbalance',
+    'Daily routine that keeps good days steady',
+  ],
+}
 
 const CONDITION_INFO: ConditionInfo = {
   conditionName: 'Parkinson’s disease',
@@ -195,6 +208,8 @@ export default function ParkinsonsCareView() {
       </section>
 
       <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
