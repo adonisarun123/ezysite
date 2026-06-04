@@ -260,7 +260,8 @@ export default function CriticalCareAtHomeView() {
             </ol>
           </nav>
 
-          <div className="mt-12 max-w-3xl">
+          <div className="mt-12 grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-14">
+            <div className="text-center lg:text-left">
             <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-400" aria-hidden />
               Bangalore · ICU-level care at home
@@ -270,11 +271,11 @@ export default function CriticalCareAtHomeView() {
               {PILLAR.title}
             </h1>
 
-            <p className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-white/75 sm:text-xl">
+            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-white/75 sm:text-xl lg:mx-0">
               {PILLAR.tagline} {PILLAR.blurb}
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <Link
                 href={ENQUIRY_HREF}
                 onClick={() => trackCareCTAClick('Speak to a critical-care advisor', `${PATH}#hero`)}
@@ -296,9 +297,10 @@ export default function CriticalCareAtHomeView() {
             <p className="mt-5 text-sm font-medium text-care-300">
               Same-day setup possible · {formatPriceWithNote(PILLAR.priceKey)}
             </p>
+            </div>
 
             {/* In-hero quick lead form */}
-            <div className="mx-auto mt-10 flex w-full max-w-md justify-center">
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
               <CareHeroQuickForm enquirySource={PATH} />
             </div>
           </div>

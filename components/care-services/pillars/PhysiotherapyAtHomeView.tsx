@@ -275,7 +275,8 @@ export default function PhysiotherapyAtHomeView() {
             </ol>
           </nav>
 
-          <div className="mt-10 max-w-3xl sm:mt-14">
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 sm:mt-14 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-14">
+            <div className="text-center lg:text-left">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
               Bangalore · Certified home rehabilitation
@@ -287,12 +288,12 @@ export default function PhysiotherapyAtHomeView() {
               <em className="font-careSerif font-normal italic text-care-500">Recovery, delivered to your door.</em>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
+            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
               {pillar.blurb} No commutes, no waiting rooms — just expert, one-on-one therapy in the comfort of
               your own home, with measurable progress at every step.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <Link
                 href={enquiryHref}
                 onClick={() => trackCareCTAClick('Book a physio assessment', `${PATH}#hero`)}
@@ -314,9 +315,10 @@ export default function PhysiotherapyAtHomeView() {
             <p className="mt-5 text-xs uppercase tracking-[0.18em] text-neutral-500">
               {formatPriceWithNote(pillar.priceKey)} · Same-week first visit across Bangalore
             </p>
+            </div>
 
             {/* In-hero quick lead form */}
-            <div className="mx-auto mt-10 flex w-full max-w-md justify-center">
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
               <CareHeroQuickForm enquirySource={PATH} />
             </div>
           </div>

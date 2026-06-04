@@ -232,13 +232,14 @@ export default function HomeNursingCareView() {
             </ol>
           </nav>
 
-          <div className="mt-10 text-center sm:mt-14 lg:mt-16">
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 sm:mt-14 lg:mt-16 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-14">
+            <div className="text-center lg:text-left">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
               Bangalore · Clinical care at home
             </p>
 
-            <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.4rem,6vw,4.75rem)] font-medium leading-[1.04] tracking-[-0.03em] text-neutral-950">
+            <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.4rem,6vw,4.75rem)] font-medium leading-[1.04] tracking-[-0.03em] text-neutral-950 lg:mx-0">
               {pillar.title}.
               <br />
               <em className="font-careSerif font-normal italic text-care-500">
@@ -246,13 +247,13 @@ export default function HomeNursingCareView() {
               </em>
             </h1>
 
-            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
+            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
               {pillar.tagline} GNM and B.Sc-verified nurses for wound care, IV therapy, catheter
               management, injections and post-surgical recovery — with daily clinical logs your doctor
               can actually use.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <Link
                 href={enquiryHref}
                 onClick={() => trackCareCTAClick('Book a home nurse', `${PATH}#hero`)}
@@ -274,9 +275,10 @@ export default function HomeNursingCareView() {
             <p className="mt-6 text-xs uppercase tracking-[0.18em] text-neutral-500">
               {formatPriceWithNote(pillar.priceKey)}
             </p>
+            </div>
 
             {/* In-hero quick lead form */}
-            <div className="mx-auto mt-10 flex w-full max-w-md justify-center">
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
               <CareHeroQuickForm enquirySource={PATH} />
             </div>
           </div>

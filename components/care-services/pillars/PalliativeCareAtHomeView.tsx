@@ -249,7 +249,8 @@ export default function PalliativeCareAtHomeView() {
             </ol>
           </nav>
 
-          <div className="mt-10 max-w-3xl sm:mt-14">
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 sm:mt-14 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-14">
+            <div className="text-center lg:text-left">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500" aria-hidden />
               Bangalore · Comfort care at home
@@ -261,13 +262,13 @@ export default function PalliativeCareAtHomeView() {
               <em className="font-careSerif font-normal italic text-accent-600">Comfort, dignity, togetherness.</em>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
+            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
               When someone you love is living with a serious illness, what matters most is comfort,
               gentleness and being together. We bring compassionate palliative care home — easing pain
               and symptoms, supporting the heart, and standing beside your whole family.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <Link
                 href={enquiryHref}
                 onClick={() => trackCareCTAClick('Talk to a care advisor', `${PATH}#hero`)}
@@ -288,9 +289,10 @@ export default function PalliativeCareAtHomeView() {
             <p className="mt-5 text-sm text-neutral-500">
               A calm, no-pressure conversation — we move at the pace that feels right for your family.
             </p>
+            </div>
 
             {/* In-hero quick lead form */}
-            <div className="mx-auto mt-10 flex w-full max-w-md justify-center">
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
               <CareHeroQuickForm enquirySource={PATH} />
             </div>
           </div>

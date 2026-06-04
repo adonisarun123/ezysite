@@ -267,24 +267,25 @@ export default function ElderCareAtHomeView() {
             </ol>
           </nav>
 
-          <div className="mt-10 text-center sm:mt-14 lg:mt-16">
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 sm:mt-14 lg:mt-16 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-14">
+            <div className="text-center lg:text-left">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
               <MapPinIcon className="h-3.5 w-3.5 text-care-500" aria-hidden />
               Now serving Bangalore
             </p>
 
-            <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.4rem,6.5vw,5rem)] font-medium leading-[1.03] tracking-[-0.035em] text-neutral-950">
+            <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.4rem,6.5vw,5rem)] font-medium leading-[1.03] tracking-[-0.035em] text-neutral-950 lg:mx-0">
               {PILLAR.title}.
               <br />
               <em className="font-careSerif font-normal italic text-care-500">With dignity, at home.</em>
             </h1>
 
-            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
+            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
               {PILLAR.tagline} Verified, trained caregivers for dementia, Parkinson’s, bedridden seniors,
               companionship and mobility — matched to your family, not assigned.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <Link
                 href={ENQUIRY_HREF}
                 onClick={() => trackCareCTAClick('Find the right caregiver', `${PATH}#hero`)}
@@ -310,9 +311,10 @@ export default function ElderCareAtHomeView() {
               Explore the six elder-care services
               <ArrowDownIcon className="h-3.5 w-3.5" aria-hidden />
             </a>
+            </div>
 
             {/* In-hero quick lead form */}
-            <div className="mx-auto mt-10 flex w-full max-w-md justify-center">
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
               <CareHeroQuickForm enquirySource={PATH} />
             </div>
           </div>

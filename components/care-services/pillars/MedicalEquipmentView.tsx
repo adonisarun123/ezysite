@@ -299,7 +299,7 @@ export default function MedicalEquipmentView() {
               </p>
             </div>
 
-            {/* Hero side card */}
+            {/* Hero side card + quick lead form */}
             <div className="lg:col-span-5">
               <div className="rounded-[28px] border border-accent-200 bg-white p-7 shadow-[0_10px_40px_rgba(0,0,0,0.06)] sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600">
@@ -320,11 +320,11 @@ export default function MedicalEquipmentView() {
                   ))}
                 </ul>
               </div>
-            </div>
 
-            {/* In-hero quick lead form */}
-            <div className="mx-auto mt-10 flex w-full max-w-md justify-center">
-              <CareHeroQuickForm enquirySource={PATH} />
+              {/* In-hero quick lead form */}
+              <div className="mx-auto mt-6 w-full max-w-md lg:mx-0 lg:max-w-none">
+                <CareHeroQuickForm enquirySource={PATH} />
+              </div>
             </div>
           </div>
         </div>

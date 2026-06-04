@@ -275,57 +275,61 @@ export default function CareServicesHomeView() {
             </ol>
           </nav>
 
-          <div className="mt-10 text-center sm:mt-14 lg:mt-16">
-            <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-              <MapPinIcon className="h-3.5 w-3.5 text-care-500" aria-hidden />
-              Now serving Bangalore
-            </p>
+          {/* Two-column hero: text + CTAs left, vertical quick form right (stacks on mobile) */}
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 sm:mt-14 lg:mt-16 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-14">
+            <div className="text-center lg:text-left">
+              <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+                <MapPinIcon className="h-3.5 w-3.5 text-care-500" aria-hidden />
+                Now serving Bangalore
+              </p>
 
-            <h1 className="mx-auto mt-7 max-w-5xl font-careSerif text-[clamp(2.5rem,7vw,5.5rem)] font-medium leading-[1.04] tracking-[-0.035em] text-neutral-950">
-              Complete care at home,
-              <br />
-              <em className="font-careSerif font-normal italic text-care-600">
-                for the people you love.
-              </em>
-            </h1>
+              <h1 className="mx-auto mt-7 max-w-5xl font-careSerif text-[clamp(2.4rem,5vw,4.25rem)] font-medium leading-[1.05] tracking-[-0.035em] text-neutral-950 lg:mx-0">
+                Complete care at home,{' '}
+                <em className="font-careSerif font-normal italic text-care-600">
+                  for the people you love.
+                </em>
+              </h1>
 
-            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
-              Bangalore’s trusted home-care platform — verified caregivers, credentialled nurses,
-              physiotherapists, ICU setups and medical equipment, all matched to your family.
-            </p>
+              <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
+                Bangalore’s trusted home-care platform — verified caregivers, credentialled nurses,
+                physiotherapists, ICU setups and medical equipment, all matched to your family.
+              </p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href={enquiryHref}
-                onClick={() => trackCareCTAClick('Find the right care', '/care-services#hero')}
-                className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-care-600 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_2px_10px_rgba(0,0,0,0.18)] transition hover:bg-care-700 hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] active:scale-[0.98]"
-              >
-                Find the right care
-                <ArrowRightIcon className="h-4 w-4" aria-hidden />
-              </Link>
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <Link
+                  href={enquiryHref}
+                  onClick={() => trackCareCTAClick('Find the right care', '/care-services#hero')}
+                  className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-care-600 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_2px_10px_rgba(0,0,0,0.18)] transition hover:bg-care-700 hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] active:scale-[0.98]"
+                >
+                  Find the right care
+                  <ArrowRightIcon className="h-4 w-4" aria-hidden />
+                </Link>
+                <a
+                  href={CARE_PHONE_HREF}
+                  onClick={() => trackCarePhoneClick(CARE_PHONE_DISPLAY, '/care-services#hero')}
+                  className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-neutral-300 bg-white px-7 py-4 text-[15px] font-semibold text-neutral-900 shadow-sm transition hover:border-neutral-900 hover:bg-neutral-50"
+                >
+                  <PhoneIcon className="h-4 w-4 text-care-600" aria-hidden />
+                  {CARE_PHONE_DISPLAY}
+                </a>
+              </div>
+
               <a
-                href={CARE_PHONE_HREF}
-                onClick={() => trackCarePhoneClick(CARE_PHONE_DISPLAY, '/care-services#hero')}
-                className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-neutral-300 bg-white px-7 py-4 text-[15px] font-semibold text-neutral-900 shadow-sm transition hover:border-neutral-900 hover:bg-neutral-50"
+                href="#services"
+                className="mt-8 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 transition hover:text-neutral-900"
               >
-                <PhoneIcon className="h-4 w-4 text-care-600" aria-hidden />
-                {CARE_PHONE_DISPLAY}
+                Explore the six services
+                <ArrowDownIcon className="h-3.5 w-3.5" aria-hidden />
               </a>
             </div>
 
             {/* In-hero quick lead form */}
-            <div className="mx-auto mt-10 flex w-full max-w-md justify-center">
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
               <CareHeroQuickForm enquirySource="/care-services" />
             </div>
+          </div>
 
-            <a
-              href="#services"
-              className="mt-8 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 transition hover:text-neutral-900"
-            >
-              Explore the six services
-              <ArrowDownIcon className="h-3.5 w-3.5" aria-hidden />
-            </a>
-
+          <div className="text-center">
             {/* Trust ribbon */}
             <ul className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-3 sm:mt-20 sm:grid-cols-4">
               {HERO_PROOF.map(({ icon: Icon, title, sub }) => (
