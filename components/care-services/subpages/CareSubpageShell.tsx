@@ -118,14 +118,14 @@ export function CareSubpageShell({
 
           <div className="mt-10 text-center sm:mt-14">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden />
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
               {eyebrow}
             </p>
 
             <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.25rem,6vw,4.5rem)] font-medium leading-[1.04] tracking-[-0.03em] text-neutral-950">
               {headlineLead}
               <br />
-              <em className="font-careSerif font-normal italic text-primary-500">{headlineAccent}</em>
+              <em className="font-careSerif font-normal italic text-care-500">{headlineAccent}</em>
             </h1>
 
             <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
@@ -211,20 +211,20 @@ export function CareSubpageClosingCTA({
 }) {
   const enquiryHref = `${CARE_ENQUIRY_HREF}?source=${encodeURIComponent(enquirySource)}`
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200 px-4 py-24 sm:px-6 sm:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-care-50 via-care-100 to-care-200 px-4 py-24 sm:px-6 sm:py-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-primary-500/15 blur-3xl"
+        className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-care-500/15 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-primary-400/20 blur-3xl"
+        className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-care-400/20 blur-3xl"
       />
       <div className="relative mx-auto max-w-3xl text-center">
         <h2 className="font-careSerif text-[clamp(2rem,5.5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
           {headlineLead}
           <br />
-          <em className="font-careSerif font-normal italic text-primary-500">{headlineAccent}</em>
+          <em className="font-careSerif font-normal italic text-care-500">{headlineAccent}</em>
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700">{body}</p>
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -285,7 +285,7 @@ export function SectionHeader({
       : 'max-w-3xl'
   return (
     <div className={wrap}>
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">{eyebrow}</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">{eyebrow}</p>
       <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
         {titleLead}
         {titleMuted ? (

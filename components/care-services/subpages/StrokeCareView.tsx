@@ -47,17 +47,17 @@ const PHASES = [
 ] as const
 
 const TONE_BG: Record<(typeof PHASES)[number]['tone'], string> = {
-  rose: 'bg-primary-50',
+  rose: 'bg-care-50',
   sand: 'bg-[#FAF6EE]',
   sage: 'bg-[#F1F6F0]',
   pearl: 'bg-[#F2F7FB]',
 }
 
 const TONE_NUM: Record<(typeof PHASES)[number]['tone'], string> = {
-  rose: 'text-primary-500',
+  rose: 'text-care-500',
   sand: 'text-[#B97A1F]',
   sage: 'text-[#1F8A4C]',
-  pearl: 'text-primary-500',
+  pearl: 'text-care-500',
 }
 
 const DAILY_CARE = [
@@ -164,9 +164,9 @@ export default function StrokeCareView() {
       {/* Direct answer block (LLM-friendly) */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F7F7F2] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Stroke care at home in Bangalore should be matched to the recovery <em className="italic text-primary-500">stage</em>.
+            Stroke care at home in Bangalore should be matched to the recovery <em className="italic text-care-500">stage</em>.
             The first two weeks are about safety and complications. The next ten are when most recovery
             actually happens. After that, care is about continuity, mood, and preventing recurrence.
             EzyHelpers places caregivers with stage-appropriate experience — and adjusts the plan as the
@@ -216,7 +216,7 @@ export default function StrokeCareView() {
                 key={t}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950">{t}</h3>
@@ -244,11 +244,11 @@ export default function StrokeCareView() {
                 {SIGNS_TO_ESCALATE.map((s) => (
                   <li
                     key={s}
-                    className="flex items-start gap-2 rounded-2xl border border-primary-500/20 bg-primary-50 px-4 py-3.5"
+                    className="flex items-start gap-2 rounded-2xl border border-care-500/20 bg-care-50 px-4 py-3.5"
                   >
                     <span
                       aria-hidden
-                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-primary-500"
+                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-care-500"
                     />
                     <span className="text-sm leading-snug text-neutral-800">{s}</span>
                   </li>
@@ -272,7 +272,7 @@ export default function StrokeCareView() {
           <ul className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">
             {EXPERIENCE_SIGNALS.map((s) => (
               <li key={s} className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5">
-                <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-500/10 text-primary-500">
+                <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-care-500/10 text-care-500">
                   <CheckIcon className="h-3.5 w-3.5" aria-hidden />
                 </span>
                 <span className="text-sm leading-snug text-neutral-800">{s}</span>

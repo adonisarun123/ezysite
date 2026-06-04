@@ -98,16 +98,16 @@ const SCENARIOS: Scenario[] = [
 ]
 
 const ACCENT_CLASS: Record<Accent, string> = {
-  rose: 'border-primary-500/30 bg-primary-50',
-  sky: 'border-primary-500/30 bg-[#F2F7FB]',
+  rose: 'border-care-500/30 bg-care-50',
+  sky: 'border-care-500/30 bg-[#F2F7FB]',
   sand: 'border-[#B97A1F]/30 bg-[#FAF6EE]',
   sage: 'border-[#1F8A4C]/30 bg-[#F1F6F0]',
   lilac: 'border-[#6B4FBE]/30 bg-[#F4F1FB]',
 }
 
 const ACCENT_TEXT: Record<Accent, string> = {
-  rose: 'text-primary-500',
-  sky: 'text-primary-500',
+  rose: 'text-care-500',
+  sky: 'text-care-500',
   sand: 'text-[#B97A1F]',
   sage: 'text-[#1F8A4C]',
   lilac: 'text-[#6B4FBE]',
@@ -216,13 +216,13 @@ export default function NurseVsCaretakerView() {
       {/* Direct rule */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">The rule, in one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">The rule, in one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Hire a <em className="italic text-primary-500">nurse</em> when there are clinical procedures —
+            Hire a <em className="italic text-care-500">nurse</em> when there are clinical procedures —
             wounds, IV, catheters, tube feeds, chest tubes, vitals you can’t miss. Hire a{' '}
-            <em className="italic text-primary-500">caretaker</em> when daily living needs help — hygiene,
+            <em className="italic text-care-500">caretaker</em> when daily living needs help — hygiene,
             meals, mobility, medication reminders, companionship. Hire a{' '}
-            <em className="italic text-primary-500">trained attendant</em> when there’s skilled physical
+            <em className="italic text-care-500">trained attendant</em> when there’s skilled physical
             handling — bedridden, post-stroke, repositioning. Many families need a combination, and that’s
             usually the most cost-effective answer.
           </p>
@@ -289,23 +289,23 @@ export default function NurseVsCaretakerView() {
               <article
                 key={c.role}
                 className={`flex h-full flex-col rounded-[28px] border bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)] ${
-                  c.highlight ? 'border-primary-500/40' : 'border-neutral-200'
+                  c.highlight ? 'border-care-500/40' : 'border-neutral-200'
                 }`}
               >
                 <div className="flex items-center justify-between">
                   <span
                     className={`flex h-11 w-11 items-center justify-center rounded-xl ring-1 ${
                       c.accent === 'sky'
-                        ? 'bg-[#E6F1FA] text-primary-500 ring-primary-500/15'
+                        ? 'bg-[#E6F1FA] text-care-500 ring-care-500/15'
                         : c.accent === 'rose'
-                          ? 'bg-primary-50 text-primary-500 ring-primary-500/15'
+                          ? 'bg-care-50 text-care-500 ring-care-500/15'
                           : 'bg-[#FAF1E2] text-[#B97A1F] ring-[#B97A1F]/15'
                     }`}
                   >
                     <c.icon className="h-5 w-5" aria-hidden />
                   </span>
                   {c.highlight ? (
-                    <span className="rounded-full bg-primary-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-primary-500">
+                    <span className="rounded-full bg-care-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-care-500">
                       Most common
                     </span>
                   ) : (
@@ -321,7 +321,7 @@ export default function NurseVsCaretakerView() {
                 <ul className="mt-5 space-y-2 text-sm text-neutral-700">
                   {c.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                       {b}
                     </li>
                   ))}
@@ -332,7 +332,7 @@ export default function NurseVsCaretakerView() {
                   </span>
                   <Link
                     href={c.href}
-                    className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-neutral-900 hover:text-primary-500"
+                    className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-neutral-900 hover:text-care-500"
                   >
                     Learn more
                     <ArrowRightIcon className="h-4 w-4" aria-hidden />
@@ -398,7 +398,7 @@ export default function NurseVsCaretakerView() {
               <article
                 key={s.setup}
                 className={`flex h-full flex-col rounded-[24px] border p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)] ${ACCENT_CLASS[s.accent]} ${
-                  s.highlight ? 'ring-2 ring-primary-500/30' : ''
+                  s.highlight ? 'ring-2 ring-care-500/30' : ''
                 }`}
               >
                 <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${ACCENT_TEXT[s.accent]}`}>

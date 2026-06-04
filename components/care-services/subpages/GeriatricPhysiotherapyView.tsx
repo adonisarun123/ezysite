@@ -145,8 +145,8 @@ export default function GeriatricPhysiotherapyView() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {HERO_STATS.map((s) => (
-              <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-primary-50 p-7 text-center">
-                <p className="font-careSerif text-3xl font-medium text-primary-500 sm:text-4xl">{s.value}</p>
+              <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-care-50 p-7 text-center">
+                <p className="font-careSerif text-3xl font-medium text-care-500 sm:text-4xl">{s.value}</p>
                 <p className="mt-2 text-sm leading-snug text-neutral-700">{s.label}</p>
               </div>
             ))}
@@ -170,7 +170,7 @@ export default function GeriatricPhysiotherapyView() {
                   key={b}
                   className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white px-5 py-4 text-sm leading-snug text-neutral-800"
                 >
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary-500" aria-hidden />
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-care-500" aria-hidden />
                   {b}
                 </li>
               ))}

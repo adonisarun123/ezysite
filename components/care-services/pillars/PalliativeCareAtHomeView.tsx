@@ -217,7 +217,7 @@ export default function PalliativeCareAtHomeView() {
       <Navbar />
 
       {/* ─────────────────── Hero ─────────────────── */}
-      <header className="relative overflow-hidden bg-primary-50">
+      <header className="relative overflow-hidden bg-care-50">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-accent-100/50 blur-3xl"
@@ -314,7 +314,7 @@ export default function PalliativeCareAtHomeView() {
 
         {/* ─────────────── Gentle intro ─────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
-          <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
+          <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600">A gentle note</p>
             <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
               Palliative care is not about giving up — it is about caring fully. It puts{' '}
@@ -487,7 +487,7 @@ export default function PalliativeCareAtHomeView() {
         </section>
 
         {/* ─────────────── Testimonials ─────────────── */}
-        <section className="border-y border-neutral-200 bg-primary-50 px-4 py-20 sm:px-6 sm:py-24">
+        <section className="border-y border-neutral-200 bg-care-50 px-4 py-20 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600">
@@ -544,14 +544,14 @@ export default function PalliativeCareAtHomeView() {
         </section>
 
         {/* ─────────────── Final CTA ─────────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200 px-4 py-24 sm:px-6 sm:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-care-50 via-care-100 to-care-200 px-4 py-24 sm:px-6 sm:py-32">
           <div
             aria-hidden
             className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-accent-200/40 blur-3xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-primary-400/20 blur-3xl"
+            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-care-400/20 blur-3xl"
           />
           <div className="relative mx-auto max-w-3xl text-center">
             <h2 className="font-careSerif text-[clamp(2rem,5.5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">

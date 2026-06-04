@@ -30,9 +30,9 @@ import { pickIllustration } from './CareClusterServiceIllustrations'
  * (peach, mint, sand, lavender, blush, sky) using Tailwind arbitrary values.
  */
 const toneClass: Record<ClusterTone, string> = {
-  c1: 'from-primary-100 to-[#FFB39A] border-transparent',
+  c1: 'from-care-100 to-[#FFB39A] border-transparent',
   c2: 'from-[#D4EDD9] to-[#9BC9A6] border-transparent',
-  c3: 'from-primary-100 to-[#F4C68C] border-transparent',
+  c3: 'from-care-100 to-[#F4C68C] border-transparent',
   c4: 'from-[#DDD4F0] to-[#B5A3DD] border-transparent',
   c5: 'from-[#FFD4D4] to-[#F19BAB] border-transparent',
   c6: 'from-[#C9E2EE] to-[#91BDD7] border-transparent',
@@ -57,7 +57,7 @@ const PILLAR_DECO_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [
 ]
 
 /** Airbnb-style pastel step panels (inspired by reference mock) */
-const PROCESS_PASTEL_BG = ['bg-primary-50', 'bg-[#E5F2EB]', 'bg-primary-100', 'bg-[#E8E4F3]'] as const
+const PROCESS_PASTEL_BG = ['bg-care-50', 'bg-[#E5F2EB]', 'bg-care-100', 'bg-[#E8E4F3]'] as const
 const PROCESS_STEP_ICONS: ComponentType<SVGProps<SVGSVGElement>>[] = [
   ChatBubbleLeftRightIcon,
   CheckCircleIcon,
@@ -142,7 +142,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                   {config.hero.line1}
                   <br />
                   {config.hero.line2Before}
-                  <em className="font-careSerif font-normal italic text-primary-500">{config.hero.line2Accent}</em>
+                  <em className="font-careSerif font-normal italic text-care-500">{config.hero.line2Accent}</em>
                   {config.hero.line2After ?? ''}
                 </h1>
                 <p className="mt-5 max-w-lg text-pretty text-[17px] leading-relaxed text-[#484848]">{heroLead}</p>
@@ -150,7 +150,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
               <div className="relative mt-8 flex flex-wrap gap-3">
                 <Link
                   href={enquiryHref}
-                  className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-primary-500 px-6 py-3.5 text-[15px] font-semibold text-white shadow-[0_2px_8px_rgba(0,116,200,0.25)] transition hover:bg-primary-600 hover:shadow-[0_4px_14px_rgba(0,116,200,0.35)] active:scale-[0.98]"
+                  className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-care-500 px-6 py-3.5 text-[15px] font-semibold text-white shadow-[0_2px_8px_rgba(0,116,200,0.25)] transition hover:bg-care-600 hover:shadow-[0_4px_14px_rgba(0,116,200,0.35)] active:scale-[0.98]"
                 >
                   {primaryCta}
                   <ArrowRightIcon className="h-4 w-4" aria-hidden />
@@ -222,7 +222,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
       <main>
         <section id="difference" className="scroll-mt-28 px-4 py-16 sm:px-6 sm:py-24 lg:py-28">
           <div className="mx-auto max-w-6xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">{config.difference.eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">{config.difference.eyebrow}</p>
             <h2 className="mt-3 font-careSerif text-[clamp(1.75rem,4.5vw,3.25rem)] font-bold leading-tight tracking-tight text-neutral-950">
               {config.difference.titleLine1}
               <br />
@@ -240,7 +240,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
             <div className="mt-12 grid gap-5 lg:grid-cols-3 lg:items-stretch">
               <article className="relative flex min-h-[360px] flex-col justify-between overflow-hidden rounded-[24px] border border-neutral-900 bg-neutral-900 p-8 text-white shadow-[0_12px_40px_rgba(0,0,0,0.18)] transition hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.22)] lg:min-h-[400px]">
                 <div className="relative">
-                  <span className="inline-block rounded-full bg-primary-500 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-sm">
+                  <span className="inline-block rounded-full bg-care-500 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-sm">
                     {config.difference.featured.tag}
                   </span>
                   <h3 className="mt-6 font-careSerif text-3xl font-semibold tracking-tight text-white">{config.difference.featured.title}</h3>
@@ -274,7 +274,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                       <ul className="mt-5 space-y-2.5 text-sm text-neutral-700">
                         {alt.bullets.map((t) => (
                           <li key={t} className="flex gap-2">
-                            <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                            <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                             <span className="leading-snug">{t}</span>
                           </li>
                         ))}
@@ -283,7 +283,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                   </div>
                   <Link
                     href={alt.href}
-                    className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary-500 hover:text-primary-600"
+                    className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-care-500 hover:text-care-600"
                   >
                     {alt.linkLabel ?? 'Learn more'} <ArrowRightIcon className="h-4 w-4" aria-hidden />
                   </Link>
@@ -295,7 +295,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
 
         <section id="why" className="scroll-mt-28 bg-[#F7F7F2] px-4 py-16 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">{config.why.eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">{config.why.eyebrow}</p>
             <h2 className="mt-3 max-w-3xl font-careSerif text-[clamp(1.65rem,4vw,2.75rem)] font-bold leading-tight tracking-tight text-neutral-950">
               {config.why.titleLine1}
               <br />
@@ -317,7 +317,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                   <div className="flex items-start justify-between gap-3">
                     <span
                       className={`font-careSerif text-3xl font-medium leading-none ${
-                        p.spotlight ? 'text-primary-400' : p.heartbeat ? 'text-teal-600' : 'text-primary-500'
+                        p.spotlight ? 'text-care-400' : p.heartbeat ? 'text-teal-600' : 'text-care-500'
                       }`}
                     >
                       {p.num}
@@ -328,7 +328,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                           ? 'border-white/20 bg-white/10 text-white'
                           : p.heartbeat
                             ? 'border-teal-200/80 bg-white text-teal-600'
-                            : 'border-primary-500/20 bg-primary-500/8 text-primary-500'
+                            : 'border-care-500/20 bg-care-500/8 text-care-500'
                       }`}
                       aria-hidden
                     >
@@ -342,7 +342,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                   </h3>
                   <p className={`mt-3 flex-1 text-sm leading-relaxed ${p.spotlight ? 'text-white/70' : 'text-neutral-600'}`}>{p.description}</p>
                   {p.heartbeat && !p.spotlight && (
-                    <svg viewBox="0 0 800 60" className="mt-auto h-12 w-full shrink-0 pt-6 text-primary-500/75" preserveAspectRatio="none" aria-hidden>
+                    <svg viewBox="0 0 800 60" className="mt-auto h-12 w-full shrink-0 pt-6 text-care-500/75" preserveAspectRatio="none" aria-hidden>
                       <polyline
                         fill="none"
                         stroke="currentColor"
@@ -363,7 +363,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div className="max-w-2xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">{config.servicesIntro.eyebrow}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">{config.servicesIntro.eyebrow}</p>
                 <h2 className="mt-3 font-careSerif text-[clamp(1.65rem,4vw,2.5rem)] font-medium leading-tight tracking-tight text-neutral-950">
                   {config.servicesIntro.titleLine1}{' '}
                   <em className="font-careSerif font-normal italic text-neutral-500">{config.servicesIntro.titleLine2Muted}</em>
@@ -392,7 +392,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                     key={c.title}
                     href={cardHref}
                     aria-label={cardAriaLabel}
-                    className="group flex cursor-pointer flex-col rounded-[28px] outline-none transition focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    className="group flex cursor-pointer flex-col rounded-[28px] outline-none transition focus-visible:ring-2 focus-visible:ring-care-500 focus-visible:ring-offset-2"
                   >
                     <div
                       className={`relative aspect-[1.05] w-full overflow-hidden rounded-[24px] border bg-gradient-to-br shadow-[0_6px_20px_rgba(0,0,0,0.06)] transition group-hover:-translate-y-1 group-hover:shadow-[0_10px_28px_rgba(0,0,0,0.12)] ${toneClass[c.tone]}`}
@@ -454,8 +454,8 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                 <div key={x.label} className="text-left">
                   <p className="font-careSerif text-[clamp(1.75rem,4vw,2.75rem)] font-medium leading-none tracking-tight text-white">
                     {x.num.replace(/\+|%/g, '')}
-                    {x.num.includes('+') && <em className="text-primary-500 not-italic">+</em>}
-                    {x.num.includes('%') && <em className="text-primary-500 not-italic">%</em>}
+                    {x.num.includes('+') && <em className="text-care-500 not-italic">+</em>}
+                    {x.num.includes('%') && <em className="text-care-500 not-italic">%</em>}
                   </p>
                   <p className="mt-2 text-sm leading-snug text-white/65">{x.label}</p>
                 </div>
@@ -466,7 +466,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
 
         <section id="process" className="scroll-mt-28 bg-white px-4 py-16 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-500">{config.processIntro.eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-care-500">{config.processIntro.eyebrow}</p>
             <h2 className="mt-3 max-w-3xl font-careSerif text-[clamp(1.75rem,4vw,2.65rem)] font-semibold leading-tight tracking-tight text-neutral-900">
               {config.processIntro.title}
             </h2>
@@ -482,9 +482,9 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                     className={`flex flex-col rounded-3xl p-7 shadow-[0_6px_20px_rgba(0,0,0,0.06)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.12)] ${pastel}`}
                   >
                     <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-[0_2px_6px_rgba(0,0,0,0.06)]">
-                      <StepIcon className="h-7 w-7 text-primary-500" aria-hidden />
+                      <StepIcon className="h-7 w-7 text-care-500" aria-hidden />
                     </div>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-primary-500">Step {step.mark}</p>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-care-500">Step {step.mark}</p>
                     <h3 className="mt-2 font-careSerif text-lg font-bold tracking-tight text-neutral-900">{step.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-neutral-600">{step.body}</p>
                   </div>
@@ -496,7 +496,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
 
         <section id="conditions" className="scroll-mt-28 px-4 py-16 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">{config.conditionsIntro.eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">{config.conditionsIntro.eyebrow}</p>
             <h2 className="mt-3 font-careSerif text-[clamp(1.45rem,3.5vw,2.35rem)] font-bold tracking-tight text-neutral-950">
               {config.conditionsIntro.titleLine1} <span className="text-neutral-400">{config.conditionsIntro.titleLine2Muted}</span>
             </h2>
@@ -507,17 +507,17 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                 return (
                   <div
                     key={label}
-                    className="flex items-center gap-3 rounded-2xl border border-black/[0.06] bg-white px-4 py-3.5 text-sm font-medium text-neutral-800 shadow-sm transition hover:-translate-y-0.5 hover:border-primary-500/35 hover:shadow-md"
+                    className="flex items-center gap-3 rounded-2xl border border-black/[0.06] bg-white px-4 py-3.5 text-sm font-medium text-neutral-800 shadow-sm transition hover:-translate-y-0.5 hover:border-care-500/35 hover:shadow-md"
                   >
                     {icon ? (
                       <span
-                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-50 text-base leading-none"
+                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-care-50 text-base leading-none"
                         aria-hidden
                       >
                         {icon}
                       </span>
                     ) : (
-                      <span className="h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-primary-500 to-[#00A699]" aria-hidden />
+                      <span className="h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-care-500 to-[#00A699]" aria-hidden />
                     )}
                     <span className="min-w-0 leading-snug">{text}</span>
                   </div>
@@ -532,7 +532,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
         {faqItems.length > 0 && (
           <section id="faq" className="scroll-mt-28 border-t border-black/[0.06] bg-white px-4 py-16 sm:px-6 sm:py-24">
             <div className="mx-auto max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">Questions</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Questions</p>
               <h2 className="mt-3 font-careSerif text-[clamp(1.45rem,3.5vw,2rem)] font-bold tracking-tight text-neutral-950">
                 Straight answers. <span className="text-neutral-400">No jargon.</span>
               </h2>
@@ -544,7 +544,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
         )}
 
         <section id="book" className="scroll-mt-28 bg-[#F7F7F2] px-4 py-16 sm:px-6 sm:py-20">
-          <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[32px] bg-gradient-to-br from-primary-100 via-[#FFC4B0] to-[#FF8A65] p-8 shadow-[0_24px_60px_rgba(255,90,60,0.2)] sm:p-12 lg:p-14">
+          <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[32px] bg-gradient-to-br from-care-100 via-[#FFC4B0] to-[#FF8A65] p-8 shadow-[0_24px_60px_rgba(255,90,60,0.2)] sm:p-12 lg:p-14">
             <div
               className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-white/40 blur-3xl"
               aria-hidden
@@ -553,13 +553,13 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
               <div className="text-left">
                 <h2 className="font-careSerif text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.1] tracking-tight text-neutral-900">
                   <span className="block">{config.finalCta.titleBefore}</span>
-                  <span className="mt-2 block text-primary-600">{config.finalCta.titleGradient}</span>
+                  <span className="mt-2 block text-care-600">{config.finalCta.titleGradient}</span>
                 </h2>
                 <p className="mt-5 max-w-md text-base leading-relaxed text-neutral-800/90 sm:text-lg">{config.finalCta.lede}</p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                   <Link
                     href={enquiryHref}
-                    className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-primary-500 px-8 py-3.5 text-base font-semibold text-white shadow-[0_4px_14px_rgba(0,116,200,0.35)] transition hover:bg-primary-600 active:scale-[0.98]"
+                    className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-care-500 px-8 py-3.5 text-base font-semibold text-white shadow-[0_4px_14px_rgba(0,116,200,0.35)] transition hover:bg-care-600 active:scale-[0.98]"
                   >
                     Start your enquiry
                     <ArrowRightIcon className="h-4 w-4" aria-hidden />
@@ -581,7 +581,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
               </div>
               <div className="relative hidden min-h-[200px] lg:flex lg:items-center lg:justify-center" aria-hidden>
                 <div className="relative h-52 w-52 rounded-full bg-white/35 shadow-inner ring-4 ring-white/50">
-                  <div className="absolute inset-6 rounded-full bg-gradient-to-br from-primary-500/45 to-[#00A699]/40" />
+                  <div className="absolute inset-6 rounded-full bg-gradient-to-br from-care-500/45 to-[#00A699]/40" />
                   <HeartIcon className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 text-white drop-shadow-md" />
                 </div>
               </div>

@@ -51,7 +51,6 @@ const navigation: NavigationItem[] = [
       { name: 'Palliative Care at Home', href: '/care-services/palliative-care-at-home-bangalore' },
     ],
   },
-  { name: 'Hire Helper', href: '/hire-helper' },
   { name: 'Nest', href: '/nest', isNew: true },
   {
     name: 'For Helpers',

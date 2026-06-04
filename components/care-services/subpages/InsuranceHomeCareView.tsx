@@ -225,15 +225,15 @@ export default function InsuranceHomeCareView() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-[24px] border border-neutral-200 bg-primary-50 p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">Typically not covered</p>
+            <div className="rounded-[24px] border border-neutral-200 bg-care-50 p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Typically not covered</p>
               <h3 className="mt-3 font-careSerif text-xl font-bold text-neutral-950 sm:text-2xl">
                 Personal care services
               </h3>
               <ul className="mt-5 space-y-2.5">
                 {NOT_COVERED.map((b) => (
                   <li key={b} className="flex items-start gap-2 text-sm text-neutral-800">
-                    <XMarkIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                    <XMarkIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                     {b}
                   </li>
                 ))}
@@ -258,7 +258,7 @@ export default function InsuranceHomeCareView() {
                 key={s.n}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-[#F7F7F2] p-6"
               >
-                <span className="font-careSerif text-3xl font-medium text-primary-500">{s.n}</span>
+                <span className="font-careSerif text-3xl font-medium text-care-500">{s.n}</span>
                 <h3 className="mt-3 font-careSerif text-lg font-bold tracking-tight text-neutral-950">
                   {s.title}
                 </h3>

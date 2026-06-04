@@ -231,10 +231,10 @@ export default function ElderCareAtHomeView() {
       <Navbar />
 
       {/* ─────────────────── Hero ─────────────────── */}
-      <header className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white">
+      <header className="relative overflow-hidden bg-gradient-to-b from-care-50 to-white">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary-200/40 blur-3xl"
+          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-care-200/40 blur-3xl"
         />
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 sm:pb-28 sm:pt-8 lg:pb-32">
           {/* Breadcrumb */}
@@ -264,14 +264,14 @@ export default function ElderCareAtHomeView() {
 
           <div className="mt-10 text-center sm:mt-14 lg:mt-16">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-              <MapPinIcon className="h-3.5 w-3.5 text-primary-500" aria-hidden />
+              <MapPinIcon className="h-3.5 w-3.5 text-care-500" aria-hidden />
               Now serving Bangalore
             </p>
 
             <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.4rem,6.5vw,5rem)] font-medium leading-[1.03] tracking-[-0.035em] text-neutral-950">
               {PILLAR.title}.
               <br />
-              <em className="font-careSerif font-normal italic text-primary-500">With dignity, at home.</em>
+              <em className="font-careSerif font-normal italic text-care-500">With dignity, at home.</em>
             </h1>
 
             <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
@@ -318,7 +318,7 @@ export default function ElderCareAtHomeView() {
           <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-neutral-200 sm:grid-cols-4">
             {TRUST_RIBBON.map(({ icon: Icon, title, sub }) => (
               <div key={title} className="flex flex-col items-center gap-2 bg-white px-4 py-7 text-center sm:py-8">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <strong className="text-sm font-bold text-neutral-950">{title}</strong>
@@ -331,7 +331,7 @@ export default function ElderCareAtHomeView() {
         {/* ─────────────── Intro ─────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
               Care for ageing parents
             </p>
             <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.08] tracking-[-0.025em] text-neutral-950">
@@ -348,10 +348,10 @@ export default function ElderCareAtHomeView() {
         </section>
 
         {/* ─────────────── Nested services grid ─────────────── */}
-        <section id="services" className="scroll-mt-28 border-y border-neutral-200 bg-primary-50 px-4 py-20 sm:px-6 sm:py-28">
+        <section id="services" className="scroll-mt-28 border-y border-neutral-200 bg-care-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Six elder-care services
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -372,9 +372,9 @@ export default function ElderCareAtHomeView() {
                     key={service.slug}
                     href={href}
                     aria-label={`${service.title} — learn more`}
-                    className="group flex h-full flex-col rounded-[28px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-primary-500/40 hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)] focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    className="group flex h-full flex-col rounded-[28px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-care-500/40 hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)] focus-visible:ring-2 focus-visible:ring-care-500 focus-visible:ring-offset-2"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                       <Icon className="h-6 w-6" aria-hidden />
                     </span>
                     <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950">
@@ -384,7 +384,7 @@ export default function ElderCareAtHomeView() {
                     <p className="mt-5 text-sm font-semibold text-neutral-900">
                       {formatPriceWithNote(service.priceKey)}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-500 transition group-hover:text-primary-600">
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-care-500 transition group-hover:text-care-600">
                       Learn more
                       <ArrowLongRightIcon
                         className="h-4 w-4 transition group-hover:translate-x-1"
@@ -402,13 +402,13 @@ export default function ElderCareAtHomeView() {
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Why specialised elder care
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Most services place whoever is free.
                 <br />
-                <em className="font-careSerif font-normal italic text-primary-500">We place whoever is right.</em>
+                <em className="font-careSerif font-normal italic text-care-500">We place whoever is right.</em>
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
                 Senior care done well is the difference between a parent who declines quietly and one who keeps
@@ -422,7 +422,7 @@ export default function ElderCareAtHomeView() {
                   key={title}
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
                   <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950">{title}</h3>
@@ -434,10 +434,10 @@ export default function ElderCareAtHomeView() {
         </section>
 
         {/* ─────────────── How it works ─────────────── */}
-        <section className="bg-primary-50 px-4 py-20 sm:px-6 sm:py-28">
+        <section className="bg-care-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">How it works</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">How it works</p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Four steps. One careful match.
               </h2>
@@ -454,7 +454,7 @@ export default function ElderCareAtHomeView() {
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-careSerif text-3xl font-medium text-primary-500">{n}</span>
+                    <span className="font-careSerif text-3xl font-medium text-care-500">{n}</span>
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-700">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
@@ -472,7 +472,7 @@ export default function ElderCareAtHomeView() {
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                   Conditions we handle
                 </p>
                 <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -498,7 +498,7 @@ export default function ElderCareAtHomeView() {
                       key={c}
                       className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700"
                     >
-                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden />
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
                       {c}
                     </span>
                   ))}
@@ -509,10 +509,10 @@ export default function ElderCareAtHomeView() {
         </section>
 
         {/* ─────────────── Testimonials ─────────────── */}
-        <section className="border-y border-neutral-200 bg-primary-50 px-4 py-20 sm:px-6 sm:py-28">
+        <section className="border-y border-neutral-200 bg-care-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">Real families</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Real families</p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Stories from Bangalore homes.
               </h2>
@@ -524,7 +524,7 @@ export default function ElderCareAtHomeView() {
                   className="flex h-full flex-col justify-between rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div>
-                    <span aria-hidden className="font-careSerif text-5xl leading-none text-primary-500/40">
+                    <span aria-hidden className="font-careSerif text-5xl leading-none text-care-500/40">
                       &ldquo;
                     </span>
                     <blockquote className="mt-2 font-careSerif text-lg leading-snug text-neutral-900 sm:text-xl">
@@ -547,7 +547,7 @@ export default function ElderCareAtHomeView() {
         {/* ─────────────── FAQ ─────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">Frequently asked</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Frequently asked</p>
             <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
               Elder care in Bangalore, answered.
             </h2>
@@ -558,20 +558,20 @@ export default function ElderCareAtHomeView() {
         </section>
 
         {/* ─────────────── Final CTA ─────────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200 px-4 py-24 sm:px-6 sm:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-care-50 via-care-100 to-care-200 px-4 py-24 sm:px-6 sm:py-32">
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-primary-500/15 blur-3xl"
+            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-care-500/15 blur-3xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-primary-400/20 blur-3xl"
+            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-care-400/20 blur-3xl"
           />
           <div className="relative mx-auto max-w-4xl text-center">
             <h2 className="font-careSerif text-[clamp(2.25rem,6vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.025em] text-neutral-950">
               Care for your parents,
               <br />
-              <em className="font-careSerif font-normal italic text-primary-500">arranged in a single call.</em>
+              <em className="font-careSerif font-normal italic text-care-500">arranged in a single call.</em>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700">
               Tell us about your loved one. Our team responds within the hour, recommends the right elder-care

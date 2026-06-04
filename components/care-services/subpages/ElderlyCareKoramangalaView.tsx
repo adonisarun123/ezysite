@@ -122,10 +122,10 @@ export default function ElderlyCareKoramangalaView() {
       lastUpdated="May 2026"
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Koramangala has one of Bangalore’s <em className="italic text-primary-500">most settled senior populations</em>{' '}
+            Koramangala has one of Bangalore’s <em className="italic text-care-500">most settled senior populations</em>{' '}
             — many lived here 30+ years. We place caregivers who respect that, briefed on Manipal Old Airport
             Road and St John’s, matched to language and routine. Live-in placements from ₹22,000/month.
           </p>
@@ -204,7 +204,7 @@ export default function ElderlyCareKoramangalaView() {
                 key={a}
                 className="flex items-center gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-800"
               >
-                <MapPinIcon className="h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                <MapPinIcon className="h-4 w-4 shrink-0 text-care-500" aria-hidden />
                 {a}
               </div>
             ))}
@@ -222,7 +222,7 @@ export default function ElderlyCareKoramangalaView() {
           <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {HOSPITALS.map((h) => (
               <div key={h} className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-4">
-                <BuildingOffice2Icon className="h-5 w-5 shrink-0 text-primary-500" aria-hidden />
+                <BuildingOffice2Icon className="h-5 w-5 shrink-0 text-care-500" aria-hidden />
                 <span className="text-sm font-medium text-neutral-900">{h}</span>
               </div>
             ))}

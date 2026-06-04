@@ -122,11 +122,11 @@ export default function LiveInVsDayShiftView() {
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            <em className="italic text-primary-500">Live-in</em> is the right choice when the patient cannot
+            <em className="italic text-care-500">Live-in</em> is the right choice when the patient cannot
             be alone — alone-living seniors, recent post-discharge, advanced dementia, or bedridden care.{' '}
-            <em className="italic text-primary-500">Day shift</em> is right when family is available the rest
+            <em className="italic text-care-500">Day shift</em> is right when family is available the rest
             of the time — working couples sharing care, a spouse covering nights, or recovery from a minor
             surgery.
           </p>
@@ -184,7 +184,7 @@ export default function LiveInVsDayShiftView() {
                 key={s.setup}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-500">Situation</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-care-500">Situation</p>
                 <p className="mt-2 font-careSerif text-lg leading-snug text-neutral-900 sm:text-xl">
                   {s.setup}
                 </p>

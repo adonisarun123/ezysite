@@ -231,7 +231,7 @@ export default function MedicalEquipmentView() {
       <header className="relative overflow-hidden bg-white">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-50 via-white to-primary-50"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-50 via-white to-care-50"
         />
         <div className="relative mx-auto max-w-6xl px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-8">
           {/* Breadcrumb */}
@@ -446,20 +446,20 @@ export default function MedicalEquipmentView() {
               </article>
 
               {/* Buy */}
-              <article className="flex flex-col rounded-[28px] border border-primary-200 bg-primary-50 p-8 sm:p-10">
+              <article className="flex flex-col rounded-[28px] border border-care-200 bg-care-50 p-8 sm:p-10">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-primary-600 ring-1 ring-primary-200">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-care-600 ring-1 ring-care-200">
                     <ShieldCheckIcon className="h-5 w-5" aria-hidden />
                   </span>
                   <div>
                     <h3 className="font-careSerif text-2xl font-bold text-neutral-950">Buy it</h3>
-                    <p className="text-sm font-semibold text-primary-600">Long-term & permanent</p>
+                    <p className="text-sm font-semibold text-care-600">Long-term & permanent</p>
                   </div>
                 </div>
                 <ul className="mt-6 space-y-3">
                   {BUY_POINTS.map((p) => (
                     <li key={p} className="flex items-start gap-3 text-sm text-neutral-800 sm:text-base">
-                      <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-primary-500" aria-hidden />
+                      <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-care-500" aria-hidden />
                       <span className="leading-snug">{p}</span>
                     </li>
                   ))}
@@ -475,9 +475,9 @@ export default function MedicalEquipmentView() {
         </section>
 
         {/* ─────────────────── How it works ─────────────────── */}
-        <section id="how-it-works" className="scroll-mt-28 bg-primary-50 px-4 py-20 sm:px-6 sm:py-24">
+        <section id="how-it-works" className="scroll-mt-28 bg-care-50 px-4 py-20 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">
               Delivery & installation
             </p>
             <h2 className="mt-3 max-w-3xl font-careSerif text-[clamp(1.75rem,4vw,2.65rem)] font-medium leading-tight tracking-tight text-neutral-950">
@@ -490,7 +490,7 @@ export default function MedicalEquipmentView() {
                   key={s.mark}
                   className="flex flex-col rounded-3xl border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
-                  <span className="font-careSerif text-3xl font-medium text-primary-500">{s.mark}</span>
+                  <span className="font-careSerif text-3xl font-medium text-care-500">{s.mark}</span>
                   <h3 className="mt-3 font-careSerif text-lg font-bold tracking-tight text-neutral-950">
                     {s.title}
                   </h3>
@@ -586,7 +586,7 @@ export default function MedicalEquipmentView() {
         </section>
 
         {/* ─────────────────── Closing CTA ─────────────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-accent-100 via-accent-50 to-primary-50 px-4 py-24 sm:px-6 sm:py-28">
+        <section className="relative overflow-hidden bg-gradient-to-br from-accent-100 via-accent-50 to-care-50 px-4 py-24 sm:px-6 sm:py-28">
           <div
             aria-hidden
             className="pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-accent-300/30 blur-3xl"

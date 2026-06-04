@@ -243,10 +243,10 @@ export default function PhysiotherapyAtHomeView() {
       <Navbar />
 
       {/* ─────────────────── Hero ─────────────────── */}
-      <header className="relative overflow-hidden bg-primary-50">
+      <header className="relative overflow-hidden bg-care-50">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-primary-500/10 blur-3xl"
+          className="pointer-events-none absolute -right-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-care-500/10 blur-3xl"
         />
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 sm:pb-28 sm:pt-8 lg:pb-32">
           {/* Breadcrumb */}
@@ -276,14 +276,14 @@ export default function PhysiotherapyAtHomeView() {
 
           <div className="mt-10 max-w-3xl sm:mt-14">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden />
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
               Bangalore · Certified home rehabilitation
             </p>
 
             <h1 className="mt-7 font-careSerif text-[clamp(2.5rem,6.5vw,5rem)] font-medium leading-[1.03] tracking-[-0.03em] text-neutral-950">
               {pillar.title}.
               <br />
-              <em className="font-careSerif font-normal italic text-primary-500">Recovery, delivered to your door.</em>
+              <em className="font-careSerif font-normal italic text-care-500">Recovery, delivered to your door.</em>
             </h1>
 
             <p className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
@@ -326,7 +326,7 @@ export default function PhysiotherapyAtHomeView() {
           <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-neutral-200 lg:grid-cols-4">
             {TRUST_RIBBON.map(({ icon: Icon, title, sub }) => (
               <div key={title} className="flex items-start gap-3 bg-white px-5 py-7 sm:px-6">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <div className="min-w-0">
@@ -341,7 +341,7 @@ export default function PhysiotherapyAtHomeView() {
         {/* ─────────────── Intro ─────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
               Physiotherapy that comes to you
             </p>
             <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.06] tracking-[-0.025em] text-neutral-950">
@@ -360,7 +360,7 @@ export default function PhysiotherapyAtHomeView() {
         <section id="services" className="scroll-mt-28 border-y border-neutral-200 bg-neutral-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Six specialised programmes
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -379,9 +379,9 @@ export default function PhysiotherapyAtHomeView() {
                   <Link
                     key={n.slug}
                     href={`/care-services/${n.slug}`}
-                    className="group flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_12px_32px_rgba(0,0,0,0.10)] focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    className="group flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_12px_32px_rgba(0,0,0,0.10)] focus-visible:ring-2 focus-visible:ring-care-500 focus-visible:ring-offset-2"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                       <Icon className="h-6 w-6" aria-hidden />
                     </span>
                     <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950">
@@ -391,7 +391,7 @@ export default function PhysiotherapyAtHomeView() {
                     <p className="mt-5 text-sm font-semibold text-neutral-900">
                       {formatPriceWithNote(n.priceKey)}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-500 transition group-hover:gap-2">
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-care-500 transition group-hover:gap-2">
                       Explore programme
                       <ArrowRightIcon className="h-4 w-4" aria-hidden />
                     </span>
@@ -406,7 +406,7 @@ export default function PhysiotherapyAtHomeView() {
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Why home physiotherapy works
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -424,7 +424,7 @@ export default function PhysiotherapyAtHomeView() {
                   key={title}
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
                   <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950">{title}</h3>
@@ -439,7 +439,7 @@ export default function PhysiotherapyAtHomeView() {
         <section className="bg-neutral-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">How it works</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">How it works</p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Four steps, from assessment to independence.
               </h2>
@@ -455,7 +455,7 @@ export default function PhysiotherapyAtHomeView() {
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-careSerif text-3xl font-medium text-primary-500">{n}</span>
+                    <span className="font-careSerif text-3xl font-medium text-care-500">{n}</span>
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-700">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
@@ -473,7 +473,7 @@ export default function PhysiotherapyAtHomeView() {
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                   Conditions we treat
                 </p>
                 <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -499,7 +499,7 @@ export default function PhysiotherapyAtHomeView() {
                       key={c}
                       className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-800 shadow-sm"
                     >
-                      <CheckCircleIcon className="h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                      <CheckCircleIcon className="h-4 w-4 shrink-0 text-care-500" aria-hidden />
                       <span className="leading-snug">{c}</span>
                     </div>
                   ))}
@@ -513,7 +513,7 @@ export default function PhysiotherapyAtHomeView() {
         <section className="border-y border-neutral-200 bg-accent-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Recovery stories
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -527,7 +527,7 @@ export default function PhysiotherapyAtHomeView() {
                   className="flex h-full flex-col justify-between rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div>
-                    <span aria-hidden className="font-careSerif text-5xl leading-none text-primary-500/40">
+                    <span aria-hidden className="font-careSerif text-5xl leading-none text-care-500/40">
                       &ldquo;
                     </span>
                     <blockquote className="mt-2 font-careSerif text-lg leading-snug text-neutral-900 sm:text-xl">
@@ -550,7 +550,7 @@ export default function PhysiotherapyAtHomeView() {
         {/* ─────────────── FAQ ─────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">Frequently asked</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Frequently asked</p>
             <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
               Home physiotherapy, answered.
             </h2>
@@ -561,20 +561,20 @@ export default function PhysiotherapyAtHomeView() {
         </section>
 
         {/* ─────────────── Final CTA ─────────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200 px-4 py-24 sm:px-6 sm:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-care-50 via-care-100 to-care-200 px-4 py-24 sm:px-6 sm:py-32">
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-primary-500/15 blur-3xl"
+            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-care-500/15 blur-3xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-primary-400/20 blur-3xl"
+            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-care-400/20 blur-3xl"
           />
           <div className="relative mx-auto max-w-3xl text-center">
             <h2 className="font-careSerif text-[clamp(2rem,5.5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
               Start your recovery at home.
               <br />
-              <em className="font-careSerif font-normal italic text-primary-500">Book a physio assessment today.</em>
+              <em className="font-careSerif font-normal italic text-care-500">Book a physio assessment today.</em>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700">
               Tell us about the condition and your goals. We respond within the hour, match you with a certified

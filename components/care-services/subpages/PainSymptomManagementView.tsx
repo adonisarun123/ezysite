@@ -144,7 +144,7 @@ export default function PainSymptomManagementView() {
           {HERO_STATS.map((s) => (
             <div
               key={s.value}
-              className="rounded-2xl border border-neutral-200 bg-primary-50 px-5 py-5 text-center"
+              className="rounded-2xl border border-neutral-200 bg-care-50 px-5 py-5 text-center"
             >
               <p className="font-careSerif text-xl font-medium text-accent-600">{s.value}</p>
               <p className="mt-1 text-sm leading-snug text-neutral-600">{s.label}</p>

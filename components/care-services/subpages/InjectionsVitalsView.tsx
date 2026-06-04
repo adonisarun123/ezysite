@@ -145,8 +145,8 @@ export default function InjectionsVitalsView() {
       <section className="bg-white px-4 pt-4 sm:px-6">
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
           {HERO_STATS.map((s) => (
-            <div key={s.label} className="rounded-[20px] border border-neutral-200 bg-primary-50 px-6 py-5 text-center">
-              <p className="font-careSerif text-2xl font-medium text-primary-500 sm:text-3xl">{s.value}</p>
+            <div key={s.label} className="rounded-[20px] border border-neutral-200 bg-care-50 px-6 py-5 text-center">
+              <p className="font-careSerif text-2xl font-medium text-care-500 sm:text-3xl">{s.value}</p>
               <p className="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">{s.label}</p>
             </div>
           ))}
@@ -154,11 +154,11 @@ export default function InjectionsVitalsView() {
       </section>
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Injections and vitals monitoring at home in Bangalore bring a qualified nurse to you for{' '}
-            <em className="italic text-primary-500">insulin, prescribed injections and routine checks</em>{' '}
+            <em className="italic text-care-500">insulin, prescribed injections and routine checks</em>{' '}
             of BP, blood sugar and oxygen — saving elderly and chronic-illness patients repeated,
             tiring clinic trips while keeping a clear health record.
           </p>
@@ -171,7 +171,7 @@ export default function InjectionsVitalsView() {
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {SERVICES_LIST.map(({ icon: Icon, title, body }) => (
               <article key={title} className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950 sm:text-xl">{title}</h3>
@@ -192,7 +192,7 @@ export default function InjectionsVitalsView() {
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {INCLUDED.map((b) => (
                   <li key={b} className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5">
-                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                     <span className="text-sm leading-snug text-neutral-800">{b}</span>
                   </li>
                 ))}
@@ -212,7 +212,7 @@ export default function InjectionsVitalsView() {
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {WHO.map((w) => (
                   <li key={w} className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3.5">
-                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                     <span className="text-sm leading-snug text-neutral-800">{w}</span>
                   </li>
                 ))}

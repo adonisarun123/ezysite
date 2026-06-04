@@ -227,7 +227,7 @@ export default function CriticalCareAtHomeView() {
       <header className="relative overflow-hidden bg-neutral-950">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-primary-500/20 blur-3xl"
+          className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-care-500/20 blur-3xl"
         />
         <div
           aria-hidden
@@ -261,7 +261,7 @@ export default function CriticalCareAtHomeView() {
 
           <div className="mt-12 max-w-3xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary-400" aria-hidden />
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-400" aria-hidden />
               Bangalore · ICU-level care at home
             </p>
 
@@ -292,7 +292,7 @@ export default function CriticalCareAtHomeView() {
               </a>
             </div>
 
-            <p className="mt-5 text-sm font-medium text-primary-300">
+            <p className="mt-5 text-sm font-medium text-care-300">
               Same-day setup possible · {formatPriceWithNote(PILLAR.priceKey)}
             </p>
           </div>
@@ -304,7 +304,7 @@ export default function CriticalCareAtHomeView() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-neutral-200 lg:grid-cols-4">
           {TRUST_RIBBON.map(({ icon: Icon, title, sub }) => (
             <div key={title} className="flex items-start gap-3 bg-white px-5 py-6 sm:px-6">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-600 ring-1 ring-primary-500/15">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-care-50 text-care-600 ring-1 ring-care-500/15">
                 <Icon className="h-5 w-5" aria-hidden />
               </span>
               <div className="min-w-0">
@@ -319,14 +319,14 @@ export default function CriticalCareAtHomeView() {
       <main>
         {/* ─────────────────── Intro ─────────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
-          <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">In one paragraph</p>
+          <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">In one paragraph</p>
             <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
               Critical care at home in Bangalore brings the equipment, staffing and protocols of a hospital ICU
               into the patient&rsquo;s own room. EzyHelpers installs{' '}
-              <em className="italic text-primary-600">hospital-grade equipment</em>, places{' '}
-              <em className="italic text-primary-600">critical-care trained nurses</em> on round-the-clock shifts,
-              and runs everything under <em className="italic text-primary-600">doctor supervision</em> — with a
+              <em className="italic text-care-600">hospital-grade equipment</em>, places{' '}
+              <em className="italic text-care-600">critical-care trained nurses</em> on round-the-clock shifts,
+              and runs everything under <em className="italic text-care-600">doctor supervision</em> — with a
               clear escalation plan. It is designed for clinically stable patients who need intensive support, so
               recovery happens in a calmer, more familiar place, with family close by.
             </p>
@@ -337,7 +337,7 @@ export default function CriticalCareAtHomeView() {
         <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">Critical-care services</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">Critical-care services</p>
               <h2 className="mt-3 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Five intensive services,{' '}
                 <span className="text-neutral-400">delivered at home.</span>
@@ -355,9 +355,9 @@ export default function CriticalCareAtHomeView() {
                   <Link
                     key={n.slug}
                     href={`/care-services/${n.slug}`}
-                    className="group flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)] focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    className="group flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)] focus-visible:ring-2 focus-visible:ring-care-500 focus-visible:ring-offset-2"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-600 ring-1 ring-primary-500/15">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-care-50 text-care-600 ring-1 ring-care-500/15">
                       <Icon className="h-6 w-6" aria-hidden />
                     </span>
                     <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950 sm:text-xl">
@@ -365,7 +365,7 @@ export default function CriticalCareAtHomeView() {
                     </h3>
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">{n.tagline}</p>
                     <p className="mt-4 text-sm font-semibold text-neutral-900">{formatPriceWithNote(n.priceKey)}</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition group-hover:gap-2">
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-care-600 transition group-hover:gap-2">
                       Learn more
                       <ArrowLongRightIcon className="h-4 w-4" aria-hidden />
                     </span>
@@ -380,7 +380,7 @@ export default function CriticalCareAtHomeView() {
         <section className="bg-neutral-50 px-4 py-20 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">A measured comparison</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">A measured comparison</p>
               <h2 className="mt-3 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 ICU at home vs hospital ICU.
               </h2>
@@ -394,7 +394,7 @@ export default function CriticalCareAtHomeView() {
               {/* header row */}
               <div className="hidden grid-cols-[1fr_1.4fr_1.4fr] gap-px bg-neutral-200 lg:grid">
                 <div className="bg-neutral-900 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white">Factor</div>
-                <div className="bg-primary-600 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white">
+                <div className="bg-care-600 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white">
                   ICU at home
                 </div>
                 <div className="bg-neutral-700 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white">
@@ -409,15 +409,15 @@ export default function CriticalCareAtHomeView() {
                     </div>
                     <div
                       className={`px-6 py-5 text-sm leading-relaxed ${
-                        row.advantage === 'home' ? 'bg-primary-50 text-neutral-800' : 'bg-white text-neutral-700'
+                        row.advantage === 'home' ? 'bg-care-50 text-neutral-800' : 'bg-white text-neutral-700'
                       }`}
                     >
-                      <span className="mb-1 block text-[11px] font-bold uppercase tracking-wide text-primary-600 lg:hidden">
+                      <span className="mb-1 block text-[11px] font-bold uppercase tracking-wide text-care-600 lg:hidden">
                         ICU at home
                       </span>
                       <span className="flex items-start gap-2">
                         {row.advantage === 'home' ? (
-                          <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" aria-hidden />
+                          <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-600" aria-hidden />
                         ) : null}
                         <span>{row.home}</span>
                       </span>
@@ -448,7 +448,7 @@ export default function CriticalCareAtHomeView() {
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">What&rsquo;s included</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">What&rsquo;s included</p>
               <h2 className="mt-3 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Equipment and staffing,{' '}
                 <span className="text-neutral-400">handled end to end.</span>
@@ -461,14 +461,14 @@ export default function CriticalCareAtHomeView() {
 
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
               <div className="rounded-[24px] border border-neutral-200 bg-neutral-50 p-8 sm:p-10">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-primary-600 ring-1 ring-primary-500/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-care-600 ring-1 ring-care-500/15">
                   <ClipboardDocumentCheckIcon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950">Equipment</h3>
                 <ul className="mt-6 space-y-3">
                   {INCLUDED_EQUIPMENT.map((b) => (
                     <li key={b} className="flex items-start gap-2.5 text-sm leading-snug text-neutral-700">
-                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" aria-hidden />
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-600" aria-hidden />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -476,14 +476,14 @@ export default function CriticalCareAtHomeView() {
               </div>
 
               <div className="rounded-[24px] border border-neutral-200 bg-neutral-50 p-8 sm:p-10">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-primary-600 ring-1 ring-primary-500/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-care-600 ring-1 ring-care-500/15">
                   <UserGroupIcon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950">Staffing & oversight</h3>
                 <ul className="mt-6 space-y-3">
                   {INCLUDED_STAFFING.map((b) => (
                     <li key={b} className="flex items-start gap-2.5 text-sm leading-snug text-neutral-700">
-                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" aria-hidden />
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-600" aria-hidden />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -497,7 +497,7 @@ export default function CriticalCareAtHomeView() {
         <section className="bg-neutral-50 px-4 py-20 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">How setup works</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">How setup works</p>
               <h2 className="mt-3 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Four careful steps to a working home ICU.
               </h2>
@@ -513,7 +513,7 @@ export default function CriticalCareAtHomeView() {
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-careSerif text-3xl font-medium text-primary-600">{n}</span>
+                    <span className="font-careSerif text-3xl font-medium text-care-600">{n}</span>
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-700">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
@@ -530,7 +530,7 @@ export default function CriticalCareAtHomeView() {
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">From Bangalore families</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">From Bangalore families</p>
               <h2 className="mt-3 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Care that steadies the whole family.
               </h2>
@@ -542,7 +542,7 @@ export default function CriticalCareAtHomeView() {
                   className="flex h-full flex-col justify-between rounded-[24px] border border-neutral-200 bg-neutral-50 p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
                 >
                   <div>
-                    <span aria-hidden className="font-careSerif text-5xl leading-none text-primary-500/40">
+                    <span aria-hidden className="font-careSerif text-5xl leading-none text-care-500/40">
                       &ldquo;
                     </span>
                     <blockquote className="mt-2 font-careSerif text-lg leading-snug text-neutral-900">
@@ -566,7 +566,7 @@ export default function CriticalCareAtHomeView() {
         {/* ─────────────────── FAQ ─────────────────── */}
         <section className="bg-neutral-50 px-4 py-20 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">Frequently asked</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">Frequently asked</p>
             <h2 className="mt-3 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
               Critical care at home, answered.
             </h2>
@@ -584,7 +584,7 @@ export default function CriticalCareAtHomeView() {
         <section className="relative overflow-hidden bg-neutral-950 px-4 py-24 sm:px-6 sm:py-28">
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-primary-500/20 blur-3xl"
+            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-care-500/20 blur-3xl"
           />
           <div
             aria-hidden
@@ -592,12 +592,12 @@ export default function CriticalCareAtHomeView() {
           />
           <div className="relative mx-auto max-w-3xl text-center">
             <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur">
-              <ClockIcon className="h-3.5 w-3.5 text-primary-300" aria-hidden />
+              <ClockIcon className="h-3.5 w-3.5 text-care-300" aria-hidden />
               Same-day setup possible
             </p>
             <h2 className="mt-7 font-careSerif text-[clamp(2rem,5.5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.025em] text-white">
               When discharge can&rsquo;t wait,{' '}
-              <em className="font-careSerif font-normal italic text-primary-300">we move fast.</em>
+              <em className="font-careSerif font-normal italic text-care-300">we move fast.</em>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/75">
               Speak to a critical-care advisor now. We assess the case, scope the equipment and staffing, and aim

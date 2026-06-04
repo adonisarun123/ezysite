@@ -362,9 +362,9 @@ export default function CareGlossaryView() {
       {/* Direct answer */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            <em className="italic text-primary-500">{totalTerms} terms</em>, six categories — caregiver roles
+            <em className="italic text-care-500">{totalTerms} terms</em>, six categories — caregiver roles
             and credentials, care types, medical conditions, procedures and equipment, hospital and
             insurance, and family decision-making. All defined in plain English, reviewed by a B.Sc Nursing
             Care Director, with links to deeper pages where useful.
@@ -420,7 +420,7 @@ export default function CareGlossaryView() {
                   {t.link ? (
                     <Link
                       href={t.link.href}
-                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-500 hover:underline underline-offset-4"
+                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-care-500 hover:underline underline-offset-4"
                     >
                       {t.link.label} →
                     </Link>

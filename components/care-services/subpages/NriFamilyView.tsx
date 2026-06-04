@@ -159,11 +159,11 @@ export default function NriFamilyView() {
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             We coordinate care across time zones the way you’d want it done if you were close enough to be
-            doing it yourself. <em className="italic text-primary-500">Daily updates</em>,{' '}
-            <em className="italic text-primary-500">weekly video</em>, escalation paths agreed in advance, and
+            doing it yourself. <em className="italic text-care-500">Daily updates</em>,{' '}
+            <em className="italic text-care-500">weekly video</em>, escalation paths agreed in advance, and
             payment from anywhere. NRI rates are the same as local rates — no markup for distance.
           </p>
         </div>
@@ -183,7 +183,7 @@ export default function NriFamilyView() {
                 key={title}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#E6F1FA] text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#E6F1FA] text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950 sm:text-xl">
@@ -210,7 +210,7 @@ export default function NriFamilyView() {
                 key={c.fear}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-500">The worry</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-care-500">The worry</p>
                 <p className="mt-2 font-careSerif text-lg leading-snug text-neutral-900 sm:text-xl">
                   {c.fear}
                 </p>

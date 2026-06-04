@@ -145,9 +145,9 @@ export default function DementiaCareAtHomeView() {
           {HERO_STATS.map((s) => (
             <div
               key={s.label}
-              className="rounded-[24px] border border-neutral-200 bg-primary-50 p-6 text-center"
+              className="rounded-[24px] border border-neutral-200 bg-care-50 p-6 text-center"
             >
-              <div className="font-careSerif text-3xl font-medium tracking-tight text-primary-500">{s.value}</div>
+              <div className="font-careSerif text-3xl font-medium tracking-tight text-care-500">{s.value}</div>
               <div className="mt-2 text-sm leading-snug text-neutral-600">{s.label}</div>
             </div>
           ))}
@@ -158,7 +158,7 @@ export default function DementiaCareAtHomeView() {
       {SECTIONS.map((sec, idx) => (
         <section
           key={sec.eyebrow}
-          className={`px-4 py-20 sm:px-6 sm:py-24 ${idx % 2 === 0 ? 'bg-white' : 'bg-primary-50'}`}
+          className={`px-4 py-20 sm:px-6 sm:py-24 ${idx % 2 === 0 ? 'bg-white' : 'bg-care-50'}`}
         >
           <div className="mx-auto max-w-5xl">
             <SectionHeader
@@ -173,7 +173,7 @@ export default function DementiaCareAtHomeView() {
                   key={b}
                   className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5"
                 >
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                   <span className="text-sm leading-snug text-neutral-800">{b}</span>
                 </li>
               ))}
