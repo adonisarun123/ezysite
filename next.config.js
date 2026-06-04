@@ -140,6 +140,16 @@ const nextConfig = {
   // Permanent redirects from legacy URLs to new structure
   async redirects() {
     return [
+      // Blog slug cleanup (June 2026): old CamelCase/typo slugs -> clean kebab-case.
+      // Old URLs are indexed in Google, so these 301s preserve rankings.
+      { source: '/blog/Top-Personal-Kitchen-Hygiene-Tips-Every-Home-Cook-in-India', destination: '/blog/kitchen-hygiene-tips-home-cooks-india', permanent: true },
+      { source: '/blog/Companionship-Care-for-Seniors', destination: '/blog/companionship-care-for-seniors', permanent: true },
+      { source: '/blog/Beyond-the-9-to-5', destination: '/blog/24-7-live-in-nanny-bangalore-working-parents', permanent: true },
+      { source: '/blog/The-Ultimate-Guide-to-Finding-Trusted-Domestic-Help-Services-in-Bareilly', destination: '/blog/trusted-domestic-help-services-bareilly-guide', permanent: true },
+      { source: '/blog/Breaking-the-Myths', destination: '/blog/part-time-maid-myths-indian-homes', permanent: true },
+      { source: '/blog/Domestc-Help-Etiquette', destination: '/blog/domestic-help-etiquette-working-relationship', permanent: true },
+      { source: '/blog/North-Indian-vs-South-Indian-Live-in-Cooks', destination: '/blog/north-indian-vs-south-indian-live-in-cooks', permanent: true },
+      { source: '/blog/The-Evolution-of-House-Maid-Services-in-India', destination: '/blog/evolution-house-maid-services-india', permanent: true },
       // 1
       { source: '/home', destination: '/', permanent: true },
       // 2
@@ -190,9 +200,10 @@ const nextConfig = {
       // 24-28 blog posts -> blog
       { source: '/blog/household-safety-security-best-practices-with-live-in-helper', destination: '/blog', permanent: true },
       { source: '/blog/why-your-helpers-also-deserve-some-monthly-time-off', destination: '/blog', permanent: true },
-      { source: '/blog/the-existing-process-of-hiring-a-24-hours-domestic-helper', destination: '/blog', permanent: true },
-      { source: '/blog/difference-between-24-hours-live-in-and-full-day-helper', destination: '/blog', permanent: true },
-      { source: '/blog/generally-we-dont-verify-our-helpers-why', destination: '/blog', permanent: true },
+      // Retargeted (June 2026) from generic /blog to the closest-matching new guides
+      { source: '/blog/the-existing-process-of-hiring-a-24-hours-domestic-helper', destination: '/blog/24-hour-maid-service-bangalore-how-it-works', permanent: true },
+      { source: '/blog/difference-between-24-hours-live-in-and-full-day-helper', destination: '/blog/live-in-maid-vs-full-time-maid-bangalore', permanent: true },
+      { source: '/blog/generally-we-dont-verify-our-helpers-why', destination: '/blog/complete-guide-to-maid-verification-and-background-check-in-india', permanent: true },
       // 29
       { source: '/services/travel-nanny', destination: '/cities/bangalore/travel-nanny', permanent: true },
       // 30 - Duplicate page consolidation: live-in-maid (singular) -> live-in-maids (plural canonical)

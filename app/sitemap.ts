@@ -511,6 +511,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.85
     })),
+    // Condition & specialty pages (June 2026)
+    ...[
+      'alzheimers-care-at-home-bangalore',
+      'respite-care-at-home-bangalore',
+      'diabetes-care-at-home-bangalore',
+      'multiple-sclerosis-als-care-at-home-bangalore',
+      'post-stroke-speech-rehab-at-home-bangalore',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85
+    })),
     // Decision & cost guides
     ...[
       'home-nursing-cost-bangalore',

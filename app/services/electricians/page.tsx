@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   title: 'Expert Electrician Services for Your Home | EzyHelpers',
   description: 'Certified electrician services for wiring, repairs & installations. Emergency electrical work available 24/7 by licensed experts in your locality.',
   keywords: 'electrician services, electrical repair, home wiring, electrical maintenance, lighting installation, appliance installation, emergency electrician',
+  openGraph: {
+    title: 'Expert Electrician Services for Your Home | EzyHelpers',
+    description: 'Certified electrician services for wiring, repairs & installations. Emergency electrical work available 24/7 by licensed experts in your locality.',
+    url: 'https://www.ezyhelpers.com/services/electricians',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/electricians'
   }

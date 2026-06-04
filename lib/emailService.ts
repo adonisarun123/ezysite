@@ -279,6 +279,125 @@ This email was automatically generated from the EzyHelpers website hire helper f
   };
 };
 
+/**
+ * Partially filled hire-helper form, sent automatically when a visitor drops
+ * off the /hire-helper page after entering contact details but before
+ * submitting. Marked clearly so the team treats it as a warm follow-up lead,
+ * not a confirmed booking request.
+ */
+const generateHireHelperPartialLeadEmail = (formData: {
+  name?: string;
+  phone?: string;
+  email?: string;
+  city?: string;
+  locality?: string;
+  apartment?: string;
+  serviceType?: string;
+  serviceRole?: string;
+  duration?: string;
+  serviceTimings?: string;
+  startDate?: string;
+  specificRequirements?: string;
+  experience?: string;
+  budget?: string;
+  languages?: string[];
+  familySize?: string;
+  preferredGender?: string;
+  houseType?: string;
+  numberOfRooms?: string;
+  cookFoodType?: string;
+  cookMeals?: string[];
+  religion?: string;
+  hasPet?: string;
+  hasHelperRoom?: string;
+  lastCompletedStep?: number;
+  totalSteps?: number;
+  requestId: string;
+  sourceUrl?: string;
+}) => {
+  const formattedPhone = formatPhoneForEmail(formData.phone || '');
+  const v = (x?: string) => (x && String(x).trim()) || '—';
+  const progress = formData.lastCompletedStep && formData.totalSteps
+    ? `${formData.lastCompletedStep} of ${formData.totalSteps} steps`
+    : 'unknown';
+
+  const fields: Array<[string, string]> = [
+    ['Name', v(formData.name)],
+    ['Phone', formattedPhone || '—'],
+    ['Email', v(formData.email)],
+    ['City', v(formData.city)],
+    ['Locality', v(formData.locality)],
+    ['Apartment', v(formData.apartment)],
+    ['Primary Role', v(formData.serviceRole)],
+    ['Service Type', v(formData.serviceType)],
+    ['Preferred Timings', v(formData.serviceTimings)],
+    ['Duration', v(formData.duration)],
+    ['Start Date', v(formData.startDate)],
+    ['Family Size', v(formData.familySize)],
+    ['House Type', v(formData.houseType)],
+    ['No. of Rooms', v(formData.numberOfRooms)],
+    ['Food Type (cook)', v(formData.cookFoodType)],
+    ['Meals (cook)', formData.cookMeals?.length ? formData.cookMeals.join(', ') : '—'],
+    ['Religion', v(formData.religion)],
+    ['Pet at Home', v(formData.hasPet)],
+    ['Helper Room (live-in)', v(formData.hasHelperRoom)],
+    ['Preferred Gender', v(formData.preferredGender)],
+    ['Experience', v(formData.experience)],
+    ['Budget', v(formData.budget)],
+    ['Languages', formData.languages?.length ? formData.languages.join(', ') : '—'],
+    ['Specific Requirements', v(formData.specificRequirements)],
+  ];
+
+  const fieldsHtml = fields
+    .map(([label, value]) => `<p style="margin:4px 0;"><strong>${safe(label)}:</strong> ${safe(value)}</p>`)
+    .join('\n          ');
+  const fieldsText = fields.map(([label, value]) => `- ${label}: ${value}`).join('\n');
+
+  return {
+    subject: `⚠️ Abandoned Hire Helper Form: ${formData.serviceRole || 'role not chosen'} in ${formData.city || 'city unknown'} — follow up`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #b45309;">Partially Filled Hire Helper Form (Visitor Dropped Off)</h2>
+        <div style="margin: 16px 0; padding: 15px; background-color: #fff3cd; border: 1px solid #ffe69c; border-radius: 8px;">
+          <p style="margin: 0; color: #856404;">
+            <strong>Note:</strong> This visitor started the hire-helper form but left the page
+            <strong>without submitting</strong>. They completed ${safe(progress)}.
+            The details below are partial — please follow up gently by phone/WhatsApp to
+            complete their requirement. This is NOT a confirmed booking request.
+          </p>
+        </div>
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Draft ID: ${safe(formData.requestId)}</h3>
+          ${fieldsHtml}
+        </div>
+        ${formData.sourceUrl ? `
+        <div style="margin-top: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 8px;">
+          <p style="margin: 0; color: #1e40af;"><strong>Source URL:</strong> <a href="${safe(formData.sourceUrl)}" target="_blank" style="color: #1e40af; text-decoration: underline;">${safe(formData.sourceUrl)}</a></p>
+        </div>
+        ` : ''}
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+        <p style="color: #666; font-size: 12px;">This email was automatically generated when a visitor left the EzyHelpers hire-helper form without submitting.</p>
+      </div>
+    `,
+    text: `
+PARTIALLY FILLED HIRE HELPER FORM (visitor dropped off without submitting)
+
+Note: This visitor started the hire-helper form but left the page WITHOUT submitting.
+They completed ${progress}. Details below are partial — follow up gently by phone/WhatsApp.
+This is NOT a confirmed booking request.
+
+Draft ID: ${formData.requestId}
+
+${fieldsText}
+
+${formData.sourceUrl ? `Source URL: ${formData.sourceUrl}` : ''}
+
+---
+This email was automatically generated when a visitor left the EzyHelpers hire-helper form without submitting.
+    `,
+  };
+};
+
 const generateGeneralLeadEmail = (formData: {
   name: string;
   phone: string;
@@ -1621,7 +1740,7 @@ export const sendLeadEmail = async (
     // hire_helper and general (contact form) use HIRE_CONTACT_EMAIL_RECIPIENTS
     let emailRecipientsEnv: string;
 
-    if (leadType === 'hire_helper' || leadType === 'general') {
+    if (leadType === 'hire_helper' || leadType === 'hire_helper_partial' || leadType === 'general') {
       // Check if it's an on-demand helper lead from either form
       const isHireHelperOnDemand = leadType === 'hire_helper' && formData.serviceType === 'on-demand';
       const isGeneralOnDemand = leadType === 'general' && formData.service && typeof formData.service === 'string' && formData.service.toLowerCase().includes('on-demand');
@@ -1681,6 +1800,9 @@ export const sendLeadEmail = async (
         break;
       case 'hire_helper':
         emailContent = generateHireHelperLeadEmail({ ...formData, requestId: requestId || 'N/A', sourceUrl });
+        break;
+      case 'hire_helper_partial':
+        emailContent = generateHireHelperPartialLeadEmail({ ...formData, requestId: requestId || 'N/A', sourceUrl });
         break;
       case 'general':
         emailContent = generateGeneralLeadEmail({ ...formData, sourceUrl });

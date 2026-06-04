@@ -379,6 +379,7 @@ export interface CandidateApplicationFormData {
 export type LeadType =
   | 'contact'
   | 'hire_helper'
+  | 'hire_helper_partial'
   | 'general'
   | 'agent_registration'
   | 'helper_registration'

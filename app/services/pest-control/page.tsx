@@ -23,6 +23,17 @@ export const metadata: Metadata = {
   title: 'Pest Control for Home in Bareilly - Safe & Effective',
   description: 'Book pest control for home in Bareilly to eliminate cockroaches, termites, rodents, and ants using safe, odourless, long-lasting treatments.',
   keywords: 'pest control bareilly, termite control bareilly, cockroach control bareilly, pest control service bareilly',
+  openGraph: {
+    title: 'Pest Control for Home in Bareilly - Safe & Effective',
+    description: 'Book pest control for home in Bareilly to eliminate cockroaches, termites, rodents, and ants using safe, odourless, long-lasting treatments.',
+    url: 'https://www.ezyhelpers.com/services/pest-control',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/pest-control'
+  }
 }
 
 export default function PestControlPage() {

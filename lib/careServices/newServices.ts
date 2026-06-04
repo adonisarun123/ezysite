@@ -135,6 +135,46 @@ export const CARE_PILLARS: Record<CarePillarSlug, CarePillar> = {
         priceKey: 'parkinsons-care',
         icon: 'ClockIcon',
       },
+      {
+        slug: 'alzheimers-care-at-home-bangalore',
+        label: 'Alzheimer’s Care',
+        title: 'Alzheimer’s Care at Home in Bangalore',
+        tagline: 'Stage-aware memory care for wandering, sundowning and daily routine.',
+        description:
+          'Specialised Alzheimer’s care at home in Bangalore — stage-aware caregivers for memory loss, wandering, sundowning, agitation and safe daily routines.',
+        priceKey: 'alzheimers-care',
+        icon: 'LightBulbIcon',
+      },
+      {
+        slug: 'respite-care-at-home-bangalore',
+        label: 'Respite Care',
+        title: 'Respite Care at Home in Bangalore',
+        tagline: 'Short-term relief caregivers so family carers can rest and recharge.',
+        description:
+          'Respite care at home in Bangalore — trained short-term caregivers for a day, a week or a month, so family caregivers can travel, work or simply rest.',
+        priceKey: 'respite-care',
+        icon: 'ArrowPathIcon',
+      },
+      {
+        slug: 'diabetes-care-at-home-bangalore',
+        label: 'Diabetes Care',
+        title: 'Diabetes Care at Home in Bangalore',
+        tagline: 'Daily sugar monitoring, insulin support and diabetic-friendly routines.',
+        description:
+          'Diabetes care at home in Bangalore — blood-sugar monitoring, insulin reminders, diabetic meal support and foot-care vigilance for elderly diabetics.',
+        priceKey: 'diabetes-care',
+        icon: 'BeakerIcon',
+      },
+      {
+        slug: 'multiple-sclerosis-als-care-at-home-bangalore',
+        label: 'MS & ALS Care',
+        title: 'Multiple Sclerosis & ALS Care at Home in Bangalore',
+        tagline: 'Specialised support for progressive neurological conditions.',
+        description:
+          'Multiple sclerosis and ALS (motor neurone disease) care at home in Bangalore — mobility, fatigue management, swallowing-aware feeding and progressive-care planning.',
+        priceKey: 'ms-als-care',
+        icon: 'PuzzlePieceIcon',
+      },
     ],
   },
 
@@ -362,6 +402,16 @@ export const CARE_PILLARS: Record<CarePillarSlug, CarePillar> = {
           'Paediatric physiotherapy at home in Bangalore — developmental delays, cerebral palsy and special-needs rehabilitation for children.',
         priceKey: 'paediatric-physio',
         icon: 'UserGroupIcon',
+      },
+      {
+        slug: 'post-stroke-speech-rehab-at-home-bangalore',
+        label: 'Post-Stroke Speech & Rehab',
+        title: 'Post-Stroke Speech Therapy & Rehab at Home in Bangalore',
+        tagline: 'Speech, swallowing and communication recovery after stroke.',
+        description:
+          'Post-stroke speech therapy and rehabilitation at home in Bangalore — aphasia, slurred speech and swallowing recovery with structured home programmes.',
+        priceKey: 'speech-rehab',
+        icon: 'ChatBubbleBottomCenterTextIcon',
       },
     ],
   },

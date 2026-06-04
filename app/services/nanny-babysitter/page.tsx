@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   title: 'Professional Babysitter Services | Certified | EzyHelpers',
   description: 'Trusted babysitter & nanny services with child safety certified professionals. 24/7 childcare support for working parents. Background verified & trained.',
   keywords: 'nanny, babysitter, childcare, child caretaker, child safety, child development',
+  openGraph: {
+    title: 'Professional Babysitter Services | Certified | EzyHelpers',
+    description: 'Trusted babysitter & nanny services with child safety certified professionals. 24/7 childcare support for working parents. Background verified & trained.',
+    url: 'https://www.ezyhelpers.com/services/nanny-babysitter',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/nanny-babysitter'
   }

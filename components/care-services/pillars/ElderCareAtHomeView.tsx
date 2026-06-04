@@ -21,6 +21,10 @@ import {
   HomeModernIcon,
   ArrowTrendingUpIcon,
   MapPinIcon,
+  LightBulbIcon,
+  ArrowPathIcon,
+  BeakerIcon,
+  PuzzlePieceIcon,
 } from '@heroicons/react/24/outline'
 import { getPillar } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
@@ -52,6 +56,10 @@ const NESTED_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   ArrowTrendingUpIcon,
   ClockIcon,
   HeartIcon,
+  LightBulbIcon,
+  ArrowPathIcon,
+  BeakerIcon,
+  PuzzlePieceIcon,
 }
 
 const TRUST_RIBBON = [

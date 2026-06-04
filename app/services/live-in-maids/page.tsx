@@ -35,6 +35,14 @@ export const metadata: Metadata = {
   title: 'Live-In Maid Services | 24/7 Dedicated Home Help',
   description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
   keywords: 'live-in maid, 24-hour maid, live in house maid, housekeeping, cooking, babysitting, elderly care',
+  openGraph: {
+    title: 'Live-In Maid Services | 24/7 Dedicated Home Help',
+    description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
+    url: 'https://www.ezyhelpers.com/services/live-in-maids',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/live-in-maids'
   }

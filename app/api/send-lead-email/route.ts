@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
 
     // Validate lead type
     if (
-      !['contact', 'hire_helper', 'general', 'requirement', 'care_services'].includes(leadType)
+      !['contact', 'hire_helper', 'hire_helper_partial', 'general', 'requirement', 'care_services'].includes(leadType)
     ) {
       return NextResponse.json(
         { error: 'invalid_lead_type' },

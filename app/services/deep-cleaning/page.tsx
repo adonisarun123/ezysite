@@ -24,6 +24,14 @@ export const metadata: Metadata = {
   title: 'Home Deep Cleaning Services – Book Verified Experts | EzyHelpers',
   description: 'Book professional home deep cleaning for kitchens, bathrooms, and full-house sanitization. Background-verified cleaners deliver spotless, hygienic results.',
   keywords: 'home deep cleaning, house deep cleaning services, kitchen deep cleaning, bathroom sanitization, full house cleaning, professional cleaners',
+  openGraph: {
+    title: 'Home Deep Cleaning Services – Book Verified Experts | EzyHelpers',
+    description: 'Book professional home deep cleaning for kitchens, bathrooms, and full-house sanitization. Background-verified cleaners deliver spotless, hygienic results.',
+    url: 'https://www.ezyhelpers.com/services/deep-cleaning',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/deep-cleaning',
     languages: selfReferencingLanguages('/services/deep-cleaning'),

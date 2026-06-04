@@ -91,11 +91,11 @@ const PILLAR_TONE: Record<
   }
 > = {
   primary: {
-    iconWrap: 'bg-primary-50 text-primary-600 ring-1 ring-primary-500/15',
-    eyebrow: 'text-primary-600',
-    chip: 'border-primary-100 bg-primary-50/60 text-primary-700 hover:border-primary-500 hover:bg-primary-50',
-    cta: 'bg-primary-600 text-white hover:bg-primary-700',
-    halo: 'bg-primary-500/10',
+    iconWrap: 'bg-care-50 text-care-600 ring-1 ring-care-500/15',
+    eyebrow: 'text-care-600',
+    chip: 'border-care-100 bg-care-50/60 text-care-700 hover:border-care-500 hover:bg-care-50',
+    cta: 'bg-care-600 text-white hover:bg-care-700',
+    halo: 'bg-care-500/10',
   },
   accentWarm: {
     iconWrap: 'bg-accent-50 text-accent-600 ring-1 ring-accent-600/15',
@@ -255,7 +255,7 @@ export default function CareServicesHomeView() {
       <Navbar />
 
       {/* ─────────────────── Hero (SOLID background — no gradient) ─────────────────── */}
-      <header className="relative overflow-hidden bg-primary-50">
+      <header className="relative overflow-hidden bg-care-50">
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 sm:pb-28 sm:pt-8 lg:pb-32">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="text-left">
@@ -276,14 +276,14 @@ export default function CareServicesHomeView() {
 
           <div className="mt-10 text-center sm:mt-14 lg:mt-16">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-              <MapPinIcon className="h-3.5 w-3.5 text-primary-500" aria-hidden />
+              <MapPinIcon className="h-3.5 w-3.5 text-care-500" aria-hidden />
               Now serving Bangalore
             </p>
 
             <h1 className="mx-auto mt-7 max-w-5xl font-careSerif text-[clamp(2.5rem,7vw,5.5rem)] font-medium leading-[1.04] tracking-[-0.035em] text-neutral-950">
               Complete care at home,
               <br />
-              <em className="font-careSerif font-normal italic text-primary-600">
+              <em className="font-careSerif font-normal italic text-care-600">
                 for the people you love.
               </em>
             </h1>
@@ -297,7 +297,7 @@ export default function CareServicesHomeView() {
               <Link
                 href={enquiryHref}
                 onClick={() => trackCareCTAClick('Find the right care', '/care-services#hero')}
-                className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-primary-600 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_2px_10px_rgba(0,0,0,0.18)] transition hover:bg-primary-700 hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] active:scale-[0.98]"
+                className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-care-600 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_2px_10px_rgba(0,0,0,0.18)] transition hover:bg-care-700 hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] active:scale-[0.98]"
               >
                 Find the right care
                 <ArrowRightIcon className="h-4 w-4" aria-hidden />
@@ -307,7 +307,7 @@ export default function CareServicesHomeView() {
                 onClick={() => trackCarePhoneClick(CARE_PHONE_DISPLAY, '/care-services#hero')}
                 className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-neutral-300 bg-white px-7 py-4 text-[15px] font-semibold text-neutral-900 shadow-sm transition hover:border-neutral-900 hover:bg-neutral-50"
               >
-                <PhoneIcon className="h-4 w-4 text-primary-600" aria-hidden />
+                <PhoneIcon className="h-4 w-4 text-care-600" aria-hidden />
                 {CARE_PHONE_DISPLAY}
               </a>
             </div>
@@ -369,7 +369,7 @@ export default function CareServicesHomeView() {
         >
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">
                 Six services. One standard.
               </p>
               <h2
@@ -393,7 +393,7 @@ export default function CareServicesHomeView() {
                 return (
                   <article
                     key={p.slug}
-                    className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-neutral-200 bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:border-neutral-300 hover:shadow-[0_14px_34px_rgba(0,0,0,0.09)] focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2 sm:p-7"
+                    className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-neutral-200 bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:border-neutral-300 hover:shadow-[0_14px_34px_rgba(0,0,0,0.09)] focus-within:ring-2 focus-within:ring-care-500 focus-within:ring-offset-2 sm:p-7"
                   >
                     <span
                       aria-hidden
@@ -432,7 +432,7 @@ export default function CareServicesHomeView() {
                           <li key={n.slug}>
                             <Link
                               href={`/care-services/${n.slug}`}
-                              className={`inline-flex min-h-[36px] items-center rounded-full border px-3 py-2 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-1 ${tone.chip}`}
+                              className={`inline-flex min-h-[36px] items-center rounded-full border px-3 py-2 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-care-500 focus-visible:ring-offset-1 ${tone.chip}`}
                             >
                               {n.label}
                             </Link>
@@ -463,11 +463,11 @@ export default function CareServicesHomeView() {
         {/* ─────────────── Why EzyHelpers / differentiators ─────────────── */}
         <section
           aria-labelledby="why-heading"
-          className="bg-gradient-to-b from-white to-primary-50/60 px-4 py-20 sm:px-6 sm:py-28"
+          className="bg-gradient-to-b from-white to-care-50/60 px-4 py-20 sm:px-6 sm:py-28"
         >
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">
                 Why families choose EzyHelpers
               </p>
               <h2
@@ -486,7 +486,7 @@ export default function CareServicesHomeView() {
                   key={title}
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-600 ring-1 ring-primary-500/15">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-600 ring-1 ring-care-500/15">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
                   <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950">
@@ -501,7 +501,7 @@ export default function CareServicesHomeView() {
               <Link
                 href={enquiryHref}
                 onClick={() => trackCareCTAClick('Talk to a care advisor', '/care-services#why')}
-                className="inline-flex min-h-[48px] items-center gap-2 rounded-full bg-primary-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-700 active:scale-[0.98]"
+                className="inline-flex min-h-[48px] items-center gap-2 rounded-full bg-care-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-care-700 active:scale-[0.98]"
               >
                 Talk to a care advisor
                 <ArrowRightIcon className="h-4 w-4" aria-hidden />
@@ -511,7 +511,7 @@ export default function CareServicesHomeView() {
                 onClick={() => trackCarePhoneClick(CARE_PHONE_DISPLAY, '/care-services#why')}
                 className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:border-neutral-900 hover:bg-neutral-50"
               >
-                <PhoneIcon className="h-4 w-4 text-primary-600" aria-hidden />
+                <PhoneIcon className="h-4 w-4 text-care-600" aria-hidden />
                 {CARE_PHONE_DISPLAY}
               </a>
             </div>
@@ -522,7 +522,7 @@ export default function CareServicesHomeView() {
         <section aria-labelledby="how-heading" className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">
                 How it works
               </p>
               <h2
@@ -544,7 +544,7 @@ export default function CareServicesHomeView() {
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-careSerif text-3xl font-medium text-primary-600">{n}</span>
+                    <span className="font-careSerif text-3xl font-medium text-care-600">{n}</span>
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-700">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
@@ -613,7 +613,7 @@ export default function CareServicesHomeView() {
         <section aria-labelledby="coverage-heading" className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">
                 Now serving Bangalore
               </p>
               <h2
@@ -633,7 +633,7 @@ export default function CareServicesHomeView() {
                   key={l}
                   className="flex items-center gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5 text-sm font-medium text-neutral-800"
                 >
-                  <MapPinIcon className="h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                  <MapPinIcon className="h-4 w-4 shrink-0 text-care-500" aria-hidden />
                   {l}
                 </li>
               ))}
@@ -644,10 +644,10 @@ export default function CareServicesHomeView() {
         {/* ─────────────── FAQ ─────────────── */}
         <section
           aria-labelledby="faq-heading"
-          className="bg-gradient-to-b from-primary-50/60 to-white px-4 py-20 sm:px-6 sm:py-28"
+          className="bg-gradient-to-b from-care-50/60 to-white px-4 py-20 sm:px-6 sm:py-28"
         >
           <div className="mx-auto max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">
               Frequently asked
             </p>
             <h2
@@ -668,11 +668,11 @@ export default function CareServicesHomeView() {
         {/* ─────────────── Final CTA band (subtle primary gradient) ─────────────── */}
         <section
           aria-labelledby="cta-heading"
-          className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200 px-4 py-24 sm:px-6 sm:py-32"
+          className="relative overflow-hidden bg-gradient-to-br from-care-50 via-care-100 to-care-200 px-4 py-24 sm:px-6 sm:py-32"
         >
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-primary-500/15 blur-3xl"
+            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-care-500/15 blur-3xl"
           />
           <div
             aria-hidden
@@ -685,7 +685,7 @@ export default function CareServicesHomeView() {
             >
               Care, beautifully arranged.
               <br />
-              <em className="font-careSerif font-normal italic text-primary-600">In a single call.</em>
+              <em className="font-careSerif font-normal italic text-care-600">In a single call.</em>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700">
               Tell us your situation. Our team responds quickly, recommends the right service, and
@@ -695,7 +695,7 @@ export default function CareServicesHomeView() {
               <Link
                 href={enquiryHref}
                 onClick={() => trackCareCTAClick('Get matched today', '/care-services#footer-cta')}
-                className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-primary-600 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.18)] transition hover:bg-primary-700 hover:shadow-[0_8px_22px_rgba(0,0,0,0.25)] active:scale-[0.98]"
+                className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-care-600 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.18)] transition hover:bg-care-700 hover:shadow-[0_8px_22px_rgba(0,0,0,0.25)] active:scale-[0.98]"
               >
                 Get matched today
                 <ArrowRightIcon className="h-4 w-4" aria-hidden />
@@ -705,12 +705,12 @@ export default function CareServicesHomeView() {
                 onClick={() => trackCarePhoneClick(CARE_PHONE_DISPLAY, '/care-services#footer-cta')}
                 className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-neutral-900/20 bg-white/80 px-7 py-4 text-[15px] font-semibold text-neutral-900 backdrop-blur transition hover:bg-white"
               >
-                <PhoneIcon className="h-4 w-4 text-primary-600" aria-hidden />
+                <PhoneIcon className="h-4 w-4 text-care-600" aria-hidden />
                 {CARE_PHONE_DISPLAY}
               </a>
             </div>
             <p className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-neutral-600">
-              <CheckCircleIcon className="h-4 w-4 text-primary-600" aria-hidden />
+              <CheckCircleIcon className="h-4 w-4 text-care-600" aria-hidden />
               Free consultation · No obligation · Verified professionals
             </p>
 

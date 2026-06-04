@@ -18,7 +18,15 @@ import {
 export const metadata: Metadata = {
   title: 'Air Conditioner Repair in Bareilly - Cooling Experts',
   description: 'Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians.',
-  keywords: 'ac repair bareilly, air conditioner repair bareilly, ac service bareilly, ac gas filling bareilly, ac technician bareilly'
+  keywords: 'ac repair bareilly, air conditioner repair bareilly, ac service bareilly, ac gas filling bareilly, ac technician bareilly',
+  openGraph: {
+    title: 'Air Conditioner Repair in Bareilly - Cooling Experts',
+    description: 'Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians.',
+    url: 'https://www.ezyhelpers.com/services/ac-repair',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  }
 }
 
 export default function ACRepairPage() {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { ChevronRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
@@ -38,6 +38,35 @@ interface FormData {
   hasHelperRoom: string
 }
 
+const EMPTY_FORM: FormData = {
+  name: '',
+  phone: '',
+  email: '',
+  city: '',
+  locality: '',
+  apartment: '',
+  serviceType: '',
+  serviceRole: '',
+  otherRole: '',
+  duration: '',
+  serviceTimings: '',
+  startDate: '',
+  specificRequirements: '',
+  experience: '',
+  budget: '',
+  languages: [],
+  additionalServices: [],
+  familySize: '',
+  preferredGender: '',
+  houseType: '',
+  numberOfRooms: '',
+  cookFoodType: '',
+  cookMeals: [],
+  religion: '',
+  hasPet: '',
+  hasHelperRoom: '',
+}
+
 const employmentTypes = [
   { value: 'live-in', label: 'Live-in Helper', description: '24/7 support at home' },
   { value: 'full-time', label: 'Full-time Helper', description: 'Daily 8-10 hours' },
@@ -52,11 +81,6 @@ const serviceRoles = [
   { value: 'cook', label: 'Cook', description: 'Meal preparation' },
   { value: 'driver', label: 'Driver', description: 'Transportation service' },
   { value: 'others', label: 'Others', description: 'Please specify below' },
-]
-
-const services = [
-  ...employmentTypes,
-  ...serviceRoles,
 ]
 
 const cities = [
@@ -81,60 +105,159 @@ const DURATION_OPTIONS = [
 const requiresScheduleDetails = (serviceType: string) =>
   Boolean(serviceType && serviceType !== 'live-in')
 
+const TOTAL_STEPS = 4
+const DRAFT_KEY = 'ezy_hire_helper_draft_v1'
+/** Minimum step the user must have completed before we consider the
+ *  draft worth sending as a partial lead (we need contact details). */
+const PARTIAL_LEAD_MIN_STEP = 2
+
+interface Draft {
+  step: number
+  formData: FormData
+  savedAt: string
+  /** request id assigned to this draft so duplicate beacons can be deduped server-side */
+  draftId: string
+  /** true once a partial lead email has been sent for the current data snapshot */
+  partialSentForSnapshot?: string
+}
+
+const generateRequestId = () =>
+  Math.random().toString(36).substring(2, 8).toUpperCase()
+
 export default function HireHelperForm() {
   const [step, setStep] = useState(1)
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    phone: '',
-    email: '',
-    city: '',
-    locality: '',
-    apartment: '',
-    serviceType: '',
-    serviceRole: '',
-    otherRole: '',
-    duration: '',
-    serviceTimings: '',
-    startDate: '',
-    specificRequirements: '',
-    experience: '',
-    budget: '',
-    languages: [],
-    additionalServices: [],
-    familySize: '',
-    preferredGender: '',
-    houseType: '',
-    numberOfRooms: '',
-    cookFoodType: '',
-    cookMeals: [],
-    religion: '',
-    hasPet: '',
-    hasHelperRoom: '',
-  })
+  const [formData, setFormData] = useState<FormData>(EMPTY_FORM)
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'error'>('idle')
   const [submitting, setSubmitting] = useState(false)
   const [honeypot, setHoneypot] = useState('')
   const [hasTrackedStart, setHasTrackedStart] = useState(false)
+  const [draftRestored, setDraftRestored] = useState(false)
   const searchParams = useSearchParams()
   const router = useRouter()
 
-  // Track form start when component mounts and check for URL parameters
+  // Refs mirrored for unload handlers (event listeners capture stale state otherwise)
+  const formDataRef = useRef(formData)
+  const stepRef = useRef(step)
+  const submittedRef = useRef(false)
+  const maxStepReachedRef = useRef(1)
+  const draftIdRef = useRef<string>('')
+  useEffect(() => { formDataRef.current = formData }, [formData])
   useEffect(() => {
-    if (!hasTrackedStart) {
-      trackFormStart('hire_helper_form', 'hire_helper_page');
-      setHasTrackedStart(true);
+    stepRef.current = step
+    if (step > maxStepReachedRef.current) maxStepReachedRef.current = step
+  }, [step])
 
-      const serviceParam = searchParams.get('service');
-      if (serviceParam && employmentTypes.some(s => s.value === serviceParam)) {
-        setFormData(prev => ({ ...prev, serviceType: serviceParam }));
-        const selectedService = employmentTypes.find(s => s.value === serviceParam);
-        if (selectedService) {
-          trackServiceSelect(selectedService.label, serviceParam, 'hire_helper_form');
-        }
+  /** Persist the current draft to localStorage. */
+  const saveDraft = useCallback((nextStep: number, data: FormData) => {
+    try {
+      if (!draftIdRef.current) draftIdRef.current = generateRequestId()
+      const draft: Draft = {
+        step: nextStep,
+        formData: data,
+        savedAt: new Date().toISOString(),
+        draftId: draftIdRef.current,
+      }
+      window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draft))
+    } catch { /* storage unavailable */ }
+  }, [])
+
+  const clearDraft = useCallback(() => {
+    try { window.localStorage.removeItem(DRAFT_KEY) } catch { /* ignore */ }
+  }, [])
+
+  // Restore draft + track form start + apply ?service= param
+  useEffect(() => {
+    if (hasTrackedStart) return
+    trackFormStart('hire_helper_form', 'hire_helper_page')
+    setHasTrackedStart(true)
+
+    let restored: Draft | null = null
+    try {
+      const raw = window.localStorage.getItem(DRAFT_KEY)
+      if (raw) restored = JSON.parse(raw) as Draft
+    } catch { /* ignore corrupted draft */ }
+
+    if (restored?.formData) {
+      // Drafts older than 7 days are discarded
+      const age = Date.now() - new Date(restored.savedAt || 0).getTime()
+      if (age < 7 * 24 * 60 * 60 * 1000) {
+        setFormData({ ...EMPTY_FORM, ...restored.formData })
+        const restoredStep = Math.min(Math.max(restored.step || 1, 1), TOTAL_STEPS)
+        setStep(restoredStep)
+        maxStepReachedRef.current = restoredStep
+        draftIdRef.current = restored.draftId || generateRequestId()
+        setDraftRestored(true)
+      } else {
+        clearDraft()
       }
     }
-  }, [hasTrackedStart, searchParams])
+
+    // URL param can pre-select the employment type (legacy links)
+    const serviceParam = searchParams.get('service')
+    if (serviceParam && employmentTypes.some(s => s.value === serviceParam)) {
+      setFormData(prev => ({ ...prev, serviceType: serviceParam }))
+      const selectedService = employmentTypes.find(s => s.value === serviceParam)
+      if (selectedService) {
+        trackServiceSelect(selectedService.label, serviceParam, 'hire_helper_form')
+      }
+    }
+  }, [hasTrackedStart, searchParams, clearDraft])
+
+  /**
+   * Abandoned-form capture: if the visitor leaves the page after reaching the
+   * contact-info step but without submitting, send the partially filled form
+   * to the leads inbox with a note. Uses sendBeacon so it survives tab close.
+   */
+  useEffect(() => {
+    const sendPartialLead = () => {
+      if (submittedRef.current) return
+      const data = formDataRef.current
+      // Only send if we actually have a way to contact the person
+      const hasContact = /^[5-9][0-9]{9}$/.test(data.phone.trim())
+      if (!hasContact || !data.name.trim()) return
+      if (maxStepReachedRef.current < PARTIAL_LEAD_MIN_STEP) return
+
+      // Dedupe: skip if this exact snapshot was already sent
+      const snapshot = JSON.stringify({ d: data, s: maxStepReachedRef.current })
+      try {
+        const raw = window.localStorage.getItem(DRAFT_KEY)
+        if (raw) {
+          const draft = JSON.parse(raw) as Draft
+          if (draft.partialSentForSnapshot === snapshot) return
+          draft.partialSentForSnapshot = snapshot
+          window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draft))
+        }
+      } catch { /* ignore */ }
+
+      const payload = JSON.stringify({
+        leadType: 'hire_helper_partial',
+        website: '',
+        formData: {
+          ...data,
+          serviceRole: data.serviceRole === 'others' ? data.otherRole.trim() : data.serviceRole,
+          lastCompletedStep: Math.min(maxStepReachedRef.current, TOTAL_STEPS),
+          totalSteps: TOTAL_STEPS,
+        },
+        requestId: draftIdRef.current || generateRequestId(),
+        sourceUrl: window.location.href,
+      })
+      try {
+        const blob = new Blob([payload], { type: 'application/json' })
+        navigator.sendBeacon('/api/send-lead-email', blob)
+      } catch { /* sendBeacon unavailable */ }
+    }
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') sendPartialLead()
+    }
+    document.addEventListener('visibilitychange', onVisibilityChange)
+    window.addEventListener('pagehide', sendPartialLead)
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibilityChange)
+      window.removeEventListener('pagehide', sendPartialLead)
+    }
+  }, [])
 
   const handleInputChange = (field: keyof FormData, value: string | string[]) => {
     setFormData(prev => {
@@ -150,11 +273,10 @@ export default function HireHelperForm() {
       return next
     })
 
-    // Track service selection
     if (field === 'serviceType' && typeof value === 'string') {
-      const selectedService = employmentTypes.find(s => s.value === value);
+      const selectedService = employmentTypes.find(s => s.value === value)
       if (selectedService) {
-        trackServiceSelect(selectedService.label, value, 'hire_helper_form');
+        trackServiceSelect(selectedService.label, value, 'hire_helper_form')
       }
     }
   }
@@ -174,7 +296,17 @@ export default function HireHelperForm() {
     today.setHours(0, 0, 0, 0)
     const maxDate = new Date(today)
     maxDate.setMonth(maxDate.getMonth() + 1)
+
     if (step === 1) {
+      // Step 1: primary role only
+      if (!formData.serviceRole) {
+        errors.serviceRole = 'Please select a role'
+      }
+      if (formData.serviceRole === 'others' && !formData.otherRole.trim()) {
+        errors.otherRole = 'Please specify the role you need'
+      }
+    } else if (step === 2) {
+      // Step 2: contact details
       if (!formData.name.trim()) {
         errors.name = 'Name is required'
       } else if (formData.name.trim().length < 3) {
@@ -188,13 +320,8 @@ export default function HireHelperForm() {
       if (!formData.city) {
         errors.city = 'Please select a city'
       }
-    } else if (step === 2) {
-      if (!formData.serviceRole) {
-        errors.serviceRole = 'Please select a role'
-      }
-      if (formData.serviceRole === 'others' && !formData.otherRole.trim()) {
-        errors.otherRole = 'Please specify the role you need'
-      }
+    } else if (step === 3) {
+      // Step 3: service follow-ups for the chosen role
       if (!formData.serviceType) {
         errors.serviceType = 'Please select a service type'
       }
@@ -247,6 +374,12 @@ export default function HireHelperForm() {
     today.setHours(0, 0, 0, 0)
     const maxDate = new Date(today)
     maxDate.setMonth(maxDate.getMonth() + 1)
+    if (!formData.serviceRole) {
+      errors.serviceRole = 'Please select a role'
+    }
+    if (formData.serviceRole === 'others' && !formData.otherRole.trim()) {
+      errors.otherRole = 'Please specify the role you need'
+    }
     if (!formData.name.trim()) {
       errors.name = 'Name is required'
     } else if (formData.name.trim().length < 3) {
@@ -259,12 +392,6 @@ export default function HireHelperForm() {
     }
     if (!formData.city) {
       errors.city = 'Please select a city'
-    }
-    if (!formData.serviceRole) {
-      errors.serviceRole = 'Please select a role'
-    }
-    if (formData.serviceRole === 'others' && !formData.otherRole.trim()) {
-      errors.otherRole = 'Please specify the role you need'
     }
     if (!formData.serviceType) {
       errors.serviceType = 'Please select a service type'
@@ -313,20 +440,27 @@ export default function HireHelperForm() {
 
   const nextStep = () => {
     if (validateStep()) {
-      const newStep = Math.min(step + 1, 3);
-      setStep(newStep);
+      const newStep = Math.min(step + 1, TOTAL_STEPS)
+      setStep(newStep)
+
+      // Auto-save the draft every time the user advances a step
+      saveDraft(newStep, formData)
 
       // Track step completion
-      const stepNames = ['Personal Information', 'Service Requirements', 'Additional Details'];
-      trackStepComplete(stepNames[step - 1], step, 3);
+      const stepNames = ['Primary Role', 'Personal Information', 'Service Requirements', 'Additional Details']
+      trackStepComplete(stepNames[step - 1], step, TOTAL_STEPS)
 
-      // Track booking start when moving to step 2
-      if (newStep === 2 && formData.city) {
-        trackBookingStart(formData.serviceType || 'unknown', formData.city);
+      // Track booking start when contact details are complete
+      if (step === 2 && formData.city) {
+        trackBookingStart(formData.serviceType || formData.serviceRole || 'unknown', formData.city)
       }
     }
   }
-  const prevStep = () => setStep(prev => Math.max(prev - 1, 1))
+  const prevStep = () => {
+    const newStep = Math.max(step - 1, 1)
+    setStep(newStep)
+    saveDraft(newStep, formData)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -438,6 +572,10 @@ export default function HireHelperForm() {
       trackFormComplete('hire_helper_form', newRequestId);
       trackBookingComplete(formData.serviceType, formData.city, newRequestId);
 
+      // Submitted — stop partial-lead beacons and clear the saved draft
+      submittedRef.current = true
+      clearDraft()
+
       router.push(`/thank-you?type=hire&ref=${encodeURIComponent(newRequestId)}`)
     } catch (error) {
       // Track form error
@@ -448,28 +586,24 @@ export default function HireHelperForm() {
     }
   }
 
-  const stepTitles = ['Personal', 'Service', 'Details']
-
-  const generateRequestId = () => {
-    // Generate a simple 6-character uppercase alphanumeric string
-    return Math.random().toString(36).substring(2, 8).toUpperCase()
-  }
+  const stepTitles = ['Role', 'Personal', 'Service', 'Details']
+  const stepHeadings = ['Primary Role', 'Personal Information', 'Service Requirements', 'Additional Details']
 
   return (
     <div className="bg-white rounded-2xl shadow-lg p-8">
       {/* Progress Bar */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
-          {[1, 2, 3].map((stepNum) => (
+          {[1, 2, 3, 4].map((stepNum) => (
             <div key={stepNum} className="flex flex-col items-center">
               <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step >= stepNum ? 'bg-primary-500 text-white' : 'bg-gray-200 text-gray-600'
                 }`}>
                 {step > stepNum ? <CheckCircleIcon className="w-5 h-5" /> : stepNum}
               </div>
               <span className="mt-1 text-xs font-semibold text-primary-600 min-w-[60px] text-center">
-                {step > stepNum ? stepTitles[stepNum - 1] : stepNum === step ? stepTitles[stepNum - 1] : ''}
+                {step >= stepNum ? stepTitles[stepNum - 1] : ''}
               </span>
-              {stepNum < 3 && (
+              {stepNum < TOTAL_STEPS && (
                 <div className={`w-full h-1 mx-4 ${step > stepNum ? 'bg-primary-500' : 'bg-gray-200'
                   }`} />
               )}
@@ -477,12 +611,13 @@ export default function HireHelperForm() {
           ))}
         </div>
         <div className="text-sm text-gray-600">
-          Step {step} of 3: {
-            step === 1 ? 'Personal Information' :
-              step === 2 ? 'Service Requirements' :
-                'Additional Details'
-          }
+          Step {step} of {TOTAL_STEPS}: {stepHeadings[step - 1]}
         </div>
+        {draftRestored && step < TOTAL_STEPS && (
+          <p className="mt-2 text-xs text-green-700 bg-green-50 border border-green-200 rounded-lg px-3 py-2">
+            Welcome back! We saved your progress — continue where you left off.
+          </p>
+        )}
       </div>
 
       <form onSubmit={handleSubmit} aria-busy={submitting}>
@@ -497,8 +632,85 @@ export default function HireHelperForm() {
           onChange={(e) => setHoneypot(e.target.value)}
           style={{ position: 'absolute', left: '-9999px', width: 0, height: 0, opacity: 0 }}
         />
-        {/* Step 1: Personal Information */}
+
+        {/* Step 1: Primary Role (asked alone, first) */}
         {step === 1 && (
+          <div className="space-y-6">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-2 font-display">
+              What do you need help with?
+            </h2>
+            <p className="text-gray-600 -mt-2">
+              Choose the primary role — we&rsquo;ll ask a few quick follow-up questions next.
+            </p>
+
+            <div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {serviceRoles.map(role => (
+                  <div
+                    key={role.value}
+                    role="button"
+                    tabIndex={0}
+                    className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceRole === role.value
+                      ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
+                      : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                    onClick={() => setFormData(prev => ({
+                      ...prev,
+                      serviceRole: role.value,
+                      otherRole: role.value !== 'others' ? '' : prev.otherRole,
+                      cookFoodType: role.value !== 'cook' ? '' : prev.cookFoodType,
+                      cookMeals: role.value !== 'cook' ? [] : prev.cookMeals,
+                    }))}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        setFormData(prev => ({
+                          ...prev,
+                          serviceRole: role.value,
+                          otherRole: role.value !== 'others' ? '' : prev.otherRole,
+                          cookFoodType: role.value !== 'cook' ? '' : prev.cookFoodType,
+                          cookMeals: role.value !== 'cook' ? [] : prev.cookMeals,
+                        }))
+                      }
+                    }}
+                  >
+                    <div className="font-medium text-gray-900">{role.label}</div>
+                    <div className="text-sm text-gray-600">{role.description}</div>
+                  </div>
+                ))}
+              </div>
+              {formErrors.serviceRole && <p role="alert" className="text-xs text-red-500 mt-1">{formErrors.serviceRole}</p>}
+
+              {formData.serviceRole === 'others' && (
+                <div className="mt-4">
+                  <input
+                    type="text"
+                    value={formData.otherRole}
+                    onChange={(e) => setFormData(prev => ({ ...prev, otherRole: e.target.value }))}
+                    aria-invalid={!!formErrors.otherRole}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+                    placeholder="Please specify the role you need..."
+                  />
+                  {formErrors.otherRole && <p role="alert" className="text-xs text-red-500 mt-1">{formErrors.otherRole}</p>}
+                </div>
+              )}
+            </div>
+
+            <div className="flex justify-end">
+              <button
+                type="button"
+                onClick={nextStep}
+                className="btn-primary flex items-center"
+              >
+                Next Step <ChevronRightIcon className="w-4 h-4 ml-2" />
+              </button>
+            </div>
+            {formErrors.step && <p className="text-xs text-red-500 mt-1">{formErrors.step}</p>}
+          </div>
+        )}
+
+        {/* Step 2: Personal Information */}
+        {step === 2 && (
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold text-gray-900 mb-6 font-display">
               Tell Us About Yourself
@@ -614,7 +826,14 @@ export default function HireHelperForm() {
               </div>
             </div>
 
-            <div className="flex justify-end">
+            <div className="flex justify-between">
+              <button
+                type="button"
+                onClick={prevStep}
+                className="btn-outline"
+              >
+                Previous
+              </button>
               <button
                 type="button"
                 onClick={nextStep}
@@ -627,80 +846,43 @@ export default function HireHelperForm() {
           </div>
         )}
 
-        {/* Step 2: Service Requirements */}
-        {step === 2 && (
+        {/* Step 3: Service Requirements (follow-ups for the chosen primary role) */}
+        {step === 3 && (
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold text-gray-900 mb-6 font-display">
               Service Requirements
             </h2>
 
-            {/* Role Selection - shown first */}
+            {/* Employment Type Selection */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-4">
-                What primary role do you need help with? *
+                What type of helper service do you need? *
               </label>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {serviceRoles.map(role => (
+                {employmentTypes.map(type => (
                   <div
-                    key={role.value}
-                    className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceRole === role.value
+                    key={type.value}
+                    role="button"
+                    tabIndex={0}
+                    className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceType === type.value
                       ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
                       : 'border-gray-200 hover:border-gray-300'
                       }`}
-                    onClick={() => setFormData(prev => ({
-                      ...prev,
-                      serviceRole: role.value,
-                      otherRole: role.value !== 'others' ? '' : prev.otherRole,
-                      cookFoodType: role.value !== 'cook' ? '' : prev.cookFoodType,
-                      cookMeals: role.value !== 'cook' ? [] : prev.cookMeals,
-                    }))}
+                    onClick={() => handleInputChange('serviceType', type.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        handleInputChange('serviceType', type.value)
+                      }
+                    }}
                   >
-                    <div className="font-medium text-gray-900">{role.label}</div>
-                    <div className="text-sm text-gray-600">{role.description}</div>
+                    <div className="font-medium text-gray-900">{type.label}</div>
+                    <div className="text-sm text-gray-600">{type.description}</div>
                   </div>
                 ))}
               </div>
-              {formErrors.serviceRole && <p className="text-xs text-red-500 mt-1">{formErrors.serviceRole}</p>}
-
-              {formData.serviceRole === 'others' && (
-                <div className="mt-4">
-                  <input
-                    type="text"
-                    value={formData.otherRole}
-                    onChange={(e) => setFormData(prev => ({ ...prev, otherRole: e.target.value }))}
-                    aria-invalid={!!formErrors.otherRole}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
-                    placeholder="Please specify the role you need..."
-                  />
-                  {formErrors.otherRole && <p className="text-xs text-red-500 mt-1">{formErrors.otherRole}</p>}
-                </div>
-              )}
+              {formErrors.serviceType && <p role="alert" className="text-xs text-red-500 mt-1">{formErrors.serviceType}</p>}
             </div>
-
-            {/* Employment Type Selection - shown after role is chosen */}
-            {formData.serviceRole && (
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">
-                  What type of helper service do you need? *
-                </label>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {employmentTypes.map(type => (
-                    <div
-                      key={type.value}
-                      className={`p-4 border rounded-lg cursor-pointer transition-all ${formData.serviceType === type.value
-                        ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
-                        : 'border-gray-200 hover:border-gray-300'
-                        }`}
-                      onClick={() => handleInputChange('serviceType', type.value)}
-                    >
-                      <div className="font-medium text-gray-900">{type.label}</div>
-                      <div className="text-sm text-gray-600">{type.description}</div>
-                    </div>
-                  ))}
-                </div>
-                {formErrors.serviceType && <p className="text-xs text-red-500 mt-1">{formErrors.serviceType}</p>}
-              </div>
-            )}
 
             {requiresScheduleDetails(formData.serviceType) && (
               <div className="space-y-6 rounded-xl border border-primary-100 bg-primary-50/40 p-5 md:p-6">
@@ -813,17 +995,25 @@ export default function HireHelperForm() {
                   {[{ value: 'yes', label: 'Yes' }, { value: 'no', label: 'No' }].map(opt => (
                     <div
                       key={opt.value}
+                      role="button"
+                      tabIndex={0}
                       className={`flex-1 p-4 border rounded-lg cursor-pointer text-center transition-all ${formData.hasHelperRoom === opt.value
                         ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
                         : 'border-gray-200 hover:border-gray-300'
                         }`}
                       onClick={() => handleInputChange('hasHelperRoom', opt.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault()
+                          handleInputChange('hasHelperRoom', opt.value)
+                        }
+                      }}
                     >
                       <div className="font-medium text-gray-900">{opt.label}</div>
                     </div>
                   ))}
                 </div>
-                {formErrors.hasHelperRoom && <p className="text-xs text-red-500 mt-1">{formErrors.hasHelperRoom}</p>}
+                {formErrors.hasHelperRoom && <p role="alert" className="text-xs text-red-500 mt-1">{formErrors.hasHelperRoom}</p>}
               </div>
             )}
 
@@ -934,11 +1124,19 @@ export default function HireHelperForm() {
                   {[{ value: 'yes', label: 'Yes' }, { value: 'no', label: 'No' }].map(opt => (
                     <div
                       key={opt.value}
+                      role="button"
+                      tabIndex={0}
                       className={`flex-1 p-3 border rounded-lg cursor-pointer text-center transition-all ${formData.hasPet === opt.value
                         ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
                         : 'border-gray-200 hover:border-gray-300'
                         }`}
                       onClick={() => handleInputChange('hasPet', opt.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault()
+                          handleInputChange('hasPet', opt.value)
+                        }
+                      }}
                     >
                       <div className="font-medium text-gray-900">{opt.label}</div>
                     </div>
@@ -980,8 +1178,8 @@ export default function HireHelperForm() {
           </div>
         )}
 
-        {/* Step 3: Additional Details */}
-        {step === 3 && (
+        {/* Step 4: Additional Details */}
+        {step === 4 && (
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold text-gray-900 mb-6 font-display">
               Additional Details
@@ -1085,4 +1283,4 @@ export default function HireHelperForm() {
       </form>
     </div>
   )
-} 
+}

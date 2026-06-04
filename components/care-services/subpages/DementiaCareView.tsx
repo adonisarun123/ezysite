@@ -312,10 +312,10 @@ export default function DementiaCareView() {
         body="Tell us what your evenings look like. We respond within the hour, recommend a stage-appropriate caregiver, and start the matching process today."
         enquirySource={PATH}
         related={[
+          { label: 'Alzheimer’s Care', href: '/care-services/alzheimers-care-at-home-bangalore' },
+          { label: 'Respite Care', href: '/care-services/respite-care-at-home-bangalore' },
           { label: 'Elderly Care Services', href: '/care-services/elderly-care-services-bangalore' },
-          { label: 'Caretaker Services', href: '/care-services/caretaker-services-bangalore' },
           { label: 'Trained Attendant', href: '/care-services/trained-attendant-services-bangalore' },
-          { label: 'Cost guide', href: '/care-services/home-nursing-cost-bangalore' },
         ]}
       />
     </CareSubpageShell>

@@ -24,6 +24,14 @@ export const metadata: Metadata = {
   title: 'Home Appliance Repair | Expert Technicians | EzyHelpers',
   description: 'Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India.',
   keywords: 'appliance repair, refrigerator repair, washing machine repair, microwave oven repair, AC repair, gas stove repair, geyser repair, TV repair, chimney repair, home appliance service',
+  openGraph: {
+    title: 'Home Appliance Repair | Expert Technicians | EzyHelpers',
+    description: 'Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India.',
+    url: 'https://www.ezyhelpers.com/services/appliance-repair',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/appliance-repair'
   }
