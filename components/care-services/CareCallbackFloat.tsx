@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { PhoneArrowDownLeftIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { trackFormStart, trackFormError } from '@/lib/analytics'
+import { trackFormStart, trackFormError, trackFormSubmitSuccess } from '@/lib/analytics'
 
 /**
  * CareCallbackFloat — quick "Request a Call Back" widget for /care-services/*.
@@ -84,6 +84,7 @@ export default function CareCallbackFloat() {
         }),
       })
       if (!res.ok) throw new Error('request_failed')
+      trackFormSubmitSuccess('care_callback_float', { serviceType: careType, source: pathname })
       setStatus('success')
     } catch (err) {
       setStatus('error')

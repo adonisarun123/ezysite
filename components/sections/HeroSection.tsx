@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState, memo } from 'react'
 import { CheckCircleIcon, StarIcon, PhoneIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
+import { trackFormSubmitSuccess } from '@/lib/analytics'
 
 // Legacy stats kept for backward compatibility
 const stats = [
@@ -178,6 +179,7 @@ export default function HeroSection() {
         // Don't fail the form submission if email fails
       }
 
+      trackFormSubmitSuccess('home_hero_lead_form', { serviceType: formData.service, city: formData.city })
       setSubmitStatus('success')
       setFormData({ name: '', phone: '', service: '', city: '' })
     } catch (error) {

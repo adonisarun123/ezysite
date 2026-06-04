@@ -3,9 +3,10 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { whatsappSendUrl } from '@/lib/whatsappUrl'
+import { trackFormSubmitSuccess } from '@/lib/analytics'
 import Image from 'next/image'
-import { 
-  CameraIcon, 
+import {
+  CameraIcon,
   MapPinIcon, 
   DocumentIcon, 
   CheckCircleIcon,
@@ -371,6 +372,7 @@ export default function AgentRegistrationPage() {
       })
       
       if (response.ok) {
+        trackFormSubmitSuccess('agent_registration_form')
         window.location.href = '/thank-you?type=agent'
       } else {
         throw new Error('Submission failed')

@@ -21,7 +21,7 @@ import {
   HandRaisedIcon
 } from '@heroicons/react/24/outline';
 import { supabase } from '@/lib/supabaseClient'
-import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackChatStart, trackPhoneClick } from '@/lib/analytics'
+import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackChatStart, trackPhoneClick, trackFormSubmitSuccess } from '@/lib/analytics'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
 
 export default function ContactPageClient() {
@@ -147,6 +147,7 @@ export default function ContactPageClient() {
 
       const confirmId = `CNT-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substr(2, 4).toUpperCase()}`
       trackFormComplete('contact_form')
+      trackFormSubmitSuccess('contact_form', { leadId: confirmId, serviceType: formData.service, city: formData.city })
       router.push(`/thank-you?type=contact&ref=${encodeURIComponent(confirmId)}`)
 
     } catch (error) {

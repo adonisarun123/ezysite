@@ -10,6 +10,7 @@ import {
 import {
   trackCandidateApplicationStart,
   trackCandidateApplicationSubmit,
+  trackFormSubmitSuccess,
 } from '@/lib/analytics'
 
 type Lang = 'en' | 'hi'
@@ -161,6 +162,7 @@ export default function CandidateApplicationForm({ lang }: Props) {
         language: lang,
         applicationId: json?.applicationId,
       })
+      trackFormSubmitSuccess('candidate_application_form', { leadId: json?.applicationId, serviceType: candidateType, city: data.area })
     } catch {
       setStatus('error')
     }

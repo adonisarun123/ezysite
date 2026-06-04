@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { whatsappSendUrl } from '@/lib/whatsappUrl'
+import { trackFormSubmitSuccess } from '@/lib/analytics'
 import Image from 'next/image'
 import {
   CameraIcon,
@@ -954,6 +955,7 @@ export default function HelperRegistrationPage() {
 
       if (response.ok) {
         const confirmId = `HLP-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substr(2, 4).toUpperCase()}`
+        trackFormSubmitSuccess('helper_registration_form', { leadId: confirmId })
         window.location.href = `/thank-you?type=helper&ref=${encodeURIComponent(confirmId)}`
         return
       } else {

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { CheckBadgeIcon, PhoneIcon } from '@heroicons/react/24/outline'
-import { trackCTAClick, trackPhoneClick, trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
+import { trackCTAClick, trackPhoneClick, trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackFormSubmitSuccess } from '@/lib/analytics'
 
 export default function CTASection() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -56,6 +56,7 @@ export default function CTASection() {
 
       // Track completion
       trackFormComplete('cta_quick_quote');
+      trackFormSubmitSuccess('home_cta_lead_form', { serviceType: data.service, city: data.city });
 
       // Reset form and show success message
       form.reset();

@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { salesExecutiveApplicationSchema } from '@/lib/salesExecutiveApplicationSchema'
+import { trackFormSubmitSuccess } from '@/lib/analytics'
 import { validateChiefOfStaffResume } from '@/lib/careersChiefOfStaffResume'
 
 const inputClass =
@@ -118,6 +119,7 @@ export default function SalesExecutiveApplicationForm() {
         setStatus('error')
         return
       }
+      trackFormSubmitSuccess('careers_sales_executive_form')
       reset(defaultValues)
       if (resumeInputRef.current) resumeInputRef.current.value = ''
       router.push('/thank-you?type=career')

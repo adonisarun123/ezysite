@@ -16,6 +16,7 @@ import {
   trackCareEnquiryStart,
   trackCareEnquirySubmit,
   trackFormError,
+  trackFormSubmitSuccess,
 } from '@/lib/analytics'
 
 const SITE = 'https://www.ezyhelpers.com'
@@ -262,6 +263,7 @@ export default function CareServicesEnquiryForm() {
         urgency,
         locality: locality.trim() || undefined,
       })
+      trackFormSubmitSuccess('care_enquiry_form', { serviceType: careType, city: locality.trim() || undefined, source: sourceUrl })
     } catch (err) {
       setStatus('idle')
       const msg = err instanceof Error ? err.message : 'Submission failed.'

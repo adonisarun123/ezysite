@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { CheckCircleIcon, ShieldCheckIcon } from '@heroicons/react/24/solid'
-import { trackFormStart, trackFormError } from '@/lib/analytics'
+import { trackFormStart, trackFormError, trackFormSubmitSuccess } from '@/lib/analytics'
 
 /**
  * CareHeroQuickForm — vertical lead card shown on the right side of every
@@ -71,6 +71,7 @@ export default function CareHeroQuickForm({ enquirySource }: { enquirySource: st
         }),
       })
       if (!res.ok) throw new Error('request_failed')
+      trackFormSubmitSuccess('care_hero_quick_form', { serviceType: careType, city, source: enquirySource })
       setStatus('success')
     } catch (err) {
       setStatus('error')

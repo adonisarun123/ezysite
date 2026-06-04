@@ -5,7 +5,7 @@ import { useSearchParams, useRouter } from 'next/navigation'
 import { ChevronRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
 import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
-import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackStepComplete, trackServiceSelect, trackBookingStart, trackBookingComplete } from '@/lib/analytics'
+import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackStepComplete, trackServiceSelect, trackBookingStart, trackBookingComplete, trackFormSubmitSuccess } from '@/lib/analytics'
 import { sendWebhook } from '@/lib/webhookService'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
 
@@ -570,6 +570,7 @@ export default function HireHelperForm() {
 
       // Track successful form completion
       trackFormComplete('hire_helper_form', newRequestId);
+      trackFormSubmitSuccess('hire_helper_form', { leadId: newRequestId, serviceType: formData.serviceType, city: formData.city });
       trackBookingComplete(formData.serviceType, formData.city, newRequestId);
 
       // Submitted — stop partial-lead beacons and clear the saved draft
