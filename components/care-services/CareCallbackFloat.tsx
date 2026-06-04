@@ -28,10 +28,21 @@ export default function CareCallbackFloat() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [fieldError, setFieldError] = useState<string | null>(null)
 
-  // Slight delay so the pill doesn't compete with hero LCP (mirrors CareWhatsAppFloat).
+  // The hero now contains a quick form, so the float acts as the scroll-catcher:
+  // appear only after the visitor scrolls past the hero (or after 12s fallback).
   useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 2500)
-    return () => clearTimeout(t)
+    const onScroll = () => {
+      if (window.scrollY > 480) {
+        setVisible(true)
+        window.removeEventListener('scroll', onScroll)
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    const t = setTimeout(() => setVisible(true), 12000)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      clearTimeout(t)
+    }
   }, [])
 
   if (!pathname?.startsWith('/care-services')) return null

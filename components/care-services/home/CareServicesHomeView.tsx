@@ -28,6 +28,7 @@ import {
   StarIcon,
   ArrowPathRoundedSquareIcon,
 } from '@heroicons/react/24/outline'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 import type { ComponentType, SVGProps } from 'react'
 import {
   CARE_PILLARS,
@@ -311,6 +312,9 @@ export default function CareServicesHomeView() {
                 {CARE_PHONE_DISPLAY}
               </a>
             </div>
+
+            {/* In-hero quick lead form */}
+            <CareHeroQuickForm enquirySource="/care-services" />
 
             <a
               href="#services"

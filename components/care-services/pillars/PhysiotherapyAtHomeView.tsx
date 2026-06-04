@@ -24,6 +24,7 @@ import {
   ChartBarIcon,
   CheckCircleIcon,
 } from '@heroicons/react/24/outline'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 import { getPillar } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
@@ -313,6 +314,9 @@ export default function PhysiotherapyAtHomeView() {
             <p className="mt-5 text-xs uppercase tracking-[0.18em] text-neutral-500">
               {formatPriceWithNote(pillar.priceKey)} · Same-week first visit across Bangalore
             </p>
+
+            {/* In-hero quick lead form */}
+            <CareHeroQuickForm enquirySource={PATH} />
           </div>
         </div>
       </header>

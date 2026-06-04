@@ -26,6 +26,7 @@ import {
   BeakerIcon,
   PuzzlePieceIcon,
 } from '@heroicons/react/24/outline'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 import { getPillar } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
@@ -305,6 +306,9 @@ export default function ElderCareAtHomeView() {
               Explore the six elder-care services
               <ArrowDownIcon className="h-3.5 w-3.5" aria-hidden />
             </a>
+
+            {/* In-hero quick lead form */}
+            <CareHeroQuickForm enquirySource={PATH} />
           </div>
         </div>
       </header>

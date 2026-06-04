@@ -22,6 +22,7 @@ import {
   CheckCircleIcon,
   ArrowLongRightIcon,
 } from '@heroicons/react/24/outline'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 import type { ComponentType, SVGProps } from 'react'
 import { getPillar } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
@@ -295,6 +296,9 @@ export default function CriticalCareAtHomeView() {
             <p className="mt-5 text-sm font-medium text-care-300">
               Same-day setup possible · {formatPriceWithNote(PILLAR.priceKey)}
             </p>
+
+            {/* In-hero quick lead form */}
+            <CareHeroQuickForm enquirySource={PATH} />
           </div>
         </div>
       </header>

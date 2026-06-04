@@ -25,6 +25,7 @@ import {
   CheckCircleIcon,
   StarIcon,
 } from '@heroicons/react/24/outline'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 import { getPillar } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 import { trackCareCTAClick, trackCarePhoneClick } from '@/lib/analytics'
@@ -320,6 +321,9 @@ export default function MedicalEquipmentView() {
                 </ul>
               </div>
             </div>
+
+            {/* In-hero quick lead form */}
+            <CareHeroQuickForm enquirySource={PATH} />
           </div>
         </div>
       </header>

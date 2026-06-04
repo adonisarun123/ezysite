@@ -20,6 +20,7 @@ import {
   PlusCircleIcon,
   ClipboardDocumentCheckIcon,
 } from '@heroicons/react/24/outline'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 import { getPillar } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
@@ -287,6 +288,9 @@ export default function PalliativeCareAtHomeView() {
             <p className="mt-5 text-sm text-neutral-500">
               A calm, no-pressure conversation — we move at the pace that feels right for your family.
             </p>
+
+            {/* In-hero quick lead form */}
+            <CareHeroQuickForm enquirySource={PATH} />
           </div>
         </div>
       </header>

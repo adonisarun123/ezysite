@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import { PhoneIcon, ArrowRightIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import { CARE_ENQUIRY_HREF } from '@/lib/careServices/registry'
 import { trackCareCTAClick, trackCarePhoneClick } from '@/lib/analytics'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 
 /**
  * Shared shell for all /care-services/* SEO subpages (condition, locality,
@@ -150,6 +151,9 @@ export function CareSubpageShell({
                 {PHONE_DISPLAY}
               </a>
             </div>
+
+            {/* In-hero quick lead form — primary CTA for high-urgency visitors */}
+            <CareHeroQuickForm enquirySource={enquirySource} />
 
             {(reviewedBy || lastUpdated) && (
               <p className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-neutral-500">
