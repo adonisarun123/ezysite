@@ -323,7 +323,9 @@ export default function MedicalEquipmentView() {
             </div>
 
             {/* In-hero quick lead form */}
-            <CareHeroQuickForm enquirySource={PATH} />
+            <div className="mx-auto mt-10 flex w-full max-w-md justify-center">
+              <CareHeroQuickForm enquirySource={PATH} />
+            </div>
           </div>
         </div>
       </header>

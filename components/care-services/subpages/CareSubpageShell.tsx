@@ -91,7 +91,7 @@ export function CareSubpageShell({
               'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,116,200,0.06) 0%, rgba(255,255,255,0) 60%)',
           }}
         />
-        <div className="relative mx-auto max-w-5xl px-4 pb-16 pt-6 sm:px-6 sm:pb-20 sm:pt-8 lg:pb-24">
+        <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-6 sm:px-6 sm:pb-20 sm:pt-8 lg:pb-24">
           {/* Inline transparent breadcrumb */}
           <nav aria-label="Breadcrumb" className="text-left">
             <ol className="flex flex-wrap items-center gap-x-1 text-sm text-neutral-500">
@@ -117,67 +117,71 @@ export function CareSubpageShell({
             </ol>
           </nav>
 
-          <div className="mt-10 text-center sm:mt-14">
-            <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
-              {eyebrow}
-            </p>
+          {/* Two-column hero: text left, vertical quick form right (stacks on mobile) */}
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 sm:mt-14 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-14">
+            <div className="text-center lg:text-left">
+              <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
+                {eyebrow}
+              </p>
 
-            <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.25rem,6vw,4.5rem)] font-medium leading-[1.04] tracking-[-0.03em] text-neutral-950">
-              {headlineLead}
-              <br />
-              <em className="font-careSerif font-normal italic text-care-500">{headlineAccent}</em>
-            </h1>
+              <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.1rem,4.5vw,3.5rem)] font-medium leading-[1.06] tracking-[-0.03em] text-neutral-950 lg:mx-0">
+                {headlineLead}{' '}
+                <em className="font-careSerif font-normal italic text-care-500">{headlineAccent}</em>
+              </h1>
 
-            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
-              {lede}
-            </p>
+              <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 lg:mx-0">
+                {lede}
+              </p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href={enquiryHref}
-                onClick={() => trackCareCTAClick(primaryCtaLabel, `${enquirySource}#hero`)}
-                className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-neutral-900 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_2px_10px_rgba(0,0,0,0.18)] transition hover:bg-black hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] active:scale-[0.98]"
-              >
-                {primaryCtaLabel}
-                <ArrowRightIcon className="h-4 w-4" aria-hidden />
-              </Link>
-              <a
-                href={PHONE_HREF}
-                onClick={() => trackCarePhoneClick(PHONE_DISPLAY, `${enquirySource}#hero`)}
-                className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-neutral-300 bg-white px-7 py-4 text-[15px] font-semibold text-neutral-900 shadow-sm transition hover:border-neutral-900 hover:bg-neutral-50"
-              >
-                <PhoneIcon className="h-4 w-4" aria-hidden />
-                {PHONE_DISPLAY}
-              </a>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <Link
+                  href={enquiryHref}
+                  onClick={() => trackCareCTAClick(primaryCtaLabel, `${enquirySource}#hero`)}
+                  className="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-neutral-900 px-7 py-4 text-[15px] font-semibold text-white shadow-[0_2px_10px_rgba(0,0,0,0.18)] transition hover:bg-black hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] active:scale-[0.98]"
+                >
+                  {primaryCtaLabel}
+                  <ArrowRightIcon className="h-4 w-4" aria-hidden />
+                </Link>
+                <a
+                  href={PHONE_HREF}
+                  onClick={() => trackCarePhoneClick(PHONE_DISPLAY, `${enquirySource}#hero`)}
+                  className="inline-flex min-h-[52px] items-center gap-2 rounded-full border border-neutral-300 bg-white px-7 py-4 text-[15px] font-semibold text-neutral-900 shadow-sm transition hover:border-neutral-900 hover:bg-neutral-50"
+                >
+                  <PhoneIcon className="h-4 w-4" aria-hidden />
+                  {PHONE_DISPLAY}
+                </a>
+              </div>
+
+              {(reviewedBy || lastUpdated) && (
+                <p className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-neutral-500 lg:justify-start">
+                  {reviewedBy ? (
+                    <span>
+                      Reviewed by{' '}
+                      {reviewedBy.href ? (
+                        <Link
+                          href={reviewedBy.href}
+                          className="font-semibold text-neutral-700 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-700"
+                        >
+                          {reviewedBy.name}, {reviewedBy.credential}
+                        </Link>
+                      ) : (
+                        <span className="font-semibold text-neutral-700">
+                          {reviewedBy.name}, {reviewedBy.credential}
+                        </span>
+                      )}
+                    </span>
+                  ) : null}
+                  {reviewedBy && lastUpdated ? <span aria-hidden>·</span> : null}
+                  {lastUpdated ? <span>Last updated {lastUpdated}</span> : null}
+                </p>
+              )}
             </div>
 
-            {/* In-hero quick lead form — primary CTA for high-urgency visitors */}
-            <CareHeroQuickForm enquirySource={enquirySource} />
-
-            {(reviewedBy || lastUpdated) && (
-              <p className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-neutral-500">
-                {reviewedBy ? (
-                  <span>
-                    Reviewed by{' '}
-                    {reviewedBy.href ? (
-                      <Link
-                        href={reviewedBy.href}
-                        className="font-semibold text-neutral-700 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-700"
-                      >
-                        {reviewedBy.name}, {reviewedBy.credential}
-                      </Link>
-                    ) : (
-                      <span className="font-semibold text-neutral-700">
-                        {reviewedBy.name}, {reviewedBy.credential}
-                      </span>
-                    )}
-                  </span>
-                ) : null}
-                {reviewedBy && lastUpdated ? <span aria-hidden>·</span> : null}
-                {lastUpdated ? <span>Last updated {lastUpdated}</span> : null}
-              </p>
-            )}
+            {/* Vertical quick lead form */}
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
+              <CareHeroQuickForm enquirySource={enquirySource} />
+            </div>
           </div>
         </div>
       </header>

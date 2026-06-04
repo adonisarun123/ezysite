@@ -314,7 +314,9 @@ export default function CareServicesHomeView() {
             </div>
 
             {/* In-hero quick lead form */}
-            <CareHeroQuickForm enquirySource="/care-services" />
+            <div className="mx-auto mt-10 flex w-full max-w-md justify-center">
+              <CareHeroQuickForm enquirySource="/care-services" />
+            </div>
 
             <a
               href="#services"
