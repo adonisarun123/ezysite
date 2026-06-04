@@ -3,11 +3,57 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('multiple-sclerosis-als-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Multiple sclerosis & ALS',
+  vitalStats: [
+    {
+      stat: 'A few per lakh',
+      detail: 'MS is relatively uncommon in India — studies estimate a prevalence of a few per 100,000, lower than in Western countries.',
+    },
+    {
+      stat: '20–40 yrs',
+      detail: 'MS is most often diagnosed between 20 and 40, striking people in their most productive working and parenting years.',
+    },
+    {
+      stat: '~2 per lakh',
+      detail: 'ALS (motor neurone disease) affects an estimated 2 or so per 100,000 people, usually appearing between 50 and 70.',
+    },
+  ],
+  causes: [
+    'MS: the immune system attacking the protective myelin around nerves',
+    'MS risk factors: genetics, low vitamin D, certain viral infections (such as EBV) and smoking',
+    'ALS: progressive degeneration of the motor neurons that control muscles',
+    'ALS: about 1 in 10 cases run in families; most have no known cause',
+    'Both: neither is contagious, and neither is caused by anything the patient did wrong',
+    'Both: exact triggers are still being researched — diagnosis needs a neurologist',
+  ],
+  symptoms: [
+    'MS: blurred or painful vision in one eye, often an early sign',
+    'MS: numbness, tingling or electric-shock sensations in limbs',
+    'MS: overwhelming fatigue that rest doesn’t fully fix',
+    'MS: balance problems, weakness or bladder urgency that come and go in relapses',
+    'ALS: painless weakness in a hand or foot — dropping things, tripping',
+    'ALS: muscle twitching (fasciculations) and visible muscle thinning',
+    'ALS: slurring speech or trouble swallowing as it progresses',
+    'Both: symptoms vary enormously person to person — track changes and tell the neurologist',
+  ],
+  whenYouNeedCare: [
+    'An MS relapse has left mobility or vision worse, and recovery needs daily support at home',
+    'Fatigue means cooking, bathing and errands are exhausting the patient or their spouse',
+    'ALS weakness has made transfers, dressing and mealtimes unsafe to manage alone',
+    'Swallowing changes mean meals now need trained, unhurried supervision',
+    'Equipment is arriving — wheelchair, hospital bed, BiPAP — and the household needs steady hands',
+    'The primary carer is burning out, or family is abroad and needs reliable daily updates',
+  ],
+}
 
 /* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
@@ -150,6 +196,8 @@ export default function MsAlsCareView() {
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
       {SECTIONS.map((sec, idx) => (
         <section
           key={sec.eyebrow}
@@ -168,6 +216,8 @@ export default function MsAlsCareView() {
           </div>
         </section>
       ))}
+
+      <CaregiverScopeSection />
 
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-4xl">

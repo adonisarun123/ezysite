@@ -3,11 +3,57 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('parkinsons-care-at-home-bangalore-elder')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Parkinson’s disease',
+  vitalStats: [
+    {
+      stat: '2nd most common',
+      detail: 'Among neurodegenerative disorders, Parkinson’s is second only to Alzheimer’s disease worldwide.',
+    },
+    {
+      stat: '~7 per 100,000',
+      detail: 'Prevalence in India is estimated at about 7 or more per 100,000 — and it rises steeply in seniors past 60.',
+    },
+    {
+      stat: '60+',
+      detail: 'Most diagnoses come after the age of 60, which is why Parkinson’s care is so often elder care first.',
+    },
+  ],
+  causes: [
+    'Gradual loss of dopamine-producing cells in the brain',
+    'Age — the strongest known risk factor, especially beyond 60',
+    'Family history and genetics, in a smaller share of cases',
+    'Long-term pesticide or chemical exposure in some occupations',
+    'A history of repeated head injuries',
+    'Being male, which carries a somewhat higher risk',
+  ],
+  symptoms: [
+    'A resting tremor in one hand that quietens when the hand is in use',
+    'Noticeably slower walking, dressing and eating',
+    'Smaller, more cramped handwriting than before',
+    'Limb stiffness, aches and reduced arm swing while walking',
+    'A quieter voice and a flatter facial expression',
+    'Stooping posture and short, shuffling steps',
+    'New constipation, poor sleep or loss of smell',
+    'Hesitation or “sticking” when starting to walk or turning',
+  ],
+  whenYouNeedCare: [
+    'Tablet times are slipping, and stiffness or tremor is worse on missed-dose days',
+    'A recent fall — or near-misses while getting up from bed or the toilet',
+    'Freezing at doorways or while turning, with no one nearby to help',
+    'Meals, bathing and dressing now need daily hands-on assistance',
+    'Coughing during meals or trouble swallowing tablets and water',
+    'The family carer is elderly or far away, and nights feel unsafe',
+  ],
+}
 
 /* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
@@ -150,6 +196,8 @@ export default function ParkinsonsCareElderView() {
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
       {SECTIONS.map((sec, idx) => (
         <section
           key={sec.eyebrow}
@@ -168,6 +216,8 @@ export default function ParkinsonsCareElderView() {
           </div>
         </section>
       ))}
+
+      <CaregiverScopeSection />
 
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-4xl">

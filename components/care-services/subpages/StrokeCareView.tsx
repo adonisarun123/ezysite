@@ -12,8 +12,54 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/stroke-care-at-home-bangalore'
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Stroke',
+  vitalStats: [
+    {
+      stat: '~1.8 million',
+      detail: 'India sees an estimated 1.8 million strokes every year — among the country’s leading causes of death and disability.',
+    },
+    {
+      stat: '~25%',
+      detail: 'A stroke survivor has roughly a 1-in-4 chance of another stroke within five years — which is why home care includes recurrence vigilance.',
+    },
+    {
+      stat: '1 in 3',
+      detail: 'Around a third of stroke survivors experience post-stroke depression — often missed unless someone is watching daily.',
+    },
+  ],
+  causes: [
+    'High blood pressure — the single biggest modifiable risk factor',
+    'Diabetes and high cholesterol damaging blood vessels over time',
+    'Atrial fibrillation and other heart-rhythm problems that send clots to the brain',
+    'Smoking and heavy alcohol use',
+    'Obesity, inactivity and chronic kidney disease',
+    'A previous stroke or TIA (mini-stroke) — the strongest warning of the next one',
+  ],
+  symptoms: [
+    'Sudden weakness or numbness of the face, arm or leg — usually one side',
+    'Facial drooping — an uneven smile is the classic sign',
+    'Slurred speech or trouble finding words',
+    'Sudden confusion or difficulty understanding what others say',
+    'Sudden loss or blurring of vision in one or both eyes',
+    'Sudden dizziness, loss of balance or trouble walking',
+    'A sudden, severe headache with no known cause',
+    'Remember B.E.F.A.S.T — Balance, Eyes, Face, Arm, Speech, Time to call an ambulance',
+  ],
+  whenYouNeedCare: [
+    'Discharge is approaching and no one at home can manage transfers, feeding and medicines',
+    'One-sided weakness means bathing, toileting and repositioning need trained hands',
+    'Swallowing difficulty makes every meal an aspiration risk without supervision',
+    'BP, sugar and blood-thinner schedules are too complex for the family to track reliably',
+    'The patient is showing withdrawal or low mood, and recovery exercises are being skipped',
+    'Family members work or live in another city, and recovery needs daily consistency',
+  ],
+}
 
 const PHASES = [
   {
@@ -174,6 +220,8 @@ export default function StrokeCareView() {
           </p>
         </div>
       </section>
+
+      <ConditionInfoSection info={CONDITION_INFO} />
 
       {/* Phases of stroke care */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
@@ -346,6 +394,8 @@ export default function StrokeCareView() {
           </p>
         </div>
       </section>
+
+      <CaregiverScopeSection />
 
       {/* FAQs */}
       <section className="bg-[#F7F7F2] px-4 py-20 sm:px-6 sm:py-24">

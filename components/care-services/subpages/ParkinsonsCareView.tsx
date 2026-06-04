@@ -8,8 +8,54 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/parkinsons-care-at-home-bangalore'
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Parkinson’s disease',
+  vitalStats: [
+    {
+      stat: '2nd',
+      detail: 'Parkinson’s is the second most common neurodegenerative disorder worldwide, after Alzheimer’s disease.',
+    },
+    {
+      stat: '~7+ per lakh',
+      detail: 'Indian studies estimate a prevalence of roughly 7 or more per 100,000 people, rising sharply after age 60.',
+    },
+    {
+      stat: '30–40%',
+      detail: 'An estimated 30–40% of people with Parkinson’s eventually develop Parkinson’s-related dementia, adding cognitive care needs.',
+    },
+  ],
+  causes: [
+    'Loss of dopamine-producing nerve cells in the brain — the core mechanism',
+    'Advancing age, with most diagnoses after 60',
+    'Genetic factors and family history in a minority of cases',
+    'Long-term exposure to certain pesticides and industrial chemicals',
+    'Repeated head injuries over a lifetime',
+    'Male sex — men are somewhat more likely to develop Parkinson’s',
+  ],
+  symptoms: [
+    'A slight tremor in one hand, finger or thumb at rest',
+    'Handwriting becoming smaller and more cramped (micrographia)',
+    'Movements slowing down — taking far longer to dress or walk',
+    'Stiffness in the arms, legs or trunk that doesn’t loosen with movement',
+    'A softer, flatter voice that family keep asking to repeat',
+    'Reduced facial expression — the “mask-like” look',
+    'Stooped posture, shuffling steps or arms that no longer swing',
+    'Loss of smell, constipation and disturbed sleep — often early clues',
+  ],
+  whenYouNeedCare: [
+    'Medication timing is slipping — missed or late doses are causing “off” episodes',
+    'A fall, or repeated near-falls, during transfers and turns at home',
+    'Freezing of gait in doorways or narrow spaces with no one to assist',
+    'Bathing, dressing and meals now take hands-on help the family can’t sustain',
+    'Coughing or choking at meals suggests swallowing is becoming unsafe',
+    'The spouse managing care is elderly themselves, or children live far away',
+  ],
+}
 
 const PRINCIPLES = [
   {
@@ -148,6 +194,8 @@ export default function ParkinsonsCareView() {
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
@@ -199,6 +247,8 @@ export default function ParkinsonsCareView() {
           </div>
         </div>
       </section>
+
+      <CaregiverScopeSection />
 
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-4xl">

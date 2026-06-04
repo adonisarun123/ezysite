@@ -3,10 +3,56 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 
 const SERVICE = getNestedService('dementia-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Dementia',
+  vitalStats: [
+    {
+      stat: '~8.8 million',
+      detail: 'The LASI-DAD study estimates about 8.8 million Indians over 60 are living with dementia today.',
+    },
+    {
+      stat: '60–70%',
+      detail: 'Of all dementia cases, an estimated 60–70% are caused by Alzheimer’s disease (WHO).',
+    },
+    {
+      stat: 'Rises with age',
+      detail: 'Dementia risk climbs steeply after 65 — affecting roughly 1 in 10 people in that age group globally.',
+    },
+  ],
+  causes: [
+    'Alzheimer’s disease — by far the most common cause',
+    'Vascular dementia after strokes or years of uncontrolled blood pressure',
+    'Lewy body disease and Parkinson’s-related dementia',
+    'Head injuries, including repeated falls in later life',
+    'Long-term heavy alcohol use',
+    'Some infections and deficiencies affecting the brain — a few causes are reversible, so diagnosis matters',
+  ],
+  symptoms: [
+    'Repeating the same question or story within minutes',
+    'Leaving the stove on, taps running, or doors unlocked',
+    'Confusion about familiar streets, dates or festivals',
+    'Searching for common words mid-sentence',
+    'Losing interest in prayer, friends or favourite TV serials',
+    'New suspicion — accusing family of hiding or stealing things',
+    'Money and medicine mistakes from someone who was always careful',
+    'Looking unkempt in someone who took pride in their appearance',
+  ],
+  whenYouNeedCare: [
+    'They have wandered or got lost — even once is the signal',
+    'Evenings bring agitation or restlessness the family can no longer settle',
+    'Daily bathing, dressing or toileting now needs another pair of hands',
+    'Medicines and gas safety can no longer be left unsupervised',
+    'The family member doing the caring is exhausted, unwell or sleepless',
+    'Sons and daughters are in other cities or abroad with no steady help at home',
+  ],
+}
 
 /* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
@@ -154,6 +200,8 @@ export default function DementiaCareAtHomeView() {
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
       {/* Rich sections */}
       {SECTIONS.map((sec, idx) => (
         <section
@@ -181,6 +229,8 @@ export default function DementiaCareAtHomeView() {
           </div>
         </section>
       ))}
+
+      <CaregiverScopeSection />
 
       {/* FAQs */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">

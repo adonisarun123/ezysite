@@ -11,8 +11,54 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/dementia-alzheimers-care-bangalore'
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Dementia',
+  vitalStats: [
+    {
+      stat: '~8.8 million',
+      detail: 'An estimated 8.8 million Indians aged 60+ live with dementia, according to the LASI-DAD study.',
+    },
+    {
+      stat: '60–70%',
+      detail: 'Alzheimer’s disease accounts for an estimated 60–70% of dementia cases worldwide (WHO).',
+    },
+    {
+      stat: '1 in 10',
+      detail: 'Globally, dementia affects roughly 1 in 10 people over 65 — and prevalence rises sharply with age.',
+    },
+  ],
+  causes: [
+    'Alzheimer’s disease — the most common cause of dementia',
+    'Vascular damage from stroke or chronically high blood pressure',
+    'Parkinson’s disease and Lewy body disease',
+    'Traumatic brain injury, including repeated falls with head impact',
+    'Prolonged heavy alcohol use',
+    'Infections and other conditions affecting the brain (some are treatable — always get a diagnosis)',
+  ],
+  symptoms: [
+    'Forgetting recent conversations or repeating the same question',
+    'Misplacing items in odd places (keys in the fridge, money in the rice tin)',
+    'Getting confused about time, dates or familiar routes',
+    'Struggling to find everyday words mid-sentence',
+    'Withdrawing from puja, social visits or hobbies they loved',
+    'Unusual irritability, suspicion or sudden mood swings',
+    'Difficulty managing money, bills or medicines they handled for years',
+    'Neglecting bathing, grooming or fresh clothes',
+  ],
+  whenYouNeedCare: [
+    'A wandering incident — they left home and couldn’t find their way back',
+    'Gas left on, doors left open, or medicines doubled or missed',
+    'Evening agitation (sundowning) that the family can no longer calm',
+    'The spouse or daughter-in-law providing care is exhausted or unwell themselves',
+    'Bathing, dressing or toileting now needs hands-on help every day',
+    'Children live in another city or abroad and there is no one steady at home',
+  ],
+}
 
 const STAGES = [
   {
@@ -173,6 +219,8 @@ export default function DementiaCareView() {
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
       {/* Stages */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
@@ -295,6 +343,8 @@ export default function DementiaCareView() {
           </div>
         </div>
       </section>
+
+      <CaregiverScopeSection />
 
       {/* FAQs */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">

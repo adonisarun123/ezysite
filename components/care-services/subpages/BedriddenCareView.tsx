@@ -9,8 +9,54 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/bedridden-patient-care-bangalore'
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Long-term immobility',
+  vitalStats: [
+    {
+      stat: 'Up to 1 in 3',
+      detail: 'Pressure ulcers can develop in up to a third of immobile patients when regular repositioning is not maintained — and most are preventable.',
+    },
+    {
+      stat: '2 hours',
+      detail: 'The internationally accepted repositioning standard for bedridden patients is every 2 hours, day and night.',
+    },
+    {
+      stat: 'Days, not weeks',
+      detail: 'Muscle loss, stiff joints and skin breakdown can begin within days of becoming bedbound — early protocol matters.',
+    },
+  ],
+  causes: [
+    'Stroke with severe one-sided weakness or paralysis',
+    'Advanced dementia, Parkinson’s or other neurodegenerative disease',
+    'Hip fracture or major surgery with prolonged recovery',
+    'Late-stage heart, lung or kidney disease causing severe weakness',
+    'Spinal cord injury or advanced arthritis limiting movement',
+    'Terminal illness in its final phase',
+  ],
+  symptoms: [
+    'Redness over heels, hips, sacrum or elbows that doesn’t fade within 30 minutes',
+    'Skin that feels warm, boggy or broken at pressure points',
+    'Joints becoming stiff and harder to straighten (early contractures)',
+    'Eating and drinking less, with gradual weight loss',
+    'Coughing or gurgling during meals — a swallowing-safety warning',
+    'Fewer wet diapers or dark urine, suggesting dehydration',
+    'New drowsiness, confusion or low-grade fever',
+    'Low mood, silence or saying they feel like a burden',
+  ],
+  whenYouNeedCare: [
+    'Night-time turning isn’t happening — no family member can sustain a 2-hour schedule',
+    'A red or broken patch of skin has already appeared at a pressure point',
+    'Lifting and transferring the patient is straining (or injuring) family members',
+    'Incontinence care is needed several times a day and dignity is suffering',
+    'Feeding, hydration and medicines need tracking the family can’t keep consistent',
+    'The household has been running on adrenaline for weeks and needs trained relief',
+  ],
+}
 
 const PROTOCOL = [
   {
@@ -147,6 +193,8 @@ export default function BedriddenCareView() {
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
       {/* Protocol */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
@@ -242,6 +290,8 @@ export default function BedriddenCareView() {
           </ul>
         </div>
       </section>
+
+      <CaregiverScopeSection />
 
       {/* FAQs */}
       <section className="bg-[#F7F7F2] px-4 py-20 sm:px-6 sm:py-24">

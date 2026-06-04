@@ -3,11 +3,57 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('diabetes-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Type 2 diabetes in seniors',
+  vitalStats: [
+    {
+      stat: '~101 million',
+      detail: 'An estimated 101 million Indians live with diabetes, according to the ICMR-INDIAB study (2023).',
+    },
+    {
+      stat: '~136 million',
+      detail: 'A further 136 million Indians are estimated to have prediabetes (ICMR-INDIAB) — many of them undiagnosed seniors.',
+    },
+    {
+      stat: '2–4×',
+      detail: 'Diabetes roughly doubles to quadruples the risk of heart disease and stroke, which is why daily control matters so much in elders.',
+    },
+  ],
+  causes: [
+    'Insulin resistance that worsens with age, weight gain and inactivity',
+    'Family history — diabetes runs strongly in Indian families',
+    'Abdominal obesity, common in the Indian body type even at lower weights',
+    'Sedentary routines after retirement, with less daily walking',
+    'High blood pressure and cholesterol, which travel with diabetes',
+    'Long-term diets heavy in refined carbohydrates and sugar',
+  ],
+  symptoms: [
+    'Urinating more often, especially waking several times at night',
+    'Unusual thirst, or a constantly dry mouth',
+    'Tiredness and drowsiness after meals',
+    'Blurred vision that comes and goes',
+    'Cuts, boils or foot wounds that heal slowly',
+    'Tingling, burning or numbness in the feet',
+    'Frequent urinary or skin infections',
+    'Unexplained weight loss despite a normal appetite',
+  ],
+  whenYouNeedCare: [
+    'A hypoglycaemia episode — confusion, sweating or a fall from low sugar — with no one at home to respond',
+    'Sugar readings, tablets and insulin timing are getting mixed up or skipped',
+    'A foot wound or numbness has appeared — daily foot checks are now essential',
+    'Diet control keeps failing because cooking and meal timing need supervision',
+    'Multiple conditions (BP, heart, kidney) make the daily routine too complex to self-manage',
+    'Children live in another city and want sugar logs and alerts they can see daily',
+  ],
+}
 
 /* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
@@ -150,6 +196,8 @@ export default function DiabetesCareView() {
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
       {SECTIONS.map((sec, idx) => (
         <section
           key={sec.eyebrow}
@@ -168,6 +216,8 @@ export default function DiabetesCareView() {
           </div>
         </section>
       ))}
+
+      <CaregiverScopeSection />
 
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-4xl">

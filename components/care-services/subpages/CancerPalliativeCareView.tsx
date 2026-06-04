@@ -7,11 +7,57 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 
 const SLUG = 'cancer-palliative-care-at-home-bangalore'
 const PATH = `/care-services/${SLUG}`
 const SERVICE = getNestedService(SLUG)
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Cancer & palliative needs',
+  vitalStats: [
+    {
+      stat: '~1.4 million',
+      detail: 'India records an estimated 1.4 million new cancer cases every year, according to ICMR projections.',
+    },
+    {
+      stat: 'A leading cause',
+      detail: 'Cancer is among the leading causes of death in India — and the need for home-based supportive care is growing with it.',
+    },
+    {
+      stat: 'Any stage',
+      detail: 'WHO recommends palliative (comfort-focused) care from early in a serious illness — alongside treatment, not only at the end.',
+    },
+  ],
+  causes: [
+    'Tobacco in any form — the largest preventable cause of cancer in India',
+    'Heavy alcohol use, especially combined with tobacco',
+    'Infections such as HPV (cervical) and hepatitis B/C (liver)',
+    'Diet, obesity and physical inactivity',
+    'Family history and inherited gene changes in some cancers',
+    'Age — most cancers become more common after 50',
+  ],
+  symptoms: [
+    'Persistent fatigue that rest doesn’t relieve',
+    'Unexplained weight loss or loss of appetite',
+    'Pain that is constant, or worse at night',
+    'Nausea and taste changes during or after treatment',
+    'A lump, ulcer or sore that doesn’t heal',
+    'Ongoing changes in bowel or bladder habits',
+    'Breathlessness or a persistent cough',
+    'Low mood, anxiety or withdrawal — distress is a symptom too',
+  ],
+  whenYouNeedCare: [
+    'Chemotherapy or radiation cycles leave them too weak for daily routines between hospital visits',
+    'Pain, nausea or appetite loss needs someone watching and reporting to the oncology team daily',
+    'The patient is increasingly bed-bound and needs repositioning, hygiene and feeding support',
+    'The spouse or children carrying the care are visibly exhausted or unwell',
+    'Night-time symptoms — pain, restlessness, breathlessness — leave the family sleepless and afraid',
+    'Family members are in another city and want a steady, kind presence at home they can trust',
+  ],
+}
 
 const HERO_STATS = [
   { value: 'Comfort-first', label: 'Care built around easing symptoms, not adding strain' },
@@ -154,6 +200,8 @@ export default function CancerPalliativeCareView() {
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
       {/* Sections */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-5xl">
@@ -187,6 +235,8 @@ export default function CancerPalliativeCareView() {
           </div>
         </div>
       </section>
+
+      <CaregiverScopeSection />
 
       {/* FAQs */}
       <section className="bg-neutral-50 px-4 py-16 sm:px-6 sm:py-20">

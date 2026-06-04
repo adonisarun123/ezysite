@@ -3,11 +3,57 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('post-fall-mobility-care-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Falls in seniors',
+  vitalStats: [
+    {
+      stat: '1 in 3',
+      detail: 'Roughly one in three adults over 65 falls each year — and having fallen once doubles the chance of falling again.',
+    },
+    {
+      stat: 'Leading cause',
+      detail: 'Falls are among the leading causes of injury and injury-related hospitalisation in Indians aged 60 and above.',
+    },
+    {
+      stat: 'Most at home',
+      detail: 'Most senior falls happen at home — bathrooms, stairs and night-time walks to the toilet are the highest-risk spots.',
+    },
+  ],
+  causes: [
+    'Muscle weakness and poor balance from reduced activity',
+    'Slippery bathrooms, loose rugs, poor lighting and trailing wires at home',
+    'Medicines that cause drowsiness or sudden drops in blood pressure',
+    'Failing eyesight and inner-ear (balance) problems',
+    'Conditions like Parkinson’s, stroke, arthritis and neuropathy affecting gait',
+    'Rushing at night to the toilet, often without switching the light on',
+  ],
+  symptoms: [
+    'Holding furniture or walls while walking around the house',
+    'A recent stumble, trip or “near-fall” they brushed off',
+    'Taking visibly slower, shorter or shuffling steps',
+    'Struggling to rise from a chair without pushing off with both arms',
+    'Dizziness or unsteadiness when standing up',
+    'New reluctance to bathe alone, use stairs or step outside',
+    'Unexplained bruises they can’t — or won’t — explain',
+    'Fear of falling that is quietly shrinking their daily activity',
+  ],
+  whenYouNeedCare: [
+    'They have already fallen once — the next fall risks a hip fracture and surgery',
+    'Recovery after a fall or fracture needs safe daily transfers and walking support',
+    'Fear of falling is making them stop moving — which only weakens them further',
+    'Night-time toilet trips are happening alone, in the dark, on unsteady legs',
+    'The family can’t be present through the day to supervise walking and bathing',
+    'Doctors have advised supervised mobility, and no trained person is at home to provide it',
+  ],
+}
 
 /* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
@@ -150,6 +196,8 @@ export default function PostFallMobilityCareView() {
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
       {SECTIONS.map((sec, idx) => (
         <section
           key={sec.eyebrow}
@@ -168,6 +216,8 @@ export default function PostFallMobilityCareView() {
           </div>
         </section>
       ))}
+
+      <CaregiverScopeSection />
 
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-4xl">

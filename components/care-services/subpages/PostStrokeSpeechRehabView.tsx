@@ -3,11 +3,57 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('post-stroke-speech-rehab-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Post-stroke aphasia & dysphagia',
+  vitalStats: [
+    {
+      stat: '~1.8 million',
+      detail: 'India sees an estimated 1.8 million strokes a year — and speech or swallowing problems follow a large share of them.',
+    },
+    {
+      stat: '~1 in 3',
+      detail: 'Roughly a third of stroke survivors experience aphasia — difficulty speaking, understanding, reading or writing.',
+    },
+    {
+      stat: 'Up to half',
+      detail: 'Swallowing difficulty (dysphagia) affects an estimated half of stroke patients early on — and raises aspiration-pneumonia risk if unmanaged.',
+    },
+  ],
+  causes: [
+    'Stroke damage to the brain’s language areas — usually the left side (aphasia)',
+    'Weakness of the lips, tongue and speech muscles after stroke (dysarthria)',
+    'Disrupted coordination of the swallowing reflex (dysphagia)',
+    'Larger strokes and delayed treatment, which increase the extent of damage',
+    'Repeat strokes adding new deficits on top of old ones',
+    'Reduced practice — speech that isn’t used and exercised recovers more slowly',
+  ],
+  symptoms: [
+    'Knowing what they want to say but unable to find the words',
+    'Speech that comes out slurred, slow or hard to understand',
+    'Using the wrong word — “chair” for “table” — without noticing',
+    'Trouble following conversations, TV or written text',
+    'Coughing, throat-clearing or a wet, gurgly voice during meals',
+    'Holding food in the mouth, or meals taking far longer than before',
+    'Avoiding phone calls and visitors out of frustration or embarrassment',
+    'Weight loss or chest infections that may trace back to unsafe swallowing',
+  ],
+  whenYouNeedCare: [
+    'The hospital SLP has discharged them with exercises, but no one at home can run the daily practice',
+    'Coughing or choking at meals is making the family afraid of every lunch and dinner',
+    'A chest infection after meals raised the question of silent aspiration',
+    'Frustration at not being understood is turning into withdrawal or anger',
+    'Therapy sessions exist, but the gains fade because nothing is practised between them',
+    'Family members are far away and want structured rehab — and progress reports — at home',
+  ],
+}
 
 /* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
@@ -150,6 +196,8 @@ export default function PostStrokeSpeechRehabView() {
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
       {SECTIONS.map((sec, idx) => (
         <section
           key={sec.eyebrow}
@@ -168,6 +216,24 @@ export default function PostStrokeSpeechRehabView() {
           </div>
         </section>
       ))}
+
+      <CaregiverScopeSection
+        workerLabel="the therapist and caregiver team"
+        dos={[
+          'Structured speech and language exercises, set and progressed by the therapist',
+          'Swallowing-safe mealtime support — posture, pacing and food-consistency guidance',
+          'Daily home practice plans between therapy sessions',
+          'Family coaching on how to communicate with — not over — the patient',
+          'Session-by-session progress tracking shared with the family',
+          'Coordination with the neuro physiotherapist for whole-person recovery',
+        ]}
+        donts={[
+          'Medical diagnosis — assessment and diagnosis remain with your doctor and hospital team',
+          'Prescribing or changing medication',
+          'Invasive swallowing procedures — these belong with the hospital SLP and treating doctor',
+          'Guaranteeing recovery timelines — progress is real but varies person to person',
+        ]}
+      />
 
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-4xl">

@@ -3,11 +3,57 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
 const SERVICE = getNestedService('alzheimers-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Alzheimer’s disease',
+  vitalStats: [
+    {
+      stat: '60–70%',
+      detail: 'Alzheimer’s disease is the most common cause of dementia, accounting for an estimated 60–70% of cases worldwide (WHO).',
+    },
+    {
+      stat: '~8.8 million',
+      detail: 'An estimated 8.8 million Indians aged 60+ live with dementia — Alzheimer’s being the largest share (LASI-DAD study).',
+    },
+    {
+      stat: '8–10 yrs',
+      detail: 'After diagnosis, families typically live with the disease for many years — often 8–10 or more — making sustainable home care essential.',
+    },
+  ],
+  causes: [
+    'Abnormal protein build-up (amyloid plaques and tau tangles) in the brain',
+    'Advancing age — the single biggest risk factor, especially after 65',
+    'Family history and genetic factors (such as the APOE-e4 gene)',
+    'Long-standing high blood pressure, diabetes and heart disease',
+    'Untreated hearing loss, social isolation and physical inactivity',
+    'Smoking and prolonged heavy alcohol use',
+  ],
+  symptoms: [
+    'Memory loss that disrupts daily life — especially recently learned information',
+    'Asking the same question again within minutes',
+    'Trouble following familiar recipes, accounts or monthly bills',
+    'Confusion about time of day, dates or seasons',
+    'Getting lost on routes they have used for decades',
+    'Trouble finding the right word, or calling objects by the wrong name',
+    'Poor judgement — unusual gifts of money, falling for telemarketing schemes',
+    'Personality change — anxiety, suspicion or withdrawal from family',
+  ],
+  whenYouNeedCare: [
+    'They have wandered out of the house or got lost in a familiar area',
+    'Sundowning — agitation or restlessness most evenings the family can’t settle',
+    'Medicines, gas stoves or door locks are no longer managed safely',
+    'Bathing and dressing now meet resistance the family can’t handle alone',
+    'The primary family caregiver is burning out or has health issues of their own',
+    'Adult children are in another city or abroad and need eyes and hands at home',
+  ],
+}
 
 /* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
@@ -150,6 +196,8 @@ export default function AlzheimersCareView() {
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
       {SECTIONS.map((sec, idx) => (
         <section
           key={sec.eyebrow}
@@ -168,6 +216,8 @@ export default function AlzheimersCareView() {
           </div>
         </section>
       ))}
+
+      <CaregiverScopeSection />
 
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-4xl">
