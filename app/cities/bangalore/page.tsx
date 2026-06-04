@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import Breadcrumb from '@/components/Breadcrumb'
 
 // ISR: revalidate hourly
@@ -643,6 +644,13 @@ export default function BangalorePage() {
         </section>
       </div>
             <NestCTA />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['bangalore', 'live-in maid', 'domestic help']}
+        title="Bangalore Home Help Guides"
+        subtitle="Costs, comparisons and hiring tips written for Bangalore families."
+      />
+
       <Footer />
     </main>
   )

@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import NestCTA from '@/components/NestCTA'
 
 // ISR: revalidate hourly
@@ -690,6 +691,13 @@ export default function CooksPage() {
           { name: "Bareilly", href: "/cities/bareilly/cooks" },
         ]}
       />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['live-in cook', 'home cook', 'kitchen hygiene']}
+        title="Cook Hiring Guides"
+        subtitle="Cuisine matching, salaries, and hygiene standards for home cooks."
+      />
+
       <Footer />
     </main>
     </>

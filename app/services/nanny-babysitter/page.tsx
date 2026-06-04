@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import NestCTA from '@/components/NestCTA'
 
 // ISR: revalidate hourly
@@ -625,6 +626,13 @@ export default function NannyBabysitterPage() {
           { name: "Bareilly", href: "/cities/bareilly/babysitter" },
         ]}
       />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['live-in nanny', 'childcare', 'bangalore']}
+        title="Childcare Guides for Parents"
+        subtitle="Expert advice on nannies and live-in childcare."
+      />
+
       <Footer />
       </main>
     </>

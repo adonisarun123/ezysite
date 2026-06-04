@@ -38,11 +38,6 @@ const MobileStickyCTA = dynamic(() => import('./MobileStickyCTA'), {
   loading: () => null
 })
 
-const CookieConsent = dynamic(() => import('./CookieConsent'), {
-  ssr: false,
-  loading: () => null
-})
-
 /** First-visit service selector modal — auto-shown on homepage; remembers choice for 30 days. */
 const ServiceSelectorModal = dynamic(() => import('./ServiceSelector'), {
   ssr: false,
@@ -59,7 +54,6 @@ export default function ClientOnlyWidgets() {
       <LanguageSelectorPopup />
       <ServiceSelectorModal mode="modal" />
       <MobileStickyCTA />
-      <CookieConsent />
     </>
   )
 }

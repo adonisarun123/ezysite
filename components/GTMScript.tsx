@@ -1,31 +1,17 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import Script from 'next/script'
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-PGM9V53'
-const CONSENT_KEY = 'ezy_cookie_consent_v1'
 
 /**
- * Google Tag Manager loader gated on cookie consent.
- * Mounts the GTM bootstrap script and the noscript iframe only after the user
- * has accepted cookies via the CookieConsent banner. Subscribes to the
- * `cookieConsent:accepted` custom event so consent acceptance flips the script
- * on without a page reload.
+ * Google Tag Manager loader.
+ * Loads unconditionally for all visitors (cookie-consent gating removed
+ * June 2026 — it was suppressing analytics for every visitor who didn't
+ * click "Accept", causing a large artificial traffic drop in GA4).
  */
 export default function GTMScript() {
-  const [consented, setConsented] = useState(false)
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    const initial = window.localStorage.getItem(CONSENT_KEY) === 'accepted'
-    setConsented(initial)
-    const onAccept = () => setConsented(true)
-    window.addEventListener('cookieConsent:accepted', onAccept)
-    return () => window.removeEventListener('cookieConsent:accepted', onAccept)
-  }, [])
-
-  if (!consented || !GTM_ID) return null
+  if (!GTM_ID) return null
 
   return (
     <>

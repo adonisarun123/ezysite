@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import {
@@ -528,6 +529,13 @@ export default function BangaloreElderlyCarePage() {
         </section>
 
               <NestCTA />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['elderly care', '24 hour care', 'companionship']}
+        title="Elder Care Guides for Bangalore Families"
+        subtitle="Understand care levels, costs, and safety before choosing a caretaker."
+      />
+
       <Footer />
       </main>
     </>
