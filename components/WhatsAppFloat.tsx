@@ -14,7 +14,7 @@ const WhatsAppFloat: React.FC = () => {
     return null;
   }
 
-  const phoneNumber = '+919972571005';
+  const phoneNumber = '+919008596005';
   const message = 'Hi! I would like to know more about your services.';
   
   const handleWhatsAppClick = () => {
