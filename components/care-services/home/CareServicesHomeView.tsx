@@ -389,7 +389,8 @@ export default function CareServicesHomeView() {
                 const Icon = iconFor(p.icon)
                 const tone = PILLAR_TONE[p.tone]
                 const pillarHref = `/care-services/${p.slug}`
-                const nestedTop = p.nested.slice(0, 4)
+                const nestedTop = p.nested.slice(0, 6)
+                const nestedMore = p.nested.length - nestedTop.length
                 return (
                   <article
                     key={p.slug}
@@ -438,6 +439,16 @@ export default function CareServicesHomeView() {
                             </Link>
                           </li>
                         ))}
+                        {nestedMore > 0 && (
+                          <li>
+                            <Link
+                              href={pillarHref}
+                              className={`inline-flex min-h-[36px] items-center rounded-full border px-3 py-2 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-care-500 focus-visible:ring-offset-1 ${tone.chip}`}
+                            >
+                              +{nestedMore} more
+                            </Link>
+                          </li>
+                        )}
                       </ul>
                     </div>
 

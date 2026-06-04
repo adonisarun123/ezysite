@@ -86,6 +86,16 @@ export const CARE_PILLARS: Record<CarePillarSlug, CarePillar> = {
         icon: 'SparklesIcon',
       },
       {
+        slug: 'alzheimers-care-at-home-bangalore',
+        label: 'Alzheimer’s Care',
+        title: 'Alzheimer’s Care at Home in Bangalore',
+        tagline: 'Stage-aware memory care for wandering, sundowning and daily routine.',
+        description:
+          'Specialised Alzheimer’s care at home in Bangalore — stage-aware caregivers for memory loss, wandering, sundowning, agitation and safe daily routines.',
+        priceKey: 'alzheimers-care',
+        icon: 'LightBulbIcon',
+      },
+      {
         slug: 'bedridden-patient-care-at-home-bangalore',
         label: 'Bedridden Patient Care',
         title: 'Bedridden Patient Care at Home in Bangalore',
@@ -104,6 +114,16 @@ export const CARE_PILLARS: Record<CarePillarSlug, CarePillar> = {
           'Companion care for elderly in Bangalore — conversation, meals together, walks, hobbies and emotional support that prevents senior loneliness.',
         priceKey: 'companionship',
         icon: 'ChatBubbleLeftRightIcon',
+      },
+      {
+        slug: 'respite-care-at-home-bangalore',
+        label: 'Respite Care',
+        title: 'Respite Care at Home in Bangalore',
+        tagline: 'Short-term relief caregivers so family carers can rest and recharge.',
+        description:
+          'Respite care at home in Bangalore — trained short-term caregivers for a day, a week or a month, so family caregivers can travel, work or simply rest.',
+        priceKey: 'respite-care',
+        icon: 'ArrowPathIcon',
       },
       {
         slug: 'senior-mental-health-counselling-bangalore',
@@ -134,26 +154,6 @@ export const CARE_PILLARS: Record<CarePillarSlug, CarePillar> = {
           'Specialised Parkinson’s care at home in Bangalore — medication timing, mobility, tremor-aware assistance and daily routine support.',
         priceKey: 'parkinsons-care',
         icon: 'ClockIcon',
-      },
-      {
-        slug: 'alzheimers-care-at-home-bangalore',
-        label: 'Alzheimer’s Care',
-        title: 'Alzheimer’s Care at Home in Bangalore',
-        tagline: 'Stage-aware memory care for wandering, sundowning and daily routine.',
-        description:
-          'Specialised Alzheimer’s care at home in Bangalore — stage-aware caregivers for memory loss, wandering, sundowning, agitation and safe daily routines.',
-        priceKey: 'alzheimers-care',
-        icon: 'LightBulbIcon',
-      },
-      {
-        slug: 'respite-care-at-home-bangalore',
-        label: 'Respite Care',
-        title: 'Respite Care at Home in Bangalore',
-        tagline: 'Short-term relief caregivers so family carers can rest and recharge.',
-        description:
-          'Respite care at home in Bangalore — trained short-term caregivers for a day, a week or a month, so family caregivers can travel, work or simply rest.',
-        priceKey: 'respite-care',
-        icon: 'ArrowPathIcon',
       },
       {
         slug: 'diabetes-care-at-home-bangalore',

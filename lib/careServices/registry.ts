@@ -18,6 +18,8 @@ export type CarePageFile = (typeof CARE_PAGE_FILES)[keyof typeof CARE_PAGE_FILES
  */
 export const CARE_NAV_PILLARS = [
   { name: 'Elder Care at Home', href: '/care-services/elder-care-at-home-bangalore' },
+  { name: 'Alzheimer’s Care at Home', href: '/care-services/alzheimers-care-at-home-bangalore' },
+  { name: 'Respite Care at Home', href: '/care-services/respite-care-at-home-bangalore' },
   { name: 'Home Nursing Care', href: '/care-services/home-nursing-care-bangalore' },
   { name: 'Medical Equipment Rental & Buy', href: '/care-services/medical-equipment-rental-bangalore' },
   { name: 'Physiotherapy at Home', href: '/care-services/physiotherapy-at-home-bangalore' },

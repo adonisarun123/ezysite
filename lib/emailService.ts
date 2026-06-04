@@ -1777,6 +1777,11 @@ export const sendLeadEmail = async (
       emailRecipientsEnv =
         process.env.CAREERS_EMAIL_RECIPIENTS ||
         'contact@ezyhelpers.com,arun@ezyhelpers.com,suraj@ezyhelpers.com';
+    } else if (leadType === 'customer_requirement') {
+      // Customer Requirement form — default recipients plus laxmi@ (June 2026).
+      const base = process.env.CUSTOMER_REQUIREMENT_RECIPIENTS ||
+        process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
+      emailRecipientsEnv = [base, 'laxmi@ezyhelpers.com'].filter(Boolean).join(',');
     } else {
       // Use default recipients for other forms (agent registration, helper registration, etc.)
       emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
