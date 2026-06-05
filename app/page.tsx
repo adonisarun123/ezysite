@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import UrgencyCTA from '@/components/UrgencyCTA'
 import MainContent from '@/components/MainContent'
 import HeroSection from '@/components/sections/HeroSection'
+import AffiliationsSection from '@/components/sections/AffiliationsSection'
 import ServiceSelector from '@/components/ServiceSelector'
 import ServicesSection from '@/components/sections/ServicesSection'
 import ProcessSection from '@/components/sections/ProcessSection'
@@ -35,6 +36,7 @@ export default function Home() {
       <Navbar />
       <MainContent>
         <HeroSection />
+        <AffiliationsSection />
         <ServiceSelector mode="section" />
         <WhyChooseUsSection />
         <ServicesSection />
