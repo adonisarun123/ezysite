@@ -27,6 +27,34 @@ export {
 // Address that must be copied on every outbound lead/notification email site-wide.
 const ALWAYS_CC_EMAIL = 'contact@ezyhelpers.com';
 
+/** Parse a user-agent string into a friendly Browser / OS / Device label for emails. */
+const describeUserAgentForEmail = (
+  ua: string,
+): { browser: string; os: string; device: string } => {
+  if (!ua) return { browser: '—', os: '—', device: '—' };
+
+  let os = 'Unknown';
+  if (/Windows NT 10/.test(ua)) os = 'Windows 10/11';
+  else if (/Windows NT/.test(ua)) os = 'Windows';
+  else if (/iPhone|iPad|iPod/.test(ua)) os = 'iOS';
+  else if (/Mac OS X/.test(ua)) os = 'macOS';
+  else if (/Android/.test(ua)) os = 'Android';
+  else if (/Linux/.test(ua)) os = 'Linux';
+
+  let browser = 'Unknown';
+  if (/Edg\//.test(ua)) browser = 'Edge';
+  else if (/OPR\/|Opera/.test(ua)) browser = 'Opera';
+  else if (/Chrome\//.test(ua) && !/Chromium/.test(ua)) browser = 'Chrome';
+  else if (/Firefox\//.test(ua)) browser = 'Firefox';
+  else if (/Safari\//.test(ua) && /Version\//.test(ua)) browser = 'Safari';
+
+  let device = 'Desktop';
+  if (/iPad|Tablet/.test(ua)) device = 'Tablet';
+  else if (/Mobi|iPhone|Android.*Mobile/.test(ua)) device = 'Mobile';
+
+  return { browser, os, device };
+};
+
 /**
  * Normalise a comma-separated recipient string into a clean, de-duplicated
  * "a@x.com, b@y.com" list, and guarantee ALWAYS_CC_EMAIL is always included.
@@ -153,6 +181,18 @@ const generateHireHelperLeadEmail = (formData: {
   hasHelperRoom?: string;
   requestId: string;
   sourceUrl?: string;
+  priority?: string;
+  clientContext?: {
+    userAgent?: string;
+    platform?: string;
+    language?: string;
+    screen?: string;
+    timezone?: string;
+  };
+  requestContext?: {
+    ip?: string;
+    userAgent?: string;
+  };
 }) => {
   const formattedPhone = formatPhoneForEmail(formData.phone);
   const durationLine = formatHireHelperDurationForEmail(formData.serviceType, formData.duration);
@@ -160,6 +200,43 @@ const generateHireHelperLeadEmail = (formData: {
 
   const isCook = formData.serviceRole === 'cook';
   const isLiveIn = formData.serviceType === 'live-in';
+  const isP0 = String(formData.priority || '').toLowerCase() === 'p0';
+
+  // Build a "Device & Source" block from whatever client/request context we have.
+  const ua = formData.requestContext?.userAgent || formData.clientContext?.userAgent || '';
+  const device = describeUserAgentForEmail(ua);
+  const ctxRows: Array<[string, string]> = [
+    ['IP Address', formData.requestContext?.ip || '—'],
+    ['Device', device.device],
+    ['Browser', device.browser],
+    ['Operating System', device.os],
+    ['Screen', formData.clientContext?.screen || '—'],
+    ['Language', formData.clientContext?.language || '—'],
+    ['Timezone', formData.clientContext?.timezone || '—'],
+  ];
+  const ctxHtml = ctxRows
+    .map(([label, value]) => `<p style="margin:4px 0;"><strong>${safe(label)}:</strong> ${safe(value)}</p>`)
+    .join('\n          ');
+  const ctxText = ctxRows.map(([label, value]) => `- ${label}: ${value}`).join('\n');
+
+  // Priority styling: P0 = red, high-urgency banner; otherwise the normal amber note.
+  const headerColor = isP0 ? '#dc2626' : '#f1750a';
+  const priorityBanner = isP0
+    ? `
+        <div style="margin: 0 0 20px; padding: 16px; background-color: #fee2e2; border: 2px solid #dc2626; border-radius: 8px;">
+          <p style="margin: 0; color: #991b1b; font-size: 15px;"><strong>🔴 P0 — PRIORITY REQUEST (Fast-Paced).</strong> The customer added full details and asked us to fast-track this. Action this immediately.</p>
+        </div>`
+    : `
+        <div style="margin: 0 0 20px; padding: 15px; background-color: #fff3cd; border-radius: 8px;">
+          <p style="margin: 0; color: #856404;"><strong>Priority:</strong> Standard lead — follow up promptly.</p>
+        </div>`;
+  const priorityText = isP0
+    ? 'PRIORITY: 🔴 P0 — PRIORITY REQUEST (Fast-Paced). Customer added full details and asked to fast-track. Action immediately.'
+    : 'Priority: Standard lead — follow up promptly.';
+  const subjectPrefix = isP0 ? '🔴 [P0] ' : '';
+  const headingText = isP0
+    ? 'P0 — Fast-Paced Hire Helper Request'
+    : 'New Hire Helper Lead Received';
 
   const cookHtml = isCook && formData.cookFoodType ? `
           <p><strong>Food Type:</strong> ${safe(formData.cookFoodType)}</p>
@@ -177,10 +254,11 @@ const generateHireHelperLeadEmail = (formData: {
     : '';
 
   return {
-    subject: `New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}`,
+    subject: `${subjectPrefix}New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #f1750a;">New Hire Helper Lead Received</h2>
+        <h2 style="color: ${headerColor};">${safe(headingText)}</h2>
+        ${priorityBanner}
         <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #333;">Request ID: ${safe(formData.requestId)}</h3>
           <p><strong>Name:</strong> ${safe(formData.name)}</p>
@@ -218,8 +296,9 @@ const generateHireHelperLeadEmail = (formData: {
           <h3 style="margin-top: 0; color: #333;">Specific Requirements</h3>
           <p style="white-space: pre-wrap;">${safe(formData.specificRequirements || 'No specific requirements mentioned.')}</p>
         </div>
-        <div style="margin-top: 20px; padding: 15px; background-color: #fff3cd; border-radius: 8px;">
-          <p style="margin: 0; color: #856404;"><strong>Priority:</strong> High priority lead - immediate follow-up required.</p>
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Device & Source</h3>
+          ${ctxHtml}
         </div>
         ${formData.sourceUrl ? `
         <div style="margin-top: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 8px;">
@@ -231,7 +310,7 @@ const generateHireHelperLeadEmail = (formData: {
       </div>
     `,
     text: `
-New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}
+${subjectPrefix}New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}
 
 Request ID: ${formData.requestId}
 
@@ -269,7 +348,10 @@ Helper Preferences:
 Specific Requirements:
 ${formData.specificRequirements || 'No specific requirements mentioned.'}
 
-Priority: High priority lead - immediate follow-up required.
+${priorityText}
+
+Device & Source:
+${ctxText}
 
 ${formData.sourceUrl ? `Source URL: ${formData.sourceUrl}` : ''}
 
