@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState, memo } from 'react'
 import { CheckCircleIcon, StarIcon, PhoneIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
+import { trackFormSubmitSuccess } from '@/lib/analytics'
 
 // Legacy stats kept for backward compatibility
 const stats = [
@@ -178,6 +179,7 @@ export default function HeroSection() {
         // Don't fail the form submission if email fails
       }
 
+      trackFormSubmitSuccess('home_hero_lead_form', { serviceType: formData.service, city: formData.city })
       setSubmitStatus('success')
       setFormData({ name: '', phone: '', service: '', city: '' })
     } catch (error) {
@@ -196,7 +198,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background-primary via-primary-50/30 to-secondary-50/30 pt-12 lg:pt-16">
+    <section className="relative overflow-hidden bg-gradient-to-br from-background-primary via-primary-50/30 to-secondary-50/30 pt-4 lg:pt-6">
       <div className="relative container-custom pb-16 lg:pb-24">
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-start">
           <div className="lg:col-span-7">

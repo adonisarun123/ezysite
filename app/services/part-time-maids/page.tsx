@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   title: 'Part-Time Maid Services | 2-6 Hours Daily | EzyHelpers',
   description: 'Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers.',
   keywords: 'part time maid, hourly maid, house help, cooking maid, babysitter, elderly care',
+  openGraph: {
+    title: 'Part-Time Maid Services | 2-6 Hours Daily | EzyHelpers',
+    description: 'Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers.',
+    url: 'https://www.ezyhelpers.com/services/part-time-maids',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/part-time-maids'
   }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import NestCTA from '@/components/NestCTA'
 
 // ISR: revalidate hourly
@@ -665,6 +666,13 @@ export default function FullTimeMaidsPage() {
           { name: "Bareilly", href: "/cities/bareilly/full-time-maid" },
         ]}
       />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['full-time maid', 'live-in maid', 'domestic help']}
+        title="Maid Hiring Guides"
+        subtitle="Compare full-time vs live-in help and understand fair pay."
+      />
+
       <Footer />
       </main>
     </>

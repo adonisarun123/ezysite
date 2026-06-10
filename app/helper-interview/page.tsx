@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { CheckCircleIcon, LanguageIcon, PaperAirplaneIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
 import { translations, Language } from '@/lib/interviewTranslations'
+import { trackFormSubmitSuccess } from '@/lib/analytics'
 
 export default function HelperInterviewPage() {
     const [lang, setLang] = useState<Language>('en')
@@ -48,6 +49,7 @@ export default function HelperInterviewPage() {
             if (response.ok) {
                 const result = await response.json()
                 setRequestId(result.requestId)
+                trackFormSubmitSuccess('helper_interview_form', { leadId: result.requestId })
                 setIsSubmitted(true)
                 window.scrollTo({ top: 0, behavior: 'smooth' })
             } else {

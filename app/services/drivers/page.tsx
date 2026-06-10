@@ -20,6 +20,14 @@ export const metadata: Metadata = {
   title: 'Professional Drivers Services | Safe & Reliable | EzyHelpers',
   description: 'Licensed professional drivers for family transportation, office commutes & personal use. Safe, reliable & punctual service across major cities in India.',
   keywords: 'professional driver, licensed drivers, chauffeur, hire driver, driver services, airport transfer, outstation travel, daily commute',
+  openGraph: {
+    title: 'Professional Drivers Services | Safe & Reliable | EzyHelpers',
+    description: 'Licensed professional drivers for family transportation, office commutes & personal use. Safe, reliable & punctual service across major cities in India.',
+    url: 'https://www.ezyhelpers.com/services/drivers',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/drivers'
   }

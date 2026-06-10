@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Allow all crawlers to access the site
+# This includes all pages that were previously blocked
+
+# Block only API endpoints for security
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.ezyhelpers.com/sitemap.xml
+
+# Previously blocked URLs are now allowed:
+# /agent-success - Now allowed
+# /helper-success - Now allowed  
+# /thank-you - Now allowed
+# /on-demand-help/thank-you - Now allowed
+# /helper-leads - Now allowed
+# /helper-interview - Now allowed
+# /customer-requirements - Now allowed
+# /Lp/ - Now allowed

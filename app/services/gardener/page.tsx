@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   title: 'Home Gardener Services | Gardening Experts | EzyHelpers',
   description: 'Professional home gardener services for lawn care, plant maintenance & landscaping. Expert gardeners available in residential neighbourhoods near you.',
   keywords: 'gardener services, garden maintenance, plant care, terrace garden, lawn care, landscaping',
+  openGraph: {
+    title: 'Home Gardener Services | Gardening Experts | EzyHelpers',
+    description: 'Professional home gardener services for lawn care, plant maintenance & landscaping. Expert gardeners available in residential neighbourhoods near you.',
+    url: 'https://www.ezyhelpers.com/services/gardener',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/gardener'
   }

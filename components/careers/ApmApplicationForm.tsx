@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { apmApplicationSchema } from '@/lib/apmApplicationSchema'
+import { trackFormSubmitSuccess } from '@/lib/analytics'
 import { validateChiefOfStaffResume } from '@/lib/careersChiefOfStaffResume'
 
 const inputClass =
@@ -115,6 +116,7 @@ export default function ApmApplicationForm() {
         setStatus('error')
         return
       }
+      trackFormSubmitSuccess('careers_apm_form')
       reset(defaultValues)
       if (resumeInputRef.current) resumeInputRef.current.value = ''
       router.push('/thank-you?type=career')

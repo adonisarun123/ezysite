@@ -42,7 +42,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true });
     }
 
-    const { leadType, formData, requestId, sourceUrl } = body;
+    const { leadType, formData, requestId, sourceUrl, priority } = body;
+
+    // Capture request-side context (IP / user-agent) for the lead email.
+    // The browser can't read its own IP, so we add it here.
+    const requestContext = {
+      ip,
+      userAgent: request.headers.get('user-agent') || '',
+    };
 
     // Validate required fields
     if (!leadType || !formData) {
@@ -57,7 +64,7 @@ export async function POST(request: NextRequest) {
 
     // Validate lead type
     if (
-      !['contact', 'hire_helper', 'general', 'requirement', 'care_services'].includes(leadType)
+      !['contact', 'hire_helper', 'hire_helper_partial', 'general', 'requirement', 'care_services'].includes(leadType)
     ) {
       return NextResponse.json(
         { error: 'invalid_lead_type' },
@@ -71,7 +78,12 @@ export async function POST(request: NextRequest) {
       undefined;
     const mergedForm =
       typeof formData === 'object' && formData !== null
-        ? { ...formData, ...(normalizedSource ? { sourceUrl: normalizedSource } : {}) }
+        ? {
+            ...formData,
+            ...(normalizedSource ? { sourceUrl: normalizedSource } : {}),
+            requestContext,
+            ...(priority ? { priority } : {}),
+          }
         : formData;
 
     // Send email

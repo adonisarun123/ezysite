@@ -158,16 +158,16 @@ const RESULTS: Record<
 
 const TONE_BG: Record<string, string> = {
   sky: 'bg-gradient-to-br from-[#F2F7FB] via-[#E6F1FA] to-[#D6E8F4]',
-  rose: 'bg-gradient-to-br from-[#FBF3F1] via-[#FFE2D6] to-[#FFD0C2]',
+  rose: 'bg-gradient-to-br from-care-50 via-[#FFE2D6] to-[#FFD0C2]',
   sand: 'bg-gradient-to-br from-[#FAF6EE] via-[#F4E5C8] to-[#EFD8A8]',
-  pearl: 'bg-gradient-to-br from-[#FFF6F2] via-[#FFF0EA] to-[#FFE4DA]',
+  pearl: 'bg-gradient-to-br from-care-50 via-care-50 to-care-100',
 }
 
 const TONE_TEXT: Record<string, string> = {
-  sky: 'text-[#0074C8]',
-  rose: 'text-[#FF385C]',
+  sky: 'text-care-500',
+  rose: 'text-care-500',
   sand: 'text-[#B97A1F]',
-  pearl: 'text-[#FF385C]',
+  pearl: 'text-care-500',
 }
 
 export default function CareQuizView() {
@@ -258,7 +258,7 @@ export default function CareQuizView() {
               </div>
               <div className="mt-3 h-1 w-full overflow-hidden rounded-full bg-neutral-100">
                 <div
-                  className="h-full rounded-full bg-[#FF385C] transition-all duration-300"
+                  className="h-full rounded-full bg-care-500 transition-all duration-300"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -282,7 +282,7 @@ export default function CareQuizView() {
                       onClick={() => choose(step, oi)}
                       className={`flex w-full items-center justify-between gap-4 rounded-2xl border px-5 py-4 text-left transition ${
                         selected
-                          ? 'border-[#FF385C] bg-[#FBF3F1]'
+                          ? 'border-care-500 bg-care-50'
                           : 'border-neutral-200 bg-white hover:border-neutral-900 hover:bg-neutral-50'
                       }`}
                     >
@@ -290,7 +290,7 @@ export default function CareQuizView() {
                       <span
                         className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 ${
                           selected
-                            ? 'border-[#FF385C] bg-[#FF385C] text-white'
+                            ? 'border-care-500 bg-care-500 text-white'
                             : 'border-neutral-300 bg-white text-transparent'
                         }`}
                       >
@@ -407,7 +407,7 @@ export default function CareQuizView() {
 
       {/* Direct line CTA */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-gradient-to-br from-[#FFF1EC] via-[#FFE4DA] to-[#FFD3C2] p-8 text-center sm:p-12">
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-gradient-to-br from-care-50 via-care-100 to-care-200 p-8 text-center sm:p-12">
           <h3 className="font-careSerif text-2xl font-medium leading-tight tracking-tight text-neutral-950 sm:text-3xl">
             Prefer to talk it through?
           </h3>

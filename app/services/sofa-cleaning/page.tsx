@@ -22,6 +22,17 @@ export const metadata: Metadata = {
   title: 'Sofa Cleaning Services in Bareilly - Stain & Odour Removal',
   description: 'Book sofa cleaning in Bareilly for all types of fabric. Remove stains, dust, and bad smells with eco-friendly products and expert handling.',
   keywords: 'sofa cleaning bareilly, sofa dry cleaning bareilly, sofa shampooing bareilly, sofa stain removal bareilly',
+  openGraph: {
+    title: 'Sofa Cleaning Services in Bareilly - Stain & Odour Removal',
+    description: 'Book sofa cleaning in Bareilly for all types of fabric. Remove stains, dust, and bad smells with eco-friendly products and expert handling.',
+    url: 'https://www.ezyhelpers.com/services/sofa-cleaning',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/sofa-cleaning'
+  }
 }
 
 export default function SofaCleaningPage() {

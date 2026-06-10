@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     images: ['/twitter-card.jpg'],
   },
   other: {
-    'theme-color': '#FF385C',
+    'theme-color': '#0074C8',
     'geo.region': 'IN-KA',
     'geo.placename': 'Bangalore',
     'geo.position': '12.9716;77.5946',

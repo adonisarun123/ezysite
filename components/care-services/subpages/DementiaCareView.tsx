@@ -11,8 +11,67 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/dementia-alzheimers-care-bangalore'
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Memory loss', 'Confusion', 'Wandering', 'Behavioural changes', 'Sundowning', 'Sleep disturbance'],
+  careNeeds: [
+    'Memory support and gentle orientation',
+    'Supervision to prevent wandering',
+    'Help with bathing, dressing, meals and medicines',
+    'Calm handling of confusion, repetition, anger or fear',
+    'Safety monitoring at home',
+    'Emotional companionship through the day',
+  ],
+}
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Dementia',
+  vitalStats: [
+    {
+      stat: '~8.8 million',
+      detail: 'An estimated 8.8 million Indians aged 60+ live with dementia, according to the LASI-DAD study.',
+    },
+    {
+      stat: '60–70%',
+      detail: 'Alzheimer’s disease accounts for an estimated 60–70% of dementia cases worldwide (WHO).',
+    },
+    {
+      stat: '1 in 10',
+      detail: 'Globally, dementia affects roughly 1 in 10 people over 65 — and prevalence rises sharply with age.',
+    },
+  ],
+  causes: [
+    'Alzheimer’s disease — the most common cause of dementia',
+    'Vascular damage from stroke or chronically high blood pressure',
+    'Parkinson’s disease and Lewy body disease',
+    'Traumatic brain injury, including repeated falls with head impact',
+    'Prolonged heavy alcohol use',
+    'Infections and other conditions affecting the brain (some are treatable — always get a diagnosis)',
+  ],
+  symptoms: [
+    'Forgetting recent conversations or repeating the same question',
+    'Misplacing items in odd places (keys in the fridge, money in the rice tin)',
+    'Getting confused about time, dates or familiar routes',
+    'Struggling to find everyday words mid-sentence',
+    'Withdrawing from puja, social visits or hobbies they loved',
+    'Unusual irritability, suspicion or sudden mood swings',
+    'Difficulty managing money, bills or medicines they handled for years',
+    'Neglecting bathing, grooming or fresh clothes',
+  ],
+  whenYouNeedCare: [
+    'A wandering incident — they left home and couldn’t find their way back',
+    'Gas left on, doors left open, or medicines doubled or missed',
+    'Evening agitation (sundowning) that the family can no longer calm',
+    'The spouse or daughter-in-law providing care is exhausted or unwell themselves',
+    'Bathing, dressing or toileting now needs hands-on help every day',
+    'Children live in another city or abroad and there is no one steady at home',
+  ],
+}
 
 const STAGES = [
   {
@@ -160,11 +219,11 @@ export default function DementiaCareView() {
     >
       {/* One-paragraph direct answer */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#FBF3F1] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Dementia care at home in Bangalore should be matched to the{' '}
-            <em className="italic text-[#FF385C]">stage</em> of cognitive decline — not the calendar.
+            <em className="italic text-care-500">stage</em> of cognitive decline — not the calendar.
             Early-stage families need companionship and routine. Moderate-stage families need behavioural
             expertise. Advanced-stage families need a trained attendant who is steady through difficulty.
             EzyHelpers places caregivers with stage-appropriate experience and re-matches as the disease
@@ -172,6 +231,10 @@ export default function DementiaCareView() {
           </p>
         </div>
       </section>
+
+      <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {/* Stages */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
@@ -188,7 +251,7 @@ export default function DementiaCareView() {
                 key={s.n}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="inline-flex w-fit rounded-full bg-[#FF385C]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[#FF385C]">
+                <span className="inline-flex w-fit rounded-full bg-care-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-care-500">
                   {s.n} stage
                 </span>
                 <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950 sm:text-2xl">
@@ -198,7 +261,7 @@ export default function DementiaCareView() {
                 <ul className="mt-5 space-y-2 text-sm text-neutral-700">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                       {b}
                     </li>
                   ))}
@@ -210,7 +273,7 @@ export default function DementiaCareView() {
       </section>
 
       {/* Common behaviours */}
-      <section className="bg-[#FBF3F1] px-4 py-20 sm:px-6 sm:py-24">
+      <section className="bg-care-50 px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             eyebrow="What we’re trained for"
@@ -224,7 +287,7 @@ export default function DementiaCareView() {
                 key={title}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFF0EA] text-[#FF385C] ring-1 ring-[#FF385C]/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950">{title}</h3>
@@ -250,7 +313,7 @@ export default function DementiaCareView() {
                 key={p}
                 className="flex items-start gap-4 rounded-2xl border border-neutral-200 bg-[#F7F7F2] px-5 py-4"
               >
-                <span className="font-careSerif text-2xl font-medium text-[#FF385C]">
+                <span className="font-careSerif text-2xl font-medium text-care-500">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className="text-sm leading-snug text-neutral-800 sm:text-base">{p}</span>
@@ -286,7 +349,7 @@ export default function DementiaCareView() {
                     key={b}
                     className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5"
                   >
-                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
+                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                     <span className="text-sm leading-snug text-neutral-800">{b}</span>
                   </li>
                 ))}
@@ -295,6 +358,8 @@ export default function DementiaCareView() {
           </div>
         </div>
       </section>
+
+      <CaregiverScopeSection />
 
       {/* FAQs */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
@@ -312,10 +377,10 @@ export default function DementiaCareView() {
         body="Tell us what your evenings look like. We respond within the hour, recommend a stage-appropriate caregiver, and start the matching process today."
         enquirySource={PATH}
         related={[
+          { label: 'Alzheimer’s Care', href: '/care-services/alzheimers-care-at-home-bangalore' },
+          { label: 'Respite Care', href: '/care-services/respite-care-at-home-bangalore' },
           { label: 'Elderly Care Services', href: '/care-services/elderly-care-services-bangalore' },
-          { label: 'Caretaker Services', href: '/care-services/caretaker-services-bangalore' },
           { label: 'Trained Attendant', href: '/care-services/trained-attendant-services-bangalore' },
-          { label: 'Cost guide', href: '/care-services/home-nursing-cost-bangalore' },
         ]}
       />
     </CareSubpageShell>

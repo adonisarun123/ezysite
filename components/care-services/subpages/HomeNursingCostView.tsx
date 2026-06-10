@@ -261,11 +261,11 @@ export default function HomeNursingCostView() {
       {/* Direct answer card */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0074C8]">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Home nursing in Bangalore typically costs <em className="italic text-[#0074C8]">₹600–₹1,200</em>{' '}
-            per nurse visit, <em className="italic text-[#0074C8]">₹1,200–₹1,800</em> for a 12-hour shift,
-            and <em className="italic text-[#0074C8]">₹35,000–₹55,000/month</em> for a live-in nurse.
+            Home nursing in Bangalore typically costs <em className="italic text-care-500">₹600–₹1,200</em>{' '}
+            per nurse visit, <em className="italic text-care-500">₹1,200–₹1,800</em> for a 12-hour shift,
+            and <em className="italic text-care-500">₹35,000–₹55,000/month</em> for a live-in nurse.
             Specialist (ICU, ventilator) care runs higher; a live-in caretaker plus weekly nurse visits is
             often 30–40% cheaper for stable patients.
           </p>
@@ -359,14 +359,14 @@ export default function HomeNursingCostView() {
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">Pushes price up</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Pushes price up</p>
               <h3 className="mt-4 font-careSerif text-2xl font-medium leading-tight tracking-tight text-neutral-950 sm:text-3xl">
                 What costs more, and why.
               </h3>
               <ul className="mt-8 space-y-4">
                 {PUSHES_UP.map(({ icon: Icon, title, body }) => (
                   <li key={title} className="flex items-start gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFF0EA] text-[#FF385C] ring-1 ring-[#FF385C]/15">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
                     <div>
@@ -416,14 +416,14 @@ export default function HomeNursingCostView() {
                 key={row.label}
                 className={`rounded-[24px] border p-6 ${
                   row.highlight
-                    ? 'border-[#0074C8]/40 bg-white shadow-[0_2px_10px_rgba(0,116,200,0.08)]'
+                    ? 'border-care-500/40 bg-white shadow-[0_2px_10px_rgba(0,116,200,0.08)]'
                     : 'border-neutral-200 bg-white'
                 }`}
               >
                 <div className="flex items-center justify-between gap-3">
                   <strong className="font-careSerif text-lg font-bold text-neutral-950">{row.label}</strong>
                   {row.highlight ? (
-                    <span className="rounded-full bg-[#0074C8]/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#0074C8]">
+                    <span className="rounded-full bg-care-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-care-500">
                       Home care
                     </span>
                   ) : null}
@@ -465,15 +465,15 @@ export default function HomeNursingCostView() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-[24px] border border-neutral-200 bg-[#FBF3F1] p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">Not included</p>
+            <div className="rounded-[24px] border border-neutral-200 bg-care-50 p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Not included</p>
               <h3 className="mt-3 font-careSerif text-xl font-bold text-neutral-950 sm:text-2xl">
                 Passed through at cost
               </h3>
               <ul className="mt-5 space-y-2.5">
                 {HIDDEN_VS_NOT.notIncluded.map((b) => (
                   <li key={b} className="flex items-start gap-2 text-sm text-neutral-800">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#FF385C]" aria-hidden />
+                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
                     {b}
                   </li>
                 ))}

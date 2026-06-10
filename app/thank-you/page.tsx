@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import { CheckCircleIcon } from '@heroicons/react/24/outline'
 import { getThankYouCopy } from '@/lib/thankYouContent'
+import HireHelperFastPace from '@/components/HireHelperFastPace'
 
 export const metadata: Metadata = {
   title: 'Thank You | EzyHelpers',
@@ -66,6 +67,9 @@ export default async function ThankYouPage({
               </Link>
             </div>
           </div>
+
+          {/* Hire-helper flow: offer to fast-pace by adding more details */}
+          {type === 'hire' ? <HireHelperFastPace /> : null}
         </div>
       </main>
 

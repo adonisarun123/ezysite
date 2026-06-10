@@ -150,6 +150,37 @@ export const trackFormComplete = (formName: string, leadId?: string) => {
   });
 };
 
+/**
+ * UNIFIED form-submit conversion event (June 2026).
+ *
+ * Fire this ONCE per form, strictly AFTER the backend confirms success
+ * (Supabase insert / lead-email API 200) — never before validation or the
+ * network call, so the count equals real submissions.
+ *
+ * One canonical event name (`form_submit_success`) across every form on the
+ * site means a single GA4 event to mark as a Key Event / conversion, with
+ * `form_name` as the breakdown dimension. Existing per-form events
+ * (form_complete, care_enquiry_submit, etc.) keep firing for back-compat.
+ */
+export const trackFormSubmitSuccess = (
+  formName: string,
+  details: { leadId?: string; serviceType?: string; city?: string; source?: string } = {}
+) => {
+  trackEvent('form_submit_success', {
+    event_category: 'conversion',
+    event_label: formName,
+    value: 1,
+    custom_parameters: {
+      form_name: formName,
+      lead_id: details.leadId || '',
+      service_type: details.serviceType || '',
+      city: details.city || '',
+      form_source: details.source || (typeof window !== 'undefined' ? window.location.pathname : ''),
+      conversion_type: 'lead_generation',
+    },
+  });
+};
+
 export const trackFormError = (formName: string, errorType: string, errorMessage: string) => {
   trackEvent(GA_EVENTS.FORM_ERROR, {
     event_category: 'form_interaction',
@@ -509,5 +540,44 @@ export const trackCarePhoneClick = (phoneNumber: string, location: string) => {
       contact_method: 'phone',
       conversion_type: 'micro_conversion',
     },
+  })
+}
+
+/* ───────────── Caregiver / nursing candidate application (FB ads) ─────────────
+ * Map `candidate_application_submit` to the Meta Pixel "Lead" event inside the
+ * GTM container (GTM-PGM9V53), exactly like the care enquiry conversion. */
+
+/** Fired the first time a candidate interacts with the application form. */
+export const trackCandidateApplicationStart = (sourcePath: string | null) => {
+  trackEvent('candidate_application_start', {
+    event_category: 'careers_engagement',
+    event_label: sourcePath ?? 'direct',
+    custom_parameters: {
+      source_path: sourcePath ?? 'direct',
+    },
+  })
+}
+
+/** Fired on a successful candidate application submit (conversion → Pixel Lead). */
+export const trackCandidateApplicationSubmit = (formData: Record<string, unknown>) => {
+  trackEvent('candidate_application_submit', {
+    event_category: 'conversion',
+    event_label: String(formData.candidateType ?? 'unknown'),
+    value: 1,
+    custom_parameters: {
+      candidate_type: formData.candidateType,
+      area: formData.area,
+      language: formData.language,
+      conversion_type: 'lead_generation',
+    },
+  })
+}
+
+/** Fired when the candidate switches the page language. */
+export const trackCandidateLanguageSwitch = (lang: 'en' | 'hi') => {
+  trackEvent('language_switch', {
+    event_category: 'careers_engagement',
+    event_label: lang,
+    custom_parameters: { language: lang, page: 'candidate_application' },
   })
 }

@@ -29,7 +29,7 @@ function Companionship(props: Props) {
       <circle cx="130" cy="90" r="14" fill="#3D2419" />
       <circle cx="130" cy="88" r="4" fill="#1F1208" />
       <path d="M117 105 Q117 100 124 100 L136 100 Q143 100 143 105 L143 165 Q143 170 138 170 L122 170 Q117 170 117 165 Z" fill="#FF7D5C" />
-      <path d="M95 125 Q113 118 120 125" stroke="#FF385C" strokeWidth="6" strokeLinecap="round" fill="none" />
+      <path d="M95 125 Q113 118 120 125" stroke="#0074C8" strokeWidth="6" strokeLinecap="round" fill="none" />
       <circle cx="160" cy="48" r="22" fill="rgba(255,255,255,0.45)" />
     </svg>
   )
@@ -103,7 +103,7 @@ function FamilyBridge(props: Props) {
       <circle cx="100" cy="100" r="55" fill="rgba(255,255,255,0.6)" />
       <path d="M70 90 L100 70 L130 90 L130 130 Q130 140 120 140 L80 140 Q70 140 70 130 Z" fill="#FFFFFF" />
       <path d="M70 90 L100 70 L130 90" stroke="#3D5C75" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M100 105 C100 100 95 96 90 96 C85 96 80 100 80 105 C80 115 100 130 100 130 C100 130 120 115 120 105 C120 100 115 96 110 96 C105 96 100 100 100 105" fill="#FF385C" />
+      <path d="M100 105 C100 100 95 96 90 96 C85 96 80 100 80 105 C80 115 100 130 100 130 C100 130 120 115 120 105 C120 100 115 96 110 96 C105 96 100 100 100 105" fill="#0074C8" />
     </svg>
   )
 }
@@ -133,7 +133,7 @@ function IvTherapy(props: Props) {
       <path d="M62 60 L94 60 L94 110 Q94 122 80 122 Q66 122 66 110 Z" fill="#FFFFFF" />
       <path d="M70 80 L88 80 L88 110 Q88 116 80 116 Q72 116 72 110 Z" fill="#9BC9A6" opacity="0.85" />
       <line x1="80" y1="122" x2="80" y2="155" stroke="#5C3527" strokeWidth="2" />
-      <circle cx="80" cy="160" r="6" fill="#FF385C" />
+      <circle cx="80" cy="160" r="6" fill="#0074C8" />
       <line x1="80" y1="55" x2="80" y2="35" stroke="#5C3527" strokeWidth="3" />
       <path d="M75 35 L85 35" stroke="#5C3527" strokeWidth="3" strokeLinecap="round" />
       <path d="M115 130 Q145 120 145 95" stroke="#5C3527" strokeWidth="2" fill="none" strokeLinecap="round" />
@@ -148,7 +148,7 @@ function Monitoring(props: Props) {
       <ellipse cx="100" cy="170" rx="55" ry="8" fill="rgba(0,0,0,0.08)" />
       <circle cx="100" cy="100" r="58" fill="rgba(255,255,255,0.55)" />
       <circle cx="100" cy="100" r="48" fill="#FFFFFF" />
-      <path d="M55 100 L78 100 L86 80 L98 122 L110 88 L118 100 L145 100" stroke="#FF385C" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M55 100 L78 100 L86 80 L98 122 L110 88 L118 100 L145 100" stroke="#0074C8" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -218,7 +218,7 @@ function Recovery(props: Props) {
       <ellipse cx="100" cy="170" rx="55" ry="8" fill="rgba(0,0,0,0.08)" />
       <circle cx="100" cy="100" r="55" fill="rgba(255,255,255,0.55)" />
       <path d="M100 88 C100 78 90 70 80 70 C68 70 60 80 60 92 C60 112 100 138 100 138 C100 138 140 112 140 92 C140 80 132 70 120 70 C110 70 100 78 100 88" fill="#FFFFFF" />
-      <path d="M64 110 L78 110 L86 90 L98 130 L110 96 L118 110 L132 110" stroke="#FF385C" strokeWidth="3.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M64 110 L78 110 L86 90 L98 130 L110 96 L118 110 L132 110" stroke="#0074C8" strokeWidth="3.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -232,7 +232,7 @@ function Conversation(props: Props) {
       <circle cx="78" cy="85" r="3" fill="#3D5C75" />
       <circle cx="92" cy="85" r="3" fill="#3D5C75" />
       <circle cx="106" cy="85" r="3" fill="#3D5C75" />
-      <path d="M150 95 Q150 86 158 86 L180 86 Q188 86 188 95 L188 115 Q188 124 180 124 L170 124 L162 134 L162 124 L158 124 Q150 124 150 115 Z" fill="#FF385C" />
+      <path d="M150 95 Q150 86 158 86 L180 86 Q188 86 188 95 L188 115 Q188 124 180 124 L170 124 L162 134 L162 124 L158 124 Q150 124 150 115 Z" fill="#0074C8" />
     </svg>
   )
 }
@@ -257,7 +257,7 @@ function Shield(props: Props) {
     <svg {...baseProps} {...props}>
       <ellipse cx="100" cy="170" rx="55" ry="8" fill="rgba(0,0,0,0.08)" />
       <path d="M100 40 L150 60 L150 110 Q150 145 100 162 Q50 145 50 110 L50 60 Z" fill="#FFFFFF" />
-      <path d="M78 100 L94 116 L124 80" stroke="#FF385C" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M78 100 L94 116 L124 80" stroke="#0074C8" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -268,7 +268,7 @@ function Heart(props: Props) {
     <svg {...baseProps} {...props}>
       <ellipse cx="100" cy="170" rx="55" ry="8" fill="rgba(0,0,0,0.08)" />
       <path d="M100 152 C100 152 50 122 50 88 C50 70 64 56 82 56 C92 56 99 62 100 70 C101 62 108 56 118 56 C136 56 150 70 150 88 C150 122 100 152 100 152 Z" fill="#FFFFFF" />
-      <path d="M75 92 L88 92 L94 78 L102 108 L110 84 L116 92 L130 92" stroke="#FF385C" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M75 92 L88 92 L94 78 L102 108 L110 84 L116 92 L130 92" stroke="#0074C8" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }

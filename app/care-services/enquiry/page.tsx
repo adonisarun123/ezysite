@@ -29,7 +29,7 @@ const HERO_CHIPS = [
     Icon: ShieldCheckIcon,
     title: 'Verified network',
     sub: 'Aadhaar + background',
-    grad: 'from-sky-500 to-primary-500',
+    grad: 'from-sky-500 to-care-500',
   },
   {
     Icon: ChatBubbleLeftRightIcon,
@@ -96,9 +96,9 @@ export default function CareServicesEnquiryPage() {
       <header className="bg-white">
         <div className="mx-auto max-w-7xl px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pb-14">
           <div className="grid min-h-0 gap-2 overflow-hidden rounded-[28px] border border-neutral-200 bg-neutral-50 shadow-[0_6px_24px_rgba(0,0,0,0.06)] lg:min-h-[420px] lg:grid-cols-2 lg:gap-0">
-            <div className="relative flex flex-col justify-between bg-gradient-to-br from-[#FFE5E5] to-[#FFF1D6] p-8 text-left sm:p-10 lg:p-12">
+            <div className="relative flex flex-col justify-between bg-gradient-to-br from-care-100 to-care-50 p-8 text-left sm:p-10 lg:p-12">
               <div
-                className="pointer-events-none absolute bottom-[-60px] right-[-60px] h-56 w-56 rounded-full bg-[#FF385C]/12 blur-2xl"
+                className="pointer-events-none absolute bottom-[-60px] right-[-60px] h-56 w-56 rounded-full bg-care-500/12 blur-2xl"
                 aria-hidden
               />
               <div className="relative">
@@ -109,7 +109,7 @@ export default function CareServicesEnquiryPage() {
                 <h1 className="font-careSerif text-[clamp(2.25rem,4.5vw,3.5rem)] font-medium leading-[1.05] tracking-[-0.025em] text-[#222]">
                   Tell us what kind of care
                   <br />
-                  <em className="font-careSerif font-normal italic text-[#FF385C]">your loved one</em> needs.
+                  <em className="font-careSerif font-normal italic text-care-500">your loved one</em> needs.
                 </h1>
                 <p className="mt-5 max-w-lg text-pretty text-[17px] leading-relaxed text-[#484848]">
                   Nurses, caretakers, and attendants — matched to your patient&apos;s situation. Same verification
@@ -119,7 +119,7 @@ export default function CareServicesEnquiryPage() {
               <div className="relative mt-8 flex flex-wrap gap-3">
                 <a
                   href="#care-enquiry-form"
-                  className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-[#FF385C] px-6 py-3.5 text-[15px] font-semibold text-white shadow-[0_2px_8px_rgba(255,56,92,0.25)] transition hover:bg-[#E31C5F] hover:shadow-[0_4px_14px_rgba(255,56,92,0.35)] active:scale-[0.98]"
+                  className="inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-care-500 px-6 py-3.5 text-[15px] font-semibold text-white shadow-[0_2px_8px_rgba(0,116,200,0.25)] transition hover:bg-care-600 hover:shadow-[0_4px_14px_rgba(0,116,200,0.35)] active:scale-[0.98]"
                 >
                   Start the form
                   <ArrowRightIcon className="h-4 w-4" aria-hidden />
@@ -135,7 +135,7 @@ export default function CareServicesEnquiryPage() {
             </div>
 
             <div className="grid min-h-[240px] grid-cols-2 grid-rows-2 gap-2 p-2 sm:min-h-[300px] sm:p-3 lg:min-h-0">
-              <div className="relative row-span-2 overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFB58C] to-[#FF7D5C] shadow-inner">
+              <div className="relative row-span-2 overflow-hidden rounded-2xl bg-gradient-to-br from-care-400 to-care-400 shadow-inner">
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-3 pt-6">
                   <HeroTileCompanionship className="h-[min(88%,200px)] w-[88%] max-w-[210px]" />
                 </div>
@@ -196,9 +196,9 @@ export default function CareServicesEnquiryPage() {
             <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start lg:gap-12">
               {/* Form card */}
               <div className="rounded-[28px] border border-neutral-200 bg-white p-6 shadow-[0_24px_60px_rgba(0,0,0,0.06)] sm:p-10">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">Care enquiry</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Care enquiry</p>
                 <h2 className="mt-3 font-careSerif text-[clamp(1.5rem,3.2vw,2rem)] font-medium leading-tight tracking-tight text-neutral-950">
-                  A few details, <em className="font-careSerif font-normal italic text-[#FF385C]">that&apos;s all.</em>
+                  A few details, <em className="font-careSerif font-normal italic text-care-500">that&apos;s all.</em>
                 </h2>
                 <p className="mt-3 max-w-2xl text-base leading-relaxed text-neutral-600">
                   This goes straight to our care desk in Bangalore. We&apos;ll respond to your requirement within the
@@ -223,7 +223,7 @@ export default function CareServicesEnquiryPage() {
               <aside className="lg:sticky lg:top-28 lg:self-start">
                 <div className="grid gap-5">
                   {/* Call card — peachy banner */}
-                  <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-[#FFE0D9] via-[#FFC4B0] to-[#FF8A65] p-6 text-neutral-900 shadow-[0_24px_60px_rgba(255,90,60,0.18)] sm:p-7">
+                  <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-care-100 via-[#FFC4B0] to-[#FF8A65] p-6 text-neutral-900 shadow-[0_24px_60px_rgba(255,90,60,0.18)] sm:p-7">
                     <div
                       className="pointer-events-none absolute -bottom-16 -right-16 h-40 w-40 rounded-full bg-white/35 blur-2xl"
                       aria-hidden
@@ -250,7 +250,7 @@ export default function CareServicesEnquiryPage() {
 
                   {/* How it works */}
                   <div className="rounded-[24px] border border-neutral-200 bg-white p-6 shadow-[0_6px_20px_rgba(0,0,0,0.06)] sm:p-7">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#FF385C]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-care-500">
                       What happens next
                     </p>
                     <h3 className="mt-2 font-careSerif text-xl font-semibold tracking-tight text-neutral-950">
@@ -259,7 +259,7 @@ export default function CareServicesEnquiryPage() {
                     <ol className="mt-5 space-y-4">
                       {HOW_IT_WORKS.map((s) => (
                         <li key={s.mark} className="flex items-start gap-3">
-                          <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#FFF8F1] font-careSerif text-sm font-semibold uppercase text-[#FF385C]">
+                          <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-care-50 font-careSerif text-sm font-semibold uppercase text-care-500">
                             {s.mark}
                           </span>
                           <div className="min-w-0">
@@ -272,10 +272,10 @@ export default function CareServicesEnquiryPage() {
                   </div>
 
                   {/* Need help choosing */}
-                  <div className="rounded-[24px] border border-neutral-200 bg-[#FFF8F1] p-6 sm:p-7">
+                  <div className="rounded-[24px] border border-neutral-200 bg-care-50 p-6 sm:p-7">
                     <div className="flex items-center gap-2">
-                      <SparklesIcon className="h-4 w-4 text-[#FF385C]" aria-hidden />
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#FF385C]">Not sure yet?</p>
+                      <SparklesIcon className="h-4 w-4 text-care-500" aria-hidden />
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-care-500">Not sure yet?</p>
                     </div>
                     <h3 className="mt-2 font-careSerif text-xl font-semibold tracking-tight text-neutral-950">
                       Need help choosing?
@@ -331,8 +331,8 @@ export default function CareServicesEnquiryPage() {
                 <div key={x.label} className="text-left">
                   <p className="font-careSerif text-[clamp(1.75rem,4vw,2.75rem)] font-medium leading-none tracking-tight text-white">
                     {x.num.replace(/\+|%/g, '')}
-                    {x.num.includes('+') && <em className="text-[#FF385C] not-italic">+</em>}
-                    {x.num.includes('%') && <em className="text-[#FF385C] not-italic">%</em>}
+                    {x.num.includes('+') && <em className="text-care-500 not-italic">+</em>}
+                    {x.num.includes('%') && <em className="text-care-500 not-italic">%</em>}
                   </p>
                   <p className="mt-2 text-sm leading-snug text-white/65">{x.label}</p>
                 </div>

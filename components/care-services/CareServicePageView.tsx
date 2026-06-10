@@ -236,7 +236,7 @@ export default function CareServicePageView({ filename }: { filename: string }) 
                     <p className="mx-auto mt-3 max-w-2xl text-pretty text-base text-gray-600 sm:text-lg">
                       Straight answers about how our Bangalore home care placements work.
                     </p>
-                    <div className="mx-auto mt-6 flex h-1 w-24 items-center justify-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-primary-500 shadow-sm" />
+                    <div className="mx-auto mt-6 flex h-1 w-24 items-center justify-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-care-500 shadow-sm" />
                   </div>
                   <FAQAccordion faqs={faqAccordionItems} tone="care" />
                 </div>
@@ -245,7 +245,7 @@ export default function CareServicePageView({ filename }: { filename: string }) 
           )}
 
           {/* Closing CTA — fluid top radius, depth */}
-          <section className="relative overflow-hidden bg-gradient-to-br from-primary-700 via-teal-700 to-emerald-900 text-white">
+          <section className="relative overflow-hidden bg-gradient-to-br from-care-700 via-teal-700 to-emerald-900 text-white">
             <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_30%_20%,white_0%,transparent_45%),radial-gradient(circle_at_80%_60%,rgba(45,212,191,0.35)_0%,transparent_50%)]" aria-hidden />
             <div className="section-padding relative">
               <div className="container-custom flex flex-col items-center justify-between gap-10 text-center lg:flex-row lg:items-end lg:text-left">

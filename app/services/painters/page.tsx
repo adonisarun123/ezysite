@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   title: 'House Painting Services | Interior & Exterior | EzyHelpers',
   description: 'Professional house painting services for interior & exterior walls. Quality paints, expert painters & affordable rates in your area.',
   keywords: 'house painting services, interior painting, exterior painting, wall painting, professional painters',
+  openGraph: {
+    title: 'House Painting Services | Interior & Exterior | EzyHelpers',
+    description: 'Professional house painting services for interior & exterior walls. Quality paints, expert painters & affordable rates in your area.',
+    url: 'https://www.ezyhelpers.com/services/painters',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/painters'
   }

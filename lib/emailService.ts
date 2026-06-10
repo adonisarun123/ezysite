@@ -3,7 +3,7 @@ import { escapeHtml } from '@/lib/sanitize';
 import pRetry from 'p-retry';
 import { EMAIL } from './constants';
 import { logger } from './logger';
-import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData, CareersSalesExecutiveFormData, CareersRoleApplicationFormData, CareServicesLeadFormData } from '../types/email';
+import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData, CareersSalesExecutiveFormData, CareersRoleApplicationFormData, CareServicesLeadFormData, CandidateApplicationFormData } from '../types/email';
 import {
   createTransporter,
   safe,
@@ -22,6 +22,59 @@ export {
   formatCoordinatesForEmail,
   formatIDForEmail,
   formatAccountForEmail,
+};
+
+// Address that must be copied on every outbound lead/notification email site-wide.
+const ALWAYS_CC_EMAIL = 'contact@ezyhelpers.com';
+
+/** Parse a user-agent string into a friendly Browser / OS / Device label for emails. */
+const describeUserAgentForEmail = (
+  ua: string,
+): { browser: string; os: string; device: string } => {
+  if (!ua) return { browser: '—', os: '—', device: '—' };
+
+  let os = 'Unknown';
+  if (/Windows NT 10/.test(ua)) os = 'Windows 10/11';
+  else if (/Windows NT/.test(ua)) os = 'Windows';
+  else if (/iPhone|iPad|iPod/.test(ua)) os = 'iOS';
+  else if (/Mac OS X/.test(ua)) os = 'macOS';
+  else if (/Android/.test(ua)) os = 'Android';
+  else if (/Linux/.test(ua)) os = 'Linux';
+
+  let browser = 'Unknown';
+  if (/Edg\//.test(ua)) browser = 'Edge';
+  else if (/OPR\/|Opera/.test(ua)) browser = 'Opera';
+  else if (/Chrome\//.test(ua) && !/Chromium/.test(ua)) browser = 'Chrome';
+  else if (/Firefox\//.test(ua)) browser = 'Firefox';
+  else if (/Safari\//.test(ua) && /Version\//.test(ua)) browser = 'Safari';
+
+  let device = 'Desktop';
+  if (/iPad|Tablet/.test(ua)) device = 'Tablet';
+  else if (/Mobi|iPhone|Android.*Mobile/.test(ua)) device = 'Mobile';
+
+  return { browser, os, device };
+};
+
+/**
+ * Normalise a comma-separated recipient string into a clean, de-duplicated
+ * "a@x.com, b@y.com" list, and guarantee ALWAYS_CC_EMAIL is always included.
+ * De-duplication is case-insensitive. Used by every send path so that
+ * contact@ezyhelpers.com receives a copy of all emails across the site.
+ */
+const buildRecipientList = (recipientsEnv: string): string => {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  const add = (email: string) => {
+    const trimmed = email.trim();
+    if (!trimmed) return;
+    const key = trimmed.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    out.push(trimmed);
+  };
+  recipientsEnv.split(',').forEach(add);
+  add(ALWAYS_CC_EMAIL);
+  return out.join(', ');
 };
 
 // Email templates
@@ -128,6 +181,18 @@ const generateHireHelperLeadEmail = (formData: {
   hasHelperRoom?: string;
   requestId: string;
   sourceUrl?: string;
+  priority?: string;
+  clientContext?: {
+    userAgent?: string;
+    platform?: string;
+    language?: string;
+    screen?: string;
+    timezone?: string;
+  };
+  requestContext?: {
+    ip?: string;
+    userAgent?: string;
+  };
 }) => {
   const formattedPhone = formatPhoneForEmail(formData.phone);
   const durationLine = formatHireHelperDurationForEmail(formData.serviceType, formData.duration);
@@ -135,6 +200,43 @@ const generateHireHelperLeadEmail = (formData: {
 
   const isCook = formData.serviceRole === 'cook';
   const isLiveIn = formData.serviceType === 'live-in';
+  const isP0 = String(formData.priority || '').toLowerCase() === 'p0';
+
+  // Build a "Device & Source" block from whatever client/request context we have.
+  const ua = formData.requestContext?.userAgent || formData.clientContext?.userAgent || '';
+  const device = describeUserAgentForEmail(ua);
+  const ctxRows: Array<[string, string]> = [
+    ['IP Address', formData.requestContext?.ip || '—'],
+    ['Device', device.device],
+    ['Browser', device.browser],
+    ['Operating System', device.os],
+    ['Screen', formData.clientContext?.screen || '—'],
+    ['Language', formData.clientContext?.language || '—'],
+    ['Timezone', formData.clientContext?.timezone || '—'],
+  ];
+  const ctxHtml = ctxRows
+    .map(([label, value]) => `<p style="margin:4px 0;"><strong>${safe(label)}:</strong> ${safe(value)}</p>`)
+    .join('\n          ');
+  const ctxText = ctxRows.map(([label, value]) => `- ${label}: ${value}`).join('\n');
+
+  // Priority styling: P0 = red, high-urgency banner; otherwise the normal amber note.
+  const headerColor = isP0 ? '#dc2626' : '#f1750a';
+  const priorityBanner = isP0
+    ? `
+        <div style="margin: 0 0 20px; padding: 16px; background-color: #fee2e2; border: 2px solid #dc2626; border-radius: 8px;">
+          <p style="margin: 0; color: #991b1b; font-size: 15px;"><strong>🔴 P0 — PRIORITY REQUEST (Fast-Paced).</strong> The customer added full details and asked us to fast-track this. Action this immediately.</p>
+        </div>`
+    : `
+        <div style="margin: 0 0 20px; padding: 15px; background-color: #fff3cd; border-radius: 8px;">
+          <p style="margin: 0; color: #856404;"><strong>Priority:</strong> Standard lead — follow up promptly.</p>
+        </div>`;
+  const priorityText = isP0
+    ? 'PRIORITY: 🔴 P0 — PRIORITY REQUEST (Fast-Paced). Customer added full details and asked to fast-track. Action immediately.'
+    : 'Priority: Standard lead — follow up promptly.';
+  const subjectPrefix = isP0 ? '🔴 [P0] ' : '';
+  const headingText = isP0
+    ? 'P0 — Fast-Paced Hire Helper Request'
+    : 'New Hire Helper Lead Received';
 
   const cookHtml = isCook && formData.cookFoodType ? `
           <p><strong>Food Type:</strong> ${safe(formData.cookFoodType)}</p>
@@ -152,10 +254,11 @@ const generateHireHelperLeadEmail = (formData: {
     : '';
 
   return {
-    subject: `New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}`,
+    subject: `${subjectPrefix}New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #f1750a;">New Hire Helper Lead Received</h2>
+        <h2 style="color: ${headerColor};">${safe(headingText)}</h2>
+        ${priorityBanner}
         <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #333;">Request ID: ${safe(formData.requestId)}</h3>
           <p><strong>Name:</strong> ${safe(formData.name)}</p>
@@ -193,8 +296,9 @@ const generateHireHelperLeadEmail = (formData: {
           <h3 style="margin-top: 0; color: #333;">Specific Requirements</h3>
           <p style="white-space: pre-wrap;">${safe(formData.specificRequirements || 'No specific requirements mentioned.')}</p>
         </div>
-        <div style="margin-top: 20px; padding: 15px; background-color: #fff3cd; border-radius: 8px;">
-          <p style="margin: 0; color: #856404;"><strong>Priority:</strong> High priority lead - immediate follow-up required.</p>
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Device & Source</h3>
+          ${ctxHtml}
         </div>
         ${formData.sourceUrl ? `
         <div style="margin-top: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 8px;">
@@ -206,7 +310,7 @@ const generateHireHelperLeadEmail = (formData: {
       </div>
     `,
     text: `
-New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}
+${subjectPrefix}New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}
 
 Request ID: ${formData.requestId}
 
@@ -244,12 +348,134 @@ Helper Preferences:
 Specific Requirements:
 ${formData.specificRequirements || 'No specific requirements mentioned.'}
 
-Priority: High priority lead - immediate follow-up required.
+${priorityText}
+
+Device & Source:
+${ctxText}
 
 ${formData.sourceUrl ? `Source URL: ${formData.sourceUrl}` : ''}
 
 ---
 This email was automatically generated from the EzyHelpers website hire helper form.
+    `,
+  };
+};
+
+/**
+ * Partially filled hire-helper form, sent automatically when a visitor drops
+ * off the /hire-helper page after entering contact details but before
+ * submitting. Marked clearly so the team treats it as a warm follow-up lead,
+ * not a confirmed booking request.
+ */
+const generateHireHelperPartialLeadEmail = (formData: {
+  name?: string;
+  phone?: string;
+  email?: string;
+  city?: string;
+  locality?: string;
+  apartment?: string;
+  serviceType?: string;
+  serviceRole?: string;
+  duration?: string;
+  serviceTimings?: string;
+  startDate?: string;
+  specificRequirements?: string;
+  experience?: string;
+  budget?: string;
+  languages?: string[];
+  familySize?: string;
+  preferredGender?: string;
+  houseType?: string;
+  numberOfRooms?: string;
+  cookFoodType?: string;
+  cookMeals?: string[];
+  religion?: string;
+  hasPet?: string;
+  hasHelperRoom?: string;
+  lastCompletedStep?: number;
+  totalSteps?: number;
+  requestId: string;
+  sourceUrl?: string;
+}) => {
+  const formattedPhone = formatPhoneForEmail(formData.phone || '');
+  const v = (x?: string) => (x && String(x).trim()) || '—';
+  const progress = formData.lastCompletedStep && formData.totalSteps
+    ? `${formData.lastCompletedStep} of ${formData.totalSteps} steps`
+    : 'unknown';
+
+  const fields: Array<[string, string]> = [
+    ['Name', v(formData.name)],
+    ['Phone', formattedPhone || '—'],
+    ['Email', v(formData.email)],
+    ['City', v(formData.city)],
+    ['Locality', v(formData.locality)],
+    ['Apartment', v(formData.apartment)],
+    ['Primary Role', v(formData.serviceRole)],
+    ['Service Type', v(formData.serviceType)],
+    ['Preferred Timings', v(formData.serviceTimings)],
+    ['Duration', v(formData.duration)],
+    ['Start Date', v(formData.startDate)],
+    ['Family Size', v(formData.familySize)],
+    ['House Type', v(formData.houseType)],
+    ['No. of Rooms', v(formData.numberOfRooms)],
+    ['Food Type (cook)', v(formData.cookFoodType)],
+    ['Meals (cook)', formData.cookMeals?.length ? formData.cookMeals.join(', ') : '—'],
+    ['Religion', v(formData.religion)],
+    ['Pet at Home', v(formData.hasPet)],
+    ['Helper Room (live-in)', v(formData.hasHelperRoom)],
+    ['Preferred Gender', v(formData.preferredGender)],
+    ['Experience', v(formData.experience)],
+    ['Budget', v(formData.budget)],
+    ['Languages', formData.languages?.length ? formData.languages.join(', ') : '—'],
+    ['Specific Requirements', v(formData.specificRequirements)],
+  ];
+
+  const fieldsHtml = fields
+    .map(([label, value]) => `<p style="margin:4px 0;"><strong>${safe(label)}:</strong> ${safe(value)}</p>`)
+    .join('\n          ');
+  const fieldsText = fields.map(([label, value]) => `- ${label}: ${value}`).join('\n');
+
+  return {
+    subject: `⚠️ Abandoned Hire Helper Form: ${formData.serviceRole || 'role not chosen'} in ${formData.city || 'city unknown'} — follow up`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #b45309;">Partially Filled Hire Helper Form (Visitor Dropped Off)</h2>
+        <div style="margin: 16px 0; padding: 15px; background-color: #fff3cd; border: 1px solid #ffe69c; border-radius: 8px;">
+          <p style="margin: 0; color: #856404;">
+            <strong>Note:</strong> This visitor started the hire-helper form but left the page
+            <strong>without submitting</strong>. They completed ${safe(progress)}.
+            The details below are partial — please follow up gently by phone/WhatsApp to
+            complete their requirement. This is NOT a confirmed booking request.
+          </p>
+        </div>
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Draft ID: ${safe(formData.requestId)}</h3>
+          ${fieldsHtml}
+        </div>
+        ${formData.sourceUrl ? `
+        <div style="margin-top: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 8px;">
+          <p style="margin: 0; color: #1e40af;"><strong>Source URL:</strong> <a href="${safe(formData.sourceUrl)}" target="_blank" style="color: #1e40af; text-decoration: underline;">${safe(formData.sourceUrl)}</a></p>
+        </div>
+        ` : ''}
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+        <p style="color: #666; font-size: 12px;">This email was automatically generated when a visitor left the EzyHelpers hire-helper form without submitting.</p>
+      </div>
+    `,
+    text: `
+PARTIALLY FILLED HIRE HELPER FORM (visitor dropped off without submitting)
+
+Note: This visitor started the hire-helper form but left the page WITHOUT submitting.
+They completed ${progress}. Details below are partial — follow up gently by phone/WhatsApp.
+This is NOT a confirmed booking request.
+
+Draft ID: ${formData.requestId}
+
+${fieldsText}
+
+${formData.sourceUrl ? `Source URL: ${formData.sourceUrl}` : ''}
+
+---
+This email was automatically generated when a visitor left the EzyHelpers hire-helper form without submitting.
     `,
   };
 };
@@ -1523,6 +1749,68 @@ EzyHelpers care services enquiry form
   }
 }
 
+const generateCandidateApplicationEmail = (
+  formData: CandidateApplicationFormData & { sourceUrl?: string }
+): EmailContent => {
+  const formattedPhone = formatPhoneForEmail(formData.mobile)
+  const typeDisplay =
+    formData.candidateType === 'Other' && formData.otherRole?.trim()
+      ? `Other — ${formData.otherRole.trim()}`
+      : formData.candidateType
+  const rawSource = formData.sourceUrl?.trim() || ''
+  const sourceDisplay = rawSource ? escapeCareEmailHtml(rawSource) : 'Not provided'
+  const langDisplay = formData.language === 'hi' ? 'Hindi' : 'English'
+  const appId = formData.applicationId?.trim() || 'N/A'
+
+  return {
+    subject: `New candidate application: ${typeDisplay} (${formData.area}) — ${appId}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto;">
+        <h2 style="color: #0074C8;">New caregiver / nursing candidate application</h2>
+        <div style="background-color: #f1f5f9; padding: 14px 16px; border-radius: 8px; margin: 16px 0; border: 1px solid #cbd5e1;">
+          <p style="margin: 0; font-size: 14px; color: #334155;"><strong>Application ID:</strong>
+            <span style="font-family: monospace; background-color: #e1e8f0; padding: 2px 8px; border-radius: 4px; font-size: 15px;">${safe(escapeCareEmailHtml(appId))}</span>
+          </p>
+        </div>
+        <div style="background-color: #e8f4fc; padding: 16px; border-radius: 8px; margin: 16px 0; border: 1px solid #b3d9f2;">
+          <p style="margin: 0 0 8px 0; font-size: 14px; color: #0c4a6e;"><strong>Source page (URL)</strong></p>
+          <p style="margin: 0; word-break: break-all;">
+            ${rawSource ? `<a href="${safe(sourceDisplay)}" target="_blank" rel="noopener noreferrer" style="color: #0369a1;">${safe(sourceDisplay)}</a>` : sourceDisplay}
+          </p>
+        </div>
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Candidate</h3>
+          <p><strong>Name:</strong> ${safe(escapeCareEmailHtml(formData.name))}</p>
+          <p><strong>Mobile:</strong> <a href="tel:${safe(formData.mobile)}" style="text-decoration: none; color: #1e40af;">${safe(formattedPhone)}</a></p>
+          <p><strong>Candidate type:</strong> ${safe(escapeCareEmailHtml(typeDisplay))}</p>
+          <p><strong>Area of residence:</strong> ${safe(escapeCareEmailHtml(formData.area))}</p>
+          <p><strong>Consent to call:</strong> ${safe(escapeCareEmailHtml(formData.consentToCall))}</p>
+          <p><strong>Form language:</strong> ${safe(langDisplay)}</p>
+        </div>
+        <hr style="margin: 24px 0; border: none; border-top: 1px solid #ddd;">
+        <p style="color: #666; font-size: 12px;">Submitted via the EzyHelpers caregiver careers application form.</p>
+      </div>
+    `,
+    text: `
+New caregiver / nursing candidate application
+
+Application ID: ${appId}
+
+Source page (URL): ${rawSource || 'Not provided'}
+
+Candidate:
+- Name: ${formData.name}
+- Mobile: ${formattedPhone}
+- Candidate type: ${typeDisplay}
+- Area of residence: ${formData.area}
+- Consent to call: ${formData.consentToCall}
+- Form language: ${langDisplay}
+---
+EzyHelpers caregiver careers application form
+    `.trim(),
+  }
+}
+
 export const sendLeadEmail = async (
   leadType: LeadType,
   formData: any, // TODO: Create union type for all form data types
@@ -1534,7 +1822,7 @@ export const sendLeadEmail = async (
     // hire_helper and general (contact form) use HIRE_CONTACT_EMAIL_RECIPIENTS
     let emailRecipientsEnv: string;
 
-    if (leadType === 'hire_helper' || leadType === 'general') {
+    if (leadType === 'hire_helper' || leadType === 'hire_helper_partial' || leadType === 'general') {
       // Check if it's an on-demand helper lead from either form
       const isHireHelperOnDemand = leadType === 'hire_helper' && formData.serviceType === 'on-demand';
       const isGeneralOnDemand = leadType === 'general' && formData.service && typeof formData.service === 'string' && formData.service.toLowerCase().includes('on-demand');
@@ -1550,6 +1838,13 @@ export const sendLeadEmail = async (
       emailRecipientsEnv =
         process.env.CARE_SERVICES_EMAIL_RECIPIENTS ||
         'contact@ezyhelpers.com,arun@ezyhelpers.com,suraj@ezyhelpers.com';
+    } else if (leadType === 'candidate_application') {
+      // Caregiver/nursing candidate applications (the /care-services/apply FB ad
+      // page) go to the care-services desk PLUS ankit@ and priyanka@ — separate
+      // from care_services enquiries so the two lists can diverge.
+      emailRecipientsEnv =
+        process.env.CANDIDATE_APPLICATION_RECIPIENTS ||
+        'contact@ezyhelpers.com,arun@ezyhelpers.com,suraj@ezyhelpers.com,ankit@ezyhelpers.com,priyanka@ezyhelpers.com';
     } else if (leadType === 'helper_registration') {
       // Helper registration leads go to multiple team members
       emailRecipientsEnv =
@@ -1562,23 +1857,20 @@ export const sendLeadEmail = async (
       leadType === 'careers_role_application'
     ) {
       emailRecipientsEnv =
-        process.env.CAREERS_EMAIL_RECIPIENTS || 'contact@ezyhelpers.com';
+        process.env.CAREERS_EMAIL_RECIPIENTS ||
+        'contact@ezyhelpers.com,arun@ezyhelpers.com,suraj@ezyhelpers.com';
+    } else if (leadType === 'customer_requirement') {
+      // Customer Requirement form — default recipients plus laxmi@ (June 2026).
+      const base = process.env.CUSTOMER_REQUIREMENT_RECIPIENTS ||
+        process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
+      emailRecipientsEnv = [base, 'laxmi@ezyhelpers.com'].filter(Boolean).join(',');
     } else {
       // Use default recipients for other forms (agent registration, helper registration, etc.)
       emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
     }
 
-    if (!emailRecipientsEnv) {
-      console.error('EMAIL_RECIPIENTS or ADMIN_EMAIL environment variable not set');
-      return { success: false, error: 'Email recipients not configured' };
-    }
-
-    // Split by comma and trim whitespace
-    const adminEmail = emailRecipientsEnv
-      .split(',')
-      .map(email => email.trim())
-      .filter(Boolean)
-      .join(', ');
+    // Always copy contact@ezyhelpers.com, even if no other recipients are configured.
+    const adminEmail = buildRecipientList(emailRecipientsEnv);
 
     if (!adminEmail) {
       console.error('No valid email recipients found');
@@ -1595,6 +1887,9 @@ export const sendLeadEmail = async (
         break;
       case 'hire_helper':
         emailContent = generateHireHelperLeadEmail({ ...formData, requestId: requestId || 'N/A', sourceUrl });
+        break;
+      case 'hire_helper_partial':
+        emailContent = generateHireHelperPartialLeadEmail({ ...formData, requestId: requestId || 'N/A', sourceUrl });
         break;
       case 'general':
         emailContent = generateGeneralLeadEmail({ ...formData, sourceUrl });
@@ -1634,6 +1929,12 @@ export const sendLeadEmail = async (
         emailContent = generateCareServicesLeadEmail({
           ...(formData as CareServicesLeadFormData),
           sourceUrl: sourceUrl || (formData as CareServicesLeadFormData).sourceUrl,
+        });
+        break;
+      case 'candidate_application':
+        emailContent = generateCandidateApplicationEmail({
+          ...(formData as CandidateApplicationFormData),
+          sourceUrl: sourceUrl || (formData as CandidateApplicationFormData).sourceUrl,
         });
         break;
       default:
@@ -1690,13 +1991,9 @@ export const sendEzyNestBookingEmail = async (
       }
     });
 
-    // Get email recipients from environment variables
+    // Get email recipients from environment variables (always copies contact@ezyhelpers.com)
     const emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
-    const adminEmail = emailRecipientsEnv
-      .split(',')
-      .map(email => email.trim())
-      .filter(Boolean)
-      .join(', ');
+    const adminEmail = buildRecipientList(emailRecipientsEnv);
 
     const mailOptions: any = {
       from: process.env.SMTP_USER,
@@ -1749,16 +2046,8 @@ export const sendNestLeadEmail = async (
     const formattedPhone = formatPhoneForEmail(formData.phone)
     const emailRecipientsEnv = process.env.NEST_LEADS_EMAIL || process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || ''
 
-    if (!emailRecipientsEnv) {
-      console.error('NEST_LEADS_EMAIL, EMAIL_RECIPIENTS or ADMIN_EMAIL environment variable not set')
-      return { success: false, error: 'Email recipients not configured' }
-    }
-
-    const adminEmail = emailRecipientsEnv
-      .split(',')
-      .map(email => email.trim())
-      .filter(Boolean)
-      .join(', ')
+    // Always copy contact@ezyhelpers.com, even if no other recipients are configured.
+    const adminEmail = buildRecipientList(emailRecipientsEnv)
 
     if (!adminEmail) {
       console.error('No valid email recipients found')

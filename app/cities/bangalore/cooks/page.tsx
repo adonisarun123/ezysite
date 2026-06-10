@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
 import FAQAccordion from '@/components/FAQAccordion'
 import NestCTA from '@/components/NestCTA'
@@ -471,6 +472,13 @@ export default function BangaloreCooksPage() {
         
 
               <NestCTA />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['live-in cook', 'home cook', 'indian cooks']}
+        title="Cook Hiring Guides"
+        subtitle="Cuisine matching, salaries, and hygiene standards for home cooks."
+      />
+
       <Footer />
       </main>
     </>

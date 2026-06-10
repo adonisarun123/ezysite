@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
 import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
-import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
+import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackFormSubmitSuccess } from '@/lib/analytics'
 import { sendWebhook } from '@/lib/webhookService'
 
 interface AdFormData {
@@ -18,11 +18,17 @@ interface AdFormData {
 interface AdLeadFormProps {
   city?: string
   trackingEvent?: string
+  /** Lead service type, e.g. 'live-in' | 'full-time'. Defaults to 'live-in'. */
+  serviceType?: string
+  /** Placeholder for the message box, service-appropriate. */
+  messagePlaceholder?: string
 }
 
 export default function AdLeadForm({
   city = 'Bangalore',
-  trackingEvent = 'live_in_maid_bangalore_ad'
+  trackingEvent = 'live_in_maid_bangalore_ad',
+  serviceType = 'live-in',
+  messagePlaceholder = 'I need a live-in maid for...'
 }: AdLeadFormProps) {
   const [formData, setFormData] = useState<AdFormData>({
     name: '',
@@ -106,7 +112,7 @@ export default function AdLeadForm({
           city: city,
           locality: '',
           apartment: '',
-          service: 'live-in',
+          service: serviceType,
           specificRequirements: formData.message.trim(),
           duration: '',
           serviceTimings: '',
@@ -140,7 +146,7 @@ export default function AdLeadForm({
                 city: insertRow.city,
                 locality: insertRow.locality,
                 apartment: insertRow.apartment,
-                serviceType: 'live-in',
+                serviceType,
                 duration: insertRow.duration,
                 serviceTimings: insertRow.service_timings,
                 startDate: insertRow.start_date,
@@ -175,7 +181,7 @@ export default function AdLeadForm({
             city: insertRow.city,
             locality: insertRow.locality,
             apartment: insertRow.apartment,
-            serviceType: 'live-in',
+            serviceType,
             duration: insertRow.duration,
             serviceTimings: insertRow.service_timings,
             startDate: insertRow.start_date,
@@ -192,6 +198,7 @@ export default function AdLeadForm({
 
         // Track successful form completion
         trackFormComplete('ad_lead_form', newRequestId);
+        trackFormSubmitSuccess('ad_lead_form', { leadId: newRequestId, serviceType, city: insertRow.city });
 
         router.push(`/thank-you?type=ad&ref=${encodeURIComponent(newRequestId)}`)
       } catch (error) {
@@ -270,7 +277,7 @@ export default function AdLeadForm({
             onChange={(e) => handleInputChange('message', e.target.value)}
             rows={3}
             className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none bg-gray-50 focus:bg-white transition-all resize-none"
-            placeholder="I need a live-in maid for..."
+            placeholder={messagePlaceholder}
           />
         </div>
 

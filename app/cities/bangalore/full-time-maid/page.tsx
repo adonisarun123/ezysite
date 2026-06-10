@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import FAQAccordion from '@/components/FAQAccordion'
 import { BreadcrumbSchema, FAQSchema, LocalBusinessSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
@@ -698,6 +699,13 @@ export default function BangaloreFullTimeMaidPage() {
       </main>
 
             <NestCTA />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['full-time maid', 'live-in maid', 'bangalore']}
+        title="Maid Hiring Guides for Bangalore"
+        subtitle="Compare options and understand fair salaries before you hire."
+      />
+
       <Footer />
     </>
   )

@@ -28,17 +28,18 @@ const CareWhatsAppFloat = dynamic(() => import('./care-services/CareWhatsAppFloa
   loading: () => null
 })
 
+/** Care-specific quick call-back form — renders only on /care-services/* paths. */
+const CareCallbackFloat = dynamic(() => import('./care-services/CareCallbackFloat'), {
+  ssr: false,
+  loading: () => null
+})
+
 const LanguageSelectorPopup = dynamic(() => import('./LanguageSelectorPopup'), {
   ssr: false,
   loading: () => null
 })
 
 const MobileStickyCTA = dynamic(() => import('./MobileStickyCTA'), {
-  ssr: false,
-  loading: () => null
-})
-
-const CookieConsent = dynamic(() => import('./CookieConsent'), {
   ssr: false,
   loading: () => null
 })
@@ -56,10 +57,10 @@ export default function ClientOnlyWidgets() {
       <UrgencyCTA />
       <WhatsAppFloat />
       <CareWhatsAppFloat />
+      <CareCallbackFloat />
       <LanguageSelectorPopup />
       <ServiceSelectorModal mode="modal" />
       <MobileStickyCTA />
-      <CookieConsent />
     </>
   )
 }

@@ -12,7 +12,25 @@ export const CARE_PAGE_FILES = {
 
 export type CarePageFile = (typeof CARE_PAGE_FILES)[keyof typeof CARE_PAGE_FILES]
 
-/** Navbar / footer: pillar parent + 7 clusters — all under /care-services/ */
+/**
+ * Navbar / footer — the 6 NEW service pillars (2026 rebuild). These are the
+ * primary care offerings surfaced site-wide.
+ */
+export const CARE_NAV_PILLARS = [
+  { name: 'Elder Care at Home', href: '/care-services/elder-care-at-home-bangalore' },
+  { name: 'Alzheimer’s Care at Home', href: '/care-services/alzheimers-care-at-home-bangalore' },
+  { name: 'Respite Care at Home', href: '/care-services/respite-care-at-home-bangalore' },
+  { name: 'Home Nursing Care', href: '/care-services/home-nursing-care-bangalore' },
+  { name: 'Medical Equipment Rental & Buy', href: '/care-services/medical-equipment-rental-bangalore' },
+  { name: 'Physiotherapy at Home', href: '/care-services/physiotherapy-at-home-bangalore' },
+  { name: 'Critical Care at Home (ICU)', href: '/care-services/critical-care-at-home-bangalore' },
+  { name: 'Palliative Care at Home', href: '/care-services/palliative-care-at-home-bangalore' },
+] as const
+
+/**
+ * Legacy cluster pages — retained as SEO landing pages (still indexed). Kept
+ * here for any remaining references; primary nav now uses CARE_NAV_PILLARS.
+ */
 export const CARE_NAV_CLUSTERS = [
   { name: 'Home Healthcare Services', href: '/care-services/home-healthcare-services-bangalore' },
   { name: 'Home Nursing Services', href: '/care-services/home-nursing-services-bangalore' },
@@ -32,5 +50,6 @@ export const CARE_ENQUIRY_HREF = '/care-services/enquiry'
 export const ALL_CARE_PATHS = new Set<string>([
   CARE_PILLAR_HREF,
   CARE_ENQUIRY_HREF,
+  ...CARE_NAV_PILLARS.map((c) => c.href),
   ...CARE_NAV_CLUSTERS.map((c) => c.href),
 ])

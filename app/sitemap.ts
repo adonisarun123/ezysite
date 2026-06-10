@@ -6,7 +6,9 @@ import { CARE_ENQUIRY_HREF, CARE_NAV_CLUSTERS, CARE_PILLAR_HREF } from '@/lib/ca
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.ezyhelpers.com'
-  const currentDate = process.env.BUILD_DATE ?? '2026-05-20T00:00:00.000Z'
+  // Use BUILD_DATE if provided, otherwise the actual build time (sitemap is
+  // generated at build, so new Date() is stable per deployment and never stale).
+  const currentDate = process.env.BUILD_DATE ?? new Date().toISOString()
 
   // Core pages with high priority
   const corePages: MetadataRoute.Sitemap = [
@@ -503,6 +505,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       'post-surgery-recovery-bangalore',
       'cancer-care-at-home-bangalore',
       'parkinsons-care-at-home-bangalore',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85
+    })),
+    // Condition & specialty pages (June 2026)
+    ...[
+      'alzheimers-care-at-home-bangalore',
+      'respite-care-at-home-bangalore',
+      'diabetes-care-at-home-bangalore',
+      'multiple-sclerosis-als-care-at-home-bangalore',
+      'post-stroke-speech-rehab-at-home-bangalore',
+      'arthritis-joint-pain-care-at-home-bangalore',
+      'respiratory-copd-care-at-home-bangalore',
     ].map((slug) => ({
       url: `${baseUrl}/care-services/${slug}`,
       lastModified: currentDate,

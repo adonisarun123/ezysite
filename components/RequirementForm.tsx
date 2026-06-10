@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { CheckCircleIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
-import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
+import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackFormSubmitSuccess } from '@/lib/analytics'
 import { sendWebhook } from '@/lib/webhookService'
 
 interface FormData {
@@ -346,6 +346,7 @@ export default function RequirementForm() {
         
         // Track successful completion
         trackFormComplete('requirement_form', newRequestId)
+        trackFormSubmitSuccess('requirement_form', { leadId: newRequestId })
         
         // Show success even if only one method worked
         console.log('🎉 Form submission completed successfully!')

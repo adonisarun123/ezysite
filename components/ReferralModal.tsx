@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { XMarkIcon, ChevronLeftIcon } from '@heroicons/react/24/outline';
 import { supabase } from '@/lib/supabaseClient';
+import { trackFormSubmitSuccess } from '@/lib/analytics';
 
 interface ReferralModalProps {
     isOpen: boolean;
@@ -109,6 +110,7 @@ export default function ReferralModal({ isOpen, onClose, lang }: ReferralModalPr
             ]);
 
             if (error) throw error;
+            trackFormSubmitSuccess('referral_form');
             setStatus('success');
             setTimeout(() => {
                 onClose();

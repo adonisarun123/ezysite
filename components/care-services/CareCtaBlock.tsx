@@ -21,7 +21,7 @@ export default function CareCtaBlock({ lines }: { lines: string[] }) {
       <div className="not-prose my-8 flex flex-wrap gap-4">
         <a
           href={PHONE_HREF}
-          className="inline-flex min-h-[48px] min-w-[44px] items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-teal-600 to-primary-600 px-8 py-3.5 text-base font-bold text-white shadow-lg transition hover:from-teal-700 hover:to-primary-700"
+          className="inline-flex min-h-[48px] min-w-[44px] items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-teal-600 to-care-600 px-8 py-3.5 text-base font-bold text-white shadow-lg transition hover:from-teal-700 hover:to-care-700"
         >
           <PhoneIcon className="h-5 w-5 shrink-0" aria-hidden />
           {PHONE_LABEL}
@@ -37,16 +37,16 @@ export default function CareCtaBlock({ lines }: { lines: string[] }) {
     <div className="not-prose my-8 flex flex-wrap gap-4">
       <Link
         href={enquiryHref}
-        className="inline-flex min-h-[48px] items-center justify-center rounded-2xl bg-gradient-to-r from-primary-600 to-blue-700 px-8 py-3.5 text-base font-bold text-white shadow-lg transition hover:from-primary-700 hover:to-blue-800"
+        className="inline-flex min-h-[48px] items-center justify-center rounded-2xl bg-gradient-to-r from-care-600 to-blue-700 px-8 py-3.5 text-base font-bold text-white shadow-lg transition hover:from-care-700 hover:to-blue-800"
       >
         {primaryLabel}
       </Link>
       {showPhone && (
         <a
           href={PHONE_HREF}
-          className="inline-flex min-h-[48px] min-w-[44px] items-center justify-center gap-2 rounded-2xl border-2 border-primary-500 bg-white px-6 py-3.5 text-base font-bold text-primary-800 shadow-md transition hover:bg-primary-50"
+          className="inline-flex min-h-[48px] min-w-[44px] items-center justify-center gap-2 rounded-2xl border-2 border-care-500 bg-white px-6 py-3.5 text-base font-bold text-care-800 shadow-md transition hover:bg-care-50"
         >
-          <PhoneIcon className="h-5 w-5 shrink-0 text-primary-600" aria-hidden />
+          <PhoneIcon className="h-5 w-5 shrink-0 text-care-600" aria-hidden />
           Call us now
         </a>
       )}

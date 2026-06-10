@@ -8,8 +8,21 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 
 const PATH = '/care-services/post-surgery-recovery-bangalore'
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Knee replacement', 'Hip replacement', 'Spine surgery', 'Cardiac surgery', 'Fracture recovery', 'General surgery'],
+  careNeeds: [
+    'Mobility support and fall prevention',
+    'Medicine reminders on schedule',
+    'Wound observation (medical dressing by nurses we arrange)',
+    'Bathing and hygiene support',
+    'Doctor follow-up coordination',
+    'Recovery routine and rest management',
+  ],
+}
 
 const PHASES = [
   {
@@ -129,15 +142,17 @@ export default function PostSurgeryView() {
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0074C8]">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Post-surgery home care should start on the <em className="italic text-[#0074C8]">day of discharge</em>.
+            Post-surgery home care should start on the <em className="italic text-care-500">day of discharge</em>.
             For most surgeries, a trained caretaker plus 4–6 nurse visits in week one is enough. Cardiac,
             neuro, and complex cases need a live-in nurse for the first two weeks. Care steps down as
             recovery progresses.
           </p>
         </div>
       </section>
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
@@ -153,7 +168,7 @@ export default function PostSurgeryView() {
                 key={p.n}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-[#F7F7F2] p-7"
               >
-                <span className="font-careSerif text-3xl font-medium text-[#0074C8]">{p.n}</span>
+                <span className="font-careSerif text-3xl font-medium text-care-500">{p.n}</span>
                 <h3 className="mt-3 font-careSerif text-xl font-bold tracking-tight text-neutral-950 sm:text-2xl">
                   {p.title}
                 </h3>
@@ -209,9 +224,9 @@ export default function PostSurgeryView() {
                 {RED_FLAGS.map((s) => (
                   <li
                     key={s}
-                    className="flex items-start gap-2 rounded-2xl border border-[#FF385C]/20 bg-[#FFF6F2] px-4 py-3.5"
+                    className="flex items-start gap-2 rounded-2xl border border-care-500/20 bg-care-50 px-4 py-3.5"
                   >
-                    <span aria-hidden className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-[#FF385C]" />
+                    <span aria-hidden className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-care-500" />
                     <span className="text-sm leading-snug text-neutral-800">{s}</span>
                   </li>
                 ))}

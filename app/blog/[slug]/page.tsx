@@ -6,6 +6,8 @@ import Image from 'next/image';
 import UrgencyCTA from '@/components/UrgencyCTA';
 import FAQWithTracking from '@/components/FAQWithTracking';
 import { posts } from '@/lib/blogData';
+import RelatedPosts from '@/components/RelatedPosts';
+import BlogServiceLinks from '@/components/BlogServiceLinks';
 import { CalendarDaysIcon, ClockIcon } from '@heroicons/react/24/outline';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -323,6 +325,9 @@ export default async function BlogPost({ params }: PageProps) {
         </ReactMarkdown>
       </article>
 
+      {/* Blog -> Service interlinking */}
+      <BlogServiceLinks postId={post.id} />
+
       {/* FAQ Section */}
       {faqs.length > 0 && (
         <section className="section-padding bg-white border-y border-gray-100">
@@ -341,6 +346,9 @@ export default async function BlogPost({ params }: PageProps) {
           </div>
         </section>
       )}
+
+      {/* Related blog posts interlinking */}
+      <RelatedPosts currentPostId={post.id} />
 
       {/* CTA */}
       <section className="section-padding bg-blue-700 text-white text-center">

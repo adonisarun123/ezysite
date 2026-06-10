@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   title: 'Fix Leaks & More with Expert Plumber Service | EzyHelpers',
   description: 'Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas.',
   keywords: 'plumber service, plumbing repair, tap repair, drain cleaning, pipe repair, emergency plumber',
+  openGraph: {
+    title: 'Fix Leaks & More with Expert Plumber Service | EzyHelpers',
+    description: 'Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas.',
+    url: 'https://www.ezyhelpers.com/services/plumbers',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/plumbers'
   }

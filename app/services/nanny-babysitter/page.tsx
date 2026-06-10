@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import NestCTA from '@/components/NestCTA'
 
 // ISR: revalidate hourly
@@ -24,6 +25,14 @@ export const metadata: Metadata = {
   title: 'Professional Babysitter Services | Certified | EzyHelpers',
   description: 'Trusted babysitter & nanny services with child safety certified professionals. 24/7 childcare support for working parents. Background verified & trained.',
   keywords: 'nanny, babysitter, childcare, child caretaker, child safety, child development',
+  openGraph: {
+    title: 'Professional Babysitter Services | Certified | EzyHelpers',
+    description: 'Trusted babysitter & nanny services with child safety certified professionals. 24/7 childcare support for working parents. Background verified & trained.',
+    url: 'https://www.ezyhelpers.com/services/nanny-babysitter',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/nanny-babysitter'
   }
@@ -625,6 +634,13 @@ export default function NannyBabysitterPage() {
           { name: "Bareilly", href: "/cities/bareilly/babysitter" },
         ]}
       />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['live-in nanny', 'childcare', 'bangalore']}
+        title="Childcare Guides for Parents"
+        subtitle="Expert advice on nannies and live-in childcare."
+      />
+
       <Footer />
       </main>
     </>

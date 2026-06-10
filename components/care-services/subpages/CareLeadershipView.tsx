@@ -101,17 +101,17 @@ export default function CareLeadershipView() {
     >
       {/* Director profile card */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-5xl rounded-[28px] border border-neutral-200 bg-gradient-to-br from-[#FFF6F2] via-[#FFF0EA] to-[#FFE4DA] p-8 sm:p-12">
+        <div className="mx-auto max-w-5xl rounded-[28px] border border-neutral-200 bg-gradient-to-br from-care-50 via-care-50 to-care-100 p-8 sm:p-12">
           <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-4">
               <div className="aspect-square w-full max-w-[320px] overflow-hidden rounded-[28px] bg-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
-                <div className="flex h-full w-full items-center justify-center font-careSerif text-7xl font-medium text-[#FF385C]/60">
+                <div className="flex h-full w-full items-center justify-center font-careSerif text-7xl font-medium text-care-500/60">
                   MG
                 </div>
               </div>
             </div>
             <div className="lg:col-span-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">Care Director</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Care Director</p>
               <h2 className="mt-3 font-careSerif text-3xl font-medium leading-tight tracking-tight text-neutral-950 sm:text-4xl">
                 Sister Mary George
               </h2>
@@ -162,7 +162,7 @@ export default function CareLeadershipView() {
                 key={title}
                 className="flex items-start gap-4 rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFF0EA] text-[#FF385C] ring-1 ring-[#FF385C]/15">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <div>
@@ -188,9 +188,9 @@ export default function CareLeadershipView() {
             {PHILOSOPHY.map((q) => (
               <figure
                 key={q}
-                className="rounded-[24px] border border-neutral-200 bg-[#FBF3F1] p-7"
+                className="rounded-[24px] border border-neutral-200 bg-care-50 p-7"
               >
-                <span aria-hidden className="font-careSerif text-5xl leading-none text-[#FF385C]/40">
+                <span aria-hidden className="font-careSerif text-5xl leading-none text-care-500/40">
                   &ldquo;
                 </span>
                 <blockquote className="mt-2 font-careSerif text-lg italic leading-snug text-neutral-900 sm:text-xl">
@@ -217,7 +217,7 @@ export default function CareLeadershipView() {
                 key={s.step}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
               >
-                <span className="font-careSerif text-3xl font-medium text-[#0074C8]">{s.step}</span>
+                <span className="font-careSerif text-3xl font-medium text-care-500">{s.step}</span>
                 <h3 className="mt-3 font-careSerif text-lg font-bold tracking-tight text-neutral-950">
                   {s.title}
                 </h3>

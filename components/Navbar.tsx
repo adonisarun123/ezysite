@@ -34,7 +34,23 @@ const navigation: NavigationItem[] = [
       { name: 'Bareilly', href: '/cities/bareilly' },
     ]
   },
-  { name: 'Hire Helper', href: '/hire-helper' },
+  {
+    name: 'Care Services',
+    href: '/care-services',
+    hasDropdown: true,
+    dropdownClassName: 'w-72',
+    dropdownItems: [
+      { name: 'All Care Services', href: '/care-services' },
+      { name: 'Elder Care at Home', href: '/care-services/elder-care-at-home-bangalore' },
+      { name: 'Alzheimer’s Care at Home', href: '/care-services/alzheimers-care-at-home-bangalore' },
+      { name: 'Respite Care at Home', href: '/care-services/respite-care-at-home-bangalore' },
+      { name: 'Home Nursing Care', href: '/care-services/home-nursing-care-bangalore' },
+      { name: 'Medical Equipment Rental & Buy', href: '/care-services/medical-equipment-rental-bangalore' },
+      { name: 'Physiotherapy at Home', href: '/care-services/physiotherapy-at-home-bangalore' },
+      { name: 'Critical Care at Home (ICU)', href: '/care-services/critical-care-at-home-bangalore' },
+      { name: 'Palliative Care at Home', href: '/care-services/palliative-care-at-home-bangalore' },
+    ],
+  },
   { name: 'Nest', href: '/nest', isNew: true },
   {
     name: 'For Helpers',
@@ -42,17 +58,6 @@ const navigation: NavigationItem[] = [
     hasDropdown: true,
     dropdownItems: [
       { name: 'Helper Jobs', href: '/helper-jobs' },
-    ]
-  },
-  { name: 'Blog', href: '/blog' },
-  {
-    name: 'About',
-    href: '/about',
-    hasDropdown: true,
-    dropdownItems: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Executive Summary', href: '/executive-summary' },
     ]
   },
   { name: 'Contact', href: '/contact' },
@@ -333,10 +338,16 @@ export default function Navbar() {
           </div>
         </div>
       </header>
-      {/* Spacer to prevent content overlap when banner is not visible */}
-      {!urgencyVisible && (
-        <div className="h-20 lg:h-24" aria-hidden="true"></div>
-      )}
+      {/* Spacer that reserves exactly the height of the fixed header so page
+          content starts right below it. Heights match the header's real size:
+          banner closed → navbar only (5rem / 6rem); banner open → navbar is
+          pushed to top-12, so add the 48px banner (8rem / 9rem). This is the
+          SINGLE source of header offset site-wide (the old
+          [data-main-content] CSS padding was removed to avoid double-counting). */}
+      <div
+        className={`${urgencyVisible ? 'h-32 lg:h-36' : 'h-20 lg:h-24'} transition-[height] duration-300`}
+        aria-hidden="true"
+      ></div>
     </>
   )
 }

@@ -24,6 +24,14 @@ export const metadata: Metadata = {
   title: 'Expert Carpenter Services | Home Repairs | EzyHelpers',
   description: 'Professional carpenter services for furniture repair, woodwork & home improvements. Skilled craftsmen available for all carpentry needs across major cities.',
   keywords: 'carpenter services, custom furniture, modular kitchen, wardrobe, furniture repair, door window fixing, office carpentry, furniture restoration',
+  openGraph: {
+    title: 'Expert Carpenter Services | Home Repairs | EzyHelpers',
+    description: 'Professional carpenter services for furniture repair, woodwork & home improvements. Skilled craftsmen available for all carpentry needs across major cities.',
+    url: 'https://www.ezyhelpers.com/services/carpenters',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/carpenters'
   }

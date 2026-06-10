@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import NestCTA from '@/components/NestCTA'
 
 // ISR: revalidate hourly
@@ -25,6 +26,14 @@ export const metadata: Metadata = {
   title: 'Professional Cook Services for Home | EzyHelpers',
   description: 'Expert cooks for Indian, Continental & regional cuisines. Includes meal planning, grocery management & dietary preferences. Hire home cooks today!',
   keywords: 'home cook, professional cook, daily cooking, meal prep, hygienic cooking, multiple cuisines, dietary preferences',
+  openGraph: {
+    title: 'Professional Cook Services for Home | EzyHelpers',
+    description: 'Expert cooks for Indian, Continental & regional cuisines. Includes meal planning, grocery management & dietary preferences. Hire home cooks today!',
+    url: 'https://www.ezyhelpers.com/services/cooks',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/cooks'
   }
@@ -690,6 +699,13 @@ export default function CooksPage() {
           { name: "Bareilly", href: "/cities/bareilly/cooks" },
         ]}
       />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['live-in cook', 'home cook', 'kitchen hygiene']}
+        title="Cook Hiring Guides"
+        subtitle="Cuisine matching, salaries, and hygiene standards for home cooks."
+      />
+
       <Footer />
     </main>
     </>

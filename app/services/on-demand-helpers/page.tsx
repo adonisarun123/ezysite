@@ -28,6 +28,14 @@ export const metadata: Metadata = {
   title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
   description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
   keywords: 'on-demand maid, emergency maid, same day maid, urgent house help, instant booking, hourly pricing',
+  openGraph: {
+    title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
+    description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
+    url: 'https://www.ezyhelpers.com/services/on-demand-helpers',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/on-demand-helpers'
   }

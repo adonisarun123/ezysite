@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import NestCTA from '@/components/NestCTA'
 
 // ISR: revalidate hourly
@@ -540,6 +541,13 @@ export default function ElderlyCare() {
           { name: "Bareilly", href: "/cities/bareilly/elderly-care" },
         ]}
       />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['elderly care', '24 hour care', 'live-in caretaker']}
+        title="Elder Care Guides"
+        subtitle="Care levels, costs, and checklists for senior care at home."
+      />
+
       <Footer />
     </main>
     </>

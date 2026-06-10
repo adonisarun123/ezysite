@@ -165,10 +165,10 @@ export default function HomeCareVsOldAgeHomeView() {
       lastUpdated="May 2026"
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#FBF3F1] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF385C]">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Home care is right for <em className="italic text-[#FF385C]">most Indian families</em> — it’s
+            Home care is right for <em className="italic text-care-500">most Indian families</em> — it’s
             cheaper, it preserves familiar surroundings, and it keeps family meaningfully involved. An old
             age home is right when the patient has very advanced dementia, no family is reachable in
             emergencies, or the family genuinely cannot cope despite trained help. We do home care, and
@@ -186,8 +186,8 @@ export default function HomeCareVsOldAgeHomeView() {
             titleMuted="ten honest comparisons."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-2">
-            <article className="flex h-full flex-col rounded-[28px] border border-[#FF385C]/30 bg-[#FBF3F1] p-7 sm:p-10">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#FF385C] ring-1 ring-[#FF385C]/15">
+            <article className="flex h-full flex-col rounded-[28px] border border-care-500/30 bg-care-50 p-7 sm:p-10">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-care-500 ring-1 ring-care-500/15">
                 <HomeIcon className="h-6 w-6" aria-hidden />
               </span>
               <h3 className="mt-5 font-careSerif text-2xl font-bold tracking-tight text-neutral-950 sm:text-3xl">
@@ -208,11 +208,11 @@ export default function HomeCareVsOldAgeHomeView() {
                 ))}
               </ul>
 
-              <h4 className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-[#FF385C]">Limitations</h4>
+              <h4 className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-care-500">Limitations</h4>
               <ul className="mt-3 space-y-2 text-sm">
                 {HOME_CONS.map((p) => (
                   <li key={p} className="flex items-start gap-2 text-neutral-800">
-                    <XMarkIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
+                    <XMarkIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                     {p}
                   </li>
                 ))}
@@ -220,7 +220,7 @@ export default function HomeCareVsOldAgeHomeView() {
             </article>
 
             <article className="flex h-full flex-col rounded-[28px] border border-neutral-200 bg-white p-7 sm:p-10">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F2F7FB] text-[#0074C8] ring-1 ring-[#0074C8]/15">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F2F7FB] text-care-500 ring-1 ring-care-500/15">
                 <BuildingOffice2Icon className="h-6 w-6" aria-hidden />
               </span>
               <h3 className="mt-5 font-careSerif text-2xl font-bold tracking-tight text-neutral-950 sm:text-3xl">
@@ -241,11 +241,11 @@ export default function HomeCareVsOldAgeHomeView() {
                 ))}
               </ul>
 
-              <h4 className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-[#FF385C]">Limitations</h4>
+              <h4 className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-care-500">Limitations</h4>
               <ul className="mt-3 space-y-2 text-sm">
                 {FACILITY_CONS.map((p) => (
                   <li key={p} className="flex items-start gap-2 text-neutral-800">
-                    <XMarkIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#FF385C]" aria-hidden />
+                    <XMarkIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                     {p}
                   </li>
                 ))}
@@ -282,11 +282,11 @@ export default function HomeCareVsOldAgeHomeView() {
                     <td className="px-5 py-4 text-sm">{f.facility}</td>
                     <td className="px-5 py-4">
                       {f.winner === 'home' ? (
-                        <span className="rounded-full bg-[#FF385C]/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#FF385C]">
+                        <span className="rounded-full bg-care-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-care-500">
                           Home
                         </span>
                       ) : f.winner === 'facility' ? (
-                        <span className="rounded-full bg-[#0074C8]/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#0074C8]">
+                        <span className="rounded-full bg-care-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-care-500">
                           Facility
                         </span>
                       ) : (

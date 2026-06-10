@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { careersRoleApplicationSchema } from '@/lib/careersRoleApplicationSchema'
+import { trackFormSubmitSuccess } from '@/lib/analytics'
 import { validateChiefOfStaffResume } from '@/lib/careersChiefOfStaffResume'
 
 const inputClass =
@@ -128,6 +129,7 @@ export default function CareersRoleApplicationForm({
         setStatus('error')
         return
       }
+      trackFormSubmitSuccess('careers_role_application_form', { serviceType: jobSlug })
       reset(defaultValues)
       if (resumeInputRef.current) resumeInputRef.current.value = ''
       router.push('/thank-you?type=career')
