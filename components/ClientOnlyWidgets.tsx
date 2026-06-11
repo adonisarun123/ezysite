@@ -44,6 +44,12 @@ const MobileStickyCTA = dynamic(() => import('./MobileStickyCTA'), {
   loading: () => null
 })
 
+/** AI chat assistant — "Asha" floating widget for FAQ + lead capture. */
+const EzyHelpersAssistant = dynamic(() => import('./EzyHelpersAssistant'), {
+  ssr: false,
+  loading: () => null
+})
+
 /** First-visit service selector modal — auto-shown on homepage; remembers choice for 30 days. */
 const ServiceSelectorModal = dynamic(() => import('./ServiceSelector'), {
   ssr: false,
@@ -61,6 +67,7 @@ export default function ClientOnlyWidgets() {
       <LanguageSelectorPopup />
       <ServiceSelectorModal mode="modal" />
       <MobileStickyCTA />
+      <EzyHelpersAssistant />
     </>
   )
 }
