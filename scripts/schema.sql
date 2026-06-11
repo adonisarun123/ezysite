@@ -22,3 +22,45 @@ create table public.hire_helper_leads (
   service_timings text null,
   constraint hire_helper_leads_pkey primary key (id)
 ) TABLESPACE pg_default;
+-- ─────────────────────────────────────────────────────────────────────
+-- Chatbot ("Asha") conversation log
+-- One row per chat session, upserted on every turn by /api/assistant.
+-- Powers learning (which questions get asked, where conversations drop
+-- off, unanswered FAQ gaps) and predictive analysis (lead conversion by
+-- page, area, job role, time of day, sentiment, feedback).
+-- Run this in the Supabase SQL editor.
+-- ─────────────────────────────────────────────────────────────────────
+create table public.chatbot_sessions (
+  session_id text not null,
+  started_at timestamp with time zone not null default now(),
+  last_message_at timestamp with time zone null,
+  closed_at timestamp with time zone null,
+  page text null,                          -- path where the chat happened
+  messages jsonb not null default '[]'::jsonb,  -- full transcript [{role, content}]
+  message_count integer not null default 0,     -- visitor messages only
+  lead jsonb null,                         -- latest raw lead JSON from the model
+  lead_type text null,                     -- customer | job_seeker | support
+  name text null,
+  phone text null,
+  area text null,
+  job_role text null,
+  job_type text null,
+  area_served boolean null,
+  lead_complete boolean not null default false,
+  lead_emailed boolean not null default false,
+  sentiment text null,                     -- negative when visitor was frustrated
+  unanswered text null,                    -- last question the bot couldn't answer
+  feedback text null,                      -- up | down (thumbs at end of chat)
+  constraint chatbot_sessions_pkey primary key (session_id)
+) TABLESPACE pg_default;
+
+create index if not exists chatbot_sessions_started_at_idx
+  on public.chatbot_sessions (started_at desc);
+create index if not exists chatbot_sessions_lead_complete_idx
+  on public.chatbot_sessions (lead_complete, started_at desc);
+create index if not exists chatbot_sessions_job_role_idx
+  on public.chatbot_sessions (job_role);
+
+-- Server-only table: RLS on, no public policies. Only the service-role
+-- key (used by /api/assistant) can read/write.
+alter table public.chatbot_sessions enable row level security;
