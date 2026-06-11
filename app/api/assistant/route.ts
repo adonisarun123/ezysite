@@ -239,6 +239,7 @@ interface MessageInput {
 interface RequestBody {
   messages: MessageInput[];
   leadSent: boolean;
+  action?: "chat" | "transcript";
 }
 
 // GET /api/assistant — health check (safe: never exposes keys)
@@ -257,9 +258,25 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const { messages, leadSent } = (await req.json()) as RequestBody;
+    const body = (await req.json()) as RequestBody;
+    const { messages, leadSent, action } = body;
+
     if (!Array.isArray(messages) || messages.length === 0) {
       return Response.json({ error: "Invalid request" }, { status: 400 });
+    }
+
+    // ── Transcript email on chat close ──
+    if (action === "transcript") {
+      // Only email if there was an actual conversation (more than just the greeting)
+      const userMessages = messages.filter((m) => m.role === "user");
+      if (userMessages.length > 0) {
+        try {
+          await sendTranscriptEmail(messages);
+        } catch (e) {
+          console.error("Transcript email failed:", e);
+        }
+      }
+      return Response.json({ ok: true });
     }
 
     const apiKey = process.env.ANTHROPIC_API_KEY || "";
@@ -448,6 +465,69 @@ async function sendUnansweredEmail(lead: LeadData) {
         Consider adding this answer to the chatbot knowledge base.<br/>
         Source: Website assistant
       </p>
+    </div>`;
+
+  await transporter.sendMail({ from, to, subject, text, html });
+}
+
+async function sendTranscriptEmail(messages: MessageInput[]) {
+  const transporter = createTransporter();
+  const to = process.env.LEAD_TO || "contact@ezyhelpers.com";
+  const from = process.env.SMTP_FROM || process.env.SMTP_USER || "";
+
+  const now = new Date();
+  const timestamp = now.toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+  const msgCount = messages.filter((m) => m.role === "user").length;
+
+  const subject = `Chat transcript — ${msgCount} message${msgCount !== 1 ? "s" : ""} · ${timestamp}`;
+
+  // Plain text version
+  const textLines = messages
+    .map(
+      (m) =>
+        `${m.role === "user" ? "Visitor" : "Asha"}: ${String(m.content || "")}`
+    )
+    .join("\n\n");
+  const text =
+    `Chat transcript from EzyHelpers website assistant\n` +
+    `Time: ${timestamp}\n` +
+    `Messages: ${msgCount}\n\n` +
+    `${"─".repeat(50)}\n\n` +
+    textLines +
+    `\n\n${"─".repeat(50)}\nSource: Website assistant`;
+
+  // HTML version
+  const htmlMessages = messages
+    .map((m) => {
+      const isUser = m.role === "user";
+      const label = isUser ? "Visitor" : "Asha";
+      const bgColor = isUser ? "#DCEAE4" : "#F8F7F3";
+      const labelColor = isUser ? "#0E7C66" : "#E8941A";
+      const content = String(m.content || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\n/g, "<br/>");
+      return `
+        <div style="margin-bottom:12px">
+          <div style="font-size:11px;font-weight:700;color:${labelColor};margin-bottom:4px">${label}</div>
+          <div style="background:${bgColor};border-radius:10px;padding:10px 14px;font-size:13.5px;line-height:1.5">${content}</div>
+        </div>`;
+    })
+    .join("");
+
+  const html = `
+    <div style="font-family:Inter,Arial,sans-serif;color:#16241F;max-width:480px">
+      <h2 style="color:#0E7C66;margin:0 0 4px">Chat transcript</h2>
+      <p style="color:#5F716B;font-size:12px;margin:0 0 16px">${timestamp} · ${msgCount} visitor message${msgCount !== 1 ? "s" : ""}</p>
+      <div style="border:1px solid #E4E0D5;border-radius:14px;padding:16px;background:#FAFAF7">
+        ${htmlMessages}
+      </div>
+      <p style="color:#5F716B;font-size:11px;margin-top:14px">Source: Website assistant</p>
     </div>`;
 
   await transporter.sendMail({ from, to, subject, text, html });

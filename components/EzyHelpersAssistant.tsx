@@ -223,7 +223,57 @@ function Panel({ seed, onClose }: { seed: string | null; onClose: () => void }) 
   const [busy, setBusy] = useState(false);
   const leadSent = useRef(false);
   const seeded = useRef(false);
+  const transcriptSent = useRef(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const messagesRef = useRef<Message[]>(messages);
+  messagesRef.current = messages;
+
+  // Send transcript email on close (fire-and-forget)
+  const handleClose = useCallback(() => {
+    const msgs = messagesRef.current;
+    const hasUserMessages = msgs.some((m) => m.role === "user");
+    if (hasUserMessages && !transcriptSent.current) {
+      transcriptSent.current = true;
+      // Use sendBeacon for reliability (works even if page is closing),
+      // fall back to fetch
+      const payload = JSON.stringify({ messages: msgs, action: "transcript" });
+      const sent =
+        typeof navigator.sendBeacon === "function" &&
+        navigator.sendBeacon(
+          "/api/assistant",
+          new Blob([payload], { type: "application/json" })
+        );
+      if (!sent) {
+        fetch("/api/assistant", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: payload,
+          keepalive: true,
+        }).catch(() => {});
+      }
+    }
+    onClose();
+  }, [onClose]);
+
+  // Also send transcript if user navigates away / closes the tab while chat is open
+  useEffect(() => {
+    const beforeUnload = () => {
+      const msgs = messagesRef.current;
+      const hasUserMessages = msgs.some((m) => m.role === "user");
+      if (hasUserMessages && !transcriptSent.current) {
+        transcriptSent.current = true;
+        const payload = JSON.stringify({ messages: msgs, action: "transcript" });
+        if (typeof navigator.sendBeacon === "function") {
+          navigator.sendBeacon(
+            "/api/assistant",
+            new Blob([payload], { type: "application/json" })
+          );
+        }
+      }
+    };
+    window.addEventListener("beforeunload", beforeUnload);
+    return () => window.removeEventListener("beforeunload", beforeUnload);
+  }, []);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({
@@ -304,7 +354,7 @@ function Panel({ seed, onClose }: { seed: string | null; onClose: () => void }) 
             Asha · online
           </div>
         </div>
-        <button className="ezw-close" onClick={onClose} aria-label="Close">
+        <button className="ezw-close" onClick={handleClose} aria-label="Close">
           <svg
             width="16"
             height="16"
