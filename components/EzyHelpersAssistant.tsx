@@ -7,11 +7,18 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 
 const GREETING =
-  "Namaste \u{1F64F} I’m Asha from EzyHelpers. Looking for a maid, cook, nanny, or other home help? Tell me what you need and I’ll connect you with our team!";
+  "Namaste \u{1F64F} I'm Asha from EzyHelpers. Looking for a maid, cook, nanny, or other home help? Tell me what you need and I'll connect you with our team!";
+
+const BUBBLE_TEXT = "Hi! Need help finding trusted home help? \u{1F44B}";
+const AUTO_OPEN_DELAY = 4000; // ms before auto-open on first visit
+const BUBBLE_DELAY = 2000; // ms before greeting bubble appears
+const SESSION_KEY = "ezw_opened"; // sessionStorage key to track if already shown
 
 export default function EzyHelpersAssistant() {
   const [open, setOpen] = useState(false);
   const [seed, setSeed] = useState<string | null>(null);
+  const [showBubble, setShowBubble] = useState(false);
+  const [bubbleDismissed, setBubbleDismissed] = useState(false);
 
   // Open from the hero search bar (or anywhere) via a custom event.
   useEffect(() => {
@@ -19,10 +26,58 @@ export default function EzyHelpersAssistant() {
       const detail = (e as CustomEvent<{ query?: string }>)?.detail;
       setSeed(detail?.query?.trim() || null);
       setOpen(true);
+      setShowBubble(false);
     };
     window.addEventListener("ezy:open", handler);
     return () => window.removeEventListener("ezy:open", handler);
   }, []);
+
+  // Show greeting bubble after BUBBLE_DELAY, then auto-open after AUTO_OPEN_DELAY (first visit only)
+  useEffect(() => {
+    // Skip if already opened this session
+    try {
+      if (sessionStorage.getItem(SESSION_KEY)) return;
+    } catch {
+      /* SSR or private mode */
+    }
+
+    const bubbleTimer = setTimeout(() => {
+      setShowBubble(true);
+    }, BUBBLE_DELAY);
+
+    const autoOpenTimer = setTimeout(() => {
+      setShowBubble(false);
+      setOpen(true);
+      try {
+        sessionStorage.setItem(SESSION_KEY, "1");
+      } catch {
+        /* ignore */
+      }
+    }, AUTO_OPEN_DELAY);
+
+    return () => {
+      clearTimeout(bubbleTimer);
+      clearTimeout(autoOpenTimer);
+    };
+  }, []);
+
+  const handleOpen = () => {
+    setSeed(null);
+    setOpen(true);
+    setShowBubble(false);
+    setBubbleDismissed(true);
+    try {
+      sessionStorage.setItem(SESSION_KEY, "1");
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const handleDismissBubble = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setShowBubble(false);
+    setBubbleDismissed(true);
+  };
 
   return (
     <>
@@ -32,18 +87,51 @@ export default function EzyHelpersAssistant() {
           --ink:#16241F;--muted:#5F716B;--bg:#F1EFE7;--line:#E4E0D5;--line-g:#DCEAE4;
           font-family:'Inter',system-ui,sans-serif;}
         .ezw *{box-sizing:border-box;}
+
+        /* ── Launcher button ── */
         .ezw-launcher{position:fixed;right:22px;bottom:22px;z-index:2147483000;display:flex;align-items:center;gap:10px;
           background:var(--teal);color:#fff;border:none;border-radius:999px;padding:13px 18px 13px 14px;cursor:pointer;
           box-shadow:0 16px 36px -12px rgba(14,124,102,.7);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;
-          transition:background .15s;}
-        .ezw-launcher:hover{background:var(--teal-d);}
+          transition:background .15s,transform .15s;
+          animation:ezwPulse 2.5s ease-in-out infinite;}
+        .ezw-launcher:hover{background:var(--teal-d);transform:scale(1.05);animation:none;}
         .ezw-launcher svg{width:22px;height:22px;}
+        @keyframes ezwPulse{
+          0%,100%{box-shadow:0 16px 36px -12px rgba(14,124,102,.7);}
+          50%{box-shadow:0 16px 36px -8px rgba(14,124,102,.9),0 0 0 8px rgba(14,124,102,.15);}
+        }
         @media (max-width:767px){
           .ezw-launcher{bottom:80px;}
         }
+
+        /* ── Greeting bubble ── */
+        .ezw-bubble{position:fixed;right:22px;bottom:80px;z-index:2147482999;max-width:260px;
+          background:#fff;color:var(--ink);border:1px solid var(--line-g);border-radius:16px 16px 4px 16px;
+          padding:12px 16px;font-size:13.5px;line-height:1.5;cursor:pointer;
+          box-shadow:0 12px 32px -8px rgba(16,40,32,.25);
+          animation:ezwBubbleIn .4s ease-out both;}
+        .ezw-bubble::after{content:'';position:absolute;right:24px;bottom:-8px;width:0;height:0;
+          border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #fff;}
+        .ezw-bubble-close{position:absolute;top:6px;right:8px;background:none;border:none;color:var(--muted);
+          cursor:pointer;font-size:16px;line-height:1;padding:2px 4px;border-radius:4px;}
+        .ezw-bubble-close:hover{color:var(--ink);background:rgba(0,0,0,.05);}
+        @keyframes ezwBubbleIn{
+          from{opacity:0;transform:translateY(10px) scale(.95);}
+          to{opacity:1;transform:translateY(0) scale(1);}
+        }
+        @media (max-width:767px){
+          .ezw-bubble{bottom:138px;right:16px;max-width:240px;}
+        }
+
+        /* ── Chat panel ── */
         .ezw-panel{position:fixed;right:22px;bottom:22px;z-index:2147483000;width:380px;max-width:calc(100vw - 28px);
           height:560px;max-height:calc(100vh - 44px);background:#fff;border:1px solid var(--line);border-radius:20px;
-          display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 70px -30px rgba(16,40,32,.6);}
+          display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 70px -30px rgba(16,40,32,.6);
+          animation:ezwPanelIn .3s ease-out both;}
+        @keyframes ezwPanelIn{
+          from{opacity:0;transform:translateY(20px) scale(.97);}
+          to{opacity:1;transform:translateY(0) scale(1);}
+        }
         @media (max-width:767px){
           .ezw-panel{right:0;bottom:0;width:100vw;max-width:100vw;height:100vh;max-height:100vh;border-radius:0;}
         }
@@ -71,31 +159,50 @@ export default function EzyHelpersAssistant() {
         .ezw-bar input:focus{border-color:var(--teal);background:#fff;}
         .ezw-bar button{width:42px;height:42px;flex:none;border:none;border-radius:11px;cursor:pointer;background:var(--teal);color:#fff;display:grid;place-items:center;}
         .ezw-bar button:disabled{opacity:.45;}
-        @media (prefers-reduced-motion: reduce){.ezw-typing span{animation:none;}}
+        @media (prefers-reduced-motion: reduce){
+          .ezw-typing span{animation:none;}
+          .ezw-launcher{animation:none;}
+          .ezw-bubble{animation:none;}
+          .ezw-panel{animation:none;}
+        }
       `}</style>
 
       <div className="ezw">
         {!open && (
-          <button
-            className="ezw-launcher"
-            onClick={() => {
-              setSeed(null);
-              setOpen(true);
-            }}
-            aria-label="Open EzyHelpers assistant"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          <>
+            {/* Greeting bubble */}
+            {showBubble && !bubbleDismissed && (
+              <div className="ezw-bubble" onClick={handleOpen}>
+                <button
+                  className="ezw-bubble-close"
+                  onClick={handleDismissBubble}
+                  aria-label="Dismiss"
+                >
+                  ×
+                </button>
+                {BUBBLE_TEXT}
+              </div>
+            )}
+
+            {/* Launcher button */}
+            <button
+              className="ezw-launcher"
+              onClick={handleOpen}
+              aria-label="Open EzyHelpers assistant"
             >
-              <path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.6-.8L3 21l1.9-5.4A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z" />
-            </svg>
-            Need help finding help?
-          </button>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.6-.8L3 21l1.9-5.4A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z" />
+              </svg>
+              Need help finding help?
+            </button>
+          </>
         )}
         {open && <Panel seed={seed} onClose={() => setOpen(false)} />}
       </div>
@@ -154,7 +261,7 @@ function Panel({ seed, onClose }: { seed: string | null; onClose: () => void }) 
           {
             role: "assistant",
             content:
-              "Sorry — I couldn’t connect just now. Please try again.",
+              "Sorry — I couldn't connect just now. Please try again.",
           },
         ]);
       } finally {
