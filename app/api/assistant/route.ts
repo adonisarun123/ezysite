@@ -158,12 +158,20 @@ triggers liquidated damages of ₹75,000 or three months' service fee (whichever
 ASSISTANT BEHAVIOUR RULES
 ═══════════════════════════════════════════════════════════
 
+FORMATTING — CRITICAL
+- This is a CHAT WIDGET, not a document. NEVER use markdown formatting.
+- NO asterisks (**bold**), NO bullet points (- or *), NO numbered lists, NO headers (#).
+- Write in short, natural paragraphs. Use line breaks between thoughts.
+- To list options, use a flowing sentence like: "We offer maids, cooks, nannies, and drivers."
+- Keep each reply to 2–4 short paragraphs max. No walls of text.
+
 STYLE
-- Warm, reassuring, concise. This is about trust. Sound human, not robotic.
+- Warm, reassuring, professional. Sound like a friendly advisor, not a robot.
 - Ask only ONE question at a time. Answer the FAQ first, THEN move toward booking.
 - To qualify, naturally gather: service, city/area, schedule
   (part-time / full-time / live-in), name, phone.
 - Once you have name + phone + service, warmly confirm an advisor will call shortly.
+- Use a conversational tone like a real person on WhatsApp — short sentences, clear structure.
 
 UNANSWERED QUESTIONS
 - If the user asks something NOT covered in the knowledge base above, DO NOT make
@@ -203,6 +211,20 @@ interface RequestBody {
   leadSent: boolean;
 }
 
+// GET /api/assistant — health check (safe: never exposes keys)
+export async function GET() {
+  const hasKey = !!process.env.ANTHROPIC_API_KEY;
+  const keyPrefix = hasKey
+    ? process.env.ANTHROPIC_API_KEY!.substring(0, 10) + "…"
+    : "(not set)";
+  return Response.json({
+    status: "ok",
+    hasAnthropicKey: hasKey,
+    keyPrefix,
+    model: MODEL,
+  });
+}
+
 export async function POST(req: Request) {
   try {
     const { messages, leadSent } = (await req.json()) as RequestBody;
@@ -210,11 +232,20 @@ export async function POST(req: Request) {
       return Response.json({ error: "Invalid request" }, { status: 400 });
     }
 
+    const apiKey = process.env.ANTHROPIC_API_KEY || "";
+    if (!apiKey) {
+      console.error("ANTHROPIC_API_KEY is not set");
+      return Response.json(
+        { reply: "Sorry — the assistant is not configured yet. Please try again later.", emailed: false },
+        { status: 200 }
+      );
+    }
+
     const aiRes = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "x-api-key": process.env.ANTHROPIC_API_KEY || "",
+        "x-api-key": apiKey,
         "anthropic-version": "2023-06-01",
       },
       body: JSON.stringify({
@@ -230,11 +261,16 @@ export async function POST(req: Request) {
     });
 
     if (!aiRes.ok) {
-      console.error("Anthropic API error:", aiRes.status, await aiRes.text().catch(() => ""));
-      return Response.json(
-        { reply: "Sorry — I couldn't connect just now. Please try again.", emailed: false },
-        { status: 200 }
-      );
+      const errBody = await aiRes.text().catch(() => "");
+      console.error("Anthropic API error:", aiRes.status, errBody);
+      // Surface a more helpful message based on the status
+      const hint =
+        aiRes.status === 401
+          ? "Sorry — the assistant couldn't authenticate. We're looking into it."
+          : aiRes.status === 429
+          ? "I'm getting a lot of questions right now! Please try again in a moment."
+          : "Sorry — I couldn't connect just now. Please try again.";
+      return Response.json({ reply: hint, emailed: false }, { status: 200 });
     }
 
     const data = await aiRes.json();
