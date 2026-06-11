@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -155,6 +156,7 @@ export default function ProfessionalChefPage() {
 
     return (
         <>
+          <ServiceSchema serviceName={"Professional Chef for Home"} serviceDescription={"Get fresh, tasty home-cooked meals daily with a professional chef preparing multi-cuisine dishes and custom menus to suit your preferences."} serviceType={"Professional Chef for Home"} serviceUrl={"https://www.ezyhelpers.com/services/professional-chef-for-home"} />
             <main className="min-h-screen">
                 <Navbar />
 

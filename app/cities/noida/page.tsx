@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
 import {
   ComputerDesktopIcon, 
   HeartIcon, 
@@ -51,6 +52,7 @@ export default function NoidaPage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Noida" stateName="Uttar Pradesh" postalCode="201301" latitude={28.5355} longitude={77.391} />
       <Navbar />
       <div className="bg-background-primary">
       {/* Hero Section */}

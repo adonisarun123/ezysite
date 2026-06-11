@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   BeakerIcon,
   CheckCircleIcon,
@@ -133,6 +134,7 @@ export default function PlumbersPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Fix Leaks & More with Expert Plumber Service"} serviceDescription={"Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas."} serviceType={"Fix Leaks & More with Expert Plumber Service"} serviceUrl={"https://www.ezyhelpers.com/services/plumbers"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

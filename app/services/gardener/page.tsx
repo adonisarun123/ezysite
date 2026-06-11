@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   GlobeAltIcon,
   CheckCircleIcon,
@@ -123,6 +124,7 @@ export default function GardenerPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Home Gardener Services"} serviceDescription={"Professional home gardener services for lawn care, plant maintenance & landscaping. Expert gardeners available in residential neighbourhoods near you."} serviceType={"Home Gardener Services"} serviceUrl={"https://www.ezyhelpers.com/services/gardener"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

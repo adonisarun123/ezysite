@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
 import {
   ComputerDesktopIcon, 
   HomeIcon, 
@@ -39,6 +40,7 @@ export default function HyderabadPage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Hyderabad" stateName="Telangana" postalCode="500001" latitude={17.385} longitude={78.4867} />
       <Navbar />
       
       <Breadcrumb 

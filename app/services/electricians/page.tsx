@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   BoltIcon,
   CheckCircleIcon,
@@ -133,6 +134,7 @@ export default function ElectriciansPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Expert Electrician Services for Your Home"} serviceDescription={"Certified electrician services for wiring, repairs & installations. Emergency electrical work available 24/7 by licensed experts in your locality."} serviceType={"Expert Electrician Services for Your Home"} serviceUrl={"https://www.ezyhelpers.com/services/electricians"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

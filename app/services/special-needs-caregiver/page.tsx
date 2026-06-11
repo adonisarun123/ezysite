@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { ServiceSchema } from '@/components/schema'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -151,6 +152,7 @@ export default function SpecialNeedsCaregiverPage() {
 
     return (
         <main className="min-h-screen">
+          <ServiceSchema serviceName={"Special Needs Caregiver for Special Kids at Home"} serviceDescription={"Special needs caregiver services for differently-abled children. Background-verified caregivers offer daily support, therapy assistance & emotional care at home."} serviceType={"Special Needs Caregiver for Special Kids at Home"} serviceUrl={"https://www.ezyhelpers.com/services/special-needs-caregiver"} />
             <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   SparklesIcon,
   CheckCircleIcon,
@@ -149,6 +150,7 @@ export default function DeepCleaningPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Home Deep Cleaning Services – Book Verified Experts"} serviceDescription={"Book professional home deep cleaning for kitchens, bathrooms, and full-house sanitization. Background-verified cleaners deliver spotless, hygienic results."} serviceType={"Home Deep Cleaning Services – Book Verified Experts"} serviceUrl={"https://www.ezyhelpers.com/services/deep-cleaning"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

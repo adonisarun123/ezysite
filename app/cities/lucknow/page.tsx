@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
 import {
   BuildingLibraryIcon, 
   HeartIcon, 
@@ -51,6 +52,7 @@ export default function LucknowPage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Lucknow" stateName="Uttar Pradesh" postalCode="226001" latitude={26.8467} longitude={80.9462} />
       <Navbar />
       <div className="min-h-screen bg-background-primary">
         {/* Hero Section */}

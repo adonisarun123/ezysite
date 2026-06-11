@@ -8,6 +8,7 @@ import NestCTA from '@/components/NestCTA'
 // ISR: revalidate hourly
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
+import { ServiceSchema } from '@/components/schema'
 import {
   HeartIcon, 
   ShieldCheckIcon, 
@@ -73,6 +74,7 @@ export default function ElderlyCare() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Compassionate Elderly Care Services for Seniors"} serviceDescription={"Compassionate elder care services with medical assistance, companionship & mobility support. Trained specialists for seniors Trusted by families across India."} serviceType={"Compassionate Elderly Care Services for Seniors"} serviceUrl={"https://www.ezyhelpers.com/services/elderly-care"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

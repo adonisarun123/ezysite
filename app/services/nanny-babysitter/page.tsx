@@ -8,6 +8,7 @@ import NestCTA from '@/components/NestCTA'
 // ISR: revalidate hourly
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
+import { ServiceSchema } from '@/components/schema'
 import {
   UserGroupIcon, 
   HeartIcon, 
@@ -73,6 +74,7 @@ export default function NannyBabysitterPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Professional Babysitter Services"} serviceDescription={"Trusted babysitter & nanny services with child safety certified professionals. 24/7 childcare support for working parents. Background verified & trained."} serviceType={"Professional Babysitter Services"} serviceUrl={"https://www.ezyhelpers.com/services/nanny-babysitter"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

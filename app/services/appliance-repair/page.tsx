@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   WrenchScrewdriverIcon,
   CheckCircleIcon,
@@ -136,6 +137,7 @@ export default function ApplianceRepairPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Home Appliance Repair"} serviceDescription={"Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India."} serviceType={"Home Appliance Repair"} serviceUrl={"https://www.ezyhelpers.com/services/appliance-repair"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { ServiceSchema } from '@/components/schema'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -166,6 +167,7 @@ export default function ChauffeurServicePage() {
 
     return (
         <>
+          <ServiceSchema serviceName={"Premium Chauffeur Service"} serviceDescription={"Book EzyHelpers’ Premium Chauffeur Service for high-end luxury cars. Verified drivers provide safe rides in Mercedes, BMW, Audi, and more."} serviceType={"Premium Chauffeur Service"} serviceUrl={"https://www.ezyhelpers.com/services/premium-chauffeur-service"} />
             <main className="min-h-screen">
                 <Navbar />
 

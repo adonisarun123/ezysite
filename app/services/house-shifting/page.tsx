@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   TruckIcon,
   CheckCircleIcon,
@@ -171,6 +172,7 @@ export default function HouseShiftingPage() {
 
   return (
     <main className="min-h-screen">
+      <ServiceSchema serviceName={"Household Shifting in Bareilly – Expert Packers"} serviceDescription={"Looking for household shifting services in Bareilly? Our movers handle packing, safe transport, and careful unpacking for a smooth relocation."} serviceType={"Household Shifting in Bareilly – Expert Packers"} serviceUrl={"https://www.ezyhelpers.com/services/house-shifting"} />
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/house-shifting" />
       

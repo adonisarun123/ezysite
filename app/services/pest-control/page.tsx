@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   ShieldCheckIcon,
   CheckCircleIcon,
@@ -145,6 +146,7 @@ export default function PestControlPage() {
 
   return (
     <main className="min-h-screen">
+      <ServiceSchema serviceName={"Pest Control for Home in Bareilly - Safe & Effective"} serviceDescription={"Book pest control for home in Bareilly to eliminate cockroaches, termites, rodents, and ants using safe, odourless, long-lasting treatments."} serviceType={"Pest Control for Home in Bareilly - Safe & Effective"} serviceUrl={"https://www.ezyhelpers.com/services/pest-control"} />
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/pest-control" />
       

@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   ShieldCheckIcon,
   ClockIcon,
@@ -118,6 +119,7 @@ export default function ACRepairPage() {
 
   return (
     <main className="min-h-screen">
+      <ServiceSchema serviceName={"Air Conditioner Repair in Bareilly - Cooling Experts"} serviceDescription={"Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians."} serviceType={"Air Conditioner Repair in Bareilly - Cooling Experts"} serviceUrl={"https://www.ezyhelpers.com/services/ac-repair"} />
       <Navbar />
       
       <Breadcrumb 

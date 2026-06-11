@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import FAQAccordion from '@/components/FAQAccordion'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   CommandLineIcon,
   CheckCircleIcon,
@@ -132,6 +133,7 @@ export default function CarpentersPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Expert Carpenter Services"} serviceDescription={"Professional carpenter services for furniture repair, woodwork & home improvements. Skilled craftsmen available for all carpentry needs across major cities."} serviceType={"Expert Carpenter Services"} serviceUrl={"https://www.ezyhelpers.com/services/carpenters"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

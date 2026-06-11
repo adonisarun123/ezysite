@@ -220,14 +220,15 @@ export default function EzyHelpersAssistant() {
         .ezw-bar button{width:42px;height:42px;flex:none;border:none;border-radius:11px;cursor:pointer;background:var(--teal);color:#fff;display:grid;place-items:center;}
         .ezw-bar button:disabled{opacity:.45;}
 
-        /* ── Quick replies ── */
-        .ezw-qr{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 12px;background:var(--bg);}
+        /* ── Quick replies (rendered inside the scrollable feed) ── */
+        .ezw-qr{margin-top:2px;padding-left:34px;}
+        .ezw-qr-chips{display:flex;flex-wrap:wrap;gap:6px;}
         .ezw-qr button{background:#fff;border:1px solid var(--line-g);color:var(--teal);border-radius:999px;
           padding:7px 14px;font-size:12.5px;font-family:inherit;font-weight:500;cursor:pointer;
           transition:all .15s;}
         .ezw-qr button:hover{background:var(--teal);color:#fff;border-color:var(--teal);}
-        .ezw-qr-label{width:100%;font-size:11px;font-weight:600;letter-spacing:.04em;
-          text-transform:uppercase;color:var(--muted);margin:2px 0 2px 2px;}
+        .ezw-qr-label{font-size:11px;font-weight:600;letter-spacing:.04em;
+          text-transform:uppercase;color:var(--muted);margin:0 0 6px 2px;}
         .ezw-qr button.q{color:var(--ink);border-color:var(--line);background:#FAFAF7;font-weight:400;}
         .ezw-qr button.q:hover{background:var(--gold-soft);border-color:var(--gold);color:var(--ink);}
 
@@ -407,6 +408,9 @@ function Panel({ seed, onClose }: { seed: string | null; onClose: () => void }) 
   }, [sendTranscript]);
 
   useEffect(() => {
+    // Don't auto-scroll on first open (greeting + suggestion chips should be
+    // read from the top); only follow the conversation once it has started.
+    if (messages.length <= 1 && !busy) return;
     scrollRef.current?.scrollTo({
       top: scrollRef.current.scrollHeight,
       behavior: "smooth",
@@ -586,25 +590,32 @@ function Panel({ seed, onClose }: { seed: string | null; onClose: () => void }) 
             </div>
           </div>
         )}
-      </div>
 
-      {/* Quick replies + suggested questions (shown only before first user message) */}
-      {showQuickReplies && !busy && (
-        <div className="ezw-qr">
-          <div className="ezw-qr-label">I&apos;m looking for…</div>
-          {QUICK_REPLIES.map((qr) => (
-            <button key={qr.label} onClick={() => send(qr.message)}>
-              {qr.label}
-            </button>
-          ))}
-          <div className="ezw-qr-label">Or ask me…</div>
-          {SUGGESTED_QUESTIONS.map((q) => (
-            <button key={q} className="q" onClick={() => send(q)}>
-              {q}
-            </button>
-          ))}
-        </div>
-      )}
+        {/* Quick replies + suggested questions — inside the scrollable feed so
+            they never cover the greeting message */}
+        {showQuickReplies && !busy && (
+          <div className="ezw-qr">
+            <div className="ezw-qr-label">I&apos;m looking for…</div>
+            <div className="ezw-qr-chips">
+              {QUICK_REPLIES.map((qr) => (
+                <button key={qr.label} onClick={() => send(qr.message)}>
+                  {qr.label}
+                </button>
+              ))}
+            </div>
+            <div className="ezw-qr-label" style={{ marginTop: 10 }}>
+              Or ask me…
+            </div>
+            <div className="ezw-qr-chips">
+              {SUGGESTED_QUESTIONS.map((q) => (
+                <button key={q} className="q" onClick={() => send(q)}>
+                  {q}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* Feedback thumbs (shown after lead is captured) */}
       {leadComplete && !feedback && (

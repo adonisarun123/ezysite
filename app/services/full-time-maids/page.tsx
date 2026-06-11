@@ -8,6 +8,7 @@ import NestCTA from '@/components/NestCTA'
 // ISR: revalidate hourly
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
+import { ServiceSchema } from '@/components/schema'
 import {
   ShieldCheckIcon, 
   HomeIcon, 
@@ -84,6 +85,7 @@ export default function FullTimeMaidsPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Full Time Maid Services"} serviceDescription={"Reliable full-time maid services for daily cleaning, cooking & home care. Get 8–10 hrs of trained, verified help daily. Book trusted maids near you today!"} serviceType={"Full Time Maid Services"} serviceUrl={"https://www.ezyhelpers.com/services/full-time-maids"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

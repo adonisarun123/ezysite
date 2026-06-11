@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
 import {
   ShoppingBagIcon, 
   HeartIcon, 
@@ -51,6 +52,7 @@ export default function MeerutPage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Meerut" stateName="Uttar Pradesh" postalCode="250001" latitude={28.9845} longitude={77.7064} />
       <Navbar />
       <div className="bg-background-primary">
       {/* Hero Section */}

@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
 import {
   BuildingOffice2Icon, 
   HeartIcon, 
@@ -51,6 +52,7 @@ export default function NagpurPage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Nagpur" stateName="Maharashtra" postalCode="440001" latitude={21.1458} longitude={79.0882} />
       <Navbar />
       <div className="min-h-screen bg-background-primary">
         {/* Hero Section */}

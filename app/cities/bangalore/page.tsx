@@ -8,6 +8,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 // ISR: revalidate hourly
 export const revalidate = 3600
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
 import {
   ComputerDesktopIcon,
   HomeIcon,
@@ -41,6 +42,7 @@ export default function BangalorePage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Bangalore" stateName="Karnataka" postalCode="560001" latitude={12.9716} longitude={77.5946} />
       <Navbar />
 
       <Breadcrumb

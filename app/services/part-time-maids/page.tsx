@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   ClockIcon, 
   CurrencyDollarIcon, 
@@ -121,6 +122,7 @@ export default function PartTimeMaidsPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Part-Time Maid Services"} serviceDescription={"Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers."} serviceType={"Part-Time Maid Services"} serviceUrl={"https://www.ezyhelpers.com/services/part-time-maids"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

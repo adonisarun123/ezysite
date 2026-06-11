@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   TruckIcon, 
   ClockIcon, 
@@ -72,6 +73,7 @@ export default function DriversPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Professional Drivers Services"} serviceDescription={"Licensed professional drivers for family transportation, office commutes & personal use. Safe, reliable & punctual service across major cities in India."} serviceType={"Professional Drivers Services"} serviceUrl={"https://www.ezyhelpers.com/services/drivers"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

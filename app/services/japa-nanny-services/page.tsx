@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { ServiceSchema } from '@/components/schema'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -168,6 +169,7 @@ export default function JapaNannyServicesPage() {
 
     return (
         <>
+          <ServiceSchema serviceName={"Japa Nanny Services for Newborn & Mother Care"} serviceDescription={"Hire trained Japa Nannies for postpartum recovery and newborn care. Gentle routines, massages, and mother care your family can trust."} serviceType={"Japa Nanny Services for Newborn & Mother Care"} serviceUrl={"https://www.ezyhelpers.com/services/japa-nanny-services"} />
             <main className="min-h-screen">
                 <Navbar />
 

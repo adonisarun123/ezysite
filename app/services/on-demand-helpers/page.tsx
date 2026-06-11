@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import OnDemandLeadForm from '@/components/OnDemandLeadForm'
+import { ServiceSchema } from '@/components/schema'
 import {
   BoltIcon,
   ClockIcon,
@@ -149,6 +150,7 @@ export default function OnDemandHelpersPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"On-Demand Helper Services"} serviceDescription={"Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help."} serviceType={"On-Demand Helper Services"} serviceUrl={"https://www.ezyhelpers.com/services/on-demand-helpers"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

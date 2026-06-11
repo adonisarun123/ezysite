@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { ServiceSchema } from '@/components/schema'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -134,6 +135,7 @@ export default function PatientCareServicesPage() {
 
     return (
         <main className="min-h-screen">
+          <ServiceSchema serviceName={"Reliable Home Patient Care Taker Services You Can Trust"} serviceDescription={"Reliable patient care services at home providing comfort, recovery, and personalized attention from trained, verified home caregivers."} serviceType={"Reliable Home Patient Care Taker Services You Can Trust"} serviceUrl={"https://www.ezyhelpers.com/services/patient-care-services-at-home"} />
             <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

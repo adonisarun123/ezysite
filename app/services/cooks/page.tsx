@@ -8,6 +8,7 @@ import NestCTA from '@/components/NestCTA'
 // ISR: revalidate hourly
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
+import { ServiceSchema } from '@/components/schema'
 import {
   SparklesIcon, 
   ClockIcon, 
@@ -74,6 +75,7 @@ export default function CooksPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Professional Cook Services for Home"} serviceDescription={"Expert cooks for Indian, Continental & regional cuisines. Includes meal planning, grocery management & dietary preferences. Hire home cooks today!"} serviceType={"Professional Cook Services for Home"} serviceUrl={"https://www.ezyhelpers.com/services/cooks"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

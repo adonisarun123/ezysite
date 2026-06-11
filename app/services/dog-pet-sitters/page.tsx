@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { ServiceSchema } from '@/components/schema'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -114,6 +115,7 @@ export default function DogPetSittersPage() {
 
     return (
         <main className="min-h-screen font-sans">
+          <ServiceSchema serviceName={"Hire Dog Pet Sitters"} serviceDescription={"Hire trusted dog pet sitters for safe home care. From daily walking and feeding to live-in sitting, we care for your dog with love and attention."} serviceType={"Hire Dog Pet Sitters"} serviceUrl={"https://www.ezyhelpers.com/services/dog-pet-sitters"} />
             <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

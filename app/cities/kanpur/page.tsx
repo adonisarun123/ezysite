@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
 import {
   CogIcon, 
   HeartIcon, 
@@ -59,6 +60,7 @@ export default function KanpurPage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Kanpur" stateName="Uttar Pradesh" postalCode="208001" latitude={26.4499} longitude={80.3319} />
       <Navbar />
       <div className="bg-background-primary">
       {/* Hero Section */}

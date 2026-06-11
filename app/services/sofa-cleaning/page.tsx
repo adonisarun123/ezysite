@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   SparklesIcon,
   CheckCircleIcon,
@@ -173,6 +174,7 @@ export default function SofaCleaningPage() {
 
   return (
     <main className="min-h-screen">
+      <ServiceSchema serviceName={"Sofa Cleaning Services in Bareilly - Stain & Odour Removal"} serviceDescription={"Book sofa cleaning in Bareilly for all types of fabric. Remove stains, dust, and bad smells with eco-friendly products and expert handling."} serviceType={"Sofa Cleaning Services in Bareilly - Stain & Odour Removal"} serviceUrl={"https://www.ezyhelpers.com/services/sofa-cleaning"} />
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/sofa-cleaning" />
       

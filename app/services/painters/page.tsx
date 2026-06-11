@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
 import {
   PaintBrushIcon,
   CheckCircleIcon,
@@ -143,6 +144,7 @@ export default function PaintersPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"House Painting Services"} serviceDescription={"Professional house painting services for interior & exterior walls. Quality paints, expert painters & affordable rates in your area."} serviceType={"House Painting Services"} serviceUrl={"https://www.ezyhelpers.com/services/painters"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

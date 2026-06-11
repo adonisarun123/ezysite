@@ -29,6 +29,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { Metadata } from 'next'
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
 
 export const metadata: Metadata = {
   title: 'House Maid Service in Bareilly – Safe & Verified',
@@ -50,6 +51,7 @@ export default function BareillyPage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Bareilly" stateName="Uttar Pradesh" postalCode="243001" latitude={28.367} longitude={79.4304} />
       <Navbar />
 
       <Breadcrumb
