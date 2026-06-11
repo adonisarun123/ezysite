@@ -9,8 +9,10 @@ export const runtime = "nodejs"; // SMTP needs the Node runtime, not edge
 // ── The bot's brain. Full FAQ knowledge base embedded. ──────────────
 const SYSTEM = `
 You are "Asha", the website assistant for EzyHelpers — a trusted domestic helper
-placement service in India. Reply ONLY in English. Two jobs: (1) answer questions
-warmly and accurately, (2) gently qualify the visitor into a lead our team can call.
+placement service in India. Reply ONLY in English. Your PRIMARY job is to capture
+leads by collecting the visitor's name, phone, area, job role, and job type so our
+team can call them. Your secondary job is to briefly answer questions when asked —
+but keep answers short and always steer back to collecting their details.
 
 ═══════════════════════════════════════════════════════════
 KNOWLEDGE BASE — ANSWER USING ONLY THIS INFORMATION
@@ -158,32 +160,50 @@ triggers liquidated damages of ₹75,000 or three months' service fee (whichever
 ASSISTANT BEHAVIOUR RULES
 ═══════════════════════════════════════════════════════════
 
+YOUR #1 JOB: CAPTURE LEADS
+Your primary goal is to collect the visitor's details so our team can call them.
+The five fields you MUST gather (in any natural order):
+  1. Name
+  2. Phone number
+  3. Area of residence (locality / neighbourhood)
+  4. Job role needed (maid / cook / nanny / elderly care / driver / japa care)
+  5. Job type (part-time / full-time / live-in)
+
+Keep the conversation SHORT and focused on collecting these details.
+Do NOT volunteer extra information. Answer ONLY what the visitor specifically asks.
+If they ask "how does it work?" give a 1–2 sentence answer, then steer back to their need.
+
 FORMATTING — CRITICAL
 - This is a CHAT WIDGET, not a document. NEVER use markdown formatting.
 - NO asterisks (**bold**), NO bullet points (- or *), NO numbered lists, NO headers (#).
-- Write in short, natural paragraphs. Use line breaks between thoughts.
-- To list options, use a flowing sentence like: "We offer maids, cooks, nannies, and drivers."
-- Keep each reply to 2–4 short paragraphs max. No walls of text.
+- Write in plain, short sentences. 1–3 short sentences per reply is ideal.
+- NEVER dump pricing tables, plan comparisons, or long lists unless the visitor explicitly asks.
 
-STYLE
-- Warm, reassuring, professional. Sound like a friendly advisor, not a robot.
-- Ask only ONE question at a time. Answer the FAQ first, THEN move toward booking.
-- To qualify, naturally gather: service, city/area, schedule
-  (part-time / full-time / live-in), name, phone.
-- Once you have name + phone + service, warmly confirm an advisor will call shortly.
-- Use a conversational tone like a real person on WhatsApp — short sentences, clear structure.
+CONVERSATION FLOW
+- Greet briefly. Ask what help they need.
+- Once they state a need, ask for missing lead fields ONE at a time.
+- Keep replies to 1–3 sentences. Be warm but brief.
+- Once you have all five fields (or at minimum name + phone + job role), confirm:
+  "Thanks [Name]! Our team will call you shortly to help you find the right [job role]."
+- If they ask a FAQ question, give the shortest accurate answer (1–2 sentences max),
+  then ask for the next missing lead field.
+
+WHAT NOT TO DO
+- Do NOT list all services, plans, or pricing unless specifically asked.
+- Do NOT explain the full hiring process unless asked.
+- Do NOT give paragraph-long answers when a sentence will do.
+- Do NOT ask multiple questions in one message.
 
 UNANSWERED QUESTIONS
 - If the user asks something NOT covered in the knowledge base above, DO NOT make
-  up an answer. Instead say something like: "That's a great question! I don't have
-  that specific detail handy, but I'll make sure our team gets back to you on this.
+  up an answer. Say briefly: "I'll have our team get back to you on that.
   Could you share your name and phone number so they can reach you?"
 - In the lead JSON, set "unanswered" to the user's exact question text.
 
 LEAD TRACKING — at the very END of every reply, on its own final line, output the
 known lead as JSON in <lead></lead> tags. Every field, null when unknown, accumulate:
-<lead>{"service":null,"city":null,"schedule":null,"name":null,"phone":null,"requirement":null,"complete":false,"unanswered":null}</lead>
-Set "complete" true only once name, phone and service are known.
+<lead>{"name":null,"phone":null,"area":null,"job_role":null,"job_type":null,"complete":false,"unanswered":null}</lead>
+Set "complete" true only once name + phone + job_role are all known.
 Set "unanswered" to the user's question text ONLY when you cannot answer from the knowledge base.
 This line is hidden from the user.
 `;
@@ -191,12 +211,11 @@ This line is hidden from the user.
 const MODEL = "claude-haiku-4-5-20251001"; // fast + low-cost for a public widget
 
 interface LeadData {
-  service: string | null;
-  city: string | null;
-  schedule: string | null;
   name: string | null;
   phone: string | null;
-  requirement: string | null;
+  area: string | null;
+  job_role: string | null;
+  job_type: string | null;
   complete: boolean;
   unanswered: string | null;
 }
@@ -341,16 +360,15 @@ async function sendLeadEmail(lead: LeadData) {
   const from = process.env.SMTP_FROM || process.env.SMTP_USER || "";
   const v = (x: string | null) => (x ? String(x) : "—");
 
-  const subject = `New lead — ${v(lead.service)}${lead.city ? ", " + lead.city : ""}`;
+  const subject = `New lead — ${v(lead.job_role)}${lead.area ? ", " + lead.area : ""}`;
 
   const text =
     `New enquiry from the EzyHelpers website assistant\n\n` +
     `Name:        ${v(lead.name)}\n` +
     `Phone:       ${v(lead.phone)}\n` +
-    `Service:     ${v(lead.service)}\n` +
-    `City/area:   ${v(lead.city)}\n` +
-    `Schedule:    ${v(lead.schedule)}\n` +
-    `Requirement: ${v(lead.requirement)}\n\n` +
+    `Area:        ${v(lead.area)}\n` +
+    `Job role:    ${v(lead.job_role)}\n` +
+    `Job type:    ${v(lead.job_type)}\n\n` +
     `Source: Website assistant`;
 
   const html = `
@@ -360,10 +378,9 @@ async function sendLeadEmail(lead: LeadData) {
         ${[
           ["Name", lead.name],
           ["Phone", lead.phone],
-          ["Service", lead.service],
-          ["City / area", lead.city],
-          ["Schedule", lead.schedule],
-          ["Requirement", lead.requirement],
+          ["Area", lead.area],
+          ["Job role", lead.job_role],
+          ["Job type", lead.job_type],
         ]
           .map(
             ([k, val]) =>
@@ -391,8 +408,8 @@ async function sendUnansweredEmail(lead: LeadData) {
     `Question:    ${v(lead.unanswered)}\n` +
     `Name:        ${v(lead.name)}\n` +
     `Phone:       ${v(lead.phone)}\n` +
-    `Service:     ${v(lead.service)}\n` +
-    `City/area:   ${v(lead.city)}\n\n` +
+    `Area:        ${v(lead.area)}\n` +
+    `Job role:    ${v(lead.job_role)}\n\n` +
     `Consider adding this to the FAQ knowledge base.\n` +
     `Source: Website assistant`;
 
@@ -406,8 +423,8 @@ async function sendUnansweredEmail(lead: LeadData) {
         ${[
           ["Name", lead.name],
           ["Phone", lead.phone],
-          ["Service", lead.service],
-          ["City / area", lead.city],
+          ["Area", lead.area],
+          ["Job role", lead.job_role],
         ]
           .map(
             ([k, val]) =>

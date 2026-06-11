@@ -7,7 +7,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 
 const GREETING =
-  "Namaste \u{1F64F} I’m Asha from EzyHelpers. I can help you find trusted, verified home help. What do you need a hand with?";
+  "Namaste \u{1F64F} I’m Asha from EzyHelpers. Looking for a maid, cook, nanny, or other home help? Tell me what you need and I’ll connect you with our team!";
 
 export default function EzyHelpersAssistant() {
   const [open, setOpen] = useState(false);
