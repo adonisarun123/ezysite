@@ -546,6 +546,37 @@ const TOOLS = [
   },
 ];
 
+/**
+ * Best-effort insert into the same `leads` table the website forms use.
+ * Shared by the create_booking tool AND the legacy lead-complete email path,
+ * so every chatbot lead lands in Supabase — not only confirmed bookings.
+ * Never throws: a DB hiccup must not break the chat or block the email.
+ */
+async function insertLeadRow(lead: LeadData): Promise<void> {
+  try {
+    const supabase = createSupabaseAdmin();
+    if (!supabase) {
+      console.warn(
+        "leads insert skipped: NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY not set"
+      );
+      return;
+    }
+    const service =
+      (lead.job_role || "unknown") + (lead.job_type ? ` (${lead.job_type})` : "");
+    const { error } = await supabase.from("leads").insert([
+      {
+        name: lead.name || "unknown",
+        phone: lead.phone || "",
+        service,
+        city: lead.area || "unknown",
+      },
+    ]);
+    if (error) console.error("Chatbot leads insert failed:", error.message);
+  } catch (e) {
+    console.error("Chatbot leads insert failed:", e);
+  }
+}
+
 interface CreateBookingInput {
   name?: string;
   phone?: string;
@@ -617,15 +648,7 @@ async function runTool(
       };
 
       // Best-effort: store in the same `leads` table the website forms use.
-      try {
-        const supabase = createSupabaseAdmin();
-        if (supabase) {
-          const service = jobRole + (lead.job_type ? ` (${lead.job_type})` : "");
-          await supabase.from("leads").insert([{ name: name_, phone, service, city: area }]);
-        }
-      } catch (e) {
-        console.error("Booking lead insert failed:", e);
-      }
+      await insertLeadRow(lead);
 
       // The booking email is the operational source of truth for the team.
       const areaServed = isServedArea(area);
@@ -969,6 +992,9 @@ export async function POST(req: Request) {
       const isDupe = isDuplicateLead(lead.phone!);
       if (!isDupe) {
         try {
+          // Store in Supabase AND email — the email is the team's alert, the
+          // leads table is the system of record.
+          await insertLeadRow(lead);
           await sendLeadEmail(lead, areaServed, recentConversation);
           emailed = true;
         } catch (e) {
