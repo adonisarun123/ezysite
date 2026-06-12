@@ -675,7 +675,13 @@ async function logChatTurn(args: {
   leadEmailed: boolean;
 }) {
   const supabase = createSupabaseAdmin();
-  if (!supabase) return; // logging is optional — never break the chat
+  if (!supabase) {
+    // logging is optional — never break the chat — but say WHY it's skipped
+    console.warn(
+      "chatbot_sessions logging skipped: NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY not set"
+    );
+    return;
+  }
   const { sessionId, page, messages, lead, areaServed, leadEmailed } = args;
   const row: Record<string, unknown> = {
     session_id: sessionId,
@@ -701,7 +707,13 @@ async function logChatTurn(args: {
   const { error } = await supabase
     .from("chatbot_sessions")
     .upsert(row, { onConflict: "session_id" });
-  if (error) console.error("Chat log upsert failed:", error.message);
+  if (error)
+    console.error(
+      "Chat log upsert failed:",
+      error.message,
+      error.details || "",
+      error.hint || ""
+    );
 }
 
 async function logChatClose(args: {
