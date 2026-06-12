@@ -23,6 +23,7 @@ const TRIAGED_LEAD_TYPES = new Set([
   'requirement',
   'customer_requirement',
   'care_services',
+  'chatbot',
 ])
 
 export interface LeadTriageResult {
@@ -54,7 +55,8 @@ const URGENCY_STYLES: Record<TriageJson['urgency'], { bg: string; border: string
 
 export async function triageLeadForEmail(
   leadType: string,
-  formData: Record<string, unknown>
+  formData: Record<string, unknown>,
+  timeoutMs: number = TIMEOUT_MS
 ): Promise<LeadTriageResult | null> {
   try {
     if (!TRIAGED_LEAD_TYPES.has(leadType)) return null
@@ -94,7 +96,7 @@ Lead data: ${JSON.stringify(compact)}`
         max_tokens: 400,
         messages: [{ role: 'user', content: prompt }],
       }),
-      signal: AbortSignal.timeout(TIMEOUT_MS),
+      signal: AbortSignal.timeout(timeoutMs),
     })
     if (!res.ok) return null
 

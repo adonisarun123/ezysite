@@ -2013,11 +2013,17 @@ export const sendEzyNestBookingEmail = async (
     const emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
     const adminEmail = buildRecipientList(emailRecipientsEnv);
 
+    // AI triage (best-effort) — never blocks the send.
+    const nestTriage = await triageLeadForEmail('general', bookingDetails as Record<string, unknown>);
+    const finalContent = nestTriage && emailContent?.subject && emailContent?.html
+      ? { ...emailContent, subject: `${nestTriage.subjectTag}${emailContent.subject}`, html: nestTriage.htmlBlock + emailContent.html }
+      : emailContent;
+
     const mailOptions: any = {
       from: process.env.SMTP_USER,
       to: adminEmail,
       replyTo: bookingDetails.email || process.env.SMTP_USER,
-      ...emailContent,
+      ...finalContent,
     };
 
     // Add ID proof attachment if provided
@@ -2166,11 +2172,17 @@ This email was automatically generated from the NEST booking system.
       `
     }
 
+    // AI triage (best-effort) — never blocks the send.
+    const nestTriage = await triageLeadForEmail('general', formData as Record<string, unknown>)
+    const finalContent = nestTriage
+      ? { ...emailContent, subject: `${nestTriage.subjectTag}${emailContent.subject}`, html: nestTriage.htmlBlock + emailContent.html }
+      : emailContent
+
     const mailOptions = {
       from: process.env.SMTP_USER,
       to: adminEmail,
       replyTo: formData.email || process.env.SMTP_USER,
-      ...emailContent,
+      ...finalContent,
     }
 
     return await sendEmailWithRetry(transporter, mailOptions)

@@ -4,6 +4,7 @@
 
 import nodemailer from "nodemailer";
 import { createSupabaseAdmin } from "@/lib/supabaseAdmin";
+import { triageLeadForEmail } from "@/lib/leadTriage";
 
 export const runtime = "nodejs"; // SMTP needs the Node runtime, not edge
 
@@ -462,6 +463,10 @@ TOOLS — REAL ACTIONS YOU CAN TAKE (use them, never guess)
    - the visitor is a customer (not job seeker/support),
    - you know their name, a valid 10-digit phone, area, and job role,
    - AND the visitor has clearly said yes to booking a callback.
+   IMPORTANT: the moment you have all four details from a customer, in that SAME
+   reply confirm them back and ask: "Shall I confirm your callback booking now?"
+   On a clear yes ("yes", "ok", "haan", "please book"), call create_booking
+   immediately. Do not let the conversation drift without offering the booking.
    Call it at most ONCE per conversation. When it succeeds, give the visitor the
    booking reference and say our team will call within 30 minutes during business
    hours (9 AM–7 PM IST). If it returns an error, apologise briefly and fix the
@@ -548,7 +553,8 @@ interface CreateBookingInput {
 
 async function runTool(
   name: string,
-  input: unknown
+  input: unknown,
+  recentConversation?: string
 ): Promise<Record<string, unknown>> {
   try {
     if (name === "check_service_area") {
@@ -579,16 +585,11 @@ async function runTool(
       if (!isValidIndianMobile(phone))
         return { ok: false, error: "invalid_phone: ask the visitor to re-check their 10-digit mobile number" };
 
-      // Re-use the duplicate-lead window: also prevents a double email later
-      // in this request (the <lead> email path checks the same map).
-      if (isDuplicateLead(phone)) {
-        return {
-          ok: true,
-          duplicate: true,
-          message:
-            "We already have a very recent request from this number. The team will call shortly — no need to book again.",
-        };
-      }
+      // Record the phone in the duplicate window so the legacy <lead> email
+      // path won't double-send. A booking is an explicit, visitor-confirmed
+      // action, so it proceeds even if a plain lead email already went out —
+      // the [BOOKED] email supersedes it for the team.
+      isDuplicateLead(phone);
 
       const reference = generateBookingRef();
       const lead: LeadData = {
@@ -623,7 +624,7 @@ async function runTool(
 
       // The booking email is the operational source of truth for the team.
       const areaServed = isServedArea(area);
-      await sendLeadEmail(lead, areaServed);
+      await sendLeadEmail(lead, areaServed, recentConversation);
 
       return {
         ok: true,
@@ -853,6 +854,14 @@ export async function POST(req: Request) {
     const apiMessages: Array<{ role: string; content: unknown }> =
       messages.slice(-20).map((m) => ({ role: m.role, content: m.content }));
 
+    // Bounded conversation context for AI triage in lead/booking emails.
+    const recentConversation = messages
+      .filter((m) => m.role === "user")
+      .slice(-6)
+      .map((m) => m.content.slice(0, 200))
+      .join(" | ")
+      .slice(0, 900);
+
     let data: { content?: ApiBlock[]; stop_reason?: string } = {};
     let bookingRef: string | null = null;
 
@@ -894,7 +903,7 @@ export async function POST(req: Request) {
       apiMessages.push({ role: "assistant", content: data.content });
       const toolResults: Array<Record<string, unknown>> = [];
       for (const tu of toolUses) {
-        const result = await runTool(tu.name || "", tu.input);
+        const result = await runTool(tu.name || "", tu.input, recentConversation);
         if (
           tu.name === "create_booking" &&
           result.ok === true &&
@@ -955,7 +964,7 @@ export async function POST(req: Request) {
       const isDupe = isDuplicateLead(lead.phone!);
       if (!isDupe) {
         try {
-          await sendLeadEmail(lead, areaServed);
+          await sendLeadEmail(lead, areaServed, recentConversation);
           emailed = true;
         } catch (e) {
           console.error("Lead email failed:", e);
@@ -1045,19 +1054,37 @@ function leadTypeTag(lead: LeadData): string {
   return "";
 }
 
-async function sendLeadEmail(lead: LeadData, areaServed: boolean | null) {
+async function sendLeadEmail(
+  lead: LeadData,
+  areaServed: boolean | null,
+  recentConversation?: string
+) {
   const transporter = createTransporter();
   const to = buildTo(process.env.LEAD_TO, LEAD_RECIPIENTS);
   const from = process.env.SMTP_FROM || process.env.SMTP_USER || "";
   const v = (x: string | null | undefined) => (x ? String(x) : "—");
 
+  // AI triage (best-effort): urgency banner + summary + suggested opener.
+  // Includes recent conversation so the summary reflects what was discussed.
+  // Tighter 3.5s timeout: this runs inside a live chat turn, so the visitor
+  // is waiting — on timeout the email simply goes out without the banner.
+  const triage = await triageLeadForEmail(
+    "chatbot",
+    {
+      ...lead,
+      recent_conversation: recentConversation || undefined,
+    } as Record<string, unknown>,
+    3500
+  );
+
   const sentimentTag = lead.sentiment === "negative" ? " [FRUSTRATED]" : "";
   const areaTag = areaServed === false ? " [OUTSIDE SERVICE AREA]" : "";
   const typeTag = leadTypeTag(lead);
   const bookedTag = lead.booking_ref ? ` [BOOKED ${lead.booking_ref}]` : "";
+  const triageTag = triage?.subjectTag || "";
 
   const subject = safeSubject(
-    `New lead${typeTag}${bookedTag} — ${v(lead.job_role)}${lead.area ? ", " + lead.area : ""}${sentimentTag}${areaTag}`
+    `${triageTag}New lead${typeTag}${bookedTag} — ${v(lead.job_role)}${lead.area ? ", " + lead.area : ""}${sentimentTag}${areaTag}`
   );
 
   const isJobSeeker = lead.lead_type === "job_seeker";
@@ -1081,6 +1108,7 @@ async function sendLeadEmail(lead: LeadData, areaServed: boolean | null) {
 
   const html = `
     <div style="font-family:Inter,Arial,sans-serif;color:#16241F">
+      ${triage?.htmlBlock || ""}
       <h2 style="color:#0E7C66;margin:0 0 12px">New website lead${esc(typeTag)}</h2>
       ${
         lead.sentiment === "negative"

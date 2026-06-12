@@ -4,7 +4,10 @@ import { ImageResponse } from 'next/og'
 // Usage: /og?title=Page%20Title&subtitle=Optional%20subtitle
 // Lives at /og (not /api/og) so robots.txt's "Disallow: /api/" never
 // blocks social/search crawlers from fetching the image.
-export const runtime = 'edge'
+// Node runtime (not edge): the edge sandbox rejects satori's internals with
+// "EvalError: Code generation from strings disallowed". Responses are
+// long-cached, so Node cold starts are irrelevant here.
+export const runtime = 'nodejs'
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
