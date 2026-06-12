@@ -48,14 +48,19 @@ const PROFANITY_LIST = [
 ];
 const PROFANITY_RE = new RegExp(`\\b(${PROFANITY_LIST.join("|")})\\b`, "i");
 
-function isSpamOrGibberish(text: string): string | null {
+export function isSpamOrGibberish(text: string): string | null {
   const trimmed = text.trim();
   // Too short (single char that's not a number or common reply)
   if (trimmed.length < 2 && !/^\d$/.test(trimmed)) return "too_short";
   // Way too long for a chat message
   if (trimmed.length > MAX_INPUT_CHARS) return "too_long";
+  // Phone-number attempts (digits with optional +/spaces/dashes/parens) must
+  // always reach the assistant — even repetitive ones like 9999999999 — so
+  // Asha can reply in context ("that number looks incorrect, could you
+  // re-check?") instead of a canned gibberish reply derailing the lead flow.
+  const phoneLike = /^[+\d][\d\s\-()]{5,}$/.test(trimmed);
   // Mostly same character repeated
-  if (/^(.)\1{5,}$/.test(trimmed.replace(/\s/g, ""))) return "gibberish";
+  if (!phoneLike && /^(.)\1{5,}$/.test(trimmed.replace(/\s/g, ""))) return "gibberish";
   // Random consonant strings (no vowels in 8+ latin chars — skip non-latin scripts)
   if (/^[^aeiouAEIOU\s\d]{8,}$/.test(trimmed) && /^[\x00-\x7F]+$/.test(trimmed))
     return "gibberish";
@@ -437,7 +442,14 @@ function Panel({ seed, onClose }: { seed: string | null; onClose: () => void }) 
         setInput("");
         return;
       }
-      if (spamType === "gibberish" || spamType === "too_short") {
+      if (
+        (spamType === "gibberish" || spamType === "too_short") &&
+        messages.length <= 1
+      ) {
+        // Canned reply ONLY before the conversation has started (drive-by spam
+        // guard). Mid-conversation, unclear input goes to the assistant, which
+        // knows the context and can ask properly ("Sorry Arun, could you re-type
+        // your number?") instead of derailing the lead flow with a re-greeting.
         setMessages((m) => [
           ...m,
           { role: "user", content: clean },
