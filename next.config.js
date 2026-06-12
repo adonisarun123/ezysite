@@ -35,7 +35,7 @@ const nextConfig = {
     styledComponents: false,
   },
 
-  serverExternalPackages: ['puppeteer', 'puppeteer-core', 'nodemailer'],
+  serverExternalPackages: ['puppeteer-core', '@sparticuz/chromium', 'nodemailer'],
 
   // Target modern browsers only to reduce bundle size
   experimental: {
@@ -61,10 +61,9 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
 
-  // Disable ESLint during builds to avoid deployment failures
-  // TODO: re-enable lint at build once existing warnings are addressed
+  // Lint at build: current codebase has 0 errors (warnings don't fail builds)
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
 
   // Headers for better caching, security and performance

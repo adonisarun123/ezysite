@@ -9,6 +9,7 @@ import NestCTA from '@/components/NestCTA'
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   ShieldCheckIcon, 
   HomeIcon, 
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
       "Hire reliable full-time maids for daily household support. Choose specialists for housekeeping, cooking, childcare, or elderly care. Fixed daily hours, verified profiles, and quick replacements.",
     url: 'https://www.ezyhelpers.com/services/full-time-maids',
     type: 'website',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Full%20Time%20Maid%20Services", width: 1200, height: 630, alt: "Full Time Maid Services" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/full-time-maids',
@@ -289,6 +291,11 @@ export default function FullTimeMaidsPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a full-time maid through EzyHelpers?"
+        answer="EzyHelpers provides background-verified full-time maids working 8–10 hours daily for cleaning, cooking support, and household chores. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper."
+      />
 
       {/* Why Choose Section */}
       <section className="section-padding bg-white">

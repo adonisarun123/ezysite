@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
         description: 'Special needs caregiver services for differently-abled children. Background-verified caregivers offer daily support, therapy assistance & emotional care at home.',
         url: 'https://www.ezyhelpers.com/services/special-needs-caregiver',
         type: 'website',
+        images: [{ url: "https://www.ezyhelpers.com/og?title=Special%20Needs%20Caregiver%20for%20Special%20Kids%20at%20Home", width: 1200, height: 630, alt: "Special Needs Caregiver for Special Kids at Home" }],
     },
     alternates: {
         canonical: 'https://www.ezyhelpers.com/services/special-needs-caregiver'
@@ -286,6 +288,11 @@ export default function SpecialNeedsCaregiverPage() {
                     </div>
                 </div>
             </section>
+
+            <QuickAnswer
+              question="How do I find a special-needs caregiver through EzyHelpers?"
+              answer="EzyHelpers provides trained, background-verified caregivers experienced in supporting children and adults with special needs — live-in, full-time, or part-time. Placement typically takes 24–72 hours, with a quick replacement guarantee."
+            />
 
             {/* Why Choose Section */}
             <section className="section-padding bg-gray-50 border-b border-gray-100 relative overflow-hidden">

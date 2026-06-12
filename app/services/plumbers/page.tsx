@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   BeakerIcon,
   CheckCircleIcon,
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Fix%20Leaks%20%26%20More%20with%20Expert%20Plumber%20Service", width: 1200, height: 630, alt: "Fix Leaks & More with Expert Plumber Service" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/plumbers'
@@ -277,6 +279,11 @@ export default function PlumbersPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book a plumber through EzyHelpers?"
+        answer="EzyHelpers connects you with verified plumbers for leak repairs, fittings, blockages, and bathroom work. Book online or call 080-31411776 — same-day visits are available in most service areas with upfront pricing."
+      />
 
       {/* Why Choose Us */}
       <section className="section-padding bg-white">

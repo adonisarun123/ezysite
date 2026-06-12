@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   SparklesIcon,
   CheckCircleIcon,
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Sofa%20Cleaning%20Services%20in%20Bareilly%20-%20Stain%20%26%20Odour%20Removal", width: 1200, height: 630, alt: "Sofa Cleaning Services in Bareilly - Stain & Odour Removal" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/sofa-cleaning'
@@ -241,6 +243,11 @@ export default function SofaCleaningPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book sofa cleaning through EzyHelpers?"
+        answer="EzyHelpers offers professional sofa and upholstery cleaning with deep shampooing, stain removal, and fast drying. Book online or call 080-31411776 — same-day and weekend slots are available in most areas."
+      />
 
       {/* Why Choose Us */}
       <section className="section-padding bg-white">

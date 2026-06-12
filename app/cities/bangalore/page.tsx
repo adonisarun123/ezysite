@@ -9,6 +9,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 export const revalidate = 3600
 import NestCTA from '@/components/NestCTA'
 import { LocalBusinessSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   ComputerDesktopIcon,
   HomeIcon,
@@ -28,6 +29,15 @@ export const metadata: Metadata = {
   title: 'Book Maid for Home in Bangalore | Safe & Reliable Help',
   description: 'Verified maid for home in Bangalore with flexible timing, multilingual helpers & quick replacements. Trusted by families across Bangalore.',
   keywords: 'maid for home bangalore, domestic helpers bangalore, verified maids bangalore, house help services bangalore, home services bangalore',
+  openGraph: {
+    title: "Book Maid for Home in Bangalore | Safe & Reliable Help",
+    description: "Verified maid for home in Bangalore with flexible timing, multilingual helpers & quick replacements. Trusted by families across Bangalore.",
+    url: "https://www.ezyhelpers.com/cities/bangalore",
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Book%20Maid%20for%20Home%20in%20Bangalore", width: 1200, height: 630, alt: "Book Maid for Home in Bangalore" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/cities/bangalore'
   }
@@ -114,6 +124,11 @@ export default function BangalorePage() {
             </div>
           </div>
         </section>
+
+        <QuickAnswer
+          question="How do I hire a maid in Bangalore through EzyHelpers?"
+          answer="EzyHelpers provides background-verified maids, cooks, nannies, drivers, and elderly caretakers across Bangalore — from Whitefield to Jayanagar. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper. Call 080-31411776 to get started."
+        />
 
         {/* Why Choose EzyHelpers Section */}
         <section className="section-padding bg-white">

@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   PaintBrushIcon,
   CheckCircleIcon,
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=House%20Painting%20Services", width: 1200, height: 630, alt: "House Painting Services" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/painters'
@@ -294,6 +296,11 @@ export default function PaintersPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book home painting through EzyHelpers?"
+        answer="EzyHelpers connects you with professional, verified painters for interior and exterior painting, touch-ups, and waterproofing. Book online or call 080-31411776 for a free estimate and flexible scheduling."
+      />
 
       
 

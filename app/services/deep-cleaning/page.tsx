@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   SparklesIcon,
   CheckCircleIcon,
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Home%20Deep%20Cleaning%20Services%20%E2%80%93%20Book%20Verified%20Experts", width: 1200, height: 630, alt: "Home Deep Cleaning Services – Book Verified Experts" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/deep-cleaning',
@@ -307,6 +309,11 @@ export default function DeepCleaningPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book home deep cleaning through EzyHelpers?"
+        answer="EzyHelpers offers professional deep cleaning for kitchens, bathrooms, sofas, and full homes using trained, verified cleaners. Book online or call 080-31411776 — flexible slots are available, including same-day service in most areas."
+      />
 
       {/* Why Choose Us */}
       <section className="section-padding bg-white">

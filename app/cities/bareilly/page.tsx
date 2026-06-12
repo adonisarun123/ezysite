@@ -30,12 +30,22 @@ import {
 import { Metadata } from 'next'
 import NestCTA from '@/components/NestCTA'
 import { LocalBusinessSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 
 export const metadata: Metadata = {
   title: 'House Maid Service in Bareilly – Safe & Verified',
   description:
     'Searching for a reliable house maid in Bareilly? Hire domestic helpers for cleaning, cooking, and caregiving, all under one trusted platform.',
   keywords: 'house maid bareilly, domestic helper bareilly, maid service bareilly, cleaning maid bareilly, cooking maid bareilly',
+  openGraph: {
+    title: "House Maid Service in Bareilly – Safe & Verified",
+    description: "Searching for a reliable house maid in Bareilly? Hire domestic helpers for cleaning, cooking, and caregiving, all under one trusted platform.",
+    url: "https://www.ezyhelpers.com/cities/bareilly",
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=House%20Maid%20Service%20in%20Bareilly%20%E2%80%93%20Safe%20%26%20Verified", width: 1200, height: 630, alt: "House Maid Service in Bareilly – Safe & Verified" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/cities/bareilly'
   }
@@ -101,6 +111,11 @@ export default function BareillyPage() {
             </div>
           </div>
         </section>
+
+        <QuickAnswer
+          question="How do I hire domestic help in Bareilly through EzyHelpers?"
+          answer="EzyHelpers provides background-verified maids, cooks, babysitters, and caretakers across Bareilly. Placement typically takes 24–72 hours, with flexible full-time, part-time, and live-in options and a quick replacement guarantee."
+        />
 
         {/* Domestic Staff Services */}
         <section className="section-padding bg-white">

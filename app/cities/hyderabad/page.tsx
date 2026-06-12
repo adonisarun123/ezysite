@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import NestCTA from '@/components/NestCTA'
 import { LocalBusinessSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   ComputerDesktopIcon, 
   HomeIcon, 
@@ -25,6 +26,15 @@ export const metadata: Metadata = {
   title: 'Hire Reliable Maid for Home in Hyderabad | Trained Helpers',
   description: 'Find background-verified maids and helpers in Hyderabad for daily chores, cooking, babysitting, elderly care, driving, and home repairs, all in one place.',
   keywords: 'maid for home Hyderabad, domestic helpers Hyderabad, verified maids Hyderabad, house help services Hyderabad',
+  openGraph: {
+    title: "Hire Reliable Maid for Home in Hyderabad | Trained Helpers",
+    description: "Find background-verified maids and helpers in Hyderabad for daily chores, cooking, babysitting, elderly care, driving, and home repairs, all in one place.",
+    url: "https://www.ezyhelpers.com/cities/hyderabad",
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Hire%20Reliable%20Maid%20for%20Home%20in%20Hyderabad", width: 1200, height: 630, alt: "Hire Reliable Maid for Home in Hyderabad" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/cities/hyderabad',
     languages: selfReferencingLanguages('/cities/hyderabad'),
@@ -112,6 +122,11 @@ export default function HyderabadPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a maid in Hyderabad through EzyHelpers?"
+        answer="EzyHelpers provides background-verified maids, cooks, babysitters, and caretakers across Hyderabad. Placement typically takes 24–72 hours, with flexible service options and a quick replacement guarantee. Call 080-31411776 to get started."
+      />
 
       {/* Why Choose EzyHelpers Section */}
       <section className="section-padding bg-white">

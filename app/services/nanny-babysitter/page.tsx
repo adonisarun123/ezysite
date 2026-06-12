@@ -9,6 +9,7 @@ import NestCTA from '@/components/NestCTA'
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   UserGroupIcon, 
   HeartIcon, 
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Professional%20Babysitter%20Services", width: 1200, height: 630, alt: "Professional Babysitter Services" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/nanny-babysitter'
@@ -279,6 +281,11 @@ export default function NannyBabysitterPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a nanny or babysitter through EzyHelpers?"
+        answer="EzyHelpers provides background-verified nannies and babysitters — live-in, full-time, or part-time — for infants to school-age children. Placement typically takes 24–72 hours, with a quick replacement guarantee."
+      />
 
       {/* Specialized Care for Every Age Group */}
       <section className="section-padding bg-white">

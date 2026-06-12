@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   ShieldCheckIcon,
   ClockIcon,
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Air%20Conditioner%20Repair%20in%20Bareilly%20-%20Cooling%20Experts", width: 1200, height: 630, alt: "Air Conditioner Repair in Bareilly - Cooling Experts" }],
   }
 }
 
@@ -184,6 +186,11 @@ export default function ACRepairPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book AC repair at home through EzyHelpers?"
+        answer="EzyHelpers connects you with background-verified AC technicians for installation, servicing, gas refilling, and repairs. Book online or call 080-31411776 — same-day visits are available in most service areas, with upfront pricing and no hidden charges."
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

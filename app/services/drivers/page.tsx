@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   TruckIcon, 
   ClockIcon, 
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Professional%20Drivers%20Services", width: 1200, height: 630, alt: "Professional Drivers Services" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/drivers'
@@ -272,6 +274,11 @@ export default function DriversPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a personal driver through EzyHelpers?"
+        answer="EzyHelpers provides background-verified personal drivers on full-time, part-time, or on-demand basis. Placement typically takes 24–72 hours, with verified driving records, a replacement guarantee, and direct payment to your driver."
+      />
 
       {/* Qualified & Professional Drivers */}
       <section className="section-padding bg-white">

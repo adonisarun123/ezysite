@@ -6,6 +6,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import FAQAccordion from '@/components/FAQAccordion'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   CommandLineIcon,
   CheckCircleIcon,
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Expert%20Carpenter%20Services", width: 1200, height: 630, alt: "Expert Carpenter Services" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/carpenters'
@@ -283,6 +285,11 @@ export default function CarpentersPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a carpenter through EzyHelpers?"
+        answer="EzyHelpers connects you with skilled, background-verified carpenters for furniture repair, fittings, and custom woodwork. Book online or call 080-31411776; same-day and scheduled visits are available with clear, upfront pricing."
+      />
 
       {/* Important Considerations */}
       <section className="section-padding bg-white">

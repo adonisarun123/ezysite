@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   ShieldCheckIcon,
   CheckCircleIcon,
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Pest%20Control%20for%20Home%20in%20Bareilly%20-%20Safe%20%26%20Effective", width: 1200, height: 630, alt: "Pest Control for Home in Bareilly - Safe & Effective" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/pest-control'
@@ -213,6 +215,11 @@ export default function PestControlPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book pest control through EzyHelpers?"
+        answer="EzyHelpers offers professional pest control for cockroaches, termites, bed bugs, and rodents using safe, effective treatments. Book online or call 080-31411776 for inspection and same-week service."
+      />
 
       {/* Why Choose Us */}
       <section className="section-padding bg-white">

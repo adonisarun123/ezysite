@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   BoltIcon,
   CheckCircleIcon,
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Expert%20Electrician%20Services%20for%20Your%20Home", width: 1200, height: 630, alt: "Expert Electrician Services for Your Home" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/electricians'
@@ -277,6 +279,11 @@ export default function ElectriciansPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book an electrician through EzyHelpers?"
+        answer="EzyHelpers connects you with verified electricians for wiring, repairs, installations, and safety checks. Book online or call 080-31411776 — same-day visits are available in most service areas with upfront pricing."
+      />
 
       {/* Why Choose Us */}
       <section className="section-padding bg-white">

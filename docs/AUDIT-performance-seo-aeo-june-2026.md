@@ -16,6 +16,42 @@ Full-codebase review covering build/runtime performance, React architecture, SEO
 
 Verification: `tsc --noEmit` passes with zero errors after all changes.
 
+## Round 2 — remaining recommendations implemented (✅ DONE)
+
+**P1 — Landing pages server-rendered.** All four `/Lp/*` pages and `/case-studies` had page-level `'use client'` but zero hooks or event handlers — pure static JSX. Directives removed; pages now prerender as static HTML. Interactive children (`AdLeadForm`, `FAQAccordion`) keep their own `'use client'`.
+
+**P3 — HeroSection split.** Form state/logic extracted to `components/sections/HeroLeadForm.tsx` (client); `HeroSection.tsx` is now a server component, so the homepage hero (the LCP element) renders entirely in initial HTML and only the form ships JS.
+
+**S5 — FAQ answers now crawlable.** `FAQAccordion` used Headless UI `DisclosurePanel`, which unmounts closed panels — FAQ answers were invisible to crawlers/answer engines. Added `unmount={false}` so answers stay in the DOM (hidden when closed). This one change covers 67+ care-services pages plus the Lp pages. (`FAQWithTracking` already used CSS collapse and was fine.)
+
+**P2 — Puppeteer replaced.** `app/api/generate-pdf/route.ts` migrated to `puppeteer-core` + `@sparticuz/chromium` (serverless-correct, ~200MB smaller installs; 33 packages removed). Local dev uses `PUPPETEER_EXECUTABLE_PATH` (documented in `.env.example`); on Vercel/Lambda the trimmed Chromium is used automatically. **Note: test the PDF endpoint after the next deploy.**
+
+**P6 — ESLint re-enabled at build.** Lint shows 0 errors (466 warnings, which don't fail builds), so `eslint.ignoreDuringBuilds` is now `false`.
+
+**S3 — openGraph added to all 10 city pages** (title/description/url/siteName/locale derived from each page's existing metadata).
+
+**Corrections to the original audit** (claims that didn't survive verification): S1 was already done — `app/blog/[slug]/page.tsx` emits full BlogPosting JSON-LD with author/dates/publisher. P4 was wrong — `UrgencyProvider` is consumed by `Navbar`/`Breadcrumb`/`MainContent` on every page, root placement is correct, and a client provider does not force server children to client-render. `libphonenumber-js` is only imported in a server API route, so it never affects client bundles.
+
+Verification: full production build passes (exit 0, ~38s) with lint enabled; all Lp/service/city pages prerender as static; shared first-load JS 102 kB.
+
+## Round 3 — final items implemented (✅ DONE)
+
+**A1 — Answer-first paragraphs on all 35 service + city pages.** New `components/QuickAnswer.tsx` (server component) renders a question + concise factual answer directly below the hero on every service and city page. Copy is hand-written per page and limited to claims already made on the site (verification, 24–72h placement, replacement guarantee) — no invented pricing.
+
+**S2 — Dynamic OG images.** New `app/og/route.tsx` generates branded 1200×630 Open Graph images on the edge (`/og?title=...`), with long-lived cache headers. All 35 service/city pages now reference per-page OG images in their metadata. The route deliberately lives at `/og`, not `/api/og`, because robots.txt disallows `/api/` and would have blocked crawlers from fetching the images.
+
+**A4 — Speakable schema.** The blog `BlogPosting` JSON-LD now includes a `SpeakableSpecification` (h1 + first paragraph) for voice/AI assistants.
+
+**P5 — correction, no action.** `CareClusterHeroScenes` and its parent landing view are server components; the inline SVGs ship zero client JS. The audit claim was a false positive.
+
+**A2 — llms.txt completed.** The file was care-services-heavy: the 25 general service pages had no URLs at all and only 2 of 10 cities were listed. All service pages and all 10 city pages now have cited URLs, so AI engines can link directly to the relevant landing page.
+
+Verification: `tsc --noEmit` clean; full production build passes (exit 0, 335 static pages).
+
+### Still open (requires data/decisions outside the code)
+
+GA4 + GTM double-tracking: `ThirdPartyScripts.tsx` deliberately loads GA4 standalone alongside GTM. To fix, add the GA4 config tag inside the GTM-PGM9V53 container, verify events flow, then delete the GA4 `<Script>` blocks. A3 pricing/comparison content needs real pricing decisions — the blog already has comparison guides; adding concrete ₹ figures is a business call. S4 AggregateRating: deliberately not implemented — Google ignores self-serving review markup on LocalBusiness/Organization (2019 policy), so star snippets require pulling genuine third-party reviews (e.g., Trustpilot API) rather than marking up the site's own 4.8/5 claim.
+
 ---
 
 ## Remaining recommendations — Performance

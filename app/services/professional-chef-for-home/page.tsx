@@ -6,6 +6,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -38,6 +39,7 @@ export const metadata: Metadata = {
         description: 'Get fresh, tasty home-cooked meals daily with a professional chef preparing multi-cuisine dishes and custom menus to suit your preferences.',
         url: 'https://www.ezyhelpers.com/services/professional-chef-for-home',
         type: 'website',
+        images: [{ url: "https://www.ezyhelpers.com/og?title=Professional%20Chef%20for%20Home", width: 1200, height: 630, alt: "Professional Chef for Home" }],
     },
     alternates: {
         canonical: 'https://www.ezyhelpers.com/services/professional-chef-for-home'
@@ -278,6 +280,11 @@ export default function ProfessionalChefPage() {
                         </div>
                     </div>
                 </section>
+
+                <QuickAnswer
+                  question="How do I hire a professional chef for home through EzyHelpers?"
+                  answer="EzyHelpers provides trained professional chefs for daily gourmet meals, parties, and special diets at home. Chefs are background-verified, with placement typically in 24–72 hours and menus tailored to your preferences."
+                />
 
                 {/* Why Choose EzyHelpers for Home Chef Services? */}
                 <section className="section-padding bg-gray-50">

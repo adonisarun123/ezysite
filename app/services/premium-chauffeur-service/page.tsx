@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -39,6 +40,7 @@ export const metadata: Metadata = {
         description: 'Book EzyHelpers’ Premium Chauffeur Service for high-end luxury cars. Verified drivers provide safe rides in Mercedes, BMW, Audi, and more.',
         url: 'https://www.ezyhelpers.com/services/premium-chauffeur-service',
         type: 'website',
+        images: [{ url: "https://www.ezyhelpers.com/og?title=Premium%20Chauffeur%20Service", width: 1200, height: 630, alt: "Premium Chauffeur Service" }],
     },
     alternates: {
         canonical: 'https://www.ezyhelpers.com/services/premium-chauffeur-service'
@@ -326,6 +328,11 @@ export default function ChauffeurServicePage() {
                         </div>
                     </div>
                 </section>
+
+                <QuickAnswer
+                  question="How do I hire a premium chauffeur through EzyHelpers?"
+                  answer="EzyHelpers provides professional, background-verified chauffeurs with clean driving records for daily commutes, business travel, and special occasions. Placement typically takes 24–72 hours, with a replacement guarantee."
+                />
 
                 {/* Why Choose EzyHelpers for Chauffeur Services? */}
                 <section className="section-padding bg-gray-50">

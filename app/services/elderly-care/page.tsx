@@ -9,6 +9,7 @@ import NestCTA from '@/components/NestCTA'
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   HeartIcon, 
   ShieldCheckIcon, 
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Compassionate%20Elderly%20Care%20Services%20for%20Seniors", width: 1200, height: 630, alt: "Compassionate Elderly Care Services for Seniors" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/elderly-care'
@@ -266,6 +268,11 @@ export default function ElderlyCare() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I arrange elderly care at home through EzyHelpers?"
+        answer="EzyHelpers provides trained, background-verified elderly caretakers for daily assistance, companionship, and mobility support — live-in or full-time. Placement typically takes 24–72 hours, with a quick replacement guarantee."
+      />
 
       {/* Why Choose Section */}
       <section className="section-padding bg-white">

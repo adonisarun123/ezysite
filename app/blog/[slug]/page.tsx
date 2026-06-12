@@ -261,6 +261,11 @@ export default async function BlogPost({ params }: PageProps) {
               '@type': 'WebPage',
               '@id': `https://www.ezyhelpers.com/blog/${post.id}`,
             },
+            // AEO: mark headline + intro as speakable for voice/AI assistants
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['h1', 'article p:first-of-type'],
+            },
           }),
         }}
       />

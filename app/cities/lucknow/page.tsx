@@ -5,6 +5,7 @@ import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import { LocalBusinessSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   BuildingLibraryIcon, 
   HeartIcon, 
@@ -19,6 +20,15 @@ export const metadata: Metadata = {
   title: 'Domestic Help in Lucknow | Verified Maids & Home Services | EzyHelpers',
   description:
     'Verified maids, cooks, and household help in Lucknow — Hazratganj, Gomti Nagar, and across the city. Trusted placements with EzyHelpers.',
+  openGraph: {
+    title: "Domestic Help in Lucknow | Verified Maids & Home Services | EzyHelpers",
+    description: "Verified maids, cooks, and household help in Lucknow — Hazratganj, Gomti Nagar, and across the city. Trusted placements with EzyHelpers.",
+    url: "https://www.ezyhelpers.com/cities/lucknow",
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Domestic%20Help%20in%20Lucknow", width: 1200, height: 630, alt: "Domestic Help in Lucknow" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/cities/lucknow',
     languages: selfReferencingLanguages('/cities/lucknow'),
@@ -94,6 +104,11 @@ export default function LucknowPage() {
             </div>
           </div>
         </section>
+
+        <QuickAnswer
+          question="How do I hire a maid in Lucknow through EzyHelpers?"
+          answer="EzyHelpers provides background-verified maids, cooks, nannies, and caretakers across Lucknow. Placement typically takes 24–72 hours, with flexible full-time, part-time, and live-in options and a quick replacement guarantee."
+        />
 
         {/* Local Services */}
         <section className="section-padding bg-white">

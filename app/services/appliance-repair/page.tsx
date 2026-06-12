@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   WrenchScrewdriverIcon,
   CheckCircleIcon,
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Home%20Appliance%20Repair", width: 1200, height: 630, alt: "Home Appliance Repair" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/appliance-repair'
@@ -273,6 +275,11 @@ export default function ApplianceRepairPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book home appliance repair through EzyHelpers?"
+        answer="EzyHelpers provides verified technicians for washing machine, refrigerator, microwave, and other home appliance repairs. Book online or call 080-31411776 for a same-day or next-day visit with transparent, upfront pricing."
+      />
 
       
 

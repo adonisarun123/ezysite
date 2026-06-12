@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -36,6 +37,7 @@ export const metadata: Metadata = {
         description: 'Hire trusted dog pet sitters for safe home care. From daily walking and feeding to live-in sitting, we care for your dog with love and attention.',
         url: 'https://www.ezyhelpers.com/services/dog-pet-sitters',
         type: 'website',
+        images: [{ url: "https://www.ezyhelpers.com/og?title=Hire%20Dog%20Pet%20Sitters", width: 1200, height: 630, alt: "Hire Dog Pet Sitters" }],
     },
     alternates: {
         canonical: 'https://www.ezyhelpers.com/services/dog-pet-sitters'
@@ -241,6 +243,11 @@ export default function DogPetSittersPage() {
                     </div>
                 </div>
             </section>
+
+            <QuickAnswer
+              question="How do I find a pet sitter through EzyHelpers?"
+              answer="EzyHelpers connects you with background-verified dog and pet sitters for daily visits, walks, or extended care at home. Placement typically takes 24–72 hours, and a replacement is arranged quickly if your sitter is unavailable."
+            />
 
             {/* Why Choose Section */}
             <section className="section-padding bg-gray-50 relative overflow-hidden">

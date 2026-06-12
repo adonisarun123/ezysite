@@ -9,6 +9,7 @@ import NestCTA from '@/components/NestCTA'
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
 import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   HomeIcon, 
   ShieldCheckIcon, 
@@ -43,6 +44,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Live-In%20Maid%20Services", width: 1200, height: 630, alt: "Live-In Maid Services" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/live-in-maids'
@@ -352,6 +354,11 @@ export default function LiveInMaidsPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a live-in maid through EzyHelpers?"
+        answer="EzyHelpers provides background-verified live-in maids who stay at your home and handle cleaning, cooking support, and daily chores. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper."
+      />
 
       {/* Why Choose Section */}
       <section className="section-padding bg-white">
