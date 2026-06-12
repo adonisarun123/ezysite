@@ -5,6 +5,12 @@
 import nodemailer from "nodemailer";
 import { createSupabaseAdmin } from "@/lib/supabaseAdmin";
 import { triageLeadForEmail } from "@/lib/leadTriage";
+import {
+  isServedArea,
+  isValidIndianMobile,
+  generateBookingRef,
+  buildTo,
+} from "@/lib/assistantHelpers";
 
 export const runtime = "nodejs"; // SMTP needs the Node runtime, not edge
 
@@ -106,28 +112,8 @@ function recordSpend() {
   dailySpend.totalUsd += EST_COST_PER_REQ;
 }
 
-// ── Server-side validators (never trust client or model alone) ────
-const SERVED_AREAS = [
-  "bellandur", "sarjapur", "hsr", "hsr layout", "koramangala",
-  "electronic city", "jp nagar", "jayanagar", "whitefield",
-  "marathahalli", "varthur", "bangalore", "bengaluru", "bareilly",
-];
-
-function isServedArea(area: string): boolean {
-  const lower = area.toLowerCase().trim();
-  return SERVED_AREAS.some((a) => lower.includes(a) || a.includes(lower));
-}
-
-// Valid Indian mobile: 10 digits starting 6–9, not an obvious fake.
-function isValidIndianMobile(phone: string | null): boolean {
-  if (!phone) return false;
-  const digits = phone.replace(/\D/g, "");
-  const ten = digits.length >= 10 ? digits.slice(-10) : digits;
-  if (!/^[6-9]\d{9}$/.test(ten)) return false;
-  if (/^(\d)\1{9}$/.test(ten)) return false; // 9999999999 etc.
-  if (ten === "9876543210" || ten === "6789012345") return false;
-  return true;
-}
+// Server-side validators (isServedArea, isValidIndianMobile) live in
+// lib/assistantHelpers.ts so they're unit-testable.
 
 // HTML-escape anything user/model-controlled before putting it in email HTML.
 function esc(x: unknown): string {
@@ -533,13 +519,6 @@ const TOOLS = [
     },
   },
 ];
-
-function generateBookingRef(): string {
-  const chars = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"; // no easily-confused chars
-  let s = "";
-  for (let i = 0; i < 6; i++) s += chars[Math.floor(Math.random() * chars.length)];
-  return `EZY-${s}`;
-}
 
 interface CreateBookingInput {
   name?: string;
@@ -1022,21 +1001,6 @@ const LEAD_RECIPIENTS = [
 
 // Chat transcripts additionally go to ankit@ (June 2026).
 const TRANSCRIPT_RECIPIENTS = [...LEAD_RECIPIENTS, 'ankit@ezyhelpers.com'];
-
-/** Merge an env-provided comma list with guaranteed recipients, de-duplicated. */
-function buildTo(envValue: string | undefined, guaranteed: string[]): string {
-  const seen = new Set<string>();
-  const out: string[] = [];
-  for (const e of [...(envValue || '').split(','), ...guaranteed]) {
-    const t = e.trim();
-    if (!t) continue;
-    const k = t.toLowerCase();
-    if (seen.has(k)) continue;
-    seen.add(k);
-    out.push(t);
-  }
-  return out.join(', ');
-}
 
 function createTransporter() {
   const port = Number(process.env.SMTP_PORT || 587);

@@ -68,7 +68,7 @@ const describeUserAgentForEmail = (
  * De-duplication is case-insensitive. Used by every send path so that the
  * core team receives a copy of all emails across the site.
  */
-const buildRecipientList = (recipientsEnv: string): string => {
+export const buildRecipientList = (recipientsEnv: string): string => {
   const seen = new Set<string>();
   const out: string[] = [];
   const add = (email: string) => {
