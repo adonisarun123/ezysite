@@ -4,6 +4,7 @@ import pRetry from 'p-retry';
 import { EMAIL } from './constants';
 import { logger } from './logger';
 import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData, CareersSalesExecutiveFormData, CareersRoleApplicationFormData, CareServicesLeadFormData, CandidateApplicationFormData } from '../types/email';
+import { triageLeadForEmail } from './leadTriage';
 import {
   createTransporter,
   safe,
@@ -24,8 +25,14 @@ export {
   formatAccountForEmail,
 };
 
-// Address that must be copied on every outbound lead/notification email site-wide.
-const ALWAYS_CC_EMAIL = 'contact@ezyhelpers.com';
+// Addresses that must be copied on every outbound lead/notification email
+// site-wide, regardless of per-form env routing (June 2026).
+const ALWAYS_CC_EMAILS = [
+  'contact@ezyhelpers.com',
+  'priyanka@ezyhelpers.com',
+  'arun@ezyhelpers.com',
+  'suraj@ezyhelpers.com',
+];
 
 /** Parse a user-agent string into a friendly Browser / OS / Device label for emails. */
 const describeUserAgentForEmail = (
@@ -57,9 +64,9 @@ const describeUserAgentForEmail = (
 
 /**
  * Normalise a comma-separated recipient string into a clean, de-duplicated
- * "a@x.com, b@y.com" list, and guarantee ALWAYS_CC_EMAIL is always included.
- * De-duplication is case-insensitive. Used by every send path so that
- * contact@ezyhelpers.com receives a copy of all emails across the site.
+ * "a@x.com, b@y.com" list, and guarantee ALWAYS_CC_EMAILS are always included.
+ * De-duplication is case-insensitive. Used by every send path so that the
+ * core team receives a copy of all emails across the site.
  */
 const buildRecipientList = (recipientsEnv: string): string => {
   const seen = new Set<string>();
@@ -73,7 +80,7 @@ const buildRecipientList = (recipientsEnv: string): string => {
     out.push(trimmed);
   };
   recipientsEnv.split(',').forEach(add);
-  add(ALWAYS_CC_EMAIL);
+  ALWAYS_CC_EMAILS.forEach(add);
   return out.join(', ');
 };
 
@@ -1939,6 +1946,17 @@ export const sendLeadEmail = async (
         break;
       default:
         throw new Error('Invalid lead type');
+    }
+
+    // AI triage (best-effort): prepend urgency banner + tag the subject.
+    // Returns null on any failure — the email always goes out regardless.
+    const triage = await triageLeadForEmail(leadType, formData as Record<string, unknown>);
+    if (triage && emailContent?.subject && emailContent?.html) {
+      emailContent = {
+        ...emailContent,
+        subject: `${triage.subjectTag}${emailContent.subject}`,
+        html: triage.htmlBlock + emailContent.html,
+      };
     }
 
     const mailOptions: nodemailer.SendMailOptions = {
