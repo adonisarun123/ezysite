@@ -6,6 +6,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import GoogleRatingBadge from '@/components/GoogleRatingBadge'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -282,6 +283,8 @@ export default function PatientCareServicesPage() {
               question="How do I arrange patient care at home through EzyHelpers?"
               answer="EzyHelpers provides trained, background-verified patient caretakers for post-surgery support, daily nursing assistance, and long-term care — live-in or shift-based. Placement typically takes 24–72 hours, with a replacement guarantee."
             />
+
+            <GoogleRatingBadge rating="5.0" detail="Every Google review of our elderly & patient care is 5-star (June 2026)" />
 
             {/* Why Choose Section */}
             <section className="section-padding bg-gray-50 relative overflow-hidden">

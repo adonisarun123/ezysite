@@ -10,6 +10,7 @@ export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import GoogleRatingBadge from '@/components/GoogleRatingBadge'
 import {
   HeartIcon, 
   ShieldCheckIcon, 
@@ -273,6 +274,8 @@ export default function ElderlyCare() {
         question="How do I arrange elderly care at home through EzyHelpers?"
         answer="EzyHelpers provides trained, background-verified elderly caretakers for daily assistance, companionship, and mobility support — live-in or full-time. Placement typically takes 24–72 hours, with a quick replacement guarantee."
       />
+
+      <GoogleRatingBadge rating="5.0" detail="Every Google review of our elderly & patient care is 5-star (June 2026)" />
 
       {/* Why Choose Section */}
       <section className="section-padding bg-white">

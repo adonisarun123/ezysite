@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import GoogleRatingBadge from '@/components/GoogleRatingBadge'
 import {
   TruckIcon, 
   ClockIcon, 
@@ -279,6 +280,8 @@ export default function DriversPage() {
         question="How do I hire a personal driver through EzyHelpers?"
         answer="EzyHelpers provides background-verified personal drivers on full-time, part-time, or on-demand basis. Placement typically takes 24–72 hours, with verified driving records, a replacement guarantee, and direct payment to your driver."
       />
+
+      <GoogleRatingBadge rating="4.93" detail="Zero negative reviews across driver placements — customers highlight licence & police verification (528 Google reviews, June 2026)" />
 
       {/* Qualified & Professional Drivers */}
       <section className="section-padding bg-white">
