@@ -17,7 +17,9 @@ export default function ThirdPartyScripts() {
   // the GTM container does not yet have GA4 tags published. Once the GA4
   // Configuration + GA4 Event tags are wired inside GTM, this block can be
   // removed to avoid double tracking.
-  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID
+  // Hardcoded fallback (June 2026): previously env-only, so a missing
+  // NEXT_PUBLIC_GA_ID in Vercel silently disabled GA4 site-wide.
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-868JRCDRFW'
 
   return (
     <>
