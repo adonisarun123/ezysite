@@ -43,6 +43,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9
     },
     {
+      url: `${baseUrl}/our-network/helpers`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7
+    },
+    {
+      url: `${baseUrl}/our-network/families`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: currentDate,
       changeFrequency: 'weekly',

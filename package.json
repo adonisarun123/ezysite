@@ -43,6 +43,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "libphonenumber-js": "^1.12.24",
+    "maplibre-gl": "^5.24.0",
     "next": "^15.5.15",
     "nodemailer": "^8.0.5",
     "p-retry": "^7.1.0",
