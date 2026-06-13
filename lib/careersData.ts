@@ -2314,6 +2314,81 @@ export const jobOpenings: JobOpening[] = [
     hasApplicationForm: true,
     applicationForm: 'role',
   },
+  {
+    slug: 'home-helper-caregiver-bangalore',
+    title: 'Home Helper & Caregiver',
+    department: 'EzyHelpers Care & Home Services',
+    category: 'Care Services',
+    location: 'Bangalore (placements across all zones)',
+    type: 'Full-time',
+    team: 'Field caregiving',
+    postedAt: '2026-06-13',
+    excerpt:
+      'A blend of home care and personal care: cooking and cleaning one moment, lending support and companionship the next. Full-time or part-time, live-in or live-out, with a Care Coordinator you can reach anytime.',
+    intro:
+      'Join the EzyHelpers family. Our Home Helpers do more than chores; they become a dependable part of the families they serve. In this role you take care of everyday household needs while also supporting elderly members, patients, or anyone in the home who needs a helping hand. It is a blend of home care and personal care: cooking and cleaning one moment, lending support and companionship the next. If you are hardworking, warm-hearted, and trustworthy, we will place you with the right family and support you every step of the way. The exact mix of home and care duties depends on each placement. Some families need more household help, others more personal care, and we match you to roles that fit your strengths.',
+    responsibilities: [
+      'Clean and maintain the home: sweeping, mopping, dusting, and tidying.',
+      'Cook fresh, home-style meals based on the family’s preferences and dietary needs.',
+      'Wash dishes and utensils; handle laundry, ironing, and bed-making.',
+      'Manage groceries and run small household errands.',
+      'Keep the home organised, safe, and comfortable.',
+      'Assist elderly members or patients with daily routines: bathing, grooming, dressing, and meals.',
+      'Help with mobility, give gentle support while walking, and accompany them when needed.',
+      'Provide medication reminders as instructed by the family.',
+      'Keep a friendly eye on wellbeing and report anything that seems off.',
+      'Offer companionship, conversation, and a caring presence.',
+      'Maintain a respectful, trustworthy relationship with the household.',
+      'Communicate openly with the family and your EzyHelpers Care Coordinator.',
+      'Adapt to the family’s routines and needs with patience and flexibility.',
+    ],
+    requirements: [
+      'A caring, honest, and dependable person who takes pride in their work.',
+      'Able to handle household tasks and physical support comfortably.',
+      'Patient and respectful, especially with the elderly and unwell.',
+      'Able to communicate in at least one of: Kannada, Hindi, Tamil, Telugu, or English.',
+      'Willing to complete background verification (a simple, standard process).',
+      'For live-in roles: comfortable staying at the family’s home as agreed.',
+      'No formal degree is needed for most roles; sincerity, reliability, and a good heart matter most.',
+    ],
+    niceToHave: [
+      'Previous experience as a house help, cook, caregiver, patient attendant, or ayah.',
+      'Cooking skills (South Indian, North Indian, or specific regional cuisine).',
+      'Any care or nursing training, or experience with elderly or post-surgery care.',
+    ],
+    extraSections: [
+      {
+        title: 'Role type',
+        items: [
+          'Full-time or part-time.',
+          'Live-in or live-out, as agreed with the family.',
+          'Placements across all Bangalore zones.',
+        ],
+      },
+      {
+        title: 'Why work with EzyHelpers',
+        items: [
+          'Steady work, fair pay: competitive, on-time salary matched to your skills.',
+          'The right fit: we place you with families that suit your experience and preferred area.',
+          'Always supported: a dedicated Care Coordinator you can reach anytime.',
+          'Clear expectations: every placement comes with defined duties, so there are no surprises.',
+          'Respect and safety: we verify the homes we place you in and stand by you.',
+          'Grow your career: training, recognition, and long-term opportunities for dependable helpers.',
+        ],
+      },
+      {
+        title: 'How to apply',
+        items: [
+          'Applying takes just a few minutes.',
+          'Apply online through this page, or call or WhatsApp our recruitment team.',
+          'Keep your ID, any certificates, and references handy for the verification step.',
+        ],
+      },
+    ],
+    applyEmail: 'careers@ezyhelpers.com',
+    hasApplicationForm: true,
+    applicationForm: 'role',
+  },
 ]
 
 export function getJobBySlug(slug: string): JobOpening | undefined {
