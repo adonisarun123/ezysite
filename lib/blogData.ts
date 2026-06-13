@@ -1476,6 +1476,7 @@ import { careBlogPosts2 } from './careBlogData2'
 import { careBlogPosts3 } from './careBlogData3'
 import { careBlogPosts4 } from './careBlogData4'
 import { careBlogPosts5 } from './careBlogData5'
+import { careBlogPosts6 } from './careBlogData6'
 
 export const posts: BlogPost[] = [
   ...careBlogPosts,
@@ -1483,6 +1484,7 @@ export const posts: BlogPost[] = [
   ...careBlogPosts3,
   ...careBlogPosts4,
   ...careBlogPosts5,
+  ...careBlogPosts6,
   {
     id: 'hiring-a-domestic-helper',
     title: 'The Complete Guide to Hiring a Domestic Helper',

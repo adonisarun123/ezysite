@@ -386,7 +386,7 @@ export const careBlogPosts2: BlogPost[] = [
     author: 'EzyHelpers Care Team',
     date: 'June 13, 2026',
     readTime: '9 min read',
-    category: 'Elderly Care',
+    category: 'Safety & Trust',
     image: '/blog/ezyhelpers-elder-scams.jpg',
     tags: ['elder fraud', 'digital arrest scam', 'senior safety', 'cyber crime', 'india'],
     content: elderScamsContent,

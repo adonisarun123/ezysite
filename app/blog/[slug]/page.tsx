@@ -690,6 +690,74 @@ const blogFAQs = {
       question: 'How do I get a reluctant parent to exercise?',
       answer: 'Encouragement and ease work better than pushing. Start very small so it is not daunting, make it social like a walk together, tie it to things they enjoy such as gardening or grandchildren, and address the fear of falling directly with reassurance and support. A caregiver who gently builds activity into the day often achieves what nagging cannot.'
     }
+  ],
+  'how-to-verify-a-caregiver-before-hiring-india': [
+    {
+      id: 'verify-steps',
+      question: 'How do you verify a caregiver before hiring them?',
+      answer: 'Confirm a government photo ID and Aadhaar and check they match the person. Arrange police verification, since they will be alone with a vulnerable elder. Get references from previous families and actually call them. Confirm their training matches your parent\'s needs, and check they are in reasonable health. A good agency does all of this before placement.'
+    },
+    {
+      id: 'verify-police',
+      question: 'Is police verification necessary for an in-home caregiver?',
+      answer: 'When someone will be alone with a vulnerable elderly person and have access to the home and valuables, yes. It confirms there is no criminal record and gives a real record of who they are. In India you can apply for police verification of domestic workers, and a serious agency does this as standard.'
+    },
+    {
+      id: 'verify-references',
+      question: 'How do I check a caregiver\'s references properly?',
+      answer: 'Ask for references from previous families and actually call them. A real conversation reveals how long the caregiver worked there, why they left, whether they were reliable, honest and good with the elderly person, and whether the family would hire them again. Be wary of references that cannot be reached or sound rehearsed.'
+    }
+  ],
+  'keeping-parent-safe-with-caregiver-at-home': [
+    {
+      id: 'safe-oversight',
+      question: 'How do I keep my parent safe once a caregiver is in the home?',
+      answer: 'Start with proper background verification, then add light ongoing oversight: stay in real contact with your parent separately from the caregiver, watch for warning signs, keep valuables secured, and have a structure to raise and resolve concerns, such as a care coordinator through an agency. The aim is sensible structure, not suspicion.'
+    },
+    {
+      id: 'safe-warning-signs',
+      question: 'What are the warning signs of a problem with a caregiver?',
+      answer: 'Unexplained injuries or a parent fearful of the caregiver, a decline in hygiene, weight or mood the caregiver cannot explain, money or valuables going missing, and the caregiver being evasive, blocking your contact with your parent, or discouraging visits. None prove anything alone, but they are reasons to pay closer attention.'
+    },
+    {
+      id: 'safe-valuables',
+      question: 'How should I handle money and valuables with a caregiver at home?',
+      answer: 'Secure them, which protects everyone including an honest caregiver from suspicion. Do not leave cash, jewellery or documents accessible, keep them locked away, manage your parent\'s finances yourself or with oversight rather than handing cash control to the caregiver, and set up bank alerts so you see money moving.'
+    }
+  ],
+  'protecting-elderly-parents-financial-abuse-india': [
+    {
+      id: 'abuse-who',
+      question: 'Who commits financial abuse against elderly parents?',
+      answer: 'Often someone close: a relative, a trusted helper, a neighbour, sometimes the person meant to be caring for them. It is heavily under-reported because the victim is usually dependent on or loves the abuser and is ashamed or afraid to speak. That closeness is exactly why families have to watch for it.'
+    },
+    {
+      id: 'abuse-signs',
+      question: 'What are the warning signs of elder financial abuse?',
+      answer: 'Unexplained withdrawals or transfers, money or valuables disappearing, a sudden change in a will or property arrangement, a parent anxious or secretive about money, unpaid bills despite having funds, a new person heavily involved in the parent\'s finances, or a parent being kept away from other family.'
+    },
+    {
+      id: 'abuse-protect',
+      question: 'How do I protect my elderly parent\'s finances?',
+      answer: 'Stay involved with their consent so a trustworthy person has visibility, set up bank alerts, keep valuables and documents secured, use a proper accountable power of attorney rather than informal access, do not leave one person with unchecked control, and keep your parent connected to wider family. Secrecy and isolation are where abuse thrives.'
+    }
+  ],
+  'home-safety-technology-elderly-parents-india': [
+    {
+      id: 'tech-medical-alert',
+      question: 'What is a medical alert system for elderly parents?',
+      answer: 'A button a parent wears or keeps nearby that summons help when pressed, either calling family or a monitoring service. For a parent living alone, it means a fall they cannot get up from still brings help. Some newer devices add automatic fall detection, which alerts even if the parent cannot press the button.'
+    },
+    {
+      id: 'tech-monitoring-dignity',
+      question: 'Is monitoring an elderly parent at home ethical?',
+      answer: 'It can be, with care. An elderly parent has a right to privacy and dignity in their own home, so monitoring should be discussed with them, agreed where possible, and limited to what genuinely helps safety rather than feeling like surveillance. The goal is to keep a parent safe, not watched.'
+    },
+    {
+      id: 'tech-vs-care',
+      question: 'Can technology replace a caregiver for an elderly parent?',
+      answer: 'No. A medical alert summons help after something happens; it does not prevent the fall, help the parent up, manage medicines, or keep them company. Technology works best alongside human care, not instead of it. For a frail or genuinely unsafe parent, a present caregiver is the surest safety, with technology adding a layer.'
+    }
   ]
 };
 
