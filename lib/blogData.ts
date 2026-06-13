@@ -1474,11 +1474,15 @@ Skip the hassle of complex verification and interviews. EzyHelpers provides pre-
 import { careBlogPosts } from './careBlogData'
 import { careBlogPosts2 } from './careBlogData2'
 import { careBlogPosts3 } from './careBlogData3'
+import { careBlogPosts4 } from './careBlogData4'
+import { careBlogPosts5 } from './careBlogData5'
 
 export const posts: BlogPost[] = [
   ...careBlogPosts,
   ...careBlogPosts2,
   ...careBlogPosts3,
+  ...careBlogPosts4,
+  ...careBlogPosts5,
   {
     id: 'hiring-a-domestic-helper',
     title: 'The Complete Guide to Hiring a Domestic Helper',
@@ -1676,3 +1680,48 @@ export const posts: BlogPost[] = [
     content: evolutionOfMaidServicesContent
   }
 ];
+
+/**
+ * Filter groups for the blog index. The per-post `category` stays as the
+ * display label; these groups consolidate the many granular categories into a
+ * tight, useful filter bar. "All" is added in the UI.
+ */
+export const BLOG_FILTER_GROUPS = [
+  'Elderly Care',
+  'Home Nursing & Recovery',
+  'Family Caregiving',
+  'Choosing & Hiring Help',
+  'Safety & Trust',
+  'Cooking & Home',
+] as const
+
+export type BlogFilterGroup = (typeof BLOG_FILTER_GROUPS)[number]
+
+/** Map a post's granular category to one of the filter groups above. */
+export function blogFilterGroup(category: string): BlogFilterGroup {
+  const c = category.toLowerCase()
+  if (c.includes('nursing') || c.includes('recovery')) return 'Home Nursing & Recovery'
+  if (c.includes('family caregiving')) return 'Family Caregiving'
+  if (
+    c.includes('hiring') ||
+    c.includes('home care guide') ||
+    c.includes('relationship')
+  )
+    return 'Choosing & Hiring Help'
+  if (c.includes('safety') || c.includes('security')) return 'Safety & Trust'
+  if (
+    c.includes('cooking') ||
+    c.includes('cuisine') ||
+    c.includes('hygiene') ||
+    c.includes('childcare')
+  )
+    return 'Cooking & Home'
+  if (
+    c.includes('elderly') ||
+    c.includes('care') ||
+    c.includes('location') ||
+    c.includes('industry')
+  )
+    return 'Elderly Care'
+  return 'Elderly Care'
+}

@@ -520,6 +520,176 @@ const blogFAQs = {
       question: 'How can families reduce the risk of an elderly parent being readmitted?',
       answer: 'Get the medicines right, keep the follow-up appointment, catch warning signs like fever or an infected wound early, and prevent the new problems recovery itself causes, falls, pressure sores, chest infections, dehydration, through fall-proofing, safe movement, and good nutrition. Competent home care in the recovery weeks keeps all of this on track.'
     }
+  ],
+  'nutrition-for-elderly-parents-india': [
+    {
+      id: 'nutrition-why-hard',
+      question: 'Why do elderly parents eat less as they age?',
+      answer: 'Appetite naturally fades, taste and smell dull, dental or chewing problems make eating a chore, some medicines suppress appetite, and a parent living alone loses the motivation to cook and eat for one. Loneliness and low mood feed directly into poor eating.'
+    },
+    {
+      id: 'nutrition-priorities',
+      question: 'What should an elderly parent\'s diet focus on?',
+      answer: 'Protein matters more with age because older bodies lose muscle, so include dal, curd, paneer, eggs, fish and milk. Add calcium and vitamin D for bones, fibre for digestion, and plenty of fluids, since older people dehydrate easily. Keep it balanced and familiar rather than exotic.'
+    },
+    {
+      id: 'nutrition-hydration',
+      question: 'Why is dehydration so common in elderly people?',
+      answer: 'The sense of thirst weakens with age, so a parent can be quite dehydrated without feeling thirsty. The consequences, confusion, urinary infections, dizziness, falls, are serious and often mistaken for other things. Offer fluids regularly through the day, including buttermilk, soups and coconut water, rather than waiting for them to ask.'
+    }
+  ],
+  'sleep-problems-elderly-parents-india': [
+    {
+      id: 'sleep-why',
+      question: 'Why do elderly parents have trouble sleeping?',
+      answer: 'Some is normal: sleep becomes lighter and more broken with age. But much is treatable, caused by pain, frequent night-time urination, anxiety or low mood, certain medicines, too much daytime napping, or conditions like sleep apnoea or dementia. These causes are worth addressing rather than just accepting.'
+    },
+    {
+      id: 'sleep-help',
+      question: 'How can I help my elderly parent sleep better without pills?',
+      answer: 'Keep a regular bed and wake time, get daylight and some activity during the day, limit daytime naps, cut evening tea, coffee and heavy meals, make the bedroom dark, quiet and cool, and build a calm wind-down before bed. Treat pain and reduce anxiety. These habits help more than sedatives.'
+    },
+    {
+      id: 'sleep-pills',
+      question: 'Are sleeping pills safe for elderly parents?',
+      answer: 'They carry real dangers in older people: a higher risk of falls, daytime drowsiness and confusion, and worsened memory. They should be a last resort, used briefly under a doctor\'s supervision, not a standing solution. Persistent sleep problems should go to a doctor, since the answer is often treating the underlying cause.'
+    }
+  ],
+  'loneliness-in-elderly-parents-india': [
+    {
+      id: 'loneliness-health',
+      question: 'Is loneliness actually harmful to elderly parents?',
+      answer: 'Yes. Prolonged loneliness and isolation in older people are linked to higher rates of depression and anxiety, faster cognitive decline and dementia, worse physical health, and shorter life. A lonely parent eats worse, moves less, takes medicines less reliably, and is more vulnerable to scams.'
+    },
+    {
+      id: 'loneliness-signs',
+      question: 'How do I know if my elderly parent is lonely?',
+      answer: 'Parents often hide it, so look for going quiet, lost interest in things they enjoyed, sounding flat on calls, poor eating or sleep, a neglected home, no longer going out or seeing anyone, or repeated calls just to talk. Someone who sees their ordinary days gives a truer picture than a tidied-up video call.'
+    },
+    {
+      id: 'loneliness-help',
+      question: 'What helps with loneliness in elderly parents?',
+      answer: 'Real, regular connection: a daily call and regular video calls, involving them in family life, helping them stay connected to neighbours, friends and community, and easy-to-use technology. For many families, especially those far away, arranging regular human company through a companion is the most effective answer.'
+    }
+  ],
+  'hearing-vision-loss-elderly-parents-india': [
+    {
+      id: 'sensory-why-matters',
+      question: 'Why do hearing and vision loss matter so much in elderly parents?',
+      answer: 'They are how a person stays connected to the world. A parent who cannot hear withdraws from conversation and company, feeding loneliness and faster cognitive decline. A parent who cannot see well is at high risk of falls, medication errors, and lost independence. Both, left unaddressed, quietly shrink a person\'s life.'
+    },
+    {
+      id: 'hearing-checked',
+      question: 'Should an elderly parent just live with hearing loss?',
+      answer: 'No. Hearing loss is usually helpable. The cause might be as simple as wax, easily removed, or age-related loss that a modern hearing aid can transform. Start with a proper hearing test. Meanwhile, face them in good light, speak clearly rather than shouting, and reduce background noise.'
+    },
+    {
+      id: 'vision-checks',
+      question: 'What vision problems in elderly parents are treatable?',
+      answer: 'Much elderly vision loss comes from treatable causes if caught early: cataracts, fixed by a simple successful operation; glaucoma, slowed if caught early; and diabetic eye damage, which is why diabetic parents need regular eye checks. Regular eye examinations are the single most important habit.'
+    }
+  ],
+  'managing-chronic-conditions-elderly-parents-home': [
+    {
+      id: 'chronic-medication',
+      question: 'How do you manage multiple medicines for an elderly parent?',
+      answer: 'Build a reliable system: a pill organiser sorted by day and time, fixed timings tied to meals, and someone checking that doses are taken. Keep an up-to-date list of every medicine, because parents see different specialists who may not know what the others prescribed, and clashing drugs are a real risk.'
+    },
+    {
+      id: 'chronic-monitor',
+      question: 'What should families monitor at home for chronic conditions?',
+      answer: 'Depending on the condition: a home blood-pressure monitor, a glucometer for diabetes, weight for heart failure, and signs like breathlessness, swelling or fatigue. Keep a simple log, since a trend over days or weeks tells the doctor more than a single reading and catches trouble before it becomes an emergency.'
+    },
+    {
+      id: 'chronic-coordinate',
+      question: 'How do you coordinate care for a parent with several conditions?',
+      answer: 'Someone needs to hold the whole picture: all conditions, all medicines, all appointments, ensuring nothing contradicts, since multiple doctors often do not talk to each other. For a busy or distant family this is one of the most valuable things a care coordinator or home nurse provides.'
+    }
+  ],
+  'arthritis-joint-pain-care-elderly-home': [
+    {
+      id: 'arthritis-movement',
+      question: 'Should an elderly parent with arthritis rest or move?',
+      answer: 'Gentle, regular, appropriate movement, not rest. Inactivity makes arthritis worse: the joint stiffens, supporting muscles weaken, and pain deepens. But overdoing it harms the joint. The right exercises, done safely through home physiotherapy, keep joints mobile and genuinely reduce pain over time.'
+    },
+    {
+      id: 'arthritis-pain',
+      question: 'How can I ease my parent\'s arthritis pain at home?',
+      answer: 'Heat helps stiff joints (a warm compress or bath, especially mornings), while cold helps an acutely swollen joint. Use pain medication as the doctor advises, maintain a healthy weight to reduce load on knees and hips, and use simple aids like walking sticks, raised seats and supportive footwear.'
+    },
+    {
+      id: 'arthritis-home',
+      question: 'How do you adapt a home for an elderly parent with arthritis?',
+      answer: 'Raised toilet seats and chairs with armrests make getting up easier, grab bars give support and reduce falls, easy-grip tools and lever taps help arthritic hands, and keeping used items within reach avoids painful bending. Warmth in the home reduces stiffness, especially in cold weather.'
+    }
+  ],
+  'dementia-wandering-sundowning-difficult-days': [
+    {
+      id: 'dementia-wandering',
+      question: 'How do you keep a parent with dementia from wandering off?',
+      answer: 'Reduce the triggers with a predictable routine, gentle activity, and attention to whether they are hungry, in pain or need the toilet. Add safeguards: locks or alarms they will not easily operate, a secured main door, and an ID card or bracelet with a contact number. A familiar, consistent caregiver is one of the best protections.'
+    },
+    {
+      id: 'dementia-sundowning',
+      question: 'What is sundowning and how do you manage it?',
+      answer: 'Sundowning is increased confusion and agitation in the late afternoon and evening, linked to tiredness, fading light and a disrupted body clock. Keep the evening calm and predictable, light the home well as daylight fades, avoid over-tiring and long daytime naps, cut evening caffeine and big meals, and stay calm yourself.'
+    },
+    {
+      id: 'dementia-aggression',
+      question: 'How do you handle aggression in a parent with dementia?',
+      answer: 'Remember it is the disease, not the parent, and almost never personal. It usually comes from fear, confusion, or an unmet need they cannot express, pain, hunger, needing the toilet, too much noise. Do not argue or correct; stay calm, keep your manner gentle, do not take it personally, and look for the trigger.'
+    }
+  ],
+  'palliative-end-of-life-care-at-home-india': [
+    {
+      id: 'palliative-what',
+      question: 'What is palliative care, and is it giving up?',
+      answer: 'Palliative care is comfort-focused care for someone with a serious or terminal illness. It is not giving up and not only for the last days; it can run alongside treatment, aiming to relieve suffering of body and mind and support quality of life. End-of-life care is its final phase.'
+    },
+    {
+      id: 'palliative-pain',
+      question: 'Can pain really be managed in end-of-life care at home?',
+      answer: 'Yes. Far too many people suffer unnecessarily at the end because pain is undertreated. Good palliative care actively manages pain, breathlessness and nausea so the person is as comfortable as possible. This needs proper medical input and a trained palliative caregiver who can manage symptoms at home.'
+    },
+    {
+      id: 'palliative-family',
+      question: 'How does home palliative care help the family?',
+      answer: 'It lets the family be family rather than nurses. Sharing the physical care with a trained caregiver means a daughter can be a daughter at her mother\'s bedside, present and grieving, rather than alone managing medications and dressings while exhausted. Done well, it gives a peaceful home, not a hospital ward.'
+    }
+  ],
+  'cancer-care-at-home-elderly-parents-india': [
+    {
+      id: 'cancer-side-effects',
+      question: 'How do you manage cancer treatment side effects at home?',
+      answer: 'Keep the parent hydrated and eating what they can, manage nausea with prescribed medicines, keep them rested but gently moving, and crucially protect them from infection, since a cancer patient\'s immune system is often suppressed and an ordinary infection can become serious. Good hygiene, avoiding crowds and sick visitors, and watching for fever all matter.'
+    },
+    {
+      id: 'cancer-nutrition',
+      question: 'Why is nutrition important during cancer treatment?',
+      answer: 'A better-nourished patient tolerates treatment better and recovers faster, but nausea, mouth sores and loss of appetite make eating hard. Small, frequent, appealing meals, soft foods when the mouth is sore, plenty of fluids, and patience help. A caregiver or cook who prepares what the parent can manage eases the burden.'
+    },
+    {
+      id: 'cancer-support',
+      question: 'How does home care help an elderly parent through cancer?',
+      answer: 'A trained caregiver manages side effects, keeps the parent nourished and protected from infection, helps with appointments and medicines, watches for warning signs, and provides steady company and support. This makes the ordeal more bearable and treatment more effective, and lets the family be family through a frightening time.'
+    }
+  ],
+  'keeping-elderly-parents-active-exercise-mobility': [
+    {
+      id: 'exercise-why',
+      question: 'Why is staying active so important for elderly parents?',
+      answer: 'In older people, strength and mobility lost to inactivity decline fast and feed on themselves: less movement leads to weakness, falls and fear, then even less movement. Regular gentle activity maintains the strength and balance that prevent falls, eases joints, helps blood pressure, sugar, weight and heart health, and improves sleep, mood and cognition.'
+    },
+    {
+      id: 'exercise-safe',
+      question: 'What exercise is safe for an elderly parent?',
+      answer: 'It depends on their condition, but most can do something: walking even short distances, gentle stretching, simple strength work like standing from a chair repeatedly, balance exercises, and chair-based exercises for those who cannot stand safely. Regular and gentle beats occasional and strenuous. For frail or recovering parents, home physiotherapy ensures it is done safely.'
+    },
+    {
+      id: 'exercise-resistance',
+      question: 'How do I get a reluctant parent to exercise?',
+      answer: 'Encouragement and ease work better than pushing. Start very small so it is not daunting, make it social like a walk together, tie it to things they enjoy such as gardening or grandchildren, and address the fear of falling directly with reassurance and support. A caregiver who gently builds activity into the day often achieves what nagging cannot.'
+    }
   ]
 };
 
