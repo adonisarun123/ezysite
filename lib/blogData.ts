@@ -1473,10 +1473,12 @@ Skip the hassle of complex verification and interviews. EzyHelpers provides pre-
 
 import { careBlogPosts } from './careBlogData'
 import { careBlogPosts2 } from './careBlogData2'
+import { careBlogPosts3 } from './careBlogData3'
 
 export const posts: BlogPost[] = [
   ...careBlogPosts,
   ...careBlogPosts2,
+  ...careBlogPosts3,
   {
     id: 'hiring-a-domestic-helper',
     title: 'The Complete Guide to Hiring a Domestic Helper',

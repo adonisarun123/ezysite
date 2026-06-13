@@ -418,6 +418,108 @@ const blogFAQs = {
       question: 'What should I do if my elderly parent has been scammed?',
       answer: 'Act fast. Call the national cybercrime helpline on 1930 immediately and file at cybercrime.gov.in, as fast reporting gives the best chance of freezing the money. Inform the bank to block the account. And go gently with your parent, since shame stops victims telling their family next time.'
     }
+  ],
+  'how-to-choose-home-care-provider-india': [
+    {
+      id: 'choose-key-question',
+      question: 'What is the most important thing to check in a home care provider?',
+      answer: 'Verification. Ask specifically whether they run police verification, identity and Aadhaar checks, and reference checks before placement, and ask to see it on the actual person being placed, not a general policy. A stranger will be alone with a vulnerable parent, so this matters most, especially for families who cannot supervise closely.'
+    },
+    {
+      id: 'choose-questions',
+      question: 'What questions should I ask before hiring a home care provider?',
+      answer: 'Ask how they verify caregivers, what training they give and whether it matches your parent\'s condition, what happens if the caregiver does not fit, whether there is a trial period, who you call when there is a problem at night, and how the caregiver is paid. The answers reveal how they really operate.'
+    },
+    {
+      id: 'choose-warning-signs',
+      question: 'What are the warning signs of a bad home care provider?',
+      answer: 'Pressure to decide immediately, vague answers about verification, no clear replacement or trial policy, a price suspiciously below everyone else, and becoming hard to reach when you raise a concern. Going silent after payment is the most common complaint, so probe support directly.'
+    }
+  ],
+  'private-caregiver-vs-agency-india': [
+    {
+      id: 'private-risks',
+      question: 'What are the risks of hiring a private caregiver?',
+      answer: 'Usually no verification, no police check or confirmed references, so you are trusting a recommendation. No backup if they fall sick or quit, leaving you scrambling. No training or oversight for your parent\'s condition. And no one to escalate to if the caregiver is unsuitable or there is a dispute.'
+    },
+    {
+      id: 'agency-worth-it',
+      question: 'Is a home care agency worth the extra cost over private hiring?',
+      answer: 'For a short-term, low-risk need with a genuinely trusted person, private hiring can work. For an elderly or unwell parent alone with the caregiver, for medical or high-dependency care, for live-in arrangements, or where you cannot supervise, the verification, training and backup an agency provides are usually worth the cost.'
+    },
+    {
+      id: 'agency-direct-pay',
+      question: 'Can I get agency verification but still pay the caregiver directly?',
+      answer: 'Yes. Some providers, including EzyHelpers, give you verified, trained caregivers with a replacement guarantee and a care manager to call, while paying wages transparently and directly to the caregiver. That combines the safety of an agency with fair, direct payment.'
+    }
+  ],
+  'caring-for-bedridden-parent-at-home-india': [
+    {
+      id: 'bedridden-sores',
+      question: 'How do you prevent bed sores in a bedridden parent?',
+      answer: 'Turn the person every two hours, day and night, to shift the pressure. Keep the skin clean and dry, use a pressure-relieving mattress if you can, and check bony areas (lower back, hips, heels, elbows) daily for the first reddened signs. This single routine prevents most pressure sores and is the most common thing untrained care gets wrong.'
+    },
+    {
+      id: 'bedridden-swallowing',
+      question: 'Why is feeding a bedridden parent risky?',
+      answer: 'If they have trouble swallowing, common after stroke or in advanced illness, food or liquid can go into the lungs and cause pneumonia, a frequent serious complication. Feed them sitting as upright as possible, go slowly, use soft or modified-texture food if advised, watch hydration, and see a doctor for any real swallowing difficulty.'
+    },
+    {
+      id: 'bedridden-help',
+      question: 'Can a family manage bedridden care alone?',
+      answer: 'Round-the-clock bedridden care, the two-hourly turning through the night, lifting, constant attention, will exhaust one family member within weeks. A trained caregiver who knows safe turning and transfers, sore prevention, dignified hygiene, and how to spot complications makes the care safer and sustainable.'
+    }
+  ],
+  'incontinence-care-elderly-parents-dignity': [
+    {
+      id: 'incontinence-medical',
+      question: 'Is incontinence just a normal part of ageing?',
+      answer: 'Not necessarily. It is common in older people but often has a treatable cause: a urinary infection, a medication side effect, constipation, prostate issues, diabetes, or mobility problems. New or worsening incontinence deserves a doctor\'s look, because it can sometimes be improved or resolved rather than just contained.'
+    },
+    {
+      id: 'incontinence-skin',
+      question: 'How do you protect the skin in incontinence care?',
+      answer: 'Change promptly when wet or soiled, clean gently and thoroughly, dry the skin properly, and use a barrier cream. Skin left in moisture breaks down into sores and infections, especially in an immobile parent. Good products that keep moisture away from the skin are worth the cost.'
+    },
+    {
+      id: 'incontinence-dignity',
+      question: 'How do you handle incontinence care without shaming an elderly parent?',
+      answer: 'Be matter-of-fact and calm, never showing disgust, protect their privacy completely, avoid shaming language, and never scold an accident. Support their independence with easy clothing, a clear path to the toilet, a commode by the bed, and scheduled trips. Many parents find it easier to accept this care from a calm professional than from their own child.'
+    }
+  ],
+  'safe-hospital-to-home-discharge-elderly-india': [
+    {
+      id: 'discharge-understand',
+      question: 'What should I understand before taking my parent home from hospital?',
+      answer: 'Get the discharge summary in writing and make sure you know every medicine with its dose and timing (especially new or changed ones), the warning signs that mean you must call the doctor, what your parent can and cannot do, any wound care needed, and the follow-up appointment date. Ask while the doctors are still in front of you.'
+    },
+    {
+      id: 'discharge-medicines',
+      question: 'Why are medication errors common after hospital discharge?',
+      answer: 'The hospital often changes the regimen, and the family does not fully register it, so at home the old routine continues alongside the new one or doses get doubled or missed. Reconcile the new list against the old, clarify confusion with the doctor or pharmacist, and use a pill organiser with fixed timings and someone checking.'
+    },
+    {
+      id: 'discharge-home-ready',
+      question: 'How do I prepare the home before my parent is discharged?',
+      answer: 'Set it up while they are still in hospital. Move the bed to the ground floor, clear and light the path to the bathroom, remove loose rugs, and arrange equipment such as a walker, commode or bedside rail in advance, so home is already safe when they arrive.'
+    }
+  ],
+  'preventing-hospital-readmission-elderly-india': [
+    {
+      id: 'readmission-cause',
+      question: 'What is the most common preventable cause of hospital readmission?',
+      answer: 'Medication going wrong after discharge. The hospital changes the regimen, the family does not fully register it, and doses get missed, doubled, or muddled with the old routine. Reconciling the medicines and running a tight system at home prevents more readmissions than anything else.'
+    },
+    {
+      id: 'readmission-followup',
+      question: 'How important is the post-discharge follow-up appointment?',
+      answer: 'Very. It exists to catch problems early, and many families miss it, letting a developing complication go unseen until it becomes an emergency. Put it in the calendar before leaving the hospital, arrange transport and an escort in advance, and treat it as non-negotiable.'
+    },
+    {
+      id: 'readmission-prevent',
+      question: 'How can families reduce the risk of an elderly parent being readmitted?',
+      answer: 'Get the medicines right, keep the follow-up appointment, catch warning signs like fever or an infected wound early, and prevent the new problems recovery itself causes, falls, pressure sores, chest infections, dehydration, through fall-proofing, safe movement, and good nutrition. Competent home care in the recovery weeks keeps all of this on track.'
+    }
   ]
 };
 
