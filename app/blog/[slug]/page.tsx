@@ -282,6 +282,142 @@ const blogFAQs = {
       question: 'How do families avoid burnout caring for a parent with dementia?',
       answer: 'Dementia caregiving is relentless, and one person doing it alone around the clock will burn out, which harms both carer and parent. Sharing the load with a trained caregiver, even part of the day through respite care, is what makes long-term home care sustainable. Using help is good caregiving, not a failure.'
     }
+  ],
+  'fall-proofing-parents-home-india': [
+    {
+      id: 'fall-most-dangerous-room',
+      question: 'Which room is most dangerous for elderly falls?',
+      answer: 'The bathroom. Wet floors, hard surfaces and the awkward motions of bathing make it the highest-risk room. Grab bars next to the toilet and in the bathing area, an anti-slip mat, a bath stool, and keeping the floor dry prevent most bathroom falls.'
+    },
+    {
+      id: 'fall-quick-fixes',
+      question: 'What are the cheapest, highest-value fall-prevention fixes?',
+      answer: 'Remove or fix down loose rugs, add grab bars in the bathroom, put a night light on the route to the toilet, get non-slip footwear, and ensure good lighting throughout. These cost little and prevent the majority of home falls.'
+    },
+    {
+      id: 'fall-after-one-fall',
+      question: 'My parent has already fallen once. What now?',
+      answer: 'One fall sharply raises the risk of another. Beyond home modifications, having someone present for the risky moments, the bath, the night trip, getting up from a chair, is the surest prevention. A caregiver, even for a few hours, prevents the fall that grab bars alone cannot.'
+    }
+  ],
+  'when-ageing-parent-refuses-help': [
+    {
+      id: 'refuse-why',
+      question: 'Why does my parent refuse help they clearly need?',
+      answer: 'The refusal is usually about fear of losing independence and control, not about the help itself. Once you frame care as something that keeps them independent longer, rather than a takeover, the conversation gets much easier.'
+    },
+    {
+      id: 'refuse-what-works',
+      question: 'What actually works to get a resistant parent to accept care?',
+      answer: 'Start small with a few hours a week, frame it around a task they dislike rather than personal care, let them choose the caregiver and hours, and bring in a voice they respect such as a doctor. A no-pressure trial period often breaks the deadlock.'
+    },
+    {
+      id: 'refuse-still-refuses',
+      question: 'What if my parent refuses and the risk is serious?',
+      answer: 'A mentally competent adult has the right to make their own choices. Keep offering gently without making every visit a fight, reduce risk where you can (fall-proofing, a medical alert, check-ins), and keep the door open. Many parents accept once it stops feeling like a threat.'
+    }
+  ],
+  'sandwich-generation-india-caregiving': [
+    {
+      id: 'sandwich-meaning',
+      question: 'What is the sandwich generation?',
+      answer: 'People caring for ageing parents while still raising their own children, caught between two sets of responsibilities at once. In India it is increasingly common as people live longer, have children later, and live in nuclear families away from extended support.'
+    },
+    {
+      id: 'sandwich-survive',
+      question: 'How do sandwich-generation caregivers avoid burning out?',
+      answer: 'Shift from doing everything personally to managing the care: share the load honestly with siblings, involve older children, use paid help during work hours, protect time with your spouse and kids, and use respite care so you can rest. Trying to do it all alone is the trap.'
+    },
+    {
+      id: 'sandwich-guilt',
+      question: 'How do I deal with the guilt of not doing enough?',
+      answer: 'The guilt is the heaviest and least useful part of the load. Arranging good care for your parent, including paid help, is a form of showing up, not a failure of duty. Being present but exhausted and resentful is not more loving than organising real, competent care.'
+    }
+  ],
+  'caregiver-burnout-signs-and-help': [
+    {
+      id: 'burnout-signs',
+      question: 'What are the signs of caregiver burnout?',
+      answer: 'Constant exhaustion even after sleep, irritability and snapping at the person you care for, hopelessness, withdrawing from friends and hobbies, getting ill more often, and a creeping numbness where the warmth has gone out of the caregiving. Several of these together signal burnout.'
+    },
+    {
+      id: 'burnout-why',
+      question: 'What causes caregiver burnout?',
+      answer: 'Lack of relief, not lack of love. A caregiver who does everything alone around the clock with no breaks will burn out regardless of how devoted they are. Financial strain, no recognition, and watching a loved one decline add to it.'
+    },
+    {
+      id: 'burnout-fix',
+      question: 'What helps with caregiver burnout?',
+      answer: 'Relief. Accept and ask for help, lower standards from perfect to good enough, keep one part of your own life alive, stay connected to people, and use professional respite care so you can rest. If you have thoughts of self-harm, seek medical help immediately.'
+    }
+  ],
+  'stroke-recovery-at-home-india': [
+    {
+      id: 'stroke-recovery-real',
+      question: 'Can someone really recover after a stroke at home?',
+      answer: 'Yes. The brain can rewire itself after a stroke, and lost functions can return with consistent rehabilitation. The fastest gains usually come in the first months, which is why consistent home physiotherapy and speech therapy in that window matter so much.'
+    },
+    {
+      id: 'stroke-home-care',
+      question: 'What does stroke care at home involve?',
+      answer: 'Home safety to prevent falls, regular turning and movement for a bedbound patient, daily physiotherapy and where needed speech therapy, faithful management of the medicines that prevent another stroke, good nutrition and hydration, and attention to the depression that commonly follows a stroke.'
+    },
+    {
+      id: 'stroke-warning',
+      question: 'What are the warning signs of another stroke?',
+      answer: 'Sudden weakness or numbness on one side, a drooping face, slurred or lost speech, sudden confusion, or trouble seeing. Act immediately, because with stroke every minute counts. Someone who has had one stroke is at raised risk of another.'
+    }
+  ],
+  'parkinsons-care-at-home-india-guide': [
+    {
+      id: 'parkinsons-medication',
+      question: "Why is medication timing so important in Parkinson's?",
+      answer: "Parkinson's drugs work in windows, and a dose taken late can leave the person barely able to move for an hour or more. Getting the medicines exactly on time, every time, is the foundation of good home care and one of the most common things that goes wrong."
+    },
+    {
+      id: 'parkinsons-freezing',
+      question: "How do you handle a Parkinson's freezing episode?",
+      answer: 'Freezing, where the person suddenly cannot move, often in doorways, passes but causes falls. Simple techniques help: counting a rhythm, stepping over an imaginary line, or shifting weight side to side. A trained caregiver handles it calmly rather than panicking.'
+    },
+    {
+      id: 'parkinsons-progression',
+      question: "How does care change as Parkinson's progresses?",
+      answer: 'Early on a person may need only reminders and a little help. As it advances they need help with dressing, bathing, eating and mobility, and eventually full daily care. Because the progression is gradual, the care can grow with it, ideally with a caregiver trained in Parkinson\'s.'
+    }
+  ],
+  'managing-diabetes-elderly-parents-home': [
+    {
+      id: 'diabetes-low-sugar',
+      question: 'What is the biggest diabetes danger for elderly parents?',
+      answer: 'Low blood sugar. In elderly diabetics on medication it can come on fast and cause confusion, sweating, shaking and even unconsciousness, and older people may not recognise the warning signs. The fix is sugar or juice immediately, then a proper snack. Skipping a meal after taking medication is the classic cause.'
+    },
+    {
+      id: 'diabetes-diet',
+      question: 'How do you manage a diabetic Indian diet for an elderly parent?',
+      answer: 'Not with a joyless diet nobody sustains, but with sensible adjustment: smaller portions of rice and roti, more vegetables and protein, whole grains over refined, fruit instead of sweets, restraint rather than denial at festivals, and regular meal timing that stays in step with the medication.'
+    },
+    {
+      id: 'diabetes-feet',
+      question: 'Why is daily foot care important for diabetic elders?',
+      answer: 'Diabetes deadens sensation in the feet, so a small cut or blister goes unnoticed, gets infected, and in the worst cases leads to amputation. A daily look at the feet, proper footwear, never walking barefoot, and prompt attention to any wound prevents this.'
+    }
+  ],
+  'protecting-elderly-parents-from-scams-india': [
+    {
+      id: 'scam-digital-arrest',
+      question: 'What is the digital arrest scam targeting senior citizens?',
+      answer: 'Fraudsters call or video-call posing as police, CBI or customs, claim the victim is under investigation, keep them isolated and terrified for hours, and demand money to clear their name. There is no such thing as a digital arrest in Indian law. No real agency arrests anyone over a video call or demands money to drop a case.'
+    },
+    {
+      id: 'scam-rules',
+      question: 'What simple rules protect elderly parents from scams?',
+      answer: 'No real police or agency arrests people over a phone or video call or asks for money to drop a case. No bank ever asks for an OTP, PIN or password. Anyone creating panic and demanding immediate payment is a scammer. When in doubt, hang up and call you or the bank on its official number.'
+    },
+    {
+      id: 'scam-what-to-do',
+      question: 'What should I do if my elderly parent has been scammed?',
+      answer: 'Act fast. Call the national cybercrime helpline on 1930 immediately and file at cybercrime.gov.in, as fast reporting gives the best chance of freezing the money. Inform the bank to block the account. And go gently with your parent, since shame stops victims telling their family next time.'
+    }
   ]
 };
 
