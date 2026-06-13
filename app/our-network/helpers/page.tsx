@@ -75,7 +75,8 @@ export default function HelperNetworkPage() {
       </section>
 
       <section className="container-custom pb-10">
-        <NetworkMapLoader dataUrl="/data/network-helpers.geojson" color="#0E7C66" noun="helper location" />
+        {/* ?v= is bumped whenever the dataset is regenerated (cache-bust) */}
+        <NetworkMapLoader dataUrl="/data/network-helpers.geojson?v=2" color="#0E7C66" noun="helper location" />
         <p className="text-xs text-gray-500 mt-3">
           Locations shown at pincode level only. Drag to rotate · scroll to zoom · click
           clusters to expand · click a pin for locality details.

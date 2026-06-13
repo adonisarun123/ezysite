@@ -76,7 +76,8 @@ export default function FamiliesNetworkPage() {
       </section>
 
       <section className="container-custom pb-10">
-        <NetworkMapLoader dataUrl="/data/network-customers.geojson" color="#D85A30" noun="family placement" />
+        {/* ?v= is bumped whenever the dataset is regenerated (cache-bust) */}
+        <NetworkMapLoader dataUrl="/data/network-customers.geojson?v=2" color="#D85A30" noun="family placement" />
         <p className="text-xs text-gray-500 mt-3">
           Locations shown at pincode level only. Drag to rotate · scroll to zoom · click
           clusters to expand · click a pin for locality details.
