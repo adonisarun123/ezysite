@@ -178,12 +178,12 @@ const FAQS = [
   {
     question: 'Why does home nursing cost vary so much in Bangalore?',
     answer:
-      'The biggest variables are: (1) credentials — ICU or ventilator-trained nurses cost roughly 60–100% more than general home nurses, (2) shift type — 24-hour cover is more than 2× a 12-hour shift, (3) duration — long placements (6+ months) get better rates, and (4) complexity — tracheostomy, dialysis support, or oncology require senior nurses at the higher end of the band.',
+      'The biggest variables are: (1) credentials, ICU or ventilator-trained nurses cost roughly 60–100% more than general home nurses, (2) shift type, 24-hour cover is more than 2× a 12-hour shift, (3) duration, long placements (6+ months) get better rates, and (4) complexity, tracheostomy, dialysis support, or oncology require senior nurses at the higher end of the band.',
   },
   {
     question: 'Is home nursing cheaper than staying in a hospital?',
     answer:
-      'Almost always — and significantly so. A live-in home nurse runs ₹1,150–₹1,800/day. A private hospital room is typically ₹8,000–₹15,000/day before adding nursing, food, medication and tests. For stable patients, home care can cost 80–90% less per day than continued hospitalisation.',
+      'Almost always, and significantly so. A live-in home nurse runs ₹1,150–₹1,800/day. A private hospital room is typically ₹8,000–₹15,000/day before adding nursing, food, medication and tests. For stable patients, home care can cost 80–90% less per day than continued hospitalisation.',
   },
   {
     question: 'What’s the cheapest way to get clinical care at home?',
@@ -193,17 +193,17 @@ const FAQS = [
   {
     question: 'Are there any hidden charges?',
     answer:
-      'No. The placement fee and the monthly arrangement are both explained clearly during consultation. What varies on top of the base rate is medical consumables (dressings, gloves), medication, and equipment — these are passed through at cost and never marked up. We don’t charge cancellation fees if a placement isn’t working.',
+      'No. The placement fee and the monthly arrangement are both explained clearly during consultation. What varies on top of the base rate is medical consumables (dressings, gloves), medication, and equipment, these are passed through at cost and never marked up. We don’t charge cancellation fees if a placement isn’t working.',
   },
   {
     question: 'What does a "live-in" arrangement actually mean for cost?',
     answer:
-      'A live-in caregiver lives in the home, typically getting one weekly off-day and one daily rest period of 2 hours. The monthly rate covers room and board provided by the family — meals, a bed, basic toiletries. If the family covers travel for the off-day, the rate may be slightly lower.',
+      'A live-in caregiver lives in the home, typically getting one weekly off-day and one daily rest period of 2 hours. The monthly rate covers room and board provided by the family, meals, a bed, basic toiletries. If the family covers travel for the off-day, the rate may be slightly lower.',
   },
   {
     question: 'How does cost compare to other Indian cities?',
     answer:
-      'Bangalore home nursing is broadly similar to Mumbai and Delhi (within 10%), modestly higher than Hyderabad and Pune, and 20–30% higher than Tier-2 cities like Bhopal or Indore. Within Bangalore, prices are uniform across localities — caregivers are matched citywide.',
+      'Bangalore home nursing is broadly similar to Mumbai and Delhi (within 10%), modestly higher than Hyderabad and Pune, and 20–30% higher than Tier-2 cities like Bhopal or Indore. Within Bangalore, prices are uniform across localities, caregivers are matched citywide.',
   },
   {
     question: 'Can I pay weekly instead of monthly?',
@@ -252,7 +252,7 @@ export default function HomeNursingCostView() {
       eyebrow="Bangalore · Pricing transparency"
       headlineLead="Home nursing in Bangalore."
       headlineAccent="What it actually costs."
-      lede="Transparent ranges for every common arrangement — visits, shifts, 24-hour cover, and live-in placements. What changes the price, what doesn’t, and how to spend wisely without underpaying for care."
+      lede="Transparent ranges for every common arrangement, visits, shifts, 24-hour cover, and live-in placements. What changes the price, what doesn’t, and how to spend wisely without underpaying for care."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -316,7 +316,7 @@ export default function HomeNursingCostView() {
             eyebrow="Often a better fit"
             titleLead="Caretaker pricing,"
             titleMuted="for non-clinical needs."
-            lede="If the patient doesn’t need procedural medical care, a caretaker is the right choice — significantly more affordable, and equally capable for hygiene, feeding, mobility, and companionship."
+            lede="If the patient doesn’t need procedural medical care, a caretaker is the right choice, significantly more affordable, and equally capable for hygiene, feeding, mobility, and companionship."
           />
           <div className="mt-12 overflow-hidden rounded-[24px] border border-neutral-200 bg-white">
             <table className="w-full text-left text-sm">
@@ -349,7 +349,7 @@ export default function HomeNursingCostView() {
             >
               home nurse vs caretaker
             </Link>{' '}
-            — a 3-minute decision guide.
+, a 3-minute decision guide.
           </p>
         </div>
       </section>
@@ -408,7 +408,7 @@ export default function HomeNursingCostView() {
             eyebrow="The economics"
             titleLead="Home care vs"
             titleMuted="extended hospital stay."
-            lede="For most stable patients, continuing recovery at home is dramatically less expensive than staying in hospital — and far better for psychological recovery."
+            lede="For most stable patients, continuing recovery at home is dramatically less expensive than staying in hospital, and far better for psychological recovery."
           />
           <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {HOSPITAL_COMPARE.map((row) => (

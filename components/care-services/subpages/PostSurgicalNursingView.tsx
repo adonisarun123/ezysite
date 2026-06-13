@@ -17,7 +17,7 @@ const SLUG = 'post-surgical-nursing-care-bangalore'
 const PATH = `/care-services/${SLUG}`
 const service = getNestedService(SLUG)!
 
-/* heroStats — INVENTED illustrative figures for layout/AEO. Confirm before launch. */
+/* heroStats, INVENTED illustrative figures for layout/AEO. Confirm before launch. */
 const HERO_STATS = [
   { value: '3,500+', label: 'Post-op recoveries supported' },
   { value: '12-hr', label: 'Shifts available for cover' },
@@ -61,7 +61,7 @@ const INCLUDED = [
 ] as const
 
 const RECOVERIES = [
-  'Orthopaedic surgery — knee/hip replacement, fracture fixation',
+  'Orthopaedic surgery, knee/hip replacement, fracture fixation',
   'Abdominal & general surgery',
   'Cardiac surgery & post-bypass recovery',
   'Cancer / oncology surgery',
@@ -73,7 +73,7 @@ const FAQS = [
   {
     question: 'What does post-surgical nursing care at home include?',
     answer:
-      'It covers everything your recovery needs after discharge: vitals monitoring, sterile incision and wound dressing, medication and pain management, safe mobility support, and a constant watch for complications — all documented in a daily clinical log your surgeon can review.',
+      'It covers everything your recovery needs after discharge: vitals monitoring, sterile incision and wound dressing, medication and pain management, safe mobility support, and a constant watch for complications, all documented in a daily clinical log your surgeon can review.',
   },
   {
     question: 'How soon after discharge can a nurse start?',
@@ -83,7 +83,7 @@ const FAQS = [
   {
     question: 'How much does post-surgical nursing cost in Bangalore?',
     answer:
-      `Post-surgical nursing care at home in Bangalore starts at ${formatPriceWithNote('post-surgical-nursing').toLowerCase()}. Cost depends on the surgery, the level of monitoring required and the duration of cover — a consultation gives you a precise estimate.`,
+      `Post-surgical nursing care at home in Bangalore starts at ${formatPriceWithNote('post-surgical-nursing').toLowerCase()}. Cost depends on the surgery, the level of monitoring required and the duration of cover, a consultation gives you a precise estimate.`,
   },
   {
     question: 'Can I get round-the-clock or 12-hour cover after surgery?',
@@ -98,7 +98,7 @@ const FAQS = [
   {
     question: 'What complications does the nurse watch for?',
     answer:
-      'Common post-surgical risks include wound infection, deep-vein thrombosis (clots), chest infection or pneumonia, uncontrolled pain and fever. A trained nurse recognises early warning signs and escalates promptly — which is exactly how readmissions are prevented.',
+      'Common post-surgical risks include wound infection, deep-vein thrombosis (clots), chest infection or pneumonia, uncontrolled pain and fever. A trained nurse recognises early warning signs and escalates promptly, which is exactly how readmissions are prevented.',
   },
 ] as const
 
@@ -113,7 +113,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Post-Surgical Nursing Care at Home, Bangalore',
+    name: 'EzyHelpers, Post-Surgical Nursing Care at Home, Bangalore',
     medicalSpecialty: 'Nursing',
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -137,7 +137,7 @@ export default function PostSurgicalNursingView() {
       eyebrow="Bangalore · Post-surgical nursing at home"
       headlineLead="Recovery, monitored"
       headlineAccent="from discharge day."
-      lede="Post-surgical nursing care at home in Bangalore — incision care, vitals monitoring, medication management and complication watch by GNM/B.Sc-verified nurses, with daily logs your surgeon can rely on."
+      lede="Post-surgical nursing care at home in Bangalore, incision care, vitals monitoring, medication management and complication watch by GNM/B.Sc-verified nurses, with daily logs your surgeon can rely on."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -159,7 +159,7 @@ export default function PostSurgicalNursingView() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Post-surgical nursing at home in Bangalore puts a qualified nurse at the bedside during the{' '}
-            <em className="italic text-care-500">riskiest window</em> — the days right after discharge —
+            <em className="italic text-care-500">riskiest window</em>, the days right after discharge, 
             for vitals monitoring, wound care, medication and complication watch. It is how families
             turn a hospital discharge into a safe recovery.
           </p>

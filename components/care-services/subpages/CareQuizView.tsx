@@ -44,8 +44,8 @@ const QUESTIONS: Question[] = [
     prompt: 'Are there active medical procedures the patient needs?',
     helper: 'Wounds being dressed, IV, catheters, tube feeding, chest tubes, regular vitals.',
     options: [
-      { label: 'Yes — daily or near-daily clinical care', weights: { nurse: 3, combined: 2 } },
-      { label: 'Some — a few times a week (e.g. wound check, port flush)', weights: { combined: 3, caretaker: 1 } },
+      { label: 'Yes, daily or near-daily clinical care', weights: { nurse: 3, combined: 2 } },
+      { label: 'Some, a few times a week (e.g. wound check, port flush)', weights: { combined: 3, caretaker: 1 } },
       { label: 'No clinical procedures, just stable management', weights: { caretaker: 3 } },
     ],
   },
@@ -82,7 +82,7 @@ const QUESTIONS: Question[] = [
     id: 'situation',
     prompt: 'What best describes the situation?',
     options: [
-      { label: 'Hospital discharge — recent or imminent', weights: { combined: 3, nurse: 2 } },
+      { label: 'Hospital discharge, recent or imminent', weights: { combined: 3, nurse: 2 } },
       { label: 'Long-term elderly care for an ageing parent', weights: { caretaker: 3 } },
       { label: 'Bedridden / post-stroke / high-dependency', weights: { attendant: 3 } },
       { label: 'Post-surgical recovery (4–12 weeks)', weights: { combined: 2, caretaker: 2 } },
@@ -98,7 +98,7 @@ const RESULTS: Record<
     title: 'Home Nursing Services',
     tagline: 'Procedural medical care, performed at home.',
     lede:
-      'Your situation calls primarily for clinical care — wound dressing, IV, catheter, vitals, doctor handoffs. A licensed nurse is the right fit, often as visits, sometimes as a shift.',
+      'Your situation calls primarily for clinical care, wound dressing, IV, catheter, vitals, doctor handoffs. A licensed nurse is the right fit, often as visits, sometimes as a shift.',
     bullets: [
       'GNM / B.Sc Nursing-trained',
       'Wound, IV, catheter discipline',
@@ -113,7 +113,7 @@ const RESULTS: Record<
     title: 'Caretaker Services',
     tagline: 'Daily personal care, matched not assigned.',
     lede:
-      'Your situation is mostly about daily living — hygiene, meals, mobility, companionship, medication reminders. A trained caretaker is the right fit, in a day-shift or live-in arrangement.',
+      'Your situation is mostly about daily living, hygiene, meals, mobility, companionship, medication reminders. A trained caretaker is the right fit, in a day-shift or live-in arrangement.',
     bullets: [
       'Hygiene · feeding · mobility',
       'Medication reminders',
@@ -128,7 +128,7 @@ const RESULTS: Record<
     title: 'Trained Attendant Services',
     tagline: 'Skilled physical handling for high-dependency care.',
     lede:
-      'Your situation calls for skilled physical handling — bedridden, post-stroke, neurological, or high-dependency care. A trained attendant is the right fit, almost always as a live-in placement.',
+      'Your situation calls for skilled physical handling, bedridden, post-stroke, neurological, or high-dependency care. A trained attendant is the right fit, almost always as a live-in placement.',
     bullets: [
       'Bedridden patient management',
       'Pressure-sore prevention',
@@ -143,7 +143,7 @@ const RESULTS: Record<
     title: 'Home Healthcare Services',
     tagline: 'Nurse + caretaker, one coordinated team.',
     lede:
-      'Your situation needs both medical procedures and daily care. The best fit is a coordinated arrangement — a nurse for clinical tasks, a caretaker for daily living — managed as one team.',
+      'Your situation needs both medical procedures and daily care. The best fit is a coordinated arrangement, a nurse for clinical tasks, a caretaker for daily living, managed as one team.',
     bullets: [
       'Doctor-aligned care plan',
       'Nurse + caretaker, one team',
@@ -399,7 +399,7 @@ export default function CareQuizView() {
             eyebrow="Why use the quiz"
             titleLead="Most families overspend"
             titleMuted="in the first two weeks."
-            lede="Hiring a nurse when a caretaker would do, or a generalist when a trained attendant is needed — both are common and both are expensive. The quiz removes the guesswork."
+            lede="Hiring a nurse when a caretaker would do, or a generalist when a trained attendant is needed, both are common and both are expensive. The quiz removes the guesswork."
             align="center"
           />
         </div>

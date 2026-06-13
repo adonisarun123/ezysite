@@ -29,7 +29,7 @@ const CONDITION_INFO: ConditionInfo = {
   vitalStats: [
     {
       stat: 'A few per lakh',
-      detail: 'MS is relatively uncommon in India — studies estimate a prevalence of a few per 100,000, lower than in Western countries.',
+      detail: 'MS is relatively uncommon in India, studies estimate a prevalence of a few per 100,000, lower than in Western countries.',
     },
     {
       stat: '20–40 yrs',
@@ -46,29 +46,29 @@ const CONDITION_INFO: ConditionInfo = {
     'ALS: progressive degeneration of the motor neurons that control muscles',
     'ALS: about 1 in 10 cases run in families; most have no known cause',
     'Both: neither is contagious, and neither is caused by anything the patient did wrong',
-    'Both: exact triggers are still being researched — diagnosis needs a neurologist',
+    'Both: exact triggers are still being researched, diagnosis needs a neurologist',
   ],
   symptoms: [
     'MS: blurred or painful vision in one eye, often an early sign',
     'MS: numbness, tingling or electric-shock sensations in limbs',
     'MS: overwhelming fatigue that rest doesn’t fully fix',
     'MS: balance problems, weakness or bladder urgency that come and go in relapses',
-    'ALS: painless weakness in a hand or foot — dropping things, tripping',
+    'ALS: painless weakness in a hand or foot, dropping things, tripping',
     'ALS: muscle twitching (fasciculations) and visible muscle thinning',
     'ALS: slurring speech or trouble swallowing as it progresses',
-    'Both: symptoms vary enormously person to person — track changes and tell the neurologist',
+    'Both: symptoms vary enormously person to person, track changes and tell the neurologist',
   ],
   whenYouNeedCare: [
     'An MS relapse has left mobility or vision worse, and recovery needs daily support at home',
     'Fatigue means cooking, bathing and errands are exhausting the patient or their spouse',
     'ALS weakness has made transfers, dressing and mealtimes unsafe to manage alone',
     'Swallowing changes mean meals now need trained, unhurried supervision',
-    'Equipment is arriving — wheelchair, hospital bed, BiPAP — and the household needs steady hands',
+    'Equipment is arriving, wheelchair, hospital bed, BiPAP, and the household needs steady hands',
     'The primary carer is burning out, or family is abroad and needs reliable daily updates',
   ],
 }
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
   { value: 'Progressive', label: 'care planning that stays ahead of the condition' },
@@ -82,10 +82,10 @@ const SECTIONS = [
     titleLead: 'Care that plans ahead,',
     titleMuted: 'not just for today.',
     lede:
-      'MS and ALS change over months and years — sometimes in relapses, sometimes steadily. We plan the next stage of care before it is needed, so nothing catches the family off guard.',
+      'MS and ALS change over months and years, sometimes in relapses, sometimes steadily. We plan the next stage of care before it is needed, so nothing catches the family off guard.',
     bullets: [
       'Regular re-assessment as strength, mobility and speech change',
-      'Care plan stepped up gradually — hours, skills, equipment',
+      'Care plan stepped up gradually, hours, skills, equipment',
       'Smooth transition to live-in or trained-attendant care when needed',
       'Family kept informed and involved in every change',
     ],
@@ -99,7 +99,7 @@ const SECTIONS = [
     bullets: [
       'Energy-conserving daily routines with planned rest periods',
       'Safe assistance with walking, transfers and repositioning',
-      'Support adapted as strength changes — from steadying arm to full transfer help',
+      'Support adapted as strength changes, from steadying arm to full transfer help',
       'Heat-awareness for MS, where overheating worsens symptoms',
     ],
   },
@@ -110,7 +110,7 @@ const SECTIONS = [
     lede:
       'Swallowing and speech are often affected in ALS and advanced MS. Caregivers provide swallowing-aware feeding support and patient, unhurried communication.',
     bullets: [
-      'Swallowing-aware feeding — pace, posture and food consistency per clinical advice',
+      'Swallowing-aware feeding, pace, posture and food consistency per clinical advice',
       'Patient communication support as speech becomes harder',
       'Use of communication boards or devices the family has in place',
       'Alertness to choking risk, with family and doctor informed of changes',
@@ -121,9 +121,9 @@ const SECTIONS = [
     titleLead: 'The right equipment,',
     titleMuted: 'and steady emotional support.',
     lede:
-      'The right wheelchair or hospital bed changes daily life — and so does a caregiver who understands what the family is going through.',
+      'The right wheelchair or hospital bed changes daily life, and so does a caregiver who understands what the family is going through.',
     bullets: [
-      'Equipment coordination — wheelchairs, hospital beds and aids via our rental service',
+      'Equipment coordination, wheelchairs, hospital beds and aids via our rental service',
       'Safe use of hoists, transfer aids and pressure-relief equipment',
       'Emotional support and companionship for the patient through a hard diagnosis',
       'A listening ear and practical relief for family members too',
@@ -135,12 +135,12 @@ const FAQS = [
   {
     question: 'How do MS and ALS care needs differ?',
     answer:
-      'MS often comes in relapses with fatigue, balance and vision issues, and many people stay mobile for years — so care focuses on energy management and safety during flare-ups. ALS progressively affects muscle strength, speech and swallowing, so care emphasises transfers, swallowing-safe feeding and communication support. We match the caregiver and plan to the specific condition and stage.',
+      'MS often comes in relapses with fatigue, balance and vision issues, and many people stay mobile for years, so care focuses on energy management and safety during flare-ups. ALS progressively affects muscle strength, speech and swallowing, so care emphasises transfers, swallowing-safe feeding and communication support. We match the caregiver and plan to the specific condition and stage.',
   },
   {
     question: 'How does care adapt as the condition progresses?',
     answer:
-      'We re-assess regularly and step up the plan gradually — more hours, more hands-on transfer support, equipment like hospital beds or hoists, and eventually live-in or trained-attendant cover if needed. Because we plan ahead, changes happen smoothly rather than in a crisis.',
+      'We re-assess regularly and step up the plan gradually, more hours, more hands-on transfer support, equipment like hospital beds or hoists, and eventually live-in or trained-attendant cover if needed. Because we plan ahead, changes happen smoothly rather than in a crisis.',
   },
   {
     question: 'What does MS or ALS care at home cost in Bangalore?',
@@ -168,7 +168,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Multiple Sclerosis & ALS Care at Home, Bangalore',
+    name: 'EzyHelpers, Multiple Sclerosis & ALS Care at Home, Bangalore',
     medicalSpecialty: ['Neurology', 'Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -192,7 +192,7 @@ export default function MsAlsCareView() {
       eyebrow="Bangalore · MS & ALS care at home"
       headlineLead="Care that stays one step"
       headlineAccent="ahead of the condition."
-      lede={SERVICE.tagline + ' Energy-aware routines, safe transfers, swallowing-aware feeding and equipment coordination — with a plan that adapts as needs change.'}
+      lede={SERVICE.tagline + ' Energy-aware routines, safe transfers, swallowing-aware feeding and equipment coordination, with a plan that adapts as needs change.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}

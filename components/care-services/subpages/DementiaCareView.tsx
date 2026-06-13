@@ -42,16 +42,16 @@ const CONDITION_INFO: ConditionInfo = {
     },
     {
       stat: '1 in 10',
-      detail: 'Globally, dementia affects roughly 1 in 10 people over 65 — and prevalence rises sharply with age.',
+      detail: 'Globally, dementia affects roughly 1 in 10 people over 65, and prevalence rises sharply with age.',
     },
   ],
   causes: [
-    'Alzheimer’s disease — the most common cause of dementia',
+    'Alzheimer’s disease, the most common cause of dementia',
     'Vascular damage from stroke or chronically high blood pressure',
     'Parkinson’s disease and Lewy body disease',
     'Traumatic brain injury, including repeated falls with head impact',
     'Prolonged heavy alcohol use',
-    'Infections and other conditions affecting the brain (some are treatable — always get a diagnosis)',
+    'Infections and other conditions affecting the brain (some are treatable, always get a diagnosis)',
   ],
   symptoms: [
     'Forgetting recent conversations or repeating the same question',
@@ -64,7 +64,7 @@ const CONDITION_INFO: ConditionInfo = {
     'Neglecting bathing, grooming or fresh clothes',
   ],
   whenYouNeedCare: [
-    'A wandering incident — they left home and couldn’t find their way back',
+    'A wandering incident, they left home and couldn’t find their way back',
     'Gas left on, doors left open, or medicines doubled or missed',
     'Evening agitation (sundowning) that the family can no longer calm',
     'The spouse or daughter-in-law providing care is exhausted or unwell themselves',
@@ -92,7 +92,7 @@ const STAGES = [
     n: 'Advanced',
     title: 'High dependence, communication loss',
     body:
-      'Full-time, often medically-aware care. Mobility decline, swallow risk, incontinence, and the emotional difficulty of late-stage disease — handled with dignity, not detachment.',
+      'Full-time, often medically-aware care. Mobility decline, swallow risk, incontinence, and the emotional difficulty of late-stage disease, handled with dignity, not detachment.',
     bullets: ['Live-in trained attendant', 'Swallow & feeding safety', 'Pressure-sore prevention', 'End-of-life sensitivity'],
   },
 ] as const
@@ -108,13 +108,13 @@ const BEHAVIOURS = [
     icon: HandRaisedIcon,
     title: 'Wandering',
     body:
-      'A safety risk in moderate-to-advanced stages. Door alarms, ID bracelets, and a caregiver who knows the patient’s favourite places to head toward — most wandering is goal-directed, not random.',
+      'A safety risk in moderate-to-advanced stages. Door alarms, ID bracelets, and a caregiver who knows the patient’s favourite places to head toward, most wandering is goal-directed, not random.',
   },
   {
     icon: HeartIcon,
     title: 'Bathing & dressing resistance',
     body:
-      'Often misread as stubbornness. Usually reflects fear of cold, embarrassment, or loss of control. Solved with warmer rooms, predictable steps, and patience — not insistence.',
+      'Often misread as stubbornness. Usually reflects fear of cold, embarrassment, or loss of control. Solved with warmer rooms, predictable steps, and patience, not insistence.',
   },
   {
     icon: SparklesIcon,
@@ -126,7 +126,7 @@ const BEHAVIOURS = [
     icon: MoonIcon,
     title: 'Sleep disturbance',
     body:
-      'Night-time confusion is common. A nightlight, fixed bedtime ritual, and limited daytime napping help. Avoid sedatives — they often worsen confusion.',
+      'Night-time confusion is common. A nightlight, fixed bedtime ritual, and limited daytime napping help. Avoid sedatives, they often worsen confusion.',
   },
   {
     icon: HomeIcon,
@@ -137,19 +137,19 @@ const BEHAVIOURS = [
 ] as const
 
 const PHILOSOPHY = [
-  'Validate the feeling, not the fact — arguing with a memory error increases agitation.',
-  'Routines beat reminders — the same time, place, and order every day reduces confusion.',
-  'One step at a time — break instructions into single, simple actions.',
-  'Eye contact, name, smile — the social cues survive long after the names fade.',
-  'Music, photographs, familiar fabrics — sensory anchors that reach memory when language can’t.',
-  'Dignity is the entire point — care without it is just supervision.',
+  'Validate the feeling, not the fact, arguing with a memory error increases agitation.',
+  'Routines beat reminders, the same time, place, and order every day reduces confusion.',
+  'One step at a time, break instructions into single, simple actions.',
+  'Eye contact, name, smile, the social cues survive long after the names fade.',
+  'Music, photographs, familiar fabrics, sensory anchors that reach memory when language can’t.',
+  'Dignity is the entire point, care without it is just supervision.',
 ] as const
 
 const FAQS = [
   {
     question: 'Is a regular caretaker enough for dementia, or do we need a specialist?',
     answer:
-      'For early-stage dementia, an experienced caretaker who has worked with cognitive decline before is often sufficient. For moderate-to-advanced stages — especially with sundowning, wandering, or aggression — you need someone trained in dementia-specific behavioural management. We match accordingly.',
+      'For early-stage dementia, an experienced caretaker who has worked with cognitive decline before is often sufficient. For moderate-to-advanced stages, especially with sundowning, wandering, or aggression, you need someone trained in dementia-specific behavioural management. We match accordingly.',
   },
   {
     question: 'How do I know what stage my parent is in?',
@@ -159,7 +159,7 @@ const FAQS = [
   {
     question: 'Can a caregiver actually slow the progression of dementia?',
     answer:
-      'No caregiver — or treatment — reverses dementia. But a good one preserves function for longer: routine, stimulation, social contact, nutrition, sleep, and mood support all influence the *pace* of decline. The goal is more good days, fewer hospital visits, and dignity throughout.',
+      'No caregiver, or treatment, reverses dementia. But a good one preserves function for longer: routine, stimulation, social contact, nutrition, sleep, and mood support all influence the *pace* of decline. The goal is more good days, fewer hospital visits, and dignity throughout.',
   },
   {
     question: 'My mother gets aggressive in the evening. How is that handled?',
@@ -169,7 +169,7 @@ const FAQS = [
   {
     question: 'How do you find caregivers who can actually do this work?',
     answer:
-      'We require demonstrated dementia-specific experience — not just elderly-care experience. The caregiver must have managed at least one moderate-to-advanced dementia patient in the last 18 months and pass our calm-under-confusion screening. About 1 in 4 elderly-care candidates make it through.',
+      'We require demonstrated dementia-specific experience, not just elderly-care experience. The caregiver must have managed at least one moderate-to-advanced dementia patient in the last 18 months and pass our calm-under-confusion screening. About 1 in 4 elderly-care candidates make it through.',
   },
   {
     question: 'What does dementia care at home cost in Bangalore?',
@@ -179,7 +179,7 @@ const FAQS = [
   {
     question: 'Should we move our parent to a memory care facility instead?',
     answer:
-      'For most Indian families, home care is preferred — familiar surroundings reduce confusion and agitation, and the family stays meaningfully involved. A facility makes more sense in advanced stages with severe wandering or aggression, or when no family member can be reachable in emergencies. We’ll be honest with you about which makes sense.',
+      'For most Indian families, home care is preferred, familiar surroundings reduce confusion and agitation, and the family stays meaningfully involved. A facility makes more sense in advanced stages with severe wandering or aggression, or when no family member can be reachable in emergencies. We’ll be honest with you about which makes sense.',
   },
 ] as const
 
@@ -187,7 +187,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Dementia & Alzheimer’s Care, Bangalore',
+    name: 'EzyHelpers, Dementia & Alzheimer’s Care, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Neurology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -211,7 +211,7 @@ export default function DementiaCareView() {
       eyebrow="Bangalore · Cognitive care at home"
       headlineLead="Dementia care, with dignity."
       headlineAccent="And a quiet steady hand."
-      lede="Dementia changes everything except who your loved one is. We place caregivers trained to remember that — through agitation, repetition, sundowning, and the long months when the disease asks more of the family than of the patient."
+      lede="Dementia changes everything except who your loved one is. We place caregivers trained to remember that, through agitation, repetition, sundowning, and the long months when the disease asks more of the family than of the patient."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -223,7 +223,7 @@ export default function DementiaCareView() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Dementia care at home in Bangalore should be matched to the{' '}
-            <em className="italic text-care-500">stage</em> of cognitive decline — not the calendar.
+            <em className="italic text-care-500">stage</em> of cognitive decline, not the calendar.
             Early-stage families need companionship and routine. Moderate-stage families need behavioural
             expertise. Advanced-stage families need a trained attendant who is steady through difficulty.
             EzyHelpers places caregivers with stage-appropriate experience and re-matches as the disease
@@ -279,7 +279,7 @@ export default function DementiaCareView() {
             eyebrow="What we’re trained for"
             titleLead="The hard moments,"
             titleMuted="handled gently."
-            lede="The behaviours that make families feel they can’t cope alone are the ones our dementia caregivers are matched on. None of these are unmanageable — they need the right approach, repeated calmly, every single day."
+            lede="The behaviours that make families feel they can’t cope alone are the ones our dementia caregivers are matched on. None of these are unmanageable, they need the right approach, repeated calmly, every single day."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {BEHAVIOURS.map(({ icon: Icon, title, body }) => (
@@ -332,7 +332,7 @@ export default function DementiaCareView() {
                 eyebrow="Care for the family too"
                 titleLead="Dementia is exhausting."
                 titleMuted="We notice."
-                lede="The hardest part of dementia care isn’t the patient — it’s the toll on the spouse and adult children carrying it. Our placements are built so the family can rest, work, and breathe."
+                lede="The hardest part of dementia care isn’t the patient, it’s the toll on the spouse and adult children carrying it. Our placements are built so the family can rest, work, and breathe."
               />
             </div>
             <div className="lg:col-span-7">

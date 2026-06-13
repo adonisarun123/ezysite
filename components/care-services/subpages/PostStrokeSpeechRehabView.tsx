@@ -29,29 +29,29 @@ const CONDITION_INFO: ConditionInfo = {
   vitalStats: [
     {
       stat: '~1.8 million',
-      detail: 'India sees an estimated 1.8 million strokes a year — and speech or swallowing problems follow a large share of them.',
+      detail: 'India sees an estimated 1.8 million strokes a year, and speech or swallowing problems follow a large share of them.',
     },
     {
       stat: '~1 in 3',
-      detail: 'Roughly a third of stroke survivors experience aphasia — difficulty speaking, understanding, reading or writing.',
+      detail: 'Roughly a third of stroke survivors experience aphasia, difficulty speaking, understanding, reading or writing.',
     },
     {
       stat: 'Up to half',
-      detail: 'Swallowing difficulty (dysphagia) affects an estimated half of stroke patients early on — and raises aspiration-pneumonia risk if unmanaged.',
+      detail: 'Swallowing difficulty (dysphagia) affects an estimated half of stroke patients early on, and raises aspiration-pneumonia risk if unmanaged.',
     },
   ],
   causes: [
-    'Stroke damage to the brain’s language areas — usually the left side (aphasia)',
+    'Stroke damage to the brain’s language areas, usually the left side (aphasia)',
     'Weakness of the lips, tongue and speech muscles after stroke (dysarthria)',
     'Disrupted coordination of the swallowing reflex (dysphagia)',
     'Larger strokes and delayed treatment, which increase the extent of damage',
     'Repeat strokes adding new deficits on top of old ones',
-    'Reduced practice — speech that isn’t used and exercised recovers more slowly',
+    'Reduced practice, speech that isn’t used and exercised recovers more slowly',
   ],
   symptoms: [
     'Knowing what they want to say but unable to find the words',
     'Speech that comes out slurred, slow or hard to understand',
-    'Using the wrong word — “chair” for “table” — without noticing',
+    'Using the wrong word, “chair” for “table”, without noticing',
     'Trouble following conversations, TV or written text',
     'Coughing, throat-clearing or a wet, gurgly voice during meals',
     'Holding food in the mouth, or meals taking far longer than before',
@@ -64,14 +64,14 @@ const CONDITION_INFO: ConditionInfo = {
     'A chest infection after meals raised the question of silent aspiration',
     'Frustration at not being understood is turning into withdrawal or anger',
     'Therapy sessions exist, but the gains fade because nothing is practised between them',
-    'Family members are far away and want structured rehab — and progress reports — at home',
+    'Family members are far away and want structured rehab, and progress reports, at home',
   ],
 }
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
-  { value: 'Early months', label: 'matter most — the golden window for speech recovery' },
+  { value: 'Early months', label: 'matter most, the golden window for speech recovery' },
   { value: 'At home', label: 'where practice is comfortable, frequent and consistent' },
   { value: 'Family-coached', label: 'so progress continues between every session' },
 ] as const
@@ -82,7 +82,7 @@ const SECTIONS = [
     titleLead: 'Finding the words',
     titleMuted: 'again, step by step.',
     lede:
-      'A stroke can take away words, names and sentences — aphasia. Structured language exercises at home rebuild communication patiently, one win at a time.',
+      'A stroke can take away words, names and sentences, aphasia. Structured language exercises at home rebuild communication patiently, one win at a time.',
     bullets: [
       'Word-finding, naming and sentence-building exercises',
       'Comprehension practice with everyday objects and routines',
@@ -95,12 +95,12 @@ const SECTIONS = [
     titleLead: 'Slurred speech worked',
     titleMuted: 'back towards clarity.',
     lede:
-      'When the stroke weakens the muscles of speech — dysarthria — words come out slurred or slow. Targeted oral-motor and articulation practice rebuilds clarity.',
+      'When the stroke weakens the muscles of speech, dysarthria, words come out slurred or slow. Targeted oral-motor and articulation practice rebuilds clarity.',
     bullets: [
       'Oral-motor exercises for lips, tongue and breath control',
       'Articulation drills paced to the patient’s stamina',
       'Volume and pacing strategies for clearer everyday speech',
-      'Practice using the patient’s own daily phrases — Kannada, Hindi, English or mixed',
+      'Practice using the patient’s own daily phrases, Kannada, Hindi, English or mixed',
     ],
   },
   {
@@ -108,7 +108,7 @@ const SECTIONS = [
     titleLead: 'Every meal made',
     titleMuted: 'safer to swallow.',
     lede:
-      'Swallowing difficulty — dysphagia — is one of the most dangerous after-effects of stroke. Assessment-informed mealtime routines reduce choking and aspiration risk.',
+      'Swallowing difficulty, dysphagia, is one of the most dangerous after-effects of stroke. Assessment-informed mealtime routines reduce choking and aspiration risk.',
     bullets: [
       'Mealtime routines informed by the clinical swallowing assessment',
       'Safe posture, pacing and food-consistency guidance',
@@ -124,9 +124,9 @@ const SECTIONS = [
       'The therapist visits a few times a week; recovery happens every day. Structured home practice and family coaching turn the whole household into part of the rehab.',
     bullets: [
       'Structured daily practice plans between therapy sessions',
-      'Family coached on how to talk with — not over — the patient',
+      'Family coached on how to talk with, not over, the patient',
       'Coordination with the neuro physiotherapist for whole-person recovery',
-      'Early start encouraged — the first months after stroke matter most',
+      'Early start encouraged, the first months after stroke matter most',
     ],
   },
 ] as const
@@ -135,7 +135,7 @@ const FAQS = [
   {
     question: 'When should speech therapy start after a stroke?',
     answer:
-      'As early as the treating doctor clears it — often within days to weeks of the stroke. The early months are the golden window when the brain is most able to rewire, so starting structured speech and swallowing work early gives the best chance of recovery.',
+      'As early as the treating doctor clears it, often within days to weeks of the stroke. The early months are the golden window when the brain is most able to rewire, so starting structured speech and swallowing work early gives the best chance of recovery.',
   },
   {
     question: 'How many sessions per week are needed?',
@@ -150,17 +150,17 @@ const FAQS = [
   {
     question: 'How long does speech recovery after stroke take?',
     answer:
-      'Honestly, it varies — with the size and location of the stroke, how early therapy starts, and how consistently practice happens. Many patients see meaningful gains within weeks, but solid recovery usually takes months of consistent work, and some improvement can continue for a year or more.',
+      'Honestly, it varies, with the size and location of the stroke, how early therapy starts, and how consistently practice happens. Many patients see meaningful gains within weeks, but solid recovery usually takes months of consistent work, and some improvement can continue for a year or more.',
   },
   {
     question: 'Do you coordinate with the neuro physiotherapist?',
     answer:
-      'Yes. Stroke recovery works best when speech and physical rehab move together, so our therapists share progress and align schedules with the physiotherapist — whether that is our own neuro physiotherapy team or one you already have.',
+      'Yes. Stroke recovery works best when speech and physical rehab move together, so our therapists share progress and align schedules with the physiotherapist, whether that is our own neuro physiotherapy team or one you already have.',
   },
   {
     question: 'What can the family do between sessions?',
     answer:
-      'A great deal — and we coach you on it. The therapist leaves a structured daily practice plan, shows family members how to run short exercises, and teaches communication habits like giving extra time, asking yes/no questions and never finishing the patient’s sentences for them.',
+      'A great deal, and we coach you on it. The therapist leaves a structured daily practice plan, shows family members how to run short exercises, and teaches communication habits like giving extra time, asking yes/no questions and never finishing the patient’s sentences for them.',
   },
 ] as const
 
@@ -168,7 +168,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Post-Stroke Speech Therapy & Rehab at Home, Bangalore',
+    name: 'EzyHelpers, Post-Stroke Speech Therapy & Rehab at Home, Bangalore',
     medicalSpecialty: ['Speech-Language Pathology', 'Neurology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -192,7 +192,7 @@ export default function PostStrokeSpeechRehabView() {
       eyebrow="Bangalore · Post-stroke speech rehab at home"
       headlineLead="After a stroke, every word"
       headlineAccent="won back counts."
-      lede={SERVICE.tagline + ' Structured aphasia, speech-clarity and swallowing rehab at home — started early, practised daily, with the family coached at every step.'}
+      lede={SERVICE.tagline + ' Structured aphasia, speech-clarity and swallowing rehab at home, started early, practised daily, with the family coached at every step.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}
@@ -236,17 +236,17 @@ export default function PostStrokeSpeechRehabView() {
         workerLabel="the therapist and caregiver team"
         dos={[
           'Structured speech and language exercises, set and progressed by the therapist',
-          'Swallowing-safe mealtime support — posture, pacing and food-consistency guidance',
+          'Swallowing-safe mealtime support, posture, pacing and food-consistency guidance',
           'Daily home practice plans between therapy sessions',
-          'Family coaching on how to communicate with — not over — the patient',
+          'Family coaching on how to communicate with, not over, the patient',
           'Session-by-session progress tracking shared with the family',
           'Coordination with the neuro physiotherapist for whole-person recovery',
         ]}
         donts={[
-          'Medical diagnosis — assessment and diagnosis remain with your doctor and hospital team',
+          'Medical diagnosis, assessment and diagnosis remain with your doctor and hospital team',
           'Prescribing or changing medication',
-          'Invasive swallowing procedures — these belong with the hospital SLP and treating doctor',
-          'Guaranteeing recovery timelines — progress is real but varies person to person',
+          'Invasive swallowing procedures, these belong with the hospital SLP and treating doctor',
+          'Guaranteeing recovery timelines, progress is real but varies person to person',
         ]}
       />
 

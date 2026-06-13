@@ -33,34 +33,34 @@ const CONDITION_INFO: ConditionInfo = {
     },
     {
       stat: '~8.8 million',
-      detail: 'An estimated 8.8 million Indians aged 60+ live with dementia — Alzheimer’s being the largest share (LASI-DAD study).',
+      detail: 'An estimated 8.8 million Indians aged 60+ live with dementia, Alzheimer’s being the largest share (LASI-DAD study).',
     },
     {
       stat: '8–10 yrs',
-      detail: 'After diagnosis, families typically live with the disease for many years — often 8–10 or more — making sustainable home care essential.',
+      detail: 'After diagnosis, families typically live with the disease for many years, often 8–10 or more, making sustainable home care essential.',
     },
   ],
   causes: [
     'Abnormal protein build-up (amyloid plaques and tau tangles) in the brain',
-    'Advancing age — the single biggest risk factor, especially after 65',
+    'Advancing age, the single biggest risk factor, especially after 65',
     'Family history and genetic factors (such as the APOE-e4 gene)',
     'Long-standing high blood pressure, diabetes and heart disease',
     'Untreated hearing loss, social isolation and physical inactivity',
     'Smoking and prolonged heavy alcohol use',
   ],
   symptoms: [
-    'Memory loss that disrupts daily life — especially recently learned information',
+    'Memory loss that disrupts daily life, especially recently learned information',
     'Asking the same question again within minutes',
     'Trouble following familiar recipes, accounts or monthly bills',
     'Confusion about time of day, dates or seasons',
     'Getting lost on routes they have used for decades',
     'Trouble finding the right word, or calling objects by the wrong name',
-    'Poor judgement — unusual gifts of money, falling for telemarketing schemes',
-    'Personality change — anxiety, suspicion or withdrawal from family',
+    'Poor judgement, unusual gifts of money, falling for telemarketing schemes',
+    'Personality change, anxiety, suspicion or withdrawal from family',
   ],
   whenYouNeedCare: [
     'They have wandered out of the house or got lost in a familiar area',
-    'Sundowning — agitation or restlessness most evenings the family can’t settle',
+    'Sundowning, agitation or restlessness most evenings the family can’t settle',
     'Medicines, gas stoves or door locks are no longer managed safely',
     'Bathing and dressing now meet resistance the family can’t handle alone',
     'The primary family caregiver is burning out or has health issues of their own',
@@ -68,7 +68,7 @@ const CONDITION_INFO: ConditionInfo = {
   ],
 }
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
   { value: 'Stage-aware', label: 'care plans for early, middle and late Alzheimer’s' },
@@ -82,7 +82,7 @@ const SECTIONS = [
     titleLead: 'Care matched to',
     titleMuted: 'the stage, not a script.',
     lede:
-      'Alzheimer’s changes over years. Early-stage care looks nothing like late-stage care — so our caregivers are briefed and matched to where your loved one is today.',
+      'Alzheimer’s changes over years. Early-stage care looks nothing like late-stage care, so our caregivers are briefed and matched to where your loved one is today.',
     bullets: [
       'Early stage: gentle prompts, routine-keeping and independence support',
       'Middle stage: hands-on help with dressing, meals and hygiene',
@@ -108,7 +108,7 @@ const SECTIONS = [
     titleLead: 'Calmer evenings,',
     titleMuted: 'anchored by familiar routine.',
     lede:
-      'Late-afternoon agitation — sundowning — is common in Alzheimer’s. A steady, memory-anchored daily routine in a familiar environment keeps evenings calmer.',
+      'Late-afternoon agitation, sundowning, is common in Alzheimer’s. A steady, memory-anchored daily routine in a familiar environment keeps evenings calmer.',
     bullets: [
       'Predictable daily rhythm for meals, rest, activity and lighting',
       'Calming techniques for evening agitation and restlessness',
@@ -123,7 +123,7 @@ const SECTIONS = [
     lede:
       'Repetition, confusion and lost words call for a special way of communicating. And the family caring alongside us needs rest too.',
     bullets: [
-      'Trained responses to repeated questions — patience, never correction',
+      'Trained responses to repeated questions, patience, never correction',
       'Simple, one-step communication that reduces frustration',
       'Daily WhatsApp updates so family and NRI children stay informed',
       'Respite cover so primary family caregivers can rest and recharge',
@@ -135,7 +135,7 @@ const FAQS = [
   {
     question: 'How is Alzheimer’s care different from general dementia care?',
     answer:
-      'Alzheimer’s is the most common cause of dementia, and it follows a fairly predictable stage-wise progression — which means care can be planned ahead. Our Alzheimer’s caregivers focus on stage-specific needs like wandering prevention, sundowning management and memory-anchored routines, rather than a one-size-fits-all dementia approach.',
+      'Alzheimer’s is the most common cause of dementia, and it follows a fairly predictable stage-wise progression, which means care can be planned ahead. Our Alzheimer’s caregivers focus on stage-specific needs like wandering prevention, sundowning management and memory-anchored routines, rather than a one-size-fits-all dementia approach.',
   },
   {
     question: 'How do caregivers handle wandering?',
@@ -155,7 +155,7 @@ const FAQS = [
   {
     question: 'Will the same caregiver continue as the stages progress?',
     answer:
-      'Wherever the caregiver has the experience for the next stage, we keep them — continuity and a familiar face matter enormously in Alzheimer’s. If late-stage needs require a trained attendant or nursing support, we manage a gradual, well-briefed handover so care never lapses.',
+      'Wherever the caregiver has the experience for the next stage, we keep them, continuity and a familiar face matter enormously in Alzheimer’s. If late-stage needs require a trained attendant or nursing support, we manage a gradual, well-briefed handover so care never lapses.',
   },
   {
     question: 'Do you provide live-in Alzheimer’s care in Bangalore?',
@@ -168,7 +168,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Alzheimer’s Care at Home, Bangalore',
+    name: 'EzyHelpers, Alzheimer’s Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Neurology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -192,7 +192,7 @@ export default function AlzheimersCareView() {
       eyebrow="Bangalore · Alzheimer’s care at home"
       headlineLead="Alzheimer’s care that keeps"
       headlineAccent="the familiar world safe."
-      lede={SERVICE.tagline + ' Caregivers trained in wandering prevention, sundowning management and memory-anchored routines — in the home your loved one knows best.'}
+      lede={SERVICE.tagline + ' Caregivers trained in wandering prevention, sundowning management and memory-anchored routines, in the home your loved one knows best.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}

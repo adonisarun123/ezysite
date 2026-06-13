@@ -11,7 +11,7 @@ const SECTIONS = [
     eyebrow: 'Conditions treated',
     title: 'What orthopaedic physiotherapy at home covers',
     intro:
-      'Orthopaedic physiotherapy targets the bones, joints, muscles and ligaments — the most common reasons Bangalore families seek home rehabilitation.',
+      'Orthopaedic physiotherapy targets the bones, joints, muscles and ligaments, the most common reasons Bangalore families seek home rehabilitation.',
     bullets: [
       'Knee and hip osteoarthritis pain and stiffness',
       'Frozen shoulder and rotator-cuff problems',
@@ -73,7 +73,7 @@ const FAQS = [
   {
     question: 'Can orthopaedic physiotherapy really be done effectively at home?',
     answer:
-      'Yes. For most joint, back and post-fracture conditions, home physiotherapy is highly effective. Sessions are one-on-one, exercises are tailored to your actual living space, and there’s no travel fatigue — which matters a great deal when a joint is painful or you’re recovering from a fracture in Bangalore.',
+      'Yes. For most joint, back and post-fracture conditions, home physiotherapy is highly effective. Sessions are one-on-one, exercises are tailored to your actual living space, and there’s no travel fatigue, which matters a great deal when a joint is painful or you’re recovering from a fracture in Bangalore.',
   },
   {
     question: 'How many sessions will I need for knee or back pain?',
@@ -88,17 +88,17 @@ const FAQS = [
   {
     question: 'Is physiotherapy safe after a fracture or joint replacement?',
     answer:
-      'When guided by a qualified physiotherapist, yes — it’s an essential part of recovery. Your therapist works within the limits set by your surgeon, progressing exercises only as your healing and strength allow. This is general information and not a substitute for your doctor’s advice.',
+      'When guided by a qualified physiotherapist, yes, it’s an essential part of recovery. Your therapist works within the limits set by your surgeon, progressing exercises only as your healing and strength allow. This is general information and not a substitute for your doctor’s advice.',
   },
   {
     question: 'Will physiotherapy help me avoid surgery?',
     answer:
-      'For many joint and back conditions, structured physiotherapy can reduce pain and improve function enough to delay or avoid surgery. Outcomes depend on your specific diagnosis — your physiotherapist and doctor can advise what’s realistic for you.',
+      'For many joint and back conditions, structured physiotherapy can reduce pain and improve function enough to delay or avoid surgery. Outcomes depend on your specific diagnosis, your physiotherapist and doctor can advise what’s realistic for you.',
   },
   {
     question: 'Are your orthopaedic physiotherapists qualified?',
     answer:
-      'Every physiotherapist is BPT or MPT qualified with verified credentials, and we match you with one experienced in orthopaedic rehabilitation specifically — not whoever is nearest.',
+      'Every physiotherapist is BPT or MPT qualified with verified credentials, and we match you with one experienced in orthopaedic rehabilitation specifically, not whoever is nearest.',
   },
 ] as const
 
@@ -112,7 +112,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Orthopaedic Physiotherapy at Home, Bangalore',
+    name: 'EzyHelpers, Orthopaedic Physiotherapy at Home, Bangalore',
     medicalSpecialty: ['PhysicalTherapy', 'Orthopedic'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,

@@ -40,7 +40,7 @@ const TAG_SERVICE_MAP: Record<string, ServiceLink> = {
     href: '/cities/bangalore/elderly-care'
   },
   '24 hour care': {
-    title: 'Home Care Services — Bangalore',
+    title: 'Home Care Services in Bangalore',
     description: 'Nursing, caretakers, physiotherapy and more, at home.',
     href: '/care-services'
   },

@@ -127,7 +127,7 @@ const DIFFERENTIATORS = [
   {
     icon: SparklesIcon,
     title: 'Matched, not assigned',
-    body: 'Every placement starts with the patient’s condition, routine and language — not whoever lives nearest. You get a curated shortlist, not a random allocation.',
+    body: 'Every placement starts with the patient’s condition, routine and language, not whoever lives nearest. You get a curated shortlist, not a random allocation.',
   },
   {
     icon: ShieldCheckIcon,
@@ -142,7 +142,7 @@ const DIFFERENTIATORS = [
   {
     icon: ArrowPathRoundedSquareIcon,
     title: 'Free replacement guarantee',
-    body: 'If the caregiver isn’t the right fit — comfort, communication or care approach — we begin finding a better match at no cost. No justification needed.',
+    body: 'If the caregiver isn’t the right fit, comfort, communication or care approach, we begin finding a better match at no cost. No justification needed.',
   },
 ] as const
 
@@ -156,7 +156,7 @@ const PROCESS_STEPS = [
   {
     n: '02',
     title: 'Curated shortlist',
-    body: 'Two or three caregivers matched to your specific situation — not whoever is free nearest.',
+    body: 'Two or three caregivers matched to your specific situation, not whoever is free nearest.',
     icon: UserGroupIcon,
   },
   {
@@ -217,7 +217,7 @@ const FAQ_ITEMS = [
   {
     question: 'What home care services does EzyHelpers offer in Bangalore?',
     answer:
-      'EzyHelpers offers six core care services at home in Bangalore: Elder Care at Home, Home Nursing Care, Medical Equipment Rental & Purchase, Physiotherapy at Home, Critical Care (ICU) at Home, and Palliative Care at Home. Each covers specialised sub-services — for example, dementia care, wound dressing, oxygen concentrator rental, neuro physiotherapy, ventilator care and pain management.',
+      'EzyHelpers offers six core care services at home in Bangalore: Elder Care at Home, Home Nursing Care, Medical Equipment Rental & Purchase, Physiotherapy at Home, Critical Care (ICU) at Home, and Palliative Care at Home. Each covers specialised sub-services, for example, dementia care, wound dressing, oxygen concentrator rental, neuro physiotherapy, ventilator care and pain management.',
   },
   {
     question: 'How quickly can you arrange a nurse or caregiver in Bangalore?',
@@ -232,17 +232,17 @@ const FAQ_ITEMS = [
   {
     question: 'Can I rent medical equipment like a hospital bed or oxygen concentrator at home?',
     answer:
-      'Yes. We rent and sell hospital-grade equipment in Bangalore — including hospital beds, oxygen concentrators, wheelchairs, patient monitors, BiPAP/CPAP machines and mobility aids. Everything is delivered, installed and serviced at home, and can be paired with nursing or critical-care staff for a complete ICU-at-home setup.',
+      'Yes. We rent and sell hospital-grade equipment in Bangalore, including hospital beds, oxygen concentrators, wheelchairs, patient monitors, BiPAP/CPAP machines and mobility aids. Everything is delivered, installed and serviced at home, and can be paired with nursing or critical-care staff for a complete ICU-at-home setup.',
   },
   {
     question: 'Do you provide ICU and ventilator care at home in Bangalore?',
     answer:
-      'Yes. Our Critical Care at Home service sets up a complete ICU at home — hospital beds, multi-parameter monitors, ventilators and suction — staffed by trained critical-care nurses. We handle invasive and non-invasive ventilation, tracheostomy care, post-ICU step-down recovery and cardiac monitoring under hospital-grade protocols.',
+      'Yes. Our Critical Care at Home service sets up a complete ICU at home, hospital beds, multi-parameter monitors, ventilators and suction, staffed by trained critical-care nurses. We handle invasive and non-invasive ventilation, tracheostomy care, post-ICU step-down recovery and cardiac monitoring under hospital-grade protocols.',
   },
   {
     question: 'What if the caregiver isn’t the right fit for my family?',
     answer:
-      'We offer a free replacement guarantee. If the caregiver isn’t right for any reason — comfort, communication or care approach — simply let us know and we begin finding a better match at no additional cost. There’s no requirement to justify the request.',
+      'We offer a free replacement guarantee. If the caregiver isn’t right for any reason, comfort, communication or care approach, simply let us know and we begin finding a better match at no additional cost. There’s no requirement to justify the request.',
   },
 ] as const
 
@@ -255,7 +255,7 @@ export default function CareServicesHomeView() {
     <div className="min-h-screen bg-white font-careUi text-neutral-900 antialiased">
       <Navbar />
 
-      {/* ─────────────────── Hero (SOLID background — no gradient) ─────────────────── */}
+      {/* ─────────────────── Hero (SOLID background, no gradient) ─────────────────── */}
       <header className="relative overflow-hidden bg-care-50">
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 sm:pb-28 sm:pt-8 lg:pb-32">
           {/* Breadcrumb */}
@@ -291,7 +291,7 @@ export default function CareServicesHomeView() {
               </h1>
 
               <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
-                Bangalore’s trusted home-care platform — verified caregivers, credentialled nurses,
+                Bangalore’s trusted home-care platform, verified caregivers, credentialled nurses,
                 physiotherapists, ICU setups and medical equipment, all matched to your family.
               </p>
 
@@ -390,7 +390,7 @@ export default function CareServicesHomeView() {
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600">
                 From ageing parents to post-surgical recovery and ICU-at-home, choose the right kind
-                of care in Bangalore — then we match the right professional to it.
+                of care in Bangalore, then we match the right professional to it.
               </p>
             </div>
 
@@ -645,7 +645,7 @@ export default function CareServicesHomeView() {
               </h2>
               <p className="mt-5 text-base leading-relaxed text-neutral-600 sm:text-lg">
                 Caregivers, nurses and physiotherapists are distributed across the city for fast,
-                reliable placement. Don’t see your area? Call us — coverage is expanding every month.
+                reliable placement. Don’t see your area? Call us, coverage is expanding every month.
               </p>
             </div>
             <ul className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
@@ -710,7 +710,7 @@ export default function CareServicesHomeView() {
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700">
               Tell us your situation. Our team responds quickly, recommends the right service, and
-              starts the matching process — at no cost.
+              starts the matching process, at no cost.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link
@@ -783,7 +783,7 @@ export default function CareServicesHomeView() {
             serviceType: 'Home Care',
             url: 'https://www.ezyhelpers.com/care-services',
             description:
-              'Complete home care in Bangalore — elder care, home nursing, medical equipment rental, physiotherapy, ICU-at-home and palliative care, matched to your family.',
+              'Complete home care in Bangalore, elder care, home nursing, medical equipment rental, physiotherapy, ICU-at-home and palliative care, matched to your family.',
             areaServed: { '@type': 'City', name: 'Bangalore' },
             provider: {
               '@type': 'LocalBusiness',

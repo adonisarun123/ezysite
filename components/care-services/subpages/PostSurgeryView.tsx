@@ -27,7 +27,7 @@ const CARE_NEEDS: CareNeeds = {
 const PHASES = [
   {
     n: '01',
-    title: 'Day of discharge — Day 3',
+    title: 'Day of discharge, Day 3',
     body:
       'Wound and drain monitoring, pain management discipline, careful first-mobilisation, anti-coagulation oversight where prescribed, hydration. The window for early complications is here.',
   },
@@ -55,7 +55,7 @@ const SURGERY_TYPES = [
   { name: 'Knee / hip replacement', care: 'Trained attendant + physiotherapy support' },
   { name: 'Cardiac bypass / valve', care: 'Nurse + caretaker, doctor-aligned' },
   { name: 'Abdominal / GI surgery', care: 'Caretaker + visiting nurse' },
-  { name: 'Spinal surgery', care: 'Trained attendant — careful handling' },
+  { name: 'Spinal surgery', care: 'Trained attendant, careful handling' },
   { name: 'Orthopaedic fracture fixation', care: 'Caretaker, physiotherapy follow-through' },
   { name: 'Neurosurgery', care: 'Specialist trained attendant + nurse' },
   { name: 'Bariatric / weight-loss', care: 'Caretaker, dietary continuity' },
@@ -110,7 +110,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Post-Surgery Recovery Care, Bangalore',
+    name: 'EzyHelpers, Post-Surgery Recovery Care, Bangalore',
     medicalSpecialty: ['Surgery', 'Rehabilitation'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -134,7 +134,7 @@ export default function PostSurgeryView() {
       eyebrow="Bangalore · Post-operative home care"
       headlineLead="Recovery, brought home."
       headlineAccent="On the day of discharge."
-      lede="Home care matched to your surgery — wound oversight, mobilisation discipline, pain management support, and the steady daily rhythm patients need to heal well."
+      lede="Home care matched to your surgery, wound oversight, mobilisation discipline, pain management support, and the steady daily rhythm patients need to heal well."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -215,7 +215,7 @@ export default function PostSurgeryView() {
               <SectionHeader
                 eyebrow="When to call the doctor"
                 titleLead="Eight signs"
-                titleMuted="that need attention — today."
+                titleMuted="that need attention, today."
                 lede="Post-op complications often catch families off guard. Caregivers we place are taught to escalate without waiting."
               />
             </div>

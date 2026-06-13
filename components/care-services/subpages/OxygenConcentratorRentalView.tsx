@@ -86,7 +86,7 @@ const SECTIONS: {
   {
     icon: ClockIcon,
     title: '24/7 support',
-    body: 'Respiratory needs are urgent — our helpline runs round the clock.',
+    body: 'Respiratory needs are urgent, our helpline runs round the clock.',
     bullets: [
       'Round-the-clock helpline for setup and faults',
       'Rapid replacement if a unit fails',
@@ -128,7 +128,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'Oxygen Concentrator Rental, Bangalore — EzyHelpers',
+    name: 'Oxygen Concentrator Rental, Bangalore, EzyHelpers',
     description: nested.description,
     brand: { '@type': 'Brand', name: 'EzyHelpers' },
     areaServed: { '@type': 'City', name: 'Bangalore' },
@@ -216,7 +216,7 @@ export default function OxygenConcentratorRentalView() {
       <CareSubpageClosingCTA
         headlineLead="Oxygen at home,"
         headlineAccent="when every breath counts."
-        body="Share the prescribed flow rate. We sanitise, deliver, install and train your family — with 24/7 support across Bangalore."
+        body="Share the prescribed flow rate. We sanitise, deliver, install and train your family, with 24/7 support across Bangalore."
         enquirySource={PATH}
         primaryCtaLabel="Get oxygen support today"
         related={[

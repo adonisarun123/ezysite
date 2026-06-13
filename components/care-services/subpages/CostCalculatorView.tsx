@@ -35,7 +35,7 @@ const BASE: Record<Role, Record<Mode, [number, number]>> = {
   },
 }
 
-/** Multipliers — applied to the base range. */
+/** Multipliers, applied to the base range. */
 const COMPLEXITY_MULT: Record<Complexity, number> = {
   simple: 1.0,
   moderate: 1.1,
@@ -117,7 +117,7 @@ export default function CostCalculatorView() {
       eyebrow="Bangalore · Pricing tool"
       headlineLead="Estimate your monthly spend"
       headlineAccent="in 30 seconds."
-      lede="Pick the care type, the cover you need, and a few details. We’ll show you an honest range — not a teaser price."
+      lede="Pick the care type, the cover you need, and a few details. We’ll show you an honest range, not a teaser price."
       enquirySource={PATH}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
       lastUpdated="May 2026"
@@ -267,7 +267,7 @@ export default function CostCalculatorView() {
                 Your estimate
               </p>
               <h3 className="mt-3 font-careSerif text-3xl font-medium leading-tight tracking-tight text-neutral-950 sm:text-4xl">
-                {fmt(finalLow)} – {fmt(finalHigh)}
+                {fmt(finalLow)}, {fmt(finalHigh)}
               </h3>
               <p className="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-neutral-600">
                 per month
@@ -275,7 +275,7 @@ export default function CostCalculatorView() {
               <p className="mt-3 text-sm text-neutral-700">
                 That’s roughly{' '}
                 <span className="font-semibold text-neutral-950">
-                  {fmt(dailyLow)} – {fmt(dailyHigh)}
+                  {fmt(dailyLow)}, {fmt(dailyHigh)}
                 </span>{' '}
                 per day.
               </p>
@@ -323,7 +323,7 @@ export default function CostCalculatorView() {
             eyebrow="Honest disclaimer"
             titleLead="What this number"
             titleMuted="doesn’t include."
-            lede="The estimate is for the caregiver placement only. Actual costs that aren’t in this number — and shouldn’t be marked up by anyone:"
+            lede="The estimate is for the caregiver placement only. Actual costs that aren’t in this number, and shouldn’t be marked up by anyone:"
             align="center"
           />
           <ul className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">

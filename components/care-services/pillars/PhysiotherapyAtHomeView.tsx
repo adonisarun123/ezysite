@@ -64,7 +64,7 @@ const WHY_HOME = [
   {
     icon: HomeModernIcon,
     title: 'Recovery in familiar surroundings',
-    body: 'Patients heal faster and stay more motivated at home — no stressful commutes, no waiting rooms, and exercises practised in the very space where daily life happens.',
+    body: 'Patients heal faster and stay more motivated at home, no stressful commutes, no waiting rooms, and exercises practised in the very space where daily life happens.',
   },
   {
     icon: UserGroupIcon,
@@ -79,7 +79,7 @@ const WHY_HOME = [
   {
     icon: ClockIcon,
     title: 'Flexible, time-saving scheduling',
-    body: 'Sessions are booked around work, caregiving and family routines — especially valuable for seniors, post-surgical patients and anyone with limited mobility.',
+    body: 'Sessions are booked around work, caregiving and family routines, especially valuable for seniors, post-surgical patients and anyone with limited mobility.',
   },
   {
     icon: HeartIcon,
@@ -112,7 +112,7 @@ const HOW_IT_WORKS = [
   {
     n: '02',
     title: 'Personalised plan',
-    body: 'A tailored treatment programme is built around your diagnosis — exercises, manual therapy and milestones, explained clearly to you and your family.',
+    body: 'A tailored treatment programme is built around your diagnosis, exercises, manual therapy and milestones, explained clearly to you and your family.',
     icon: ClipboardDocumentCheckIcon,
   },
   {
@@ -157,7 +157,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'My father had a stroke and lost movement on his right side. The neuro-physio plan was patient and structured — we saw small wins every single week, and the daily updates kept us hopeful.',
+      'My father had a stroke and lost movement on his right side. The neuro-physio plan was patient and structured, we saw small wins every single week, and the daily updates kept us hopeful.',
     name: 'Rahul Menon',
     place: 'Whitefield, Bangalore',
   },
@@ -178,22 +178,22 @@ const FAQS = [
   {
     question: 'Do I need to buy any equipment for home physiotherapy in Bangalore?',
     answer:
-      'No. Our physiotherapists arrive equipped with the tools most sessions require — therapy bands, mobilisation aids and assessment instruments. If your specific plan benefits from a particular item (for example a TENS unit or specialised mobility aid), we’ll advise you in advance, and many such items can be rented rather than purchased.',
+      'No. Our physiotherapists arrive equipped with the tools most sessions require, therapy bands, mobilisation aids and assessment instruments. If your specific plan benefits from a particular item (for example a TENS unit or specialised mobility aid), we’ll advise you in advance, and many such items can be rented rather than purchased.',
   },
   {
     question: 'Is home physiotherapy as effective as visiting a clinic?',
     answer:
-      'For most conditions, yes — and often more so. Home sessions are fully one-on-one, exercises are tailored to your actual living space, and there is no fatigue or stress from travel. For patients who are post-surgical, elderly or have limited mobility, recovering at home is frequently the safer and faster route.',
+      'For most conditions, yes, and often more so. Home sessions are fully one-on-one, exercises are tailored to your actual living space, and there is no fatigue or stress from travel. For patients who are post-surgical, elderly or have limited mobility, recovering at home is frequently the safer and faster route.',
   },
   {
     question: 'Will physiotherapy at home be covered by my health insurance?',
     answer:
-      'Coverage varies by insurer and policy. Some plans reimburse prescribed home physiotherapy, particularly post-surgery or post-hospitalisation, while others do not. We can provide proper session documentation and receipts to support your claim — please confirm the specifics directly with your insurance provider before starting.',
+      'Coverage varies by insurer and policy. Some plans reimburse prescribed home physiotherapy, particularly post-surgery or post-hospitalisation, while others do not. We can provide proper session documentation and receipts to support your claim, please confirm the specifics directly with your insurance provider before starting.',
   },
   {
     question: 'Are your physiotherapists qualified and verified?',
     answer:
-      'Every physiotherapist is BPT or MPT qualified, with their credentials and identity verified before placement. We match you with a therapist experienced in your specific condition — orthopaedic, neurological, post-surgical, geriatric, cardio-respiratory or paediatric — rather than assigning whoever is nearest.',
+      'Every physiotherapist is BPT or MPT qualified, with their credentials and identity verified before placement. We match you with a therapist experienced in your specific condition, orthopaedic, neurological, post-surgical, geriatric, cardio-respiratory or paediatric, rather than assigning whoever is nearest.',
   },
   {
     question: 'How soon can a physiotherapist start home visits in Bangalore?',
@@ -206,7 +206,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Physiotherapy at Home, Bangalore',
+    name: 'EzyHelpers, Physiotherapy at Home, Bangalore',
     medicalSpecialty: ['PhysicalTherapy', 'Rehabilitation'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -289,7 +289,7 @@ export default function PhysiotherapyAtHomeView() {
             </h1>
 
             <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
-              {pillar.blurb} No commutes, no waiting rooms — just expert, one-on-one therapy in the comfort of
+              {pillar.blurb} No commutes, no waiting rooms, just expert, one-on-one therapy in the comfort of
               your own home, with measurable progress at every step.
             </p>
 
@@ -359,7 +359,7 @@ export default function PhysiotherapyAtHomeView() {
               Whether you are recovering from surgery, managing a neurological condition, or rebuilding strength
               and balance in later life, our certified physiotherapists bring the full rehabilitation experience
               home. Each programme is personalised to your diagnosis, practised in your real living space, and
-              measured against clear goals — so every session moves you closer to independence.
+              measured against clear goals, so every session moves you closer to independence.
             </p>
           </div>
         </section>
@@ -376,7 +376,7 @@ export default function PhysiotherapyAtHomeView() {
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-600">
                 From joint and back pain to stroke recovery and children’s development, choose the programme
-                matched to your condition — each delivered at home by a therapist experienced in it.
+                matched to your condition, each delivered at home by a therapist experienced in it.
               </p>
             </div>
 
@@ -452,7 +452,7 @@ export default function PhysiotherapyAtHomeView() {
                 Four steps, from assessment to independence.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
-                A clear, measurable process — so you always understand where your recovery is heading.
+                A clear, measurable process, so you always understand where your recovery is heading.
               </p>
             </div>
 
@@ -488,7 +488,7 @@ export default function PhysiotherapyAtHomeView() {
                   Rehabilitation for a wide range of needs.
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-neutral-600 sm:text-lg">
-                  Our physiotherapists are matched to your specific condition. If yours isn’t listed, call us —
+                  Our physiotherapists are matched to your specific condition. If yours isn’t listed, call us, 
                   we’ll assess what your recovery actually needs.
                 </p>
                 <a

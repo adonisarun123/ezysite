@@ -48,18 +48,18 @@ const CATEGORIES: Category[] = [
       },
       {
         term: 'Trained attendant',
-        def: 'A non-nursing caregiver trained in safe physical patient handling — transfers, repositioning, pressure-sore prevention, hygiene for bedridden patients. Right for high-dependency cases that aren’t medically complex.',
+        def: 'A non-nursing caregiver trained in safe physical patient handling, transfers, repositioning, pressure-sore prevention, hygiene for bedridden patients. Right for high-dependency cases that aren’t medically complex.',
         link: { label: 'Trained Attendant Services', href: '/care-services/trained-attendant-services-bangalore' },
       },
       {
         term: 'Caretaker',
-        def: 'A general-purpose caregiver focused on daily living — hygiene, meals, mobility, medication reminders, companionship. Cannot perform medical procedures.',
+        def: 'A general-purpose caregiver focused on daily living, hygiene, meals, mobility, medication reminders, companionship. Cannot perform medical procedures.',
         also: ['Caregiver', 'Home aide'],
         link: { label: 'Caretaker Services', href: '/care-services/caretaker-services-bangalore' },
       },
       {
         term: 'Home nurse',
-        def: 'A licensed nurse (GNM or B.Sc) placed at the home to deliver clinical care — wound dressing, IV therapy, vitals, catheter management. Distinct from a caretaker.',
+        def: 'A licensed nurse (GNM or B.Sc) placed at the home to deliver clinical care, wound dressing, IV therapy, vitals, catheter management. Distinct from a caretaker.',
         link: { label: 'Home Nursing Services', href: '/care-services/home-nursing-services-bangalore' },
       },
       {
@@ -68,7 +68,7 @@ const CATEGORIES: Category[] = [
       },
       {
         term: 'Critical-care nurse',
-        def: 'A nurse with additional ICU-level training — ventilator handling, tracheostomy care, hemodynamic monitoring. The right level for very high-complexity home cases.',
+        def: 'A nurse with additional ICU-level training, ventilator handling, tracheostomy care, hemodynamic monitoring. The right level for very high-complexity home cases.',
       },
     ],
   },
@@ -105,7 +105,7 @@ const CATEGORIES: Category[] = [
       },
       {
         term: 'Respite care',
-        def: 'Short-term professional care that gives the family caregiver a break — a few hours, a weekend, or a planned holiday. Prevents burnout in long primary-carer situations.',
+        def: 'Short-term professional care that gives the family caregiver a break, a few hours, a weekend, or a planned holiday. Prevents burnout in long primary-carer situations.',
       },
       {
         term: 'Step-down care',
@@ -124,12 +124,12 @@ const CATEGORIES: Category[] = [
     terms: [
       {
         term: 'Hemiplegia / hemiparesis',
-        def: 'Weakness (paresis) or paralysis (plegia) on one side of the body, typically after a stroke. Affects safe transfers, balance and walking — needs experienced caregiver handling.',
+        def: 'Weakness (paresis) or paralysis (plegia) on one side of the body, typically after a stroke. Affects safe transfers, balance and walking, needs experienced caregiver handling.',
         link: { label: 'Stroke care', href: '/care-services/stroke-care-at-home-bangalore' },
       },
       {
         term: 'Aphasia',
-        def: 'Difficulty producing or understanding speech, often after a left-side stroke. The patient’s intelligence is intact — caregivers must adapt communication, not assume cognitive decline.',
+        def: 'Difficulty producing or understanding speech, often after a left-side stroke. The patient’s intelligence is intact, caregivers must adapt communication, not assume cognitive decline.',
       },
       {
         term: 'Dysphagia',
@@ -155,11 +155,11 @@ const CATEGORIES: Category[] = [
       },
       {
         term: 'TIA (transient ischemic attack)',
-        def: 'A “mini-stroke” — stroke-like symptoms that resolve within 24 hours, usually within an hour. A warning sign that a major stroke may follow; treat as an emergency even if symptoms have passed.',
+        def: 'A “mini-stroke”, stroke-like symptoms that resolve within 24 hours, usually within an hour. A warning sign that a major stroke may follow; treat as an emergency even if symptoms have passed.',
       },
       {
         term: 'DVT (deep vein thrombosis)',
-        def: 'A blood clot in a deep leg vein, common after surgery or in bedridden patients. Sudden calf pain or swelling is a red flag — escalate to a doctor immediately.',
+        def: 'A blood clot in a deep leg vein, common after surgery or in bedridden patients. Sudden calf pain or swelling is a red flag, escalate to a doctor immediately.',
       },
       {
         term: 'Sepsis',
@@ -250,7 +250,7 @@ const CATEGORIES: Category[] = [
       },
       {
         term: 'TPA (Third Party Administrator)',
-        def: 'A company that handles claim processing on behalf of an insurer — the body you actually communicate with for pre-auth, queries and reimbursement. MediAssist, Vidal Health, Health India are common Indian TPAs.',
+        def: 'A company that handles claim processing on behalf of an insurer, the body you actually communicate with for pre-auth, queries and reimbursement. MediAssist, Vidal Health, Health India are common Indian TPAs.',
       },
       {
         term: 'Cashless billing',
@@ -266,7 +266,7 @@ const CATEGORIES: Category[] = [
       },
       {
         term: 'HDU (High-Dependency Unit)',
-        def: 'A hospital ward between general care and ICU — for patients who need more monitoring than a regular ward but aren’t critical. Often where step-down care begins before discharge.',
+        def: 'A hospital ward between general care and ICU, for patients who need more monitoring than a regular ward but aren’t critical. Often where step-down care begins before discharge.',
       },
       {
         term: 'Sum insured',
@@ -309,7 +309,7 @@ const CATEGORIES: Category[] = [
       },
       {
         term: 'Advance directive',
-        def: 'A document stating the patient’s wishes about future medical care — what treatments they would or wouldn’t want. Recognised in Indian medical practice though formal legal frameworks are still developing.',
+        def: 'A document stating the patient’s wishes about future medical care, what treatments they would or wouldn’t want. Recognised in Indian medical practice though formal legal frameworks are still developing.',
       },
       {
         term: 'NRI family',
@@ -349,7 +349,7 @@ export default function CareGlossaryView() {
       eyebrow="Plain-English · Bangalore"
       headlineLead="Home care terms,"
       headlineAccent="explained simply."
-      lede="Every term Indian families come across when arranging home care — from NG tubes and PEG to GNM nurses and TPAs — without the jargon."
+      lede="Every term Indian families come across when arranging home care, from NG tubes and PEG to GNM nurses and TPAs, without the jargon."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{
@@ -364,7 +364,7 @@ export default function CareGlossaryView() {
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            <em className="italic text-care-500">{totalTerms} terms</em>, six categories — caregiver roles
+            <em className="italic text-care-500">{totalTerms} terms</em>, six categories, caregiver roles
             and credentials, care types, medical conditions, procedures and equipment, hospital and
             insurance, and family decision-making. All defined in plain English, reviewed by a B.Sc Nursing
             Care Director, with links to deeper pages where useful.
@@ -436,7 +436,7 @@ export default function CareGlossaryView() {
       <section className="bg-white px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm leading-relaxed text-neutral-500">
-            Don’t see a term? Tell us — we’ll add it. The glossary is reviewed and expanded every quarter
+            Don’t see a term? Tell us, we’ll add it. The glossary is reviewed and expanded every quarter
             by our Care Director.
           </p>
           <div className="mt-6">
@@ -453,7 +453,7 @@ export default function CareGlossaryView() {
       <CareSubpageClosingCTA
         headlineLead="Now that the words make sense,"
         headlineAccent="let’s talk about your situation."
-        body="Tell us what you need. The terms above will help — but a 5-minute call with a care advisor will help more."
+        body="Tell us what you need. The terms above will help, but a 5-minute call with a care advisor will help more."
         enquirySource={PATH}
         related={[
           { label: 'Care Quiz', href: '/care-services/care-quiz' },

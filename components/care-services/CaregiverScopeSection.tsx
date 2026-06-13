@@ -22,7 +22,7 @@ interface CaregiverScopeProps {
 }
 
 const DEFAULT_DOS = [
-  'Personal care — bathing, grooming, dressing, toilet assistance',
+  'Personal care, bathing, grooming, dressing, toilet assistance',
   'Oral feeding and meal-time support',
   'Oral medication reminders, on schedule',
   'Safe walking, transfers and mobility support',
@@ -45,7 +45,7 @@ const BOOKING_STEPS = [
   {
     icon: PhoneIcon,
     title: 'Tell us what you need',
-    body: 'Call 080-31411776 or send the form — share the condition, daily routine and your locality.',
+    body: 'Call 080-31411776 or send the form, share the condition, daily routine and your locality.',
   },
   {
     icon: UserGroupIcon,
@@ -55,7 +55,7 @@ const BOOKING_STEPS = [
   {
     icon: HomeIcon,
     title: 'Care starts at home',
-    body: 'The caregiver is briefed and begins — with quick replacement support if the fit isn’t right.',
+    body: 'The caregiver is briefed and begins, with quick replacement support if the fit isn’t right.',
   },
 ] as const
 
@@ -67,7 +67,7 @@ export default function CaregiverScopeSection({ dos = DEFAULT_DOS, donts = DEFAU
         <div className="mx-auto max-w-5xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">Honest expectations</p>
           <h2 id="scope-heading" className="mt-3 font-careSerif text-3xl font-bold tracking-tight text-neutral-950 sm:text-4xl">
-            What {workerLabel} does — <span className="text-neutral-500">and doesn&rsquo;t.</span>
+            What {workerLabel} does, <span className="text-neutral-500">and doesn&rsquo;t.</span>
           </h2>
           <p className="mt-4 max-w-2xl text-neutral-600">
             Clear scope from day one keeps the placement happy on both sides. Here&rsquo;s exactly what to expect.

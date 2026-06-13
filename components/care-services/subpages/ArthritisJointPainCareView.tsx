@@ -23,7 +23,7 @@ const CONDITION_INFO: ConditionInfo = {
     {
       stat: '1 in 3',
       detail:
-        'Roughly 1 in 3 seniors with severe joint pain reduces daily activity — accelerating muscle loss and fall risk.',
+        'Roughly 1 in 3 seniors with severe joint pain reduces daily activity, accelerating muscle loss and fall risk.',
     },
     {
       stat: 'Higher in women',
@@ -33,7 +33,7 @@ const CONDITION_INFO: ConditionInfo = {
   ],
   causes: [
     'Age-related cartilage wear (osteoarthritis)',
-    'Rheumatoid arthritis — an autoimmune condition',
+    'Rheumatoid arthritis, an autoimmune condition',
     'Post-menopausal bone-density loss (osteoporosis)',
     'Old joint injuries and fractures',
     'Obesity placing load on knees and hips',
@@ -52,7 +52,7 @@ const CONDITION_INFO: ConditionInfo = {
     'Bathing or dressing is now painful without help',
     'A recent fall or near-fall on stairs or in the bathroom',
     'Daily walks have stopped due to pain or fear',
-    'Family can’t be present for high-risk moments — bathing, stairs, night',
+    'Family can’t be present for high-risk moments, bathing, stairs, night',
     'The pain medication routine needs steady reminders',
     'The doctor has advised assisted gentle movement',
   ],
@@ -70,7 +70,7 @@ const CARE_NEEDS: CareNeeds = {
   ],
 }
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
   { value: 'Pain-paced', label: 'bathing and dressing support, never rushed' },
@@ -84,7 +84,7 @@ const SECTIONS = [
     titleLead: 'Daily care, paced to',
     titleMuted: 'painful joints.',
     lede:
-      'Arthritic joints punish hurry. Our caregivers handle bathing, dressing and grooming at the senior’s own pace — supporting the painful side, never pulling or rushing.',
+      'Arthritic joints punish hurry. Our caregivers handle bathing, dressing and grooming at the senior’s own pace, supporting the painful side, never pulling or rushing.',
     bullets: [
       'Bathing assistance with stable seating and grab support',
       'Dressing help that works around stiff shoulders, knees and hips',
@@ -100,7 +100,7 @@ const SECTIONS = [
       'Stairs, bathrooms and bed-to-chair transfers are where arthritic seniors fall. A trained pair of hands at those moments changes everything.',
     bullets: [
       'Steady walking support indoors and on doctor-approved outdoor walks',
-      'Help on stairs — one step at a time, with rails and patience',
+      'Help on stairs, one step at a time, with rails and patience',
       'Safe bed, chair and toilet transfers without joint strain',
       'Walker, stick and commode-chair support where used',
     ],
@@ -110,7 +110,7 @@ const SECTIONS = [
     titleLead: 'A steady routine that',
     titleMuted: 'keeps joints moving.',
     lede:
-      'Good arthritis days are built on routine — gentle movement, warm-support routines as advised by the family or doctor, and pain medication taken on time.',
+      'Good arthritis days are built on routine, gentle movement, warm-support routines as advised by the family or doctor, and pain medication taken on time.',
     bullets: [
       'Gentle assisted movement as the doctor or physiotherapist advises',
       'Warm-support routines (hot-water bag, warm compress) as instructed by family or doctor',
@@ -123,7 +123,7 @@ const SECTIONS = [
     titleLead: 'Everyone on the',
     titleMuted: 'same care plan.',
     lede:
-      'Caregivers keep the family informed daily and work alongside the physiotherapists we arrange — so movement advice actually gets practised between sessions.',
+      'Caregivers keep the family informed daily and work alongside the physiotherapists we arrange, so movement advice actually gets practised between sessions.',
     bullets: [
       'Daily WhatsApp updates on pain, mobility and mood',
       'Coordination with certified physiotherapists we arrange at home',
@@ -137,7 +137,7 @@ const FAQS = [
   {
     question: 'Does the caregiver do massage or physiotherapy?',
     answer:
-      'No. Caregivers provide gentle assisted movement and warm-support routines only as advised by the family or doctor — they don’t perform massage or physiotherapy. Where physiotherapy is needed, we arrange certified physiotherapists for home sessions, and the caregiver helps practise the advised movements between visits.',
+      'No. Caregivers provide gentle assisted movement and warm-support routines only as advised by the family or doctor, they don’t perform massage or physiotherapy. Where physiotherapy is needed, we arrange certified physiotherapists for home sessions, and the caregiver helps practise the advised movements between visits.',
   },
   {
     question: 'What does arthritis care at home cost in Bangalore?',
@@ -152,17 +152,17 @@ const FAQS = [
   {
     question: 'Can the caregiver help with stairs and outdoor walks?',
     answer:
-      'Yes. Caregivers support stairs one step at a time with rail support, and accompany doctor-approved outdoor walks at a comfortable pace — keeping gentle daily movement going, which is one of the best things for arthritic joints.',
+      'Yes. Caregivers support stairs one step at a time with rail support, and accompany doctor-approved outdoor walks at a comfortable pace, keeping gentle daily movement going, which is one of the best things for arthritic joints.',
   },
   {
-    question: 'My mother has osteoporosis — how is that handled?',
+    question: 'My mother has osteoporosis, how is that handled?',
     answer:
       'With fracture awareness at every moment. Caregivers avoid any pulling or sudden support of the arms, use safe transfer techniques, keep walkways clear, and treat every near-fall as a reportable event. Even minor falls are flagged to family and doctor immediately, since osteoporotic bones fracture easily.',
   },
   {
     question: 'Should we choose live-in or day-shift care?',
     answer:
-      'If night-time bathroom trips, stairs at night or early-morning stiffness are the risk moments, live-in care is safer. If help is mainly needed for bathing, walks and daytime routine, a day shift works well. We’ll recommend the right cover in the free consultation — and you can change it later.',
+      'If night-time bathroom trips, stairs at night or early-morning stiffness are the risk moments, live-in care is safer. If help is mainly needed for bathing, walks and daytime routine, a day shift works well. We’ll recommend the right cover in the free consultation, and you can change it later.',
   },
 ] as const
 
@@ -170,7 +170,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Arthritis & Joint Pain Care at Home, Bangalore',
+    name: 'EzyHelpers, Arthritis & Joint Pain Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Rheumatology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -194,7 +194,7 @@ export default function ArthritisJointPainCareView() {
       eyebrow="Bangalore · Arthritis & joint pain care at home"
       headlineLead="Joint-pain support that"
       headlineAccent="keeps every day moving."
-      lede={SERVICE.tagline + ' Bathing, dressing, walking and stairs handled at a pain-sensitive pace — with fall prevention built into every moment.'}
+      lede={SERVICE.tagline + ' Bathing, dressing, walking and stairs handled at a pain-sensitive pace, with fall prevention built into every moment.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}

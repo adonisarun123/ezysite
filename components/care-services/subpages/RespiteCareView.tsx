@@ -9,12 +9,12 @@ import { formatPriceWithNote } from '@/lib/careServices/pricing'
 const SERVICE = getNestedService('respite-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
-  { value: '1 day – 1 month', label: 'flexible cover for exactly as long as you need' },
+  { value: '1 day, 1 month', label: 'flexible cover for exactly as long as you need' },
   { value: '24–48 hrs', label: 'typical time to place a respite caregiver' },
-  { value: 'Same standards', label: 'as our long-term care — verified, trained, briefed' },
+  { value: 'Same standards', label: 'as our long-term care, verified, trained, briefed' },
 ] as const
 
 const SECTIONS = [
@@ -23,7 +23,7 @@ const SECTIONS = [
     titleLead: 'A real break,',
     titleMuted: 'without the guilt.',
     lede:
-      'Family caregivers in Bangalore rarely get a day off. Respite care gives you a trained stand-in — for a day, a week or a month — so you can step away knowing your loved one is in good hands.',
+      'Family caregivers in Bangalore rarely get a day off. Respite care gives you a trained stand-in, for a day, a week or a month, so you can step away knowing your loved one is in good hands.',
     bullets: [
       'Cover from a single day up to a full month',
       'Travel, work trips, weddings and recovery from your own illness',
@@ -39,7 +39,7 @@ const SECTIONS = [
       'You have spent months building a routine that works. Our respite caregiver starts with a detailed handover briefing from you, so nothing changes for your loved one.',
     bullets: [
       'Structured handover briefing with the family carer before you leave',
-      'Written routine notes — meals, medication times, preferences, dislikes',
+      'Written routine notes, meals, medication times, preferences, dislikes',
       'Overlap day available so the caregiver settles in while you are still home',
       'Daily WhatsApp updates while you are away',
     ],
@@ -49,7 +49,7 @@ const SECTIONS = [
     titleLead: 'Short-term cover,',
     titleMuted: 'long-term quality.',
     lede:
-      'Respite caregivers come from the same verified, trained pool as our long-term placements — there is no “temp” tier of quality.',
+      'Respite caregivers come from the same verified, trained pool as our long-term placements, there is no “temp” tier of quality.',
     bullets: [
       'Police-verified, background-checked caregivers',
       'Trained in elder care, hygiene support and safe mobility assistance',
@@ -60,11 +60,11 @@ const SECTIONS = [
   {
     eyebrow: 'Caregiver wellbeing',
     titleLead: 'Because burnout helps',
-    titleMuted: 'no one — least of all them.',
+    titleMuted: 'no one, least of all them.',
     lede:
-      'Exhausted family caregivers make mistakes, fall ill and lose patience. Regular respite is not a luxury — it is how good care stays good.',
+      'Exhausted family caregivers make mistakes, fall ill and lose patience. Regular respite is not a luxury, it is how good care stays good.',
     bullets: [
-      'Recurring respite slots — a weekend a month, or a fixed weekly day off',
+      'Recurring respite slots, a weekend a month, or a fixed weekly day off',
       'Emergency respite when the family carer falls ill suddenly',
       'A pressure-free way to trial professional care before going long-term',
       'Smooth conversion to a long-term caregiver if you decide to continue',
@@ -76,7 +76,7 @@ const FAQS = [
   {
     question: 'What is the minimum duration for respite care?',
     answer:
-      'A single 12-hour shift is our minimum — useful for a wedding, a hospital visit of your own, or just a day of rest. Most Bangalore families book respite cover for anywhere between a weekend and a month.',
+      'A single 12-hour shift is our minimum, useful for a wedding, a hospital visit of your own, or just a day of rest. Most Bangalore families book respite cover for anywhere between a weekend and a month.',
   },
   {
     question: 'How quickly can a respite caregiver start?',
@@ -91,7 +91,7 @@ const FAQS = [
   {
     question: 'Will the respite caregiver follow our existing routine?',
     answer:
-      'Yes — that is the whole point of respite care. We start with a structured handover briefing from you, capture the routine in writing (medication times, meals, preferences), and the caregiver follows it exactly so your loved one’s day stays unchanged.',
+      'Yes, that is the whole point of respite care. We start with a structured handover briefing from you, capture the routine in writing (medication times, meals, preferences), and the caregiver follows it exactly so your loved one’s day stays unchanged.',
   },
   {
     question: 'Can respite care convert into long-term care?',
@@ -109,7 +109,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Respite Care at Home, Bangalore',
+    name: 'EzyHelpers, Respite Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -133,7 +133,7 @@ export default function RespiteCareView() {
       eyebrow="Bangalore · Respite care at home"
       headlineLead="You take the break."
       headlineAccent="We hold the routine."
-      lede={SERVICE.tagline + ' From a single day to a full month — verified caregivers who follow your routine exactly, so you can travel, work or simply rest.'}
+      lede={SERVICE.tagline + ' From a single day to a full month, verified caregivers who follow your routine exactly, so you can travel, work or simply rest.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}

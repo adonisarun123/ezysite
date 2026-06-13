@@ -30,7 +30,7 @@ const baseSvgProps = {
   'aria-hidden': true,
 } as const satisfies Partial<SVGProps<SVGSVGElement>>
 
-/** Heart cradled in two open hands — the parent / pillar warm welcome. */
+/** Heart cradled in two open hands, the parent / pillar warm welcome. */
 function HeroTileHeartHands({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -60,7 +60,7 @@ function HeroTileHeartHands({ className }: IllustrationProps) {
   )
 }
 
-/** Pitched-roof home with a heart in the window — pillar / cluster overview. */
+/** Pitched-roof home with a heart in the window, pillar / cluster overview. */
 function HeroTileHomeWithHeart({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -77,7 +77,7 @@ function HeroTileHomeWithHeart({ className }: IllustrationProps) {
   )
 }
 
-/** Stethoscope coiled around a small heart — clinical, doctor-aligned. */
+/** Stethoscope coiled around a small heart, clinical, doctor-aligned. */
 function HeroTileStethoscope({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -108,7 +108,7 @@ function HeroTileStethoscope({ className }: IllustrationProps) {
   )
 }
 
-/** IV stand and drip bag — nursing procedures at home. */
+/** IV stand and drip bag, nursing procedures at home. */
 function HeroTileIvStand({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -133,7 +133,7 @@ function HeroTileIvStand({ className }: IllustrationProps) {
   )
 }
 
-/** Gloved hand giving care — bandage / nurse focus. */
+/** Gloved hand giving care, bandage / nurse focus. */
 function HeroTileNurseGloves({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -155,7 +155,7 @@ function HeroTileNurseGloves({ className }: IllustrationProps) {
   )
 }
 
-/** Clipboard with check-marks — nurse log / structured care plan. */
+/** Clipboard with check-marks, nurse log / structured care plan. */
 function HeroTileClipboard({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -172,7 +172,7 @@ function HeroTileClipboard({ className }: IllustrationProps) {
   )
 }
 
-/** Breakfast tray with bowl + glass — caretaker daily living. */
+/** Breakfast tray with bowl + glass, caretaker daily living. */
 function HeroTileBreakfastTray({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -189,7 +189,7 @@ function HeroTileBreakfastTray({ className }: IllustrationProps) {
   )
 }
 
-/** Walker / mobility frame — patient recovery focus. */
+/** Walker / mobility frame, patient recovery focus. */
 function HeroTileWalker({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -207,7 +207,7 @@ function HeroTileWalker({ className }: IllustrationProps) {
   )
 }
 
-/** Healing potted plant — patient care recovery / hope. */
+/** Healing potted plant, patient care recovery / hope. */
 function HeroTileHealingPlant({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -224,7 +224,7 @@ function HeroTileHealingPlant({ className }: IllustrationProps) {
   )
 }
 
-/** Sun + moon held together — day/night attendant rhythm. */
+/** Sun + moon held together, day/night attendant rhythm. */
 function HeroTileSunMoon({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -249,7 +249,7 @@ function HeroTileSunMoon({ className }: IllustrationProps) {
   )
 }
 
-/** Bed-care attendant — trained / high-dependency. */
+/** Bed-care attendant, trained / high-dependency. */
 function HeroTileBedCarePro({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -277,7 +277,7 @@ function HeroTileBedCarePro({ className }: IllustrationProps) {
   )
 }
 
-/** Shield with heart — trained attendant safety. */
+/** Shield with heart, trained attendant safety. */
 function HeroTileShieldHeart({ className }: IllustrationProps) {
   return (
     <svg className={className} {...baseSvgProps}>
@@ -302,7 +302,7 @@ type HeroSceneTile = {
   illustration: SvgIllustration
   /** Tailwind classes for the tile background gradient (`from-[#…] to-[#…]`). */
   tileGradient: string
-  /** Default caption — overridden by `config.heroCaptions[idx]` if provided. */
+  /** Default caption, overridden by `config.heroCaptions[idx]` if provided. */
   caption: string
   /** Visual scale of the illustration inside its tile. */
   scale?: 'lg' | 'md'

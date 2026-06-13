@@ -42,7 +42,7 @@ function breadcrumbItemsFor(parsed: ReturnType<typeof readCareMarkdownFile>) {
   return items
 }
 
-/** Soft wave separating the hero from the page body — fluid, responsive height */
+/** Soft wave separating the hero from the page body, fluid, responsive height */
 function CareHeroWave() {
   return (
     <div className="pointer-events-none absolute bottom-0 left-0 right-0 translate-y-[1px] text-gray-50">
@@ -102,7 +102,7 @@ export default function CareServicePageView({ filename }: { filename: string }) 
       />
 
       <div className="relative min-h-screen bg-gray-50">
-        {/* Ambient page tint — subtle care / clinical calm */}
+        {/* Ambient page tint, subtle care / clinical calm */}
         <div
           className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(ellipse_90%_60%_at_50%_-8%,rgba(45,212,191,0.09),transparent_52%)]"
           aria-hidden
@@ -110,7 +110,7 @@ export default function CareServicePageView({ filename }: { filename: string }) 
 
         <Navbar />
         <div>
-          {/* Hero — fluid mesh, organic wave, responsive type */}
+          {/* Hero, fluid mesh, organic wave, responsive type */}
           <section className="relative overflow-hidden pt-16 text-white sm:pt-20">
             {/* Base mesh + depth */}
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-800 via-teal-900 to-slate-950" />
@@ -166,7 +166,7 @@ export default function CareServicePageView({ filename }: { filename: string }) 
                 </a>
               </div>
 
-              {/* Pillar-only: trust highlights — bento-style glass cards */}
+              {/* Pillar-only: trust highlights, bento-style glass cards */}
               {isPillar && (
                 <div className="mx-auto mt-14 grid max-w-5xl gap-4 sm:mt-16 sm:grid-cols-3 sm:gap-5">
                   {[
@@ -178,7 +178,7 @@ export default function CareServicePageView({ filename }: { filename: string }) 
                     {
                       icon: ClockIcon,
                       title: 'Rapid placement',
-                      body: 'Same-day when a suitable professional is available — we keep you informed either way.',
+                      body: 'Same-day when a suitable professional is available, we keep you informed either way.',
                     },
                     {
                       icon: LifebuoyIcon,
@@ -206,9 +206,9 @@ export default function CareServicePageView({ filename }: { filename: string }) 
 
           <Breadcrumb items={breadcrumbItemsFor(parsed)} variant="minimal" separator="chevron" />
 
-          {/* Article — overlaps wave; fluid container & soft elevation */}
+          {/* Article, overlaps wave; fluid container & soft elevation */}
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            {/* Decorative blobs behind card — depth without clutter */}
+            {/* Decorative blobs behind card, depth without clutter */}
             <div className="pointer-events-none absolute left-1/2 top-8 -z-0 h-64 w-[min(90vw,42rem)] -translate-x-1/2 rounded-full bg-teal-300/15 blur-3xl" aria-hidden />
             <div className="pointer-events-none absolute right-0 top-40 -z-0 h-48 w-48 rounded-full bg-emerald-400/10 blur-3xl sm:right-[8%]" aria-hidden />
 
@@ -244,7 +244,7 @@ export default function CareServicePageView({ filename }: { filename: string }) 
             </section>
           )}
 
-          {/* Closing CTA — fluid top radius, depth */}
+          {/* Closing CTA, fluid top radius, depth */}
           <section className="relative overflow-hidden bg-gradient-to-br from-care-700 via-teal-700 to-emerald-900 text-white">
             <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_30%_20%,white_0%,transparent_45%),radial-gradient(circle_at_80%_60%,rgba(45,212,191,0.35)_0%,transparent_50%)]" aria-hidden />
             <div className="section-padding relative">
@@ -254,7 +254,7 @@ export default function CareServicePageView({ filename }: { filename: string }) 
                     Ready to find the right care?
                   </h2>
                   <p className="mt-3 text-base leading-relaxed text-white/85 sm:text-lg">
-                    Share your requirement — our team typically responds within the hour on business days.
+                    Share your requirement, our team typically responds within the hour on business days.
                   </p>
                 </div>
                 <div className="flex w-full flex-shrink-0 flex-col gap-3 sm:w-auto sm:flex-row sm:justify-end">

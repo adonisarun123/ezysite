@@ -79,7 +79,7 @@ const WHY_SPECIALISED = [
     icon: HeartIcon,
     title: 'Ageing is not one condition',
     body:
-      'A senior recovering from a fall needs something completely different from one living with dementia. Our caregivers are matched to the specific need — not handed a generic “elderly care” brief.',
+      'A senior recovering from a fall needs something completely different from one living with dementia. Our caregivers are matched to the specific need, not handed a generic “elderly care” brief.',
   },
   {
     icon: ShieldCheckIcon,
@@ -91,13 +91,13 @@ const WHY_SPECIALISED = [
     icon: ChatBubbleLeftRightIcon,
     title: 'Dignity over supervision',
     body:
-      'Good elder care preserves identity, routine and pride. We screen for warmth and patience as hard as we screen for skill — because how care feels matters as much as what it does.',
+      'Good elder care preserves identity, routine and pride. We screen for warmth and patience as hard as we screen for skill, because how care feels matters as much as what it does.',
   },
   {
     icon: UserGroupIcon,
     title: 'The family is part of the plan',
     body:
-      'Daily WhatsApp updates, doctor-visit coordination and respite hours mean the spouse and adult children — including NRI families — can rest, work and stay genuinely connected.',
+      'Daily WhatsApp updates, doctor-visit coordination and respite hours mean the spouse and adult children, including NRI families, can rest, work and stay genuinely connected.',
   },
 ] as const
 
@@ -111,7 +111,7 @@ const PROCESS_STEPS = [
   {
     n: '02',
     title: 'Curated shortlist',
-    body: 'Two or three caregivers matched to the exact need — dementia, bedridden, companionship — not whoever is free nearest.',
+    body: 'Two or three caregivers matched to the exact need, dementia, bedridden, companionship, not whoever is free nearest.',
     icon: UserGroupIcon,
   },
   {
@@ -143,19 +143,19 @@ const CONDITIONS = [
   'Memory loss & confusion',
 ] as const
 
-/* TESTIMONIALS — ILLUSTRATIVE. These are realistic, representative scenarios
+/* TESTIMONIALS, ILLUSTRATIVE. These are realistic, representative scenarios
  * written for layout/marketing and are NOT verbatim quotes from named clients.
  * Replace with consented, attributable reviews before launch. */
 const TESTIMONIALS = [
   {
     quote:
-      'Amma was getting confused in the evenings and we were exhausted. EzyHelpers placed a caregiver who had handled dementia before — within two weeks the agitation settled and our evenings became calm again.',
+      'Amma was getting confused in the evenings and we were exhausted. EzyHelpers placed a caregiver who had handled dementia before, within two weeks the agitation settled and our evenings became calm again.',
     name: 'Lakshmi R.',
     place: 'Jayanagar, Bangalore',
   },
   {
     quote:
-      'After my father’s fall, we needed someone who knew safe transfers and fall-prevention. The attendant rebuilt his confidence to walk and sent us a daily update — we live in the US, so that meant everything.',
+      'After my father’s fall, we needed someone who knew safe transfers and fall-prevention. The attendant rebuilt his confidence to walk and sent us a daily update, we live in the US, so that meant everything.',
     name: 'Praveen K.',
     place: 'Parents in Whitefield',
   },
@@ -171,12 +171,12 @@ const FAQS = [
   {
     question: 'What does elder care at home in Bangalore cost?',
     answer:
-      'Cost depends on the level of care — companionship and day-shift arrangements are the most affordable, while live-in, dementia, Parkinson’s or bedridden care cost more because they need specialised, round-the-clock support. Rather than quote a misleading flat rate, we give you a precise, transparent price after a free consultation that matches the plan to your parent’s actual needs.',
+      'Cost depends on the level of care, companionship and day-shift arrangements are the most affordable, while live-in, dementia, Parkinson’s or bedridden care cost more because they need specialised, round-the-clock support. Rather than quote a misleading flat rate, we give you a precise, transparent price after a free consultation that matches the plan to your parent’s actual needs.',
   },
   {
     question: 'What is the difference between a general caretaker and specialised elder care?',
     answer:
-      'A general caretaker can manage basic daily support. Specialised elder care means the caregiver has demonstrated experience in your parent’s specific need — dementia behaviour management, Parkinson’s medication timing, safe handling of a bedridden senior, or post-fall mobility rebuilding. We match on that specialisation so you are not relying on improvisation.',
+      'A general caretaker can manage basic daily support. Specialised elder care means the caregiver has demonstrated experience in your parent’s specific need, dementia behaviour management, Parkinson’s medication timing, safe handling of a bedridden senior, or post-fall mobility rebuilding. We match on that specialisation so you are not relying on improvisation.',
   },
   {
     question: 'Can I get a live-in caregiver, or only day shifts?',
@@ -186,17 +186,17 @@ const FAQS = [
   {
     question: 'How quickly can you place an elder caregiver in Bangalore?',
     answer:
-      'When a suitable caregiver is available, we attempt same-day placement — particularly for hospital discharge or an urgent situation. Across the Bangalore localities we serve, most precise matches are completed within 24–48 hours so we never compromise on fit just to be fast.',
+      'When a suitable caregiver is available, we attempt same-day placement, particularly for hospital discharge or an urgent situation. Across the Bangalore localities we serve, most precise matches are completed within 24–48 hours so we never compromise on fit just to be fast.',
   },
   {
     question: 'Are your elder care caregivers verified and trained?',
     answer:
-      'Yes. Every caregiver is verified through Aadhaar authentication, government ID checks, in-person interviews and background screening. For senior care, we additionally confirm hands-on experience with the relevant condition — dementia, Parkinson’s, mobility support or bedridden handling.',
+      'Yes. Every caregiver is verified through Aadhaar authentication, government ID checks, in-person interviews and background screening. For senior care, we additionally confirm hands-on experience with the relevant condition, dementia, Parkinson’s, mobility support or bedridden handling.',
   },
   {
     question: 'Which areas of Bangalore do you cover for elder care?',
     answer:
-      'We serve seniors across Bangalore, including Whitefield, HSR Layout, Koramangala, Indiranagar, Jayanagar, JP Nagar, Hebbal, Sarjapur Road, Electronic City and surrounding areas. Call us to confirm coverage in your specific locality — we are expanding every month.',
+      'We serve seniors across Bangalore, including Whitefield, HSR Layout, Koramangala, Indiranagar, Jayanagar, JP Nagar, Hebbal, Sarjapur Road, Electronic City and surrounding areas. Call us to confirm coverage in your specific locality, we are expanding every month.',
   },
 ] as const
 
@@ -213,7 +213,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Elder Care at Home, Bangalore',
+    name: 'EzyHelpers, Elder Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -282,7 +282,7 @@ export default function ElderCareAtHomeView() {
 
             <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
               {PILLAR.tagline} Verified, trained caregivers for dementia, Parkinson’s, bedridden seniors,
-              companionship and mobility — matched to your family, not assigned.
+              companionship and mobility, matched to your family, not assigned.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
@@ -353,7 +353,7 @@ export default function ElderCareAtHomeView() {
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600">
               {PILLAR.blurb} Whether your parent needs a calm companion for the afternoons or round-the-clock
-              support through advanced dementia, we match a caregiver with the right experience — and stay
+              support through advanced dementia, we match a caregiver with the right experience, and stay
               involved long after placement to make sure the care keeps working.
             </p>
           </div>
@@ -370,7 +370,7 @@ export default function ElderCareAtHomeView() {
                 Specialised care for every stage of ageing.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
-                From gentle companionship to advanced dementia and bedridden care — choose the service that
+                From gentle companionship to advanced dementia and bedridden care, choose the service that
                 fits, and we’ll match a caregiver experienced in exactly that.
               </p>
             </div>
@@ -383,7 +383,7 @@ export default function ElderCareAtHomeView() {
                   <Link
                     key={service.slug}
                     href={href}
-                    aria-label={`${service.title} — learn more`}
+                    aria-label={`${service.title}, learn more`}
                     className="group flex h-full flex-col rounded-[28px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-care-500/40 hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)] focus-visible:ring-2 focus-visible:ring-care-500 focus-visible:ring-offset-2"
                   >
                     <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
@@ -492,7 +492,7 @@ export default function ElderCareAtHomeView() {
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-neutral-600 sm:text-lg">
                   Elder caregivers are matched only when they have managed your parent’s specific condition
-                  before. If yours isn’t listed, call us — we’ll assess what the care actually requires.
+                  before. If yours isn’t listed, call us, we’ll assess what the care actually requires.
                 </p>
                 <a
                   href={PHONE_HREF}
@@ -587,7 +587,7 @@ export default function ElderCareAtHomeView() {
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700">
               Tell us about your loved one. Our team responds within the hour, recommends the right elder-care
-              service, and starts the matching process — at no cost.
+              service, and starts the matching process, at no cost.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link

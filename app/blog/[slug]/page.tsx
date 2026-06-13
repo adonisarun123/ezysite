@@ -180,6 +180,108 @@ const blogFAQs = {
       question: 'What insurance do I need for domestic employees?',
       answer: 'Consider public liability, professional indemnity, and property insurance. Provide medical insurance, accident insurance, and life insurance for employees. Workmen\'s compensation is mandatory for injuries.'
     }
+  ],
+  'home-care-cost-elderly-parents-india': [
+    {
+      id: 'attendant-vs-nurse-cost',
+      question: 'How much does a live-in elderly care attendant cost per month in India?',
+      answer: 'As a typical 2025-26 market range, a live-in attendant for daily personal care such as bathing, feeding and mobility runs about ₹12,000 to ₹25,000 a month. A trained home nurse for medical tasks costs more, roughly ₹25,000 to ₹60,000. Bangalore and other metros sit at the higher end. These are market ranges; call EzyHelpers on 080-31411776 for a quote for your situation.'
+    },
+    {
+      id: 'why-bangalore-costs-more',
+      question: 'Why does elderly care cost more in Bangalore than smaller towns?',
+      answer: 'Wages and living costs are higher in metros, so home care in Bangalore, Mumbai or Delhi typically costs 20 to 50 percent more than in smaller cities.'
+    },
+    {
+      id: 'reduce-care-cost',
+      question: 'How can families reduce the cost of home care without cutting safety?',
+      answer: 'Match the caregiver to the actual task. Most elderly parents need an attendant most of the time, with a nurse only for specific clinical jobs, so hiring a full-time nurse for routine companionship wastes money. Ask providers what the caregiver is paid versus the agency markup, and use a trial period to avoid a costly replacement search.'
+    }
+  ],
+  'government-schemes-senior-care-india': [
+    {
+      id: 'schemes-provide-caregiver',
+      question: 'Does any government scheme provide a home caregiver for elderly parents?',
+      answer: 'No. Government schemes cover hospital treatment, assistive devices, pensions and institutional old age homes. The daily work of bathing, feeding, medication and companionship at home is arranged privately, through family or a service like EzyHelpers.'
+    },
+    {
+      id: 'nphce',
+      question: 'What is the National Programme for Health Care of the Elderly?',
+      answer: 'It is a central and state funded programme that sets up dedicated geriatric clinics and wards in government hospitals so seniors get age-appropriate care. If your parent uses public hospitals, ask whether there is a geriatric OPD.'
+    },
+    {
+      id: 'claim-senior-benefits',
+      question: 'How do families claim senior citizen benefits in India?',
+      answer: 'Get a senior citizen identity card from the state social welfare department, keep Aadhaar and income or BPL proof ready since most schemes are means-tested, and apply through the District Social Welfare Office or official scheme portal rather than paid agents.'
+    }
+  ],
+  'caring-for-ageing-parents-india-from-abroad': [
+    {
+      id: 'nri-trust-care',
+      question: 'How can NRIs arrange trustworthy home care for parents in India?',
+      answer: 'Set up three things: a verified caregiver physically present for daily care, a single point of contact who reports to you across time zones, and transparent direct payment to the caregiver. Background and police verification matter most for NRI families because you cannot drop in to check.'
+    },
+    {
+      id: 'parents-say-fine',
+      question: 'My parents always say they are fine. How do I know if they need help?',
+      answer: 'Parents often say "fine" to avoid worrying their children. The reliable way to know is to have someone trustworthy on the ground who sees the ordinary days and reports honestly, rather than relying on a tidied-up ten-minute video call.'
+    },
+    {
+      id: 'nri-emergency',
+      question: 'How should NRI families prepare for a medical emergency back home?',
+      answer: 'Set up remote hospital bill payment before you need it, keep a shared document of doctors, medicines and hospital preference, choose a hospital in advance, and give the caregiver and a local relative authority to act fast so nothing waits on a time difference.'
+    }
+  ],
+  'signs-your-parent-needs-a-caregiver': [
+    {
+      id: 'warning-signs',
+      question: 'What are the early signs an elderly parent needs a caregiver?',
+      answer: 'Watch for falls or new unsteadiness, unexplained weight loss, missed or muddled medications, memory changes that disrupt daily life, slipping personal hygiene, unopened post or unpaid bills, and a parent becoming withdrawn or lonely. Acting on these early avoids a crisis later.'
+    },
+    {
+      id: 'raise-care-conversation',
+      question: 'How do I raise the topic of a caregiver without upsetting my parent?',
+      answer: 'Frame care as support that keeps them independent longer, not a takeover. Start small with a few hours of help or respite care, let them keep choices over caregiver and tasks, and bring in a doctor or trusted relative rather than making it feel like the children decided for them.'
+    },
+    {
+      id: 'memory-loss-dementia',
+      question: 'Is forgetfulness in my parent normal ageing or dementia?',
+      answer: 'Occasional forgetting is normal. Missed medications, repeated questions in one conversation, confusion about the day, or getting lost on familiar routes are signs worth a doctor visit. A lot of dementia in India goes undiagnosed because families read early signs as ordinary ageing.'
+    }
+  ],
+  'post-surgery-recovery-care-at-home-india': [
+    {
+      id: 'prepare-home-surgery',
+      question: 'How do I prepare my home before a parent is discharged after surgery?',
+      answer: 'Set the home up while they are still in hospital. Move the bed to the ground floor, clear loose rugs and clutter, light the path to the bathroom well, and arrange any equipment such as a walker or commode in advance. Get the discharge summary in writing and understand the medicines, dressing schedule and warning signs.'
+    },
+    {
+      id: 'post-surgery-nurse',
+      question: 'Do I need a home nurse after surgery or will an attendant do?',
+      answer: 'The first two to six weeks often need a trained nurse for dressing changes, pain management and spotting infection early. Once the wound heals and clinical needs drop, an attendant is usually enough. Matching the level of care to the stage keeps cost sensible.'
+    },
+    {
+      id: 'infection-signs',
+      question: 'What are the warning signs of infection after surgery at home?',
+      answer: 'Increasing redness, swelling, warmth, foul smell or unusual discharge from the wound, along with a rising fever, are signs of infection that need a doctor rather than a wait-and-see approach. Keep the surgeon\'s number within reach from day one.'
+    }
+  ],
+  'dementia-care-at-home-guide-india': [
+    {
+      id: 'dementia-routine',
+      question: 'Why does routine matter so much in dementia care?',
+      answer: 'People with dementia do better with sameness. Meals at the same time, a familiar daily rhythm and a calm, uncluttered home reduce confusion and agitation, while change and chaos make them worse. This is why a consistent caregiver who knows the parent\'s habits is far better than rotating strangers.'
+    },
+    {
+      id: 'dementia-difficult-behaviour',
+      question: 'How do I handle anger or confusion in a parent with dementia?',
+      answer: 'Do not argue with their version of reality; redirect gently instead of correcting them into distress. Keep your voice calm and sentences short, reduce noise and crowds, and learn their triggers, since tiredness, hunger, pain or needing the toilet often cause outbursts they cannot explain.'
+    },
+    {
+      id: 'dementia-burnout',
+      question: 'How do families avoid burnout caring for a parent with dementia?',
+      answer: 'Dementia caregiving is relentless, and one person doing it alone around the clock will burn out, which harms both carer and parent. Sharing the load with a trained caregiver, even part of the day through respite care, is what makes long-term home care sustainable. Using help is good caregiving, not a failure.'
+    }
   ]
 };
 

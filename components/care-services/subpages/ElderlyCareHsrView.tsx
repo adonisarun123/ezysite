@@ -32,7 +32,7 @@ const HOSPITALS = [
 
 const CARE_OPTIONS = [
   { title: 'Day shift companion', hours: '8 hours', fit: 'Working tech couples whose parents need company while they’re at the office.', price: '₹14,000–₹18,000 / mo' },
-  { title: '12-hour caretaker', hours: '12 hours', fit: 'Substantial daily support — bath, meals, medication, evening companionship.', price: '₹18,000–₹24,000 / mo' },
+  { title: '12-hour caretaker', hours: '12 hours', fit: 'Substantial daily support, bath, meals, medication, evening companionship.', price: '₹18,000–₹24,000 / mo' },
   { title: 'Live-in caregiver', hours: '24×7', fit: 'Older parents living alone in HSR while children are abroad or working long hours.', price: '₹22,000–₹30,000 / mo' },
   { title: 'Trained attendant (live-in)', hours: '24×7', fit: 'Bedridden, post-stroke, or advanced-stage dementia.', price: '₹26,000–₹34,000 / mo' },
 ] as const
@@ -51,7 +51,7 @@ const FAQS = [
   {
     question: 'Are caregivers familiar with HSR’s gated apartment complexes?',
     answer:
-      'Yes — Adarsh, Sterling, Salarpuria, Vaswani, and the BDA complexes are all routine for our caregivers. We register them with apartment security in advance.',
+      'Yes, Adarsh, Sterling, Salarpuria, Vaswani, and the BDA complexes are all routine for our caregivers. We register them with apartment security in advance.',
   },
   {
     question: 'Do you support NRI families based abroad with parents in HSR?',
@@ -61,7 +61,7 @@ const FAQS = [
   {
     question: 'Languages?',
     answer:
-      'English, Hindi, Tamil, Kannada, Telugu, Malayalam — HSR is genuinely cosmopolitan. Language match is a primary criterion in our shortlisting.',
+      'English, Hindi, Tamil, Kannada, Telugu, Malayalam, HSR is genuinely cosmopolitan. Language match is a primary criterion in our shortlisting.',
   },
 ] as const
 
@@ -69,7 +69,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'EzyHelpers — Elderly Care in HSR Layout, Bangalore',
+    name: 'EzyHelpers, Elderly Care in HSR Layout, Bangalore',
     areaServed: { '@type': 'AdministrativeArea', name: 'HSR Layout, Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
     telephone: '+91-80-31411776',
@@ -92,7 +92,7 @@ export default function ElderlyCareHsrView() {
       eyebrow="HSR Layout · Bangalore"
       headlineLead="Elderly care, in HSR."
       headlineAccent="Across all seven sectors."
-      lede="Verified, matched caregivers across HSR Layout’s seven sectors and surrounding micro-localities — typically reaching your home within 30 minutes."
+      lede="Verified, matched caregivers across HSR Layout’s seven sectors and surrounding micro-localities, typically reaching your home within 30 minutes."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -104,7 +104,7 @@ export default function ElderlyCareHsrView() {
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Elderly care across <em className="italic text-care-500">all seven HSR sectors</em>, briefed
             on Manipal Sarjapur, Apollo Spectra, Sakra HSR, and Cloudnine. Live-in placements from
-            ₹22,000/month, day shifts from ₹14,000/month — language-matched, hospital-aware, family-led.
+            ₹22,000/month, day shifts from ₹14,000/month, language-matched, hospital-aware, family-led.
           </p>
         </div>
       </section>

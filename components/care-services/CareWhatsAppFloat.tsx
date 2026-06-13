@@ -23,7 +23,7 @@ const CARE_WHATSAPP_NUMBER = '+919972571005'
 /** Per-page pre-filled message. Falls back to a generic care message. */
 function messageForPath(path: string | null): string {
   if (!path || !path.startsWith('/care-services')) {
-    return 'Hi! I’m exploring home care services in Bangalore — could you help me find the right option?'
+    return 'Hi! I’m exploring home care services in Bangalore, could you help me find the right option?'
   }
   const tail = path.replace(/^\/care-services\/?/, '').split('?')[0].replace(/\/$/, '')
 
@@ -78,7 +78,7 @@ function messageForPath(path: string | null): string {
 
   // Trust pages
   if (tail === 'caregiver-verification-process')
-    return 'Hi, I read about your caregiver verification process — could we discuss our requirement?'
+    return 'Hi, I read about your caregiver verification process, could we discuss our requirement?'
   if (tail === 'caregiver-training')
     return 'Hi, I’d like to talk to a care advisor about a placement.'
   if (tail === 'care-leadership')
@@ -170,7 +170,7 @@ export default function CareWhatsAppFloat() {
             </div>
             <div className="px-4 py-3">
               <p className="text-[13px] leading-relaxed text-neutral-700">
-                Replies typically within minutes between 9am–9pm IST. Tell us the situation — we’ll
+                Replies typically within minutes between 9am–9pm IST. Tell us the situation, we’ll
                 recommend the right care.
               </p>
               <p className="mt-3 rounded-xl bg-neutral-50 px-3 py-2 text-[13px] leading-snug text-neutral-700">

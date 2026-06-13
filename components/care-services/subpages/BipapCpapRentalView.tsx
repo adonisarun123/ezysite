@@ -98,7 +98,7 @@ const FAQS = [
   {
     question: 'What is the difference between CPAP and BiPAP?',
     answer:
-      'A CPAP machine delivers a single continuous pressure and is mainly used for obstructive sleep apnoea. A BiPAP delivers two pressures — higher on inhale, lower on exhale — and is used for COPD and respiratory failure. Share your prescription and we will supply the right one.',
+      'A CPAP machine delivers a single continuous pressure and is mainly used for obstructive sleep apnoea. A BiPAP delivers two pressures, higher on inhale, lower on exhale, and is used for COPD and respiratory failure. Share your prescription and we will supply the right one.',
   },
   {
     question: 'Is the machine and mask sanitised and serviced?',
@@ -116,7 +116,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'BiPAP & CPAP Machine Rental, Bangalore — EzyHelpers',
+    name: 'BiPAP & CPAP Machine Rental, Bangalore, EzyHelpers',
     description: nested.description,
     brand: { '@type': 'Brand', name: 'EzyHelpers' },
     areaServed: { '@type': 'City', name: 'Bangalore' },

@@ -116,7 +116,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'Patient Monitor Rental, Bangalore — EzyHelpers',
+    name: 'Patient Monitor Rental, Bangalore, EzyHelpers',
     description: nested.description,
     brand: { '@type': 'Brand', name: 'EzyHelpers' },
     areaServed: { '@type': 'City', name: 'Bangalore' },

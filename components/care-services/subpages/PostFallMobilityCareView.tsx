@@ -29,7 +29,7 @@ const CONDITION_INFO: ConditionInfo = {
   vitalStats: [
     {
       stat: '1 in 3',
-      detail: 'Roughly one in three adults over 65 falls each year — and having fallen once doubles the chance of falling again.',
+      detail: 'Roughly one in three adults over 65 falls each year, and having fallen once doubles the chance of falling again.',
     },
     {
       stat: 'Leading cause',
@@ -37,7 +37,7 @@ const CONDITION_INFO: ConditionInfo = {
     },
     {
       stat: 'Most at home',
-      detail: 'Most senior falls happen at home — bathrooms, stairs and night-time walks to the toilet are the highest-risk spots.',
+      detail: 'Most senior falls happen at home, bathrooms, stairs and night-time walks to the toilet are the highest-risk spots.',
     },
   ],
   causes: [
@@ -55,20 +55,20 @@ const CONDITION_INFO: ConditionInfo = {
     'Struggling to rise from a chair without pushing off with both arms',
     'Dizziness or unsteadiness when standing up',
     'New reluctance to bathe alone, use stairs or step outside',
-    'Unexplained bruises they can’t — or won’t — explain',
+    'Unexplained bruises they can’t, or won’t, explain',
     'Fear of falling that is quietly shrinking their daily activity',
   ],
   whenYouNeedCare: [
-    'They have already fallen once — the next fall risks a hip fracture and surgery',
+    'They have already fallen once, the next fall risks a hip fracture and surgery',
     'Recovery after a fall or fracture needs safe daily transfers and walking support',
-    'Fear of falling is making them stop moving — which only weakens them further',
+    'Fear of falling is making them stop moving, which only weakens them further',
     'Night-time toilet trips are happening alone, in the dark, on unsteady legs',
     'The family can’t be present through the day to supervise walking and bathing',
     'Doctors have advised supervised mobility, and no trained person is at home to provide it',
   ],
 }
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
   { value: 'Fall-aware', label: 'caregivers trained in safe transfers' },
@@ -97,7 +97,7 @@ const SECTIONS = [
     lede:
       'Most falls are preventable. We help make the home safer and the senior steadier.',
     bullets: [
-      'Home-hazard guidance — rugs, lighting, bathroom safety',
+      'Home-hazard guidance, rugs, lighting, bathroom safety',
       'Encouraging strength and balance within safe limits',
       'Proper use of walkers, canes and grab supports',
       'Watchfulness for dizziness, weakness or medication effects',
@@ -135,17 +135,17 @@ const FAQS = [
   {
     question: 'What does post-fall recovery care at home involve?',
     answer:
-      'It combines safe physical support — standing, walking and transfers — with fall-prevention, confidence-building and watchful monitoring during recovery. Caregivers also coordinate with physiotherapists when mobility rehab is prescribed, and help make the home safer.',
+      'It combines safe physical support, standing, walking and transfers, with fall-prevention, confidence-building and watchful monitoring during recovery. Caregivers also coordinate with physiotherapists when mobility rehab is prescribed, and help make the home safer.',
   },
   {
     question: 'How do you help an elderly person walk again after a fall?',
     answer:
-      'We rebuild mobility gradually and safely — assisting with transfers and short walks, setting small weekly goals, ensuring correct use of walkers or canes, and offering steady reassurance to overcome the fear of falling again. Pace is set by the senior’s recovery, never rushed.',
+      'We rebuild mobility gradually and safely, assisting with transfers and short walks, setting small weekly goals, ensuring correct use of walkers or canes, and offering steady reassurance to overcome the fear of falling again. Pace is set by the senior’s recovery, never rushed.',
   },
   {
     question: 'How can falls be prevented at home for seniors?',
     answer:
-      'We guide families on common home hazards — loose rugs, poor lighting, slippery bathrooms — recommend grab supports and proper mobility aids, encourage safe strength and balance activity, and stay alert to dizziness, weakness or medication side-effects that increase fall risk.',
+      'We guide families on common home hazards, loose rugs, poor lighting, slippery bathrooms, recommend grab supports and proper mobility aids, encourage safe strength and balance activity, and stay alert to dizziness, weakness or medication side-effects that increase fall risk.',
   },
   {
     question: 'What does post-fall mobility care cost in Bangalore?',
@@ -160,7 +160,7 @@ const FAQS = [
   {
     question: 'How quickly can you arrange post-fall care in Bangalore?',
     answer:
-      'When a suitable caregiver is available, we attempt same-day placement — especially after a hospital discharge following a fall. Across the Bangalore localities we serve, most matches are completed within 24–48 hours.',
+      'When a suitable caregiver is available, we attempt same-day placement, especially after a hospital discharge following a fall. Across the Bangalore localities we serve, most matches are completed within 24–48 hours.',
   },
 ] as const
 
@@ -168,7 +168,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Post-Fall Recovery & Mobility Care at Home, Bangalore',
+    name: 'EzyHelpers, Post-Fall Recovery & Mobility Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics', 'PhysicalTherapy'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -192,7 +192,7 @@ export default function PostFallMobilityCareView() {
       eyebrow="Bangalore · Recovery & mobility at home"
       headlineLead="Back on their feet,"
       headlineAccent="safely and with confidence."
-      lede={SERVICE.tagline + ' Caregivers trained in safe transfers, fall-prevention and gentle mobility rebuilding — so your parent recovers without fear, and without the next fall.'}
+      lede={SERVICE.tagline + ' Caregivers trained in safe transfers, fall-prevention and gentle mobility rebuilding, so your parent recovers without fear, and without the next fall.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}

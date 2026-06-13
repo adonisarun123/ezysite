@@ -16,7 +16,7 @@ const SLUG = 'injections-vitals-monitoring-bangalore'
 const PATH = `/care-services/${SLUG}`
 const service = getNestedService(SLUG)!
 
-/* heroStats — INVENTED illustrative figures for layout/AEO. Confirm before launch. */
+/* heroStats, INVENTED illustrative figures for layout/AEO. Confirm before launch. */
 const HERO_STATS = [
   { value: '12,000+', label: 'Home visits completed' },
   { value: 'From ₹400', label: 'Per visit, transparently priced' },
@@ -28,19 +28,19 @@ const SERVICES_LIST = [
     icon: HeartIcon,
     title: 'Insulin & diabetic injections',
     body:
-      'Regular insulin administration for diabetic patients who cannot self-inject — with correct dosing, rotation of sites and blood-sugar checks, all by a qualified nurse.',
+      'Regular insulin administration for diabetic patients who cannot self-inject, with correct dosing, rotation of sites and blood-sugar checks, all by a qualified nurse.',
   },
   {
     icon: SparklesIcon,
     title: 'Prescribed injections',
     body:
-      'Intramuscular and subcutaneous injections exactly as your doctor has prescribed — pain-relief, blood thinners, hormone and other medications, given safely with sterile technique.',
+      'Intramuscular and subcutaneous injections exactly as your doctor has prescribed, pain-relief, blood thinners, hormone and other medications, given safely with sterile technique.',
   },
   {
     icon: ClipboardDocumentCheckIcon,
     title: 'BP, blood-sugar & SpO₂ monitoring',
     body:
-      'Routine monitoring of blood pressure, blood glucose and oxygen saturation — tracked over time so trends are visible and your doctor can adjust treatment with real data.',
+      'Routine monitoring of blood pressure, blood glucose and oxygen saturation, tracked over time so trends are visible and your doctor can adjust treatment with real data.',
   },
   {
     icon: ShieldCheckIcon,
@@ -72,7 +72,7 @@ const FAQS = [
   {
     question: 'Can a nurse give injections at home in Bangalore?',
     answer:
-      'Yes. A qualified GNM/B.Sc-verified nurse can administer prescribed injections at home — insulin, intramuscular and subcutaneous medications, blood thinners and more — using sterile, single-use needles and correct technique. We administer only what your doctor has prescribed.',
+      'Yes. A qualified GNM/B.Sc-verified nurse can administer prescribed injections at home, insulin, intramuscular and subcutaneous medications, blood thinners and more, using sterile, single-use needles and correct technique. We administer only what your doctor has prescribed.',
   },
   {
     question: 'What vitals can be monitored at home?',
@@ -82,7 +82,7 @@ const FAQS = [
   {
     question: 'How much do home injections and vitals monitoring cost in Bangalore?',
     answer:
-      `Injections and vitals monitoring at home in Bangalore start at ${formatPriceWithNote('injections-vitals').toLowerCase()}. Recurring visits for ongoing monitoring can be planned at a predictable cost — a consultation gives you the exact figure for your needs.`,
+      `Injections and vitals monitoring at home in Bangalore start at ${formatPriceWithNote('injections-vitals').toLowerCase()}. Recurring visits for ongoing monitoring can be planned at a predictable cost, a consultation gives you the exact figure for your needs.`,
   },
   {
     question: 'Do you need a prescription for injections?',
@@ -92,7 +92,7 @@ const FAQS = [
   {
     question: 'Can you set up a regular monitoring schedule for an elderly parent?',
     answer:
-      'Absolutely. Many families — including NRI families with parents in Bangalore — set up recurring visits for insulin, injections and vitals monitoring, with a clinical log shared after each visit. It is a reliable way to keep an eye on a parent’s health from anywhere.',
+      'Absolutely. Many families, including NRI families with parents in Bangalore, set up recurring visits for insulin, injections and vitals monitoring, with a clinical log shared after each visit. It is a reliable way to keep an eye on a parent’s health from anywhere.',
   },
   {
     question: 'Are the needles and equipment safe and single-use?',
@@ -112,7 +112,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Injections & Vitals Monitoring at Home, Bangalore',
+    name: 'EzyHelpers, Injections & Vitals Monitoring at Home, Bangalore',
     medicalSpecialty: 'Nursing',
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -136,7 +136,7 @@ export default function InjectionsVitalsView() {
       eyebrow="Bangalore · Injections & vitals at home"
       headlineLead="Injections and checks,"
       headlineAccent="brought to your door."
-      lede="At-home injections and vitals monitoring in Bangalore — insulin, prescribed injections, BP, blood sugar and SpO₂ checks by qualified nurses. No more clinic queues for a five-minute procedure."
+      lede="At-home injections and vitals monitoring in Bangalore, insulin, prescribed injections, BP, blood sugar and SpO₂ checks by qualified nurses. No more clinic queues for a five-minute procedure."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -159,7 +159,7 @@ export default function InjectionsVitalsView() {
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Injections and vitals monitoring at home in Bangalore bring a qualified nurse to you for{' '}
             <em className="italic text-care-500">insulin, prescribed injections and routine checks</em>{' '}
-            of BP, blood sugar and oxygen — saving elderly and chronic-illness patients repeated,
+            of BP, blood sugar and oxygen, saving elderly and chronic-illness patients repeated,
             tiring clinic trips while keeping a clear health record.
           </p>
         </div>
@@ -248,7 +248,7 @@ export default function InjectionsVitalsView() {
       <CareSubpageClosingCTA
         headlineLead="The injection comes"
         headlineAccent="to you now."
-        body="Tell us what is prescribed. We respond within the hour, match a qualified nurse, and arrange a visit — single or recurring, with a clear health log."
+        body="Tell us what is prescribed. We respond within the hour, match a qualified nurse, and arrange a visit, single or recurring, with a clear health log."
         enquirySource={PATH}
         related={RELATED as unknown as { label: string; href: string }[]}
       />

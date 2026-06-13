@@ -40,7 +40,7 @@ const SECTIONS: { title: string; lede?: string; bullets: string[] }[] = [
   },
   {
     title: 'Safety and oversight',
-    lede: 'The first weeks after ICU are when complications and re-admissions are most likely — so vigilance matters.',
+    lede: 'The first weeks after ICU are when complications and re-admissions are most likely, so vigilance matters.',
     bullets: [
       'Clear escalation thresholds and a nurse-to-doctor protocol',
       'A defined pathway back to hospital if the patient deteriorates',
@@ -54,7 +54,7 @@ const FAQS = [
   {
     question: 'Why is post-ICU care important?',
     answer:
-      'The weeks after ICU discharge carry a real risk of complications, weakness and re-admission. Structured step-down care — monitoring, medication management, early mobilisation and nutrition — helps recovery stay on track. This is general information, not medical advice.',
+      'The weeks after ICU discharge carry a real risk of complications, weakness and re-admission. Structured step-down care, monitoring, medication management, early mobilisation and nutrition, helps recovery stay on track. This is general information, not medical advice.',
   },
   {
     question: 'What is post-intensive-care syndrome?',
@@ -64,7 +64,7 @@ const FAQS = [
   {
     question: 'Do you provide nurses or attendants for post-ICU care?',
     answer:
-      'We match the staffing to the recovery stage — critical-care or skilled nurses where monitoring and clinical tasks are needed, stepping down to trained attendants as the patient stabilises, all under doctor oversight.',
+      'We match the staffing to the recovery stage, critical-care or skilled nurses where monitoring and clinical tasks are needed, stepping down to trained attendants as the patient stabilises, all under doctor oversight.',
   },
   {
     question: 'How much does post-ICU recovery care cost in Bangalore?',
@@ -87,7 +87,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Post-ICU Recovery Care at Home, Bangalore',
+    name: 'EzyHelpers, Post-ICU Recovery Care at Home, Bangalore',
     medicalSpecialty: ['Critical Care', 'Rehabilitation'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -111,7 +111,7 @@ export default function PostIcuRecoveryView() {
       eyebrow="Bangalore · Critical care at home"
       headlineLead="Post-ICU recovery,"
       headlineAccent="safely stepped down."
-      lede="The move from ICU to home is a vulnerable window. We provide step-down monitoring, rehabilitation and complication watch after intensive-care discharge — to keep recovery on track and reduce re-admission."
+      lede="The move from ICU to home is a vulnerable window. We provide step-down monitoring, rehabilitation and complication watch after intensive-care discharge, to keep recovery on track and reduce re-admission."
       enquirySource={PATH}
       jsonLd={JSONLD}
     >

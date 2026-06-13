@@ -16,7 +16,7 @@ const SLUG = 'iv-therapy-at-home-bangalore'
 const PATH = `/care-services/${SLUG}`
 const service = getNestedService(SLUG)!
 
-/* heroStats — INVENTED illustrative figures for layout/AEO. Confirm before launch. */
+/* heroStats, INVENTED illustrative figures for layout/AEO. Confirm before launch. */
 const HERO_STATS = [
   { value: '5,000+', label: 'Infusions given at home' },
   { value: 'Doctor-led', label: 'Only on valid prescription' },
@@ -28,7 +28,7 @@ const INFUSIONS = [
     icon: BeakerIcon,
     title: 'IV fluids & rehydration',
     body:
-      'For dehydration from infection, heat or poor intake — prescribed IV fluids and electrolytes restore balance safely at home, avoiding an unnecessary hospital trip for weak or elderly patients.',
+      'For dehydration from infection, heat or poor intake, prescribed IV fluids and electrolytes restore balance safely at home, avoiding an unnecessary hospital trip for weak or elderly patients.',
   },
   {
     icon: ShieldCheckIcon,
@@ -40,7 +40,7 @@ const INFUSIONS = [
     icon: SparklesIcon,
     title: 'Electrolyte & vitamin infusions',
     body:
-      'Doctor-prescribed electrolyte correction, iron infusions and vitamin therapy delivered with proper rate control and monitoring — never self-administered, always supervised by a nurse.',
+      'Doctor-prescribed electrolyte correction, iron infusions and vitamin therapy delivered with proper rate control and monitoring, never self-administered, always supervised by a nurse.',
   },
   {
     icon: HeartIcon,
@@ -60,7 +60,7 @@ const INCLUDED = [
 ] as const
 
 const SAFETY = [
-  'IV therapy carries real risks — wrong rate, infiltration or reaction — that need a trained nurse, not a layperson.',
+  'IV therapy carries real risks, wrong rate, infiltration or reaction, that need a trained nurse, not a layperson.',
   'Aseptic cannulation technique is the single biggest factor in preventing IV-line infections.',
   'Home infusion frees hospital beds and lets patients recover in comfort, without losing clinical safety.',
   'Continuous observation during the infusion catches reactions in the first minutes, when they matter most.',
@@ -70,17 +70,17 @@ const FAQS = [
   {
     question: 'Is IV therapy safe to do at home in Bangalore?',
     answer:
-      'Yes — when it is doctor-prescribed and administered by a qualified nurse. Our GNM/B.Sc-verified nurses use sterile cannulation, control the infusion rate, monitor for reactions throughout, and follow a clear escalation plan. We only administer IV therapy on a valid prescription; we do not offer drips on request without a doctor’s order.',
+      'Yes, when it is doctor-prescribed and administered by a qualified nurse. Our GNM/B.Sc-verified nurses use sterile cannulation, control the infusion rate, monitor for reactions throughout, and follow a clear escalation plan. We only administer IV therapy on a valid prescription; we do not offer drips on request without a doctor’s order.',
   },
   {
     question: 'What kinds of IV infusions can be given at home?',
     answer:
-      'Prescribed IV fluids and rehydration, IV antibiotics, electrolyte correction, iron and vitamin infusions, and supportive recovery infusions. The specific infusion, dose and rate are always set by your treating doctor — we administer exactly what is prescribed.',
+      'Prescribed IV fluids and rehydration, IV antibiotics, electrolyte correction, iron and vitamin infusions, and supportive recovery infusions. The specific infusion, dose and rate are always set by your treating doctor, we administer exactly what is prescribed.',
   },
   {
     question: 'How much does IV therapy at home cost in Bangalore?',
     answer:
-      `IV therapy and infusion at home in Bangalore starts at ${formatPriceWithNote('iv-therapy').toLowerCase()}. The total depends on the infusion type, number of sessions and duration — a consultation gives you an exact estimate.`,
+      `IV therapy and infusion at home in Bangalore starts at ${formatPriceWithNote('iv-therapy').toLowerCase()}. The total depends on the infusion type, number of sessions and duration, a consultation gives you an exact estimate.`,
   },
   {
     question: 'Do I need a prescription for IV therapy at home?',
@@ -88,7 +88,7 @@ const FAQS = [
       'Yes, always. IV therapy is a medical procedure and we administer it only on a valid doctor’s prescription specifying the infusion, dose and rate. This protects the patient and ensures the therapy is clinically appropriate.',
   },
   {
-    question: 'Who administers the IV — a nurse or a technician?',
+    question: 'Who administers the IV, a nurse or a technician?',
     answer:
       'Always a qualified nurse with a verified GNM or B.Sc Nursing qualification and demonstrated competence in IV cannulation and infusion. They remain present to monitor the infusion and respond to any reaction.',
   },
@@ -110,7 +110,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — IV Therapy & Infusion at Home, Bangalore',
+    name: 'EzyHelpers, IV Therapy & Infusion at Home, Bangalore',
     medicalSpecialty: 'Nursing',
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -134,7 +134,7 @@ export default function IvTherapyView() {
       eyebrow="Bangalore · IV therapy at home"
       headlineLead="Doctor-prescribed infusions,"
       headlineAccent="given safely at home."
-      lede="IV fluids, antibiotics, electrolytes and prescribed infusions administered at home in Bangalore by credentialled nurses — sterile cannulation, controlled rate, and continuous monitoring throughout."
+      lede="IV fluids, antibiotics, electrolytes and prescribed infusions administered at home in Bangalore by credentialled nurses, sterile cannulation, controlled rate, and continuous monitoring throughout."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -157,7 +157,7 @@ export default function IvTherapyView() {
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             IV therapy at home in Bangalore lets a qualified nurse administer{' '}
             <em className="italic text-care-500">doctor-prescribed</em> fluids, antibiotics and
-            infusions in your own home — with sterile technique, controlled rate and continuous
+            infusions in your own home, with sterile technique, controlled rate and continuous
             monitoring. It is the comfort of home with the safety of a hospital ward.
           </p>
         </div>
@@ -245,7 +245,7 @@ export default function IvTherapyView() {
       <CareSubpageClosingCTA
         headlineLead="Your prescribed infusion,"
         headlineAccent="without the hospital stay."
-        body="Share the prescription. We respond within the hour, match a nurse trained in IV care, and schedule the infusion at home — sterile and monitored throughout."
+        body="Share the prescription. We respond within the hour, match a nurse trained in IV care, and schedule the infusion at home, sterile and monitored throughout."
         enquirySource={PATH}
         related={RELATED as unknown as { label: string; href: string }[]}
       />

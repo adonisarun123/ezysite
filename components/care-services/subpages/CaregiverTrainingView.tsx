@@ -32,7 +32,7 @@ const CORE_MODULES = [
     title: 'Vital signs & escalation',
     hours: '6 hrs',
     body:
-      'BP, SpO₂, pulse, glucose, temperature — measurement, recording, recognising emergencies, when to call the family vs. an ambulance.',
+      'BP, SpO₂, pulse, glucose, temperature, measurement, recording, recognising emergencies, when to call the family vs. an ambulance.',
   },
   {
     n: '04',
@@ -84,7 +84,7 @@ const SPECIALISATIONS = [
     title: 'Post-surgical recovery',
     hours: '16 hrs',
     body:
-      'Wound observation (not dressing — that’s nursing), drain care, mobilisation timing, pain assessment, complication watch.',
+      'Wound observation (not dressing, that’s nursing), drain care, mobilisation timing, pain assessment, complication watch.',
   },
 ] as const
 
@@ -99,7 +99,7 @@ const ASSESSMENT = [
   },
   {
     title: 'Scenario interview',
-    body: '“What would you do if…” — five real-world scenarios. We’re looking for calm, judgement, and willingness to escalate.',
+    body: '“What would you do if…”, five real-world scenarios. We’re looking for calm, judgement, and willingness to escalate.',
   },
   {
     title: 'Probationary placement',
@@ -126,7 +126,7 @@ const FAQS = [
   {
     question: 'Is training ongoing or one-time?',
     answer:
-      'Ongoing. Active caregivers attend a 4-hour refresher every quarter. Anytime our protocols change — for example if dementia evidence updates or we add a new condition specialisation — affected caregivers are recalled for the relevant module.',
+      'Ongoing. Active caregivers attend a 4-hour refresher every quarter. Anytime our protocols change, for example if dementia evidence updates or we add a new condition specialisation, affected caregivers are recalled for the relevant module.',
   },
   {
     question: 'Can a family request additional training for a specific case?',
@@ -257,7 +257,7 @@ export default function CaregiverTrainingView() {
             eyebrow="Assessment"
             titleLead="Four checks"
             titleMuted="before independent placement."
-            lede="Training without assessment is theatre. Every caregiver clears all four — and is held back if they don’t."
+            lede="Training without assessment is theatre. Every caregiver clears all four, and is held back if they don’t."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {ASSESSMENT.map((a, i) => (
@@ -322,7 +322,7 @@ export default function CaregiverTrainingView() {
       <CareSubpageClosingCTA
         headlineLead="Trained for the moments"
         headlineAccent="that actually matter."
-        body="Tell us what you need. We’ll match you with a caregiver whose training matches the case — not just the calendar."
+        body="Tell us what you need. We’ll match you with a caregiver whose training matches the case, not just the calendar."
         enquirySource={PATH}
         related={[
           { label: 'Verification Process', href: '/care-services/caregiver-verification-process' },

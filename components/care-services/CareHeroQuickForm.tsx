@@ -61,10 +61,10 @@ export default function CareHeroQuickForm({ enquirySource }: { enquirySource: st
             email: '',
             phone: phone.trim(),
             careType,
-            patientSummary: requirements.trim() || 'Hero quick-form lead — call back to assess the requirement',
+            patientSummary: requirements.trim() || 'Hero quick-form lead, call back to assess the requirement',
             locality: city !== 'Bangalore' ? city : undefined,
             urgency: '24-48h',
-            notes: `Hero quick form. City: ${city}.${requirements.trim() ? '' : ' No requirement text — please call to assess.'}`,
+            notes: `Hero quick form. City: ${city}.${requirements.trim() ? '' : ' No requirement text, please call to assess.'}`,
             sourceUrl: typeof window !== 'undefined' ? window.location.href.split('#')[0] : undefined,
           },
           sourceUrl: typeof window !== 'undefined' ? window.location.href.split('#')[0] : undefined,
@@ -96,7 +96,7 @@ export default function CareHeroQuickForm({ enquirySource }: { enquirySource: st
         <>
           <h2 className="text-xl font-bold tracking-tight text-neutral-900">Get a free care consultation</h2>
           <p className="mt-1.5 text-sm leading-snug text-neutral-500">
-            Share a few details — a care advisor calls you back within the hour.
+            Share a few details, a care advisor calls you back within the hour.
           </p>
 
           <form onSubmit={submit} className="mt-5 space-y-3.5" aria-label="Request a free care consultation">
@@ -182,7 +182,7 @@ export default function CareHeroQuickForm({ enquirySource }: { enquirySource: st
             {fieldError && <p role="alert" className="text-xs font-medium text-red-600">{fieldError}</p>}
             {status === 'error' && (
               <p role="alert" className="text-xs font-medium text-red-600">
-                Couldn&rsquo;t send — please call 080-31411776 instead.
+                Couldn&rsquo;t send, please call 080-31411776 instead.
               </p>
             )}
 

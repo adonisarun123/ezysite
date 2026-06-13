@@ -32,7 +32,7 @@ const CONDITION_INFO: ConditionInfo = {
     },
   ],
   causes: [
-    'Long-term smoking — the most common cause',
+    'Long-term smoking, the most common cause',
     'Indoor smoke exposure from years of chulha/biomass cooking',
     'Occupational dust and fumes',
     'Poorly controlled asthma progressing with age',
@@ -40,7 +40,7 @@ const CONDITION_INFO: ConditionInfo = {
     'Air pollution exposure',
   ],
   symptoms: [
-    'Breathlessness on mild activity — even walking to the bathroom',
+    'Breathlessness on mild activity, even walking to the bathroom',
     'Persistent cough with phlegm',
     'Wheezing or chest tightness',
     'Fatigue after small tasks',
@@ -70,7 +70,7 @@ const CARE_NEEDS: CareNeeds = {
   ],
 }
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
   { value: 'Breath-paced', label: 'walking and bathroom support, never hurried' },
@@ -84,11 +84,11 @@ const SECTIONS = [
     titleLead: 'Every task paced',
     titleMuted: 'to the breath.',
     lede:
-      'For a senior with COPD, the walk to the bathroom can be the hardest part of the day. Caregivers pace every activity to breathing capacity — support, pause, recover, continue.',
+      'For a senior with COPD, the walk to the bathroom can be the hardest part of the day. Caregivers pace every activity to breathing capacity, support, pause, recover, continue.',
     bullets: [
       'Paced walking support with planned rest stops',
       'Restroom and bathing support without breathless hurry',
-      'Positioning support — propped sitting and sleeping postures that ease breathing',
+      'Positioning support, propped sitting and sleeping postures that ease breathing',
       'Energy-conserving daily routines so good hours aren’t spent on chores',
     ],
   },
@@ -97,7 +97,7 @@ const SECTIONS = [
     titleLead: 'The routine that keeps',
     titleMuted: 'the lungs out of hospital.',
     lede:
-      'COPD stays stable when inhalers and medicines are taken exactly on schedule. Caregivers keep the routine unmissable — with nebulisation support only where trained and instructed by the family or doctor.',
+      'COPD stays stable when inhalers and medicines are taken exactly on schedule. Caregivers keep the routine unmissable, with nebulisation support only where trained and instructed by the family or doctor.',
     bullets: [
       'On-time reminders for every inhaler and oral medicine',
       'Inhaler-technique prompts as the doctor has demonstrated',
@@ -110,10 +110,10 @@ const SECTIONS = [
     titleLead: 'Exacerbations caught',
     titleMuted: 'before they escalate.',
     lede:
-      'COPD emergencies rarely come without warning — more cough, more fatigue, harder breathing. A trained observer at home spots the change a day early and alerts the people who can act.',
+      'COPD emergencies rarely come without warning, more cough, more fatigue, harder breathing. A trained observer at home spots the change a day early and alerts the people who can act.',
     bullets: [
       'Daily observation of breathlessness, cough changes and fatigue',
-      'SpO₂ observation with a family-provided oximeter — observation only, never a diagnosis',
+      'SpO₂ observation with a family-provided oximeter, observation only, never a diagnosis',
       'Changes reported to family and doctor the same day',
       'Agreed escalation plan followed calmly during an episode',
     ],
@@ -123,7 +123,7 @@ const SECTIONS = [
     titleLead: 'Comfortable around oxygen,',
     titleMuted: 'connected to the family.',
     lede:
-      'Caregivers work confidently alongside oxygen concentrators and home respiratory equipment — which we also rent and service — while keeping the family in the loop daily.',
+      'Caregivers work confidently alongside oxygen concentrators and home respiratory equipment, which we also rent and service, while keeping the family in the loop daily.',
     bullets: [
       'Works alongside oxygen concentrators, nebulisers and home equipment',
       'Equipment rental available through our medical-equipment service',
@@ -137,12 +137,12 @@ const FAQS = [
   {
     question: 'Can the caregiver operate the nebuliser or oxygen concentrator?',
     answer:
-      'Caregivers provide nebulisation and equipment support only if trained and instructed by the family or doctor. Clinical decisions — oxygen flow titration, dose changes — always stay with a nurse or doctor. Where clinical respiratory care is needed, we arrange home nursing alongside the caregiver, all under one roof.',
+      'Caregivers provide nebulisation and equipment support only if trained and instructed by the family or doctor. Clinical decisions, oxygen flow titration, dose changes, always stay with a nurse or doctor. Where clinical respiratory care is needed, we arrange home nursing alongside the caregiver, all under one roof.',
   },
   {
     question: 'What happens during a breathless episode?',
     answer:
-      'The caregiver helps the senior into the easiest breathing position, keeps them calm, and follows the escalation plan agreed with the family — calling the family, doctor or ambulance as per that plan. Having a trained, calm person present is exactly what prevents panic from making an episode worse.',
+      'The caregiver helps the senior into the easiest breathing position, keeps them calm, and follows the escalation plan agreed with the family, calling the family, doctor or ambulance as per that plan. Having a trained, calm person present is exactly what prevents panic from making an episode worse.',
   },
   {
     question: 'What does respiratory care at home cost in Bangalore?',
@@ -152,17 +152,17 @@ const FAQS = [
   {
     question: 'Do caregivers monitor oxygen saturation (SpO₂)?',
     answer:
-      'Yes — as observation only. If the family provides a pulse oximeter, the caregiver records readings at agreed times and alerts the family and doctor when readings drop below the agreed level. Caregivers never interpret readings as a diagnosis or change oxygen settings on their own.',
+      'Yes, as observation only. If the family provides a pulse oximeter, the caregiver records readings at agreed times and alerts the family and doctor when readings drop below the agreed level. Caregivers never interpret readings as a diagnosis or change oxygen settings on their own.',
   },
   {
     question: 'Can they help with daily walks?',
     answer:
-      'Yes. Gentle, doctor-approved walking is one of the best things for COPD. Caregivers pace walks to breathing capacity, plan rest stops, and stop the moment breathlessness rises — keeping movement going safely, day after day.',
+      'Yes. Gentle, doctor-approved walking is one of the best things for COPD. Caregivers pace walks to breathing capacity, plan rest stops, and stop the moment breathlessness rises, keeping movement going safely, day after day.',
   },
   {
     question: 'Is live-in care available for night-time episodes?',
     answer:
-      'Yes. Night-time breathlessness is one of the most common reasons families choose live-in respiratory care — someone trained is present and awake-able for every episode, instead of an elder facing it alone. Day-shift and visiting options are also available.',
+      'Yes. Night-time breathlessness is one of the most common reasons families choose live-in respiratory care, someone trained is present and awake-able for every episode, instead of an elder facing it alone. Day-shift and visiting options are also available.',
   },
 ] as const
 
@@ -170,7 +170,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Respiratory & COPD Care at Home, Bangalore',
+    name: 'EzyHelpers, Respiratory & COPD Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Pulmonology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -194,7 +194,7 @@ export default function RespiratoryCopdCareView() {
       eyebrow="Bangalore · Respiratory & COPD care at home"
       headlineLead="COPD support that makes"
       headlineAccent="every breath easier."
-      lede={SERVICE.tagline + ' Breath-paced daily support, on-time inhaler routines and early-warning monitoring — comfortable around oxygen equipment at home.'}
+      lede={SERVICE.tagline + ' Breath-paced daily support, on-time inhaler routines and early-warning monitoring, comfortable around oxygen equipment at home.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}

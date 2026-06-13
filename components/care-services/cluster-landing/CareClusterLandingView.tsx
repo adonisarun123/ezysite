@@ -106,7 +106,7 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
 
       <header className="bg-white">
         <div className="mx-auto max-w-7xl px-4 pb-10 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pb-14">
-          {/* Inline, transparent breadcrumb — sits inside the hero, no separator bar */}
+          {/* Inline, transparent breadcrumb, sits inside the hero, no separator bar */}
           <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8">
             <ol className="flex flex-wrap items-center gap-x-1 text-sm text-neutral-500">
               <li>
@@ -385,8 +385,8 @@ export default function CareClusterLandingView({ config, metaDescription, faqIte
                 const headerLabel = c.badge ?? c.tag
                 const cardHref = c.href ?? enquiryHref
                 const cardAriaLabel = c.href
-                  ? `${c.title} — learn more`
-                  : `${c.title} — request a callback`
+                  ? `${c.title}, learn more`
+                  : `${c.title}, request a callback`
                 return (
                   <Link
                     key={c.title}

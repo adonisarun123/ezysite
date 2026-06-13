@@ -88,7 +88,7 @@ const FAQS = [
   {
     question: 'What deposit is needed to rent mobility aids in Bangalore?',
     answer:
-      'Most mobility aids carry a low, fully refundable security deposit that varies by item — for example, an air mattress carries a higher deposit than a walker. It is returned when the aid is collected in working condition.',
+      'Most mobility aids carry a low, fully refundable security deposit that varies by item, for example, an air mattress carries a higher deposit than a walker. It is returned when the aid is collected in working condition.',
   },
   {
     question: 'How quickly can mobility aids be delivered?',
@@ -116,7 +116,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'Mobility Aids Rental, Bangalore — EzyHelpers',
+    name: 'Mobility Aids Rental, Bangalore, EzyHelpers',
     description: nested.description,
     brand: { '@type': 'Brand', name: 'EzyHelpers' },
     areaServed: { '@type': 'City', name: 'Bangalore' },
@@ -204,7 +204,7 @@ export default function MobilityAidsRentalView() {
       <CareSubpageClosingCTA
         headlineLead="The right aid,"
         headlineAccent="delivered the same day."
-        body="Tell us what the patient needs — walker, commode, air mattress or more. We sanitise, deliver and set it up across Bangalore."
+        body="Tell us what the patient needs, walker, commode, air mattress or more. We sanitise, deliver and set it up across Bangalore."
         enquirySource={PATH}
         primaryCtaLabel="Get mobility aids today"
         related={[

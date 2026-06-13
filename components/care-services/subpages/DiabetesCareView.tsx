@@ -34,7 +34,7 @@ const CONDITION_INFO: ConditionInfo = {
     },
     {
       stat: '~136 million',
-      detail: 'A further 136 million Indians are estimated to have prediabetes (ICMR-INDIAB) — many of them undiagnosed seniors.',
+      detail: 'A further 136 million Indians are estimated to have prediabetes (ICMR-INDIAB), many of them undiagnosed seniors.',
     },
     {
       stat: '2–4×',
@@ -43,7 +43,7 @@ const CONDITION_INFO: ConditionInfo = {
   ],
   causes: [
     'Insulin resistance that worsens with age, weight gain and inactivity',
-    'Family history — diabetes runs strongly in Indian families',
+    'Family history, diabetes runs strongly in Indian families',
     'Abdominal obesity, common in the Indian body type even at lower weights',
     'Sedentary routines after retirement, with less daily walking',
     'High blood pressure and cholesterol, which travel with diabetes',
@@ -60,20 +60,20 @@ const CONDITION_INFO: ConditionInfo = {
     'Unexplained weight loss despite a normal appetite',
   ],
   whenYouNeedCare: [
-    'A hypoglycaemia episode — confusion, sweating or a fall from low sugar — with no one at home to respond',
+    'A hypoglycaemia episode, confusion, sweating or a fall from low sugar, with no one at home to respond',
     'Sugar readings, tablets and insulin timing are getting mixed up or skipped',
-    'A foot wound or numbness has appeared — daily foot checks are now essential',
+    'A foot wound or numbness has appeared, daily foot checks are now essential',
     'Diet control keeps failing because cooking and meal timing need supervision',
     'Multiple conditions (BP, heart, kidney) make the daily routine too complex to self-manage',
     'Children live in another city and want sugar logs and alerts they can see daily',
   ],
 }
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
   { value: 'Daily', label: 'blood-sugar checks, logged and shared with the family' },
-  { value: 'On-time', label: 'insulin reminders — injections by qualified nurses where needed' },
+  { value: 'On-time', label: 'insulin reminders, injections by qualified nurses where needed' },
   { value: 'Foot-care', label: 'vigilance to catch wounds and infections early' },
 ] as const
 
@@ -87,7 +87,7 @@ const SECTIONS = [
     bullets: [
       'Daily glucometer checks at the times the doctor prescribes',
       'Readings logged and shared with family on WhatsApp',
-      'Trends flagged early — creeping highs or repeated lows',
+      'Trends flagged early, creeping highs or repeated lows',
       'Readings on hand for every doctor consultation',
     ],
   },
@@ -96,7 +96,7 @@ const SECTIONS = [
     titleLead: 'Insulin support,',
     titleMuted: 'done the safe way.',
     lede:
-      'Caregivers keep insulin and oral medication strictly on time. Where injections are clinically required, qualified nurses administer them — we arrange both under one roof.',
+      'Caregivers keep insulin and oral medication strictly on time. Where injections are clinically required, qualified nurses administer them, we arrange both under one roof.',
     bullets: [
       'On-time reminders for insulin doses and oral medication',
       'Assistance with self-injection routines and supplies',
@@ -113,7 +113,7 @@ const SECTIONS = [
     bullets: [
       'Diabetic-friendly meal planning and portion awareness',
       'Consistent meal timings to match medication schedules',
-      'Gentle daily activity — walks and doctor-approved exercise',
+      'Gentle daily activity, walks and doctor-approved exercise',
       'Polite vigilance on sweets, festival foods and skipped meals',
     ],
   },
@@ -124,7 +124,7 @@ const SECTIONS = [
     lede:
       'Hypoglycemia, hyperglycemia and diabetic foot wounds are the emergencies that put elderly diabetics in hospital. Trained eyes at home catch them early.',
     bullets: [
-      'Alert to hypo signs — sweating, shakiness, confusion — with quick response',
+      'Alert to hypo signs, sweating, shakiness, confusion, with quick response',
       'Watchful for hyperglycemia symptoms like excessive thirst and fatigue',
       'Daily foot checks for cuts, blisters and slow-healing wounds',
       'Doctor and family alerted immediately when something looks off',
@@ -136,12 +136,12 @@ const FAQS = [
   {
     question: 'Can caregivers give insulin injections?',
     answer:
-      'Caregivers remind, assist with self-injection routines and manage supplies, but injections themselves are administered by qualified nurses where clinically required. We arrange both — a daily caregiver plus nurse visits for injections — so the family doesn’t have to coordinate two agencies.',
+      'Caregivers remind, assist with self-injection routines and manage supplies, but injections themselves are administered by qualified nurses where clinically required. We arrange both, a daily caregiver plus nurse visits for injections, so the family doesn’t have to coordinate two agencies.',
   },
   {
     question: 'How often is blood sugar monitored?',
     answer:
-      'As often as the doctor prescribes — typically once or twice daily for stable diabetics, and more frequently where control is poor or insulin doses are being adjusted. Every reading is logged and shared with the family on WhatsApp.',
+      'As often as the doctor prescribes, typically once or twice daily for stable diabetics, and more frequently where control is poor or insulin doses are being adjusted. Every reading is logged and shared with the family on WhatsApp.',
   },
   {
     question: 'Do caregivers help with a diabetic diet?',
@@ -156,7 +156,7 @@ const FAQS = [
   {
     question: 'What happens in a sugar emergency?',
     answer:
-      'Caregivers are trained to recognise hypo and hyperglycemia warning signs early, respond immediately — for example, giving fast-acting sugar for a hypo as per the care plan — and alert the family and doctor at once. For serious episodes, they help get your loved one to hospital without delay.',
+      'Caregivers are trained to recognise hypo and hyperglycemia warning signs early, respond immediately, for example, giving fast-acting sugar for a hypo as per the care plan, and alert the family and doctor at once. For serious episodes, they help get your loved one to hospital without delay.',
   },
   {
     question: 'Do you coordinate with our doctor?',
@@ -169,7 +169,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Diabetes Care at Home, Bangalore',
+    name: 'EzyHelpers, Diabetes Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Endocrinology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -193,7 +193,7 @@ export default function DiabetesCareView() {
       eyebrow="Bangalore · Diabetes care at home"
       headlineLead="Diabetes care that keeps"
       headlineAccent="every reading in range."
-      lede={SERVICE.tagline + ' Daily monitoring, on-time insulin support and foot-care vigilance — with qualified nurses for anything clinical.'}
+      lede={SERVICE.tagline + ' Daily monitoring, on-time insulin support and foot-care vigilance, with qualified nurses for anything clinical.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}

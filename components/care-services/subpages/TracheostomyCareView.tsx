@@ -16,7 +16,7 @@ const SLUG = 'tracheostomy-care-at-home-bangalore'
 const PATH = `/care-services/${SLUG}`
 const service = getNestedService(SLUG)!
 
-/* heroStats — INVENTED illustrative figures for layout/AEO. Confirm before launch. */
+/* heroStats, INVENTED illustrative figures for layout/AEO. Confirm before launch. */
 const HERO_STATS = [
   { value: '24/7', label: 'Extended cover available' },
   { value: 'Specialist', label: 'Nurses trained in airway care' },
@@ -28,7 +28,7 @@ const CARE_AREAS = [
     icon: ShieldCheckIcon,
     title: 'Airway suctioning',
     body:
-      'Tracheostomy patients cannot always clear their own secretions. Our nurses perform sterile suctioning at the right frequency to keep the airway clear and breathing comfortable — a skilled, time-sensitive task.',
+      'Tracheostomy patients cannot always clear their own secretions. Our nurses perform sterile suctioning at the right frequency to keep the airway clear and breathing comfortable, a skilled, time-sensitive task.',
   },
   {
     icon: SparklesIcon,
@@ -46,7 +46,7 @@ const CARE_AREAS = [
     icon: ClockIcon,
     title: 'Respiratory monitoring',
     body:
-      'We watch breathing rate, oxygen saturation and signs of distress or blockage. Early recognition of a problem with an artificial airway can be lifesaving — which is why trained eyes matter.',
+      'We watch breathing rate, oxygen saturation and signs of distress or blockage. Early recognition of a problem with an artificial airway can be lifesaving, which is why trained eyes matter.',
   },
 ] as const
 
@@ -54,13 +54,13 @@ const INCLUDED = [
   'Sterile airway suctioning at the prescribed frequency',
   'Tracheostomy tube and inner-cannula cleaning and care',
   'Aseptic stoma-site dressing and skin protection',
-  'Respiratory monitoring — rate, SpO₂ and signs of distress',
+  'Respiratory monitoring, rate, SpO₂ and signs of distress',
   'Humidification and secretion management support',
   'Family training and a daily clinical log for your doctor',
 ] as const
 
 const SAFETY = [
-  'A tracheostomy is an artificial airway — a blockage is a medical emergency that needs a trained responder.',
+  'A tracheostomy is an artificial airway, a blockage is a medical emergency that needs a trained responder.',
   'Sterile suctioning technique is the single biggest factor in preventing airway infections.',
   'Skilled stoma and tube hygiene prevents the skin breakdown and infection that complicate recovery.',
   'Continuous respiratory monitoring catches breathing trouble in its earliest, most treatable stage.',
@@ -70,7 +70,7 @@ const FAQS = [
   {
     question: 'What does tracheostomy care at home in Bangalore include?',
     answer:
-      'It covers sterile airway suctioning, tracheostomy tube and inner-cannula cleaning, aseptic stoma-site dressing, respiratory monitoring, humidification and secretion management — all performed by nurses trained specifically in airway care, with a daily clinical log.',
+      'It covers sterile airway suctioning, tracheostomy tube and inner-cannula cleaning, aseptic stoma-site dressing, respiratory monitoring, humidification and secretion management, all performed by nurses trained specifically in airway care, with a daily clinical log.',
   },
   {
     question: 'Is it safe to manage a tracheostomy at home?',
@@ -80,7 +80,7 @@ const FAQS = [
   {
     question: 'How much does tracheostomy care cost at home in Bangalore?',
     answer:
-      `Tracheostomy care at home in Bangalore starts at ${formatPriceWithNote('tracheostomy-care').toLowerCase()}. Because airway care often needs extended or round-the-clock cover, the total depends on the hours required — a consultation gives you a precise estimate for your situation.`,
+      `Tracheostomy care at home in Bangalore starts at ${formatPriceWithNote('tracheostomy-care').toLowerCase()}. Because airway care often needs extended or round-the-clock cover, the total depends on the hours required, a consultation gives you a precise estimate for your situation.`,
   },
   {
     question: 'Can you provide 24-hour tracheostomy care?',
@@ -90,12 +90,12 @@ const FAQS = [
   {
     question: 'Are the nurses specifically trained for airway care?',
     answer:
-      'Yes. Tracheostomy care requires specialist skill, so we match only nurses with verified GNM/B.Sc qualifications and demonstrated competence in suctioning, tube care and respiratory monitoring. This is not general nursing — it requires specific airway training.',
+      'Yes. Tracheostomy care requires specialist skill, so we match only nurses with verified GNM/B.Sc qualifications and demonstrated competence in suctioning, tube care and respiratory monitoring. This is not general nursing, it requires specific airway training.',
   },
   {
     question: 'Will the nurse teach our family how to help?',
     answer:
-      'Where appropriate, yes. We train willing family members in basic suctioning, hygiene and — most importantly — recognising the warning signs of a blocked or displaced tube, so there is always someone confident at the bedside between nursing hours.',
+      'Where appropriate, yes. We train willing family members in basic suctioning, hygiene and, most importantly, recognising the warning signs of a blocked or displaced tube, so there is always someone confident at the bedside between nursing hours.',
   },
 ] as const
 
@@ -110,7 +110,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Tracheostomy Care at Home, Bangalore',
+    name: 'EzyHelpers, Tracheostomy Care at Home, Bangalore',
     medicalSpecialty: 'Nursing',
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -134,7 +134,7 @@ export default function TracheostomyCareView() {
       eyebrow="Bangalore · Tracheostomy care at home"
       headlineLead="A clear airway,"
       headlineAccent="cared for with skill."
-      lede="Tracheostomy care at home in Bangalore — sterile suctioning, tube and stoma hygiene, and respiratory monitoring by nurses trained specifically in airway care, with extended cover available."
+      lede="Tracheostomy care at home in Bangalore, sterile suctioning, tube and stoma hygiene, and respiratory monitoring by nurses trained specifically in airway care, with extended cover available."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -156,7 +156,7 @@ export default function TracheostomyCareView() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Tracheostomy care at home in Bangalore needs{' '}
-            <em className="italic text-care-500">specialist airway nursing</em> — sterile suctioning,
+            <em className="italic text-care-500">specialist airway nursing</em>, sterile suctioning,
             tube and stoma hygiene, and constant respiratory monitoring. With trained nurses and the
             right setup, a tracheostomy patient can recover safely at home, not on a ward.
           </p>

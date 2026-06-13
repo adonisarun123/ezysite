@@ -36,16 +36,16 @@ const CONDITION_INFO: ConditionInfo = {
     },
     {
       stat: 'Rises with age',
-      detail: 'Dementia risk climbs steeply after 65 — affecting roughly 1 in 10 people in that age group globally.',
+      detail: 'Dementia risk climbs steeply after 65, affecting roughly 1 in 10 people in that age group globally.',
     },
   ],
   causes: [
-    'Alzheimer’s disease — by far the most common cause',
+    'Alzheimer’s disease, by far the most common cause',
     'Vascular dementia after strokes or years of uncontrolled blood pressure',
     'Lewy body disease and Parkinson’s-related dementia',
     'Head injuries, including repeated falls in later life',
     'Long-term heavy alcohol use',
-    'Some infections and deficiencies affecting the brain — a few causes are reversible, so diagnosis matters',
+    'Some infections and deficiencies affecting the brain, a few causes are reversible, so diagnosis matters',
   ],
   symptoms: [
     'Repeating the same question or story within minutes',
@@ -53,12 +53,12 @@ const CONDITION_INFO: ConditionInfo = {
     'Confusion about familiar streets, dates or festivals',
     'Searching for common words mid-sentence',
     'Losing interest in prayer, friends or favourite TV serials',
-    'New suspicion — accusing family of hiding or stealing things',
+    'New suspicion, accusing family of hiding or stealing things',
     'Money and medicine mistakes from someone who was always careful',
     'Looking unkempt in someone who took pride in their appearance',
   ],
   whenYouNeedCare: [
-    'They have wandered or got lost — even once is the signal',
+    'They have wandered or got lost, even once is the signal',
     'Evenings bring agitation or restlessness the family can no longer settle',
     'Daily bathing, dressing or toileting now needs another pair of hands',
     'Medicines and gas safety can no longer be left unsupervised',
@@ -67,10 +67,10 @@ const CONDITION_INFO: ConditionInfo = {
   ],
 }
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
-  { value: '3 stages', label: 'matched care — early, moderate, advanced' },
+  { value: '3 stages', label: 'matched care, early, moderate, advanced' },
   { value: '24/7', label: 'live-in cover available for wandering & sundowning' },
   { value: 'Same-day', label: 'placement attempts for urgent situations' },
 ] as const
@@ -83,9 +83,9 @@ const SECTIONS = [
     lede:
       'Dementia care should follow function, not the date of diagnosis. We re-match the caregiver as the condition changes.',
     bullets: [
-      'Early stage — companionship, routine and gentle memory prompts to preserve independence',
-      'Moderate stage — sundowning management, safe bathing, and wandering supervision',
-      'Advanced stage — full live-in attendant care with feeding, mobility and dignity support',
+      'Early stage, companionship, routine and gentle memory prompts to preserve independence',
+      'Moderate stage, sundowning management, safe bathing, and wandering supervision',
+      'Advanced stage, full live-in attendant care with feeding, mobility and dignity support',
       'Free re-assessment whenever the stage changes',
     ],
   },
@@ -96,11 +96,11 @@ const SECTIONS = [
     lede:
       'The behaviours that make families feel they can’t cope alone are exactly what our dementia caregivers are matched on.',
     bullets: [
-      'Sundowning — calming evening routines that reduce late-day agitation',
-      'Wandering — safe supervision, door awareness and gentle redirection',
-      'Repetitive questions — patient, consistent reassurance every time',
-      'Bathing & dressing resistance — dignity-first, fear-aware approaches',
-      'Sleep disturbance — night-time routines that restore rest',
+      'Sundowning, calming evening routines that reduce late-day agitation',
+      'Wandering, safe supervision, door awareness and gentle redirection',
+      'Repetitive questions, patient, consistent reassurance every time',
+      'Bathing & dressing resistance, dignity-first, fear-aware approaches',
+      'Sleep disturbance, night-time routines that restore rest',
     ],
   },
   {
@@ -124,7 +124,7 @@ const SECTIONS = [
       'The hardest part of dementia care is often the toll on the spouse and adult children carrying it.',
     bullets: [
       'Scheduled respite hours so family members can rest and work',
-      'Daily WhatsApp updates — ideal for NRI and distant family',
+      'Daily WhatsApp updates, ideal for NRI and distant family',
       'Mood and behaviour log shared with your family doctor',
       'Free replacement caregiver if the match isn’t working',
     ],
@@ -135,7 +135,7 @@ const FAQS = [
   {
     question: 'Is a regular caretaker enough for dementia care, or do we need a specialist?',
     answer:
-      'Early-stage dementia can often be supported by an experienced caretaker familiar with cognitive decline. For moderate-to-advanced stages — with sundowning, wandering or aggression — you need a caregiver trained in dementia-specific behaviour management. In Bangalore, we match accordingly and re-match as the condition progresses.',
+      'Early-stage dementia can often be supported by an experienced caretaker familiar with cognitive decline. For moderate-to-advanced stages, with sundowning, wandering or aggression, you need a caregiver trained in dementia-specific behaviour management. In Bangalore, we match accordingly and re-match as the condition progresses.',
   },
   {
     question: 'How do I know which stage of dementia my parent is in?',
@@ -150,12 +150,12 @@ const FAQS = [
   {
     question: 'What does dementia care at home cost in Bangalore?',
     answer:
-      'Cost depends on the stage and intensity of care needed — day shifts and companionship hours are more affordable, while live-in and advanced-stage dementia care cost more because they need specialised, round-the-clock support. A free consultation gives you a precise, transparent estimate for your situation.',
+      'Cost depends on the stage and intensity of care needed, day shifts and companionship hours are more affordable, while live-in and advanced-stage dementia care cost more because they need specialised, round-the-clock support. A free consultation gives you a precise, transparent estimate for your situation.',
   },
   {
     question: 'Can the same caregiver continue as the dementia progresses?',
     answer:
-      'Where the caregiver has the experience for the next stage, we keep them for continuity — which matters enormously to someone with memory loss. If advanced needs require a trained attendant, we manage a smooth, briefed handover.',
+      'Where the caregiver has the experience for the next stage, we keep them for continuity, which matters enormously to someone with memory loss. If advanced needs require a trained attendant, we manage a smooth, briefed handover.',
   },
   {
     question: 'Do you cover wandering and night-time safety?',
@@ -168,7 +168,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Dementia & Alzheimer’s Care at Home, Bangalore',
+    name: 'EzyHelpers, Dementia & Alzheimer’s Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Neurology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,

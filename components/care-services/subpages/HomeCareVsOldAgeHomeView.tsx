@@ -12,8 +12,8 @@ const PATH = '/care-services/home-care-vs-old-age-home'
 const FACTORS = [
   {
     factor: 'Familiarity & emotional comfort',
-    home: 'Highest — own bed, own home, family rhythm intact',
-    facility: 'Lower — adjustment period of weeks to months',
+    home: 'Highest, own bed, own home, family rhythm intact',
+    facility: 'Lower, adjustment period of weeks to months',
     winner: 'home',
   },
   {
@@ -36,14 +36,14 @@ const FACTORS = [
   },
   {
     factor: 'Social interaction with peers',
-    home: 'Limited — depends on family & neighbours',
-    facility: 'Higher — built-in peer community',
+    home: 'Limited, depends on family & neighbours',
+    facility: 'Higher, built-in peer community',
     winner: 'facility',
   },
   {
     factor: 'Family involvement',
-    home: 'High — family is part of daily life',
-    facility: 'Visit-based — varies by frequency',
+    home: 'High, family is part of daily life',
+    facility: 'Visit-based, varies by frequency',
     winner: 'home',
   },
   {
@@ -66,14 +66,14 @@ const FACTORS = [
   },
   {
     factor: 'NRI family suitability',
-    home: 'High — daily updates, family in charge',
-    facility: 'High — independent operation',
+    home: 'High, daily updates, family in charge',
+    facility: 'High, independent operation',
     winner: 'tie',
   },
 ]
 
 const HOME_PROS = [
-  'Familiar surroundings — proven to slow dementia decline and reduce hospital readmissions',
+  'Familiar surroundings, proven to slow dementia decline and reduce hospital readmissions',
   'Family stays meaningfully involved',
   'Customised diet, routine, and language',
   'Significantly more affordable',
@@ -99,7 +99,7 @@ const FACILITY_PROS = [
 
 const FACILITY_CONS = [
   'Significantly higher cost (often 2–3× home care)',
-  'Adjustment trauma — especially in first 8–12 weeks',
+  'Adjustment trauma, especially in first 8–12 weeks',
   'Loss of familiar surroundings',
   'Standardised diet and routine',
   'Family becomes visitor rather than co-carer',
@@ -108,34 +108,34 @@ const FACILITY_CONS = [
 
 const FAQS = [
   {
-    question: 'Honestly — which is better?',
+    question: 'Honestly, which is better?',
     answer:
       'For most Indian families: home care is better when (a) the patient can be safely cared for at home, (b) someone is willing to be the family lead, and (c) the patient prefers home. A facility is better when (a) the patient has very advanced dementia with severe wandering or aggression, (b) no family member is reachable in emergencies, or (c) the patient genuinely prefers community living. We don’t have a stake in either answer.',
   },
   {
     question: 'How much more does an old age home cost?',
     answer:
-      'In Bangalore, decent assisted-living facilities run ₹35,000–₹60,000/month for shared rooms, ₹70,000–₹1,20,000+ for private rooms. Memory-care units cost more. Home care with a live-in caretaker is ₹18,000–₹30,000/month. The difference is significant — often ₹3,00,000–₹6,00,000/year.',
+      'In Bangalore, decent assisted-living facilities run ₹35,000–₹60,000/month for shared rooms, ₹70,000–₹1,20,000+ for private rooms. Memory-care units cost more. Home care with a live-in caretaker is ₹18,000–₹30,000/month. The difference is significant, often ₹3,00,000–₹6,00,000/year.',
   },
   {
-    question: 'What about hybrid options — home care with day-care visits to a senior centre?',
+    question: 'What about hybrid options, home care with day-care visits to a senior centre?',
     answer:
       'These work well in Bangalore, especially for early-to-mid stage dementia. Live-in or day-shift caregiver at home + 2–3 visits a week to a senior day-centre for peer interaction, activities, and respite. Combines the strengths of both.',
   },
   {
     question: 'Will my parent feel like a burden if we choose home care?',
     answer:
-      'Sometimes — and that feeling deserves to be addressed, not dismissed. It usually softens when the caregiver builds a real relationship and the family adjusts to the rhythm. The opposite — a parent feeling abandoned in a facility they didn’t choose — is harder to repair.',
+      'Sometimes, and that feeling deserves to be addressed, not dismissed. It usually softens when the caregiver builds a real relationship and the family adjusts to the rhythm. The opposite, a parent feeling abandoned in a facility they didn’t choose, is harder to repair.',
   },
   {
     question: 'How do we know if the patient is too advanced for home care?',
     answer:
-      'Two signs: (1) the patient is wandering with intent to leave the home regularly despite locked doors and supervision, or (2) the family is no longer coping despite a trained attendant. Either is a valid reason to consider a facility — but most cases are manageable at home with the right caregiver.',
+      'Two signs: (1) the patient is wandering with intent to leave the home regularly despite locked doors and supervision, or (2) the family is no longer coping despite a trained attendant. Either is a valid reason to consider a facility, but most cases are manageable at home with the right caregiver.',
   },
   {
     question: 'Can EzyHelpers help us evaluate facilities too?',
     answer:
-      'We don’t place patients in facilities — that’s outside our service. But we can have an honest conversation about whether home care is realistic in your situation, and we’ll tell you when we think a facility is the better choice.',
+      'We don’t place patients in facilities, that’s outside our service. But we can have an honest conversation about whether home care is realistic in your situation, and we’ll tell you when we think a facility is the better choice.',
   },
 ] as const
 
@@ -168,7 +168,7 @@ export default function HomeCareVsOldAgeHomeView() {
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Home care is right for <em className="italic text-care-500">most Indian families</em> — it’s
+            Home care is right for <em className="italic text-care-500">most Indian families</em>, it’s
             cheaper, it preserves familiar surroundings, and it keeps family meaningfully involved. An old
             age home is right when the patient has very advanced dementia, no family is reachable in
             emergencies, or the family genuinely cannot cope despite trained help. We do home care, and
@@ -315,7 +315,7 @@ export default function HomeCareVsOldAgeHomeView() {
       <CareSubpageClosingCTA
         headlineLead="A 5-minute call"
         headlineAccent="decides this clearly."
-        body="Tell us your situation. We’ll be honest — even if home care isn’t the right answer for you."
+        body="Tell us your situation. We’ll be honest, even if home care isn’t the right answer for you."
         enquirySource={PATH}
         related={[
           { label: 'Elderly Care Services', href: '/care-services/elderly-care-services-bangalore' },

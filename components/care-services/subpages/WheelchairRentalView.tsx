@@ -116,7 +116,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'Wheelchair Rental, Bangalore — EzyHelpers',
+    name: 'Wheelchair Rental, Bangalore, EzyHelpers',
     description: nested.description,
     brand: { '@type': 'Brand', name: 'EzyHelpers' },
     areaServed: { '@type': 'City', name: 'Bangalore' },
@@ -204,7 +204,7 @@ export default function WheelchairRentalView() {
       <CareSubpageClosingCTA
         headlineLead="Mobility back,"
         headlineAccent="independence restored."
-        body="Tell us the patient’s needs and we’ll recommend the right wheelchair — sanitised, adjusted and delivered the same day across Bangalore."
+        body="Tell us the patient’s needs and we’ll recommend the right wheelchair, sanitised, adjusted and delivered the same day across Bangalore."
         enquirySource={PATH}
         primaryCtaLabel="Get a wheelchair today"
         related={[

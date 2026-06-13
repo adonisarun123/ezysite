@@ -35,7 +35,7 @@ const ROWS: Row[] = [
   { capability: 'Feeding, meal prep, swallow safety', nurse: 'sometimes', caretaker: 'yes', attendant: 'yes' },
   { capability: 'Mobility, walking, light exercise', nurse: 'sometimes', caretaker: 'yes', attendant: 'yes' },
   { capability: 'Companionship & emotional support', nurse: 'sometimes', caretaker: 'yes', attendant: 'yes' },
-  { capability: 'Safe transfers (bed–chair, chair–toilet)', nurse: 'sometimes', caretaker: 'sometimes', attendant: 'yes' },
+  { capability: 'Safe transfers (bed, chair, chair, toilet)', nurse: 'sometimes', caretaker: 'sometimes', attendant: 'yes' },
   { capability: 'Repositioning & pressure-sore prevention', nurse: 'sometimes', caretaker: 'sometimes', attendant: 'yes' },
   { capability: 'Bedridden patient handling', nurse: 'sometimes', caretaker: 'no', attendant: 'yes' },
 ]
@@ -70,7 +70,7 @@ const SCENARIOS: Scenario[] = [
   {
     setup: 'Aunt, 78, bedridden after stroke, has a feeding tube.',
     answer: 'Trained attendant (live-in)',
-    why: 'Skilled physical handling — repositioning, feeding tube, transfers. A general caretaker isn’t equipped; a nurse is rarely needed daily.',
+    why: 'Skilled physical handling, repositioning, feeding tube, transfers. A general caretaker isn’t equipped; a nurse is rarely needed daily.',
     href: '/care-services/trained-attendant-services-bangalore',
     accent: 'sand',
   },
@@ -122,14 +122,14 @@ const COSTS = [
 
 const FAQS = [
   {
-    question: 'In one sentence — what’s the difference?',
+    question: 'In one sentence, what’s the difference?',
     answer:
       'A nurse handles medical procedures, a caretaker handles daily living, and a trained attendant handles physical patient handling. Most families need a caretaker; a smaller number need a nurse; a few need both.',
   },
   {
     question: 'How do I know which one I actually need?',
     answer:
-      'Use this rule: if the doctor’s discharge summary mentions wounds, IV, catheter, tube feed, or chest tube — you need a nurse, at least for visits. If the patient is mostly stable but needs daily help — you need a caretaker. If the patient is bedridden or post-stroke with significant physical handling needs — you need a trained attendant.',
+      'Use this rule: if the doctor’s discharge summary mentions wounds, IV, catheter, tube feed, or chest tube, you need a nurse, at least for visits. If the patient is mostly stable but needs daily help, you need a caretaker. If the patient is bedridden or post-stroke with significant physical handling needs, you need a trained attendant.',
   },
   {
     question: 'Can a caretaker give injections or change a wound dressing?',
@@ -139,22 +139,22 @@ const FAQS = [
   {
     question: 'Is a nurse always more qualified than a caretaker?',
     answer:
-      'For medical procedures, yes — a nurse is trained and licensed. For daily living, mobility, swallow safety, dementia handling, and emotional companionship, an experienced caretaker is often better. Different work, different skills.',
+      'For medical procedures, yes, a nurse is trained and licensed. For daily living, mobility, swallow safety, dementia handling, and emotional companionship, an experienced caretaker is often better. Different work, different skills.',
   },
   {
     question: 'Can I save money with a caretaker plus weekly nurse visits?',
     answer:
-      'Often, yes — and it’s our most common arrangement. A live-in caretaker (~₹22,000/mo) plus three nurse visits a week (~₹2,400–₹3,600/week) can deliver excellent care for ~30–40% less than a live-in nurse.',
+      'Often, yes, and it’s our most common arrangement. A live-in caretaker (~₹22,000/mo) plus three nurse visits a week (~₹2,400–₹3,600/week) can deliver excellent care for ~30–40% less than a live-in nurse.',
   },
   {
     question: 'What if my parent’s needs change midway?',
     answer:
-      'They almost always do. We adjust placements as the situation evolves — adding nurse visits, swapping a caretaker for a trained attendant, or stepping down to a day shift as recovery progresses. There’s no penalty for changing.',
+      'They almost always do. We adjust placements as the situation evolves, adding nurse visits, swapping a caretaker for a trained attendant, or stepping down to a day shift as recovery progresses. There’s no penalty for changing.',
   },
   {
     question: 'Do you guarantee the right match the first time?',
     answer:
-      'We do our best, but care is human work — sometimes the chemistry isn’t right, or the situation reveals new needs. If the placement isn’t working, we offer a free replacement, no questions asked, and most families settle within the first or second placement.',
+      'We do our best, but care is human work, sometimes the chemistry isn’t right, or the situation reveals new needs. If the placement isn’t working, we offer a free replacement, no questions asked, and most families settle within the first or second placement.',
   },
 ] as const
 
@@ -162,7 +162,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: 'Home Nurse vs Caretaker — Which Do I Need?',
+    headline: 'Home Nurse vs Caretaker, Which Do I Need?',
     author: { '@type': 'Organization', name: 'EzyHelpers' },
     publisher: { '@type': 'Organization', name: 'EzyHelpers' },
     mainEntityOfPage: `https://www.ezyhelpers.com${PATH}`,
@@ -207,7 +207,7 @@ export default function NurseVsCaretakerView() {
       eyebrow="Bangalore · Decision guide"
       headlineLead="Nurse, caretaker, or both?"
       headlineAccent="A 3-minute answer."
-      lede="Most families overspend or underspend in the first two weeks because nobody explains the difference. This is the difference — clearly, honestly, with examples."
+      lede="Most families overspend or underspend in the first two weeks because nobody explains the difference. This is the difference, clearly, honestly, with examples."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -218,12 +218,12 @@ export default function NurseVsCaretakerView() {
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">The rule, in one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Hire a <em className="italic text-care-500">nurse</em> when there are clinical procedures —
+            Hire a <em className="italic text-care-500">nurse</em> when there are clinical procedures, 
             wounds, IV, catheters, tube feeds, chest tubes, vitals you can’t miss. Hire a{' '}
-            <em className="italic text-care-500">caretaker</em> when daily living needs help — hygiene,
+            <em className="italic text-care-500">caretaker</em> when daily living needs help, hygiene,
             meals, mobility, medication reminders, companionship. Hire a{' '}
             <em className="italic text-care-500">trained attendant</em> when there’s skilled physical
-            handling — bedridden, post-stroke, repositioning. Many families need a combination, and that’s
+            handling, bedridden, post-stroke, repositioning. Many families need a combination, and that’s
             usually the most cost-effective answer.
           </p>
         </div>
@@ -273,7 +273,7 @@ export default function NurseVsCaretakerView() {
               {
                 role: 'Trained attendant',
                 tag: 'Physical handling',
-                desc: 'Skilled in safe transfers, repositioning, pressure-sore prevention — the work bedridden and post-stroke patients need.',
+                desc: 'Skilled in safe transfers, repositioning, pressure-sore prevention, the work bedridden and post-stroke patients need.',
                 bullets: [
                   'Bedridden patient management',
                   'Pressure-sore prevention',
@@ -351,7 +351,7 @@ export default function NurseVsCaretakerView() {
             eyebrow="Capability comparison"
             titleLead="What each role"
             titleMuted="can and cannot do."
-            lede="The honest version of the table — including where roles overlap, and where they don’t."
+            lede="The honest version of the table, including where roles overlap, and where they don’t."
           />
           <div className="mt-12 overflow-hidden rounded-[24px] border border-neutral-200 bg-white">
             <table className="w-full text-left text-sm">
@@ -391,7 +391,7 @@ export default function NurseVsCaretakerView() {
             eyebrow="Real situations"
             titleLead="Six scenarios,"
             titleMuted="six clear answers."
-            lede="If your situation looks like one of these, you’re probably looking at the right answer next to it. If it doesn’t — call us. We’ll work it through with you."
+            lede="If your situation looks like one of these, you’re probably looking at the right answer next to it. If it doesn’t, call us. We’ll work it through with you."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-2">
             {SCENARIOS.map((s) => (
@@ -479,7 +479,7 @@ export default function NurseVsCaretakerView() {
       <CareSubpageClosingCTA
         headlineLead="Still not sure?"
         headlineAccent="A 5-minute call decides it."
-        body="Tell us the situation. We’ll recommend the right role — nurse, caretaker, attendant, or a combination — and start the matching process the same day."
+        body="Tell us the situation. We’ll recommend the right role, nurse, caretaker, attendant, or a combination, and start the matching process the same day."
         enquirySource={PATH}
         primaryCtaLabel="Talk to a care advisor"
         related={[

@@ -35,34 +35,34 @@ const CONDITION_INFO: ConditionInfo = {
   vitalStats: [
     {
       stat: '~1.8 million',
-      detail: 'India sees an estimated 1.8 million strokes every year — among the country’s leading causes of death and disability.',
+      detail: 'India sees an estimated 1.8 million strokes every year, among the country’s leading causes of death and disability.',
     },
     {
       stat: '~25%',
-      detail: 'A stroke survivor has roughly a 1-in-4 chance of another stroke within five years — which is why home care includes recurrence vigilance.',
+      detail: 'A stroke survivor has roughly a 1-in-4 chance of another stroke within five years, which is why home care includes recurrence vigilance.',
     },
     {
       stat: '1 in 3',
-      detail: 'Around a third of stroke survivors experience post-stroke depression — often missed unless someone is watching daily.',
+      detail: 'Around a third of stroke survivors experience post-stroke depression, often missed unless someone is watching daily.',
     },
   ],
   causes: [
-    'High blood pressure — the single biggest modifiable risk factor',
+    'High blood pressure, the single biggest modifiable risk factor',
     'Diabetes and high cholesterol damaging blood vessels over time',
     'Atrial fibrillation and other heart-rhythm problems that send clots to the brain',
     'Smoking and heavy alcohol use',
     'Obesity, inactivity and chronic kidney disease',
-    'A previous stroke or TIA (mini-stroke) — the strongest warning of the next one',
+    'A previous stroke or TIA (mini-stroke), the strongest warning of the next one',
   ],
   symptoms: [
-    'Sudden weakness or numbness of the face, arm or leg — usually one side',
-    'Facial drooping — an uneven smile is the classic sign',
+    'Sudden weakness or numbness of the face, arm or leg, usually one side',
+    'Facial drooping, an uneven smile is the classic sign',
     'Slurred speech or trouble finding words',
     'Sudden confusion or difficulty understanding what others say',
     'Sudden loss or blurring of vision in one or both eyes',
     'Sudden dizziness, loss of balance or trouble walking',
     'A sudden, severe headache with no known cause',
-    'Remember B.E.F.A.S.T — Balance, Eyes, Face, Arm, Speech, Time to call an ambulance',
+    'Remember B.E.F.A.S.T, Balance, Eyes, Face, Arm, Speech, Time to call an ambulance',
   ],
   whenYouNeedCare: [
     'Discharge is approaching and no one at home can manage transfers, feeding and medicines',
@@ -93,7 +93,7 @@ const PHASES = [
     n: '03',
     title: 'Sub-acute (month 4–6)',
     body:
-      'Strength and confidence-building. Caregivers help maintain therapy gains, expand mobility, and watch for late-onset depression — which affects nearly a third of stroke survivors and is often missed.',
+      'Strength and confidence-building. Caregivers help maintain therapy gains, expand mobility, and watch for late-onset depression, which affects nearly a third of stroke survivors and is often missed.',
     tone: 'sage',
   },
   {
@@ -152,22 +152,22 @@ const FAQS = [
   {
     question: 'How soon after discharge should home care start?',
     answer:
-      'Ideally on the day of discharge — the first 48 hours carry the highest risk of falls, missed medication, and aspiration. We attempt same-day placement when discharge dates are confirmed in advance, and within 24 hours otherwise.',
+      'Ideally on the day of discharge, the first 48 hours carry the highest risk of falls, missed medication, and aspiration. We attempt same-day placement when discharge dates are confirmed in advance, and within 24 hours otherwise.',
   },
   {
     question: 'Is a nurse or a caretaker the right fit for stroke recovery?',
     answer:
-      'It depends on the medical complexity. A trained caretaker handles repositioning, feeding, mobility, speech practice and routine BP/glucose checks — adequate for most uncomplicated recoveries. A nurse is needed if there are tracheostomy care, IV antibiotics, complex wound care, or unstable vitals. Many families combine: a caretaker live-in plus weekly nurse visits.',
+      'It depends on the medical complexity. A trained caretaker handles repositioning, feeding, mobility, speech practice and routine BP/glucose checks, adequate for most uncomplicated recoveries. A nurse is needed if there are tracheostomy care, IV antibiotics, complex wound care, or unstable vitals. Many families combine: a caretaker live-in plus weekly nurse visits.',
   },
   {
     question: 'What does a typical stroke caregiver do in a day?',
     answer:
-      'A consistent schedule — morning hygiene with safe transfers, breakfast in upright position, prescribed exercises and physiotherapy support, BP/glucose log, light activities to engage cognition, lunch, rest, evening walk if mobility allows, dinner, medication, and night-time positioning. The day is built around the recovery plan, not the caregiver’s convenience.',
+      'A consistent schedule, morning hygiene with safe transfers, breakfast in upright position, prescribed exercises and physiotherapy support, BP/glucose log, light activities to engage cognition, lunch, rest, evening walk if mobility allows, dinner, medication, and night-time positioning. The day is built around the recovery plan, not the caregiver’s convenience.',
   },
   {
     question: 'Do you provide caregivers trained in stroke-specific protocols?',
     answer:
-      'Yes. We match caregivers who have managed a hemiplegic patient in the last 12 months and can demonstrate safe transfer technique. For higher-complexity cases — bedridden, tube-fed, or with significant aphasia — we place a Trained Attendant rather than a general caretaker.',
+      'Yes. We match caregivers who have managed a hemiplegic patient in the last 12 months and can demonstrate safe transfer technique. For higher-complexity cases, bedridden, tube-fed, or with significant aphasia, we place a Trained Attendant rather than a general caretaker.',
   },
   {
     question: 'How long do families typically need stroke home care?',
@@ -182,7 +182,7 @@ const FAQS = [
   {
     question: 'Can the same caregiver continue once recovery stabilises?',
     answer:
-      'Yes — and continuity matters in stroke recovery. The caregiver who learns the patient’s routine, communication patterns, and warning signs in month one is far more effective in month four. We strongly encourage continuity placements.',
+      'Yes, and continuity matters in stroke recovery. The caregiver who learns the patient’s routine, communication patterns, and warning signs in month one is far more effective in month four. We strongly encourage continuity placements.',
   },
 ] as const
 
@@ -190,7 +190,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Stroke Care at Home, Bangalore',
+    name: 'EzyHelpers, Stroke Care at Home, Bangalore',
     medicalSpecialty: ['Neurology', 'Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -214,7 +214,7 @@ export default function StrokeCareView() {
       eyebrow="Bangalore · Post-stroke recovery"
       headlineLead="Stroke recovery, brought home."
       headlineAccent="Day by day. Step by step."
-      lede="Recovery from a stroke is a season, not a single event. We place caregivers who have walked alongside families through it before — matched to the recovery stage, not just the diagnosis."
+      lede="Recovery from a stroke is a season, not a single event. We place caregivers who have walked alongside families through it before, matched to the recovery stage, not just the diagnosis."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -228,7 +228,7 @@ export default function StrokeCareView() {
             Stroke care at home in Bangalore should be matched to the recovery <em className="italic text-care-500">stage</em>.
             The first two weeks are about safety and complications. The next ten are when most recovery
             actually happens. After that, care is about continuity, mood, and preventing recurrence.
-            EzyHelpers places caregivers with stage-appropriate experience — and adjusts the plan as the
+            EzyHelpers places caregivers with stage-appropriate experience, and adjusts the plan as the
             patient progresses.
           </p>
         </div>
@@ -245,7 +245,7 @@ export default function StrokeCareView() {
             eyebrow="Stages of recovery"
             titleLead="Care that adapts"
             titleMuted="as recovery progresses."
-            lede="A stroke caregiver in week one is doing very different work from a caregiver in month six. We change the placement plan to match — and often the caregiver level itself."
+            lede="A stroke caregiver in week one is doing very different work from a caregiver in month six. We change the placement plan to match, and often the caregiver level itself."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2">
             {PHASES.map((p) => (
@@ -271,7 +271,7 @@ export default function StrokeCareView() {
             eyebrow="What’s included"
             titleLead="The day-to-day"
             titleMuted="of post-stroke care."
-            lede="A trained stroke caregiver covers the daily fundamentals — and watches, quietly, for the things that go wrong if no one is paying attention."
+            lede="A trained stroke caregiver covers the daily fundamentals, and watches, quietly, for the things that go wrong if no one is paying attention."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {DAILY_CARE.map(({ icon: Icon, t, d }) => (
@@ -298,7 +298,7 @@ export default function StrokeCareView() {
               <SectionHeader
                 eyebrow="Stroke recurrence"
                 titleLead="Eight signs"
-                titleMuted="that need a hospital — now."
+                titleMuted="that need a hospital, now."
                 lede="A stroke survivor has roughly a 25% chance of a recurrence within five years. Caregivers we place are taught to recognise these signs and call emergency services without waiting."
               />
             </div>
@@ -329,7 +329,7 @@ export default function StrokeCareView() {
             eyebrow="Why matching matters"
             titleLead="What a stroke-experienced caregiver"
             titleMuted="actually looks like."
-            lede="Stroke recovery work is unforgiving of inexperience. We don’t place general caretakers on stroke cases — these are the things we verify before we shortlist."
+            lede="Stroke recovery work is unforgiving of inexperience. We don’t place general caretakers on stroke cases, these are the things we verify before we shortlist."
             align="center"
           />
           <ul className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">

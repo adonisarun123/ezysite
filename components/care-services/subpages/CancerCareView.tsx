@@ -68,7 +68,7 @@ const SUPPORT = [
     icon: HandRaisedIcon,
     title: 'Port & PICC line support',
     body:
-      'Daily observation for redness or discharge, dressing care between nurse visits, escalation if anything looks wrong — minor complications caught early.',
+      'Daily observation for redness or discharge, dressing care between nurse visits, escalation if anything looks wrong, minor complications caught early.',
   },
   {
     icon: SparklesIcon,
@@ -87,7 +87,7 @@ const FAQS = [
   {
     question: 'Can the caregiver give chemo at home?',
     answer:
-      'No — home chemotherapy administration requires a registered oncology nurse and physician oversight. We coordinate with home-chemo providers (where prescribed) but don’t provide chemo administration ourselves. Our caregivers handle everything around it.',
+      'No, home chemotherapy administration requires a registered oncology nurse and physician oversight. We coordinate with home-chemo providers (where prescribed) but don’t provide chemo administration ourselves. Our caregivers handle everything around it.',
   },
   {
     question: 'How do you protect immunocompromised patients during treatment?',
@@ -97,7 +97,7 @@ const FAQS = [
   {
     question: 'Is palliative care included?',
     answer:
-      'Yes. We place trained attendants experienced in palliative and end-of-life care — calm, patient, dignity-first. Coordinated with the palliative care team where one is engaged.',
+      'Yes. We place trained attendants experienced in palliative and end-of-life care, calm, patient, dignity-first. Coordinated with the palliative care team where one is engaged.',
   },
   {
     question: 'What does cancer home care cost in Bangalore?',
@@ -115,7 +115,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Cancer & Oncology Home Care, Bangalore',
+    name: 'EzyHelpers, Cancer & Oncology Home Care, Bangalore',
     medicalSpecialty: ['Oncology', 'Palliative care'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -139,7 +139,7 @@ export default function CancerCareView() {
       eyebrow="Bangalore · Oncology home care"
       headlineLead="Cancer care, at home."
       headlineAccent="Through every cycle."
-      lede="Caregivers experienced in oncology — through chemo, between cycles, and the long months in between. Compassion, not just competence."
+      lede="Caregivers experienced in oncology, through chemo, between cycles, and the long months in between. Compassion, not just competence."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -164,7 +164,7 @@ export default function CancerCareView() {
             eyebrow="Phases of care"
             titleLead="Care that adapts"
             titleMuted="to where you are in treatment."
-            lede="Active treatment, recovery between cycles, long-term maintenance, and palliative — different needs, different placements."
+            lede="Active treatment, recovery between cycles, long-term maintenance, and palliative, different needs, different placements."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {PHASES.map((p) => (

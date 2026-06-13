@@ -59,7 +59,7 @@ const TRUST_RIBBON = [
 const COMPARISON = [
   {
     label: 'Cost',
-    home: 'Typically lower than a prolonged hospital ICU stay — you pay for care and equipment, not bed, admission and ancillary hospital charges.',
+    home: 'Typically lower than a prolonged hospital ICU stay, you pay for care and equipment, not bed, admission and ancillary hospital charges.',
     hospital: 'High daily ICU bed charges, plus consumables, admission and incidental costs that accumulate quickly over long stays.',
     advantage: 'home',
   },
@@ -117,7 +117,7 @@ const SETUP_STEPS = [
   {
     n: '02',
     title: 'Install & equip',
-    body: 'Hospital-grade equipment is delivered, installed and tested at home — bed, ventilator, monitor, suction and oxygen — to clinical standards.',
+    body: 'Hospital-grade equipment is delivered, installed and tested at home, bed, ventilator, monitor, suction and oxygen, to clinical standards.',
     icon: HomeModernIcon,
   },
   {
@@ -129,12 +129,12 @@ const SETUP_STEPS = [
   {
     n: '04',
     title: 'Monitor & review',
-    body: 'Vitals are monitored 24/7 with daily logs, doctor reviews and family updates — with a clear plan for any escalation.',
+    body: 'Vitals are monitored 24/7 with daily logs, doctor reviews and family updates, with a clear plan for any escalation.',
     icon: CheckCircleIcon,
   },
 ] as const
 
-/* Illustrative testimonials — flagged as representative examples, not verified reviews. */
+/* Illustrative testimonials, flagged as representative examples, not verified reviews. */
 const TESTIMONIALS = [
   {
     quote:
@@ -160,7 +160,7 @@ const FAQS = [
   {
     question: 'Is ICU care at home actually safe?',
     answer:
-      'For stable, planned cases it can be very safe. We use hospital-grade equipment, critical-care trained nurses and doctor-supervised protocols, with 24/7 monitoring and a defined escalation pathway to a partner hospital. The first step is always a clinical assessment to confirm the case is suitable for home care. This is informational guidance, not medical advice — the final decision is made with your treating doctor.',
+      'For stable, planned cases it can be very safe. We use hospital-grade equipment, critical-care trained nurses and doctor-supervised protocols, with 24/7 monitoring and a defined escalation pathway to a partner hospital. The first step is always a clinical assessment to confirm the case is suitable for home care. This is informational guidance, not medical advice, the final decision is made with your treating doctor.',
   },
   {
     question: 'Is there doctor oversight, or only nurses?',
@@ -175,7 +175,7 @@ const FAQS = [
   {
     question: 'What happens in an emergency?',
     answer:
-      'Every setup has a defined emergency pathway agreed up front: thresholds for escalation, the nurse-to-doctor protocol, and a coordinated route to a partner hospital with an ambulance if the patient needs to be moved. Home ICU is best suited to stable cases — for highly unstable, acute emergencies, a hospital ICU remains the right place.',
+      'Every setup has a defined emergency pathway agreed up front: thresholds for escalation, the nurse-to-doctor protocol, and a coordinated route to a partner hospital with an ambulance if the patient needs to be moved. Home ICU is best suited to stable cases, for highly unstable, acute emergencies, a hospital ICU remains the right place.',
   },
   {
     question: 'How quickly can you set up an ICU at home?',
@@ -185,7 +185,7 @@ const FAQS = [
   {
     question: 'Who is critical care at home suitable for?',
     answer:
-      'It suits patients who need ongoing intensive monitoring or support but are clinically stable — for example ventilator-dependent patients, post-ICU step-down recovery, tracheostomy care, and continuous cardiac monitoring after a cardiac event. Suitability is always confirmed by the assessing doctor in coordination with your treating team.',
+      'It suits patients who need ongoing intensive monitoring or support but are clinically stable, for example ventilator-dependent patients, post-ICU step-down recovery, tracheostomy care, and continuous cardiac monitoring after a cardiac event. Suitability is always confirmed by the assessing doctor in coordination with your treating team.',
   },
 ] as const
 
@@ -193,7 +193,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Critical Care (ICU) at Home, Bangalore',
+    name: 'EzyHelpers, Critical Care (ICU) at Home, Bangalore',
     medicalSpecialty: ['Intensive Care', 'Critical Care'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -334,7 +334,7 @@ export default function CriticalCareAtHomeView() {
               into the patient&rsquo;s own room. EzyHelpers installs{' '}
               <em className="italic text-care-600">hospital-grade equipment</em>, places{' '}
               <em className="italic text-care-600">critical-care trained nurses</em> on round-the-clock shifts,
-              and runs everything under <em className="italic text-care-600">doctor supervision</em> — with a
+              and runs everything under <em className="italic text-care-600">doctor supervision</em>, with a
               clear escalation plan. It is designed for clinically stable patients who need intensive support, so
               recovery happens in a calmer, more familiar place, with family close by.
             </p>
@@ -462,7 +462,7 @@ export default function CriticalCareAtHomeView() {
                 <span className="text-neutral-400">handled end to end.</span>
               </h2>
               <p className="mt-5 text-base leading-relaxed text-neutral-600 sm:text-lg">
-                A complete home ICU is a system — the right machines, the right people, and the protocols that tie
+                A complete home ICU is a system, the right machines, the right people, and the protocols that tie
                 them together. We provide all three.
               </p>
             </div>

@@ -66,7 +66,7 @@ const FAQS = [
   {
     question: 'How much cheaper is day shift than live-in?',
     answer:
-      'A 12-hour day shift typically costs ₹22,000–₹32,000/month, vs ₹18,000–₹26,000/month for live-in. Live-in is often cheaper because the caregiver lives at the home (no daily commute, no overtime). Day shift becomes cheaper only when family members can cover the other hours — otherwise you’re paying for two shifts.',
+      'A 12-hour day shift typically costs ₹22,000–₹32,000/month, vs ₹18,000–₹26,000/month for live-in. Live-in is often cheaper because the caregiver lives at the home (no daily commute, no overtime). Day shift becomes cheaper only when family members can cover the other hours, otherwise you’re paying for two shifts.',
   },
   {
     question: 'Can I switch from live-in to day shift later?',
@@ -76,22 +76,22 @@ const FAQS = [
   {
     question: 'What does "live-in" actually mean for the caregiver?',
     answer:
-      'Live-in caregivers stay at the home with one weekly off-day (typically Sunday) and one daily rest period of 2 hours (typically afternoon). Family provides meals, a bed, and basic toiletries. They’re present 24×7 but not awake 24×7 — sleep is part of the arrangement.',
+      'Live-in caregivers stay at the home with one weekly off-day (typically Sunday) and one daily rest period of 2 hours (typically afternoon). Family provides meals, a bed, and basic toiletries. They’re present 24×7 but not awake 24×7, sleep is part of the arrangement.',
   },
   {
     question: 'Can a live-in caregiver wake up at night for the patient?',
     answer:
-      'Yes — for medication, toileting, or emergencies. Live-in caregivers are expected to respond to night-time needs. For patients who genuinely need active care every 1–2 hours all night (advanced dementia, bedridden with frequent repositioning), two caregivers in alternating 12-hour shifts is more sustainable.',
+      'Yes, for medication, toileting, or emergencies. Live-in caregivers are expected to respond to night-time needs. For patients who genuinely need active care every 1–2 hours all night (advanced dementia, bedridden with frequent repositioning), two caregivers in alternating 12-hour shifts is more sustainable.',
   },
   {
     question: 'Is night shift available alone?',
     answer:
-      'Yes. Some families need only night cover — when the patient sleeps poorly, has dementia-driven night agitation, or when the family caregiver needs to sleep. Night shifts run ₹1,000–₹1,400/day in Bangalore.',
+      'Yes. Some families need only night cover, when the patient sleeps poorly, has dementia-driven night agitation, or when the family caregiver needs to sleep. Night shifts run ₹1,000–₹1,400/day in Bangalore.',
   },
   {
     question: 'How do live-in caregivers get their off-day?',
     answer:
-      'One full day off per week, typically Sunday. The family arranges cover during this time — either through us (substitute caregiver), a family member, or a nearby relative. We can include the off-day cover in the placement plan if needed.',
+      'One full day off per week, typically Sunday. The family arranges cover during this time, either through us (substitute caregiver), a family member, or a nearby relative. We can include the off-day cover in the placement plan if needed.',
   },
 ] as const
 
@@ -125,9 +125,9 @@ export default function LiveInVsDayShiftView() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             <em className="italic text-care-500">Live-in</em> is the right choice when the patient cannot
-            be alone — alone-living seniors, recent post-discharge, advanced dementia, or bedridden care.{' '}
+            be alone, alone-living seniors, recent post-discharge, advanced dementia, or bedridden care.{' '}
             <em className="italic text-care-500">Day shift</em> is right when family is available the rest
-            of the time — working couples sharing care, a spouse covering nights, or recovery from a minor
+            of the time, working couples sharing care, a spouse covering nights, or recovery from a minor
             surgery.
           </p>
         </div>

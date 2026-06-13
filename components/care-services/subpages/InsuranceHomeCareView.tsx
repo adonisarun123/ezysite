@@ -19,7 +19,7 @@ const INSURERS = [
   },
   {
     name: 'Star Health',
-    coverage: 'Home Care benefit in Senior Citizens Red Carpet, Family Health Optima, and Star Health Comprehensive — daily limits apply.',
+    coverage: 'Home Care benefit in Senior Citizens Red Carpet, Family Health Optima, and Star Health Comprehensive, daily limits apply.',
     notes: 'Often capped at ₹3,000–₹5,000/day. Pre-authorisation mandatory.',
     rating: 'Moderate',
   },
@@ -92,7 +92,7 @@ const STEPS = [
   {
     n: '4',
     title: 'Maintain documentation',
-    body: 'Daily nursing log, medication records, treatment notes — all needed at claim submission. Without these, claims are routinely rejected.',
+    body: 'Daily nursing log, medication records, treatment notes, all needed at claim submission. Without these, claims are routinely rejected.',
   },
 ] as const
 
@@ -110,7 +110,7 @@ const FAQS = [
   {
     question: 'Is cashless billing available for home nursing?',
     answer:
-      'Only if EzyHelpers (or your nursing provider) is empanelled with your insurer’s network. We can check. Otherwise, you pay first and claim reimbursement — claim approval typically takes 30–45 days.',
+      'Only if EzyHelpers (or your nursing provider) is empanelled with your insurer’s network. We can check. Otherwise, you pay first and claim reimbursement, claim approval typically takes 30–45 days.',
   },
   {
     question: 'How much does insurance typically cover for home nursing?',
@@ -120,17 +120,17 @@ const FAQS = [
   {
     question: 'Can I claim for a stroke or post-surgery placement?',
     answer:
-      'Often yes — these are clear medical needs. The placement must include skilled nursing tasks (vitals, wound care, medication administration), be prescribed by a doctor, and be documented daily. Companionship-only post-stroke placements typically aren’t covered.',
+      'Often yes, these are clear medical needs. The placement must include skilled nursing tasks (vitals, wound care, medication administration), be prescribed by a doctor, and be documented daily. Companionship-only post-stroke placements typically aren’t covered.',
   },
   {
     question: 'Will EzyHelpers help me with the claim paperwork?',
     answer:
-      'Yes. We provide daily nursing logs, treatment summaries, and prescription copies on request — the documentation insurers ask for. We don’t directly handle claim filing but can guide you to a TPA or insurance advisor who does.',
+      'Yes. We provide daily nursing logs, treatment summaries, and prescription copies on request, the documentation insurers ask for. We don’t directly handle claim filing but can guide you to a TPA or insurance advisor who does.',
   },
   {
     question: 'Are there any insurers that cover non-medical home care?',
     answer:
-      'Almost none in standard Indian health insurance. Some senior-specific top-up plans (e.g. specific Star Senior variants, certain corporate group plans) include limited home care benefits — read the wordings carefully or have us review with your TPA.',
+      'Almost none in standard Indian health insurance. Some senior-specific top-up plans (e.g. specific Star Senior variants, certain corporate group plans) include limited home care benefits, read the wordings carefully or have us review with your TPA.',
   },
 ] as const
 
@@ -153,7 +153,7 @@ export default function InsuranceHomeCareView() {
       eyebrow="Bangalore · Insurance guide"
       headlineLead="Will your insurance"
       headlineAccent="cover home care?"
-      lede="An honest guide to how major Indian health insurers handle home nursing — what qualifies, what doesn’t, and how to claim without surprises."
+      lede="An honest guide to how major Indian health insurers handle home nursing, what qualifies, what doesn’t, and how to claim without surprises."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -164,7 +164,7 @@ export default function InsuranceHomeCareView() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1F8A4C]">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Indian health insurance typically covers <em className="italic text-[#1F8A4C]">skilled home nursing</em>{' '}
-            — IV, wound care, post-surgical monitoring — under "domiciliary hospitalisation" clauses, with
+, IV, wound care, post-surgical monitoring, under "domiciliary hospitalisation" clauses, with
             doctor certification and pre-authorisation. It almost never covers caretaker or companion
             services. The amount varies by plan, often 5–10% of sum insured per year.
           </p>
@@ -178,7 +178,7 @@ export default function InsuranceHomeCareView() {
             eyebrow="Major insurers"
             titleLead="What each insurer"
             titleMuted="actually covers."
-            lede="Plan-level details vary. Read your specific policy wordings or call your TPA — but this is roughly where each company stands."
+            lede="Plan-level details vary. Read your specific policy wordings or call your TPA, but this is roughly where each company stands."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-2">
             {INSURERS.map((i) => (

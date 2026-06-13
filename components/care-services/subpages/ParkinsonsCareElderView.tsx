@@ -33,7 +33,7 @@ const CONDITION_INFO: ConditionInfo = {
     },
     {
       stat: '~7 per 100,000',
-      detail: 'Prevalence in India is estimated at about 7 or more per 100,000 — and it rises steeply in seniors past 60.',
+      detail: 'Prevalence in India is estimated at about 7 or more per 100,000, and it rises steeply in seniors past 60.',
     },
     {
       stat: '60+',
@@ -42,7 +42,7 @@ const CONDITION_INFO: ConditionInfo = {
   ],
   causes: [
     'Gradual loss of dopamine-producing cells in the brain',
-    'Age — the strongest known risk factor, especially beyond 60',
+    'Age, the strongest known risk factor, especially beyond 60',
     'Family history and genetics, in a smaller share of cases',
     'Long-term pesticide or chemical exposure in some occupations',
     'A history of repeated head injuries',
@@ -60,7 +60,7 @@ const CONDITION_INFO: ConditionInfo = {
   ],
   whenYouNeedCare: [
     'Tablet times are slipping, and stiffness or tremor is worse on missed-dose days',
-    'A recent fall — or near-misses while getting up from bed or the toilet',
+    'A recent fall, or near-misses while getting up from bed or the toilet',
     'Freezing at doorways or while turning, with no one nearby to help',
     'Meals, bathing and dressing now need daily hands-on assistance',
     'Coughing during meals or trouble swallowing tablets and water',
@@ -68,7 +68,7 @@ const CONDITION_INFO: ConditionInfo = {
   ],
 }
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
   { value: 'On-time', label: 'medication timing, which is critical in Parkinson’s' },
@@ -135,12 +135,12 @@ const FAQS = [
   {
     question: 'Why is medication timing so important in Parkinson’s care?',
     answer:
-      'Parkinson’s medication works within narrow time windows, and even small delays can cause symptoms to worsen — more tremor, stiffness and “off” periods. Our caregivers keep doses strictly on time and track them, which keeps symptoms steadier throughout the day.',
+      'Parkinson’s medication works within narrow time windows, and even small delays can cause symptoms to worsen, more tremor, stiffness and “off” periods. Our caregivers keep doses strictly on time and track them, which keeps symptoms steadier throughout the day.',
   },
   {
     question: 'How do caregivers help with tremors and mobility?',
     answer:
-      'They provide patient, tremor-aware assistance with walking, transfers and balance, stay alert to freezing and unsteady gait to prevent falls, and help with eating, dressing and grooming when tremor makes these difficult — always at the senior’s pace.',
+      'They provide patient, tremor-aware assistance with walking, transfers and balance, stay alert to freezing and unsteady gait to prevent falls, and help with eating, dressing and grooming when tremor makes these difficult, always at the senior’s pace.',
   },
   {
     question: 'What does Parkinson’s care at home cost in Bangalore?',
@@ -168,7 +168,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Parkinson’s Care at Home, Bangalore',
+    name: 'EzyHelpers, Parkinson’s Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Neurology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -192,7 +192,7 @@ export default function ParkinsonsCareElderView() {
       eyebrow="Bangalore · Parkinson’s care at home"
       headlineLead="Parkinson’s care that keeps"
       headlineAccent="every good day steady."
-      lede={SERVICE.tagline + ' Caregivers trained in on-time medication, tremor-aware assistance and daily routine — so your loved one stays as independent and comfortable as possible.'}
+      lede={SERVICE.tagline + ' Caregivers trained in on-time medication, tremor-aware assistance and daily routine, so your loved one stays as independent and comfortable as possible.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}

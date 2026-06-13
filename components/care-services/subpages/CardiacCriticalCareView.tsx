@@ -54,7 +54,7 @@ const FAQS = [
   {
     question: 'Can cardiac patients be monitored safely at home?',
     answer:
-      'Yes — for clinically stable patients, continuous cardiac monitoring at home is delivered by critical-care nurses under cardiologist supervision, with a clear escalation pathway. Suitability is always confirmed by your treating doctor. This is general information, not medical advice.',
+      'Yes, for clinically stable patients, continuous cardiac monitoring at home is delivered by critical-care nurses under cardiologist supervision, with a clear escalation pathway. Suitability is always confirmed by your treating doctor. This is general information, not medical advice.',
   },
   {
     question: 'What kind of monitoring is provided?',
@@ -87,7 +87,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Cardiac Critical Care at Home, Bangalore',
+    name: 'EzyHelpers, Cardiac Critical Care at Home, Bangalore',
     medicalSpecialty: ['Critical Care', 'Cardiology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -111,7 +111,7 @@ export default function CardiacCriticalCareView() {
       eyebrow="Bangalore · Critical care at home"
       headlineLead="Cardiac critical care,"
       headlineAccent="watched around the clock."
-      lede="Continuous cardiac monitoring, medication management and post-cardiac-event support at home — by critical-care nurses under cardiologist supervision, with a clear plan for any emergency."
+      lede="Continuous cardiac monitoring, medication management and post-cardiac-event support at home, by critical-care nurses under cardiologist supervision, with a clear plan for any emergency."
       enquirySource={PATH}
       jsonLd={JSONLD}
     >

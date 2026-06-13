@@ -54,7 +54,7 @@ const FAQS = [
   {
     question: 'Can a real ICU be set up at home?',
     answer:
-      'Yes — for clinically stable patients, a home ICU replicates the equipment, staffing and protocols of a hospital ICU. We install hospital-grade machines, place critical-care nurses on 24/7 shifts and run everything under doctor supervision. Suitability is confirmed by your doctor first. This is general information, not medical advice.',
+      'Yes, for clinically stable patients, a home ICU replicates the equipment, staffing and protocols of a hospital ICU. We install hospital-grade machines, place critical-care nurses on 24/7 shifts and run everything under doctor supervision. Suitability is confirmed by your doctor first. This is general information, not medical advice.',
   },
   {
     question: 'What equipment is included in a home ICU?',
@@ -87,7 +87,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — ICU Setup at Home, Bangalore',
+    name: 'EzyHelpers, ICU Setup at Home, Bangalore',
     medicalSpecialty: ['Intensive Care', 'Critical Care'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -111,7 +111,7 @@ export default function IcuSetupAtHomeView() {
       eyebrow="Bangalore · Critical care at home"
       headlineLead="A complete ICU,"
       headlineAccent="installed in your home."
-      lede="Beds, monitors, ventilators, suction and trained staff — installed and managed to hospital protocols. A full intensive-care environment at home, supervised by a doctor and staffed by critical-care nurses."
+      lede="Beds, monitors, ventilators, suction and trained staff, installed and managed to hospital protocols. A full intensive-care environment at home, supervised by a doctor and staffed by critical-care nurses."
       enquirySource={PATH}
       jsonLd={JSONLD}
     >
@@ -158,7 +158,7 @@ export default function IcuSetupAtHomeView() {
       <CareSubpageClosingCTA
         headlineLead="Need an ICU at home, fast?"
         headlineAccent="We’ll have it ready."
-        body="Speak to a critical-care advisor. We assess the case, install hospital-grade equipment and place critical-care nurses — often before discharge."
+        body="Speak to a critical-care advisor. We assess the case, install hospital-grade equipment and place critical-care nurses, often before discharge."
         enquirySource={PATH}
         primaryCtaLabel="Speak to a critical-care advisor"
         related={[

@@ -87,7 +87,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Ventilator Care at Home, Bangalore',
+    name: 'EzyHelpers, Ventilator Care at Home, Bangalore',
     medicalSpecialty: ['Critical Care', 'Pulmonology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -111,7 +111,7 @@ export default function VentilatorCareView() {
       eyebrow="Bangalore · Critical care at home"
       headlineLead="Ventilator care at home,"
       headlineAccent="managed by experts."
-      lede="Invasive and non-invasive ventilation, set up safely in your home and run round the clock by critical-care nurses under doctor supervision — with continuous monitoring and a clear escalation plan."
+      lede="Invasive and non-invasive ventilation, set up safely in your home and run round the clock by critical-care nurses under doctor supervision, with continuous monitoring and a clear escalation plan."
       enquirySource={PATH}
       jsonLd={JSONLD}
     >

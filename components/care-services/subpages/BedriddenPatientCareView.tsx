@@ -23,7 +23,7 @@ const CARE_NEEDS: CareNeeds = {
   ],
 }
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
   { value: '2-hourly', label: 'repositioning to prevent pressure sores' },
@@ -37,7 +37,7 @@ const SECTIONS = [
     titleLead: 'Bedsores are preventable.',
     titleMuted: 'We treat them that way.',
     lede:
-      'For a bedridden senior, pressure-sore prevention is the single most important daily discipline — and our attendants are trained to deliver it consistently.',
+      'For a bedridden senior, pressure-sore prevention is the single most important daily discipline, and our attendants are trained to deliver it consistently.',
     bullets: [
       'Scheduled 2-hourly repositioning, day and night',
       'Air-mattress and cushion guidance for at-risk pressure points',
@@ -76,7 +76,7 @@ const SECTIONS = [
     titleLead: 'Small changes,',
     titleMuted: 'caught early.',
     lede:
-      'A trained attendant notices the early signs — a new sore, a fever, reduced intake — before they become emergencies.',
+      'A trained attendant notices the early signs, a new sore, a fever, reduced intake, before they become emergencies.',
     bullets: [
       'Daily observation of skin, intake, output and comfort',
       'Vitals tracking and prompt escalation to family or doctor',
@@ -100,7 +100,7 @@ const FAQS = [
   {
     question: 'What does bedridden patient care cost in Bangalore?',
     answer:
-      'Cost depends on the intensity of care needed — bedridden care requires trained attendants skilled in safe handling, repositioning and pressure-sore prevention, so it costs more than general caretaking. A free consultation gives you a precise, transparent estimate based on the patient’s needs.',
+      'Cost depends on the intensity of care needed, bedridden care requires trained attendants skilled in safe handling, repositioning and pressure-sore prevention, so it costs more than general caretaking. A free consultation gives you a precise, transparent estimate based on the patient’s needs.',
   },
   {
     question: 'Can the attendant manage catheter and feeding tubes?',
@@ -115,7 +115,7 @@ const FAQS = [
   {
     question: 'How quickly can you arrange a bedridden caregiver in Bangalore?',
     answer:
-      'When a suitable trained attendant is available, we attempt same-day placement — especially for hospital discharge. Across the Bangalore localities we serve, most matches are completed within 24–48 hours.',
+      'When a suitable trained attendant is available, we attempt same-day placement, especially for hospital discharge. Across the Bangalore localities we serve, most matches are completed within 24–48 hours.',
   },
 ] as const
 
@@ -123,7 +123,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Bedridden Patient Care at Home, Bangalore',
+    name: 'EzyHelpers, Bedridden Patient Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -147,7 +147,7 @@ export default function BedriddenPatientCareView() {
       eyebrow="Bangalore · High-dependency care at home"
       headlineLead="Bedridden care, done safely."
       headlineAccent="And with real dignity."
-      lede={SERVICE.tagline + ' Trained attendants for repositioning, pressure-sore prevention, hygiene, feeding and safe transfers — so your loved one stays comfortable and complication-free at home.'}
+      lede={SERVICE.tagline + ' Trained attendants for repositioning, pressure-sore prevention, hygiene, feeding and safe transfers, so your loved one stays comfortable and complication-free at home.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}

@@ -35,7 +35,7 @@ const RESPONSIBILITIES = [
     icon: UserGroupIcon,
     title: 'Family escalation point',
     body:
-      'For situations the family wants reviewed by a senior clinician — whether the caregiver is right, whether the level of care is right — the call comes here.',
+      'For situations the family wants reviewed by a senior clinician, whether the caregiver is right, whether the level of care is right, the call comes here.',
   },
   {
     icon: HeartIcon,
@@ -47,7 +47,7 @@ const RESPONSIBILITIES = [
 
 const PHILOSOPHY = [
   '“Match the caregiver to the patient, not the patient to the caregiver who’s available.”',
-  '“Family stays in charge. We give you better information and the right person — you make the call.”',
+  '“Family stays in charge. We give you better information and the right person, you make the call.”',
   '“Care is human work. Listening is half of it.”',
   '“If we wouldn’t place this caregiver with our own mother, we don’t place them.”',
 ] as const
@@ -95,7 +95,7 @@ export default function CareLeadershipView() {
       eyebrow="Editorial · Clinical reviewer"
       headlineLead="The clinician behind"
       headlineAccent="every care page on this site."
-      lede="Care work — and the words used to describe it — should answer to a real, named, qualified person. This is ours."
+      lede="Care work, and the words used to describe it, should answer to a real, named, qualified person. This is ours."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
     >

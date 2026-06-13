@@ -41,7 +41,7 @@ export default function RelatedPosts({ currentPostId, max = 3 }: RelatedPostsPro
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">Related Guides</h2>
           <p className="text-lg text-gray-600 font-medium">
-            Keep reading — more expert guides on hiring trusted home help
+            More guides on hiring trusted home help
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">

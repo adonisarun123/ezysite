@@ -64,7 +64,7 @@ const TRUST_RIBBON: { icon: ComponentType<SVGProps<SVGSVGElement>>; title: strin
 
 /* ── Rent vs Buy comparison ── */
 const RENT_POINTS = [
-  'Lower upfront cost — ideal for short recovery periods',
+  'Lower upfront cost, ideal for short recovery periods',
   'No long-term storage or resale headache afterwards',
   'Free servicing, breakdown replacement and pickup included',
   'Upgrade or swap models as the patient’s needs change',
@@ -73,7 +73,7 @@ const RENT_POINTS = [
 
 const BUY_POINTS = [
   'Most cost-effective for long-term or permanent needs',
-  'Equipment is yours — available any time, no return date',
+  'Equipment is yours, available any time, no return date',
   'Brand-new and certified pre-owned options available',
   'Warranty plus optional annual maintenance contracts',
   'Best for chronic conditions and indefinite home-care setups',
@@ -89,7 +89,7 @@ const STEPS: { mark: string; title: string; body: string }[] = [
   {
     mark: '02',
     title: 'Sanitised & dispatched',
-    body: 'Your equipment is inspected, sanitised to hospital standards and dispatched — often the same day — to your address anywhere in Bangalore.',
+    body: 'Your equipment is inspected, sanitised to hospital standards and dispatched, often the same day, to your address anywhere in Bangalore.',
   },
   {
     mark: '03',
@@ -108,7 +108,7 @@ const WHY: { icon: ComponentType<SVGProps<SVGSVGElement>>; title: string; body: 
   {
     icon: SparklesIcon,
     title: 'Hospital-grade sanitisation',
-    body: 'Every machine, bed and aid is deep-cleaned and disinfected before it reaches your home — the same hygiene standards a hospital would expect.',
+    body: 'Every machine, bed and aid is deep-cleaned and disinfected before it reaches your home, the same hygiene standards a hospital would expect.',
   },
   {
     icon: WrenchScrewdriverIcon,
@@ -118,12 +118,12 @@ const WHY: { icon: ComponentType<SVGProps<SVGSVGElement>>; title: string; body: 
   {
     icon: MapPinIcon,
     title: 'Delivery across 16+ localities',
-    body: 'From Whitefield and Indiranagar to Jayanagar, HSR, Electronic City and beyond — fast doorstep delivery across Bangalore neighbourhoods.',
+    body: 'From Whitefield and Indiranagar to Jayanagar, HSR, Electronic City and beyond, fast doorstep delivery across Bangalore neighbourhoods.',
   },
   {
     icon: ShieldCheckIcon,
     title: 'Genuine, certified equipment',
-    body: 'Only quality-checked, hospital-grade devices from trusted brands — no worn-out or uncertified machines, whether you rent or buy.',
+    body: 'Only quality-checked, hospital-grade devices from trusted brands, no worn-out or uncertified machines, whether you rent or buy.',
   },
   {
     icon: CurrencyRupeeIcon,
@@ -133,7 +133,7 @@ const WHY: { icon: ComponentType<SVGProps<SVGSVGElement>>; title: string; body: 
   {
     icon: ClockIcon,
     title: 'Round-the-clock support',
-    body: 'A 24/7 helpline for setup questions, breakdowns and urgent replacements — because medical needs don’t wait for office hours.',
+    body: 'A 24/7 helpline for setup questions, breakdowns and urgent replacements, because medical needs don’t wait for office hours.',
   },
 ]
 
@@ -163,7 +163,7 @@ const FAQS = [
   {
     question: 'Do I need to pay a deposit to rent medical equipment in Bangalore?',
     answer:
-      'Yes, most rentals carry a refundable security deposit that depends on the equipment value — for example, beds and concentrators carry a higher deposit than walkers or commodes. The deposit is fully refunded when you return the equipment in working condition at the end of your rental.',
+      'Yes, most rentals carry a refundable security deposit that depends on the equipment value, for example, beds and concentrators carry a higher deposit than walkers or commodes. The deposit is fully refunded when you return the equipment in working condition at the end of your rental.',
   },
   {
     question: 'How fast can you deliver equipment to my home?',
@@ -196,7 +196,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Medical Equipment Rental & Purchase, Bangalore',
+    name: 'EzyHelpers, Medical Equipment Rental & Purchase, Bangalore',
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
     telephone: '+91-80-31411776',
@@ -272,7 +272,7 @@ export default function MedicalEquipmentView() {
               </h1>
               <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
                 {pillar.tagline} Rent or buy hospital beds, oxygen concentrators, wheelchairs,
-                monitors and respiratory machines — sanitised, set up and serviced at home.
+                monitors and respiratory machines, sanitised, set up and serviced at home.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -361,7 +361,7 @@ export default function MedicalEquipmentView() {
             <p className="mt-6 text-lg leading-relaxed text-neutral-600">
               When a loved one comes home from hospital, the last thing a family should worry about is
               sourcing equipment. EzyHelpers delivers, installs, sanitises and services the full range of
-              home medical equipment across Bangalore — so you can focus on recovery, not logistics.
+              home medical equipment across Bangalore, so you can focus on recovery, not logistics.
               Choose rental for short-term needs or purchase for the long term.
             </p>
           </div>
@@ -424,7 +424,7 @@ export default function MedicalEquipmentView() {
                 Rent for now, <span className="text-neutral-400">or buy for the long run.</span>
               </h2>
               <p className="mt-4 text-base text-neutral-600 sm:text-lg">
-                There’s no single right answer — it depends on how long you need the equipment. Here’s the
+                There’s no single right answer, it depends on how long you need the equipment. Here’s the
                 honest breakdown our advisors use.
               </p>
             </div>
@@ -474,7 +474,7 @@ export default function MedicalEquipmentView() {
             </div>
 
             <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-neutral-500">
-              Not sure which is cheaper for your situation? Call us — we’ll do the maths with you and
+              Not sure which is cheaper for your situation? Call us, we’ll do the maths with you and
               recommend whichever costs less.
             </p>
           </div>
@@ -487,7 +487,7 @@ export default function MedicalEquipmentView() {
               Delivery & installation
             </p>
             <h2 className="mt-3 max-w-3xl font-careSerif text-[clamp(1.75rem,4vw,2.65rem)] font-medium leading-tight tracking-tight text-neutral-950">
-              From your call to a fully set-up home — in four steps.
+              From your call to a fully set-up home, in four steps.
             </h2>
 
             <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">

@@ -77,7 +77,7 @@ export default function CareCallbackFloat() {
             careType,
             patientSummary: 'Quick call-back request from floating widget',
             urgency: '24-48h',
-            notes: 'Visitor used the quick "Request a Call Back" widget — call them back, details not yet collected.',
+            notes: 'Visitor used the quick "Request a Call Back" widget, call them back, details not yet collected.',
             sourceUrl: typeof window !== 'undefined' ? window.location.href.split('#')[0] : undefined,
           },
           sourceUrl: typeof window !== 'undefined' ? window.location.href.split('#')[0] : undefined,
@@ -151,7 +151,7 @@ export default function CareCallbackFloat() {
               {fieldError && <p role="alert" className="text-xs text-red-600">{fieldError}</p>}
               {status === 'error' && (
                 <p role="alert" className="text-xs text-red-600">
-                  Couldn&rsquo;t send — please call 080-31411776 instead.
+                  Couldn&rsquo;t send, please call 080-31411776 instead.
                 </p>
               )}
               <button

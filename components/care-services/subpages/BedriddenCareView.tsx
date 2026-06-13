@@ -34,7 +34,7 @@ const CONDITION_INFO: ConditionInfo = {
   vitalStats: [
     {
       stat: 'Up to 1 in 3',
-      detail: 'Pressure ulcers can develop in up to a third of immobile patients when regular repositioning is not maintained — and most are preventable.',
+      detail: 'Pressure ulcers can develop in up to a third of immobile patients when regular repositioning is not maintained, and most are preventable.',
     },
     {
       stat: '2 hours',
@@ -42,7 +42,7 @@ const CONDITION_INFO: ConditionInfo = {
     },
     {
       stat: 'Days, not weeks',
-      detail: 'Muscle loss, stiff joints and skin breakdown can begin within days of becoming bedbound — early protocol matters.',
+      detail: 'Muscle loss, stiff joints and skin breakdown can begin within days of becoming bedbound, early protocol matters.',
     },
   ],
   causes: [
@@ -58,13 +58,13 @@ const CONDITION_INFO: ConditionInfo = {
     'Skin that feels warm, boggy or broken at pressure points',
     'Joints becoming stiff and harder to straighten (early contractures)',
     'Eating and drinking less, with gradual weight loss',
-    'Coughing or gurgling during meals — a swallowing-safety warning',
+    'Coughing or gurgling during meals, a swallowing-safety warning',
     'Fewer wet diapers or dark urine, suggesting dehydration',
     'New drowsiness, confusion or low-grade fever',
     'Low mood, silence or saying they feel like a burden',
   ],
   whenYouNeedCare: [
-    'Night-time turning isn’t happening — no family member can sustain a 2-hour schedule',
+    'Night-time turning isn’t happening, no family member can sustain a 2-hour schedule',
     'A red or broken patch of skin has already appeared at a pressure point',
     'Lifting and transferring the patient is straining (or injuring) family members',
     'Incontinence care is needed several times a day and dignity is suffering',
@@ -78,7 +78,7 @@ const PROTOCOL = [
     icon: ClockIcon,
     title: 'Repositioning every 2 hours',
     body:
-      'A simple discipline that prevents most pressure sores. Caregivers maintain a written turning schedule — no clock-skipping, even at 3am.',
+      'A simple discipline that prevents most pressure sores. Caregivers maintain a written turning schedule, no clock-skipping, even at 3am.',
   },
   {
     icon: ShieldCheckIcon,
@@ -125,9 +125,9 @@ const RED_FLAGS = [
 
 const FAQS = [
   {
-    question: 'A general caretaker vs a trained attendant — which is right for bedridden care?',
+    question: 'A general caretaker vs a trained attendant, which is right for bedridden care?',
     answer:
-      'Almost always a trained attendant. Bedridden care requires safe physical handling — repositioning, transfers, pressure-sore protocol — that general caretakers aren’t trained for. The cost difference is small (₹4,000–₹6,000/month) and the safety difference is significant.',
+      'Almost always a trained attendant. Bedridden care requires safe physical handling, repositioning, transfers, pressure-sore protocol, that general caretakers aren’t trained for. The cost difference is small (₹4,000–₹6,000/month) and the safety difference is significant.',
   },
   {
     question: 'How often should the patient be turned?',
@@ -142,7 +142,7 @@ const FAQS = [
   {
     question: 'What if a pressure sore develops despite protocol?',
     answer:
-      'It happens — bedridden skin is fragile. Stage 1 sores are managed by the trained attendant. Stage 2+ sores require a nurse for dressing. We arrange nurse visits as needed and notify the family doctor for any wound that isn’t improving in 5–7 days.',
+      'It happens, bedridden skin is fragile. Stage 1 sores are managed by the trained attendant. Stage 2+ sores require a nurse for dressing. We arrange nurse visits as needed and notify the family doctor for any wound that isn’t improving in 5–7 days.',
   },
   {
     question: 'Is hospital-grade equipment needed at home?',
@@ -152,7 +152,7 @@ const FAQS = [
   {
     question: 'How do you handle the emotional difficulty of bedridden care?',
     answer:
-      'Bedridden patients often feel like a burden. The caregiver’s tone, presence, and patience matter as much as the protocol. We screen for calmness and warmth in addition to skill — and we share family communication updates to keep distant relatives connected.',
+      'Bedridden patients often feel like a burden. The caregiver’s tone, presence, and patience matter as much as the protocol. We screen for calmness and warmth in addition to skill, and we share family communication updates to keep distant relatives connected.',
   },
   {
     question: 'What does live-in care for a bedridden patient cost in Bangalore?',
@@ -165,7 +165,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Bedridden Patient Care, Bangalore',
+    name: 'EzyHelpers, Bedridden Patient Care, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Palliative care'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -189,7 +189,7 @@ export default function BedriddenCareView() {
       eyebrow="Bangalore · High-dependency care"
       headlineLead="Bedridden, but not"
       headlineAccent="held back."
-      lede="Trained attendants for bedridden patients in Bangalore — pressure-sore prevention, dignified incontinence care, safe transfers, and the calm patience this work demands."
+      lede="Trained attendants for bedridden patients in Bangalore, pressure-sore prevention, dignified incontinence care, safe transfers, and the calm patience this work demands."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -201,8 +201,8 @@ export default function BedriddenCareView() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Bedridden patient care should be done by a <em className="italic text-care-500">trained attendant</em>,
-            not a general caretaker. The work — repositioning every two hours, twice-daily skin
-            inspection, dignified incontinence care, and safe transfers — is unforgiving of inexperience.
+            not a general caretaker. The work, repositioning every two hours, twice-daily skin
+            inspection, dignified incontinence care, and safe transfers, is unforgiving of inexperience.
             EzyHelpers places trained attendants live-in for ₹24,000–₹34,000/month.
           </p>
         </div>
@@ -248,7 +248,7 @@ export default function BedriddenCareView() {
               <SectionHeader
                 eyebrow="When to escalate"
                 titleLead="Eight signs"
-                titleMuted="that need a doctor — today."
+                titleMuted="that need a doctor, today."
                 lede="Bedridden patients deteriorate quietly. The trained attendants we place are taught to recognise these signs and act."
               />
             </div>

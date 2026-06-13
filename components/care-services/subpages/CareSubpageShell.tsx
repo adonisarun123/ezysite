@@ -29,7 +29,7 @@ type Props = {
   currentLabel: string
   /** Eyebrow above the hero headline, small caps tracking */
   eyebrow: string
-  /** Headline — the first half is bold neutral, the accent half italic rose */
+  /** Headline, the first half is bold neutral, the accent half italic rose */
   headlineLead: string
   headlineAccent: string
   /** Sub-headline / lede */
@@ -201,7 +201,7 @@ export function CareSubpageShell({
   )
 }
 
-/* ───────────────── Final CTA (warm peach gradient — re-use across pages) ───────────────── */
+/* ───────────────── Final CTA (warm peach gradient, re-use across pages) ───────────────── */
 export function CareSubpageClosingCTA({
   headlineLead,
   headlineAccent,

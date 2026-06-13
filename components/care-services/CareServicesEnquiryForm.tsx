@@ -468,7 +468,7 @@ export default function CareServicesEnquiryForm() {
         </div>
       </div>
 
-      {/* Urgency — segmented pill control */}
+      {/* Urgency, segmented pill control */}
       <fieldset>
         <legend className={LABEL_BASE}>
           When do you need support?{REQUIRED_MARK}

@@ -37,20 +37,20 @@ const CONDITION_INFO: ConditionInfo = {
     },
     {
       stat: 'A leading cause',
-      detail: 'Cancer is among the leading causes of death in India — and the need for home-based supportive care is growing with it.',
+      detail: 'Cancer is among the leading causes of death in India, and the need for home-based supportive care is growing with it.',
     },
     {
       stat: 'Any stage',
-      detail: 'WHO recommends palliative (comfort-focused) care from early in a serious illness — alongside treatment, not only at the end.',
+      detail: 'WHO recommends palliative (comfort-focused) care from early in a serious illness, alongside treatment, not only at the end.',
     },
   ],
   causes: [
-    'Tobacco in any form — the largest preventable cause of cancer in India',
+    'Tobacco in any form, the largest preventable cause of cancer in India',
     'Heavy alcohol use, especially combined with tobacco',
     'Infections such as HPV (cervical) and hepatitis B/C (liver)',
     'Diet, obesity and physical inactivity',
     'Family history and inherited gene changes in some cancers',
-    'Age — most cancers become more common after 50',
+    'Age, most cancers become more common after 50',
   ],
   symptoms: [
     'Persistent fatigue that rest doesn’t relieve',
@@ -60,14 +60,14 @@ const CONDITION_INFO: ConditionInfo = {
     'A lump, ulcer or sore that doesn’t heal',
     'Ongoing changes in bowel or bladder habits',
     'Breathlessness or a persistent cough',
-    'Low mood, anxiety or withdrawal — distress is a symptom too',
+    'Low mood, anxiety or withdrawal, distress is a symptom too',
   ],
   whenYouNeedCare: [
     'Chemotherapy or radiation cycles leave them too weak for daily routines between hospital visits',
     'Pain, nausea or appetite loss needs someone watching and reporting to the oncology team daily',
     'The patient is increasingly bed-bound and needs repositioning, hygiene and feeding support',
     'The spouse or children carrying the care are visibly exhausted or unwell',
-    'Night-time symptoms — pain, restlessness, breathlessness — leave the family sleepless and afraid',
+    'Night-time symptoms, pain, restlessness, breathlessness, leave the family sleepless and afraid',
     'Family members are in another city and want a steady, kind presence at home they can trust',
   ],
 }
@@ -83,7 +83,7 @@ const SECTIONS = [
     icon: SparklesIcon,
     title: 'What cancer palliative care at home involves',
     body:
-      'Comfort-focused support for someone living with cancer — at any stage of treatment. Our caregivers help with daily needs, gentle symptom relief and emotional steadiness, working alongside your oncology team so home stays calm and cared-for.',
+      'Comfort-focused support for someone living with cancer, at any stage of treatment. Our caregivers help with daily needs, gentle symptom relief and emotional steadiness, working alongside your oncology team so home stays calm and cared-for.',
     bullets: [
       'Help with daily routine, hygiene and rest',
       'Gentle nutrition and hydration support',
@@ -107,7 +107,7 @@ const SECTIONS = [
     icon: HeartIcon,
     title: 'Emotional and family support',
     body:
-      'A cancer diagnosis touches the whole family. Our caregivers offer a warm, listening presence for the patient, respite for tired relatives, and gentle guidance — with counselling support available when it would help.',
+      'A cancer diagnosis touches the whole family. Our caregivers offer a warm, listening presence for the patient, respite for tired relatives, and gentle guidance, with counselling support available when it would help.',
     bullets: [
       'A patient, listening companion',
       'Respite so family carers can rest',
@@ -119,7 +119,7 @@ const SECTIONS = [
     icon: HandRaisedIcon,
     title: 'Dignity, always',
     body:
-      'Every person deserves to feel respected and comfortable. We honour personal wishes, protect privacy and bring patience to every interaction — so your loved one feels cared for as a person, never as a patient alone.',
+      'Every person deserves to feel respected and comfortable. We honour personal wishes, protect privacy and bring patience to every interaction, so your loved one feels cared for as a person, never as a patient alone.',
     bullets: [
       'Respect for personal and spiritual wishes',
       'Privacy and gentleness in every task',
@@ -133,7 +133,7 @@ const FAQS = [
   {
     question: 'What is cancer palliative care at home?',
     answer:
-      'It is comfort-focused care for someone living with cancer, provided in their own home. Rather than replacing cancer treatment, it sits alongside it — easing symptoms, supporting daily life and offering emotional comfort, in coordination with your oncology team.',
+      'It is comfort-focused care for someone living with cancer, provided in their own home. Rather than replacing cancer treatment, it sits alongside it, easing symptoms, supporting daily life and offering emotional comfort, in coordination with your oncology team.',
   },
   {
     question: 'Can palliative care start during active cancer treatment?',
@@ -148,7 +148,7 @@ const FAQS = [
   {
     question: 'How do you support the family during this time?',
     answer:
-      'We offer respite hours so family carers can rest, gentle guidance on what to expect, kind daily updates for relatives, and emotional support for everyone involved — because a cancer journey is carried by the whole family.',
+      'We offer respite hours so family carers can rest, gentle guidance on what to expect, kind daily updates for relatives, and emotional support for everyone involved, because a cancer journey is carried by the whole family.',
   },
   {
     question: 'Is cancer palliative care at home available across Bangalore?',
@@ -166,7 +166,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Cancer & Oncology Palliative Care at Home, Bangalore',
+    name: 'EzyHelpers, Cancer & Oncology Palliative Care at Home, Bangalore',
     medicalSpecialty: ['Oncology', 'PalliativeCare'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -192,7 +192,7 @@ export default function CancerPalliativeCareView() {
       headlineAccent="Gently, at home."
       lede={
         SERVICE?.tagline ??
-        'Comfort-focused support for someone living with cancer — easing symptoms, steadying the heart, and standing beside your whole family.'
+        'Comfort-focused support for someone living with cancer, easing symptoms, steadying the heart, and standing beside your whole family.'
       }
       primaryCtaLabel="Talk to a care advisor"
       enquirySource={PATH}
@@ -224,7 +224,7 @@ export default function CancerPalliativeCareView() {
             eyebrow="How we help"
             titleLead="Care shaped around"
             titleMuted="comfort and dignity."
-            lede="Compassionate, comfort-focused support for someone living with cancer — at home, in coordination with your medical team."
+            lede="Compassionate, comfort-focused support for someone living with cancer, at home, in coordination with your medical team."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {SECTIONS.map(({ icon: Icon, title, body, bullets }) => (
@@ -270,7 +270,7 @@ export default function CancerPalliativeCareView() {
       <CareSubpageClosingCTA
         headlineLead="Whenever you are ready,"
         headlineAccent="we are here for your family."
-        body="Reach out for a calm, compassionate conversation about comfort care at home — with no pressure at all."
+        body="Reach out for a calm, compassionate conversation about comfort care at home, with no pressure at all."
         enquirySource={PATH}
         primaryCtaLabel="Request a compassionate consultation"
         related={[

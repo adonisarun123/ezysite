@@ -11,10 +11,10 @@ const SECTIONS = [
     eyebrow: 'Conditions treated',
     title: 'What neurological physiotherapy at home covers',
     intro:
-      'Neuro physiotherapy supports recovery and function for conditions affecting the brain, spinal cord and nerves — care that benefits hugely from being delivered patiently at home.',
+      'Neuro physiotherapy supports recovery and function for conditions affecting the brain, spinal cord and nerves, care that benefits hugely from being delivered patiently at home.',
     bullets: [
       'Stroke recovery and one-sided weakness (hemiplegia)',
-      'Parkinson’s disease — mobility, balance and rigidity',
+      'Parkinson’s disease, mobility, balance and rigidity',
       'Paralysis and partial paralysis rehabilitation',
       'Spinal cord injury function and mobility',
       'Multiple sclerosis and other progressive conditions',
@@ -32,14 +32,14 @@ const SECTIONS = [
       'Gait (walking) training, with aids where needed',
       'Strengthening of weakened muscles on the affected side',
       'Spasticity and stiffness management techniques',
-      'Functional task practice — standing, transfers, dressing',
+      'Functional task practice, standing, transfers, dressing',
     ],
   },
   {
     eyebrow: 'What a session looks like',
     title: 'Your typical neuro physiotherapy session',
     intro:
-      'Sessions are calm, patient and goal-focused — small, repeated wins build toward bigger function over time.',
+      'Sessions are calm, patient and goal-focused, small, repeated wins build toward bigger function over time.',
     bullets: [
       'A review of movement, strength and any changes since last visit',
       'Hands-on facilitation to guide correct movement',
@@ -78,7 +78,7 @@ const FAQS = [
   {
     question: 'How soon after a stroke should physiotherapy start?',
     answer:
-      'Generally, the earlier rehabilitation begins after medical stabilisation, the better the long-term outcomes — but timing must be guided by your treating doctor. Once cleared, our therapists begin gentle, structured work and progress carefully. This is general information, not medical advice.',
+      'Generally, the earlier rehabilitation begins after medical stabilisation, the better the long-term outcomes, but timing must be guided by your treating doctor. Once cleared, our therapists begin gentle, structured work and progress carefully. This is general information, not medical advice.',
   },
   {
     question: 'How long does neurological recovery take?',
@@ -93,12 +93,12 @@ const FAQS = [
   {
     question: 'Will the family need to help between sessions?',
     answer:
-      'Often, yes — and we coach you on how. Your physiotherapist shows family members safe assistance and simple exercises to practise between visits, which significantly improves outcomes in neurological recovery.',
+      'Often, yes, and we coach you on how. Your physiotherapist shows family members safe assistance and simple exercises to practise between visits, which significantly improves outcomes in neurological recovery.',
   },
   {
     question: 'Are your neuro physiotherapists specially trained?',
     answer:
-      'Yes. We match you with a BPT or MPT qualified physiotherapist experienced specifically in neurological rehabilitation, with verified credentials — not a general therapist assigned by proximity.',
+      'Yes. We match you with a BPT or MPT qualified physiotherapist experienced specifically in neurological rehabilitation, with verified credentials, not a general therapist assigned by proximity.',
   },
 ] as const
 
@@ -112,7 +112,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Neurological Physiotherapy at Home, Bangalore',
+    name: 'EzyHelpers, Neurological Physiotherapy at Home, Bangalore',
     medicalSpecialty: ['PhysicalTherapy', 'Neurology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,

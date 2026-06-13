@@ -16,7 +16,7 @@ const SLUG = 'catheter-care-at-home-bangalore'
 const PATH = `/care-services/${SLUG}`
 const service = getNestedService(SLUG)!
 
-/* heroStats — INVENTED illustrative figures for layout/AEO. Confirm before launch. */
+/* heroStats, INVENTED illustrative figures for layout/AEO. Confirm before launch. */
 const HERO_STATS = [
   { value: '4,000+', label: 'Catheter & tube procedures' },
   { value: 'Hygienic', label: 'Sterile technique, every change' },
@@ -61,7 +61,7 @@ const INCLUDED = [
 
 const WHY = [
   'Catheter-associated urinary tract infections are common and largely preventable with correct, sterile technique.',
-  'A blocked or wrongly positioned tube can be a medical emergency — trained eyes catch problems early.',
+  'A blocked or wrongly positioned tube can be a medical emergency, trained eyes catch problems early.',
   'Feeding-tube hygiene directly affects nutrition and infection risk for dependent patients.',
   'Dignified, discreet tube care preserves the patient’s comfort and self-respect at home.',
 ] as const
@@ -75,12 +75,12 @@ const FAQS = [
   {
     question: 'How often does a urinary catheter need changing?',
     answer:
-      'It depends on the catheter type and your doctor’s guidance — many indwelling catheters are changed every few weeks, but the schedule is individual. Our nurse follows the prescribed interval and changes earlier if there are signs of blockage or infection.',
+      'It depends on the catheter type and your doctor’s guidance, many indwelling catheters are changed every few weeks, but the schedule is individual. Our nurse follows the prescribed interval and changes earlier if there are signs of blockage or infection.',
   },
   {
     question: 'How much does catheter and tube care cost in Bangalore?',
     answer:
-      `Catheter and tube care at home in Bangalore starts at ${formatPriceWithNote('catheter-care').toLowerCase()}. The exact cost depends on the procedure, frequency and materials needed — a consultation gives you a precise estimate.`,
+      `Catheter and tube care at home in Bangalore starts at ${formatPriceWithNote('catheter-care').toLowerCase()}. The exact cost depends on the procedure, frequency and materials needed, a consultation gives you a precise estimate.`,
   },
   {
     question: 'Can the nurse manage Ryles or PEG tube feeding too?',
@@ -95,7 +95,7 @@ const FAQS = [
   {
     question: 'What should we watch for between nursing visits?',
     answer:
-      'The nurse will explain the warning signs for your specific tube — fever, reduced or cloudy drainage, leakage, blockage, pain, or redness at the site. If any appear, you call us and we arrange an earlier visit or advise on urgent medical care.',
+      'The nurse will explain the warning signs for your specific tube, fever, reduced or cloudy drainage, leakage, blockage, pain, or redness at the site. If any appear, you call us and we arrange an earlier visit or advise on urgent medical care.',
   },
 ] as const
 
@@ -110,7 +110,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Catheter & Tube Care at Home, Bangalore',
+    name: 'EzyHelpers, Catheter & Tube Care at Home, Bangalore',
     medicalSpecialty: 'Nursing',
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -134,7 +134,7 @@ export default function CatheterCareView() {
       eyebrow="Bangalore · Catheter & tube care at home"
       headlineLead="Catheters and tubes,"
       headlineAccent="managed hygienically."
-      lede="Hygienic urinary catheter, Ryles tube and PEG feeding-tube care at home in Bangalore — sterile changes, feeding support and infection watch by GNM/B.Sc-verified nurses, with dignity at every step."
+      lede="Hygienic urinary catheter, Ryles tube and PEG feeding-tube care at home in Bangalore, sterile changes, feeding support and infection watch by GNM/B.Sc-verified nurses, with dignity at every step."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -157,7 +157,7 @@ export default function CatheterCareView() {
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Catheter and tube care at home in Bangalore means a qualified nurse managing{' '}
             <em className="italic text-care-500">urinary catheters, Ryles tubes and PEG feeding</em>{' '}
-            with sterile technique — preventing infection and blockage while keeping the patient
+            with sterile technique, preventing infection and blockage while keeping the patient
             comfortable and dignified at home.
           </p>
         </div>

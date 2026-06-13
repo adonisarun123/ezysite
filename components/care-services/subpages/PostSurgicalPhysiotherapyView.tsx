@@ -11,7 +11,7 @@ const SECTIONS = [
     eyebrow: 'Conditions treated',
     title: 'Surgeries we support recovery from',
     intro:
-      'Post-surgical physiotherapy restores strength, movement and confidence after an operation — guided rehab that makes recovery at home safer and faster.',
+      'Post-surgical physiotherapy restores strength, movement and confidence after an operation, guided rehab that makes recovery at home safer and faster.',
     bullets: [
       'Knee replacement (TKR) and hip replacement (THR)',
       'Ligament reconstruction (ACL) and arthroscopy',
@@ -39,7 +39,7 @@ const SECTIONS = [
     eyebrow: 'What a session looks like',
     title: 'Your typical post-surgical session',
     intro:
-      'Every visit is structured around safe, steady progress — never rushing the healing tissue.',
+      'Every visit is structured around safe, steady progress, never rushing the healing tissue.',
     bullets: [
       'A check of swelling, pain, wound status and range of motion',
       'Gentle, guided movement to restore mobility',
@@ -73,12 +73,12 @@ const FAQS = [
   {
     question: 'How soon after surgery should physiotherapy start?',
     answer:
-      'For many procedures, gentle physiotherapy begins within the first few days once your surgeon clears it — early movement helps prevent stiffness and complications. Our physiotherapists work strictly within your surgeon’s guidelines. This is general information and not a substitute for your doctor’s advice.',
+      'For many procedures, gentle physiotherapy begins within the first few days once your surgeon clears it, early movement helps prevent stiffness and complications. Our physiotherapists work strictly within your surgeon’s guidelines. This is general information and not a substitute for your doctor’s advice.',
   },
   {
     question: 'Is home physiotherapy safe right after a major surgery?',
     answer:
-      'Yes, when delivered by a qualified physiotherapist following your surgeon’s protocol. Home sessions are actually safer for many patients — there’s no travel strain on healing tissue, and exercises are practised in your real environment with full one-on-one supervision.',
+      'Yes, when delivered by a qualified physiotherapist following your surgeon’s protocol. Home sessions are actually safer for many patients, there’s no travel strain on healing tissue, and exercises are practised in your real environment with full one-on-one supervision.',
   },
   {
     question: 'How long is rehabilitation after a knee or hip replacement?',
@@ -112,7 +112,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Post-Surgical Physiotherapy at Home, Bangalore',
+    name: 'EzyHelpers, Post-Surgical Physiotherapy at Home, Bangalore',
     medicalSpecialty: ['PhysicalTherapy', 'Rehabilitation'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,

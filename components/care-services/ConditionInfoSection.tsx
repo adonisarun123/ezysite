@@ -17,7 +17,7 @@ import { ChartBarIcon, MagnifyingGlassIcon, ExclamationTriangleIcon, HandRaisedI
  */
 
 export interface ConditionInfo {
-  /** e.g. "Dementia" — used in the section heading */
+  /** e.g. "Dementia", used in the section heading */
   conditionName: string
   /** 2-3 short stat lines (India/global prevalence etc.) with source names */
   vitalStats: { stat: string; detail: string }[]
@@ -108,7 +108,7 @@ export default function ConditionInfoSection({ info }: { info: ConditionInfo }) 
 
         <p className="mt-8 text-xs leading-relaxed text-neutral-400">
           This information is for general awareness, not medical advice. Always consult a qualified doctor for
-          diagnosis and treatment. EzyHelpers arranges trained caregivers and nursing support — we work alongside
+          diagnosis and treatment. EzyHelpers arranges trained caregivers and nursing support, we work alongside
           your doctor&rsquo;s plan, never in place of it.
         </p>
       </div>

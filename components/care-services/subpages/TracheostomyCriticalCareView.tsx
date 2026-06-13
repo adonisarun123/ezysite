@@ -54,7 +54,7 @@ const FAQS = [
   {
     question: 'Can tracheostomy care be done safely at home?',
     answer:
-      'Yes — for clinically stable patients, tracheostomy care is routinely delivered at home by critical-care trained nurses using sterile technique, under doctor supervision, with family training and a clear emergency plan. This is general information, not medical advice; suitability is confirmed by your treating doctor.',
+      'Yes, for clinically stable patients, tracheostomy care is routinely delivered at home by critical-care trained nurses using sterile technique, under doctor supervision, with family training and a clear emergency plan. This is general information, not medical advice; suitability is confirmed by your treating doctor.',
   },
   {
     question: 'How often does the tracheostomy tube need suctioning or changing?',
@@ -87,7 +87,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Tracheostomy Critical Care at Home, Bangalore',
+    name: 'EzyHelpers, Tracheostomy Critical Care at Home, Bangalore',
     medicalSpecialty: ['Critical Care', 'Otolaryngology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -111,7 +111,7 @@ export default function TracheostomyCriticalCareView() {
       eyebrow="Bangalore · Critical care at home"
       headlineLead="Tracheostomy care,"
       headlineAccent="with a steady, expert hand."
-      lede="Advanced airway management at home — sterile suctioning, stoma care, tube changes and respiratory monitoring by critical-care nurses, under doctor supervision, with the family trained and supported."
+      lede="Advanced airway management at home, sterile suctioning, stoma care, tube changes and respiratory monitoring by critical-care nurses, under doctor supervision, with the family trained and supported."
       enquirySource={PATH}
       jsonLd={JSONLD}
     >
@@ -158,7 +158,7 @@ export default function TracheostomyCriticalCareView() {
       <CareSubpageClosingCTA
         headlineLead="Tracheostomy care at home?"
         headlineAccent="We’ll manage it safely."
-        body="Speak to a critical-care advisor. We assess the airway needs, place experienced nurses and train your family — with a clear emergency plan in place."
+        body="Speak to a critical-care advisor. We assess the airway needs, place experienced nurses and train your family, with a clear emergency plan in place."
         enquirySource={PATH}
         primaryCtaLabel="Speak to a critical-care advisor"
         related={[

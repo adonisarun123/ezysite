@@ -11,7 +11,7 @@ const SECTIONS = [
     eyebrow: 'Conditions treated',
     title: 'What cardiac & respiratory physiotherapy covers',
     intro:
-      'This specialised physiotherapy supports the heart and lungs — improving breathing, stamina and recovery for conditions that affect how you breathe and move.',
+      'This specialised physiotherapy supports the heart and lungs, improving breathing, stamina and recovery for conditions that affect how you breathe and move.',
     bullets: [
       'COPD, asthma and chronic breathlessness',
       'Post-cardiac (bypass, angioplasty) rehabilitation',
@@ -57,7 +57,7 @@ const SECTIONS = [
       'Breathing techniques can ease symptoms quite early',
       'Stamina and exercise tolerance improve over several weeks',
       'Post-cardiac rehab is structured in careful, monitored stages',
-      'Goals focus on daily activities — stairs, walking, chores',
+      'Goals focus on daily activities, stairs, walking, chores',
       'A maintenance routine helps protect long-term lung health',
     ],
   },
@@ -73,7 +73,7 @@ const FAQS = [
   {
     question: 'Can cardiac and respiratory physiotherapy be done safely at home?',
     answer:
-      'Yes. Home is often ideal for patients with breathing or heart conditions — it reduces exposure to clinic infections and removes travel strain. Sessions are carefully paced and monitored, and your physiotherapist works within the limits set by your doctor. This is general information, not medical advice.',
+      'Yes. Home is often ideal for patients with breathing or heart conditions, it reduces exposure to clinic infections and removes travel strain. Sessions are carefully paced and monitored, and your physiotherapist works within the limits set by your doctor. This is general information, not medical advice.',
   },
   {
     question: 'How does physiotherapy help with COPD or breathlessness?',
@@ -93,7 +93,7 @@ const FAQS = [
   {
     question: 'Do you monitor the patient during exercise?',
     answer:
-      'Yes. Your physiotherapist watches effort and recovery throughout each session and adjusts activity to keep it within a safe, comfortable range — especially important for heart and lung conditions.',
+      'Yes. Your physiotherapist watches effort and recovery throughout each session and adjusts activity to keep it within a safe, comfortable range, especially important for heart and lung conditions.',
   },
   {
     question: 'Are your cardio-respiratory physiotherapists qualified?',
@@ -112,7 +112,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Cardiac & Respiratory Physiotherapy at Home, Bangalore',
+    name: 'EzyHelpers, Cardiac & Respiratory Physiotherapy at Home, Bangalore',
     medicalSpecialty: ['PhysicalTherapy', 'PulmonaryMedicine'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
