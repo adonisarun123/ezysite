@@ -7,6 +7,12 @@
 
 import dynamic from 'next/dynamic'
 
+/** Sitewide page_view + scroll_depth + service_view tracking (mounted globally). */
+const GlobalPageTracking = dynamic(() => import('./GlobalPageTracking'), {
+  ssr: false,
+  loading: () => null
+})
+
 const LLMOptimization = dynamic(() => import('./LLMOptimization'), {
   ssr: false,
   loading: () => null
@@ -59,6 +65,7 @@ const ServiceSelectorModal = dynamic(() => import('./ServiceSelector'), {
 export default function ClientOnlyWidgets() {
   return (
     <>
+      <GlobalPageTracking />
       <LLMOptimization />
       <UrgencyCTA />
       <WhatsAppFloat />

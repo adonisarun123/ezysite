@@ -120,7 +120,7 @@ export default function Navbar() {
                         alt="EzyHelpers Logo"
                         fill
                         className="object-contain"
-                        priority
+                        loading="eager"
                         sizes="40px"
                       />
                     </div>
@@ -243,7 +243,6 @@ export default function Navbar() {
                     alt="EzyHelpers Logo"
                     fill
                     className="object-contain"
-                    priority
                     sizes="32px"
                   />
                 </div>
