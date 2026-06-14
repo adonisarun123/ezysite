@@ -7,6 +7,9 @@ export const SERVED_AREAS = [
   "bellandur", "sarjapur", "hsr", "hsr layout", "koramangala",
   "electronic city", "jp nagar", "jayanagar", "whitefield",
   "marathahalli", "varthur", "bangalore", "bengaluru", "bareilly",
+  // Added Jun 2026 from chatbot_sessions demand analysis (confirmed served):
+  "yelahanka", "rajarajeshwari nagar", "rajarajeshwari", "rr nagar",
+  "banashankari", "arekere", "kammanhalli", "mahalakshmipuram",
 ];
 
 export function isServedArea(area: string): boolean {

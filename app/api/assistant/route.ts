@@ -17,6 +17,7 @@ import {
   readDailyCounter,
   kvConfigured,
 } from "@/lib/rateLimitKv";
+import { matchApprovedFaqs, logPendingFaq } from "@/lib/faqStore";
 
 export const runtime = "nodejs"; // SMTP needs the Node runtime, not edge
 
@@ -179,7 +180,9 @@ KNOWLEDGE BASE — ANSWER USING ONLY THIS INFORMATION
 
 ## AREAS SERVED
 - Bangalore full-time & part-time: Bellandur, Sarjapur Road, HSR Layout,
-  Koramangala, Electronic City, JP Nagar, Jayanagar, Whitefield, Marathahalli, Varthur.
+  Koramangala, Electronic City, JP Nagar, Jayanagar, Whitefield, Marathahalli,
+  Varthur, Yelahanka, Rajarajeshwari Nagar (RR Nagar), Banashankari, Arekere,
+  Kammanhalli, Mahalakshmipuram.
 - Bangalore live-in: anywhere in Bangalore.
 - Bareilly: yes, we serve Bareilly as well.
 
@@ -191,12 +194,66 @@ KNOWLEDGE BASE — ANSWER USING ONLY THIS INFORMATION
 - Nannies / baby care — part of our "Premium Care" offering from trained, vetted caregivers.
 - Elderly & patient care — Premium Care offering.
 - Japa / postnatal care for new mothers and newborns (duration depends on customer needs).
-- Drivers with verified, valid licences.
+- Drivers with verified, valid licences. Premium chauffeur service available for luxury cars.
+- Professional chefs (separate from everyday cooks) for daily meals, special diets, and occasions.
+- Special-needs caregivers — trained, NON-medical support for children with special needs in daily home routines.
+- Dog / pet sitters for daily pet care and home support.
 - Available part-time, full-time, or live-in.
 
 Part-time: comes for fixed tasks at set hours and leaves.
 Full-time: works a full agreed day and returns home at night.
 Live-in: stays at your home, available through the day with rest; you provide accommodation and meals.
+
+## HOME CARE & HEALTHCARE SERVICES (Bangalore)
+A dedicated home-care division provides verified nurses, trained attendants and
+caretakers for medical and elderly needs. Eight care pillars:
+1. Elder Care at Home — day or live-in elderly care, companionship, dementia &
+   Alzheimer's care, Parkinson's care, diabetes care, arthritis/joint-pain care,
+   respiratory/COPD care, post-fall mobility care, respite care, senior mental-health counselling.
+2. Home Nursing Care — wound care & dressing, IV therapy, catheter care,
+   injections & vitals monitoring, post-surgical nursing, tracheostomy care.
+3. Medical Equipment Rental & Buy — hospital beds, oxygen concentrators,
+   wheelchairs, patient monitors, BiPAP/CPAP machines, mobility aids.
+4. Physiotherapy at Home — orthopedic, neuro, post-surgical, geriatric,
+   cardio-respiratory, paediatric physiotherapy, and post-stroke speech rehab.
+5. Critical Care at Home (ICU) — ventilator care, ICU setup at home, post-ICU
+   recovery, tracheostomy critical care, cardiac critical care.
+6. Palliative Care at Home — cancer palliative care, pain & symptom management,
+   end-of-life and hospice-at-home care.
+7. Patient / Hospital-discharge care — bedridden patient care, post-surgery
+   recovery, hospital-discharge support, stroke care.
+8. Attendant services — home attendants, trained attendants, caretakers.
+- Same-day placement is often possible for care; urgency options range from same
+  day to "planning / not urgent".
+- Care caregivers are verified through the same identity/background process; a
+  separate caregiver verification process and trained-caregiver programme apply.
+- We also support NRI families managing a parent's care remotely from Bangalore.
+- PRICING: do NOT quote care prices. Care plans are customised after a free
+  consultation so the quote matches the patient's actual condition and needs.
+  If asked about cost, say plans are tailored and our care team shares a free,
+  no-obligation quote on a quick call — then capture their details.
+- Care is a medical/emotional topic: be especially gentle, never transactional.
+  Do NOT give medical advice or diagnose — our trained team and visiting nurses handle clinical decisions.
+
+## ON-DEMAND HOME SERVICES (skilled trades & cleaning)
+Beyond domestic helpers, we connect households with verified skilled professionals:
+- Electricians (wiring, lighting, EV charger setup, smart upgrades)
+- Plumbers (leaks, installations, repairs)
+- Carpenters (furniture repair, modular fittings, custom builds)
+- Painters (interior & exterior)
+- Appliance repair (refrigerators, washing machines, ACs and more)
+- AC repair & service
+- Deep cleaning / professional home cleaning
+- Pest control
+- Gardening (setup and seasonal care)
+- House shifting / relocation
+- On-demand quick household help (a Bangalore pilot, /on-demand-help) for
+  same-day short tasks like cleaning, dishwashing, kitchen tidy-up, packing &
+  light organising — currently in HSR Layout, Sarjapur Road, BTM Layout,
+  Haralur and Bellandur, with a 60-minute advance booking minimum.
+For these, capture the same lead fields (name, phone, area, the service needed
+in job_role) so our team can arrange a verified professional. Exact charges
+depend on the job — our team confirms on the call; don't quote trade prices.
 
 ## HOW HIRING WORKS
 1. Tell us your requirement (type of help, schedule, location).
@@ -215,6 +272,18 @@ You can share preferences for language, gender, experience — we match accordin
 - The household pays the helper's wages directly; the fee above is for placement.
 - Exact service fee can depend on plan and helper's salary — our team will
   share an exact, no-obligation quote on a quick call.
+
+HOW TO ANSWER PRICE QUESTIONS (important — most visitors who ask price leave):
+- Lead with VALUE before the number. In one warm line, mention what the fee buys:
+  a fully background-verified helper matched to their needs, with free
+  replacements on the 3- and 11-month plans and a 7-day cooling-off. THEN give
+  the figures plainly.
+- Frame it as an investment in a verified, guaranteed placement — not a flat
+  charge. Note the household pays the helper's wages separately.
+- Always end a price answer by moving forward: offer a free, no-obligation quote
+  tailored to their exact need on a quick callback, and ask for the next missing
+  detail (name / phone / area). Never let a price answer be a dead end.
+- Keep it to 2–3 short sentences. Don't dump the full plan table unless asked.
 
 Plans:
 | Plan            | Service period | Free replacements |
@@ -327,8 +396,14 @@ For CUSTOMERS, gather (in any natural order):
   1. Name
   2. Phone number (valid 10-digit Indian mobile starting 6/7/8/9)
   3. Area of residence (locality / neighbourhood)
-  4. Job role needed (maid / cook / nanny / elderly care / driver / japa care)
-  5. Job type (part-time / full-time / live-in)
+  4. Job role needed — domestic (maid / cook / chef / nanny / elderly care /
+     driver / japa care / special-needs caregiver / pet sitter), home care
+     (nurse / attendant / caretaker / physiotherapy / ICU-at-home / palliative /
+     equipment rental), or on-demand trade (electrician / plumber / carpenter /
+     painter / appliance or AC repair / deep cleaning / pest control / gardener /
+     house shifting). Capture whatever they need in job_role — it is free text.
+  5. Job type (part-time / full-time / live-in; for care: day shift / live-in /
+     visit-based; for trades: one-time job). Use "one-time" or the natural value.
 
 For JOB SEEKERS, gather:
   1. Name
@@ -352,8 +427,10 @@ PHONE NUMBER VALIDATION
 
 AREA VALIDATION
 - Served: Bellandur, Sarjapur Road, HSR Layout, Koramangala, Electronic City,
-  JP Nagar, Jayanagar, Whitefield, Marathahalli, Varthur (part-time/full-time),
-  anywhere in Bangalore for live-in, and Bareilly.
+  JP Nagar, Jayanagar, Whitefield, Marathahalli, Varthur, Yelahanka,
+  Rajarajeshwari Nagar (RR Nagar), Banashankari, Arekere, Kammanhalli,
+  Mahalakshmipuram (part-time/full-time), anywhere in Bangalore for live-in,
+  and Bareilly.
 - If the visitor's area is NOT served, say warmly: "We're currently expanding and
   don't serve [area] just yet, but I'd still love to take your details — our team
   will reach out as soon as we're available there!" Still collect all fields.
@@ -394,14 +471,21 @@ EXISTING CUSTOMERS & COMPLAINTS
   their details.
 
 OUT-OF-SCOPE QUESTIONS
-- Medical, legal, financial, or salary-negotiation advice: politely decline and
-  steer back. "I can't advise on that, but our team can guide you on the call."
+- Care, nursing, physiotherapy and home-repair ENQUIRIES are fully in scope —
+  help warmly and capture the lead. What stays out of scope is clinical/medical
+  ADVICE (diagnosis, dosage, treatment plans), legal, financial, or
+  salary-negotiation advice: politely decline and steer back. "I can't advise on
+  the medical side, but our trained care team will guide you on the call."
 - Helper salary/wage amounts are agreed between household and helper — don't quote
   wage figures; our team discusses on the call.
 
 FORMATTING — CRITICAL
 - This is a CHAT WIDGET, not a document. NEVER use markdown formatting.
 - NO asterisks, NO bullet points, NO numbered lists, NO headers, NO tables.
+- NEVER wrap anything in ** ** for bold — not booking references, names, prices,
+  or anything. Write a booking reference as plain text: "Your booking reference
+  is EZY-AB12CD." (no asterisks). This is the single most common formatting
+  mistake — booking confirmations must be plain text.
 - Natural conversational sentences. 1–3 short sentences per reply is ideal.
 - NEVER dump pricing tables or plan comparisons unless explicitly asked, and even
   then summarise in plain sentences.
@@ -941,6 +1025,32 @@ export async function POST(req: Request) {
       .join(" | ")
       .slice(0, 900);
 
+    // ── Reviewable FAQ injection (RAG-lite) ───────────────────────────
+    // Match the visitor's latest message against human-APPROVED FAQ answers and
+    // append them to the system context so the bot can answer in its own voice.
+    // Approved answers are facts a human signed off on — the bot may use them
+    // directly. (See lib/faqStore.ts + supabase/chatbot_faqs.sql.)
+    const lastUserMsg =
+      [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
+    let systemForRequest = SYSTEM;
+    try {
+      const faqs = await matchApprovedFaqs(lastUserMsg);
+      if (faqs.length > 0) {
+        const block = faqs
+          .map((f) => `Q: ${f.question}\nA: ${f.answer}`)
+          .join("\n\n");
+        systemForRequest =
+          SYSTEM +
+          `\n\n═══════════════════════════════════════════════════════════\n` +
+          `APPROVED FAQ ANSWERS (human-reviewed — you MAY use these directly,\n` +
+          `rephrased in your own warm voice; they extend the knowledge base):\n` +
+          `═══════════════════════════════════════════════════════════\n` +
+          block;
+      }
+    } catch {
+      /* FAQ lookup is best-effort; never block the reply */
+    }
+
     let data: { content?: ApiBlock[]; stop_reason?: string } = {};
     let bookingRef: string | null = null;
 
@@ -955,7 +1065,7 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           model: MODEL,
           max_tokens: 700, // replies are 1–3 sentences + lead JSON; cap output cost
-          system: SYSTEM,
+          system: systemForRequest,
           messages: apiMessages,
           tools: TOOLS,
         }),
@@ -1021,6 +1131,18 @@ export async function POST(req: Request) {
       .replace(/<lead>[\s\S]*$/i, "")
       .trim();
 
+    // Belt-and-suspenders: the model is told never to use markdown, but it still
+    // leaks **bold** (most often on booking refs) and stray bullets. The widget
+    // renders plain text, so strip markdown here so the visitor never sees raw
+    // asterisks/markdown artefacts. (Confirmed from chatbot_sessions, June 2026.)
+    reply = reply
+      .replace(/\*\*(.+?)\*\*/g, "$1") // **bold** -> bold
+      .replace(/(^|\s)\*(?!\s)([^*\n]+?)\*(?=\s|$)/g, "$1$2") // *italic* -> italic
+      .replace(/^\s{0,3}#{1,6}\s+/gm, "") // # headers
+      .replace(/^\s*[-*]\s+/gm, "") // - / * bullet leaders
+      .replace(/^\s*\d+\.\s+/gm, "") // 1. numbered leaders
+      .trim();
+
     let emailed = false;
     const areaServed = lead?.area ? isServedArea(lead.area) : null;
 
@@ -1064,6 +1186,15 @@ export async function POST(req: Request) {
       } catch (e) {
         console.error("Unanswered-question email failed:", e);
       }
+    }
+
+    // Queue unanswered questions into the reviewable FAQ table so a human can
+    // write an approved answer the bot will use next time. Deduped + best-effort.
+    if (lead && lead.unanswered) {
+      void logPendingFaq(
+        lead.unanswered,
+        typeof body.page === "string" ? body.page : null
+      ).catch(() => {});
     }
 
     // Log the full turn for learning & analytics (non-blocking on failure).
