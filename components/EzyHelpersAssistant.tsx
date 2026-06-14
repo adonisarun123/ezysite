@@ -108,6 +108,38 @@ export default function EzyHelpersAssistant() {
   const [seed, setSeed] = useState<string | null>(null);
   const [showBubble, setShowBubble] = useState(false);
   const [bubbleDismissed, setBubbleDismissed] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [showMascot, setShowMascot] = useState(false);
+  const mascotVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  // Reveal the mascot a couple of seconds after load — fades in once the page
+  // settles, so it draws the eye without competing with initial render.
+  useEffect(() => {
+    const t = setTimeout(() => setShowMascot(true), 2000);
+    return () => clearTimeout(t);
+  }, []);
+
+  // Respect the OS "reduce motion" setting — show a still instead of the loop.
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const apply = () => setPrefersReducedMotion(mq.matches);
+    apply();
+    mq.addEventListener?.("change", apply);
+    return () => mq.removeEventListener?.("change", apply);
+  }, []);
+
+  // Pause the mascot loop when it scrolls out of view or the tab is hidden —
+  // keeps it cheap on CPU/battery (it's fixed, so this mainly covers tab switches).
+  useEffect(() => {
+    const vid = mascotVideoRef.current;
+    if (!vid || prefersReducedMotion || open) return;
+    const onVisibility = () => {
+      if (document.hidden) vid.pause();
+      else vid.play().catch(() => {});
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => document.removeEventListener("visibilitychange", onVisibility);
+  }, [prefersReducedMotion, open]);
 
   // Open from the hero search bar (or anywhere) via a custom event.
   useEffect(() => {
@@ -169,12 +201,42 @@ export default function EzyHelpersAssistant() {
           .ezw-launcher{bottom:80px;}
         }
 
-        /* ── Greeting bubble ── */
-        .ezw-bubble{position:fixed;right:22px;bottom:80px;z-index:2147482999;max-width:260px;
+        /* ── Mascot (looping helper video above the launcher) ── */
+        /* Sits just above the launcher (launcher ~48px tall at bottom:22px).
+           Bubble is repositioned above the mascot so nothing overlaps. */
+        .ezw-mascot{position:fixed;right:24px;bottom:78px;z-index:2147483001;
+          width:72px;height:72px;padding:0;border:3px solid #fff;border-radius:50%;
+          background:var(--line-g);cursor:pointer;overflow:hidden;
+          box-shadow:0 10px 26px -8px rgba(16,40,32,.45);
+          transform-origin:center bottom;
+          animation:ezwMascotIn .45s ease-out both, ezwMascotBob 3.2s ease-in-out 0.45s infinite;}
+        .ezw-mascot:hover{transform:scale(1.08);animation:none;}
+        .ezw-mascot video,.ezw-mascot img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;pointer-events:none;}
+        @keyframes ezwMascotIn{
+          from{opacity:0;transform:translateY(12px) scale(.85);}
+          to{opacity:1;transform:translateY(0) scale(1);}
+        }
+        @keyframes ezwMascotBob{
+          0%,100%{transform:translateY(0);}
+          50%{transform:translateY(-5px);}
+        }
+        @media (max-width:767px){
+          /* launcher is at bottom:80px on mobile; stack mascot above it */
+          .ezw-mascot{bottom:136px;right:20px;}
+        }
+        @media (prefers-reduced-motion: reduce){
+          .ezw-mascot{animation:ezwMascotIn .45s ease-out both;}
+        }
+
+        /* ── Greeting bubble (sits above the mascot, which is above the launcher) ── */
+        .ezw-bubble{position:fixed;right:22px;bottom:162px;z-index:2147482999;max-width:260px;
           background:#fff;color:var(--ink);border:1px solid var(--line-g);border-radius:16px 16px 4px 16px;
           padding:12px 16px;font-size:13.5px;line-height:1.5;cursor:pointer;
           box-shadow:0 12px 32px -8px rgba(16,40,32,.25);
           animation:ezwBubbleIn .4s ease-out both;}
+        @media (max-width:767px){
+          .ezw-bubble{bottom:218px;}
+        }
         .ezw-bubble::after{content:'';position:absolute;right:24px;bottom:-8px;width:0;height:0;
           border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #fff;}
         .ezw-bubble-close{position:absolute;top:6px;right:8px;background:none;border:none;color:var(--muted);
@@ -257,6 +319,36 @@ export default function EzyHelpersAssistant() {
       <div className="ezw">
         {!open && (
           <>
+            {/* Mascot — small looping helper video that draws attention to chat */}
+            {showMascot && (
+              <button
+                className="ezw-mascot"
+                onClick={handleOpen}
+                aria-label="Open EzyHelpers assistant"
+              >
+                {prefersReducedMotion ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src="/asha-mascot.jpg" alt="EzyHelpers assistant" width={72} height={72} />
+                ) : (
+                  <video
+                    ref={mascotVideoRef}
+                    poster="/asha-mascot.jpg"
+                    width={72}
+                    height={72}
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                    preload="none"
+                    aria-hidden="true"
+                  >
+                    <source src="/asha-mascot.webm" type="video/webm" />
+                    <source src="/asha-mascot.mp4" type="video/mp4" />
+                  </video>
+                )}
+              </button>
+            )}
+
             {/* Greeting bubble */}
             {showBubble && !bubbleDismissed && (
               <div className="ezw-bubble" onClick={handleOpen}>
