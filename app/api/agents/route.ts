@@ -11,9 +11,9 @@ interface AgentData {
   agencyName: string
   registrationNumber: string
   agencyCertificate: string // file path
-  yearFounded: number
+  yearFounded: number | null
   servicesOffered: string[]
-  maxHelpersSupply: number
+  maxHelpersSupply: number | null
   ownerName: string
   ownerDOB: string
   ownerPhoto: string // file path
@@ -179,8 +179,13 @@ export async function POST(request: NextRequest) {
     // Extract and validate basic fields
     const agencyName = formData.get('agencyName') as string
     const registrationNumber = formData.get('registrationNumber') as string
-    const yearFounded = parseInt(formData.get('yearFounded') as string)
-    const maxHelpersSupply = parseInt(formData.get('maxHelpersSupply') as string)
+    // NaN guards: parseInt on a missing/non-numeric field yields NaN, which
+    // either errors on an int/NOT NULL DB column or stores garbage. Fall back to
+    // null (nullable columns) so a bad submission can't poison the row.
+    const yearFoundedRaw = parseInt(formData.get('yearFounded') as string)
+    const yearFounded = Number.isFinite(yearFoundedRaw) ? yearFoundedRaw : null
+    const maxHelpersSupplyRaw = parseInt(formData.get('maxHelpersSupply') as string)
+    const maxHelpersSupply = Number.isFinite(maxHelpersSupplyRaw) ? maxHelpersSupplyRaw : null
     const ownerName = formData.get('ownerName') as string
     const ownerDOB = formData.get('ownerDOB') as string
     const ownerIDType = formData.get('ownerIDType') as string
@@ -193,8 +198,10 @@ export async function POST(request: NextRequest) {
     const city = formData.get('city') as string
     const state = formData.get('state') as string
     const pincode = formData.get('pincode') as string
-    const latitude = formData.get('latitude') ? parseFloat(formData.get('latitude') as string) : null
-    const longitude = formData.get('longitude') ? parseFloat(formData.get('longitude') as string) : null
+    const latRaw = formData.get('latitude') ? parseFloat(formData.get('latitude') as string) : null
+    const lngRaw = formData.get('longitude') ? parseFloat(formData.get('longitude') as string) : null
+    const latitude = latRaw !== null && Number.isFinite(latRaw) ? latRaw : null
+    const longitude = lngRaw !== null && Number.isFinite(lngRaw) ? lngRaw : null
     const listedBy = formData.get('listedBy') as string || ''
     const notes = formData.get('notes') as string || ''
     const createdAt = formData.get('createdAt') as string || new Date().toISOString()

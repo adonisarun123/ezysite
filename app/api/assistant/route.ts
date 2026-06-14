@@ -11,6 +11,12 @@ import {
   generateBookingRef,
   buildTo,
 } from "@/lib/assistantHelpers";
+import {
+  checkRateLimitKV,
+  incrementDailyCounter,
+  readDailyCounter,
+  kvConfigured,
+} from "@/lib/rateLimitKv";
 
 export const runtime = "nodejs"; // SMTP needs the Node runtime, not edge
 
@@ -23,19 +29,14 @@ const MAX_TRANSCRIPT_MSGS = 60;
 // NOTE: in-memory state is per server instance. On serverless hosts with many
 // instances these limits are "best effort" — still worth having. For strict
 // guarantees move to Upstash/Redis.
-const rateLimits = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT_WINDOW = 60_000; // 1 minute
 const RATE_LIMIT_MAX = 10; // max chat requests per minute per IP
 
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimits.get(ip);
-  if (!entry || now > entry.resetAt) {
-    rateLimits.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW });
-    return false;
-  }
-  entry.count++;
-  return entry.count > RATE_LIMIT_MAX;
+// KV-backed (falls back to in-memory when KV env is unset). Async because the
+// shared store is queried over the network.
+async function isRateLimited(ip: string): Promise<boolean> {
+  const { allowed } = await checkRateLimitKV(`assistant:${ip}`, RATE_LIMIT_MAX, RATE_LIMIT_WINDOW / 1000);
+  return !allowed;
 }
 
 // ── Transcript email throttle (per-IP) — stops transcript spam ────
@@ -92,23 +93,38 @@ function isDuplicateUnanswered(q: string): boolean {
 }
 
 // ── Daily API spend cap ($2/day) ──────────────────────────────────
+// Backed by a shared KV counter so the cap is GLOBAL across serverless
+// instances (previously per-instance memory, so the cap never actually held
+// and the paid LLM endpoint could be driven well past budget by distributed
+// callers). Falls back to per-instance memory when KV is unconfigured.
 let dailySpend = { date: "", totalUsd: 0 };
 const DAILY_CAP_USD = 2.0;
 const EST_COST_PER_REQ = 0.00045; // conservative estimate per request
+const DAILY_CAP_CENTS = Math.round(DAILY_CAP_USD * 100 * 1000); // track in micro-cents for precision
+const COST_PER_REQ_UNITS = Math.round(EST_COST_PER_REQ * 100 * 1000);
 
-function checkSpendCap(): boolean {
-  const today = new Date().toISOString().slice(0, 10);
-  if (dailySpend.date !== today) {
-    dailySpend = { date: today, totalUsd: 0 };
+function spendDayKey(): string {
+  return new Date().toISOString().slice(0, 10); // UTC day
+}
+
+async function checkSpendCap(): Promise<boolean> {
+  if (kvConfigured()) {
+    const total = await readDailyCounter(`assistant-spend:${spendDayKey()}`);
+    return total >= DAILY_CAP_CENTS;
   }
+  // In-memory fallback
+  const today = spendDayKey();
+  if (dailySpend.date !== today) dailySpend = { date: today, totalUsd: 0 };
   return dailySpend.totalUsd >= DAILY_CAP_USD;
 }
 
-function recordSpend() {
-  const today = new Date().toISOString().slice(0, 10);
-  if (dailySpend.date !== today) {
-    dailySpend = { date: today, totalUsd: 0 };
+async function recordSpend(): Promise<void> {
+  if (kvConfigured()) {
+    await incrementDailyCounter(`assistant-spend:${spendDayKey()}`, COST_PER_REQ_UNITS, DAILY_CAP_CENTS);
+    return;
   }
+  const today = spendDayKey();
+  if (dailySpend.date !== today) dailySpend = { date: today, totalUsd: 0 };
   dailySpend.totalUsd += EST_COST_PER_REQ;
 }
 
@@ -823,9 +839,18 @@ function sanitizeMessages(
 
 export async function POST(req: Request) {
   try {
-    const forwarded = req.headers.get("x-forwarded-for");
-    const ip = forwarded?.split(",")[0]?.trim() || "unknown";
-    if (isRateLimited(ip)) {
+    // Prefer platform-set client IP headers over the client-controllable
+    // leftmost x-forwarded-for entry (which a caller can spoof to rotate the
+    // rate-limit key). Vercel sets x-real-ip / x-vercel-forwarded-for from the
+    // trusted edge; fall back to the last XFF hop, then the first.
+    const xff = req.headers.get("x-forwarded-for");
+    const ip =
+      req.headers.get("x-real-ip")?.trim() ||
+      req.headers.get("x-vercel-forwarded-for")?.trim() ||
+      xff?.split(",").pop()?.trim() ||
+      xff?.split(",")[0]?.trim() ||
+      "unknown";
+    if (await isRateLimited(ip)) {
       return Response.json(
         {
           reply:
@@ -872,7 +897,7 @@ export async function POST(req: Request) {
     }
 
     // ── Daily spend cap ──
-    if (checkSpendCap()) {
+    if (await checkSpendCap()) {
       return Response.json(
         {
           reply:
@@ -946,7 +971,7 @@ export async function POST(req: Request) {
         return Response.json({ reply: hint, emailed: false }, { status: 200 });
       }
 
-      recordSpend();
+      void recordSpend().catch(() => {});
       data = await aiRes.json();
 
       if (data.stop_reason !== "tool_use") break;

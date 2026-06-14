@@ -25,6 +25,19 @@ export {
   formatAccountForEmail,
 };
 
+// Returns a safe Reply-To address. The Reply-To is set from user-submitted
+// email on lead forms; an invalid/garbage value means staff replies could be
+// routed to an attacker-chosen address (phishing) or make sendMail throw.
+// Validate against a strict pattern and strip CR/LF (header-injection guard);
+// fall back to SMTP_USER when the input is missing or malformed.
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function safeReplyTo(email: unknown): string | undefined {
+  const fallback = process.env.SMTP_USER || undefined;
+  if (typeof email !== 'string') return fallback;
+  const cleaned = email.trim().replace(/[\r\n]/g, '');
+  return EMAIL_RE.test(cleaned) ? cleaned : fallback;
+}
+
 // Addresses that must be copied on every outbound lead/notification email
 // site-wide, regardless of per-form env routing (June 2026).
 const ALWAYS_CC_EMAILS = [
@@ -1962,7 +1975,7 @@ export const sendLeadEmail = async (
     const mailOptions: nodemailer.SendMailOptions = {
       from: process.env.SMTP_USER,
       to: adminEmail,
-      replyTo: formData.email || process.env.SMTP_USER,
+      replyTo: safeReplyTo(formData.email),
       ...emailContent,
     };
 
@@ -2022,7 +2035,7 @@ export const sendEzyNestBookingEmail = async (
     const mailOptions: any = {
       from: process.env.SMTP_USER,
       to: adminEmail,
-      replyTo: bookingDetails.email || process.env.SMTP_USER,
+      replyTo: safeReplyTo(bookingDetails.email),
       ...finalContent,
     };
 
@@ -2181,7 +2194,7 @@ This email was automatically generated from the NEST booking system.
     const mailOptions = {
       from: process.env.SMTP_USER,
       to: adminEmail,
-      replyTo: formData.email || process.env.SMTP_USER,
+      replyTo: safeReplyTo(formData.email),
       ...finalContent,
     }
 

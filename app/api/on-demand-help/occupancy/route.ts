@@ -34,8 +34,10 @@ export async function GET(req: NextRequest) {
     .gt('visit_end_at', dayStartIso)
 
   if (error) {
+    // Log the detailed DB error server-side; return a generic code to the
+    // client so Supabase schema/column details aren't leaked in the response.
     console.error('[on-demand-help/occupancy]', error)
-    return NextResponse.json({ ok: false, error: error.message, intervals: [] }, { status: 500 })
+    return NextResponse.json({ ok: false, error: 'occupancy_failed', intervals: [] }, { status: 500 })
   }
 
   const intervals =
