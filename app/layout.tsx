@@ -166,7 +166,15 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <UrgencyProvider>
+        {/*
+          defaultVisible: the urgency banner shows on essentially every page
+          load, so we reserve its space from the FIRST server-rendered paint.
+          Previously this defaulted to false and a post-hydration useEffect
+          flipped it to true, which grew the Navbar spacer from h-20→h-32 and
+          shifted all content down ~48px — the dominant source of the field
+          CLS (0.34). Reserving the space up front removes that shift.
+        */}
+        <UrgencyProvider defaultVisible={true}>
           <main id="main-content">
             {children}
           </main>

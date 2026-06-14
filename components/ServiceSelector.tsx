@@ -142,7 +142,7 @@ function SelectorBody({
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-2 sm:mb-3">
                   Compassionate elderly &amp; patient care at home.
                 </p>
-                <span className="inline-flex items-center text-xs sm:text-sm font-semibold text-trust-600 group-hover:text-trust-700">
+                <span className="inline-flex items-center text-xs sm:text-sm font-semibold text-trust-700 group-hover:text-trust-800">
                   Continue
                   <ArrowRightIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1 sm:ml-1.5 transition-transform group-hover:translate-x-1" />
                 </span>

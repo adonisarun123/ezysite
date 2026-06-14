@@ -133,7 +133,7 @@ export default function HeroSection() {
                 <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-3">
                   <ChatBubbleLeftRightIcon className="h-5 w-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1 font-display">Get Helper in 24-72 Hours</h3>
+                <h2 className="text-lg font-bold text-gray-900 mb-1 font-display">Get Helper in 24-72 Hours</h2>
                 <p className="text-xs text-gray-600">Fill form → We call you in 30 min</p>
               </div>
 

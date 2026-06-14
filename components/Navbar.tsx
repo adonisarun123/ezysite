@@ -344,7 +344,7 @@ export default function Navbar() {
           SINGLE source of header offset site-wide (the old
           [data-main-content] CSS padding was removed to avoid double-counting). */}
       <div
-        className={`${urgencyVisible ? 'h-32 lg:h-36' : 'h-20 lg:h-24'} transition-[height] duration-300`}
+        className={`${urgencyVisible ? 'h-32 lg:h-36' : 'h-20 lg:h-24'}`}
         aria-hidden="true"
       ></div>
     </>

@@ -27,7 +27,7 @@ export default function UrgencyCTA({ defaultVisible = true }: UrgencyCTAProps = 
   if (!isUrgencyVisible) return null
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-green-600 shadow-lg">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-green-700 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3">
           {/* Main CTA Content */}
@@ -56,7 +56,7 @@ export default function UrgencyCTA({ defaultVisible = true }: UrgencyCTAProps = 
           <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
             <a
               href="tel:+918031411776"
-              className="bg-white text-green-600 px-3 sm:px-4 py-2 rounded-full font-bold text-xs sm:text-sm hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg whitespace-nowrap"
+              className="bg-white text-green-700 px-3 sm:px-4 py-2 rounded-full font-bold text-xs sm:text-sm hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg whitespace-nowrap"
             >
               Call Now
             </a>
