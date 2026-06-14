@@ -8,6 +8,21 @@ interface Language {
   flag: string;
 }
 
+// Safe storage access — Safari private mode / blocked storage throws
+// SecurityError, which would otherwise propagate out of the effect/handler.
+function safeGet(store: 'local' | 'session', key: string): string | null {
+  try {
+    if (typeof window === 'undefined') return null
+    return (store === 'local' ? window.localStorage : window.sessionStorage).getItem(key)
+  } catch { return null }
+}
+function safeSet(store: 'local' | 'session', key: string, value: string): void {
+  try {
+    if (typeof window === 'undefined') return
+    ;(store === 'local' ? window.localStorage : window.sessionStorage).setItem(key, value)
+  } catch { /* ignore */ }
+}
+
 export function useLanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasShown, setHasShown] = useState(false);
@@ -18,55 +33,39 @@ export function useLanguageSelector() {
     const pageKey = 'languageSelectorShown_for_helpers';
     const dismissedKey = 'languageSelectorDismissed_for_helpers';
     const sessionKey = 'languageSelectorSession_for_helpers';
-    
-    const hasShownBefore = localStorage.getItem(pageKey);
-    const wasDismissed = localStorage.getItem(dismissedKey);
-    const sessionShown = sessionStorage.getItem(sessionKey);
-    
-    // Debug logging (remove in production)
-    console.log('Language Selector State Check:', {
-      hasShownBefore: !!hasShownBefore,
-      wasDismissed: !!wasDismissed,
-      sessionShown: !!sessionShown,
-      userDismissed,
-    });
-    
+
+    const hasShownBefore = safeGet('local', pageKey);
+    const wasDismissed = safeGet('local', dismissedKey);
+    const sessionShown = safeGet('session', sessionKey);
+
     // Only show if ALL conditions are false:
     // 1. Never shown before in localStorage
     // 2. Never dismissed by user
     // 3. Not shown in current session
     // 4. User hasn't dismissed in current session
     const shouldShow = !hasShownBefore && !wasDismissed && !sessionShown && !userDismissed;
-    
+
     if (shouldShow) {
-      console.log('Setting timer to show language selector in 3 seconds');
       const timer = setTimeout(() => {
-        console.log('Showing language selector');
         setIsOpen(true);
         setHasShown(true);
-        localStorage.setItem(pageKey, 'true');
-        sessionStorage.setItem(sessionKey, 'true');
+        safeSet('local', pageKey, 'true');
+        safeSet('session', sessionKey, 'true');
       }, 3000);
 
-      return () => {
-        console.log('Clearing language selector timer');
-        clearTimeout(timer);
-      };
-    } else {
-      console.log('Language selector will not be shown');
+      return () => clearTimeout(timer);
     }
-  }, []); // Empty dependency array to run only once
+  }, [userDismissed]); // re-evaluate if the user dismisses
 
   const openSelector = () => setIsOpen(true);
-  
+
   const closeSelector = () => {
-    console.log('Closing language selector');
     setIsOpen(false);
     // Don't mark as permanently dismissed - allow manual reopening
   };
 
   const handleLanguageSelect = (language: Language) => {
-    localStorage.setItem('selectedLanguage', JSON.stringify(language));
+    safeSet('local', 'selectedLanguage', JSON.stringify(language));
     closeSelector();
   };
 

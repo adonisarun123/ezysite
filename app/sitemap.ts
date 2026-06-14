@@ -474,12 +474,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5
     },
-    {
-      url: `${baseUrl}/helper-interview`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5
-    },
+    // helper-interview removed from sitemap: it's an internal form with no
+    // unique indexable content and is now marked noindex (see its layout.tsx).
     {
       url: `${baseUrl}/helper-leads`,
       lastModified: currentDate,

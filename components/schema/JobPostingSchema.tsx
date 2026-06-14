@@ -1,4 +1,5 @@
 import React from 'react'
+import { jsonLdHtml } from '@/lib/jsonLd'
 
 interface JobPostingProps {
   title: string
@@ -67,7 +68,7 @@ export default function JobPostingSchema(props: JobPostingProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdHtml(data) }}
     />
   )
 }

@@ -1,3 +1,4 @@
+import { jsonLdHtml } from '@/lib/jsonLd'
 interface ServiceSchemaProps {
   serviceName: string
   serviceDescription: string
@@ -143,7 +144,7 @@ export default function ServiceSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdHtml(serviceSchema) }}
     />
   )
 } 

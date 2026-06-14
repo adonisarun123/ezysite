@@ -1,3 +1,4 @@
+import { jsonLdHtml } from '@/lib/jsonLd'
 interface FAQItem {
   question: string
   answer: string
@@ -25,7 +26,7 @@ export default function FAQSchema({ faqs, aboutPage: _aboutPage }: FAQSchemaProp
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdHtml(faqSchema) }}
     />
   )
 }

@@ -1,3 +1,4 @@
+import { jsonLdHtml } from '@/lib/jsonLd'
 interface LocalBusinessSchemaProps {
   cityName: string
   stateName: string
@@ -161,7 +162,7 @@ export default function LocalBusinessSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(cleanedSchema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdHtml(cleanedSchema) }}
     />
   )
 } 
