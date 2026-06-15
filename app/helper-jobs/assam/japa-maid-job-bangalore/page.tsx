@@ -83,6 +83,12 @@ export default function JapaMaidJobsAssamBangalorePage() {
                         { label: 'Assam', href: '/helper-jobs/assam' },
                         { label: 'Japa Maid Jobs in Bangalore' }
                     ]}
+                    rightContent={
+                        <div className="flex gap-2">
+                            <span className="text-xs font-bold bg-pink-100 text-pink-800 px-2 py-1 rounded-md">English</span>
+                            <Link href="/helper-jobs/assam/japa-maid-job-bangalore/hin" className="text-xs font-medium text-gray-500 hover:text-slate-600 transition-colors px-2 py-1 rounded-md hover:bg-slate-50">हिन्दी</Link>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -94,8 +100,8 @@ export default function JapaMaidJobsAssamBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">Japa Maid Jobs in Bangalore for Assam Helpers</h1>
-                            <p className="text-sm md:text-xl text-pink-100/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium italic">
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">Japa Maid Jobs in Bangalore for Assam Helpers</h1>
+                            <p className="text-sm md:text-xl text-pink-100/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium">
                                 If you are from Assam and have experience caring for newborn babies and mothers after delivery, we help you find safe and respectful Japa maid jobs in Bangalore with a fixed salary and full support.
                             </p>
 
@@ -313,7 +319,7 @@ export default function JapaMaidJobsAssamBangalorePage() {
                                 </div>
                             </div>
 
-                            <p className="text-center font-bold text-pink-700 italic">We explain every duty clearly before you start your work.</p>
+                            <p className="text-center font-bold text-pink-700">We explain every duty clearly before you start your work.</p>
                         </div>
                     </div>
                 </section>
@@ -460,7 +466,7 @@ export default function JapaMaidJobsAssamBangalorePage() {
                                     <span className="bg-white px-4 py-2 rounded-full font-bold text-pink-800 shadow-sm border border-pink-200">Affordable and comfortable stay</span>
                                 </div>
                                 
-                                <p className="text-md font-bold text-pink-700 italic mb-8 max-w-2xl mx-auto">
+                                <p className="text-md font-bold text-pink-700 mb-8 max-w-2xl mx-auto">
                                     You settle down comfortably before your japa maid job starts. No stress. No last-minute panic at all.
                                 </p>
                                 
