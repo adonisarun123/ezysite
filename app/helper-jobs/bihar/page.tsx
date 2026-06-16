@@ -173,21 +173,25 @@ export default function HelperJobsBiharPage() {
                             {[
                                 {
                                     title: "House Cleaning Jobs in Bangalore",
+                                    slug: "housekeeping-job-bangalore",
                                     desc: "Clean and maintain homes daily while supporting families in their routine work.",
                                     features: ["Sweep and mop floors properly", "Dust furniture and clean bathrooms", "Wash dishes, clothes, and bedsheets", "Keep kitchen and living areas tidy", "Live-in or full-time work available"]
                                 },
                                 {
                                     title: "Cooking / Kitchen Helper Jobs",
+                                    slug: "cook-job-bangalore",
                                     desc: "Help families by preparing meals and managing daily kitchen work properly.",
                                     features: ["Make fresh breakfast, lunch, and dinner", "Follow family recipes and tastes", "Clean vessels and kitchen counters", "Store leftover food safely", "Live-in or full-time work available"]
                                 },
                                 {
                                     title: "Nanny / Babysitter house maid jobs in Bangalore",
+                                    slug: "nanny-job-bangalore",
                                     desc: "Take care of children with love, attention, and full responsibility every day.",
                                     features: ["Bathe and dress the kids gently", "Prepare healthy snacks and meals", "Play with children and teach good habits", "Put them to sleep at night", "Live-in or full-time work available"]
                                 },
                                 {
                                     title: "Elderly Care Jobs",
+                                    slug: "old-age-caretaker-job-bangalore",
                                     desc: "Support senior citizens with daily care, comfort, and emotional support at home.",
                                     features: ["Help seniors walk and sit comfortably", "Give medicines at the right time", "Talk to them and keep them happy", "Cook soft, easy-to-eat meals", "Friendly and calm environment"]
                                 },
@@ -216,26 +220,39 @@ export default function HelperJobsBiharPage() {
                                     desc: "Couples manage farmhouse work, including maintenance, safety, and daily support.",
                                     features: ["Keep the garden and lawns clean", "Water plants and remove weeds", "Basic cooking, if requested", "Watch visitors and lock gates", "Private room with meals"]
                                 }
-                            ].map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="group bg-white rounded-2xl p-6 border border-indigo-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block text-left relative overflow-hidden"
-                                >
-                                    <h3 className="text-lg md:text-2xl font-bold text-indigo-700 mb-3 group-hover:text-indigo-800 relative z-10">{item.title}</h3>
-                                    <p className="text-gray-700 text-sm mb-5 leading-relaxed font-medium relative z-10 italic">{item.desc}</p>
-                                    <div className="space-y-2 relative z-10">
-                                        {item.features.map((feature, fIndex) => (
-                                            <div key={fIndex} className="flex items-start gap-2">
-                                                <CheckCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                                <span className="text-sm text-gray-600">{feature}</span>
+                            ].map((item, index) => {
+                                const CardContent = (
+                                    <>
+                                        <h3 className="text-lg md:text-2xl font-bold text-indigo-700 mb-3 group-hover:text-indigo-800 relative z-10">{item.title}</h3>
+                                        <p className="text-gray-700 text-sm mb-5 leading-relaxed font-medium relative z-10 italic">{item.desc}</p>
+                                        <div className="space-y-2 relative z-10">
+                                            {item.features.map((feature, fIndex) => (
+                                                <div key={fIndex} className="flex items-start gap-2">
+                                                    <CheckCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                                    <span className="text-sm text-gray-600">{feature}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        {item.slug && (
+                                            <div className="mt-6 font-bold text-indigo-600 text-[10px] uppercase tracking-widest group-hover:underline flex items-center gap-1 relative z-10">
+                                                Learn More <span>→</span>
                                             </div>
-                                        ))}
+                                        )}
+                                    </>
+                                );
+
+                                const cardClasses = "group bg-white rounded-2xl p-6 border border-indigo-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block text-left relative overflow-hidden h-full";
+
+                                return item.slug ? (
+                                    <Link key={index} href={`/helper-jobs/bihar/${item.slug}`} className={cardClasses}>
+                                        {CardContent}
+                                    </Link>
+                                ) : (
+                                    <div key={index} className={cardClasses}>
+                                        {CardContent}
                                     </div>
-                                    <div className="mt-6 font-bold text-indigo-600 text-[10px] uppercase tracking-widest group-hover:underline flex items-center gap-1 relative z-10">
-                                        Learn More <span>→</span>
-                                    </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </section>

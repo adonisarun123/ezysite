@@ -137,7 +137,7 @@ export default function BareillyElderlyCare() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="min-h-screen">
+            <main className="min-h-screen">
         <Navbar />
 
         <Breadcrumb 
@@ -149,53 +149,60 @@ export default function BareillyElderlyCare() {
         />
       
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
+        <section className="relative bg-gradient-to-br from-indigo-900 via-violet-800 to-indigo-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+            <div className="absolute top-48 -left-24 w-72 h-72 bg-violet-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
           </div>
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white focus:outline-none">
-                Caretaker for Elderly at Home in Bareilly – Trustworthy Support for Your Loved Ones
+              <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 border border-white/20 text-indigo-100 text-sm font-semibold tracking-wider mb-6 backdrop-blur-md">
+                PREMIUM ELDER CARE
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white tracking-tight drop-shadow-sm">
+                Caretaker for Elderly at Home in Bareilly <br className="hidden md:block" /><span className="text-indigo-200">– Trustworthy Support</span>
               </h1>
-              <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+              <p className="text-lg md:text-xl lg:text-2xl text-indigo-50 max-w-4xl mx-auto leading-relaxed font-medium mb-10">
                 Get verified, trained caretakers for elderly at home in Bareilly for daily support, health monitoring, and compassionate care.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto mb-10">
-                <Link
-                  href="/hire-helper"
-                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform"
-                >
+              <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mt-8">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-900 font-bold text-lg py-4 px-10 rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transition-all hover:-translate-y-1 duration-300">
                   Book Elderly Care
                 </Link>
-
-                <Link
-                  href="tel:+918031411776"
-                  className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all"
-                >
-                  <PhoneIcon className="h-5 w-5 mr-1" />
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-indigo-300/50 hover:bg-white/10 hover:border-white backdrop-blur-sm transition-all duration-300">
+                  <PhoneIcon className="h-6 w-6 mr-2 group-hover:animate-pulse" />
                   Call +91 80 3141 1776
                 </Link>
               </div>
 
               {/* Service Assurance Badges */}
-              <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
-                {serviceBadges.map((b, i) => (
-                  <span key={i} className="text-sm bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 font-semibold">
-                    ✓ {b}
-                  </span>
+              <div className="mt-12 flex flex-wrap justify-center gap-4">
+                {[
+                  'Background Verified Caretakers',
+                  'Compassionate Care',
+                  'Complete Elder Care Support',
+                  'Affordable Monthly Plans'
+                ].map((b, i) => (
+                  <div key={i} className="inline-flex items-center gap-2 bg-black/20 backdrop-blur-md rounded-full px-5 py-2.5 text-sm font-semibold text-white border border-white/10 shadow-inner">
+                    <span className="text-emerald-400 font-bold">✓</span>
+                    <span>{b}</span>
+                  </div>
                 ))}
               </div>
 
               {/* Highlight Metrics */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                {highlightMetrics.map((m, i) => (
-                  <div key={i} className="bg-white/5 rounded-2xl p-6 backdrop-blur-md border border-white/10">
-                    <div className="text-3xl font-extrabold text-white mb-1">{m.value}</div>
-                    <div className="text-indigo-100 font-medium">{m.label}</div>
+              <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                {[
+                  { value: '500+', label: 'Happy Families' },
+                  { value: 'Reliable', label: 'Senior Support' },
+                  { value: '100%', label: 'Verified & Experienced' }
+                ].map((m, i) => (
+                  <div key={i} className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 p-8 shadow-2xl group hover:bg-white/10 transition-colors duration-300">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 to-purple-400 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight drop-shadow-md">{m.value}</div>
+                    <div className="text-indigo-200 font-medium text-sm md:text-base uppercase tracking-wider">{m.label}</div>
                   </div>
                 ))}
               </div>
@@ -203,189 +210,167 @@ export default function BareillyElderlyCare() {
           </div>
         </section>
         
-        {/* Why choose EzyHelpers Home Elder Care Services in Bareilly? */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Why choose EzyHelpers Home Elder Care Services in Bareilly?</h2>
-              <p className="text-lg text-gray-600">We provide personalised, respectful, and reliable elder care services tailored to Bareilly’s family values.</p>
+        {/* Why choose EzyHelpers */}
+        <section className="section-padding bg-gray-50 relative">
+          <div className="container-custom max-w-6xl">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display tracking-tight">Why choose EzyHelpers Home Elder Care Services in Bareilly?</h2>
+              <p className="text-xl text-gray-600">We provide personalised, respectful, and reliable elder care services tailored to Bareilly's family values.</p>
             </div>
-            <ul className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto text-gray-700">
-              <li>• Respects traditions with cultural sensitivity and daily elder routines</li>
-              <li>• Handles joint families with care and family harmony</li>
-              <li>• Fast placement service with verified local caretakers</li>
-              <li>• Ensures timely medicine and diet reminders for senior health</li>
-              <li>• Family updates and support with regular check-ins</li>
-              <li>• Trained in senior care skills and emergency handling</li>
-            </ul>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                'Respects traditions with cultural sensitivity and daily elder routines',
+                'Handles joint families with care and family harmony',
+                'Fast placement service with verified local caretakers',
+                'Ensures timely medicine and diet reminders for senior health',
+                'Family updates and support with regular check-ins',
+                'Trained in senior care skills and emergency handling'
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-100 transition-all duration-300 group">
+                  <div className="bg-indigo-50 p-3 rounded-xl group-hover:bg-indigo-100 transition-colors shrink-0">
+                    <span className="text-indigo-600 font-bold">✓</span>
+                  </div>
+                  <span className="font-semibold text-gray-800 text-lg leading-snug pt-1">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Services Offered by Elderly Caretakers */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-custom">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Services Offered by Elderly Caretakers</h2>
-              <p className="text-lg text-gray-600">Our elderly caretakers in Bareilly provide complete support for seniors:</p>
+        <section className="section-padding bg-white relative">
+          <div className="container-custom max-w-6xl">
+            <div className="text-center max-w-4xl mx-auto mb-16">
+              <span className="text-indigo-600 font-bold tracking-wider uppercase text-sm mb-2 block">Our Expertise</span>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display tracking-tight">Services Offered by Elderly Caretakers</h2>
+              <p className="text-xl text-gray-600">Our elderly caretakers in Bareilly provide complete support for seniors:</p>
             </div>
-            <div className="max-w-4xl mx-auto space-y-6 text-gray-700">
-              <div>
-                <h3 className="font-semibold">1.  Daily Personal Care</h3>
-                <p>Helping with bathing, dressing, and grooming, ensuring hygiene and comfort for elderly family members.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold">2.  Medicine Management</h3>
-                <p>Reminding and assisting with timely medication, as per the doctor's advice.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold">3.  Meal Preparation</h3>
-                <p>Cooking healthy and favourite meals, keeping in mind dietary needs and local tastes.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold">4.  Light Household Chores</h3>
-                <p>Keeping the elder's living area clean and tidy, like sweeping and dusting.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold">5.  Mobility Support</h3>
-                <p>Assisting with moving around the house, going for walks, and preventing falls.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold">6.  Companionship & Engagement</h3>
-                <p>Spending quality time, listening, and encouraging light activities or religious practices.</p>
-              </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { title: 'Daily Personal Care', desc: 'Helping with bathing, dressing, and grooming, ensuring hygiene and comfort for elderly family members.', color: 'indigo' },
+                { title: 'Medicine Management', desc: 'Reminding and assisting with timely medication, as per the doctor\'s advice.', color: 'violet' },
+                { title: 'Meal Preparation', desc: 'Cooking healthy and favourite meals, keeping in mind dietary needs and local tastes.', color: 'pink' },
+                { title: 'Light Household Chores', desc: 'Keeping the elder\'s living area clean and tidy, like sweeping and dusting.', color: 'blue' },
+                { title: 'Mobility Support', desc: 'Assisting with moving around the house, going for walks, and preventing falls.', color: 'emerald' },
+                { title: 'Companionship & Engagement', desc: 'Spending quality time, listening, and encouraging light activities or religious practices.', color: 'amber' }
+              ].map((service, idx) => (
+                <div key={idx} className={`bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:border-${service.color}-200 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col h-full`}>
+                  <div className={`absolute top-0 right-0 w-24 h-24 bg-${service.color}-100 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-110`}></div>
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className={`w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-2xl font-bold text-${service.color}-600`}>{idx + 1}</div>
+                    <h3 className={`text-2xl font-bold text-gray-900 mb-3 group-hover:text-${service.color}-700 transition-colors font-display`}>{service.title}</h3>
+                    <p className="text-gray-600 mb-6 flex-grow text-lg">{service.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Who Needs Elderly Care Services in Bareilly? */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Who Needs Elderly Care Services in Bareilly?</h2>
-              <p className="text-lg text-gray-600">Life gets easier with a trusted caretaker for your ageing loved ones:</p>
+        <section className="section-padding bg-indigo-900 text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+          <div className="container-custom max-w-5xl relative z-10">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 font-display tracking-tight text-white">Who Needs Elderly Care Services in Bareilly?</h2>
+              <p className="text-xl text-indigo-200">Life gets easier with a trusted caretaker for your ageing loved ones:</p>
             </div>
-            <div className="max-w-4xl mx-auto space-y-6 text-gray-700">
-              <div>
-                <h3 className="font-semibold">1.  Working Couples</h3>
-                <p>Get trusted elder care at home while you work peacefully.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold">2.  Migrated Professionals</h3>
-                <p>Support your parents back home if you live outside Bareilly.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold">3.  Recovering Patients</h3>
-                <p>Ongoing care for seniors healing from illness, injury, or surgery.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold">4.  Seniors with Limited Mobility</h3>
-                <p>Help with movement, toilet needs, and preventing falls.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold">5.  Post-Hospitalization Care</h3>
-                <p>Support after hospital discharge, including medicine, meals, rest, and mobility assistance</p>
-              </div>
+            
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { title: 'Working Couples', desc: 'Get trusted elder care at home while you work peacefully.' },
+                { title: 'Migrated Professionals', desc: 'Support your parents back home if you live outside Bareilly.' },
+                { title: 'Recovering Patients', desc: 'Ongoing care for seniors healing from illness, injury, or surgery.' },
+                { title: 'Seniors with Limited Mobility', desc: 'Help with movement, toilet needs, and preventing falls.' },
+                { title: 'Post-Hospitalization Care', desc: 'Support after hospital discharge, including medicine, meals, rest, and mobility assistance.' }
+              ].map((item, i) => (
+                <div key={i} className={`bg-white/10 backdrop-blur-md border border-white/20 px-6 py-5 rounded-2xl shadow-lg hover:bg-white/20 hover:-translate-y-1 transition-all duration-300 ${i === 4 ? 'md:col-span-2 md:w-1/2 md:mx-auto' : ''}`}>
+                  <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
+                  <p className="text-indigo-100">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Flexible Senior Care Options for Every Need */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Flexible Senior Care Options for Every Need</h2>
-              <p className="text-lg text-gray-600">Choose an elder care option that suits your Bareilly family’s routine and comfort:</p>
+          <div className="container-custom max-w-6xl">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display tracking-tight">Flexible Senior Care Options for Every Need</h2>
+              <p className="text-xl text-gray-600">Choose an elder care option that suits your Bareilly family's routine and comfort:</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3">Live-In Elderly Caretakers</h3>
-                <p className="text-gray-600 mb-3">Round-the-clock elder support for personal hygiene, medication, companionship, and emergency needs.</p>
-                <ul className="text-gray-700 space-y-1">
-                  <li>✅ 12-Hour Daily Shifts</li>
-                  <li>✅ Night-time assistance</li>
-                  <li>✅ Fall prevention</li>
-                  <li>✅ Emotional support</li>
-                </ul>
-              </div>
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3">Full-Time Elderly Caretakers</h3>
-                <p className="text-gray-600 mb-3">8–10 hours of daily care for seniors, including meals, medicine reminders, and safe mobility.</p>
-                <ul className="text-gray-700 space-y-1">
-                  <li>✅ Daytime supervision</li>
-                  <li>✅ Meal preparation</li>
-                  <li>✅ Medicine reminders</li>
-                  <li>✅ Walking assistance</li>
-                </ul>
-              </div>
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3">Part-Time Elderly Caretakers</h3>
-                <p className="text-gray-600 mb-3">Flexible senior care for 2–6 hours, ideal for personal care and routine help.</p>
-                <ul className="text-gray-700 space-y-1">
-                  <li>✅ Personal hygiene</li>
-                  <li>✅ Light exercise support</li>
-                  <li>✅ Companionship</li>
-                  <li>✅ Flexible timings</li>
-                </ul>
-              </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { title: 'Live-In Elderly Caretakers', desc: 'Round-the-clock elder support for personal hygiene, medication, companionship, and emergency needs.', perks: ['12-Hour Daily Shifts', 'Night-time assistance', 'Fall prevention', 'Emotional support'] },
+                { title: 'Full-Time Elderly Caretakers', desc: '8–10 hours of daily care for seniors, including meals, medicine reminders, and safe mobility.', perks: ['Daytime supervision', 'Meal preparation', 'Medicine reminders', 'Walking assistance'] },
+                { title: 'Part-Time Elderly Caretakers', desc: 'Flexible senior care for 2–6 hours, ideal for personal care and routine help.', perks: ['Personal hygiene', 'Light exercise support', 'Companionship', 'Flexible timings'] }
+              ].map((item, i) => (
+                <div key={i} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <h3 className="text-2xl font-bold text-indigo-900 mb-4">{item.title}</h3>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-6 h-24">{item.desc}</p>
+                  <ul className="space-y-3 border-t border-gray-100 pt-6">
+                    {item.perks.map((perk, j) => (
+                      <li key={j} className="flex items-center gap-2 text-gray-700 font-medium">
+                        <span className="text-emerald-500 font-bold">✓</span> {perk}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Your Easy 4-Step Hiring Process */}
         <section className="section-padding bg-white">
-          <div className="container-custom max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">Your Easy 4-Step Hiring Process</h2>
-            <p className="text-gray-700 mb-4 text-center">Hiring a caretaker for the elderly at home in Bareilly is simple with EzyHelpers:</p>
-            <ol className="list-decimal list-inside space-y-2 text-gray-700">
-              <li><strong>Personal Consultation</strong> – We understand your elder’s specific needs and suggest the best care plan.</li>
-              <li><strong>Caretaker Selection</strong> – We shortlist 2-3 background-verified caretakers matching your requirements.</li>
-              <li><strong>Interview & Review</strong> – Talk to shortlisted caretakers through phone, video call, or in-person meetings.</li>
-              <li><strong>Easy Onboarding</strong> – After selection, the caretaker is placed smoothly with full documentation and ongoing support.</li>
-            </ol>
-          </div>
-        </section>
-
-        {/* Explore Other Services */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-custom">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">Explore Other Services</h2>
-            <p className="text-lg text-gray-600 text-center mb-8">Beyond elderly care, EzyHelpers offers comprehensive home support services for Bareilly families:</p>
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="bg-white rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold mb-2">Housekeeping & Deep Cleaning</h3>
-                <p className="text-gray-600">Professional deep cleaning, sofa washing, and kitchen sanitisation.</p>
-                <Link href="/cities/bareilly/home-deep-cleaning" className="text-purple-600 font-semibold mt-2 inline-block">Learn More About Cleaning Services</Link>
-              </div>
-              <div className="bg-white rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold mb-2">Cook Services in Bareilly</h3>
-                <p className="text-gray-600">Expert cooks for daily meals, special occasions, or diet-specific cooking.</p>
-                <Link href="/cities/bareilly/cooks" className="text-purple-600 font-semibold mt-2 inline-block">Learn More About Cook Services</Link>
-              </div>
-              <div className="bg-white rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold mb-2">Driver Services</h3>
-                <p className="text-gray-600">Reliable drivers for school pickups, grocery runs, and local travel.</p>
-                <Link href="/cities/bareilly/drivers" className="text-purple-600 font-semibold mt-2 inline-block">Learn More About Driver Services</Link>
-              </div>
+          <div className="container-custom max-w-6xl">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display tracking-tight">Your Easy 4-Step Hiring Process</h2>
+              <p className="text-xl text-gray-600">Hiring a caretaker for the elderly at home in Bareilly is simple with EzyHelpers:</p>
+            </div>
+            
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative">
+              {/* Connector line for desktop */}
+              <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-1 bg-indigo-100 rounded-full"></div>
+              
+              {[
+                { title: 'Personal Consultation', desc: 'We understand your elder\'s specific needs and suggest the best care plan.' },
+                { title: 'Caretaker Selection', desc: 'We shortlist 2-3 background-verified caretakers matching your requirements.' },
+                { title: 'Interview & Review', desc: 'Talk to shortlisted caretakers through phone, video call, or in-person meetings.' },
+                { title: 'Easy Onboarding', desc: 'After selection, the caretaker is placed smoothly with full documentation and ongoing support.' }
+              ].map((step, i) => (
+                <div key={i} className="relative z-10 flex flex-col items-center text-center group">
+                  <div className="w-20 h-20 bg-white border-4 border-indigo-100 rounded-full flex items-center justify-center mb-6 shadow-xl group-hover:border-indigo-500 group-hover:scale-110 transition-all duration-300">
+                    <span className="text-2xl font-bold text-indigo-600">{i + 1}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Final CTA */}
-        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center font-display">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 leading-tight">
-                Book our Home Senior Care Services today!
-              </h2>
-              <p className="text-xl mb-8 text-indigo-100 font-medium">
-                Don’t leave your loved ones alone. EzyHelpers provides trusted, local, and compassionate elder care in Bareilly.
+        <section className="section-padding bg-gradient-to-br from-indigo-800 to-violet-900 text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-white/5 opacity-20 mix-blend-overlay"></div>
+          <div className="container-custom relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl md:text-5xl text-white font-bold mb-6 font-display tracking-tight">Book our Home Senior Care Services today!</h2>
+              <p className="text-xl md:text-2xl mb-10 text-indigo-100 font-medium max-w-3xl mx-auto leading-relaxed">
+                Don't leave your loved ones alone. EzyHelpers provides trusted, local, and compassionate elder care in Bareilly.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-900 font-bold text-xl py-5 px-10 rounded-2xl shadow-2xl hover:bg-gray-50 hover:scale-105 transition-all duration-300">
                   Book Elder Care
                 </Link>
-                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all">
-                  <PhoneIcon className="h-5 w-5 mr-1" />
+                <Link href="tel:+918031411776" className="inline-flex items-center justify-center bg-transparent text-white font-bold text-xl py-5 px-10 rounded-2xl border-2 border-indigo-300 hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm">
+                  <PhoneIcon className="h-6 w-6 mr-2" />
                   Call +91 80 3141 1776
                 </Link>
               </div>
@@ -395,22 +380,50 @@ export default function BareillyElderlyCare() {
 
         {/* Our Caregiving Philosophy */}
         <section className="section-padding bg-white">
-          <div className="container-custom max-w-4xl border-l-4 border-indigo-600 pl-8">
+          <div className="container-custom max-w-4xl border-l-8 border-indigo-500 bg-indigo-50/50 p-8 md:p-12 rounded-r-3xl">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">Our Caregiving Philosophy</h2>
             <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-              <p>At EzyHelpers, we understand that choosing a caretaker for elderly at home in Bareilly is not just a practical decision, it’s deeply emotional.</p>
-              <p className="font-medium text-indigo-900/80">Our home elder care services in Bareilly begin with hiring individuals who naturally connect with elderly people.</p>
-              <p>With EzyHelpers’ home elder care services in Bareilly, your family gains not just a helper, but a reliable companion.</p>
+              <p>At EzyHelpers, we understand that choosing a caretaker for elderly at home in Bareilly is not just a practical decision, it's deeply emotional.</p>
+              <p className="font-medium text-indigo-900 text-xl py-2">Our home elder care services in Bareilly begin with hiring individuals who naturally connect with elderly people.</p>
+              <p>With EzyHelpers' home elder care services in Bareilly, your family gains not just a helper, but a reliable companion.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Explore Other Services */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom max-w-6xl">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display tracking-tight">Explore Other Services</h2>
+              <p className="text-xl text-gray-600">Beyond elderly care, EzyHelpers offers comprehensive home support services for Bareilly families:</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { title: 'Housekeeping & Deep Cleaning', desc: 'Professional deep cleaning, sofa washing, and kitchen sanitisation.', link: '/cities/bareilly/home-deep-cleaning', linkText: 'Learn More About Cleaning Services' },
+                { title: 'Cook Services in Bareilly', desc: 'Expert cooks for daily meals, special occasions, or diet-specific cooking.', link: '/cities/bareilly/cooks', linkText: 'Learn More About Cook Services' },
+                { title: 'Driver Services', desc: 'Reliable drivers for school pickups, grocery runs, and local travel.', link: '/cities/bareilly/drivers', linkText: 'Learn More About Driver Services' }
+              ].map((s, i) => (
+                <div key={i} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{s.title}</h3>
+                    <p className="text-gray-600 text-lg mb-8 leading-relaxed">{s.desc}</p>
+                  </div>
+                  <Link href={s.link} className="text-indigo-600 font-bold hover:text-indigo-800 transition-colors inline-flex items-center gap-1 group-hover:underline">
+                    {s.linkText} <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* FAQs */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-custom max-w-5xl">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
-              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+        <section className="section-padding bg-white">
+          <div className="container-custom max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display tracking-tight">FAQs</h2>
+              <div className="w-24 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
             <FAQAccordion
               faqs={[

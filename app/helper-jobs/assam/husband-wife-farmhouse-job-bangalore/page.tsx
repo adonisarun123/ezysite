@@ -89,6 +89,12 @@ export default function HusbandWifeFarmhouseJobsAssamBangalorePage() {
                         { label: 'Assam', href: '/helper-jobs/assam' },
                         { label: 'Husband-Wife Farmhouse Job in Bangalore' }
                     ]}
+                    rightContent={
+                        <div className="flex gap-2">
+                            <span className="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded-md">English</span>
+                            <Link href="/helper-jobs/assam/husband-wife-farmhouse-job-bangalore/hin" className="text-xs font-medium text-gray-500 hover:text-slate-600 transition-colors px-2 py-1 rounded-md hover:bg-slate-50">हिन्दी</Link>
+                        </div>
+                    }
                 />
 
                 {/* Hero Section */}
@@ -100,8 +106,8 @@ export default function HusbandWifeFarmhouseJobsAssamBangalorePage() {
 
                     <div className="container-custom relative z-10">
                         <div className="w-full max-w-none mx-auto text-center px-4">
-                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal italic">Husband-wife Farmhouse Job in Bangalore for Assam Helpers</h1>
-                            <p className="text-sm md:text-xl text-amber-100/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium italic">
+                            <h1 className="text-xl md:text-5xl lg:text-5xl font-bold mb-2 font-display leading-tight text-white whitespace-normal">Husband-wife Farmhouse Job in Bangalore for Assam Helpers</h1>
+                            <p className="text-sm md:text-xl text-amber-100/90 leading-relaxed max-w-4xl mx-auto mb-8 font-medium">
                                 Are you and your partner ready to earn together in Bangalore? We help Assam couples get live-in Husband-wife farmhouse jobs in Bangalore on farmhouses and private properties with stay, salary, and full support.
                             </p>
 
@@ -294,7 +300,7 @@ export default function HusbandWifeFarmhouseJobsAssamBangalorePage() {
                                 ))}
                             </div>
                             
-                            <p className="text-center font-bold text-amber-800 italic">We explain all work responsibilities clearly before you start the job.</p>
+                            <p className="text-center font-bold text-amber-800">We explain all work responsibilities clearly before you start the job.</p>
                         </div>
                     </div>
                 </section>
@@ -441,7 +447,7 @@ export default function HusbandWifeFarmhouseJobsAssamBangalorePage() {
                                     <span className="bg-white px-4 py-2 rounded-full font-bold text-amber-900 shadow-sm border border-amber-200">Affordable and comfortable stay</span>
                                 </div>
                                 
-                                <p className="text-md font-bold text-amber-800 italic mb-8 max-w-2xl mx-auto">
+                                <p className="text-md font-bold text-amber-800 mb-8 max-w-2xl mx-auto">
                                     You settle down comfortably before your house helper job starts. No stress. No last-minute panic at all.
                                 </p>
                                 
