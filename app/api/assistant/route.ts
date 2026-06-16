@@ -75,6 +75,27 @@ function isDuplicateLead(phone: string): boolean {
   return false;
 }
 
+// ── Duplicate priority-payment notification detection ─────────────
+// A paid/priority lead must alert the team even if a normal lead email already
+// went out for that phone — but only ONCE per (phone, txn) so repeated turns
+// after payment don't re-spam. Keyed on phone+txn, 24h window.
+const recentPaid = new Map<string, number>();
+const PAID_WINDOW = 24 * 60 * 60 * 1000;
+
+function isDuplicatePaid(phone: string, txn: string): boolean {
+  const key = `${phone.replace(/\D/g, "").slice(-10)}:${txn.trim().slice(0, 60)}`;
+  const now = Date.now();
+  const last = recentPaid.get(key);
+  if (last && now - last < PAID_WINDOW) return true;
+  recentPaid.set(key, now);
+  if (recentPaid.size > 500) {
+    for (const [k, vts] of recentPaid) {
+      if (now - vts > PAID_WINDOW) recentPaid.delete(k);
+    }
+  }
+  return false;
+}
+
 // ── Duplicate unanswered-question detection ───────────────────────
 const recentUnanswered = new Map<string, number>(); // normalized question → ts
 const UNANSWERED_WINDOW = 24 * 60 * 60 * 1000; // 24 hours
@@ -266,7 +287,7 @@ Yes, you can interview the helper before hiring.
 You can share preferences for language, gender, experience — we match accordingly.
 
 ## PRICING & PLANS
-- One-time registration fee: ₹1,500
+- One-time registration fee: ₹1,499
 - Service (placement) fee: ₹25,000 + 18% GST
 - Payment by UPI, bank transfer, or payment link. No hidden charges.
 - The household pays the helper's wages directly; the fee above is for placement.
@@ -507,18 +528,132 @@ SENTIMENT DETECTION
 
 CONVERSATION FLOW
 - Greet briefly. Ask what help they need.
-- Once they state a need, acknowledge warmly, then ask for the next missing field.
-- Ask for missing fields ONE at a time, never re-asking known ones.
-- Once you have all fields (or at minimum name + phone + job role), confirm warmly:
-  "You're all set, [Name]! Our advisor will call you shortly to help you find the
-  perfect [job role]. You're in great hands!" For job seekers: "Our team will call
-  you about [work] opportunities — keep your phone handy!"
-- After confirming, if they keep chatting, stay helpful and friendly — answer
-  questions, don't push for anything more.
 - If they ask a FAQ question mid-flow, answer concisely (1–3 sentences), then
   transition naturally back to the next missing field.
 - If they refuse to share their number, respect it completely: offer 080-31411776
   and WhatsApp (Mon–Sat, 9am–7pm) instead, and stay warm. Never ask more than twice.
+
+═══════════════════════════════════════════════════════════
+THE 3-PHASE LEAD JOURNEY (CUSTOMERS) — FOLLOW THIS CAREFULLY
+═══════════════════════════════════════════════════════════
+This applies to CUSTOMERS hiring help. Job seekers and support cases follow the
+simpler flows above — do NOT run them through these phases.
+
+SET EXPECTATIONS UP FRONT (very first helpful reply to a hiring customer):
+- In ONE warm, honest line, tell them how this will go before you start asking.
+  Example: "Lovely — I'll just ask a few quick details so our team can find the
+  right person for you. It takes under a minute, and I'll keep it simple."
+- Be considerate and realistic. NEVER over-promise. Do not promise a specific
+  outcome, a guaranteed match, or a fixed timeline beyond what the knowledge
+  base allows (typical turnaround ~7–10 days).
+
+GENTLE DEMAND/SCARCITY FRAMING (use sparingly, woven in naturally):
+- Subtly and honestly remind them that demand for good helpers in their area is
+  high right now, while reassuring that our experienced team will put in real
+  effort to source the right match. Vary the wording; never repeat it twice in a
+  row, never sound pushy or alarmist.
+  e.g. "Good helpers in [area] are in high demand at the moment, but our team
+  will work hard to find the right fit for you."
+
+─── PHASE 1 — CORE DETAILS (always collect these) ───
+Ask ONE at a time, weaving in warmth. Collect:
+  1. What they need help with — one of: Baby Care/Nanny, Elderly Care,
+     General Housekeeping, Cook, Driver, or Others (free text). → job_role
+  2. Type of helper service — one of: Live-in (24/7), Full-time (8–10 hrs/day),
+     Part-time (few hours daily), On-demand (as needed). → job_type
+  3. Full Name → name
+  4. Phone Number (validate: 10 digits, starts 6-9) → phone
+  5. City → area (city)
+  6. Locality (optional) → goes in details.locality
+When all of phase 1 is gathered, set "phase":1 in the lead JSON.
+
+END OF PHASE 1 — IMPORTANT WORDING:
+- Thank them warmly. Do NOT promise a callback in 30 minutes at this stage.
+- Offer to go a little deeper to speed things up. Say something like:
+  "Thank you, [Name]! That's enough for our team to get started. If you can
+  spare another 60 seconds, a few more details would help us fast-track and
+  find the right match sooner — shall I ask?"
+- If they decline, that's completely fine — reassure them the team will still
+  reach out, and stop asking for details.
+
+─── PHASE 2 — DEEPER DETAILS (only if they agree) ───
+Only enter phase 2 if the visitor agrees to share more. Keep it light and quick,
+ONE question at a time. Everything here is OPTIONAL — never make them feel
+interrogated; if they want to stop, stop gracefully and thank them.
+
+Branch by the phase-1 job_type:
+
+IF LIVE-IN, ask (skip any they already answered):
+  - Do you have a separate room for the helper? → details.separate_room
+  - Email Address → details.email
+  - When do you need to start? → details.start_when
+  - No. of Family Members → details.family_members
+  - House Type (Apartment / Individual Villa / Standalone house / Small Flat)
+    → details.house_type
+  - No. of Rooms → details.rooms
+  - Name of the apartment/society → details.society
+  - Religion → details.religion
+  - Do you have a pet at home? (Yes/No) → details.pet
+  - Preferred gender (Male/Female) → details.preferred_gender
+  - Experience Level (Entry 0–1 yrs / Experienced 2–5 yrs / Expert 5+ yrs)
+    → details.experience_level
+  - Monthly budget range (Under 10K / 10-15K / 15-20K / 20-25K / 25-30K / 30K+)
+    → details.budget_range
+  - Preferred languages (English, Hindi, Tamil, Telugu, Kannada, Malayalam,
+    Bengali, Marathi) → details.languages
+  - Specific Requirements → details.requirements
+
+IF PART-TIME, FULL-TIME or ON-DEMAND, ask the live-in list above EXCEPT:
+  - DO NOT ask about a separate room.
+  - ADD: Preferred service timings → details.service_timings
+  - ADD: Duration (how many hours) → details.duration
+
+When phase 2 has meaningful detail, set "phase":2 in the lead JSON.
+
+END OF PHASE 2 — IMPORTANT WORDING:
+- Thank them sincerely for sharing so much: "Thank you so much for these
+  details, [Name] — this really helps."
+- Be honest and considerate: "Finding the right helper isn't always easy, but
+  don't worry — our team will start scouting for you right away." Add the gentle
+  high-demand reassurance once here.
+- Still do NOT make a hard 30-minute promise unless they go through phase 3.
+
+─── PHASE 3 — PRIORITY (OPTIONAL, paid) ───
+After phase 2 (or if a customer wants to be prioritised), you MAY offer the
+priority option — only once, gently, never pushy:
+  "If you'd like, you can prioritise your request and have our customer success
+  team work on it within the next 30–60 minutes. There's a small one-time
+  registration fee of ₹1,499 for this. Would you like to go ahead?"
+- If they are NOT interested: that's perfectly fine. Reassure them the team will
+  still work on their request in the normal flow. Never pressure.
+- If they SAY YES: share the payment link in plain text exactly as given below,
+  and in the SAME message ask them to share the transaction details here once
+  they've paid:
+    PAYMENT_LINK_PLACEHOLDER
+  Say: "Here's the secure payment link: PAYMENT_LINK_PLACEHOLDER — once you've
+  completed the ₹1,499 payment, please paste the transaction ID (or UPI/payment
+  reference number) right here in the chat so I can confirm it and get our
+  customer success team started." Set "registration_interest":true.
+- If they say they've paid but DON'T give a reference, gently ask for it once
+  more: "Could you share the transaction ID or payment reference number from
+  your payment confirmation? It helps us match and confirm your payment quickly."
+- When they paste a transaction ID / reference number:
+  1. Capture it in "txn_id", set "registration_paid":true and "phase":3.
+  2. CONFIRM it back to them in plain text so they know it's recorded, e.g.
+     "Thank you! I've recorded your payment reference [the ID they gave]. Our
+     customer success team will verify it and prioritise your request, aiming to
+     work on it within the next 30–60 minutes (business hours, 9 AM–7 PM IST)."
+  This is the ONLY situation where you may mention the 30–60 minute timeframe.
+- NEVER claim the payment itself succeeded or is verified — only acknowledge and
+  confirm the transaction ID they shared; say our team will verify it.
+
+OVER-PROMISE GUARDRAILS (apply across all phases):
+- After phase 1 only: do NOT promise a 30-minute callback.
+- Only the paid phase-3 path may mention the 30–60 minute priority window.
+- Otherwise, the honest commitment is: our team will reach out / start scouting,
+  with the usual ~7–10 day typical turnaround if asked.
+- Stay considerate and human throughout: acknowledge it's a real need, keep
+  replies short and warm, and never sound like a form.
 
 UNANSWERED QUESTIONS
 - If asked something NOT covered above, DON'T make up an answer. Say: "That's a
@@ -528,10 +663,22 @@ UNANSWERED QUESTIONS
 
 LEAD TRACKING — at the very END of every reply, on its own final line, output the
 known lead as JSON in <lead></lead> tags. Every field, null when unknown, accumulate:
-<lead>{"lead_type":"customer","name":null,"phone":null,"area":null,"job_role":null,"job_type":null,"complete":false,"unanswered":null}</lead>
+<lead>{"lead_type":"customer","name":null,"phone":null,"area":null,"job_role":null,"job_type":null,"complete":false,"unanswered":null,"phase":null,"details":null,"registration_interest":false,"registration_paid":false,"txn_id":null}</lead>
 - "lead_type": "customer" | "job_seeker" | "support"
 - Set "complete" true only once name + phone + job_role are all known AND the phone
   passed validation.
+- "phase": integer 1, 2, or 3 — the furthest detail-collection phase reached for a
+  customer (1 core fields, 2 deeper details, 3 priority payment). null for job
+  seekers / support.
+- "details": an object holding any phase-2 fields you've collected, using the exact
+  keys named in the phases above (locality, separate_room, email, start_when,
+  family_members, house_type, rooms, society, religion, pet, preferred_gender,
+  experience_level, budget_range, languages, requirements, service_timings,
+  duration). Accumulate across turns; omit keys you don't have. null until you have
+  at least one. NEVER drop details you already captured.
+- "registration_interest": true once the visitor agrees to the priority/paid option.
+- "registration_paid": true once they paste a transaction ID for the registration fee.
+- "txn_id": the transaction/reference ID string the visitor pasted, else null.
 - PHONE VALIDATION: a valid number is 10 digits starting with 6-9. REJECT obviously
   fake numbers — all identical digits (9999999999), sequences (9876543210), or
   numbers starting 0-5. When that happens, stay on the current topic and politely
@@ -606,14 +753,38 @@ TOOLS — REAL ACTIONS YOU CAN TAKE (use them, never guess)
    On a clear yes ("yes", "ok", "haan", "please book"), call create_booking
    immediately. Do not let the conversation drift without offering the booking.
    Call it at most ONCE per conversation. When it succeeds, give the visitor the
-   booking reference and say our team will call within 30 minutes during business
-   hours (9 AM–7 PM IST). If it returns an error, apologise briefly and fix the
-   issue (e.g., re-confirm the phone number).
+   booking reference and say our team will reach out to help them (business hours
+   9 AM–7 PM IST). Only promise the 30–60 minute priority window if the visitor
+   completed the paid phase-3 registration. If it returns an error, apologise
+   briefly and fix the issue (e.g., re-confirm the phone number).
+   When you call create_booking, also pass any phase-2 "details" you've collected,
+   the "phase" reached, and "registration_paid"/"txn_id" if the visitor paid — so
+   the team gets the full picture in one record.
 - NEVER tell a visitor a booking exists unless create_booking returned ok:true.
 - Keep emitting the <lead> JSON exactly as before, on every reply.
 `;
 
 const MODEL = "claude-haiku-4-5-20251001"; // fast + low-cost for a public widget
+
+// ── Razorpay priority-registration payment link (phase 3) ──────────
+// Set RAZORPAY_PAYMENT_LINK in the environment to the live link. Until it's set,
+// Asha will NOT offer the paid priority option (it can't share a real link),
+// so visitors are never sent a broken/placeholder URL.
+const RAZORPAY_PAYMENT_LINK = (process.env.RAZORPAY_PAYMENT_LINK || "").trim();
+
+// Build the system prompt for this request: inject the real payment link, or
+// strip the paid phase-3 offer entirely when no link is configured.
+function buildSystemPrompt(): string {
+  if (RAZORPAY_PAYMENT_LINK) {
+    return SYSTEM.replace(/PAYMENT_LINK_PLACEHOLDER/g, RAZORPAY_PAYMENT_LINK);
+  }
+  // No link configured → tell the model not to offer paid priority yet.
+  return SYSTEM.replace(/PAYMENT_LINK_PLACEHOLDER/g, "(payment link not available)") +
+    `\n\nNOTE: The priority registration payment link is not configured right now. ` +
+    `Do NOT offer the paid 30–60 minute priority option or mention a registration ` +
+    `fee link. If a visitor asks to prioritise, warmly say our team can arrange ` +
+    `priority handling on a quick call and capture their details instead.`;
+}
 
 interface LeadData {
   lead_type?: string | null;
@@ -629,6 +800,50 @@ interface LeadData {
   booking_ref?: string | null;
   /** Timing/requirement details captured by the create_booking tool. */
   booking_notes?: string | null;
+  /** 3-phase journey: 1 core fields, 2 deep details, 3 priority payment. */
+  phase?: number | null;
+  /** Phase-2 free-form requirement detail keyed by the names in the prompt. */
+  details?: Record<string, unknown> | null;
+  /** Phase-3: visitor agreed to the paid priority option. */
+  registration_interest?: boolean | null;
+  /** Phase-3: visitor reported paying the registration fee. */
+  registration_paid?: boolean | null;
+  /** Phase-3: transaction/reference id the visitor pasted (unverified). */
+  txn_id?: string | null;
+}
+
+// Human-readable labels for the phase-2 detail keys (used in emails).
+const DETAIL_LABELS: Record<string, string> = {
+  locality: "Locality",
+  separate_room: "Separate room",
+  email: "Email",
+  start_when: "Start when",
+  family_members: "Family members",
+  house_type: "House type",
+  rooms: "No. of rooms",
+  society: "Apartment/society",
+  religion: "Religion",
+  pet: "Pet at home",
+  preferred_gender: "Preferred gender",
+  experience_level: "Experience level",
+  budget_range: "Budget range",
+  languages: "Preferred languages",
+  requirements: "Specific requirements",
+  service_timings: "Service timings",
+  duration: "Duration",
+};
+
+// Render the details object as plain "Label: value" lines, skipping empties.
+function formatDetailLines(details: Record<string, unknown> | null | undefined): string {
+  if (!details || typeof details !== "object") return "";
+  const lines: string[] = [];
+  for (const [k, v] of Object.entries(details)) {
+    if (v == null || String(v).trim() === "") continue;
+    const label = DETAIL_LABELS[k] || k;
+    const val = Array.isArray(v) ? v.join(", ") : String(v);
+    lines.push(`${label}: ${val.slice(0, 200)}`);
+  }
+  return lines.join("\n");
 }
 
 // ── Agentic tools (June 2026) ──────────────────────────────────────
@@ -666,6 +881,42 @@ const TOOLS = [
         job_type: { type: "string", description: "live-in | full-time | part-time | on-demand" },
         start_when: { type: "string", description: "When they need the helper, if mentioned" },
         notes: { type: "string", description: "Any other relevant requirement details" },
+        phase: {
+          type: "integer",
+          description: "Furthest detail phase reached: 1 core, 2 deep details, 3 priority payment",
+        },
+        details: {
+          type: "object",
+          description:
+            "Phase-2 requirement detail collected so far. Use these exact keys (omit any you don't have): locality, separate_room, email, start_when, family_members, house_type, rooms, society, religion, pet, preferred_gender, experience_level, budget_range, languages, requirements, service_timings, duration.",
+          properties: {
+            locality: { type: "string" },
+            separate_room: { type: "string" },
+            email: { type: "string" },
+            start_when: { type: "string" },
+            family_members: { type: "string" },
+            house_type: { type: "string" },
+            rooms: { type: "string" },
+            society: { type: "string" },
+            religion: { type: "string" },
+            pet: { type: "string" },
+            preferred_gender: { type: "string" },
+            experience_level: { type: "string" },
+            budget_range: { type: "string" },
+            languages: { type: "string" },
+            requirements: { type: "string" },
+            service_timings: { type: "string" },
+            duration: { type: "string" },
+          },
+        },
+        registration_paid: {
+          type: "boolean",
+          description: "True if the visitor reported paying the priority registration fee",
+        },
+        txn_id: {
+          type: "string",
+          description: "Transaction/reference id the visitor pasted after paying, if any",
+        },
       },
       required: ["name", "phone", "area", "job_role"],
     },
@@ -689,14 +940,21 @@ async function insertLeadRow(lead: LeadData): Promise<void> {
     }
     const service =
       (lead.job_role || "unknown") + (lead.job_type ? ` (${lead.job_type})` : "");
-    const { error } = await supabase.from("leads").insert([
-      {
-        name: lead.name || "unknown",
-        phone: lead.phone || "",
-        service,
-        city: lead.area || "unknown",
-      },
-    ]);
+    const row: Record<string, unknown> = {
+      name: lead.name || "unknown",
+      phone: lead.phone || "",
+      service,
+      city: lead.area || "unknown",
+    };
+    // Phase-2/3 enrichment lives in columns added by the
+    // 20260616120000_add_chatbot_detail_capture migration. Only set them when
+    // present so older databases (pre-migration) don't 400 on unknown columns
+    // for plain leads — but if they ARE set and the column is missing, Supabase
+    // returns an error we log without breaking the chat.
+    if (lead.details && Object.keys(lead.details).length > 0) row.details = lead.details;
+    if (lead.registration_paid) row.registration_paid = true;
+    if (lead.txn_id) row.txn_id = String(lead.txn_id).slice(0, 120);
+    const { error } = await supabase.from("leads").insert([row]);
     if (error) console.error("Chatbot leads insert failed:", error.message);
   } catch (e) {
     console.error("Chatbot leads insert failed:", e);
@@ -711,6 +969,10 @@ interface CreateBookingInput {
   job_type?: string;
   start_when?: string;
   notes?: string;
+  phase?: number;
+  details?: Record<string, unknown>;
+  registration_paid?: boolean;
+  txn_id?: string;
 }
 
 async function runTool(
@@ -763,6 +1025,11 @@ async function runTool(
         job_type: b.job_type ? String(b.job_type).slice(0, 60) : null,
         complete: true,
         unanswered: null,
+        phase: typeof b.phase === "number" ? b.phase : null,
+        details:
+          b.details && typeof b.details === "object" ? b.details : null,
+        registration_paid: b.registration_paid ? true : null,
+        txn_id: b.txn_id ? String(b.txn_id).slice(0, 120) : null,
         booking_ref: reference,
         booking_notes:
           [
@@ -773,6 +1040,13 @@ async function runTool(
             .join(" · ") || null,
       };
 
+      // If this booking carries a reported payment, mark the paid-dedupe window
+      // so the standalone priority-email path won't also fire for the same
+      // (phone, txn) on a later turn — the [BOOKED]+[PAID] email covers it.
+      if (lead.registration_paid && lead.txn_id) {
+        isDuplicatePaid(phone, String(lead.txn_id));
+      }
+
       // Best-effort: store in the same `leads` table the website forms use.
       await insertLeadRow(lead);
 
@@ -780,10 +1054,16 @@ async function runTool(
       const areaServed = isServedArea(area);
       await sendLeadEmail(lead, areaServed, recentConversation);
 
+      // Only paid/priority bookings get the 30–60 min window; otherwise the
+      // honest commitment is that the team will reach out (no over-promise).
+      const message = lead.registration_paid
+        ? `Booking recorded with reference ${reference}. As a priority request, our customer success team aims to action it within 30–60 minutes during business hours (9 AM–7 PM IST).`
+        : `Booking recorded with reference ${reference}. Our team will reach out during business hours (9 AM–7 PM IST).`;
+
       return {
         ok: true,
         reference,
-        message: `Booking recorded with reference ${reference}. Team calls within 30 minutes during business hours (9 AM–7 PM IST).`,
+        message,
         area_served: areaServed,
       };
     }
@@ -857,6 +1137,11 @@ async function logChatTurn(args: {
     if (areaServed !== null) row.area_served = areaServed;
     if (lead.sentiment) row.sentiment = clamp(lead.sentiment, 20);
     if (lead.unanswered) row.unanswered = clamp(lead.unanswered, 500);
+    // Phase-2/3 enrichment (columns from the detail-capture migration).
+    if (typeof lead.phase === "number") row.phase = lead.phase;
+    if (lead.details && Object.keys(lead.details).length > 0) row.details = lead.details;
+    if (lead.registration_paid) row.registration_paid = true;
+    if (lead.txn_id) row.txn_id = clamp(lead.txn_id, 120);
   }
   if (leadEmailed) row.lead_emailed = true;
   const { error } = await supabase
@@ -1032,7 +1317,8 @@ export async function POST(req: Request) {
     // directly. (See lib/faqStore.ts + supabase/chatbot_faqs.sql.)
     const lastUserMsg =
       [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
-    let systemForRequest = SYSTEM;
+    const baseSystem = buildSystemPrompt();
+    let systemForRequest = baseSystem;
     try {
       const faqs = await matchApprovedFaqs(lastUserMsg);
       if (faqs.length > 0) {
@@ -1040,7 +1326,7 @@ export async function POST(req: Request) {
           .map((f) => `Q: ${f.question}\nA: ${f.answer}`)
           .join("\n\n");
         systemForRequest =
-          SYSTEM +
+          baseSystem +
           `\n\n═══════════════════════════════════════════════════════════\n` +
           `APPROVED FAQ ANSWERS (human-reviewed — you MAY use these directly,\n` +
           `rephrased in your own warm voice; they extend the knowledge base):\n` +
@@ -1179,6 +1465,30 @@ export async function POST(req: Request) {
       }
     }
 
+    // Priority payment alert (phase 3): when the visitor reports paying the
+    // registration fee, the team must be alerted with the [PAID] flag — even if
+    // a normal lead email already went out earlier in the chat. Deduped per
+    // (phone, txn) so it fires once. Re-validate the phone server-side.
+    if (
+      lead &&
+      lead.registration_paid &&
+      lead.txn_id &&
+      lead.name &&
+      isValidIndianMobile(lead.phone)
+    ) {
+      if (!isDuplicatePaid(lead.phone!, String(lead.txn_id))) {
+        try {
+          await insertLeadRow(lead); // persist txn/details on the leads row
+          await sendLeadEmail(lead, areaServed, recentConversation);
+          emailed = true;
+        } catch (e) {
+          console.error("Priority payment email failed:", e);
+        }
+      } else {
+        emailed = true;
+      }
+    }
+
     // Email unanswered questions (deduped) so the team can follow up.
     if (lead && lead.unanswered && !isDuplicateUnanswered(lead.unanswered)) {
       try {
@@ -1279,10 +1589,12 @@ async function sendLeadEmail(
   const areaTag = areaServed === false ? " [OUTSIDE SERVICE AREA]" : "";
   const typeTag = leadTypeTag(lead);
   const bookedTag = lead.booking_ref ? ` [BOOKED ${lead.booking_ref}]` : "";
+  const paidTag = lead.registration_paid ? " [PAID · PRIORITY]" : "";
   const triageTag = triage?.subjectTag || "";
+  const detailLines = formatDetailLines(lead.details);
 
   const subject = safeSubject(
-    `${triageTag}New lead${typeTag}${bookedTag} — ${v(lead.job_role)}${lead.area ? ", " + lead.area : ""}${sentimentTag}${areaTag}`
+    `${paidTag ? "🚀 " : ""}${triageTag}New lead${typeTag}${bookedTag}${paidTag} — ${v(lead.job_role)}${lead.area ? ", " + lead.area : ""}${sentimentTag}${areaTag}`
   );
 
   const isJobSeeker = lead.lead_type === "job_seeker";
@@ -1291,6 +1603,9 @@ async function sendLeadEmail(
 
   const text =
     `New enquiry from the EzyHelpers website assistant\n\n` +
+    (lead.registration_paid
+      ? `🚀 PRIORITY — registration fee reported PAID${lead.txn_id ? ` (txn: ${lead.txn_id})` : ""}.\n   Customer success: action within 30–60 min (business hours).\n\n`
+      : "") +
     (lead.booking_ref ? `Booking ref: ${lead.booking_ref}\n` : "") +
     (lead.booking_notes ? `Details:     ${lead.booking_notes}\n` : "") +
     `Type:        ${isJobSeeker ? "Job seeker (helper looking for work)" : lead.lead_type === "support" ? "Existing customer / support" : "Customer"}\n` +
@@ -1299,15 +1614,24 @@ async function sendLeadEmail(
     `Area:        ${v(lead.area)}${areaServed === false ? " (outside service area)" : ""}\n` +
     `${roleLabel}:    ${v(lead.job_role)}\n` +
     `${typeLabel}:    ${v(lead.job_type)}\n` +
+    (typeof lead.phase === "number" ? `Detail phase: ${lead.phase}\n` : "") +
     (lead.sentiment === "negative"
       ? `Sentiment:   ⚠️ Frustrated / negative\n`
       : "") +
+    (detailLines ? `\nRequirement details:\n${detailLines}\n` : "") +
     `\nSource: Website assistant`;
 
   const html = `
     <div style="font-family:Inter,Arial,sans-serif;color:#16241F">
       ${triage?.htmlBlock || ""}
       <h2 style="color:#0E7C66;margin:0 0 12px">New website lead${esc(typeTag)}</h2>
+      ${
+        lead.registration_paid
+          ? `<div style="background:#EAF8F1;border:1px solid #B8E6CF;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#0E7C66">
+              🚀 <b>Priority lead</b> — registration fee reported paid${lead.txn_id ? ` · txn <b>${esc(lead.txn_id)}</b>` : ""}. Customer success to action within 30–60 min (business hours).
+            </div>`
+          : ""
+      }
       ${
         lead.sentiment === "negative"
           ? `<div style="background:#FFF0F0;border:1px solid #FFCCCC;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#CC3333">
@@ -1330,7 +1654,16 @@ async function sendLeadEmail(
           ["Area", lead.area],
           [roleLabel, lead.job_role],
           [typeLabel, lead.job_type],
+          ...(typeof lead.phase === "number" ? [["Detail phase", String(lead.phase)]] : []),
           ...(lead.booking_notes ? [["Details", lead.booking_notes]] : []),
+          ...(lead.details
+            ? Object.entries(lead.details)
+                .filter(([, vv]) => vv != null && String(vv).trim() !== "")
+                .map(([k, vv]) => [
+                  DETAIL_LABELS[k] || k,
+                  Array.isArray(vv) ? vv.join(", ") : String(vv),
+                ] as [string, string])
+            : []),
         ]
           .map(
             ([k, val]) =>
