@@ -29,12 +29,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Full-Time Maid Bangalore | Verified Daily Helper',
-  description: 'Full-time maids in Bangalore for daily cleaning, cooking, and home tasks. Perfect for working families needing complete home management support.',
+  title: 'Full-Time Maid in Bangalore | Daily Help | EzyHelpers',
+  description: 'Hire a verified full-time maid in Bangalore for cooking, cleaning, childcare & elderly care. Background-checked. 8–10 hrs daily. All areas covered.',
   keywords: 'full time maid bangalore, full day maid bangalore, daily maid bangalore, househelp bangalore, cook bangalore, babysitter bangalore, elderly care bangalore',
   openGraph: {
-    title: 'Full-Time Maid Bangalore | Verified Daily Helper',
-    description: 'Reliable 8–10 hour daily maid service in Bangalore for cleaning, cooking, childcare, or elderly care. Background-verified and trained.',
+    title: 'Full-Time Maid in Bangalore | Daily Help | EzyHelpers',
+    description: 'Hire a verified full-time maid in Bangalore for cooking, cleaning, childcare & elderly care. Background-checked. 8–10 hrs daily. All areas covered.',
     url: 'https://www.ezyhelpers.com/cities/bangalore/full-time-maid',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -54,71 +54,18 @@ export default function BangaloreFullTimeMaidPage() {
     { name: 'Full-Time Maid', url: 'https://www.ezyhelpers.com/cities/bangalore/full-time-maid' }
   ]
 
-  // Reasons (Why Full-Time Maids Are a Necessity in Bangalore)
-  const reasons = [
-    {
-      title: 'Daily Chores, Simplified',
-      description:
-        'Full-time maids in Bangalore manage household tasks so you can enjoy your time and reduce stress.',
-      icon: HomeIcon,
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-100'
-    },
-    {
-      title: 'Fits Busy Work Schedules',
-      description:
-        'Our maids support you during long shifts, meetings, and hectic workdays, so you can focus without stress.',
-      icon: BuildingOffice2Icon,
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-100'
-    },
-    {
-      title: 'Balance Family & Work',
-      description:
-        'Maids adjust to your routine, helping manage daily tasks for working parents and homemakers alike.',
-      icon: UserGroupIcon,
-      color: 'text-green-600',
-      bgColor: 'bg-green-100'
-    },
-    {
-      title: 'Ideal for Tech Families',
-      description:
-        'Perfect for dual-income or joint families managing packed schedules in Bangalore’s tech hubs.',
-      icon: SparklesIcon,
-      color: 'text-pink-600',
-      bgColor: 'bg-pink-100'
-    },
-    {
-      title: 'Help for All Residents',
-      description:
-        'New to Bangalore or long-settled, our maids bring daily consistency while you handle your priorities.',
-      icon: StarIcon,
-      color: 'text-yellow-600',
-      bgColor: 'bg-yellow-100'
-    },
-    {
-      title: 'No Live-In Needed',
-      description:
-        'Get 8–10 hours of help daily without accommodating a maid. Enjoy privacy and clean home comfort.',
-      icon: LockClosedIcon,
-      color: 'text-red-600',
-      bgColor: 'bg-red-100'
-    }
-  ]
-
   // Services
   const fullTimeServices = [
     {
       title: 'Full-Time Housekeeper',
-      description:
-        'Manage daily home tasks with a flexible 8–10 hour schedule. Perfect for tech professionals in Electronic City and Outer Ring Road.',
+      description: 'Ideal for families who need complete daily home management. Tasks include sweeping, mopping, dusting, bathroom and kitchen cleaning, utensil washing, laundry, and ironing.',
       icon: HomeIcon,
       features: [
-        'Daily sweeping, mopping, dusting',
-        'Bathroom cleaning',
+        'Sweeping & mopping',
+        'Dusting & kitchen cleaning',
         'Utensil washing',
         'Laundry & ironing',
-        'Basic kitchen help'
+        'Bathroom cleaning'
       ],
       gradient: 'from-blue-500 to-indigo-600',
       bgColor: 'bg-blue-50',
@@ -126,15 +73,13 @@ export default function BangaloreFullTimeMaidPage() {
     },
     {
       title: 'Full-Time Cook',
-      description:
-        'Fresh, healthy meals aligned with your work schedule. Ideal for busy professionals needing breakfast before early meetings and dinner after late work.',
+      description: 'Best for working professionals who need fresh, home-cooked meals without managing the kitchen themselves. Tasks include breakfast, lunch, and dinner preparation; South Indian, North Indian, and basic continental cooking; tiffin packing; and market errands.',
       icon: HeartIcon,
       features: [
-        'Breakfast, lunch, dinner prep',
-        'South Indian, North Indian & basic continental',
+        'Breakfast, lunch & dinner',
+        'Multiple cuisines',
         'Tiffin packing',
         'Market errands',
-        'Festival/special meal support'
       ],
       gradient: 'from-red-500 to-pink-600',
       bgColor: 'bg-red-50',
@@ -142,61 +87,37 @@ export default function BangaloreFullTimeMaidPage() {
     },
     {
       title: 'Full-Day Babysitter',
-      description:
-        "Reliable childcare support coordinating with parents' schedules. Perfect for working couples in Whitefield and Marathahalli managing school routines.",
+      description: 'Suited for working parents managing school routines and childcare during office hours. Tasks include bathing, feeding, homework assistance, playtime management, and school or daycare pick-up and drop.',
       icon: UserGroupIcon,
-      features: ['Bathing & feeding', 'Homework assistance', 'Playtime management', 'Pick-up/drop from school or daycare'],
+      features: ['Bathing & feeding', 'Homework assistance', 'Playtime management', 'School pick-up/drop'],
       gradient: 'from-green-500 to-emerald-600',
       bgColor: 'bg-green-50',
       iconColor: 'text-green-600'
     },
     {
       title: 'Full-Time Elderly Care Assistant',
-      description:
-        'Dedicated daytime care for senior family members. Essential for families needing supervision during work hours.',
+      description: 'Essential for families needing reliable daytime supervision for senior members. Tasks include companionship, medication reminders, hygiene and mobility support, and basic assistance throughout the day.',
       icon: ShieldCheckIcon,
-      features: ['Daytime companionship', 'Medication reminders', 'Light medical assistance', 'Hygiene support'],
+      features: ['Daytime companionship', 'Medication reminders', 'Mobility support', 'Hygiene & assistance'],
       gradient: 'from-purple-500 to-violet-600',
       bgColor: 'bg-purple-50',
       iconColor: 'text-purple-600'
     }
   ]
 
-  const pricingInfo = {
-    range: '₹12,000 to ₹20,000/month',
-    note: 'Typical salary for 8–10 hour full-time maid services in Bangalore',
-    factors: [
-      'Type of service: cleaning, cooking, childcare, or elderly care',
-      'Maid’s experience, skillset, and language comfort',
-      'Daily working hours (usually 8–10) and task complexity',
-      'Your location in Bangalore; premium localities may impact salary rates',
-      'Cost-effective vs. live-in (no accommodation needed)'
-    ]
-  }
-
-  const benefits = [
-    { title: '8–10 Hour Daily Support', description: 'Get reliable help throughout your day. Perfect for any family that values both privacy and a consistent household routine.', icon: ClockIcon },
-    { title: 'Fits Your Lifestyle', description: 'Flexible timing aligned with your office hours, home responsibilities, and regular family activities.', icon: CalendarDaysIcon },
-    { title: 'No Accommodation Needed', description: 'Enjoy full-time maid support without the stress of live-in arrangements. Your maid returns home after her shift.', icon: HomeIcon },
-    { title: 'Replacement Guarantee', description: 'If your maid is unavailable, we ensure quick replacements so your home routine stays uninterrupted.', icon: ShieldCheckIcon },
-    { title: 'Cost-Effective Daily Help', description: 'Skip the hassle of managing multiple part-time helpers. One trained, full-time maid offers better value and consistent quality every day.', icon: CurrencyRupeeIcon },
-    { title: 'Trained & Verified', description: 'Background checks, hygiene and safety orientation for reliable performance.', icon: CheckCircleIcon }
-  ]
-
-  const lifestyleFit = [
-    'Flexible for various household schedules and lifestyle preferences',
-    'Adaptable to diverse family needs and daily routines',
-    'Clear communication in Hindi, Kannada, or English',
-    'Well-versed in apartment rules and gated community protocols with full compliance',
-    'Comfortable working in all types of homes, from compact apartments to independent villas',
-    'Also ideal for non-working residents, homemakers, or seniors needing consistent, all-day help'
+  const preferReasons = [
+    { title: 'IT Professionals & Couples', description: 'Ideal for those in Electronic City, Whitefield, and Outer Ring Road.', icon: BuildingOffice2Icon },
+    { title: 'Families with Children', description: 'Weekday support for infants, toddlers, or school-going children.', icon: UserGroupIcon },
+    { title: 'Households with Elderly', description: 'Daytime supervision and companionship for senior parents.', icon: HeartIcon },
+    { title: 'Single-Person Households', description: 'Regular cooking and cleaning without coordinating multiple helpers.', icon: UserIcon },
+    { title: 'New Residents & Expats', description: 'Immediate, reliable domestic help when settling into Bangalore.', icon: MapPinIcon }
   ]
 
   const process = [
-    { step: '1', title: 'Consultation', description: 'We carefully understand your lifestyle, preferences, and specific requirements', icon: ChatBubbleLeftRightIcon },
-    { step: '2', title: 'Matching', description: 'Receive 2-3 curated profiles customized to your specific criteria', icon: UserIcon },
-    { step: '3', title: 'Interviews', description: 'Evaluate candidates with interviews and trial periods to ensure a great fit', icon: CheckCircleIcon },
-    { step: '4', title: 'Onboarding', description: 'Quick onboarding to get trusted help without delays', icon: SparklesIcon }
+    { step: '1', title: 'Share Your Requirements', description: 'Tell us the tasks needed (cleaning, cooking, childcare, elderly care, or combination), preferred working hours, and location in Bangalore.', icon: ChatBubbleLeftRightIcon },
+    { step: '2', title: 'Receive Verified Profiles', description: 'Get 2–3 shortlisted profiles of background-verified, experienced full-time maids matched to your household needs.', icon: UserIcon },
+    { step: '3', title: 'Interview & Select', description: 'Speak with shortlisted candidates over a call or in person. Request a trial period before making your final decision.', icon: CheckCircleIcon },
+    { step: '4', title: 'Confirm & Onboard', description: 'We coordinate the joining process and ensure your full-time maid arrives on the agreed date, ready to work.', icon: SparklesIcon }
   ]
 
   const bangaloreAreas = [
@@ -206,19 +127,17 @@ export default function BangaloreFullTimeMaidPage() {
   ]
 
   const faqs = [
-    { question: 'What is the difference between full-time maid and live-in maid services?', answer: 'A full-time maid Bangalore works 8-10 hours daily and returns home, while live-in maids stay 24/7. Full-time service offers professional support without accommodation requirements.' },
-    { question: 'Can full-day maid in Bangalore adjust to IT professional schedules?', answer: "Yes, our maids are trained to work with early morning starts (as early as 6 AM) and evening schedules (up to 8 PM) to support Bangalore's tech workforce." },
-    { question: 'Do full-time maids work on weekends?', answer: 'Our full-day maids typically work 6 days a week with one weekly day off. Emergency weekend support is available on request.' },
-    { question: 'Can the maid handle both cooking and cleaning in 8-10 hours?', answer: 'No, one maid typically specialises in a specific task. If you hire a maid for cleaning, she focuses only on cleaning duties. If you hire a cook, she will handle cooking and may assist with light cleaning or top-up work if time allows. For both cooking and cleaning, we recommend hiring two separate helpers to ensure quality and efficiency.' },
-    { question: 'Is full-time maid service cost-effective for small families?', answer: "Full-time service offers better value than multiple part-time helpers, especially for working couples in Bangalore's competitive rental market." },
-    { question: 'Do you provide maids familiar with North Indian cooking?', answer: 'Yes, we match maids for full-time, based on cuisine preferences, including North Indian, South Indian, and continental cooking skills.' },
-    { question: 'How do you ensure the safety of full-time maid services?', answer: 'We ensure safety by verifying every maid’s Aadhaar ID and local address. Police verification is available on request for added security and peace of mind.' },
-    { question: 'Can full-time maids manage modern apartment living in Bangalore?', answer: 'Our full-day maids in Bangalore are trained in using modern appliances, following apartment rules, and managing day-to-day urban home needs.' },
-    { question: 'Do full-time maids take weekly off?', answer: 'Yes, most full-time maids take one day off per week. The day can be fixed based on mutual agreement and household convenience.' },
-    { question: 'How are maids trained before placement?', answer: 'We conduct skill assessment and soft skill orientation before assigning full-time maids. This includes hygiene, safety, and household discipline basics.' },
-    { question: 'Are full-time maids available for single-person households?', answer: 'Absolutely. Full-time maids are also ideal for working professionals, senior citizens, or bachelors who need daily help with cleaning and cooking.' },
-    { question: 'Do I need to provide food for the full-time maid?', answer: 'Providing meals is not mandatory. Most maids bring their own food, though offering water, tea, or snacks is a courteous gesture. However, offering water, tea, or snacks is a common gesture and helps build a positive working relationship. Many households do choose to provide meals.' },
-    { question: 'How do I give feedback or report an issue with the maid?', answer: 'You can contact our customer support or use our feedback portal. We take complaints seriously and ensure professional behavior and performance.' }
+    { question: 'What is the salary of a full-time maid in Bangalore?', answer: 'Full-time maid salaries in Bangalore range from ₹16,000 to ₹20,000 per month. The exact amount depends on duties, experience, and daily working hours. Roles combining cooking and cleaning or involving childcare and elderly care typically fall at the higher end of this range.' },
+    { question: 'What is the difference between a full-time maid and a live-in maid?', answer: "A full-time maid works 8–10 hours daily and returns home after the shift. A live-in maid stays at the employer's residence and is available overnight. Full-time maids are preferred when structured daily help is needed without a residential arrangement." },
+    { question: 'What is the difference between a full-time maid and a part-time maid?', answer: 'A full-time maid works 8–10 hours daily and handles a complete set of household responsibilities. A part-time maid typically works 2–4 hours covering specific tasks such as sweeping or utensil washing. Full-time help suits households needing comprehensive daily support, while part-time works for lighter, task-specific needs.' },
+    { question: 'What is a full-day house help in Bangalore?', answer: 'A full-day house help works a complete 8–10 hour shift at your home each day, covering all assigned household tasks from morning through evening. This is the same as hiring a full-time maid or full-time house maid in Bangalore; the terminology varies, but the arrangement is identical.' },
+    { question: 'Can a full-time maid handle both cooking and cleaning?', answer: 'Yes. Many full-time maids in Bangalore manage both cooking and cleaning within their shift. When multiple tasks are assigned, the salary is adjusted based on workload and confirmed before hiring.' },
+    { question: 'How quickly can I hire a full-time maid in Bangalore?', answer: 'Through EzyHelpers, shortlisting begins within 1–2 business days once the registration fee is paid. Most families complete interviews and confirm a maid within 3–5 days, with background verification completed before work begins. In some cases, it might take up to 7 days, also based on the availability of the helper that matches your needs.' },
+    { question: 'Do full-time maids in Bangalore work on weekends?', answer: 'Most full-time maids work six days a week with one weekly off. Weekend availability is discussed and confirmed during the hiring process based on the family’s requirements.' },
+    { question: 'Is hiring full-time house help in Bangalore cost-effective for small families?', answer: 'Yes. A single full-time maid replaces multiple part-time helpers, delivering consistent daily support at a predictable monthly cost. This removes coordination overhead and ensures reliable help every day.' },
+    { question: 'How are full-time maids verified by EzyHelpers?', answer: 'All helpers undergo Aadhaar-based identity verification and address confirmation before being recommended. But if you want police verification and health assessment, that can be done at an additional cost, too.' },
+    { question: 'Do I need to provide food for the full-time maid?', answer: 'Most families offer tea or light refreshments during the shift. Providing a full meal is not mandatory and is agreed upon between the family and the maid before hiring, separate from the monthly salary.' },
+    { question: 'Can I hire a full-time maid only for cooking or cleaning?', answer: 'Yes. You can hire a full-time maid for a single responsibility, such as cooking, housekeeping, childcare, or elderly care. You can also combine responsibilities based on your household’s needs and working hours.' }
   ]
 
   // Local Business Schema props
@@ -279,18 +198,18 @@ export default function BangaloreFullTimeMaidPage() {
                   </div>
 
                   <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                    Full-Time Maid Bangalore – Reliable Domestic Help for Your Home
+                    Full-Time Maid in Bangalore – Reliable Daily Home Help for Busy Families
                   </h1>
 
                   <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                    Reliable 8–10 hour daily maid service for working families and everyday households across Bangalore. Get trusted help for cleaning, cooking, childcare, or elderly care, customised to your routine.
+                    Hire a background-verified full-time maid in Bangalore for 8–10 hours of daily household support. Cooking, cleaning, childcare, or elderly care, matched to your schedule and home.
                   </p>
 
                   {/* Key Benefits Pills */}
                   <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Background Verified</div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ 8–10 Hour Daily Assistance</div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Affordable, Full-Day Help</div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Aadhaar & Background Verified</div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ 8–10 Hour Daily Service</div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ Serving All Bangalore Neighbourhoods</div>
                   </div>
 
                   {/* CTA Buttons */}
@@ -307,22 +226,6 @@ export default function BangaloreFullTimeMaidPage() {
                       <span className="hidden sm:inline">Call +91 9972571005</span>
                       <span className="sm:hidden">Call Now</span>
                     </Link>
-                  </div>
-
-                  {/* Trust Indicators */}
-                  <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
-                    <div className="text-center lg:text-left">
-                      <div className="text-2xl font-bold text-white">8–10 hrs</div>
-                      <div className="text-primary-200 text-sm">Daily Service</div>
-                    </div>
-                    <div className="text-center lg:text-left">
-                      <div className="text-2xl font-bold text-white">Experienced</div>
-                      <div className="text-primary-200 text-sm">in Urban Homes</div>
-                    </div>
-                    <div className="text-center lg:text-left">
-                      <div className="text-2xl font-bold text-white">Safe</div>
-                      <div className="text-primary-200 text-sm">and Trusted Maids</div>
-                    </div>
                   </div>
                 </div>
 
@@ -348,13 +251,6 @@ export default function BangaloreFullTimeMaidPage() {
                         <div className="text-white font-semibold text-sm group-hover:text-purple-100">Elder Care</div>
                       </div>
                     </div>
-                    {/* Floating Elements */}
-                    <div className="absolute -top-4 -right-4 bg-yellow-400 text-yellow-900 rounded-full p-3 shadow-lg">
-                      <ClockIcon className="h-6 w-6" />
-                    </div>
-                    <div className="absolute -bottom-4 -left-4 bg-green-400 text-green-900 rounded-full p-3 shadow-lg">
-                      <CheckCircleIcon className="h-6 w-6" />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -362,31 +258,40 @@ export default function BangaloreFullTimeMaidPage() {
           </div>
         </section>
 
-        {/* Why Section */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">
-                Why Full-Time Maids Are a Necessity in Bangalore Homes
-              </h2>
-              <p className="text-xl text-gray-600 mb-12">
-              In Bangalore’s busy life with traffic and work pressure, a full-time maid helps manage daily chores so you can focus on family and career.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {reasons.map((item, index) => {
-                const IconComponent = (item.icon as any)
-                return (
-                  <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
-                    <div className={`w-12 h-12 ${item.bgColor} rounded-lg flex items-center justify-center mb-4`}>
-                      <IconComponent className={`h-6 w-6 ${item.color}`} />
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+        {/* What Is a Full-Time Maid */}
+        <section className="section-padding bg-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-primary-500 to-purple-500"></div>
+          <div className="container-custom relative z-10">
+            <div className="max-w-5xl mx-auto">
+              <div className="bg-gradient-to-br from-blue-50 to-primary-50 rounded-3xl p-8 md:p-12 border border-blue-100 shadow-sm relative overflow-hidden">
+                {/* Decorative background circle */}
+                <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+                <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+                
+                <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-10 items-start md:items-center">
+                  <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl shadow-md flex items-center justify-center shrink-0 border border-blue-50 transform hover:scale-105 transition-transform duration-300">
+                    <UserGroupIcon className="w-10 h-10 md:w-12 md:h-12 text-primary-600" />
                   </div>
-                )
-              })}
+                  
+                  <div>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4 font-display">
+                      What Is a Full-Time Maid in Bangalore?
+                    </h2>
+                    <div className="text-lg text-gray-700 leading-relaxed space-y-4">
+                      <p>
+                        A full-time house maid in Bangalore works <strong className="text-gray-900">8 to 10 hours a day</strong> at your home and returns to her own residence after the shift ends. She manages daily household tasks such as cooking, cleaning, laundry, childcare, or elderly care, depending on what your family needs.
+                      </p>
+                      <p>
+                        This arrangement differs from a live-in maid, who stays at the employer's home overnight. Whether you need a full-day house help, a daily house maid, or full-time domestic help in Bangalore, the service works the same way: a trained helper arrives at your home each morning, completes her duties, and returns home after the shift.
+                      </p>
+                      <div className="inline-flex items-center gap-2 bg-white px-5 py-3 rounded-xl text-sm md:text-base font-semibold text-primary-800 shadow-sm mt-4 border border-primary-100 hover:shadow-md transition-shadow">
+                        <StarIcon className="w-5 h-5 text-yellow-500" />
+                        Most commonly hired by working professionals & dual-income households
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -399,7 +304,7 @@ export default function BangaloreFullTimeMaidPage() {
                 What Does a Full-Time Maid in Bangalore Do?
               </h2>
               <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-                Each EzyHelpers maid focuses on one core responsibility, like cooking, childcare, or cleaning, ensuring consistent quality for homes across Bangalore, from compact apartments to large villas.
+                A full-time maid can be hired for one core responsibility or a combination of tasks, confirmed before hiring. When multiple responsibilities are assigned, working hours and salary are discussed and agreed upon before the maid begins work.
               </p>
             </div>
 
@@ -432,60 +337,142 @@ export default function BangaloreFullTimeMaidPage() {
 
             {/* CTA */}
             <div className="text-center">
-              <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl">
-                Book Full-Time Maid Now
-                <ArrowRightIcon className="h-5 w-5 ml-2" />
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/hire-helper" className="bg-primary-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-primary-700 transition-colors shadow-lg">
+                  Book Now
+                </Link>
+                <Link href="tel:+919972571005" className="bg-white text-primary-600 border-2 border-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors">
+                  Call Us
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Pricing */}
+        {/* Pricing Table */}
         <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                  How Much Does a Full-Time Maid in Bangalore Cost?
+                  Full-Time Maid Salary in Bangalore
                 </h2>
-                <p className="text-lg text-gray-600">Transparent Pricing for Daily Domestic Support</p>
+                <p className="text-lg text-gray-600">
+                  The salary of a full-time maid in Bangalore ranges from ₹16,000 to ₹20,000 per month for an 8–10 hour daily shift.
+                </p>
               </div>
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="text-center mb-8">
-                  <div className="text-4xl font-bold text-primary-600 mb-2">{pricingInfo.range}</div>
-                  <p className="text-gray-600">{pricingInfo.note}</p>
+              
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg mb-8 border border-gray-100">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-primary-600 text-white">
+                        <th className="py-4 px-6 font-bold text-lg">Role</th>
+                        <th className="py-4 px-6 font-bold text-lg">Monthly Salary Range</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      <tr className="hover:bg-gray-50 transition-colors">
+                        <td className="py-4 px-6 font-semibold text-gray-900 text-lg">General housekeeper</td>
+                        <td className="py-4 px-6 text-gray-700 font-medium text-lg">₹16,000 – ₹20,000</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50 transition-colors">
+                        <td className="py-4 px-6 font-semibold text-gray-900 text-lg">Cook (single cuisine)</td>
+                        <td className="py-4 px-6 text-gray-700 font-medium text-lg">₹14,000 – ₹18,000</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50 transition-colors">
+                        <td className="py-4 px-6 font-semibold text-gray-900 text-lg">Babysitter / childcare</td>
+                        <td className="py-4 px-6 text-gray-700 font-medium text-lg">₹16,000 – ₹20,000</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50 transition-colors">
+                        <td className="py-4 px-6 font-semibold text-gray-900 text-lg">Elderly care assistant</td>
+                        <td className="py-4 px-6 text-gray-700 font-medium text-lg">₹16,000 – ₹20,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Pricing depends on:</h3>
-                  {pricingInfo.factors.map((factor, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <CurrencyRupeeIcon className="h-5 w-5 text-primary-600 mt-1 shrink-0" />
-                      <span className="text-gray-700">{factor}</span>
-                    </div>
-                  ))}
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-gray-600">
+                <p className="mb-2"><strong>Salary depends on:</strong> The duties assigned, the maid's experience, daily working hours, and your locality within Bangalore.</p>
+                <p><strong>Note:</strong> For a cook, salary varies based on the number of meals and family members. For a babysitter, infants under one year attract higher pay due to intensive care needs. For elderly care, specialised or intensive care is priced higher based on the requirement.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Full-Time vs Live-In Table */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                  Full-Time Maid vs Live-In Maid in Bangalore
+                </h2>
+              </div>
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-gray-50 text-gray-900">
+                        <th className="py-4 px-6 font-bold border-b text-lg">Feature</th>
+                        <th className="py-4 px-6 font-bold border-b text-primary-700 text-lg">Full-Time Maid</th>
+                        <th className="py-4 px-6 font-bold border-b text-blue-700 text-lg">Live-In Maid</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      <tr className="hover:bg-gray-50 transition-colors">
+                        <td className="py-4 px-6 font-semibold text-gray-700">Working hours</td>
+                        <td className="py-4 px-6 text-gray-800 font-medium">8–10 hours/day</td>
+                        <td className="py-4 px-6 text-gray-800 font-medium">Available all day</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50 transition-colors">
+                        <td className="py-4 px-6 font-semibold text-gray-700">Stays at home</td>
+                        <td className="py-4 px-6 text-gray-800 font-medium">No</td>
+                        <td className="py-4 px-6 text-gray-800 font-medium">Yes</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50 transition-colors">
+                        <td className="py-4 px-6 font-semibold text-gray-700">Accommodation needed</td>
+                        <td className="py-4 px-6 text-gray-800 font-medium">No</td>
+                        <td className="py-4 px-6 text-gray-800 font-medium">Yes</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50 transition-colors">
+                        <td className="py-4 px-6 font-semibold text-gray-700">Monthly cost</td>
+                        <td className="py-4 px-6 text-gray-800 font-medium">₹16,000 – ₹20,000</td>
+                        <td className="py-4 px-6 text-gray-800 font-medium">₹20,000 – ₹35,000</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50 transition-colors">
+                        <td className="py-4 px-6 font-semibold text-gray-700">Best for</td>
+                        <td className="py-4 px-6 text-gray-800">Families needing structured daily help</td>
+                        <td className="py-4 px-6 text-gray-800">Families needing overnight or round-the-clock support</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
-        <section className="section-padding bg-white">
+        {/* Why Prefer */}
+        <section className="section-padding bg-gray-50">
           <div className="container-custom">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                What are the Benefits of Hiring a Full-Time Maid in Bangalore?
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display">
+                Why Families in Bangalore Prefer Full-Time House Help
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Daily household support made simple with trained maids and flexible working hours
+              <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+                Bangalore's long commutes, demanding work schedules, and dual-income households make daily home management genuinely difficult. Hiring full-time help in Bangalore provides structured, reliable support without requiring residential accommodation, giving families consistent daily assistance while maintaining complete privacy at home.
+              </p>
+              <p className="text-lg text-gray-600 max-w-4xl mx-auto mt-4 font-semibold">
+                Full-time daily maid services in Bangalore are particularly suited for:
               </p>
             </div>
-
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => {
+              {preferReasons.map((benefit, index) => {
                 const IconComponent = (benefit.icon as any)
                 return (
-                  <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <div key={index} className="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow border border-gray-100">
                     <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
                       <IconComponent className="h-6 w-6 text-primary-600" />
                     </div>
@@ -495,29 +482,17 @@ export default function BangaloreFullTimeMaidPage() {
                 )
               })}
             </div>
-          </div>
-        </section>
-
-        {/* Lifestyle Fit */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                What Makes EzyHelpers’ Full-Time Maids Ideal for All Lifestyles and Schedules
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Tailored full-time maid support for every routine, home type, and lifestyle need.
-              </p>
-            </div>
-            <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-sm">
-              <ul className="space-y-3">
-                {lifestyleFit.map((item, idx) => (
-                  <li key={idx} className="flex items-start text-gray-700">
-                    <CheckCircleIcon className="h-5 w-5 text-primary-600 mt-0.5 mr-2" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            
+            {/* CTA */}
+            <div className="mt-12 text-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/hire-helper" className="bg-primary-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-primary-700 transition-colors shadow-lg">
+                  Book Now
+                </Link>
+                <Link href="tel:+919972571005" className="bg-white text-primary-600 border-2 border-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors">
+                  Talk to our Team
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -526,8 +501,8 @@ export default function BangaloreFullTimeMaidPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Our 4-Step Hiring Process</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Simple and efficient process to get you trusted help quickly</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">How EzyHelpers Places the Right Full-Time Maid for Your Home</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Most families get matched within 3–5 days, depending on availability and requirements.</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -552,117 +527,12 @@ export default function BangaloreFullTimeMaidPage() {
           </div>
         </section>
 
-        
-
-        {/* Final CTA */}
-        <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-700 text-white">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Transform Your Bangalore Lifestyle with a Full-Time Maid</h2>
-              <p className="text-xl text-primary-100 mb-10 leading-relaxed">
-                Simplify home management and make your routine stress-free. Whether you're a working professional, homemaker, or anyone in between, EzyHelpers has the perfect daily maid for your needs.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/hire-helper" className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors shadow-lg hover:shadow-xl">
-                  Book Full-Time Maid Now
-                </Link>
-                <Link href="tel:+919972571005" className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">
-                  Talk to an Expert
-                </Link>
-              </div>
-
-              <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/20">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">8–10 hrs</div>
-                  <div className="text-primary-200 text-sm">Daily Service</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">5★</div>
-                  <div className="text-primary-200 text-sm">Average Rating</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">100%</div>
-                  <div className="text-primary-200 text-sm">Background Verified</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Related Services */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                Explore Other Trusted Home Services by EzyHelpers
-              </h2>
-              <p className="text-lg text-gray-600">Complete household support solutions for Bangalore's busy professionals.</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[ 
-                {
-                  title: 'Babysitter Services',
-                  description: 'Caring and trained babysitters for infants and toddlers.',
-                  href: '/services/nanny-babysitter',
-                  icon: UserGroupIcon,
-                  color: 'text-pink-600',
-                  bgColor: 'bg-pink-50'
-                },
-                {
-                  title: 'Eldercare Services',
-                  description: 'Day-time or full-day support for senior citizens.',
-                  href: '/services/elderly-care',
-                  icon: HeartIcon,
-                  color: 'text-red-600',
-                  bgColor: 'bg-red-50'
-                },
-                {
-                  title: 'Live-In Maids',
-                  description: 'Round-the-clock help for families that need residential support.',
-                  href: '/cities/bangalore/live-in-maids',
-                  icon: ShieldCheckIcon,
-                  color: 'text-purple-600',
-                  bgColor: 'bg-purple-50'
-                }
-              ].map((service, index) => {
-                const IconComponent = service.icon as any
-                return (
-                  <Link
-                    key={index}
-                    href={service.href}
-                    className={`group relative ${service.bgColor} rounded-2xl p-8 border-2 border-gray-100 hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-                  >
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl transform translate-x-16 -translate-y-16"></div>
-                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full blur-2xl transform -translate-x-12 translate-y-12"></div>
-                    </div>
-
-                    <div className="relative z-10">
-                      <div className={`w-16 h-16 ${service.bgColor} group-hover:bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 border border-white/20`}>
-                        <IconComponent className={`h-8 w-8 ${service.color} group-hover:text-white group-hover:scale-110 transition-all duration-300`} />
-                      </div>
-
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                      <p className="text-gray-600 mb-4">{service.description}</p>
-                      <div className="flex items-center text-primary-600 font-semibold">
-                        {service.title.includes('Babysitter') ? 'Explore Babysitter Services' : service.title.includes('Eldercare') ? 'Explore Senior Care Options' : 'Explore Live-In Maids Services'} <ArrowRightIcon className="h-4 w-4 ml-2" />
-                      </div>
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
         {/* Areas We Serve */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Areas We Serve in Bangalore</h2>
-              <p className="text-lg text-gray-600">Trusted full-time maid services across all Bangalore neighborhoods</p>
+              <p className="text-lg text-gray-600">EzyHelpers provides full-time maid and house help services across Whitefield, Koramangala, HSR Layout, Indiranagar, Marathahalli, Electronic City, JP Nagar, Jayanagar, BTM Layout, Sarjapur Road, Bannerghatta Road, Hebbal, Yelahanka, Rajajinagar, Malleshwaram, Basavanagudi, and all surrounding areas across Bangalore.</p>
             </div>
 
             <div className="bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8">
@@ -673,11 +543,25 @@ export default function BangaloreFullTimeMaidPage() {
                   </div>
                 ))}
               </div>
-              <div className="text-center mt-8">
-                <p className="text-gray-600 mb-4">And many more areas across Bangalore</p>
-                <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors">
-                  Check Service in Your Area
-                  <ArrowRightIcon className="h-4 w-4 ml-2" />
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-700 text-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl text-white font-bold mb-6 font-display">Ready to Hire a Full-Time Maid in Bangalore?</h2>
+              <p className="text-xl text-primary-100 mb-10 leading-relaxed">
+                Stop managing everything alone. Whether you need help with cooking, cleaning, childcare, or elderly care, EzyHelpers connects you with a verified, experienced full-time maid matched to your home and schedule.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/hire-helper" className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors shadow-lg hover:shadow-xl">
+                  Book Full-Time Maid Now
+                </Link>
+                <Link href="tel:+919972571005" className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">
+                  Talk to an Expert
                 </Link>
               </div>
             </div>
@@ -688,8 +572,7 @@ export default function BangaloreFullTimeMaidPage() {
         <section className="section-padding bg-white">
           <div className="container-custom">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Frequently Asked Questions</h2>
-              <p className="text-lg text-gray-600">Everything you need to know about full-time maid services in Bangalore</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs — Full-Time Maid in Bangalore</h2>
             </div>
             <div className="max-w-4xl mx-auto">
               <FAQAccordion faqs={faqs} />
@@ -698,7 +581,8 @@ export default function BangaloreFullTimeMaidPage() {
         </section>
       </main>
 
-            <NestCTA />
+      <NestCTA />
+      
       {/* Blog guides interlinking */}
       <CityBlogLinks
         tags={['full-time maid', 'live-in maid', 'bangalore']}
