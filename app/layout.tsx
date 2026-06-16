@@ -124,7 +124,24 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Favicons */}
+        {/*
+          Resource hints — open TCP/TLS connections to third-party origins early
+          so analytics, chat, and widget scripts (loaded lazily after hydration)
+          don't pay full connection cost on first use. This is the same "connect
+          early" benefit AMP's preconnect gave, without the AMP runtime.
+          crossOrigin is required on preconnect for font/CORS fetches.
+        */}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://widget.trustpilot.com" />
+        <link rel="dns-prefetch" href="https://ik.imagekit.io" />
+
+        {/* Favicons — generated from the EzyHelpers brand mark */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
@@ -149,7 +166,15 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <UrgencyProvider>
+        {/*
+          defaultVisible: the urgency banner shows on essentially every page
+          load, so we reserve its space from the FIRST server-rendered paint.
+          Previously this defaulted to false and a post-hydration useEffect
+          flipped it to true, which grew the Navbar spacer from h-20→h-32 and
+          shifted all content down ~48px — the dominant source of the field
+          CLS (0.34). Reserving the space up front removes that shift.
+        */}
+        <UrgencyProvider defaultVisible={true}>
           <main id="main-content">
             {children}
           </main>

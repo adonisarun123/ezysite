@@ -7,6 +7,12 @@
 
 import dynamic from 'next/dynamic'
 
+/** Sitewide page_view + scroll_depth + service_view tracking (mounted globally). */
+const GlobalPageTracking = dynamic(() => import('./GlobalPageTracking'), {
+  ssr: false,
+  loading: () => null
+})
+
 const LLMOptimization = dynamic(() => import('./LLMOptimization'), {
   ssr: false,
   loading: () => null
@@ -28,6 +34,12 @@ const CareWhatsAppFloat = dynamic(() => import('./care-services/CareWhatsAppFloa
   loading: () => null
 })
 
+/** Care-specific quick call-back form — renders only on /care-services/* paths. */
+const CareCallbackFloat = dynamic(() => import('./care-services/CareCallbackFloat'), {
+  ssr: false,
+  loading: () => null
+})
+
 const LanguageSelectorPopup = dynamic(() => import('./LanguageSelectorPopup'), {
   ssr: false,
   loading: () => null
@@ -38,7 +50,8 @@ const MobileStickyCTA = dynamic(() => import('./MobileStickyCTA'), {
   loading: () => null
 })
 
-const CookieConsent = dynamic(() => import('./CookieConsent'), {
+/** AI chat assistant — "Asha" floating widget for FAQ + lead capture. */
+const EzyHelpersAssistant = dynamic(() => import('./EzyHelpersAssistant'), {
   ssr: false,
   loading: () => null
 })
@@ -52,14 +65,16 @@ const ServiceSelectorModal = dynamic(() => import('./ServiceSelector'), {
 export default function ClientOnlyWidgets() {
   return (
     <>
+      <GlobalPageTracking />
       <LLMOptimization />
       <UrgencyCTA />
       <WhatsAppFloat />
       <CareWhatsAppFloat />
+      <CareCallbackFloat />
       <LanguageSelectorPopup />
       <ServiceSelectorModal mode="modal" />
       <MobileStickyCTA />
-      <CookieConsent />
+      <EzyHelpersAssistant />
     </>
   )
 }

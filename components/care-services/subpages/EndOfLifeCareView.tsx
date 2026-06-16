@@ -36,7 +36,7 @@ const SECTIONS = [
     icon: PlusCircleIcon,
     title: 'Comfort and symptom relief',
     body:
-      'We help keep your loved one as comfortable as possible — supporting gentle positioning, easing restlessness and discomfort, and alerting your medical team when symptoms need their attention.',
+      'We help keep your loved one as comfortable as possible, supporting gentle positioning, easing restlessness and discomfort, and alerting your medical team when symptoms need their attention.',
     bullets: [
       'Comfort care for pain and discomfort',
       'Gentle positioning and soothing routines',
@@ -48,7 +48,7 @@ const SECTIONS = [
     icon: HandRaisedIcon,
     title: 'Honouring dignity and wishes',
     body:
-      'These moments are deeply personal. We honour your loved one’s wishes, protect their privacy and bring gentleness to every act of care — so they feel respected and at peace.',
+      'These moments are deeply personal. We honour your loved one’s wishes, protect their privacy and bring gentleness to every act of care, so they feel respected and at peace.',
     bullets: [
       'Respect for personal and spiritual wishes',
       'Privacy and gentleness in every task',
@@ -60,7 +60,7 @@ const SECTIONS = [
     icon: UserGroupIcon,
     title: 'Standing with the family',
     body:
-      'This is one of life’s hardest passages. We offer a steady presence, gentle guidance on what to expect, and emotional support — including grief resources — for everyone in the family.',
+      'This is one of life’s hardest passages. We offer a steady presence, gentle guidance on what to expect, and emotional support, including grief resources, for everyone in the family.',
     bullets: [
       'A reachable, caring advisor',
       'Gentle guidance for the family',
@@ -74,7 +74,7 @@ const FAQS = [
   {
     question: 'What is end-of-life care at home?',
     answer:
-      'End-of-life care is compassionate, comfort-focused support during the final stages of a serious illness, provided at home. The aim is comfort, peace and dignity — keeping your loved one settled and surrounded by family, in coordination with your medical team.',
+      'End-of-life care is compassionate, comfort-focused support during the final stages of a serious illness, provided at home. The aim is comfort, peace and dignity, keeping your loved one settled and surrounded by family, in coordination with your medical team.',
   },
   {
     question: 'How is end-of-life care different from other care?',
@@ -89,7 +89,7 @@ const FAQS = [
   {
     question: 'How do you support the family during this time?',
     answer:
-      'We offer a steady, reachable presence, gentle guidance on what to expect, respite so family can rest, and emotional support — including grief resources — for everyone involved. You are never alone in this.',
+      'We offer a steady, reachable presence, gentle guidance on what to expect, respite so family can rest, and emotional support, including grief resources, for everyone involved. You are never alone in this.',
   },
   {
     question: 'Can cultural and religious wishes be respected?',
@@ -107,7 +107,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — End-of-Life Care at Home, Bangalore',
+    name: 'EzyHelpers, End-of-Life Care at Home, Bangalore',
     medicalSpecialty: ['PalliativeCare', 'Hospice'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -133,7 +133,7 @@ export default function EndOfLifeCareView() {
       headlineAccent="in the final stages of life."
       lede={
         SERVICE?.tagline ??
-        'Compassionate comfort care that puts dignity and peace first — keeping your loved one settled, and your family close, in the comfort of home.'
+        'Compassionate comfort care that puts dignity and peace first, keeping your loved one settled, and your family close, in the comfort of home.'
       }
       primaryCtaLabel="Talk to a care advisor"
       enquirySource={PATH}
@@ -144,7 +144,7 @@ export default function EndOfLifeCareView() {
           {HERO_STATS.map((s) => (
             <div
               key={s.value}
-              className="rounded-2xl border border-neutral-200 bg-primary-50 px-5 py-5 text-center"
+              className="rounded-2xl border border-neutral-200 bg-care-50 px-5 py-5 text-center"
             >
               <p className="font-careSerif text-xl font-medium text-accent-600">{s.value}</p>
               <p className="mt-1 text-sm leading-snug text-neutral-600">{s.label}</p>
@@ -159,7 +159,7 @@ export default function EndOfLifeCareView() {
             eyebrow="How we help"
             titleLead="Comfort, peace"
             titleMuted="and dignity."
-            lede="Gentle, unhurried care for these tender days — focused entirely on your loved one’s comfort, and on supporting your family."
+            lede="Gentle, unhurried care for these tender days, focused entirely on your loved one’s comfort, and on supporting your family."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {SECTIONS.map(({ icon: Icon, title, body, bullets }) => (
@@ -202,7 +202,7 @@ export default function EndOfLifeCareView() {
       <CareSubpageClosingCTA
         headlineLead="Whenever you are ready,"
         headlineAccent="we will be gently by your side."
-        body="Reach out for a calm, compassionate conversation. We will listen, and explain how dignified care at home can bring comfort to these days — with no pressure at all."
+        body="Reach out for a calm, compassionate conversation. We will listen, and explain how dignified care at home can bring comfort to these days, with no pressure at all."
         enquirySource={PATH}
         primaryCtaLabel="Request a compassionate consultation"
         related={[

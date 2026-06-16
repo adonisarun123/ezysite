@@ -11,7 +11,7 @@ const SECTIONS = [
     eyebrow: 'Conditions treated',
     title: 'What geriatric physiotherapy at home covers',
     intro:
-      'Geriatric physiotherapy helps older adults stay strong, steady and independent — addressing the age-related changes that most affect daily life.',
+      'Geriatric physiotherapy helps older adults stay strong, steady and independent, addressing the age-related changes that most affect daily life.',
     bullets: [
       'Balance problems and a history of falls',
       'General weakness and loss of muscle strength',
@@ -25,7 +25,7 @@ const SECTIONS = [
     eyebrow: 'Techniques used',
     title: 'How geriatric physiotherapy keeps seniors independent',
     intro:
-      'Programmes are gentle, encouraging and built around safety — restoring confidence as much as physical strength.',
+      'Programmes are gentle, encouraging and built around safety, restoring confidence as much as physical strength.',
     bullets: [
       'Balance and stability training to reduce fall risk',
       'Gentle strengthening for legs, core and posture',
@@ -39,7 +39,7 @@ const SECTIONS = [
     eyebrow: 'What a session looks like',
     title: 'Your parent’s typical home session',
     intro:
-      'Sessions are calm, patient and never rushed — designed for comfort and steady, encouraging progress.',
+      'Sessions are calm, patient and never rushed, designed for comfort and steady, encouraging progress.',
     bullets: [
       'A friendly check of mobility, balance and any concerns',
       'Gentle warm-up and supervised strengthening exercises',
@@ -52,7 +52,7 @@ const SECTIONS = [
     eyebrow: 'Recovery timeline',
     title: 'What progress usually looks like',
     intro:
-      'For seniors, the goal is steady, sustainable improvement — and maintaining independence for as long as possible.',
+      'For seniors, the goal is steady, sustainable improvement, and maintaining independence for as long as possible.',
     bullets: [
       'Many older adults feel steadier within a few weeks of regular work',
       'Strength and balance build gradually with consistency',
@@ -73,7 +73,7 @@ const FAQS = [
   {
     question: 'How does geriatric physiotherapy help prevent falls?',
     answer:
-      'Falls are often caused by weak muscles, poor balance and unsteady walking. Geriatric physiotherapy targets all three with balance training, gentle strengthening and gait practice, plus practical home-safety advice — significantly lowering the risk of a fall at home in Bangalore.',
+      'Falls are often caused by weak muscles, poor balance and unsteady walking. Geriatric physiotherapy targets all three with balance training, gentle strengthening and gait practice, plus practical home-safety advice, significantly lowering the risk of a fall at home in Bangalore.',
   },
   {
     question: 'Is physiotherapy safe for very elderly or frail patients?',
@@ -112,7 +112,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Geriatric Physiotherapy at Home, Bangalore',
+    name: 'EzyHelpers, Geriatric Physiotherapy at Home, Bangalore',
     medicalSpecialty: ['PhysicalTherapy', 'Geriatric'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -145,8 +145,8 @@ export default function GeriatricPhysiotherapyView() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {HERO_STATS.map((s) => (
-              <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-primary-50 p-7 text-center">
-                <p className="font-careSerif text-3xl font-medium text-primary-500 sm:text-4xl">{s.value}</p>
+              <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-care-50 p-7 text-center">
+                <p className="font-careSerif text-3xl font-medium text-care-500 sm:text-4xl">{s.value}</p>
                 <p className="mt-2 text-sm leading-snug text-neutral-700">{s.label}</p>
               </div>
             ))}
@@ -170,7 +170,7 @@ export default function GeriatricPhysiotherapyView() {
                   key={b}
                   className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white px-5 py-4 text-sm leading-snug text-neutral-800"
                 >
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary-500" aria-hidden />
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-care-500" aria-hidden />
                   {b}
                 </li>
               ))}

@@ -16,7 +16,7 @@ const SLUG = 'iv-therapy-at-home-bangalore'
 const PATH = `/care-services/${SLUG}`
 const service = getNestedService(SLUG)!
 
-/* heroStats — INVENTED illustrative figures for layout/AEO. Confirm before launch. */
+/* heroStats, INVENTED illustrative figures for layout/AEO. Confirm before launch. */
 const HERO_STATS = [
   { value: '5,000+', label: 'Infusions given at home' },
   { value: 'Doctor-led', label: 'Only on valid prescription' },
@@ -28,7 +28,7 @@ const INFUSIONS = [
     icon: BeakerIcon,
     title: 'IV fluids & rehydration',
     body:
-      'For dehydration from infection, heat or poor intake — prescribed IV fluids and electrolytes restore balance safely at home, avoiding an unnecessary hospital trip for weak or elderly patients.',
+      'For dehydration from infection, heat or poor intake, prescribed IV fluids and electrolytes restore balance safely at home, avoiding an unnecessary hospital trip for weak or elderly patients.',
   },
   {
     icon: ShieldCheckIcon,
@@ -40,7 +40,7 @@ const INFUSIONS = [
     icon: SparklesIcon,
     title: 'Electrolyte & vitamin infusions',
     body:
-      'Doctor-prescribed electrolyte correction, iron infusions and vitamin therapy delivered with proper rate control and monitoring — never self-administered, always supervised by a nurse.',
+      'Doctor-prescribed electrolyte correction, iron infusions and vitamin therapy delivered with proper rate control and monitoring, never self-administered, always supervised by a nurse.',
   },
   {
     icon: HeartIcon,
@@ -60,7 +60,7 @@ const INCLUDED = [
 ] as const
 
 const SAFETY = [
-  'IV therapy carries real risks — wrong rate, infiltration or reaction — that need a trained nurse, not a layperson.',
+  'IV therapy carries real risks, wrong rate, infiltration or reaction, that need a trained nurse, not a layperson.',
   'Aseptic cannulation technique is the single biggest factor in preventing IV-line infections.',
   'Home infusion frees hospital beds and lets patients recover in comfort, without losing clinical safety.',
   'Continuous observation during the infusion catches reactions in the first minutes, when they matter most.',
@@ -70,17 +70,17 @@ const FAQS = [
   {
     question: 'Is IV therapy safe to do at home in Bangalore?',
     answer:
-      'Yes — when it is doctor-prescribed and administered by a qualified nurse. Our GNM/B.Sc-verified nurses use sterile cannulation, control the infusion rate, monitor for reactions throughout, and follow a clear escalation plan. We only administer IV therapy on a valid prescription; we do not offer drips on request without a doctor’s order.',
+      'Yes, when it is doctor-prescribed and administered by a qualified nurse. Our GNM/B.Sc-verified nurses use sterile cannulation, control the infusion rate, monitor for reactions throughout, and follow a clear escalation plan. We only administer IV therapy on a valid prescription; we do not offer drips on request without a doctor’s order.',
   },
   {
     question: 'What kinds of IV infusions can be given at home?',
     answer:
-      'Prescribed IV fluids and rehydration, IV antibiotics, electrolyte correction, iron and vitamin infusions, and supportive recovery infusions. The specific infusion, dose and rate are always set by your treating doctor — we administer exactly what is prescribed.',
+      'Prescribed IV fluids and rehydration, IV antibiotics, electrolyte correction, iron and vitamin infusions, and supportive recovery infusions. The specific infusion, dose and rate are always set by your treating doctor, we administer exactly what is prescribed.',
   },
   {
     question: 'How much does IV therapy at home cost in Bangalore?',
     answer:
-      `IV therapy and infusion at home in Bangalore starts at ${formatPriceWithNote('iv-therapy').toLowerCase()}. The total depends on the infusion type, number of sessions and duration — a consultation gives you an exact estimate.`,
+      `IV therapy and infusion at home in Bangalore starts at ${formatPriceWithNote('iv-therapy').toLowerCase()}. The total depends on the infusion type, number of sessions and duration, a consultation gives you an exact estimate.`,
   },
   {
     question: 'Do I need a prescription for IV therapy at home?',
@@ -88,7 +88,7 @@ const FAQS = [
       'Yes, always. IV therapy is a medical procedure and we administer it only on a valid doctor’s prescription specifying the infusion, dose and rate. This protects the patient and ensures the therapy is clinically appropriate.',
   },
   {
-    question: 'Who administers the IV — a nurse or a technician?',
+    question: 'Who administers the IV, a nurse or a technician?',
     answer:
       'Always a qualified nurse with a verified GNM or B.Sc Nursing qualification and demonstrated competence in IV cannulation and infusion. They remain present to monitor the infusion and respond to any reaction.',
   },
@@ -110,7 +110,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — IV Therapy & Infusion at Home, Bangalore',
+    name: 'EzyHelpers, IV Therapy & Infusion at Home, Bangalore',
     medicalSpecialty: 'Nursing',
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -134,7 +134,7 @@ export default function IvTherapyView() {
       eyebrow="Bangalore · IV therapy at home"
       headlineLead="Doctor-prescribed infusions,"
       headlineAccent="given safely at home."
-      lede="IV fluids, antibiotics, electrolytes and prescribed infusions administered at home in Bangalore by credentialled nurses — sterile cannulation, controlled rate, and continuous monitoring throughout."
+      lede="IV fluids, antibiotics, electrolytes and prescribed infusions administered at home in Bangalore by credentialled nurses, sterile cannulation, controlled rate, and continuous monitoring throughout."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -143,8 +143,8 @@ export default function IvTherapyView() {
       <section className="bg-white px-4 pt-4 sm:px-6">
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
           {HERO_STATS.map((s) => (
-            <div key={s.label} className="rounded-[20px] border border-neutral-200 bg-primary-50 px-6 py-5 text-center">
-              <p className="font-careSerif text-2xl font-medium text-primary-500 sm:text-3xl">{s.value}</p>
+            <div key={s.label} className="rounded-[20px] border border-neutral-200 bg-care-50 px-6 py-5 text-center">
+              <p className="font-careSerif text-2xl font-medium text-care-500 sm:text-3xl">{s.value}</p>
               <p className="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">{s.label}</p>
             </div>
           ))}
@@ -152,12 +152,12 @@ export default function IvTherapyView() {
       </section>
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             IV therapy at home in Bangalore lets a qualified nurse administer{' '}
-            <em className="italic text-primary-500">doctor-prescribed</em> fluids, antibiotics and
-            infusions in your own home — with sterile technique, controlled rate and continuous
+            <em className="italic text-care-500">doctor-prescribed</em> fluids, antibiotics and
+            infusions in your own home, with sterile technique, controlled rate and continuous
             monitoring. It is the comfort of home with the safety of a hospital ward.
           </p>
         </div>
@@ -174,7 +174,7 @@ export default function IvTherapyView() {
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {INFUSIONS.map(({ icon: Icon, title, body }) => (
               <article key={title} className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950 sm:text-xl">{title}</h3>
@@ -195,7 +195,7 @@ export default function IvTherapyView() {
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {INCLUDED.map((b) => (
                   <li key={b} className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5">
-                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                     <span className="text-sm leading-snug text-neutral-800">{b}</span>
                   </li>
                 ))}
@@ -211,7 +211,7 @@ export default function IvTherapyView() {
           <ol className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2">
             {SAFETY.map((p, i) => (
               <li key={p} className="flex items-start gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 px-5 py-4">
-                <span className="font-careSerif text-2xl font-medium text-primary-500">{String(i + 1).padStart(2, '0')}</span>
+                <span className="font-careSerif text-2xl font-medium text-care-500">{String(i + 1).padStart(2, '0')}</span>
                 <span className="text-sm leading-snug text-neutral-800 sm:text-base">{p}</span>
               </li>
             ))}
@@ -245,7 +245,7 @@ export default function IvTherapyView() {
       <CareSubpageClosingCTA
         headlineLead="Your prescribed infusion,"
         headlineAccent="without the hospital stay."
-        body="Share the prescription. We respond within the hour, match a nurse trained in IV care, and schedule the infusion at home — sterile and monitored throughout."
+        body="Share the prescription. We respond within the hour, match a nurse trained in IV care, and schedule the infusion at home, sterile and monitored throughout."
         enquirySource={PATH}
         related={RELATED as unknown as { label: string; href: string }[]}
       />

@@ -2,11 +2,15 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import NestCTA from '@/components/NestCTA'
 
 // ISR: revalidate hourly
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
+import GoogleRatingBadge from '@/components/GoogleRatingBadge'
 import {
   HeartIcon, 
   ShieldCheckIcon, 
@@ -31,6 +35,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Compassionate%20Elderly%20Care%20Services%20for%20Seniors", width: 1200, height: 630, alt: "Compassionate Elderly Care Services for Seniors" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/elderly-care'
@@ -72,6 +77,7 @@ export default function ElderlyCare() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Compassionate Elderly Care Services for Seniors"} serviceDescription={"Compassionate elder care services with medical assistance, companionship & mobility support. Trained specialists for seniors Trusted by families across India."} serviceType={"Compassionate Elderly Care Services for Seniors"} serviceUrl={"https://www.ezyhelpers.com/services/elderly-care"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -263,6 +269,13 @@ export default function ElderlyCare() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I arrange elderly care at home through EzyHelpers?"
+        answer="EzyHelpers provides trained, background-verified elderly caretakers for daily assistance, companionship, and mobility support — live-in or full-time. Placement typically takes 24–72 hours, with a quick replacement guarantee."
+      />
+
+      <GoogleRatingBadge rating="5.0" detail="Every Google review of our elderly & patient care is 5-star (June 2026)" />
 
       {/* Why Choose Section */}
       <section className="section-padding bg-white">
@@ -540,6 +553,13 @@ export default function ElderlyCare() {
           { name: "Bareilly", href: "/cities/bareilly/elderly-care" },
         ]}
       />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['elderly care', '24 hour care', 'live-in caretaker']}
+        title="Elder Care Guides"
+        subtitle="Care levels, costs, and checklists for senior care at home."
+      />
+
       <Footer />
     </main>
     </>

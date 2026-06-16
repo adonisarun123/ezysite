@@ -2,11 +2,14 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import NestCTA from '@/components/NestCTA'
 
 // ISR: revalidate hourly
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   SparklesIcon, 
   ClockIcon, 
@@ -25,6 +28,15 @@ export const metadata: Metadata = {
   title: 'Professional Cook Services for Home | EzyHelpers',
   description: 'Expert cooks for Indian, Continental & regional cuisines. Includes meal planning, grocery management & dietary preferences. Hire home cooks today!',
   keywords: 'home cook, professional cook, daily cooking, meal prep, hygienic cooking, multiple cuisines, dietary preferences',
+  openGraph: {
+    title: 'Professional Cook Services for Home | EzyHelpers',
+    description: 'Expert cooks for Indian, Continental & regional cuisines. Includes meal planning, grocery management & dietary preferences. Hire home cooks today!',
+    url: 'https://www.ezyhelpers.com/services/cooks',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Professional%20Cook%20Services%20for%20Home", width: 1200, height: 630, alt: "Professional Cook Services for Home" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/cooks'
   }
@@ -65,6 +77,7 @@ export default function CooksPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Professional Cook Services for Home"} serviceDescription={"Expert cooks for Indian, Continental & regional cuisines. Includes meal planning, grocery management & dietary preferences. Hire home cooks today!"} serviceType={"Professional Cook Services for Home"} serviceUrl={"https://www.ezyhelpers.com/services/cooks"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -282,6 +295,11 @@ export default function CooksPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a home cook through EzyHelpers?"
+        answer="EzyHelpers provides background-verified home cooks skilled in Indian and regional cuisines, available live-in, full-time, or part-time. Placement typically takes 24–72 hours, with a quick replacement guarantee and direct payment to your cook."
+      />
 
       {/* The EzyHelpers Difference */}
       <section className="section-padding bg-background-secondary">
@@ -690,6 +708,13 @@ export default function CooksPage() {
           { name: "Bareilly", href: "/cities/bareilly/cooks" },
         ]}
       />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['live-in cook', 'home cook', 'kitchen hygiene']}
+        title="Cook Hiring Guides"
+        subtitle="Cuisine matching, salaries, and hygiene standards for home cooks."
+      />
+
       <Footer />
     </main>
     </>

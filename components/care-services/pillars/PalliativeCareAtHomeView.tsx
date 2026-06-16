@@ -20,6 +20,7 @@ import {
   PlusCircleIcon,
   ClipboardDocumentCheckIcon,
 } from '@heroicons/react/24/outline'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 import { getPillar } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
@@ -60,7 +61,7 @@ const WHAT_INCLUDES = [
     icon: PlusCircleIcon,
     title: 'Physical comfort',
     body:
-      'Gentle, doctor-guided relief from pain, breathlessness, nausea, fatigue and other symptoms — so each day can be as comfortable and calm as possible.',
+      'Gentle, doctor-guided relief from pain, breathlessness, nausea, fatigue and other symptoms, so each day can be as comfortable and calm as possible.',
     bullets: [
       'Pain and symptom relief',
       'Help with feeding, hygiene and rest',
@@ -72,7 +73,7 @@ const WHAT_INCLUDES = [
     icon: HeartIcon,
     title: 'Emotional wellbeing',
     body:
-      'A serious diagnosis carries fear, sadness and uncertainty. Our caregivers offer a steady, listening presence — and connect you with counselling when it would help.',
+      'A serious diagnosis carries fear, sadness and uncertainty. Our caregivers offer a steady, listening presence, and connect you with counselling when it would help.',
     bullets: [
       'A calm, listening companion',
       'Emotional reassurance through hard days',
@@ -84,7 +85,7 @@ const WHAT_INCLUDES = [
     icon: UserGroupIcon,
     title: 'Support for the family',
     body:
-      'Caring for a seriously ill loved one is exhausting. We share the load — practical help, clear updates and respite so families can rest and simply be present.',
+      'Caring for a seriously ill loved one is exhausting. We share the load, practical help, clear updates and respite so families can rest and simply be present.',
     bullets: [
       'Respite hours so families can rest',
       'Gentle guidance on what to expect',
@@ -108,28 +109,28 @@ const STEPS = [
     n: '01',
     title: 'A gentle conversation',
     body:
-      'We listen first — to the diagnosis, the symptoms and what comfort and dignity mean to your family. There is no pressure, only understanding.',
+      'We listen first, to the diagnosis, the symptoms and what comfort and dignity mean to your family. There is no pressure, only understanding.',
     icon: ChatBubbleLeftRightIcon,
   },
   {
     n: '02',
     title: 'A comfort-focused plan',
     body:
-      'Working alongside your treating doctor, we shape a care plan around pain relief, symptom comfort and emotional support — at home, where it feels safe.',
+      'Working alongside your treating doctor, we shape a care plan around pain relief, symptom comfort and emotional support, at home, where it feels safe.',
     icon: ClipboardDocumentCheckIcon,
   },
   {
     n: '03',
     title: 'A caregiver who fits',
     body:
-      'We match a trained, compassionate caregiver to your loved one — chosen for warmth and patience as much as skill — and introduce them gently.',
+      'We match a trained, compassionate caregiver to your loved one, chosen for warmth and patience as much as skill, and introduce them gently.',
     icon: HandRaisedIcon,
   },
   {
     n: '04',
     title: 'Care that stays close',
     body:
-      'We remain reachable, adjust the plan as needs change, and support the whole family — quietly, steadily, for as long as you need us.',
+      'We remain reachable, adjust the plan as needs change, and support the whole family, quietly, steadily, for as long as you need us.',
     icon: HeartIcon,
   },
 ] as const
@@ -143,7 +144,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'My father wanted to be in his own room, with his own things around him. EzyHelpers made that possible — comfort care, calm updates, and a caregiver who treated him like family.',
+      'My father wanted to be in his own room, with his own things around him. EzyHelpers made that possible, comfort care, calm updates, and a caregiver who treated him like family.',
     name: 'Imran S.',
     place: 'HSR Layout, Bangalore',
   },
@@ -159,22 +160,22 @@ const FAQS = [
   {
     question: 'What is palliative care at home, and how is it different from hospital care?',
     answer:
-      'Palliative care focuses on comfort, dignity and quality of life for someone living with a serious illness — relieving pain and symptoms rather than only treating the disease. At home, that comfort is delivered in familiar surroundings, surrounded by family, while staying coordinated with your treating doctor. It can be provided alongside ongoing treatment, not only at the end of life.',
+      'Palliative care focuses on comfort, dignity and quality of life for someone living with a serious illness, relieving pain and symptoms rather than only treating the disease. At home, that comfort is delivered in familiar surroundings, surrounded by family, while staying coordinated with your treating doctor. It can be provided alongside ongoing treatment, not only at the end of life.',
   },
   {
     question: 'Is palliative care only for the final stage of life?',
     answer:
-      'No. Palliative care can begin at any point after a serious diagnosis — including during active treatment — to ease pain, breathlessness, nausea and emotional distress. End-of-life and hospice care are part of palliative care, but many families benefit from comfort-focused support much earlier in the journey.',
+      'No. Palliative care can begin at any point after a serious diagnosis, including during active treatment, to ease pain, breathlessness, nausea and emotional distress. End-of-life and hospice care are part of palliative care, but many families benefit from comfort-focused support much earlier in the journey.',
   },
   {
     question: 'Will the caregiver manage pain and difficult symptoms?',
     answer:
-      'Our caregivers provide comfort care and symptom support under the guidance of your treating doctor — helping keep pain, breathlessness, nausea and discomfort gently controlled, and alerting your medical team when something needs attention. Medical decisions and prescriptions always remain with your doctor. This page is for information and is not medical advice.',
+      'Our caregivers provide comfort care and symptom support under the guidance of your treating doctor, helping keep pain, breathlessness, nausea and discomfort gently controlled, and alerting your medical team when something needs attention. Medical decisions and prescriptions always remain with your doctor. This page is for information and is not medical advice.',
   },
   {
     question: 'How do you support the family, not just the patient?',
     answer:
-      'Caring for a seriously ill loved one is physically and emotionally exhausting. We offer respite hours so family carers can rest, gentle guidance on what to expect, clear daily updates for relatives near and far, and emotional support — including grief resources — for everyone involved.',
+      'Caring for a seriously ill loved one is physically and emotionally exhausting. We offer respite hours so family carers can rest, gentle guidance on what to expect, clear daily updates for relatives near and far, and emotional support, including grief resources, for everyone involved.',
   },
   {
     question: 'Can palliative care at home be arranged across Bangalore?',
@@ -192,7 +193,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Palliative Care at Home, Bangalore',
+    name: 'EzyHelpers, Palliative Care at Home, Bangalore',
     medicalSpecialty: ['PalliativeCare', 'Hospice'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -217,7 +218,7 @@ export default function PalliativeCareAtHomeView() {
       <Navbar />
 
       {/* ─────────────────── Hero ─────────────────── */}
-      <header className="relative overflow-hidden bg-primary-50">
+      <header className="relative overflow-hidden bg-care-50">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-accent-100/50 blur-3xl"
@@ -248,7 +249,8 @@ export default function PalliativeCareAtHomeView() {
             </ol>
           </nav>
 
-          <div className="mt-10 max-w-3xl sm:mt-14">
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 sm:mt-14 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-14">
+            <div className="text-center lg:text-left">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500" aria-hidden />
               Bangalore · Comfort care at home
@@ -260,13 +262,13 @@ export default function PalliativeCareAtHomeView() {
               <em className="font-careSerif font-normal italic text-accent-600">Comfort, dignity, togetherness.</em>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
+            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
               When someone you love is living with a serious illness, what matters most is comfort,
-              gentleness and being together. We bring compassionate palliative care home — easing pain
+              gentleness and being together. We bring compassionate palliative care home, easing pain
               and symptoms, supporting the heart, and standing beside your whole family.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <Link
                 href={enquiryHref}
                 onClick={() => trackCareCTAClick('Talk to a care advisor', `${PATH}#hero`)}
@@ -285,8 +287,14 @@ export default function PalliativeCareAtHomeView() {
               </a>
             </div>
             <p className="mt-5 text-sm text-neutral-500">
-              A calm, no-pressure conversation — we move at the pace that feels right for your family.
+              A calm, no-pressure conversation, we move at the pace that feels right for your family.
             </p>
+            </div>
+
+            {/* In-hero quick lead form */}
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
+              <CareHeroQuickForm enquirySource={PATH} />
+            </div>
           </div>
         </div>
       </header>
@@ -314,10 +322,10 @@ export default function PalliativeCareAtHomeView() {
 
         {/* ─────────────── Gentle intro ─────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
-          <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
+          <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600">A gentle note</p>
             <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-              Palliative care is not about giving up — it is about caring fully. It puts{' '}
+              Palliative care is not about giving up, it is about caring fully. It puts{' '}
               <em className="italic text-accent-600">comfort and dignity</em> at the centre, easing pain
               and worry so your loved one can live their days as gently and meaningfully as possible, at
               home, surrounded by the people they love.
@@ -337,7 +345,7 @@ export default function PalliativeCareAtHomeView() {
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
                 Every situation is different. These are the gentle, comfort-focused services we most often
-                arrange — and we will always tailor them to what your family needs.
+                arrange, and we will always tailor them to what your family needs.
               </p>
             </div>
 
@@ -382,7 +390,7 @@ export default function PalliativeCareAtHomeView() {
                 Comfort for the body, the heart and the family.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
-                Good palliative care holds all three together — gentle physical relief, emotional
+                Good palliative care holds all three together, gentle physical relief, emotional
                 steadiness, and real support for the people doing the caring.
               </p>
             </div>
@@ -426,8 +434,8 @@ export default function PalliativeCareAtHomeView() {
                   You are not carrying this alone.
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-neutral-600 sm:text-lg">
-                  A serious illness asks so much of a family. Our role is to lighten that weight — with
-                  practical help, gentle guidance and a steady presence — so you can rest, and simply be
+                  A serious illness asks so much of a family. Our role is to lighten that weight, with
+                  practical help, gentle guidance and a steady presence, so you can rest, and simply be
                   with the person you love.
                 </p>
               </div>
@@ -487,7 +495,7 @@ export default function PalliativeCareAtHomeView() {
         </section>
 
         {/* ─────────────── Testimonials ─────────────── */}
-        <section className="border-y border-neutral-200 bg-primary-50 px-4 py-20 sm:px-6 sm:py-24">
+        <section className="border-y border-neutral-200 bg-care-50 px-4 py-20 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600">
@@ -544,14 +552,14 @@ export default function PalliativeCareAtHomeView() {
         </section>
 
         {/* ─────────────── Final CTA ─────────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200 px-4 py-24 sm:px-6 sm:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-care-50 via-care-100 to-care-200 px-4 py-24 sm:px-6 sm:py-32">
           <div
             aria-hidden
             className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-accent-200/40 blur-3xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-primary-400/20 blur-3xl"
+            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-care-400/20 blur-3xl"
           />
           <div className="relative mx-auto max-w-3xl text-center">
             <h2 className="font-careSerif text-[clamp(2rem,5.5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -561,7 +569,7 @@ export default function PalliativeCareAtHomeView() {
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700">
               Reach out for a calm, compassionate conversation. We will listen, answer your questions, and
-              gently explain how palliative care at home could bring comfort — with no pressure at all.
+              gently explain how palliative care at home could bring comfort, with no pressure at all.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link

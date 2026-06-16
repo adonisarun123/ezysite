@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   BeakerIcon,
   CheckCircleIcon,
@@ -23,6 +25,15 @@ export const metadata: Metadata = {
   title: 'Fix Leaks & More with Expert Plumber Service | EzyHelpers',
   description: 'Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas.',
   keywords: 'plumber service, plumbing repair, tap repair, drain cleaning, pipe repair, emergency plumber',
+  openGraph: {
+    title: 'Fix Leaks & More with Expert Plumber Service | EzyHelpers',
+    description: 'Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas.',
+    url: 'https://www.ezyhelpers.com/services/plumbers',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Fix%20Leaks%20%26%20More%20with%20Expert%20Plumber%20Service", width: 1200, height: 630, alt: "Fix Leaks & More with Expert Plumber Service" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/plumbers'
   }
@@ -125,6 +136,7 @@ export default function PlumbersPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Fix Leaks & More with Expert Plumber Service"} serviceDescription={"Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas."} serviceType={"Fix Leaks & More with Expert Plumber Service"} serviceUrl={"https://www.ezyhelpers.com/services/plumbers"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -267,6 +279,11 @@ export default function PlumbersPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book a plumber through EzyHelpers?"
+        answer="EzyHelpers connects you with verified plumbers for leak repairs, fittings, blockages, and bathroom work. Book online or call 080-31411776 — same-day visits are available in most service areas with upfront pricing."
+      />
 
       {/* Why Choose Us */}
       <section className="section-padding bg-white">

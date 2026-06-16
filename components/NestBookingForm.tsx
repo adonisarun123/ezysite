@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { CheckCircleIcon, PaperAirplaneIcon, CalendarDaysIcon, ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/24/outline'
 import { supabase } from '@/lib/supabaseClient'
-import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
+import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackFormSubmitSuccess } from '@/lib/analytics'
 
 interface NestBookingData {
     name: string
@@ -191,6 +191,7 @@ export default function NestBookingForm() {
                 }
 
                 trackFormComplete('nest_booking_form', newRequestId)
+                trackFormSubmitSuccess('nest_booking_form', { leadId: newRequestId })
                 router.push(`/thank-you?type=nest&ref=${encodeURIComponent(newRequestId)}`)
             } catch (error) {
                 console.error('Submission error:', error)

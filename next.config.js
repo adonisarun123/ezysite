@@ -35,7 +35,7 @@ const nextConfig = {
     styledComponents: false,
   },
 
-  serverExternalPackages: ['puppeteer', 'puppeteer-core', 'nodemailer'],
+  serverExternalPackages: ['puppeteer-core', '@sparticuz/chromium', 'nodemailer'],
 
   // Target modern browsers only to reduce bundle size
   experimental: {
@@ -43,8 +43,11 @@ const nextConfig = {
     esmExternals: true,
     // Enable optimizations that are safe
     forceSwcTransforms: true,
-    // Inline and remove unused CSS chunks to prevent 404s
-    optimizeCss: true,
+    // NOTE: `optimizeCss` (critters) was removed June 2026. It only inlines
+    // critical CSS on the Pages Router render path; this site is pure App
+    // Router, so it inlined nothing (build output had zero <style> blocks) and
+    // pulled in the now-deprecated `critters` package for no benefit. CSS is
+    // still minified by the normal pipeline and content-hashed + cached 1yr.
     // Automatically rewrite package imports to the exact path for better tree-shaking
     optimizePackageImports: [
       '@heroicons/react',
@@ -61,10 +64,9 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
 
-  // Disable ESLint during builds to avoid deployment failures
-  // TODO: re-enable lint at build once existing warnings are addressed
+  // Lint at build: current codebase has 0 errors (warnings don't fail builds)
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
 
   // Headers for better caching, security and performance
@@ -110,7 +112,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy-Report-Only',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net https://*.facebook.com https://*.facebook.net https://*.trustpilot.com https://widget.trustpilot.com https://translate.google.com https://translate.googleapis.com https://www.google.com https://www.gstatic.com https://*.tawk.to https://embed.tawk.to https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.trustpilot.com https://translate.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.facebook.com https://*.tawk.to wss://*.tawk.to https://*.clarity.ms https://api.razorpay.com https://lumberjack.razorpay.com; frame-src https://www.googletagmanager.com https://*.facebook.com https://*.tawk.to https://*.trustpilot.com https://www.google.com https://td.doubleclick.net https://api.razorpay.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net https://*.facebook.com https://*.facebook.net https://*.trustpilot.com https://widget.trustpilot.com https://translate.google.com https://translate.googleapis.com https://www.google.com https://www.gstatic.com https://*.tawk.to https://embed.tawk.to https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.trustpilot.com https://translate.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com https://*.google.com https://stats.g.doubleclick.net https://googleads.g.doubleclick.net https://*.doubleclick.net https://*.facebook.com https://*.tawk.to wss://*.tawk.to https://*.clarity.ms https://api.razorpay.com https://lumberjack.razorpay.com https://server.arcgisonline.com https://demotiles.maplibre.org; worker-src 'self' blob:; frame-src https://www.googletagmanager.com https://*.facebook.com https://*.tawk.to https://*.trustpilot.com https://www.google.com https://td.doubleclick.net https://api.razorpay.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
           },
         ],
       },
@@ -140,6 +142,16 @@ const nextConfig = {
   // Permanent redirects from legacy URLs to new structure
   async redirects() {
     return [
+      // Blog slug cleanup (June 2026): old CamelCase/typo slugs -> clean kebab-case.
+      // Old URLs are indexed in Google, so these 301s preserve rankings.
+      { source: '/blog/Top-Personal-Kitchen-Hygiene-Tips-Every-Home-Cook-in-India', destination: '/blog/kitchen-hygiene-tips-home-cooks-india', permanent: true },
+      { source: '/blog/Companionship-Care-for-Seniors', destination: '/blog/companionship-care-for-seniors', permanent: true },
+      { source: '/blog/Beyond-the-9-to-5', destination: '/blog/24-7-live-in-nanny-bangalore-working-parents', permanent: true },
+      { source: '/blog/The-Ultimate-Guide-to-Finding-Trusted-Domestic-Help-Services-in-Bareilly', destination: '/blog/trusted-domestic-help-services-bareilly-guide', permanent: true },
+      { source: '/blog/Breaking-the-Myths', destination: '/blog/part-time-maid-myths-indian-homes', permanent: true },
+      { source: '/blog/Domestc-Help-Etiquette', destination: '/blog/domestic-help-etiquette-working-relationship', permanent: true },
+      { source: '/blog/North-Indian-vs-South-Indian-Live-in-Cooks', destination: '/blog/north-indian-vs-south-indian-live-in-cooks', permanent: true },
+      { source: '/blog/The-Evolution-of-House-Maid-Services-in-India', destination: '/blog/evolution-house-maid-services-india', permanent: true },
       // 1
       { source: '/home', destination: '/', permanent: true },
       // 2
@@ -190,9 +202,10 @@ const nextConfig = {
       // 24-28 blog posts -> blog
       { source: '/blog/household-safety-security-best-practices-with-live-in-helper', destination: '/blog', permanent: true },
       { source: '/blog/why-your-helpers-also-deserve-some-monthly-time-off', destination: '/blog', permanent: true },
-      { source: '/blog/the-existing-process-of-hiring-a-24-hours-domestic-helper', destination: '/blog', permanent: true },
-      { source: '/blog/difference-between-24-hours-live-in-and-full-day-helper', destination: '/blog', permanent: true },
-      { source: '/blog/generally-we-dont-verify-our-helpers-why', destination: '/blog', permanent: true },
+      // Retargeted (June 2026) from generic /blog to the closest-matching new guides
+      { source: '/blog/the-existing-process-of-hiring-a-24-hours-domestic-helper', destination: '/blog/24-hour-maid-service-bangalore-how-it-works', permanent: true },
+      { source: '/blog/difference-between-24-hours-live-in-and-full-day-helper', destination: '/blog/live-in-maid-vs-full-time-maid-bangalore', permanent: true },
+      { source: '/blog/generally-we-dont-verify-our-helpers-why', destination: '/blog/complete-guide-to-maid-verification-and-background-check-in-india', permanent: true },
       // 29
       { source: '/services/travel-nanny', destination: '/cities/bangalore/travel-nanny', permanent: true },
       // 30 - Duplicate page consolidation: live-in-maid (singular) -> live-in-maids (plural canonical)

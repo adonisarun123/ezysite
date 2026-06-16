@@ -21,7 +21,7 @@ import {
   getAvailableSlotStartsIst,
   minSelectableDateIst,
 } from '@/lib/onDemandHelpSlots'
-import { trackFormComplete, trackFormError, trackFormStart, trackFormSubmit } from '@/lib/analytics'
+import { trackFormComplete, trackFormError, trackFormStart, trackFormSubmit, trackStepComplete } from '@/lib/analytics'
 import { sendWebhook } from '@/lib/webhookService'
 import RazorpayPaymentButton from './RazorpayPaymentButton'
 import {
@@ -236,6 +236,9 @@ export default function OnDemandHelpWizard() {
 
   const goNext = () => {
     if (!validateStep(step)) return
+    // step_complete: fires once the current step passes validation and the user
+    // advances — gives a per-step funnel in GA4 (step_number / total_steps).
+    trackStepComplete(`${FORM_NAME}_step_${step}`, step, 6)
     setStep((x) => Math.min(6, x + 1))
   }
 

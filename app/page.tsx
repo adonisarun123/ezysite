@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import UrgencyCTA from '@/components/UrgencyCTA'
 import MainContent from '@/components/MainContent'
 import HeroSection from '@/components/sections/HeroSection'
+import AffiliationsSection from '@/components/sections/AffiliationsSection'
 import ServiceSelector from '@/components/ServiceSelector'
 import ServicesSection from '@/components/sections/ServicesSection'
 import ProcessSection from '@/components/sections/ProcessSection'
@@ -31,10 +31,12 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <UrgencyCTA />
+      {/* UrgencyCTA is mounted globally via ClientOnlyWidgets — rendering it
+          here too produced two stacked fixed banners. Removed to dedupe. */}
       <Navbar />
       <MainContent>
         <HeroSection />
+        <AffiliationsSection />
         <ServiceSelector mode="section" />
         <WhyChooseUsSection />
         <ServicesSection />

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabaseClient'
+import { trackFormSubmitSuccess } from '@/lib/analytics'
 
 // Job roles enum matching the database schema
 const JOB_ROLES = [
@@ -313,6 +314,7 @@ export default function HelperLeadsPage() {
         throw error
       }
 
+      trackFormSubmitSuccess('helper_leads_form', { city: dbData.detected_city || undefined })
       router.push('/thank-you?type=helper_lead')
       setFormData({
         helper_name: '',

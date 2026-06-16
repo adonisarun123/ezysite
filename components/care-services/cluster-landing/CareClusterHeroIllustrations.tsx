@@ -1,4 +1,4 @@
-/** Inline hero tile art — peg-doll / flat style per elderly-care spec (no external assets). */
+/** Inline hero tile art, peg-doll / flat style per elderly-care spec (no external assets). */
 
 export function HeroTileCompanionship({ className }: { className?: string }) {
   return (

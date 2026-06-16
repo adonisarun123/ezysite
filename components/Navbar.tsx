@@ -42,6 +42,8 @@ const navigation: NavigationItem[] = [
     dropdownItems: [
       { name: 'All Care Services', href: '/care-services' },
       { name: 'Elder Care at Home', href: '/care-services/elder-care-at-home-bangalore' },
+      { name: 'Alzheimer’s Care at Home', href: '/care-services/alzheimers-care-at-home-bangalore' },
+      { name: 'Respite Care at Home', href: '/care-services/respite-care-at-home-bangalore' },
       { name: 'Home Nursing Care', href: '/care-services/home-nursing-care-bangalore' },
       { name: 'Medical Equipment Rental & Buy', href: '/care-services/medical-equipment-rental-bangalore' },
       { name: 'Physiotherapy at Home', href: '/care-services/physiotherapy-at-home-bangalore' },
@@ -49,7 +51,6 @@ const navigation: NavigationItem[] = [
       { name: 'Palliative Care at Home', href: '/care-services/palliative-care-at-home-bangalore' },
     ],
   },
-  { name: 'Hire Helper', href: '/hire-helper' },
   { name: 'Nest', href: '/nest', isNew: true },
   {
     name: 'For Helpers',
@@ -119,7 +120,7 @@ export default function Navbar() {
                         alt="EzyHelpers Logo"
                         fill
                         className="object-contain"
-                        priority
+                        loading="eager"
                         sizes="40px"
                       />
                     </div>
@@ -242,7 +243,6 @@ export default function Navbar() {
                     alt="EzyHelpers Logo"
                     fill
                     className="object-contain"
-                    priority
                     sizes="32px"
                   />
                 </div>
@@ -344,7 +344,7 @@ export default function Navbar() {
           SINGLE source of header offset site-wide (the old
           [data-main-content] CSS padding was removed to avoid double-counting). */}
       <div
-        className={`${urgencyVisible ? 'h-32 lg:h-36' : 'h-20 lg:h-24'} transition-[height] duration-300`}
+        className={`${urgencyVisible ? 'h-32 lg:h-36' : 'h-20 lg:h-24'}`}
         aria-hidden="true"
       ></div>
     </>

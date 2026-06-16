@@ -6,17 +6,28 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/agent-success',
-          '/helper-success',
-          '/thank-you',
-          '/on-demand-help/thank-you',
-          '/helper-leads',
-          '/helper-interview',
-          '/customer-requirements',
-          '/Lp/',
+        disallow: ['/api/'],
+      },
+      // Explicitly welcome AI/answer-engine crawlers (AEO).
+      // These bots power ChatGPT, Claude, Perplexity and Google AI Overviews —
+      // being crawlable by them increases the chance of brand citations.
+      {
+        userAgent: [
+          'GPTBot',
+          'OAI-SearchBot',
+          'ChatGPT-User',
+          'ClaudeBot',
+          'Claude-Web',
+          'anthropic-ai',
+          'PerplexityBot',
+          'Perplexity-User',
+          'Google-Extended',
+          'Applebot-Extended',
+          'cohere-ai',
+          'CCBot',
         ],
+        allow: '/',
+        disallow: ['/api/'],
       },
     ],
     sitemap: 'https://www.ezyhelpers.com/sitemap.xml',

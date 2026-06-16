@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabaseClient'
 import { buildHireHelperLeadInsertRow } from '@/lib/hireHelperLeadDb'
-import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError } from '@/lib/analytics'
+import { trackFormStart, trackFormSubmit, trackFormComplete, trackFormError, trackFormSubmitSuccess } from '@/lib/analytics'
 import { sendWebhook } from '@/lib/webhookService'
 
 const CITIES = [
@@ -320,6 +320,7 @@ export default function OnDemandLeadForm({
       ).catch(() => {})
 
       trackFormComplete('on_demand_lead_form', newRequestId)
+      trackFormSubmitSuccess('on_demand_lead_form', { leadId: newRequestId, serviceType: 'on-demand', city: insertRow.city })
       router.push(`/thank-you?type=on_demand&ref=${encodeURIComponent(newRequestId)}`)
     } catch (err) {
       trackFormError(

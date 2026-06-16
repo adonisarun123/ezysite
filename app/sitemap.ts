@@ -1,12 +1,42 @@
 import { MetadataRoute } from 'next'
+import fs from 'fs'
+import path from 'path'
 import { posts } from '@/lib/blogData'
 import { caseStudies } from '@/app/case-studies/data/caseStudies'
 import { jobOpenings } from '@/lib/careersData'
 import { CARE_ENQUIRY_HREF, CARE_NAV_CLUSTERS, CARE_PILLAR_HREF } from '@/lib/careServices/registry'
 
+/**
+ * Read every real care-services route from the filesystem at build time.
+ * This makes the sitemap self-healing: any care page added under
+ * app/care-services/<slug>/page.tsx is included automatically, so the
+ * curated lists below never silently drift out of sync again.
+ * Excludes form/utility routes that should not be indexed.
+ */
+const CARE_SITEMAP_EXCLUDE = new Set(['apply', 'enquiry'])
+function discoverCareSlugs(): string[] {
+  try {
+    const dir = path.join(process.cwd(), 'app', 'care-services')
+    return fs
+      .readdirSync(dir, { withFileTypes: true })
+      .filter(
+        (e) =>
+          e.isDirectory() &&
+          !e.name.startsWith('[') &&
+          !CARE_SITEMAP_EXCLUDE.has(e.name) &&
+          fs.existsSync(path.join(dir, e.name, 'page.tsx'))
+      )
+      .map((e) => e.name)
+  } catch {
+    return []
+  }
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.ezyhelpers.com'
-  const currentDate = process.env.BUILD_DATE ?? '2026-05-20T00:00:00.000Z'
+  // Use BUILD_DATE if provided, otherwise the actual build time (sitemap is
+  // generated at build, so new Date() is stable per deployment and never stale).
+  const currentDate = process.env.BUILD_DATE ?? new Date().toISOString()
 
   // Core pages with high priority
   const corePages: MetadataRoute.Sitemap = [
@@ -39,6 +69,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9
+    },
+    {
+      url: `${baseUrl}/our-network/helpers`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7
+    },
+    {
+      url: `${baseUrl}/our-network/families`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7
     },
     {
       url: `${baseUrl}/blog`,
@@ -432,12 +474,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5
     },
-    {
-      url: `${baseUrl}/helper-interview`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5
-    },
+    // helper-interview removed from sitemap: it's an internal form with no
+    // unique indexable content and is now marked noindex (see its layout.tsx).
     {
       url: `${baseUrl}/helper-leads`,
       lastModified: currentDate,
@@ -509,6 +547,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.85
     })),
+    // Condition & specialty pages (June 2026)
+    ...[
+      '24-hour-elderly-care-at-home-bangalore',
+      'signs-elderly-parent-needs-care-bangalore',
+      'alzheimers-care-at-home-bangalore',
+      'respite-care-at-home-bangalore',
+      'diabetes-care-at-home-bangalore',
+      'multiple-sclerosis-als-care-at-home-bangalore',
+      'post-stroke-speech-rehab-at-home-bangalore',
+      'arthritis-joint-pain-care-at-home-bangalore',
+      'respiratory-copd-care-at-home-bangalore',
+    ].map((slug) => ({
+      url: `${baseUrl}/care-services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85
+    })),
     // Decision & cost guides
     ...[
       'home-nursing-cost-bangalore',
@@ -573,9 +628,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ]
 
+  // Catch-all: every care page on disk not already covered by the curated
+  // lists above. Deduped by URL so curated priorities win; new pages still
+  // appear automatically with a sensible default priority.
+  const curatedUrls = new Set(careServicesBangalore.map((e) => e.url))
+  const careAutoDiscovered: MetadataRoute.Sitemap = discoverCareSlugs()
+    .map((slug) => `${baseUrl}/care-services/${slug}`)
+    .filter((url) => !curatedUrls.has(url))
+    .map((url) => ({
+      url,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
+
   return [
     ...corePages,
     ...careServicesBangalore,
+    ...careAutoDiscovered,
     ...services,
     ...cities,
     ...bangaloreServices,

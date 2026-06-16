@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   ClockIcon, 
   CurrencyDollarIcon, 
@@ -23,6 +25,15 @@ export const metadata: Metadata = {
   title: 'Part-Time Maid Services | 2-6 Hours Daily | EzyHelpers',
   description: 'Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers.',
   keywords: 'part time maid, hourly maid, house help, cooking maid, babysitter, elderly care',
+  openGraph: {
+    title: 'Part-Time Maid Services | 2-6 Hours Daily | EzyHelpers',
+    description: 'Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers.',
+    url: 'https://www.ezyhelpers.com/services/part-time-maids',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Part-Time%20Maid%20Services", width: 1200, height: 630, alt: "Part-Time Maid Services" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/part-time-maids'
   }
@@ -113,6 +124,7 @@ export default function PartTimeMaidsPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Part-Time Maid Services"} serviceDescription={"Flexible part-time maid services from 2-6 hours daily. Perfect for working professionals. Customizable schedules with background verified helpers."} serviceType={"Part-Time Maid Services"} serviceUrl={"https://www.ezyhelpers.com/services/part-time-maids"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -319,6 +331,11 @@ export default function PartTimeMaidsPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a part-time maid through EzyHelpers?"
+        answer="EzyHelpers provides background-verified part-time maids for 2–6 hours daily — cleaning, dishes, laundry, and more. Placement typically takes 24–72 hours, with flexible timings and a quick replacement guarantee."
+      />
 
       {/* Why Choose Section */}
       <section className="section-padding bg-white">

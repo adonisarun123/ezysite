@@ -60,7 +60,7 @@ export default function TestimonialsSection() {
                   <span className="text-white font-semibold text-sm">{testimonial.avatar}</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                  <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
                   <p className="text-sm text-gray-500">{testimonial.location}</p>
                 </div>
               </div>

@@ -32,18 +32,21 @@ export default function GoogleTranslateWidget({ targetLanguage }: GoogleTranslat
       };
     };
 
-    // Load Google Translate script
+    // Load Google Translate script once. Guard against duplicate injection on
+    // remount (the previous version appended a new <script> every mount).
     if (!window.google?.translate) {
-      const script = document.createElement('script');
-      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      script.async = true;
-      
-      script.onload = () => {
+      const existing = document.getElementById('google-translate-script') as HTMLScriptElement | null;
+      if (existing) {
         initGoogleTranslate();
-      };
-      
-      document.head.appendChild(script);
-      initGoogleTranslate();
+      } else {
+        const script = document.createElement('script');
+        script.id = 'google-translate-script';
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        script.async = true;
+        script.onload = () => initGoogleTranslate();
+        document.head.appendChild(script);
+        initGoogleTranslate();
+      }
     } else {
       initGoogleTranslate();
       window.googleTranslateElementInit();
@@ -61,10 +64,15 @@ export default function GoogleTranslateWidget({ targetLanguage }: GoogleTranslat
         }
       };
 
-      // Try multiple times with increasing delays
-      setTimeout(translateToLanguage, 500);
-      setTimeout(translateToLanguage, 1500);
-      setTimeout(translateToLanguage, 3000);
+      // Try multiple times with increasing delays. Capture + clear the timers
+      // on cleanup so they don't fire (and dispatch on a stale/removed element)
+      // after unmount or a targetLanguage change.
+      const timers = [
+        setTimeout(translateToLanguage, 500),
+        setTimeout(translateToLanguage, 1500),
+        setTimeout(translateToLanguage, 3000),
+      ];
+      return () => timers.forEach(clearTimeout);
     }
   }, [targetLanguage]);
 

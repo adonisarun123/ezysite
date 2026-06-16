@@ -5,6 +5,8 @@ import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import FAQAccordion from '@/components/FAQAccordion'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   CommandLineIcon,
   CheckCircleIcon,
@@ -24,6 +26,15 @@ export const metadata: Metadata = {
   title: 'Expert Carpenter Services | Home Repairs | EzyHelpers',
   description: 'Professional carpenter services for furniture repair, woodwork & home improvements. Skilled craftsmen available for all carpentry needs across major cities.',
   keywords: 'carpenter services, custom furniture, modular kitchen, wardrobe, furniture repair, door window fixing, office carpentry, furniture restoration',
+  openGraph: {
+    title: 'Expert Carpenter Services | Home Repairs | EzyHelpers',
+    description: 'Professional carpenter services for furniture repair, woodwork & home improvements. Skilled craftsmen available for all carpentry needs across major cities.',
+    url: 'https://www.ezyhelpers.com/services/carpenters',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Expert%20Carpenter%20Services", width: 1200, height: 630, alt: "Expert Carpenter Services" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/carpenters'
   }
@@ -124,6 +135,7 @@ export default function CarpentersPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Expert Carpenter Services"} serviceDescription={"Professional carpenter services for furniture repair, woodwork & home improvements. Skilled craftsmen available for all carpentry needs across major cities."} serviceType={"Expert Carpenter Services"} serviceUrl={"https://www.ezyhelpers.com/services/carpenters"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -273,6 +285,11 @@ export default function CarpentersPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a carpenter through EzyHelpers?"
+        answer="EzyHelpers connects you with skilled, background-verified carpenters for furniture repair, fittings, and custom woodwork. Book online or call 080-31411776; same-day and scheduled visits are available with clear, upfront pricing."
+      />
 
       {/* Important Considerations */}
       <section className="section-padding bg-white">

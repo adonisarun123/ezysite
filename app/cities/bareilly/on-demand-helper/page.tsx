@@ -99,7 +99,7 @@ export default function BareillyOnDemandHelperPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="min-h-screen">
+            <main className="min-h-screen">
         <Navbar />
         
         <Breadcrumb 
@@ -111,57 +111,59 @@ export default function BareillyOnDemandHelperPage() {
         />
       
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-indigo-700 via-violet-700 to-blue-800 text-white pt-20 pb-24 lg:pb-28 overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
+        <section className="relative bg-gradient-to-br from-indigo-900 via-violet-800 to-indigo-700 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+            <div className="absolute top-48 -left-24 w-72 h-72 bg-violet-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
           </div>
 
           <div className="container-custom relative z-10">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white">
-                Instant Maid Service in Bareilly – Quick Help When You Need It Most
+              <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 border border-white/20 text-indigo-100 text-sm font-semibold tracking-wider mb-6 backdrop-blur-md">
+                PREMIUM DOMESTIC HELP
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 font-display leading-tight text-white tracking-tight drop-shadow-sm">
+                Instant Maid Service in Bareilly <br className="hidden md:block" /><span className="text-indigo-200">– Quick Help When You Need It Most</span>
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed font-medium">
+              <p className="text-lg md:text-xl lg:text-2xl text-indigo-50 max-w-4xl mx-auto leading-relaxed font-medium mb-10">
                 Need urgent domestic assistance? EzyHelpers offers instant maid service in Bareilly, ideal for emergency situations, sudden guests, or one-time events. Our quick helpers are available within 2–4 hours!
               </p>
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
+              <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mt-8">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-indigo-900 font-bold text-lg py-4 px-10 rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transition-all hover:-translate-y-1 duration-300">
                   Book an Instant Maid
                 </Link>
-                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all">
-                  <PhoneIcon className="h-5 w-5 mr-1" />
+                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center w-full sm:w-auto text-white font-bold text-lg py-4 px-10 rounded-2xl border-2 border-indigo-300/50 hover:bg-white/10 hover:border-white backdrop-blur-sm transition-all duration-300">
+                  <PhoneIcon className="h-6 w-6 mr-2 group-hover:animate-pulse" />
                   Call +91 80 3141 1776
                 </Link>
               </div>
 
-              <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {/* Service Assurance Badges */}
+              <div className="mt-12 flex flex-wrap justify-center gap-4">
                 {[
                   'Verified & Trained Emergency Helpers',
                   'Same-Day Availability (within 2–4 hours)',
-                  'Hourly Pricing, No Commitment',
-                  'Flexible Short-Term Assignments',
-                  'Available for Events & Festive Occasions',
-                  'Multi-Tasking Capable (on request)',
-                  'Ideal for One-Time or Emergency Tasks'
+                  'Hourly Pricing, No Commitment'
                 ].map((b, i) => (
-                  <div key={i} className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
-                    <span className="text-emerald-300">✓</span>
+                  <div key={i} className="inline-flex items-center gap-2 bg-black/20 backdrop-blur-md rounded-full px-5 py-2.5 text-sm font-semibold text-white border border-white/10 shadow-inner">
+                    <CheckCircleIcon className="h-5 w-5 text-emerald-400" />
                     <span>{b}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
+              {/* Highlight Metrics */}
+              <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 {[
                   { value: 'Instant', label: 'Booking & Confirmation' },
                   { value: 'Available', label: '7 Days a Week' },
                   { value: '4.8★ Rating', label: 'For Instant Maid Services in Bareilly' }
                 ].map((m, i) => (
-                  <div key={i} className="rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/15 px-6 py-6">
-                    <div className="text-2xl font-extrabold">{m.value}</div>
-                    <div className="mt-1 text-orange-50/80">{m.label}</div>
+                  <div key={i} className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 p-8 shadow-2xl group hover:bg-white/10 transition-colors duration-300">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 to-purple-400 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight drop-shadow-md">{m.value}</div>
+                    <div className="text-indigo-200 font-medium text-sm md:text-base uppercase tracking-wider">{m.label}</div>
                   </div>
                 ))}
               </div>
@@ -170,11 +172,14 @@ export default function BareillyOnDemandHelperPage() {
         </section>
 
         {/* Why Choose EzyHelpers */}
-        <section className="section-padding bg-white">
-          <div className="container-custom max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">Why Choose EzyHelpers for Instant Maid Service in Bareilly?</h2>
-            <p className="text-lg text-gray-600 text-center mb-6">Our instant maid service in Bareilly ensures prompt, reliable, and skilled help for all unplanned domestic needs. We’re trusted by Bareilly families for fast and dependable service.</p>
-            <ul className="grid md:grid-cols-2 gap-3 text-gray-700">
+        <section className="section-padding bg-gray-50 relative">
+          <div className="container-custom max-w-6xl">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display tracking-tight">Why Choose EzyHelpers for Instant Maid Service in Bareilly?</h2>
+              <p className="text-xl text-gray-600">Our instant maid service in Bareilly ensures prompt, reliable, and skilled help for all unplanned domestic needs. We're trusted by Bareilly families for fast and dependable service.</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 'Trained, Background-Verified Helpers',
                 'No Long-Term Commitment Required',
@@ -183,191 +188,253 @@ export default function BareillyOnDemandHelperPage() {
                 'Hindi-Speaking Bareilly Helpers',
                 'Specializing in Home Maintenance Services'
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2"><CheckCircleIcon className="h-5 w-5 text-green-600 mt-0.5" />{item}</li>
+                <div key={i} className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-100 transition-all duration-300 group">
+                  <div className="bg-indigo-50 p-3 rounded-xl group-hover:bg-indigo-100 transition-colors shrink-0">
+                    <CheckCircleIcon className="h-6 w-6 text-indigo-600" />
+                  </div>
+                  <span className="font-semibold text-gray-800 text-lg leading-snug pt-1">{item}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 
         {/* Our Specialized Instant Maid Services for Every Urgent Need */}
+        <section className="section-padding bg-white relative">
+          <div className="container-custom max-w-6xl">
+            <div className="text-center max-w-4xl mx-auto mb-16">
+              <span className="text-indigo-600 font-bold tracking-wider uppercase text-sm mb-2 block">Our Expertise</span>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display tracking-tight">Our Specialized Instant Maid Services for Every Urgent Need</h2>
+              <p className="text-xl text-gray-600">From festival prep to family emergencies, our quick helpers in Bareilly are trained to handle your urgent home requirements right when you need them.</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Emergency Cleaning */}
+              <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:border-indigo-200 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col h-full">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-100 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-110"></div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-indigo-700 transition-colors font-display">Emergency Home Cleaning</h3>
+                  <p className="text-gray-600 mb-6 flex-grow">Expecting guests or preparing for a pooja? Our cleaning experts are just a call away for quick, reliable home cleaning.</p>
+                  
+                  <div className="bg-white rounded-2xl p-5 shadow-sm mb-6 border border-gray-50">
+                    <p className="font-bold text-gray-900 mb-3 text-xs uppercase tracking-wide">What they do:</p>
+                    <ul className="space-y-2 text-sm">
+                      {['Sweeping, mopping, and dusting', 'Kitchen & bathroom sanitization', 'Post-party or festival cleaning', 'Room organization'].map((task, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-gray-700 font-medium">
+                          <span className="w-1.5 h-1.5 mt-1.5 rounded-full bg-indigo-500 shrink-0"></span> {task}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <Link href="/hire-helper" className="inline-flex items-center justify-center bg-indigo-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-indigo-700 transition-colors shadow-md hover:shadow-lg w-full">Book Cleaning Helper</Link>
+                </div>
+              </div>
+
+              {/* Cooking */}
+              <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:border-violet-200 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col h-full">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-violet-100 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-110"></div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-violet-700 transition-colors font-display">On-Demand Cooking</h3>
+                  <p className="text-gray-600 mb-6 flex-grow">Our instant cooks prepare Bareilly-style meals, snacks, or vrat food with hygiene and care.</p>
+                  
+                  <div className="bg-white rounded-2xl p-5 shadow-sm mb-6 border border-gray-50">
+                    <p className="font-bold text-gray-900 mb-3 text-xs uppercase tracking-wide">What they do:</p>
+                    <ul className="space-y-2 text-sm">
+                      {['North Indian veg/non-veg meals', 'Fasting food (Navratri, Karva Chauth)', 'Cooking for events or functions', 'Kitchen cleanup post-cooking'].map((task, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-gray-700 font-medium">
+                          <span className="w-1.5 h-1.5 mt-1.5 rounded-full bg-violet-500 shrink-0"></span> {task}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <Link href="/hire-helper" className="inline-flex items-center justify-center bg-violet-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-violet-700 transition-colors shadow-md hover:shadow-lg w-full">Hire Quick Cook</Link>
+                </div>
+              </div>
+
+              {/* Babysitting */}
+              <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:border-pink-200 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col h-full">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-pink-100 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-110"></div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors font-display">Emergency Babysitter</h3>
+                  <p className="text-gray-600 mb-6 flex-grow">Need help with kids while you're busy or out? Our trained babysitters step in instantly.</p>
+                  
+                  <div className="bg-white rounded-2xl p-5 shadow-sm mb-6 border border-gray-50">
+                    <p className="font-bold text-gray-900 mb-3 text-xs uppercase tracking-wide">What they do:</p>
+                    <ul className="space-y-2 text-sm">
+                      {['Feeding, bathing, and hygiene', 'Storytelling and age-appropriate play', 'Holiday or emergency supervision', 'School drop/pickup support'].map((task, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-gray-700 font-medium">
+                          <span className="w-1.5 h-1.5 mt-1.5 rounded-full bg-pink-500 shrink-0"></span> {task}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <Link href="/hire-helper" className="inline-flex items-center justify-center bg-pink-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-pink-700 transition-colors shadow-md hover:shadow-lg w-full">Get Babysitting Help</Link>
+                </div>
+              </div>
+
+              {/* Elderly Care */}
+              <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:border-blue-200 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col h-full">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-100 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-110"></div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors font-display">Elder Care Support</h3>
+                  <p className="text-gray-600 mb-6 flex-grow">If your regular caregiver is away, we provide respectful and gentle elderly support on short notice.</p>
+                  
+                  <div className="bg-white rounded-2xl p-5 shadow-sm mb-6 border border-gray-50">
+                    <p className="font-bold text-gray-900 mb-3 text-xs uppercase tracking-wide">What they do:</p>
+                    <ul className="space-y-2 text-sm">
+                      {['Help with walking & medicine', 'Emotional companionship', 'Cleanliness and hygiene assistance', 'Light home support and rituals'].map((task, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-gray-700 font-medium">
+                          <span className="w-1.5 h-1.5 mt-1.5 rounded-full bg-blue-500 shrink-0"></span> {task}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <Link href="/hire-helper" className="inline-flex items-center justify-center bg-blue-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg w-full">Book Elderly Care</Link>
+                </div>
+              </div>
+
+              {/* Patient Care */}
+              <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:border-emerald-200 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col h-full">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-100 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-110"></div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-emerald-700 transition-colors font-display">Patient & Nursing Care</h3>
+                  <p className="text-gray-600 mb-6 flex-grow">Need short-term support for someone unwell at home? We provide trained medical helpers.</p>
+                  
+                  <div className="bg-white rounded-2xl p-5 shadow-sm mb-6 border border-gray-50">
+                    <p className="font-bold text-gray-900 mb-3 text-xs uppercase tracking-wide">What they do:</p>
+                    <ul className="space-y-2 text-sm">
+                      {['Medication and vitals monitoring', 'Support with daily movement', 'Hygiene care for recovery patients'].map((task, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-gray-700 font-medium">
+                          <span className="w-1.5 h-1.5 mt-1.5 rounded-full bg-emerald-500 shrink-0"></span> {task}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <Link href="/hire-helper" className="inline-flex items-center justify-center bg-emerald-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-emerald-700 transition-colors shadow-md hover:shadow-lg w-full">Book Patient Care</Link>
+                </div>
+              </div>
+
+              {/* Event Help */}
+              <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:border-amber-200 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col h-full">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-amber-100 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-110"></div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-700 transition-colors font-display">Instant Event Help</h3>
+                  <p className="text-gray-600 mb-6 flex-grow">Planning a wedding, pooja, or family event? Our event support helpers ensure smooth execution.</p>
+                  
+                  <div className="bg-white rounded-2xl p-5 shadow-sm mb-6 border border-gray-50">
+                    <p className="font-bold text-gray-900 mb-3 text-xs uppercase tracking-wide">What they do:</p>
+                    <ul className="space-y-2 text-sm">
+                      {['Pre-function home prep', 'Guest service and food help', 'Kitchen & utensil management', 'Post-event cleaning'].map((task, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-gray-700 font-medium">
+                          <span className="w-1.5 h-1.5 mt-1.5 rounded-full bg-amber-500 shrink-0"></span> {task}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <Link href="/hire-helper" className="inline-flex items-center justify-center bg-amber-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-amber-700 transition-colors shadow-md hover:shadow-lg w-full">Book Event Helper</Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Technical Home Maintenance Services - Full width card */}
+            <div className="mt-8 bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:border-teal-200 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-teal-100 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+                <div className="relative z-10">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors font-display">Technical Home Maintenance Services</h3>
+                  <p className="text-gray-600 text-lg mb-6 leading-relaxed">Facing plumbing, electrical, or carpentry issues? We have instant technicians ready to fix them.</p>
+                  
+                  <div className="bg-white rounded-2xl p-6 shadow-sm mb-6 border border-gray-50">
+                    <p className="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wide">What they do:</p>
+                    <ul className="grid sm:grid-cols-2 gap-3 text-gray-700">
+                      {['Fix fan, light, wiring, or switches', 'Tap leaks, drainage & water tank issues', 'Furniture repairs and home fixes', 'Fridge, cooler, and washing machine repairs'].map((task, idx) => (
+                        <li key={idx} className="flex items-center gap-3 font-medium">
+                          <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0"></span> {task}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <Link href="/hire-helper" className="inline-flex items-center justify-center bg-teal-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-teal-700 transition-colors shadow-md hover:shadow-lg w-full sm:w-auto">Book Maintenance Support</Link>
+                </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Easy 4-Step Hiring Process */}
         <section className="section-padding bg-gray-50">
-          <div className="container-custom max-w-4xl">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Our Specialized Instant Maid Services for Every Urgent Need</h2>
-              <p className="text-lg text-gray-600">From festival prep to family emergencies, our quick helpers in Bareilly are trained to handle your urgent home requirements right when you need them.</p>
+          <div className="container-custom max-w-6xl">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display tracking-tight">Easy 4-Step Booking for Instant Maids in Bareilly</h2>
+              <p className="text-xl text-gray-600">Getting a quick helper in Bareilly is hassle-free with our 4-step process:</p>
             </div>
-
-            <div className="space-y-10 text-gray-700">
-              <div>
-                <h3 className="text-xl font-semibold">Emergency Home Cleaning</h3>
-                <p className="mt-1">Expecting guests or preparing for a pooja? Our cleaning experts are just a call away for quick, reliable home cleaning.</p>
-                <p className="mt-3 font-medium">What they do:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Sweeping, mopping, and dusting</li>
-                  <li>Kitchen and bathroom sanitization</li>
-                  <li>Post-party or festival cleaning</li>
-                  <li>Room organization and clutter removal</li>
-                </ul>
-                <Link href="/hire-helper" className="text-red-600 font-semibold mt-2 inline-block">Book Instant Cleaning Helper</Link>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold">On-Demand Cooking Services</h3>
-                <p className="mt-1">Our instant cooks prepare Bareilly-style meals, snacks, or vrat food with hygiene and care.</p>
-                <p className="mt-3 font-medium">What they do:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>North Indian veg/non-veg meals</li>
-                  <li>Fasting food for Navratri, Karva Chauth</li>
-                  <li>Cooking for events or functions</li>
-                  <li>Kitchen cleanup post-cooking</li>
-                </ul>
-                <Link href="/hire-helper" className="text-red-600 font-semibold mt-2 inline-block">Hire Quick Cook in Bareilly</Link>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold">Emergency Babysitter Services</h3>
-                <p className="mt-1">Need help with kids while you're busy or out? Our trained babysitters step in instantly.</p>
-                <p className="mt-3 font-medium">What they do:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Feeding, bathing, and hygiene</li>
-                  <li>Storytelling and age-appropriate play</li>
-                  <li>Holiday or emergency supervision</li>
-                  <li>School drop/pickup support (if pre-arranged)</li>
-                </ul>
-                <Link href="/hire-helper" className="text-red-600 font-semibold mt-2 inline-block">Get Instant Babysitting Help</Link>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold">Elder Care Support on Short Notice</h3>
-                <p className="mt-1">If your regular caregiver is away, we provide respectful and gentle elderly support.</p>
-                <p className="mt-3 font-medium">What they do:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Help with walking, food, and medicine</li>
-                  <li>Emotional companionship</li>
-                  <li>Cleanliness and hygiene assistance</li>
-                  <li>Light home support and rituals</li>
-                </ul>
-                <Link href="/hire-helper" className="text-red-600 font-semibold mt-2 inline-block">Book Emergency Elderly Care Helper</Link>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold">Patient & Nursing Care at Home</h3>
-                <p className="mt-1">Need short-term support for someone unwell at home? We provide trained medical helpers.</p>
-                <p className="mt-3 font-medium">What they do:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Medication and vitals monitoring</li>
-                  <li>Support with daily movement</li>
-                  <li>Hygiene care for recovery patients</li>
-                </ul>
-                <Link href="/hire-helper" className="text-red-600 font-semibold mt-2 inline-block">Book Quick Patient Care in Bareilly</Link>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold">Technical Home Maintenance Services</h3>
-                <p className="mt-1">Facing plumbing, electrical, or carpentry issues? We have instant technicians ready.</p>
-                <p className="mt-3 font-medium">What they do:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Fix fan, light, wiring, or switches</li>
-                  <li>Tap leaks, drainage & water tank issues</li>
-                  <li>Furniture repairs and home fixes</li>
-                  <li>Fridge, cooler, and washing machine repairs</li>
-                </ul>
-                <Link href="/hire-helper" className="text-red-600 font-semibold mt-2 inline-block">Book Instant Home Maintenance Support</Link>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold">Instant Event Help in Bareilly</h3>
-                <p className="mt-1">Planning a wedding, pooja, or family event? Our event support helpers ensure smooth execution.</p>
-                <p className="mt-3 font-medium">What they do:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Pre-function home prep</li>
-                  <li>Guest service and food help</li>
-                  <li>Kitchen & utensil management</li>
-                  <li>Post-event cleaning and waste disposal</li>
-                </ul>
-                <Link href="/hire-helper" className="text-red-600 font-semibold mt-2 inline-block">Book Event Helper Now</Link>
-              </div>
+            
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative">
+              {/* Connector line for desktop */}
+              <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-1 bg-indigo-100 rounded-full"></div>
+              
+              {[
+                { title: 'Consultation', desc: 'Discuss your needs with our team and choose the type of emergency helper you want.' },
+                { title: 'Maid Shortlisting', desc: 'We match you with 2–3 verified candidates based on your preferences.' },
+                { title: 'Interview & Selection', desc: 'Connect with shortlisted helpers via call, video, or in-person interviews.' },
+                { title: 'Smooth Onboarding', desc: 'Once selected, we handle the documentation, and your maid begins with a trial period. The support team stays in touch throughout.' }
+              ].map((step, i) => (
+                <div key={i} className="relative z-10 flex flex-col items-center text-center group">
+                  <div className="w-20 h-20 bg-white border-4 border-indigo-100 rounded-full flex items-center justify-center mb-6 shadow-xl group-hover:border-indigo-500 group-hover:scale-110 transition-all duration-300">
+                    <span className="text-2xl font-bold text-indigo-600">{i + 1}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Easy 4-Step Booking */}
+        {/* What to Consider Before Booking */}
         <section className="section-padding bg-white">
-          <div className="container-custom max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">Easy 4-Step Booking for Instant Maids in Bareilly</h2>
-            <p className="text-gray-700 mb-4 text-center">Getting a quick helper in Bareilly is hassle-free with our 4-step process:</p>
-            <ol className="list-decimal list-inside space-y-2 text-gray-700">
-              <li><strong>Consultation</strong> – Discuss your needs with our team and choose the type of emergency helper you want.</li>
-              <li><strong>Maid Shortlisting</strong> – We match you with 2–3 verified candidates based on your preferences.</li>
-              <li><strong>Interview & Selection</strong> – Connect with shortlisted helpers via call, video, or in-person interviews.</li>
-              <li><strong>Smooth Onboarding</strong> – Once selected, we handle the documentation, and your maid begins with a trial period. The support team stays in touch throughout.</li>
-            </ol>
-          </div>
-        </section>
-
-        {/* What to Consider Before Booking Quick Helpers in Bareilly? */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-custom max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">What to Consider Before Booking Quick Helpers in Bareilly?</h2>
-            <p className="text-gray-700 mb-4 text-center">Everything You Should Know to Make the Right Hiring Decision</p>
-            <div className="space-y-4 text-gray-700">
-              <div>
-                <p className="font-semibold">1. Real-Time Availability</p>
-                <p>Helpers are dispatched within 2–4 hours, depending on your location in Bareilly. Book early during peak festivals.</p>
-              </div>
-              <div>
-                <p className="font-semibold">2. Clear Task Details</p>
-                <p>Explain the service needed (e.g., “post-Holi cleanup” or “elderly meal support”) for a better match and preparedness.</p>
-              </div>
-              <div>
-                <p className="font-semibold">3. Transparent Hourly Pricing</p>
-                <p>You’ll know the total cost before starting. No hidden charges, and payment only after satisfaction.</p>
-              </div>
+          <div className="container-custom max-w-5xl">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display tracking-tight">What to Consider Before Booking Quick Helpers in Bareilly?</h2>
+              <p className="text-xl text-gray-600">Everything You Should Know to Make the Right Hiring Decision</p>
             </div>
-          </div>
-        </section>
-
-        {/* Explore Our Other Services */}
-        <section className="section-padding bg-white">
-          <div className="container-custom">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-display text-center">Explore Our Other Services</h2>
-            <p className="text-lg text-gray-600 text-center mb-8">Complete your household support system with EzyHelpers' trusted domestic services in Bareilly and beyond:</p>
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold mb-2">Cook Services</h3>
-                <p className="text-gray-600">Skilled home cooks for daily meals, fasting food, or festive dishes.</p>
-                <Link href="/cities/bareilly/cooks" className="text-red-600 font-semibold mt-2 inline-block">Explore Cook Services</Link>
-              </div>
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold mb-2">Babysitter/Nanny Services</h3>
-                <p className="text-gray-600">Caring and experienced nannies for infants, toddlers, and school-age kids.</p>
-                <Link href="/cities/bareilly/babysitter" className="text-red-600 font-semibold mt-2 inline-block">Hire a Trusted Babysitter</Link>
-              </div>
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold mb-2">Elderly Care Services</h3>
-                <p className="text-gray-600">Compassionate support for seniors, including mobility, hygiene, and medication care.</p>
-                <Link href="/cities/bareilly/elderly-care" className="text-red-600 font-semibold mt-2 inline-block">Discover Elderly Care Options</Link>
-              </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { title: '1. Real-Time Availability', desc: 'Helpers are dispatched within 2–4 hours, depending on your location in Bareilly. Book early during peak festivals.' },
+                { title: '2. Clear Task Details', desc: 'Explain the service needed (e.g., “post-Holi cleanup” or “elderly meal support”) for a better match and preparedness.' },
+                { title: '3. Transparent Hourly Pricing', desc: 'You’ll know the total cost before starting. No hidden charges, and payment only after satisfaction.' }
+              ].map((item, i) => (
+                <div key={i} className="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center">
+                  <h3 className="text-xl font-bold text-indigo-900 mb-4">{item.title}</h3>
+                  <p className="text-gray-700 text-lg leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Final CTA */}
-        <section className="section-padding bg-gradient-to-r from-indigo-700 to-indigo-900 text-white text-center">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-5xl text-white font-bold mb-6 font-display leading-tight">
-                Get a Trusted Quick Helper in Bareilly – EzyHelpers is Just a Call Away
-              </h2>
-              <p className="text-xl mb-8 text-indigo-100 font-medium">
+        <section className="section-padding bg-gradient-to-br from-indigo-800 to-violet-900 text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-white/5 opacity-20 mix-blend-overlay"></div>
+          <div className="container-custom relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl md:text-5xl text-white font-bold mb-6 font-display tracking-tight">Get a Trusted Quick Helper in Bareilly – EzyHelpers is Just a Call Away</h2>
+              <p className="text-xl md:text-2xl mb-10 text-indigo-100 font-medium max-w-3xl mx-auto leading-relaxed">
                 From last-minute events to daily home emergencies, our quick helpers and instant maid services in Bareilly are your reliable local solution.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
-                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-700 font-bold text-lg py-4 px-10 rounded-2xl shadow-xl hover:bg-gray-100 transition-all hover:scale-105 transform">
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link href="/hire-helper" className="inline-flex items-center justify-center bg-white text-indigo-900 font-bold text-xl py-5 px-10 rounded-2xl shadow-2xl hover:bg-gray-50 hover:scale-105 transition-all duration-300">
                   Book Instant Help Now
                 </Link>
-                <Link href="tel:+918031411776" className="group inline-flex items-center justify-center bg-transparent border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-bold text-lg py-4 px-10 rounded-2xl transition-all">
-                  <PhoneIcon className="h-5 w-5 mr-1" />
+                <Link href="tel:+918031411776" className="inline-flex items-center justify-center bg-transparent text-white font-bold text-xl py-5 px-10 rounded-2xl border-2 border-indigo-300 hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm">
+                  <PhoneIcon className="h-6 w-6 mr-2" />
                   Call +91 80 3141 1776
                 </Link>
               </div>
@@ -375,12 +442,40 @@ export default function BareillyOnDemandHelperPage() {
           </div>
         </section>
 
+        {/* Explore Our Other Services */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom max-w-6xl">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display tracking-tight">Explore Our Other Services</h2>
+              <p className="text-xl text-gray-600">Complete your household support system with EzyHelpers' trusted domestic services in Bareilly and beyond:</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { title: 'Cook Services', desc: 'Skilled home cooks for daily meals, fasting food, or festive dishes.', link: '/cities/bareilly/cooks', linkText: 'Explore Cook Services' },
+                { title: 'Babysitter/Nanny Services', desc: 'Caring and experienced nannies for infants, toddlers, and school-age kids.', link: '/cities/bareilly/babysitter', linkText: 'Hire a Trusted Babysitter' },
+                { title: 'Elderly Care Services', desc: 'Compassionate support for seniors, including mobility, hygiene, and medication care.', link: '/cities/bareilly/elderly-care', linkText: 'Discover Elderly Care Options' }
+              ].map((s, i) => (
+                <div key={i} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{s.title}</h3>
+                    <p className="text-gray-600 text-lg mb-8 leading-relaxed">{s.desc}</p>
+                  </div>
+                  <Link href={s.link} className="text-indigo-600 font-bold hover:text-indigo-800 transition-colors inline-flex items-center gap-1 group-hover:underline">
+                    {s.linkText} <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FAQs */}
         <section className="section-padding bg-white">
-          <div className="container-custom max-w-5xl">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display text-center">FAQs</h2>
-              <div className="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+          <div className="container-custom max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display tracking-tight">FAQs</h2>
+              <div className="w-24 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
             <FAQAccordion
               faqs={[

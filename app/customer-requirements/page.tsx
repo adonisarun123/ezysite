@@ -13,6 +13,7 @@ import {
     HeartIcon
 } from '@heroicons/react/24/outline'
 import { CustomerRequirementFormData } from '@/types/email'
+import { trackFormSubmitSuccess } from '@/lib/analytics'
 
 export default function CustomerRequirementsPage() {
     const [currentStep, setCurrentStep] = useState(1)
@@ -150,6 +151,7 @@ export default function CustomerRequirementsPage() {
             })
 
             if (response.ok) {
+                trackFormSubmitSuccess('customer_requirements_form', { serviceType: formData.serviceType })
                 setIsSubmitted(true)
                 window.scrollTo(0, 0)
             } else {

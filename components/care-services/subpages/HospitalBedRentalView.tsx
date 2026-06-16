@@ -98,7 +98,7 @@ const FAQS = [
   {
     question: 'What is the difference between a manual and electric hospital bed?',
     answer:
-      'A manual bed uses cranks to adjust the height and backrest, while an electric bed adjusts at the touch of a remote — easier for the patient and caregiver, and better for frequent repositioning. ICU-grade electric beds add advanced positions like Trendelenburg.',
+      'A manual bed uses cranks to adjust the height and backrest, while an electric bed adjusts at the touch of a remote, easier for the patient and caregiver, and better for frequent repositioning. ICU-grade electric beds add advanced positions like Trendelenburg.',
   },
   {
     question: 'Is the bed sanitised and serviced?',
@@ -121,7 +121,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'Hospital Bed Rental, Bangalore — EzyHelpers',
+    name: 'Hospital Bed Rental, Bangalore, EzyHelpers',
     description: nested.description,
     brand: { '@type': 'Brand', name: 'EzyHelpers' },
     areaServed: { '@type': 'City', name: 'Bangalore' },
@@ -214,7 +214,7 @@ export default function HospitalBedRentalView() {
       <CareSubpageClosingCTA
         headlineLead="A bed at home,"
         headlineAccent="before the patient arrives."
-        body="Tell us the type of bed and how long you need it. We sanitise, deliver and install across Bangalore — often the same day."
+        body="Tell us the type of bed and how long you need it. We sanitise, deliver and install across Bangalore, often the same day."
         enquirySource={PATH}
         primaryCtaLabel="Get a hospital bed today"
         related={[

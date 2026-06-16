@@ -14,7 +14,7 @@ const careComponents = {
   }) => {
     if (href?.startsWith('/')) {
       return (
-        <Link href={href} className="font-medium text-primary-600 underline-offset-2 hover:text-primary-700 hover:underline">
+        <Link href={href} className="font-medium text-care-600 underline-offset-2 hover:text-care-700 hover:underline">
           {children}
         </Link>
       )
@@ -22,7 +22,7 @@ const careComponents = {
     return (
       <a
         href={href}
-        className="font-medium text-primary-600 underline-offset-2 hover:text-primary-700 hover:underline"
+        className="font-medium text-care-600 underline-offset-2 hover:text-care-700 hover:underline"
         target={href?.startsWith('http') ? '_blank' : undefined}
         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
       >

@@ -27,7 +27,7 @@ const STEPS = [
     icon: DocumentCheckIcon,
     title: 'Government ID & address',
     body:
-      'PAN, voter ID, or driving licence — at least one secondary government-issued ID. Permanent and current address are verified. Address mismatches are flagged for in-person review.',
+      'PAN, voter ID, or driving licence, at least one secondary government-issued ID. Permanent and current address are verified. Address mismatches are flagged for in-person review.',
     metric: '2 government IDs minimum',
   },
   {
@@ -78,7 +78,7 @@ const DISQUALIFIERS = [
 const ONGOING = [
   {
     title: 'Daily WhatsApp check-ins',
-    body: 'Caregivers report into our team daily during placements — anything unusual is flagged the same hour.',
+    body: 'Caregivers report into our team daily during placements, anything unusual is flagged the same hour.',
   },
   {
     title: 'Family feedback loop',
@@ -90,7 +90,7 @@ const ONGOING = [
   },
   {
     title: 'Re-verification annually',
-    body: 'Every active caregiver is re-verified annually — Aadhaar, address, and reference re-checks.',
+    body: 'Every active caregiver is re-verified annually, Aadhaar, address, and reference re-checks.',
   },
 ] as const
 
@@ -98,7 +98,7 @@ const FAQS = [
   {
     question: 'How many candidates pass your verification process?',
     answer:
-      'Roughly 1 in 4. The largest single drop-off is the condition-specific experience review for care placements — many candidates have general elderly experience but not specific dementia, stroke, or bedridden experience. We don’t lower the bar to fill faster.',
+      'Roughly 1 in 4. The largest single drop-off is the condition-specific experience review for care placements, many candidates have general elderly experience but not specific dementia, stroke, or bedridden experience. We don’t lower the bar to fill faster.',
   },
   {
     question: 'How long does verification take for a single caregiver?',
@@ -118,7 +118,7 @@ const FAQS = [
   {
     question: 'Do you verify caregiver health every year?',
     answer:
-      'Yes. Active caregivers re-submit Aadhaar, address proof and reference contacts annually. Health re-screening is triggered for caregivers placed on high-dependency care — bedridden, post-surgery, oncology — every 6 months.',
+      'Yes. Active caregivers re-submit Aadhaar, address proof and reference contacts annually. Health re-screening is triggered for caregivers placed on high-dependency care, bedridden, post-surgery, oncology, every 6 months.',
   },
   {
     question: 'Is the police verification done by you or by the police?',
@@ -162,11 +162,11 @@ export default function VerificationProcessView() {
       {/* Direct answer */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Roughly <em className="italic text-primary-500">one in four</em> applicants make it through.
+            Roughly <em className="italic text-care-500">one in four</em> applicants make it through.
             Aadhaar authentication, government IDs, in-person interview, background and reference checks,
-            condition-specific experience review, and pre-placement health screening — non-negotiable, in
+            condition-specific experience review, and pre-placement health screening, non-negotiable, in
             that order. Verification documents are shared with the family before placement.
           </p>
         </div>
@@ -179,7 +179,7 @@ export default function VerificationProcessView() {
             eyebrow="The screening steps"
             titleLead="Six checks,"
             titleMuted="every caregiver, no exceptions."
-            lede="Each step is independent — failing any one removes the candidate. We don’t override on the basis of urgency; we’d rather take an extra day than place wrong."
+            lede="Each step is independent, failing any one removes the candidate. We don’t override on the basis of urgency; we’d rather take an extra day than place wrong."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {STEPS.map(({ n, icon: Icon, title, body, metric }) => (
@@ -188,8 +188,8 @@ export default function VerificationProcessView() {
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
                 <div className="flex items-start justify-between">
-                  <span className="font-careSerif text-3xl font-medium text-primary-500">{n}</span>
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                  <span className="font-careSerif text-3xl font-medium text-care-500">{n}</span>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
                 </div>
@@ -207,7 +207,7 @@ export default function VerificationProcessView() {
       </section>
 
       {/* What disqualifies */}
-      <section className="bg-primary-50 px-4 py-20 sm:px-6 sm:py-24">
+      <section className="bg-care-50 px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
@@ -215,7 +215,7 @@ export default function VerificationProcessView() {
                 eyebrow="Why we say no"
                 titleLead="Eight things"
                 titleMuted="that disqualify a candidate."
-                lede="No matter how kind, capable, or in-need the candidate is, these are non-negotiable. Care placements affect families’ safety — there is no flexibility here."
+                lede="No matter how kind, capable, or in-need the candidate is, these are non-negotiable. Care placements affect families’ safety, there is no flexibility here."
               />
             </div>
             <div className="lg:col-span-7">
@@ -223,9 +223,9 @@ export default function VerificationProcessView() {
                 {DISQUALIFIERS.map((d) => (
                   <li
                     key={d}
-                    className="flex items-start gap-2 rounded-2xl border border-primary-500/20 bg-white px-4 py-3.5"
+                    className="flex items-start gap-2 rounded-2xl border border-care-500/20 bg-white px-4 py-3.5"
                   >
-                    <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-500/10 text-primary-500">
+                    <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-care-500/10 text-care-500">
                       <XMarkIcon className="h-3.5 w-3.5" aria-hidden />
                     </span>
                     <span className="text-sm leading-snug text-neutral-800">{d}</span>

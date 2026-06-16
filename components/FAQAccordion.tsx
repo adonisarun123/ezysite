@@ -52,7 +52,10 @@ export default function FAQAccordion({
                 />
               </DisclosureButton>
               <div className="overflow-hidden">
+                {/* unmount={false}: keep answers in the DOM (hidden when closed) so
+                    search engines and AI crawlers can read FAQ content from server HTML */}
                 <DisclosurePanel
+                  unmount={false}
                   transition
                   className="origin-top px-5 pb-5 text-gray-600 transition duration-200 ease-out data-[closed]:scale-y-95 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 sm:px-6 sm:pb-6"
                 >

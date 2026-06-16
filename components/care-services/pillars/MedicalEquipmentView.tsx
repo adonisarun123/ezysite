@@ -25,6 +25,7 @@ import {
   CheckCircleIcon,
   StarIcon,
 } from '@heroicons/react/24/outline'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 import { getPillar } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 import { trackCareCTAClick, trackCarePhoneClick } from '@/lib/analytics'
@@ -63,7 +64,7 @@ const TRUST_RIBBON: { icon: ComponentType<SVGProps<SVGSVGElement>>; title: strin
 
 /* ── Rent vs Buy comparison ── */
 const RENT_POINTS = [
-  'Lower upfront cost — ideal for short recovery periods',
+  'Lower upfront cost, ideal for short recovery periods',
   'No long-term storage or resale headache afterwards',
   'Free servicing, breakdown replacement and pickup included',
   'Upgrade or swap models as the patient’s needs change',
@@ -72,7 +73,7 @@ const RENT_POINTS = [
 
 const BUY_POINTS = [
   'Most cost-effective for long-term or permanent needs',
-  'Equipment is yours — available any time, no return date',
+  'Equipment is yours, available any time, no return date',
   'Brand-new and certified pre-owned options available',
   'Warranty plus optional annual maintenance contracts',
   'Best for chronic conditions and indefinite home-care setups',
@@ -88,7 +89,7 @@ const STEPS: { mark: string; title: string; body: string }[] = [
   {
     mark: '02',
     title: 'Sanitised & dispatched',
-    body: 'Your equipment is inspected, sanitised to hospital standards and dispatched — often the same day — to your address anywhere in Bangalore.',
+    body: 'Your equipment is inspected, sanitised to hospital standards and dispatched, often the same day, to your address anywhere in Bangalore.',
   },
   {
     mark: '03',
@@ -107,7 +108,7 @@ const WHY: { icon: ComponentType<SVGProps<SVGSVGElement>>; title: string; body: 
   {
     icon: SparklesIcon,
     title: 'Hospital-grade sanitisation',
-    body: 'Every machine, bed and aid is deep-cleaned and disinfected before it reaches your home — the same hygiene standards a hospital would expect.',
+    body: 'Every machine, bed and aid is deep-cleaned and disinfected before it reaches your home, the same hygiene standards a hospital would expect.',
   },
   {
     icon: WrenchScrewdriverIcon,
@@ -117,12 +118,12 @@ const WHY: { icon: ComponentType<SVGProps<SVGSVGElement>>; title: string; body: 
   {
     icon: MapPinIcon,
     title: 'Delivery across 16+ localities',
-    body: 'From Whitefield and Indiranagar to Jayanagar, HSR, Electronic City and beyond — fast doorstep delivery across Bangalore neighbourhoods.',
+    body: 'From Whitefield and Indiranagar to Jayanagar, HSR, Electronic City and beyond, fast doorstep delivery across Bangalore neighbourhoods.',
   },
   {
     icon: ShieldCheckIcon,
     title: 'Genuine, certified equipment',
-    body: 'Only quality-checked, hospital-grade devices from trusted brands — no worn-out or uncertified machines, whether you rent or buy.',
+    body: 'Only quality-checked, hospital-grade devices from trusted brands, no worn-out or uncertified machines, whether you rent or buy.',
   },
   {
     icon: CurrencyRupeeIcon,
@@ -132,7 +133,7 @@ const WHY: { icon: ComponentType<SVGProps<SVGSVGElement>>; title: string; body: 
   {
     icon: ClockIcon,
     title: 'Round-the-clock support',
-    body: 'A 24/7 helpline for setup questions, breakdowns and urgent replacements — because medical needs don’t wait for office hours.',
+    body: 'A 24/7 helpline for setup questions, breakdowns and urgent replacements, because medical needs don’t wait for office hours.',
   },
 ]
 
@@ -162,7 +163,7 @@ const FAQS = [
   {
     question: 'Do I need to pay a deposit to rent medical equipment in Bangalore?',
     answer:
-      'Yes, most rentals carry a refundable security deposit that depends on the equipment value — for example, beds and concentrators carry a higher deposit than walkers or commodes. The deposit is fully refunded when you return the equipment in working condition at the end of your rental.',
+      'Yes, most rentals carry a refundable security deposit that depends on the equipment value, for example, beds and concentrators carry a higher deposit than walkers or commodes. The deposit is fully refunded when you return the equipment in working condition at the end of your rental.',
   },
   {
     question: 'How fast can you deliver equipment to my home?',
@@ -195,7 +196,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Medical Equipment Rental & Purchase, Bangalore',
+    name: 'EzyHelpers, Medical Equipment Rental & Purchase, Bangalore',
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
     telephone: '+91-80-31411776',
@@ -231,7 +232,7 @@ export default function MedicalEquipmentView() {
       <header className="relative overflow-hidden bg-white">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-50 via-white to-primary-50"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-50 via-white to-care-50"
         />
         <div className="relative mx-auto max-w-6xl px-4 pb-12 pt-6 sm:px-6 sm:pb-16 sm:pt-8 lg:px-8">
           {/* Breadcrumb */}
@@ -271,7 +272,7 @@ export default function MedicalEquipmentView() {
               </h1>
               <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
                 {pillar.tagline} Rent or buy hospital beds, oxygen concentrators, wheelchairs,
-                monitors and respiratory machines — sanitised, set up and serviced at home.
+                monitors and respiratory machines, sanitised, set up and serviced at home.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -298,7 +299,7 @@ export default function MedicalEquipmentView() {
               </p>
             </div>
 
-            {/* Hero side card */}
+            {/* Hero side card + quick lead form */}
             <div className="lg:col-span-5">
               <div className="rounded-[28px] border border-accent-200 bg-white p-7 shadow-[0_10px_40px_rgba(0,0,0,0.06)] sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600">
@@ -318,6 +319,11 @@ export default function MedicalEquipmentView() {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              {/* In-hero quick lead form */}
+              <div className="mx-auto mt-6 w-full max-w-md lg:mx-0 lg:max-w-none">
+                <CareHeroQuickForm enquirySource={PATH} />
               </div>
             </div>
           </div>
@@ -355,7 +361,7 @@ export default function MedicalEquipmentView() {
             <p className="mt-6 text-lg leading-relaxed text-neutral-600">
               When a loved one comes home from hospital, the last thing a family should worry about is
               sourcing equipment. EzyHelpers delivers, installs, sanitises and services the full range of
-              home medical equipment across Bangalore — so you can focus on recovery, not logistics.
+              home medical equipment across Bangalore, so you can focus on recovery, not logistics.
               Choose rental for short-term needs or purchase for the long term.
             </p>
           </div>
@@ -418,7 +424,7 @@ export default function MedicalEquipmentView() {
                 Rent for now, <span className="text-neutral-400">or buy for the long run.</span>
               </h2>
               <p className="mt-4 text-base text-neutral-600 sm:text-lg">
-                There’s no single right answer — it depends on how long you need the equipment. Here’s the
+                There’s no single right answer, it depends on how long you need the equipment. Here’s the
                 honest breakdown our advisors use.
               </p>
             </div>
@@ -446,20 +452,20 @@ export default function MedicalEquipmentView() {
               </article>
 
               {/* Buy */}
-              <article className="flex flex-col rounded-[28px] border border-primary-200 bg-primary-50 p-8 sm:p-10">
+              <article className="flex flex-col rounded-[28px] border border-care-200 bg-care-50 p-8 sm:p-10">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-primary-600 ring-1 ring-primary-200">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-care-600 ring-1 ring-care-200">
                     <ShieldCheckIcon className="h-5 w-5" aria-hidden />
                   </span>
                   <div>
                     <h3 className="font-careSerif text-2xl font-bold text-neutral-950">Buy it</h3>
-                    <p className="text-sm font-semibold text-primary-600">Long-term & permanent</p>
+                    <p className="text-sm font-semibold text-care-600">Long-term & permanent</p>
                   </div>
                 </div>
                 <ul className="mt-6 space-y-3">
                   {BUY_POINTS.map((p) => (
                     <li key={p} className="flex items-start gap-3 text-sm text-neutral-800 sm:text-base">
-                      <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-primary-500" aria-hidden />
+                      <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-care-500" aria-hidden />
                       <span className="leading-snug">{p}</span>
                     </li>
                   ))}
@@ -468,20 +474,20 @@ export default function MedicalEquipmentView() {
             </div>
 
             <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-neutral-500">
-              Not sure which is cheaper for your situation? Call us — we’ll do the maths with you and
+              Not sure which is cheaper for your situation? Call us, we’ll do the maths with you and
               recommend whichever costs less.
             </p>
           </div>
         </section>
 
         {/* ─────────────────── How it works ─────────────────── */}
-        <section id="how-it-works" className="scroll-mt-28 bg-primary-50 px-4 py-20 sm:px-6 sm:py-24">
+        <section id="how-it-works" className="scroll-mt-28 bg-care-50 px-4 py-20 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-6xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">
               Delivery & installation
             </p>
             <h2 className="mt-3 max-w-3xl font-careSerif text-[clamp(1.75rem,4vw,2.65rem)] font-medium leading-tight tracking-tight text-neutral-950">
-              From your call to a fully set-up home — in four steps.
+              From your call to a fully set-up home, in four steps.
             </h2>
 
             <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -490,7 +496,7 @@ export default function MedicalEquipmentView() {
                   key={s.mark}
                   className="flex flex-col rounded-3xl border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
-                  <span className="font-careSerif text-3xl font-medium text-primary-500">{s.mark}</span>
+                  <span className="font-careSerif text-3xl font-medium text-care-500">{s.mark}</span>
                   <h3 className="mt-3 font-careSerif text-lg font-bold tracking-tight text-neutral-950">
                     {s.title}
                   </h3>
@@ -586,7 +592,7 @@ export default function MedicalEquipmentView() {
         </section>
 
         {/* ─────────────────── Closing CTA ─────────────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-accent-100 via-accent-50 to-primary-50 px-4 py-24 sm:px-6 sm:py-28">
+        <section className="relative overflow-hidden bg-gradient-to-br from-accent-100 via-accent-50 to-care-50 px-4 py-24 sm:px-6 sm:py-28">
           <div
             aria-hidden
             className="pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-accent-300/30 blur-3xl"

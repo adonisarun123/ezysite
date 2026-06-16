@@ -9,7 +9,7 @@ import { formatPriceWithNote } from '@/lib/careServices/pricing'
 const SERVICE = getNestedService('elderly-companionship-care-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
   { value: 'Flexible', label: 'hourly, day or live-in companionship' },
@@ -62,7 +62,7 @@ const SECTIONS = [
     titleLead: 'Reassurance',
     titleMuted: 'from anywhere.',
     lede:
-      'For families who can’t be present every day — especially NRI families — a companion is steady reassurance that someone caring is there.',
+      'For families who can’t be present every day, especially NRI families, a companion is steady reassurance that someone caring is there.',
     bullets: [
       'Daily WhatsApp updates and photos',
       'Flexible hours that fit your family’s routine',
@@ -81,7 +81,7 @@ const FAQS = [
   {
     question: 'How is companionship care different from a full-time caretaker?',
     answer:
-      'Companionship care centres on emotional wellbeing, social connection and light daily support. A full-time caretaker handles more intensive personal care — bathing, mobility, feeding. Many families start with companionship and scale up as needs change; we make that transition seamless.',
+      'Companionship care centres on emotional wellbeing, social connection and light daily support. A full-time caretaker handles more intensive personal care, bathing, mobility, feeding. Many families start with companionship and scale up as needs change; we make that transition seamless.',
   },
   {
     question: 'What does companionship care cost in Bangalore?',
@@ -91,7 +91,7 @@ const FAQS = [
   {
     question: 'Can I arrange companionship for just a few hours a day?',
     answer:
-      'Yes. Companionship care is flexible — many families choose a few hours a day or specific days of the week. We arrange the schedule that suits your parent and can adjust it any time.',
+      'Yes. Companionship care is flexible, many families choose a few hours a day or specific days of the week. We arrange the schedule that suits your parent and can adjust it any time.',
   },
   {
     question: 'How do you ensure the companion is a good personality match?',
@@ -109,7 +109,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Elderly Companionship Care at Home, Bangalore',
+    name: 'EzyHelpers, Elderly Companionship Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -133,7 +133,7 @@ export default function ElderlyCompanionshipCareView() {
       eyebrow="Bangalore · Companion care at home"
       headlineLead="Company, conversation,"
       headlineAccent="and good days again."
-      lede={SERVICE.tagline + ' Warm, patient companions for seniors — conversation, meals together, walks and hobbies that keep loneliness away and bring the spark back.'}
+      lede={SERVICE.tagline + ' Warm, patient companions for seniors, conversation, meals together, walks and hobbies that keep loneliness away and bring the spark back.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}
@@ -142,8 +142,8 @@ export default function ElderlyCompanionshipCareView() {
       <section className="bg-white px-4 pt-4 sm:px-6">
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
           {HERO_STATS.map((s) => (
-            <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-primary-50 p-6 text-center">
-              <div className="font-careSerif text-3xl font-medium tracking-tight text-primary-500">{s.value}</div>
+            <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-care-50 p-6 text-center">
+              <div className="font-careSerif text-3xl font-medium tracking-tight text-care-500">{s.value}</div>
               <div className="mt-2 text-sm leading-snug text-neutral-600">{s.label}</div>
             </div>
           ))}
@@ -153,14 +153,14 @@ export default function ElderlyCompanionshipCareView() {
       {SECTIONS.map((sec, idx) => (
         <section
           key={sec.eyebrow}
-          className={`px-4 py-20 sm:px-6 sm:py-24 ${idx % 2 === 0 ? 'bg-white' : 'bg-primary-50'}`}
+          className={`px-4 py-20 sm:px-6 sm:py-24 ${idx % 2 === 0 ? 'bg-white' : 'bg-care-50'}`}
         >
           <div className="mx-auto max-w-5xl">
             <SectionHeader eyebrow={sec.eyebrow} titleLead={sec.titleLead} titleMuted={sec.titleMuted} lede={sec.lede} />
             <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {sec.bullets.map((b) => (
                 <li key={b} className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5">
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                   <span className="text-sm leading-snug text-neutral-800">{b}</span>
                 </li>
               ))}

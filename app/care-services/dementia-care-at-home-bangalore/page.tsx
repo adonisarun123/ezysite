@@ -11,9 +11,12 @@ const DESCRIPTION = SERVICE.description
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
+  // Duplicate-content consolidation (June 2026): this page targets the same
+  // keyword as the established /care-services/dementia-alzheimers-care-bangalore page,
+  // so we canonicalize to it. The page stays live for internal navigation.
   alternates: {
-    canonical: `https://www.ezyhelpers.com${PATH}`,
-    languages: selfReferencingLanguages(PATH),
+    canonical: `https://www.ezyhelpers.com/care-services/dementia-alzheimers-care-bangalore`,
+    languages: selfReferencingLanguages('/care-services/dementia-alzheimers-care-bangalore'),
   },
   robots: { index: true, follow: true },
   openGraph: {

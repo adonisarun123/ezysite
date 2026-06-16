@@ -4,14 +4,21 @@ import React, { useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { XMarkIcon, LanguageIcon } from '@heroicons/react/24/outline';
 
+// Safe localStorage access — Safari private mode / blocked-storage throws
+// SecurityError, which would otherwise propagate out of the effect and break it.
+function lsGet(key: string): string | null {
+    try { return typeof window !== 'undefined' ? window.localStorage.getItem(key) : null } catch { return null }
+}
+function lsSet(key: string, value: string): void {
+    try { if (typeof window !== 'undefined') window.localStorage.setItem(key, value) } catch { /* ignore */ }
+}
+
 export default function LanguageSelectorPopup() {
     const [isVisible, setIsVisible] = useState(false);
     const pathname = usePathname();
     const router = useRouter();
 
     useEffect(() => {
-        // console.log('Current pathname:', pathname);
-
         // Only run on helper-jobs pages
         if (!pathname?.startsWith('/helper-jobs')) {
             setIsVisible(false);
@@ -19,24 +26,20 @@ export default function LanguageSelectorPopup() {
         }
 
         // Check if user has already dismissed the popup
-        const isDismissed = localStorage.getItem('lang_popup_dismissed');
-        // console.log('isDismissed:', isDismissed);
-
-        if (isDismissed === 'true') {
+        if (lsGet('lang_popup_dismissed') === 'true') {
             setIsVisible(false);
             return;
         }
 
         // Show popup after 5 seconds
         const timer = setTimeout(() => {
-            // console.log('Setting popup visible');
             setIsVisible(true);
         }, 5000);
 
-        return () => {
-            clearTimeout(timer);
-            setIsVisible(false);
-        };
+        // Cleanup only clears the timer. Previously this also called
+        // setIsVisible(false), which fired on every in-section navigation and
+        // hid the popup the instant it was due to appear.
+        return () => clearTimeout(timer);
     }, [pathname]);
 
     if (!isVisible) return null;
@@ -44,7 +47,7 @@ export default function LanguageSelectorPopup() {
     const isHindiPage = pathname.includes('/hin');
 
     const handleLanguageSelect = (lang: 'en' | 'hi') => {
-        localStorage.setItem('lang_popup_dismissed', 'true');
+        lsSet('lang_popup_dismissed', 'true');
         setIsVisible(false);
 
         if (lang === 'hi' && !isHindiPage) {
@@ -60,7 +63,7 @@ export default function LanguageSelectorPopup() {
     };
 
     const handleDismiss = () => {
-        localStorage.setItem('lang_popup_dismissed', 'true');
+        lsSet('lang_popup_dismissed', 'true');
         setIsVisible(false);
     };
 

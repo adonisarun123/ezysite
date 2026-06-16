@@ -8,13 +8,26 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 
 const PATH = '/care-services/post-surgery-recovery-bangalore'
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Knee replacement', 'Hip replacement', 'Spine surgery', 'Cardiac surgery', 'Fracture recovery', 'General surgery'],
+  careNeeds: [
+    'Mobility support and fall prevention',
+    'Medicine reminders on schedule',
+    'Wound observation (medical dressing by nurses we arrange)',
+    'Bathing and hygiene support',
+    'Doctor follow-up coordination',
+    'Recovery routine and rest management',
+  ],
+}
 
 const PHASES = [
   {
     n: '01',
-    title: 'Day of discharge — Day 3',
+    title: 'Day of discharge, Day 3',
     body:
       'Wound and drain monitoring, pain management discipline, careful first-mobilisation, anti-coagulation oversight where prescribed, hydration. The window for early complications is here.',
   },
@@ -42,7 +55,7 @@ const SURGERY_TYPES = [
   { name: 'Knee / hip replacement', care: 'Trained attendant + physiotherapy support' },
   { name: 'Cardiac bypass / valve', care: 'Nurse + caretaker, doctor-aligned' },
   { name: 'Abdominal / GI surgery', care: 'Caretaker + visiting nurse' },
-  { name: 'Spinal surgery', care: 'Trained attendant — careful handling' },
+  { name: 'Spinal surgery', care: 'Trained attendant, careful handling' },
   { name: 'Orthopaedic fracture fixation', care: 'Caretaker, physiotherapy follow-through' },
   { name: 'Neurosurgery', care: 'Specialist trained attendant + nurse' },
   { name: 'Bariatric / weight-loss', care: 'Caretaker, dietary continuity' },
@@ -97,7 +110,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Post-Surgery Recovery Care, Bangalore',
+    name: 'EzyHelpers, Post-Surgery Recovery Care, Bangalore',
     medicalSpecialty: ['Surgery', 'Rehabilitation'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -121,7 +134,7 @@ export default function PostSurgeryView() {
       eyebrow="Bangalore · Post-operative home care"
       headlineLead="Recovery, brought home."
       headlineAccent="On the day of discharge."
-      lede="Home care matched to your surgery — wound oversight, mobilisation discipline, pain management support, and the steady daily rhythm patients need to heal well."
+      lede="Home care matched to your surgery, wound oversight, mobilisation discipline, pain management support, and the steady daily rhythm patients need to heal well."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -129,15 +142,17 @@ export default function PostSurgeryView() {
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Post-surgery home care should start on the <em className="italic text-primary-500">day of discharge</em>.
+            Post-surgery home care should start on the <em className="italic text-care-500">day of discharge</em>.
             For most surgeries, a trained caretaker plus 4–6 nurse visits in week one is enough. Cardiac,
             neuro, and complex cases need a live-in nurse for the first two weeks. Care steps down as
             recovery progresses.
           </p>
         </div>
       </section>
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
@@ -153,7 +168,7 @@ export default function PostSurgeryView() {
                 key={p.n}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-[#F7F7F2] p-7"
               >
-                <span className="font-careSerif text-3xl font-medium text-primary-500">{p.n}</span>
+                <span className="font-careSerif text-3xl font-medium text-care-500">{p.n}</span>
                 <h3 className="mt-3 font-careSerif text-xl font-bold tracking-tight text-neutral-950 sm:text-2xl">
                   {p.title}
                 </h3>
@@ -200,7 +215,7 @@ export default function PostSurgeryView() {
               <SectionHeader
                 eyebrow="When to call the doctor"
                 titleLead="Eight signs"
-                titleMuted="that need attention — today."
+                titleMuted="that need attention, today."
                 lede="Post-op complications often catch families off guard. Caregivers we place are taught to escalate without waiting."
               />
             </div>
@@ -209,9 +224,9 @@ export default function PostSurgeryView() {
                 {RED_FLAGS.map((s) => (
                   <li
                     key={s}
-                    className="flex items-start gap-2 rounded-2xl border border-primary-500/20 bg-primary-50 px-4 py-3.5"
+                    className="flex items-start gap-2 rounded-2xl border border-care-500/20 bg-care-50 px-4 py-3.5"
                   >
-                    <span aria-hidden className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-primary-500" />
+                    <span aria-hidden className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-care-500" />
                     <span className="text-sm leading-snug text-neutral-800">{s}</span>
                   </li>
                 ))}

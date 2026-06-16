@@ -11,8 +11,67 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/dementia-alzheimers-care-bangalore'
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Memory loss', 'Confusion', 'Wandering', 'Behavioural changes', 'Sundowning', 'Sleep disturbance'],
+  careNeeds: [
+    'Memory support and gentle orientation',
+    'Supervision to prevent wandering',
+    'Help with bathing, dressing, meals and medicines',
+    'Calm handling of confusion, repetition, anger or fear',
+    'Safety monitoring at home',
+    'Emotional companionship through the day',
+  ],
+}
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Dementia',
+  vitalStats: [
+    {
+      stat: '~8.8 million',
+      detail: 'An estimated 8.8 million Indians aged 60+ live with dementia, according to the LASI-DAD study.',
+    },
+    {
+      stat: '60–70%',
+      detail: 'Alzheimer’s disease accounts for an estimated 60–70% of dementia cases worldwide (WHO).',
+    },
+    {
+      stat: '1 in 10',
+      detail: 'Globally, dementia affects roughly 1 in 10 people over 65, and prevalence rises sharply with age.',
+    },
+  ],
+  causes: [
+    'Alzheimer’s disease, the most common cause of dementia',
+    'Vascular damage from stroke or chronically high blood pressure',
+    'Parkinson’s disease and Lewy body disease',
+    'Traumatic brain injury, including repeated falls with head impact',
+    'Prolonged heavy alcohol use',
+    'Infections and other conditions affecting the brain (some are treatable, always get a diagnosis)',
+  ],
+  symptoms: [
+    'Forgetting recent conversations or repeating the same question',
+    'Misplacing items in odd places (keys in the fridge, money in the rice tin)',
+    'Getting confused about time, dates or familiar routes',
+    'Struggling to find everyday words mid-sentence',
+    'Withdrawing from puja, social visits or hobbies they loved',
+    'Unusual irritability, suspicion or sudden mood swings',
+    'Difficulty managing money, bills or medicines they handled for years',
+    'Neglecting bathing, grooming or fresh clothes',
+  ],
+  whenYouNeedCare: [
+    'A wandering incident, they left home and couldn’t find their way back',
+    'Gas left on, doors left open, or medicines doubled or missed',
+    'Evening agitation (sundowning) that the family can no longer calm',
+    'The spouse or daughter-in-law providing care is exhausted or unwell themselves',
+    'Bathing, dressing or toileting now needs hands-on help every day',
+    'Children live in another city or abroad and there is no one steady at home',
+  ],
+}
 
 const STAGES = [
   {
@@ -33,7 +92,7 @@ const STAGES = [
     n: 'Advanced',
     title: 'High dependence, communication loss',
     body:
-      'Full-time, often medically-aware care. Mobility decline, swallow risk, incontinence, and the emotional difficulty of late-stage disease — handled with dignity, not detachment.',
+      'Full-time, often medically-aware care. Mobility decline, swallow risk, incontinence, and the emotional difficulty of late-stage disease, handled with dignity, not detachment.',
     bullets: ['Live-in trained attendant', 'Swallow & feeding safety', 'Pressure-sore prevention', 'End-of-life sensitivity'],
   },
 ] as const
@@ -49,13 +108,13 @@ const BEHAVIOURS = [
     icon: HandRaisedIcon,
     title: 'Wandering',
     body:
-      'A safety risk in moderate-to-advanced stages. Door alarms, ID bracelets, and a caregiver who knows the patient’s favourite places to head toward — most wandering is goal-directed, not random.',
+      'A safety risk in moderate-to-advanced stages. Door alarms, ID bracelets, and a caregiver who knows the patient’s favourite places to head toward, most wandering is goal-directed, not random.',
   },
   {
     icon: HeartIcon,
     title: 'Bathing & dressing resistance',
     body:
-      'Often misread as stubbornness. Usually reflects fear of cold, embarrassment, or loss of control. Solved with warmer rooms, predictable steps, and patience — not insistence.',
+      'Often misread as stubbornness. Usually reflects fear of cold, embarrassment, or loss of control. Solved with warmer rooms, predictable steps, and patience, not insistence.',
   },
   {
     icon: SparklesIcon,
@@ -67,7 +126,7 @@ const BEHAVIOURS = [
     icon: MoonIcon,
     title: 'Sleep disturbance',
     body:
-      'Night-time confusion is common. A nightlight, fixed bedtime ritual, and limited daytime napping help. Avoid sedatives — they often worsen confusion.',
+      'Night-time confusion is common. A nightlight, fixed bedtime ritual, and limited daytime napping help. Avoid sedatives, they often worsen confusion.',
   },
   {
     icon: HomeIcon,
@@ -78,19 +137,19 @@ const BEHAVIOURS = [
 ] as const
 
 const PHILOSOPHY = [
-  'Validate the feeling, not the fact — arguing with a memory error increases agitation.',
-  'Routines beat reminders — the same time, place, and order every day reduces confusion.',
-  'One step at a time — break instructions into single, simple actions.',
-  'Eye contact, name, smile — the social cues survive long after the names fade.',
-  'Music, photographs, familiar fabrics — sensory anchors that reach memory when language can’t.',
-  'Dignity is the entire point — care without it is just supervision.',
+  'Validate the feeling, not the fact, arguing with a memory error increases agitation.',
+  'Routines beat reminders, the same time, place, and order every day reduces confusion.',
+  'One step at a time, break instructions into single, simple actions.',
+  'Eye contact, name, smile, the social cues survive long after the names fade.',
+  'Music, photographs, familiar fabrics, sensory anchors that reach memory when language can’t.',
+  'Dignity is the entire point, care without it is just supervision.',
 ] as const
 
 const FAQS = [
   {
     question: 'Is a regular caretaker enough for dementia, or do we need a specialist?',
     answer:
-      'For early-stage dementia, an experienced caretaker who has worked with cognitive decline before is often sufficient. For moderate-to-advanced stages — especially with sundowning, wandering, or aggression — you need someone trained in dementia-specific behavioural management. We match accordingly.',
+      'For early-stage dementia, an experienced caretaker who has worked with cognitive decline before is often sufficient. For moderate-to-advanced stages, especially with sundowning, wandering, or aggression, you need someone trained in dementia-specific behavioural management. We match accordingly.',
   },
   {
     question: 'How do I know what stage my parent is in?',
@@ -100,7 +159,7 @@ const FAQS = [
   {
     question: 'Can a caregiver actually slow the progression of dementia?',
     answer:
-      'No caregiver — or treatment — reverses dementia. But a good one preserves function for longer: routine, stimulation, social contact, nutrition, sleep, and mood support all influence the *pace* of decline. The goal is more good days, fewer hospital visits, and dignity throughout.',
+      'No caregiver, or treatment, reverses dementia. But a good one preserves function for longer: routine, stimulation, social contact, nutrition, sleep, and mood support all influence the *pace* of decline. The goal is more good days, fewer hospital visits, and dignity throughout.',
   },
   {
     question: 'My mother gets aggressive in the evening. How is that handled?',
@@ -110,7 +169,7 @@ const FAQS = [
   {
     question: 'How do you find caregivers who can actually do this work?',
     answer:
-      'We require demonstrated dementia-specific experience — not just elderly-care experience. The caregiver must have managed at least one moderate-to-advanced dementia patient in the last 18 months and pass our calm-under-confusion screening. About 1 in 4 elderly-care candidates make it through.',
+      'We require demonstrated dementia-specific experience, not just elderly-care experience. The caregiver must have managed at least one moderate-to-advanced dementia patient in the last 18 months and pass our calm-under-confusion screening. About 1 in 4 elderly-care candidates make it through.',
   },
   {
     question: 'What does dementia care at home cost in Bangalore?',
@@ -120,7 +179,7 @@ const FAQS = [
   {
     question: 'Should we move our parent to a memory care facility instead?',
     answer:
-      'For most Indian families, home care is preferred — familiar surroundings reduce confusion and agitation, and the family stays meaningfully involved. A facility makes more sense in advanced stages with severe wandering or aggression, or when no family member can be reachable in emergencies. We’ll be honest with you about which makes sense.',
+      'For most Indian families, home care is preferred, familiar surroundings reduce confusion and agitation, and the family stays meaningfully involved. A facility makes more sense in advanced stages with severe wandering or aggression, or when no family member can be reachable in emergencies. We’ll be honest with you about which makes sense.',
   },
 ] as const
 
@@ -128,7 +187,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Dementia & Alzheimer’s Care, Bangalore',
+    name: 'EzyHelpers, Dementia & Alzheimer’s Care, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Neurology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -152,7 +211,7 @@ export default function DementiaCareView() {
       eyebrow="Bangalore · Cognitive care at home"
       headlineLead="Dementia care, with dignity."
       headlineAccent="And a quiet steady hand."
-      lede="Dementia changes everything except who your loved one is. We place caregivers trained to remember that — through agitation, repetition, sundowning, and the long months when the disease asks more of the family than of the patient."
+      lede="Dementia changes everything except who your loved one is. We place caregivers trained to remember that, through agitation, repetition, sundowning, and the long months when the disease asks more of the family than of the patient."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -160,11 +219,11 @@ export default function DementiaCareView() {
     >
       {/* One-paragraph direct answer */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Dementia care at home in Bangalore should be matched to the{' '}
-            <em className="italic text-primary-500">stage</em> of cognitive decline — not the calendar.
+            <em className="italic text-care-500">stage</em> of cognitive decline, not the calendar.
             Early-stage families need companionship and routine. Moderate-stage families need behavioural
             expertise. Advanced-stage families need a trained attendant who is steady through difficulty.
             EzyHelpers places caregivers with stage-appropriate experience and re-matches as the disease
@@ -172,6 +231,10 @@ export default function DementiaCareView() {
           </p>
         </div>
       </section>
+
+      <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {/* Stages */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
@@ -188,7 +251,7 @@ export default function DementiaCareView() {
                 key={s.n}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="inline-flex w-fit rounded-full bg-primary-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-500">
+                <span className="inline-flex w-fit rounded-full bg-care-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-care-500">
                   {s.n} stage
                 </span>
                 <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950 sm:text-2xl">
@@ -198,7 +261,7 @@ export default function DementiaCareView() {
                 <ul className="mt-5 space-y-2 text-sm text-neutral-700">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
-                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                       {b}
                     </li>
                   ))}
@@ -210,13 +273,13 @@ export default function DementiaCareView() {
       </section>
 
       {/* Common behaviours */}
-      <section className="bg-primary-50 px-4 py-20 sm:px-6 sm:py-24">
+      <section className="bg-care-50 px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             eyebrow="What we’re trained for"
             titleLead="The hard moments,"
             titleMuted="handled gently."
-            lede="The behaviours that make families feel they can’t cope alone are the ones our dementia caregivers are matched on. None of these are unmanageable — they need the right approach, repeated calmly, every single day."
+            lede="The behaviours that make families feel they can’t cope alone are the ones our dementia caregivers are matched on. None of these are unmanageable, they need the right approach, repeated calmly, every single day."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {BEHAVIOURS.map(({ icon: Icon, title, body }) => (
@@ -224,7 +287,7 @@ export default function DementiaCareView() {
                 key={title}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950">{title}</h3>
@@ -250,7 +313,7 @@ export default function DementiaCareView() {
                 key={p}
                 className="flex items-start gap-4 rounded-2xl border border-neutral-200 bg-[#F7F7F2] px-5 py-4"
               >
-                <span className="font-careSerif text-2xl font-medium text-primary-500">
+                <span className="font-careSerif text-2xl font-medium text-care-500">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className="text-sm leading-snug text-neutral-800 sm:text-base">{p}</span>
@@ -269,7 +332,7 @@ export default function DementiaCareView() {
                 eyebrow="Care for the family too"
                 titleLead="Dementia is exhausting."
                 titleMuted="We notice."
-                lede="The hardest part of dementia care isn’t the patient — it’s the toll on the spouse and adult children carrying it. Our placements are built so the family can rest, work, and breathe."
+                lede="The hardest part of dementia care isn’t the patient, it’s the toll on the spouse and adult children carrying it. Our placements are built so the family can rest, work, and breathe."
               />
             </div>
             <div className="lg:col-span-7">
@@ -286,7 +349,7 @@ export default function DementiaCareView() {
                     key={b}
                     className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5"
                   >
-                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                     <span className="text-sm leading-snug text-neutral-800">{b}</span>
                   </li>
                 ))}
@@ -295,6 +358,8 @@ export default function DementiaCareView() {
           </div>
         </div>
       </section>
+
+      <CaregiverScopeSection />
 
       {/* FAQs */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
@@ -312,10 +377,10 @@ export default function DementiaCareView() {
         body="Tell us what your evenings look like. We respond within the hour, recommend a stage-appropriate caregiver, and start the matching process today."
         enquirySource={PATH}
         related={[
+          { label: 'Alzheimer’s Care', href: '/care-services/alzheimers-care-at-home-bangalore' },
+          { label: 'Respite Care', href: '/care-services/respite-care-at-home-bangalore' },
           { label: 'Elderly Care Services', href: '/care-services/elderly-care-services-bangalore' },
-          { label: 'Caretaker Services', href: '/care-services/caretaker-services-bangalore' },
           { label: 'Trained Attendant', href: '/care-services/trained-attendant-services-bangalore' },
-          { label: 'Cost guide', href: '/care-services/home-nursing-cost-bangalore' },
         ]}
       />
     </CareSubpageShell>

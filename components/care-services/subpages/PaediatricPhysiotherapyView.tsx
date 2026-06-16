@@ -11,7 +11,7 @@ const SECTIONS = [
     eyebrow: 'Conditions treated',
     title: 'What paediatric physiotherapy at home covers',
     intro:
-      'Paediatric physiotherapy supports a child’s movement, strength and development — play-based therapy that works best in the comfort of a familiar home.',
+      'Paediatric physiotherapy supports a child’s movement, strength and development, play-based therapy that works best in the comfort of a familiar home.',
     bullets: [
       'Developmental delays in sitting, crawling or walking',
       'Cerebral palsy and related movement difficulties',
@@ -25,7 +25,7 @@ const SECTIONS = [
     eyebrow: 'Techniques used',
     title: 'How paediatric physiotherapy helps children grow stronger',
     intro:
-      'Therapy is gentle, encouraging and play-led — children learn through movement, games and fun rather than rigid exercise.',
+      'Therapy is gentle, encouraging and play-led, children learn through movement, games and fun rather than rigid exercise.',
     bullets: [
       'Play-based exercises that build strength and coordination',
       'Developmental activities to encourage milestones',
@@ -39,7 +39,7 @@ const SECTIONS = [
     eyebrow: 'What a session looks like',
     title: 'Your child’s typical home session',
     intro:
-      'Sessions feel like guided play — keeping children engaged, comfortable and motivated in their own space.',
+      'Sessions feel like guided play, keeping children engaged, comfortable and motivated in their own space.',
     bullets: [
       'A friendly check on movement, strength and progress',
       'Play-based activities that double as therapeutic exercise',
@@ -78,7 +78,7 @@ const FAQS = [
   {
     question: 'Why is home physiotherapy good for children?',
     answer:
-      'Children are most relaxed and cooperative in familiar surroundings. Home sessions reduce anxiety, let therapy blend naturally into play, and allow parents to learn techniques they can continue every day — which makes a real difference to progress.',
+      'Children are most relaxed and cooperative in familiar surroundings. Home sessions reduce anxiety, let therapy blend naturally into play, and allow parents to learn techniques they can continue every day, which makes a real difference to progress.',
   },
   {
     question: 'What conditions does paediatric physiotherapy help with?',
@@ -88,7 +88,7 @@ const FAQS = [
   {
     question: 'Will my child find the sessions stressful?',
     answer:
-      'No — sessions are designed to be playful and engaging. Our paediatric physiotherapists use games and fun activities so that therapy feels like play, keeping children motivated and comfortable throughout.',
+      'No, sessions are designed to be playful and engaging. Our paediatric physiotherapists use games and fun activities so that therapy feels like play, keeping children motivated and comfortable throughout.',
   },
   {
     question: 'How involved will I need to be as a parent?',
@@ -112,7 +112,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Paediatric Physiotherapy at Home, Bangalore',
+    name: 'EzyHelpers, Paediatric Physiotherapy at Home, Bangalore',
     medicalSpecialty: ['PhysicalTherapy', 'Pediatric'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -145,8 +145,8 @@ export default function PaediatricPhysiotherapyView() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {HERO_STATS.map((s) => (
-              <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-primary-50 p-7 text-center">
-                <p className="font-careSerif text-3xl font-medium text-primary-500 sm:text-4xl">{s.value}</p>
+              <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-care-50 p-7 text-center">
+                <p className="font-careSerif text-3xl font-medium text-care-500 sm:text-4xl">{s.value}</p>
                 <p className="mt-2 text-sm leading-snug text-neutral-700">{s.label}</p>
               </div>
             ))}
@@ -170,7 +170,7 @@ export default function PaediatricPhysiotherapyView() {
                   key={b}
                   className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white px-5 py-4 text-sm leading-snug text-neutral-800"
                 >
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary-500" aria-hidden />
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-care-500" aria-hidden />
                   {b}
                 </li>
               ))}

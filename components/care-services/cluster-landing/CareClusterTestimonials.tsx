@@ -24,25 +24,25 @@ export default function CareClusterTestimonials({ stories }: { stories: CareStor
   const hasEm = emIdx >= 0 && emph
 
   return (
-    <section className="relative overflow-hidden bg-primary-50 px-4 py-16 font-careUi sm:px-6 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-care-50 px-4 py-16 font-careUi sm:px-6 sm:py-20 lg:py-24">
       <div
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#FFF8F1_0%,#ffffff_50%,#FFF8F1_100%)]"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/25 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-care-500/25 to-transparent"
         aria-hidden
       />
 
       <div className="relative mx-auto max-w-3xl">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-primary-500">Real families</p>
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-care-500">Real families</p>
         <h2 className="font-careSerif mt-2 text-center text-xl font-medium tracking-tight text-[#222] sm:text-[clamp(1.25rem,3vw,1.75rem)]">
           What people say <span className="text-[#717171]">about care with us</span>
         </h2>
 
-        <div className="relative mt-10 rounded-[28px] border border-primary-500/15 bg-white/95 p-8 shadow-[0_24px_80px_rgba(0,116,200,0.06)] backdrop-blur-[2px] sm:p-10">
+        <div className="relative mt-10 rounded-[28px] border border-care-500/15 bg-white/95 p-8 shadow-[0_24px_80px_rgba(0,116,200,0.06)] backdrop-blur-[2px] sm:p-10">
           <span
-            className="pointer-events-none absolute -left-1 top-6 font-careSerif text-7xl leading-none text-primary-500/[0.12] sm:text-8xl"
+            className="pointer-events-none absolute -left-1 top-6 font-careSerif text-7xl leading-none text-care-500/[0.12] sm:text-8xl"
             aria-hidden
           >
             &ldquo;
@@ -53,7 +53,7 @@ export default function CareClusterTestimonials({ stories }: { stories: CareStor
               {hasEm && emph ? (
                 <>
                   {active.quote.slice(0, emIdx)}
-                  <em className="font-careSerif font-normal italic text-primary-500">{emph}</em>
+                  <em className="font-careSerif font-normal italic text-care-500">{emph}</em>
                   {active.quote.slice(emIdx + emph.length)}
                 </>
               ) : (
@@ -63,7 +63,7 @@ export default function CareClusterTestimonials({ stories }: { stories: CareStor
           </blockquote>
 
           <div className="mt-8 flex flex-col items-center gap-4 border-t border-neutral-100 pt-8 sm:flex-row sm:justify-center sm:gap-6">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-400 text-xs font-bold leading-tight text-white shadow-lg shadow-primary-500/25 sm:text-sm">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-care-500 to-care-400 text-xs font-bold leading-tight text-white shadow-lg shadow-care-500/25 sm:text-sm">
               {active.initials}
             </div>
             <div className="text-center sm:text-left">
@@ -75,7 +75,7 @@ export default function CareClusterTestimonials({ stories }: { stories: CareStor
           <div className="mt-8 flex items-center justify-center gap-3" role="tablist" aria-label="Client stories">
             <button
               type="button"
-              className="rounded-full border border-neutral-200 bg-white p-2 text-neutral-600 shadow-sm transition hover:border-primary-500/40 hover:text-primary-500"
+              className="rounded-full border border-neutral-200 bg-white p-2 text-neutral-600 shadow-sm transition hover:border-care-500/40 hover:text-care-500"
               aria-label="Previous story"
               onClick={() => go(i - 1)}
             >
@@ -90,13 +90,13 @@ export default function CareClusterTestimonials({ stories }: { stories: CareStor
                   aria-selected={idx === i}
                   aria-label={`Story ${idx + 1}`}
                   onClick={() => go(idx)}
-                  className={`h-2 rounded-full transition-all ${idx === i ? 'w-10 bg-gradient-to-r from-primary-500 to-primary-400' : 'w-7 bg-neutral-200 hover:bg-primary-500/25'}`}
+                  className={`h-2 rounded-full transition-all ${idx === i ? 'w-10 bg-gradient-to-r from-care-500 to-care-400' : 'w-7 bg-neutral-200 hover:bg-care-500/25'}`}
                 />
               ))}
             </div>
             <button
               type="button"
-              className="rounded-full border border-neutral-200 bg-white p-2 text-neutral-600 shadow-sm transition hover:border-primary-500/40 hover:text-primary-500"
+              className="rounded-full border border-neutral-200 bg-white p-2 text-neutral-600 shadow-sm transition hover:border-care-500/40 hover:text-care-500"
               aria-label="Next story"
               onClick={() => go(i + 1)}
             >

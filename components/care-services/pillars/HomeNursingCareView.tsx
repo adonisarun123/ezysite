@@ -26,6 +26,7 @@ import {
   DocumentCheckIcon,
   IdentificationIcon,
 } from '@heroicons/react/24/outline'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 import { getPillar } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
@@ -73,7 +74,7 @@ const WHY_PROFESSIONAL = [
     icon: ClipboardDocumentCheckIcon,
     title: 'Fewer hospital readmissions',
     body:
-      'Disciplined post-discharge monitoring — vitals, wound healing, medication timing — catches complications early, which is exactly when they are cheapest and safest to treat.',
+      'Disciplined post-discharge monitoring, vitals, wound healing, medication timing, catches complications early, which is exactly when they are cheapest and safest to treat.',
   },
   {
     icon: DocumentCheckIcon,
@@ -85,7 +86,7 @@ const WHY_PROFESSIONAL = [
     icon: HomeModernIcon,
     title: 'Hospital-grade care, at home in Bangalore',
     body:
-      'Recover in your own bed, on your own routine, near family — with the same clinical rigour you would expect on a hospital ward, delivered across all serviced Bangalore localities.',
+      'Recover in your own bed, on your own routine, near family, with the same clinical rigour you would expect on a hospital ward, delivered across all serviced Bangalore localities.',
   },
 ] as const
 
@@ -102,13 +103,13 @@ const PROCESS_STEPS = [
   {
     n: '01',
     title: 'Share the prescription',
-    body: 'Tell us the doctor’s orders — wound type, IV schedule, catheter plan or post-op needs. A 15-minute call is all it takes.',
+    body: 'Tell us the doctor’s orders, wound type, IV schedule, catheter plan or post-op needs. A 15-minute call is all it takes.',
     icon: ChatBubbleLeftRightIcon,
   },
   {
     n: '02',
     title: 'Matched to a qualified nurse',
-    body: 'We shortlist nurses whose verified skills match your exact procedure — not whoever is free nearest.',
+    body: 'We shortlist nurses whose verified skills match your exact procedure, not whoever is free nearest.',
     icon: UserGroupIcon,
   },
   {
@@ -140,13 +141,13 @@ const CONDITIONS = [
   'Chronic-illness daily nursing',
 ] as const
 
-/* ───── Illustrative testimonials — flagged as illustrative, not real clients ───── */
+/* ───── Illustrative testimonials, flagged as illustrative, not real clients ───── */
 // NOTE: ILLUSTRATIVE testimonials for layout/SEO. Replace with verified
 // client quotes (with consent) before launch. Names/places are invented.
 const TESTIMONIALS = [
   {
     quote:
-      'My father came home after bypass surgery with an incision that needed daily dressing. The nurse EzyHelpers sent kept a written log of his vitals every day — our cardiologist said it was the cleanest recovery record he had seen.',
+      'My father came home after bypass surgery with an incision that needed daily dressing. The nurse EzyHelpers sent kept a written log of his vitals every day, our cardiologist said it was the cleanest recovery record he had seen.',
     name: 'Deepa Krishnan',
     place: 'Jayanagar, Bangalore',
   },
@@ -158,7 +159,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'We needed a two-week IV antibiotic course for my husband. Having a credentialled nurse administer it at home — on schedule, with proper hygiene — saved us a hospital stay we couldn’t afford.',
+      'We needed a two-week IV antibiotic course for my husband. Having a credentialled nurse administer it at home, on schedule, with proper hygiene, saved us a hospital stay we couldn’t afford.',
     name: 'Anita Bhat',
     place: 'HSR Layout, Bangalore',
   },
@@ -168,7 +169,7 @@ const FAQ_ITEMS = [
   {
     question: 'What is home nursing care, and how is it different from a caretaker?',
     answer:
-      'Home nursing care is clinical care delivered at home by a qualified nurse — wound dressing, IV therapy, catheter management, injections, vitals monitoring and post-surgical recovery. A caretaker handles daily personal support like hygiene, feeding and companionship but is not trained for medical procedures. Many families in Bangalore use both: a nurse for procedures and a caretaker for daily care.',
+      'Home nursing care is clinical care delivered at home by a qualified nurse, wound dressing, IV therapy, catheter management, injections, vitals monitoring and post-surgical recovery. A caretaker handles daily personal support like hygiene, feeding and companionship but is not trained for medical procedures. Many families in Bangalore use both: a nurse for procedures and a caretaker for daily care.',
   },
   {
     question: 'Are EzyHelpers home nurses qualified and verified?',
@@ -178,12 +179,12 @@ const FAQ_ITEMS = [
   {
     question: 'How much does home nursing care cost in Bangalore?',
     answer:
-      `Home nursing in Bangalore starts at ${formatPriceWithNote('nursing-care').toLowerCase()} for single-procedure visits such as a wound dressing or injection. Longer post-surgical care is available as 12-hour shifts. Exact pricing depends on the procedure, frequency and duration — a free consultation gives you a precise estimate for your situation.`,
+      `Home nursing in Bangalore starts at ${formatPriceWithNote('nursing-care').toLowerCase()} for single-procedure visits such as a wound dressing or injection. Longer post-surgical care is available as 12-hour shifts. Exact pricing depends on the procedure, frequency and duration, a free consultation gives you a precise estimate for your situation.`,
   },
   {
     question: 'Can a nurse visit just once, or do I need to commit long-term?',
     answer:
-      'Both are available. You can book a single nursing visit — for example a one-off injection or dressing change — or arrange recurring visits and 12-hour shifts for ongoing post-surgical or chronic-condition care. There is no requirement to commit to a long-term plan.',
+      'Both are available. You can book a single nursing visit, for example a one-off injection or dressing change, or arrange recurring visits and 12-hour shifts for ongoing post-surgical or chronic-condition care. There is no requirement to commit to a long-term plan.',
   },
   {
     question: 'Will the nurse coordinate with our treating doctor?',
@@ -193,7 +194,7 @@ const FAQ_ITEMS = [
   {
     question: 'How quickly can a home nurse be arranged in Bangalore?',
     answer:
-      'For most Bangalore localities we attempt same-day or next-day placement when a suitably qualified nurse is available — we prioritise urgent situations such as hospital discharge. Where precise matching takes longer, we keep you informed and typically place within 24 to 48 hours.',
+      'For most Bangalore localities we attempt same-day or next-day placement when a suitably qualified nurse is available, we prioritise urgent situations such as hospital discharge. Where precise matching takes longer, we keep you informed and typically place within 24 to 48 hours.',
   },
 ] as const
 
@@ -205,7 +206,7 @@ export default function HomeNursingCareView() {
       <Navbar />
 
       {/* ─────────────────── Hero ─────────────────── */}
-      <header className="relative overflow-hidden bg-primary-50">
+      <header className="relative overflow-hidden bg-care-50">
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 sm:pb-28 sm:pt-8 lg:pb-32">
           <nav aria-label="Breadcrumb" className="text-left">
             <ol className="flex flex-wrap items-center gap-x-1 text-sm text-neutral-500">
@@ -231,27 +232,28 @@ export default function HomeNursingCareView() {
             </ol>
           </nav>
 
-          <div className="mt-10 text-center sm:mt-14 lg:mt-16">
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 sm:mt-14 lg:mt-16 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-14">
+            <div className="text-center lg:text-left">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden />
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
               Bangalore · Clinical care at home
             </p>
 
-            <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.4rem,6vw,4.75rem)] font-medium leading-[1.04] tracking-[-0.03em] text-neutral-950">
+            <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.4rem,6vw,4.75rem)] font-medium leading-[1.04] tracking-[-0.03em] text-neutral-950 lg:mx-0">
               {pillar.title}.
               <br />
-              <em className="font-careSerif font-normal italic text-primary-500">
+              <em className="font-careSerif font-normal italic text-care-500">
                 Performed with discipline.
               </em>
             </h1>
 
-            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
+            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
               {pillar.tagline} GNM and B.Sc-verified nurses for wound care, IV therapy, catheter
-              management, injections and post-surgical recovery — with daily clinical logs your doctor
+              management, injections and post-surgical recovery, with daily clinical logs your doctor
               can actually use.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <Link
                 href={enquiryHref}
                 onClick={() => trackCareCTAClick('Book a home nurse', `${PATH}#hero`)}
@@ -273,6 +275,12 @@ export default function HomeNursingCareView() {
             <p className="mt-6 text-xs uppercase tracking-[0.18em] text-neutral-500">
               {formatPriceWithNote(pillar.priceKey)}
             </p>
+            </div>
+
+            {/* In-hero quick lead form */}
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
+              <CareHeroQuickForm enquirySource={PATH} />
+            </div>
           </div>
         </div>
       </header>
@@ -286,7 +294,7 @@ export default function HomeNursingCareView() {
           <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-neutral-200 lg:grid-cols-4">
             {TRUST_RIBBON.map(({ icon: Icon, title, sub }) => (
               <div key={title} className="flex items-center gap-3 bg-white px-5 py-6 sm:px-6">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <div className="min-w-0 text-left">
@@ -301,7 +309,7 @@ export default function HomeNursingCareView() {
         {/* ─────────────── Intro ─────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
               Clinical care, kept at home
             </p>
             <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.06] tracking-[-0.025em] text-neutral-950">
@@ -325,7 +333,7 @@ export default function HomeNursingCareView() {
         >
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Six nursing services
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -344,10 +352,10 @@ export default function HomeNursingCareView() {
                   <Link
                     key={n.slug}
                     href={`/care-services/${n.slug}`}
-                    aria-label={`${n.title} — learn more`}
-                    className="group flex h-full flex-col rounded-[28px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_12px_32px_rgba(0,0,0,0.10)] focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    aria-label={`${n.title}, learn more`}
+                    className="group flex h-full flex-col rounded-[28px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_12px_32px_rgba(0,0,0,0.10)] focus-visible:ring-2 focus-visible:ring-care-500 focus-visible:ring-offset-2"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                       <Icon className="h-6 w-6" aria-hidden />
                     </span>
                     <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950">
@@ -357,7 +365,7 @@ export default function HomeNursingCareView() {
                     <p className="mt-5 text-sm font-semibold text-neutral-900">
                       {formatPriceWithNote(n.priceKey)}
                     </p>
-                    <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary-500 transition group-hover:text-primary-600">
+                    <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-care-500 transition group-hover:text-care-600">
                       Learn more
                       <ArrowLongRightIcon
                         className="h-4 w-4 transition group-hover:translate-x-1"
@@ -375,7 +383,7 @@ export default function HomeNursingCareView() {
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Why professional nursing
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -383,7 +391,7 @@ export default function HomeNursingCareView() {
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-600">
                 Clinical procedures at home are not a place to improvise. Here is what professional home
-                nursing protects against — and why it matters for recovery.
+                nursing protects against, and why it matters for recovery.
               </p>
             </div>
 
@@ -393,7 +401,7 @@ export default function HomeNursingCareView() {
                   key={title}
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
                   <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950 sm:text-xl">
@@ -411,7 +419,7 @@ export default function HomeNursingCareView() {
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-400">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-400">
                   Credentials & verification
                 </p>
                 <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-white">
@@ -440,7 +448,7 @@ export default function HomeNursingCareView() {
                       key={c}
                       className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4"
                     >
-                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-400" aria-hidden />
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-400" aria-hidden />
                       <span className="text-sm leading-snug text-white/85">{c}</span>
                     </li>
                   ))}
@@ -454,7 +462,7 @@ export default function HomeNursingCareView() {
         <section className="bg-neutral-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 How it works
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -473,7 +481,7 @@ export default function HomeNursingCareView() {
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-careSerif text-3xl font-medium text-primary-500">{n}</span>
+                    <span className="font-careSerif text-3xl font-medium text-care-500">{n}</span>
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-700">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
@@ -493,7 +501,7 @@ export default function HomeNursingCareView() {
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                   Conditions we handle
                 </p>
                 <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -501,7 +509,7 @@ export default function HomeNursingCareView() {
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-neutral-600 sm:text-lg">
                   Our home nurses are matched to procedures they have performed before. If your situation
-                  is not listed, call us — we will assess what the care actually requires.
+                  is not listed, call us, we will assess what the care actually requires.
                 </p>
               </div>
               <div className="lg:col-span-7">
@@ -524,7 +532,7 @@ export default function HomeNursingCareView() {
         <section className="border-y border-neutral-200 bg-neutral-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Bangalore families
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -538,7 +546,7 @@ export default function HomeNursingCareView() {
                   className="flex h-full flex-col justify-between rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div>
-                    <span aria-hidden className="font-careSerif text-5xl leading-none text-primary-500/40">
+                    <span aria-hidden className="font-careSerif text-5xl leading-none text-care-500/40">
                       &ldquo;
                     </span>
                     <blockquote className="mt-2 font-careSerif text-lg leading-snug text-neutral-900">
@@ -561,7 +569,7 @@ export default function HomeNursingCareView() {
         {/* ─────────────── FAQ ─────────────── */}
         <section id="faq" className="scroll-mt-28 bg-neutral-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
               Frequently asked
             </p>
             <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -577,24 +585,24 @@ export default function HomeNursingCareView() {
         </section>
 
         {/* ─────────────── Final CTA ─────────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200 px-4 py-24 sm:px-6 sm:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-care-50 via-care-100 to-care-200 px-4 py-24 sm:px-6 sm:py-32">
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-primary-500/15 blur-3xl"
+            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-care-500/15 blur-3xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-primary-400/20 blur-3xl"
+            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-care-400/20 blur-3xl"
           />
           <div className="relative mx-auto max-w-3xl text-center">
             <h2 className="font-careSerif text-[clamp(2rem,5.5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
               A qualified nurse, at home.
               <br />
-              <em className="font-careSerif font-normal italic text-primary-500">In a single call.</em>
+              <em className="font-careSerif font-normal italic text-care-500">In a single call.</em>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700">
               Share the prescription. We respond within the hour, match a verified nurse to your exact
-              procedure, and begin care — with daily logs from day one.
+              procedure, and begin care, with daily logs from day one.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link
@@ -673,7 +681,7 @@ export default function HomeNursingCareView() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'MedicalBusiness',
-            name: 'EzyHelpers — Home Nursing Care, Bangalore',
+            name: 'EzyHelpers, Home Nursing Care, Bangalore',
             medicalSpecialty: 'Nursing',
             areaServed: { '@type': 'City', name: 'Bangalore' },
             url: `https://www.ezyhelpers.com${PATH}`,

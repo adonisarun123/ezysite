@@ -24,6 +24,7 @@ import {
   ChartBarIcon,
   CheckCircleIcon,
 } from '@heroicons/react/24/outline'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 import { getPillar } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
@@ -63,7 +64,7 @@ const WHY_HOME = [
   {
     icon: HomeModernIcon,
     title: 'Recovery in familiar surroundings',
-    body: 'Patients heal faster and stay more motivated at home — no stressful commutes, no waiting rooms, and exercises practised in the very space where daily life happens.',
+    body: 'Patients heal faster and stay more motivated at home, no stressful commutes, no waiting rooms, and exercises practised in the very space where daily life happens.',
   },
   {
     icon: UserGroupIcon,
@@ -78,7 +79,7 @@ const WHY_HOME = [
   {
     icon: ClockIcon,
     title: 'Flexible, time-saving scheduling',
-    body: 'Sessions are booked around work, caregiving and family routines — especially valuable for seniors, post-surgical patients and anyone with limited mobility.',
+    body: 'Sessions are booked around work, caregiving and family routines, especially valuable for seniors, post-surgical patients and anyone with limited mobility.',
   },
   {
     icon: HeartIcon,
@@ -111,7 +112,7 @@ const HOW_IT_WORKS = [
   {
     n: '02',
     title: 'Personalised plan',
-    body: 'A tailored treatment programme is built around your diagnosis — exercises, manual therapy and milestones, explained clearly to you and your family.',
+    body: 'A tailored treatment programme is built around your diagnosis, exercises, manual therapy and milestones, explained clearly to you and your family.',
     icon: ClipboardDocumentCheckIcon,
   },
   {
@@ -156,7 +157,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'My father had a stroke and lost movement on his right side. The neuro-physio plan was patient and structured — we saw small wins every single week, and the daily updates kept us hopeful.',
+      'My father had a stroke and lost movement on his right side. The neuro-physio plan was patient and structured, we saw small wins every single week, and the daily updates kept us hopeful.',
     name: 'Rahul Menon',
     place: 'Whitefield, Bangalore',
   },
@@ -177,22 +178,22 @@ const FAQS = [
   {
     question: 'Do I need to buy any equipment for home physiotherapy in Bangalore?',
     answer:
-      'No. Our physiotherapists arrive equipped with the tools most sessions require — therapy bands, mobilisation aids and assessment instruments. If your specific plan benefits from a particular item (for example a TENS unit or specialised mobility aid), we’ll advise you in advance, and many such items can be rented rather than purchased.',
+      'No. Our physiotherapists arrive equipped with the tools most sessions require, therapy bands, mobilisation aids and assessment instruments. If your specific plan benefits from a particular item (for example a TENS unit or specialised mobility aid), we’ll advise you in advance, and many such items can be rented rather than purchased.',
   },
   {
     question: 'Is home physiotherapy as effective as visiting a clinic?',
     answer:
-      'For most conditions, yes — and often more so. Home sessions are fully one-on-one, exercises are tailored to your actual living space, and there is no fatigue or stress from travel. For patients who are post-surgical, elderly or have limited mobility, recovering at home is frequently the safer and faster route.',
+      'For most conditions, yes, and often more so. Home sessions are fully one-on-one, exercises are tailored to your actual living space, and there is no fatigue or stress from travel. For patients who are post-surgical, elderly or have limited mobility, recovering at home is frequently the safer and faster route.',
   },
   {
     question: 'Will physiotherapy at home be covered by my health insurance?',
     answer:
-      'Coverage varies by insurer and policy. Some plans reimburse prescribed home physiotherapy, particularly post-surgery or post-hospitalisation, while others do not. We can provide proper session documentation and receipts to support your claim — please confirm the specifics directly with your insurance provider before starting.',
+      'Coverage varies by insurer and policy. Some plans reimburse prescribed home physiotherapy, particularly post-surgery or post-hospitalisation, while others do not. We can provide proper session documentation and receipts to support your claim, please confirm the specifics directly with your insurance provider before starting.',
   },
   {
     question: 'Are your physiotherapists qualified and verified?',
     answer:
-      'Every physiotherapist is BPT or MPT qualified, with their credentials and identity verified before placement. We match you with a therapist experienced in your specific condition — orthopaedic, neurological, post-surgical, geriatric, cardio-respiratory or paediatric — rather than assigning whoever is nearest.',
+      'Every physiotherapist is BPT or MPT qualified, with their credentials and identity verified before placement. We match you with a therapist experienced in your specific condition, orthopaedic, neurological, post-surgical, geriatric, cardio-respiratory or paediatric, rather than assigning whoever is nearest.',
   },
   {
     question: 'How soon can a physiotherapist start home visits in Bangalore?',
@@ -205,7 +206,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Physiotherapy at Home, Bangalore',
+    name: 'EzyHelpers, Physiotherapy at Home, Bangalore',
     medicalSpecialty: ['PhysicalTherapy', 'Rehabilitation'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -243,10 +244,10 @@ export default function PhysiotherapyAtHomeView() {
       <Navbar />
 
       {/* ─────────────────── Hero ─────────────────── */}
-      <header className="relative overflow-hidden bg-primary-50">
+      <header className="relative overflow-hidden bg-care-50">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-primary-500/10 blur-3xl"
+          className="pointer-events-none absolute -right-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-care-500/10 blur-3xl"
         />
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 sm:pb-28 sm:pt-8 lg:pb-32">
           {/* Breadcrumb */}
@@ -274,24 +275,25 @@ export default function PhysiotherapyAtHomeView() {
             </ol>
           </nav>
 
-          <div className="mt-10 max-w-3xl sm:mt-14">
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 sm:mt-14 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-14">
+            <div className="text-center lg:text-left">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden />
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
               Bangalore · Certified home rehabilitation
             </p>
 
             <h1 className="mt-7 font-careSerif text-[clamp(2.5rem,6.5vw,5rem)] font-medium leading-[1.03] tracking-[-0.03em] text-neutral-950">
               {pillar.title}.
               <br />
-              <em className="font-careSerif font-normal italic text-primary-500">Recovery, delivered to your door.</em>
+              <em className="font-careSerif font-normal italic text-care-500">Recovery, delivered to your door.</em>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
-              {pillar.blurb} No commutes, no waiting rooms — just expert, one-on-one therapy in the comfort of
+            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
+              {pillar.blurb} No commutes, no waiting rooms, just expert, one-on-one therapy in the comfort of
               your own home, with measurable progress at every step.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <Link
                 href={enquiryHref}
                 onClick={() => trackCareCTAClick('Book a physio assessment', `${PATH}#hero`)}
@@ -313,6 +315,12 @@ export default function PhysiotherapyAtHomeView() {
             <p className="mt-5 text-xs uppercase tracking-[0.18em] text-neutral-500">
               {formatPriceWithNote(pillar.priceKey)} · Same-week first visit across Bangalore
             </p>
+            </div>
+
+            {/* In-hero quick lead form */}
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
+              <CareHeroQuickForm enquirySource={PATH} />
+            </div>
           </div>
         </div>
       </header>
@@ -326,7 +334,7 @@ export default function PhysiotherapyAtHomeView() {
           <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-neutral-200 lg:grid-cols-4">
             {TRUST_RIBBON.map(({ icon: Icon, title, sub }) => (
               <div key={title} className="flex items-start gap-3 bg-white px-5 py-7 sm:px-6">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <div className="min-w-0">
@@ -341,7 +349,7 @@ export default function PhysiotherapyAtHomeView() {
         {/* ─────────────── Intro ─────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
               Physiotherapy that comes to you
             </p>
             <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.06] tracking-[-0.025em] text-neutral-950">
@@ -351,7 +359,7 @@ export default function PhysiotherapyAtHomeView() {
               Whether you are recovering from surgery, managing a neurological condition, or rebuilding strength
               and balance in later life, our certified physiotherapists bring the full rehabilitation experience
               home. Each programme is personalised to your diagnosis, practised in your real living space, and
-              measured against clear goals — so every session moves you closer to independence.
+              measured against clear goals, so every session moves you closer to independence.
             </p>
           </div>
         </section>
@@ -360,7 +368,7 @@ export default function PhysiotherapyAtHomeView() {
         <section id="services" className="scroll-mt-28 border-y border-neutral-200 bg-neutral-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Six specialised programmes
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -368,7 +376,7 @@ export default function PhysiotherapyAtHomeView() {
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-600">
                 From joint and back pain to stroke recovery and children’s development, choose the programme
-                matched to your condition — each delivered at home by a therapist experienced in it.
+                matched to your condition, each delivered at home by a therapist experienced in it.
               </p>
             </div>
 
@@ -379,9 +387,9 @@ export default function PhysiotherapyAtHomeView() {
                   <Link
                     key={n.slug}
                     href={`/care-services/${n.slug}`}
-                    className="group flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_12px_32px_rgba(0,0,0,0.10)] focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    className="group flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_12px_32px_rgba(0,0,0,0.10)] focus-visible:ring-2 focus-visible:ring-care-500 focus-visible:ring-offset-2"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                       <Icon className="h-6 w-6" aria-hidden />
                     </span>
                     <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950">
@@ -391,7 +399,7 @@ export default function PhysiotherapyAtHomeView() {
                     <p className="mt-5 text-sm font-semibold text-neutral-900">
                       {formatPriceWithNote(n.priceKey)}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-500 transition group-hover:gap-2">
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-care-500 transition group-hover:gap-2">
                       Explore programme
                       <ArrowRightIcon className="h-4 w-4" aria-hidden />
                     </span>
@@ -406,7 +414,7 @@ export default function PhysiotherapyAtHomeView() {
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Why home physiotherapy works
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -424,7 +432,7 @@ export default function PhysiotherapyAtHomeView() {
                   key={title}
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
                   <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950">{title}</h3>
@@ -439,12 +447,12 @@ export default function PhysiotherapyAtHomeView() {
         <section className="bg-neutral-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">How it works</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">How it works</p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Four steps, from assessment to independence.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
-                A clear, measurable process — so you always understand where your recovery is heading.
+                A clear, measurable process, so you always understand where your recovery is heading.
               </p>
             </div>
 
@@ -455,7 +463,7 @@ export default function PhysiotherapyAtHomeView() {
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-careSerif text-3xl font-medium text-primary-500">{n}</span>
+                    <span className="font-careSerif text-3xl font-medium text-care-500">{n}</span>
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-700">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
@@ -473,14 +481,14 @@ export default function PhysiotherapyAtHomeView() {
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                   Conditions we treat
                 </p>
                 <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                   Rehabilitation for a wide range of needs.
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-neutral-600 sm:text-lg">
-                  Our physiotherapists are matched to your specific condition. If yours isn’t listed, call us —
+                  Our physiotherapists are matched to your specific condition. If yours isn’t listed, call us, 
                   we’ll assess what your recovery actually needs.
                 </p>
                 <a
@@ -499,7 +507,7 @@ export default function PhysiotherapyAtHomeView() {
                       key={c}
                       className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-800 shadow-sm"
                     >
-                      <CheckCircleIcon className="h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                      <CheckCircleIcon className="h-4 w-4 shrink-0 text-care-500" aria-hidden />
                       <span className="leading-snug">{c}</span>
                     </div>
                   ))}
@@ -513,7 +521,7 @@ export default function PhysiotherapyAtHomeView() {
         <section className="border-y border-neutral-200 bg-accent-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Recovery stories
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -527,7 +535,7 @@ export default function PhysiotherapyAtHomeView() {
                   className="flex h-full flex-col justify-between rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div>
-                    <span aria-hidden className="font-careSerif text-5xl leading-none text-primary-500/40">
+                    <span aria-hidden className="font-careSerif text-5xl leading-none text-care-500/40">
                       &ldquo;
                     </span>
                     <blockquote className="mt-2 font-careSerif text-lg leading-snug text-neutral-900 sm:text-xl">
@@ -550,7 +558,7 @@ export default function PhysiotherapyAtHomeView() {
         {/* ─────────────── FAQ ─────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">Frequently asked</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Frequently asked</p>
             <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
               Home physiotherapy, answered.
             </h2>
@@ -561,20 +569,20 @@ export default function PhysiotherapyAtHomeView() {
         </section>
 
         {/* ─────────────── Final CTA ─────────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200 px-4 py-24 sm:px-6 sm:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-care-50 via-care-100 to-care-200 px-4 py-24 sm:px-6 sm:py-32">
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-primary-500/15 blur-3xl"
+            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-care-500/15 blur-3xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-primary-400/20 blur-3xl"
+            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-care-400/20 blur-3xl"
           />
           <div className="relative mx-auto max-w-3xl text-center">
             <h2 className="font-careSerif text-[clamp(2rem,5.5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
               Start your recovery at home.
               <br />
-              <em className="font-careSerif font-normal italic text-primary-500">Book a physio assessment today.</em>
+              <em className="font-careSerif font-normal italic text-care-500">Book a physio assessment today.</em>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700">
               Tell us about the condition and your goals. We respond within the hour, match you with a certified

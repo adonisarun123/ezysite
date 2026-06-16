@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   TruckIcon,
   CheckCircleIcon,
@@ -22,6 +24,18 @@ export const metadata: Metadata = {
   title: 'Household Shifting in Bareilly – Expert Packers',
   description: 'Looking for household shifting services in Bareilly? Our movers handle packing, safe transport, and careful unpacking for a smooth relocation.',
   keywords: 'household shifting bareilly, packers and movers bareilly, house shifting bareilly, home relocation bareilly',
+  openGraph: {
+    title: 'Household Shifting in Bareilly – Expert Packers',
+    description: 'Looking for household shifting services in Bareilly? Our movers handle packing, safe transport, and careful unpacking for a smooth relocation.',
+    url: 'https://www.ezyhelpers.com/services/house-shifting',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Household%20Shifting%20in%20Bareilly%20%E2%80%93%20Expert%20Packers", width: 1200, height: 630, alt: "Household Shifting in Bareilly – Expert Packers" }],
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/services/house-shifting'
+  }
 }
 
 export default function HouseShiftingPage() {
@@ -160,6 +174,7 @@ export default function HouseShiftingPage() {
 
   return (
     <main className="min-h-screen">
+      <ServiceSchema serviceName={"Household Shifting in Bareilly – Expert Packers"} serviceDescription={"Looking for household shifting services in Bareilly? Our movers handle packing, safe transport, and careful unpacking for a smooth relocation."} serviceType={"Household Shifting in Bareilly – Expert Packers"} serviceUrl={"https://www.ezyhelpers.com/services/house-shifting"} />
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/house-shifting" />
       
@@ -226,6 +241,11 @@ export default function HouseShiftingPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book house shifting through EzyHelpers?"
+        answer="EzyHelpers provides reliable packers and movers for local house shifting, with trained crews, careful packing, and transparent pricing. Book online or call 080-31411776 to schedule your move."
+      />
 
       {/* Why Choose Us */}
       <section className="section-padding bg-white">

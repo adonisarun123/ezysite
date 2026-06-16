@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { sendWebhook } from '@/lib/webhookService'
+import { trackFormSubmitSuccess } from '@/lib/analytics'
 import { 
   UserIcon, 
   PhoneIcon, 
@@ -217,6 +218,7 @@ export default function ComprehensiveLeadForm() {
 
       if (response.ok) {
         sendWebhook('comprehensive_lead', formData).catch(console.error)
+        trackFormSubmitSuccess('comprehensive_lead_form', { serviceType: formData.service, city: formData.city })
         router.push('/thank-you?type=comprehensive')
       } else {
         throw new Error('Failed to submit form')

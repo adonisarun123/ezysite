@@ -44,8 +44,8 @@ const QUESTIONS: Question[] = [
     prompt: 'Are there active medical procedures the patient needs?',
     helper: 'Wounds being dressed, IV, catheters, tube feeding, chest tubes, regular vitals.',
     options: [
-      { label: 'Yes — daily or near-daily clinical care', weights: { nurse: 3, combined: 2 } },
-      { label: 'Some — a few times a week (e.g. wound check, port flush)', weights: { combined: 3, caretaker: 1 } },
+      { label: 'Yes, daily or near-daily clinical care', weights: { nurse: 3, combined: 2 } },
+      { label: 'Some, a few times a week (e.g. wound check, port flush)', weights: { combined: 3, caretaker: 1 } },
       { label: 'No clinical procedures, just stable management', weights: { caretaker: 3 } },
     ],
   },
@@ -82,7 +82,7 @@ const QUESTIONS: Question[] = [
     id: 'situation',
     prompt: 'What best describes the situation?',
     options: [
-      { label: 'Hospital discharge — recent or imminent', weights: { combined: 3, nurse: 2 } },
+      { label: 'Hospital discharge, recent or imminent', weights: { combined: 3, nurse: 2 } },
       { label: 'Long-term elderly care for an ageing parent', weights: { caretaker: 3 } },
       { label: 'Bedridden / post-stroke / high-dependency', weights: { attendant: 3 } },
       { label: 'Post-surgical recovery (4–12 weeks)', weights: { combined: 2, caretaker: 2 } },
@@ -98,7 +98,7 @@ const RESULTS: Record<
     title: 'Home Nursing Services',
     tagline: 'Procedural medical care, performed at home.',
     lede:
-      'Your situation calls primarily for clinical care — wound dressing, IV, catheter, vitals, doctor handoffs. A licensed nurse is the right fit, often as visits, sometimes as a shift.',
+      'Your situation calls primarily for clinical care, wound dressing, IV, catheter, vitals, doctor handoffs. A licensed nurse is the right fit, often as visits, sometimes as a shift.',
     bullets: [
       'GNM / B.Sc Nursing-trained',
       'Wound, IV, catheter discipline',
@@ -113,7 +113,7 @@ const RESULTS: Record<
     title: 'Caretaker Services',
     tagline: 'Daily personal care, matched not assigned.',
     lede:
-      'Your situation is mostly about daily living — hygiene, meals, mobility, companionship, medication reminders. A trained caretaker is the right fit, in a day-shift or live-in arrangement.',
+      'Your situation is mostly about daily living, hygiene, meals, mobility, companionship, medication reminders. A trained caretaker is the right fit, in a day-shift or live-in arrangement.',
     bullets: [
       'Hygiene · feeding · mobility',
       'Medication reminders',
@@ -128,7 +128,7 @@ const RESULTS: Record<
     title: 'Trained Attendant Services',
     tagline: 'Skilled physical handling for high-dependency care.',
     lede:
-      'Your situation calls for skilled physical handling — bedridden, post-stroke, neurological, or high-dependency care. A trained attendant is the right fit, almost always as a live-in placement.',
+      'Your situation calls for skilled physical handling, bedridden, post-stroke, neurological, or high-dependency care. A trained attendant is the right fit, almost always as a live-in placement.',
     bullets: [
       'Bedridden patient management',
       'Pressure-sore prevention',
@@ -143,7 +143,7 @@ const RESULTS: Record<
     title: 'Home Healthcare Services',
     tagline: 'Nurse + caretaker, one coordinated team.',
     lede:
-      'Your situation needs both medical procedures and daily care. The best fit is a coordinated arrangement — a nurse for clinical tasks, a caretaker for daily living — managed as one team.',
+      'Your situation needs both medical procedures and daily care. The best fit is a coordinated arrangement, a nurse for clinical tasks, a caretaker for daily living, managed as one team.',
     bullets: [
       'Doctor-aligned care plan',
       'Nurse + caretaker, one team',
@@ -158,16 +158,16 @@ const RESULTS: Record<
 
 const TONE_BG: Record<string, string> = {
   sky: 'bg-gradient-to-br from-[#F2F7FB] via-[#E6F1FA] to-[#D6E8F4]',
-  rose: 'bg-gradient-to-br from-primary-50 via-[#FFE2D6] to-[#FFD0C2]',
+  rose: 'bg-gradient-to-br from-care-50 via-[#FFE2D6] to-[#FFD0C2]',
   sand: 'bg-gradient-to-br from-[#FAF6EE] via-[#F4E5C8] to-[#EFD8A8]',
-  pearl: 'bg-gradient-to-br from-primary-50 via-primary-50 to-primary-100',
+  pearl: 'bg-gradient-to-br from-care-50 via-care-50 to-care-100',
 }
 
 const TONE_TEXT: Record<string, string> = {
-  sky: 'text-primary-500',
-  rose: 'text-primary-500',
+  sky: 'text-care-500',
+  rose: 'text-care-500',
   sand: 'text-[#B97A1F]',
-  pearl: 'text-primary-500',
+  pearl: 'text-care-500',
 }
 
 export default function CareQuizView() {
@@ -258,7 +258,7 @@ export default function CareQuizView() {
               </div>
               <div className="mt-3 h-1 w-full overflow-hidden rounded-full bg-neutral-100">
                 <div
-                  className="h-full rounded-full bg-primary-500 transition-all duration-300"
+                  className="h-full rounded-full bg-care-500 transition-all duration-300"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -282,7 +282,7 @@ export default function CareQuizView() {
                       onClick={() => choose(step, oi)}
                       className={`flex w-full items-center justify-between gap-4 rounded-2xl border px-5 py-4 text-left transition ${
                         selected
-                          ? 'border-primary-500 bg-primary-50'
+                          ? 'border-care-500 bg-care-50'
                           : 'border-neutral-200 bg-white hover:border-neutral-900 hover:bg-neutral-50'
                       }`}
                     >
@@ -290,7 +290,7 @@ export default function CareQuizView() {
                       <span
                         className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 ${
                           selected
-                            ? 'border-primary-500 bg-primary-500 text-white'
+                            ? 'border-care-500 bg-care-500 text-white'
                             : 'border-neutral-300 bg-white text-transparent'
                         }`}
                       >
@@ -399,7 +399,7 @@ export default function CareQuizView() {
             eyebrow="Why use the quiz"
             titleLead="Most families overspend"
             titleMuted="in the first two weeks."
-            lede="Hiring a nurse when a caretaker would do, or a generalist when a trained attendant is needed — both are common and both are expensive. The quiz removes the guesswork."
+            lede="Hiring a nurse when a caretaker would do, or a generalist when a trained attendant is needed, both are common and both are expensive. The quiz removes the guesswork."
             align="center"
           />
         </div>
@@ -407,7 +407,7 @@ export default function CareQuizView() {
 
       {/* Direct line CTA */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200 p-8 text-center sm:p-12">
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-gradient-to-br from-care-50 via-care-100 to-care-200 p-8 text-center sm:p-12">
           <h3 className="font-careSerif text-2xl font-medium leading-tight tracking-tight text-neutral-950 sm:text-3xl">
             Prefer to talk it through?
           </h3>

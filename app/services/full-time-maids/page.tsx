@@ -2,11 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import NestCTA from '@/components/NestCTA'
 
 // ISR: revalidate hourly
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   ShieldCheckIcon, 
   HomeIcon, 
@@ -31,6 +34,7 @@ export const metadata: Metadata = {
       "Hire reliable full-time maids for daily household support. Choose specialists for housekeeping, cooking, childcare, or elderly care. Fixed daily hours, verified profiles, and quick replacements.",
     url: 'https://www.ezyhelpers.com/services/full-time-maids',
     type: 'website',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Full%20Time%20Maid%20Services", width: 1200, height: 630, alt: "Full Time Maid Services" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/full-time-maids',
@@ -83,6 +87,7 @@ export default function FullTimeMaidsPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Full Time Maid Services"} serviceDescription={"Reliable full-time maid services for daily cleaning, cooking & home care. Get 8–10 hrs of trained, verified help daily. Book trusted maids near you today!"} serviceType={"Full Time Maid Services"} serviceUrl={"https://www.ezyhelpers.com/services/full-time-maids"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -286,6 +291,11 @@ export default function FullTimeMaidsPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a full-time maid through EzyHelpers?"
+        answer="EzyHelpers provides background-verified full-time maids working 8–10 hours daily for cleaning, cooking support, and household chores. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper."
+      />
 
       {/* Why Choose Section */}
       <section className="section-padding bg-white">
@@ -665,6 +675,13 @@ export default function FullTimeMaidsPage() {
           { name: "Bareilly", href: "/cities/bareilly/full-time-maid" },
         ]}
       />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['full-time maid', 'live-in maid', 'domestic help']}
+        title="Maid Hiring Guides"
+        subtitle="Compare full-time vs live-in help and understand fair pay."
+      />
+
       <Footer />
       </main>
     </>

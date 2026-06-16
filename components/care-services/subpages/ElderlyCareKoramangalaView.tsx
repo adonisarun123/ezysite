@@ -32,7 +32,7 @@ const HOSPITALS = [
 
 const CARE_OPTIONS = [
   { title: 'Day shift companion', hours: '8 hours', fit: 'Older couples or alone-living seniors needing daytime company while family is at work.', price: '₹14,000–₹18,000 / mo' },
-  { title: '12-hour caretaker', hours: '12 hours', fit: 'Substantial daily support — bath, meals, medication, evening companionship.', price: '₹18,000–₹24,000 / mo' },
+  { title: '12-hour caretaker', hours: '12 hours', fit: 'Substantial daily support, bath, meals, medication, evening companionship.', price: '₹18,000–₹24,000 / mo' },
   { title: 'Live-in caregiver', hours: '24×7', fit: 'Older parents in independent homes or apartments while children are abroad.', price: '₹22,000–₹30,000 / mo' },
   { title: 'Trained attendant (live-in)', hours: '24×7', fit: 'Bedridden, post-stroke, or advanced-stage dementia.', price: '₹26,000–₹34,000 / mo' },
 ] as const
@@ -46,12 +46,12 @@ const KORAMANGALA_REALITY = [
   {
     title: 'Mid-density apartment growth',
     body:
-      'Newer mid-rise apartments (Brigade, Salarpuria, Adarsh) are common from the 5th and 6th blocks outward — gated access, lift, security desk.',
+      'Newer mid-rise apartments (Brigade, Salarpuria, Adarsh) are common from the 5th and 6th blocks outward, gated access, lift, security desk.',
   },
   {
     title: 'Mature ageing-in-place population',
     body:
-      'Koramangala has one of Bangalore’s longest-settled senior populations — many have lived here 30+ years. Care that respects familiarity matters here.',
+      'Koramangala has one of Bangalore’s longest-settled senior populations, many have lived here 30+ years. Care that respects familiarity matters here.',
   },
   {
     title: 'Hospital proximity',
@@ -69,7 +69,7 @@ const FAQS = [
   {
     question: 'Are caregivers familiar with Koramangala’s independent homes (vs apartments)?',
     answer:
-      'Yes. Many of our Koramangala placements are in independent homes — Tata Silk Farm, KHB Colony, the early blocks. Caregivers are comfortable with both setup styles.',
+      'Yes. Many of our Koramangala placements are in independent homes, Tata Silk Farm, KHB Colony, the early blocks. Caregivers are comfortable with both setup styles.',
   },
   {
     question: 'Which hospitals do your caregivers know for Koramangala patients?',
@@ -79,12 +79,12 @@ const FAQS = [
   {
     question: 'My parent has lived in Koramangala for 40 years. Is the caregiver respectful of that?',
     answer:
-      'Absolutely. We screen for warmth and patience, not just skill. Senior Koramangala residents have specific routines, neighbours, and preferences — caregivers we place treat that as the centre of their work, not a complication.',
+      'Absolutely. We screen for warmth and patience, not just skill. Senior Koramangala residents have specific routines, neighbours, and preferences, caregivers we place treat that as the centre of their work, not a complication.',
   },
   {
     question: 'Languages?',
     answer:
-      'English, Hindi, Tamil, Kannada, Telugu, Malayalam — Koramangala is genuinely multilingual. Language match is in our shortlisting criteria.',
+      'English, Hindi, Tamil, Kannada, Telugu, Malayalam, Koramangala is genuinely multilingual. Language match is in our shortlisting criteria.',
   },
 ] as const
 
@@ -92,7 +92,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'EzyHelpers — Elderly Care in Koramangala, Bangalore',
+    name: 'EzyHelpers, Elderly Care in Koramangala, Bangalore',
     areaServed: { '@type': 'AdministrativeArea', name: 'Koramangala, Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
     telephone: '+91-80-31411776',
@@ -115,18 +115,18 @@ export default function ElderlyCareKoramangalaView() {
       eyebrow="Koramangala · Bangalore"
       headlineLead="Elderly care, in Koramangala."
       headlineAccent="Across all eight blocks."
-      lede="Verified, matched caregivers across Koramangala’s eight blocks — from independent homes in the older blocks to mid-rise apartments in the newer ones."
+      lede="Verified, matched caregivers across Koramangala’s eight blocks, from independent homes in the older blocks to mid-rise apartments in the newer ones."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
       lastUpdated="May 2026"
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Koramangala has one of Bangalore’s <em className="italic text-primary-500">most settled senior populations</em>{' '}
-            — many lived here 30+ years. We place caregivers who respect that, briefed on Manipal Old Airport
+            Koramangala has one of Bangalore’s <em className="italic text-care-500">most settled senior populations</em>{' '}
+, many lived here 30+ years. We place caregivers who respect that, briefed on Manipal Old Airport
             Road and St John’s, matched to language and routine. Live-in placements from ₹22,000/month.
           </p>
         </div>
@@ -204,7 +204,7 @@ export default function ElderlyCareKoramangalaView() {
                 key={a}
                 className="flex items-center gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-800"
               >
-                <MapPinIcon className="h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                <MapPinIcon className="h-4 w-4 shrink-0 text-care-500" aria-hidden />
                 {a}
               </div>
             ))}
@@ -222,7 +222,7 @@ export default function ElderlyCareKoramangalaView() {
           <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {HOSPITALS.map((h) => (
               <div key={h} className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-4">
-                <BuildingOffice2Icon className="h-5 w-5 shrink-0 text-primary-500" aria-hidden />
+                <BuildingOffice2Icon className="h-5 w-5 shrink-0 text-care-500" aria-hidden />
                 <span className="text-sm font-medium text-neutral-900">{h}</span>
               </div>
             ))}

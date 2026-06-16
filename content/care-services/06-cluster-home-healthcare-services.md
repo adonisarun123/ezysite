@@ -77,7 +77,7 @@ Home healthcare at EzyHelpers is structured around the medical complexity and da
 - ICU discharge coordinated home transition
 - Cancer palliative care (medical comfort + daily support)
 - Dementia and Alzheimer's coordinated care
-- Bedridden patient comprehensive care
+- Bedridden patient full daily care
 - Mobility support and fall prevention for high-risk patients
 - Day shift, night shift, full-time, and live-in arrangements
 
@@ -118,7 +118,7 @@ We speak with you to understand the patient's diagnosis, current care instructio
 
 ### **Step 2: Coordinated Shortlisting**
 
-Based on your needs, we shortlist suitable professionals — both medical and non-medical where required. For example, cardiac patients are matched with nurses experienced in post-cardiac recovery and caretakers familiar with cardiac patient routines.
+Based on your needs, we shortlist suitable professionals, both medical and non-medical where required. For example, cardiac patients are matched with nurses experienced in post-cardiac recovery and caretakers familiar with cardiac patient routines.
 
 ### **Step 3: Interview & Matching**
 
@@ -221,11 +221,11 @@ Call us to confirm coverage in your specific area.
 
 ### **What is the difference between home healthcare and home care?**
 
-Home care primarily covers daily personal support — hygiene, feeding, medication reminders, mobility — without medical procedures. Home healthcare combines this with medical monitoring, wound observation, vital signs documentation, doctor coordination, and where needed, licensed nursing procedures. We offer both and can help you determine which level fits your patient.
+Home care primarily covers daily personal support, hygiene, feeding, medication reminders, mobility, without medical procedures. Home healthcare combines this with medical monitoring, wound observation, vital signs documentation, doctor coordination, and where needed, licensed nursing procedures. We offer both and can help you determine which level fits your patient.
 
 ### **Do you provide post-surgical home healthcare?**
 
-Yes. Post-surgical home healthcare is one of our most common placements. We match professionals based on the specific surgery type — cardiac, orthopaedic, abdominal, neurological, or other — to ensure the team has directly relevant experience.
+Yes. Post-surgical home healthcare is one of our most common placements. We match professionals based on the specific surgery type, cardiac, orthopaedic, abdominal, neurological, or other, to ensure the team has directly relevant experience.
 
 ### **Can home healthcare include medical nursing procedures?**
 
@@ -245,16 +245,16 @@ Yes. Home healthcare can be arranged for long-term support based on the patient'
 
 ### **Can I get a nurse and a caretaker for the same patient?**
 
-Yes — that's exactly what home healthcare is. The nurse handles medical procedures while the caretaker manages daily personal care. We coordinate both placements, ensure smooth handover, and keep communication aligned.
+Yes, that's exactly what home healthcare is. The nurse handles medical procedures while the caretaker manages daily personal care. We coordinate both placements, ensure smooth handover, and keep communication aligned.
 
 ---
 
 ## **Related Services**
 
-- **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)** — When the patient needs only medical procedures (no daily care needed).
-- **[Patient Care Services](/care-services/patient-care-services-bangalore/)** — When the focus is daily care for a patient recovering from surgery or illness.
-- **[Caretaker Services](/care-services/caretaker-services-bangalore/)** — When the patient needs only daily personal care, no medical procedures.
-- **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)** — For high-dependency patients (bedridden, neurological) needing skilled physical handling.
+- **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)**, When the patient needs only medical procedures (no daily care needed).
+- **[Patient Care Services](/care-services/patient-care-services-bangalore/)**, When the focus is daily care for a patient recovering from surgery or illness.
+- **[Caretaker Services](/care-services/caretaker-services-bangalore/)**, When the patient needs only daily personal care, no medical procedures.
+- **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)**, For high-dependency patients (bedridden, neurological) needing skilled physical handling.
 
 ← Back to **[Home Care Services](/care-services/home-care-services-bangalore/)**
 

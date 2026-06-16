@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   WrenchScrewdriverIcon,
   CheckCircleIcon,
@@ -24,6 +26,15 @@ export const metadata: Metadata = {
   title: 'Home Appliance Repair | Expert Technicians | EzyHelpers',
   description: 'Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India.',
   keywords: 'appliance repair, refrigerator repair, washing machine repair, microwave oven repair, AC repair, gas stove repair, geyser repair, TV repair, chimney repair, home appliance service',
+  openGraph: {
+    title: 'Home Appliance Repair | Expert Technicians | EzyHelpers',
+    description: 'Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India.',
+    url: 'https://www.ezyhelpers.com/services/appliance-repair',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Home%20Appliance%20Repair", width: 1200, height: 630, alt: "Home Appliance Repair" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/appliance-repair'
   }
@@ -128,6 +139,7 @@ export default function ApplianceRepairPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Home Appliance Repair"} serviceDescription={"Professional home appliance repair services for washing machines, fridges, ACs & more. Expert technicians with genuine parts, serving homes across India."} serviceType={"Home Appliance Repair"} serviceUrl={"https://www.ezyhelpers.com/services/appliance-repair"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -263,6 +275,11 @@ export default function ApplianceRepairPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book home appliance repair through EzyHelpers?"
+        answer="EzyHelpers provides verified technicians for washing machine, refrigerator, microwave, and other home appliance repairs. Book online or call 080-31411776 for a same-day or next-day visit with transparent, upfront pricing."
+      />
 
       
 

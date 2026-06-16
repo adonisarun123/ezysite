@@ -10,6 +10,7 @@ import {
 import {
   trackCandidateApplicationStart,
   trackCandidateApplicationSubmit,
+  trackFormSubmitSuccess,
 } from '@/lib/analytics'
 
 type Lang = 'en' | 'hi'
@@ -19,7 +20,7 @@ interface Props {
 }
 
 const FIELD =
-  'mt-1.5 block w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-[15px] text-neutral-900 placeholder:text-neutral-400 shadow-sm transition focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/15 hover:border-neutral-300'
+  'mt-1.5 block w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-[15px] text-neutral-900 placeholder:text-neutral-400 shadow-sm transition focus:border-care-500 focus:outline-none focus:ring-4 focus:ring-care-500/15 hover:border-neutral-300'
 const LABEL = 'block text-sm font-semibold text-neutral-900'
 
 const T = {
@@ -161,6 +162,7 @@ export default function CandidateApplicationForm({ lang }: Props) {
         language: lang,
         applicationId: json?.applicationId,
       })
+      trackFormSubmitSuccess('candidate_application_form', { leadId: json?.applicationId, serviceType: candidateType, city: data.area })
     } catch {
       setStatus('error')
     }
@@ -268,8 +270,8 @@ export default function CandidateApplicationForm({ lang }: Props) {
           {errors.area && <FieldError msg={errors.area} />}
         </div>
 
-        <div className="flex items-start gap-3 rounded-xl border border-primary-100 bg-primary-50 p-3">
-          <input id="consent" name="consent" type="checkbox" className="mt-0.5 h-5 w-5 flex-none accent-primary-500" />
+        <div className="flex items-start gap-3 rounded-xl border border-care-100 bg-care-50 p-3">
+          <input id="consent" name="consent" type="checkbox" className="mt-0.5 h-5 w-5 flex-none accent-care-500" />
           <label htmlFor="consent" className="text-[12.5px] leading-snug text-neutral-600">
             {t.consent} <span className="text-red-500">*</span>
           </label>
@@ -285,7 +287,7 @@ export default function CandidateApplicationForm({ lang }: Props) {
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="w-full rounded-full bg-primary-500 px-6 py-3.5 text-[17px] font-bold text-white transition hover:bg-primary-600 disabled:opacity-60"
+          className="w-full rounded-full bg-care-500 px-6 py-3.5 text-[17px] font-bold text-white transition hover:bg-care-600 disabled:opacity-60"
         >
           {status === 'submitting' ? t.submitting : t.submit}
         </button>

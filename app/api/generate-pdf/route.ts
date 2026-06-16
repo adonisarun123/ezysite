@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
 import { validateApiKey } from '@/lib/auth';
+
+// Serverless (Vercel/Lambda): use @sparticuz/chromium's trimmed Chromium build.
+// Local dev: point PUPPETEER_EXECUTABLE_PATH at an installed Chrome/Chromium.
+const isServerless = !!(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
 
 const ALLOWED_HOSTS = new Set<string>([
   'www.ezyhelpers.com',
@@ -76,15 +81,31 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Launch Puppeteer with safe args only (no --no-sandbox / --disable-setuid-sandbox)
+    // Serverless requires chromium.args (incl. --no-sandbox: Lambda/Vercel microVMs
+    // can't create the Chrome sandbox; the function itself is the isolation boundary).
+    // Locally we keep safe args only (no --no-sandbox / --disable-setuid-sandbox).
+    const executablePath = isServerless
+      ? await chromium.executablePath()
+      : process.env.PUPPETEER_EXECUTABLE_PATH;
+
+    if (!executablePath) {
+      return NextResponse.json(
+        { error: 'pdf_unavailable', detail: 'Set PUPPETEER_EXECUTABLE_PATH to a local Chrome binary for non-serverless environments' },
+        { status: 503 }
+      );
+    }
+
     browser = await puppeteer.launch({
       headless: true,
-      args: [
-        '--disable-dev-shm-usage',
-        '--disable-accelerated-2d-canvas',
-        '--no-first-run',
-        '--disable-gpu',
-      ],
+      executablePath,
+      args: isServerless
+        ? chromium.args
+        : [
+            '--disable-dev-shm-usage',
+            '--disable-accelerated-2d-canvas',
+            '--no-first-run',
+            '--disable-gpu',
+          ],
     });
 
     const page = await browser.newPage();

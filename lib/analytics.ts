@@ -150,6 +150,37 @@ export const trackFormComplete = (formName: string, leadId?: string) => {
   });
 };
 
+/**
+ * UNIFIED form-submit conversion event (June 2026).
+ *
+ * Fire this ONCE per form, strictly AFTER the backend confirms success
+ * (Supabase insert / lead-email API 200) — never before validation or the
+ * network call, so the count equals real submissions.
+ *
+ * One canonical event name (`form_submit_success`) across every form on the
+ * site means a single GA4 event to mark as a Key Event / conversion, with
+ * `form_name` as the breakdown dimension. Existing per-form events
+ * (form_complete, care_enquiry_submit, etc.) keep firing for back-compat.
+ */
+export const trackFormSubmitSuccess = (
+  formName: string,
+  details: { leadId?: string; serviceType?: string; city?: string; source?: string } = {}
+) => {
+  trackEvent('form_submit_success', {
+    event_category: 'conversion',
+    event_label: formName,
+    value: 1,
+    custom_parameters: {
+      form_name: formName,
+      lead_id: details.leadId || '',
+      service_type: details.serviceType || '',
+      city: details.city || '',
+      form_source: details.source || (typeof window !== 'undefined' ? window.location.pathname : ''),
+      conversion_type: 'lead_generation',
+    },
+  });
+};
+
 export const trackFormError = (formName: string, errorType: string, errorMessage: string) => {
   trackEvent(GA_EVENTS.FORM_ERROR, {
     event_category: 'form_interaction',

@@ -1,3 +1,4 @@
+import { jsonLdHtml } from '@/lib/jsonLd'
 export default function WebSiteSchema() {
   const websiteSchema = {
     '@context': 'https://schema.org',
@@ -22,7 +23,7 @@ export default function WebSiteSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdHtml(websiteSchema) }}
     />
   )
 }

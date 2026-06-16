@@ -17,7 +17,7 @@ const SLUG = 'wound-care-dressing-at-home-bangalore'
 const PATH = `/care-services/${SLUG}`
 const service = getNestedService(SLUG)!
 
-/* heroStats — INVENTED illustrative figures for layout/AEO. Confirm before launch. */
+/* heroStats, INVENTED illustrative figures for layout/AEO. Confirm before launch. */
 const HERO_STATS = [
   { value: '7,000+', label: 'Dressings done at home' },
   { value: '< 24 hr', label: 'Typical first-visit window' },
@@ -29,7 +29,7 @@ const WOUND_TYPES = [
     icon: PlusCircleIcon,
     title: 'Diabetic foot wounds & ulcers',
     body:
-      'Diabetic wounds heal slowly and infect easily. Our nurses use sterile dressing, monitor for early infection signs, and follow the wound-care plan your doctor or podiatrist has set — a discipline that keeps small wounds from becoming hospital admissions.',
+      'Diabetic wounds heal slowly and infect easily. Our nurses use sterile dressing, monitor for early infection signs, and follow the wound-care plan your doctor or podiatrist has set, a discipline that keeps small wounds from becoming hospital admissions.',
   },
   {
     icon: ShieldCheckIcon,
@@ -54,14 +54,14 @@ const WOUND_TYPES = [
 const INCLUDED = [
   'Assessment of wound size, stage and healing progress at every visit',
   'Sterile cleaning and dressing with single-use, sealed kits',
-  'Early detection of infection — redness, discharge, odour, fever',
+  'Early detection of infection, redness, discharge, odour, fever',
   'Dressing schedule aligned to your doctor’s wound-care plan',
   'Clear advice on nutrition, hygiene and what to watch between visits',
   'Daily clinical log of wound status, shared with your doctor on request',
 ] as const
 
 const WHY = [
-  'Wrong dressing technique is a leading cause of avoidable wound infection — sterile technique matters.',
+  'Wrong dressing technique is a leading cause of avoidable wound infection, sterile technique matters.',
   'Professional dressing at home avoids repeated, painful trips to a clinic for elderly or bedridden patients.',
   'Early infection detection at the bedside is what keeps a manageable wound from becoming a hospital stay.',
   'A documented healing record helps your treating doctor adjust the plan without guesswork.',
@@ -76,12 +76,12 @@ const FAQS = [
   {
     question: 'How much does wound dressing at home cost in Bangalore?',
     answer:
-      `Wound care and dressing at home in Bangalore starts at ${formatPriceWithNote('wound-care').toLowerCase()}. The exact cost depends on the wound type, dressing materials and how often visits are needed — a quick consultation gives you a precise estimate.`,
+      `Wound care and dressing at home in Bangalore starts at ${formatPriceWithNote('wound-care').toLowerCase()}. The exact cost depends on the wound type, dressing materials and how often visits are needed, a quick consultation gives you a precise estimate.`,
   },
   {
     question: 'How often will the nurse need to visit?',
     answer:
-      'Frequency follows your doctor’s plan and the wound itself — some wounds need daily dressing, others every two or three days. The nurse reassesses healing at each visit and adjusts the schedule with you so you are never paying for more visits than the wound needs.',
+      'Frequency follows your doctor’s plan and the wound itself, some wounds need daily dressing, others every two or three days. The nurse reassesses healing at each visit and adjusts the schedule with you so you are never paying for more visits than the wound needs.',
   },
   {
     question: 'Do you bring the dressing materials, or do we?',
@@ -111,7 +111,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Wound Care & Dressing at Home, Bangalore',
+    name: 'EzyHelpers, Wound Care & Dressing at Home, Bangalore',
     medicalSpecialty: 'Nursing',
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -135,7 +135,7 @@ export default function WoundCareDressingView() {
       eyebrow="Bangalore · Wound care at home"
       headlineLead="Wounds that heal,"
       headlineAccent="dressed the right way."
-      lede="Sterile, professional wound dressing at home in Bangalore — for diabetic wounds, bedsores, surgical incisions and ostomy care. Performed by GNM/B.Sc-verified nurses who catch infection early and log every visit."
+      lede="Sterile, professional wound dressing at home in Bangalore, for diabetic wounds, bedsores, surgical incisions and ostomy care. Performed by GNM/B.Sc-verified nurses who catch infection early and log every visit."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -147,9 +147,9 @@ export default function WoundCareDressingView() {
           {HERO_STATS.map((s) => (
             <div
               key={s.label}
-              className="rounded-[20px] border border-neutral-200 bg-primary-50 px-6 py-5 text-center"
+              className="rounded-[20px] border border-neutral-200 bg-care-50 px-6 py-5 text-center"
             >
-              <p className="font-careSerif text-2xl font-medium text-primary-500 sm:text-3xl">{s.value}</p>
+              <p className="font-careSerif text-2xl font-medium text-care-500 sm:text-3xl">{s.value}</p>
               <p className="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">{s.label}</p>
             </div>
           ))}
@@ -158,12 +158,12 @@ export default function WoundCareDressingView() {
 
       {/* Direct answer */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             Wound care at home in Bangalore means a qualified nurse coming to you for{' '}
-            <em className="italic text-primary-500">sterile dressing</em>, infection monitoring and
-            healing assessment — for diabetic wounds, bedsores, surgical incisions and ostomy sites.
+            <em className="italic text-care-500">sterile dressing</em>, infection monitoring and
+            healing assessment, for diabetic wounds, bedsores, surgical incisions and ostomy sites.
             The goal is simple: faster healing, fewer infections, and no painful clinic trips.
           </p>
         </div>
@@ -184,7 +184,7 @@ export default function WoundCareDressingView() {
                 key={title}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950 sm:text-xl">{title}</h3>
@@ -214,7 +214,7 @@ export default function WoundCareDressingView() {
                     key={b}
                     className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5"
                   >
-                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                     <span className="text-sm leading-snug text-neutral-800">{b}</span>
                   </li>
                 ))}
@@ -239,7 +239,7 @@ export default function WoundCareDressingView() {
                 key={p}
                 className="flex items-start gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 px-5 py-4"
               >
-                <span className="font-careSerif text-2xl font-medium text-primary-500">
+                <span className="font-careSerif text-2xl font-medium text-care-500">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className="text-sm leading-snug text-neutral-800 sm:text-base">{p}</span>
@@ -281,7 +281,7 @@ export default function WoundCareDressingView() {
       <CareSubpageClosingCTA
         headlineLead="A clean dressing,"
         headlineAccent="by tomorrow."
-        body="Tell us about the wound. We respond within the hour, match a nurse experienced in your wound type, and arrange the first visit — sterile kit included."
+        body="Tell us about the wound. We respond within the hour, match a nurse experienced in your wound type, and arrange the first visit, sterile kit included."
         enquirySource={PATH}
         related={RELATED as unknown as { label: string; href: string }[]}
       />

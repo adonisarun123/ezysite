@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   GlobeAltIcon,
   CheckCircleIcon,
@@ -23,6 +25,15 @@ export const metadata: Metadata = {
   title: 'Home Gardener Services | Gardening Experts | EzyHelpers',
   description: 'Professional home gardener services for lawn care, plant maintenance & landscaping. Expert gardeners available in residential neighbourhoods near you.',
   keywords: 'gardener services, garden maintenance, plant care, terrace garden, lawn care, landscaping',
+  openGraph: {
+    title: 'Home Gardener Services | Gardening Experts | EzyHelpers',
+    description: 'Professional home gardener services for lawn care, plant maintenance & landscaping. Expert gardeners available in residential neighbourhoods near you.',
+    url: 'https://www.ezyhelpers.com/services/gardener',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Home%20Gardener%20Services", width: 1200, height: 630, alt: "Home Gardener Services" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/gardener'
   }
@@ -115,6 +126,7 @@ export default function GardenerPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Home Gardener Services"} serviceDescription={"Professional home gardener services for lawn care, plant maintenance & landscaping. Expert gardeners available in residential neighbourhoods near you."} serviceType={"Home Gardener Services"} serviceUrl={"https://www.ezyhelpers.com/services/gardener"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -250,6 +262,11 @@ export default function GardenerPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a home gardener through EzyHelpers?"
+        answer="EzyHelpers connects you with experienced, verified gardeners for plant care, lawn maintenance, and garden setup — on-demand or on a regular schedule. Book online or call 080-31411776 for quick scheduling."
+      />
       {/* Why Choose Us */}
       <section className="section-padding bg-white">
         <div className="container-custom">

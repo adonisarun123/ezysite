@@ -3,15 +3,74 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 import { getNestedService } from '@/lib/careServices/newServices'
 
 const SERVICE = getNestedService('dementia-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Memory loss', 'Confusion', 'Wandering', 'Behavioural changes', 'Sundowning', 'Sleep disturbance'],
+  careNeeds: [
+    'Memory support and gentle orientation',
+    'Supervision to prevent wandering',
+    'Help with bathing, dressing, meals and medicines',
+    'Calm handling of confusion, repetition, anger or fear',
+    'Safety monitoring at home',
+    'Emotional companionship through the day',
+  ],
+}
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Dementia',
+  vitalStats: [
+    {
+      stat: '~8.8 million',
+      detail: 'The LASI-DAD study estimates about 8.8 million Indians over 60 are living with dementia today.',
+    },
+    {
+      stat: '60–70%',
+      detail: 'Of all dementia cases, an estimated 60–70% are caused by Alzheimer’s disease (WHO).',
+    },
+    {
+      stat: 'Rises with age',
+      detail: 'Dementia risk climbs steeply after 65, affecting roughly 1 in 10 people in that age group globally.',
+    },
+  ],
+  causes: [
+    'Alzheimer’s disease, by far the most common cause',
+    'Vascular dementia after strokes or years of uncontrolled blood pressure',
+    'Lewy body disease and Parkinson’s-related dementia',
+    'Head injuries, including repeated falls in later life',
+    'Long-term heavy alcohol use',
+    'Some infections and deficiencies affecting the brain, a few causes are reversible, so diagnosis matters',
+  ],
+  symptoms: [
+    'Repeating the same question or story within minutes',
+    'Leaving the stove on, taps running, or doors unlocked',
+    'Confusion about familiar streets, dates or festivals',
+    'Searching for common words mid-sentence',
+    'Losing interest in prayer, friends or favourite TV serials',
+    'New suspicion, accusing family of hiding or stealing things',
+    'Money and medicine mistakes from someone who was always careful',
+    'Looking unkempt in someone who took pride in their appearance',
+  ],
+  whenYouNeedCare: [
+    'They have wandered or got lost, even once is the signal',
+    'Evenings bring agitation or restlessness the family can no longer settle',
+    'Daily bathing, dressing or toileting now needs another pair of hands',
+    'Medicines and gas safety can no longer be left unsupervised',
+    'The family member doing the caring is exhausted, unwell or sleepless',
+    'Sons and daughters are in other cities or abroad with no steady help at home',
+  ],
+}
+
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
-  { value: '3 stages', label: 'matched care — early, moderate, advanced' },
+  { value: '3 stages', label: 'matched care, early, moderate, advanced' },
   { value: '24/7', label: 'live-in cover available for wandering & sundowning' },
   { value: 'Same-day', label: 'placement attempts for urgent situations' },
 ] as const
@@ -24,9 +83,9 @@ const SECTIONS = [
     lede:
       'Dementia care should follow function, not the date of diagnosis. We re-match the caregiver as the condition changes.',
     bullets: [
-      'Early stage — companionship, routine and gentle memory prompts to preserve independence',
-      'Moderate stage — sundowning management, safe bathing, and wandering supervision',
-      'Advanced stage — full live-in attendant care with feeding, mobility and dignity support',
+      'Early stage, companionship, routine and gentle memory prompts to preserve independence',
+      'Moderate stage, sundowning management, safe bathing, and wandering supervision',
+      'Advanced stage, full live-in attendant care with feeding, mobility and dignity support',
       'Free re-assessment whenever the stage changes',
     ],
   },
@@ -37,11 +96,11 @@ const SECTIONS = [
     lede:
       'The behaviours that make families feel they can’t cope alone are exactly what our dementia caregivers are matched on.',
     bullets: [
-      'Sundowning — calming evening routines that reduce late-day agitation',
-      'Wandering — safe supervision, door awareness and gentle redirection',
-      'Repetitive questions — patient, consistent reassurance every time',
-      'Bathing & dressing resistance — dignity-first, fear-aware approaches',
-      'Sleep disturbance — night-time routines that restore rest',
+      'Sundowning, calming evening routines that reduce late-day agitation',
+      'Wandering, safe supervision, door awareness and gentle redirection',
+      'Repetitive questions, patient, consistent reassurance every time',
+      'Bathing & dressing resistance, dignity-first, fear-aware approaches',
+      'Sleep disturbance, night-time routines that restore rest',
     ],
   },
   {
@@ -65,7 +124,7 @@ const SECTIONS = [
       'The hardest part of dementia care is often the toll on the spouse and adult children carrying it.',
     bullets: [
       'Scheduled respite hours so family members can rest and work',
-      'Daily WhatsApp updates — ideal for NRI and distant family',
+      'Daily WhatsApp updates, ideal for NRI and distant family',
       'Mood and behaviour log shared with your family doctor',
       'Free replacement caregiver if the match isn’t working',
     ],
@@ -76,7 +135,7 @@ const FAQS = [
   {
     question: 'Is a regular caretaker enough for dementia care, or do we need a specialist?',
     answer:
-      'Early-stage dementia can often be supported by an experienced caretaker familiar with cognitive decline. For moderate-to-advanced stages — with sundowning, wandering or aggression — you need a caregiver trained in dementia-specific behaviour management. In Bangalore, we match accordingly and re-match as the condition progresses.',
+      'Early-stage dementia can often be supported by an experienced caretaker familiar with cognitive decline. For moderate-to-advanced stages, with sundowning, wandering or aggression, you need a caregiver trained in dementia-specific behaviour management. In Bangalore, we match accordingly and re-match as the condition progresses.',
   },
   {
     question: 'How do I know which stage of dementia my parent is in?',
@@ -91,12 +150,12 @@ const FAQS = [
   {
     question: 'What does dementia care at home cost in Bangalore?',
     answer:
-      'Cost depends on the stage and intensity of care needed — day shifts and companionship hours are more affordable, while live-in and advanced-stage dementia care cost more because they need specialised, round-the-clock support. A free consultation gives you a precise, transparent estimate for your situation.',
+      'Cost depends on the stage and intensity of care needed, day shifts and companionship hours are more affordable, while live-in and advanced-stage dementia care cost more because they need specialised, round-the-clock support. A free consultation gives you a precise, transparent estimate for your situation.',
   },
   {
     question: 'Can the same caregiver continue as the dementia progresses?',
     answer:
-      'Where the caregiver has the experience for the next stage, we keep them for continuity — which matters enormously to someone with memory loss. If advanced needs require a trained attendant, we manage a smooth, briefed handover.',
+      'Where the caregiver has the experience for the next stage, we keep them for continuity, which matters enormously to someone with memory loss. If advanced needs require a trained attendant, we manage a smooth, briefed handover.',
   },
   {
     question: 'Do you cover wandering and night-time safety?',
@@ -109,7 +168,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Dementia & Alzheimer’s Care at Home, Bangalore',
+    name: 'EzyHelpers, Dementia & Alzheimer’s Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Neurology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -145,20 +204,24 @@ export default function DementiaCareAtHomeView() {
           {HERO_STATS.map((s) => (
             <div
               key={s.label}
-              className="rounded-[24px] border border-neutral-200 bg-primary-50 p-6 text-center"
+              className="rounded-[24px] border border-neutral-200 bg-care-50 p-6 text-center"
             >
-              <div className="font-careSerif text-3xl font-medium tracking-tight text-primary-500">{s.value}</div>
+              <div className="font-careSerif text-3xl font-medium tracking-tight text-care-500">{s.value}</div>
               <div className="mt-2 text-sm leading-snug text-neutral-600">{s.label}</div>
             </div>
           ))}
         </div>
       </section>
 
+      <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
+
       {/* Rich sections */}
       {SECTIONS.map((sec, idx) => (
         <section
           key={sec.eyebrow}
-          className={`px-4 py-20 sm:px-6 sm:py-24 ${idx % 2 === 0 ? 'bg-white' : 'bg-primary-50'}`}
+          className={`px-4 py-20 sm:px-6 sm:py-24 ${idx % 2 === 0 ? 'bg-white' : 'bg-care-50'}`}
         >
           <div className="mx-auto max-w-5xl">
             <SectionHeader
@@ -173,7 +236,7 @@ export default function DementiaCareAtHomeView() {
                   key={b}
                   className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5"
                 >
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                   <span className="text-sm leading-snug text-neutral-800">{b}</span>
                 </li>
               ))}
@@ -181,6 +244,8 @@ export default function DementiaCareAtHomeView() {
           </div>
         </section>
       ))}
+
+      <CaregiverScopeSection />
 
       {/* FAQs */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">

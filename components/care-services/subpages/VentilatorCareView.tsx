@@ -87,7 +87,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Ventilator Care at Home, Bangalore',
+    name: 'EzyHelpers, Ventilator Care at Home, Bangalore',
     medicalSpecialty: ['Critical Care', 'Pulmonology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -111,13 +111,13 @@ export default function VentilatorCareView() {
       eyebrow="Bangalore · Critical care at home"
       headlineLead="Ventilator care at home,"
       headlineAccent="managed by experts."
-      lede="Invasive and non-invasive ventilation, set up safely in your home and run round the clock by critical-care nurses under doctor supervision — with continuous monitoring and a clear escalation plan."
+      lede="Invasive and non-invasive ventilation, set up safely in your home and run round the clock by critical-care nurses under doctor supervision, with continuous monitoring and a clear escalation plan."
       enquirySource={PATH}
       jsonLd={JSONLD}
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             {NESTED.description}
           </p>
@@ -134,7 +134,7 @@ export default function VentilatorCareView() {
                   key={b}
                   className="flex items-start gap-2.5 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5 text-sm leading-snug text-neutral-800"
                 >
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" aria-hidden />
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-600" aria-hidden />
                   <span>{b}</span>
                 </li>
               ))}

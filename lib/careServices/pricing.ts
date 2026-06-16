@@ -54,6 +54,12 @@ export type CarePriceKey =
   | 'mental-health'
   | 'post-fall-mobility'
   | 'parkinsons-care'
+  | 'alzheimers-care'
+  | 'respite-care'
+  | 'diabetes-care'
+  | 'ms-als-care'
+  | 'arthritis-care'
+  | 'respiratory-care'
   // Nursing nested
   | 'wound-care'
   | 'iv-therapy'
@@ -75,6 +81,7 @@ export type CarePriceKey =
   | 'geriatric-physio'
   | 'cardio-respiratory-physio'
   | 'paediatric-physio'
+  | 'speech-rehab'
   // Critical care nested
   | 'ventilator-care'
   | 'icu-setup'
@@ -108,6 +115,12 @@ export const CARE_PRICING: Record<CarePriceKey, CarePrice> = {
   'mental-health': { amount: 1200, unit: 'session', note: 'Counselling from' },
   'post-fall-mobility': { amount: 18000, unit: 'mo', note: 'From' },
   'parkinsons-care': { amount: 22000, unit: 'mo', note: 'Live-in from' },
+  'alzheimers-care': { amount: 24000, unit: 'mo', note: 'Live-in from' },
+  'respite-care': { amount: 1200, unit: 'day', note: '12-hr shift from' },
+  'diabetes-care': { amount: 18000, unit: 'mo', note: 'From' },
+  'ms-als-care': { amount: 26000, unit: 'mo', note: 'Live-in from' },
+  'arthritis-care': { amount: 18000, unit: 'mo', note: 'From' },
+  'respiratory-care': { amount: 22000, unit: 'mo', note: 'From' },
 
   // ── Nursing nested ───────────────────────────────────────
   'wound-care': { amount: 600, unit: 'visit', note: 'Per dressing from' },
@@ -132,6 +145,7 @@ export const CARE_PRICING: Record<CarePriceKey, CarePrice> = {
   'geriatric-physio': { amount: 700, unit: 'session', note: 'Per session from' },
   'cardio-respiratory-physio': { amount: 900, unit: 'session', note: 'Per session from' },
   'paediatric-physio': { amount: 900, unit: 'session', note: 'Per session from' },
+  'speech-rehab': { amount: 900, unit: 'session', note: 'Per session from' },
 
   // ── Critical care nested ─────────────────────────────────
   'ventilator-care': { amount: 2500, unit: 'day', note: 'From' },

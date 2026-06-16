@@ -32,7 +32,7 @@ const CORE_MODULES = [
     title: 'Vital signs & escalation',
     hours: '6 hrs',
     body:
-      'BP, SpO₂, pulse, glucose, temperature — measurement, recording, recognising emergencies, when to call the family vs. an ambulance.',
+      'BP, SpO₂, pulse, glucose, temperature, measurement, recording, recognising emergencies, when to call the family vs. an ambulance.',
   },
   {
     n: '04',
@@ -84,7 +84,7 @@ const SPECIALISATIONS = [
     title: 'Post-surgical recovery',
     hours: '16 hrs',
     body:
-      'Wound observation (not dressing — that’s nursing), drain care, mobilisation timing, pain assessment, complication watch.',
+      'Wound observation (not dressing, that’s nursing), drain care, mobilisation timing, pain assessment, complication watch.',
   },
 ] as const
 
@@ -99,7 +99,7 @@ const ASSESSMENT = [
   },
   {
     title: 'Scenario interview',
-    body: '“What would you do if…” — five real-world scenarios. We’re looking for calm, judgement, and willingness to escalate.',
+    body: '“What would you do if…”, five real-world scenarios. We’re looking for calm, judgement, and willingness to escalate.',
   },
   {
     title: 'Probationary placement',
@@ -126,7 +126,7 @@ const FAQS = [
   {
     question: 'Is training ongoing or one-time?',
     answer:
-      'Ongoing. Active caregivers attend a 4-hour refresher every quarter. Anytime our protocols change — for example if dementia evidence updates or we add a new condition specialisation — affected caregivers are recalled for the relevant module.',
+      'Ongoing. Active caregivers attend a 4-hour refresher every quarter. Anytime our protocols change, for example if dementia evidence updates or we add a new condition specialisation, affected caregivers are recalled for the relevant module.',
   },
   {
     question: 'Can a family request additional training for a specific case?',
@@ -202,7 +202,7 @@ export default function CaregiverTrainingView() {
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-careSerif text-3xl font-medium text-primary-500">{m.n}</span>
+                  <span className="font-careSerif text-3xl font-medium text-care-500">{m.n}</span>
                   <span className="rounded-full bg-neutral-900/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-700">
                     {m.hours}
                   </span>
@@ -218,7 +218,7 @@ export default function CaregiverTrainingView() {
       </section>
 
       {/* Specialisations */}
-      <section className="bg-primary-50 px-4 py-20 sm:px-6 sm:py-24">
+      <section className="bg-care-50 px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             eyebrow="Specialisations"
@@ -232,13 +232,13 @@ export default function CaregiverTrainingView() {
                 key={title}
                 className="flex items-start gap-5 rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <div>
                   <div className="flex items-center gap-3">
                     <h3 className="font-careSerif text-lg font-bold tracking-tight text-neutral-950">{title}</h3>
-                    <span className="rounded-full bg-primary-500/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-500">
+                    <span className="rounded-full bg-care-500/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-care-500">
                       {hours}
                     </span>
                   </div>
@@ -257,7 +257,7 @@ export default function CaregiverTrainingView() {
             eyebrow="Assessment"
             titleLead="Four checks"
             titleMuted="before independent placement."
-            lede="Training without assessment is theatre. Every caregiver clears all four — and is held back if they don’t."
+            lede="Training without assessment is theatre. Every caregiver clears all four, and is held back if they don’t."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {ASSESSMENT.map((a, i) => (
@@ -301,7 +301,7 @@ export default function CaregiverTrainingView() {
                 key={b}
                 className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5"
               >
-                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                 <span className="text-sm leading-snug text-neutral-800">{b}</span>
               </li>
             ))}
@@ -322,7 +322,7 @@ export default function CaregiverTrainingView() {
       <CareSubpageClosingCTA
         headlineLead="Trained for the moments"
         headlineAccent="that actually matter."
-        body="Tell us what you need. We’ll match you with a caregiver whose training matches the case — not just the calendar."
+        body="Tell us what you need. We’ll match you with a caregiver whose training matches the case, not just the calendar."
         enquirySource={PATH}
         related={[
           { label: 'Verification Process', href: '/care-services/caregiver-verification-process' },

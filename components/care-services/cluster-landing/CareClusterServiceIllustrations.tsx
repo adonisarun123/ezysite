@@ -108,7 +108,7 @@ function FamilyBridge(props: Props) {
   )
 }
 
-/** Wound dressing — gentle bandage cross. */
+/** Wound dressing, gentle bandage cross. */
 function WoundCare(props: Props) {
   return (
     <svg {...baseProps} {...props}>
@@ -124,7 +124,7 @@ function WoundCare(props: Props) {
   )
 }
 
-/** IV therapy — drip line. */
+/** IV therapy, drip line. */
 function IvTherapy(props: Props) {
   return (
     <svg {...baseProps} {...props}>
@@ -141,7 +141,7 @@ function IvTherapy(props: Props) {
   )
 }
 
-/** Vitals monitoring — heartbeat ring. */
+/** Vitals monitoring, heartbeat ring. */
 function Monitoring(props: Props) {
   return (
     <svg {...baseProps} {...props}>
@@ -167,7 +167,7 @@ function Mobility(props: Props) {
   )
 }
 
-/** Bed care — patient in bed. */
+/** Bed care, patient in bed. */
 function BedCare(props: Props) {
   return (
     <svg {...baseProps} {...props}>
@@ -182,7 +182,7 @@ function BedCare(props: Props) {
   )
 }
 
-/** Night supervision — moon + stars. */
+/** Night supervision, moon + stars. */
 function NightShift(props: Props) {
   return (
     <svg {...baseProps} {...props}>
@@ -197,7 +197,7 @@ function NightShift(props: Props) {
   )
 }
 
-/** Day shift — sun rising over rooftop. */
+/** Day shift, sun rising over rooftop. */
 function DayShift(props: Props) {
   return (
     <svg {...baseProps} {...props}>
@@ -211,7 +211,7 @@ function DayShift(props: Props) {
   )
 }
 
-/** Recovery — heart with arc (post-op rehab). */
+/** Recovery, heart with arc (post-op rehab). */
 function Recovery(props: Props) {
   return (
     <svg {...baseProps} {...props}>
@@ -223,7 +223,7 @@ function Recovery(props: Props) {
   )
 }
 
-/** Companionship & social — chat bubbles. */
+/** Companionship & social, chat bubbles. */
 function Conversation(props: Props) {
   return (
     <svg {...baseProps} {...props}>
@@ -237,7 +237,7 @@ function Conversation(props: Props) {
   )
 }
 
-/** Trained / heavy handling — hoist arm. */
+/** Trained / heavy handling, hoist arm. */
 function Transfer(props: Props) {
   return (
     <svg {...baseProps} {...props}>
@@ -251,7 +251,7 @@ function Transfer(props: Props) {
   )
 }
 
-/** Verified / shield — trust. */
+/** Verified / shield, trust. */
 function Shield(props: Props) {
   return (
     <svg {...baseProps} {...props}>
@@ -262,7 +262,7 @@ function Shield(props: Props) {
   )
 }
 
-/** Generic care / heart — fallback / palliative. */
+/** Generic care / heart, fallback / palliative. */
 function Heart(props: Props) {
   return (
     <svg {...baseProps} {...props}>
@@ -296,7 +296,7 @@ export const SERVICE_ILLUSTRATIONS = {
 
 export type ServiceIllustrationKey = keyof typeof SERVICE_ILLUSTRATIONS
 
-/** Default fallback by tone — keeps unmapped cards visually distinct. */
+/** Default fallback by tone, keeps unmapped cards visually distinct. */
 export const ILLUSTRATION_BY_TONE: Record<string, ServiceIllustrationKey> = {
   c1: 'companionship',
   c2: 'memory',

@@ -9,15 +9,76 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/bedridden-patient-care-bangalore'
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Complete bedside care', 'Long-term immobility', 'Diaper care', 'Bed sores risk', 'Tube feeding (nurse-supported)'],
+  careNeeds: [
+    'Bed bath and oral hygiene',
+    'Diaper changing with dignity',
+    'Feeding assistance',
+    'Two-hourly position changing',
+    'Bed-sore prevention and skin checks',
+    'Linen changing',
+    'Basic vitals observation',
+    'Emotional comfort and presence',
+  ],
+}
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Long-term immobility',
+  vitalStats: [
+    {
+      stat: 'Up to 1 in 3',
+      detail: 'Pressure ulcers can develop in up to a third of immobile patients when regular repositioning is not maintained, and most are preventable.',
+    },
+    {
+      stat: '2 hours',
+      detail: 'The internationally accepted repositioning standard for bedridden patients is every 2 hours, day and night.',
+    },
+    {
+      stat: 'Days, not weeks',
+      detail: 'Muscle loss, stiff joints and skin breakdown can begin within days of becoming bedbound, early protocol matters.',
+    },
+  ],
+  causes: [
+    'Stroke with severe one-sided weakness or paralysis',
+    'Advanced dementia, Parkinson’s or other neurodegenerative disease',
+    'Hip fracture or major surgery with prolonged recovery',
+    'Late-stage heart, lung or kidney disease causing severe weakness',
+    'Spinal cord injury or advanced arthritis limiting movement',
+    'Terminal illness in its final phase',
+  ],
+  symptoms: [
+    'Redness over heels, hips, sacrum or elbows that doesn’t fade within 30 minutes',
+    'Skin that feels warm, boggy or broken at pressure points',
+    'Joints becoming stiff and harder to straighten (early contractures)',
+    'Eating and drinking less, with gradual weight loss',
+    'Coughing or gurgling during meals, a swallowing-safety warning',
+    'Fewer wet diapers or dark urine, suggesting dehydration',
+    'New drowsiness, confusion or low-grade fever',
+    'Low mood, silence or saying they feel like a burden',
+  ],
+  whenYouNeedCare: [
+    'Night-time turning isn’t happening, no family member can sustain a 2-hour schedule',
+    'A red or broken patch of skin has already appeared at a pressure point',
+    'Lifting and transferring the patient is straining (or injuring) family members',
+    'Incontinence care is needed several times a day and dignity is suffering',
+    'Feeding, hydration and medicines need tracking the family can’t keep consistent',
+    'The household has been running on adrenaline for weeks and needs trained relief',
+  ],
+}
 
 const PROTOCOL = [
   {
     icon: ClockIcon,
     title: 'Repositioning every 2 hours',
     body:
-      'A simple discipline that prevents most pressure sores. Caregivers maintain a written turning schedule — no clock-skipping, even at 3am.',
+      'A simple discipline that prevents most pressure sores. Caregivers maintain a written turning schedule, no clock-skipping, even at 3am.',
   },
   {
     icon: ShieldCheckIcon,
@@ -64,9 +125,9 @@ const RED_FLAGS = [
 
 const FAQS = [
   {
-    question: 'A general caretaker vs a trained attendant — which is right for bedridden care?',
+    question: 'A general caretaker vs a trained attendant, which is right for bedridden care?',
     answer:
-      'Almost always a trained attendant. Bedridden care requires safe physical handling — repositioning, transfers, pressure-sore protocol — that general caretakers aren’t trained for. The cost difference is small (₹4,000–₹6,000/month) and the safety difference is significant.',
+      'Almost always a trained attendant. Bedridden care requires safe physical handling, repositioning, transfers, pressure-sore protocol, that general caretakers aren’t trained for. The cost difference is small (₹4,000–₹6,000/month) and the safety difference is significant.',
   },
   {
     question: 'How often should the patient be turned?',
@@ -81,7 +142,7 @@ const FAQS = [
   {
     question: 'What if a pressure sore develops despite protocol?',
     answer:
-      'It happens — bedridden skin is fragile. Stage 1 sores are managed by the trained attendant. Stage 2+ sores require a nurse for dressing. We arrange nurse visits as needed and notify the family doctor for any wound that isn’t improving in 5–7 days.',
+      'It happens, bedridden skin is fragile. Stage 1 sores are managed by the trained attendant. Stage 2+ sores require a nurse for dressing. We arrange nurse visits as needed and notify the family doctor for any wound that isn’t improving in 5–7 days.',
   },
   {
     question: 'Is hospital-grade equipment needed at home?',
@@ -91,7 +152,7 @@ const FAQS = [
   {
     question: 'How do you handle the emotional difficulty of bedridden care?',
     answer:
-      'Bedridden patients often feel like a burden. The caregiver’s tone, presence, and patience matter as much as the protocol. We screen for calmness and warmth in addition to skill — and we share family communication updates to keep distant relatives connected.',
+      'Bedridden patients often feel like a burden. The caregiver’s tone, presence, and patience matter as much as the protocol. We screen for calmness and warmth in addition to skill, and we share family communication updates to keep distant relatives connected.',
   },
   {
     question: 'What does live-in care for a bedridden patient cost in Bangalore?',
@@ -104,7 +165,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Bedridden Patient Care, Bangalore',
+    name: 'EzyHelpers, Bedridden Patient Care, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Palliative care'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -128,7 +189,7 @@ export default function BedriddenCareView() {
       eyebrow="Bangalore · High-dependency care"
       headlineLead="Bedridden, but not"
       headlineAccent="held back."
-      lede="Trained attendants for bedridden patients in Bangalore — pressure-sore prevention, dignified incontinence care, safe transfers, and the calm patience this work demands."
+      lede="Trained attendants for bedridden patients in Bangalore, pressure-sore prevention, dignified incontinence care, safe transfers, and the calm patience this work demands."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -136,16 +197,20 @@ export default function BedriddenCareView() {
     >
       {/* Direct answer */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Bedridden patient care should be done by a <em className="italic text-primary-500">trained attendant</em>,
-            not a general caretaker. The work — repositioning every two hours, twice-daily skin
-            inspection, dignified incontinence care, and safe transfers — is unforgiving of inexperience.
+            Bedridden patient care should be done by a <em className="italic text-care-500">trained attendant</em>,
+            not a general caretaker. The work, repositioning every two hours, twice-daily skin
+            inspection, dignified incontinence care, and safe transfers, is unforgiving of inexperience.
             EzyHelpers places trained attendants live-in for ₹24,000–₹34,000/month.
           </p>
         </div>
       </section>
+
+      <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {/* Protocol */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
@@ -162,7 +227,7 @@ export default function BedriddenCareView() {
                 key={title}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950 sm:text-xl">
@@ -176,14 +241,14 @@ export default function BedriddenCareView() {
       </section>
 
       {/* Red flags */}
-      <section className="bg-primary-50 px-4 py-20 sm:px-6 sm:py-24">
+      <section className="bg-care-50 px-4 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
               <SectionHeader
                 eyebrow="When to escalate"
                 titleLead="Eight signs"
-                titleMuted="that need a doctor — today."
+                titleMuted="that need a doctor, today."
                 lede="Bedridden patients deteriorate quietly. The trained attendants we place are taught to recognise these signs and act."
               />
             </div>
@@ -192,11 +257,11 @@ export default function BedriddenCareView() {
                 {RED_FLAGS.map((s) => (
                   <li
                     key={s}
-                    className="flex items-start gap-2 rounded-2xl border border-primary-500/20 bg-white px-4 py-3.5"
+                    className="flex items-start gap-2 rounded-2xl border border-care-500/20 bg-white px-4 py-3.5"
                   >
                     <span
                       aria-hidden
-                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-primary-500"
+                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-care-500"
                     />
                     <span className="text-sm leading-snug text-neutral-800">{s}</span>
                   </li>
@@ -235,13 +300,15 @@ export default function BedriddenCareView() {
                 key={b}
                 className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-[#F7F7F2] px-4 py-3.5"
               >
-                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                 <span className="text-sm leading-snug text-neutral-800">{b}</span>
               </li>
             ))}
           </ul>
         </div>
       </section>
+
+      <CaregiverScopeSection />
 
       {/* FAQs */}
       <section className="bg-[#F7F7F2] px-4 py-20 sm:px-6 sm:py-24">

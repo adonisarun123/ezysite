@@ -54,7 +54,7 @@ const FAQS = [
   {
     question: 'Can a real ICU be set up at home?',
     answer:
-      'Yes — for clinically stable patients, a home ICU replicates the equipment, staffing and protocols of a hospital ICU. We install hospital-grade machines, place critical-care nurses on 24/7 shifts and run everything under doctor supervision. Suitability is confirmed by your doctor first. This is general information, not medical advice.',
+      'Yes, for clinically stable patients, a home ICU replicates the equipment, staffing and protocols of a hospital ICU. We install hospital-grade machines, place critical-care nurses on 24/7 shifts and run everything under doctor supervision. Suitability is confirmed by your doctor first. This is general information, not medical advice.',
   },
   {
     question: 'What equipment is included in a home ICU?',
@@ -87,7 +87,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — ICU Setup at Home, Bangalore',
+    name: 'EzyHelpers, ICU Setup at Home, Bangalore',
     medicalSpecialty: ['Intensive Care', 'Critical Care'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -111,13 +111,13 @@ export default function IcuSetupAtHomeView() {
       eyebrow="Bangalore · Critical care at home"
       headlineLead="A complete ICU,"
       headlineAccent="installed in your home."
-      lede="Beds, monitors, ventilators, suction and trained staff — installed and managed to hospital protocols. A full intensive-care environment at home, supervised by a doctor and staffed by critical-care nurses."
+      lede="Beds, monitors, ventilators, suction and trained staff, installed and managed to hospital protocols. A full intensive-care environment at home, supervised by a doctor and staffed by critical-care nurses."
       enquirySource={PATH}
       jsonLd={JSONLD}
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             {NESTED.description}
           </p>
@@ -134,7 +134,7 @@ export default function IcuSetupAtHomeView() {
                   key={b}
                   className="flex items-start gap-2.5 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5 text-sm leading-snug text-neutral-800"
                 >
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" aria-hidden />
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-600" aria-hidden />
                   <span>{b}</span>
                 </li>
               ))}
@@ -158,7 +158,7 @@ export default function IcuSetupAtHomeView() {
       <CareSubpageClosingCTA
         headlineLead="Need an ICU at home, fast?"
         headlineAccent="We’ll have it ready."
-        body="Speak to a critical-care advisor. We assess the case, install hospital-grade equipment and place critical-care nurses — often before discharge."
+        body="Speak to a critical-care advisor. We assess the case, install hospital-grade equipment and place critical-care nurses, often before discharge."
         enquirySource={PATH}
         primaryCtaLabel="Speak to a critical-care advisor"
         related={[

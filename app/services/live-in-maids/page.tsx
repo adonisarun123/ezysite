@@ -2,11 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CityBlogLinks from '@/components/CityBlogLinks'
 import NestCTA from '@/components/NestCTA'
 
 // ISR: revalidate hourly
 export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   HomeIcon, 
   ShieldCheckIcon, 
@@ -34,6 +37,15 @@ export const metadata: Metadata = {
   title: 'Live-In Maid Services | 24/7 Dedicated Home Help',
   description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
   keywords: 'live-in maid, 24-hour maid, live in house maid, housekeeping, cooking, babysitting, elderly care',
+  openGraph: {
+    title: 'Live-In Maid Services | 24/7 Dedicated Home Help',
+    description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
+    url: 'https://www.ezyhelpers.com/services/live-in-maids',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Live-In%20Maid%20Services", width: 1200, height: 630, alt: "Live-In Maid Services" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/live-in-maids'
   }
@@ -110,6 +122,7 @@ export default function LiveInMaidsPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Live-In Maid Services"} serviceDescription={"Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed."} serviceType={"Live-In Maid Services"} serviceUrl={"https://www.ezyhelpers.com/services/live-in-maids"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -341,6 +354,11 @@ export default function LiveInMaidsPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a live-in maid through EzyHelpers?"
+        answer="EzyHelpers provides background-verified live-in maids who stay at your home and handle cleaning, cooking support, and daily chores. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper."
+      />
 
       {/* Why Choose Section */}
       <section className="section-padding bg-white">
@@ -720,6 +738,13 @@ export default function LiveInMaidsPage() {
           { name: "Bareilly", href: "/cities/bareilly/live-in-maid" },
         ]}
       />
+      {/* Blog guides interlinking */}
+      <CityBlogLinks
+        tags={['live-in maid', '24 hour maid', 'domestic help']}
+        title="Live-In Maid Hiring Guides"
+        subtitle="Costs, comparisons, and verification checklists from our experts."
+      />
+
       <Footer />
       </main>
     </>

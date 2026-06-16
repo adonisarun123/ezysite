@@ -41,6 +41,7 @@ const footerLinks = {
   ],
   company: [
     { name: 'About Us', href: '/about' },
+    { name: 'Hire Helper', href: '/hire-helper' },
     { name: 'Executive Summary', href: '/executive-summary' },
     { name: 'Careers', href: '/careers' },
     { name: 'How It Works', href: '/how-it-works' },
@@ -202,7 +203,7 @@ export default function Footer() {
 
             {/* Bangalore care cluster */}
             <div>
-              <h3 className="text-lg font-semibold mb-8 font-display text-white">Care Services — Bangalore</h3>
+              <h3 className="text-lg font-semibold mb-8 font-display text-white">Care Services in Bangalore</h3>
               <ul className="space-y-4">
                 <li>
                   <Link
@@ -311,7 +312,7 @@ export default function Footer() {
                     Talk to us
                   </p>
                   <p className="mt-2 text-base leading-relaxed text-gray-200 sm:text-[15px]">
-                    Quickest way to reach a real human — WhatsApp or phone.
+                    Quickest way to reach a real human: WhatsApp or phone.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2.5">
                     <Link

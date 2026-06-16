@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   CogIcon, 
   HeartIcon, 
@@ -26,6 +28,15 @@ export const metadata: Metadata = {
   title: 'Domestic Help in Kanpur | Verified Maids & Home Staff | EzyHelpers',
   description:
     'Book background-verified maids, cooks, nannies, and drivers in Kanpur for industrial, business, and residential households.',
+  openGraph: {
+    title: "Domestic Help in Kanpur | Verified Maids & Home Staff | EzyHelpers",
+    description: "Book background-verified maids, cooks, nannies, and drivers in Kanpur for industrial, business, and residential households.",
+    url: "https://www.ezyhelpers.com/cities/kanpur",
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Domestic%20Help%20in%20Kanpur", width: 1200, height: 630, alt: "Domestic Help in Kanpur" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/cities/kanpur',
     languages: selfReferencingLanguages('/cities/kanpur'),
@@ -59,6 +70,7 @@ export default function KanpurPage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Kanpur" stateName="Uttar Pradesh" postalCode="208001" latitude={26.4499} longitude={80.3319} />
       <Navbar />
       <div className="bg-background-primary">
       {/* Hero Section */}
@@ -144,6 +156,11 @@ export default function KanpurPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire domestic help in Kanpur through EzyHelpers?"
+        answer="EzyHelpers provides background-verified maids, cooks, babysitters, and elderly caretakers across Kanpur. Placement typically takes 24–72 hours, with live-in, full-time, and part-time options and a quick replacement guarantee."
+      />
 
       {/* Local Services */}
       <section className="section-padding bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">

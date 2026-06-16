@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   ComputerDesktopIcon, 
   HeartIcon, 
@@ -18,6 +20,15 @@ export const metadata: Metadata = {
   title: 'Domestic Help in Noida & Greater Noida | EzyHelpers',
   description:
     'Verified maids, cooks, and home help in Noida sectors and Greater Noida. Book trusted domestic staff for apartments and gated communities.',
+  openGraph: {
+    title: "Domestic Help in Noida & Greater Noida | EzyHelpers",
+    description: "Verified maids, cooks, and home help in Noida sectors and Greater Noida. Book trusted domestic staff for apartments and gated communities.",
+    url: "https://www.ezyhelpers.com/cities/noida",
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Domestic%20Help%20in%20Noida%20%26%20Greater%20Noida", width: 1200, height: 630, alt: "Domestic Help in Noida & Greater Noida" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/cities/noida',
     languages: selfReferencingLanguages('/cities/noida'),
@@ -51,6 +62,7 @@ export default function NoidaPage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Noida" stateName="Uttar Pradesh" postalCode="201301" latitude={28.5355} longitude={77.391} />
       <Navbar />
       <div className="bg-background-primary">
       {/* Hero Section */}
@@ -92,6 +104,11 @@ export default function NoidaPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a maid in Noida through EzyHelpers?"
+        answer="EzyHelpers provides background-verified maids, cooks, nannies, and elderly caretakers across Noida and Greater Noida. Placement typically takes 24–72 hours, with live-in, full-time, and part-time options and a quick replacement guarantee."
+      />
 
       {/* Local Services */}
       <section className="section-padding bg-white">

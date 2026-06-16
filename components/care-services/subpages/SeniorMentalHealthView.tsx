@@ -9,7 +9,7 @@ import { formatPriceWithNote } from '@/lib/careServices/pricing'
 const SERVICE = getNestedService('senior-mental-health-counselling-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
   { value: 'At home', label: 'counselling in familiar, private surroundings' },
@@ -23,7 +23,7 @@ const SECTIONS = [
     titleLead: 'Low mood in seniors',
     titleMuted: 'is not just “old age”.',
     lede:
-      'Depression, anxiety and isolation are common — and treatable — in later life. The first step is recognising them rather than dismissing them.',
+      'Depression, anxiety and isolation are common, and treatable, in later life. The first step is recognising them rather than dismissing them.',
     bullets: [
       'Persistent sadness, withdrawal or loss of interest',
       'Sleep changes, low appetite or unexplained fatigue',
@@ -36,7 +36,7 @@ const SECTIONS = [
     titleLead: 'Counselling that comes',
     titleMuted: 'to your living room.',
     lede:
-      'At-home emotional support removes the barriers of travel, stigma and unfamiliar clinics — care happens where your parent feels safe.',
+      'At-home emotional support removes the barriers of travel, stigma and unfamiliar clinics, care happens where your parent feels safe.',
     bullets: [
       'One-to-one emotional support and active listening',
       'Coping strategies for anxiety, grief and loneliness',
@@ -49,7 +49,7 @@ const SECTIONS = [
     titleLead: 'Mind and body,',
     titleMuted: 'cared for together.',
     lede:
-      'Mental wellbeing improves alongside daily habits — sleep, activity, nutrition and social connection all matter.',
+      'Mental wellbeing improves alongside daily habits, sleep, activity, nutrition and social connection all matter.',
     bullets: [
       'Encouraging social engagement and meaningful activity',
       'Support for sleep hygiene and daily rhythm',
@@ -62,7 +62,7 @@ const SECTIONS = [
     titleLead: 'Guidance for',
     titleMuted: 'the whole family.',
     lede:
-      'Families often feel helpless watching a parent struggle emotionally. We help you understand what to do — and what not to.',
+      'Families often feel helpless watching a parent struggle emotionally. We help you understand what to do, and what not to.',
     bullets: [
       'Practical guidance on supporting a low or anxious parent',
       'Updates that keep distant and NRI families involved',
@@ -76,7 +76,7 @@ const FAQS = [
   {
     question: 'What kind of mental health support do you provide for seniors at home?',
     answer:
-      'We provide at-home emotional support and counselling-style care for depression, anxiety, grief and isolation — including active listening, coping strategies, routine-building and family guidance. For clinical diagnoses or medication, we coordinate with qualified mental-health professionals.',
+      'We provide at-home emotional support and counselling-style care for depression, anxiety, grief and isolation, including active listening, coping strategies, routine-building and family guidance. For clinical diagnoses or medication, we coordinate with qualified mental-health professionals.',
   },
   {
     question: 'How do I know if my elderly parent needs mental health support?',
@@ -109,7 +109,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Senior Mental Health & Counselling at Home, Bangalore',
+    name: 'EzyHelpers, Senior Mental Health & Counselling at Home, Bangalore',
     medicalSpecialty: ['Geriatrics', 'Psychiatric'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -133,7 +133,7 @@ export default function SeniorMentalHealthView() {
       eyebrow="Bangalore · Emotional wellbeing at home"
       headlineLead="Emotional wellbeing,"
       headlineAccent="treated with dignity."
-      lede={SERVICE.tagline + ' At-home support for depression, anxiety, grief and isolation in seniors — gentle, private and respectful, in the place they feel safest.'}
+      lede={SERVICE.tagline + ' At-home support for depression, anxiety, grief and isolation in seniors, gentle, private and respectful, in the place they feel safest.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}
@@ -142,8 +142,8 @@ export default function SeniorMentalHealthView() {
       <section className="bg-white px-4 pt-4 sm:px-6">
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
           {HERO_STATS.map((s) => (
-            <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-primary-50 p-6 text-center">
-              <div className="font-careSerif text-3xl font-medium tracking-tight text-primary-500">{s.value}</div>
+            <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-care-50 p-6 text-center">
+              <div className="font-careSerif text-3xl font-medium tracking-tight text-care-500">{s.value}</div>
               <div className="mt-2 text-sm leading-snug text-neutral-600">{s.label}</div>
             </div>
           ))}
@@ -153,14 +153,14 @@ export default function SeniorMentalHealthView() {
       {SECTIONS.map((sec, idx) => (
         <section
           key={sec.eyebrow}
-          className={`px-4 py-20 sm:px-6 sm:py-24 ${idx % 2 === 0 ? 'bg-white' : 'bg-primary-50'}`}
+          className={`px-4 py-20 sm:px-6 sm:py-24 ${idx % 2 === 0 ? 'bg-white' : 'bg-care-50'}`}
         >
           <div className="mx-auto max-w-5xl">
             <SectionHeader eyebrow={sec.eyebrow} titleLead={sec.titleLead} titleMuted={sec.titleMuted} lede={sec.lede} />
             <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {sec.bullets.map((b) => (
                 <li key={b} className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5">
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                   <span className="text-sm leading-snug text-neutral-800">{b}</span>
                 </li>
               ))}

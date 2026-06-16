@@ -178,12 +178,12 @@ const FAQS = [
   {
     question: 'Why does home nursing cost vary so much in Bangalore?',
     answer:
-      'The biggest variables are: (1) credentials — ICU or ventilator-trained nurses cost roughly 60–100% more than general home nurses, (2) shift type — 24-hour cover is more than 2× a 12-hour shift, (3) duration — long placements (6+ months) get better rates, and (4) complexity — tracheostomy, dialysis support, or oncology require senior nurses at the higher end of the band.',
+      'The biggest variables are: (1) credentials, ICU or ventilator-trained nurses cost roughly 60–100% more than general home nurses, (2) shift type, 24-hour cover is more than 2× a 12-hour shift, (3) duration, long placements (6+ months) get better rates, and (4) complexity, tracheostomy, dialysis support, or oncology require senior nurses at the higher end of the band.',
   },
   {
     question: 'Is home nursing cheaper than staying in a hospital?',
     answer:
-      'Almost always — and significantly so. A live-in home nurse runs ₹1,150–₹1,800/day. A private hospital room is typically ₹8,000–₹15,000/day before adding nursing, food, medication and tests. For stable patients, home care can cost 80–90% less per day than continued hospitalisation.',
+      'Almost always, and significantly so. A live-in home nurse runs ₹1,150–₹1,800/day. A private hospital room is typically ₹8,000–₹15,000/day before adding nursing, food, medication and tests. For stable patients, home care can cost 80–90% less per day than continued hospitalisation.',
   },
   {
     question: 'What’s the cheapest way to get clinical care at home?',
@@ -193,17 +193,17 @@ const FAQS = [
   {
     question: 'Are there any hidden charges?',
     answer:
-      'No. The placement fee and the monthly arrangement are both explained clearly during consultation. What varies on top of the base rate is medical consumables (dressings, gloves), medication, and equipment — these are passed through at cost and never marked up. We don’t charge cancellation fees if a placement isn’t working.',
+      'No. The placement fee and the monthly arrangement are both explained clearly during consultation. What varies on top of the base rate is medical consumables (dressings, gloves), medication, and equipment, these are passed through at cost and never marked up. We don’t charge cancellation fees if a placement isn’t working.',
   },
   {
     question: 'What does a "live-in" arrangement actually mean for cost?',
     answer:
-      'A live-in caregiver lives in the home, typically getting one weekly off-day and one daily rest period of 2 hours. The monthly rate covers room and board provided by the family — meals, a bed, basic toiletries. If the family covers travel for the off-day, the rate may be slightly lower.',
+      'A live-in caregiver lives in the home, typically getting one weekly off-day and one daily rest period of 2 hours. The monthly rate covers room and board provided by the family, meals, a bed, basic toiletries. If the family covers travel for the off-day, the rate may be slightly lower.',
   },
   {
     question: 'How does cost compare to other Indian cities?',
     answer:
-      'Bangalore home nursing is broadly similar to Mumbai and Delhi (within 10%), modestly higher than Hyderabad and Pune, and 20–30% higher than Tier-2 cities like Bhopal or Indore. Within Bangalore, prices are uniform across localities — caregivers are matched citywide.',
+      'Bangalore home nursing is broadly similar to Mumbai and Delhi (within 10%), modestly higher than Hyderabad and Pune, and 20–30% higher than Tier-2 cities like Bhopal or Indore. Within Bangalore, prices are uniform across localities, caregivers are matched citywide.',
   },
   {
     question: 'Can I pay weekly instead of monthly?',
@@ -252,7 +252,7 @@ export default function HomeNursingCostView() {
       eyebrow="Bangalore · Pricing transparency"
       headlineLead="Home nursing in Bangalore."
       headlineAccent="What it actually costs."
-      lede="Transparent ranges for every common arrangement — visits, shifts, 24-hour cover, and live-in placements. What changes the price, what doesn’t, and how to spend wisely without underpaying for care."
+      lede="Transparent ranges for every common arrangement, visits, shifts, 24-hour cover, and live-in placements. What changes the price, what doesn’t, and how to spend wisely without underpaying for care."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -261,11 +261,11 @@ export default function HomeNursingCostView() {
       {/* Direct answer card */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Home nursing in Bangalore typically costs <em className="italic text-primary-500">₹600–₹1,200</em>{' '}
-            per nurse visit, <em className="italic text-primary-500">₹1,200–₹1,800</em> for a 12-hour shift,
-            and <em className="italic text-primary-500">₹35,000–₹55,000/month</em> for a live-in nurse.
+            Home nursing in Bangalore typically costs <em className="italic text-care-500">₹600–₹1,200</em>{' '}
+            per nurse visit, <em className="italic text-care-500">₹1,200–₹1,800</em> for a 12-hour shift,
+            and <em className="italic text-care-500">₹35,000–₹55,000/month</em> for a live-in nurse.
             Specialist (ICU, ventilator) care runs higher; a live-in caretaker plus weekly nurse visits is
             often 30–40% cheaper for stable patients.
           </p>
@@ -316,7 +316,7 @@ export default function HomeNursingCostView() {
             eyebrow="Often a better fit"
             titleLead="Caretaker pricing,"
             titleMuted="for non-clinical needs."
-            lede="If the patient doesn’t need procedural medical care, a caretaker is the right choice — significantly more affordable, and equally capable for hygiene, feeding, mobility, and companionship."
+            lede="If the patient doesn’t need procedural medical care, a caretaker is the right choice, significantly more affordable, and equally capable for hygiene, feeding, mobility, and companionship."
           />
           <div className="mt-12 overflow-hidden rounded-[24px] border border-neutral-200 bg-white">
             <table className="w-full text-left text-sm">
@@ -349,7 +349,7 @@ export default function HomeNursingCostView() {
             >
               home nurse vs caretaker
             </Link>{' '}
-            — a 3-minute decision guide.
+, a 3-minute decision guide.
           </p>
         </div>
       </section>
@@ -359,14 +359,14 @@ export default function HomeNursingCostView() {
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">Pushes price up</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Pushes price up</p>
               <h3 className="mt-4 font-careSerif text-2xl font-medium leading-tight tracking-tight text-neutral-950 sm:text-3xl">
                 What costs more, and why.
               </h3>
               <ul className="mt-8 space-y-4">
                 {PUSHES_UP.map(({ icon: Icon, title, body }) => (
                   <li key={title} className="flex items-start gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
                     <div>
@@ -408,7 +408,7 @@ export default function HomeNursingCostView() {
             eyebrow="The economics"
             titleLead="Home care vs"
             titleMuted="extended hospital stay."
-            lede="For most stable patients, continuing recovery at home is dramatically less expensive than staying in hospital — and far better for psychological recovery."
+            lede="For most stable patients, continuing recovery at home is dramatically less expensive than staying in hospital, and far better for psychological recovery."
           />
           <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {HOSPITAL_COMPARE.map((row) => (
@@ -416,14 +416,14 @@ export default function HomeNursingCostView() {
                 key={row.label}
                 className={`rounded-[24px] border p-6 ${
                   row.highlight
-                    ? 'border-primary-500/40 bg-white shadow-[0_2px_10px_rgba(0,116,200,0.08)]'
+                    ? 'border-care-500/40 bg-white shadow-[0_2px_10px_rgba(0,116,200,0.08)]'
                     : 'border-neutral-200 bg-white'
                 }`}
               >
                 <div className="flex items-center justify-between gap-3">
                   <strong className="font-careSerif text-lg font-bold text-neutral-950">{row.label}</strong>
                   {row.highlight ? (
-                    <span className="rounded-full bg-primary-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-primary-500">
+                    <span className="rounded-full bg-care-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-care-500">
                       Home care
                     </span>
                   ) : null}
@@ -465,15 +465,15 @@ export default function HomeNursingCostView() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-[24px] border border-neutral-200 bg-primary-50 p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">Not included</p>
+            <div className="rounded-[24px] border border-neutral-200 bg-care-50 p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Not included</p>
               <h3 className="mt-3 font-careSerif text-xl font-bold text-neutral-950 sm:text-2xl">
                 Passed through at cost
               </h3>
               <ul className="mt-5 space-y-2.5">
                 {HIDDEN_VS_NOT.notIncluded.map((b) => (
                   <li key={b} className="flex items-start gap-2 text-sm text-neutral-800">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden />
+                    <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
                     {b}
                   </li>
                 ))}

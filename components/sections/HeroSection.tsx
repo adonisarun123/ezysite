@@ -1,11 +1,10 @@
-'use client'
-
 import Link from 'next/link'
-import { useState, memo } from 'react'
 import { CheckCircleIcon, StarIcon, PhoneIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
-import { LoadingSpinner } from '@/components/ui/loading-spinner'
+import HeroLeadForm from './HeroLeadForm'
 
-// Legacy stats kept for backward compatibility
+// Server component: all static hero content renders in the initial HTML.
+// Only the lead form (HeroLeadForm) ships client-side JS.
+
 const stats = [
   { label: 'Trusted Families', value: '10,000+' },
   { label: 'Verified Helpers', value: '5,000+' },
@@ -13,24 +12,11 @@ const stats = [
   { label: 'Customer Rating', value: '4.8/5' },
 ]
 
-
-
 const trustedFeatures = [
   'Background Verified Helpers',
-  'Dedicated Support Team', 
+  'Dedicated Support Team',
   'Quick Placement',
   'Flexible Service Options',
-]
-
-// Optimized for performance - static arrays
-const services = [
-  'Live-in Maid', 'Full-time Maid', 'Part-time Maid', 'On-demand Helper',
-  'Babysitter/Nanny', 'Elderly Care', 'Cook', 'Driver'
-]
-
-const cities = [
-  'Bangalore', 'Mumbai', 'Delhi', 'Noida', 'Nagpur', 
-  'Lucknow', 'Kanpur', 'Meerut', 'Bareilly'
 ]
 
 const quickAccessServices = [
@@ -40,161 +26,49 @@ const quickAccessServices = [
   { name: 'Babysitter', href: '/services/nanny-babysitter' }
 ]
 
-// Memoized star rating component
-const StarRating = memo(() => (
-  <div className="flex items-center space-x-1">
-    {[...Array(5)].map((_, i) => (
-      <StarIcon key={i} className="h-4 w-4 text-yellow-400" />
-    ))}
-  </div>
-));
-StarRating.displayName = 'StarRating';
+function StarRating() {
+  return (
+    <div className="flex items-center space-x-1">
+      {[...Array(5)].map((_, i) => (
+        <StarIcon key={i} className="h-4 w-4 text-yellow-400" />
+      ))}
+    </div>
+  )
+}
 
-// Memoized stats component - now using EnhancedStatsGrid
-const StatsGrid = memo(() => (
-  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-    {stats.map((stat) => (
-      <div key={stat.label} className="text-center bg-white rounded-lg p-3 shadow-sm">
-        <div className="text-xl md:text-2xl font-bold text-primary-600 mb-1">
-          {stat.value}
+function StatsGrid() {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {stats.map((stat) => (
+        <div key={stat.label} className="text-center bg-white rounded-lg p-3 shadow-sm">
+          <div className="text-xl md:text-2xl font-bold text-primary-600 mb-1">
+            {stat.value}
+          </div>
+          <div className="text-xs text-gray-600">{stat.label}</div>
         </div>
-        <div className="text-xs text-gray-600">{stat.label}</div>
-      </div>
-    ))}
-  </div>
-));
-StatsGrid.displayName = 'StatsGrid';
+      ))}
+    </div>
+  )
+}
 
-// Optional: Enhanced version available via dynamic import for future upgrade
-// import dynamic from 'next/dynamic'
-// const EnhancedStatsGrid = dynamic(() => import('../EnhancedStatsGrid'), { ssr: false })
-
-// Memoized quick access links
-const QuickAccessLinks = memo(() => (
-  <div className="flex flex-wrap gap-2 mb-8">
-    <span className="text-sm text-gray-500 mr-2">Quick access:</span>
-    {quickAccessServices.map((service) => (
-      <Link
-        key={service.name}
-        href={service.href}
-        className="text-sm bg-white border border-gray-200 rounded-full px-3 py-1 hover:border-primary-300 hover:bg-primary-50 transition-colors"
-      >
-        {service.name}
-      </Link>
-    ))}
-  </div>
-));
-QuickAccessLinks.displayName = 'QuickAccessLinks';
+function QuickAccessLinks() {
+  return (
+    <div className="flex flex-wrap gap-2 mb-8">
+      <span className="text-sm text-gray-500 mr-2">Quick access:</span>
+      {quickAccessServices.map((service) => (
+        <Link
+          key={service.name}
+          href={service.href}
+          className="text-sm bg-white border border-gray-200 rounded-full px-3 py-1 hover:border-primary-300 hover:bg-primary-50 transition-colors"
+        >
+          {service.name}
+        </Link>
+      ))}
+    </div>
+  )
+}
 
 export default function HeroSection() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    service: '',
-    city: ''
-  })
-
-  const [formErrors, setFormErrors] = useState({
-    name: '',
-    phone: '',
-    service: '',
-    city: ''
-  })
-
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const [submitting, setSubmitting] = useState(false)
-  const [honeypot, setHoneypot] = useState('')
-
-  const validate = () => {
-    const errors: typeof formErrors = { name: '', phone: '', service: '', city: '' }
-    if (!formData.name.trim()) {
-      errors.name = 'Name is required'
-    } else if (formData.name.trim().length < 3) {
-      errors.name = 'Name must be at least 3 characters'
-    }
-    if (!formData.phone.trim()) {
-      errors.phone = 'Phone number is required'
-    } else if (!/^[5-9][0-9]{9}$/.test(formData.phone.trim())) {
-      errors.phone = 'Enter a valid 10-digit phone number starting with 5-9'
-    }
-    if (!formData.service) {
-      errors.service = 'Please select a service'
-    }
-    if (!formData.city) {
-      errors.city = 'Please select a city'
-    }
-    setFormErrors(errors)
-    return Object.values(errors).every((v) => !v)
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (submitting) return
-
-    if (!validate()) {
-      return; // Stop here if validation fails
-    }
-
-    setSubmitting(true)
-    try {
-      const { supabase } = await import('@/lib/supabaseClient')
-      const { error } = await supabase.from('leads').insert([
-        {
-          name: formData.name.trim(),
-          phone: formData.phone.trim(),
-          service: formData.service,
-          city: formData.city
-        }
-      ])
-      if (error) throw error
-
-      // Send email notification
-      try {
-        const emailResponse = await fetch('/api/send-lead-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            leadType: 'general',
-            website: honeypot,
-            formData: {
-              name: formData.name.trim(),
-              phone: formData.phone.trim(),
-              service: formData.service,
-              city: formData.city
-            },
-            sourceUrl: window.location.href
-          })
-        });
-
-        if (!emailResponse.ok) {
-          console.error('Failed to send email notification');
-        } else {
-          console.log('Email notification sent successfully');
-        }
-      } catch (emailError) {
-        console.error('Email sending error:', emailError);
-        // Don't fail the form submission if email fails
-      }
-
-      setSubmitStatus('success')
-      setFormData({ name: '', phone: '', service: '', city: '' })
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setSubmitStatus('error')
-    } finally {
-      setSubmitting(false)
-    }
-  }
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-background-primary via-primary-50/30 to-secondary-50/30 pt-4 lg:pt-6">
       <div className="relative container-custom pb-16 lg:pb-24">
@@ -213,8 +87,8 @@ export default function HeroSection() {
 
             {/* LCP Element - Optimized for fastest render */}
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
-              Connect with verified, reliable professionals for all your home needs. 
-              From housemaids and cooks to caretakers and maintenance - 
+              Connect with verified, reliable professionals for all your home needs.
+              From housemaids and cooks to caretakers and maintenance -
               <strong className="text-gray-900"> fair pricing with direct payments to helpers, quick booking, exceptional service.</strong>
             </p>
 
@@ -259,7 +133,7 @@ export default function HeroSection() {
                 <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-3">
                   <ChatBubbleLeftRightIcon className="h-5 w-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1 font-display">Get Helper in 24-72 Hours</h3>
+                <h2 className="text-lg font-bold text-gray-900 mb-1 font-display">Get Helper in 24-72 Hours</h2>
                 <p className="text-xs text-gray-600">Fill form → We call you in 30 min</p>
               </div>
 
@@ -278,103 +152,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-3" aria-busy={submitting}>
-                {/* Honeypot field - hidden from real users, traps bots */}
-                <input
-                  type="text"
-                  name="website"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
-                  value={honeypot}
-                  onChange={(e) => setHoneypot(e.target.value)}
-                  style={{ position: 'absolute', left: '-9999px', width: 0, height: 0, opacity: 0 }}
-                />
-                <label htmlFor="hero-name" className="sr-only">Your Name</label>
-                <input
-                  id="hero-name"
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  aria-invalid={!!formErrors.name}
-                  aria-describedby={formErrors.name ? 'hero-name-error' : undefined}
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
-                  placeholder="Your Name"
-                  aria-label="Your Name"
-                />
-                {formErrors.name && <p id="hero-name-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.name}</p>}
-
-                <label htmlFor="hero-phone" className="sr-only">Phone Number</label>
-                <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm pointer-events-none select-none">+91</span>
-                  <input
-                    id="hero-phone"
-                    type="tel"
-                    name="phone"
-                    inputMode="tel"
-                    maxLength={10}
-                    pattern="[5-9][0-9]{9}"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    aria-invalid={!!formErrors.phone}
-                    aria-describedby={formErrors.phone ? 'hero-phone-error' : 'hero-phone-hint'}
-                    className="w-full pl-12 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm"
-                    placeholder="9XXXXXXXXX"
-                    aria-label="Phone Number"
-                  />
-                </div>
-                <p id="hero-phone-hint" className="text-xs text-gray-500">10-digit mobile number, no country code needed</p>
-                {formErrors.phone && <p id="hero-phone-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.phone}</p>}
-
-                <label htmlFor="hero-service" className="sr-only">Select Service</label>
-                <select
-                  id="hero-service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleInputChange}
-                  aria-invalid={!!formErrors.service}
-                  aria-describedby={formErrors.service ? 'hero-service-error' : undefined}
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
-                  aria-label="Select Service Type"
-                >
-                  <option value="">Select Service</option>
-                  {services.map((service) => (
-                    <option key={service} value={service}>{service}</option>
-                  ))}
-                </select>
-                {formErrors.service && <p id="hero-service-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.service}</p>}
-
-                <label htmlFor="hero-city" className="sr-only">Select City</label>
-                <select
-                  id="hero-city"
-                  name="city"
-                  value={formData.city}
-                  onChange={handleInputChange}
-                  aria-invalid={!!formErrors.city}
-                  aria-describedby={formErrors.city ? 'hero-city-error' : undefined}
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-sm text-gray-900"
-                  aria-label="Select City"
-                >
-                  <option value="">Select City</option>
-                  {cities.map((city) => (
-                    <option key={city} value={city}>{city}</option>
-                  ))}
-                </select>
-                {formErrors.city && <p id="hero-city-error" role="alert" className="text-xs text-red-500 mt-1">{formErrors.city}</p>}
-
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  aria-disabled={submitting}
-                  className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                  {submitting && <LoadingSpinner size="sm" />}
-                  {submitting ? 'Submitting...' : 'Get Free Consultation Now'}
-                </button>
-                {submitStatus === 'success' && <p role="status" className="text-green-600 text-sm mt-2">Lead submitted successfully!</p>}
-                {submitStatus === 'error' && <p role="alert" className="text-red-600 text-sm mt-2">There was an error submitting your lead. Please try again.</p>}
-              </form>
+              <HeroLeadForm />
 
               <div className="mt-3 text-center">
                 <div className="flex items-center justify-center space-x-1">
@@ -388,4 +166,4 @@ export default function HeroSection() {
       </div>
     </section>
   )
-} 
+}

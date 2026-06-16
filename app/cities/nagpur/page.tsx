@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   BuildingOffice2Icon, 
   HeartIcon, 
@@ -18,6 +20,15 @@ export const metadata: Metadata = {
   title: 'Domestic Help in Nagpur | Verified Maids & Home Services | EzyHelpers',
   description:
     'Hire verified maids, cooks, and home help in Nagpur — Sitabuldi, Sadar, Hingna, and nearby areas. Trusted domestic staff with EzyHelpers.',
+  openGraph: {
+    title: "Domestic Help in Nagpur | Verified Maids & Home Services | EzyHelpers",
+    description: "Hire verified maids, cooks, and home help in Nagpur — Sitabuldi, Sadar, Hingna, and nearby areas. Trusted domestic staff with EzyHelpers.",
+    url: "https://www.ezyhelpers.com/cities/nagpur",
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Domestic%20Help%20in%20Nagpur", width: 1200, height: 630, alt: "Domestic Help in Nagpur" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/cities/nagpur',
     languages: selfReferencingLanguages('/cities/nagpur'),
@@ -51,6 +62,7 @@ export default function NagpurPage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Nagpur" stateName="Maharashtra" postalCode="440001" latitude={21.1458} longitude={79.0882} />
       <Navbar />
       <div className="min-h-screen bg-background-primary">
         {/* Hero Section */}
@@ -92,6 +104,11 @@ export default function NagpurPage() {
             </div>
           </div>
         </section>
+
+        <QuickAnswer
+          question="How do I hire domestic help in Nagpur through EzyHelpers?"
+          answer="EzyHelpers provides background-verified maids, cooks, babysitters, and elderly caretakers across Nagpur. Placement typically takes 24–72 hours, with flexible service options and a quick replacement guarantee."
+        />
 
         {/* Local Services */}
         <section className="section-padding bg-white">

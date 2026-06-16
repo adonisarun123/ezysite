@@ -3,6 +3,9 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
+import GoogleRatingBadge from '@/components/GoogleRatingBadge'
 import {
   TruckIcon, 
   ClockIcon, 
@@ -20,6 +23,15 @@ export const metadata: Metadata = {
   title: 'Professional Drivers Services | Safe & Reliable | EzyHelpers',
   description: 'Licensed professional drivers for family transportation, office commutes & personal use. Safe, reliable & punctual service across major cities in India.',
   keywords: 'professional driver, licensed drivers, chauffeur, hire driver, driver services, airport transfer, outstation travel, daily commute',
+  openGraph: {
+    title: 'Professional Drivers Services | Safe & Reliable | EzyHelpers',
+    description: 'Licensed professional drivers for family transportation, office commutes & personal use. Safe, reliable & punctual service across major cities in India.',
+    url: 'https://www.ezyhelpers.com/services/drivers',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Professional%20Drivers%20Services", width: 1200, height: 630, alt: "Professional Drivers Services" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/drivers'
   }
@@ -64,6 +76,7 @@ export default function DriversPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"Professional Drivers Services"} serviceDescription={"Licensed professional drivers for family transportation, office commutes & personal use. Safe, reliable & punctual service across major cities in India."} serviceType={"Professional Drivers Services"} serviceUrl={"https://www.ezyhelpers.com/services/drivers"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -262,6 +275,13 @@ export default function DriversPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a personal driver through EzyHelpers?"
+        answer="EzyHelpers provides background-verified personal drivers on full-time, part-time, or on-demand basis. Placement typically takes 24–72 hours, with verified driving records, a replacement guarantee, and direct payment to your driver."
+      />
+
+      <GoogleRatingBadge rating="4.93" detail="Zero negative reviews across driver placements — customers highlight licence & police verification (528 Google reviews, June 2026)" />
 
       {/* Qualified & Professional Drivers */}
       <section className="section-padding bg-white">

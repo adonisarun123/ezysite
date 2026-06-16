@@ -12,8 +12,67 @@ import {
 } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import ConditionInfoSection, { type ConditionInfo } from '../ConditionInfoSection'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
+import CaregiverScopeSection from '../CaregiverScopeSection'
 
 const PATH = '/care-services/stroke-care-at-home-bangalore'
+
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['One-side weakness', 'Speech difficulty', 'Swallowing changes', 'Post-stroke recovery', 'Paralysis'],
+  careNeeds: [
+    'Bed-to-chair transfer support',
+    'Assisted walking',
+    'Feeding support with swallowing awareness',
+    'Bathing and toileting assistance',
+    'Physiotherapy coordination',
+    'Monitoring speech, swallowing, weakness and mood changes',
+  ],
+}
+
+const CONDITION_INFO: ConditionInfo = {
+  conditionName: 'Stroke',
+  vitalStats: [
+    {
+      stat: '~1.8 million',
+      detail: 'India sees an estimated 1.8 million strokes every year, among the country’s leading causes of death and disability.',
+    },
+    {
+      stat: '~25%',
+      detail: 'A stroke survivor has roughly a 1-in-4 chance of another stroke within five years, which is why home care includes recurrence vigilance.',
+    },
+    {
+      stat: '1 in 3',
+      detail: 'Around a third of stroke survivors experience post-stroke depression, often missed unless someone is watching daily.',
+    },
+  ],
+  causes: [
+    'High blood pressure, the single biggest modifiable risk factor',
+    'Diabetes and high cholesterol damaging blood vessels over time',
+    'Atrial fibrillation and other heart-rhythm problems that send clots to the brain',
+    'Smoking and heavy alcohol use',
+    'Obesity, inactivity and chronic kidney disease',
+    'A previous stroke or TIA (mini-stroke), the strongest warning of the next one',
+  ],
+  symptoms: [
+    'Sudden weakness or numbness of the face, arm or leg, usually one side',
+    'Facial drooping, an uneven smile is the classic sign',
+    'Slurred speech or trouble finding words',
+    'Sudden confusion or difficulty understanding what others say',
+    'Sudden loss or blurring of vision in one or both eyes',
+    'Sudden dizziness, loss of balance or trouble walking',
+    'A sudden, severe headache with no known cause',
+    'Remember B.E.F.A.S.T, Balance, Eyes, Face, Arm, Speech, Time to call an ambulance',
+  ],
+  whenYouNeedCare: [
+    'Discharge is approaching and no one at home can manage transfers, feeding and medicines',
+    'One-sided weakness means bathing, toileting and repositioning need trained hands',
+    'Swallowing difficulty makes every meal an aspiration risk without supervision',
+    'BP, sugar and blood-thinner schedules are too complex for the family to track reliably',
+    'The patient is showing withdrawal or low mood, and recovery exercises are being skipped',
+    'Family members work or live in another city, and recovery needs daily consistency',
+  ],
+}
 
 const PHASES = [
   {
@@ -34,7 +93,7 @@ const PHASES = [
     n: '03',
     title: 'Sub-acute (month 4–6)',
     body:
-      'Strength and confidence-building. Caregivers help maintain therapy gains, expand mobility, and watch for late-onset depression — which affects nearly a third of stroke survivors and is often missed.',
+      'Strength and confidence-building. Caregivers help maintain therapy gains, expand mobility, and watch for late-onset depression, which affects nearly a third of stroke survivors and is often missed.',
     tone: 'sage',
   },
   {
@@ -47,17 +106,17 @@ const PHASES = [
 ] as const
 
 const TONE_BG: Record<(typeof PHASES)[number]['tone'], string> = {
-  rose: 'bg-primary-50',
+  rose: 'bg-care-50',
   sand: 'bg-[#FAF6EE]',
   sage: 'bg-[#F1F6F0]',
   pearl: 'bg-[#F2F7FB]',
 }
 
 const TONE_NUM: Record<(typeof PHASES)[number]['tone'], string> = {
-  rose: 'text-primary-500',
+  rose: 'text-care-500',
   sand: 'text-[#B97A1F]',
   sage: 'text-[#1F8A4C]',
-  pearl: 'text-primary-500',
+  pearl: 'text-care-500',
 }
 
 const DAILY_CARE = [
@@ -93,22 +152,22 @@ const FAQS = [
   {
     question: 'How soon after discharge should home care start?',
     answer:
-      'Ideally on the day of discharge — the first 48 hours carry the highest risk of falls, missed medication, and aspiration. We attempt same-day placement when discharge dates are confirmed in advance, and within 24 hours otherwise.',
+      'Ideally on the day of discharge, the first 48 hours carry the highest risk of falls, missed medication, and aspiration. We attempt same-day placement when discharge dates are confirmed in advance, and within 24 hours otherwise.',
   },
   {
     question: 'Is a nurse or a caretaker the right fit for stroke recovery?',
     answer:
-      'It depends on the medical complexity. A trained caretaker handles repositioning, feeding, mobility, speech practice and routine BP/glucose checks — adequate for most uncomplicated recoveries. A nurse is needed if there are tracheostomy care, IV antibiotics, complex wound care, or unstable vitals. Many families combine: a caretaker live-in plus weekly nurse visits.',
+      'It depends on the medical complexity. A trained caretaker handles repositioning, feeding, mobility, speech practice and routine BP/glucose checks, adequate for most uncomplicated recoveries. A nurse is needed if there are tracheostomy care, IV antibiotics, complex wound care, or unstable vitals. Many families combine: a caretaker live-in plus weekly nurse visits.',
   },
   {
     question: 'What does a typical stroke caregiver do in a day?',
     answer:
-      'A consistent schedule — morning hygiene with safe transfers, breakfast in upright position, prescribed exercises and physiotherapy support, BP/glucose log, light activities to engage cognition, lunch, rest, evening walk if mobility allows, dinner, medication, and night-time positioning. The day is built around the recovery plan, not the caregiver’s convenience.',
+      'A consistent schedule, morning hygiene with safe transfers, breakfast in upright position, prescribed exercises and physiotherapy support, BP/glucose log, light activities to engage cognition, lunch, rest, evening walk if mobility allows, dinner, medication, and night-time positioning. The day is built around the recovery plan, not the caregiver’s convenience.',
   },
   {
     question: 'Do you provide caregivers trained in stroke-specific protocols?',
     answer:
-      'Yes. We match caregivers who have managed a hemiplegic patient in the last 12 months and can demonstrate safe transfer technique. For higher-complexity cases — bedridden, tube-fed, or with significant aphasia — we place a Trained Attendant rather than a general caretaker.',
+      'Yes. We match caregivers who have managed a hemiplegic patient in the last 12 months and can demonstrate safe transfer technique. For higher-complexity cases, bedridden, tube-fed, or with significant aphasia, we place a Trained Attendant rather than a general caretaker.',
   },
   {
     question: 'How long do families typically need stroke home care?',
@@ -123,7 +182,7 @@ const FAQS = [
   {
     question: 'Can the same caregiver continue once recovery stabilises?',
     answer:
-      'Yes — and continuity matters in stroke recovery. The caregiver who learns the patient’s routine, communication patterns, and warning signs in month one is far more effective in month four. We strongly encourage continuity placements.',
+      'Yes, and continuity matters in stroke recovery. The caregiver who learns the patient’s routine, communication patterns, and warning signs in month one is far more effective in month four. We strongly encourage continuity placements.',
   },
 ] as const
 
@@ -131,7 +190,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Stroke Care at Home, Bangalore',
+    name: 'EzyHelpers, Stroke Care at Home, Bangalore',
     medicalSpecialty: ['Neurology', 'Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -155,7 +214,7 @@ export default function StrokeCareView() {
       eyebrow="Bangalore · Post-stroke recovery"
       headlineLead="Stroke recovery, brought home."
       headlineAccent="Day by day. Step by step."
-      lede="Recovery from a stroke is a season, not a single event. We place caregivers who have walked alongside families through it before — matched to the recovery stage, not just the diagnosis."
+      lede="Recovery from a stroke is a season, not a single event. We place caregivers who have walked alongside families through it before, matched to the recovery stage, not just the diagnosis."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -164,16 +223,20 @@ export default function StrokeCareView() {
       {/* Direct answer block (LLM-friendly) */}
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F7F7F2] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Stroke care at home in Bangalore should be matched to the recovery <em className="italic text-primary-500">stage</em>.
+            Stroke care at home in Bangalore should be matched to the recovery <em className="italic text-care-500">stage</em>.
             The first two weeks are about safety and complications. The next ten are when most recovery
             actually happens. After that, care is about continuity, mood, and preventing recurrence.
-            EzyHelpers places caregivers with stage-appropriate experience — and adjusts the plan as the
+            EzyHelpers places caregivers with stage-appropriate experience, and adjusts the plan as the
             patient progresses.
           </p>
         </div>
       </section>
+
+      <ConditionInfoSection info={CONDITION_INFO} />
+
+      <CareNeedsCovered needs={CARE_NEEDS} />
 
       {/* Phases of stroke care */}
       <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
@@ -182,7 +245,7 @@ export default function StrokeCareView() {
             eyebrow="Stages of recovery"
             titleLead="Care that adapts"
             titleMuted="as recovery progresses."
-            lede="A stroke caregiver in week one is doing very different work from a caregiver in month six. We change the placement plan to match — and often the caregiver level itself."
+            lede="A stroke caregiver in week one is doing very different work from a caregiver in month six. We change the placement plan to match, and often the caregiver level itself."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2">
             {PHASES.map((p) => (
@@ -208,7 +271,7 @@ export default function StrokeCareView() {
             eyebrow="What’s included"
             titleLead="The day-to-day"
             titleMuted="of post-stroke care."
-            lede="A trained stroke caregiver covers the daily fundamentals — and watches, quietly, for the things that go wrong if no one is paying attention."
+            lede="A trained stroke caregiver covers the daily fundamentals, and watches, quietly, for the things that go wrong if no one is paying attention."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {DAILY_CARE.map(({ icon: Icon, t, d }) => (
@@ -216,7 +279,7 @@ export default function StrokeCareView() {
                 key={t}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950">{t}</h3>
@@ -235,7 +298,7 @@ export default function StrokeCareView() {
               <SectionHeader
                 eyebrow="Stroke recurrence"
                 titleLead="Eight signs"
-                titleMuted="that need a hospital — now."
+                titleMuted="that need a hospital, now."
                 lede="A stroke survivor has roughly a 25% chance of a recurrence within five years. Caregivers we place are taught to recognise these signs and call emergency services without waiting."
               />
             </div>
@@ -244,11 +307,11 @@ export default function StrokeCareView() {
                 {SIGNS_TO_ESCALATE.map((s) => (
                   <li
                     key={s}
-                    className="flex items-start gap-2 rounded-2xl border border-primary-500/20 bg-primary-50 px-4 py-3.5"
+                    className="flex items-start gap-2 rounded-2xl border border-care-500/20 bg-care-50 px-4 py-3.5"
                   >
                     <span
                       aria-hidden
-                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-primary-500"
+                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-care-500"
                     />
                     <span className="text-sm leading-snug text-neutral-800">{s}</span>
                   </li>
@@ -266,13 +329,13 @@ export default function StrokeCareView() {
             eyebrow="Why matching matters"
             titleLead="What a stroke-experienced caregiver"
             titleMuted="actually looks like."
-            lede="Stroke recovery work is unforgiving of inexperience. We don’t place general caretakers on stroke cases — these are the things we verify before we shortlist."
+            lede="Stroke recovery work is unforgiving of inexperience. We don’t place general caretakers on stroke cases, these are the things we verify before we shortlist."
             align="center"
           />
           <ul className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">
             {EXPERIENCE_SIGNALS.map((s) => (
               <li key={s} className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5">
-                <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-500/10 text-primary-500">
+                <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-care-500/10 text-care-500">
                   <CheckIcon className="h-3.5 w-3.5" aria-hidden />
                 </span>
                 <span className="text-sm leading-snug text-neutral-800">{s}</span>
@@ -346,6 +409,8 @@ export default function StrokeCareView() {
           </p>
         </div>
       </section>
+
+      <CaregiverScopeSection />
 
       {/* FAQs */}
       <section className="bg-[#F7F7F2] px-4 py-20 sm:px-6 sm:py-24">

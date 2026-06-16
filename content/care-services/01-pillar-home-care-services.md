@@ -49,7 +49,7 @@ Different patients need different kinds of help. Use this guide to find the righ
 
 ### **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)**
 **For:** Bedridden, post-spinal, neurological, or other high-dependency patients.
-**Best when:** The patient needs skilled physical handling — transfers, repositioning, pressure-sore prevention.
+**Best when:** The patient needs skilled physical handling, transfers, repositioning, pressure-sore prevention.
 
 **Not sure which service you need? Call us, and our team will help you choose in a 5-minute conversation.**
 
@@ -171,13 +171,13 @@ Call us to confirm home care service availability in your specific area.
 
 ### **Which home care service is right for my family?**
 
-If your loved one needs medical procedures (wounds, IV, catheter), choose [Home Nursing Services](/care-services/home-nursing-services-bangalore/). If they need both medical and daily care, choose [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/). For age-related daily support, choose [Elderly Care Services](/care-services/elderly-care-services-bangalore/). For a bedridden or high-dependency patient, see [Trained Attendant Services](/care-services/trained-attendant-services-bangalore/). If you're not sure, call us — we'll guide you in a 5-minute conversation.
+If your loved one needs medical procedures (wounds, IV, catheter), choose [Home Nursing Services](/care-services/home-nursing-services-bangalore/). If they need both medical and daily care, choose [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/). For age-related daily support, choose [Elderly Care Services](/care-services/elderly-care-services-bangalore/). For a bedridden or high-dependency patient, see [Trained Attendant Services](/care-services/trained-attendant-services-bangalore/). If you're not sure, call us, we'll guide you in a 5-minute conversation.
 
 ### **What's the difference between a home nurse, a caretaker, and an attendant?**
 
-A home nurse is medically trained and handles procedures (wounds, IV, vitals, medication administration). A caretaker (also called caregiver) provides general daily support — hygiene, feeding, mobility, companionship. An attendant focuses on physical patient handling — repositioning, transfers, mobility. Many families need a combination, which we can arrange.
+A home nurse is medically trained and handles procedures (wounds, IV, vitals, medication administration). A caretaker (also called caregiver) provides general daily support, hygiene, feeding, mobility, companionship. An attendant focuses on physical patient handling, repositioning, transfers, mobility. Many families need a combination, which we can arrange.
 
-### **Can I combine multiple care types — for example, a nurse and a caretaker for the same patient?**
+### **Can I combine multiple care types, for example, a nurse and a caretaker for the same patient?**
 
 Yes. This is a common arrangement. The nurse handles medical tasks while the caretaker manages daily personal care. We coordinate both placements and ensure handover and communication work smoothly.
 
@@ -195,7 +195,7 @@ Yes, there is a one-time placement fee, which our team explains clearly during t
 
 ### **What if the placement isn't working?**
 
-We offer free replacements. If the caregiver is not the right fit for any reason — comfort, communication, or care approach — let us know and we begin the process of finding a better match. There's no requirement to justify the request.
+We offer free replacements. If the caregiver is not the right fit for any reason, comfort, communication, or care approach, let us know and we begin the process of finding a better match. There's no requirement to justify the request.
 
 ---
 

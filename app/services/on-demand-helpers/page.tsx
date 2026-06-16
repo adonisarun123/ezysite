@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import OnDemandLeadForm from '@/components/OnDemandLeadForm'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   BoltIcon,
   ClockIcon,
@@ -28,6 +30,15 @@ export const metadata: Metadata = {
   title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
   description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
   keywords: 'on-demand maid, emergency maid, same day maid, urgent house help, instant booking, hourly pricing',
+  openGraph: {
+    title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
+    description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
+    url: 'https://www.ezyhelpers.com/services/on-demand-helpers',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=On-Demand%20Helper%20Services", width: 1200, height: 630, alt: "On-Demand Helper Services" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/on-demand-helpers'
   }
@@ -141,6 +152,7 @@ export default function OnDemandHelpersPage() {
 
   return (
     <>
+      <ServiceSchema serviceName={"On-Demand Helper Services"} serviceDescription={"Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help."} serviceType={"On-Demand Helper Services"} serviceUrl={"https://www.ezyhelpers.com/services/on-demand-helpers"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -290,6 +302,11 @@ export default function OnDemandHelpersPage() {
             </div>
           </div>
         </section>
+
+        <QuickAnswer
+          question="How do I book an on-demand helper through EzyHelpers?"
+          answer="EzyHelpers provides same-day, on-demand helpers for cleaning, kitchen help, event support, and one-off household tasks. Book online or call 080-31411776 — helpers are background-verified and available within hours in most areas."
+        />
 
         {/* Why Choose Section */}
         <section className="section-padding bg-white">

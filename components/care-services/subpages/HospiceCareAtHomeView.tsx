@@ -24,7 +24,7 @@ const SECTIONS = [
     icon: HomeModernIcon,
     title: 'What hospice care at home offers',
     body:
-      'Hospice care brings together comfort, dignity and coordinated support for someone with a life-limiting illness — all within the familiarity of home. It focuses on quality of life, easing symptoms and surrounding the family with care.',
+      'Hospice care brings together comfort, dignity and coordinated support for someone with a life-limiting illness, all within the familiarity of home. It focuses on quality of life, easing symptoms and surrounding the family with care.',
     bullets: [
       'Comfort-focused daily care at home',
       'Coordinated support around your loved one',
@@ -36,7 +36,7 @@ const SECTIONS = [
     icon: PlusCircleIcon,
     title: 'Comfort and symptom support',
     body:
-      'We help keep your loved one comfortable — supporting gentle positioning, easing discomfort and restlessness, and alerting your medical team when symptoms need attention.',
+      'We help keep your loved one comfortable, supporting gentle positioning, easing discomfort and restlessness, and alerting your medical team when symptoms need attention.',
     bullets: [
       'Comfort care for pain and discomfort',
       'Help with feeding, hydration and rest',
@@ -60,7 +60,7 @@ const SECTIONS = [
     icon: UserGroupIcon,
     title: 'Support for the whole family',
     body:
-      'A life-limiting illness is carried by everyone who loves the person. We provide respite, gentle guidance and emotional support — including grief resources — so families can rest and stay close.',
+      'A life-limiting illness is carried by everyone who loves the person. We provide respite, gentle guidance and emotional support, including grief resources, so families can rest and stay close.',
     bullets: [
       'Respite hours so carers can rest',
       'Gentle guidance on what to expect',
@@ -74,7 +74,7 @@ const FAQS = [
   {
     question: 'What is hospice care at home?',
     answer:
-      'Hospice care at home is coordinated comfort care for someone with a life-limiting illness, delivered in their own home. It brings together physical comfort, emotional reassurance and spiritual support, with the family included throughout — all in coordination with your medical team.',
+      'Hospice care at home is coordinated comfort care for someone with a life-limiting illness, delivered in their own home. It brings together physical comfort, emotional reassurance and spiritual support, with the family included throughout, all in coordination with your medical team.',
   },
   {
     question: 'How is hospice care different from end-of-life care?',
@@ -94,7 +94,7 @@ const FAQS = [
   {
     question: 'How do you support the family?',
     answer:
-      'We offer respite so family carers can rest, gentle guidance on what to expect, kind daily updates, and emotional support — including grief resources — for everyone involved.',
+      'We offer respite so family carers can rest, gentle guidance on what to expect, kind daily updates, and emotional support, including grief resources, for everyone involved.',
   },
   {
     question: 'Is hospice care at home available across Bangalore?',
@@ -107,7 +107,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Hospice Care at Home, Bangalore',
+    name: 'EzyHelpers, Hospice Care at Home, Bangalore',
     medicalSpecialty: ['Hospice', 'PalliativeCare'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -133,7 +133,7 @@ export default function HospiceCareAtHomeView() {
       headlineAccent="without leaving home."
       lede={
         SERVICE?.tagline ??
-        'Coordinated comfort, emotional reassurance and spiritual support for a life-limiting illness — all in the familiarity of home, with your family close by.'
+        'Coordinated comfort, emotional reassurance and spiritual support for a life-limiting illness, all in the familiarity of home, with your family close by.'
       }
       primaryCtaLabel="Talk to a care advisor"
       enquirySource={PATH}
@@ -144,7 +144,7 @@ export default function HospiceCareAtHomeView() {
           {HERO_STATS.map((s) => (
             <div
               key={s.value}
-              className="rounded-2xl border border-neutral-200 bg-primary-50 px-5 py-5 text-center"
+              className="rounded-2xl border border-neutral-200 bg-care-50 px-5 py-5 text-center"
             >
               <p className="font-careSerif text-xl font-medium text-accent-600">{s.value}</p>
               <p className="mt-1 text-sm leading-snug text-neutral-600">{s.label}</p>
@@ -159,7 +159,7 @@ export default function HospiceCareAtHomeView() {
             eyebrow="How we help"
             titleLead="Comfort and care,"
             titleMuted="gently coordinated."
-            lede="Hospice-style support that holds the body, the heart and the family together — in the comfort of home."
+            lede="Hospice-style support that holds the body, the heart and the family together, in the comfort of home."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {SECTIONS.map(({ icon: Icon, title, body, bullets }) => (
@@ -202,7 +202,7 @@ export default function HospiceCareAtHomeView() {
       <CareSubpageClosingCTA
         headlineLead="Whenever you are ready,"
         headlineAccent="we are here for your family."
-        body="Reach out for a calm, compassionate conversation about hospice care at home — with no pressure at all."
+        body="Reach out for a calm, compassionate conversation about hospice care at home, with no pressure at all."
         enquirySource={PATH}
         primaryCtaLabel="Request a compassionate consultation"
         related={[

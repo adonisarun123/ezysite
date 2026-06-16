@@ -21,7 +21,14 @@ import {
   HomeModernIcon,
   ArrowTrendingUpIcon,
   MapPinIcon,
+  LightBulbIcon,
+  ArrowPathIcon,
+  BeakerIcon,
+  PuzzlePieceIcon,
+  CloudIcon,
+  HandRaisedIcon,
 } from '@heroicons/react/24/outline'
+import CareHeroQuickForm from '../CareHeroQuickForm'
 import { getPillar } from '@/lib/careServices/newServices'
 import { formatPriceWithNote } from '@/lib/careServices/pricing'
 
@@ -52,6 +59,12 @@ const NESTED_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   ArrowTrendingUpIcon,
   ClockIcon,
   HeartIcon,
+  LightBulbIcon,
+  ArrowPathIcon,
+  BeakerIcon,
+  PuzzlePieceIcon,
+  CloudIcon,
+  HandRaisedIcon,
 }
 
 const TRUST_RIBBON = [
@@ -66,7 +79,7 @@ const WHY_SPECIALISED = [
     icon: HeartIcon,
     title: 'Ageing is not one condition',
     body:
-      'A senior recovering from a fall needs something completely different from one living with dementia. Our caregivers are matched to the specific need — not handed a generic “elderly care” brief.',
+      'A senior recovering from a fall needs something completely different from one living with dementia. Our caregivers are matched to the specific need, not handed a generic “elderly care” brief.',
   },
   {
     icon: ShieldCheckIcon,
@@ -78,13 +91,13 @@ const WHY_SPECIALISED = [
     icon: ChatBubbleLeftRightIcon,
     title: 'Dignity over supervision',
     body:
-      'Good elder care preserves identity, routine and pride. We screen for warmth and patience as hard as we screen for skill — because how care feels matters as much as what it does.',
+      'Good elder care preserves identity, routine and pride. We screen for warmth and patience as hard as we screen for skill, because how care feels matters as much as what it does.',
   },
   {
     icon: UserGroupIcon,
     title: 'The family is part of the plan',
     body:
-      'Daily WhatsApp updates, doctor-visit coordination and respite hours mean the spouse and adult children — including NRI families — can rest, work and stay genuinely connected.',
+      'Daily WhatsApp updates, doctor-visit coordination and respite hours mean the spouse and adult children, including NRI families, can rest, work and stay genuinely connected.',
   },
 ] as const
 
@@ -98,7 +111,7 @@ const PROCESS_STEPS = [
   {
     n: '02',
     title: 'Curated shortlist',
-    body: 'Two or three caregivers matched to the exact need — dementia, bedridden, companionship — not whoever is free nearest.',
+    body: 'Two or three caregivers matched to the exact need, dementia, bedridden, companionship, not whoever is free nearest.',
     icon: UserGroupIcon,
   },
   {
@@ -130,19 +143,19 @@ const CONDITIONS = [
   'Memory loss & confusion',
 ] as const
 
-/* TESTIMONIALS — ILLUSTRATIVE. These are realistic, representative scenarios
+/* TESTIMONIALS, ILLUSTRATIVE. These are realistic, representative scenarios
  * written for layout/marketing and are NOT verbatim quotes from named clients.
  * Replace with consented, attributable reviews before launch. */
 const TESTIMONIALS = [
   {
     quote:
-      'Amma was getting confused in the evenings and we were exhausted. EzyHelpers placed a caregiver who had handled dementia before — within two weeks the agitation settled and our evenings became calm again.',
+      'Amma was getting confused in the evenings and we were exhausted. EzyHelpers placed a caregiver who had handled dementia before, within two weeks the agitation settled and our evenings became calm again.',
     name: 'Lakshmi R.',
     place: 'Jayanagar, Bangalore',
   },
   {
     quote:
-      'After my father’s fall, we needed someone who knew safe transfers and fall-prevention. The attendant rebuilt his confidence to walk and sent us a daily update — we live in the US, so that meant everything.',
+      'After my father’s fall, we needed someone who knew safe transfers and fall-prevention. The attendant rebuilt his confidence to walk and sent us a daily update, we live in the US, so that meant everything.',
     name: 'Praveen K.',
     place: 'Parents in Whitefield',
   },
@@ -158,12 +171,12 @@ const FAQS = [
   {
     question: 'What does elder care at home in Bangalore cost?',
     answer:
-      'Cost depends on the level of care — companionship and day-shift arrangements are the most affordable, while live-in, dementia, Parkinson’s or bedridden care cost more because they need specialised, round-the-clock support. Rather than quote a misleading flat rate, we give you a precise, transparent price after a free consultation that matches the plan to your parent’s actual needs.',
+      'Cost depends on the level of care, companionship and day-shift arrangements are the most affordable, while live-in, dementia, Parkinson’s or bedridden care cost more because they need specialised, round-the-clock support. Rather than quote a misleading flat rate, we give you a precise, transparent price after a free consultation that matches the plan to your parent’s actual needs.',
   },
   {
     question: 'What is the difference between a general caretaker and specialised elder care?',
     answer:
-      'A general caretaker can manage basic daily support. Specialised elder care means the caregiver has demonstrated experience in your parent’s specific need — dementia behaviour management, Parkinson’s medication timing, safe handling of a bedridden senior, or post-fall mobility rebuilding. We match on that specialisation so you are not relying on improvisation.',
+      'A general caretaker can manage basic daily support. Specialised elder care means the caregiver has demonstrated experience in your parent’s specific need, dementia behaviour management, Parkinson’s medication timing, safe handling of a bedridden senior, or post-fall mobility rebuilding. We match on that specialisation so you are not relying on improvisation.',
   },
   {
     question: 'Can I get a live-in caregiver, or only day shifts?',
@@ -173,17 +186,17 @@ const FAQS = [
   {
     question: 'How quickly can you place an elder caregiver in Bangalore?',
     answer:
-      'When a suitable caregiver is available, we attempt same-day placement — particularly for hospital discharge or an urgent situation. Across the Bangalore localities we serve, most precise matches are completed within 24–48 hours so we never compromise on fit just to be fast.',
+      'When a suitable caregiver is available, we attempt same-day placement, particularly for hospital discharge or an urgent situation. Across the Bangalore localities we serve, most precise matches are completed within 24–48 hours so we never compromise on fit just to be fast.',
   },
   {
     question: 'Are your elder care caregivers verified and trained?',
     answer:
-      'Yes. Every caregiver is verified through Aadhaar authentication, government ID checks, in-person interviews and background screening. For senior care, we additionally confirm hands-on experience with the relevant condition — dementia, Parkinson’s, mobility support or bedridden handling.',
+      'Yes. Every caregiver is verified through Aadhaar authentication, government ID checks, in-person interviews and background screening. For senior care, we additionally confirm hands-on experience with the relevant condition, dementia, Parkinson’s, mobility support or bedridden handling.',
   },
   {
     question: 'Which areas of Bangalore do you cover for elder care?',
     answer:
-      'We serve seniors across Bangalore, including Whitefield, HSR Layout, Koramangala, Indiranagar, Jayanagar, JP Nagar, Hebbal, Sarjapur Road, Electronic City and surrounding areas. Call us to confirm coverage in your specific locality — we are expanding every month.',
+      'We serve seniors across Bangalore, including Whitefield, HSR Layout, Koramangala, Indiranagar, Jayanagar, JP Nagar, Hebbal, Sarjapur Road, Electronic City and surrounding areas. Call us to confirm coverage in your specific locality, we are expanding every month.',
   },
 ] as const
 
@@ -200,7 +213,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Elder Care at Home, Bangalore',
+    name: 'EzyHelpers, Elder Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -223,10 +236,10 @@ export default function ElderCareAtHomeView() {
       <Navbar />
 
       {/* ─────────────────── Hero ─────────────────── */}
-      <header className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white">
+      <header className="relative overflow-hidden bg-gradient-to-b from-care-50 to-white">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary-200/40 blur-3xl"
+          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-care-200/40 blur-3xl"
         />
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 sm:pb-28 sm:pt-8 lg:pb-32">
           {/* Breadcrumb */}
@@ -254,24 +267,25 @@ export default function ElderCareAtHomeView() {
             </ol>
           </nav>
 
-          <div className="mt-10 text-center sm:mt-14 lg:mt-16">
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 sm:mt-14 lg:mt-16 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-14">
+            <div className="text-center lg:text-left">
             <p className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-              <MapPinIcon className="h-3.5 w-3.5 text-primary-500" aria-hidden />
+              <MapPinIcon className="h-3.5 w-3.5 text-care-500" aria-hidden />
               Now serving Bangalore
             </p>
 
-            <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.4rem,6.5vw,5rem)] font-medium leading-[1.03] tracking-[-0.035em] text-neutral-950">
+            <h1 className="mx-auto mt-7 max-w-4xl font-careSerif text-[clamp(2.4rem,6.5vw,5rem)] font-medium leading-[1.03] tracking-[-0.035em] text-neutral-950 lg:mx-0">
               {PILLAR.title}.
               <br />
-              <em className="font-careSerif font-normal italic text-primary-500">With dignity, at home.</em>
+              <em className="font-careSerif font-normal italic text-care-500">With dignity, at home.</em>
             </h1>
 
-            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl">
+            <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-600 sm:text-xl lg:mx-0">
               {PILLAR.tagline} Verified, trained caregivers for dementia, Parkinson’s, bedridden seniors,
-              companionship and mobility — matched to your family, not assigned.
+              companionship and mobility, matched to your family, not assigned.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <Link
                 href={ENQUIRY_HREF}
                 onClick={() => trackCareCTAClick('Find the right caregiver', `${PATH}#hero`)}
@@ -297,6 +311,12 @@ export default function ElderCareAtHomeView() {
               Explore the six elder-care services
               <ArrowDownIcon className="h-3.5 w-3.5" aria-hidden />
             </a>
+            </div>
+
+            {/* In-hero quick lead form */}
+            <div className="mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
+              <CareHeroQuickForm enquirySource={PATH} />
+            </div>
           </div>
         </div>
       </header>
@@ -310,7 +330,7 @@ export default function ElderCareAtHomeView() {
           <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-neutral-200 sm:grid-cols-4">
             {TRUST_RIBBON.map(({ icon: Icon, title, sub }) => (
               <div key={title} className="flex flex-col items-center gap-2 bg-white px-4 py-7 text-center sm:py-8">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <strong className="text-sm font-bold text-neutral-950">{title}</strong>
@@ -323,7 +343,7 @@ export default function ElderCareAtHomeView() {
         {/* ─────────────── Intro ─────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
               Care for ageing parents
             </p>
             <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.08] tracking-[-0.025em] text-neutral-950">
@@ -333,24 +353,24 @@ export default function ElderCareAtHomeView() {
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600">
               {PILLAR.blurb} Whether your parent needs a calm companion for the afternoons or round-the-clock
-              support through advanced dementia, we match a caregiver with the right experience — and stay
+              support through advanced dementia, we match a caregiver with the right experience, and stay
               involved long after placement to make sure the care keeps working.
             </p>
           </div>
         </section>
 
         {/* ─────────────── Nested services grid ─────────────── */}
-        <section id="services" className="scroll-mt-28 border-y border-neutral-200 bg-primary-50 px-4 py-20 sm:px-6 sm:py-28">
+        <section id="services" className="scroll-mt-28 border-y border-neutral-200 bg-care-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Six elder-care services
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Specialised care for every stage of ageing.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
-                From gentle companionship to advanced dementia and bedridden care — choose the service that
+                From gentle companionship to advanced dementia and bedridden care, choose the service that
                 fits, and we’ll match a caregiver experienced in exactly that.
               </p>
             </div>
@@ -363,10 +383,10 @@ export default function ElderCareAtHomeView() {
                   <Link
                     key={service.slug}
                     href={href}
-                    aria-label={`${service.title} — learn more`}
-                    className="group flex h-full flex-col rounded-[28px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-primary-500/40 hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)] focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    aria-label={`${service.title}, learn more`}
+                    className="group flex h-full flex-col rounded-[28px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition hover:-translate-y-1 hover:border-care-500/40 hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)] focus-visible:ring-2 focus-visible:ring-care-500 focus-visible:ring-offset-2"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                       <Icon className="h-6 w-6" aria-hidden />
                     </span>
                     <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950">
@@ -376,7 +396,7 @@ export default function ElderCareAtHomeView() {
                     <p className="mt-5 text-sm font-semibold text-neutral-900">
                       {formatPriceWithNote(service.priceKey)}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-500 transition group-hover:text-primary-600">
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-care-500 transition group-hover:text-care-600">
                       Learn more
                       <ArrowLongRightIcon
                         className="h-4 w-4 transition group-hover:translate-x-1"
@@ -394,13 +414,13 @@ export default function ElderCareAtHomeView() {
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                 Why specialised elder care
               </p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Most services place whoever is free.
                 <br />
-                <em className="font-careSerif font-normal italic text-primary-500">We place whoever is right.</em>
+                <em className="font-careSerif font-normal italic text-care-500">We place whoever is right.</em>
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
                 Senior care done well is the difference between a parent who declines quietly and one who keeps
@@ -414,7 +434,7 @@ export default function ElderCareAtHomeView() {
                   key={title}
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-500 ring-1 ring-primary-500/15">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care-50 text-care-500 ring-1 ring-care-500/15">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
                   <h3 className="mt-5 font-careSerif text-xl font-bold tracking-tight text-neutral-950">{title}</h3>
@@ -426,10 +446,10 @@ export default function ElderCareAtHomeView() {
         </section>
 
         {/* ─────────────── How it works ─────────────── */}
-        <section className="bg-primary-50 px-4 py-20 sm:px-6 sm:py-28">
+        <section className="bg-care-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">How it works</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">How it works</p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Four steps. One careful match.
               </h2>
@@ -446,7 +466,7 @@ export default function ElderCareAtHomeView() {
                   className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-careSerif text-3xl font-medium text-primary-500">{n}</span>
+                    <span className="font-careSerif text-3xl font-medium text-care-500">{n}</span>
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-700">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
@@ -464,7 +484,7 @@ export default function ElderCareAtHomeView() {
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
                   Conditions we handle
                 </p>
                 <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
@@ -472,7 +492,7 @@ export default function ElderCareAtHomeView() {
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-neutral-600 sm:text-lg">
                   Elder caregivers are matched only when they have managed your parent’s specific condition
-                  before. If yours isn’t listed, call us — we’ll assess what the care actually requires.
+                  before. If yours isn’t listed, call us, we’ll assess what the care actually requires.
                 </p>
                 <a
                   href={PHONE_HREF}
@@ -490,7 +510,7 @@ export default function ElderCareAtHomeView() {
                       key={c}
                       className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700"
                     >
-                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden />
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-care-500" aria-hidden />
                       {c}
                     </span>
                   ))}
@@ -501,10 +521,10 @@ export default function ElderCareAtHomeView() {
         </section>
 
         {/* ─────────────── Testimonials ─────────────── */}
-        <section className="border-y border-neutral-200 bg-primary-50 px-4 py-20 sm:px-6 sm:py-28">
+        <section className="border-y border-neutral-200 bg-care-50 px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">Real families</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Real families</p>
               <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
                 Stories from Bangalore homes.
               </h2>
@@ -516,7 +536,7 @@ export default function ElderCareAtHomeView() {
                   className="flex h-full flex-col justify-between rounded-[24px] border border-neutral-200 bg-white p-7 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
                 >
                   <div>
-                    <span aria-hidden className="font-careSerif text-5xl leading-none text-primary-500/40">
+                    <span aria-hidden className="font-careSerif text-5xl leading-none text-care-500/40">
                       &ldquo;
                     </span>
                     <blockquote className="mt-2 font-careSerif text-lg leading-snug text-neutral-900 sm:text-xl">
@@ -539,7 +559,7 @@ export default function ElderCareAtHomeView() {
         {/* ─────────────── FAQ ─────────────── */}
         <section className="bg-white px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">Frequently asked</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">Frequently asked</p>
             <h2 className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
               Elder care in Bangalore, answered.
             </h2>
@@ -550,24 +570,24 @@ export default function ElderCareAtHomeView() {
         </section>
 
         {/* ─────────────── Final CTA ─────────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200 px-4 py-24 sm:px-6 sm:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-care-50 via-care-100 to-care-200 px-4 py-24 sm:px-6 sm:py-32">
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-primary-500/15 blur-3xl"
+            className="pointer-events-none absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-care-500/15 blur-3xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-primary-400/20 blur-3xl"
+            className="pointer-events-none absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-care-400/20 blur-3xl"
           />
           <div className="relative mx-auto max-w-4xl text-center">
             <h2 className="font-careSerif text-[clamp(2.25rem,6vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.025em] text-neutral-950">
               Care for your parents,
               <br />
-              <em className="font-careSerif font-normal italic text-primary-500">arranged in a single call.</em>
+              <em className="font-careSerif font-normal italic text-care-500">arranged in a single call.</em>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700">
               Tell us about your loved one. Our team responds within the hour, recommends the right elder-care
-              service, and starts the matching process — at no cost.
+              service, and starts the matching process, at no cost.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link

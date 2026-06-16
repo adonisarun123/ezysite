@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import NestCTA from '@/components/NestCTA'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   ShieldCheckIcon,
   ClockIcon,
@@ -18,7 +20,16 @@ import {
 export const metadata: Metadata = {
   title: 'Air Conditioner Repair in Bareilly - Cooling Experts',
   description: 'Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians.',
-  keywords: 'ac repair bareilly, air conditioner repair bareilly, ac service bareilly, ac gas filling bareilly, ac technician bareilly'
+  keywords: 'ac repair bareilly, air conditioner repair bareilly, ac service bareilly, ac gas filling bareilly, ac technician bareilly',
+  openGraph: {
+    title: 'Air Conditioner Repair in Bareilly - Cooling Experts',
+    description: 'Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians.',
+    url: 'https://www.ezyhelpers.com/services/ac-repair',
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Air%20Conditioner%20Repair%20in%20Bareilly%20-%20Cooling%20Experts", width: 1200, height: 630, alt: "Air Conditioner Repair in Bareilly - Cooling Experts" }],
+  }
 }
 
 export default function ACRepairPage() {
@@ -110,6 +121,7 @@ export default function ACRepairPage() {
 
   return (
     <main className="min-h-screen">
+      <ServiceSchema serviceName={"Air Conditioner Repair in Bareilly - Cooling Experts"} serviceDescription={"Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians."} serviceType={"Air Conditioner Repair in Bareilly - Cooling Experts"} serviceUrl={"https://www.ezyhelpers.com/services/ac-repair"} />
       <Navbar />
       
       <Breadcrumb 
@@ -174,6 +186,11 @@ export default function ACRepairPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I book AC repair at home through EzyHelpers?"
+        answer="EzyHelpers connects you with background-verified AC technicians for installation, servicing, gas refilling, and repairs. Book online or call 080-31411776 — same-day visits are available in most service areas, with upfront pricing and no hidden charges."
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

@@ -8,6 +8,7 @@ import OptimizedCard from '@/components/optimized/OptimizedCard'
 import OptimizedHeader from '@/components/optimized/OptimizedHeader'
 import { LocalBusinessSchema, BreadcrumbSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   BuildingLibraryIcon, 
   HeartIcon, 
@@ -30,6 +31,15 @@ export const metadata: Metadata = {
   title: 'Domestic Help Services in Delhi | Verified Maids & Home Staff | EzyHelpers',
   description:
     'Book verified maids, cooks, nannies, drivers, and elderly care in Delhi. Background-checked domestic help for Lutyens, South Delhi, Dwarka, and across NCR.',
+  openGraph: {
+    title: "Domestic Help Services in Delhi | Verified Maids & Home Staff | EzyHelpers",
+    description: "Book verified maids, cooks, nannies, drivers, and elderly care in Delhi. Background-checked domestic help for Lutyens, South Delhi, Dwarka, and across NCR.",
+    url: "https://www.ezyhelpers.com/cities/delhi",
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Domestic%20Help%20Services%20in%20Delhi", width: 1200, height: 630, alt: "Domestic Help Services in Delhi" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/cities/delhi',
     languages: selfReferencingLanguages('/cities/delhi'),
@@ -170,6 +180,11 @@ export default function DelhiPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a maid in Delhi through EzyHelpers?"
+        answer="EzyHelpers provides background-verified maids, cooks, nannies, and elderly caretakers across Delhi NCR. Placement typically takes 24–72 hours, with live-in, full-time, and part-time options and a quick replacement guarantee."
+      />
 
       {/* Local Services - Optimized */}
       <OptimizedSection background="gradient">

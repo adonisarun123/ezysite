@@ -4,6 +4,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
+import GoogleRatingBadge from '@/components/GoogleRatingBadge'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -33,6 +36,7 @@ export const metadata: Metadata = {
         description: 'Reliable patient care services at home providing comfort, recovery, and personalized attention from trained, verified home caregivers.',
         url: 'https://www.ezyhelpers.com/services/patient-care-services-at-home',
         type: 'website',
+        images: [{ url: "https://www.ezyhelpers.com/og?title=Reliable%20Home%20Patient%20Care%20Taker%20Services%20You%20Can%20Trust", width: 1200, height: 630, alt: "Reliable Home Patient Care Taker Services You Can Trust" }],
     },
     alternates: {
         canonical: 'https://www.ezyhelpers.com/services/patient-care-services-at-home'
@@ -134,6 +138,7 @@ export default function PatientCareServicesPage() {
 
     return (
         <main className="min-h-screen">
+          <ServiceSchema serviceName={"Reliable Home Patient Care Taker Services You Can Trust"} serviceDescription={"Reliable patient care services at home providing comfort, recovery, and personalized attention from trained, verified home caregivers."} serviceType={"Reliable Home Patient Care Taker Services You Can Trust"} serviceUrl={"https://www.ezyhelpers.com/services/patient-care-services-at-home"} />
             <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -273,6 +278,13 @@ export default function PatientCareServicesPage() {
                     </div>
                 </div>
             </section>
+
+            <QuickAnswer
+              question="How do I arrange patient care at home through EzyHelpers?"
+              answer="EzyHelpers provides trained, background-verified patient caretakers for post-surgery support, daily nursing assistance, and long-term care — live-in or shift-based. Placement typically takes 24–72 hours, with a replacement guarantee."
+            />
+
+            <GoogleRatingBadge rating="5.0" detail="Every Google review of our elderly & patient care is 5-star (June 2026)" />
 
             {/* Why Choose Section */}
             <section className="section-padding bg-gray-50 relative overflow-hidden">

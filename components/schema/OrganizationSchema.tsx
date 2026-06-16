@@ -1,3 +1,4 @@
+import { jsonLdHtml } from '@/lib/jsonLd'
 export default function OrganizationSchema() {
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -202,7 +203,7 @@ export default function OrganizationSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdHtml(organizationSchema) }}
     />
   )
 } 

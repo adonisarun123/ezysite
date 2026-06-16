@@ -6,18 +6,32 @@
 EzyHelpers operates two parallel businesses: (1) general home services (full-time maids, part-time maids, live-in maids, nannies, cooks, drivers, on-demand helpers) across multiple Indian cities, and (2) a dedicated Care Services division (nurses, caretakers, trained attendants) currently in Bangalore. Every caregiver passes Aadhaar verification, ID checks, in-person interview, and condition-relevant experience review before placement. Same-day placement is attempted across 16+ Bangalore localities. Free replacement is offered if the placement is not working.
 
 ## General Home Services
-- Full-Time Maids
-- Part-Time Maids
-- Live-In Maids
-- Nanny & Babysitter
-- Cooks
-- Drivers
-- Elderly Care
-- On-Demand Helpers
-- Home Deep Cleaning
-- Appliance Repair
-- Pest Control
-- House Shifting
+- All Services hub: https://www.ezyhelpers.com/services
+- Full-Time Maids: https://www.ezyhelpers.com/services/full-time-maids
+- Part-Time Maids: https://www.ezyhelpers.com/services/part-time-maids
+- Live-In Maids: https://www.ezyhelpers.com/services/live-in-maids
+- Nanny & Babysitter: https://www.ezyhelpers.com/services/nanny-babysitter
+- Japa Nanny (newborn & postnatal care): https://www.ezyhelpers.com/services/japa-nanny-services
+- Cooks: https://www.ezyhelpers.com/services/cooks
+- Professional Chef for Home: https://www.ezyhelpers.com/services/professional-chef-for-home
+- Drivers: https://www.ezyhelpers.com/services/drivers
+- Premium Chauffeur Service: https://www.ezyhelpers.com/services/premium-chauffeur-service
+- Elderly Care: https://www.ezyhelpers.com/services/elderly-care
+- Patient Care at Home: https://www.ezyhelpers.com/services/patient-care-services-at-home
+- Special-Needs Caregiver: https://www.ezyhelpers.com/services/special-needs-caregiver
+- On-Demand Helpers: https://www.ezyhelpers.com/services/on-demand-helpers
+- Home Deep Cleaning: https://www.ezyhelpers.com/services/deep-cleaning
+- Sofa Cleaning: https://www.ezyhelpers.com/services/sofa-cleaning
+- Appliance Repair: https://www.ezyhelpers.com/services/appliance-repair
+- AC Repair: https://www.ezyhelpers.com/services/ac-repair
+- Electricians: https://www.ezyhelpers.com/services/electricians
+- Plumbers: https://www.ezyhelpers.com/services/plumbers
+- Carpenters: https://www.ezyhelpers.com/services/carpenters
+- Painters: https://www.ezyhelpers.com/services/painters
+- Gardener: https://www.ezyhelpers.com/services/gardener
+- Pest Control: https://www.ezyhelpers.com/services/pest-control
+- House Shifting: https://www.ezyhelpers.com/services/house-shifting
+- Dog & Pet Sitters: https://www.ezyhelpers.com/services/dog-pet-sitters
 
 ## Care Services (Bangalore)
 - All Care Services hub: https://www.ezyhelpers.com/care-services
@@ -63,8 +77,16 @@ EzyHelpers operates two parallel businesses: (1) general home services (full-tim
 - Home Care for NRI Families: https://www.ezyhelpers.com/care-services/nri-family-home-care-bangalore
 
 ## Cities Served (general home services)
-- Bangalore
-- Bareilly
+- Bangalore: https://www.ezyhelpers.com/cities/bangalore
+- Mumbai: https://www.ezyhelpers.com/cities/mumbai
+- Delhi: https://www.ezyhelpers.com/cities/delhi
+- Noida: https://www.ezyhelpers.com/cities/noida
+- Hyderabad: https://www.ezyhelpers.com/cities/hyderabad
+- Lucknow: https://www.ezyhelpers.com/cities/lucknow
+- Kanpur: https://www.ezyhelpers.com/cities/kanpur
+- Meerut: https://www.ezyhelpers.com/cities/meerut
+- Nagpur: https://www.ezyhelpers.com/cities/nagpur
+- Bareilly: https://www.ezyhelpers.com/cities/bareilly
 
 ## Contact
 - Website: https://www.ezyhelpers.com

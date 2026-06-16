@@ -17,13 +17,13 @@ const SUPPORT = [
     icon: ChatBubbleLeftRightIcon,
     title: 'Daily WhatsApp updates',
     body:
-      'A short evening summary every day — meals, medication, mood, anything notable. Photos when appropriate. The cadence that distant children actually want.',
+      'A short evening summary every day, meals, medication, mood, anything notable. Photos when appropriate. The cadence that distant children actually want.',
   },
   {
     icon: VideoCameraIcon,
     title: 'Weekly video calls',
     body:
-      'A scheduled video check-in with the caregiver and the parent — caregiver sets it up, family sees how things look. We coordinate the time across time zones.',
+      'A scheduled video check-in with the caregiver and the parent, caregiver sets it up, family sees how things look. We coordinate the time across time zones.',
   },
   {
     icon: ClockIcon,
@@ -76,7 +76,7 @@ const CONCERNS = [
   {
     fear: 'How do emergencies work when I’m 12 hours away?',
     answer:
-      'Pre-agreed escalation: minor (caregiver handles, you’re informed in the next update), moderate (we call you on your local time), serious (we call regardless of time zone). Ambulance, hospital, paperwork — we coordinate even when you can’t.',
+      'Pre-agreed escalation: minor (caregiver handles, you’re informed in the next update), moderate (we call you on your local time), serious (we call regardless of time zone). Ambulance, hospital, paperwork, we coordinate even when you can’t.',
   },
   {
     fear: 'Will I be able to speak to my parent freely?',
@@ -104,22 +104,22 @@ const FAQS = [
   {
     question: 'Can the caregiver communicate with my parent’s consultant doctor?',
     answer:
-      'Yes — we register the caregiver with the consultant for routine updates. For meaningful clinical decisions, we always loop in the family.',
+      'Yes, we register the caregiver with the consultant for routine updates. For meaningful clinical decisions, we always loop in the family.',
   },
   {
-    question: 'What about visa visits — can the caregiver continue when I visit India?',
+    question: 'What about visa visits, can the caregiver continue when I visit India?',
     answer:
-      'Of course. Many families ask the caregiver to stay during their visits — it preserves the parent’s routine and gives you trusted help during what’s often a busy trip.',
+      'Of course. Many families ask the caregiver to stay during their visits, it preserves the parent’s routine and gives you trusted help during what’s often a busy trip.',
   },
   {
     question: 'How do you handle festivals, religious observance, dietary preferences?',
     answer:
-      'These are the daily texture of life — not optional. We brief the caregiver on dietary norms (vegetarian, Jain, fasting), festival routines, and prayer-time accommodation. We screen for cultural sensitivity in the same interview that screens for skill.',
+      'These are the daily texture of life, not optional. We brief the caregiver on dietary norms (vegetarian, Jain, fasting), festival routines, and prayer-time accommodation. We screen for cultural sensitivity in the same interview that screens for skill.',
   },
   {
     question: 'Are NRI prices different from local prices?',
     answer:
-      'No. NRI families pay the same rates as local families. We don’t add an "abroad" markup — that wouldn’t be right.',
+      'No. NRI families pay the same rates as local families. We don’t add an "abroad" markup, that wouldn’t be right.',
   },
 ] as const
 
@@ -151,7 +151,7 @@ export default function NriFamilyView() {
       eyebrow="Bangalore · NRI care coordination"
       headlineLead="Care for parents in Bangalore."
       headlineAccent="Wherever you are in the world."
-      lede="Daily updates, weekly video calls, time-zone-aware emergencies, transparent invoicing — built for the families running this from 12 time zones away."
+      lede="Daily updates, weekly video calls, time-zone-aware emergencies, transparent invoicing, built for the families running this from 12 time zones away."
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director', href: '/care-services/care-leadership' }}
@@ -159,12 +159,12 @@ export default function NriFamilyView() {
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             We coordinate care across time zones the way you’d want it done if you were close enough to be
-            doing it yourself. <em className="italic text-primary-500">Daily updates</em>,{' '}
-            <em className="italic text-primary-500">weekly video</em>, escalation paths agreed in advance, and
-            payment from anywhere. NRI rates are the same as local rates — no markup for distance.
+            doing it yourself. <em className="italic text-care-500">Daily updates</em>,{' '}
+            <em className="italic text-care-500">weekly video</em>, escalation paths agreed in advance, and
+            payment from anywhere. NRI rates are the same as local rates, no markup for distance.
           </p>
         </div>
       </section>
@@ -175,7 +175,7 @@ export default function NriFamilyView() {
             eyebrow="What we do differently"
             titleLead="Six things"
             titleMuted="that make remote care work."
-            lede="Most home care isn’t built for distance. We’ve built ours around it — because over half our care placements are NRI-coordinated."
+            lede="Most home care isn’t built for distance. We’ve built ours around it, because over half our care placements are NRI-coordinated."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {SUPPORT.map(({ icon: Icon, title, body }) => (
@@ -183,7 +183,7 @@ export default function NriFamilyView() {
                 key={title}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#E6F1FA] text-primary-500 ring-1 ring-primary-500/15">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#E6F1FA] text-care-500 ring-1 ring-care-500/15">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 font-careSerif text-lg font-bold tracking-tight text-neutral-950 sm:text-xl">
@@ -210,7 +210,7 @@ export default function NriFamilyView() {
                 key={c.fear}
                 className="flex h-full flex-col rounded-[24px] border border-neutral-200 bg-white p-7"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-500">The worry</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-care-500">The worry</p>
                 <p className="mt-2 font-careSerif text-lg leading-snug text-neutral-900 sm:text-xl">
                   {c.fear}
                 </p>

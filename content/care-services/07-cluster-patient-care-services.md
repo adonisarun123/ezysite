@@ -9,9 +9,9 @@ Schema: Service, LocalBusiness, BreadcrumbList, FAQPage, Review
 
 Every patient is different. Their condition, their daily rhythms, the things that comfort them, the language they feel most understood in, and the level of support they will accept without feeling diminished. Good patient care at home starts with understanding this individuality and matching a caretaker who can genuinely work within it.
 
-Patient care is recovery-focused care. It is the support someone receives while they are actively healing from surgery, managing a chronic condition, or transitioning from hospital to home. It is different from elderly care (which focuses on age-related daily support) and different from medical nursing (which focuses on procedures). Patient care sits in between — non-medical daily support delivered with awareness of the patient's specific medical situation.
+Patient care is recovery-focused care. It is the support someone receives while they are actively healing from surgery, managing a chronic condition, or transitioning from hospital to home. It is different from elderly care (which focuses on age-related daily support) and different from medical nursing (which focuses on procedures). Patient care sits in between, non-medical daily support delivered with awareness of the patient's specific medical situation.
 
-EzyHelpers provides patient care services in Bangalore that begin with this patient-centred approach. Whether your family member is recovering from surgery, managing a long-term illness, bedridden and needing comprehensive daily care, or transitioning home from a hospital stay, we match a verified, experienced caretaker to their specific situation rather than sending whoever happens to be available.
+EzyHelpers provides patient care services in Bangalore that begin with this patient-centred approach. Whether your family member is recovering from surgery, managing a long-term illness, bedridden and needing full daily care, or transitioning home from a hospital stay, we match a verified, experienced caretaker to their specific situation rather than sending whoever happens to be available.
 
 **✓ Recovery-Focused Daily Patient Support  ✓ Verified, Trained, and Background-Checked  ✓ Quick Placement for Hospital-Discharge Situations**
 
@@ -58,8 +58,8 @@ Patient care at home through EzyHelpers is designed around the patient's actual 
 - Live-in care for round-the-clock supervision
 - Day and night shift care based on family requirements
 - Bedside care for patients needing constant attention
-- Personal care support — bathing, grooming, hygiene
-- Mobility assistance — walking, transfers, fall prevention
+- Personal care support, bathing, grooming, hygiene
+- Mobility assistance, walking, transfers, fall prevention
 - Feeding assistance and dietary support
 - Companionship care for emotional support during recovery
 - Hospital-to-home transition support for smooth recovery setup
@@ -196,7 +196,7 @@ Call us to confirm availability in your specific area.
 
 ### **How is patient care different from elderly care or caretaker services?**
 
-Patient care focuses on someone actively recovering from surgery or managing a specific medical condition — it's recovery-focused. [Elderly care](/care-services/elderly-care-services-bangalore/) focuses on age-related daily support and dignity for seniors. [Caretaker services](/care-services/caretaker-services-bangalore/) is the broad service-keyword for general personal care. Many situations overlap — call us if you're not sure which fits.
+Patient care focuses on someone actively recovering from surgery or managing a specific medical condition, it's recovery-focused. [Elderly care](/care-services/elderly-care-services-bangalore/) focuses on age-related daily support and dignity for seniors. [Caretaker services](/care-services/caretaker-services-bangalore/) is the broad service-keyword for general personal care. Many situations overlap, call us if you're not sure which fits.
 
 ### **How quickly can you arrange a patient caretaker?**
 
@@ -216,7 +216,7 @@ Yes. We offer flexible options including short-term, part-time, full-day, and li
 
 ### **What if my patient also needs medical procedures?**
 
-If the patient needs both daily care AND medical procedures (wound care, IV, monitoring), see [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/) — a coordinated nurse + caretaker arrangement. If only nursing is needed, see [Home Nursing Services](/care-services/home-nursing-services-bangalore/).
+If the patient needs both daily care AND medical procedures (wound care, IV, monitoring), see [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/), a coordinated nurse + caretaker arrangement. If only nursing is needed, see [Home Nursing Services](/care-services/home-nursing-services-bangalore/).
 
 ### **What is the registration or service fee?**
 
@@ -226,12 +226,12 @@ A one-time registration or service fee may apply. Our team will clearly explain 
 
 ## **Related Services**
 
-- **[Home Healthcare Services](/care-services/home-healthcare-services-bangalore/)** — When medical procedures are needed alongside patient care.
-- **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)** — When only medical nursing is needed.
-- **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)** — For high-dependency cases (bedridden, neurological, post-spinal).
-- **[Home Attendant Services](/care-services/home-attendant-services-bangalore/)** — For shift-based daily attendant support.
-- **[Elderly Care Services](/care-services/elderly-care-services-bangalore/)** — When the patient is a senior citizen.
-- **[Caretaker Services](/care-services/caretaker-services-bangalore/)** — General caretaker placement.
+- **[Home Healthcare Services](/care-services/home-healthcare-services-bangalore/)**, When medical procedures are needed alongside patient care.
+- **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)**, When only medical nursing is needed.
+- **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)**, For high-dependency cases (bedridden, neurological, post-spinal).
+- **[Home Attendant Services](/care-services/home-attendant-services-bangalore/)**, For shift-based daily attendant support.
+- **[Elderly Care Services](/care-services/elderly-care-services-bangalore/)**, When the patient is a senior citizen.
+- **[Caretaker Services](/care-services/caretaker-services-bangalore/)**, General caretaker placement.
 
 ← Back to **[Home Care Services](/care-services/home-care-services-bangalore/)**
 

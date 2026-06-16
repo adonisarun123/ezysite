@@ -48,12 +48,12 @@ const FAQS = [
   {
     question: 'Can you really place a caregiver on the day of discharge?',
     answer:
-      'For most situations, yes — provided we have at least 24 hours’ notice. Discharge dates often shift; we plan for two scenarios (morning vs afternoon discharge) and the caregiver is briefed and on standby.',
+      'For most situations, yes, provided we have at least 24 hours’ notice. Discharge dates often shift; we plan for two scenarios (morning vs afternoon discharge) and the caregiver is briefed and on standby.',
   },
   {
-    question: 'What if discharge is sudden — same day notice?',
+    question: 'What if discharge is sudden, same day notice?',
     answer:
-      'We try. Same-day placement is harder but not impossible — Bangalore’s caregiver density is good. If we can’t place that day, we typically place by next morning. The caregiver doing a "second night" while you wait is rare.',
+      'We try. Same-day placement is harder but not impossible, Bangalore’s caregiver density is good. If we can’t place that day, we typically place by next morning. The caregiver doing a "second night" while you wait is rare.',
   },
   {
     question: 'Should I arrange a nurse, a caretaker, or both?',
@@ -63,12 +63,12 @@ const FAQS = [
   {
     question: 'Do you coordinate with the hospital social worker / discharge planner?',
     answer:
-      'Yes — most major Bangalore hospitals have discharge coordinators we work with regularly. We can speak directly to the discharge nurse or social worker if helpful, and they often refer families to us.',
+      'Yes, most major Bangalore hospitals have discharge coordinators we work with regularly. We can speak directly to the discharge nurse or social worker if helpful, and they often refer families to us.',
   },
   {
     question: 'Will my insurance cover this?',
     answer:
-      'Skilled nursing for medically necessary post-discharge care is often covered under "domiciliary hospitalisation" clauses. Caretaker services typically aren’t. See our insurance guide for plan-specific notes — and we’ll provide the documentation needed for claims.',
+      'Skilled nursing for medically necessary post-discharge care is often covered under "domiciliary hospitalisation" clauses. Caretaker services typically aren’t. See our insurance guide for plan-specific notes, and we’ll provide the documentation needed for claims.',
   },
   {
     question: 'How much does discharge home care typically cost?',
@@ -81,7 +81,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Hospital Discharge Home Care, Bangalore',
+    name: 'EzyHelpers, Hospital Discharge Home Care, Bangalore',
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
     telephone: '+91-80-31411776',
@@ -112,9 +112,9 @@ export default function HospitalDischargeView() {
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-[#F2F7FB] p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">In one paragraph</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
-            Discharge home care should be set up <em className="italic text-primary-500">before discharge</em>,
+            Discharge home care should be set up <em className="italic text-care-500">before discharge</em>,
             not after. With 24 hours’ notice, we shortlist, brief and place a caregiver who arrives at the
             home before the patient does. Across Manipal, Apollo, Fortis, Sakra, Narayana, Aster, and the
             other major Bangalore hospitals.
@@ -136,7 +136,7 @@ export default function HospitalDischargeView() {
                 key={t.when}
                 className="flex items-start gap-5 rounded-2xl border border-neutral-200 bg-[#F7F7F2] px-6 py-5"
               >
-                <span className="font-careSerif text-lg font-medium text-primary-500 sm:text-xl min-w-[4.5rem]">
+                <span className="font-careSerif text-lg font-medium text-care-500 sm:text-xl min-w-[4.5rem]">
                   {t.when}
                 </span>
                 <div>
@@ -160,7 +160,7 @@ export default function HospitalDischargeView() {
           <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {HOSPITALS.map((h) => (
               <div key={h} className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-4">
-                <BuildingOffice2Icon className="mt-0.5 h-5 w-5 shrink-0 text-primary-500" aria-hidden />
+                <BuildingOffice2Icon className="mt-0.5 h-5 w-5 shrink-0 text-care-500" aria-hidden />
                 <span className="text-sm font-medium text-neutral-900">{h}</span>
               </div>
             ))}
@@ -174,7 +174,7 @@ export default function HospitalDischargeView() {
             eyebrow="What we’ll need from you"
             titleLead="Eight things"
             titleMuted="from the discharge summary."
-            lede="The faster you can share these, the faster we can match the right caregiver. Most are on the discharge summary — your hospital social worker can help if anything is missing."
+            lede="The faster you can share these, the faster we can match the right caregiver. Most are on the discharge summary, your hospital social worker can help if anything is missing."
             align="center"
           />
           <ul className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">
@@ -183,7 +183,7 @@ export default function HospitalDischargeView() {
                 key={c}
                 className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-[#F7F7F2] px-4 py-3.5"
               >
-                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                 <span className="text-sm leading-snug text-neutral-800">{c}</span>
               </li>
             ))}

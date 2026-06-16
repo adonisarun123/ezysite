@@ -3,12 +3,27 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
 import FAQAccordion from '@/components/FAQAccordion'
 import { CareSubpageShell, CareSubpageClosingCTA, SectionHeader } from './CareSubpageShell'
+import CareNeedsCovered, { type CareNeeds } from '../CareNeedsCovered'
 import { getNestedService } from '@/lib/careServices/newServices'
 
 const SERVICE = getNestedService('bedridden-patient-care-at-home-bangalore')!
 const PATH = `/care-services/${SERVICE.slug}`
 
-/* hero stats — INVENTED / ILLUSTRATIVE figures for layout & marketing only.
+const CARE_NEEDS: CareNeeds = {
+  conditionsCovered: ['Complete bedside care', 'Long-term immobility', 'Diaper care', 'Bed sores risk', 'Tube feeding (nurse-supported)'],
+  careNeeds: [
+    'Bed bath and oral hygiene',
+    'Diaper changing with dignity',
+    'Feeding assistance',
+    'Two-hourly position changing',
+    'Bed-sore prevention and skin checks',
+    'Linen changing',
+    'Basic vitals observation',
+    'Emotional comfort and presence',
+  ],
+}
+
+/* hero stats, INVENTED / ILLUSTRATIVE figures for layout & marketing only.
  * Confirm against real operational data before launch. */
 const HERO_STATS = [
   { value: '2-hourly', label: 'repositioning to prevent pressure sores' },
@@ -22,7 +37,7 @@ const SECTIONS = [
     titleLead: 'Bedsores are preventable.',
     titleMuted: 'We treat them that way.',
     lede:
-      'For a bedridden senior, pressure-sore prevention is the single most important daily discipline — and our attendants are trained to deliver it consistently.',
+      'For a bedridden senior, pressure-sore prevention is the single most important daily discipline, and our attendants are trained to deliver it consistently.',
     bullets: [
       'Scheduled 2-hourly repositioning, day and night',
       'Air-mattress and cushion guidance for at-risk pressure points',
@@ -61,7 +76,7 @@ const SECTIONS = [
     titleLead: 'Small changes,',
     titleMuted: 'caught early.',
     lede:
-      'A trained attendant notices the early signs — a new sore, a fever, reduced intake — before they become emergencies.',
+      'A trained attendant notices the early signs, a new sore, a fever, reduced intake, before they become emergencies.',
     bullets: [
       'Daily observation of skin, intake, output and comfort',
       'Vitals tracking and prompt escalation to family or doctor',
@@ -85,7 +100,7 @@ const FAQS = [
   {
     question: 'What does bedridden patient care cost in Bangalore?',
     answer:
-      'Cost depends on the intensity of care needed — bedridden care requires trained attendants skilled in safe handling, repositioning and pressure-sore prevention, so it costs more than general caretaking. A free consultation gives you a precise, transparent estimate based on the patient’s needs.',
+      'Cost depends on the intensity of care needed, bedridden care requires trained attendants skilled in safe handling, repositioning and pressure-sore prevention, so it costs more than general caretaking. A free consultation gives you a precise, transparent estimate based on the patient’s needs.',
   },
   {
     question: 'Can the attendant manage catheter and feeding tubes?',
@@ -100,7 +115,7 @@ const FAQS = [
   {
     question: 'How quickly can you arrange a bedridden caregiver in Bangalore?',
     answer:
-      'When a suitable trained attendant is available, we attempt same-day placement — especially for hospital discharge. Across the Bangalore localities we serve, most matches are completed within 24–48 hours.',
+      'When a suitable trained attendant is available, we attempt same-day placement, especially for hospital discharge. Across the Bangalore localities we serve, most matches are completed within 24–48 hours.',
   },
 ] as const
 
@@ -108,7 +123,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Bedridden Patient Care at Home, Bangalore',
+    name: 'EzyHelpers, Bedridden Patient Care at Home, Bangalore',
     medicalSpecialty: ['Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -132,7 +147,7 @@ export default function BedriddenPatientCareView() {
       eyebrow="Bangalore · High-dependency care at home"
       headlineLead="Bedridden care, done safely."
       headlineAccent="And with real dignity."
-      lede={SERVICE.tagline + ' Trained attendants for repositioning, pressure-sore prevention, hygiene, feeding and safe transfers — so your loved one stays comfortable and complication-free at home.'}
+      lede={SERVICE.tagline + ' Trained attendants for repositioning, pressure-sore prevention, hygiene, feeding and safe transfers, so your loved one stays comfortable and complication-free at home.'}
       enquirySource={PATH}
       jsonLd={JSONLD as unknown as Record<string, unknown>[]}
       reviewedBy={{ name: 'Sister Mary George', credential: 'B.Sc Nursing, Care Director' }}
@@ -141,25 +156,27 @@ export default function BedriddenPatientCareView() {
       <section className="bg-white px-4 pt-4 sm:px-6">
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
           {HERO_STATS.map((s) => (
-            <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-primary-50 p-6 text-center">
-              <div className="font-careSerif text-3xl font-medium tracking-tight text-primary-500">{s.value}</div>
+            <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-care-50 p-6 text-center">
+              <div className="font-careSerif text-3xl font-medium tracking-tight text-care-500">{s.value}</div>
               <div className="mt-2 text-sm leading-snug text-neutral-600">{s.label}</div>
             </div>
           ))}
         </div>
       </section>
 
+      <CareNeedsCovered needs={CARE_NEEDS} />
+
       {SECTIONS.map((sec, idx) => (
         <section
           key={sec.eyebrow}
-          className={`px-4 py-20 sm:px-6 sm:py-24 ${idx % 2 === 0 ? 'bg-white' : 'bg-primary-50'}`}
+          className={`px-4 py-20 sm:px-6 sm:py-24 ${idx % 2 === 0 ? 'bg-white' : 'bg-care-50'}`}
         >
           <div className="mx-auto max-w-5xl">
             <SectionHeader eyebrow={sec.eyebrow} titleLead={sec.titleLead} titleMuted={sec.titleMuted} lede={sec.lede} />
             <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {sec.bullets.map((b) => (
                 <li key={b} className="flex items-start gap-2 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5">
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden />
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-500" aria-hidden />
                   <span className="text-sm leading-snug text-neutral-800">{b}</span>
                 </li>
               ))}

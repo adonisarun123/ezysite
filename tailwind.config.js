@@ -38,6 +38,21 @@ module.exports = {
           800: '#136092',
           900: '#074371',
         },
+        /** Care-services section theme — warm orange (June 2026 restyle).
+         *  Used by components/care-services/home/CareServicesHomeView.tsx.
+         *  Tune the section's hue here in one place. */
+        care: {
+          50: '#fef5ec',
+          100: '#fce4cb',
+          200: '#f9cfa3',
+          300: '#f5b573',
+          400: '#f0993f',
+          500: '#ea7c1f', // Warm Orange — care-services brand color
+          600: '#cf6512',
+          700: '#a84f10',
+          800: '#823c10',
+          900: '#5c2a0d',
+        },
         accent: {
           50: '#fff3e6',
           100: '#ffe0b3',

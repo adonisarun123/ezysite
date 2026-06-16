@@ -25,12 +25,12 @@ Whether your loved one needs a few hours of daily support, an overnight shift, a
 
 ## **Home Attendant vs Trained Attendant: Which Do You Need?**
 
-Both services place attendants — the difference is the level of physical complexity:
+Both services place attendants, the difference is the level of physical complexity:
 
 | Service | Best For | Skill Focus |
 |---|---|---|
-| **Home Attendant** (this page) | General daily attendant needs — elderly support, post-recovery, routine personal care | Daily care + flexible shift coverage (day, night, full-time, live-in) |
-| [Trained Attendant](/care-services/trained-attendant-services-bangalore/) | Bedridden, post-spinal, neurological, bariatric, high-dependency patients | Skilled physical handling — transfers, repositioning, pressure-sore prevention |
+| **Home Attendant** (this page) | General daily attendant needs, elderly support, post-recovery, routine personal care | Daily care + flexible shift coverage (day, night, full-time, live-in) |
+| [Trained Attendant](/care-services/trained-attendant-services-bangalore/) | Bedridden, post-spinal, neurological, bariatric, high-dependency patients | Skilled physical handling, transfers, repositioning, pressure-sore prevention |
 
 If you're unsure which level your patient needs, our consultation will clarify in 5 minutes.
 
@@ -48,7 +48,7 @@ Every home attendant in our network is verified through Aadhaar authentication, 
 
 A home attendant for a bedridden post-surgical patient has very different requirements from one supporting a mobile but cognitively declining elderly person. We ask detailed questions during the consultation to understand exactly what your patient's day looks like and what the attendant will need to manage. The match is based on this specificity.
 
-### **Flexible Shift Options — Day, Night, Full-Time, Live-In**
+### **Flexible Shift Options, Day, Night, Full-Time, Live-In**
 
 Different families need different coverage. We place attendants for day shifts (typically 8–12 hours during the day), night shifts (overnight monitoring and support), full-time daily coverage, or live-in arrangements where the attendant stays at the home round-the-clock. We can also arrange rotating shifts with two attendants for round-the-clock care without the live-in setup.
 
@@ -90,11 +90,11 @@ Home attendant services through EzyHelpers are structured around what your patie
 
 ### **What's Included**
 
-- Full morning hygiene routine — bathing, grooming, dressing
+- Full morning hygiene routine, bathing, grooming, dressing
 - Safe positioning and regular repositioning for bedridden patients
 - Feeding assistance and monitoring of food and fluid intake
 - Medication reminders and schedule compliance
-- Mobility assistance — transfers between bed, chair, and bathroom
+- Mobility assistance, transfers between bed, chair, and bathroom
 - Basic vital signs observation and noting changes
 - Light physiotherapy exercise support as directed by the doctor
 - End-of-day family update on the patient's condition and activities
@@ -212,11 +212,11 @@ Need to check coverage in your specific locality? Call us and we will confirm qu
 
 ### **What is the difference between a home attendant and a home nurse?**
 
-A home attendant focuses on non-medical daily care — personal hygiene, feeding, mobility support, medication reminders, and companionship. A [home nurse](/care-services/home-nursing-services-bangalore/) performs medical procedures such as wound dressing, IV administration, catheter management, and medication injections. If your patient needs both, we can arrange a combined placement or see [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/).
+A home attendant focuses on non-medical daily care, personal hygiene, feeding, mobility support, medication reminders, and companionship. A [home nurse](/care-services/home-nursing-services-bangalore/) performs medical procedures such as wound dressing, IV administration, catheter management, and medication injections. If your patient needs both, we can arrange a combined placement or see [Home Healthcare Services](/care-services/home-healthcare-services-bangalore/).
 
 ### **What is the difference between a home attendant and a trained attendant?**
 
-A home attendant handles general daily care — flexible shift coverage for elderly support, post-recovery, and routine personal care. A [trained attendant](/care-services/trained-attendant-services-bangalore/) is for high-dependency situations requiring skilled physical handling — bedridden, post-spinal, neurological, or bariatric patients. The trained attendant role demands specific transfer, repositioning, and pressure-care experience.
+A home attendant handles general daily care, flexible shift coverage for elderly support, post-recovery, and routine personal care. A [trained attendant](/care-services/trained-attendant-services-bangalore/) is for high-dependency situations requiring skilled physical handling, bedridden, post-spinal, neurological, or bariatric patients. The trained attendant role demands specific transfer, repositioning, and pressure-care experience.
 
 ### **Can you place a home attendant for a bedridden patient?**
 
@@ -228,7 +228,7 @@ Yes. Gender matching is a standard part of our consultation and placement proces
 
 ### **Can a home attendant support a patient post-surgery?**
 
-Absolutely. Post-surgical home attendant support is a core part of our service. We ensure the attendant placed has experience with the specific type of surgery your patient has undergone — orthopaedic, cardiac, abdominal, or neurological.
+Absolutely. Post-surgical home attendant support is a core part of our service. We ensure the attendant placed has experience with the specific type of surgery your patient has undergone, orthopaedic, cardiac, abdominal, or neurological.
 
 ### **What if the attendant becomes unavailable?**
 
@@ -242,11 +242,11 @@ This is assessed during our placement interview through scenario-based questions
 
 ## **Related Services**
 
-- **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)** — For high-dependency patients (bedridden, neurological, post-spinal).
-- **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)** — When the patient needs medical procedures.
-- **[Home Healthcare Services](/care-services/home-healthcare-services-bangalore/)** — Combined medical + daily care.
-- **[Caretaker Services](/care-services/caretaker-services-bangalore/)** — General caretaker placement.
-- **[Elderly Care Services](/care-services/elderly-care-services-bangalore/)** — Specialised matching for senior citizens.
+- **[Trained Attendant Services](/care-services/trained-attendant-services-bangalore/)**, For high-dependency patients (bedridden, neurological, post-spinal).
+- **[Home Nursing Services](/care-services/home-nursing-services-bangalore/)**, When the patient needs medical procedures.
+- **[Home Healthcare Services](/care-services/home-healthcare-services-bangalore/)**, Combined medical + daily care.
+- **[Caretaker Services](/care-services/caretaker-services-bangalore/)**, General caretaker placement.
+- **[Elderly Care Services](/care-services/elderly-care-services-bangalore/)**, Specialised matching for senior citizens.
 
 ← Back to **[Home Care Services](/care-services/home-care-services-bangalore/)**
 

@@ -40,7 +40,7 @@ const SECTIONS: { title: string; lede?: string; bullets: string[] }[] = [
   },
   {
     title: 'Safety and oversight',
-    lede: 'The first weeks after ICU are when complications and re-admissions are most likely — so vigilance matters.',
+    lede: 'The first weeks after ICU are when complications and re-admissions are most likely, so vigilance matters.',
     bullets: [
       'Clear escalation thresholds and a nurse-to-doctor protocol',
       'A defined pathway back to hospital if the patient deteriorates',
@@ -54,7 +54,7 @@ const FAQS = [
   {
     question: 'Why is post-ICU care important?',
     answer:
-      'The weeks after ICU discharge carry a real risk of complications, weakness and re-admission. Structured step-down care — monitoring, medication management, early mobilisation and nutrition — helps recovery stay on track. This is general information, not medical advice.',
+      'The weeks after ICU discharge carry a real risk of complications, weakness and re-admission. Structured step-down care, monitoring, medication management, early mobilisation and nutrition, helps recovery stay on track. This is general information, not medical advice.',
   },
   {
     question: 'What is post-intensive-care syndrome?',
@@ -64,7 +64,7 @@ const FAQS = [
   {
     question: 'Do you provide nurses or attendants for post-ICU care?',
     answer:
-      'We match the staffing to the recovery stage — critical-care or skilled nurses where monitoring and clinical tasks are needed, stepping down to trained attendants as the patient stabilises, all under doctor oversight.',
+      'We match the staffing to the recovery stage, critical-care or skilled nurses where monitoring and clinical tasks are needed, stepping down to trained attendants as the patient stabilises, all under doctor oversight.',
   },
   {
     question: 'How much does post-ICU recovery care cost in Bangalore?',
@@ -87,7 +87,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Post-ICU Recovery Care at Home, Bangalore',
+    name: 'EzyHelpers, Post-ICU Recovery Care at Home, Bangalore',
     medicalSpecialty: ['Critical Care', 'Rehabilitation'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -111,13 +111,13 @@ export default function PostIcuRecoveryView() {
       eyebrow="Bangalore · Critical care at home"
       headlineLead="Post-ICU recovery,"
       headlineAccent="safely stepped down."
-      lede="The move from ICU to home is a vulnerable window. We provide step-down monitoring, rehabilitation and complication watch after intensive-care discharge — to keep recovery on track and reduce re-admission."
+      lede="The move from ICU to home is a vulnerable window. We provide step-down monitoring, rehabilitation and complication watch after intensive-care discharge, to keep recovery on track and reduce re-admission."
       enquirySource={PATH}
       jsonLd={JSONLD}
     >
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-primary-50 p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600">In one paragraph</p>
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-neutral-200 bg-care-50 p-8 sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-600">In one paragraph</p>
           <p className="mt-4 font-careSerif text-xl leading-snug text-neutral-900 sm:text-2xl">
             {NESTED.description}
           </p>
@@ -134,7 +134,7 @@ export default function PostIcuRecoveryView() {
                   key={b}
                   className="flex items-start gap-2.5 rounded-2xl border border-neutral-200 bg-white px-4 py-3.5 text-sm leading-snug text-neutral-800"
                 >
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" aria-hidden />
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-600" aria-hidden />
                   <span>{b}</span>
                 </li>
               ))}

@@ -4,6 +4,7 @@ import pRetry from 'p-retry';
 import { EMAIL } from './constants';
 import { logger } from './logger';
 import { ContactFormData, EmailContent, HireHelperFormData, GeneralLeadFormData, AgentRegistrationFormData, HelperRegistrationFormData, RequirementFormData, CustomerRequirementFormData, HelperInterviewFormData, EmailSendResult, LeadType, CareersChiefOfStaffFormData, CareersApmFormData, CareersSalesExecutiveFormData, CareersRoleApplicationFormData, CareServicesLeadFormData, CandidateApplicationFormData } from '../types/email';
+import { triageLeadForEmail } from './leadTriage';
 import {
   createTransporter,
   safe,
@@ -24,16 +25,63 @@ export {
   formatAccountForEmail,
 };
 
-// Address that must be copied on every outbound lead/notification email site-wide.
-const ALWAYS_CC_EMAIL = 'contact@ezyhelpers.com';
+// Returns a safe Reply-To address. The Reply-To is set from user-submitted
+// email on lead forms; an invalid/garbage value means staff replies could be
+// routed to an attacker-chosen address (phishing) or make sendMail throw.
+// Validate against a strict pattern and strip CR/LF (header-injection guard);
+// fall back to SMTP_USER when the input is missing or malformed.
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function safeReplyTo(email: unknown): string | undefined {
+  const fallback = process.env.SMTP_USER || undefined;
+  if (typeof email !== 'string') return fallback;
+  const cleaned = email.trim().replace(/[\r\n]/g, '');
+  return EMAIL_RE.test(cleaned) ? cleaned : fallback;
+}
+
+// Addresses that must be copied on every outbound lead/notification email
+// site-wide, regardless of per-form env routing (June 2026).
+const ALWAYS_CC_EMAILS = [
+  'contact@ezyhelpers.com',
+  'priyanka@ezyhelpers.com',
+  'arun@ezyhelpers.com',
+  'suraj@ezyhelpers.com',
+];
+
+/** Parse a user-agent string into a friendly Browser / OS / Device label for emails. */
+const describeUserAgentForEmail = (
+  ua: string,
+): { browser: string; os: string; device: string } => {
+  if (!ua) return { browser: '—', os: '—', device: '—' };
+
+  let os = 'Unknown';
+  if (/Windows NT 10/.test(ua)) os = 'Windows 10/11';
+  else if (/Windows NT/.test(ua)) os = 'Windows';
+  else if (/iPhone|iPad|iPod/.test(ua)) os = 'iOS';
+  else if (/Mac OS X/.test(ua)) os = 'macOS';
+  else if (/Android/.test(ua)) os = 'Android';
+  else if (/Linux/.test(ua)) os = 'Linux';
+
+  let browser = 'Unknown';
+  if (/Edg\//.test(ua)) browser = 'Edge';
+  else if (/OPR\/|Opera/.test(ua)) browser = 'Opera';
+  else if (/Chrome\//.test(ua) && !/Chromium/.test(ua)) browser = 'Chrome';
+  else if (/Firefox\//.test(ua)) browser = 'Firefox';
+  else if (/Safari\//.test(ua) && /Version\//.test(ua)) browser = 'Safari';
+
+  let device = 'Desktop';
+  if (/iPad|Tablet/.test(ua)) device = 'Tablet';
+  else if (/Mobi|iPhone|Android.*Mobile/.test(ua)) device = 'Mobile';
+
+  return { browser, os, device };
+};
 
 /**
  * Normalise a comma-separated recipient string into a clean, de-duplicated
- * "a@x.com, b@y.com" list, and guarantee ALWAYS_CC_EMAIL is always included.
- * De-duplication is case-insensitive. Used by every send path so that
- * contact@ezyhelpers.com receives a copy of all emails across the site.
+ * "a@x.com, b@y.com" list, and guarantee ALWAYS_CC_EMAILS are always included.
+ * De-duplication is case-insensitive. Used by every send path so that the
+ * core team receives a copy of all emails across the site.
  */
-const buildRecipientList = (recipientsEnv: string): string => {
+export const buildRecipientList = (recipientsEnv: string): string => {
   const seen = new Set<string>();
   const out: string[] = [];
   const add = (email: string) => {
@@ -45,7 +93,7 @@ const buildRecipientList = (recipientsEnv: string): string => {
     out.push(trimmed);
   };
   recipientsEnv.split(',').forEach(add);
-  add(ALWAYS_CC_EMAIL);
+  ALWAYS_CC_EMAILS.forEach(add);
   return out.join(', ');
 };
 
@@ -153,6 +201,18 @@ const generateHireHelperLeadEmail = (formData: {
   hasHelperRoom?: string;
   requestId: string;
   sourceUrl?: string;
+  priority?: string;
+  clientContext?: {
+    userAgent?: string;
+    platform?: string;
+    language?: string;
+    screen?: string;
+    timezone?: string;
+  };
+  requestContext?: {
+    ip?: string;
+    userAgent?: string;
+  };
 }) => {
   const formattedPhone = formatPhoneForEmail(formData.phone);
   const durationLine = formatHireHelperDurationForEmail(formData.serviceType, formData.duration);
@@ -160,6 +220,43 @@ const generateHireHelperLeadEmail = (formData: {
 
   const isCook = formData.serviceRole === 'cook';
   const isLiveIn = formData.serviceType === 'live-in';
+  const isP0 = String(formData.priority || '').toLowerCase() === 'p0';
+
+  // Build a "Device & Source" block from whatever client/request context we have.
+  const ua = formData.requestContext?.userAgent || formData.clientContext?.userAgent || '';
+  const device = describeUserAgentForEmail(ua);
+  const ctxRows: Array<[string, string]> = [
+    ['IP Address', formData.requestContext?.ip || '—'],
+    ['Device', device.device],
+    ['Browser', device.browser],
+    ['Operating System', device.os],
+    ['Screen', formData.clientContext?.screen || '—'],
+    ['Language', formData.clientContext?.language || '—'],
+    ['Timezone', formData.clientContext?.timezone || '—'],
+  ];
+  const ctxHtml = ctxRows
+    .map(([label, value]) => `<p style="margin:4px 0;"><strong>${safe(label)}:</strong> ${safe(value)}</p>`)
+    .join('\n          ');
+  const ctxText = ctxRows.map(([label, value]) => `- ${label}: ${value}`).join('\n');
+
+  // Priority styling: P0 = red, high-urgency banner; otherwise the normal amber note.
+  const headerColor = isP0 ? '#dc2626' : '#f1750a';
+  const priorityBanner = isP0
+    ? `
+        <div style="margin: 0 0 20px; padding: 16px; background-color: #fee2e2; border: 2px solid #dc2626; border-radius: 8px;">
+          <p style="margin: 0; color: #991b1b; font-size: 15px;"><strong>🔴 P0 — PRIORITY REQUEST (Fast-Paced).</strong> The customer added full details and asked us to fast-track this. Action this immediately.</p>
+        </div>`
+    : `
+        <div style="margin: 0 0 20px; padding: 15px; background-color: #fff3cd; border-radius: 8px;">
+          <p style="margin: 0; color: #856404;"><strong>Priority:</strong> Standard lead — follow up promptly.</p>
+        </div>`;
+  const priorityText = isP0
+    ? 'PRIORITY: 🔴 P0 — PRIORITY REQUEST (Fast-Paced). Customer added full details and asked to fast-track. Action immediately.'
+    : 'Priority: Standard lead — follow up promptly.';
+  const subjectPrefix = isP0 ? '🔴 [P0] ' : '';
+  const headingText = isP0
+    ? 'P0 — Fast-Paced Hire Helper Request'
+    : 'New Hire Helper Lead Received';
 
   const cookHtml = isCook && formData.cookFoodType ? `
           <p><strong>Food Type:</strong> ${safe(formData.cookFoodType)}</p>
@@ -177,10 +274,11 @@ const generateHireHelperLeadEmail = (formData: {
     : '';
 
   return {
-    subject: `New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}`,
+    subject: `${subjectPrefix}New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #f1750a;">New Hire Helper Lead Received</h2>
+        <h2 style="color: ${headerColor};">${safe(headingText)}</h2>
+        ${priorityBanner}
         <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #333;">Request ID: ${safe(formData.requestId)}</h3>
           <p><strong>Name:</strong> ${safe(formData.name)}</p>
@@ -218,8 +316,9 @@ const generateHireHelperLeadEmail = (formData: {
           <h3 style="margin-top: 0; color: #333;">Specific Requirements</h3>
           <p style="white-space: pre-wrap;">${safe(formData.specificRequirements || 'No specific requirements mentioned.')}</p>
         </div>
-        <div style="margin-top: 20px; padding: 15px; background-color: #fff3cd; border-radius: 8px;">
-          <p style="margin: 0; color: #856404;"><strong>Priority:</strong> High priority lead - immediate follow-up required.</p>
+        <div style="background-color: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Device & Source</h3>
+          ${ctxHtml}
         </div>
         ${formData.sourceUrl ? `
         <div style="margin-top: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 8px;">
@@ -231,7 +330,7 @@ const generateHireHelperLeadEmail = (formData: {
       </div>
     `,
     text: `
-New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}
+${subjectPrefix}New Hire Helper Lead: ${formData.serviceRole || formData.serviceType} (${formData.serviceType}) in ${formData.city}
 
 Request ID: ${formData.requestId}
 
@@ -269,12 +368,134 @@ Helper Preferences:
 Specific Requirements:
 ${formData.specificRequirements || 'No specific requirements mentioned.'}
 
-Priority: High priority lead - immediate follow-up required.
+${priorityText}
+
+Device & Source:
+${ctxText}
 
 ${formData.sourceUrl ? `Source URL: ${formData.sourceUrl}` : ''}
 
 ---
 This email was automatically generated from the EzyHelpers website hire helper form.
+    `,
+  };
+};
+
+/**
+ * Partially filled hire-helper form, sent automatically when a visitor drops
+ * off the /hire-helper page after entering contact details but before
+ * submitting. Marked clearly so the team treats it as a warm follow-up lead,
+ * not a confirmed booking request.
+ */
+const generateHireHelperPartialLeadEmail = (formData: {
+  name?: string;
+  phone?: string;
+  email?: string;
+  city?: string;
+  locality?: string;
+  apartment?: string;
+  serviceType?: string;
+  serviceRole?: string;
+  duration?: string;
+  serviceTimings?: string;
+  startDate?: string;
+  specificRequirements?: string;
+  experience?: string;
+  budget?: string;
+  languages?: string[];
+  familySize?: string;
+  preferredGender?: string;
+  houseType?: string;
+  numberOfRooms?: string;
+  cookFoodType?: string;
+  cookMeals?: string[];
+  religion?: string;
+  hasPet?: string;
+  hasHelperRoom?: string;
+  lastCompletedStep?: number;
+  totalSteps?: number;
+  requestId: string;
+  sourceUrl?: string;
+}) => {
+  const formattedPhone = formatPhoneForEmail(formData.phone || '');
+  const v = (x?: string) => (x && String(x).trim()) || '—';
+  const progress = formData.lastCompletedStep && formData.totalSteps
+    ? `${formData.lastCompletedStep} of ${formData.totalSteps} steps`
+    : 'unknown';
+
+  const fields: Array<[string, string]> = [
+    ['Name', v(formData.name)],
+    ['Phone', formattedPhone || '—'],
+    ['Email', v(formData.email)],
+    ['City', v(formData.city)],
+    ['Locality', v(formData.locality)],
+    ['Apartment', v(formData.apartment)],
+    ['Primary Role', v(formData.serviceRole)],
+    ['Service Type', v(formData.serviceType)],
+    ['Preferred Timings', v(formData.serviceTimings)],
+    ['Duration', v(formData.duration)],
+    ['Start Date', v(formData.startDate)],
+    ['Family Size', v(formData.familySize)],
+    ['House Type', v(formData.houseType)],
+    ['No. of Rooms', v(formData.numberOfRooms)],
+    ['Food Type (cook)', v(formData.cookFoodType)],
+    ['Meals (cook)', formData.cookMeals?.length ? formData.cookMeals.join(', ') : '—'],
+    ['Religion', v(formData.religion)],
+    ['Pet at Home', v(formData.hasPet)],
+    ['Helper Room (live-in)', v(formData.hasHelperRoom)],
+    ['Preferred Gender', v(formData.preferredGender)],
+    ['Experience', v(formData.experience)],
+    ['Budget', v(formData.budget)],
+    ['Languages', formData.languages?.length ? formData.languages.join(', ') : '—'],
+    ['Specific Requirements', v(formData.specificRequirements)],
+  ];
+
+  const fieldsHtml = fields
+    .map(([label, value]) => `<p style="margin:4px 0;"><strong>${safe(label)}:</strong> ${safe(value)}</p>`)
+    .join('\n          ');
+  const fieldsText = fields.map(([label, value]) => `- ${label}: ${value}`).join('\n');
+
+  return {
+    subject: `⚠️ Abandoned Hire Helper Form: ${formData.serviceRole || 'role not chosen'} in ${formData.city || 'city unknown'} — follow up`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #b45309;">Partially Filled Hire Helper Form (Visitor Dropped Off)</h2>
+        <div style="margin: 16px 0; padding: 15px; background-color: #fff3cd; border: 1px solid #ffe69c; border-radius: 8px;">
+          <p style="margin: 0; color: #856404;">
+            <strong>Note:</strong> This visitor started the hire-helper form but left the page
+            <strong>without submitting</strong>. They completed ${safe(progress)}.
+            The details below are partial — please follow up gently by phone/WhatsApp to
+            complete their requirement. This is NOT a confirmed booking request.
+          </p>
+        </div>
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h3 style="margin-top: 0; color: #333;">Draft ID: ${safe(formData.requestId)}</h3>
+          ${fieldsHtml}
+        </div>
+        ${formData.sourceUrl ? `
+        <div style="margin-top: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 8px;">
+          <p style="margin: 0; color: #1e40af;"><strong>Source URL:</strong> <a href="${safe(formData.sourceUrl)}" target="_blank" style="color: #1e40af; text-decoration: underline;">${safe(formData.sourceUrl)}</a></p>
+        </div>
+        ` : ''}
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+        <p style="color: #666; font-size: 12px;">This email was automatically generated when a visitor left the EzyHelpers hire-helper form without submitting.</p>
+      </div>
+    `,
+    text: `
+PARTIALLY FILLED HIRE HELPER FORM (visitor dropped off without submitting)
+
+Note: This visitor started the hire-helper form but left the page WITHOUT submitting.
+They completed ${progress}. Details below are partial — follow up gently by phone/WhatsApp.
+This is NOT a confirmed booking request.
+
+Draft ID: ${formData.requestId}
+
+${fieldsText}
+
+${formData.sourceUrl ? `Source URL: ${formData.sourceUrl}` : ''}
+
+---
+This email was automatically generated when a visitor left the EzyHelpers hire-helper form without submitting.
     `,
   };
 };
@@ -1621,7 +1842,7 @@ export const sendLeadEmail = async (
     // hire_helper and general (contact form) use HIRE_CONTACT_EMAIL_RECIPIENTS
     let emailRecipientsEnv: string;
 
-    if (leadType === 'hire_helper' || leadType === 'general') {
+    if (leadType === 'hire_helper' || leadType === 'hire_helper_partial' || leadType === 'general') {
       // Check if it's an on-demand helper lead from either form
       const isHireHelperOnDemand = leadType === 'hire_helper' && formData.serviceType === 'on-demand';
       const isGeneralOnDemand = leadType === 'general' && formData.service && typeof formData.service === 'string' && formData.service.toLowerCase().includes('on-demand');
@@ -1658,6 +1879,11 @@ export const sendLeadEmail = async (
       emailRecipientsEnv =
         process.env.CAREERS_EMAIL_RECIPIENTS ||
         'contact@ezyhelpers.com,arun@ezyhelpers.com,suraj@ezyhelpers.com';
+    } else if (leadType === 'customer_requirement') {
+      // Customer Requirement form — default recipients plus laxmi@ (June 2026).
+      const base = process.env.CUSTOMER_REQUIREMENT_RECIPIENTS ||
+        process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
+      emailRecipientsEnv = [base, 'laxmi@ezyhelpers.com'].filter(Boolean).join(',');
     } else {
       // Use default recipients for other forms (agent registration, helper registration, etc.)
       emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
@@ -1681,6 +1907,9 @@ export const sendLeadEmail = async (
         break;
       case 'hire_helper':
         emailContent = generateHireHelperLeadEmail({ ...formData, requestId: requestId || 'N/A', sourceUrl });
+        break;
+      case 'hire_helper_partial':
+        emailContent = generateHireHelperPartialLeadEmail({ ...formData, requestId: requestId || 'N/A', sourceUrl });
         break;
       case 'general':
         emailContent = generateGeneralLeadEmail({ ...formData, sourceUrl });
@@ -1732,10 +1961,21 @@ export const sendLeadEmail = async (
         throw new Error('Invalid lead type');
     }
 
+    // AI triage (best-effort): prepend urgency banner + tag the subject.
+    // Returns null on any failure — the email always goes out regardless.
+    const triage = await triageLeadForEmail(leadType, formData as Record<string, unknown>);
+    if (triage && emailContent?.subject && emailContent?.html) {
+      emailContent = {
+        ...emailContent,
+        subject: `${triage.subjectTag}${emailContent.subject}`,
+        html: triage.htmlBlock + emailContent.html,
+      };
+    }
+
     const mailOptions: nodemailer.SendMailOptions = {
       from: process.env.SMTP_USER,
       to: adminEmail,
-      replyTo: formData.email || process.env.SMTP_USER,
+      replyTo: safeReplyTo(formData.email),
       ...emailContent,
     };
 
@@ -1786,11 +2026,17 @@ export const sendEzyNestBookingEmail = async (
     const emailRecipientsEnv = process.env.EMAIL_RECIPIENTS || process.env.ADMIN_EMAIL || '';
     const adminEmail = buildRecipientList(emailRecipientsEnv);
 
+    // AI triage (best-effort) — never blocks the send.
+    const nestTriage = await triageLeadForEmail('general', bookingDetails as Record<string, unknown>);
+    const finalContent = nestTriage && emailContent?.subject && emailContent?.html
+      ? { ...emailContent, subject: `${nestTriage.subjectTag}${emailContent.subject}`, html: nestTriage.htmlBlock + emailContent.html }
+      : emailContent;
+
     const mailOptions: any = {
       from: process.env.SMTP_USER,
       to: adminEmail,
-      replyTo: bookingDetails.email || process.env.SMTP_USER,
-      ...emailContent,
+      replyTo: safeReplyTo(bookingDetails.email),
+      ...finalContent,
     };
 
     // Add ID proof attachment if provided
@@ -1939,11 +2185,17 @@ This email was automatically generated from the NEST booking system.
       `
     }
 
+    // AI triage (best-effort) — never blocks the send.
+    const nestTriage = await triageLeadForEmail('general', formData as Record<string, unknown>)
+    const finalContent = nestTriage
+      ? { ...emailContent, subject: `${nestTriage.subjectTag}${emailContent.subject}`, html: nestTriage.htmlBlock + emailContent.html }
+      : emailContent
+
     const mailOptions = {
       from: process.env.SMTP_USER,
       to: adminEmail,
-      replyTo: formData.email || process.env.SMTP_USER,
-      ...emailContent,
+      replyTo: safeReplyTo(formData.email),
+      ...finalContent,
     }
 
     return await sendEmailWithRetry(transporter, mailOptions)

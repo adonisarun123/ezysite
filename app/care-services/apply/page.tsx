@@ -121,18 +121,18 @@ export default function CandidateApplyPage() {
           }`}
         >
         <div className="mx-auto flex max-w-6xl items-center justify-end px-4 py-2 sm:px-6">
-          <div className="inline-flex overflow-hidden rounded-full border border-primary-500 text-sm font-bold">
+          <div className="inline-flex overflow-hidden rounded-full border border-care-500 text-sm font-bold">
             <button
               type="button"
               onClick={() => switchLang('en')}
-              className={lang === 'en' ? 'bg-primary-500 px-4 py-1.5 text-white' : 'bg-white px-4 py-1.5 text-primary-600'}
+              className={lang === 'en' ? 'bg-care-500 px-4 py-1.5 text-white' : 'bg-white px-4 py-1.5 text-care-600'}
             >
               EN
             </button>
             <button
               type="button"
               onClick={() => switchLang('hi')}
-              className={lang === 'hi' ? 'bg-primary-500 px-4 py-1.5 text-white' : 'bg-white px-4 py-1.5 text-primary-600'}
+              className={lang === 'hi' ? 'bg-care-500 px-4 py-1.5 text-white' : 'bg-white px-4 py-1.5 text-care-600'}
             >
               हिं
             </button>
@@ -141,7 +141,7 @@ export default function CandidateApplyPage() {
       </div>
 
       {/* hero + form */}
-      <section className="bg-gradient-to-br from-[#003a63] via-primary-500 to-[#1a8fde] text-white">
+      <section className="bg-gradient-to-br from-[#003a63] via-care-500 to-[#1a8fde] text-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.1fr_.9fr] lg:py-16">
           <div>
             <div className="mb-4 flex flex-wrap gap-2">
@@ -154,11 +154,11 @@ export default function CandidateApplyPage() {
             <p className="mt-4 max-w-xl text-lg text-white/90">{c.lead}</p>
             <div className="mt-6 flex flex-wrap gap-2">
               {['ANM', 'GNM', 'GDA'].map((r) => (
-                <span key={r} className="rounded-lg bg-white px-4 py-2 font-extrabold text-primary-700 shadow">{r}</span>
+                <span key={r} className="rounded-lg bg-white px-4 py-2 font-extrabold text-care-700 shadow">{r}</span>
               ))}
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#apply" className="rounded-full bg-white px-7 py-3.5 text-[17px] font-bold text-primary-700 hover:bg-neutral-100">
+              <a href="#apply" className="rounded-full bg-white px-7 py-3.5 text-[17px] font-bold text-care-700 hover:bg-neutral-100">
                 {lang === 'hi' ? '1 मिनट में आवेदन करें →' : 'Apply in 1 minute →'}
               </a>
               <a href="tel:+918031411776" className="rounded-full border border-white/60 px-7 py-3.5 text-[17px] font-bold text-white hover:bg-white/10">
@@ -179,7 +179,7 @@ export default function CandidateApplyPage() {
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-3 px-4 py-5 sm:px-6">
           {c.trust.map((s, i) => (
             <span key={i} className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 py-2.5 text-sm font-semibold shadow-sm">
-              <CheckBadgeIcon className="h-5 w-5 text-primary-500" /> {s}
+              <CheckBadgeIcon className="h-5 w-5 text-care-500" /> {s}
             </span>
           ))}
         </div>
@@ -187,14 +187,14 @@ export default function CandidateApplyPage() {
 
       {/* why work with us */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <p className="text-center text-sm font-extrabold uppercase tracking-wider text-primary-600">{c.whyEyebrow}</p>
+        <p className="text-center text-sm font-extrabold uppercase tracking-wider text-care-600">{c.whyEyebrow}</p>
         <h2 className="mx-auto mt-2 max-w-2xl text-center text-3xl font-extrabold">{c.whyTitle}</h2>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {c.benefits.map(([title, body], i) => {
             const Icon = BENEFIT_ICONS[i] ?? CheckBadgeIcon
             return (
-              <div key={title} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-200">
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-600">
+              <div key={title} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-care-200">
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-care-50 text-care-600">
                   <Icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-lg font-bold">{title}</h3>
@@ -204,10 +204,10 @@ export default function CandidateApplyPage() {
           })}
         </div>
 
-        <div className="mt-12 rounded-2xl bg-primary-50 px-6 py-8 text-center">
-          <p className="text-sm font-extrabold uppercase tracking-wider text-primary-600">{c.rolesEyebrow}</p>
-          <p className="mt-2 text-2xl font-extrabold text-primary-800">{c.rolesTitle}</p>
-          <a href="#apply" className="mt-5 inline-block rounded-full bg-primary-500 px-7 py-3 font-bold text-white hover:bg-primary-600">
+        <div className="mt-12 rounded-2xl bg-care-50 px-6 py-8 text-center">
+          <p className="text-sm font-extrabold uppercase tracking-wider text-care-600">{c.rolesEyebrow}</p>
+          <p className="mt-2 text-2xl font-extrabold text-care-800">{c.rolesTitle}</p>
+          <a href="#apply" className="mt-5 inline-block rounded-full bg-care-500 px-7 py-3 font-bold text-white hover:bg-care-600">
             {lang === 'hi' ? 'अभी आवेदन करें →' : 'Apply Now →'}
           </a>
         </div>

@@ -11,7 +11,7 @@ const SECTIONS = [
     eyebrow: 'Conditions treated',
     title: 'Surgeries we support recovery from',
     intro:
-      'Post-surgical physiotherapy restores strength, movement and confidence after an operation — guided rehab that makes recovery at home safer and faster.',
+      'Post-surgical physiotherapy restores strength, movement and confidence after an operation, guided rehab that makes recovery at home safer and faster.',
     bullets: [
       'Knee replacement (TKR) and hip replacement (THR)',
       'Ligament reconstruction (ACL) and arthroscopy',
@@ -39,7 +39,7 @@ const SECTIONS = [
     eyebrow: 'What a session looks like',
     title: 'Your typical post-surgical session',
     intro:
-      'Every visit is structured around safe, steady progress — never rushing the healing tissue.',
+      'Every visit is structured around safe, steady progress, never rushing the healing tissue.',
     bullets: [
       'A check of swelling, pain, wound status and range of motion',
       'Gentle, guided movement to restore mobility',
@@ -73,12 +73,12 @@ const FAQS = [
   {
     question: 'How soon after surgery should physiotherapy start?',
     answer:
-      'For many procedures, gentle physiotherapy begins within the first few days once your surgeon clears it — early movement helps prevent stiffness and complications. Our physiotherapists work strictly within your surgeon’s guidelines. This is general information and not a substitute for your doctor’s advice.',
+      'For many procedures, gentle physiotherapy begins within the first few days once your surgeon clears it, early movement helps prevent stiffness and complications. Our physiotherapists work strictly within your surgeon’s guidelines. This is general information and not a substitute for your doctor’s advice.',
   },
   {
     question: 'Is home physiotherapy safe right after a major surgery?',
     answer:
-      'Yes, when delivered by a qualified physiotherapist following your surgeon’s protocol. Home sessions are actually safer for many patients — there’s no travel strain on healing tissue, and exercises are practised in your real environment with full one-on-one supervision.',
+      'Yes, when delivered by a qualified physiotherapist following your surgeon’s protocol. Home sessions are actually safer for many patients, there’s no travel strain on healing tissue, and exercises are practised in your real environment with full one-on-one supervision.',
   },
   {
     question: 'How long is rehabilitation after a knee or hip replacement?',
@@ -112,7 +112,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Post-Surgical Physiotherapy at Home, Bangalore',
+    name: 'EzyHelpers, Post-Surgical Physiotherapy at Home, Bangalore',
     medicalSpecialty: ['PhysicalTherapy', 'Rehabilitation'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -145,8 +145,8 @@ export default function PostSurgicalPhysiotherapyView() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {HERO_STATS.map((s) => (
-              <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-primary-50 p-7 text-center">
-                <p className="font-careSerif text-3xl font-medium text-primary-500 sm:text-4xl">{s.value}</p>
+              <div key={s.label} className="rounded-[24px] border border-neutral-200 bg-care-50 p-7 text-center">
+                <p className="font-careSerif text-3xl font-medium text-care-500 sm:text-4xl">{s.value}</p>
                 <p className="mt-2 text-sm leading-snug text-neutral-700">{s.label}</p>
               </div>
             ))}
@@ -170,7 +170,7 @@ export default function PostSurgicalPhysiotherapyView() {
                   key={b}
                   className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white px-5 py-4 text-sm leading-snug text-neutral-800"
                 >
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary-500" aria-hidden />
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-care-500" aria-hidden />
                   {b}
                 </li>
               ))}

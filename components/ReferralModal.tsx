@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { XMarkIcon, ChevronLeftIcon } from '@heroicons/react/24/outline';
 import { supabase } from '@/lib/supabaseClient';
+import { trackFormSubmitSuccess } from '@/lib/analytics';
 
 interface ReferralModalProps {
     isOpen: boolean;
@@ -77,6 +78,10 @@ export default function ReferralModal({ isOpen, onClose, lang }: ReferralModalPr
     const [selectedWorkTypes, setSelectedWorkTypes] = useState<string[]>([]);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    // Track the post-success auto-close timer so it can be cleared if the modal
+    // unmounts within the 2s window (avoids onClose()/setState after unmount).
+    const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    useEffect(() => () => { if (closeTimerRef.current) clearTimeout(closeTimerRef.current); }, []);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -109,8 +114,9 @@ export default function ReferralModal({ isOpen, onClose, lang }: ReferralModalPr
             ]);
 
             if (error) throw error;
+            trackFormSubmitSuccess('referral_form');
             setStatus('success');
-            setTimeout(() => {
+            closeTimerRef.current = setTimeout(() => {
                 onClose();
                 setStatus('idle');
                 setFormData({ userName: '', userPhone: '', workerName: '', workerPhone: '' });

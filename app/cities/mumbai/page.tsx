@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
+import { LocalBusinessSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
   BuildingOfficeIcon, 
   HeartIcon, 
@@ -26,6 +28,15 @@ export const metadata: Metadata = {
   title: 'Domestic Help in Mumbai | Verified Maids & Home Services | EzyHelpers',
   description:
     'Hire verified maids, cooks, nannies, and drivers in Mumbai — Bandra, Andheri, Powai, Thane, Navi Mumbai, and more. Trusted domestic help with EzyHelpers.',
+  openGraph: {
+    title: "Domestic Help in Mumbai | Verified Maids & Home Services | EzyHelpers",
+    description: "Hire verified maids, cooks, nannies, and drivers in Mumbai — Bandra, Andheri, Powai, Thane, Navi Mumbai, and more. Trusted domestic help with EzyHelpers.",
+    url: "https://www.ezyhelpers.com/cities/mumbai",
+    type: 'website',
+    siteName: 'EzyHelpers',
+    locale: 'en_IN',
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Domestic%20Help%20in%20Mumbai", width: 1200, height: 630, alt: "Domestic Help in Mumbai" }],
+  },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/cities/mumbai',
     languages: selfReferencingLanguages('/cities/mumbai'),
@@ -59,6 +70,7 @@ export default function MumbaiPage() {
 
   return (
     <main className="min-h-screen">
+      <LocalBusinessSchema cityName="Mumbai" stateName="Maharashtra" postalCode="400001" latitude={19.076} longitude={72.8777} />
       <Navbar />
       <div className="bg-background-primary">
       {/* Hero Section */}
@@ -144,6 +156,11 @@ export default function MumbaiPage() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer
+        question="How do I hire a maid in Mumbai through EzyHelpers?"
+        answer="EzyHelpers provides background-verified maids, cooks, nannies, drivers, and caretakers across Mumbai. Placement typically takes 24–72 hours, with live-in, full-time, and part-time options and a quick replacement guarantee. Call 080-31411776 to get started."
+      />
 
       {/* Local Services */}
       <section className="section-padding bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">

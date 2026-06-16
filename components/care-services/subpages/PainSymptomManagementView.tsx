@@ -24,7 +24,7 @@ const SECTIONS = [
     icon: PlusCircleIcon,
     title: 'What symptom management at home involves',
     body:
-      'When a serious illness brings pain or distressing symptoms, our caregivers provide attentive comfort care — helping keep your loved one as settled and comfortable as possible, and alerting your medical team when symptoms need their attention.',
+      'When a serious illness brings pain or distressing symptoms, our caregivers provide attentive comfort care, helping keep your loved one as settled and comfortable as possible, and alerting your medical team when symptoms need their attention.',
     bullets: [
       'Comfort care for pain and discomfort',
       'Support for breathlessness and restlessness',
@@ -36,7 +36,7 @@ const SECTIONS = [
     icon: SparklesIcon,
     title: 'Relief from common distressing symptoms',
     body:
-      'Serious illness can bring many uncomfortable symptoms at once. We offer calm, practical support for each — gentle positioning, soothing routines and watchful monitoring — so your loved one’s days feel more comfortable.',
+      'Serious illness can bring many uncomfortable symptoms at once. We offer calm, practical support for each, gentle positioning, soothing routines and watchful monitoring, so your loved one’s days feel more comfortable.',
     bullets: [
       'Gentle positioning for comfort and breathing',
       'Soothing routines for rest and sleep',
@@ -60,7 +60,7 @@ const SECTIONS = [
     icon: UserGroupIcon,
     title: 'Support for the family',
     body:
-      'Watching a loved one in discomfort is hard. We share the load with respite, gentle guidance and clear updates — so families can rest and stay present.',
+      'Watching a loved one in discomfort is hard. We share the load with respite, gentle guidance and clear updates, so families can rest and stay present.',
     bullets: [
       'Respite hours so carers can rest',
       'Gentle guidance on what to expect',
@@ -107,7 +107,7 @@ const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'EzyHelpers — Pain & Symptom Management at Home, Bangalore',
+    name: 'EzyHelpers, Pain & Symptom Management at Home, Bangalore',
     medicalSpecialty: ['PalliativeCare', 'PainMedicine'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
@@ -133,7 +133,7 @@ export default function PainSymptomManagementView() {
       headlineAccent="and discomfort, at home."
       lede={
         SERVICE?.tagline ??
-        'Attentive comfort care that helps ease pain, breathlessness and discomfort — keeping your loved one as settled as possible, in coordination with your medical team.'
+        'Attentive comfort care that helps ease pain, breathlessness and discomfort, keeping your loved one as settled as possible, in coordination with your medical team.'
       }
       primaryCtaLabel="Talk to a care advisor"
       enquirySource={PATH}
@@ -144,7 +144,7 @@ export default function PainSymptomManagementView() {
           {HERO_STATS.map((s) => (
             <div
               key={s.value}
-              className="rounded-2xl border border-neutral-200 bg-primary-50 px-5 py-5 text-center"
+              className="rounded-2xl border border-neutral-200 bg-care-50 px-5 py-5 text-center"
             >
               <p className="font-careSerif text-xl font-medium text-accent-600">{s.value}</p>
               <p className="mt-1 text-sm leading-snug text-neutral-600">{s.label}</p>
@@ -159,7 +159,7 @@ export default function PainSymptomManagementView() {
             eyebrow="How we help"
             titleLead="Comfort care for"
             titleMuted="body and heart."
-            lede="Calm, practical support for the symptoms that make serious illness hard — always coordinated with your treating doctor."
+            lede="Calm, practical support for the symptoms that make serious illness hard, always coordinated with your treating doctor."
           />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {SECTIONS.map(({ icon: Icon, title, body, bullets }) => (
@@ -202,7 +202,7 @@ export default function PainSymptomManagementView() {
       <CareSubpageClosingCTA
         headlineLead="Whenever you are ready,"
         headlineAccent="we are here for your family."
-        body="Reach out for a calm, compassionate conversation about easing your loved one’s discomfort at home — with no pressure at all."
+        body="Reach out for a calm, compassionate conversation about easing your loved one’s discomfort at home, with no pressure at all."
         enquirySource={PATH}
         primaryCtaLabel="Request a compassionate consultation"
         related={[

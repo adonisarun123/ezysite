@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { ServiceSchema } from '@/components/schema'
+import QuickAnswer from '@/components/QuickAnswer'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -30,6 +32,7 @@ export const metadata: Metadata = {
         description: 'Hire trained Japa Nannies for postpartum recovery and newborn care. Gentle routines, massages, and mother care your family can trust.',
         url: 'https://www.ezyhelpers.com/services/japa-nanny-services',
         type: 'website',
+        images: [{ url: "https://www.ezyhelpers.com/og?title=Japa%20Nanny%20Services%20for%20Newborn%20%26%20Mother%20Care", width: 1200, height: 630, alt: "Japa Nanny Services for Newborn & Mother Care" }],
     },
     alternates: {
         canonical: 'https://www.ezyhelpers.com/services/japa-nanny-services'
@@ -168,6 +171,7 @@ export default function JapaNannyServicesPage() {
 
     return (
         <>
+          <ServiceSchema serviceName={"Japa Nanny Services for Newborn & Mother Care"} serviceDescription={"Hire trained Japa Nannies for postpartum recovery and newborn care. Gentle routines, massages, and mother care your family can trust."} serviceType={"Japa Nanny Services for Newborn & Mother Care"} serviceUrl={"https://www.ezyhelpers.com/services/japa-nanny-services"} />
             <main className="min-h-screen">
                 <Navbar />
 
@@ -310,6 +314,11 @@ export default function JapaNannyServicesPage() {
                         </div>
                     </div>
                 </section>
+
+                <QuickAnswer
+                  question="How do I hire a japa maid through EzyHelpers?"
+                  answer="EzyHelpers provides experienced, background-verified japa maids for newborn and postnatal mother care, typically live-in. Placement usually takes 24–72 hours, with trained caregivers and a quick replacement guarantee."
+                />
 
                 {/* Why Choose Section */}
                 <section className="section-padding bg-gray-50">
