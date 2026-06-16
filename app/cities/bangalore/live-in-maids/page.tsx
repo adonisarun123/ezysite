@@ -173,60 +173,36 @@ export default function BangaloreLiveInMaidsPage() {
 
   const faqs = [
     {
-      question: "How to get a live-in maid in Bangalore?",
-      answer: "To hire a live-in maid in Bangalore, choose a reliable domestic help agency like EzyHelpers. We match you with background-verified maids based on your needs. Our team ensures smooth onboarding, documentation, and support for a comfortable, long-term arrangement."
+      question: "How much is 24 hrs maid service in Bangalore?",
+      answer: "A live-in maid/24 hrs maid service in Bangalore typically costs ₹18,000–₹25,000 per month, depending on duties, experience, and home size."
     },
     {
-      question: "Is it safe to have a live-in maid in Bangalore with kids at home?",
-      answer: "Yes, it is safe if you hire through a trusted agency. At EzyHelpers, each live-in maid in Bangalore is background-verified, trained, and experienced in childcare, ensuring a secure and caring environment for your children."
+      question: "Does a live-in maid work 24 hours or 12 hours?",
+      answer: "A live-in maid stays at your home 24/7 for presence and emergencies, but actively works around 12 hours a day, with proper rest."
     },
     {
-      question: "What accommodation should I provide for a live-in maid?",
-      answer: "You should offer a private room or a shared room with a bed, cot or mattress and access to a bathroom depending on the availability and convenience of the customers. Many Bangalore homes have a dedicated helper’s room for this."
+      question: "Is EzyHelpers a registered live-in maid agency in Bangalore?",
+      answer: "Yes. We are a trusted live-in maid agency providing Aadhaar-verified, background-checked helpers, and we are registered with DWSSC & Skill India."
     },
     {
-      question: "What if my live-in maid leaves suddenly?",
-      answer: "Most maids give a one-month notice before leaving. If that happens, EzyHelpers will help you find a replacement quickly so your household routine is not disturbed."
+      question: "Can a live-in maid cook and clean both?",
+      answer: "Each maid specialises in one core area for quality, but many handle a primary skill (like cooking) with light support tasks. Tell us your priority, and we’ll match accordingly."
     },
     {
-      question: "Do live-in maids in Bangalore get time off?",
-      answer: "Yes, live-in maids in Bangalore are entitled to get two days off per month, which may be scheduled with mutual understanding."
-    },
-    {
-      question: "What is the salary of a live-in maid in Bangalore?",
-      answer: "The monthly salary for a live-in maid in Bangalore typically ranges from ₹18,000 to ₹25,000. The exact amount depends on factors like experience, household duties, and location. Areas like Whitefield or Electronic City may offer slightly higher salaries due to demand. The salary usually includes stay, meals, and regular rest days."
-    },
-    {
-      question: "Are the live-in maids background-checked?",
-      answer: "Yes. All maids from EzyHelpers go through Aadhaar and address verification. Police verification is done at an additional cost if the customer requests it. This ensures safety and trust when you hire a 24hr maid in Bangalore."
-    },
-    {
-      question: "Can live-in maids cook local Bangalore-style food?",
-      answer: "Yes. Many live-in maids can cook South Indian meals like dosa, sambar, and rasam, as well as North Indian and basic continental dishes. They usually adapt to your family’s taste preferences."
+      question: "Do you provide live-in maids in Electronic City and Whitefield?",
+      answer: "Yes. We serve Electronic City, Whitefield, Marathahalli, HSR Layout, and all major Bangalore neighbourhoods."
     },
     {
       question: "How soon can I get a live-in maid in Bangalore?",
-      answer: "You can usually get a live-in maid within 24 to 72 hours, depending on your location and requirements. EzyHelpers offers quick matching to avoid long waiting times."
-    },
-    {
-      question: "Can a live-in maid work for two households?",
-      answer: "No. A live-in maid works full-time for one family only. This ensures loyalty, privacy, and focused care for your home."
+      answer: "In most cases, a verified live-in maid is placed within 24–72 hours, depending on your requirements, preferred skills, location, and helper availability. Once we understand your needs, we shortlist suitable background-verified profiles, arrange interviews, and help you onboard the selected helper as quickly as possible. Our goal is to make the hiring process smooth, efficient, and hassle-free."
     },
     {
       question: "Do live-in maids speak Kannada or Hindi?",
-      answer: "Yes. Most live-in maids in Bangalore can speak Kannada and Hindi. This helps them communicate well with your family, neighbours, and building staff."
+      answer: "Yes. We match helpers based on your language preference, including Kannada, Hindi, and English, to help ensure smooth communication and a comfortable experience for your family."
     },
     {
-      question: "Are live-in maids suitable for IT professionals?",
-      answer: "Absolutely. A 24hr maid in Bangalore is ideal for tech professionals who work long hours or travel often. They manage home tasks efficiently so you can focus on work."
-    },
-    {
-      question: "Can live-in maids work in apartment buildings?",
-      answer: "Yes. They are trained to follow apartment rules and can handle delivery access, visitor logs, and building protocols smoothly."
-    },
-    {
-      question: "Can a live-in maid handle online deliveries or food orders?",
-      answer: "Yes. Many live-in maids can manage online grocery deliveries and food apps like Swiggy or Zomato and coordinate with the apartment mailroom or security for daily deliveries."
+      question: "What is the difference between a live-in maid and a full-time maid?",
+      answer: "A live-in maid stays at your home and provides support throughout the day within a structured work schedule. A full-time maid works fixed hours and returns home after 8-10 hours of shift. Live-in maids are often preferred by families needing childcare, elder care, or household support beyond standard working hours."
     }
   ]
 
