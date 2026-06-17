@@ -14,7 +14,7 @@ alter table if exists public.leads
   add column if not exists txn_id             text;
 
 comment on column public.leads.details is
-  'Phase-2 chatbot requirement detail (room/start/family/house type/rooms/society/religion/pet/gender/experience/budget/languages/email/timings/duration/requirements). Free-form JSON; keys may be absent.';
+  'Phase-2 chatbot requirement detail, or expanded job-seeker fields (first_name/last_name/languages/locality/experience). Free-form JSON; keys may be absent.';
 comment on column public.leads.registration_paid is
   'Phase-3: visitor opted into priority service and reported paying the registration fee.';
 comment on column public.leads.txn_id is
@@ -28,7 +28,7 @@ alter table if exists public.chatbot_sessions
   add column if not exists phase              smallint;
 
 comment on column public.chatbot_sessions.details is
-  'Phase-2 requirement detail captured during the session (mirrors leads.details).';
+  'Phase-2 requirement detail / job-seeker fields captured during the session (mirrors leads.details).';
 comment on column public.chatbot_sessions.registration_paid is
   'True once the visitor reported paying the priority registration fee.';
 comment on column public.chatbot_sessions.txn_id is
