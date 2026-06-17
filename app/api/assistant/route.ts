@@ -426,12 +426,24 @@ For CUSTOMERS, gather (in any natural order):
   5. Job type (part-time / full-time / live-in; for care: day shift / live-in /
      visit-based; for trades: one-time job). Use "one-time" or the natural value.
 
-For JOB SEEKERS, gather:
-  1. Name
-  2. Phone number (same validation)
-  3. City / area
-  4. Type of work they do (put it in "job_role")
-  5. Years of experience (put it in "job_type", e.g. "5 years experience")
+For JOB SEEKERS, gather these — ask ONE at a time, in THIS order, warmly. Many
+job seekers write in simple language or Hindi; be encouraging and patient.
+  1. First name → details.first_name (also set "name" to the full name once known)
+  2. Last name → details.last_name
+  3. Contact number (valid 10-digit Indian mobile starting 6/7/8/9) → phone
+  4. Job role — the work they do, one of: Cook, Housekeeping, Driver, Baby Sitter,
+     Elder Care, Gardener, Japa (or their own words if different) → job_role
+  5. Job type — one of: On-demand, Full-time, Live-in, Part-time → job_type
+  6. Languages they speak → details.languages
+  7. Locality / area where they want to work → area (and details.locality)
+  Also, if they mention it, capture years of experience → details.experience
+  (e.g. "5 years"). Don't force this if they don't offer it.
+- Combine first + last name into "name" (e.g. "Priya Sharma"). If they only give
+  one name, that's fine — use what you have.
+- A job seeker is "complete" once you have name + valid phone + job_role (same as
+  before); the extra fields enrich the lead but aren't required to mark complete.
+- Do NOT run job seekers through the customer 3-phase journey or the paid priority
+  option — registration is FREE for helpers. Just collect these warmly.
 
 EXTRACT EVERYTHING AT ONCE
 - If the visitor gives several details in one message ("I'm Priya from HSR, need a
@@ -617,10 +629,18 @@ END OF PHASE 2 — IMPORTANT WORDING:
   don't worry — our team will start scouting for you right away." Add the gentle
   high-demand reassurance once here.
 - Still do NOT make a hard 30-minute promise unless they go through phase 3.
+- Then move to PHASE 3 and offer the priority option (see below) once.
 
-─── PHASE 3 — PRIORITY (OPTIONAL, paid) ───
-After phase 2 (or if a customer wants to be prioritised), you MAY offer the
-priority option — only once, gently, never pushy:
+─── PHASE 3 — PRIORITY (paid; ALWAYS OFFER ONCE) ───
+WHEN TO OFFER (important — do not skip this):
+- As soon as you have the core details for a customer (name + valid phone +
+  job role), AND the visitor has either completed phase 2 or declined to share
+  more, you MUST offer the paid priority option exactly ONCE. This is not
+  optional on your side — always present it, then respect their answer.
+- Offer it gently and warmly, never pushy, and never offer it more than once.
+- If a customer asks to be prioritised or to speed things up at any point, offer
+  it immediately even if phase 2 isn't done.
+The offer (say it once, in your own warm words, close to this):
   "If you'd like, you can prioritise your request and have our customer success
   team work on it within the next 30–60 minutes. There's a small one-time
   registration fee of ₹1,499 for this. Would you like to go ahead?"
@@ -670,12 +690,13 @@ known lead as JSON in <lead></lead> tags. Every field, null when unknown, accumu
 - "phase": integer 1, 2, or 3 — the furthest detail-collection phase reached for a
   customer (1 core fields, 2 deeper details, 3 priority payment). null for job
   seekers / support.
-- "details": an object holding any phase-2 fields you've collected, using the exact
-  keys named in the phases above (locality, separate_room, email, start_when,
+- "details": an object holding extra fields you've collected, using the exact keys
+  named above. For CUSTOMERS (phase 2): locality, separate_room, email, start_when,
   family_members, house_type, rooms, society, religion, pet, preferred_gender,
   experience_level, budget_range, languages, requirements, service_timings,
-  duration). Accumulate across turns; omit keys you don't have. null until you have
-  at least one. NEVER drop details you already captured.
+  duration. For JOB SEEKERS: first_name, last_name, languages, locality,
+  experience. Accumulate across turns; omit keys you don't have. null until you
+  have at least one. NEVER drop details you already captured.
 - "registration_interest": true once the visitor agrees to the priority/paid option.
 - "registration_paid": true once they paste a transaction ID for the registration fee.
 - "txn_id": the transaction/reference ID string the visitor pasted, else null.
@@ -812,8 +833,10 @@ interface LeadData {
   txn_id?: string | null;
 }
 
-// Human-readable labels for the phase-2 detail keys (used in emails).
+// Human-readable labels for the detail keys (used in emails). Covers both the
+// customer phase-2 fields and the expanded job-seeker fields.
 const DETAIL_LABELS: Record<string, string> = {
+  // Customer phase-2
   locality: "Locality",
   separate_room: "Separate room",
   email: "Email",
@@ -827,10 +850,14 @@ const DETAIL_LABELS: Record<string, string> = {
   preferred_gender: "Preferred gender",
   experience_level: "Experience level",
   budget_range: "Budget range",
-  languages: "Preferred languages",
+  languages: "Languages",
   requirements: "Specific requirements",
   service_timings: "Service timings",
   duration: "Duration",
+  // Job-seeker
+  first_name: "First name",
+  last_name: "Last name",
+  experience: "Experience",
 };
 
 // Render the details object as plain "Label: value" lines, skipping empties.
@@ -1182,6 +1209,10 @@ export async function GET() {
   return Response.json({
     status: "ok",
     configured: !!process.env.ANTHROPIC_API_KEY,
+    // Whether the phase-3 priority payment link is set on THIS server. We expose
+    // only a boolean (never the URL) so you can confirm the env var is live
+    // after a deploy without digging through the host dashboard.
+    payment_link_configured: !!RAZORPAY_PAYMENT_LINK,
   });
 }
 
