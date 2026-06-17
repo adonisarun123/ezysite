@@ -216,6 +216,12 @@ const nextConfig = {
         destination: '/careers/field-officer-bangalore',
         permanent: true,
       },
+      // 32 - Careers: HR Executive role slug rename (Junior -> Senior)
+      {
+        source: '/careers/junior-hr-executive-bangalore',
+        destination: '/careers/senior-hr-executive-bangalore',
+        permanent: true,
+      },
       { source: '/agent-success', destination: '/thank-you?type=agent', permanent: false },
       { source: '/helper-success', destination: '/thank-you?type=helper', permanent: false },
       // Care cluster moved under /care-services/ (2026)
