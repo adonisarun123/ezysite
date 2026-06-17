@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -14,6 +15,16 @@ import {
   HeartIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'
+
+// Paid ad landing page — noindex so it does not compete organically with the
+// canonical /services/full-time-maids and /cities/bangalore/full-time-maid pages.
+// (followed so link equity still flows; metadata gives a clean title if shared.)
+export const metadata: Metadata = {
+  title: 'Full-Time Maid in Bangalore | EzyHelpers',
+  description: 'Hire a verified full-time maid in Bangalore. Quick joining, background-checked helpers, and free replacement support.',
+  robots: { index: false, follow: true },
+  alternates: { canonical: 'https://www.ezyhelpers.com/services/full-time-maids' },
+}
 
 export default function FullTimeMaidBangalorePage() {
   const features = [

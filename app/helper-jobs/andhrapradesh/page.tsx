@@ -28,7 +28,11 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/andhrapradesh'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/andhrapradesh',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/andhrapradesh',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/andhrapradesh/hin'
+        }
     }
 }
 

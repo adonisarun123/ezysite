@@ -38,7 +38,11 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/housekeeping-job-bangalore'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/housekeeping-job-bangalore',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/assam/housekeeping-job-bangalore',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/assam/housekeeping-job-bangalore/hin'
+        }
     }
 }
 

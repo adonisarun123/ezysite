@@ -38,7 +38,11 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/elderly-care-jobs-bangalore'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/elderly-care-jobs-bangalore',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/assam/elderly-care-jobs-bangalore',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/assam/elderly-care-jobs-bangalore/hin'
+        }
     }
 }
 

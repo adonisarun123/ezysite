@@ -40,7 +40,11 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/live-in-couple-housekeeping-jobs-bangalore'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/live-in-couple-housekeeping-jobs-bangalore',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/assam/live-in-couple-housekeeping-jobs-bangalore',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/assam/live-in-couple-housekeeping-jobs-bangalore/hin'
+        }
     }
 }
 
