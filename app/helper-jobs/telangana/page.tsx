@@ -32,10 +32,6 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: 'https://www.ezyhelpers.com/helper-jobs/telangana',
-        languages: {
-            'en': 'https://www.ezyhelpers.com/helper-jobs/telangana',
-            'hi': 'https://www.ezyhelpers.com/helper-jobs/telangana/hin'
-        }
     },
 }
 

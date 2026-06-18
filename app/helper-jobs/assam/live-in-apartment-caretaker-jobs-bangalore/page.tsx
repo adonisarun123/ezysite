@@ -42,11 +42,7 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/live-in-apartment-caretaker-jobs-bangalore',
-        languages: {
-            'en': 'https://www.ezyhelpers.com/helper-jobs/assam/live-in-apartment-caretaker-jobs-bangalore',
-            'hi': 'https://www.ezyhelpers.com/helper-jobs/assam/live-in-apartment-caretaker-jobs-bangalore/hin'
-        }
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/live-in-apartment-caretaker-jobs-bangalore'
     }
 }
 

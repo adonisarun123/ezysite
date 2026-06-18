@@ -32,10 +32,6 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: 'https://www.ezyhelpers.com/helper-jobs/kolkata',
-        languages: {
-            'en': 'https://www.ezyhelpers.com/helper-jobs/kolkata',
-            'hi': 'https://www.ezyhelpers.com/helper-jobs/kolkata/hin'
-        }
     },
 }
 

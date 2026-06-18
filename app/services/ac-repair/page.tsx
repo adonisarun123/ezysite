@@ -21,20 +21,17 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Air Conditioner Repair & Service - Cooling Experts | EzyHelpers',
-  description: 'Looking for air conditioner repair? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians.',
-  keywords: 'ac repair, air conditioner repair, ac service, ac gas filling, ac technician',
+  title: 'Air Conditioner Repair in Bareilly - Cooling Experts',
+  description: 'Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians.',
+  keywords: 'ac repair bareilly, air conditioner repair bareilly, ac service bareilly, ac gas filling bareilly, ac technician bareilly',
   openGraph: {
-    title: 'Air Conditioner Repair & Service - Cooling Experts | EzyHelpers',
-    description: 'Looking for air conditioner repair? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians.',
+    title: 'Air Conditioner Repair in Bareilly - Cooling Experts',
+    description: 'Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians.',
     url: 'https://www.ezyhelpers.com/services/ac-repair',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
-    images: [{ url: "https://www.ezyhelpers.com/og?title=Air%20Conditioner%20Repair%20%26%20Service%20-%20Cooling%20Experts", width: 1200, height: 630, alt: "Air Conditioner Repair & Service - Cooling Experts | EzyHelpers" }],
-  },
-  alternates: {
-    canonical: 'https://www.ezyhelpers.com/services/ac-repair'
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Air%20Conditioner%20Repair%20in%20Bareilly%20-%20Cooling%20Experts", width: 1200, height: 630, alt: "Air Conditioner Repair in Bareilly - Cooling Experts" }],
   }
 }
 
@@ -53,11 +50,11 @@ export default async function ACRepairPage() {
     },
     {
       title: "Cooling Performance Issues",
-      description: "Fix poor cooling problems caused by extreme summer heat and dust accumulation."
+      description: "Fix poor cooling problems caused by Bareilly's extreme summer heat and dust accumulation."
     },
     {
       title: "Filter Cleaning & Replacement",
-      description: "Combat constant filter clogging from construction dust and pollution."
+      description: "Combat constant filter clogging from construction dust and pollution around Bareilly."
     },
     {
       title: "Voltage Fluctuation Damage",
@@ -103,7 +100,7 @@ export default async function ACRepairPage() {
 
   const commonProblems = [
     "Poor Cooling Performance– Weak airflow due to dirty filters or gas leaks",
-    "Dust & Pollution Clogging– construction dust blocks filters fast",
+    "Dust & Pollution Clogging– Bareilly's construction dust blocks filters fast",
     "Voltage Fluctuations– Power cuts damage AC compressors",
     "Water Leakage– Monsoon humidity causes drainage problems",
     "Fungus & Bad Odor– Unclean vents spread germs and foul smells"
@@ -111,30 +108,30 @@ export default async function ACRepairPage() {
 
   const faqs = [
     {
-      question: "What services are included in air conditioner repair?",
-      answer: "Our air conditioner repair includes gas refilling, filter cleaning, thermostat repair, water leakage fixes, and full performance checks to keep your AC running efficiently during extreme heat."
+      question: "What services are included in air conditioner repair in Bareilly?",
+      answer: "Our air conditioner repair in Bareilly includes gas refilling, filter cleaning, thermostat repair, water leakage fixes, and full performance checks to keep your AC running efficiently during Bareilly's extreme heat."
     },
     {
       question: "Can you fix the poor cooling performance in my AC?",
-      answer: "Yes, our AC technicians are trained to fix weak cooling caused by clogged filters, gas leaks, or thermostat issues. We ensure your AC cools effectively even during peak summer heat."
+      answer: "Yes, our AC technicians in Bareilly are trained to fix weak cooling caused by clogged filters, gas leaks, or thermostat issues. We ensure your AC cools effectively even during Bareilly's peak summer heat."
     },
     {
-      question: "Do you clean or replace AC filters in homes?",
-      answer: "Yes, we offer filter cleaning and replacement services to combat dust from construction zones. Clean filters help improve air quality and cooling efficiency in your home."
+      question: "Do you clean or replace AC filters in Bareilly homes?",
+      answer: "Yes, we offer filter cleaning and replacement services to combat dust from Bareilly's construction zones. Clean filters help improve air quality and cooling efficiency in your home."
     },
     {
       question: "Can you repair AC units damaged by voltage fluctuations?",
-      answer: "Yes, our AC repair includes fixing units affected by voltage fluctuations and power cuts. We check electrical connections and damaged parts like compressors or PCBs."
+      answer: "Yes, our AC repair in Bareilly includes fixing units affected by voltage fluctuations and power cuts. We check electrical connections and damaged parts like compressors or PCBs."
     },
     {
-      question: "Do you fix AC water leakage problems?",
-      answer: "Yes, we repair water leakage caused by humidity or blocked drainage. Our AC technicians ensure proper drainage to avoid damage and odor issues."
+      question: "Do you fix AC water leakage problems in Bareilly?",
+      answer: "Yes, we repair water leakage caused by humidity or blocked drainage. Our Bareilly AC technicians ensure proper drainage to avoid damage and odor issues."
     }
   ]
 
   return (
     <main className="min-h-screen">
-      <ServiceSchema serviceName={"Air Conditioner Repair - Cooling Experts"} serviceDescription={"Looking for air conditioner repair? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians."} serviceType={"Air Conditioner Repair - Cooling Experts"} serviceUrl={"https://www.ezyhelpers.com/services/ac-repair"} />
+      <ServiceSchema serviceName={"Air Conditioner Repair in Bareilly - Cooling Experts"} serviceDescription={"Looking for air conditioner repair in Bareilly? We offer trusted AC service, gas refills, leak fixes, and maintenance by certified technicians."} serviceType={"Air Conditioner Repair in Bareilly - Cooling Experts"} serviceUrl={"https://www.ezyhelpers.com/services/ac-repair"} />
       <Navbar />
       
       <Breadcrumb 
@@ -160,11 +157,11 @@ export default async function ACRepairPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
-              Air Conditioner Repair: Keep Your Cool with EzyHelpers!
+              Air Conditioner Repair in Bareilly: Keep Your Cool with EzyHelpers!
             </h1>
             
             <p className="text-xl lg:text-2xl text-blue-100 mb-10 leading-relaxed max-w-4xl mx-auto">
-              Beat the scorching summer heat with EzyHelpers! We provide quick, reliable, and affordable air conditioner repair to ensure your home stays cool, comfortable, and energy-efficient throughout the summer and beyond.
+              Beat the scorching heat of Bareilly with EzyHelpers! We provide quick, reliable, and affordable air conditioner repair in Bareilly to ensure your home stays cool, comfortable, and energy-efficient throughout the summer and beyond.
             </p>
 
             {/* Trust Badges */}
@@ -210,10 +207,10 @@ export default async function ACRepairPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Our AC Repair Services
+              Our AC Repair Services in Bareilly
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Comprehensive solutions for all your Air Conditioner repair needs in any challenging climate
+              Comprehensive solutions for all your Air Conditioner repair needs in Bareilly's challenging climate
             </p>
           </div>
 
@@ -244,7 +241,7 @@ export default async function ACRepairPage() {
               Types of AC Units We Service
             </h2>
             <p className="text-lg text-gray-600">
-              Complete AC servicing options for every home
+              Complete AC servicing options for every Bareilly home
             </p>
           </div>
 
@@ -264,10 +261,10 @@ export default async function ACRepairPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Is Your AC Failing in Extreme Heat? We Can Help!
+              Is Your AC Failing in Bareilly's Extreme Heat? We Can Help!
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Scorching summers make ACs a necessity, not a luxury. But when your AC stops cooling, gas leaks, or trips due to voltage issues, your family's comfort and health are at risk.
+              Bareilly's scorching summers make ACs a necessity, not a luxury. But when your AC stops cooling, gas leaks, or trips due to voltage issues, your family's comfort and health are at risk.
             </p>
           </div>
 
@@ -317,7 +314,7 @@ export default async function ACRepairPage() {
             Don't Let AC Trouble Heat Up Your Home!
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Fix your AC issues quickly with EzyHelpers. Stay cool and worry-free during the hot summer.
+            Fix your AC issues quickly with EzyHelpers. Stay cool and worry-free during Bareilly's hot summer.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/book-now" className="inline-flex items-center bg-white text-blue-600 hover:bg-gray-100 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">

@@ -41,11 +41,7 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/japa-maid-job-bangalore',
-        languages: {
-            'en': 'https://www.ezyhelpers.com/helper-jobs/assam/japa-maid-job-bangalore',
-            'hi': 'https://www.ezyhelpers.com/helper-jobs/assam/japa-maid-job-bangalore/hin'
-        }
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/japa-maid-job-bangalore'
     }
 }
 

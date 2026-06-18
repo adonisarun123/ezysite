@@ -4,19 +4,10 @@ import MainContent from '@/components/MainContent';
 import CaseStudyCard from './components/CaseStudyCard';
 import CTASection from '@/components/sections/CTASection';
 import Link from 'next/link';
-import type { Metadata } from 'next';
-import { getAllCaseStudies } from '@/lib/caseStudySource';
+import { caseStudies } from './data/caseStudies';
 
-export const metadata: Metadata = {
-  title: 'Case Studies | EzyHelpers',
-  description: 'Real stories of families who found the right verified helper through EzyHelpers — maids, cooks, nannies, elderly care and more.',
-  alternates: {
-    canonical: 'https://www.ezyhelpers.com/case-studies',
-  },
-};
-
-export default async function CaseStudiesPage() {
-    const filteredCaseStudies = await getAllCaseStudies();
+export default function CaseStudiesPage() {
+    const filteredCaseStudies = caseStudies;
 
     const jsonLd = {
         "@context": "https://schema.org",

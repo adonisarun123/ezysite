@@ -32,10 +32,6 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: 'https://www.ezyhelpers.com/helper-jobs/tamilnadu',
-        languages: {
-            'en': 'https://www.ezyhelpers.com/helper-jobs/tamilnadu',
-            'hi': 'https://www.ezyhelpers.com/helper-jobs/tamilnadu/hin'
-        }
     },
 }
 
