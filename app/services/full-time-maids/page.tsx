@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -10,6 +12,7 @@ export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
   ShieldCheckIcon, 
   HomeIcon, 
@@ -41,7 +44,14 @@ export const metadata: Metadata = {
   },
 }
 
-export default function FullTimeMaidsPage() {
+export default async function FullTimeMaidsPage() {
+  const __dbHtml = await getHtmlContent("services/full-time-maids")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("full-time-maids", {
+    question: "How do I hire a full-time maid through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified full-time maids working 8–10 hours daily for cleaning, cooking support, and household chores. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper.",
+  })
   const services = [
     {
       title: "Full-Time Maid for Housekeeping",
@@ -293,8 +303,8 @@ export default function FullTimeMaidsPage() {
       </section>
 
       <QuickAnswer
-        question="How do I hire a full-time maid through EzyHelpers?"
-        answer="EzyHelpers provides background-verified full-time maids working 8–10 hours daily for cleaning, cooking support, and household chores. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       {/* Why Choose Section */}

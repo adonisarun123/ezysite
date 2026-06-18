@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
   ClockIcon, 
   CurrencyDollarIcon, 
@@ -39,7 +42,14 @@ export const metadata: Metadata = {
   }
 }
 
-export default function PartTimeMaidsPage() {
+export default async function PartTimeMaidsPage() {
+  const __dbHtml = await getHtmlContent("services/part-time-maids")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("part-time-maids", {
+    question: "How do I hire a part-time maid through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified part-time maids for 2–6 hours daily — cleaning, dishes, laundry, and more. Placement typically takes 24–72 hours, with flexible timings and a quick replacement guarantee.",
+  })
   const services = [
     {
       title: "Part-Time Maid for Housekeeping",
@@ -333,8 +343,8 @@ export default function PartTimeMaidsPage() {
       </section>
 
       <QuickAnswer
-        question="How do I hire a part-time maid through EzyHelpers?"
-        answer="EzyHelpers provides background-verified part-time maids for 2–6 hours daily — cleaning, dishes, laundry, and more. Placement typically takes 24–72 hours, with flexible timings and a quick replacement guarantee."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       {/* Why Choose Section */}

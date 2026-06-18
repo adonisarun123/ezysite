@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
   WrenchScrewdriverIcon,
   CheckCircleIcon,
@@ -40,7 +43,14 @@ export const metadata: Metadata = {
   }
 }
 
-export default function ApplianceRepairPage() {
+export default async function ApplianceRepairPage() {
+  const __dbHtml = await getHtmlContent("services/appliance-repair")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("appliance-repair", {
+    question: "How do I book home appliance repair through EzyHelpers?",
+    answer: "EzyHelpers provides verified technicians for washing machine, refrigerator, microwave, and other home appliance repairs. Book online or call 080-31411776 for a same-day or next-day visit with transparent, upfront pricing.",
+  })
   const breadcrumbs = [
     { name: "Home", url: "https://www.ezyhelpers.com" },
     { name: "Services", url: "https://www.ezyhelpers.com/services" },
@@ -277,8 +287,8 @@ export default function ApplianceRepairPage() {
       </section>
 
       <QuickAnswer
-        question="How do I book home appliance repair through EzyHelpers?"
-        answer="EzyHelpers provides verified technicians for washing machine, refrigerator, microwave, and other home appliance repairs. Book online or call 080-31411776 for a same-day or next-day visit with transparent, upfront pricing."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       

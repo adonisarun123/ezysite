@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
   ShieldCheckIcon,
   ClockIcon,
@@ -35,7 +38,14 @@ export const metadata: Metadata = {
   }
 }
 
-export default function ACRepairPage() {
+export default async function ACRepairPage() {
+  const __dbHtml = await getHtmlContent("services/ac-repair")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("ac-repair", {
+    question: "How do I book AC repair at home through EzyHelpers?",
+    answer: "EzyHelpers connects you with background-verified AC technicians for installation, servicing, gas refilling, and repairs. Book online or call 080-31411776 — same-day visits are available in most service areas, with upfront pricing and no hidden charges.",
+  })
   const services = [
     {
       title: "AC Gas Refilling & Leak Repair",
@@ -191,8 +201,8 @@ export default function ACRepairPage() {
       </section>
 
       <QuickAnswer
-        question="How do I book AC repair at home through EzyHelpers?"
-        answer="EzyHelpers connects you with background-verified AC technicians for installation, servicing, gas refilling, and repairs. Book online or call 080-31411776 — same-day visits are available in most service areas, with upfront pricing and no hidden charges."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       {/* Services Section */}

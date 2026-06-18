@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
   ShieldCheckIcon,
   CheckCircleIcon,
@@ -39,7 +42,14 @@ export const metadata: Metadata = {
   }
 }
 
-export default function PestControlPage() {
+export default async function PestControlPage() {
+  const __dbHtml = await getHtmlContent("services/pest-control")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("pest-control", {
+    question: "How do I book pest control through EzyHelpers?",
+    answer: "EzyHelpers offers professional pest control for cockroaches, termites, bed bugs, and rodents using safe, effective treatments. Book online or call 080-31411776 for inspection and same-week service.",
+  })
   const breadcrumbs = [
     { name: "Home", url: "https://www.ezyhelpers.com" },
     { name: "Services", url: "https://www.ezyhelpers.com/services" },
@@ -217,8 +227,8 @@ export default function PestControlPage() {
       </section>
 
       <QuickAnswer
-        question="How do I book pest control through EzyHelpers?"
-        answer="EzyHelpers offers professional pest control for cockroaches, termites, bed bugs, and rodents using safe, effective treatments. Book online or call 080-31411776 for inspection and same-week service."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       {/* Why Choose Us */}

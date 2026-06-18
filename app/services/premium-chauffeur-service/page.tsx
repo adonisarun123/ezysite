@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -47,7 +50,14 @@ export const metadata: Metadata = {
     }
 }
 
-export default function ChauffeurServicePage() {
+export default async function ChauffeurServicePage() {
+  const __dbHtml = await getHtmlContent("services/premium-chauffeur-service")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("premium-chauffeur-service", {
+    question: "How do I hire a premium chauffeur through EzyHelpers?",
+    answer: "EzyHelpers provides professional, background-verified chauffeurs with clean driving records for daily commutes, business travel, and special occasions. Placement typically takes 24–72 hours, with a replacement guarantee.",
+  })
     const faqs: FAQItem[] = [
         { question: 'Are EzyHelpers chauffeurs verified and licensed?', answer: 'Yes. All chauffeurs are fully verified through ID checks, address verification, driving licence validation, and background screening. This ensures safe, reliable, and trusted chauffeur services for every customer.' },
         { question: 'Do chauffeurs know how to handle automatic and manual luxury cars?', answer: 'Yes. Our chauffeurs are trained to drive both automatic and manual luxury vehicles. They understand smooth acceleration, careful braking, and vehicle-specific handling required for premium cars.' },
@@ -330,9 +340,9 @@ export default function ChauffeurServicePage() {
                 </section>
 
                 <QuickAnswer
-                  question="How do I hire a premium chauffeur through EzyHelpers?"
-                  answer="EzyHelpers provides professional, background-verified chauffeurs with clean driving records for daily commutes, business travel, and special occasions. Placement typically takes 24–72 hours, with a replacement guarantee."
-                />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
                 {/* Why Choose EzyHelpers for Chauffeur Services? */}
                 <section className="section-padding bg-gray-50">

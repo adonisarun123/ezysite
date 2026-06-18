@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
   GlobeAltIcon,
   CheckCircleIcon,
@@ -39,7 +42,14 @@ export const metadata: Metadata = {
   }
 }
 
-export default function GardenerPage() {
+export default async function GardenerPage() {
+  const __dbHtml = await getHtmlContent("services/gardener")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("gardener", {
+    question: "How do I hire a home gardener through EzyHelpers?",
+    answer: "EzyHelpers connects you with experienced, verified gardeners for plant care, lawn maintenance, and garden setup — on-demand or on a regular schedule. Book online or call 080-31411776 for quick scheduling.",
+  })
   const breadcrumbs = [
     { name: "Home", url: "https://www.ezyhelpers.com" },
     { name: "Services", url: "https://www.ezyhelpers.com/services" },
@@ -264,8 +274,8 @@ export default function GardenerPage() {
       </section>
 
       <QuickAnswer
-        question="How do I hire a home gardener through EzyHelpers?"
-        answer="EzyHelpers connects you with experienced, verified gardeners for plant care, lawn maintenance, and garden setup — on-demand or on a regular schedule. Book online or call 080-31411776 for quick scheduling."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
       {/* Why Choose Us */}
       <section className="section-padding bg-white">

@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
   BeakerIcon,
   CheckCircleIcon,
@@ -39,7 +42,14 @@ export const metadata: Metadata = {
   }
 }
 
-export default function PlumbersPage() {
+export default async function PlumbersPage() {
+  const __dbHtml = await getHtmlContent("services/plumbers")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("plumbers", {
+    question: "How do I book a plumber through EzyHelpers?",
+    answer: "EzyHelpers connects you with verified plumbers for leak repairs, fittings, blockages, and bathroom work. Book online or call 080-31411776 — same-day visits are available in most service areas with upfront pricing.",
+  })
   const breadcrumbs = [
     { name: "Home", url: "https://www.ezyhelpers.com" },
     { name: "Services", url: "https://www.ezyhelpers.com/services" },
@@ -281,8 +291,8 @@ export default function PlumbersPage() {
       </section>
 
       <QuickAnswer
-        question="How do I book a plumber through EzyHelpers?"
-        answer="EzyHelpers connects you with verified plumbers for leak repairs, fittings, blockages, and bathroom work. Book online or call 080-31411776 — same-day visits are available in most service areas with upfront pricing."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       {/* Why Choose Us */}

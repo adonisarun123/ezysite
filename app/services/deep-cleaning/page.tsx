@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
@@ -7,6 +9,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
   SparklesIcon,
   CheckCircleIcon,
@@ -41,7 +44,14 @@ export const metadata: Metadata = {
   },
 }
 
-export default function DeepCleaningPage() {
+export default async function DeepCleaningPage() {
+  const __dbHtml = await getHtmlContent("services/deep-cleaning")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("deep-cleaning", {
+    question: "How do I book home deep cleaning through EzyHelpers?",
+    answer: "EzyHelpers offers professional deep cleaning for kitchens, bathrooms, sofas, and full homes using trained, verified cleaners. Book online or call 080-31411776 — flexible slots are available, including same-day service in most areas.",
+  })
   const breadcrumbs = [
     { name: "Home", url: "https://www.ezyhelpers.com" },
     { name: "Services", url: "https://www.ezyhelpers.com/services" },
@@ -311,8 +321,8 @@ export default function DeepCleaningPage() {
       </section>
 
       <QuickAnswer
-        question="How do I book home deep cleaning through EzyHelpers?"
-        answer="EzyHelpers offers professional deep cleaning for kitchens, bathrooms, sofas, and full homes using trained, verified cleaners. Book online or call 080-31411776 — flexible slots are available, including same-day service in most areas."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       {/* Why Choose Us */}

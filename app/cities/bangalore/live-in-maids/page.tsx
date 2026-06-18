@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -42,7 +44,10 @@ export const metadata: Metadata = {
   }
 }
 
-export default function BangaloreLiveInMaidsPage() {
+export default async function BangaloreLiveInMaidsPage() {
+  const __dbHtml = await getHtmlContent("cities/bangalore/live-in-maids")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
   
   // Breadcrumb schema for SEO
   const breadcrumbs = [

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
@@ -6,6 +8,7 @@ import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import { LocalBusinessSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getCityQuickAnswer } from '@/lib/cityContentSource'
 import {
   BuildingOffice2Icon, 
   HeartIcon, 
@@ -35,7 +38,14 @@ export const metadata: Metadata = {
   },
 }
 
-export default function NagpurPage() {
+export default async function NagpurPage() {
+  const __dbHtml = await getHtmlContent("cities/nagpur")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getCityQuickAnswer("cities/nagpur", {
+    question: "How do I hire domestic help in Nagpur through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified maids, cooks, babysitters, and elderly caretakers across Nagpur. Placement typically takes 24–72 hours, with flexible service options and a quick replacement guarantee.",
+  })
   const localServices = [
     {
       title: "Industrial Area Support",
@@ -106,9 +116,9 @@ export default function NagpurPage() {
         </section>
 
         <QuickAnswer
-          question="How do I hire domestic help in Nagpur through EzyHelpers?"
-          answer="EzyHelpers provides background-verified maids, cooks, babysitters, and elderly caretakers across Nagpur. Placement typically takes 24–72 hours, with flexible service options and a quick replacement guarantee."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* Local Services */}
         <section className="section-padding bg-white">

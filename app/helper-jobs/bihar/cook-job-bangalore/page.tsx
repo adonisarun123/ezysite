@@ -19,6 +19,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 
 export const metadata: Metadata = {
     title: 'House Cook Jobs in Bangalore for Bihar Helpers',
@@ -65,7 +66,8 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function CookJobBangalorePage() {
+export default async function CookJobBangalorePage() {
+  const faqItems = await getHelperJobFaqs("helper-jobs/bihar/cook-job-bangalore", faqs)
     return (
         <>
             <main className="min-h-screen">
@@ -538,7 +540,7 @@ export default function CookJobBangalorePage() {
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display tracking-tight">Questions and Answers (FAQs)</h2>
                             <div className="w-24 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
                         </div>
-                        <FAQAccordion faqs={faqs} />
+                        <FAQAccordion faqs={faqItems} />
                     </div>
                 </section>
 

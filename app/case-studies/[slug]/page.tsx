@@ -5,7 +5,8 @@ import Footer from '@/components/Footer';
 import MainContent from '@/components/MainContent';
 import CTASection from '@/components/sections/CTASection';
 import CaseStudyCard from '../components/CaseStudyCard';
-import { getCaseStudy, getRelatedCaseStudies, caseStudies } from '../data/caseStudies';
+import { caseStudies } from '../data/caseStudies';
+import { getCaseStudy, getRelatedCaseStudies } from '@/lib/caseStudySource';
 import { CheckCircleIcon, StarIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
@@ -641,7 +642,7 @@ export async function generateMetadata(
     parent: ResolvingMetadata
 ): Promise<Metadata> {
     const { slug } = await params;
-    const caseStudy = getCaseStudy(slug);
+    const caseStudy = await getCaseStudy(slug);
 
     if (!caseStudy) {
         return {
@@ -673,7 +674,7 @@ export async function generateMetadata(
 
 export default async function CaseStudyDetailPage({ params }: Props) {
     const { slug } = await params;
-    const caseStudy = getCaseStudy(slug);
+    const caseStudy = await getCaseStudy(slug);
 
     if (!caseStudy) {
         notFound();
@@ -681,7 +682,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
     const extraSections = CASE_STUDY_EXTRA_CONTENT[caseStudy.slug];
 
-    const related = getRelatedCaseStudies(slug, 3);
+    const related = await getRelatedCaseStudies(slug, 3);
 
     const jsonLd = {
         "@context": "https://schema.org",

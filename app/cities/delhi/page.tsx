@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
@@ -9,6 +11,7 @@ import OptimizedHeader from '@/components/optimized/OptimizedHeader'
 import { LocalBusinessSchema, BreadcrumbSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getCityQuickAnswer } from '@/lib/cityContentSource'
 import {
   BuildingLibraryIcon, 
   HeartIcon, 
@@ -46,7 +49,14 @@ export const metadata: Metadata = {
   },
 }
 
-export default function DelhiPage() {
+export default async function DelhiPage() {
+  const __dbHtml = await getHtmlContent("cities/delhi")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getCityQuickAnswer("cities/delhi", {
+    question: "How do I hire a maid in Delhi through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified maids, cooks, nannies, and elderly caretakers across Delhi NCR. Placement typically takes 24–72 hours, with live-in, full-time, and part-time options and a quick replacement guarantee.",
+  })
   // Schema data for Delhi
   const breadcrumbs = [
     { name: "Home", url: "https://www.ezyhelpers.com" },
@@ -182,8 +192,8 @@ export default function DelhiPage() {
       </section>
 
       <QuickAnswer
-        question="How do I hire a maid in Delhi through EzyHelpers?"
-        answer="EzyHelpers provides background-verified maids, cooks, nannies, and elderly caretakers across Delhi NCR. Placement typically takes 24–72 hours, with live-in, full-time, and part-time options and a quick replacement guarantee."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       {/* Local Services - Optimized */}

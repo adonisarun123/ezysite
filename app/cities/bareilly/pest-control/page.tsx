@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -40,7 +42,10 @@ export const metadata: Metadata = {
   }
 }
 
-export default function BareillyPestControl() {
+export default async function BareillyPestControl() {
+  const __dbHtml = await getHtmlContent("cities/bareilly/pest-control")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

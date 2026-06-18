@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -10,6 +12,7 @@ export const revalidate = 3600
 import NestCTA from '@/components/NestCTA'
 import { LocalBusinessSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getCityQuickAnswer } from '@/lib/cityContentSource'
 import {
   ComputerDesktopIcon,
   HomeIcon,
@@ -43,7 +46,14 @@ export const metadata: Metadata = {
   }
 }
 
-export default function BangalorePage() {
+export default async function BangalorePage() {
+  const __dbHtml = await getHtmlContent("cities/bangalore")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getCityQuickAnswer("cities/bangalore", {
+    question: "How do I hire a maid in Bangalore through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified maids, cooks, nannies, drivers, and elderly caretakers across Bangalore — from Whitefield to Jayanagar. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper. Call 080-31411776 to get started.",
+  })
   const areas = [
     "Whitefield", "Electronic City", "Koramangala", "Indiranagar", "HSR Layout",
     "BTM Layout", "Marathahalli", "Sarjapur Road", "Bannerghatta Road", "Yelahanka",
@@ -126,9 +136,9 @@ export default function BangalorePage() {
         </section>
 
         <QuickAnswer
-          question="How do I hire a maid in Bangalore through EzyHelpers?"
-          answer="EzyHelpers provides background-verified maids, cooks, nannies, drivers, and elderly caretakers across Bangalore — from Whitefield to Jayanagar. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper. Call 080-31411776 to get started."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* Why Choose EzyHelpers Section */}
         <section className="section-padding bg-white">

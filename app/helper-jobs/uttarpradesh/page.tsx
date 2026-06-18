@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -17,6 +19,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 
 export const metadata: Metadata = {
     title: 'House maid job in Bangalore with High Salary- Apply Now',
@@ -59,7 +62,11 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function HelperJobsUPPage() {
+export default async function HelperJobsUPPage() {
+  const __dbHtml = await getHtmlContent("helper-jobs/uttarpradesh")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const faqItems = await getHelperJobFaqs("helper-jobs/uttarpradesh", faqs)
     return (
         <>
             <main className="min-h-screen">
@@ -459,7 +466,7 @@ export default function HelperJobsUPPage() {
                             </h2>
                             <div className="w-32 h-1 bg-amber-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
-                        <FAQAccordion faqs={faqs} />
+                        <FAQAccordion faqs={faqItems} />
                     </div>
                 </section>
 

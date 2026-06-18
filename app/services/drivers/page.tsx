@@ -1,10 +1,13 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import GoogleRatingBadge from '@/components/GoogleRatingBadge'
 import {
   TruckIcon, 
@@ -37,7 +40,14 @@ export const metadata: Metadata = {
   }
 }
 
-export default function DriversPage() {
+export default async function DriversPage() {
+  const __dbHtml = await getHtmlContent("services/drivers")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("drivers", {
+    question: "How do I hire a personal driver through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified personal drivers on full-time, part-time, or on-demand basis. Placement typically takes 24–72 hours, with verified driving records, a replacement guarantee, and direct payment to your driver.",
+  })
   const services = [
     {
       title: "Daily Commute Services",
@@ -277,8 +287,8 @@ export default function DriversPage() {
       </section>
 
       <QuickAnswer
-        question="How do I hire a personal driver through EzyHelpers?"
-        answer="EzyHelpers provides background-verified personal drivers on full-time, part-time, or on-demand basis. Placement typically takes 24–72 hours, with verified driving records, a replacement guarantee, and direct payment to your driver."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       <GoogleRatingBadge rating="4.93" detail="Zero negative reviews across driver placements — customers highlight licence & police verification (528 Google reviews, June 2026)" />

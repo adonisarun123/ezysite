@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -94,7 +96,10 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function ElderlyCaretakerJobsBangalorePage() {
+export default async function ElderlyCaretakerJobsBangalorePage() {
+  const __dbHtml = await getHtmlContent("helper-jobs/jharkhand/elderly-caretaker-job-bangalore")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
     return (
         <>
             <main className="min-h-screen">

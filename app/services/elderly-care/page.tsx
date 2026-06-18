@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -10,6 +12,7 @@ export const revalidate = 3600
 import AvailableInCities from '@/components/AvailableInCities'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import GoogleRatingBadge from '@/components/GoogleRatingBadge'
 import {
   HeartIcon, 
@@ -42,7 +45,14 @@ export const metadata: Metadata = {
   }
 }
 
-export default function ElderlyCare() {
+export default async function ElderlyCare() {
+  const __dbHtml = await getHtmlContent("services/elderly-care")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("elderly-care", {
+    question: "How do I arrange elderly care at home through EzyHelpers?",
+    answer: "EzyHelpers provides trained, background-verified elderly caretakers for daily assistance, companionship, and mobility support — live-in or full-time. Placement typically takes 24–72 hours, with a quick replacement guarantee.",
+  })
   const services = [
     {
       title: "Personal Care Assistance",
@@ -271,8 +281,8 @@ export default function ElderlyCare() {
       </section>
 
       <QuickAnswer
-        question="How do I arrange elderly care at home through EzyHelpers?"
-        answer="EzyHelpers provides trained, background-verified elderly caretakers for daily assistance, companionship, and mobility support — live-in or full-time. Placement typically takes 24–72 hours, with a quick replacement guarantee."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       <GoogleRatingBadge rating="5.0" detail="Every Google review of our elderly & patient care is 5-star (June 2026)" />

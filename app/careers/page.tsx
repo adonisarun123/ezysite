@@ -6,10 +6,10 @@ import {
   CAREERS_DEDICATED_PAGE_SLUGS,
   JOB_CATEGORY_BLURBS,
   JOB_CATEGORY_ORDER,
-  jobOpenings,
   type JobCategory,
   type JobOpening,
 } from '@/lib/careersData'
+import { getAllJobs } from '@/lib/careersSource'
 import {
   ArrowRightIcon,
   ShieldCheckIcon,
@@ -203,7 +203,8 @@ function groupJobsByCategory(jobs: JobOpening[]): Array<{
   }))
 }
 
-export default function CareersPage() {
+export default async function CareersPage() {
+  const jobOpenings = await getAllJobs()
   const groupedRoles = groupJobsByCategory(jobOpenings)
   const totalRoles = jobOpenings.length
 

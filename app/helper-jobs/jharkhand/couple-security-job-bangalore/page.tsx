@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import { whatsappSendUrl } from '@/lib/whatsappUrl'
 import Navbar from '@/components/Navbar'
@@ -27,6 +29,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 import ReferEarnSection from '@/components/ReferEarnSection'
 import { JobPostingSchema } from '@/components/schema'
 
@@ -84,7 +87,11 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function CoupleSecurityJobsBangalorePage() {
+export default async function CoupleSecurityJobsBangalorePage() {
+  const __dbHtml = await getHtmlContent("helper-jobs/jharkhand/couple-security-job-bangalore")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const faqItems = await getHelperJobFaqs("helper-jobs/jharkhand/couple-security-job-bangalore", faqs)
     return (
         <>
             <JobPostingSchema
@@ -674,7 +681,7 @@ export default function CoupleSecurityJobsBangalorePage() {
                             <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4 font-display">Common Questions from Helpers</h2>
                             <div className="w-24 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
                         </div>
-                        <FAQAccordion faqs={faqs} />
+                        <FAQAccordion faqs={faqItems} />
                     </div>
                 </section>
 

@@ -5,7 +5,7 @@ import CaseStudyCard from './components/CaseStudyCard';
 import CTASection from '@/components/sections/CTASection';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { caseStudies } from './data/caseStudies';
+import { getAllCaseStudies } from '@/lib/caseStudySource';
 
 export const metadata: Metadata = {
   title: 'Case Studies | EzyHelpers',
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CaseStudiesPage() {
-    const filteredCaseStudies = caseStudies;
+export default async function CaseStudiesPage() {
+    const filteredCaseStudies = await getAllCaseStudies();
 
     const jsonLd = {
         "@context": "https://schema.org",

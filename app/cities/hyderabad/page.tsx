@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
 import Navbar from '@/components/Navbar'
@@ -7,6 +9,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import NestCTA from '@/components/NestCTA'
 import { LocalBusinessSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getCityQuickAnswer } from '@/lib/cityContentSource'
 import {
   ComputerDesktopIcon, 
   HomeIcon, 
@@ -41,7 +44,14 @@ export const metadata: Metadata = {
   },
 }
 
-export default function HyderabadPage() {
+export default async function HyderabadPage() {
+  const __dbHtml = await getHtmlContent("cities/hyderabad")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getCityQuickAnswer("cities/hyderabad", {
+    question: "How do I hire a maid in Hyderabad through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified maids, cooks, babysitters, and caretakers across Hyderabad. Placement typically takes 24–72 hours, with flexible service options and a quick replacement guarantee. Call 080-31411776 to get started.",
+  })
   const areas = [
     "HITEC City", "Gachibowli", "Madhapur", "Banjara Hills", "Jubilee Hills", 
     "Kondapur", "Begumpet", "Secunderabad", "Ameerpet", "Kukatpally",
@@ -124,8 +134,8 @@ export default function HyderabadPage() {
       </section>
 
       <QuickAnswer
-        question="How do I hire a maid in Hyderabad through EzyHelpers?"
-        answer="EzyHelpers provides background-verified maids, cooks, babysitters, and caretakers across Hyderabad. Placement typically takes 24–72 hours, with flexible service options and a quick replacement guarantee. Call 080-31411776 to get started."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       {/* Why Choose EzyHelpers Section */}

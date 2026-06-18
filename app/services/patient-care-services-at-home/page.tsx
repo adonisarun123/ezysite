@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import GoogleRatingBadge from '@/components/GoogleRatingBadge'
 import {
     PhoneIcon,
@@ -43,7 +46,14 @@ export const metadata: Metadata = {
     }
 }
 
-export default function PatientCareServicesPage() {
+export default async function PatientCareServicesPage() {
+  const __dbHtml = await getHtmlContent("services/patient-care-services-at-home")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("patient-care-services-at-home", {
+    question: "How do I arrange patient care at home through EzyHelpers?",
+    answer: "EzyHelpers provides trained, background-verified patient caretakers for post-surgery support, daily nursing assistance, and long-term care — live-in or shift-based. Placement typically takes 24–72 hours, with a replacement guarantee.",
+  })
     const faqs: FAQItem[] = [
         {
             question: 'What is a Patient care taker at home?',
@@ -280,9 +290,9 @@ export default function PatientCareServicesPage() {
             </section>
 
             <QuickAnswer
-              question="How do I arrange patient care at home through EzyHelpers?"
-              answer="EzyHelpers provides trained, background-verified patient caretakers for post-surgery support, daily nursing assistance, and long-term care — live-in or shift-based. Placement typically takes 24–72 hours, with a replacement guarantee."
-            />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
             <GoogleRatingBadge rating="5.0" detail="Every Google review of our elderly & patient care is 5-star (June 2026)" />
 

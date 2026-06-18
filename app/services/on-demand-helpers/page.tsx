@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import NestCTA from '@/components/NestCTA'
 import OnDemandLeadForm from '@/components/OnDemandLeadForm'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
   BoltIcon,
   ClockIcon,
@@ -44,7 +47,14 @@ export const metadata: Metadata = {
   }
 }
 
-export default function OnDemandHelpersPage() {
+export default async function OnDemandHelpersPage() {
+  const __dbHtml = await getHtmlContent("services/on-demand-helpers")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("on-demand-helpers", {
+    question: "How do I book an on-demand helper through EzyHelpers?",
+    answer: "EzyHelpers provides same-day, on-demand helpers for cleaning, kitchen help, event support, and one-off household tasks. Book online or call 080-31411776 — helpers are background-verified and available within hours in most areas.",
+  })
   const services = [
     {
       title: "On-Demand Maid for Emergency Cleaning",
@@ -304,9 +314,9 @@ export default function OnDemandHelpersPage() {
         </section>
 
         <QuickAnswer
-          question="How do I book an on-demand helper through EzyHelpers?"
-          answer="EzyHelpers provides same-day, on-demand helpers for cleaning, kitchen help, event support, and one-off household tasks. Book online or call 080-31411776 — helpers are background-verified and available within hours in most areas."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* Why Choose Section */}
         <section className="section-padding bg-white">

@@ -18,6 +18,7 @@ import {
 
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 import ReferEarnSection from '@/components/ReferEarnSection'
 
 
@@ -79,7 +80,8 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function HelperJobsPage() {
+export default async function HelperJobsPage() {
+  const faqItems = await getHelperJobFaqs("helper-jobs", faqs)
     return (
         <>
             <main className="min-h-screen">
@@ -640,7 +642,7 @@ export default function HelperJobsPage() {
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
                         </div>
                         <div className="max-w-4xl mx-auto">
-                            <FAQAccordion faqs={faqs} />
+                            <FAQAccordion faqs={faqItems} />
                         </div>
                     </div>
                 </section>
