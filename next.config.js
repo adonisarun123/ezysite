@@ -237,7 +237,6 @@ const nextConfig = {
       // SEO consolidation: cannibalization fixes
       { source: '/services/japa', destination: '/services/japa-nanny-services', permanent: true },
       { source: '/services/babysitter', destination: '/services/nanny-babysitter', permanent: true },
-      { source: '/services/english-speaking-babysitters', destination: '/services/nanny-babysitter', permanent: true },
       { source: '/jobs', destination: '/helper-jobs', permanent: true },
     ]
   },
