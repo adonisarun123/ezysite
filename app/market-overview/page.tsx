@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     description: 'In-depth analysis of India\'s vast domestic helper market covering 50-90 million workers, growth trends, and formalization opportunities.',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/market-overview',
+  },
 }
 
 const breadcrumbItems = [

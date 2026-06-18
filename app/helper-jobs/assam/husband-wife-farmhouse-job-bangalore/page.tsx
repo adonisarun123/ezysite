@@ -40,7 +40,11 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/husband-wife-farmhouse-job-bangalore'
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/husband-wife-farmhouse-job-bangalore',
+        languages: {
+            'en': 'https://www.ezyhelpers.com/helper-jobs/assam/husband-wife-farmhouse-job-bangalore',
+            'hi': 'https://www.ezyhelpers.com/helper-jobs/assam/husband-wife-farmhouse-job-bangalore/hin'
+        }
     }
 }
 

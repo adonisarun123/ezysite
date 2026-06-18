@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -14,6 +15,15 @@ import {
   HeartIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'
+
+// Paid ad landing page — noindex so it does not compete organically with the
+// canonical /services/full-time-maids and /cities/bareilly/full-time-maid pages.
+export const metadata: Metadata = {
+  title: 'Full-Time Maid in Bareilly | EzyHelpers',
+  description: 'Hire a verified full-time maid in Bareilly. Quick joining, background-checked helpers, and free replacement support.',
+  robots: { index: false, follow: true },
+  alternates: { canonical: 'https://www.ezyhelpers.com/cities/bareilly/full-time-maid' },
+}
 
 export default function FullTimeMaidBareillyPage() {
   const features = [
