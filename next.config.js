@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
+// Legacy WordPress 404 -> redirect map, generated from the "404 Redirects" CSV
+// by scripts/generate-legacy-redirects.js. Kept in a separate file because it
+// holds ~1.3k entries; regenerate with that script rather than editing by hand.
+const legacyRedirects = require('./redirects-legacy')
+
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -178,10 +183,10 @@ const nextConfig = {
       { source: '/product/full-time-helper', destination: '/services/full-time-maids', permanent: true },
       // 13
       { source: '/terms-and-conditions', destination: '/terms-of-service', permanent: true },
-      // 14
-      { source: '/landing-page', destination: '/cities/bangalore', permanent: true },
-      // 15
-      { source: '/ezyelders', destination: '/', permanent: true },
+      // 14 — EzyElders is a separate brand site; send legacy landing page there (per 404 CSV)
+      { source: '/landing-page', destination: 'https://www.ezyelders.com/', permanent: true },
+      // 15 — legacy EzyElders entry point -> external EzyElders site (per 404 CSV)
+      { source: '/ezyelders', destination: 'https://www.ezyelders.com/', permanent: true },
       // 16
       { source: '/services/elderly-engagement-new', destination: '/services/elderly-care', permanent: true },
       // 17
@@ -239,6 +244,28 @@ const nextConfig = {
       { source: '/services/babysitter', destination: '/services/nanny-babysitter', permanent: true },
       { source: '/services/english-speaking-babysitters', destination: '/services/nanny-babysitter', permanent: true },
       { source: '/jobs', destination: '/helper-jobs', permanent: true },
+
+      // --- Broken-link / typo corrections (18 June 2026 "Redirects" CSV) ---
+      // Plural/singular, state-name hyphenation, and renamed-slug fixes -> live pages.
+      { source: '/cities/bangalore/carpenters', destination: '/cities/bangalore/carpenter', permanent: true },
+      // NOTE: per CSV, Bareilly plumbing routes to the Bangalore plumber page (cross-city).
+      { source: '/cities/bareilly/plumbing', destination: '/cities/bangalore/plumber', permanent: true },
+      { source: '/cities/bareilly/packers-and-movers', destination: '/cities/bareilly/house-shifting', permanent: true },
+      { source: '/cities/bareilly/electrical', destination: '/cities/bareilly/electrician', permanent: true },
+      { source: '/services/house-cleaning', destination: '/services/deep-cleaning', permanent: true },
+      { source: '/blog/market-overview', destination: '/blog', permanent: true },
+      { source: '/helper-jobs/odisha/elderly-caretaker-job-bangalore', destination: '/helper-jobs/odisha/elderly-care-job-bangalore', permanent: true },
+      { source: '/helper-jobs/hin/japa-maid-jobs', destination: '/helper-jobs/hin', permanent: true },
+      { source: '/helper-jobs/andhra-pradesh', destination: '/helper-jobs/andhrapradesh', permanent: true },
+      { source: '/helper-jobs/uttar-pradesh', destination: '/helper-jobs/uttarpradesh', permanent: true },
+      { source: '/helper-jobs/tamil-nadu', destination: '/helper-jobs/tamilnadu', permanent: true },
+      { source: '/helper-jobs/madhya-pradesh', destination: '/helper-jobs/madhyapradesh', permanent: true },
+      { source: '/cities/bangalore/plumbers', destination: '/cities/bangalore/plumber', permanent: true },
+      { source: '/services/chauffeur-for-luxury-cars', destination: '/services/premium-chauffeur-service', permanent: true },
+
+      // Legacy WordPress URLs (~1.3k) imported from the "404 Redirects" CSV.
+      // Spread last so any hand-curated rule above wins on a source collision.
+      ...legacyRedirects,
     ]
   },
 }
