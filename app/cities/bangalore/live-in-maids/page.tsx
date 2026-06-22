@@ -165,7 +165,7 @@ export default async function BangaloreLiveInMaidsPage() {
       answer: "In most cases, a verified live-in maid is placed within 24–72 hours, depending on your requirements, preferred skills, location, and helper availability. Once we understand your needs, we shortlist suitable background-verified profiles, arrange interviews, and help you onboard the selected helper as quickly as possible. Our goal is to make the hiring process smooth, efficient, and hassle-free."
     },
     {
-      question: "Do live-in helpers speak Kannada or Hindi?",
+      question: "Do live-in maids speak Kannada or Hindi?",
       answer: "Yes. We match helpers based on your language preference, including Kannada, Hindi, and English, to help ensure smooth communication and a comfortable experience for your family."
     },
     {
