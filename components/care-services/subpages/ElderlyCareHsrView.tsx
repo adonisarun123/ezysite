@@ -72,7 +72,15 @@ const JSONLD = [
     name: 'EzyHelpers, Elderly Care in HSR Layout, Bangalore',
     areaServed: { '@type': 'AdministrativeArea', name: 'HSR Layout, Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
-    telephone: '+91-80-31411776',
+    telephone: '+918031411776',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'HSR Layout',
+      addressLocality: 'Bangalore',
+      addressRegion: 'Karnataka',
+      postalCode: '560102',
+      addressCountry: 'IN',
+    },
   },
   {
     '@context': 'https://schema.org',

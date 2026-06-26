@@ -19,9 +19,12 @@ export const metadata: Metadata = {
     }]
   },
   robots: {
-    index: true,
+    index: false, // Lead-capture form page — keep out of the index
     follow: true
-  }
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/service-request',
+  },
 }
 
 export default function ServiceRequestPage() {

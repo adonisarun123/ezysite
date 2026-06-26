@@ -194,7 +194,15 @@ const JSONLD = [
     medicalSpecialty: ['Neurology', 'Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
-    telephone: '+91-80-31411776',
+    telephone: '+918031411776',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'HSR Layout',
+      addressLocality: 'Bangalore',
+      addressRegion: 'Karnataka',
+      postalCode: '560102',
+      addressCountry: 'IN',
+    },
   },
   {
     '@context': 'https://schema.org',
@@ -428,10 +436,12 @@ export default function StrokeCareView() {
         body="Tell us your discharge plan. We respond within the hour, recommend the right level of care, and try to place a caregiver before you bring your loved one home."
         enquirySource={PATH}
         related={[
+          { label: 'Post-Stroke Speech Rehab', href: '/care-services/post-stroke-speech-rehab-at-home-bangalore' },
           { label: 'Home Nursing Services', href: '/care-services/home-nursing-services-bangalore' },
           { label: 'Trained Attendant', href: '/care-services/trained-attendant-services-bangalore' },
           { label: 'Patient Care', href: '/care-services/patient-care-services-bangalore' },
           { label: 'Cost guide', href: '/care-services/home-nursing-cost-bangalore' },
+          { label: 'MS & ALS Care', href: '/care-services/multiple-sclerosis-als-care-at-home-bangalore' },
           { label: 'Care glossary', href: '/care-services/care-glossary' },
         ]}
       />

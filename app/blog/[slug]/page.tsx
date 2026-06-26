@@ -887,7 +887,7 @@ export default async function BlogPost({ params }: PageProps) {
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
-            h1: ({ children }) => <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 mt-4 leading-tight font-display">{children}</h2>,
+            h1: ({ children }) => <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 mt-4 leading-tight font-display">{children}</h1>,
             h2: ({ children }) => <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-12 pb-2 border-b-2 border-blue-500 w-fit">{children}</h2>,
             h3: ({ children }) => <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 mt-8">{children}</h3>,
             p: ({ children }) => <p className="text-gray-700 mb-6 leading-relaxed text-lg">{children}</p>,

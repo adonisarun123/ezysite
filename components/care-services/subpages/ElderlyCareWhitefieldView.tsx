@@ -187,7 +187,7 @@ const JSONLD = [
       name: 'Whitefield, Bangalore',
     },
     url: `https://www.ezyhelpers.com${PATH}`,
-    telephone: '+91-80-31411776',
+    telephone: '+918031411776',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Whitefield',

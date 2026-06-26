@@ -168,7 +168,15 @@ const JSONLD = [
     medicalSpecialty: ['Neurology', 'Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
-    telephone: '+91-80-31411776',
+    telephone: '+918031411776',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'HSR Layout',
+      addressLocality: 'Bangalore',
+      addressRegion: 'Karnataka',
+      postalCode: '560102',
+      addressCountry: 'IN',
+    },
   },
   {
     '@context': 'https://schema.org',
@@ -282,6 +290,7 @@ export default function ParkinsonsCareView() {
         related={[
           { label: 'Elderly Care Services', href: '/care-services/elderly-care-services-bangalore' },
           { label: 'Dementia Care', href: '/care-services/dementia-alzheimers-care-bangalore' },
+          { label: 'MS & ALS Care', href: '/care-services/multiple-sclerosis-als-care-at-home-bangalore' },
           { label: 'Trained Attendant', href: '/care-services/trained-attendant-services-bangalore' },
         ]}
       />

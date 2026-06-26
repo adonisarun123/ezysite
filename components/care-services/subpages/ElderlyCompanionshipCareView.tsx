@@ -113,7 +113,15 @@ const JSONLD = [
     medicalSpecialty: ['Geriatrics'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
-    telephone: '+91-80-31411776',
+    telephone: '+918031411776',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'HSR Layout',
+      addressLocality: 'Bangalore',
+      addressRegion: 'Karnataka',
+      postalCode: '560102',
+      addressCountry: 'IN',
+    },
   },
   {
     '@context': 'https://schema.org',
@@ -184,6 +192,7 @@ export default function ElderlyCompanionshipCareView() {
         body="Tell us about your loved one. We respond within the hour, recommend a warm companion, and start matching today."
         enquirySource={PATH}
         related={[
+          { label: '24-Hour Elderly Care', href: '/care-services/24-hour-elderly-care-at-home-bangalore' },
           { label: 'Senior Mental Health & Counselling', href: '/care-services/senior-mental-health-counselling-bangalore' },
           { label: 'Dementia Care', href: '/care-services/dementia-care-at-home-bangalore' },
           { label: 'Post-Fall & Mobility Care', href: '/care-services/post-fall-mobility-care-bangalore' },

@@ -47,7 +47,7 @@ export default function LocalityCareView({ data }: { data: LocalityCareData }) {
       name: `EzyHelpers, Elderly Care Services in ${localityName}, Bangalore`,
       areaServed: { '@type': 'AdministrativeArea', name: `${localityName}, Bangalore` },
       url: `https://www.ezyhelpers.com${path}`,
-      telephone: '+91-80-31411776',
+      telephone: '+918031411776',
       address: {
         '@type': 'PostalAddress',
         addressLocality: localityName,

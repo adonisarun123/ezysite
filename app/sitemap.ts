@@ -124,12 +124,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6
     },
-    {
-      url: `${baseUrl}/service-request`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
+    // service-request removed from sitemap: internal lead-capture form, now noindex.
     {
       url: `${baseUrl}/how-it-works`,
       lastModified: currentDate,
@@ -148,12 +143,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6
     },
-    {
-      url: `${baseUrl}/requirement`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.6
-    },
+    // requirement removed from sitemap: internal lead-capture form, now noindex.
     {
       url: `${baseUrl}/privacy-policy`,
       lastModified: currentDate,
@@ -468,20 +458,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5
     },
-    {
-      url: `${baseUrl}/customer-requirements`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5
-    },
-    // helper-interview removed from sitemap: it's an internal form with no
-    // unique indexable content and is now marked noindex (see its layout.tsx).
-    {
-      url: `${baseUrl}/helper-leads`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5
-    }
+    // customer-requirements, helper-leads, helper-interview removed from sitemap:
+    // internal lead-capture forms with no unique indexable content, all noindex.
   ]
 
   // Business pages
