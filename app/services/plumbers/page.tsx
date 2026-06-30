@@ -18,16 +18,17 @@ import {
   WrenchScrewdriverIcon,
   FireIcon,
   CubeIcon,
-  ExclamationTriangleIcon
+  ExclamationTriangleIcon,
+  MapPinIcon
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Fix Leaks & More with Expert Plumber Service | EzyHelpers',
-  description: 'Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas.',
+  title: 'Plumber Service in India | Leak Repairs & More | EzyHelpers',
+  description: 'Book a licensed plumber anywhere in India for pipe repairs, installations & emergency fixes. Available 24/7. Serving Bangalore, Bareilly & more cities.',
   keywords: 'plumber service, plumbing repair, tap repair, drain cleaning, pipe repair, emergency plumber',
   openGraph: {
-    title: 'Fix Leaks & More with Expert Plumber Service | EzyHelpers',
-    description: 'Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas.',
+    title: 'Plumber Service in India | Leak Repairs & More | EzyHelpers',
+    description: 'Book a licensed plumber anywhere in India for pipe repairs, installations & emergency fixes. Available 24/7. Serving Bangalore, Bareilly & more cities.',
     url: 'https://www.ezyhelpers.com/services/plumbers',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -40,6 +41,19 @@ export const metadata: Metadata = {
 }
 
 export default function PlumbersPage() {
+  const cities = [
+    { name: 'Bangalore', href: '/cities/bangalore/plumber' },
+    { name: 'Bareilly', href: '/cities/bareilly/plumber' },
+    { name: 'Delhi', href: '/cities/delhi' },
+    { name: 'Noida', href: '/cities/noida' },
+    { name: 'Lucknow', href: '/cities/lucknow' },
+    { name: 'Kanpur', href: '/cities/kanpur' },
+    { name: 'Nagpur', href: '/cities/nagpur' },
+    { name: 'Hyderabad', href: '/cities/hyderabad' },
+    { name: 'Meerut', href: '/cities/meerut' },
+    { name: 'Mumbai', href: '/cities/mumbai' }
+  ]
+
   const breadcrumbs = [
     { name: "Home", url: "https://www.ezyhelpers.com" },
     { name: "Services", url: "https://www.ezyhelpers.com/services" },
@@ -136,7 +150,7 @@ export default function PlumbersPage() {
 
   return (
     <>
-      <ServiceSchema serviceName={"Fix Leaks & More with Expert Plumber Service"} serviceDescription={"Professional plumber service for pipe repairs, installations & emergency fixes. Licensed plumbers available 24/7 in your city and surrounding areas."} serviceType={"Fix Leaks & More with Expert Plumber Service"} serviceUrl={"https://www.ezyhelpers.com/services/plumbers"} />
+      <ServiceSchema serviceName={"Fix Leaks & More with Expert Plumber Service"} serviceDescription={"Book a licensed plumber anywhere in India for pipe repairs, installations & emergency fixes. Available 24/7. Serving Bangalore, Bareilly & more cities."} serviceType={"Fix Leaks & More with Expert Plumber Service"} serviceUrl={"https://www.ezyhelpers.com/services/plumbers"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -150,68 +164,75 @@ export default function PlumbersPage() {
                 "@type": "Answer",
                 "text": "EzyHelpers provides a full range of plumbing services, including leak repair, pipe replacement, drain cleaning, toilet repair, bathroom fittings, kitchen plumbing, water heater installation, and emergency plumbing support. Our certified plumbers handle both minor issues and large-scale plumbing jobs with professional care."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can I get emergency plumber services 24/7?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, EzyHelpers offers 24/7 emergency plumber service for urgent problems like burst pipes, major leaks, or blocked drains. Our local plumbers respond quickly to control damage and restore your home’s plumbing system with minimal disruption."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Are your plumbers licensed and experienced?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, all EzyHelpers plumbers are licensed and background verified. They have hands-on experience with Indian plumbing systems, are certified in safety standards, and can handle everything from repairs to full plumbing installations."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can I book a same-day plumber near me?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, same-day plumbing service is available in most major Indian cities. Whether it’s a leaking tap, broken pipe, or clogged sink, our plumbers can reach your location quickly and start work the same day."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Do you handle both small plumbing repairs and big projects?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, we cover all plumbing work, from fixing leaking taps to full bathroom plumbing and pipeline replacements. Our plumbers are experienced in managing small repairs as well as large installations and upgrades."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can your plumbers help with bathroom renovations?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, our plumbers work on bathroom renovation projects, such as new fittings, pipelines, basin setups, shower installations, and drainage planning. We coordinate with your contractor or designer for seamless execution."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Do you fix geysers and water heater issues?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, our plumbers handle the installation and repair of electric and gas water heaters. We fix geyser leaks, replace thermostats, repair heating elements, and ensure proper pipeline connection for safe usage."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "How fast can a plumber reach my home?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "In urgent cases, we can dispatch a local plumber within a few hours, depending on your city. For non-emergency jobs, we usually schedule the visit within 24 hours of booking."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Do you supply plumbing materials like taps and pipes?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, we use quality plumbing supplies like ISI-marked pipes, branded taps, valves, and fittings. You can either use our materials or provide your own preferences before the job begins."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "What if I only need a minor repair? Do I still need to book?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Definitely. We handle everything from minor repairs like dripping taps to major plumbing projects. No job is too small. Book online or give us a call, and we’ll take care of it."
+              }
+            }, {
+              "@type": "Question",
+              "name": "Which cities currently offer plumber services?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Plumbing services are available in selected Indian cities. Each city page includes information about available plumbing work, response times, and local booking options, making it easier to find services near you."
               }
             }]
           })
@@ -220,478 +241,529 @@ export default function PlumbersPage() {
       <main className="min-h-screen">
         <BreadcrumbSchema items={breadcrumbs} />
         <Navbar />
-      
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-indigo-600 via-indigo-700 to-indigo-800 text-white pt-28 pb-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-white rounded-full blur-3xl"></div>
-        </div>
 
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
-              <BeakerIcon className="h-5 w-5 text-indigo-200 mr-2" />
-              <span className="text-sm font-semibold">Trusted Plumbing Solutions</span>
-            </div>
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-indigo-600 via-indigo-700 to-indigo-800 text-white pt-28 pb-20 overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 right-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-20 w-80 h-80 bg-white rounded-full blur-3xl"></div>
+          </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
-              Trusted Plumber Service for Leak Repairs & More
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-indigo-100 mb-10 leading-relaxed max-w-3xl mx-auto">
-              Expert plumbing solutions for leaks, installations, and repairs. Same-day service, transparent pricing, and 100% satisfaction guaranteed.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link href="/hire-helper" className="group bg-white text-indigo-800 hover:bg-indigo-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
-                <span className="flex items-center justify-center">
-                  Book Plumber Now
-                  <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-              
-              <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call 080-31411776
-              </Link>
-            </div>
-
-            {/* Trust Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/20">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">12K+</div>
-                <div className="text-indigo-200 text-sm">Plumbing Jobs</div>
+          <div className="container-custom relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
+                <BeakerIcon className="h-5 w-5 text-indigo-200 mr-2" />
+                <span className="text-sm font-semibold">Trusted Plumbing Solutions</span>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">Quick</div>
-                <div className="text-indigo-200 text-sm">Response</div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
+                Plumber Service Across India: Leak Repairs, Installations & Emergency Fixes
+              </h1>
+
+              <p className="text-xl lg:text-2xl text-indigo-100 mb-10 leading-relaxed max-w-3xl mx-auto">
+                Looking for a plumber in India? Get help with leaking pipes, tap repairs, drain cleaning, bathroom fittings, and plumbing installations from experienced professionals.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <Link href="/hire-helper" className="group bg-white text-indigo-800 hover:bg-indigo-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
+                  <span className="flex items-center justify-center">
+                    Book Plumber Now
+                    <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+
+                <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
+                  <PhoneIcon className="h-5 w-5 mr-2" />
+                  Call 080-31411776
+                </Link>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">100%</div>
-                <div className="text-indigo-200 text-sm">Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">4.9★</div>
-                <div className="text-indigo-200 text-sm">Customer Rating</div>
+
+              {/* Trust Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/20">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">12K+</div>
+                  <div className="text-indigo-200 text-sm">Plumbing Jobs</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">Quick</div>
+                  <div className="text-indigo-200 text-sm">Response</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">100%</div>
+                  <div className="text-indigo-200 text-sm">Satisfaction</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">4.9★</div>
+                  <div className="text-indigo-200 text-sm">Customer Rating</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <QuickAnswer
-        question="How do I book a plumber through EzyHelpers?"
-        answer="EzyHelpers connects you with verified plumbers for leak repairs, fittings, blockages, and bathroom work. Book online or call 080-31411776 — same-day visits are available in most service areas with upfront pricing."
-      />
+        {/* Explore Available Cities Section */}
+        <section className="py-16 bg-white border-b border-gray-100 relative overflow-hidden">
+          {/* Subtle background decoration */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-50/30 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Why Choose EzyHelpers for Plumber Service?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Reliable plumbing with upfront pricing, same-day support, and guaranteed service satisfaction.
-            </p>
+          <div className="container-custom relative z-10">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 mb-4 border border-primary-100 shadow-sm">
+                <MapPinIcon className="h-4 w-4 mr-2 text-primary-600 animate-bounce" />
+                <span className="text-sm font-semibold">Service Coverage</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Find Plumber Services by City
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Select your city to explore plumbing services, repair solutions, and installation support near you.
+              </p>
+            </div>
+
+            {/* Cities Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 mb-12">
+              {cities.map((city) => (
+                <Link
+                  key={city.name}
+                  href={city.href}
+                  className="group relative bg-white hover:bg-gradient-to-br hover:from-primary-600 hover:to-primary-700 p-5 rounded-2xl border border-gray-200/80 hover:border-transparent shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center cursor-pointer"
+                >
+                  {/* Icon / Pin design */}
+                  <div className="w-10 h-10 rounded-xl bg-primary-50 group-hover:bg-white/20 flex items-center justify-center mb-3 transition-colors duration-300">
+                    <MapPinIcon className="h-5 w-5 text-primary-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 text-base md:text-lg">
+                    {city.name}
+                  </span>
+                  {/* View services indicator */}
+                  <div className="mt-2 text-primary-600 group-hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-xs font-medium flex items-center">
+                    View Services
+                    <ArrowRightIcon className="h-3 w-3 ml-1" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm md:text-base text-gray-500 font-medium">
+                More cities coming soon. Call us or visit your city page to confirm availability.
+              </p>
+            </div>
           </div>
+        </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Certified & Experienced",
-                description: "Certified plumbers with proven expertise deliver effective, long-lasting solutions for every plumbing need.",
-                icon: ShieldCheckIcon,
-                color: "text-indigo-600"
-              },
-              {
-                title: "Transparent Pricing",
-                description: "Get honest, upfront quotes before work starts. No hidden fees or surprise costs ever.",
-                icon: CheckCircleIcon,
-                color: "text-green-600"
-              },
-              {
-                title: "Fast Same-Day Service",
-                description: "Rapid response for urgent plumbing issues, often resolved with same-day service availability.",
-                icon: ClockIcon,
-                color: "text-blue-600"
-              },
-              {
-                title: "100% Satisfaction",
-                description: "We ensure quality plumbing work and fix issues for free if you’re not satisfied.",
-                icon: StarIcon,
-                color: "text-yellow-600"
-              }
-            ].map((benefit, index) => {
-              const IconComponent = benefit.icon
-              return (
-                <div key={index} className="text-center p-6 rounded-2xl hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <IconComponent className={`h-8 w-8 ${benefit.color}`} />
+        <QuickAnswer
+          question="How do I book a plumber through EzyHelpers?"
+          answer="EzyHelpers connects you with verified plumbers for leak repairs, fittings, blockages, and bathroom work. Book online or call 080-31411776 — same-day visits are available in most service areas with upfront pricing."
+        />
+
+        {/* Why Choose Us */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Why Choose EzyHelpers for Plumber Service?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Reliable plumbing with upfront pricing, same-day support, and guaranteed service satisfaction.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  title: "Certified & Experienced",
+                  description: "Certified plumbers with proven expertise deliver effective, long-lasting solutions for every plumbing need.",
+                  icon: ShieldCheckIcon,
+                  color: "text-indigo-600"
+                },
+                {
+                  title: "Transparent Pricing",
+                  description: "Get honest, upfront quotes before work starts. No hidden fees or surprise costs ever.",
+                  icon: CheckCircleIcon,
+                  color: "text-green-600"
+                },
+                {
+                  title: "Fast Same-Day Service",
+                  description: "Rapid response for urgent plumbing issues, often resolved with same-day service availability.",
+                  icon: ClockIcon,
+                  color: "text-blue-600"
+                },
+                {
+                  title: "100% Satisfaction",
+                  description: "We ensure quality plumbing work and fix issues for free if you’re not satisfied.",
+                  icon: StarIcon,
+                  color: "text-yellow-600"
+                }
+              ].map((benefit, index) => {
+                const IconComponent = benefit.icon
+                return (
+                  <div key={index} className="text-center p-6 rounded-2xl hover:shadow-lg transition-shadow duration-300">
+                    <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <IconComponent className={`h-8 w-8 ${benefit.color}`} />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Comprehensive Plumber Services by EzyHelpers
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                One-stop platform for comprehensive home plumbing services with same-day or next-day service availability
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {plumbingServices.map((service, index) => {
+                const IconComponent = service.icon
+                return (
+                  <div key={index} className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+                      <IconComponent className="h-6 w-6 text-indigo-600" />
+                    </div>
+
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 font-display">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    <div className="space-y-1">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center text-xs">
+                          <CheckCircleIcon className="h-3 w-3 text-indigo-600 mr-1.5" />
+                          <span className="text-gray-600">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Why It Matters */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Why Timely Plumbing Service Matters
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Plumbing problems might appear small, but if not addressed in time, they can lead to serious issues
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Prevent Major Damages",
+                  description: "Fix leaks and blockages early to stop water damage that can weaken your home's structure",
+                  icon: ShieldCheckIcon
+                },
+                {
+                  title: "Save on Costly Repairs",
+                  description: "Timely service helps catch small issues before they turn into big, costly problems",
+                  icon: CheckCircleIcon
+                },
+                {
+                  title: "Healthy Living Environment",
+                  description: "Prevent mold and bacteria growth caused by leaks or dampness for family safety",
+                  icon: HomeIcon
+                },
+                {
+                  title: "Improve Water Efficiency",
+                  description: "Repairing leaks and faulty fixtures reduces water wastage and lowers your bills",
+                  icon: BeakerIcon
+                },
+                {
+                  title: "Avoid Emergency Disruptions",
+                  description: "Regular maintenance prevents sudden pipe bursts or clogged drains, saving stress",
+                  icon: ExclamationTriangleIcon
+                }
+              ].map((reason, index) => {
+                const IconComponent = reason.icon
+                return (
+                  <div key={index} className="bg-indigo-50 rounded-2xl p-6 border border-indigo-200 hover:shadow-lg transition-shadow duration-300">
+                    <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+                      <IconComponent className="h-6 w-6 text-indigo-600" />
+                    </div>
+
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 font-display">
+                      {reason.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {reason.description}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* How to Book */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                How to Book a Plumber with EzyHelpers?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Booking our home plumbing services is quick and easy
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  step: "1",
+                  title: "Select Your Service",
+                  description: "Choose the plumbing service you need, such as leak repair, pipe fitting, or drain cleaning"
+                },
+                {
+                  step: "2",
+                  title: "Provide Your Details",
+                  description: "Share your name, address, phone number, and when you want the plumber to visit"
+                },
+                {
+                  step: "3",
+                  title: "Confirm Your Appointment",
+                  description: "We will confirm your booking quickly and schedule your plumber to arrive on time"
+                },
+                {
+                  step: "4",
+                  title: "Get Expert Help",
+                  description: "A verified, skilled plumber arrives prepared to fix your plumbing issues efficiently"
+                }
+              ].map((step, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                    {step.step}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">
-                    {benefit.title}
+                    {step.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    {benefit.description}
+                    {step.description}
                   </p>
                 </div>
-              )
-            })}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Services Grid */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Comprehensive Plumber Services by EzyHelpers
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              One-stop platform for comprehensive home plumbing services with same-day or next-day service availability
-            </p>
-          </div>
+        {/* Important Considerations */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                What to Consider Before Booking Your Plumber
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                For a smooth and effective plumbing service experience, a few considerations can make a big difference:
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {plumbingServices.map((service, index) => {
-              const IconComponent = service.icon
-              return (
-                <div key={index} className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
-                    <IconComponent className="h-6 w-6 text-indigo-600" />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Detailed Problem Description",
+                  description: "Providing as much detail as possible about the issue (e.g., \"slow draining kitchen sink\", \"leaking pipe under the bathroom sink\", \"no hot water\") helps our plumbers come prepared.",
+                  icon: CheckCircleIcon
+                },
+                {
+                  title: "Accessibility",
+                  description: "Ensure the problem area is easily accessible for the plumber. Clearing items from under sinks or around water heaters can save time.",
+                  icon: WrenchScrewdriverIcon
+                },
+                {
+                  title: "Emergency vs Non-Emergency",
+                  description: "If it's a major leak or burst pipe, clearly state it's an emergency for priority dispatch.",
+                  icon: ExclamationTriangleIcon
+                },
+                {
+                  title: "Material Preferences (if applicable)",
+                  description: "For installations, if you have specific fixture brands or pipe materials in mind, let us know.",
+                  icon: CubeIcon
+                },
+                {
+                  title: "Availability",
+                  description: "While we strive for quick service, complex jobs or specific part requirements might extend the timeline. We'll communicate this clearly.",
+                  icon: ClockIcon
+                }
+              ].map((consideration, index) => {
+                const IconComponent = consideration.icon
+                return (
+                  <div key={index} className="bg-indigo-50 rounded-2xl p-6 border border-indigo-200 hover:shadow-lg transition-shadow duration-300">
+                    <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+                      <IconComponent className="h-6 w-6 text-indigo-600" />
+                    </div>
+
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 font-display">
+                      {consideration.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {consideration.description}
+                    </p>
                   </div>
-                  
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 font-display">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  <div className="space-y-1">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-xs">
-                        <CheckCircleIcon className="h-3 w-3 text-indigo-600 mr-1.5" />
-                        <span className="text-gray-600">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Why It Matters */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Why Timely Plumbing Service Matters
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Plumbing problems might appear small, but if not addressed in time, they can lead to serious issues
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Prevent Major Damages",
-                description: "Fix leaks and blockages early to stop water damage that can weaken your home's structure",
-                icon: ShieldCheckIcon
-              },
-              {
-                title: "Save on Costly Repairs",
-                description: "Timely service helps catch small issues before they turn into big, costly problems",
-                icon: CheckCircleIcon
-              },
-              {
-                title: "Healthy Living Environment",
-                description: "Prevent mold and bacteria growth caused by leaks or dampness for family safety",
-                icon: HomeIcon
-              },
-              {
-                title: "Improve Water Efficiency",
-                description: "Repairing leaks and faulty fixtures reduces water wastage and lowers your bills",
-                icon: BeakerIcon
-              },
-              {
-                title: "Avoid Emergency Disruptions",
-                description: "Regular maintenance prevents sudden pipe bursts or clogged drains, saving stress",
-                icon: ExclamationTriangleIcon
-              }
-            ].map((reason, index) => {
-              const IconComponent = reason.icon
-              return (
-                <div key={index} className="bg-indigo-50 rounded-2xl p-6 border border-indigo-200 hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
-                    <IconComponent className="h-6 w-6 text-indigo-600" />
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 font-display">
-                    {reason.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {reason.description}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* How to Book */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              How to Book a Plumber with EzyHelpers?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Booking our home plumbing services is quick and easy
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                step: "1",
-                title: "Select Your Service",
-                description: "Choose the plumbing service you need, such as leak repair, pipe fitting, or drain cleaning"
-              },
-              {
-                step: "2",
-                title: "Provide Your Details",
-                description: "Share your name, address, phone number, and when you want the plumber to visit"
-              },
-              {
-                step: "3",
-                title: "Confirm Your Appointment",
-                description: "We will confirm your booking quickly and schedule your plumber to arrive on time"
-              },
-              {
-                step: "4",
-                title: "Get Expert Help",
-                description: "A verified, skilled plumber arrives prepared to fix your plumbing issues efficiently"
-              }
-            ].map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                  {step.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {step.description}
-                </p>
+        {/* FAQ Section (disabled here to move after CTA) */}
+        {false && (
+          <section className="section-padding bg-gray-50">
+            <div className="container-custom">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Important Considerations */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              What to Consider Before Booking Your Plumber
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              For a smooth and effective plumbing service experience, a few considerations can make a big difference:
-            </p>
+              <div className="max-w-4xl mx-auto">
+                <div className="space-y-6">
+                  {faqs.map((faq, index) => (
+                    <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                      <details className="group">
+                        <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                          <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                            {faq.question}
+                          </h3>
+                          <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                            <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </div>
+                        </summary>
+                        <div className="px-6 pb-6">
+                          <p className="text-gray-600 leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </details>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* CTA Section */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-700 to-indigo-800 text-white py-20">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Detailed Problem Description",
-                description: "Providing as much detail as possible about the issue (e.g., \"slow draining kitchen sink\", \"leaking pipe under the bathroom sink\", \"no hot water\") helps our plumbers come prepared.",
-                icon: CheckCircleIcon
-              },
-              {
-                title: "Accessibility",
-                description: "Ensure the problem area is easily accessible for the plumber. Clearing items from under sinks or around water heaters can save time.",
-                icon: WrenchScrewdriverIcon
-              },
-              {
-                title: "Emergency vs Non-Emergency",
-                description: "If it's a major leak or burst pipe, clearly state it's an emergency for priority dispatch.",
-                icon: ExclamationTriangleIcon
-              },
-              {
-                title: "Material Preferences (if applicable)",
-                description: "For installations, if you have specific fixture brands or pipe materials in mind, let us know.",
-                icon: CubeIcon
-              },
-              {
-                title: "Availability",
-                description: "While we strive for quick service, complex jobs or specific part requirements might extend the timeline. We'll communicate this clearly.",
-                icon: ClockIcon
-              }
-            ].map((consideration, index) => {
-              const IconComponent = consideration.icon
-              return (
-                <div key={index} className="bg-indigo-50 rounded-2xl p-6 border border-indigo-200 hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
-                    <IconComponent className="h-6 w-6 text-indigo-600" />
+          <div className="container-custom relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-6 font-display">
+                Don't Let Plumbing Problems Stress You Out!
+              </h2>
+              <p className="text-xl text-indigo-100 mb-10 leading-relaxed">
+                Whether it's a leaking tap, clogged drain, or broken geyser, EzyHelpers has expert plumbers you can trust. Fast, affordable, and reliable service is just a call away.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/hire-helper" className="group bg-white text-indigo-800 hover:bg-indigo-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
+                  <span className="flex items-center justify-center">
+                    Book Your Plumber Now
+                    <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+
+                <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
+                  <PhoneIcon className="h-5 w-5 mr-2" />
+                  Call 080-31411776
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Explore Other Services */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">Professional support for daily tasks and repairs.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-all">
+                <h3 className="text-xl font-semibold mb-2">Home Deep Cleaning</h3>
+                <p className="text-gray-600 mb-3">Book a professional deep clean to refresh your entire home.</p>
+                <Link href="/services/deep-cleaning" className="text-indigo-600 font-medium inline-flex items-center">Learn about Home Deep Cleaning Services <ArrowRightIcon className="h-4 w-4 ml-1" /></Link>
+              </div>
+              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-all">
+                <h3 className="text-xl font-semibold mb-2">Electrician Services</h3>
+                <p className="text-gray-600 mb-3">Expert electricians for all your home wiring and appliance power needs.</p>
+                <Link href="/services/electricians" className="text-indigo-600 font-medium inline-flex items-center">Learn about Electrician Services <ArrowRightIcon className="h-4 w-4 ml-1" /></Link>
+              </div>
+              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-all">
+                <h3 className="text-xl font-semibold mb-2">Gardener Services</h3>
+                <p className="text-gray-600 mb-3">Maintain a beautiful home garden with experienced gardening help.</p>
+                <Link href="/services/gardener" className="text-indigo-600 font-medium inline-flex items-center">Learn about Gardener Services <ArrowRightIcon className="h-4 w-4 ml-1" /></Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="space-y-6">
+                {faqs.map((faq, index) => (
+                  <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <details className="group">
+                      <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                        <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                          {faq.question}
+                        </h3>
+                        <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                          <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </summary>
+                      <div className="px-6 pb-6">
+                        <p className="text-gray-600 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </details>
                   </div>
-                  
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 font-display">
-                    {consideration.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {consideration.description}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section (disabled here to move after CTA) */}
-      {false && (
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
-                  <details className="group">
-                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
-                        {faq.question}
-                      </h3>
-                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </details>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      )}
+        </section>
 
-      {/* CTA Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-700 to-indigo-800 text-white py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-6 font-display">
-              Don't Let Plumbing Problems Stress You Out!
-            </h2>
-            <p className="text-xl text-indigo-100 mb-10 leading-relaxed">
-              Whether it's a leaking tap, clogged drain, or broken geyser, EzyHelpers has expert plumbers you can trust. Fast, affordable, and reliable service is just a call away.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/hire-helper" className="group bg-white text-indigo-800 hover:bg-indigo-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
-                <span className="flex items-center justify-center">
-                  Book Your Plumber Now
-                  <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-              
-              <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call 080-31411776
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Explore Other Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Professional support for daily tasks and repairs.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-all">
-              <h3 className="text-xl font-semibold mb-2">Home Deep Cleaning</h3>
-              <p className="text-gray-600 mb-3">Book a professional deep clean to refresh your entire home.</p>
-              <Link href="/services/deep-cleaning" className="text-indigo-600 font-medium inline-flex items-center">Learn about Home Deep Cleaning Services <ArrowRightIcon className="h-4 w-4 ml-1"/></Link>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-all">
-              <h3 className="text-xl font-semibold mb-2">Electrician Services</h3>
-              <p className="text-gray-600 mb-3">Expert electricians for all your home wiring and appliance power needs.</p>
-              <Link href="/services/electricians" className="text-indigo-600 font-medium inline-flex items-center">Learn about Electrician Services <ArrowRightIcon className="h-4 w-4 ml-1"/></Link>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-all">
-              <h3 className="text-xl font-semibold mb-2">Gardener Services</h3>
-              <p className="text-gray-600 mb-3">Maintain a beautiful home garden with experienced gardening help.</p>
-              <Link href="/services/gardener" className="text-indigo-600 font-medium inline-flex items-center">Learn about Gardener Services <ArrowRightIcon className="h-4 w-4 ml-1"/></Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQs */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
-                  <details className="group">
-                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
-                        {faq.question}
-                      </h3>
-                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </details>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-            <NestCTA />
-      <Footer />
-    </main>
+        <NestCTA />
+        <Footer />
+      </main>
     </>
   )
 }

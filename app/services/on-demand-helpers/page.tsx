@@ -23,16 +23,17 @@ import {
   BuildingOffice2Icon,
   UserPlusIcon,
   TruckIcon,
-  SparklesIcon
+  SparklesIcon,
+  MapPinIcon
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
-  description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
+  title: 'On-Demand Maid Service in India | Same-Day Help',
+  description: 'Book an on-demand maid anywhere in India. Verified helpers for same-day cleaning, cooking & one-day help. Available in Bangalore, Bareilly & more cities.',
   keywords: 'on-demand maid, emergency maid, same day maid, urgent house help, instant booking, hourly pricing',
   openGraph: {
-    title: 'On-Demand Helper Services | Same Day Booking | EzyHelpers',
-    description: 'Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help.',
+    title: 'On-Demand Maid Service in India | Same-Day Help',
+    description: 'Book an on-demand maid anywhere in India. Verified helpers for same-day cleaning, cooking & one-day help. Available in Bangalore, Bareilly & more cities.',
     url: 'https://www.ezyhelpers.com/services/on-demand-helpers',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -45,6 +46,19 @@ export const metadata: Metadata = {
 }
 
 export default function OnDemandHelpersPage() {
+  const cities = [
+    { name: 'Bangalore', href: '/cities/bangalore/on-demand-helper' },
+    { name: 'Bareilly', href: '/cities/bareilly/on-demand-helper' },
+    { name: 'Delhi', href: '/cities/delhi' },
+    { name: 'Noida', href: '/cities/noida' },
+    { name: 'Lucknow', href: '/cities/lucknow' },
+    { name: 'Kanpur', href: '/cities/kanpur' },
+    { name: 'Nagpur', href: '/cities/nagpur' },
+    { name: 'Hyderabad', href: '/cities/hyderabad' },
+    { name: 'Meerut', href: '/cities/meerut' },
+    { name: 'Mumbai', href: '/cities/mumbai' }
+  ]
+
   const services = [
     {
       title: "On-Demand Maid for Emergency Cleaning",
@@ -152,7 +166,7 @@ export default function OnDemandHelpersPage() {
 
   return (
     <>
-      <ServiceSchema serviceName={"On-Demand Helper Services"} serviceDescription={"Emergency on-demand helper services available same day. Perfect for events, deep cleaning & urgent household tasks. Call +91 9972571005 for instant help."} serviceType={"On-Demand Helper Services"} serviceUrl={"https://www.ezyhelpers.com/services/on-demand-helpers"} />
+      <ServiceSchema serviceName={"On-Demand Helper Services"} serviceDescription={"Book an on-demand maid anywhere in India. Verified helpers for same-day cleaning, cooking & one-day help. Available in Bangalore, Bareilly & more cities."} serviceType={"On-Demand Helper Services"} serviceUrl={"https://www.ezyhelpers.com/services/on-demand-helpers"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -166,54 +180,61 @@ export default function OnDemandHelpersPage() {
                 "@type": "Answer",
                 "text": "An on-demand maid service helps you get quick household support when you need it most. EzyHelpers offers same-day emergency maids for cleaning, cooking, babysitting, and care. It is ideal for unexpected situations and short-term help. You can book it for just a few hours without any long-term contract."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "How quickly can I get an on-demand maid?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "EzyHelpers can send an on-demand maid within a few hours of your request. We offer same-day service across most locations. For faster response, it is best to book early, especially during weekends or holidays."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Do I need to pay upfront, or can I pay after the emergency service is completed?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "You can pay after the service is completed. We accept multiple payment methods, including cash, UPI, and card. The total charge is confirmed before the service begins, and payment is only required once you're satisfied with the help provided."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can I request a female helper for emergency babysitting or elderly care?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, you can request a female helper. We understand that families may prefer female support for services like babysitting or elder care. Just let us know your preference while booking. We try our best to match it, depending on availability."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can I cancel my emergency booking if my situation changes?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, you can cancel your emergency booking. However, since these services are fast and same-day, some charges may apply if the helper is already on the way. For best results, inform our support team as early as possible."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can I hire an on-demand cook for same-day meals?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, we offer on-demand cooks for same-day meal preparation. They can help with cooking meals for your family, small parties, or guests. They also help with groceries, menu planning, and kitchen cleaning. You can request this service for a few hours or for a full day."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can I choose the language my emergency helper speaks?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, you can mention your preferred language when booking. Most of our helpers speak both local languages and basic English. We will try to match you with someone who can communicate clearly with your family."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "How is emergency service different from regular part-time maid service?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Emergency maid services are for urgent, same-day help. You can book them instantly for short periods without contracts. Part-time services are scheduled regularly with fixed timings and long-term arrangements. Emergency services are quicker but may cost slightly more per hour."
+              }
+            }, {
+              "@type": "Question",
+              "name": "How do I check if on-demand maid service is available in my city?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On-demand maid services are offered in selected cities across India. Choose your city from the list above to view local availability, supported household tasks, booking options, and estimated response times before placing a request."
               }
             }]
           })
@@ -240,65 +261,119 @@ export default function OnDemandHelpersPage() {
 
           <div className="container-custom relative z-10">
             <div className="max-w-4xl mx-auto text-center lg:text-left">
-                <div>
-                  {/* Trust Badge */}
-                  <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                    <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
-                    <span className="text-sm font-semibold">Same-Day Availability</span>
+              <div>
+                {/* Trust Badge */}
+                <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                  <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
+                  <span className="text-sm font-semibold">Same-Day Availability</span>
+                </div>
+
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
+                  On-Demand Maid Service in India: Instant Help in Your City
+                </h1>
+
+                <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
+                  Need household help today? EzyHelpers provides on-demand maid service across India, connecting you with verified, background-checked helpers for same-day cleaning, cooking, babysitting, and more.
+                </p>
+
+                {/* Key Benefits Pills */}
+                <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
+                  {[
+                    'Verified & Trained Emergency Helpers',
+                    'Same-Day Availability',
+                    'Hourly Pricing, No Commitment',
+                    'Flexible Short-Term Assignments',
+                    'Available for Events & Special Occasions',
+                    'Quick Replacement Guarantee',
+                    'Multi-Tasking Capable (on request)',
+                    'Instant Booking Options',
+                    'Multi-Service Specialists'
+                  ].map((pill, i) => (
+                    <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ {pill}</div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                  <a href="#on-demand-booking" className="group relative bg-white text-trust-800 hover:bg-trust-50 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-center">
+                    <span className="relative z-10">Book an On-Demand Maid</span>
+                  </a>
+                  <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
+                    <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
+                    <span className="hidden sm:inline">Call for Emergency Help</span>
+                    <span className="sm:hidden">080-31411776</span>
+                  </Link>
+                </div>
+
+                {/* Quick Stats */}
+                <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+                  <div className="text-center lg:text-left">
+                    <div className="text-2xl font-bold text-white">Instant</div>
+                    <div className="text-trust-200 text-sm">Booking & Confirmation</div>
                   </div>
-
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                    On-Demand Maid Services – Instant Help When You Need It Most
-                  </h1>
-
-                  <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                    Need urgent household help? EzyHelpers offers on-demand maid services in your city, perfect for one-time or last-minute support needs. Whether it’s an unexpected guest, emergency cleanup, last-minute cooking, or temporary care, our emergency helpers are just a call away; skilled, verified, and ready to assist.
-                  </p>
-
-                  {/* Key Benefits Pills */}
-                  <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
-                    {[
-                      'Verified & Trained Emergency Helpers',
-                      'Same-Day Availability',
-                      'Hourly Pricing, No Commitment',
-                      'Flexible Short-Term Assignments',
-                      'Available for Events & Special Occasions',
-                      'Quick Replacement Guarantee',
-                      'Multi-Tasking Capable (on request)',
-                      'Instant Booking Options',
-                      'Multi-Service Specialists'
-                    ].map((pill, i) => (
-                      <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ {pill}</div>
-                    ))}
+                  <div className="text-center lg:text-left">
+                    <div className="text-2xl font-bold text-white">Available</div>
+                    <div className="text-trust-200 text-sm">7 Days a Week</div>
                   </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                    <a href="#on-demand-booking" className="group relative bg-white text-trust-800 hover:bg-trust-50 font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-center">
-                      <span className="relative z-10">Book an On-Demand Maid</span>
-                    </a>
-                    <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300">
-                      <PhoneIcon className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-                      <span className="hidden sm:inline">Call for Emergency Help</span>
-                      <span className="sm:hidden">080-31411776</span>
-                    </Link>
-                  </div>
-
-                  {/* Quick Stats */}
-                  <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
-                    <div className="text-center lg:text-left">
-                      <div className="text-2xl font-bold text-white">Instant</div>
-                      <div className="text-trust-200 text-sm">Booking & Confirmation</div>
-                    </div>
-                    <div className="text-center lg:text-left">
-                      <div className="text-2xl font-bold text-white">Available</div>
-                      <div className="text-trust-200 text-sm">7 Days a Week</div>
-                    </div>
-                    <div className="text-center lg:text-left">
-                      <div className="text-2xl font-bold text-white">4.8★</div>
-                      <div className="text-trust-200 text-sm">For Emergency Helper Services</div>
-                    </div>
+                  <div className="text-center lg:text-left">
+                    <div className="text-2xl font-bold text-white">4.8★</div>
+                    <div className="text-trust-200 text-sm">For Emergency Helper Services</div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Explore Available Cities Section */}
+        <section className="py-16 bg-white border-b border-gray-100 relative overflow-hidden">
+          {/* Subtle background decoration */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-50/30 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+          <div className="container-custom relative z-10">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 mb-4 border border-primary-100 shadow-sm">
+                <MapPinIcon className="h-4 w-4 mr-2 text-primary-600 animate-bounce" />
+                <span className="text-sm font-semibold">Service Coverage</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Available Locations Across India
+              </h2>
+              <h3 className="text-lg font-semibold text-gray-700 mb-2">
+                Where This Service Is Available
+              </h3>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                EzyHelpers provides on-demand and same-day maid service across major cities in India.
+              </p>
+            </div>
+
+            {/* Cities Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 mb-12">
+              {cities.map((city) => (
+                <Link
+                  key={city.name}
+                  href={city.href}
+                  className="group relative bg-white hover:bg-gradient-to-br hover:from-primary-600 hover:to-primary-700 p-5 rounded-2xl border border-gray-200/80 hover:border-transparent shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center cursor-pointer"
+                >
+                  {/* Icon / Pin design */}
+                  <div className="w-10 h-10 rounded-xl bg-primary-50 group-hover:bg-white/20 flex items-center justify-center mb-3 transition-colors duration-300">
+                    <MapPinIcon className="h-5 w-5 text-primary-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 text-base md:text-lg">
+                    {city.name}
+                  </span>
+                  {/* View services indicator */}
+                  <div className="mt-2 text-primary-600 group-hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-xs font-medium flex items-center">
+                    View Services
+                    <ArrowRightIcon className="h-3 w-3 ml-1" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm md:text-base text-gray-500 font-medium">
+                More cities coming soon. Call us or visit your city page to confirm availability.
+              </p>
             </div>
           </div>
         </section>
@@ -663,8 +738,8 @@ export default function OnDemandHelpersPage() {
           </div>
         </section>
 
-              <NestCTA />
-      <Footer />
+        <NestCTA />
+        <Footer />
       </main>
     </>
   )

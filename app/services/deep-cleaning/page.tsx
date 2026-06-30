@@ -19,16 +19,17 @@ import {
   BeakerIcon,
   FireIcon,
   CubeIcon,
-  UserGroupIcon
+  UserGroupIcon,
+  MapPinIcon
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Home Deep Cleaning Services – Book Verified Experts | EzyHelpers',
-  description: 'Book professional home deep cleaning for kitchens, bathrooms, and full-house sanitization. Background-verified cleaners deliver spotless, hygienic results.',
+  title: 'Home Deep Cleaning in India | Verified Experts | EzyHelpers',
+  description: 'Book home deep cleaning for kitchens, bathrooms & full-house sanitisation anywhere in India. Background-verified cleaners and fair pricing.',
   keywords: 'home deep cleaning, house deep cleaning services, kitchen deep cleaning, bathroom sanitization, full house cleaning, professional cleaners',
   openGraph: {
-    title: 'Home Deep Cleaning Services – Book Verified Experts | EzyHelpers',
-    description: 'Book professional home deep cleaning for kitchens, bathrooms, and full-house sanitization. Background-verified cleaners deliver spotless, hygienic results.',
+    title: 'Home Deep Cleaning in India | Verified Experts | EzyHelpers',
+    description: 'Book home deep cleaning for kitchens, bathrooms & full-house sanitisation anywhere in India. Background-verified cleaners and fair pricing.',
     url: 'https://www.ezyhelpers.com/services/deep-cleaning',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -42,6 +43,19 @@ export const metadata: Metadata = {
 }
 
 export default function DeepCleaningPage() {
+  const cities = [
+    { name: 'Bangalore', href: '/cities/bangalore/home-deep-cleaning' },
+    { name: 'Bareilly', href: '/cities/bareilly/home-deep-cleaning' },
+    { name: 'Delhi', href: '/cities/delhi' },
+    { name: 'Noida', href: '/cities/noida' },
+    { name: 'Lucknow', href: '/cities/lucknow' },
+    { name: 'Kanpur', href: '/cities/kanpur' },
+    { name: 'Nagpur', href: '/cities/nagpur' },
+    { name: 'Hyderabad', href: '/cities/hyderabad' },
+    { name: 'Meerut', href: '/cities/meerut' },
+    { name: 'Mumbai', href: '/cities/mumbai' }
+  ]
+
   const breadcrumbs = [
     { name: "Home", url: "https://www.ezyhelpers.com" },
     { name: "Services", url: "https://www.ezyhelpers.com/services" },
@@ -152,7 +166,7 @@ export default function DeepCleaningPage() {
 
   return (
     <>
-      <ServiceSchema serviceName={"Home Deep Cleaning Services – Book Verified Experts"} serviceDescription={"Book professional home deep cleaning for kitchens, bathrooms, and full-house sanitization. Background-verified cleaners deliver spotless, hygienic results."} serviceType={"Home Deep Cleaning Services – Book Verified Experts"} serviceUrl={"https://www.ezyhelpers.com/services/deep-cleaning"} />
+      <ServiceSchema serviceName={"Home Deep Cleaning Services – Book Verified Experts"} serviceDescription={"Book home deep cleaning for kitchens, bathrooms & full-house sanitisation anywhere in India. Background-verified cleaners and fair pricing."} serviceType={"Home Deep Cleaning Services – Book Verified Experts"} serviceUrl={"https://www.ezyhelpers.com/services/deep-cleaning"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -166,82 +180,96 @@ export default function DeepCleaningPage() {
                 "@type": "Answer",
                 "text": "No, it’s not mandatory. You can attend the initial walkthrough, explain your cleaning needs, and then step out. Many clients hand over keys and return to a sparkling clean home. Just keep valuables safe and accessible areas clear."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Is deep cleaning different from regular house cleaning?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, deep cleaning is more detailed. It covers hard-to-reach spots like behind appliances, inside cabinets, and under furniture. It’s ideal for moving in after renovations or festive cleaning before Diwali or weddings."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Do your home cleaners bring their own cleaning supplies and equipment?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, our team comes with all cleaning materials, including vacuum cleaners, scrubbers, microfibre cloths, and safe disinfectants. You don’t need to arrange anything for the service."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can I book deep cleaning for today or urgently?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Same-day cleaning is available based on location and team availability. For larger homes or post-renovation jobs, booking 24–48 hours in advance is recommended to ensure slot availability."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Do you offer post-renovation or post-painting cleaning?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, we specialise in post-renovation and post-paint cleaning. Our team removes paint splatters, cement dust, and debris, making your home ready for use after construction or wall painting."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can I book only kitchen or bathroom deep cleaning?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, we offer room-specific deep cleaning. You can book just a kitchen, bathroom, or sofa cleaning if required. These services are ideal for maintenance between full house cleans."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Do you provide move-in or move-out cleaning for tenants and homeowners?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, our move-in/move-out cleaning includes floor scrubbing, wall stain removal, and appliance interiors, perfect before shifting into a new house or handing it back to the landlord."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can you clean appliances and furniture, too?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, we clean refrigerators, microwaves, chimneys, sofas, and mattresses. We use fabric-safe shampoos and steam tools to remove stains, grease, and odor from upholstery and appliances."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "How is the deep cleaning price calculated?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Deep cleaning charges depend on various factors like the size of your home (1BHK, 2BHK, etc.), total carpet area, number of bathrooms, and the type of cleaning required. Prices may vary based on add-ons such as kitchen degreasing, sofa shampooing, mattress cleaning, wall or ceiling dust removal, and post-renovation cleanup. We offer a transparent quote after understanding your specific needs, no hidden charges, no surprises."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Do your cleaners help with decluttering and organizing?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Our cleaners do light tidying and basic organization as part of the deep cleaning process, like arranging items, clearing surfaces, and putting things back in place. For full home decluttering or expert-level organizing (like wardrobes, kitchens, or storage areas), we can connect you with our trusted professional organizing partners."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "What is the best time to book a home deep cleaning service?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "The ideal time to schedule deep cleaning is before major festivals, after renovation or painting work, when shifting homes, or during seasonal changes like pre-monsoon or post-winter. Regular deep cleaning every 3 to 6 months also helps maintain hygiene, prevent dust buildup, and keep your home fresh and allergy-free."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "How often should I get my home deep cleaned?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "For best results, we recommend deep cleaning every 3 to 6 months. Homes with children, pets, or high footfall may benefit from more frequent cleaning to maintain hygiene and reduce dust and allergens."
+              }
+            }, {
+              "@type": "Question",
+              "name": "Can I book home deep cleaning in my location?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Home deep cleaning is available in selected cities across India. Visit your city page to see the services offered locally, available booking options, and any location-specific information before scheduling a visit."
+              }
+            }, {
+              "@type": "Question",
+              "name": "What does a deep cleaning service include?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Deep cleaning covers kitchen degreasing, bathroom sanitisation, sofa and upholstery cleaning, and full-house sanitisation. Visit your city page or call us for the exact scope and pricing in your area."
               }
             }]
           })
@@ -250,428 +278,479 @@ export default function DeepCleaningPage() {
       <main className="min-h-screen">
         <BreadcrumbSchema items={breadcrumbs} />
         <Navbar />
-      
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-cyan-600 via-cyan-700 to-cyan-800 text-white pt-28 pb-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-white rounded-full blur-3xl"></div>
-        </div>
 
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
-              <SparklesIcon className="h-5 w-5 text-cyan-200 mr-2" />
-              <span className="text-sm font-semibold">Professional Deep Cleaning</span>
-            </div>
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-cyan-600 via-cyan-700 to-cyan-800 text-white pt-28 pb-20 overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 right-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-20 w-80 h-80 bg-white rounded-full blur-3xl"></div>
+          </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
-              Professional House Cleaning for a Healthier Home
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-cyan-100 mb-10 leading-relaxed max-w-3xl mx-auto">
-              Thorough, professional deep cleaning for every corner of your home. Safe, hygienic results using eco-friendly products with satisfaction guaranteed.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link href="/hire-helper" className="group bg-white text-cyan-800 hover:bg-cyan-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
-                <span className="flex items-center justify-center">
-                  Book Deep Cleaning
-                  <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-              
-              <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call 080-31411776
-              </Link>
-            </div>
-
-            {/* Trust Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/20">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">20K+</div>
-                <div className="text-cyan-200 text-sm">Homes Cleaned</div>
+          <div className="container-custom relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
+                <SparklesIcon className="h-5 w-5 text-cyan-200 mr-2" />
+                <span className="text-sm font-semibold">Professional Deep Cleaning</span>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">100%</div>
-                <div className="text-cyan-200 text-sm">Eco-Friendly</div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 font-display leading-tight">
+                Home Deep Cleaning Service Across India: Verified Cleaning Experts
+              </h1>
+
+              <p className="text-xl lg:text-2xl text-cyan-100 mb-10 leading-relaxed max-w-3xl mx-auto">
+                Book professional home deep cleaning services in India for kitchens, bathrooms, sofas, mattresses, and complete home sanitisation with trained cleaning specialists.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <Link href="/hire-helper" className="group bg-white text-cyan-800 hover:bg-cyan-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
+                  <span className="flex items-center justify-center">
+                    Book Deep Cleaning
+                    <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+
+                <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
+                  <PhoneIcon className="h-5 w-5 mr-2" />
+                  Call 080-31411776
+                </Link>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">4.9★</div>
-                <div className="text-cyan-200 text-sm">Customer Rating</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">Verified</div>
-                <div className="text-cyan-200 text-sm">Cleaners</div>
+
+              {/* Trust Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/20">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">20K+</div>
+                  <div className="text-cyan-200 text-sm">Homes Cleaned</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">100%</div>
+                  <div className="text-cyan-200 text-sm">Eco-Friendly</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">4.9★</div>
+                  <div className="text-cyan-200 text-sm">Customer Rating</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">Verified</div>
+                  <div className="text-cyan-200 text-sm">Cleaners</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <QuickAnswer
-        question="How do I book home deep cleaning through EzyHelpers?"
-        answer="EzyHelpers offers professional deep cleaning for kitchens, bathrooms, sofas, and full homes using trained, verified cleaners. Book online or call 080-31411776 — flexible slots are available, including same-day service in most areas."
-      />
+        {/* Explore Available Cities Section */}
+        <section className="py-16 bg-white border-b border-gray-100 relative overflow-hidden">
+          {/* Subtle background decoration */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-50/30 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Why Choose EzyHelpers for House Deep Cleaning?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Expert care, eco-friendly products, and guaranteed satisfaction with cleaning plans made just for you.
-            </p>
+          <div className="container-custom relative z-10">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 mb-4 border border-primary-100 shadow-sm">
+                <MapPinIcon className="h-4 w-4 mr-2 text-primary-600 animate-bounce" />
+                <span className="text-sm font-semibold">Service Coverage</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Explore Deep Cleaning Services
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Choose your city to check deep cleaning services available for homes, apartments, and furnished spaces.
+              </p>
+            </div>
+
+            {/* Cities Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 mb-12">
+              {cities.map((city) => (
+                <Link
+                  key={city.name}
+                  href={city.href}
+                  className="group relative bg-white hover:bg-gradient-to-br hover:from-primary-600 hover:to-primary-700 p-5 rounded-2xl border border-gray-200/80 hover:border-transparent shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center cursor-pointer"
+                >
+                  {/* Icon / Pin design */}
+                  <div className="w-10 h-10 rounded-xl bg-primary-50 group-hover:bg-white/20 flex items-center justify-center mb-3 transition-colors duration-300">
+                    <MapPinIcon className="h-5 w-5 text-primary-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 text-base md:text-lg">
+                    {city.name}
+                  </span>
+                  {/* View services indicator */}
+                  <div className="mt-2 text-primary-600 group-hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-xs font-medium flex items-center">
+                    View Services
+                    <ArrowRightIcon className="h-3 w-3 ml-1" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm md:text-base text-gray-500 font-medium">
+                More cities coming soon. Call us or visit your city page to confirm availability.
+              </p>
+            </div>
           </div>
+        </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Experienced Cleaners",
-                description: "Skilled, background-verified cleaners ensure safe and professional deep cleaning every single time.",
-                icon: ShieldCheckIcon,
-                color: "text-cyan-600"
-              },
-              {
-                title: "Custom Cleaning Plans",
-                description: "We create detailed cleaning plans tailored to match your home’s exact cleaning requirements.",
-                icon: CheckCircleIcon,
-                color: "text-green-600"
-              },
-              {
-                title: "Affordable Pricing",
-                description: "Clear, budget-friendly pricing with no hidden costs and complete value for every rupee spent.",
-                icon: StarIcon,
-                color: "text-yellow-600"
-              },
-              {
-                title: "Satisfaction Guaranteed",
-                description: "Not satisfied? We'll return and clean again until you're completely happy with the results.",
-                icon: SparklesIcon,
-                color: "text-purple-600"
-              }
-            ].map((benefit, index) => {
-              const IconComponent = benefit.icon
-              return (
-                <div key={index} className="text-center p-6 rounded-2xl hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <IconComponent className={`h-8 w-8 ${benefit.color}`} />
+        <QuickAnswer
+          question="How do I book home deep cleaning through EzyHelpers?"
+          answer="EzyHelpers offers professional deep cleaning for kitchens, bathrooms, sofas, and full homes using trained, verified cleaners. Book online or call 080-31411776 — flexible slots are available, including same-day service in most areas."
+        />
+
+        {/* Why Choose Us */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Why Choose EzyHelpers for House Deep Cleaning?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Expert care, eco-friendly products, and guaranteed satisfaction with cleaning plans made just for you.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  title: "Experienced Cleaners",
+                  description: "Skilled, background-verified cleaners ensure safe and professional deep cleaning every single time.",
+                  icon: ShieldCheckIcon,
+                  color: "text-cyan-600"
+                },
+                {
+                  title: "Custom Cleaning Plans",
+                  description: "We create detailed cleaning plans tailored to match your home’s exact cleaning requirements.",
+                  icon: CheckCircleIcon,
+                  color: "text-green-600"
+                },
+                {
+                  title: "Affordable Pricing",
+                  description: "Clear, budget-friendly pricing with no hidden costs and complete value for every rupee spent.",
+                  icon: StarIcon,
+                  color: "text-yellow-600"
+                },
+                {
+                  title: "Satisfaction Guaranteed",
+                  description: "Not satisfied? We'll return and clean again until you're completely happy with the results.",
+                  icon: SparklesIcon,
+                  color: "text-purple-600"
+                }
+              ].map((benefit, index) => {
+                const IconComponent = benefit.icon
+                return (
+                  <div key={index} className="text-center p-6 rounded-2xl hover:shadow-lg transition-shadow duration-300">
+                    <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <IconComponent className={`h-8 w-8 ${benefit.color}`} />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Our House Deep Cleaning Services
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Comprehensive range of deep cleaning services to cover every part of your home with detail and dedication
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {cleaningServices.map((service, index) => {
+                const IconComponent = service.icon
+                return (
+                  <div key={index} className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-4">
+                      <IconComponent className="h-6 w-6 text-cyan-600" />
+                    </div>
+
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 font-display">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    <div className="space-y-1">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center text-xs">
+                          <CheckCircleIcon className="h-3 w-3 text-cyan-600 mr-1.5" />
+                          <span className="text-gray-600">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Who Is It For */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Who Is It For?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Our house cleaning services are ideal for various needs and lifestyles
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  title: "Working Professionals",
+                  description: "Perfect for busy individuals who want a clean home without sacrificing work-life balance",
+                  icon: UserGroupIcon
+                },
+                {
+                  title: "Families for Special Occasions",
+                  description: "Ideal for households needing extra help to get homes spotless and festive-ready",
+                  icon: StarIcon
+                },
+                {
+                  title: "Moving Tenants",
+                  description: "Great for renters moving in or out who want thorough cleaning for fresh spaces",
+                  icon: HomeIcon
+                },
+                {
+                  title: "Routine Maintenance",
+                  description: "Suitable for those who want regular, reliable cleaning to keep homes fresh and healthy",
+                  icon: ClockIcon
+                }
+              ].map((target, index) => {
+                const IconComponent = target.icon
+                return (
+                  <div key={index} className="text-center p-6 rounded-2xl bg-cyan-50 border border-cyan-200 hover:shadow-lg transition-shadow duration-300">
+                    <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <IconComponent className="h-6 w-6 text-cyan-600" />
+                    </div>
+
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 font-display">
+                      {target.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {target.description}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* How to Book */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                How to Book Our Home Deep Cleaning Services?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Booking your house cleaning with EzyHelpers is simple, fast, and fully hassle-free.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  step: "1",
+                  title: "Tell Us What You Need",
+                  description: "Fill out our form with your cleaning needs and preferred service date online."
+                },
+                {
+                  step: "2",
+                  title: "Get a Clear Quote",
+                  description: "We’ll share a transparent quote based on home size and cleaning requirements."
+                },
+                {
+                  step: "3",
+                  title: "Confirm Your Booking",
+                  description: "Review the quote and confirm your cleaning appointment for a convenient time."
+                },
+                {
+                  step: "4",
+                  title: "Sit Back and Relax",
+                  description: "Our professional cleaners will arrive and deep clean every corner of your home."
+                }
+              ].map((step, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-cyan-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                    {step.step}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">
-                    {benefit.title}
+                    {step.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    {benefit.description}
+                    {step.description}
                   </p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Our House Deep Cleaning Services
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Comprehensive range of deep cleaning services to cover every part of your home with detail and dedication
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {cleaningServices.map((service, index) => {
-              const IconComponent = service.icon
-              return (
-                <div key={index} className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-4">
-                    <IconComponent className="h-6 w-6 text-cyan-600" />
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 font-display">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  <div className="space-y-1">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-xs">
-                        <CheckCircleIcon className="h-3 w-3 text-cyan-600 mr-1.5" />
-                        <span className="text-gray-600">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Who Is It For */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Who Is It For?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our house cleaning services are ideal for various needs and lifestyles
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Working Professionals",
-                description: "Perfect for busy individuals who want a clean home without sacrificing work-life balance",
-                icon: UserGroupIcon
-              },
-              {
-                title: "Families for Special Occasions",
-                description: "Ideal for households needing extra help to get homes spotless and festive-ready",
-                icon: StarIcon
-              },
-              {
-                title: "Moving Tenants",
-                description: "Great for renters moving in or out who want thorough cleaning for fresh spaces",
-                icon: HomeIcon
-              },
-              {
-                title: "Routine Maintenance",
-                description: "Suitable for those who want regular, reliable cleaning to keep homes fresh and healthy",
-                icon: ClockIcon
-              }
-            ].map((target, index) => {
-              const IconComponent = target.icon
-              return (
-                <div key={index} className="text-center p-6 rounded-2xl bg-cyan-50 border border-cyan-200 hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <IconComponent className="h-6 w-6 text-cyan-600" />
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 font-display">
-                    {target.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {target.description}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* How to Book */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              How to Book Our Home Deep Cleaning Services?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Booking your house cleaning with EzyHelpers is simple, fast, and fully hassle-free.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                step: "1",
-                title: "Tell Us What You Need",
-                description: "Fill out our form with your cleaning needs and preferred service date online."
-              },
-              {
-                step: "2",
-                title: "Get a Clear Quote",
-                description: "We’ll share a transparent quote based on home size and cleaning requirements."
-              },
-              {
-                step: "3",
-                title: "Confirm Your Booking",
-                description: "Review the quote and confirm your cleaning appointment for a convenient time."
-              },
-              {
-                step: "4",
-                title: "Sit Back and Relax",
-                description: "Our professional cleaners will arrive and deep clean every corner of your home."
-              }
-            ].map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-cyan-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                  {step.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Health & Lifestyle Benefits */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              The Health & Lifestyle Benefits of Professional Deep Cleaning
-            </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Beyond a visually spotless home, a professional deep clean by EzyHelpers offers significant advantages for your health, comfort, and lifestyle.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {[
-              {
-                title: "Improved Indoor Air Quality",
-                text: "Deep cleaning removes built-up dust, pet hair, pollen, and other common allergens from floors, furniture, and fabrics, leading to noticeably fresher and cleaner air. This is especially helpful for people with allergies or breathing issues."
-              },
-              {
-                title: "Enhanced Hygiene & Sanitization",
-                text: "We go beyond surface cleaning, sanitizing high-touch areas, bathrooms, and kitchens with hospital-grade disinfectants. This eliminates harmful bacteria and viruses, significantly reducing the risk of illness."
-              },
-              {
-                title: "Extended Lifespan of Furnishings",
-                text: "Regular deep cleaning prevents the build-up of dirt and grit that can prematurely wear down carpets, upholstery, and hard surfaces, helping to preserve your home's assets and maintain their appearance."
-              },
-              {
-                title: "Stress Reduction & Peace of Mind",
-                text: "A clean and tidy home helps you feel more relaxed. When our professionals take care of the deep cleaning, you save time and effort so you can unwind and enjoy your fresh, peaceful space."
-              },
-              {
-                title: "Odour Elimination",
-                text: "Deep cleaning tackles the source of unpleasant odours, rather than just masking them, leaving your home smelling genuinely fresh and clean."
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section (moved here after benefits) */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-cyan-600 via-cyan-700 to-cyan-800 text-white py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-6 font-display">
-              Ready for a Clean, Healthy Home Without the Stress?
-            </h2>
-            <p className="text-xl text-cyan-100 mb-10 leading-relaxed">
-              Let EzyHelpers take care of your deep cleaning needs with trusted experts, safe products, and easy booking. Just a fresh, sparkling home waiting for you!
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/hire-helper" className="group bg-white text-cyan-800 hover:bg-cyan-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
-                <span className="flex items-center justify-center">
-                  Book Deep Cleaning Today
-                  <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-              
-              <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call 080-31411776
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Explore Other Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">From cleaning to carpentry, your home, fully cared for.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div className="border border-gray-200 rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Carpenter Services</h3>
-              <p className="text-gray-600 mb-3">Custom furniture, repairs, and fittings by skilled local carpenters.</p>
-              <Link href="/services/carpenters" className="text-cyan-700 font-semibold hover:underline">Learn about Carpenter Services</Link>
-            </div>
-            <div className="border border-gray-200 rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Appliance Repair Services</h3>
-              <p className="text-gray-600 mb-3">Fix your fridge, washing machine, or microwave with expert care.</p>
-              <Link href="/services/appliance-repair" className="text-cyan-700 font-semibold hover:underline">Learn about Appliance Repair Services</Link>
-            </div>
-            <div className="border border-gray-200 rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Plumber Services</h3>
-              <p className="text-gray-600 mb-3">Quick solutions for leaks, clogs, fittings, and water systems.</p>
-              <Link href="/services/plumbers" className="text-cyan-700 font-semibold hover:underline">Learn about Plumber Services</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section (moved to last) */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Common questions about our deep cleaning services
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
-                  <details className="group">
-                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
-                        {faq.question}
-                      </h3>
-                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </details>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer follows after FAQs */}
-      
-            <NestCTA />
-      <Footer />
-    </main>
+        {/* Health & Lifestyle Benefits */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                The Health & Lifestyle Benefits of Professional Deep Cleaning
+              </h2>
+              <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+                Beyond a visually spotless home, a professional deep clean by EzyHelpers offers significant advantages for your health, comfort, and lifestyle.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {[
+                {
+                  title: "Improved Indoor Air Quality",
+                  text: "Deep cleaning removes built-up dust, pet hair, pollen, and other common allergens from floors, furniture, and fabrics, leading to noticeably fresher and cleaner air. This is especially helpful for people with allergies or breathing issues."
+                },
+                {
+                  title: "Enhanced Hygiene & Sanitization",
+                  text: "We go beyond surface cleaning, sanitizing high-touch areas, bathrooms, and kitchens with hospital-grade disinfectants. This eliminates harmful bacteria and viruses, significantly reducing the risk of illness."
+                },
+                {
+                  title: "Extended Lifespan of Furnishings",
+                  text: "Regular deep cleaning prevents the build-up of dirt and grit that can prematurely wear down carpets, upholstery, and hard surfaces, helping to preserve your home's assets and maintain their appearance."
+                },
+                {
+                  title: "Stress Reduction & Peace of Mind",
+                  text: "A clean and tidy home helps you feel more relaxed. When our professionals take care of the deep cleaning, you save time and effort so you can unwind and enjoy your fresh, peaceful space."
+                },
+                {
+                  title: "Odour Elimination",
+                  text: "Deep cleaning tackles the source of unpleasant odours, rather than just masking them, leaving your home smelling genuinely fresh and clean."
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section (moved here after benefits) */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-cyan-600 via-cyan-700 to-cyan-800 text-white py-20">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="container-custom relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-6 font-display">
+                Ready for a Clean, Healthy Home Without the Stress?
+              </h2>
+              <p className="text-xl text-cyan-100 mb-10 leading-relaxed">
+                Let EzyHelpers take care of your deep cleaning needs with trusted experts, safe products, and easy booking. Just a fresh, sparkling home waiting for you!
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/hire-helper" className="group bg-white text-cyan-800 hover:bg-cyan-50 font-bold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
+                  <span className="flex items-center justify-center">
+                    Book Deep Cleaning Today
+                    <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+
+                <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300">
+                  <PhoneIcon className="h-5 w-5 mr-2" />
+                  Call 080-31411776
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Explore Other Services */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Explore Other Services</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">From cleaning to carpentry, your home, fully cared for.</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <div className="border border-gray-200 rounded-2xl p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Carpenter Services</h3>
+                <p className="text-gray-600 mb-3">Custom furniture, repairs, and fittings by skilled local carpenters.</p>
+                <Link href="/services/carpenters" className="text-cyan-700 font-semibold hover:underline">Learn about Carpenter Services</Link>
+              </div>
+              <div className="border border-gray-200 rounded-2xl p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Appliance Repair Services</h3>
+                <p className="text-gray-600 mb-3">Fix your fridge, washing machine, or microwave with expert care.</p>
+                <Link href="/services/appliance-repair" className="text-cyan-700 font-semibold hover:underline">Learn about Appliance Repair Services</Link>
+              </div>
+              <div className="border border-gray-200 rounded-2xl p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 font-display">Plumber Services</h3>
+                <p className="text-gray-600 mb-3">Quick solutions for leaks, clogs, fittings, and water systems.</p>
+                <Link href="/services/plumbers" className="text-cyan-700 font-semibold hover:underline">Learn about Plumber Services</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section (moved to last) */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Common questions about our deep cleaning services
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="space-y-6">
+                {faqs.map((faq, index) => (
+                  <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <details className="group">
+                      <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                        <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                          {faq.question}
+                        </h3>
+                        <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                          <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </summary>
+                      <div className="px-6 pb-6">
+                        <p className="text-gray-600 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </details>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer follows after FAQs */}
+
+        <NestCTA />
+        <Footer />
+      </main>
     </>
   )
 }

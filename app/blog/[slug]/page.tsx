@@ -22,6 +22,33 @@ export function generateStaticParams() {
 
 // FAQ data for different blog categories
 const blogFAQs = {
+  'what-is-a-Japa-maid': [
+    {
+      id: 'japa-maid-vs-confinement-nanny',
+      question: 'Is a Japa maid the same as a confinement nanny?',
+      answer: 'Yes. "Confinement nanny," "postpartum maid," "newborn care specialist," and "Japa nanny" all describe broadly the same role, a trained caregiver for the mother-and-baby recovery period.'
+    },
+    {
+      id: 'when-to-book-japa-maid',
+      question: 'When should I book a Japa maid?',
+      answer: 'Ideally, during your pregnancy, a few weeks before your due date, so an experienced, verified caregiver is reserved and ready when the baby arrives. Good Japa maids get booked early.'
+    },
+    {
+      id: 'japa-care-for-baby-only',
+      question: 'Is Japa care only for the baby?',
+      answer: 'No. A defining feature of Japa care is that it looks after the mother\'s recovery too; her meals, massage, rest, and emotional wellbeing, not only the newborn.'
+    },
+    {
+      id: 'religious-regional-traditions',
+      question: 'Does Japa care follow religious or regional traditions?',
+      answer: 'It can. Many families want specific dietary, massage, or tummy-binding practices observed, and experienced Japa maids are familiar with these. You can discuss your family\'s preferences upfront.'
+    },
+    {
+      id: 'different-from-normal-nanny',
+      question: 'How is this different from a normal nanny I\'d hire later?',
+      answer: 'A Japa maid is for the short, intensive recovery window and cares for both mother and baby. A regular nanny usually starts later and focuses on the child as it grows. Many families use a Japa maid first, then transition to a nanny.'
+    }
+  ],
   'hiring-domestic-helper': [
     {
       id: 'hiring-cost',
@@ -886,14 +913,36 @@ export default async function BlogPost({ params }: PageProps) {
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
-            h1: ({ children }) => <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 mt-4 leading-tight font-display">{children}</h2>,
+            h1: ({ children }) => <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 mt-4 leading-tight font-display">{children}</h1>,
             h2: ({ children }) => <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-12 pb-2 border-b-2 border-blue-500 w-fit">{children}</h2>,
             h3: ({ children }) => <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 mt-8">{children}</h3>,
+            blockquote: ({ children }) => (
+              <blockquote className="bg-blue-50/80 p-8 rounded-2xl border-l-4 border-blue-600 my-10 shadow-sm">
+                <div className="prose prose-blue max-w-none">{children}</div>
+              </blockquote>
+            ),
             p: ({ children }) => <p className="text-gray-700 mb-6 leading-relaxed text-lg">{children}</p>,
             ul: ({ children }) => <ul className="list-disc pl-6 mb-8 space-y-3">{children}</ul>,
             li: ({ children }) => <li className="text-gray-700 leading-relaxed text-lg">{children}</li>,
             strong: ({ children }) => <strong className="font-bold text-gray-900">{children}</strong>,
-            a: ({ href, children }) => <a href={href} className="text-blue-600 font-semibold underline decoration-2 underline-offset-4 hover:text-blue-800 transition-colors">{children}</a>,
+            a: ({ href, children }) => {
+              if (href?.startsWith('https://tel.btn/')) {
+                const phone = href.replace('https://tel.btn/', '');
+                return (
+                  <a href={`tel:${phone}`} className="inline-block bg-blue-600 !text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-transform hover:scale-105 shadow-md my-2 mx-4 !no-underline border-0">
+                    {children}
+                  </a>
+                );
+              }
+              if (href?.includes('#btn') || href?.includes('?btn')) {
+                return (
+                  <a href={href.replace('#btn', '').replace('?btn', '')} className="inline-block bg-blue-600 !text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-transform hover:scale-105 shadow-md my-2 mx-4 !no-underline border-0">
+                    {children}
+                  </a>
+                );
+              }
+              return <a href={href} className="text-blue-600 font-semibold underline decoration-2 underline-offset-4 hover:text-blue-800 transition-colors">{children}</a>;
+            },
             table: ({ children }) => (
               <div className="overflow-x-auto my-8 rounded-xl border border-gray-200">
                 <table className="min-w-full divide-y divide-gray-200">{children}</table>

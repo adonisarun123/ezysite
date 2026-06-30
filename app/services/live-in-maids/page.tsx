@@ -11,9 +11,9 @@ import AvailableInCities from '@/components/AvailableInCities'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
 import {
-  HomeIcon, 
-  ShieldCheckIcon, 
-  ClockIcon, 
+  HomeIcon,
+  ShieldCheckIcon,
+  ClockIcon,
   HeartIcon,
   CheckCircleIcon,
   PhoneIcon,
@@ -30,16 +30,17 @@ import {
   TrophyIcon,
   ArrowRightIcon,
   UserPlusIcon,
-  BuildingOffice2Icon
+  BuildingOffice2Icon,
+  MapPinIcon
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Live-In Maid Services | 24/7 Dedicated Home Help',
-  description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
+  title: 'Live-In Maid in India | 24/7 Dedicated Help',
+  description: 'Hire a verified live-in maid anywhere in India for 24/7 housekeeping, cooking, childcare & elder care. Trusted by families across multiple cities.',
   keywords: 'live-in maid, 24-hour maid, live in house maid, housekeeping, cooking, babysitting, elderly care',
   openGraph: {
-    title: 'Live-In Maid Services | 24/7 Dedicated Home Help',
-    description: 'Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed.',
+    title: 'Live-In Maid in India | 24/7 Dedicated Help',
+    description: 'Hire a verified live-in maid anywhere in India for 24/7 housekeeping, cooking, childcare & elder care. Trusted by families across multiple cities.',
     url: 'https://www.ezyhelpers.com/services/live-in-maids',
     type: 'website',
     siteName: 'EzyHelpers',
@@ -52,6 +53,19 @@ export const metadata: Metadata = {
 }
 
 export default function LiveInMaidsPage() {
+  const cities = [
+    { name: 'Bangalore', href: '/cities/bangalore/live-in-maids' },
+    { name: 'Bareilly', href: '/cities/bareilly/live-in-maid' },
+    { name: 'Delhi', href: '/cities/delhi' },
+    { name: 'Noida', href: '/cities/noida' },
+    { name: 'Lucknow', href: '/cities/lucknow' },
+    { name: 'Kanpur', href: '/cities/kanpur' },
+    { name: 'Nagpur', href: '/cities/nagpur' },
+    { name: 'Hyderabad', href: '/cities/hyderabad' },
+    { name: 'Meerut', href: '/cities/meerut' },
+    { name: 'Mumbai', href: '/cities/mumbai' }
+  ]
+
   const services = [
     {
       title: "Live-In Maid for Housekeeping",
@@ -68,7 +82,7 @@ export default function LiveInMaidsPage() {
       cta: "Book Live-In Housekeeper"
     },
     {
-      title: "Live-In Maid for Cooking", 
+      title: "Live-In Maid for Cooking",
       description: "Enjoy wholesome, home-cooked meals without the hassle. Our live-in cook specialises in preparing delicious and nutritious food tailored to your family's preferences.",
       icon: HeartIcon,
       features: [
@@ -122,7 +136,7 @@ export default function LiveInMaidsPage() {
 
   return (
     <>
-      <ServiceSchema serviceName={"Live-In Maid Services"} serviceDescription={"Live-in maid services with 24/7 support. Trained and Background verified professionals for complete home care. Quick placement in 24-72 hours guaranteed."} serviceType={"Live-In Maid Services"} serviceUrl={"https://www.ezyhelpers.com/services/live-in-maids"} />
+      <ServiceSchema serviceName={"Live-In Maid Services"} serviceDescription={"Hire a verified live-in maid anywhere in India for 24/7 housekeeping, cooking, childcare & elder care. Trusted by families across multiple cities."} serviceType={"Live-In Maid Services"} serviceUrl={"https://www.ezyhelpers.com/services/live-in-maids"} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -136,96 +150,103 @@ export default function LiveInMaidsPage() {
                 "@type": "Answer",
                 "text": "A live-in maid stays in your home full-time and works up to 12 hours a day. She focuses on one task only, such as housekeeping, cooking, babysitting (child care), or elderly care. You can choose the type of help your family needs most."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Are live-in maids background-verified?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, all our live-in maids are background verified. We check Aadhaar, local address (if available), and basic identity. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Does a live-in maid handle multiple household tasks?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "No, each live-in maid is trained for one specific task only, either cleaning, cooking, child care, or elder care. This ensures better quality and focus. Minor extra help may be provided only if both sides agree."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "How is a live-in maid different from a full-time or part-time maid?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "A live-in maid stays at your home 24x7 and works a structured 12-hour shift every day. In contrast, full-time and part-time maids come from outside and leave after completing their 8–10 hour or 2–6 hour shifts."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "What is the difference between a live-in maid and a full-time maid?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "A live-in maid lives in your home and offers full-day support, while a full-time maid comes daily but does not stay overnight. Live-in maids offer better continuity and are ideal for families who need a reliable, round-the-clock presence."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "What are the working hours for a live-in maid?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Live-in maids work for 12 hours a day with a fixed schedule. They stay 24 hours at your home but are not expected to work all day or during the night."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Do I need to provide accommodation for the live-in maid?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes. You’ll need to provide a room (private or shared) with basic facilities like a bed, mattress, or cot, and bathroom access. A comfortable space helps the maid feel at home and do her job better."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can I hire a live-in maid just for cooking or babysitting?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Absolutely. You can hire a live-in maid specifically for cooking, housekeeping, child care, or elderly care. Each maid is trained in only one area and is placed based on your exact household needs."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "How fast can EzyHelpers place a live-in maid in my home?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "In most cases, we can place a live-in maid within 24 to 72 hours after understanding your needs. You’ll get profiles of trained and background-verified maids to choose from quickly."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "What qualifications or training do EzyHelpers' live-in maids have?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Our live-in maids are trained in their specific roles, whether it’s hygiene and cleaning, cooking meals, child safety and development, or senior care. We also verify their previous work experience and ensure they’re ready for real-life tasks."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "How many off days do live-in maids get?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Every live-in maid is entitled to two days off per month. These can be decided in advance by mutual agreement. Respecting off days helps the maid stay motivated and refreshed."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Can I interview the live-in maid before hiring?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes. We arrange interviews with 2–3 shortlisted maids via phone or video call. You can speak to them, ask questions, and choose the one that feels right for your home."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Is the pricing for live-in maid services fixed?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Pricing is flexible and depends on the role (cooking, cleaning, etc.), the maid’s experience, and your location. We offer transparent rates without hidden charges, and you pay directly to the helper. Contact us for a detailed quote."
               }
-            },{
+            }, {
               "@type": "Question",
               "name": "Is there a trial period for live-in maids?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, we offer a trial period if you’d like to assess the maid before finalising. However, many families skip the trial once they’re satisfied after the interview. We leave the choice up to you."
+              }
+            }, {
+              "@type": "Question",
+              "name": "Are live-in maid services available across India?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": " Live-in maid services are available in selected cities across India through EzyHelpers. Since hiring requirements, accommodation expectations, and salary ranges differ by location, each city page provides information tailored to local conditions."
               }
             }]
           })
@@ -233,519 +254,574 @@ export default function LiveInMaidsPage() {
       />
       <main className="min-h-screen">
         <Navbar />
-      
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-700 via-primary-600 to-primary-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
-        {/* Background Decorative Elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-white rounded-full blur-2xl"></div>
-        </div>
-        
-        {/* Geometric Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-full" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
-        </div>
 
-        <div className="container-custom relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Content Column */}
-              <div className="text-center lg:text-left">
-                {/* Trust Badge */}
-                <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                  <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
-                  <span className="text-sm font-semibold">Trusted by 10,000+ Families</span>
-                </div>
-
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
-                  Live-In Maid Services – Dedicated Help for Every Need
-                </h1>
-                
-                <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
-                  EzyHelpers connects you with trained and background-verified live-in maids specialised in housekeeping, cooking, childcare, or elder care, making home management easier with dedicated support customised to your family’s specific needs.
-                </p>
-
-                {/* Key Benefits Pills */}
-                <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
-                  {[
-                    '100% Verified & Background-Checked',
-                    'Quick Replacement Guarantee',
-                    'Personalized Matchmaking',
-                    'Flexible Contract Options'
-                  ].map((pill, i) => (
-                    <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ {pill}</div>
-                  ))}
-                </div>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 px-4 lg:px-0">
-                  <Link href="/hire-helper" className="group relative bg-white text-primary-800 hover:bg-primary-50 font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
-                    <span className="relative z-10">
-                      <span className="hidden sm:inline">Book a Live-In Maid Now</span>
-                      <span className="sm:hidden">Book Now</span>
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white to-primary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  </Link>
-                  <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300">
-                    <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    <span className="hidden sm:inline">Call Us for Quick Assistance</span>
-                    <span className="sm:hidden">Call Now</span>
-                  </Link>
-                </div>
-
-                {/* Quick Stats */}
-                <div className="grid grid-cols-4 gap-6 pt-8 border-t border-white/20">
-                  <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">98%</div>
-                    <div className="text-primary-200 text-sm">Customer Satisfaction Rate</div>
-                  </div>
-                  <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">Easy</div>
-                    <div className="text-primary-200 text-sm">Replacement Support</div>
-                  </div>
-                  <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">10,000+</div>
-                    <div className="text-primary-200 text-sm">Happy Households Served</div>
-                  </div>
-                  <div className="text-center lg:text-left">
-                    <div className="text-2xl font-bold text-white">100%</div>
-                    <div className="text-primary-200 text-sm">Verified & Trained Professionals</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Visual Column */}
-              <div className="relative hidden lg:block">
-                <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                  {/* Service Icons Grid */}
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer">
-                      <HomeIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-blue-100 group-hover:scale-110 transition-all duration-300" />
-                      <div className="text-white font-semibold text-sm group-hover:text-blue-100">House Cleaning</div>
-                    </div>
-                    <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-red-500 hover:to-pink-600 hover:shadow-2xl hover:shadow-red-500/25 transition-all duration-500 transform hover:scale-105 hover:rotate-1 cursor-pointer">
-                      <HeartIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-red-100 group-hover:scale-110 transition-all duration-300" />
-                      <div className="text-white font-semibold text-sm group-hover:text-red-100">Meal Preparation</div>
-                    </div>
-                    <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-green-500 hover:to-emerald-600 hover:shadow-2xl hover:shadow-green-500/25 transition-all duration-500 transform hover:scale-105 hover:rotate-1 cursor-pointer">
-                      <UserGroupIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-green-100 group-hover:scale-110 transition-all duration-300" />
-                      <div className="text-white font-semibold text-sm group-hover:text-green-100">Child Care</div>
-                    </div>
-                    <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-purple-500 hover:to-violet-600 hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer">
-                      <ShieldCheckIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-purple-100 group-hover:scale-110 transition-all duration-300" />
-                      <div className="text-white font-semibold text-sm group-hover:text-purple-100">Elderly Care</div>
-                    </div>
-                  </div>
-                  
-                  {/* Floating Elements */}
-                  <div className="absolute -top-4 -right-4 bg-yellow-400 text-yellow-900 rounded-full p-3 shadow-lg">
-                    <ClockIcon className="h-6 w-6" />
-                  </div>
-                  <div className="absolute -bottom-4 -left-4 bg-green-400 text-green-900 rounded-full p-3 shadow-lg">
-                    <CheckCircleIcon className="h-6 w-6" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <QuickAnswer
-        question="How do I hire a live-in maid through EzyHelpers?"
-        answer="EzyHelpers provides background-verified live-in maids who stay at your home and handle cleaning, cooking support, and daily chores. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper."
-      />
-
-      {/* Why Choose Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Why Choose EzyHelpers for Your Live-In Maid Needs?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We make finding the right domestic help simple, safe, and fast.
-            </p>
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-primary-700 via-primary-600 to-primary-500 text-white pt-20 pb-24 lg:pb-32 overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-white rounded-full blur-2xl"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <CheckCircleIcon className="h-6 w-6 text-success-600 mt-1 shrink-0" />
-                <span className="text-gray-700 font-medium">{benefit}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Offered */}
-      <section className="section-padding bg-background-secondary">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Our Specialized Live-In Maid Services for Every Household Need
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Choose from expert categories of live-in maids, each focused on a specific household role.
-            </p>
+          {/* Geometric Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-0 left-0 w-full h-full" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }}></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, index) => {
-              const IconComponent = service.icon
-              return (
-                <div key={index} className="bg-white rounded-xl p-8 hover:shadow-lg transition-shadow">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center shrink-0">
-                      <IconComponent className="h-6 w-6 text-primary-600" />
+          <div className="container-custom relative z-10">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Content Column */}
+                <div className="text-center lg:text-left">
+                  {/* Trust Badge */}
+                  <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                    <StarIcon className="h-5 w-5 text-yellow-400 mr-2" />
+                    <span className="text-sm font-semibold">Trusted by 10,000+ Families</span>
+                  </div>
+
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight text-white drop-shadow-lg">
+                    Live-In Maid Service Across India – 24/7 Dedicated Home Help
+                  </h1>
+
+                  <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 drop-shadow-sm">
+                    Live-in maids provide dedicated household support by staying with your family and assisting with daily chores, cooking, childcare, or elderly care. Explore live-in maid services in India and find the right household helper for long-term support.
+                  </p>
+
+                  {/* Key Benefits Pills */}
+                  <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
+                    {[
+                      '100% Verified & Background-Checked',
+                      'Quick Replacement Guarantee',
+                      'Personalized Matchmaking',
+                      'Flexible Contract Options'
+                    ].map((pill, i) => (
+                      <div key={i} className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">✓ {pill}</div>
+                    ))}
+                  </div>
+
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 px-4 lg:px-0">
+                    <Link href="/hire-helper" className="group relative bg-white text-primary-800 hover:bg-primary-50 font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
+                      <span className="relative z-10">
+                        <span className="hidden sm:inline">Book a Live-In Maid Now</span>
+                        <span className="sm:hidden">Book Now</span>
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-white to-primary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </Link>
+                    <Link href="tel:+918031411776" className="group flex items-center justify-center bg-transparent border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300">
+                      <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform" />
+                      <span className="hidden sm:inline">Call Us for Quick Assistance</span>
+                      <span className="sm:hidden">Call Now</span>
+                    </Link>
+                  </div>
+
+                  {/* Quick Stats */}
+                  <div className="grid grid-cols-4 gap-6 pt-8 border-t border-white/20">
+                    <div className="text-center lg:text-left">
+                      <div className="text-2xl font-bold text-white">98%</div>
+                      <div className="text-primary-200 text-sm">Customer Satisfaction Rate</div>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed mb-3">
-                        {service.description}
-                      </p>
-                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
-                        {service.features.map((f, i) => (
-                          <li key={i}>{f}</li>
-                        ))}
-                      </ul>
-                      {service.expertise && (
-                        <p className="text-gray-700 mt-3"><span className="font-semibold">Expertise:</span> {service.expertise}</p>
-                      )}
-                      {service.cta && (
-                        <div className="mt-4">
-                          <Link href="/hire-helper" className="inline-flex items-center text-primary-700 font-semibold hover:underline">
-                            {service.cta}
-                            <ArrowRightIcon className="h-4 w-4 ml-1" />
-                          </Link>
-                        </div>
-                      )}
+                    <div className="text-center lg:text-left">
+                      <div className="text-2xl font-bold text-white">Easy</div>
+                      <div className="text-primary-200 text-sm">Replacement Support</div>
+                    </div>
+                    <div className="text-center lg:text-left">
+                      <div className="text-2xl font-bold text-white">10,000+</div>
+                      <div className="text-primary-200 text-sm">Happy Households Served</div>
+                    </div>
+                    <div className="text-center lg:text-left">
+                      <div className="text-2xl font-bold text-white">100%</div>
+                      <div className="text-primary-200 text-sm">Verified & Trained Professionals</div>
                     </div>
                   </div>
                 </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
 
-      {/* Ideal For Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Who Needs a Live-In Maid?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Live-in maids are the ideal solution for households that need dependable, all-day support with minimal hassle. Here's who can benefit the most:
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <ul className="list-disc pl-6 text-gray-700 space-y-2 text-lg">
-              <li>Working couples needing help with housekeeping or cooking.</li>
-              <li>New parents requiring a trustworthy babysitter.</li>
-              <li>Families with elderly members who need constant care.</li>
-              <li>Busy professionals who want a well-maintained home.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="section-padding bg-background-secondary">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Our Easy 4-Step Maid Hiring Process
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Hiring a live-in maid with EzyHelpers is smooth and stress-free.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                step: "1",
-                title: "Consultation",
-                description: "Discuss your needs with our team and choose the type of maid service you want, like cleaning, cooking, childcare, or elder care."
-              },
-              {
-                step: "2", 
-                title: "Maid Shortlisting",
-                description: "We match you with 2–3 verified candidates based on your preferences."
-              },
-              {
-                step: "3",
-                title: "Interview & Selection", 
-                description: "Connect with shortlisted maids via call, video or in-person interviews."
-              },
-              {
-                step: "4",
-                title: "Smooth Onboarding",
-                description: "Once selected, we handle the documentation, and your maid begins with a trial period. The support team stays in touch throughout."
-              }
-            ].map((process, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {process.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">
-                  {process.title}
-                </h3>
-                <p className="text-gray-600">
-                  {process.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Things to Know Before Hiring */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Things to Know Before Hiring a 24-Hour Maid</h2>
-            <p className="text-lg text-gray-600">Everything you should know to make the right hiring decision.</p>
-          </div>
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">1. Living Arrangements</h3>
-              <p className="text-gray-700">Live-in maids should be provided with a separate room or shared room based on your household setup. Basic amenities such as a bed, cot or mattress and access to a private or shared bathroom must be arranged depending on available resources.</p>
-            </div>
-            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">2. Work Schedule Clarity</h3>
-              <p className="text-gray-700">While the maid stays at your home 24/7, she works for a structured 12 hours daily. Clearly outline expectations around duty hours, break times, and rest periods to avoid overwork or misunderstanding.</p>
-            </div>
-            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">3. Monthly Offs</h3>
-              <p className="text-gray-700">Every live-in maid is entitled to 2 days off per month, which should be respected and planned in advance to support her physical and mental well-being.</p>
-            </div>
-            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">4. One Role Per Maid</h3>
-              <p className="text-gray-700">Each live-in maid is assigned only one responsibility at a time, such as housekeeping, cooking, babysitting, or elderly care for quality and focus. Maids are not expected to handle multiple duties.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              FAQs
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Answers to common questions about live-in maid services.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
-              {[
-                { question: 'What services does a live-in maid provide?', answer: 'A live-in maid stays in your home full-time and works up to 12 hours a day. She focuses on one task only, such as housekeeping, cooking, babysitting (child care), or elderly care. You can choose the type of help your family needs most.' },
-                { question: 'Are live-in maids background-verified?', answer: 'Yes, all our live-in maids are background verified. We check Aadhaar, local address (if available), and basic identity. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind.' },
-                { question: 'Does a live-in maid handle multiple household tasks?', answer: 'No, each live-in maid is trained for one specific task only, either cleaning, cooking, child care, or elder care. This ensures better quality and focus. Minor extra help may be provided only if both sides agree.' },
-                { question: 'How is a live-in maid different from a full-time or part-time maid?', answer: 'A live-in maid stays at your home 24x7 and works a structured 12-hour shift every day. In contrast, full-time and part-time maids come from outside and leave after completing their 8–10 hour or 2–6 hour shifts.' },
-                { question: 'What is the difference between a live-in maid and a full-time maid?', answer: 'A live-in maid lives in your home and offers full-day support, while a full-time maid comes daily but does not stay overnight. Live-in maids offer better continuity and are ideal for families who need a reliable, round-the-clock presence.' },
-                { question: 'What are the working hours for a live-in maid?', answer: 'Live-in maids work for 12 hours a day with a fixed schedule. They stay 24 hours at your home but are not expected to work all day or during the night.' },
-                { question: 'Do I need to provide accommodation for the live-in maid?', answer: 'Yes. You’ll need to provide a room (private or shared) with basic facilities like a bed, mattress, or cot, and bathroom access. A comfortable space helps the maid feel at home and do her job better.' },
-                { question: 'Can I hire a live-in maid just for cooking or babysitting?', answer: 'Absolutely. You can hire a live-in maid specifically for cooking, housekeeping, child care, or elderly care. Each maid is trained in only one area and is placed based on your exact household needs.' },
-                { question: 'How fast can EzyHelpers place a live-in maid in my home?', answer: 'In most cases, we can place a live-in maid within 24 to 72 hours after understanding your needs. You’ll get profiles of trained and background-verified maids to choose from. Depending on demand and availability, it may take longer, but we’ll do our best to find a suitable match for you.' },
-                { question: "What qualifications or training do EzyHelpers' live-in maids have?", answer: 'Our live-in maids are trained in their specific roles, whether it’s hygiene and cleaning, cooking meals, child safety and development, or senior care. We also verify their previous work experience and ensure they’re ready for real-life tasks.' },
-                { question: 'How many off days do live-in maids get?', answer: 'Every live-in maid is entitled to two off days per month. These can be decided in advance by mutual agreement. Respecting off days helps the maid stay motivated and refreshed.' },
-                { question: 'Can I interview the live-in maid before hiring?', answer: 'Yes. We arrange interviews with 2–3 shortlisted maids via phone or video call. You can speak to them, ask questions, and choose the one that feels right for your home.' },
-                { question: 'Is the pricing for live-in maid services fixed?', answer: 'Pricing is flexible and depends on the role (cooking, cleaning, etc.), the maid’s experience, and your location. We offer transparent rates without hidden charges, and you pay directly to the helper. Contact us for a detailed quote.' },
-                { question: 'Is there a trial period for live-in maids?', answer: 'Yes, we offer a trial period if you’d like to assess the maid before finalising. However, many families skip the trial once they’re satisfied after the interview. We leave the choice up to you.' }
-              ].map((faq, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
-                  <details className="group">
-                    <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
-                        {faq.question}
-                      </h3>
-                      <div className="flex-shrink-0 transition-transform group-open:rotate-180">
-                        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
+                {/* Visual Column */}
+                <div className="relative hidden lg:block">
+                  <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                    {/* Service Icons Grid */}
+                    <div className="grid grid-cols-2 gap-6">
+                      <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer">
+                        <HomeIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-blue-100 group-hover:scale-110 transition-all duration-300" />
+                        <div className="text-white font-semibold text-sm group-hover:text-blue-100">House Cleaning</div>
                       </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
+                      <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-red-500 hover:to-pink-600 hover:shadow-2xl hover:shadow-red-500/25 transition-all duration-500 transform hover:scale-105 hover:rotate-1 cursor-pointer">
+                        <HeartIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-red-100 group-hover:scale-110 transition-all duration-300" />
+                        <div className="text-white font-semibold text-sm group-hover:text-red-100">Meal Preparation</div>
+                      </div>
+                      <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-green-500 hover:to-emerald-600 hover:shadow-2xl hover:shadow-green-500/25 transition-all duration-500 transform hover:scale-105 hover:rotate-1 cursor-pointer">
+                        <UserGroupIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-green-100 group-hover:scale-110 transition-all duration-300" />
+                        <div className="text-white font-semibold text-sm group-hover:text-green-100">Child Care</div>
+                      </div>
+                      <div className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-purple-500 hover:to-violet-600 hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer">
+                        <ShieldCheckIcon className="h-12 w-12 text-white mx-auto mb-3 group-hover:text-purple-100 group-hover:scale-110 transition-all duration-300" />
+                        <div className="text-white font-semibold text-sm group-hover:text-purple-100">Elderly Care</div>
+                      </div>
                     </div>
-                  </details>
+
+                    {/* Floating Elements */}
+                    <div className="absolute -top-4 -right-4 bg-yellow-400 text-yellow-900 rounded-full p-3 shadow-lg">
+                      <ClockIcon className="h-6 w-6" />
+                    </div>
+                    <div className="absolute -bottom-4 -left-4 bg-green-400 text-green-900 rounded-full p-3 shadow-lg">
+                      <CheckCircleIcon className="h-6 w-6" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Explore Available Cities Section */}
+        <section className="py-16 bg-white border-b border-gray-100 relative overflow-hidden">
+          {/* Subtle background decoration */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-50/30 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+          <div className="container-custom relative z-10">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 mb-4 border border-primary-100 shadow-sm">
+                <MapPinIcon className="h-4 w-4 mr-2 text-primary-600 animate-bounce" />
+                <span className="text-sm font-semibold">Service Coverage</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Find This Service Near You
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Find verified live-in maids in the cities listed below.
+              </p>
+            </div>
+
+            {/* Cities Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 mb-12">
+              {cities.map((city) => (
+                <Link
+                  key={city.name}
+                  href={city.href}
+                  className="group relative bg-white hover:bg-gradient-to-br hover:from-primary-600 hover:to-primary-700 p-5 rounded-2xl border border-gray-200/80 hover:border-transparent shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center cursor-pointer"
+                >
+                  {/* Icon / Pin design */}
+                  <div className="w-10 h-10 rounded-xl bg-primary-50 group-hover:bg-white/20 flex items-center justify-center mb-3 transition-colors duration-300">
+                    <MapPinIcon className="h-5 w-5 text-primary-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 text-base md:text-lg">
+                    {city.name}
+                  </span>
+                  {/* View services indicator */}
+                  <div className="mt-2 text-primary-600 group-hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-xs font-medium flex items-center">
+                    View Services
+                    <ArrowRightIcon className="h-3 w-3 ml-1" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm md:text-base text-gray-500 font-medium">
+                More cities coming soon. Visit your city page or{' '}
+                <Link href="tel:+918031411776" className="text-primary-600 hover:text-primary-700 underline font-semibold transition-colors">
+                  call us
+                </Link>{' '}
+                to confirm availability.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <QuickAnswer
+          question="How do I hire a live-in maid through EzyHelpers?"
+          answer="EzyHelpers provides background-verified live-in maids who stay at your home and handle cleaning, cooking support, and daily chores. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper."
+        />
+
+        {/* Why Choose Section */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Why Choose EzyHelpers for Your Live-In Maid Needs?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                We make finding the right domestic help simple, safe, and fast.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircleIcon className="h-6 w-6 text-success-600 mt-1 shrink-0" />
+                  <span className="text-gray-700 font-medium">{benefit}</span>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Closing CTA Block */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Find Your Trusted Live-In Maid with EzyHelpers Today!</h2>
-              <p className="text-lg text-gray-700">Don’t let household chores or care responsibilities overwhelm you. With EzyHelpers, get reliable, background-verified live-in maids who fit right into your home and schedule.</p>
+        {/* Services Offered */}
+        <section className="section-padding bg-background-secondary">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Our Specialized Live-In Maid Services for Every Household Need
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Choose from expert categories of live-in maids, each focused on a specific household role.
+              </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors shadow">
-                Book Your Live-In Maid
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {services.map((service, index) => {
+                const IconComponent = service.icon
+                return (
+                  <div key={index} className="bg-white rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center shrink-0">
+                        <IconComponent className="h-6 w-6 text-primary-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed mb-3">
+                          {service.description}
+                        </p>
+                        <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                          {service.features.map((f, i) => (
+                            <li key={i}>{f}</li>
+                          ))}
+                        </ul>
+                        {service.expertise && (
+                          <p className="text-gray-700 mt-3"><span className="font-semibold">Expertise:</span> {service.expertise}</p>
+                        )}
+                        {service.cta && (
+                          <div className="mt-4">
+                            <Link href="/hire-helper" className="inline-flex items-center text-primary-700 font-semibold hover:underline">
+                              {service.cta}
+                              <ArrowRightIcon className="h-4 w-4 ml-1" />
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Ideal For Section */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Who Needs a Live-In Maid?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Live-in maids are the ideal solution for households that need dependable, all-day support with minimal hassle. Here's who can benefit the most:
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto">
+              <ul className="list-disc pl-6 text-gray-700 space-y-2 text-lg">
+                <li>Working couples needing help with housekeeping or cooking.</li>
+                <li>New parents requiring a trustworthy babysitter.</li>
+                <li>Families with elderly members who need constant care.</li>
+                <li>Busy professionals who want a well-maintained home.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="section-padding bg-background-secondary">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Our Easy 4-Step Maid Hiring Process
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Hiring a live-in maid with EzyHelpers is smooth and stress-free.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  step: "1",
+                  title: "Consultation",
+                  description: "Discuss your needs with our team and choose the type of maid service you want, like cleaning, cooking, childcare, or elder care."
+                },
+                {
+                  step: "2",
+                  title: "Maid Shortlisting",
+                  description: "We match you with 2–3 verified candidates based on your preferences."
+                },
+                {
+                  step: "3",
+                  title: "Interview & Selection",
+                  description: "Connect with shortlisted maids via call, video or in-person interviews."
+                },
+                {
+                  step: "4",
+                  title: "Smooth Onboarding",
+                  description: "Once selected, we handle the documentation, and your maid begins with a trial period. The support team stays in touch throughout."
+                }
+              ].map((process, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                    {process.step}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display">
+                    {process.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {process.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Things to Know Before Hiring */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Things to Know Before Hiring a 24-Hour Maid</h2>
+              <p className="text-lg text-gray-600">Everything you should know to make the right hiring decision.</p>
+            </div>
+            <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">1. Living Arrangements</h3>
+                <p className="text-gray-700">Live-in maids should be provided with a separate room or shared room based on your household setup. Basic amenities such as a bed, cot or mattress and access to a private or shared bathroom must be arranged depending on available resources.</p>
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">2. Work Schedule Clarity</h3>
+                <p className="text-gray-700">While the maid stays at your home 24/7, she works for a structured 12 hours daily. Clearly outline expectations around duty hours, break times, and rest periods to avoid overwork or misunderstanding.</p>
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">3. Monthly Offs</h3>
+                <p className="text-gray-700">Every live-in maid is entitled to 2 days off per month, which should be respected and planned in advance to support her physical and mental well-being.</p>
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">4. One Role Per Maid</h3>
+                <p className="text-gray-700">Each live-in maid is assigned only one responsibility at a time, such as housekeeping, cooking, babysitting, or elderly care for quality and focus. Maids are not expected to handle multiple duties.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                FAQs
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Answers to common questions about live-in maid services.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="space-y-6">
+                {[
+                  { question: 'What services does a live-in maid provide?', answer: 'A live-in maid stays in your home full-time and works up to 12 hours a day. She focuses on one task only, such as housekeeping, cooking, babysitting (child care), or elderly care. You can choose the type of help your family needs most.' },
+                  { question: 'Are live-in maids background-verified?', answer: 'Yes, all our live-in maids are background verified. We check Aadhaar, local address (if available), and basic identity. Police verification and medical checkups can also be arranged at an extra cost for added peace of mind.' },
+                  { question: 'Does a live-in maid handle multiple household tasks?', answer: 'No, each live-in maid is trained for one specific task only, either cleaning, cooking, child care, or elder care. This ensures better quality and focus. Minor extra help may be provided only if both sides agree.' },
+                  { question: 'How is a live-in maid different from a full-time or part-time maid?', answer: 'A live-in maid stays at your home 24x7 and works a structured 12-hour shift every day. In contrast, full-time and part-time maids come from outside and leave after completing their 8–10 hour or 2–6 hour shifts.' },
+                  { question: 'What is the difference between a live-in maid and a full-time maid?', answer: 'A live-in maid lives in your home and offers full-day support, while a full-time maid comes daily but does not stay overnight. Live-in maids offer better continuity and are ideal for families who need a reliable, round-the-clock presence.' },
+                  { question: 'What are the working hours for a live-in maid?', answer: 'Live-in maids work for 12 hours a day with a fixed schedule. They stay 24 hours at your home but are not expected to work all day or during the night.' },
+                  { question: 'Do I need to provide accommodation for the live-in maid?', answer: 'Yes. You’ll need to provide a room (private or shared) with basic facilities like a bed, mattress, or cot, and bathroom access. A comfortable space helps the maid feel at home and do her job better.' },
+                  { question: 'Can I hire a live-in maid just for cooking or babysitting?', answer: 'Absolutely. You can hire a live-in maid specifically for cooking, housekeeping, child care, or elderly care. Each maid is trained in only one area and is placed based on your exact household needs.' },
+                  { question: 'How fast can EzyHelpers place a live-in maid in my home?', answer: 'In most cases, we can place a live-in maid within 24 to 72 hours after understanding your needs. You’ll get profiles of trained and background-verified maids to choose from. Depending on demand and availability, it may take longer, but we’ll do our best to find a suitable match for you.' },
+                  { question: "What qualifications or training do EzyHelpers' live-in maids have?", answer: 'Our live-in maids are trained in their specific roles, whether it’s hygiene and cleaning, cooking meals, child safety and development, or senior care. We also verify their previous work experience and ensure they’re ready for real-life tasks.' },
+                  { question: 'How many off days do live-in maids get?', answer: 'Every live-in maid is entitled to two off days per month. These can be decided in advance by mutual agreement. Respecting off days helps the maid stay motivated and refreshed.' },
+                  { question: 'Can I interview the live-in maid before hiring?', answer: 'Yes. We arrange interviews with 2–3 shortlisted maids via phone or video call. You can speak to them, ask questions, and choose the one that feels right for your home.' },
+                  { question: 'Is the pricing for live-in maid services fixed?', answer: 'Pricing is flexible and depends on the role (cooking, cleaning, etc.), the maid’s experience, and your location. We offer transparent rates without hidden charges, and you pay directly to the helper. Contact us for a detailed quote.' },
+                  { question: 'Is there a trial period for live-in maids?', answer: 'Yes, we offer a trial period if you’d like to assess the maid before finalising. However, many families skip the trial once they’re satisfied after the interview. We leave the choice up to you.' }
+                ].map((faq, index) => (
+                  <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <details className="group">
+                      <summary className="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                        <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                          {faq.question}
+                        </h3>
+                        <div className="flex-shrink-0 transition-transform group-open:rotate-180">
+                          <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </summary>
+                      <div className="px-6 pb-6">
+                        <p className="text-gray-600 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </details>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Closing CTA Block */}
+        <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Find Your Trusted Live-In Maid with EzyHelpers Today!</h2>
+                <p className="text-lg text-gray-700">Don’t let household chores or care responsibilities overwhelm you. With EzyHelpers, get reliable, background-verified live-in maids who fit right into your home and schedule.</p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Link href="/hire-helper" className="inline-flex items-center bg-primary-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors shadow">
+                  Book Your Live-In Maid
+                  <ArrowRightIcon className="h-5 w-5 ml-2" />
+                </Link>
+                <Link href="tel:+918031411776" className="inline-flex items-center bg-white border-2 border-primary-200 text-primary-700 font-semibold px-6 py-3 rounded-xl hover:bg-primary-50 transition-colors">
+                  <PhoneIcon className="h-5 w-5 mr-2" />
+                  Call 080-31411776
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Enhanced Related Services */}
+        <section className="relative section-padding bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div
+              className="absolute top-0 left-0 w-full h-full"
+              style={{
+                backgroundImage:
+                  `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23818cf8' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3Ccircle cx='15' cy='15' r='2'/%3E%3Ccircle cx='45' cy='15' r='2'/%3E%3Ccircle cx='15' cy='45' r='2'/%3E%3Ccircle cx='45' cy='45' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            ></div>
+          </div>
+
+          <div className="container-custom relative z-10">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-primary-100 text-primary-800 rounded-full px-4 py-2 mb-6">
+                <SparklesIcon className="h-4 w-4 mr-2" />
+                <span className="text-sm font-semibold">Complete Home Care Solutions</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Explore Our Other Services
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Complete your home care needs with our wide range of professional domestic help services
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Full-Time Maid Services",
+                  description: "Daily household help without live-in commitment",
+                  href: "/services/full-time-maids",
+                  icon: BuildingOffice2Icon,
+                  bgColor: "bg-orange-50",
+                  iconColor: "text-orange-600",
+                  borderColor: "border-orange-200"
+                },
+                {
+                  title: "Part-Time Maid Services",
+                  description: "Flexible cleaning on your schedule without full commitment",
+                  href: "/services/part-time-maids",
+                  icon: SparklesIcon,
+                  bgColor: "bg-purple-50",
+                  iconColor: "text-purple-600",
+                  borderColor: "border-purple-200"
+                },
+                {
+                  title: "Cook Services",
+                  description: "Delicious, hassle-free meals every day from professional cooks",
+                  href: "/services/cooks",
+                  icon: HeartIcon,
+                  bgColor: "bg-pink-50",
+                  iconColor: "text-pink-600",
+                  borderColor: "border-pink-200"
+                }
+              ].map((service, index) => {
+                const IconComponent = service.icon
+                return (
+                  <Link
+                    key={index}
+                    href={service.href}
+                    className={`group relative ${service.bgColor} rounded-2xl p-8 border-2 ${service.borderColor} hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
+                  >
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl transform translate-x-16 -translate-y-16"></div>
+                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full blur-2xl transform -translate-x-12 translate-y-12"></div>
+                    </div>
+
+                    <div className="relative z-10">
+                      <div className={`w-16 h-16 ${service.bgColor} group-hover:bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 border ${service.borderColor} group-hover:border-white/20`}>
+                        <IconComponent className={`h-8 w-8 ${service.iconColor} group-hover:text-white group-hover:scale-110 transition-all duration-300`} />
+                      </div>
+
+                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-white mb-4 font-display transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-600 group-hover:text-white/90 mb-6 leading-relaxed transition-colors duration-300">
+                        {service.description}
+                      </p>
+
+                      <div className="flex items-center justify-between">
+                        <span className={`${service.iconColor} group-hover:text-white font-semibold transition-colors duration-300`}>
+                          Learn More About {service.title}
+                        </span>
+                        <ArrowRightIcon className={`h-5 w-5 ${service.iconColor} group-hover:text-white group-hover:translate-x-1 transition-all duration-300`} />
+                      </div>
+                    </div>
+
+                    {index === 1 && (
+                      <div className="absolute -top-3 -left-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full transform -rotate-12 shadow-lg">
+                        Popular
+                      </div>
+                    )}
+                  </Link>
+                )
+              })}
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-gray-600 mb-6">
+                Can't find what you're looking for? We have more services available!
+              </p>
+              <Link
+                href="/hire-helper"
+                className="inline-flex items-center bg-primary-600 text-white hover:bg-primary-700 font-semibold px-8 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                View All Services
                 <ArrowRightIcon className="h-5 w-5 ml-2" />
               </Link>
-              <Link href="tel:+918031411776" className="inline-flex items-center bg-white border-2 border-primary-200 text-primary-700 font-semibold px-6 py-3 rounded-xl hover:bg-primary-50 transition-colors">
-                <PhoneIcon className="h-5 w-5 mr-2" />
-                Call 080-31411776
-              </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Enhanced Related Services */}
-      <section className="relative section-padding bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div
-            className="absolute top-0 left-0 w-full h-full"
-            style={{
-              backgroundImage:
-                `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23818cf8' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3Ccircle cx='15' cy='15' r='2'/%3E%3Ccircle cx='45' cy='15' r='2'/%3E%3Ccircle cx='15' cy='45' r='2'/%3E%3Ccircle cx='45' cy='45' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          ></div>
-        </div>
+        <NestCTA />
+        <AvailableInCities
+          serviceSlug="live-in-maids"
+          serviceName="Live-In Maids"
+          cities={[
+            { name: "Bangalore", href: "/cities/bangalore/live-in-maids" },
+            { name: "Bareilly", href: "/cities/bareilly/live-in-maid" },
+          ]}
+        />
+        {/* Blog guides interlinking */}
+        <CityBlogLinks
+          tags={['live-in maid', '24 hour maid', 'domestic help']}
+          title="Live-In Maid Hiring Guides"
+          subtitle="Costs, comparisons, and verification checklists from our experts."
+        />
 
-        <div className="container-custom relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-primary-100 text-primary-800 rounded-full px-4 py-2 mb-6">
-              <SparklesIcon className="h-4 w-4 mr-2" />
-              <span className="text-sm font-semibold">Complete Home Care Solutions</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Explore Our Other Services
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Complete your home care needs with our wide range of professional domestic help services
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[ 
-              {
-                title: "Full-Time Maid Services",
-                description: "Daily household help without live-in commitment",
-                href: "/services/full-time-maids",
-                icon: BuildingOffice2Icon,
-                bgColor: "bg-orange-50",
-                iconColor: "text-orange-600",
-                borderColor: "border-orange-200"
-              },
-              {
-                title: "Part-Time Maid Services", 
-                description: "Flexible cleaning on your schedule without full commitment",
-                href: "/services/part-time-maids",
-                icon: SparklesIcon,
-                bgColor: "bg-purple-50",
-                iconColor: "text-purple-600",
-                borderColor: "border-purple-200"
-              },
-              {
-                title: "Cook Services",
-                description: "Delicious, hassle-free meals every day from professional cooks",
-                href: "/services/cooks",
-                icon: HeartIcon,
-                bgColor: "bg-pink-50",
-                iconColor: "text-pink-600",
-                borderColor: "border-pink-200"
-              }
-            ].map((service, index) => {
-              const IconComponent = service.icon
-              return (
-                <Link
-                  key={index}
-                  href={service.href}
-                  className={`group relative ${service.bgColor} rounded-2xl p-8 border-2 ${service.borderColor} hover:border-transparent hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-rotate-1 cursor-pointer overflow-hidden`}
-                >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl transform translate-x-16 -translate-y-16"></div>
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full blur-2xl transform -translate-x-12 translate-y-12"></div>
-                  </div>
-
-                  <div className="relative z-10">
-                    <div className={`w-16 h-16 ${service.bgColor} group-hover:bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 border ${service.borderColor} group-hover:border-white/20`}>
-                      <IconComponent className={`h-8 w-8 ${service.iconColor} group-hover:text-white group-hover:scale-110 transition-all duration-300`} />
-                    </div>
-
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-white mb-4 font-display transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 group-hover:text-white/90 mb-6 leading-relaxed transition-colors duration-300">
-                      {service.description}
-                    </p>
-
-                    <div className="flex items-center justify-between">
-                      <span className={`${service.iconColor} group-hover:text-white font-semibold transition-colors duration-300`}>
-                        Learn More About {service.title}
-                      </span>
-                      <ArrowRightIcon className={`h-5 w-5 ${service.iconColor} group-hover:text-white group-hover:translate-x-1 transition-all duration-300`} />
-                    </div>
-                  </div>
-
-                  {index === 1 && (
-                    <div className="absolute -top-3 -left-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full transform -rotate-12 shadow-lg">
-                      Popular
-                    </div>
-                  )}
-                </Link>
-              )
-            })}
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">
-              Can't find what you're looking for? We have more services available!
-            </p>
-            <Link
-              href="/hire-helper"
-              className="inline-flex items-center bg-primary-600 text-white hover:bg-primary-700 font-semibold px-8 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              View All Services
-              <ArrowRightIcon className="h-5 w-5 ml-2" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-            <NestCTA />
-            <AvailableInCities
-        serviceSlug="live-in-maids"
-        serviceName="Live-In Maids"
-        cities={[
-          { name: "Bangalore", href: "/cities/bangalore/live-in-maids" },
-          { name: "Bareilly", href: "/cities/bareilly/live-in-maid" },
-        ]}
-      />
-      {/* Blog guides interlinking */}
-      <CityBlogLinks
-        tags={['live-in maid', '24 hour maid', 'domestic help']}
-        title="Live-In Maid Hiring Guides"
-        subtitle="Costs, comparisons, and verification checklists from our experts."
-      />
-
-      <Footer />
+        <Footer />
       </main>
     </>
   )
