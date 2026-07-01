@@ -212,27 +212,47 @@ const FAQS = [
   },
 ] as const
 
+/**
+ * Parse a display range like "₹600 – ₹1,200" into numeric min/max.
+ * schema.org price/minPrice/maxPrice must be plain numbers — currency symbols,
+ * commas, spaces or ranges are rejected by Google's structured-data validator.
+ */
+function parsePriceRange(range: string): { min: number; max: number } | null {
+  const nums = range.match(/\d[\d,]*/g)
+  if (!nums || nums.length === 0) return null
+  const parsed = nums.map((n) => Number(n.replace(/,/g, ''))).filter((n) => Number.isFinite(n))
+  if (parsed.length === 0) return null
+  return { min: parsed[0], max: parsed[parsed.length - 1] }
+}
+
 const JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    serviceType: 'Home Nursing Services',
     name: 'Home Nursing Services in Bangalore',
     areaServed: { '@type': 'City', name: 'Bangalore' },
     provider: {
       '@type': 'Organization',
       name: 'EzyHelpers',
+      url: 'https://www.ezyhelpers.com/',
+      telephone: '+918031411776',
     },
-    offers: PRICE_TABLE.map((row) => ({
-      '@type': 'Offer',
-      name: row.arrangement,
-      description: row.bestFor,
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'INR',
-        price: row.range,
-        unitText: row.unit,
-      },
-    })),
+    offers: PRICE_TABLE.map((row) => {
+      const r = parsePriceRange(row.range)
+      return {
+        '@type': 'Offer',
+        name: row.arrangement,
+        description: row.bestFor,
+        availability: 'https://schema.org/InStock',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          priceCurrency: 'INR',
+          ...(r ? { minPrice: r.min, maxPrice: r.max } : {}),
+          unitText: row.unit,
+        },
+      }
+    }),
   },
   {
     '@context': 'https://schema.org',

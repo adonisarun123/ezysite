@@ -169,6 +169,24 @@ export async function GET(req: NextRequest) {
   const to =
     (process.env.LEAD_DIGEST_RECIPIENTS || '').trim() || DIGEST_RECIPIENTS.join(', ')
 
+  // Dry-run health check (?dry=1): runs the full pipeline — auth, Supabase,
+  // leads query, summaries, email assembly — but does NOT send. Lets a watchdog
+  // verify the digest is healthy each day without emailing the team a second
+  // copy. Returns ok:true only if everything up to the send succeeded.
+  const isDryRun = req.nextUrl.searchParams.get('dry') === '1'
+  if (isDryRun) {
+    return NextResponse.json({
+      ok: true,
+      dryRun: true,
+      wouldSendTo: to,
+      yesterday: yesterday.total,
+      weekSoFar: weekSoFar.total,
+      monthSoFar: monthSoFar.total,
+      chatbotSessions: chatbot?.sessions ?? null,
+      dataNote,
+    })
+  }
+
   try {
     const transporter = createTransporter()
     await transporter.sendMail({

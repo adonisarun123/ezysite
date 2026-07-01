@@ -103,6 +103,7 @@ const FAQS = [
 ] as const
 
 const RELATED = [
+  { label: 'Post-Stroke Speech Rehab', href: '/care-services/post-stroke-speech-rehab-at-home-bangalore' },
   { label: 'Geriatric Physiotherapy', href: '/care-services/geriatric-physiotherapy-bangalore' },
   { label: 'Post-Surgical Physiotherapy', href: '/care-services/post-surgical-physiotherapy-bangalore' },
   { label: 'Physiotherapy at Home', href: '/care-services/physiotherapy-at-home-bangalore' },
@@ -116,7 +117,15 @@ const JSONLD = [
     medicalSpecialty: ['PhysicalTherapy', 'Neurology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
-    telephone: '+91-80-31411776',
+    telephone: '+918031411776',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'HSR Layout',
+      addressLocality: 'Bangalore',
+      addressRegion: 'Karnataka',
+      postalCode: '560102',
+      addressCountry: 'IN',
+    },
   },
   {
     '@context': 'https://schema.org',

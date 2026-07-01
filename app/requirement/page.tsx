@@ -27,6 +27,13 @@ export const metadata: Metadata = {
     description: 'Submit your specific service requirements and we will connect you with the perfect helper.',
     url: 'https://www.ezyhelpers.com/requirement',
   },
+  robots: {
+    index: false, // Lead-capture form page — keep out of the index
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://www.ezyhelpers.com/requirement',
+  },
 }
 
 const breadcrumbItems = [

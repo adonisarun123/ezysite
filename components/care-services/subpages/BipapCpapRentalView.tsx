@@ -115,11 +115,27 @@ const FAQS = [
 const JSONLD = [
   {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'Service',
+    serviceType: 'BiPAP & CPAP Machine Rental, Bangalore, EzyHelpers',
     name: 'BiPAP & CPAP Machine Rental, Bangalore, EzyHelpers',
-    description: nested.description,
-    brand: { '@type': 'Brand', name: 'EzyHelpers' },
+    ...(nested.description ? { description: nested.description } : {}),
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'EzyHelpers',
+      url: 'https://www.ezyhelpers.com/',
+      telephone: '+918031411776',
+      image: 'https://www.ezyhelpers.com/ezyhelper_logo_new.png',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'HSR Layout',
+        addressLocality: 'Bangalore',
+        addressRegion: 'Karnataka',
+        postalCode: '560102',
+        addressCountry: 'IN',
+      },
+    },
     areaServed: { '@type': 'City', name: 'Bangalore' },
+    url: `https://www.ezyhelpers.com${PATH}`,
   },
   {
     '@context': 'https://schema.org',
@@ -208,6 +224,7 @@ export default function BipapCpapRentalView() {
         enquirySource={PATH}
         primaryCtaLabel="Get a BiPAP / CPAP today"
         related={[
+          { label: 'Respiratory & COPD Care', href: '/care-services/respiratory-copd-care-at-home-bangalore' },
           { label: 'Oxygen Concentrator Rental', href: '/care-services/oxygen-concentrator-rental-bangalore' },
           { label: 'Patient Monitor Rental', href: '/care-services/patient-monitor-rental-bangalore' },
           { label: 'Hospital Bed Rental', href: '/care-services/hospital-bed-rental-bangalore' },

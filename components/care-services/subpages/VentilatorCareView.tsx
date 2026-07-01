@@ -91,7 +91,15 @@ const JSONLD = [
     medicalSpecialty: ['Critical Care', 'Pulmonology'],
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
-    telephone: '+91-80-31411776',
+    telephone: '+918031411776',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'HSR Layout',
+      addressLocality: 'Bangalore',
+      addressRegion: 'Karnataka',
+      postalCode: '560102',
+      addressCountry: 'IN',
+    },
   },
   {
     '@context': 'https://schema.org',

@@ -120,11 +120,27 @@ const FAQS = [
 const JSONLD = [
   {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'Service',
+    serviceType: 'Hospital Bed Rental, Bangalore, EzyHelpers',
     name: 'Hospital Bed Rental, Bangalore, EzyHelpers',
-    description: nested.description,
-    brand: { '@type': 'Brand', name: 'EzyHelpers' },
+    ...(nested.description ? { description: nested.description } : {}),
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'EzyHelpers',
+      url: 'https://www.ezyhelpers.com/',
+      telephone: '+918031411776',
+      image: 'https://www.ezyhelpers.com/ezyhelper_logo_new.png',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'HSR Layout',
+        addressLocality: 'Bangalore',
+        addressRegion: 'Karnataka',
+        postalCode: '560102',
+        addressCountry: 'IN',
+      },
+    },
     areaServed: { '@type': 'City', name: 'Bangalore' },
+    url: `https://www.ezyhelpers.com${PATH}`,
   },
   {
     '@context': 'https://schema.org',

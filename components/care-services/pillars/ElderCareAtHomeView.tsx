@@ -143,6 +143,41 @@ const CONDITIONS = [
   'Memory loss & confusion',
 ] as const
 
+/* Bangalore localities with dedicated elder-care landing pages. Linked from the
+ * pillar so each locality page has an internal-link path (no longer orphaned). */
+const AREAS_SERVED = [
+  { name: 'Whitefield', href: '/care-services/elderly-care-whitefield-bangalore' },
+  { name: 'HSR Layout', href: '/care-services/elderly-care-hsr-layout-bangalore' },
+  { name: 'Koramangala', href: '/care-services/elderly-care-koramangala-bangalore' },
+  { name: 'Indiranagar', href: '/care-services/elderly-care-indiranagar-bangalore' },
+  { name: 'Jayanagar', href: '/care-services/elderly-care-jayanagar-bangalore' },
+  { name: 'Marathahalli', href: '/care-services/elderly-care-marathahalli-bangalore' },
+  { name: 'Sarjapur Road', href: '/care-services/elderly-care-sarjapur-road-bangalore' },
+  { name: 'Electronic City', href: '/care-services/elderly-care-electronic-city-bangalore' },
+  { name: 'Bannerghatta Road', href: '/care-services/elderly-care-bannerghatta-road-bangalore' },
+] as const
+
+/* Elderly-care guides linked from the pillar so each post gains a contextual
+ * inbound link from a high-authority page (under-linked-page fix). */
+const ELDER_GUIDES = [
+  {
+    title: 'Nutrition for Elderly Parents: An Indian Family’s Practical Guide',
+    href: '/blog/nutrition-for-elderly-parents-india',
+  },
+  {
+    title: 'Sleep Problems in Elderly Parents: Why They Happen and How to Help',
+    href: '/blog/sleep-problems-elderly-parents-india',
+  },
+  {
+    title: 'Hearing and Vision Loss in Elderly Parents: Staying Connected',
+    href: '/blog/hearing-vision-loss-elderly-parents-india',
+  },
+  {
+    title: 'Palliative and End-of-Life Care at Home: A Guide for Families',
+    href: '/blog/palliative-end-of-life-care-at-home-india',
+  },
+] as const
+
 /* TESTIMONIALS, ILLUSTRATIVE. These are realistic, representative scenarios
  * written for layout/marketing and are NOT verbatim quotes from named clients.
  * Replace with consented, attributable reviews before launch. */
@@ -517,6 +552,82 @@ export default function ElderCareAtHomeView() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ─────────────── Areas we serve ─────────────── */}
+        <section aria-labelledby="areas-served" className="border-y border-neutral-200 bg-care-50 px-4 py-20 sm:px-6 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
+              Areas we serve in Bangalore
+            </p>
+            <h2 id="areas-served" className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
+              Elder care, close to your home.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
+              We place caregivers within 30 minutes of your home across Bangalore, briefed on your local
+              hospitals and matched to your parent’s language and routine. Explore elder care in your locality:
+            </p>
+            <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {AREAS_SERVED.map((a) => (
+                <li key={a.href}>
+                  <Link
+                    href={a.href}
+                    className="group flex items-center justify-between gap-3 rounded-2xl border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-800 transition hover:border-care-300 hover:bg-care-50"
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <MapPinIcon className="h-4 w-4 shrink-0 text-care-500" aria-hidden />
+                      {a.name}
+                    </span>
+                    <ArrowRightIcon className="h-4 w-4 shrink-0 text-care-400 transition group-hover:translate-x-1" aria-hidden />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-sm leading-relaxed text-neutral-500">
+              Comparing your options? Read{' '}
+              <Link href="/care-services/home-care-vs-old-age-home" className="font-semibold text-care-600 underline-offset-2 hover:underline">
+                home care vs an old age home
+              </Link>
+              , or check the{' '}
+              <Link href="/care-services/signs-elderly-parent-needs-care-bangalore" className="font-semibold text-care-600 underline-offset-2 hover:underline">
+                signs an elderly parent needs care
+              </Link>
+              . Not sure how much cover you need? Compare{' '}
+              <Link href="/care-services/live-in-vs-day-shift-caregiver" className="font-semibold text-care-600 underline-offset-2 hover:underline">
+                live-in vs day-shift caregivers
+              </Link>
+              , or explore round-the-clock{' '}
+              <Link href="/care-services/24-hour-elderly-care-at-home-bangalore" className="font-semibold text-care-600 underline-offset-2 hover:underline">
+                24-hour elderly care at home
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
+        {/* ─────────────── Helpful guides ─────────────── */}
+        <section aria-labelledby="elder-guides" className="bg-white px-4 py-20 sm:px-6 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-care-500">
+              Guides for families
+            </p>
+            <h2 id="elder-guides" className="mt-4 font-careSerif text-[clamp(1.85rem,4.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.025em] text-neutral-950">
+              Practical reading on caring for ageing parents.
+            </h2>
+            <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {ELDER_GUIDES.map((g) => (
+                <li key={g.href}>
+                  <Link
+                    href={g.href}
+                    className="group flex items-start justify-between gap-3 rounded-2xl border border-neutral-200 bg-white px-5 py-4 text-sm font-medium text-neutral-800 transition hover:border-care-300 hover:bg-care-50"
+                  >
+                    <span>{g.title}</span>
+                    <ArrowRightIcon className="mt-0.5 h-4 w-4 shrink-0 text-care-400 transition group-hover:translate-x-1" aria-hidden />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 

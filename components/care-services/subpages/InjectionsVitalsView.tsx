@@ -104,6 +104,7 @@ const FAQS = [
 const RELATED = [
   { label: 'IV Therapy & Infusion', href: '/care-services/iv-therapy-at-home-bangalore' },
   { label: 'Wound Care & Dressing', href: '/care-services/wound-care-dressing-at-home-bangalore' },
+  { label: 'Diabetes Care', href: '/care-services/diabetes-care-at-home-bangalore' },
   { label: 'Post-Surgical Nursing', href: '/care-services/post-surgical-nursing-care-bangalore' },
   { label: 'Home Nursing Care', href: '/care-services/home-nursing-care-bangalore' },
 ] as const
@@ -117,6 +118,14 @@ const JSONLD = [
     areaServed: { '@type': 'City', name: 'Bangalore' },
     url: `https://www.ezyhelpers.com${PATH}`,
     telephone: '+918031411776',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'HSR Layout',
+      addressLocality: 'Bangalore',
+      addressRegion: 'Karnataka',
+      postalCode: '560102',
+      addressCountry: 'IN',
+    },
   },
   {
     '@context': 'https://schema.org',
