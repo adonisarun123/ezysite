@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -43,7 +45,10 @@ export const metadata: Metadata = {
     }
 }
 
-export default function BangaloreChauffeurService() {
+export default async function BangaloreChauffeurService() {
+  const __dbHtml = await getHtmlContent("cities/bangalore/chauffeur-service")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
     const faqs: FAQItem[] = [
         { question: 'What is a Chauffeur Service in Bangalore?', answer: 'A Chauffeur Service in Bangalore means you hire a trained driver to drive your own car. The car always belongs to you. The Chauffeur handles driving, parking, traffic, and safety so you can relax during daily travel, office commutes, or family trips.' },
         { question: 'What is the difference between a regular driver and a professional Chauffeur?', answer: 'A professional Chauffeur is trained to drive premium and high-end cars like BMW, Mercedes, or Audi. They follow proper driving manners, keep the car safe, and behave professionally. Regular drivers may not have this level of training or experience.' },

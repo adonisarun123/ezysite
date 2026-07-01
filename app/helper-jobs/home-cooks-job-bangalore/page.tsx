@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -21,6 +23,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 import ReferEarnSection from '@/components/ReferEarnSection'
 import { JobPostingSchema } from '@/components/schema'
 
@@ -71,7 +74,11 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function HomeCookJobsBangalorePage() {
+export default async function HomeCookJobsBangalorePage() {
+  const __dbHtml = await getHtmlContent("helper-jobs/home-cooks-job-bangalore")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const faqItems = await getHelperJobFaqs("helper-jobs/home-cooks-job-bangalore", faqs)
     return (
         <>
             <JobPostingSchema
@@ -962,7 +969,7 @@ export default function HomeCookJobsBangalorePage() {
                                 <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
                                 <p className="text-gray-600 mt-6 text-lg">Have questions about our home cook jobs? Find answers to commonly asked questions below.</p>
                             </div>
-                            <FAQAccordion faqs={faqs} />
+                            <FAQAccordion faqs={faqItems} />
                         </div>
                     </div>
                 </section>

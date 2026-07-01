@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -39,7 +42,14 @@ export const metadata: Metadata = {
     }
 }
 
-export default function JapaNannyServicesPage() {
+export default async function JapaNannyServicesPage() {
+  const __dbHtml = await getHtmlContent("services/japa-nanny-services")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("japa-nanny-services", {
+    question: "How do I hire a japa maid through EzyHelpers?",
+    answer: "EzyHelpers provides experienced, background-verified japa maids for newborn and postnatal mother care, typically live-in. Placement usually takes 24–72 hours, with trained caregivers and a quick replacement guarantee.",
+  })
     const faqs: FAQItem[] = [
         {
             question: 'What does a Postpartum Care maid do at home?',
@@ -316,9 +326,9 @@ export default function JapaNannyServicesPage() {
                 </section>
 
                 <QuickAnswer
-                  question="How do I hire a japa maid through EzyHelpers?"
-                  answer="EzyHelpers provides experienced, background-verified japa maids for newborn and postnatal mother care, typically live-in. Placement usually takes 24–72 hours, with trained caregivers and a quick replacement guarantee."
-                />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
                 {/* Why Choose Section */}
                 <section className="section-padding bg-gray-50">

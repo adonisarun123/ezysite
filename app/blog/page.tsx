@@ -12,7 +12,7 @@ import {
   ClockIcon,
 } from '@heroicons/react/24/outline';
 
-import { posts } from '@/lib/blogData';
+import { getAllBlogPosts } from '@/lib/blogSource';
 import BlogList from '@/components/BlogList';
 
 export const metadata: Metadata = {
@@ -32,7 +32,8 @@ export const metadata: Metadata = {
   }
 }
 
-export default function BlogIndex() {
+export default async function BlogIndex() {
+  const posts = await getAllBlogPosts();
   const featured = posts.find((p) => p.featured) ?? posts[0];
   const others = posts.filter((p) => p.id !== featured.id);
 

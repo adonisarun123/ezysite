@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
   ShieldCheckIcon,
   CheckCircleIcon,
@@ -22,24 +25,31 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Pest Control for Home - Safe & Effective | EzyHelpers',
-  description: 'Book home pest control to eliminate cockroaches, termites, rodents, and ants using safe, odourless, long-lasting treatments.',
-  keywords: 'pest control, termite control, cockroach control, rodent control, home pest control service',
+  title: 'Pest Control for Home in Bareilly - Safe & Effective',
+  description: 'Book pest control for home in Bareilly to eliminate cockroaches, termites, rodents, and ants using safe, odourless, long-lasting treatments.',
+  keywords: 'pest control bareilly, termite control bareilly, cockroach control bareilly, pest control service bareilly',
   openGraph: {
-    title: 'Pest Control for Home - Safe & Effective | EzyHelpers',
-    description: 'Book home pest control to eliminate cockroaches, termites, rodents, and ants using safe, odourless, long-lasting treatments.',
+    title: 'Pest Control for Home in Bareilly - Safe & Effective',
+    description: 'Book pest control for home in Bareilly to eliminate cockroaches, termites, rodents, and ants using safe, odourless, long-lasting treatments.',
     url: 'https://www.ezyhelpers.com/services/pest-control',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
-    images: [{ url: "https://www.ezyhelpers.com/og?title=Pest%20Control%20for%20Home%20-%20Safe%20%26%20Effective", width: 1200, height: 630, alt: "Pest Control for Home - Safe & Effective | EzyHelpers" }],
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Pest%20Control%20for%20Home%20in%20Bareilly%20-%20Safe%20%26%20Effective", width: 1200, height: 630, alt: "Pest Control for Home in Bareilly - Safe & Effective" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/pest-control'
   }
 }
 
-export default function PestControlPage() {
+export default async function PestControlPage() {
+  const __dbHtml = await getHtmlContent("services/pest-control")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("pest-control", {
+    question: "How do I book pest control through EzyHelpers?",
+    answer: "EzyHelpers offers professional pest control for cockroaches, termites, bed bugs, and rodents using safe, effective treatments. Book online or call 080-31411776 for inspection and same-week service.",
+  })
   const breadcrumbs = [
     { name: "Home", url: "https://www.ezyhelpers.com" },
     { name: "Services", url: "https://www.ezyhelpers.com/services" },
@@ -105,20 +115,20 @@ export default function PestControlPage() {
 
   const faqs = [
     {
-      question: "Do you offer same-day pest control services?",
-      answer: "Yes, we offer same-day pest control services. Our background-verified pest control experts respond quickly with effective solutions to eliminate pests and restore hygiene to your home without delay."
+      question: "Do you offer same-day pest services in Bareilly?",
+      answer: "Yes, we offer same-day pest services in Bareilly. Our local, background-verified pest control experts respond quickly with effective solutions to eliminate pests and restore hygiene to your home without delay."
     },
     {
-      question: "What types of pests do you treat in homes?",
-      answer: "We treat a wide range of pests in homes, including termites, cockroaches, ants, mosquitoes, rats, mice, bed bugs, and general bugs, using safe and effective pest control treatments."
+      question: "What types of pests do you treat in Bareilly homes?",
+      answer: "We treat a wide range of pests in Bareilly homes, including termites, cockroaches, ants, mosquitoes, rats, mice, bed bugs, and general bugs, using safe and effective pest control treatments."
     },
     {
-      question: "Do you handle cockroach infestations in kitchens?",
-      answer: "Yes, we provide specialised cockroach pest control, especially for kitchens. Our solutions are safe, fast-acting, and effective in eliminating roaches and keeping your kitchen hygienic."
+      question: "Do you handle cockroach infestations in Bareilly kitchens?",
+      answer: "Yes, we provide specialised cockroach pest control in Bareilly, especially for kitchens. Our solutions are safe, fast-acting, and effective in eliminating roaches and keeping your kitchen hygienic."
     },
     {
-      question: "What are the benefits of regular pest control?",
-      answer: "Regular pest control prevents infestations, protects health, reduces allergies, and stops long-term damage to furniture and food. It keeps your home clean, safe, and stress-free all year round."
+      question: "What are the benefits of regular pest control in Bareilly?",
+      answer: "Regular pest control in Bareilly prevents infestations, protects health, reduces allergies, and stops long-term damage to furniture and food. It keeps your home clean, safe, and stress-free all year round."
     },
     {
       question: "Is mosquito control available through EzyHelpers?",
@@ -129,12 +139,12 @@ export default function PestControlPage() {
       answer: "Yes, we provide ant control service by targeting colonies and trails with safe, effective treatments that prevent them from returning."
     },
     {
-      question: "How do you prevent pests from returning after treatment?",
-      answer: "We prevent pest recurrence through targeted treatment, sealing entry points, hygiene tips, and follow-up services to maintain long-term pest-free conditions."
+      question: "How do you prevent pests from returning after treatment in Bareilly?",
+      answer: "We prevent pest recurrence in Bareilly through targeted treatment, sealing entry points, hygiene tips, and follow-up services to maintain long-term pest-free conditions."
     },
     {
-      question: "How often should I schedule pest control?",
-      answer: "We recommend pest control every 3 to 6 months, depending on pest severity, season, and home conditions, to ensure ongoing protection."
+      question: "How often should I schedule pest control in Bareilly?",
+      answer: "We recommend pest control every 3 to 6 months in Bareilly, depending on pest severity, season, and home conditions, to ensure ongoing protection."
     },
     {
       question: "Are your pest control chemicals safe for children and pets?",
@@ -142,13 +152,13 @@ export default function PestControlPage() {
     },
     {
       question: "How do you identify pest entry points and prevent future infestations?",
-      answer: "Our pest services include a full inspection to find pest entry points like wall gaps, drain outlets, or window cracks. We seal these areas and apply preventive barriers to stop pests from returning, ensuring long-term protection for your home."
+      answer: "Our pest services in Bareilly include a full inspection to find pest entry points like wall gaps, drain outlets, or window cracks. We seal these areas and apply preventive barriers to stop pests from returning, ensuring long-term protection for your home."
     }
   ]
 
   return (
     <main className="min-h-screen">
-      <ServiceSchema serviceName={"Pest Control for Home - Safe & Effective"} serviceDescription={"Book pest control for home to eliminate cockroaches, termites, rodents, and ants using safe, odourless, long-lasting treatments."} serviceType={"Pest Control for Home - Safe & Effective"} serviceUrl={"https://www.ezyhelpers.com/services/pest-control"} />
+      <ServiceSchema serviceName={"Pest Control for Home in Bareilly - Safe & Effective"} serviceDescription={"Book pest control for home in Bareilly to eliminate cockroaches, termites, rodents, and ants using safe, odourless, long-lasting treatments."} serviceType={"Pest Control for Home in Bareilly - Safe & Effective"} serviceUrl={"https://www.ezyhelpers.com/services/pest-control"} />
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/pest-control" />
       
@@ -176,7 +186,7 @@ export default function PestControlPage() {
             </h1>
             
             <p className="text-xl lg:text-2xl text-green-100 mb-10 leading-relaxed max-w-3xl mx-auto">
-              Protect your home and family with professional pest control that targets cockroaches, ants, mosquitoes, termites, and more. Our trained experts use safe, eco-friendly methods.
+              Protect your home and family with professional pest control in Bareilly that targets cockroaches, ants, mosquitoes, termites, and more. Our trained experts use safe, eco-friendly methods.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -217,8 +227,8 @@ export default function PestControlPage() {
       </section>
 
       <QuickAnswer
-        question="How do I book pest control through EzyHelpers?"
-        answer="EzyHelpers offers professional pest control for cockroaches, termites, bed bugs, and rodents using safe, effective treatments. Book online or call 080-31411776 for inspection and same-week service."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       {/* Why Choose Us */}
@@ -229,7 +239,7 @@ export default function PestControlPage() {
               Why Choose EzyHelpers for Pest Control?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Trust, safety, and expertise for your home
+              Trust, safety, and local expertise for your Bareilly home
             </p>
           </div>
 
@@ -284,7 +294,7 @@ export default function PestControlPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Our Pest Control Services
+              Our Pest Control Services in Bareilly
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Complete solutions to keep your home safe, clean, and pest-free
@@ -330,7 +340,7 @@ export default function PestControlPage() {
               Local Pest Challenges We Solve
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Common household pest problems and how we handle them
+              Common pest problems in Bareilly homes and how we handle them
             </p>
           </div>
 
@@ -348,7 +358,7 @@ export default function PestControlPage() {
               },
               {
                 title: "Seasonal Changes",
-                description: "Adapt pest control methods based on seasonal weather patterns",
+                description: "Adapt pest control methods based on Bareilly's weather patterns",
                 icon: SparklesIcon
               }
             ].map((challenge, index) => {

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import { whatsappSendUrl } from '@/lib/whatsappUrl'
 import Navbar from '@/components/Navbar'
@@ -22,6 +24,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 
 export const metadata: Metadata = {
     title: 'झारखंड हेल्पर्स के लिए बैंगलोर में भरोसेमंद होम कुक जॉब्स',
@@ -69,7 +72,11 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function HomeCookJobsBangaloreHindiPage() {
+export default async function HomeCookJobsBangaloreHindiPage() {
+  const __dbHtml = await getHtmlContent("helper-jobs/home-cooks-job-bangalore/hin")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const faqItems = await getHelperJobFaqs("helper-jobs/home-cooks-job-bangalore/hin", faqs)
     return (
         <div className="noto-sans-devanagari-hindi">
             <div lang="hi" className="min-h-screen">
@@ -927,7 +934,7 @@ export default function HomeCookJobsBangaloreHindiPage() {
                                 <div className="w-24 h-1 bg-teal-500 mx-auto mt-4 rounded-full"></div>
                                 <p className="text-gray-600 mt-6 text-lg">हमारी कुक की नौकरियों के बारे में सवाल हैं? नीचे दिए गए सामान्य सवालों के जवाब पढ़ें।</p>
                             </div>
-                            <FAQAccordion faqs={faqs} />
+                            <FAQAccordion faqs={faqItems} />
                         </div>
                     </div>
                 </section>

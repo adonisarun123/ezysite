@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -26,6 +28,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
@@ -38,11 +41,7 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/home-cook-jobs-bangalore',
-        languages: {
-            'en': 'https://www.ezyhelpers.com/helper-jobs/assam/home-cook-jobs-bangalore',
-            'hi': 'https://www.ezyhelpers.com/helper-jobs/assam/home-cook-jobs-bangalore/hin'
-        }
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/assam/home-cook-jobs-bangalore'
     }
 }
 
@@ -73,7 +72,11 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function HomeCookJobsAssamBangalorePage() {
+export default async function HomeCookJobsAssamBangalorePage() {
+  const __dbHtml = await getHtmlContent("helper-jobs/assam/home-cook-jobs-bangalore")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const faqItems = await getHelperJobFaqs("helper-jobs/assam/home-cook-jobs-bangalore", faqs)
     return (
         <>
             <main className="min-h-screen">
@@ -603,7 +606,7 @@ export default function HomeCookJobsAssamBangalorePage() {
                             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-display">FAQs</h2>
                             <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
                         </div>
-                        <FAQAccordion faqs={faqs} />
+                        <FAQAccordion faqs={faqItems} />
                     </div>
                 </section>
 

@@ -1,4 +1,7 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -41,7 +44,15 @@ export const metadata: Metadata = {
   }
 }
 
-export default function CarpentersPage() {
+export default async function CarpentersPage() {
+  const __dbHtml = await getHtmlContent("services/carpenters")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("carpenters", {
+    question: "How do I hire a carpenter through EzyHelpers?",
+    answer: "EzyHelpers connects you with skilled, background-verified carpenters for furniture repair, fittings, and custom woodwork. Book online or call 080-31411776; same-day and scheduled visits are available with clear, upfront pricing.",
+  })
+
   const cities = [
     { name: 'Bangalore', href: '/cities/bangalore/carpenter' },
     { name: 'Bareilly', href: '/cities/bareilly/carpenter' },
@@ -359,9 +370,9 @@ export default function CarpentersPage() {
         </section>
 
         <QuickAnswer
-          question="How do I hire a carpenter through EzyHelpers?"
-          answer="EzyHelpers connects you with skilled, background-verified carpenters for furniture repair, fittings, and custom woodwork. Book online or call 080-31411776; same-day and scheduled visits are available with clear, upfront pricing."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* Important Considerations */}
         <section className="section-padding bg-white">

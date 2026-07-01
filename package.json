@@ -29,7 +29,9 @@
     "test:on-demand-logic": "tsx scripts/verify-on-demand-help-logic.ts",
     "test:on-demand-db": "tsx scripts/verify-on-demand-bookings-db.ts",
     "chatbot:gap-digest": "tsx --env-file=.env.development scripts/chatbot-gap-digest.ts",
-    "faq:verify": "tsx --env-file=.env.development scripts/verify-faq-roundtrip.ts"
+    "faq:verify": "tsx --env-file=.env.development scripts/verify-faq-roundtrip.ts",
+    "content:upload": "tsx --env-file=.env.local scripts/upload-site-content.ts",
+    "content:upload:dry": "tsx --env-file=.env.local scripts/upload-site-content.ts --dry-run"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",

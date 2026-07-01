@@ -1,3 +1,6 @@
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
@@ -45,7 +48,15 @@ export const metadata: Metadata = {
   }
 }
 
-export default function OnDemandHelpersPage() {
+export default async function OnDemandHelpersPage() {
+  const __dbHtml = await getHtmlContent("services/on-demand-helpers")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("on-demand-helpers", {
+    question: "How do I book an on-demand helper through EzyHelpers?",
+    answer: "EzyHelpers provides same-day, on-demand helpers for cleaning, kitchen help, event support, and one-off household tasks. Book online or call 080-31411776 — helpers are background-verified and available within hours in most areas.",
+  })
+
   const cities = [
     { name: 'Bangalore', href: '/cities/bangalore/on-demand-helper' },
     { name: 'Bareilly', href: '/cities/bareilly/on-demand-helper' },
@@ -379,9 +390,9 @@ export default function OnDemandHelpersPage() {
         </section>
 
         <QuickAnswer
-          question="How do I book an on-demand helper through EzyHelpers?"
-          answer="EzyHelpers provides same-day, on-demand helpers for cleaning, kitchen help, event support, and one-off household tasks. Book online or call 080-31411776 — helpers are background-verified and available within hours in most areas."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* Why Choose Section */}
         <section className="section-padding bg-white">

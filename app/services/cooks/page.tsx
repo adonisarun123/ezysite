@@ -1,4 +1,7 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -44,7 +47,15 @@ export const metadata: Metadata = {
   }
 }
 
-export default function CooksPage() {
+export default async function CooksPage() {
+  const __dbHtml = await getHtmlContent("services/cooks")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer('cooks', {
+    question: "How do I hire a home cook through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified home cooks skilled in Indian and regional cuisines, available live-in, full-time, or part-time. Placement typically takes 24–72 hours, with a quick replacement guarantee and direct payment to your cook.",
+  })
+
   const cities = [
     { name: 'Bangalore', href: '/cities/bangalore/cooks' },
     { name: 'Bareilly', href: '/cities/bareilly/cooks' },
@@ -381,9 +392,9 @@ export default function CooksPage() {
         </section>
 
         <QuickAnswer
-          question="How do I hire a home cook through EzyHelpers?"
-          answer="EzyHelpers provides background-verified home cooks skilled in Indian and regional cuisines, available live-in, full-time, or part-time. Placement typically takes 24–72 hours, with a quick replacement guarantee and direct payment to your cook."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* The EzyHelpers Difference */}
         <section className="section-padding bg-background-secondary">

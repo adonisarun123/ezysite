@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -7,6 +9,7 @@ import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -46,7 +49,14 @@ export const metadata: Metadata = {
     }
 }
 
-export default function ProfessionalChefPage() {
+export default async function ProfessionalChefPage() {
+  const __dbHtml = await getHtmlContent("services/professional-chef-for-home")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("professional-chef-for-home", {
+    question: "How do I hire a professional chef for home through EzyHelpers?",
+    answer: "EzyHelpers provides trained professional chefs for daily gourmet meals, parties, and special diets at home. Chefs are background-verified, with placement typically in 24–72 hours and menus tailored to your preferences.",
+  })
     const faqs: FAQItem[] = [
         { question: 'What does a professional chef for home do?', answer: 'A professional chef for home prepares fresh, high-quality meals in your kitchen based on your family’s taste, diet needs, and daily routine. They handle menu planning, cooking, basic kitchen organisation, and ensure every meal is hygienic, nutritious, and well presented.' },
         { question: 'Can a home chef cook special diet food?', answer: 'Yes. Our home chefs prepare customised meals for vegetarian, vegan, keto, diabetic-friendly, gluten-free, and other health-based diets. Meals are planned according to medical advice, nutrition goals, and personal food preferences.' },
@@ -282,9 +292,9 @@ export default function ProfessionalChefPage() {
                 </section>
 
                 <QuickAnswer
-                  question="How do I hire a professional chef for home through EzyHelpers?"
-                  answer="EzyHelpers provides trained professional chefs for daily gourmet meals, parties, and special diets at home. Chefs are background-verified, with placement typically in 24–72 hours and menus tailored to your preferences."
-                />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
                 {/* Why Choose EzyHelpers for Home Chef Services? */}
                 <section className="section-padding bg-gray-50">

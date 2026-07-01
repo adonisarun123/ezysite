@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import { whatsappSendUrl } from '@/lib/whatsappUrl'
 import Navbar from '@/components/Navbar'
@@ -27,6 +29,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
@@ -75,7 +78,11 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function HousekeepingCoupleJobsBangaloreHindiPage() {
+export default async function HousekeepingCoupleJobsBangaloreHindiPage() {
+  const __dbHtml = await getHtmlContent("helper-jobs/jharkhand/live-in-housekeeping-couple-job-bangalore/hin")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const faqItems = await getHelperJobFaqs("helper-jobs/jharkhand/live-in-housekeeping-couple-job-bangalore/hin", faqs)
     return (
         <>
             <div lang="hi" className="min-h-screen noto-sans-devanagari-hindi">
@@ -674,7 +681,7 @@ export default function HousekeepingCoupleJobsBangaloreHindiPage() {
                             <div className="w-24 h-2 bg-orange-600 mx-auto mt-4 rounded-full"></div>
                         </div>
                         <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl border border-gray-100">
-                            <FAQAccordion faqs={faqs} />
+                            <FAQAccordion faqs={faqItems} />
                         </div>
                     </div>
                 </section>

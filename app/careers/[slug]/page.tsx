@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { CAREERS_DEDICATED_PAGE_SLUGS, getJobBySlug, jobOpenings } from '@/lib/careersData'
+import { CAREERS_DEDICATED_PAGE_SLUGS, jobOpenings } from '@/lib/careersData'
+import { getJobBySlug, getAllJobs } from '@/lib/careersSource'
 import ApmApplicationForm from '@/components/careers/ApmApplicationForm'
 import SalesExecutiveApplicationForm from '@/components/careers/SalesExecutiveApplicationForm'
 import CareersRoleApplicationForm from '@/components/careers/CareersRoleApplicationForm'
@@ -36,7 +37,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const job = getJobBySlug(slug)
+  const job = await getJobBySlug(slug)
   if (!job) {
     return { title: 'Role not found | EzyHelpers' }
   }
@@ -136,7 +137,7 @@ const DEFAULT_THEME = CATEGORY_THEME.Operations
 
 export default async function CareerJobPage({ params }: Props) {
   const { slug } = await params
-  const job = getJobBySlug(slug)
+  const job = await getJobBySlug(slug)
   if (!job) notFound()
 
   const theme = CATEGORY_THEME[job.category] ?? DEFAULT_THEME
@@ -151,7 +152,8 @@ export default async function CareerJobPage({ params }: Props) {
   const inlineFormKind = job.applicationForm ?? 'apm'
 
   // Related roles from the same category (excluding current)
-  const relatedRoles = jobOpenings
+  const allJobs = await getAllJobs()
+  const relatedRoles = allJobs
     .filter((j) => j.category === job.category && j.slug !== job.slug)
     .slice(0, 3)
 

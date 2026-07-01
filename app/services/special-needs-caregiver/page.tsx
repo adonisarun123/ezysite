@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -40,7 +43,14 @@ export const metadata: Metadata = {
     }
 }
 
-export default function SpecialNeedsCaregiverPage() {
+export default async function SpecialNeedsCaregiverPage() {
+  const __dbHtml = await getHtmlContent("services/special-needs-caregiver")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("special-needs-caregiver", {
+    question: "How do I find a special-needs caregiver through EzyHelpers?",
+    answer: "EzyHelpers provides trained, background-verified caregivers experienced in supporting children and adults with special needs — live-in, full-time, or part-time. Placement typically takes 24–72 hours, with a quick replacement guarantee.",
+  })
     const faqs: FAQItem[] = [
         {
             question: 'Can you provide Special Needs caregivers for specific conditions?',
@@ -290,9 +300,9 @@ export default function SpecialNeedsCaregiverPage() {
             </section>
 
             <QuickAnswer
-              question="How do I find a special-needs caregiver through EzyHelpers?"
-              answer="EzyHelpers provides trained, background-verified caregivers experienced in supporting children and adults with special needs — live-in, full-time, or part-time. Placement typically takes 24–72 hours, with a quick replacement guarantee."
-            />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
             {/* Why Choose Section */}
             <section className="section-padding bg-gray-50 border-b border-gray-100 relative overflow-hidden">

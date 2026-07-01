@@ -15,6 +15,12 @@ export interface ParsedCarePage {
 
 const cache = new Map<string, ParsedCarePage>()
 
+/**
+ * Read a care-services markdown page. Synchronous: returns a DB-primed entry
+ * if `primeCareMarkdownFromDb` ran first (see below), otherwise reads the
+ * committed file under content/care-services/. The file is always the
+ * fallback, so the site renders even if the DB is unavailable.
+ */
 export function readCareMarkdownFile(filename: string): ParsedCarePage {
   if (cache.has(filename)) return cache.get(filename)!
   const full = path.join(process.cwd(), 'content/care-services', filename)
@@ -22,6 +28,32 @@ export function readCareMarkdownFile(filename: string): ParsedCarePage {
   const parsed = parseCareMarkdown(raw)
   cache.set(filename, parsed)
   return parsed
+}
+
+/**
+ * DB-first priming: fetch the raw markdown for `filename` from Supabase
+ * (site_content.metadata.rawMarkdown, section = 'care-services') and write the
+ * parsed result into the shared cache, so the subsequent synchronous
+ * `readCareMarkdownFile(filename)` returns DB content.
+ *
+ * Call this from the (async) care page server component before rendering.
+ * On any error or missing row it does nothing, and `readCareMarkdownFile`
+ * transparently falls back to the committed file.
+ *
+ * Lazy-imports the Supabase helper so this module stays usable in pure
+ * file-only contexts (e.g. the sitemap) without pulling in the client.
+ */
+export async function primeCareMarkdownFromDb(filename: string): Promise<void> {
+  try {
+    const { getCareMarkdownRaw } = await import('./careMarkdownDb')
+    const raw = await getCareMarkdownRaw(filename)
+    if (raw && /^\s*#\s/m.test(raw)) {
+      cache.set(filename, parseCareMarkdown(raw))
+    }
+  } catch (e) {
+    // Silent: file fallback in readCareMarkdownFile covers this.
+    console.error(`[readCareMarkdown] primeCareMarkdownFromDb(${filename}):`, e)
+  }
 }
 
 export function parseCareMarkdown(raw: string): ParsedCarePage {

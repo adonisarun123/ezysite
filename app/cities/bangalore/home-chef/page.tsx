@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -41,7 +43,10 @@ export const metadata: Metadata = {
     }
 }
 
-export default function BangaloreHomeChef() {
+export default async function BangaloreHomeChef() {
+  const __dbHtml = await getHtmlContent("cities/bangalore/home-chef")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
     const faqs: FAQItem[] = [
         {
             question: "What is the difference between a Professional Chef and a regular home cook?",

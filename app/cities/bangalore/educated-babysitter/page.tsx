@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -43,7 +45,10 @@ export const metadata: Metadata = {
     }
 }
 
-export default function BangaloreEducatedBabysitter() {
+export default async function BangaloreEducatedBabysitter() {
+  const __dbHtml = await getHtmlContent("cities/bangalore/educated-babysitter")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
     const faqs: FAQItem[] = [
         { question: 'How is an Educated Babysitter different from a regular Babysitter?', answer: 'Unlike regular Babysitters who mainly supervise children, an Educated Babysitter actively supports learning, homework, communication skills, and emotional growth. They are trained to engage children intellectually and socially, not just keep them safe.' },
         { question: 'Are Educated Babysitters suitable for school-going children?', answer: 'Yes. Educated Babysitters are well-suited for school-going children. They help children complete homework on time, revise lessons, read textbooks, and practise English speaking. They also maintain a proper after-school routine, limit distractions, and guide children with discipline, focus, and good study habits in a calm and patient manner.' },

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import UrgencyCTA from '@/components/UrgencyCTA';
 import FAQWithTracking from '@/components/FAQWithTracking';
 import { posts } from '@/lib/blogData';
+import { getBlogPost } from '@/lib/blogSource';
 import RelatedPosts from '@/components/RelatedPosts';
 import BlogServiceLinks from '@/components/BlogServiceLinks';
 import { CalendarDaysIcon, ClockIcon } from '@heroicons/react/24/outline';
@@ -790,7 +791,7 @@ const blogFAQs = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = posts.find((p) => p.id === slug);
+  const post = await getBlogPost(slug);
   if (!post) {
     return {
       title: 'Post Not Found | EzyHelpers Blog',
@@ -828,7 +829,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function BlogPost({ params }: PageProps) {
   const { slug } = await params;
-  const post = posts.find((p) => p.id === slug);
+  const post = await getBlogPost(slug);
   if (!post) return notFound();
 
   const markdown = post.content;

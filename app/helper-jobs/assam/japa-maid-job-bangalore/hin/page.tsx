@@ -27,6 +27,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
@@ -74,7 +75,8 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function JapaMaidJobAssamBangaloreHindiPage() {
+export default async function JapaMaidJobAssamBangaloreHindiPage() {
+  const faqItems = await getHelperJobFaqs("helper-jobs/assam/japa-maid-job-bangalore/hin", faqs)
     return (
         <>
             <main className="min-h-screen">
@@ -579,7 +581,7 @@ export default function JapaMaidJobAssamBangaloreHindiPage() {
                             <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4 font-display">अक्सर पूछे जाने वाले सवाल</h2>
                             <div className="w-24 h-1 bg-pink-500 mx-auto rounded-full"></div>
                         </div>
-                        <FAQAccordion faqs={faqs} />
+                        <FAQAccordion faqs={faqItems} />
                     </div>
                 </section>
 

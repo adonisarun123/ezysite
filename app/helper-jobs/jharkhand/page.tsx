@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -18,6 +20,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 
 export const metadata: Metadata = {
     title: 'Helper Jobs in Bangalore – Apply from Jharkhand | EzyHelpers',
@@ -29,11 +32,7 @@ export const metadata: Metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand',
-        languages: {
-            'en': 'https://www.ezyhelpers.com/helper-jobs/jharkhand',
-            'hi': 'https://www.ezyhelpers.com/helper-jobs/jharkhand/hin'
-        }
+        canonical: 'https://www.ezyhelpers.com/helper-jobs/jharkhand'
     }
 }
 
@@ -68,7 +67,11 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function HelperJobsJharkhandPage() {
+export default async function HelperJobsJharkhandPage() {
+  const __dbHtml = await getHtmlContent("helper-jobs/jharkhand")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const faqItems = await getHelperJobFaqs("helper-jobs/jharkhand", faqs)
     return (
         <>
             <main className="min-h-screen">
@@ -477,7 +480,7 @@ export default function HelperJobsJharkhandPage() {
                             </h2>
                             <div className="w-32 h-1 bg-teal-500 mx-auto mt-6 rounded-full opacity-50"></div>
                         </div>
-                        <FAQAccordion faqs={faqs} />
+                        <FAQAccordion faqs={faqItems} />
                     </div>
                 </section>
 

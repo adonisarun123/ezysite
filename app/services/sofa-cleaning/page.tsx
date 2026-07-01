@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/schema'
 import NestCTA from '@/components/NestCTA'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
   SparklesIcon,
   CheckCircleIcon,
@@ -21,24 +24,31 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Sofa Cleaning Services - Stain & Odour Removal | EzyHelpers',
-  description: 'Book professional sofa cleaning for all fabric types. Remove stains, dust, and odours with eco-friendly products and expert handling.',
-  keywords: 'sofa cleaning, sofa dry cleaning, sofa shampooing, sofa stain removal, fabric sofa cleaning',
+  title: 'Sofa Cleaning Services in Bareilly - Stain & Odour Removal',
+  description: 'Book sofa cleaning in Bareilly for all types of fabric. Remove stains, dust, and bad smells with eco-friendly products and expert handling.',
+  keywords: 'sofa cleaning bareilly, sofa dry cleaning bareilly, sofa shampooing bareilly, sofa stain removal bareilly',
   openGraph: {
-    title: 'Sofa Cleaning Services - Stain & Odour Removal | EzyHelpers',
-    description: 'Book professional sofa cleaning for all fabric types. Remove stains, dust, and odours with eco-friendly products and expert handling.',
+    title: 'Sofa Cleaning Services in Bareilly - Stain & Odour Removal',
+    description: 'Book sofa cleaning in Bareilly for all types of fabric. Remove stains, dust, and bad smells with eco-friendly products and expert handling.',
     url: 'https://www.ezyhelpers.com/services/sofa-cleaning',
     type: 'website',
     siteName: 'EzyHelpers',
     locale: 'en_IN',
-    images: [{ url: "https://www.ezyhelpers.com/og?title=Sofa%20Cleaning%20Services%20-%20Stain%20%26%20Odour%20Removal", width: 1200, height: 630, alt: "Sofa Cleaning Services - Stain & Odour Removal | EzyHelpers" }],
+    images: [{ url: "https://www.ezyhelpers.com/og?title=Sofa%20Cleaning%20Services%20in%20Bareilly%20-%20Stain%20%26%20Odour%20Removal", width: 1200, height: 630, alt: "Sofa Cleaning Services in Bareilly - Stain & Odour Removal" }],
   },
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services/sofa-cleaning'
   }
 }
 
-export default function SofaCleaningPage() {
+export default async function SofaCleaningPage() {
+  const __dbHtml = await getHtmlContent("services/sofa-cleaning")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("sofa-cleaning", {
+    question: "How do I book sofa cleaning through EzyHelpers?",
+    answer: "EzyHelpers offers professional sofa and upholstery cleaning with deep shampooing, stain removal, and fast drying. Book online or call 080-31411776 — same-day and weekend slots are available in most areas.",
+  })
   const breadcrumbs = [
     { name: "Home", url: "https://www.ezyhelpers.com" },
     { name: "Services", url: "https://www.ezyhelpers.com/services" },
@@ -90,7 +100,7 @@ export default function SofaCleaningPage() {
     },
     {
       title: "Dust & Dirt Deep Cleaning",
-      description: "Removes embedded dust and everyday pollution.",
+      description: "Removes embedded dust from Bareilly's polluted air.",
       icon: SparklesIcon,
       features: ["Dust Gone", "Deep Clean", "Air Fresh", "Pure Sit"]
     },
@@ -125,58 +135,58 @@ export default function SofaCleaningPage() {
 
   const faqs = [
     {
-      question: "What is included in professional sofa cleaning?",
-      answer: "Professional sofa cleaning includes dusting, vacuuming, deep shampooing, stain removal, sanitisation, and odour treatment. It ensures every part of your sofa, from cushions to crevices, is hygienically cleaned for a healthier living space."
+      question: "What is included in home deep cleaning in Bareilly?",
+      answer: "Home deep cleaning in Bareilly includes dusting, mopping, bathroom and kitchen cleaning, sofa and mattress cleaning, sanitisation, and more. It ensures every area, from living rooms to pooja rooms, is hygienically cleaned for a healthier living space."
     },
     {
-      question: "Why should I choose professional sofa cleaning services?",
-      answer: "Professional sofa cleaning services like EzyHelpers offer trained cleaners, allergy-safe products, and high-quality tools to remove hidden dirt, allergens, and bacteria, making your home safer and more comfortable for your family."
+      question: "Why should I choose professional cleaning services in Bareilly?",
+      answer: "Professional cleaning services in Bareilly like EzyHelpers offer trained cleaners, allergy-safe products, and high-quality tools to remove hidden dirt, allergens, and bacteria, making your home safer and more comfortable for your family."
     },
     {
-      question: "Do you provide same-day sofa cleaning services?",
-      answer: "Yes, EzyHelpers offers same-day sofa cleaning, ideal for urgent needs like guest visits, post-events, or quick sanitation requirements. Our team responds within 2 hours of your booking."
+      question: "Do you provide same-day deep cleaning services in Bareilly?",
+      answer: "Yes, EzyHelpers offers same-day home deep cleaning in Bareilly, ideal for urgent needs like guest visits, post-events, or quick sanitation requirements. Our team responds within 2 hours of your booking."
     },
     {
       question: "Are your house cleaners background-verified and trained?",
-      answer: "Yes, our professional cleaning services only include background-checked and trained cleaners who use safe techniques and follow hygiene protocols for a stress-free and reliable experience."
+      answer: "Yes, our professional cleaning services in Bareilly only include background-checked and trained cleaners who use safe techniques and follow hygiene protocols for a stress-free and reliable experience."
     },
     {
-      question: "Do you offer kitchen deep cleaning?",
-      answer: "Yes, our professional cleaning services include kitchen deep cleaning that removes grease, food stains, and bacteria from countertops, appliances, and cabinets. We make your cooking space safe, hygienic, and odor-free."
+      question: "Do you offer kitchen deep cleaning in Bareilly?",
+      answer: "Yes, our professional cleaning services in Bareilly include kitchen deep cleaning that removes grease, food stains, and bacteria from countertops, appliances, and cabinets. We make your cooking space safe, hygienic, and odor-free."
     },
     {
-      question: "Do you offer post-festival home cleaning?",
-      answer: "Yes, we offer post-Holi, Diwali, and wedding cleanups. Our team removes colour stains, oil, and mess, restoring your home's original shine after celebrations."
+      question: "Do you offer post-festival home cleaning in Bareilly?",
+      answer: "Yes, we offer post-Holi, Diwali, and wedding cleanups in Bareilly. Our team removes colour stains, oil, and mess, restoring your home's original shine after celebrations."
     },
     {
-      question: "How often should I book home deep cleaning?",
-      answer: "It's recommended to book professional home deep cleaning every 3 to 6 months to keep your home hygienic, fresh-smelling, and free of dust, pests, and illness-causing bacteria."
+      question: "How often should I book home deep cleaning in Bareilly?",
+      answer: "It's recommended to book professional home deep cleaning every 3 to 6 months in Bareilly to keep your home hygienic, fresh-smelling, and free of dust, pests, and illness-causing bacteria."
     },
     {
-      question: "What is included in bathroom deep cleaning?",
+      question: "What is included in bathroom deep cleaning in Bareilly?",
       answer: "Bathroom deep cleaning includes scrubbing tiles, disinfecting fittings, removing stains, cleaning mirrors, and clearing drains. Our team ensures germ-free and sparkling clean bathrooms."
     },
     {
       question: "How long does a deep cleaning session take?",
-      answer: "Depending on the size of your home and selected services, a deep cleaning session can take between 3 to 6 hours. Larger homes or post-construction jobs may take longer."
+      answer: "Depending on the size of your home and selected services, a deep cleaning session in Bareilly can take between 3 to 6 hours. Larger homes or post-construction jobs may take longer."
     },
     {
       question: "Do you clean glass windows and mirrors?",
-      answer: "Yes, we provide streak-free glass and window cleaning. It's included in our standard and deep cleaning packages for a brighter, clearer home."
+      answer: "Yes, we provide streak-free glass and window cleaning in Bareilly. It's included in our standard and deep cleaning packages for a brighter, clearer home."
     },
     {
-      question: "Can I book home deep cleaning for weekends or holidays?",
-      answer: "Yes, you can easily schedule home deep cleaning on weekends or public holidays. We understand your busy schedule and make sure you get cleaning help when it suits you best."
+      question: "Can I book home deep cleaning in Bareilly for weekends or holidays?",
+      answer: "Yes, you can easily schedule home deep cleaning in Bareilly on weekends or public holidays. We understand your busy schedule and make sure you get cleaning help when it suits you best."
     },
     {
       question: "Can I choose which rooms or areas to clean instead of the whole house?",
-      answer: "Absolutely. With our professional cleaning services, you can choose to clean only specific rooms like the kitchen or bathrooms or even focus on certain items like windows or sofas."
+      answer: "Absolutely. With our professional cleaning services in Bareilly, you can choose to clean only specific rooms like the kitchen or bathrooms or even focus on certain items like windows or sofas."
     }
   ]
 
   return (
     <main className="min-h-screen">
-      <ServiceSchema serviceName={"Sofa Cleaning Services - Stain & Odour Removal"} serviceDescription={"Book professional sofa cleaning for all types of fabric. Remove stains, dust, and bad smells with eco-friendly products and expert handling."} serviceType={"Sofa Cleaning Services - Stain & Odour Removal"} serviceUrl={"https://www.ezyhelpers.com/services/sofa-cleaning"} />
+      <ServiceSchema serviceName={"Sofa Cleaning Services in Bareilly - Stain & Odour Removal"} serviceDescription={"Book sofa cleaning in Bareilly for all types of fabric. Remove stains, dust, and bad smells with eco-friendly products and expert handling."} serviceType={"Sofa Cleaning Services in Bareilly - Stain & Odour Removal"} serviceUrl={"https://www.ezyhelpers.com/services/sofa-cleaning"} />
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} aboutPage="https://www.ezyhelpers.com/services/sofa-cleaning" />
       
@@ -204,7 +214,7 @@ export default function SofaCleaningPage() {
             </h1>
             
             <p className="text-xl lg:text-2xl text-teal-100 mb-10 leading-relaxed max-w-3xl mx-auto">
-              Is your sofa looking dull, dusty, or stained? Our skilled professionals deliver deep sofa cleaning at home, restoring freshness and hygiene.
+              Is your sofa looking dull, dusty, or stained? Our skilled professionals deliver deep sofa cleaning at home in Bareilly, restoring freshness and hygiene.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -245,8 +255,8 @@ export default function SofaCleaningPage() {
       </section>
 
       <QuickAnswer
-        question="How do I book sofa cleaning through EzyHelpers?"
-        answer="EzyHelpers offers professional sofa and upholstery cleaning with deep shampooing, stain removal, and fast drying. Book online or call 080-31411776 — same-day and weekend slots are available in most areas."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       {/* Why Choose Us */}
@@ -257,7 +267,7 @@ export default function SofaCleaningPage() {
               Why Choose EzyHelpers for Sofa Cleaning?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              EzyHelpers is your reliable choice for professional sofa cleaning at home
+              EzyHelpers is your reliable choice for sofa cleaning at home in Bareilly
             </p>
           </div>
 
@@ -312,7 +322,7 @@ export default function SofaCleaningPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Our Sofa Cleaning Services
+              Our Sofa Cleaning Services in Bareilly
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Complete sofa cleaning and care for your family's comfort
@@ -355,10 +365,10 @@ export default function SofaCleaningPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-              Types of Sofas We Clean
+              Types of Sofas We Clean in Bareilly
             </h2>
             <p className="text-lg text-gray-600">
-              We cover every type of sofa material and design with professional sofa cleaning at home
+              We cover every type of sofa material and design with professional sofa cleaning at home in Bareilly
             </p>
           </div>
 
@@ -381,7 +391,7 @@ export default function SofaCleaningPage() {
               How to Book Our Sofa Cleaning Services
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Booking EzyHelpers for sofa cleaning services is quick and hassle-free
+              Booking EzyHelpers for sofa cleaning services in Bareilly is quick and hassle-free
             </p>
           </div>
 
@@ -477,7 +487,7 @@ export default function SofaCleaningPage() {
               Don't Let a Dirty Sofa Spoil Your Home's Look!
             </h2>
             <p className="text-xl text-teal-100 mb-10 leading-relaxed">
-              Book professional sofa cleaning services and enjoy sparkling clean furniture without the hassle.
+              Book professional sofa cleaning services in Bareilly and enjoy sparkling clean furniture without the hassle.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

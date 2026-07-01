@@ -1,4 +1,7 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -40,7 +43,15 @@ export const metadata: Metadata = {
   }
 }
 
-export default function PlumbersPage() {
+export default async function PlumbersPage() {
+  const __dbHtml = await getHtmlContent("services/plumbers")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("plumbers", {
+    question: "How do I book a plumber through EzyHelpers?",
+    answer: "EzyHelpers connects you with verified plumbers for leak repairs, fittings, blockages, and bathroom work. Book online or call 080-31411776 — same-day visits are available in most service areas with upfront pricing.",
+  })
+
   const cities = [
     { name: 'Bangalore', href: '/cities/bangalore/plumber' },
     { name: 'Bareilly', href: '/cities/bareilly/plumber' },
@@ -353,9 +364,9 @@ export default function PlumbersPage() {
         </section>
 
         <QuickAnswer
-          question="How do I book a plumber through EzyHelpers?"
-          answer="EzyHelpers connects you with verified plumbers for leak repairs, fittings, blockages, and bathroom work. Book online or call 080-31411776 — same-day visits are available in most service areas with upfront pricing."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* Why Choose Us */}
         <section className="section-padding bg-white">

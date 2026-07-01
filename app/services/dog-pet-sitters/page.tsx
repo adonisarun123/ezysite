@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -6,6 +8,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
 import { ServiceSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import {
     PhoneIcon,
     CheckCircleIcon,
@@ -44,7 +47,14 @@ export const metadata: Metadata = {
     }
 }
 
-export default function DogPetSittersPage() {
+export default async function DogPetSittersPage() {
+  const __dbHtml = await getHtmlContent("services/dog-pet-sitters")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("dog-pet-sitters", {
+    question: "How do I find a pet sitter through EzyHelpers?",
+    answer: "EzyHelpers connects you with background-verified dog and pet sitters for daily visits, walks, or extended care at home. Placement typically takes 24–72 hours, and a replacement is arranged quickly if your sitter is unavailable.",
+  })
     const faqs: FAQItem[] = [
         {
             question: 'What is the difference between a dog sitter and a dog walker?',
@@ -245,9 +255,9 @@ export default function DogPetSittersPage() {
             </section>
 
             <QuickAnswer
-              question="How do I find a pet sitter through EzyHelpers?"
-              answer="EzyHelpers connects you with background-verified dog and pet sitters for daily visits, walks, or extended care at home. Placement typically takes 24–72 hours, and a replacement is arranged quickly if your sitter is unavailable."
-            />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
             {/* Why Choose Section */}
             <section className="section-padding bg-gray-50 relative overflow-hidden">

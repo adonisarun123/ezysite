@@ -1,3 +1,6 @@
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
@@ -40,7 +43,15 @@ export const metadata: Metadata = {
   }
 }
 
-export default function PartTimeMaidsPage() {
+export default async function PartTimeMaidsPage() {
+  const __dbHtml = await getHtmlContent("services/part-time-maids")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("part-time-maids", {
+    question: "How do I hire a part-time maid through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified part-time maids for 2–6 hours daily — cleaning, dishes, laundry, and more. Placement typically takes 24–72 hours, with flexible timings and a quick replacement guarantee.",
+  })
+
   const cities = [
     { name: 'Bangalore', href: '/cities/bangalore/part-time-maid' },
     { name: 'Bareilly', href: '/cities/bareilly/part-time-maid' },
@@ -405,9 +416,9 @@ export default function PartTimeMaidsPage() {
         </section>
 
         <QuickAnswer
-          question="How do I hire a part-time maid through EzyHelpers?"
-          answer="EzyHelpers provides background-verified part-time maids for 2–6 hours daily — cleaning, dishes, laundry, and more. Placement typically takes 24–72 hours, with flexible timings and a quick replacement guarantee."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* Why Choose Section */}
         <section className="section-padding bg-white">

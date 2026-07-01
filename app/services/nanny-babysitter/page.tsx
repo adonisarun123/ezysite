@@ -1,4 +1,7 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -43,7 +46,15 @@ export const metadata: Metadata = {
   }
 }
 
-export default function NannyBabysitterPage() {
+export default async function NannyBabysitterPage() {
+  const __dbHtml = await getHtmlContent("services/nanny-babysitter")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("nanny-babysitter", {
+    question: "How do I hire a nanny or babysitter through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified nannies and babysitters — live-in, full-time, or part-time — for infants to school-age children. Placement typically takes 24–72 hours, with a quick replacement guarantee.",
+  })
+
   const cities = [
     { name: 'Bangalore', href: '/cities/bangalore/nanny-babysitter' },
     { name: 'Bareilly', href: '/cities/bareilly/babysitter' },
@@ -367,9 +378,9 @@ export default function NannyBabysitterPage() {
         </section>
 
         <QuickAnswer
-          question="How do I hire a nanny or babysitter through EzyHelpers?"
-          answer="EzyHelpers provides background-verified nannies and babysitters — live-in, full-time, or part-time — for infants to school-age children. Placement typically takes 24–72 hours, with a quick replacement guarantee."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* Specialized Care for Every Age Group */}
         <section className="section-padding bg-white">

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -28,6 +30,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 import ReferEarnSection from '@/components/ReferEarnSection'
 
 export const metadata: Metadata = {
@@ -83,7 +86,11 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function LiveInCoupleHousekeepingJobsAssamBangaloreHindiPage() {
+export default async function LiveInCoupleHousekeepingJobsAssamBangaloreHindiPage() {
+  const __dbHtml = await getHtmlContent("helper-jobs/assam/live-in-couple-housekeeping-jobs-bangalore/hin")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const faqItems = await getHelperJobFaqs("helper-jobs/assam/live-in-couple-housekeeping-jobs-bangalore/hin", faqs)
     return (
         <>
             <main className="min-h-screen">
@@ -635,7 +642,7 @@ export default function LiveInCoupleHousekeepingJobsAssamBangaloreHindiPage() {
                             <h2 className="text-2xl md:text-4xl font-bold text-indigo-900 mb-4 font-display">अक्सर पूछे जाने वाले सवाल</h2>
                             <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
                         </div>
-                        <FAQAccordion faqs={faqs} />
+                        <FAQAccordion faqs={faqItems} />
                     </div>
                 </section>
 

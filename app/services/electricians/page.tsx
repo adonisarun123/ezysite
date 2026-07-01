@@ -1,4 +1,7 @@
 import { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -40,7 +43,15 @@ export const metadata: Metadata = {
   }
 }
 
-export default function ElectriciansPage() {
+export default async function ElectriciansPage() {
+  const __dbHtml = await getHtmlContent("services/electricians")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("electricians", {
+    question: "How do I book an electrician through EzyHelpers?",
+    answer: "EzyHelpers connects you with verified electricians for wiring, repairs, installations, and safety checks. Book online or call 080-31411776 — same-day visits are available in most service areas with upfront pricing.",
+  })
+
   const cities = [
     { name: 'Bangalore', href: '/cities/bangalore/electrician' },
     { name: 'Bareilly', href: '/cities/bareilly/electrician' },
@@ -353,9 +364,9 @@ export default function ElectriciansPage() {
         </section>
 
         <QuickAnswer
-          question="How do I book an electrician through EzyHelpers?"
-          answer="EzyHelpers connects you with verified electricians for wiring, repairs, installations, and safety checks. Book online or call 080-31411776 — same-day visits are available in most service areas with upfront pricing."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* Why Choose Us */}
         <section className="section-padding bg-white">

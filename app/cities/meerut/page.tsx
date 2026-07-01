@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { selfReferencingLanguages } from '@/lib/selfHreflang'
@@ -6,6 +8,7 @@ import Footer from '@/components/Footer'
 import NestCTA from '@/components/NestCTA'
 import { LocalBusinessSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getCityQuickAnswer } from '@/lib/cityContentSource'
 import {
   ShoppingBagIcon, 
   HeartIcon, 
@@ -35,7 +38,14 @@ export const metadata: Metadata = {
   },
 }
 
-export default function MeerutPage() {
+export default async function MeerutPage() {
+  const __dbHtml = await getHtmlContent("cities/meerut")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getCityQuickAnswer("cities/meerut", {
+    question: "How do I hire domestic help in Meerut through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified maids, cooks, babysitters, and elderly caretakers across Meerut. Placement typically takes 24–72 hours, with live-in, full-time, and part-time options and a quick replacement guarantee.",
+  })
   const localServices = [
     {
       title: "Business Community Support",
@@ -106,8 +116,8 @@ export default function MeerutPage() {
       </section>
 
       <QuickAnswer
-        question="How do I hire domestic help in Meerut through EzyHelpers?"
-        answer="EzyHelpers provides background-verified maids, cooks, babysitters, and elderly caretakers across Meerut. Placement typically takes 24–72 hours, with live-in, full-time, and part-time options and a quick replacement guarantee."
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
       />
 
       {/* Local Services */}

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -40,7 +42,10 @@ export const metadata: Metadata = {
   }
 }
 
-export default function BangaloreNannyBabysitterPage() {
+export default async function BangaloreNannyBabysitterPage() {
+  const __dbHtml = await getHtmlContent("cities/bangalore/nanny-babysitter")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
   const breadcrumbs = [
     { name: 'Home', url: 'https://www.ezyhelpers.com' },
     { name: 'Services', url: 'https://www.ezyhelpers.com/services' },

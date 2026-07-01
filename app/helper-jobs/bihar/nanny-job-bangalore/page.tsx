@@ -20,6 +20,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 
 export const metadata: Metadata = {
     title: 'Nanny Jobs in Bangalore | Babysitter Jobs Open Apply Now',
@@ -62,7 +63,8 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function NannyJobBangalorePage() {
+export default async function NannyJobBangalorePage() {
+  const faqItems = await getHelperJobFaqs("helper-jobs/bihar/nanny-job-bangalore", faqs)
     return (
         <>
             <main className="min-h-screen">
@@ -617,7 +619,7 @@ export default function NannyJobBangalorePage() {
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display tracking-tight">Questions and Answers (FAQs)</h2>
                             <div className="w-24 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
                         </div>
-                        <FAQAccordion faqs={faqs} />
+                        <FAQAccordion faqs={faqItems} />
                     </div>
                 </section>
 

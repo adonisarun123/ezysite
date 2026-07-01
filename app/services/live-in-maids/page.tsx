@@ -1,3 +1,6 @@
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
+import { getServiceQuickAnswer } from '@/lib/serviceContentSource'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
@@ -52,7 +55,15 @@ export const metadata: Metadata = {
   }
 }
 
-export default function LiveInMaidsPage() {
+export default async function LiveInMaidsPage() {
+  const __dbHtml = await getHtmlContent("services/live-in-maids")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getServiceQuickAnswer("live-in-maids", {
+    question: "How do I hire a live-in maid through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified live-in maids who stay at your home and handle cleaning, cooking support, and daily chores. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper.",
+  })
+
   const cities = [
     { name: 'Bangalore', href: '/cities/bangalore/live-in-maids' },
     { name: 'Bareilly', href: '/cities/bareilly/live-in-maid' },
@@ -432,9 +443,9 @@ export default function LiveInMaidsPage() {
         </section>
 
         <QuickAnswer
-          question="How do I hire a live-in maid through EzyHelpers?"
-          answer="EzyHelpers provides background-verified live-in maids who stay at your home and handle cleaning, cooking support, and daily chores. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* Why Choose Section */}
         <section className="section-padding bg-white">

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -18,6 +20,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 import FAQAccordion, { FAQItem } from '@/components/FAQAccordion'
+import { getHelperJobFaqs } from '@/lib/helperJobsSource'
 
 export const metadata: Metadata = {
     title: 'बैंगलोर में घरेलू हेल्पर जॉब्स | झारखंड से अप्लाई करें',
@@ -65,7 +68,11 @@ const faqs: FAQItem[] = [
     }
 ]
 
-export default function HelperJobsJharkhandHinPage() {
+export default async function HelperJobsJharkhandHinPage() {
+  const __dbHtml = await getHtmlContent("helper-jobs/jharkhand/hin")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const faqItems = await getHelperJobFaqs("helper-jobs/jharkhand/hin", faqs)
     return (
         <>
             <div lang="hi" className="min-h-screen noto-sans-devanagari-hindi">
@@ -566,7 +573,7 @@ export default function HelperJobsJharkhandHinPage() {
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">आम सवाल</h2>
                         </div>
                         <div className="max-w-4xl mx-auto">
-                            <FAQAccordion faqs={faqs} />
+                            <FAQAccordion faqs={faqItems} />
                         </div>
                     </div>
                 </section >

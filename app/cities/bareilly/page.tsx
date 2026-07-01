@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import DbHtmlContent from '@/components/DbHtmlContent'
+import { getHtmlContent } from '@/lib/htmlContentSource'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
@@ -31,6 +33,7 @@ import { Metadata } from 'next'
 import NestCTA from '@/components/NestCTA'
 import { LocalBusinessSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
+import { getCityQuickAnswer } from '@/lib/cityContentSource'
 
 export const metadata: Metadata = {
   title: 'House Maid Service in Bareilly – Safe & Verified',
@@ -51,7 +54,14 @@ export const metadata: Metadata = {
   }
 }
 
-export default function BareillyPage() {
+export default async function BareillyPage() {
+  const __dbHtml = await getHtmlContent("cities/bareilly")
+  if (__dbHtml) return <DbHtmlContent content={__dbHtml} />
+
+  const quickAnswer = await getCityQuickAnswer("cities/bareilly", {
+    question: "How do I hire domestic help in Bareilly through EzyHelpers?",
+    answer: "EzyHelpers provides background-verified maids, cooks, babysitters, and caretakers across Bareilly. Placement typically takes 24–72 hours, with flexible full-time, part-time, and live-in options and a quick replacement guarantee.",
+  })
   const trustBadges = [
     '✅ Trained & Background Verified',
     '✅ Free Replacement',
@@ -113,9 +123,9 @@ export default function BareillyPage() {
         </section>
 
         <QuickAnswer
-          question="How do I hire domestic help in Bareilly through EzyHelpers?"
-          answer="EzyHelpers provides background-verified maids, cooks, babysitters, and caretakers across Bareilly. Placement typically takes 24–72 hours, with flexible full-time, part-time, and live-in options and a quick replacement guarantee."
-        />
+        question={quickAnswer.question}
+        answer={quickAnswer.answer}
+      />
 
         {/* Domestic Staff Services */}
         <section className="section-padding bg-white">
