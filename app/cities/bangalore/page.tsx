@@ -6,11 +6,12 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CityBlogLinks from '@/components/CityBlogLinks'
 import Breadcrumb from '@/components/Breadcrumb'
+import FAQAccordion from '@/components/FAQAccordion'
 
 // ISR: revalidate hourly
 export const revalidate = 3600
 import NestCTA from '@/components/NestCTA'
-import { LocalBusinessSchema } from '@/components/schema'
+import { LocalBusinessSchema, FAQSchema } from '@/components/schema'
 import QuickAnswer from '@/components/QuickAnswer'
 import { getCityQuickAnswer } from '@/lib/cityContentSource'
 import {
@@ -25,7 +26,8 @@ import {
   ChatBubbleLeftRightIcon,
   HomeModernIcon,
   WrenchScrewdriverIcon,
-  SparklesIcon
+  SparklesIcon,
+  ArrowRightIcon
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
@@ -58,6 +60,49 @@ export default async function BangalorePage() {
     "Whitefield", "Electronic City", "Koramangala", "Indiranagar", "HSR Layout",
     "BTM Layout", "Marathahalli", "Sarjapur Road", "Bannerghatta Road", "Yelahanka",
     "Hebbal", "JP Nagar", "Jayanagar", "Rajajinagar", "Malleshwaram"
+  ]
+
+  const faqs = [
+    {
+      question: "How do I book a maid online in Bangalore?",
+      answer: "Booking a maid online with EzyHelpers takes minutes. Tell us the type of help you need, your location, and your timing, and we'll match you with verified helpers near you. You can book a maid online, by phone on 080-31411776, or by filling out the form, whichever is easiest."
+    },
+    {
+      question: "How much does a maid for home in Bangalore cost?",
+      answer: "It depends on the type of help (part-time, full-time, or live-in), the hours, and the tasks involved. You pay the helper's salary directly with no hidden commissions, and we share a clear quote upfront."
+    },
+    {
+      question: "Can I hire a maid just for cleaning in Bangalore?",
+      answer: "Yes. If you only need help with house cleaning, our part-time maids handle sweeping, mopping, dishwashing, and kitchen work on a flexible schedule, without committing to full-day or live-in help."
+    },
+    {
+      question: "Do you offer monthly maid service in Bangalore?",
+      answer: "Yes. Most families book our part-time and full-time maids on a monthly maid service plan, with daily or alternate-day visits at a fixed monthly arrangement. You can scale the hours and tasks up or down as your needs change."
+    },
+    {
+      question: "Can I find house help near me in Bangalore?",
+      answer: "Yes. We provide verified house help across all major Bangalore localities, from Whitefield and Electronic City to Jayanagar and Hebbal. Share your area, and we'll match you with trained house help near you."
+    },
+    {
+      question: "What's the difference between a part-time, full-time, and live-in maid?",
+      answer: "A part-time maid works a few hours for specific tasks like cleaning; a full-time maid stays through the working day for complete household management; and a live-in maid stays at your home for round-the-clock support."
+    },
+    {
+      question: "Are your maids and house help background-verified?",
+      answer: "Yes. Every maid and house help is Aadhaar-verified and local address verified before placement, so you get safe, trustworthy help at home."
+    },
+    {
+      question: "What languages do your maids in Bangalore speak?",
+      answer: "Our Bangalore helpers speak a range of languages, including Kannada, Hindi, and others. We match you with a helper who fits your household's language preference, so communication stays easy."
+    },
+    {
+      question: "How quickly can I get a maid for home in Bangalore?",
+      answer: "As soon as you share your requirements, we match them against our helper database and pick out the most compatible profiles to share with you. Once you finalise a profile, we arrange a video call with the helper so you can speak directly. If all goes well, we will place them with your household soon after."
+    },
+    {
+      question: "What happens if the maid isn't the right fit?",
+      answer: "We offer a replacement guarantee. If a helper isn't right for your home, we'll match you with a replacement, typically within 7-15 days, at no extra hassle."
+    }
   ]
 
   return (
@@ -136,9 +181,9 @@ export default async function BangalorePage() {
         </section>
 
         <QuickAnswer
-        question={quickAnswer.question}
-        answer={quickAnswer.answer}
-      />
+          question={quickAnswer.question}
+          answer={quickAnswer.answer}
+        />
 
         {/* Why Choose EzyHelpers Section */}
         <section className="section-padding bg-white">
@@ -639,9 +684,9 @@ export default async function BangalorePage() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  title: "Mumbai",
-                  description: "Financial Capital domestic help services",
-                  href: "/cities/mumbai"
+                  title: "Bareilly",
+                  description: "Trusted local domestic help services",
+                  href: "/cities/bareilly"
                 },
                 {
                   title: "Delhi",
@@ -670,13 +715,108 @@ export default async function BangalorePage() {
           </div>
         </section>
       </div>
-            <NestCTA />
-      {/* Blog guides interlinking */}
-      <CityBlogLinks
-        tags={['bangalore', 'live-in maid', 'domestic help']}
-        title="Bangalore Home Help Guides"
-        subtitle="Costs, comparisons and hiring tips written for Bangalore families."
-      />
+      <NestCTA />
+      <FAQSchema faqs={faqs} />
+      {/* Most Booked in Bangalore Section */}
+      <section className="section-padding bg-blue-50/50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Most Booked in Bangalore</h2>
+            <div className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="font-semibold text-gray-900">Our Top-Selling Services</p>
+              <p className="mt-1 text-gray-600">The services Bangalore families request most. Verified, trained, and ready to start. Pick one and book in minutes.</p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                badge: "★ #1 Most Hired",
+                title: "Live-in Maid",
+                description: "Stay-in maids offering 24/7 household help and supervision for families.",
+                features: ["24/7 stay-in assistance", "Support with daily household routines", "Long-term domestic support"],
+                bookHref: "/hire-helper",
+                bookText: "Book a Live-in Maid",
+                learnHref: "/cities/bangalore/live-in-maids",
+                learnText: "Learn More"
+              },
+              {
+                badge: "#2 Popular",
+                title: "Full-Time Maid",
+                description: "Daily maids for regular household chores from morning until evening.",
+                features: ["Daily full-day cleaning and care", "Trained for modern households", "Fixed-time daily assistance"],
+                bookHref: "/hire-helper",
+                bookText: "Book a Full-Time Maid",
+                learnHref: "/cities/bangalore/full-time-maid",
+                learnText: "Learn More"
+              },
+              {
+                badge: "#3 Loved by Parents",
+                title: "Babysitter",
+                description: "Trusted babysitters for infants or toddlers with flexible shifts and care.",
+                features: ["Trained in infant care", "Flexible shift timings", "Verified and caring professionals"],
+                bookHref: "/hire-helper",
+                bookText: "Book a Babysitter",
+                learnHref: "/cities/bangalore/nanny-babysitter",
+                learnText: "Learn More"
+              }
+            ].map((service, idx) => (
+              <div
+                key={idx}
+                className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg ring-1 ring-gray-100 transition-all flex flex-col h-full"
+              >
+                {service.badge && (
+                  <span className="inline-block mb-3 text-xs font-bold text-blue-600 uppercase tracking-wider">
+                    {service.badge}
+                  </span>
+                )}
+                <h3 className="text-xl font-bold text-gray-900 mb-3 leading-snug group-hover:text-blue-700 transition-colors font-display">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">{service.description}</p>
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feat, fidx) => (
+                    <li key={fidx} className="flex items-start text-sm text-gray-600">
+                      <CheckCircleIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 shrink-0" />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-4 border-t border-gray-100 space-y-2">
+                  <Link
+                    href={service.bookHref}
+                    className="inline-flex items-center text-blue-600 font-semibold text-sm hover:text-blue-700"
+                  >
+                    {service.bookText}
+                    <ArrowRightIcon className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <div className="block">
+                    <Link
+                      href={service.learnHref}
+                      className="inline-flex items-center text-gray-500 font-medium text-sm hover:text-gray-700"
+                    >
+                      {service.learnText}
+                      <ArrowRightIcon className="h-4 w-4 ml-1" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">Frequently Asked Questions</h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <FAQAccordion faqs={faqs} />
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </main>

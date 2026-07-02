@@ -34,8 +34,8 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Home Services | Maids, Cooks, Drivers & More | EzyHelpers',
-  description: 'Complete home services including maids, cooks, drivers, electricians, plumbers & more. Professional, verified helpers for all your household needs.',
+  title: 'Home Services in India | Maids, Cooks & More | EzyHelpers',
+  description: 'Hire verified maids, cooks, drivers & more across major cities in India. Background-checked domestic helpers. Fast placement & transparent pricing. Book now.',
   keywords: 'home services, domestic help, maids, cooks, drivers, electricians, plumbers, household services, professional helpers',
   alternates: {
     canonical: 'https://www.ezyhelpers.com/services',
@@ -69,6 +69,19 @@ export default function ServicesPage() {
 
   // Combined FAQs for services page
   const servicePageFAQs = [...generalFAQs, ...serviceFAQs]
+
+  const cities = [
+    { name: 'Bangalore', href: '/cities/bangalore' },
+    { name: 'Bareilly', href: '/cities/bareilly' },
+    { name: 'Delhi', href: '/cities/delhi' },
+    { name: 'Noida', href: '/cities/noida' },
+    { name: 'Lucknow', href: '/cities/lucknow' },
+    { name: 'Kanpur', href: '/cities/kanpur' },
+    { name: 'Nagpur', href: '/cities/nagpur' },
+    { name: 'Hyderabad', href: '/cities/hyderabad' },
+    { name: 'Meerut', href: '/cities/meerut' },
+    { name: 'Mumbai', href: '/cities/mumbai' }
+  ]
 
   const services = [
     {
@@ -398,7 +411,7 @@ export default function ServicesPage() {
 
               {/* Enhanced Description */}
               <p className="text-xl lg:text-2xl text-primary-100 mb-10 leading-relaxed max-w-3xl mx-auto">
-                From daily housekeeping to specialized care, find trusted professionals for every home service need. Verified, reliable, and tailored to your lifestyle.
+                Looking for reliable home services in India? Explore verified domestic help for cleaning, cooking, childcare, elderly care, driving, and more. Browse our service categories and check availability in your preferred city.
               </p>
 
               {/* Feature Pills */}
@@ -544,6 +557,61 @@ export default function ServicesPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Explore Available Cities Section */}
+        <section className="py-16 bg-white border-b border-gray-100 relative overflow-hidden">
+          {/* Subtle background decoration */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-50/30 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+          <div className="container-custom relative z-10">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 mb-4 border border-primary-100 shadow-sm">
+                <MapPinIcon className="h-4 w-4 mr-2 text-primary-600 animate-bounce" />
+                <span className="text-sm font-semibold">Service Coverage</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
+                Explore Available Cities
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Find trusted home services in the cities listed below.
+              </p>
+            </div>
+
+            {/* Cities Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 mb-12">
+              {cities.map((city) => (
+                <Link
+                  key={city.name}
+                  href={city.href}
+                  className="group relative bg-white hover:bg-gradient-to-br hover:from-primary-600 hover:to-primary-700 p-5 rounded-2xl border border-gray-200/80 hover:border-transparent shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center cursor-pointer"
+                >
+                  {/* Icon / Pin design */}
+                  <div className="w-10 h-10 rounded-xl bg-primary-50 group-hover:bg-white/20 flex items-center justify-center mb-3 transition-colors duration-300">
+                    <MapPinIcon className="h-5 w-5 text-primary-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 text-base md:text-lg">
+                    {city.name}
+                  </span>
+                  {/* View services indicator */}
+                  <div className="mt-2 text-primary-600 group-hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-300 text-xs font-medium flex items-center">
+                    View Services
+                    <ArrowRightIcon className="h-3 w-3 ml-1" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm md:text-base text-gray-500 font-medium">
+                More cities coming soon.{' '}
+                <Link href="tel:+918031411776" className="text-primary-600 hover:text-primary-700 underline font-semibold transition-colors">
+                  Call us
+                </Link>{' '}
+                to check availability in your area.
+              </p>
             </div>
           </div>
         </section>
