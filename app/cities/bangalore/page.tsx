@@ -31,12 +31,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Book Maid for Home in Bangalore | Safe & Reliable Help',
-  description: 'Verified maid for home in Bangalore with flexible timing, multilingual helpers & quick replacements. Trusted by families across Bangalore.',
+  title: 'Book a Maid Online in Bangalore | House Help & More',
+  description: 'Book a maid or house help online in Bangalore. Verified part-time, full-time & live-in maids, cooks, nannies & drivers for cleaning and home care.',
   keywords: 'maid for home bangalore, domestic helpers bangalore, verified maids bangalore, house help services bangalore, home services bangalore',
   openGraph: {
-    title: "Book Maid for Home in Bangalore | Safe & Reliable Help",
-    description: "Verified maid for home in Bangalore with flexible timing, multilingual helpers & quick replacements. Trusted by families across Bangalore.",
+    title: "Book a Maid Online in Bangalore | House Help & More",
+    description: "Book a maid or house help online in Bangalore. Verified part-time, full-time & live-in maids, cooks, nannies & drivers for cleaning and home care.",
     url: "https://www.ezyhelpers.com/cities/bangalore",
     type: 'website',
     siteName: 'EzyHelpers',
@@ -54,7 +54,7 @@ export default async function BangalorePage() {
 
   const quickAnswer = await getCityQuickAnswer("cities/bangalore", {
     question: "How do I hire a maid in Bangalore through EzyHelpers?",
-    answer: "EzyHelpers provides background-verified maids, cooks, nannies, drivers, and elderly caretakers across Bangalore — from Whitefield to Jayanagar. Placement typically takes 24–72 hours, with a replacement guarantee and direct payment to your helper. Call 080-31411776 to get started.",
+    answer: "EzyHelpers lets you book a maid or house help online across Bangalore, from Whitefield to Jayanagar. Choose verified maids, cooks, nannies, drivers, and elderly caretakers for cleaning, cooking, or full household help, with a replacement guarantee and direct payment to your helper.",
   })
   const areas = [
     "Whitefield", "Electronic City", "Koramangala", "Indiranagar", "HSR Layout",
@@ -129,7 +129,7 @@ export default async function BangalorePage() {
                 Trusted Maid for Home in Bangalore
               </h1>
               <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                From trusted maids for homes in Bangalore to professional cooks and drivers, we bring you verified helpers tailored to your lifestyle, schedule, and household needs.
+                Looking for a reliable maid or house help in Bangalore? From part-time maids for cleaning to full-time house help, professional cooks, and drivers, we bring you verified helpers tailored to your lifestyle, schedule, and household needs.
               </p>
 
               {/* Trust Indicators */}
@@ -160,7 +160,7 @@ export default async function BangalorePage() {
                   className="group relative bg-white text-blue-800 font-bold text-lg px-10 py-5 rounded-2xl hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-white/25 min-w-[240px] text-center overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center justify-center">
-                    <span>Book a Verified Maid Today</span>
+                    <span>Book a Maid Online in Bangalore</span>
                     <svg className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5-5 5M6 12h12" />
                     </svg>
@@ -257,7 +257,7 @@ export default async function BangalorePage() {
                 Popular Service Areas in Bangalore
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                We serve all major residential and commercial localities across Bangalore
+                Find verified maids and house help near you across all major residential and commercial localities in Bangalore
               </p>
             </div>
 
@@ -295,15 +295,15 @@ export default async function BangalorePage() {
                 },
                 {
                   title: "Full-Time Maid",
-                  description: "Daily maids for regular household chores from morning until evening.",
-                  features: ["Daily full-day cleaning and care", "Trained for modern households", "Fixed-time daily assistance"],
+                  description: "Full-time house help for regular household chores and cleaning, from morning until evening. ",
+                  features: ["Daily full-day cleaning and home care", "Available on monthly maid service plans", "Fixed-time daily assistance"],
                   href: "/cities/bangalore/full-time-maid",
                   linkText: "Learn More About Full-Time Maids"
                 },
                 {
                   title: "Part-Time Maid",
                   description: "Flexible hourly maids for small homes or working professionals.",
-                  features: ["Flexible hourly schedules", "Kitchen and cleaning support", "Daily or alternate-day options"],
+                  features: ["Flexible hourly schedules for cleaning & kitchen work", "Daily, alternate-day, or monthly maid service plans", "Ideal for house cleaning and small homes"],
                   href: "/cities/bangalore/part-time-maid",
                   linkText: "Learn More About Part-Time Maids"
                 },
@@ -599,7 +599,7 @@ export default async function BangalorePage() {
           <div className="container-custom">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display">
-                How to Book a Maid for Home in Bangalore in 3 Simple Steps
+                How to Book a Maid Online in Bangalore in 3 Simple Steps
               </h2>
             </div>
 

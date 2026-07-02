@@ -388,3 +388,8 @@ body.care-page .tawk-min-container {
     right: auto !important;
   }
 }
+
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none !important;
+}

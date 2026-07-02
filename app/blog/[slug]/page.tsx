@@ -23,6 +23,200 @@ export function generateStaticParams() {
 
 // FAQ data for different blog categories
 const blogFAQs = {
+  'how-to-find-a-maid-for-home-in-bangalore': [
+    {
+      id: 'reliable-maid-bangalore',
+      question: 'How do I find a reliable maid for my home in Bangalore?',
+      answer: 'Decide the arrangement you need (part-time, full-time, or live-in), then source through a verified agency, a trusted reference, or a reputable platform and always run a background check before hiring. An agency is the fastest, most reliable route because candidates are pre-verified.'
+    },
+    {
+      id: 'get-full-time-maid-quickly',
+      question: 'How can I get a full-time maid in Bangalore quickly?',
+      answer: 'Share your requirements with a verified agency, review 2–3 matched profiles, interview or trial them, and onboard, often within a few days. This is faster and safer than chasing brokers or unverified listings.'
+    },
+    {
+      id: 'full-time-maid-cost-bangalore',
+      question: 'How much does a full-time maid cost in Bangalore?',
+      answer: 'Roughly ₹16,000–₹20,000 per month for 8–10 hours daily, depending on the tasks, the maid\'s experience, and your locality. Part-time costs less; live-in costs more.'
+    },
+    {
+      id: 'what-to-check-before-hiring',
+      question: 'What should I check before hiring a maid in Bangalore?',
+      answer: 'Government ID and address proof, police/background verification, references from previous families, and a health check, plus a short trial period. Also, confirm your apartment or gated community\'s staff registration rules.'
+    },
+    {
+      id: 'agency-vs-direct-hiring',
+      question: 'Is it better to hire a maid through an agency or directly in Bangalore?',
+      answer: 'Direct hiring can be cheaper, but you handle all verification and have no backup if it fails. An agency pre-verifies candidates and offers replacements, usually worth it in a large city where reliability and safety matter most.'
+    },
+    {
+      id: 'hardest-time-to-find-maid',
+      question: 'When is the hardest time to find a maid in Bangalore?',
+      answer: 'Around major festivals and the year-end, when many helpers travel to their hometowns, availability tightens. Start early in these periods, or use an agency that can guarantee a replacement.'
+    }
+  ],
+  'part-time-vs-full-time-vs-live-in-cook': [
+    {
+      id: 'diff-part-time-full-time-cook',
+      question: 'What is the difference between a part-time and full-time cook?',
+      answer: 'A part-time cook comes for a fixed slot, cooks the booked meals, and leaves. A full-time cook works through the day, handling most meals plus kitchen upkeep, then goes home at night. Full-time gives more coverage; part-time costs less.'
+    },
+    {
+      id: 'is-live-in-cook-worth-it',
+      question: 'Is a live-in cook worth it?',
+      answer: 'For large or joint families, those who entertain often, or households with unpredictable mealtimes, yes, a live-in cook delivers any-hour coverage. For a small family with regular meals, it\'s usually more than you need.'
+    },
+    {
+      id: 'most-affordable-cook',
+      question: 'Which type of cook is most affordable?',
+      answer: 'A part-time cook is typically the most economical, since you only pay for specific meal slots rather than all-day availability.'
+    },
+    {
+      id: 'part-time-cook-special-diets',
+      question: 'Can a part-time cook handle special diets?',
+      answer: 'Yes, discuss your dietary needs (vegetarian, Jain, diabetic-friendly, regional cuisine) upfront. A trial meal helps you confirm the fit before committing.'
+    },
+    {
+      id: 'provide-accommodation-for-cook',
+      question: 'Do I need to provide accommodation for a cook?',
+      answer: 'Only for a live-in cook, who stays in your home. Part-time and full-time cooks go home, so no accommodation is needed.'
+    }
+  ],
+  'signs-elderly-parents-need-help-at-home': [
+    {
+      id: 'first-signs-elderly-parent-needs-help',
+      question: 'What are the first signs an elderly parent needs help?',
+      answer: 'Often subtle ones like unsteadiness or a minor fall, missed medications, a home that\'s less clean than usual, spoiled or scarce food, and withdrawing socially. A cluster of these matters more than any single sign.'
+    },
+    {
+      id: 'parent-insists-they-are-fine',
+      question: 'My parent insists they\'re fine — what do I do?',
+      answer: 'Resistance is common and usually about fear of losing independence. Approach it gently, focus on specific safety concerns rather than "you can\'t cope," and involve their doctor. Our guide on helping seniors accept care covers this in depth.'
+    },
+    {
+      id: 'memory-lapses-normal',
+      question: 'Are memory lapses a normal part of ageing?',
+      answer: 'Mild forgetfulness can be. But frequent repetition, confusion in familiar places, missed appointments, or trouble managing money warrant a doctor\'s input, since some causes are treatable.'
+    },
+    {
+      id: 'what-kind-of-help-arrange',
+      question: 'What kind of help should I arrange?',
+      answer: 'It depends on the need. Companionship for loneliness and light support, a full-time or live-in caretaker for daily tasks and mobility, or 24-hour care for higher needs. Match the level of care to the signs you\'re seeing.'
+    },
+    {
+      id: 'arrange-early-or-wait',
+      question: 'Is it better to arrange help early or wait?',
+      answer: 'Earlier is usually safer. Families often wait until a crisis; arranging support when the early signs appear prevents falls, medication errors, and emergencies, and helps your parent stay independent longer.'
+    }
+  ],
+  'hiring-a-maid-without-an-agency': [
+    {
+      id: 'is-it-legal-to-hire-directly',
+      question: 'Is it legal to hire a maid without an agency?',
+      answer: 'Yes. There\'s no law requiring you to use an agency. The responsibility for verification and fair terms simply shifts entirely to you.'
+    },
+    {
+      id: 'police-verification-hired-directly',
+      question: 'Can I get police verification for a maid I hired directly?',
+      answer: 'Yes. Citizens can request domestic-help antecedent verification through official state portals (Seva Sindhu in Karnataka) and the national Digital Police Portal.'
+    },
+    {
+      id: 'is-hiring-directly-cheaper',
+      question: 'Is hiring directly cheaper than an agency?',
+      answer: 'It can look cheaper upfront because there\'s no agency fee. But factor in your time, the verification effort, and the cost and risk if the hire fails and you have no replacement.'
+    },
+    {
+      id: 'biggest-risk',
+      question: 'What\'s the biggest risk of hiring without an agency?',
+      answer: 'Skipping or being unable to do proper background verification. An unverified stranger in your home around family and valuables is the core risk you\'re taking on.'
+    },
+    {
+      id: 'protect-myself-direct-hiring',
+      question: 'How do I protect myself if I still want to hire directly?',
+      answer: 'Do every step in the checklist above — verify ID, get a background check, call real references, run a trial, and put terms in writing.'
+    }
+  ],
+  'types-of-domestic-help-india': [
+    {
+      id: 'diff-maid-cook',
+      question: 'What is the difference between a maid and a cook?',
+      answer: 'A maid handles cleaning and general housekeeping; a cook focuses on meal preparation and the kitchen. Some full-time or live-in maids do both, but if cooking is your priority, a dedicated cook is usually better.'
+    },
+    {
+      id: 'what-does-top-work-mean',
+      question: 'What does "top work maid" mean?',
+      answer: 'A maid who does "top work", the standing-level kitchen and counter tasks like washing utensils and cooking help, rather than floor-level cleaning ("below work"). Always confirm which she does before hiring.'
+    },
+    {
+      id: 'can-one-do-all',
+      question: 'Can one person do all the household work?',
+      answer: 'Usually, no. Most domestic helpers are hired for specific responsibilities based on their skills and experience. For example, a live-in maid generally focuses on housekeeping and daily household chores, while a live-in cook handles meal preparation. Similarly, childcare and elderly care require dedicated support and are often assigned to trained caregivers. If you need a helper to manage multiple tasks, this should be discussed and agreed upon before hiring so that the duties, workload, and salary expectations are clear for everyone involved.'
+    },
+    {
+      id: 'most-affordable',
+      question: 'Which type of domestic help is most affordable?',
+      answer: 'A part-time maid for a single task is typically the lowest cost. Live-in and specialised roles (japa, elderly care) cost more because of the hours and skills involved.'
+    },
+    {
+      id: 'do-all-need-verification',
+      question: 'Do all types of domestic help need verification?',
+      answer: 'Yes. Anyone entering your home; maid, cook, nanny, caretaker, or driver, should be background-verified for your family\'s safety.'
+    }
+  ],
+  'how-to-choose-a-reliable-japa-maid': [
+    {
+      id: 'how-far-in-advance-choose-japa-maid',
+      question: 'How far in advance should I choose a japa maid?',
+      answer: 'Start during pregnancy, a few weeks before your due date. Good japa maids are booked early, and you don\'t want to be scrambling after delivery.'
+    },
+    {
+      id: 'most-important-thing-to-check',
+      question: 'What\'s the single most important thing to check?',
+      answer: 'Verification. You\'re trusting someone with a newborn and a healing mother. ID and background checks, health status, and real references come before everything else.'
+    },
+    {
+      id: 'should-japa-maid-live-in',
+      question: 'Should the japa maid live in?',
+      answer: 'For most families, yes. Night care for feeds is a big part of the value. But if you only need daytime help, part-time arrangements exist.'
+    },
+    {
+      id: 'what-if-japa-maid-not-good-fit',
+      question: 'What if the japa maid isn\'t a good fit after a few days?',
+      answer: 'This is exactly why you confirm the replacement policy upfront. With a reputable agency you can request a replacement; with direct hiring you\'re on your own, which is a real risk to weigh.'
+    },
+    {
+      id: 'is-more-expensive-japa-maid-better',
+      question: 'Is a more expensive japa maid always better?',
+      answer: 'Not automatically. Experience, verification, references, and fit with your family matter more than price alone. Use cost as one factor, not the deciding one.'
+    }
+  ],
+  'japa-maid-vs-nanny-vs-babysitter': [
+    {
+      id: 'is-japa-nanny-same',
+      question: 'Is a japa nanny the same as a regular nanny?',
+      answer: 'No. A "japa nanny" is another name for a japa maid, a postpartum specialist for the recovery period who also cares for the mother. A regular nanny focuses on the child over the long term.'
+    },
+    {
+      id: 'can-one-be-both',
+      question: 'Can one person be both a japa maid and a nanny?',
+      answer: 'Sometimes an experienced caregiver can transition from japa duties into a nanny role once the mother has recovered, if you and she agree. But the skill sets and focus differ, so discuss it openly rather than assuming.'
+    },
+    {
+      id: 'diff-nanny-babysitter',
+      question: 'What\'s the difference between a nanny and a babysitter?',
+      answer: 'A nanny provides ongoing, full-day or live-in childcare and takes on your child\'s whole routine and development. A babysitter provides hours-based cover, which can be occasional (an evening out) or regular part-time (a few hours every day), focused on keeping your child safe and occupied during those hours rather than the deeper nanny role.'
+    },
+    {
+      id: 'which-is-more-expensive',
+      question: 'Which is more expensive?',
+      answer: 'A japa maid usually costs the most per month because the care is specialised and round-the-clock, but it\'s only for a short period. Nannies are an ongoing monthly cost. Babysitters are usually paid hourly or per session.'
+    },
+    {
+      id: 'family-help-at-home',
+      question: 'We have family help at home, do we still need any of these?',
+      answer: 'Not necessarily. If you have reliable family support, you might only need occasional babysitting. These roles exist to fill gaps that family support can\'t, which is common in nuclear, far-from-home, or dual-working households.'
+    }
+  ],
   'what-is-a-Japa-maid': [
     {
       id: 'japa-maid-vs-confinement-nanny',
@@ -986,7 +1180,7 @@ export default async function BlogPost({ params }: PageProps) {
       {/* CTA */}
       <section className="section-padding bg-blue-700 text-white text-center">
         <div className="container-custom max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4 font-display tracking-tight">Ready to Find Trusted Help at Home?</h2>
+          <h2 className="text-3xl font-bold mb-4 font-display tracking-tight text-white">Ready to Find Trusted Help at Home?</h2>
           <p className="text-blue-100 mb-10 text-lg">Join 10,000+ families who trust EzyHelpers for their daily home support.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/hire-helper" className="bg-white text-blue-700 hover:bg-blue-50 font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-900/20">
